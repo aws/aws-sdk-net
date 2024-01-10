@@ -1620,6 +1620,7 @@ namespace Amazon.QConnect
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
+        [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual GetRecommendationsResponse GetRecommendations(GetRecommendationsRequest request)
         {
             var options = new InvokeOptions();
@@ -1641,6 +1642,7 @@ namespace Amazon.QConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommendations
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
+        [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual IAsyncResult BeginGetRecommendations(GetRecommendationsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1658,6 +1660,7 @@ namespace Amazon.QConnect
         /// 
         /// <returns>Returns a  GetRecommendationsResult from QConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetRecommendations">REST API Reference for GetRecommendations Operation</seealso>
+        [Obsolete("GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual GetRecommendationsResponse EndGetRecommendations(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRecommendationsResponse>(asyncResult);
@@ -2308,6 +2311,7 @@ namespace Amazon.QConnect
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/QueryAssistant">REST API Reference for QueryAssistant Operation</seealso>
+        [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual QueryAssistantResponse QueryAssistant(QueryAssistantRequest request)
         {
             var options = new InvokeOptions();
@@ -2329,6 +2333,7 @@ namespace Amazon.QConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryAssistant
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/QueryAssistant">REST API Reference for QueryAssistant Operation</seealso>
+        [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual IAsyncResult BeginQueryAssistant(QueryAssistantRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2346,6 +2351,7 @@ namespace Amazon.QConnect
         /// 
         /// <returns>Returns a  QueryAssistantResult from QConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/QueryAssistant">REST API Reference for QueryAssistant Operation</seealso>
+        [Obsolete("QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.")]
         public virtual QueryAssistantResponse EndQueryAssistant(IAsyncResult asyncResult)
         {
             return EndInvoke<QueryAssistantResponse>(asyncResult);
