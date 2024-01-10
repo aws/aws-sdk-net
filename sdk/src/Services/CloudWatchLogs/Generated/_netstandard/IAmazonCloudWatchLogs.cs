@@ -586,13 +586,26 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes a CloudWatch Logs account policy.
+        /// Deletes a CloudWatch Logs account policy. This stops the policy from applying to all
+        /// log groups or a subset of log groups in the account. Log-group level policies will
+        /// still be in effect.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must be signed on with the <c>logs:DeleteDataProtectionPolicy</c>
+        /// To use this operation, you must be signed on with the correct permissions depending
+        /// on the type of policy that you are deleting.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To delete a data protection policy, you must have the <c>logs:DeleteDataProtectionPolicy</c>
         /// and <c>logs:DeleteAccountPolicy</c> permissions.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a subscription filter policy, you must have the <c>logs:DeleteSubscriptionFilter</c>
+        /// and <c>logs:DeleteAccountPolicy</c> permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2176,11 +2189,19 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates an account-level data protection policy that applies to all log groups in
-        /// the account. A data protection policy can help safeguard sensitive data that's ingested
-        /// by your log groups by auditing and masking the sensitive log data. Each account can
-        /// have only one account-level policy.
+        /// Creates an account-level data protection policy or subscription filter policy that
+        /// applies to all log groups or a subset of log groups in the account.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Data protection policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A data protection policy can help safeguard sensitive data that's ingested by your
+        /// log groups by auditing and masking the sensitive log data. Each account can have only
+        /// one account-level data protection policy.
+        /// </para>
         ///  <important> 
         /// <para>
         /// Sensitive data is detected and masked when it is ingested into a log group. When you
@@ -2191,9 +2212,9 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// If you use <c>PutAccountPolicy</c> to create a data protection policy for your whole
         /// account, it applies to both existing log groups and all log groups that are created
-        /// later in this account. The account policy is applied to existing log groups with eventual
-        /// consistency. It might take up to 5 minutes before sensitive data in existing log groups
-        /// begins to be masked.
+        /// later in this account. The account-level policy is applied to existing log groups
+        /// with eventual consistency. It might take up to 5 minutes before sensitive data in
+        /// existing log groups begins to be masked.
         /// </para>
         ///  
         /// <para>
@@ -2214,17 +2235,63 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// To use the <c>PutAccountPolicy</c> operation, you must be signed on with the <c>logs:PutDataProtectionPolicy</c>
-        /// and <c>logs:PutAccountPolicy</c> permissions.
+        /// To use the <c>PutAccountPolicy</c> operation for a data protection policy, you must
+        /// be signed on with the <c>logs:PutDataProtectionPolicy</c> and <c>logs:PutAccountPolicy</c>
+        /// permissions.
         /// </para>
         ///  
         /// <para>
         /// The <c>PutAccountPolicy</c> operation applies to all log groups in the account. You
-        /// can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+        /// can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
         /// to create a data protection policy that applies to just one log group. If a log group
         /// has its own data protection policy and the account also has an account-level data
         /// protection policy, then the two policies are cumulative. Any sensitive term specified
         /// in either policy is masked.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Subscription filter policy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A subscription filter policy sets up a real-time feed of log events from CloudWatch
+        /// Logs to other Amazon Web Services services. Account-level subscription filter policies
+        /// apply to both existing log groups and log groups that are created later in this account.
+        /// Supported destinations are Kinesis Data Streams, Kinesis Data Firehose, and Lambda.
+        /// When log events are sent to the receiving service, they are Base64 encoded and compressed
+        /// with the GZIP format.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following destinations are supported for subscription filters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Kinesis Data Streams data stream in the same account as the subscription policy,
+        /// for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Kinesis Data Firehose data stream in the same account as the subscription policy,
+        /// for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Lambda function in the same account as the subscription policy, for same-account
+        /// delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
+        /// for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported
+        /// as logical destinations.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Each account can have one account-level subscription filter policy. If you are updating
+        /// an existing filter, you must specify the correct name in <c>PolicyName</c>. To perform
+        /// a <c>PutAccountPolicy</c> subscription filter operation for any destination except
+        /// a Lambda function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
@@ -3081,7 +3148,11 @@ namespace Amazon.CloudWatchLogs
         /// the client that is receiving the stream. The session also ends if the established
         /// connection between the client and the server breaks.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// For examples of using an SDK to start a Live Tail session, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html">
+        /// Start a Live Tail session using an Amazon Web Services SDK</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartLiveTail service method.</param>
         /// <param name="cancellationToken">

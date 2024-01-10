@@ -39,6 +39,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _policyName;
         private PolicyType _policyType;
         private Scope _scope;
+        private string _selectionCriteria;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -152,6 +153,24 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectionCriteria. 
+        /// <para>
+        /// The log group selection criteria for this subscription filter policy.
+        /// </para>
+        /// </summary>
+        public string SelectionCriteria
+        {
+            get { return this._selectionCriteria; }
+            set { this._selectionCriteria = value; }
+        }
+
+        // Check to see if SelectionCriteria property is set
+        internal bool IsSetSelectionCriteria()
+        {
+            return this._selectionCriteria != null;
         }
 
     }

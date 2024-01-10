@@ -602,6 +602,10 @@ namespace Amazon.CloudWatchLogs
         /// Constant DATA_PROTECTION_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType DATA_PROTECTION_POLICY = new PolicyType("DATA_PROTECTION_POLICY");
+        /// <summary>
+        /// Constant SUBSCRIPTION_FILTER_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType SUBSCRIPTION_FILTER_POLICY = new PolicyType("SUBSCRIPTION_FILTER_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

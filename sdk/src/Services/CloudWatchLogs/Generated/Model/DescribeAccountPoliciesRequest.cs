@@ -87,7 +87,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property PolicyType. 
         /// <para>
         /// Use this parameter to limit the returned policies to only the policies that match
-        /// the policy type that you specify. Currently, the only valid value is <c>DATA_PROTECTION_POLICY</c>.
+        /// the policy type that you specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

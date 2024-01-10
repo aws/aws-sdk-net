@@ -89,7 +89,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// the client that is receiving the stream. The session also ends if the established
     /// connection between the client and the server breaks.
     /// </para>
-    ///  </important>
+    ///  </important> 
+    /// <para>
+    /// For examples of using an SDK to start a Live Tail session, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html">
+    /// Start a Live Tail session using an Amazon Web Services SDK</a>.
+    /// </para>
     /// </summary>
     public partial class StartLiveTailRequest : AmazonCloudWatchLogsRequest
     {
@@ -166,6 +170,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// If you specify this parameter, then only log events in the log streams that have names
         /// that start with the prefixes that you specify here are included in the Live Tail session.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify this field, you can't also specify the <c>logStreamNames</c> field.
+        /// </para>
         ///  <note> 
         /// <para>
         /// You can specify this parameter only if you specify only one log group in <c>logGroupIdentifiers</c>.
@@ -190,6 +198,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// If you specify this parameter, then only log events in the log streams that you specify
         /// here are included in the Live Tail session.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this field, you can't also specify the <c>logStreamNamePrefixes</c>
+        /// field.
         /// </para>
         ///  <note> 
         /// <para>

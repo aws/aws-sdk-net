@@ -99,6 +99,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("selectionCriteria", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SelectionCriteria = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

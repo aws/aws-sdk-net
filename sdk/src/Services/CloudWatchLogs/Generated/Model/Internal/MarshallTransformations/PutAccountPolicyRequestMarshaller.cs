@@ -91,6 +91,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Scope);
                 }
 
+                if(publicRequest.IsSetSelectionCriteria())
+                {
+                    context.Writer.WritePropertyName("selectionCriteria");
+                    context.Writer.Write(publicRequest.SelectionCriteria);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

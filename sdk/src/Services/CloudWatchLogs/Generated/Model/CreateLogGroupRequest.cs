@@ -140,7 +140,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// After a log group is created, its class can't be changed.
+        /// The value of <c>logGroupClass</c> can't be changed after a log group is created.
         /// </para>
         ///  </important> 
         /// <para>
