@@ -33,8 +33,36 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class MapConfiguration
     {
+        private List<string> _customLayers = new List<string>();
         private string _politicalView;
         private string _style;
+
+        /// <summary>
+        /// Gets and sets the property CustomLayers. 
+        /// <para>
+        /// Specifies the custom layers for the style. Leave unset to not enable any custom layer,
+        /// or, for styles that support custom layers, you can enable layer(s), such as POI layer
+        /// for the VectorEsriNavigation style. Default is <c>unset</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not all map resources or styles support custom layers. See Custom Layers for more
+        /// information.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> CustomLayers
+        {
+            get { return this._customLayers; }
+            set { this._customLayers = value; }
+        }
+
+        // Check to see if CustomLayers property is set
+        internal bool IsSetCustomLayers()
+        {
+            return this._customLayers != null && this._customLayers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PoliticalView. 

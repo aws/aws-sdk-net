@@ -63,6 +63,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomLayers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CustomLayers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PoliticalView", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
