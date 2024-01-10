@@ -57,7 +57,7 @@ namespace Amazon.ConnectCampaignService.Model
         /// <summary>
         /// Gets and sets the property ClientToken.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=64)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string ClientToken
         {
             get { return this._clientToken; }

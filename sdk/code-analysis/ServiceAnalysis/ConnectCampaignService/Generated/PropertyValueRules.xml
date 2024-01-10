@@ -4,6 +4,7 @@
     <property>Amazon.ConnectCampaignService.Model.CreateCampaignRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.CreateCampaignRequest.Name</property>
@@ -19,41 +20,49 @@
     <property>Amazon.ConnectCampaignService.Model.CreateCampaignResponse.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.DeleteCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.DeleteConnectInstanceConfigRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.DeleteInstanceOnboardingJobRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.DescribeCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.GetCampaignStateRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.GetConnectInstanceConfigRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.GetInstanceOnboardingJobStatusRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.ListCampaignsRequest.MaxResults</property>
@@ -80,31 +89,37 @@
     <property>Amazon.ConnectCampaignService.Model.PauseCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.PutDialRequestBatchRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.ResumeCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.StartCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.StartInstanceOnboardingJobRequest.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.StopCampaignRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.TagResourceRequest.Arn</property>
@@ -122,11 +137,13 @@
     <property>Amazon.ConnectCampaignService.Model.UpdateCampaignDialerConfigRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.UpdateCampaignNameRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.UpdateCampaignNameRequest.Name</property>
@@ -147,6 +164,7 @@
     <property>Amazon.ConnectCampaignService.Model.UpdateCampaignOutboundCallConfigRequest.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.AgentlessDialerConfig.DialingCapacity</property>
@@ -161,11 +179,13 @@
     <property>Amazon.ConnectCampaignService.Model.Campaign.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.Campaign.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.Campaign.Name</property>
@@ -181,11 +201,13 @@
     <property>Amazon.ConnectCampaignService.Model.CampaignSummary.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.CampaignSummary.Id</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.CampaignSummary.Name</property>
@@ -195,12 +217,14 @@
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.DialRequest.ClientToken</property>
     <min>0</min>
-    <max>64</max>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.DialRequest.PhoneNumber</property>
     <min>0</min>
     <max>20</max>
+    <pattern>[\d\-+]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.EncryptionConfig.KeyArn</property>
@@ -211,16 +235,25 @@
     <property>Amazon.ConnectCampaignService.Model.FailedCampaignStateResponse.CampaignId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.FailedRequest.ClientToken</property>
     <min>0</min>
-    <max>64</max>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignService.Model.FailedRequest.Id</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.InstanceConfig.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.InstanceConfig.ServiceLinkedRoleArn</property>
@@ -231,11 +264,13 @@
     <property>Amazon.ConnectCampaignService.Model.InstanceIdFilter.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.InstanceOnboardingJobStatus.ConnectInstanceId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.OutboundCallConfig.ConnectContactFlowId</property>
@@ -274,10 +309,18 @@
     <property>Amazon.ConnectCampaignService.Model.SuccessfulCampaignStateResponse.CampaignId</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignService.Model.SuccessfulRequest.ClientToken</property>
     <min>0</min>
-    <max>64</max>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignService.Model.SuccessfulRequest.Id</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9_\-.]*</pattern>
   </property-value-rule>
 </property-value-rules>
