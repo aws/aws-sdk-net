@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Fix encoding issue where resource path components from the configured endpoint were being double encoded. Resource path components from configured endpoints will be single encoded and resource path components from the request will continue to be double encoded (except for S3)."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }

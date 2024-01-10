@@ -1,3 +1,26 @@
+### 3.7.723.0 (2024-01-10 19:21 UTC)
+* CloudWatchLogs (3.7.303.0)
+	* Add support for account level subscription filter policies to PutAccountPolicy, DescribeAccountPolicies, and DeleteAccountPolicy APIs. Additionally, PutAccountPolicy has been modified with new optional "selectionCriteria" parameter for resource selection.
+* ConnectCampaignService (3.7.301.0)
+	* Minor pattern updates for Campaign and Dial Request API fields.
+* ConnectWisdomService (3.7.302.0)
+	* QueryAssistant and GetRecommendations will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.
+* LocationService (3.7.304.0)
+	* This release adds API support for custom layers for the maps service APIs: CreateMap, UpdateMap, DescribeMap.
+* QConnect (3.7.302.0)
+	* QueryAssistant and GetRecommendations will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications.
+* RedshiftServerless (3.7.302.21)
+	* Updates to ConfigParameter for RSS workgroup, removal of use_fips_ssl
+* Route53 (3.7.302.0)
+	* Route53 now supports geoproximity routing in AWS regions
+* S3 (3.7.305.8)
+	* Fixed a bug where uploading empty unseekable stream with TransferUtility creates 8MB file in S3.
+* Core 3.7.301.3
+	* Fix encoding issue where resource path components from the configured endpoint were being double encoded. Resource path components from configured endpoints will be single encoded and resource path components from the request will continue to be double encoded (except for S3).
+	* Update documentation generators to use correct code tags
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.722.0 (2024-01-08 19:16 UTC)
 * CodeBuild (3.7.301.0)
 	* Aws CodeBuild now supports new compute type BUILD_GENERAL1_XLARGE
