@@ -105,7 +105,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Route 53 also supports the contry code <b>UA</b> forr Ukraine.
+        /// Route 53 also supports the country code <b>UA</b> for Ukraine.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

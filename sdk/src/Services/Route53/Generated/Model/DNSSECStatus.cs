@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A string repesenting the status of DNSSEC signing.
+    /// A string representing the status of DNSSEC signing.
     /// </summary>
     public partial class DNSSECStatus
     {

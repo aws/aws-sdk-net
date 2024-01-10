@@ -216,7 +216,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application
+        ///  <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53 Application
         /// Recovery Controller routing control. If the routing control state is <c>ON</c>, the
         /// health check is considered healthy. If the state is <c>OFF</c>, the health check is
         /// considered unhealthy. 

@@ -29,49 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// This is the response object from the GetDNSSEC operation.
+    /// A complex type that lists the coordinates for a geoproximity resource record.
     /// </summary>
-    public partial class GetDNSSECResponse : AmazonWebServiceResponse
+    public partial class Coordinates
     {
-        private DNSSECStatus _status;
-        private List<KeySigningKey> _keySigningKeys = new List<KeySigningKey>();
+        private string _latitude;
+        private string _longitude;
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Latitude. 
         /// <para>
-        /// A string representing the status of DNSSEC.
+        ///  Specifies a coordinate of the north–south position of a geographic point on the surface
+        /// of the Earth (-90 - 90). 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DNSSECStatus Status
+        [AWSProperty(Required=true, Min=1, Max=6)]
+        public string Latitude
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._latitude; }
+            set { this._latitude = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Latitude property is set
+        internal bool IsSetLatitude()
         {
-            return this._status != null;
+            return this._latitude != null;
         }
 
         /// <summary>
-        /// Gets and sets the property KeySigningKeys. 
+        /// Gets and sets the property Longitude. 
         /// <para>
-        /// The key-signing keys (KSKs) in your account.
+        ///  Specifies a coordinate of the east–west position of a geographic point on the surface
+        /// of the Earth (-180 - 180). 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<KeySigningKey> KeySigningKeys
+        [AWSProperty(Required=true, Min=1, Max=7)]
+        public string Longitude
         {
-            get { return this._keySigningKeys; }
-            set { this._keySigningKeys = value; }
+            get { return this._longitude; }
+            set { this._longitude = value; }
         }
 
-        // Check to see if KeySigningKeys property is set
-        internal bool IsSetKeySigningKeys()
+        // Check to see if Longitude property is set
+        internal bool IsSetLongitude()
         {
-            return this._keySigningKeys != null && this._keySigningKeys.Count > 0; 
+            return this._longitude != null;
         }
 
     }

@@ -47,6 +47,7 @@ namespace Amazon.Route53.Model
         private string _healthCheckId;
         private string _trafficPolicyInstanceId;
         private CidrRoutingConfig _cidrRoutingConfig;
+        private GeoProximityLocation _geoProximityLocation;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -381,12 +382,7 @@ namespace Amazon.Route53.Model
         /// with an IP address of <c>192.0.2.111</c>, create a resource record set with a <c>Type</c>
         /// of <c>A</c> and a <c>ContinentCode</c> of <c>AF</c>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Although creating geolocation and geolocation alias resource record sets in a private
-        /// hosted zone is allowed, it's not supported.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// If you create separate resource record sets for overlapping geographic regions (for
         /// example, one resource record set for a continent and one for a country on the same
@@ -908,6 +904,26 @@ namespace Amazon.Route53.Model
         internal bool IsSetCidrRoutingConfig()
         {
             return this._cidrRoutingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeoProximityLocation. 
+        /// <para>
+        ///  <i> GeoproximityLocation resource record sets only:</i> A complex type that lets
+        /// you control how Route 53 responds to DNS queries based on the geographic origin of
+        /// the query and your resources. 
+        /// </para>
+        /// </summary>
+        public GeoProximityLocation GeoProximityLocation
+        {
+            get { return this._geoProximityLocation; }
+            set { this._geoProximityLocation = value; }
+        }
+
+        // Check to see if GeoProximityLocation property is set
+        internal bool IsSetGeoProximityLocation()
+        {
+            return this._geoProximityLocation != null;
         }
 
     }

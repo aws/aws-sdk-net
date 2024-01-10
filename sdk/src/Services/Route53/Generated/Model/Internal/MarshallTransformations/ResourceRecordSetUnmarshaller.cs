@@ -139,6 +139,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.CidrRoutingConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("GeoProximityLocation", targetDepth))
+                    {
+                        var unmarshaller = GeoProximityLocationUnmarshaller.Instance;
+                        unmarshalledObject.GeoProximityLocation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -179,6 +179,33 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
                                     xmlWriter.WriteEndElement();
                                 }
+                
+                                if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation != null) 
+                                {
+                                    xmlWriter.WriteStartElement("GeoProximityLocation", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                                    if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.IsSetAWSRegion())
+                                        xmlWriter.WriteElementString("AWSRegion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.AWSRegion));                 
+
+                                    if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.IsSetLocalZoneGroup())
+                                        xmlWriter.WriteElementString("LocalZoneGroup", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.LocalZoneGroup));                 
+
+                
+                                    if (publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates != null) 
+                                    {
+                                        xmlWriter.WriteStartElement("Coordinates", "https://route53.amazonaws.com/doc/2013-04-01/");            
+                                        if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates.IsSetLatitude())
+                                            xmlWriter.WriteElementString("Latitude", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates.Latitude));                 
+
+                                        if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates.IsSetLongitude())
+                                            xmlWriter.WriteElementString("Longitude", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Coordinates.Longitude));                 
+
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.IsSetBias())
+                                        xmlWriter.WriteElementString("Bias", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Bias));                 
+
+                                    xmlWriter.WriteEndElement();
+                                }
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();

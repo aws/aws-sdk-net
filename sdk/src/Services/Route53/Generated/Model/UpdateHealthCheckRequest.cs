@@ -319,6 +319,12 @@ namespace Amazon.Route53.Model
         /// specify in <c>RequestInterval</c>. Using an IPv4 address that is returned by DNS,
         /// Route 53 then checks the health of the endpoint.
         /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for <c>IPAddress</c>, you can’t update the health check
+        /// to remove the <c>FullyQualifiedDomainName</c>; if you don’t specify a value for <c>IPAddress</c>
+        /// on creation, a <c>FullyQualifiedDomainName</c> is required.
+        /// </para>
         ///  <note> 
         /// <para>
         /// If you don't specify a value for <c>IPAddress</c>, Route 53 uses only IPv4 to send
