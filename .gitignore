@@ -63,3 +63,5 @@ generator/.vs/**
 codesign-zip
 *.binlog
 /sdk/src/netsdk-*
+
+sdk/test/Performance/**/BenchmarkDotNet.Artifacts/*
