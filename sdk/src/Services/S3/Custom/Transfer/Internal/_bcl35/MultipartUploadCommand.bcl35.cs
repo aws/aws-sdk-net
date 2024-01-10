@@ -137,20 +137,38 @@ namespace Amazon.S3.Transfer.Internal
                     try
                     {
                         int partNumber = 1;
-                        int readBytesCount;
-                        while (true)
+                        int readBytesCount, readAheadBytesCount = 0;
+
+                        readBytesCount = stream.Read(readBuffer, 0, readBuffer.Length);
+
+                        do
                         {
-                            readBytesCount = stream.Read(readBuffer, 0, readBuffer.Length);
                             nextUploadBuffer.Write(readBuffer, 0, readBytesCount);
-                            if (nextUploadBuffer.Position > minPartSize || readBytesCount == 0)
+                            // read the stream ahead and process it in the next iteration.
+                            // this is used to set isLastPart when there is no data left in the stream.
+                            readAheadBytesCount = stream.Read(readBuffer, 0, readBuffer.Length);
+
+                            if ((nextUploadBuffer.Position > minPartSize || readAheadBytesCount == 0))
                             {
-                                bool isLastPart = readBytesCount == 0;
+                                if (nextUploadBuffer.Position == 0)
+                                {
+                                    if (partNumber == 1)
+                                    {
+                                        // if the input stream is empty then upload empty MemoryStream.
+                                        // without doing this the UploadPart call will use the length of the
+                                        // nextUploadBuffer as the pastSize. The length will be incorrectly computed
+                                        // for the part as (int)minPartSize + (READ_BUFFER_SIZE) as defined above for partBuffer.
+                                        nextUploadBuffer.Dispose();
+                                        nextUploadBuffer = new MemoryStream();
+                                    }
+                                }
+                                bool isLastPart = readAheadBytesCount == 0;
+
                                 var partSize = nextUploadBuffer.Position;
                                 nextUploadBuffer.Position = 0;
                                 UploadPartRequest uploadPartRequest = ConstructUploadPartRequestForNonSeekableStream(nextUploadBuffer, partNumber, partSize, isLastPart, initiateResponse);
 
                                 var partResponse = _s3Client.UploadPart(uploadPartRequest);
-
                                 Logger.DebugFormat("Uploaded part {0}. (Last part = {1}, Part size = {2}, Upload Id: {3})", partNumber, isLastPart, partSize, initiateResponse.UploadId);
                                 uploadPartResponses.Add(partResponse);
                                 partNumber++;
@@ -158,12 +176,9 @@ namespace Amazon.S3.Transfer.Internal
                                 nextUploadBuffer.Dispose();
                                 nextUploadBuffer = new MemoryStream(partBuffer);
                             }
-
-                            if (readBytesCount == 0)
-                            {
-                                break;
-                            }
+                            readBytesCount = readAheadBytesCount;
                         }
+                        while (readAheadBytesCount > 0);
                     }
                     finally
                     {

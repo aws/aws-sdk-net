@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixed a bug where uploading empty unseekable stream with TransferUtility creates 8MB file in S3."
+            ]
+        }
+    ]
+}

@@ -174,6 +174,202 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void UploadUnSeekableStreamFileSizeSmallerThanMinPartTest()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\SmallerThanMinPart");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 4 * MEG_SIZE;
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, fileName);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+
+                //Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnSeekableStreamFileSizeEqualToMinPartTest()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\EqualToMinPartSize");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 5 * MEG_SIZE;
+
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, fileName);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+
+                //Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnSeekableStreamFileSizeEqualToPartBufferSize()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\EqualToPartBufferSize");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 5 * MEG_SIZE + 8192;
+
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, fileName);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+
+                //Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnseekableStreamFileSizeBetweenMinPartSizeAndPartBufferSize()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\BetweenMinPartSizeAndPartBufferSize");
+            var path = Path.Combine(BasePath, fileName);
+            // there was a bug where the transfer utility was uploading 13MB file
+            // when the file size was between 5MB and (5MB + 8192). 8192 is the s3Client.Config.BufferSize
+            var fileSize = 5 * MEG_SIZE + 1;
+
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, fileName);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+
+                //Download the file and validate content of downloaded file is equal.
+                var downloadPath = path + ".download";
+                var downloadRequest = new TransferUtilityDownloadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = downloadPath
+                };
+                tu.Download(downloadRequest);
+                UtilityMethods.CompareFiles(path, downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnSeekableStreamWithZeroLengthTest()
+        {
+            const long zeroFileSize = 0;
+            var client = Client;
+            var key = UtilityMethods.GenerateName(@"SimpleUploadTest\EmptyFile");
+
+            var stream = new UnseekableStream(setZeroLengthStream: true);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, key);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+                Assert.AreEqual(zeroFileSize, metadata.ContentLength);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadUnSeekableStreamTestWithEmptyFile()
+        {
+            var client = Client;
+            var fileName = UtilityMethods.GenerateName(@"UnSeekableStream\EmptyFile");
+            var path = Path.Combine(BasePath, fileName);
+            var fileSize = 0;
+            UtilityMethods.GenerateFile(path, fileSize);
+            //take the generated file and turn it into an unseekable stream
+
+            var stream = GenerateUnseekableStreamFromFile(path);
+            using (var tu = new Amazon.S3.Transfer.TransferUtility(client))
+            {
+                tu.Upload(stream, bucketName, fileName);
+
+                var metadata = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName
+                });
+                Assert.AreEqual(fileSize, metadata.ContentLength);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void UploadUnSeekableStreamWithMetadataAndHeadersTest()
         {
             var client = Client;
@@ -1020,8 +1216,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
         private class UnseekableStream : MemoryStream
         {
-            public UnseekableStream(byte[] buffer) : base(buffer) { }
+            private readonly bool _setZeroLengthStream;
 
+            public UnseekableStream(byte[] buffer) : base(buffer) { }
+            public UnseekableStream(bool setZeroLengthStream): base()
+            {
+                _setZeroLengthStream = setZeroLengthStream;
+            }
             public UnseekableStream(): base() { }
 
             public override bool CanSeek
@@ -1030,7 +1231,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             public override long Length
             {
-                get => throw new NotSupportedException();
+                get
+                {
+                    if (_setZeroLengthStream)
+                    {
+                        return 0;
+                    }
+                    else { throw new NotSupportedException(); }
+                }
             }
         }
     }
