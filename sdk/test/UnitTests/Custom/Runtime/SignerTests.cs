@@ -144,26 +144,28 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void TestCanonicalizeResourcePath()
+        public void TestCanonicalizeResourcePathSingleEncoded()
         {
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(null, null));
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(null, string.Empty));
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), null));
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), string.Empty));
-            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), null));
-            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), string.Empty));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(null, null, false, null));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(null, string.Empty, false, null));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://ec2.us-west-1.amazonaws.com"), null, false, null));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://ec2.us-west-1.amazonaws.com"), string.Empty, false, null));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), null, false, null));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), string.Empty, false, null));
 
             Assert.AreEqual(
                 "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePath(null, @"/vx_folder/1.0\datafiles\file.json"));
-
-            Assert.AreEqual(
-                "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json"));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json", false, null));
 
             Assert.AreEqual(
                 "/custompath/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json"));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json", false, null));
+            
+            Assert.AreEqual("/%40%23%24%3A%21.json",
+                    AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost"), @"/@#$:!.json", false, null));
+
+            Assert.AreEqual("/%24custompath/%40%23%24%3A%21.json",
+                    AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/@#$:!.json", false, null));
         }
 
         [TestMethod]
@@ -171,26 +173,40 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestCanonicalizeResourcePathDoubleEncoded()
         {
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), null, true));
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://ec2.us-west-1.amazonaws.com"), string.Empty, true));
-            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), null, true));
-            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), string.Empty, true));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://ec2.us-west-1.amazonaws.com"), null, true, null));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://ec2.us-west-1.amazonaws.com"), string.Empty, true, null));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), null, true, null));
+            Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), string.Empty, true, null));
 
             // exception because the URI is necessary to decide whether or not to pre URL encode
             AssertExtensions.ExpectException(() =>
             {
-                AWSSDKUtils.CanonicalizeResourcePath(null, "doesn't matter", true);
+                AWSSDKUtils.CanonicalizeResourcePathV2(null, "doesn't matter", true, null);
             }, typeof(ArgumentNullException), "A non-null endpoint is necessary to decide whether or not to pre URL encode.\r\nParameter name: endpoint");
 
-            // should be single URL encoded because it's S3
+            // In the new signer path, if it's s3, we pass in false for double encoding
             Assert.AreEqual(
                 "/vx_folder/1.0%5Cdatafiles%5Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json", true));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3-eu-west-1.amazonaws.com/"), @"/vx_folder/1.0\datafiles\file.json", false, null));
 
             // should be double URL encoded because it's not S3
             Assert.AreEqual(
                 "/custompath/vx_folder/1.0%255Cdatafiles%255Cfile.json",
-                AWSSDKUtils.CanonicalizeResourcePath(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json", true));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), @"/vx_folder/1.0\datafiles\file.json", true, null));
+            // some services like apiagatewaymanagementapi allow special characters to be in the configured endpoint's resource path, in this case the endpoint's resource path is single encoded 
+            // and the resource path from the request is double encoded. Since $ is the only special character allowed in the endpoint, we test for this case
+            Assert.AreEqual(
+                "/%24custompath/vx_folder/1.0%255Cdatafiles%255Cfile.json",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/vx_folder/1.0\datafiles\file.json", true, null));
+
+            Assert.AreEqual("/%24custompath/%2540%2523%2524%253A%2521.json",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/@#$:!.json", true, null));
+            
+            Assert.AreEqual("/%2540%2523%2524%253A%2521.json",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost"), @"/@#$:!.json", true, null));
+            
+            Assert.AreEqual("/%24custompath/nospecialcharacters",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/nospecialcharacters", true, null));
         }
 
 #if BCL45

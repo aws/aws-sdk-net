@@ -427,25 +427,32 @@ namespace Amazon.Util
         /// <returns>Canonicalized resource path for the endpoint.</returns>
         public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
         {
+            // Single encode the resourcepath from the endpoint i.e. treat it like a regular uri.
+            // Double encode the resource path from the request
+            string resourcePathFromRequest = resourcePath != null ? resourcePath : string.Empty;
+            string resourcePathFromEndpoint = endpoint != null? endpoint.AbsolutePath : string.Empty;
+
             if (endpoint != null)
             {
-                var path = endpoint.AbsolutePath;
-                if (string.IsNullOrEmpty(path) || string.Equals(path, Slash, StringComparison.Ordinal))
-                    path = string.Empty;
+                // If the resource path from the endpoint is just a slash, it is the equivalent of being empty, so just set it to empty.
+                if (string.IsNullOrEmpty(resourcePathFromEndpoint) || string.Equals(resourcePathFromEndpoint, Slash, StringComparison.Ordinal))
+                    resourcePathFromEndpoint = string.Empty;
 
-                if (!string.IsNullOrEmpty(resourcePath) && resourcePath.StartsWith(Slash, StringComparison.Ordinal))
-                    resourcePath = resourcePath.Substring(1);
+                if (!string.IsNullOrEmpty(resourcePathFromRequest) && resourcePathFromRequest.StartsWith(Slash, StringComparison.Ordinal))
+                    resourcePathFromRequest = resourcePathFromRequest.Substring(1);
 
-                if (!string.IsNullOrEmpty(resourcePath))
-                    path = path + Slash + resourcePath;
+                // If the resource path from the endpoint is empty, add a slash in front of the resource path from the request,
+                // so that when we split and join the resource path segments, we don't encode the slash. Removing this will cause odd unwanted behavior.
+                // We don't want to add a slash if the resource path from the endpoint has a value because that will result in two slashes, one from the
+                // endpoint and one from the resource path.
+                if (string.IsNullOrEmpty(resourcePathFromEndpoint) && !string.IsNullOrEmpty(resourcePathFromRequest))
+                    resourcePathFromRequest = Slash + resourcePathFromRequest;
 
-                resourcePath = path;
             }
 
-            if (string.IsNullOrEmpty(resourcePath))
+            if (string.IsNullOrEmpty(resourcePathFromRequest) && string.IsNullOrEmpty(resourcePathFromEndpoint))
                 return Slash;
-
-            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
+            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePathFromRequest, pathResources);
 
             var pathWasPreEncoded = false;
             if (encode)
@@ -456,8 +463,7 @@ namespace Amazon.Util
                 encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, false));
                 pathWasPreEncoded = true;
             }
-
-            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegmentsV2(encodedSegments);
+            string canonicalizedResourcePath = GetFullCanonicalizedResourcePath(resourcePathFromEndpoint, encodedSegments);
 
             // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
             Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
@@ -469,6 +475,29 @@ namespace Amazon.Util
             return canonicalizedResourcePath;
         }
 
+        /// <summary>
+        /// This method returns the full canonicalized resource path which includes the resource path from the request and the resource path from the endpoint.
+        /// </summary>
+        /// <param name="resourcePathFromEndpoint">This is the resource path that comes from the endpoint itself and not the request</param>
+        /// <param name="encodedSegments">If double encoded, encoded segments contains the encoded segments from the resource path from the request</param>
+        /// <returns>The full canonicalized resource path that contains the single encoded canonicalized resource path from the endpoint and the double encoded
+        /// resource path from the request</returns>
+        private static string GetFullCanonicalizedResourcePath(string resourcePathFromEndpoint, IEnumerable<string> encodedSegments)
+        {
+            // Most of the time resourcePathFromEndpoint will just be "/", meaning it is essentially empty, so check to see if the length is > 1.
+            if (resourcePathFromEndpoint.Length > 1)
+            {
+                // Since we are resolving the configured endpoint here, we don't want to subsitute any key/value pairs from path resources.
+                IEnumerable<string> absolutePathSegment = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePathFromEndpoint, null);
+                // If encodedSegments' first value is empty, that means the resourcePath was empty, so no need to concatenate it since that will produce an extra "/" character at the end.
+                IEnumerable<string> fullPath = string.IsNullOrEmpty(encodedSegments.FirstOrDefault()) ? absolutePathSegment : absolutePathSegment.Concat(encodedSegments);
+                return AWSSDKUtils.JoinResourcePathSegmentsV2(fullPath);
+            }
+            else
+            {
+                return AWSSDKUtils.JoinResourcePathSegmentsV2(encodedSegments);
+            }
+        }
         /// <summary>
         /// Splits the resourcePath at / into segments then resolves any keys with the path resource values. Greedy
         /// key values will be split into multiple segments at each /.
