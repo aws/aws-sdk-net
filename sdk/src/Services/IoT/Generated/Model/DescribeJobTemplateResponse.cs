@@ -103,7 +103,9 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DestinationPackageVersions. 
         /// <para>
         /// The package version Amazon Resource Names (ARNs) that are installed on the device
-        /// when the job successfully completes. 
+        /// when the job successfully completes. The package version must be in either the Published
+        /// or Deprecated state when the job deploys. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+        /// version lifecycle</a>.
         /// </para>
         ///  
         /// <para>
