@@ -55,6 +55,13 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
+    /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+    /// creating or updating a service. <c>volumeConfigurations</c> is only supported for
+    /// REPLICA service and not DAEMON service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+    /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// Tasks for services that don't use a load balancer are considered healthy if they're
     /// in the <c>RUNNING</c> state. Tasks for services that use a load balancer are considered
     /// healthy if they're in the <c>RUNNING</c> state and are reported as healthy by the
@@ -172,6 +179,7 @@ namespace Amazon.ECS.Model
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
+        private List<ServiceVolumeConfiguration> _volumeConfigurations = new List<ServiceVolumeConfiguration>();
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -857,6 +865,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinition()
         {
             return this._taskDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeConfigurations. 
+        /// <para>
+        /// The configuration for a volume specified in the task definition as a volume that is
+        /// configured at launch time. Currently, the only supported volume type is an Amazon
+        /// EBS volume.
+        /// </para>
+        /// </summary>
+        public List<ServiceVolumeConfiguration> VolumeConfigurations
+        {
+            get { return this._volumeConfigurations; }
+            set { this._volumeConfigurations = value; }
+        }
+
+        // Check to see if VolumeConfigurations property is set
+        internal bool IsSetVolumeConfigurations()
+        {
+            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
         }
 
     }

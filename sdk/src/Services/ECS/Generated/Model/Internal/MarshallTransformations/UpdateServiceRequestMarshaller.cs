@@ -240,6 +240,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TaskDefinition);
                 }
 
+                if(publicRequest.IsSetVolumeConfigurations())
+                {
+                    context.Writer.WritePropertyName("volumeConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVolumeConfigurationsListValue in publicRequest.VolumeConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ServiceVolumeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVolumeConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

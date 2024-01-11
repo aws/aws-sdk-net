@@ -41,8 +41,23 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Details of the attachment. For elastic network interfaces, this includes the network
-        /// interface ID, the MAC address, the subnet ID, and the private IPv4 address.
+        /// Details of the attachment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For elastic network interfaces, this includes the network interface ID, the MAC address,
+        /// the subnet ID, and the private IPv4 address.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Service Connect services, this includes <c>portName</c>, <c>clientAliases</c>,
+        /// <c>discoveryName</c>, and <c>ingressPortOverride</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For elastic block storage, this includes <c>roleArn</c>, <c>encrypted</c>, <c>filesystemType</c>,
+        /// <c>iops</c>, <c>kmsKeyId</c>, <c>sizeInGiB</c>, <c>snapshotId</c>, <c>tagSpecifications</c>,
+        /// <c>throughput</c>, and <c>volumeType</c>.
         /// </para>
         /// </summary>
         public List<KeyValuePair> Details
@@ -98,7 +113,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the attachment, such as <c>ElasticNetworkInterface</c>.
+        /// The type of the attachment, such as <c>ElasticNetworkInterface</c>, <c>Service Connect</c>,
+        /// and <c>AmazonElasticBlockStorage</c>.
         /// </para>
         /// </summary>
         public string Type

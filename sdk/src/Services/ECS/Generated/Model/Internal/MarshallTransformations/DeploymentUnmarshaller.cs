@@ -171,6 +171,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("volumeConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ServiceVolumeConfiguration, ServiceVolumeConfigurationUnmarshaller>(ServiceVolumeConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.VolumeConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

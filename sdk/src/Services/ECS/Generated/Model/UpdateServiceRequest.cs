@@ -42,6 +42,18 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
+    /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+    /// starting or running a task, or when creating or updating a service. For more infomation,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+    /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You
+    /// can update your volume configurations and trigger a new deployment. <c>volumeConfigurations</c>
+    /// is only supported for REPLICA service and not DAEMON service. If you leave <c>volumeConfigurations</c>
+    /// <c>null</c>, it doesn't trigger a new deployment. For more infomation on volumes,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+    /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// For services using the blue/green (<c>CODE_DEPLOY</c>) deployment controller, only
     /// the desired count, deployment configuration, health check grace period, task placement
     /// constraints and strategies, enable ECS managed tags option, and propagate tags can
@@ -66,10 +78,17 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// If you have updated the Docker image of your application, you can create a new task
-    /// definition with that image and deploy it to your service. The service scheduler uses
-    /// the minimum healthy percent and maximum percent parameters (in the service's deployment
-    /// configuration) to determine the deployment strategy.
+    /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+    /// starting or running a task, or when creating or updating a service. For more infomation,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+    /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you have updated the container image of your application, you can create a new
+    /// task definition with that image and deploy it to your service. The service scheduler
+    /// uses the minimum healthy percent and maximum percent parameters (in the service's
+    /// deployment configuration) to determine the deployment strategy.
     /// </para>
     ///  <note> 
     /// <para>
@@ -199,6 +218,7 @@ namespace Amazon.ECS.Model
         private ServiceConnectConfiguration _serviceConnectConfiguration;
         private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
         private string _taskDefinition;
+        private List<ServiceVolumeConfiguration> _volumeConfigurations = new List<ServiceVolumeConfiguration>();
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -672,6 +692,28 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinition()
         {
             return this._taskDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeConfigurations. 
+        /// <para>
+        /// The details of the volume that was <c>configuredAtLaunch</c>. You can configure the
+        /// size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+        /// The <c>name</c> of the volume must match the <c>name</c> from the task definition.
+        /// If set to null, no new deployment is triggered. Otherwise, if this configuration differs
+        /// from the existing one, it triggers a new deployment.
+        /// </para>
+        /// </summary>
+        public List<ServiceVolumeConfiguration> VolumeConfigurations
+        {
+            get { return this._volumeConfigurations; }
+            set { this._volumeConfigurations = value; }
+        }
+
+        // Check to see if VolumeConfigurations property is set
+        internal bool IsSetVolumeConfigurations()
+        {
+            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
         }
 
     }

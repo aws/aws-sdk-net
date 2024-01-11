@@ -1005,6 +1005,52 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type EBSResourceType.
+    /// </summary>
+    public class EBSResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Volume for EBSResourceType
+        /// </summary>
+        public static readonly EBSResourceType Volume = new EBSResourceType("volume");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSResourceType FindValue(string value)
+        {
+            return FindValue<EBSResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EFSAuthorizationConfigIAM.
     /// </summary>
     public class EFSAuthorizationConfigIAM : ConstantClass
@@ -2978,6 +3024,60 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskFilesystemType.
+    /// </summary>
+    public class TaskFilesystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ext3 for TaskFilesystemType
+        /// </summary>
+        public static readonly TaskFilesystemType Ext3 = new TaskFilesystemType("ext3");
+        /// <summary>
+        /// Constant Ext4 for TaskFilesystemType
+        /// </summary>
+        public static readonly TaskFilesystemType Ext4 = new TaskFilesystemType("ext4");
+        /// <summary>
+        /// Constant Xfs for TaskFilesystemType
+        /// </summary>
+        public static readonly TaskFilesystemType Xfs = new TaskFilesystemType("xfs");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskFilesystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskFilesystemType FindValue(string value)
+        {
+            return FindValue<TaskFilesystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskFilesystemType(string value)
         {
             return FindValue(value);
         }

@@ -52,6 +52,7 @@ namespace Amazon.ECS.Model
         private string _status;
         private string _taskDefinition;
         private DateTime? _updatedAt;
+        private List<ServiceVolumeConfiguration> _volumeConfigurations = new List<ServiceVolumeConfiguration>();
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -438,6 +439,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeConfigurations. 
+        /// <para>
+        /// The details of the volume that was <c>configuredAtLaunch</c>. You can configure different
+        /// settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>.
+        /// The <c>name</c> of the volume must match the <c>name</c> from the task definition.
+        /// </para>
+        /// </summary>
+        public List<ServiceVolumeConfiguration> VolumeConfigurations
+        {
+            get { return this._volumeConfigurations; }
+            set { this._volumeConfigurations = value; }
+        }
+
+        // Check to see if VolumeConfigurations property is set
+        internal bool IsSetVolumeConfigurations()
+        {
+            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
         }
 
     }

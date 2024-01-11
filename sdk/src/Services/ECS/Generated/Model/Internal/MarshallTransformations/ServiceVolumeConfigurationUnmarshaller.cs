@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for ServiceVolumeConfiguration Object
     /// </summary>  
-    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class ServiceVolumeConfigurationUnmarshaller : IUnmarshaller<ServiceVolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServiceVolumeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Volume IUnmarshaller<Volume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceVolumeConfiguration IUnmarshaller<ServiceVolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context)
+        public ServiceVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Volume unmarshalledObject = new Volume();
+            ServiceVolumeConfiguration unmarshalledObject = new ServiceVolumeConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configuredAtLaunch", targetDepth))
+                if (context.TestExpression("managedEBSVolume", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ConfiguredAtLaunch = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dockerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = DockerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = FSxWindowsFileServerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FsxWindowsFileServerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("host", targetDepth))
-                {
-                    var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ServiceManagedEBSVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedEBSVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -104,12 +80,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static ServiceVolumeConfigurationUnmarshaller _instance = new ServiceVolumeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static ServiceVolumeConfigurationUnmarshaller Instance
         {
             get
             {

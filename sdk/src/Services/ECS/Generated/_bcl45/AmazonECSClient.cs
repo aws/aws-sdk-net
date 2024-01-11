@@ -514,6 +514,13 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// creating or updating a service. <c>volumeConfigurations</c> is only supported for
+        /// REPLICA service and not DAEMON service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Tasks for services that don't use a load balancer are considered healthy if they're
         /// in the <c>RUNNING</c> state. Tasks for services that use a load balancer are considered
         /// healthy if they're in the <c>RUNNING</c> state and are reported as healthy by the
@@ -674,6 +681,13 @@ namespace Amazon.ECS
         /// traffic across the tasks that are associated with the service. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
         /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// creating or updating a service. <c>volumeConfigurations</c> is only supported for
+        /// REPLICA service and not DAEMON service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -4036,6 +4050,12 @@ namespace Amazon.ECS
         /// </para>
         ///  </note> 
         /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// The Amazon ECS API follows an eventual consistency model. This is because of the distributed
         /// nature of the system supporting the API. This means that the result of an API command
         /// you run that affects your Amazon ECS resources might not be immediately visible to
@@ -4154,6 +4174,12 @@ namespace Amazon.ECS
         /// continue using the service. 
         /// </para>
         ///  </note> 
+        /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
         /// <para>
         /// The Amazon ECS API follows an eventual consistency model. This is because of the distributed
         /// nature of the system supporting the API. This means that the result of an API command
@@ -4274,6 +4300,12 @@ namespace Amazon.ECS
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
         /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTask service method.</param>
         /// 
@@ -4292,6 +4324,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual StartTaskResponse StartTask(StartTaskRequest request)
@@ -4324,6 +4359,12 @@ namespace Amazon.ECS
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
         /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTask service method.</param>
         /// <param name="cancellationToken">
@@ -4345,6 +4386,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual Task<StartTaskResponse> StartTaskAsync(StartTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5301,6 +5345,18 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// starting or running a task, or when creating or updating a service. For more infomation,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You
+        /// can update your volume configurations and trigger a new deployment. <c>volumeConfigurations</c>
+        /// is only supported for REPLICA service and not DAEMON service. If you leave <c>volumeConfigurations</c>
+        /// <c>null</c>, it doesn't trigger a new deployment. For more infomation on volumes,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// For services using the blue/green (<c>CODE_DEPLOY</c>) deployment controller, only
         /// the desired count, deployment configuration, health check grace period, task placement
         /// constraints and strategies, enable ECS managed tags option, and propagate tags can
@@ -5325,10 +5381,17 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// If you have updated the Docker image of your application, you can create a new task
-        /// definition with that image and deploy it to your service. The service scheduler uses
-        /// the minimum healthy percent and maximum percent parameters (in the service's deployment
-        /// configuration) to determine the deployment strategy.
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// starting or running a task, or when creating or updating a service. For more infomation,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have updated the container image of your application, you can create a new
+        /// task definition with that image and deploy it to your service. The service scheduler
+        /// uses the minimum healthy percent and maximum percent parameters (in the service's
+        /// deployment configuration) to determine the deployment strategy.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5477,6 +5540,9 @@ namespace Amazon.ECS
         /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
@@ -5498,6 +5564,18 @@ namespace Amazon.ECS
         /// enable ECS managed tags option, propagate tags option, task placement constraints
         /// and strategies, and task definition. When you update any of these parameters, Amazon
         /// ECS starts new tasks with the new configuration. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// starting or running a task, or when creating or updating a service. For more infomation,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. You
+        /// can update your volume configurations and trigger a new deployment. <c>volumeConfigurations</c>
+        /// is only supported for REPLICA service and not DAEMON service. If you leave <c>volumeConfigurations</c>
+        /// <c>null</c>, it doesn't trigger a new deployment. For more infomation on volumes,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -5525,10 +5603,17 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// If you have updated the Docker image of your application, you can create a new task
-        /// definition with that image and deploy it to your service. The service scheduler uses
-        /// the minimum healthy percent and maximum percent parameters (in the service's deployment
-        /// configuration) to determine the deployment strategy.
+        /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+        /// starting or running a task, or when creating or updating a service. For more infomation,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+        /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have updated the container image of your application, you can create a new
+        /// task definition with that image and deploy it to your service. The service scheduler
+        /// uses the minimum healthy percent and maximum percent parameters (in the service's
+        /// deployment configuration) to determine the deployment strategy.
         /// </para>
         ///  <note> 
         /// <para>
@@ -5679,6 +5764,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
         /// The specified service wasn't found. You can view your available services with <a>ListServices</a>.
         /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

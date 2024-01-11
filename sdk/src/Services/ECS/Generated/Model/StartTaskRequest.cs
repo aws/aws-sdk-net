@@ -49,6 +49,12 @@ namespace Amazon.ECS.Model
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
     /// Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+    /// creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+    /// EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class StartTaskRequest : AmazonECSRequest
     {
@@ -64,6 +70,7 @@ namespace Amazon.ECS.Model
         private string _startedBy;
         private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
+        private List<TaskVolumeConfiguration> _volumeConfigurations = new List<TaskVolumeConfiguration>();
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -355,6 +362,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinition()
         {
             return this._taskDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeConfigurations. 
+        /// <para>
+        /// The details of the volume that was <c>configuredAtLaunch</c>. You can configure the
+        /// size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+        /// The <c>name</c> of the volume must match the <c>name</c> from the task definition.
+        /// </para>
+        /// </summary>
+        public List<TaskVolumeConfiguration> VolumeConfigurations
+        {
+            get { return this._volumeConfigurations; }
+            set { this._volumeConfigurations = value; }
+        }
+
+        // Check to see if VolumeConfigurations property is set
+        internal bool IsSetVolumeConfigurations()
+        {
+            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
         }
 
     }

@@ -29,21 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A data volume that's used in a task definition. For tasks that use the Amazon Elastic
-    /// File System (Amazon EFS), specify an <c>efsVolumeConfiguration</c>. For Windows tasks
-    /// that use Amazon FSx for Windows File Server file system, specify a <c>fsxWindowsFileServerVolumeConfiguration</c>.
-    /// For tasks that use a Docker volume, specify a <c>DockerVolumeConfiguration</c>. For
-    /// tasks that use a bind mount host volume, specify a <c>host</c> and optional <c>sourcePath</c>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
-    /// Data Volumes in Tasks</a>.
+    /// The data volume configuration for tasks launched using this task definition. Specifying
+    /// a volume configuration in a task definition is optional. The volume configuration
+    /// may contain multiple volumes but only one volume configured at launch is supported.
+    /// Each volume defined in the volume configuration may only specify a <c>name</c> and
+    /// one of either <c>configuredAtLaunch</c>, <c>dockerVolumeConfiguration</c>, <c>efsVolumeConfiguration</c>,
+    /// <c>fsxWindowsFileServerVolumeConfiguration</c>, or <c>host</c>. If an empty volume
+    /// configuration is specified, by default Amazon ECS uses a host volume. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+    /// data volumes in tasks</a>.
     /// </summary>
     public partial class Volume
     {
+        private bool? _configuredAtLaunch;
         private DockerVolumeConfiguration _dockerVolumeConfiguration;
         private EFSVolumeConfiguration _efsVolumeConfiguration;
         private FSxWindowsFileServerVolumeConfiguration _fsxWindowsFileServerVolumeConfiguration;
         private HostVolumeProperties _host;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ConfiguredAtLaunch. 
+        /// <para>
+        /// Indicates whether the volume should be configured at launch time. This is used to
+        /// create Amazon EBS volumes for standalone tasks or tasks created as part of a service.
+        /// Each task definition revision may only have one volume configured at launch in the
+        /// volume configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// To configure a volume at launch time, use this task definition revision and specify
+        /// a <c>volumeConfigurations</c> object when calling the <c>CreateService</c>, <c>UpdateService</c>,
+        /// <c>RunTask</c> or <c>StartTask</c> APIs.
+        /// </para>
+        /// </summary>
+        public bool ConfiguredAtLaunch
+        {
+            get { return this._configuredAtLaunch.GetValueOrDefault(); }
+            set { this._configuredAtLaunch = value; }
+        }
+
+        // Check to see if ConfiguredAtLaunch property is set
+        internal bool IsSetConfiguredAtLaunch()
+        {
+            return this._configuredAtLaunch.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DockerVolumeConfiguration. 
@@ -145,12 +175,22 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores,
-        /// and hyphens are allowed. This name is referenced in the <c>sourceVolume</c> parameter
-        /// of container definition <c>mountPoints</c>.
+        /// and hyphens are allowed.
         /// </para>
         ///  
         /// <para>
-        /// This is required wwhen you use an Amazon EFS volume.
+        /// When using a volume configured at launch, the <c>name</c> is required and must also
+        /// be specified as the volume name in the <c>ServiceVolumeConfiguration</c> or <c>TaskVolumeConfiguration</c>
+        /// parameter when creating your service or standalone task.
+        /// </para>
+        ///  
+        /// <para>
+        /// For all other types of volumes, this name is referenced in the <c>sourceVolume</c>
+        /// parameter of the <c>mountPoints</c> object in the container definition.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a volume is using the <c>efsVolumeConfiguration</c>, the name is required.
         /// </para>
         /// </summary>
         public string Name

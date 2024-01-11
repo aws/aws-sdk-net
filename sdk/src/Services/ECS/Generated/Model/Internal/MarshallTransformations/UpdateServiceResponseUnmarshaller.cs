@@ -120,6 +120,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     return ServiceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedFeatureException"))
+                {
+                    return UnsupportedFeatureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonECSException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

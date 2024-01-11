@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for EBSTagSpecification Object
     /// </summary>  
-    public class VolumeUnmarshaller : IUnmarshaller<Volume, XmlUnmarshallerContext>, IUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class EBSTagSpecificationUnmarshaller : IUnmarshaller<EBSTagSpecification, XmlUnmarshallerContext>, IUnmarshaller<EBSTagSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Volume IUnmarshaller<Volume, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EBSTagSpecification IUnmarshaller<EBSTagSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context)
+        public EBSTagSpecification Unmarshall(JsonUnmarshallerContext context)
         {
-            Volume unmarshalledObject = new Volume();
+            EBSTagSpecification unmarshalledObject = new EBSTagSpecification();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configuredAtLaunch", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ConfiguredAtLaunch = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dockerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = DockerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = FSxWindowsFileServerVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FsxWindowsFileServerVolumeConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("host", targetDepth))
-                {
-                    var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("propagateTags", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +86,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static EBSTagSpecificationUnmarshaller _instance = new EBSTagSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static EBSTagSpecificationUnmarshaller Instance
         {
             get
             {

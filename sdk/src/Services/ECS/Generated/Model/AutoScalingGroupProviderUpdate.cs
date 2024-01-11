@@ -44,10 +44,6 @@ namespace Amazon.ECS.Model
         /// enable this, Amazon ECS manages and gracefully drains the EC2 container instances
         /// that are in the Auto Scaling group capacity provider.
         /// </para>
-        ///  
-        /// <para>
-        /// The default is <c>ENABLED</c>.
-        /// </para>
         /// </summary>
         public ManagedDraining ManagedDraining
         {
