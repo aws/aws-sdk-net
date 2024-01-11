@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update generators to use correct code tags in `<param>` XML elements"
+        ]
+    }
+}

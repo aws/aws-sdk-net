@@ -415,6 +415,8 @@ namespace ServiceClientGenerator
                          .Replace("</p>", string.Empty)
                          .Replace("\n", string.Empty)
                          .Replace("    ", " ")
+                         .Replace("<code>", "<c>")
+                         .Replace("</code>", "</c>")
                          .ToString();
             }
         }
@@ -432,6 +434,8 @@ namespace ServiceClientGenerator
                          .Replace("</p>", string.Empty)
                          .Replace("\n", string.Empty)
                          .Replace("    ", " ")
+                         .Replace("<code>", "<c>")
+                         .Replace("</code>", "</c>")
                          .ToString();
             }
         }
