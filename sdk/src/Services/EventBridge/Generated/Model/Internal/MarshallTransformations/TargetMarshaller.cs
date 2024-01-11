@@ -45,6 +45,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Target requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppSyncParameters())
+            {
+                context.Writer.WritePropertyName("AppSyncParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AppSyncParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.AppSyncParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");

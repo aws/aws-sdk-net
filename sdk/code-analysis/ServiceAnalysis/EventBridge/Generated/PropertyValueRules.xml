@@ -1136,6 +1136,11 @@
     <pattern>[\.\-_A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EventBridge.Model.AppSyncParameters.GraphQLOperation</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EventBridge.Model.Archive.ArchiveName</property>
     <min>1</min>
     <max>48</max>

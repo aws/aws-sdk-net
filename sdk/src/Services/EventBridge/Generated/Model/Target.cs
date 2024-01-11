@@ -44,6 +44,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class Target
     {
+        private AppSyncParameters _appSyncParameters;
         private string _arn;
         private BatchParameters _batchParameters;
         private DeadLetterConfig _deadLetterConfig;
@@ -60,6 +61,25 @@ namespace Amazon.EventBridge.Model
         private RunCommandParameters _runCommandParameters;
         private SageMakerPipelineParameters _sageMakerPipelineParameters;
         private SqsParameters _sqsParameters;
+
+        /// <summary>
+        /// Gets and sets the property AppSyncParameters. 
+        /// <para>
+        /// Contains the GraphQL operation to be parsed and executed, if the event target is an
+        /// AppSync API.
+        /// </para>
+        /// </summary>
+        public AppSyncParameters AppSyncParameters
+        {
+            get { return this._appSyncParameters; }
+            set { this._appSyncParameters = value; }
+        }
+
+        // Check to see if AppSyncParameters property is set
+        internal bool IsSetAppSyncParameters()
+        {
+            return this._appSyncParameters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
