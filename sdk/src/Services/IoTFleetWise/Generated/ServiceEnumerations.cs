@@ -459,10 +459,6 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly NetworkInterfaceFailureReason CONFLICTING_NETWORK_INTERFACE = new NetworkInterfaceFailureReason("CONFLICTING_NETWORK_INTERFACE");
         /// <summary>
-        /// Constant CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL for NetworkInterfaceFailureReason
-        /// </summary>
-        public static readonly NetworkInterfaceFailureReason CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL = new NetworkInterfaceFailureReason("CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL");
-        /// <summary>
         /// Constant DUPLICATE_NETWORK_INTERFACE for NetworkInterfaceFailureReason
         /// </summary>
         public static readonly NetworkInterfaceFailureReason DUPLICATE_NETWORK_INTERFACE = new NetworkInterfaceFailureReason("DUPLICATE_NETWORK_INTERFACE");
@@ -528,10 +524,6 @@ namespace Amazon.IoTFleetWise
         /// Constant CAN_INTERFACE for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType CAN_INTERFACE = new NetworkInterfaceType("CAN_INTERFACE");
-        /// <summary>
-        /// Constant CUSTOMER_DECODED_INTERFACE for NetworkInterfaceType
-        /// </summary>
-        public static readonly NetworkInterfaceType CUSTOMER_DECODED_INTERFACE = new NetworkInterfaceType("CUSTOMER_DECODED_INTERFACE");
         /// <summary>
         /// Constant OBD_INTERFACE for NetworkInterfaceType
         /// </summary>
@@ -955,10 +947,6 @@ namespace Amazon.IoTFleetWise
         /// </summary>
         public static readonly SignalDecoderFailureReason CONFLICTING_SIGNAL = new SignalDecoderFailureReason("CONFLICTING_SIGNAL");
         /// <summary>
-        /// Constant CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL for SignalDecoderFailureReason
-        /// </summary>
-        public static readonly SignalDecoderFailureReason CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL = new SignalDecoderFailureReason("CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL");
-        /// <summary>
         /// Constant DUPLICATE_SIGNAL for SignalDecoderFailureReason
         /// </summary>
         public static readonly SignalDecoderFailureReason DUPLICATE_SIGNAL = new SignalDecoderFailureReason("DUPLICATE_SIGNAL");
@@ -1056,10 +1044,6 @@ namespace Amazon.IoTFleetWise
         /// Constant CAN_SIGNAL for SignalDecoderType
         /// </summary>
         public static readonly SignalDecoderType CAN_SIGNAL = new SignalDecoderType("CAN_SIGNAL");
-        /// <summary>
-        /// Constant CUSTOMER_DECODED_SIGNAL for SignalDecoderType
-        /// </summary>
-        public static readonly SignalDecoderType CUSTOMER_DECODED_SIGNAL = new SignalDecoderType("CUSTOMER_DECODED_SIGNAL");
         /// <summary>
         /// Constant MESSAGE_SIGNAL for SignalDecoderType
         /// </summary>
