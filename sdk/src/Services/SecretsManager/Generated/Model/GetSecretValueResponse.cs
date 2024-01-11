@@ -103,8 +103,9 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property SecretBinary. 
         /// <para>
         /// The decrypted secret value, if the secret value was originally provided as binary
-        /// data in the form of a byte array. The response parameter represents the binary data
-        /// as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.
+        /// data in the form of a byte array. When you retrieve a <c>SecretBinary</c> using the
+        /// HTTP API, the Python SDK, or the Amazon Web Services CLI, the value is Base64-encoded.
+        /// Otherwise, it is not encoded.
         /// </para>
         ///  
         /// <para>

@@ -32,7 +32,9 @@ namespace Amazon.SecretsManager.Model
     /// Container for the parameters to the GetRandomPassword operation.
     /// Generates a random password. We recommend that you specify the maximum length and
     /// include every character type that the system you are generating a password for can
-    /// support.
+    /// support. By default, Secrets Manager uses uppercase and lowercase letters, numbers,
+    /// and the following characters in passwords: <c>!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~</c>
+    /// 
     /// 
     ///  
     /// <para>

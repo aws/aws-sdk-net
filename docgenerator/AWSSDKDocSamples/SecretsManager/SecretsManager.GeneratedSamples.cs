@@ -11,6 +11,26 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
 {
     class SecretsManagerSamples : ISample
     {
+        public void SecretsManagerBatchGetSecretValue()
+        {
+            #region to-retrieve-the-secret-values-for-a-group-of-secrets-listed-by-name-1704846593341
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.BatchGetSecretValue(new BatchGetSecretValueRequest 
+            {
+                SecretIdList = new List<string> {
+                    "MySecret1",
+                    "MySecret2",
+                    "MySecret3"
+                }
+            });
+
+            List<APIErrorType> errors = response.Errors;
+            List<SecretValueEntry> secretValues = response.SecretValues;
+
+            #endregion
+        }
+
         public void SecretsManagerCancelRotateSecret()
         {
             #region to-cancel-scheduled-rotation-for-a-secret-1523996016032
