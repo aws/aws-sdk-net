@@ -1,3 +1,22 @@
+### 3.7.724.0 (2024-01-11 19:16 UTC)
+* EC2 (3.7.312.0)
+	* This release adds support for adding an ElasticBlockStorage volume configurations in ECS RunTask/StartTask/CreateService/UpdateService APIs. The configuration allows for attaching EBS volumes to ECS Tasks.
+* ECS (3.7.304.0)
+	* This release adds support for adding an ElasticBlockStorage volume configurations in ECS RunTask/StartTask/CreateService/UpdateService APIs. The configuration allows for attaching EBS volumes to ECS Tasks.
+* EventBridge (3.7.302.0)
+	* Adding AppSync as an EventBridge Target
+* IoT (3.7.304.0)
+	* Add ConflictException to Update APIs of AWS IoT Software Package Catalog
+* IoTFleetWise (3.7.302.0)
+	* The following dataTypes have been removed: CUSTOMER_DECODED_INTERFACE in NetworkInterfaceType; CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL in SignalDecoderFailureReason; CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL in NetworkInterfaceFailureReason; CUSTOMER_DECODED_SIGNAL in SignalDecoderType
+* SecretsManager (3.7.302.9)
+	* Doc only update for Secrets Manager
+* WorkSpaces (3.7.301.26)
+	* Added AWS Workspaces RebootWorkspaces API - Extended Reboot documentation update
+* Core 3.7.301.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.723.0 (2024-01-10 19:21 UTC)
 * CloudWatchLogs (3.7.303.0)
 	* Add support for account level subscription filter policies to PutAccountPolicy, DescribeAccountPolicies, and DeleteAccountPolicy APIs. Additionally, PutAccountPolicy has been modified with new optional "selectionCriteria" parameter for resource selection.
