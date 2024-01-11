@@ -33,10 +33,30 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EbsInstanceBlockDevice
     {
+        private string _associatedResource;
         private DateTime? _attachTime;
         private bool? _deleteOnTermination;
         private AttachmentStatus _status;
         private string _volumeId;
+        private string _volumeOwnerId;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedResource. 
+        /// <para>
+        /// The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+        /// </para>
+        /// </summary>
+        public string AssociatedResource
+        {
+            get { return this._associatedResource; }
+            set { this._associatedResource = value; }
+        }
+
+        // Check to see if AssociatedResource property is set
+        internal bool IsSetAssociatedResource()
+        {
+            return this._associatedResource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttachTime. 
@@ -108,6 +128,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetVolumeId()
         {
             return this._volumeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeOwnerId. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the volume.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is returned only for volumes that are attached to Fargate tasks.
+        /// </para>
+        /// </summary>
+        public string VolumeOwnerId
+        {
+            get { return this._volumeOwnerId; }
+            set { this._volumeOwnerId = value; }
+        }
+
+        // Check to see if VolumeOwnerId property is set
+        internal bool IsSetVolumeOwnerId()
+        {
+            return this._volumeOwnerId != null;
         }
 
     }

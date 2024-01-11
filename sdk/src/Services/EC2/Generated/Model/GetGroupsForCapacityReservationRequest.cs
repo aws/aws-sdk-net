@@ -61,10 +61,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return for the request in a single page. The remaining
-        /// results can be seen by sending another request with the returned <c>nextToken</c>
-        /// value. This value can be between 5 and 500. If <c>maxResults</c> is given a larger
-        /// value than 500, you receive an error.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

@@ -583,12 +583,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacityUnitType. 
         /// <para>
-        /// The unit for the target capacity. <c>TargetCapacityUnitType</c> can only be specified
-        /// when <c>InstanceRequirements</c> is specified.
+        /// The unit for the target capacity. You can specify this parameter only when using attribute-based
+        /// instance type selection.
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>units</c> (translates to number of instances)
+        /// Default: <c>units</c> (the number of instances)
         /// </para>
         /// </summary>
         public TargetCapacityUnitType TargetCapacityUnitType

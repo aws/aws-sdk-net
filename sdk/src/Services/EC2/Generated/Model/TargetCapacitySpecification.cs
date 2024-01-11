@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DefaultTargetCapacityType. 
         /// <para>
-        /// The default <c>TotalTargetCapacity</c>, which is either <c>Spot</c> or <c>On-Demand</c>.
+        /// The default target capacity type.
         /// </para>
         /// </summary>
         public DefaultTargetCapacityType DefaultTargetCapacityType
@@ -113,12 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacityUnitType. 
         /// <para>
-        /// The unit for the target capacity. <c>TargetCapacityUnitType</c> can only be specified
-        /// when <c>InstanceRequirements</c> is specified.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>units</c> (translates to number of instances)
+        /// The unit for the target capacity.
         /// </para>
         /// </summary>
         public TargetCapacityUnitType TargetCapacityUnitType
@@ -136,7 +131,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalTargetCapacity. 
         /// <para>
-        /// The number of units to request, filled using <c>DefaultTargetCapacityType</c>.
+        /// The number of units to request, filled the default target capacity type.
         /// </para>
         /// </summary>
         public int TotalTargetCapacity

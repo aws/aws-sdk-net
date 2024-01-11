@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// does not exceed your budget. If you set a maximum price per hour for the On-Demand
     /// Instances and Spot Instances in your request, EC2 Fleet will launch instances until
     /// it reaches the maximum amount that you're willing to pay. When the maximum amount
-    /// you're willing to pay is reached, the fleet stops launching instances even if it hasn’t
+    /// you're willing to pay is reached, the fleet stops launching instances even if it hasn't
     /// met the target capacity. The <c>MaxTotalPrice</c> parameters are located in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest">OnDemandOptionsRequest</a>
     /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest">SpotOptionsRequest</a>.
     /// </para>
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DefaultTargetCapacityType. 
         /// <para>
-        /// The default <c>TotalTargetCapacity</c>, which is either <c>Spot</c> or <c>On-Demand</c>.
+        /// The default target capacity type.
         /// </para>
         /// </summary>
         public DefaultTargetCapacityType DefaultTargetCapacityType
@@ -111,12 +111,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetCapacityUnitType. 
         /// <para>
-        /// The unit for the target capacity. <c>TargetCapacityUnitType</c> can only be specified
-        /// when <c>InstanceRequirements</c> is specified.
+        /// The unit for the target capacity. You can specify this parameter only when using attributed-based
+        /// instance type selection.
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>units</c> (translates to number of instances)
+        /// Default: <c>units</c> (the number of instances)
         /// </para>
         /// </summary>
         public TargetCapacityUnitType TargetCapacityUnitType
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalTargetCapacity. 
         /// <para>
-        /// The number of units to request, filled using <c>DefaultTargetCapacityType</c>.
+        /// The number of units to request, filled using the default target capacity type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

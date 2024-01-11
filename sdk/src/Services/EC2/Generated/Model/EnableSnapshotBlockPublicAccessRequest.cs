@@ -80,7 +80,10 @@ namespace Amazon.EC2.Model
         /// Users in the account will no longer be able to request new public sharing. However,
         /// snapshots that are already publicly shared, remain publicly available.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>unblocked</c> is not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SnapshotBlockPublicAccessState State

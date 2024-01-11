@@ -24029,6 +24029,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// You can't detach or force detach volumes that are attached to Amazon ECS or Fargate
+        /// tasks. Attempting to do this results in the <c>UnsupportedOperationException</c> exception
+        /// with the <c>Unable to detach volume attached to ECS tasks</c> error message.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
         /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>

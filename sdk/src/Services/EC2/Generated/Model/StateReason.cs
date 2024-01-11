@@ -87,8 +87,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Client.InstanceInitiatedShutdown</c>: The instance was shut down using the <c>shutdown
-        /// -h</c> command from the instance.
+        ///  <c>Client.InstanceInitiatedShutdown</c>: The instance was shut down from the operating
+        /// system of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

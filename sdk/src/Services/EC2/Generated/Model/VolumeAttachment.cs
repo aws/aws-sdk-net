@@ -33,12 +33,32 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VolumeAttachment
     {
+        private string _associatedResource;
         private DateTime? _attachTime;
         private bool? _deleteOnTermination;
         private string _device;
         private string _instanceId;
+        private string _instanceOwningService;
         private VolumeAttachmentState _state;
         private string _volumeId;
+
+        /// <summary>
+        /// Gets and sets the property AssociatedResource. 
+        /// <para>
+        /// The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+        /// </para>
+        /// </summary>
+        public string AssociatedResource
+        {
+            get { return this._associatedResource; }
+            set { this._associatedResource = value; }
+        }
+
+        // Check to see if AssociatedResource property is set
+        internal bool IsSetAssociatedResource()
+        {
+            return this._associatedResource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttachTime. 
@@ -81,6 +101,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The device name.
         /// </para>
+        ///  
+        /// <para>
+        /// If the volume is attached to a Fargate task, this parameter returns <c>null</c>.
+        /// </para>
         /// </summary>
         public string Device
         {
@@ -99,6 +123,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the instance.
         /// </para>
+        ///  
+        /// <para>
+        /// If the volume is attached to a Fargate task, this parameter returns <c>null</c>.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -110,6 +138,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceOwningService. 
+        /// <para>
+        /// The service principal of Amazon Web Services service that owns the underlying instance
+        /// to which the volume is attached.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is returned only for volumes that are attached to Fargate tasks.
+        /// </para>
+        /// </summary>
+        public string InstanceOwningService
+        {
+            get { return this._instanceOwningService; }
+            set { this._instanceOwningService = value; }
+        }
+
+        // Check to see if InstanceOwningService property is set
+        internal bool IsSetInstanceOwningService()
+        {
+            return this._instanceOwningService != null;
         }
 
         /// <summary>

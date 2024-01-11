@@ -213,10 +213,6 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The unit for the target capacity.
         /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>units</c> (translates to number of instances)
-        /// </para>
         /// </summary>
         public TargetCapacityUnitType TargetCapacityUnitType
         {
