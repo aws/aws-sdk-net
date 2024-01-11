@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.S3.NetStandard", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.DynamoDBv2.NetStandard", "..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj", "{D374DA6E-DBAD-451E-9465-B02D372A71E6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaBenchmarksRunner", "LambdaBenchmarksRunner\LambdaBenchmarksRunner.csproj", "{15D10993-24D7-488B-B570-F266FAF3D915}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Lambda.NetStandard", "..\..\..\src\Services\Lambda\AWSSDK.Lambda.NetStandard.csproj", "{D1A48FBC-4B9D-424C-8848-232C87D7B772}"
 EndProject
 Global
@@ -29,6 +31,10 @@ Global
 		{D374DA6E-DBAD-451E-9465-B02D372A71E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D374DA6E-DBAD-451E-9465-B02D372A71E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D374DA6E-DBAD-451E-9465-B02D372A71E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D10993-24D7-488B-B570-F266FAF3D915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D10993-24D7-488B-B570-F266FAF3D915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D10993-24D7-488B-B570-F266FAF3D915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D10993-24D7-488B-B570-F266FAF3D915}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D1A48FBC-4B9D-424C-8848-232C87D7B772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D1A48FBC-4B9D-424C-8848-232C87D7B772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1A48FBC-4B9D-424C-8848-232C87D7B772}.Release|Any CPU.ActiveCfg = Release|Any CPU
