@@ -229,7 +229,7 @@ namespace Amazon.CloudFrontKeyValueStore
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new AWS4Signer();
+            return new AWS4aSignerCRTWrapper();
         } 
 
         /// <summary>
