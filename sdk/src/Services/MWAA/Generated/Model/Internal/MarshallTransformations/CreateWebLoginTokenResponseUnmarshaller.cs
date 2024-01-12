@@ -51,6 +51,18 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AirflowIdentity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AirflowIdentity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IamIdentity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IamIdentity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WebServerHostname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

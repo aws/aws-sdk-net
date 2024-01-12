@@ -117,6 +117,11 @@
     <pattern>^[a-zA-Z][0-9a-zA-Z-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.CreateWebLoginTokenResponse.AirflowIdentity</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.CreateWebLoginTokenResponse.WebServerHostname</property>
     <min>1</min>
     <max>255</max>
