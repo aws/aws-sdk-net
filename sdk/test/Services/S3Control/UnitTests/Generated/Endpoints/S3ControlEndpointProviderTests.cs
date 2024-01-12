@@ -371,9 +371,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
-        [Description("outpost access points do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
-        public void Outpost_access_points_do_not_support_dualstackuswest2_Test()
+        [Description("outpost access points support dualstack@us-west-2")]
+        public void Outpost_access_points_support_dualstackuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["AccessPointName"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
@@ -383,42 +382,43 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts.us-west-2.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
-        [Description("outpost access points do not support dualstack@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
-        public void Outpost_access_points_do_not_support_dualstackcnnorth1_Test()
+        [Description("outpost access points support dualstack@af-south-1")]
+        public void Outpost_access_points_support_dualstackafsouth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            parameters["AccessPointName"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            parameters["AccountId"] = "123456789012";
-            parameters["Region"] = "cn-north-1";
-            parameters["RequiresAccountId"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("S3Control")]
-        [Description("outpost access points do not support dualstack@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
-        public void Outpost_access_points_do_not_support_dualstackafsouth1_Test()
-        {
-            var parameters = new S3ControlEndpointParameters();
-            parameters["AccessPointName"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
+            parameters["AccessPointName"] = "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
             parameters["AccountId"] = "123456789012";
             parameters["Region"] = "af-south-1";
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts.af-south-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
+        [Description("outpost access points support fips + dualstack@af-south-1")]
+        public void Outpost_access_points_support_fips_dualstackafsouth1_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccessPointName"] = "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
+            parameters["AccountId"] = "123456789012";
+            parameters["Region"] = "af-south-1";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts-fips.af-south-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -682,6 +682,24 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
+        [Description("ListRegionalBucket + OutpostId + fips + dualstack@us-east-2")]
+        public void ListRegionalBucket_OutpostId_fips_dualstackuseast2_Test()
+        {
+            var parameters = new S3ControlEndpointParameters();
+            parameters["AccountId"] = "123456789012";
+            parameters["OutpostId"] = "op-123";
+            parameters["Region"] = "us-east-2";
+            parameters["RequiresAccountId"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts-fips.us-east-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3Control")]
         [Description("CreateBucket + OutpostId endpoint url@us-east-2")]
         public void CreateBucket_OutpostId_endpoint_urluseast2_Test()
         {
@@ -702,33 +720,14 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Dualstack_cannot_be_used_with_outposts_when_an_endpoint_URL_is_setuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["AccessPointName"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
-            parameters["Endpoint"] = "https://beta.example.com";
+            parameters["Endpoint"] = "https://s3-outposts.us-west-2.api.aws";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("S3Control")]
-        [Description("Dual-stack cannot be used with outposts@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outposts do not support dual-stack")]
-        public void Dualstack_cannot_be_used_with_outpostsuswest2_Test()
-        {
-            var parameters = new S3ControlEndpointParameters();
-            parameters["Bucket"] = "bucketname";
-            parameters["Endpoint"] = "https://beta.example.com";
-            parameters["OutpostId"] = "op-123";
-            parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = false;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -823,17 +822,17 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
-        [Description("Outposts do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
-        public void Outposts_do_not_support_dualstackuswest2_Test()
+        [Description("bucket ARN in aws partition with fips + dualstack@us-east-2")]
+        public void Bucket_ARN_in_aws_partition_with_fips_dualstackuseast2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket";
-            parameters["Region"] = "us-west-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket";
+            parameters["Region"] = "us-east-2";
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts-fips.us-east-2.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -925,9 +924,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
-        [Description("Outposts do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
-        public void Outposts_do_not_support_dualstackuswest2_1_Test()
+        [Description("Outposts support dualstack @us-west-2")]
+        public void Outposts_support_dualstack_uswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket";
@@ -936,6 +934,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-outposts.us-west-2.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -1021,23 +1020,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://s3-outposts-fips.us-east-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("S3Control")]
-        [Description("Outposts do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
-        public void Outposts_do_not_support_dualstackuswest2_2_Test()
-        {
-            var parameters = new S3ControlEndpointParameters();
-            parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket";
-            parameters["Region"] = "us-west-2";
-            parameters["RequiresAccountId"] = true;
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -1623,13 +1605,13 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
-        [Description("get bucket with endpoint_url and dualstack is not supported@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
-        public void Get_bucket_with_endpoint_url_and_dualstack_is_not_supporteduswest2_Test()
+        [Description("get bucket with custom endpoint and dualstack is not supported@us-west-2")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
+        public void Get_bucket_with_custom_endpoint_and_dualstack_is_not_supporteduswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket";
-            parameters["Endpoint"] = "https://beta.example.com";
+            parameters["Endpoint"] = "https://s3-outposts.us-west-2.api.aws";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;

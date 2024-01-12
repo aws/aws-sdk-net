@@ -95,19 +95,27 @@ namespace Amazon.S3Control.Internal
                         {
                             throw new AmazonClientException("OutpostId must only contain a-z, A-Z, 0-9 and `-`.");
                         }
+                        if (IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
+                        }
                         if (IsValidHostLabel((string)refs["Region"], true))
                         {
-                            if (Equals(refs["UseDualStack"], true))
-                            {
-                                throw new AmazonClientException("Invalid configuration: Outposts do not support dual-stack");
-                            }
                             if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
                             {
                                 return new Endpoint(Interpolate(@"{url#scheme}://{url#authority}{url#path}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                             }
+                            if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3-outposts-fips.{Region}.{partitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
                             if (Equals(refs["UseFIPS"], true))
                             {
                                 return new Endpoint(Interpolate(@"https://s3-outposts-fips.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals(refs["UseDualStack"], true))
+                            {
+                                return new Endpoint(Interpolate(@"https://s3-outposts.{Region}.{partitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                             }
                             return new Endpoint(Interpolate(@"https://s3-outposts.{Region}.{partitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
                         }
@@ -120,14 +128,14 @@ namespace Amazon.S3Control.Internal
                     {
                         if (Equals(GetAttr(refs["accessPointArn"], "service"), "s3-outposts"))
                         {
-                            if (Equals(refs["UseDualStack"], true))
-                            {
-                                throw new AmazonClientException("Invalid configuration: Outpost Access Points do not support dual-stack");
-                            }
                             if ((refs["outpostId"] = GetAttr(refs["accessPointArn"], "resourceId[1]")) != null)
                             {
                                 if (IsValidHostLabel((string)refs["outpostId"], false))
                                 {
+                                    if (IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
+                                    }
                                     if (IsSet(refs["UseArnRegion"]) && Equals(refs["UseArnRegion"], false) && !Equals(GetAttr(refs["accessPointArn"], "region"), Interpolate(@"{Region}", refs)))
                                     {
                                         throw new AmazonClientException(Interpolate(@"Invalid configuration: region from ARN `{accessPointArn#region}` does not match client region `{Region}` and UseArnRegion is `false`", refs));
@@ -154,9 +162,17 @@ namespace Amazon.S3Control.Internal
                                                                 {
                                                                     if (Equals(refs["outpostType"], "accesspoint"))
                                                                     {
+                                                                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                                                        {
+                                                                            return new Endpoint(Interpolate(@"https://s3-outposts-fips.{accessPointArn#region}.{arnPartition#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{accessPointArn#region}""}]}", refs), InterpolateJson(@"{""x-amz-account-id"":[""{accessPointArn#accountId}""],""x-amz-outpost-id"":[""{outpostId}""]}", refs));
+                                                                        }
                                                                         if (Equals(refs["UseFIPS"], true))
                                                                         {
                                                                             return new Endpoint(Interpolate(@"https://s3-outposts-fips.{accessPointArn#region}.{arnPartition#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{accessPointArn#region}""}]}", refs), InterpolateJson(@"{""x-amz-account-id"":[""{accessPointArn#accountId}""],""x-amz-outpost-id"":[""{outpostId}""]}", refs));
+                                                                        }
+                                                                        if (Equals(refs["UseDualStack"], true))
+                                                                        {
+                                                                            return new Endpoint(Interpolate(@"https://s3-outposts.{accessPointArn#region}.{arnPartition#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{accessPointArn#region}""}]}", refs), InterpolateJson(@"{""x-amz-account-id"":[""{accessPointArn#accountId}""],""x-amz-outpost-id"":[""{outpostId}""]}", refs));
                                                                         }
                                                                         if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
                                                                         {
@@ -193,14 +209,14 @@ namespace Amazon.S3Control.Internal
                     {
                         if (Equals(GetAttr(refs["bucketArn"], "service"), "s3-outposts"))
                         {
-                            if (Equals(refs["UseDualStack"], true))
-                            {
-                                throw new AmazonClientException("Invalid configuration: Outpost buckets do not support dual-stack");
-                            }
                             if ((refs["outpostId"] = GetAttr(refs["bucketArn"], "resourceId[1]")) != null)
                             {
                                 if (IsValidHostLabel((string)refs["outpostId"], false))
                                 {
+                                    if (IsSet(refs["Endpoint"]) && Equals(refs["UseDualStack"], true))
+                                    {
+                                        throw new AmazonClientException("Invalid Configuration: DualStack and custom endpoint are not supported");
+                                    }
                                     if (IsSet(refs["UseArnRegion"]) && Equals(refs["UseArnRegion"], false) && !Equals(GetAttr(refs["bucketArn"], "region"), Interpolate(@"{Region}", refs)))
                                     {
                                         throw new AmazonClientException(Interpolate(@"Invalid configuration: region from ARN `{bucketArn#region}` does not match client region `{Region}` and UseArnRegion is `false`", refs));
@@ -227,9 +243,17 @@ namespace Amazon.S3Control.Internal
                                                                 {
                                                                     if (Equals(refs["outpostType"], "bucket"))
                                                                     {
+                                                                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                                                                        {
+                                                                            return new Endpoint(Interpolate(@"https://s3-outposts-fips.{bucketArn#region}.{arnPartition#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{bucketArn#region}""}]}", refs), InterpolateJson(@"{""x-amz-account-id"":[""{bucketArn#accountId}""],""x-amz-outpost-id"":[""{outpostId}""]}", refs));
+                                                                        }
                                                                         if (Equals(refs["UseFIPS"], true))
                                                                         {
                                                                             return new Endpoint(Interpolate(@"https://s3-outposts-fips.{bucketArn#region}.{arnPartition#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{bucketArn#region}""}]}", refs), InterpolateJson(@"{""x-amz-account-id"":[""{bucketArn#accountId}""],""x-amz-outpost-id"":[""{outpostId}""]}", refs));
+                                                                        }
+                                                                        if (Equals(refs["UseDualStack"], true))
+                                                                        {
+                                                                            return new Endpoint(Interpolate(@"https://s3-outposts.{bucketArn#region}.{arnPartition#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""disableDoubleEncoding"":true,""name"":""sigv4"",""signingName"":""s3-outposts"",""signingRegion"":""{bucketArn#region}""}]}", refs), InterpolateJson(@"{""x-amz-account-id"":[""{bucketArn#accountId}""],""x-amz-outpost-id"":[""{outpostId}""]}", refs));
                                                                         }
                                                                         if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
                                                                         {
