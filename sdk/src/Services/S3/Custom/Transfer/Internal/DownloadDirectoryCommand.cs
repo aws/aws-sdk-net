@@ -98,7 +98,10 @@ namespace Amazon.S3.Transfer.Internal
             downloadRequest.Key = s3Object.Key;
             var file = s3Object.Key.Substring(prefixLength).Replace('/', Path.DirectorySeparatorChar);
             downloadRequest.FilePath = Path.Combine(this._request.LocalDirectory, file);
-                        
+            downloadRequest.ServerSideEncryptionCustomerMethod = this._request.ServerSideEncryptionCustomerMethod;
+            downloadRequest.ServerSideEncryptionCustomerProvidedKey = this._request.ServerSideEncryptionCustomerProvidedKey;
+            downloadRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = this._request.ServerSideEncryptionCustomerProvidedKeyMD5;
+
             //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
             if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
             {
