@@ -34,6 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class DescribedServer
     {
         private string _arn;
+        private List<string> _as2ServiceManagedEgressIpAddresses = new List<string>();
         private string _certificate;
         private Domain _domain;
         private EndpointDetails _endpointDetails;
@@ -72,6 +73,31 @@ namespace Amazon.Transfer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property As2ServiceManagedEgressIpAddresses. 
+        /// <para>
+        /// The list of egress IP addresses of this server. These IP addresses are only relevant
+        /// for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.
+        /// </para>
+        ///  
+        /// <para>
+        /// These IP addresses are assigned automatically when you create an AS2 server. Additionally,
+        /// if you update an existing server and add the AS2 protocol, static IP addresses are
+        /// assigned as well.
+        /// </para>
+        /// </summary>
+        public List<string> As2ServiceManagedEgressIpAddresses
+        {
+            get { return this._as2ServiceManagedEgressIpAddresses; }
+            set { this._as2ServiceManagedEgressIpAddresses = value; }
+        }
+
+        // Check to see if As2ServiceManagedEgressIpAddresses property is set
+        internal bool IsSetAs2ServiceManagedEgressIpAddresses()
+        {
+            return this._as2ServiceManagedEgressIpAddresses != null && this._as2ServiceManagedEgressIpAddresses.Count > 0; 
         }
 
         /// <summary>

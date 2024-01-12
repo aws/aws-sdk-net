@@ -44,7 +44,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the Directory Service directory that you want to stop sharing.
+        /// The identifier of the Directory Service directory that you want to use as your identity
+        /// provider.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

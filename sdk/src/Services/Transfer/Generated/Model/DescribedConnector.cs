@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
         private As2ConnectorConfig _as2Config;
         private string _connectorId;
         private string _loggingRole;
+        private List<string> _serviceManagedEgressIpAddresses = new List<string>();
         private SftpConnectorConfig _sftpConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _url;
@@ -173,6 +174,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetLoggingRole()
         {
             return this._loggingRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceManagedEgressIpAddresses. 
+        /// <para>
+        /// The list of egress IP addresses of this connector. These IP addresses are assigned
+        /// automatically when you create the connector.
+        /// </para>
+        /// </summary>
+        public List<string> ServiceManagedEgressIpAddresses
+        {
+            get { return this._serviceManagedEgressIpAddresses; }
+            set { this._serviceManagedEgressIpAddresses = value; }
+        }
+
+        // Check to see if ServiceManagedEgressIpAddresses property is set
+        internal bool IsSetServiceManagedEgressIpAddresses()
+        {
+            return this._serviceManagedEgressIpAddresses != null && this._serviceManagedEgressIpAddresses.Count > 0; 
         }
 
         /// <summary>
