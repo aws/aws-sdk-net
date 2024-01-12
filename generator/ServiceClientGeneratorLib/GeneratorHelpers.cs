@@ -17,6 +17,8 @@ namespace ServiceClientGenerator
                     // we should not continue to add new hardcoded service specific signers
                     // and instead implement a solution based on a signer selection specification
                     return "EventBridgeSigner";
+                case "CloudFrontKeyValueStore":
+                    return "AWS4aSignerCRTWrapper";
             }
 
             switch (signatureVersion)
