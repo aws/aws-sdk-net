@@ -237,6 +237,10 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
         /// <summary>
+        /// Constant SUPERVISOR for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole SUPERVISOR = new ParticipantRole("SUPERVISOR");
+        /// <summary>
         /// Constant SYSTEM for ParticipantRole
         /// </summary>
         public static readonly ParticipantRole SYSTEM = new ParticipantRole("SYSTEM");
@@ -306,6 +310,10 @@ namespace Amazon.ConnectParticipant
         /// Constant PARTICIPANT for ResourceType
         /// </summary>
         public static readonly ResourceType PARTICIPANT = new ResourceType("PARTICIPANT");
+        /// <summary>
+        /// Constant PHONE_NUMBER for ResourceType
+        /// </summary>
+        public static readonly ResourceType PHONE_NUMBER = new ResourceType("PHONE_NUMBER");
         /// <summary>
         /// Constant USER for ResourceType
         /// </summary>

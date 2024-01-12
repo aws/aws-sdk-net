@@ -596,6 +596,9 @@ namespace Amazon.ConnectParticipant
         /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
+        /// An attachment with that identifier is already being uploaded.
+        /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Amazon Connect service.
         /// </exception>
@@ -631,6 +634,9 @@ namespace Amazon.ConnectParticipant
         /// <returns>The response from the SendEvent service method, as returned by ConnectParticipant.</returns>
         /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
+        /// An attachment with that identifier is already being uploaded.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Amazon Connect service.
