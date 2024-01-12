@@ -93,6 +93,11 @@ namespace Amazon.Connect.Model
         /// in the filter. You can include both queue IDs and queue ARNs in the same request.
         /// VOICE, CHAT, and TASK channels are supported.
         /// </para>
+        ///  
+        /// <para>
+        /// RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching
+        /// to GetMetricDataV2 for more up-to-date features.
+        /// </para>
         ///  <note> 
         /// <para>
         /// To filter by <c>Queues</c>, enter the queue ID/ARN, not the name of the queue.
@@ -122,6 +127,11 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// If no grouping is specified, a summary of metrics for all queues is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching
+        /// to GetMetricDataV2 for more up-to-date features.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]

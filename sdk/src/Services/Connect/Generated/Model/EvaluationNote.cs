@@ -40,8 +40,16 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The note for an item (section or question) in a contact evaluation.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Even though a note in an evaluation can have up to 3072 chars, there is also a limit
+        /// on the total number of chars for all the notes in the evaluation combined. Assuming
+        /// there are N questions in the evaluation being submitted, then the max char limit for
+        /// all notes combined is N x 1024.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=3072)]
         public string Value
         {
             get { return this._value; }

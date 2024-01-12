@@ -45,7 +45,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AllowedMonitorCapabilities. 
         /// <para>
         /// Specify which monitoring actions the user is allowed to take. For example, whether
-        /// the user is allowed to escalate from silent monitoring to barge.
+        /// the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities
+        /// is required if barge is enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]

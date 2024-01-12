@@ -109,6 +109,10 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Feature
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Routing step expression
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// At least one filter must be passed from queues, routing profiles, agents, or user
@@ -129,7 +133,8 @@ namespace Amazon.Connect.Model
         /// Valid filter keys: <c>QUEUE</c> | <c>ROUTING_PROFILE</c> | <c>AGENT</c> | <c>CHANNEL</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c> | <c>FEATURE</c>
-        /// | <c>contact/segmentAttributes/connect:Subtype</c> 
+        /// | <c>contact/segmentAttributes/connect:Subtype</c> | <c>ROUTING_STEP_EXPRESSION</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -150,6 +155,10 @@ namespace Amazon.Connect.Model
         ///  <c>connect:Chat</c>, <c>connect:SMS</c>, <c>connect:Telephony</c>, and <c>connect:WebRTC</c>
         /// are valid <c>filterValue</c> examples (not exhaustive) for the <c>contact/segmentAttributes/connect:Subtype
         /// filter</c> key.
+        /// </para>
+        ///  
+        /// <para>
+        /// ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -182,7 +191,7 @@ namespace Amazon.Connect.Model
         /// Valid grouping keys: <c>QUEUE</c> | <c>ROUTING_PROFILE</c> | <c>AGENT</c> | <c>CHANNEL</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>, <c>contact/segmentAttributes/connect:Subtype</c>
-        /// 
+        /// | <c>ROUTING_STEP_EXPRESSION</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]
@@ -493,7 +502,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression
         /// </para>
         ///  <note> 
         /// <para>
@@ -670,7 +679,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// contact/segmentAttributes/connect:Subtype
+        /// contact/segmentAttributes/connect:Subtype, RoutingStepExpression
         /// </para>
         ///  </dd> <dt>CONTACTS_CREATED</dt> <dd> 
         /// <para>
@@ -699,7 +708,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-        /// Feature, contact/segmentAttributes/connect:Subtype
+        /// Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression
         /// </para>
         ///  <note> 
         /// <para>
@@ -816,6 +825,22 @@ namespace Amazon.Connect.Model
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
         /// contact/segmentAttributes/connect:Subtype
         /// </para>
+        ///  </dd> <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, RoutingStepExpression
+        /// </para>
+        ///  </dd> <dt>PERCENT_CONTACTS_STEP_JOINED</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, RoutingStepExpression
+        /// </para>
         ///  </dd> <dt>PERCENT_NON_TALK_TIME</dt> <dd> 
         /// <para>
         /// This metric is available only for contacts analyzed by Contact Lens conversational
@@ -888,6 +913,14 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
         /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// </para>
+        ///  </dd> <dt>STEP_CONTACTS_QUEUED</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, RoutingStepExpression
         /// </para>
         ///  </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> 
         /// <para>

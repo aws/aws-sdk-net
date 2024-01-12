@@ -1999,6 +1999,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly InstanceAttributeType EARLY_MEDIA = new InstanceAttributeType("EARLY_MEDIA");
         /// <summary>
+        /// Constant ENHANCED_CHAT_MONITORING for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType ENHANCED_CHAT_MONITORING = new InstanceAttributeType("ENHANCED_CHAT_MONITORING");
+        /// <summary>
         /// Constant ENHANCED_CONTACT_MONITORING for InstanceAttributeType
         /// </summary>
         public static readonly InstanceAttributeType ENHANCED_CONTACT_MONITORING = new InstanceAttributeType("ENHANCED_CONTACT_MONITORING");
@@ -2718,6 +2722,10 @@ namespace Amazon.Connect
         /// Constant CUSTOMER for ParticipantRole
         /// </summary>
         public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
+        /// <summary>
+        /// Constant SUPERVISOR for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole SUPERVISOR = new ParticipantRole("SUPERVISOR");
         /// <summary>
         /// Constant SYSTEM for ParticipantRole
         /// </summary>
