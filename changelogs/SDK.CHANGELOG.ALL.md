@@ -1,3 +1,24 @@
+### 3.7.725.0 (2024-01-12 19:44 UTC)
+* CloudFrontKeyValueStore (3.7.300.28)
+	* Fixed CloudFrontKeyValueStore to use Sigv4a instead of Sigv4.
+* Connect (3.7.310.0)
+	* Supervisor Barge for Chat is now supported through the MonitorContact API.
+* ConnectParticipant (3.7.301.0)
+	* Introduce new Supervisor participant role
+* LocationService (3.7.304.2)
+	* Location SDK documentation update. Added missing fonts to the MapConfiguration data type. Updated note for the SubMunicipality property in the place data type.
+* MWAA (3.7.302.0)
+	* This Amazon MWAA feature release includes new fields in CreateWebLoginToken response model. The new fields IamIdentity and AirflowIdentity will let you match identifications, as the Airflow identity length is currently hashed to 64 characters.
+* S3Control (3.7.305.0)
+	* S3 On Outposts team adds dualstack endpoints support for S3Control and S3Outposts API calls.
+* SupplyChain (3.7.300.0)
+	* This release includes APIs CreateBillOfMaterialsImportJob and GetBillOfMaterialsImportJob.
+* Transfer (3.7.302.0)
+	* AWS Transfer Family now supports static IP addresses for SFTP & AS2 connectors and for async MDNs on AS2 servers.
+* Core 3.7.301.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.724.0 (2024-01-11 19:16 UTC)
 * EC2 (3.7.312.0)
 	* This release adds support for adding an ElasticBlockStorage volume configurations in ECS RunTask/StartTask/CreateService/UpdateService APIs. The configuration allows for attaching EBS volumes to ECS Tasks.
