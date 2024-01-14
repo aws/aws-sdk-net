@@ -61,6 +61,7 @@ namespace Amazon.SageMaker.Model
         /// in VPC-only mode.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=10)]
         public List<string> VpcOnlyTrustedAccounts
         {
             get { return this._vpcOnlyTrustedAccounts; }

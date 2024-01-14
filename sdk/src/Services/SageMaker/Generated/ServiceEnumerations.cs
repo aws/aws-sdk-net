@@ -100,6 +100,10 @@ namespace Amazon.SageMaker
         /// Constant S3Object for AdditionalS3DataSourceDataType
         /// </summary>
         public static readonly AdditionalS3DataSourceDataType S3Object = new AdditionalS3DataSourceDataType("S3Object");
+        /// <summary>
+        /// Constant S3Prefix for AdditionalS3DataSourceDataType
+        /// </summary>
+        public static readonly AdditionalS3DataSourceDataType S3Prefix = new AdditionalS3DataSourceDataType("S3Prefix");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -881,10 +885,6 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppType CodeEditor = new AppType("CodeEditor");
         /// <summary>
-        /// Constant DatasetManager for AppType
-        /// </summary>
-        public static readonly AppType DatasetManager = new AppType("DatasetManager");
-        /// <summary>
         /// Constant DetailedProfiler for AppType
         /// </summary>
         public static readonly AppType DetailedProfiler = new AppType("DetailedProfiler");
@@ -901,14 +901,6 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppType KernelGateway = new AppType("KernelGateway");
         /// <summary>
-        /// Constant Local for AppType
-        /// </summary>
-        public static readonly AppType Local = new AppType("Local");
-        /// <summary>
-        /// Constant RSession for AppType
-        /// </summary>
-        public static readonly AppType RSession = new AppType("RSession");
-        /// <summary>
         /// Constant RSessionGateway for AppType
         /// </summary>
         public static readonly AppType RSessionGateway = new AppType("RSessionGateway");
@@ -917,21 +909,9 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppType RStudioServerPro = new AppType("RStudioServerPro");
         /// <summary>
-        /// Constant SageMakerLite for AppType
-        /// </summary>
-        public static readonly AppType SageMakerLite = new AppType("SageMakerLite");
-        /// <summary>
-        /// Constant Savitur for AppType
-        /// </summary>
-        public static readonly AppType Savitur = new AppType("Savitur");
-        /// <summary>
         /// Constant TensorBoard for AppType
         /// </summary>
         public static readonly AppType TensorBoard = new AppType("TensorBoard");
-        /// <summary>
-        /// Constant VSCode for AppType
-        /// </summary>
-        public static readonly AppType VSCode = new AppType("VSCode");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -15076,14 +15056,6 @@ namespace Amazon.SageMaker
         /// Constant KernelGateway for StudioLifecycleConfigAppType
         /// </summary>
         public static readonly StudioLifecycleConfigAppType KernelGateway = new StudioLifecycleConfigAppType("KernelGateway");
-        /// <summary>
-        /// Constant Savitur for StudioLifecycleConfigAppType
-        /// </summary>
-        public static readonly StudioLifecycleConfigAppType Savitur = new StudioLifecycleConfigAppType("Savitur");
-        /// <summary>
-        /// Constant VSCode for StudioLifecycleConfigAppType
-        /// </summary>
-        public static readonly StudioLifecycleConfigAppType VSCode = new StudioLifecycleConfigAppType("VSCode");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
