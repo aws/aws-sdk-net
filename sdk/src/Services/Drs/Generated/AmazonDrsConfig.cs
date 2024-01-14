@@ -32,7 +32,7 @@ namespace Amazon.Drs
     public partial class AmazonDrsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("drs", "3.7.301.17");
+            InternalSDKUtils.BuildUserAgentString("drs", "3.7.301.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>

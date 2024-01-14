@@ -1,3 +1,10 @@
+### 3.7.726.0 (2024-01-14 05:28 UTC)
+* SageMaker (3.7.310.0)
+	* This release will have ValidationException thrown if certain invalid app types are provided. The release will also throw ValidationException if more than 10 account ids are provided in VpcOnlyTrustedAccounts.
+* Core 3.7.301.6
+	* Update generators to use correct code tags in `<param>` XML elements
+	* All services packages updated to require new Core
+
 ### 3.7.725.0 (2024-01-12 19:44 UTC)
 * CloudFrontKeyValueStore (3.7.300.28)
 	* Fixed CloudFrontKeyValueStore to use Sigv4a instead of Sigv4.
