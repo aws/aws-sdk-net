@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates ListAssociationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="associationFilterList">One or more filters. Use a filter to return a more specific list of results. <note> Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned. </note></param>
+        /// <param name="associationFilterList">One or more filters. Use a filter to return a more specific list of results. <note> Filtering associations using the <c>InstanceID</c> attribute only returns legacy associations created using the <c>InstanceID</c> attribute. Associations targeting the managed node that are part of the Target Attributes <c>ResourceGroup</c> or <c>Tags</c> aren't returned. </note></param>
         public ListAssociationsRequest(List<AssociationFilter> associationFilterList)
         {
             _associationFilterList = associationFilterList;

@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates UpdateApplicationRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName">The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName">The name of the application to update. If no such application is found, <c>UpdateApplication</c> returns an <c>InvalidParameterValue</c> error. </param>
         public UpdateApplicationRequest(string applicationName)
         {
             _applicationName = applicationName;

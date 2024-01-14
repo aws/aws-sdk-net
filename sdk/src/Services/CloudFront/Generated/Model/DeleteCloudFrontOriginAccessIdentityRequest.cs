@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates DeleteCloudFrontOriginAccessIdentityRequest with the parameterized properties
         /// </summary>
         /// <param name="id">The origin access identity's ID.</param>
-        /// <param name="ifMatch">The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</param>
+        /// <param name="ifMatch">The value of the <c>ETag</c> header you received from a previous <c>GET</c> or <c>PUT</c> request. For example: <c>E2QWRUHAPOMQZL</c>.</param>
         public DeleteCloudFrontOriginAccessIdentityRequest(string id, string ifMatch)
         {
             _id = id;

@@ -47,7 +47,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates WriteRequest with the parameterized properties
         /// </summary>
-        /// <param name="putRequest">A request to perform a <code>PutItem</code> operation.</param>
+        /// <param name="putRequest">A request to perform a <c>PutItem</c> operation.</param>
         public WriteRequest(PutRequest putRequest)
         {
             _putRequest = putRequest;
@@ -56,7 +56,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates WriteRequest with the parameterized properties
         /// </summary>
-        /// <param name="deleteRequest">A request to perform a <code>DeleteItem</code> operation.</param>
+        /// <param name="deleteRequest">A request to perform a <c>DeleteItem</c> operation.</param>
         public WriteRequest(DeleteRequest deleteRequest)
         {
             _deleteRequest = deleteRequest;

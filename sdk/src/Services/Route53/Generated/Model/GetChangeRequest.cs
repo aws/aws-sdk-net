@@ -58,7 +58,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates GetChangeRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.</param>
+        /// <param name="id">The ID of the change batch request. The value that you specify here is the value that <c>ChangeResourceRecordSets</c> returned in the <c>Id</c> element when you submitted the request.</param>
         public GetChangeRequest(string id)
         {
             _id = id;

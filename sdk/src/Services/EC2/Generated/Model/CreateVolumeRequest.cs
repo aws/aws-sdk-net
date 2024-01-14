@@ -79,8 +79,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</param>
-        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB </li> <li>  <code>io1</code>: 4 - 16,384 GiB </li> <li>  <code>io2</code>: 4 - 65,536 GiB </li> <li>  <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB </li> <li>  <code>standard</code>: 1 - 1024 GiB </li> </ul></param>
+        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>.</param>
+        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB </li> <li>  <c>io1</c>: 4 - 16,384 GiB </li> <li>  <c>io2</c>: 4 - 65,536 GiB </li> <li>  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB </li> <li>  <c>standard</c>: 1 - 1024 GiB </li> </ul></param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <code>us-east-1a</code>.</param>
+        /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>.</param>
         /// <param name="snapshotId">The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.</param>
         public CreateVolumeRequest(string availabilityZone, string snapshotId)
         {

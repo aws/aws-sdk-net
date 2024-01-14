@@ -419,7 +419,7 @@ namespace Amazon.MachineLearning
         /// of the <c>MLModel</c>; that is, the location to send real-time prediction requests
         /// for the specified <c>MLModel</c>.
         /// </summary>
-        /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> during creation.</param>
+        /// <param name="mlModelId">The ID assigned to the <c>MLModel</c> during creation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -479,7 +479,7 @@ namespace Amazon.MachineLearning
         ///  <b>Caution:</b> The result of the <c>DeleteBatchPrediction</c> operation is irreversible.
         /// </para>
         /// </summary>
-        /// <param name="batchPredictionId">A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</param>
+        /// <param name="batchPredictionId">A user-supplied ID that uniquely identifies the <c>BatchPrediction</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -547,7 +547,7 @@ namespace Amazon.MachineLearning
         ///  <b>Caution:</b> The results of the <c>DeleteDataSource</c> operation are irreversible.
         /// </para>
         /// </summary>
-        /// <param name="dataSourceId">A user-supplied ID that uniquely identifies the <code>DataSource</code>.</param>
+        /// <param name="dataSourceId">A user-supplied ID that uniquely identifies the <c>DataSource</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -615,7 +615,7 @@ namespace Amazon.MachineLearning
         ///  <b>Caution:</b> The results of the <c>DeleteEvaluation</c> operation are irreversible.
         /// </para>
         /// </summary>
-        /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</param>
+        /// <param name="evaluationId">A user-supplied ID that uniquely identifies the <c>Evaluation</c> to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -683,7 +683,7 @@ namespace Amazon.MachineLearning
         ///  <b>Caution:</b> The result of the <c>DeleteMLModel</c> operation is irreversible.
         /// </para>
         /// </summary>
-        /// <param name="mlModelId">A user-supplied ID that uniquely identifies the <code>MLModel</code>.</param>
+        /// <param name="mlModelId">A user-supplied ID that uniquely identifies the <c>MLModel</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -741,7 +741,7 @@ namespace Amazon.MachineLearning
         /// <summary>
         /// Deletes a real time endpoint of an <c>MLModel</c>.
         /// </summary>
-        /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> during creation.</param>
+        /// <param name="mlModelId">The ID assigned to the <c>MLModel</c> during creation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -951,7 +951,7 @@ namespace Amazon.MachineLearning
         /// Returns a <c>BatchPrediction</c> that includes detailed metadata, status, and data
         /// file information for a <c>Batch Prediction</c> request.
         /// </summary>
-        /// <param name="batchPredictionId">An ID assigned to the <code>BatchPrediction</code> at creation.</param>
+        /// <param name="batchPredictionId">An ID assigned to the <c>BatchPrediction</c> at creation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1008,7 +1008,7 @@ namespace Amazon.MachineLearning
         /// the normal format.
         /// </para>
         /// </summary>
-        /// <param name="dataSourceId">The ID assigned to the <code>DataSource</code> at creation.</param>
+        /// <param name="dataSourceId">The ID assigned to the <c>DataSource</c> at creation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1037,8 +1037,8 @@ namespace Amazon.MachineLearning
         /// the normal format.
         /// </para>
         /// </summary>
-        /// <param name="dataSourceId">The ID assigned to the <code>DataSource</code> at creation.</param>
-        /// <param name="verbose">Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>. If true, <code>DataSourceSchema</code> is returned. If false, <code>DataSourceSchema</code> is not returned.</param>
+        /// <param name="dataSourceId">The ID assigned to the <c>DataSource</c> at creation.</param>
+        /// <param name="verbose">Specifies whether the <c>GetDataSource</c> operation should return <c>DataSourceSchema</c>. If true, <c>DataSourceSchema</c> is returned. If false, <c>DataSourceSchema</c> is not returned.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1095,7 +1095,7 @@ namespace Amazon.MachineLearning
         /// Returns an <c>Evaluation</c> that includes metadata as well as the current status
         /// of the <c>Evaluation</c>.
         /// </summary>
-        /// <param name="evaluationId">The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </param>
+        /// <param name="evaluationId">The ID of the <c>Evaluation</c> to retrieve. The evaluation of each <c>MLModel</c> is recorded and cataloged. The ID provides the means to access the information. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1150,7 +1150,7 @@ namespace Amazon.MachineLearning
         ///  <c>GetMLModel</c> provides results in normal or verbose format. 
         /// </para>
         /// </summary>
-        /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> at creation.</param>
+        /// <param name="mlModelId">The ID assigned to the <c>MLModel</c> at creation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1177,8 +1177,8 @@ namespace Amazon.MachineLearning
         ///  <c>GetMLModel</c> provides results in normal or verbose format. 
         /// </para>
         /// </summary>
-        /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> at creation.</param>
-        /// <param name="verbose">Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>. If true, <code>Recipe</code> is returned. If false, <code>Recipe</code> is not returned.</param>
+        /// <param name="mlModelId">The ID assigned to the <c>MLModel</c> at creation.</param>
+        /// <param name="verbose">Specifies whether the <c>GetMLModel</c> operation should return <c>Recipe</c>. If true, <c>Recipe</c> is returned. If false, <c>Recipe</c> is not returned.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1238,7 +1238,7 @@ namespace Amazon.MachineLearning
         /// is populated depends on the type of model requested.
         /// </para>
         /// </summary>
-        /// <param name="mlModelId">A unique identifier of the <code>MLModel</code>.</param>
+        /// <param name="mlModelId">A unique identifier of the <c>MLModel</c>.</param>
         /// <param name="predictEndpoint">A property of PredictRequest used to execute the Predict service method.</param>
         /// <param name="record">A property of PredictRequest used to execute the Predict service method.</param>
         /// <param name="cancellationToken">
@@ -1314,8 +1314,8 @@ namespace Amazon.MachineLearning
         /// data element.
         /// </para>
         /// </summary>
-        /// <param name="batchPredictionId">The ID assigned to the <code>BatchPrediction</code> during creation.</param>
-        /// <param name="batchPredictionName">A new user-supplied name or description of the <code>BatchPrediction</code>.</param>
+        /// <param name="batchPredictionId">The ID assigned to the <c>BatchPrediction</c> during creation.</param>
+        /// <param name="batchPredictionName">A new user-supplied name or description of the <c>BatchPrediction</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1375,8 +1375,8 @@ namespace Amazon.MachineLearning
         /// data element.
         /// </para>
         /// </summary>
-        /// <param name="dataSourceId">The ID assigned to the <code>DataSource</code> during creation.</param>
-        /// <param name="dataSourceName">A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </param>
+        /// <param name="dataSourceId">The ID assigned to the <c>DataSource</c> during creation.</param>
+        /// <param name="dataSourceName">A new user-supplied name or description of the <c>DataSource</c> that will replace the current description. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1436,8 +1436,8 @@ namespace Amazon.MachineLearning
         /// data element.
         /// </para>
         /// </summary>
-        /// <param name="evaluationId">The ID assigned to the <code>Evaluation</code> during creation.</param>
-        /// <param name="evaluationName">A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </param>
+        /// <param name="evaluationId">The ID assigned to the <c>Evaluation</c> during creation.</param>
+        /// <param name="evaluationName">A new user-supplied name or description of the <c>Evaluation</c> that will replace the current content. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1497,9 +1497,9 @@ namespace Amazon.MachineLearning
         /// element.
         /// </para>
         /// </summary>
-        /// <param name="mlModelId">The ID assigned to the <code>MLModel</code> during creation.</param>
-        /// <param name="mlModelName">A user-supplied name or description of the <code>MLModel</code>.</param>
-        /// <param name="scoreThreshold">The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction. Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</param>
+        /// <param name="mlModelId">The ID assigned to the <c>MLModel</c> during creation.</param>
+        /// <param name="mlModelName">A user-supplied name or description of the <c>MLModel</c>.</param>
+        /// <param name="scoreThreshold">The <c>ScoreThreshold</c> used in binary classification <c>MLModel</c> that marks the boundary between a positive prediction and a negative prediction. Output values greater than or equal to the <c>ScoreThreshold</c> receive a positive result from the <c>MLModel</c>, such as <c>true</c>. Output values less than the <c>ScoreThreshold</c> receive a negative response from the <c>MLModel</c>, such as <c>false</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

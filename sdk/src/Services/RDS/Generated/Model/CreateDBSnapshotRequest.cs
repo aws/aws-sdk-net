@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates CreateDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot. Constraints: <ul> <li> Can't be null, empty, or blank </li> <li> Must contain from 1 to 255 letters, numbers, or hyphens </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot. Constraints: <ul> <li> Can't be null, empty, or blank </li> <li> Must contain from 1 to 255 letters, numbers, or hyphens </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <c>my-snapshot-id</c> </param>
         /// <param name="dbInstanceIdentifier">The identifier of the DB instance that you want to create the snapshot of. Constraints: <ul> <li> Must match the identifier of an existing DBInstance. </li> </ul></param>
         public CreateDBSnapshotRequest(string dbSnapshotIdentifier, string dbInstanceIdentifier)
         {

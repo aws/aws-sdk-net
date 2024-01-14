@@ -55,7 +55,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates GetQueueUrlRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueName">The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). Queue URLs and names are case-sensitive.</param>
+        /// <param name="queueName">The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<c>-</c>), and underscores (<c>_</c>). Queue URLs and names are case-sensitive.</param>
         public GetQueueUrlRequest(string queueName)
         {
             _queueName = queueName;

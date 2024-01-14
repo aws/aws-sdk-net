@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</param>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="device">The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</param>
+        /// <param name="device">The device name (for example, <c>/dev/sdh</c> or <c>xvdh</c>).</param>
         public AttachVolumeRequest(string volumeId, string instanceId, string device)
         {
             _volumeId = volumeId;

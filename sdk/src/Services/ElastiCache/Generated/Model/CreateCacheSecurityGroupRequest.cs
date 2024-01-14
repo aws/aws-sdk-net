@@ -54,7 +54,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates CreateCacheSecurityGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheSecurityGroupName">A name for the cache security group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default". Example: <code>mysecuritygroup</code> </param>
+        /// <param name="cacheSecurityGroupName">A name for the cache security group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default". Example: <c>mysecuritygroup</c> </param>
         /// <param name="description">A description for the cache security group.</param>
         public CreateCacheSecurityGroupRequest(string cacheSecurityGroupName, string description)
         {

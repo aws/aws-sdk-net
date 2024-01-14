@@ -44,7 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates PlacementType with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</param>
+        /// <param name="availabilityZone">The Amazon EC2 Availability Zone for the cluster. <c>AvailabilityZone</c> is used for uniform instance groups, while <c>AvailabilityZones</c> (plural) is used for instance fleets.</param>
         public PlacementType(string availabilityZone)
         {
             _availabilityZone = availabilityZone;

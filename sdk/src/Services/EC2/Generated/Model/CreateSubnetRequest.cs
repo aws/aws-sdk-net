@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateSubnetRequest with the parameterized properties
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
-        /// <param name="cidrBlock">The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>. This parameter is not supported for an IPv6 only subnet.</param>
+        /// <param name="cidrBlock">The IPv4 network range for the subnet, in CIDR notation. For example, <c>10.0.0.0/24</c>. We modify the specified CIDR block to its canonical form; for example, if you specify <c>100.68.0.18/18</c>, we modify it to <c>100.68.0.0/18</c>. This parameter is not supported for an IPv6 only subnet.</param>
         public CreateSubnetRequest(string vpcId, string cidrBlock)
         {
             _vpcId = vpcId;

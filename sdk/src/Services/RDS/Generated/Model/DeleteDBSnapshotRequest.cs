@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSnapshotIdentifier">The DB snapshot identifier. Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</param>
+        /// <param name="dbSnapshotIdentifier">The DB snapshot identifier. Constraints: Must be the name of an existing DB snapshot in the <c>available</c> state.</param>
         public DeleteDBSnapshotRequest(string dbSnapshotIdentifier)
         {
             _dbSnapshotIdentifier = dbSnapshotIdentifier;

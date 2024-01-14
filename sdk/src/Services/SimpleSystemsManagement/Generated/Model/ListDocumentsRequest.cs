@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates ListDocumentsRequest with the parameterized properties
         /// </summary>
-        /// <param name="documentFilterList">This data type is deprecated. Instead, use <code>Filters</code>.</param>
+        /// <param name="documentFilterList">This data type is deprecated. Instead, use <c>Filters</c>.</param>
         public ListDocumentsRequest(List<DocumentFilter> documentFilterList)
         {
             _documentFilterList = documentFilterList;

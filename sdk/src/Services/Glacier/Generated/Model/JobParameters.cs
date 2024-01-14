@@ -54,7 +54,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="format">When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</param>
         /// <param name="type">The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</param>
-        /// <param name="archiveId">The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </param>
+        /// <param name="archiveId">The ID of the archive that you want to retrieve. This field is required only if <c>Type</c> is set to <c>select</c> or <c>archive-retrieval</c>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </param>
         /// <param name="description">The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</param>
         public JobParameters(string format, string type, string archiveId, string description)
         {

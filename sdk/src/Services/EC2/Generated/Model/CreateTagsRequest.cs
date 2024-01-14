@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateTagsRequest with the parameterized properties
         /// </summary>
         /// <param name="resources">The IDs of the resources, separated by spaces. Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</param>
-        /// <param name="tags">The tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string.</param>
+        /// <param name="tags">The tags. The <c>value</c> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string.</param>
         public CreateTagsRequest(List<string> resources, List<Tag> tags)
         {
             _resources = resources;

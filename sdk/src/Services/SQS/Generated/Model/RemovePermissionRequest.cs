@@ -66,7 +66,7 @@ namespace Amazon.SQS.Model
         /// Instantiates RemovePermissionRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue from which permissions are removed. Queue URLs and names are case-sensitive.</param>
-        /// <param name="label">The identification of the permission to remove. This is the label added using the <code> <a>AddPermission</a> </code> action.</param>
+        /// <param name="label">The identification of the permission to remove. This is the label added using the <c> <a>AddPermission</a> </c> action.</param>
         public RemovePermissionRequest(string queueUrl, string label)
         {
             _queueUrl = queueUrl;

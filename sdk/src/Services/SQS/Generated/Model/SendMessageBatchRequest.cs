@@ -84,7 +84,7 @@ namespace Amazon.SQS.Model
         /// Instantiates SendMessageBatchRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="entries">A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</param>
+        /// <param name="entries">A list of <c> <a>SendMessageBatchRequestEntry</a> </c> items.</param>
         public SendMessageBatchRequest(string queueUrl, List<SendMessageBatchRequestEntry> entries)
         {
             _queueUrl = queueUrl;

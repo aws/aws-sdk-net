@@ -72,7 +72,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UploadSigningCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateBody">The contents of the signing certificate. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>) </li> <li> The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) </li> </ul></param>
+        /// <param name="certificateBody">The contents of the signing certificate. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (<c>\u0020</c>) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through <c>\u00FF</c>) </li> <li> The special characters tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage return (<c>\u000D</c>) </li> </ul></param>
         public UploadSigningCertificateRequest(string certificateBody)
         {
             _certificateBody = certificateBody;

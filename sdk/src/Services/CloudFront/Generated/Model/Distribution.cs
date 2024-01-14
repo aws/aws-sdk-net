@@ -53,9 +53,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates Distribution with the parameterized properties
         /// </summary>
-        /// <param name="id">The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</param>
-        /// <param name="status">The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</param>
-        /// <param name="domainName">The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</param>
+        /// <param name="id">The distribution's identifier. For example: <c>E1U5RQF7T870K0</c>.</param>
+        /// <param name="status">The distribution's status. When the status is <c>Deployed</c>, the distribution's information is fully propagated to all CloudFront edge locations.</param>
+        /// <param name="domainName">The distribution's CloudFront domain name. For example: <c>d111111abcdef8.cloudfront.net</c>.</param>
         public Distribution(string id, string status, string domainName)
         {
             _id = id;

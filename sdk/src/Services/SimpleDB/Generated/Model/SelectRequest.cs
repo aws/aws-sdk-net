@@ -72,7 +72,7 @@ namespace Amazon.SimpleDB.Model
         /// Instantiates SelectRequest with the parameterized properties
         /// </summary>
         /// <param name="selectExpression">The expression used to query the domain.</param>
-        /// <param name="consistentRead">Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.</param>
+        /// <param name="consistentRead">Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <c>true</c>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.</param>
         public SelectRequest(string selectExpression, bool consistentRead)
         {
             _selectExpression = selectExpression;

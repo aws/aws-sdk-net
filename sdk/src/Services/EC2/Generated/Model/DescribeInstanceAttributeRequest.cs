@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         /// Instantiates DescribeInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The instance attribute. Note: The <code>enaSupport</code> attribute is not supported at this time.</param>
+        /// <param name="attribute">The instance attribute. Note: The <c>enaSupport</c> attribute is not supported at this time.</param>
         public DescribeInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;

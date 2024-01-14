@@ -49,8 +49,8 @@ namespace Amazon.SimpleDB.Model
         /// Instantiates UpdateCondition with the parameterized properties
         /// </summary>
         /// <param name="name">The name of the attribute involved in the condition.</param>
-        /// <param name="value">The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</param>
-        /// <param name="exists">A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</param>
+        /// <param name="value">The value of an attribute. This value can only be specified when the <c>Exists</c> parameter is equal to <c>true</c>.</param>
+        /// <param name="exists">A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <c>true</c> if the attribute must exist for the update condition to be satisfied. Specify <c>false</c> if the attribute should not exist in order for the update condition to be satisfied.</param>
         public UpdateCondition(string name, string value, bool exists)
         {
             _name = name;

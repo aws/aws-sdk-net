@@ -63,7 +63,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates ListSubscriptionsByTopicRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to find subscriptions.</param>
-        /// <param name="nextToken">Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</param>
+        /// <param name="nextToken">Token returned by the previous <c>ListSubscriptionsByTopic</c> request.</param>
         public ListSubscriptionsByTopicRequest(string topicArn, string nextToken)
         {
             _topicArn = topicArn;

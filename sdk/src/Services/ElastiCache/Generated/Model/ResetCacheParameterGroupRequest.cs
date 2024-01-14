@@ -50,7 +50,7 @@ namespace Amazon.ElastiCache.Model
         /// Instantiates ResetCacheParameterGroupRequest with the parameterized properties
         /// </summary>
         /// <param name="cacheParameterGroupName">The name of the cache parameter group to reset.</param>
-        /// <param name="parameterNameValues">An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</param>
+        /// <param name="parameterNameValues">An array of parameter names to reset to their default values. If <c>ResetAllParameters</c> is <c>true</c>, do not use <c>ParameterNameValues</c>. If <c>ResetAllParameters</c> is <c>false</c>, you must specify the name of at least one parameter to reset.</param>
         public ResetCacheParameterGroupRequest(string cacheParameterGroupName, List<ParameterNameValue> parameterNameValues)
         {
             _cacheParameterGroupName = cacheParameterGroupName;

@@ -107,7 +107,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates CreateQueueRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue URLs and names are case-sensitive.</param>
+        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<c>-</c>), and underscores (<c>_</c>). </li> <li> A FIFO queue name must end with the <c>.fifo</c> suffix. </li> </ul> Queue URLs and names are case-sensitive.</param>
         public CreateQueueRequest(string queueName)
         {
             _queueName = queueName;

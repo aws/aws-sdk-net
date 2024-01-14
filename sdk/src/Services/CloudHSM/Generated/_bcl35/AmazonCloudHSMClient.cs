@@ -1164,7 +1164,7 @@ namespace Amazon.CloudHSM
         /// number.
         /// </para>
         /// </summary>
-        /// <param name="hsmArn">The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</param>
+        /// <param name="hsmArn">The ARN of the HSM. Either the <c>HsmArn</c> or the <c>SerialNumber</c> parameter must be specified.</param>
         /// 
         /// <returns>The response from the DescribeHsm service method, as returned by CloudHSM.</returns>
         /// <exception cref="Amazon.CloudHSM.Model.CloudHsmInternalException">

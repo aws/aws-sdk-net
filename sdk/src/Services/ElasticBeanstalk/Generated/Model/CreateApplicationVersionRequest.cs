@@ -80,8 +80,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CreateApplicationVersionRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="versionLabel">A label identifying this version. Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName"> The name of the application. If no application is found with this name, and <c>AutoCreateApplication</c> is <c>false</c>, returns an <c>InvalidParameterValue</c> error. </param>
+        /// <param name="versionLabel">A label identifying this version. Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. </param>
         public CreateApplicationVersionRequest(string applicationName, string versionLabel)
         {
             _applicationName = applicationName;

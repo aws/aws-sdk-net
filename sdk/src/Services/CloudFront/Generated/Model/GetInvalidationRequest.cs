@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates GetInvalidationRequest with the parameterized properties
         /// </summary>
         /// <param name="distributionId">The distribution's ID.</param>
-        /// <param name="id">The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</param>
+        /// <param name="id">The identifier for the invalidation request, for example, <c>IDFDVBD632BHDS5</c>.</param>
         public GetInvalidationRequest(string distributionId, string id)
         {
             _distributionId = distributionId;

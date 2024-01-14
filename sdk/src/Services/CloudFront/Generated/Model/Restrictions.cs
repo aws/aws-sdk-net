@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates Restrictions with the parameterized properties
         /// </summary>
-        /// <param name="geoRestriction">A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</param>
+        /// <param name="geoRestriction">A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <c>MaxMind</c> GeoIP databases.</param>
         public Restrictions(GeoRestriction geoRestriction)
         {
             _geoRestriction = geoRestriction;

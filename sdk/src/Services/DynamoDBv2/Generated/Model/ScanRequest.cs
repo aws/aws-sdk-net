@@ -113,7 +113,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ScanRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
         public ScanRequest(string tableName)
         {
             _tableName = tableName;

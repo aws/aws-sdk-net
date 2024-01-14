@@ -64,7 +64,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UpdateAccessKeyRequest with the parameterized properties
         /// </summary>
         /// <param name="accessKeyId">The access key ID of the secret access key you want to update. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
-        /// <param name="status"> The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code> means that the key cannot be used.</param>
+        /// <param name="status"> The status you want to assign to the secret access key. <c>Active</c> means that the key can be used for programmatic calls to Amazon Web Services, while <c>Inactive</c> means that the key cannot be used.</param>
         public UpdateAccessKeyRequest(string accessKeyId, StatusType status)
         {
             _accessKeyId = accessKeyId;

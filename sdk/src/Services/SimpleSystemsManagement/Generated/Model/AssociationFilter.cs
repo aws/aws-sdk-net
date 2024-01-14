@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates AssociationFilter with the parameterized properties
         /// </summary>
-        /// <param name="key">The name of the filter. <note>  <code>InstanceId</code> has been deprecated. </note></param>
+        /// <param name="key">The name of the filter. <note>  <c>InstanceId</c> has been deprecated. </note></param>
         /// <param name="value">The filter value.</param>
         public AssociationFilter(AssociationFilterKey key, string value)
         {

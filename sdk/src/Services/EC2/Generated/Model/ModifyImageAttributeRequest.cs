@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The name of the attribute to modify. Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </param>
+        /// <param name="attribute">The name of the attribute to modify. Valid values: <c>description</c> | <c>imdsSupport</c> | <c>launchPermission</c> </param>
         public ModifyImageAttributeRequest(string imageId, string attribute)
         {
             _imageId = imageId;

@@ -63,7 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The name of the IAM user that the access key is associated with.</param>
         /// <param name="accessKeyId">The ID for this access key.</param>
-        /// <param name="status">The status of the access key. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not. </param>
+        /// <param name="status">The status of the access key. <c>Active</c> means that the key is valid for API calls, while <c>Inactive</c> means it is not. </param>
         /// <param name="secretAccessKey">The secret key used to sign requests.</param>
         public AccessKey(string userName, string accessKeyId, StatusType status, string secretAccessKey)
         {

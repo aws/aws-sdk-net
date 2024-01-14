@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates UpdateCloudFrontOriginAccessIdentityRequest with the parameterized properties
         /// </summary>
         /// <param name="id">The identity's id.</param>
-        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</param>
+        /// <param name="ifMatch">The value of the <c>ETag</c> header that you received when retrieving the identity's configuration. For example: <c>E2QWRUHAPOMQZL</c>.</param>
         /// <param name="cloudFrontOriginAccessIdentityConfig">The identity's configuration information.</param>
         public UpdateCloudFrontOriginAccessIdentityRequest(string id, string ifMatch, CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig)
         {

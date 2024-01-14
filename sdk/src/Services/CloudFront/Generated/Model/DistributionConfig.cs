@@ -61,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DistributionConfig with the parameterized properties
         /// </summary>
-        /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution. If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</param>
+        /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <c>CallerReference</c> is new (regardless of the content of the <c>DistributionConfig</c> object), CloudFront creates a new distribution. If <c>CallerReference</c> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <c>DistributionAlreadyExists</c> error.</param>
         /// <param name="enabled">From this field, you can enable or disable the selected distribution.</param>
         public DistributionConfig(string callerReference, bool enabled)
         {

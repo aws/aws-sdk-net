@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates UpdateStreamingDistributionRequest with the parameterized properties
         /// </summary>
         /// <param name="id">The streaming distribution's id.</param>
-        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</param>
+        /// <param name="ifMatch">The value of the <c>ETag</c> header that you received when retrieving the streaming distribution's configuration. For example: <c>E2QWRUHAPOMQZL</c>.</param>
         /// <param name="streamingDistributionConfig">The streaming distribution's configuration information.</param>
         public UpdateStreamingDistributionRequest(string id, string ifMatch, StreamingDistributionConfig streamingDistributionConfig)
         {

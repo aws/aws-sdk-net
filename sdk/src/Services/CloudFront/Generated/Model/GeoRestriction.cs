@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates GeoRestriction with the parameterized properties
         /// </summary>
-        /// <param name="restrictionType">The method that you want to use to restrict distribution of your content by country: <ul> <li>  <code>none</code>: No geo restriction is enabled, meaning access to content is not restricted by client geo location. </li> <li>  <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want CloudFront to distribute your content. </li> <li>  <code>whitelist</code>: The <code>Location</code> elements specify the countries in which you want CloudFront to distribute your content. </li> </ul></param>
+        /// <param name="restrictionType">The method that you want to use to restrict distribution of your content by country: <ul> <li>  <c>none</c>: No geo restriction is enabled, meaning access to content is not restricted by client geo location. </li> <li>  <c>blacklist</c>: The <c>Location</c> elements specify the countries in which you don't want CloudFront to distribute your content. </li> <li>  <c>whitelist</c>: The <c>Location</c> elements specify the countries in which you want CloudFront to distribute your content. </li> </ul></param>
         public GeoRestriction(GeoRestrictionType restrictionType)
         {
             _restrictionType = restrictionType;

@@ -63,7 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates AttributeValue with the parameterized properties
         /// </summary>
-        /// <param name="s">An attribute of type String. For example:  <code>"S": "Hello"</code> </param>
+        /// <param name="s">An attribute of type String. For example:  <c>"S": "Hello"</c> </param>
         public AttributeValue(string s)
         {
             _s = s;
@@ -72,7 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates AttributeValue with the parameterized properties
         /// </summary>
-        /// <param name="ss">An attribute of type String Set. For example:  <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code> </param>
+        /// <param name="ss">An attribute of type String Set. For example:  <c>"SS": ["Giraffe", "Hippo" ,"Zebra"]</c> </param>
         public AttributeValue(List<string> ss)
         {
             _ss = ss;

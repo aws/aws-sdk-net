@@ -46,8 +46,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates LoggingConfig with the parameterized properties
         /// </summary>
-        /// <param name="bucket">The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</param>
-        /// <param name="prefix">An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</param>
+        /// <param name="bucket">The Amazon S3 bucket to store the access logs in, for example, <c>myawslogbucket.s3.amazonaws.com</c>.</param>
+        /// <param name="prefix">An optional string that you want CloudFront to prefix to the access log <c>filenames</c> for this distribution, for example, <c>myprefix/</c>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <c>Prefix</c> element in the <c>Logging</c> element.</param>
         public LoggingConfig(string bucket, string prefix)
         {
             _bucket = bucket;

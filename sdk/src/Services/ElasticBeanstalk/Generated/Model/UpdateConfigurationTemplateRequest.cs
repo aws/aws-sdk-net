@@ -64,8 +64,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates UpdateConfigurationTemplateRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName">The name of the application associated with the configuration template to update.  If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="templateName">The name of the configuration template to update.  If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName">The name of the application associated with the configuration template to update.  If no application is found with this name, <c>UpdateConfigurationTemplate</c> returns an <c>InvalidParameterValue</c> error. </param>
+        /// <param name="templateName">The name of the configuration template to update.  If no configuration template is found with this name, <c>UpdateConfigurationTemplate</c> returns an <c>InvalidParameterValue</c> error. </param>
         public UpdateConfigurationTemplateRequest(string applicationName, string templateName)
         {
             _applicationName = applicationName;

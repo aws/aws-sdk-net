@@ -1026,7 +1026,7 @@ namespace Amazon.CloudHSM
         /// number.
         /// </para>
         /// </summary>
-        /// <param name="hsmArn">The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</param>
+        /// <param name="hsmArn">The ARN of the HSM. Either the <c>HsmArn</c> or the <c>SerialNumber</c> parameter must be specified.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

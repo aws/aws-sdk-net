@@ -59,7 +59,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Instantiates CreateEnvironmentRequest with the parameterized properties
         /// </summary>
         /// <param name="applicationName">The name of the application that is associated with this environment.</param>
-        /// <param name="environmentName">A unique name for the environment. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
+        /// <param name="environmentName">A unique name for the environment. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <c>InvalidParameterValue</c> error.  If you don't specify the <c>CNAMEPrefix</c> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
         public CreateEnvironmentRequest(string applicationName, string environmentName)
         {
             _applicationName = applicationName;

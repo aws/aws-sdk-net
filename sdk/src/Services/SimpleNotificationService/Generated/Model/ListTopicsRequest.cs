@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Instantiates ListTopicsRequest with the parameterized properties
         /// </summary>
-        /// <param name="nextToken">Token returned by the previous <code>ListTopics</code> request.</param>
+        /// <param name="nextToken">Token returned by the previous <c>ListTopics</c> request.</param>
         public ListTopicsRequest(string nextToken)
         {
             _nextToken = nextToken;

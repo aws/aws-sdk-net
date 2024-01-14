@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates GetLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group. <note>  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.  </note></param>
+        /// <param name="logGroupName">The name of the log group. <note>  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not both.  </note></param>
         /// <param name="logStreamName">The name of the log stream.</param>
         public GetLogEventsRequest(string logGroupName, string logStreamName)
         {

@@ -122,8 +122,8 @@ namespace Amazon.SQS.Model
         /// Instantiates ChangeMessageVisibilityRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs and names are case-sensitive.</param>
-        /// <param name="receiptHandle">The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.</param>
-        /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</param>
+        /// <param name="receiptHandle">The receipt handle associated with the message, whose visibility timeout is changed. This parameter is returned by the <c> <a>ReceiveMessage</a> </c> action.</param>
+        /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values range: <c>0</c> to <c>43200</c>. Maximum: 12 hours.</param>
         public ChangeMessageVisibilityRequest(string queueUrl, string receiptHandle, int visibilityTimeout)
         {
             _queueUrl = queueUrl;

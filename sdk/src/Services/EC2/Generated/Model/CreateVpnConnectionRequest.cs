@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVpnConnectionRequest with the parameterized properties
         /// </summary>
-        /// <param name="type">The type of VPN connection (<code>ipsec.1</code>).</param>
+        /// <param name="type">The type of VPN connection (<c>ipsec.1</c>).</param>
         /// <param name="customerGatewayId">The ID of the customer gateway.</param>
         /// <param name="vpnGatewayId">The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</param>
         public CreateVpnConnectionRequest(string type, string customerGatewayId, string vpnGatewayId)

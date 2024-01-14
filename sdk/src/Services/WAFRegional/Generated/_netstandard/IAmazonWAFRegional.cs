@@ -213,7 +213,7 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="name">A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</param>
+        /// <param name="name">A friendly name or description of the <a>ByteMatchSet</a>. You can't change <c>Name</c> after you create a <c>ByteMatchSet</c>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -612,7 +612,7 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="name">A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</param>
+        /// <param name="name">A friendly name or description of the <a>IPSet</a>. You can't change <c>Name</c> after you create the <c>IPSet</c>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1267,9 +1267,9 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="name">A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</param>
+        /// <param name="name">A friendly name or description of the <a>Rule</a>. You can't change the name of a <c>Rule</c> after you create it.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
-        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</param>
+        /// <param name="metricName">A friendly name or description for the metrics for this <c>Rule</c>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <c>Rule</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1781,7 +1781,7 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="name">A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</param>
+        /// <param name="name">A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <c>Name</c> after you create the <c>SqlInjectionMatchSet</c>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2479,7 +2479,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ol>
         /// </summary>
-        /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
+        /// <param name="byteMatchSetId">The <c>ByteMatchSetId</c> of the <a>ByteMatchSet</a> that you want to delete. <c>ByteMatchSetId</c> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2798,7 +2798,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ol>
         /// </summary>
-        /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
+        /// <param name="ipSetId">The <c>IPSetId</c> of the <a>IPSet</a> that you want to delete. <c>IPSetId</c> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3409,7 +3409,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ol>
         /// </summary>
-        /// <param name="ruleId">The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</param>
+        /// <param name="ruleId">The <c>RuleId</c> of the <a>Rule</a> that you want to delete. <c>RuleId</c> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3882,7 +3882,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ol>
         /// </summary>
-        /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
+        /// <param name="sqlInjectionMatchSetId">The <c>SqlInjectionMatchSetId</c> of the <a>SqlInjectionMatchSet</a> that you want to delete. <c>SqlInjectionMatchSetId</c> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4091,7 +4091,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ol>
         /// </summary>
-        /// <param name="webACLId">The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</param>
+        /// <param name="webACLId">The <c>WebACLId</c> of the <a>WebACL</a> that you want to delete. <c>WebACLId</c> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4489,7 +4489,7 @@ namespace Amazon.WAFRegional
         /// Returns the <a>ByteMatchSet</a> specified by <c>ByteMatchSetId</c>.
         /// </para>
         /// </summary>
-        /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
+        /// <param name="byteMatchSetId">The <c>ByteMatchSetId</c> of the <a>ByteMatchSet</a> that you want to get. <c>ByteMatchSetId</c> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4683,7 +4683,7 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="changeToken">The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</param>
+        /// <param name="changeToken">The change token for which you want to get the status. This change token was previously returned in the <c>GetChangeToken</c> response.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4814,7 +4814,7 @@ namespace Amazon.WAFRegional
         /// Returns the <a>IPSet</a> that is specified by <c>IPSetId</c>.
         /// </para>
         /// </summary>
-        /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
+        /// <param name="ipSetId">The <c>IPSetId</c> of the <a>IPSet</a> that you want to get. <c>IPSetId</c> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5198,7 +5198,7 @@ namespace Amazon.WAFRegional
         /// the <c>GetRule</c> request.
         /// </para>
         /// </summary>
-        /// <param name="ruleId">The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</param>
+        /// <param name="ruleId">The <c>RuleId</c> of the <a>Rule</a> that you want to get. <c>RuleId</c> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5416,7 +5416,7 @@ namespace Amazon.WAFRegional
         /// Returns the <a>SqlInjectionMatchSet</a> that is specified by <c>SqlInjectionMatchSetId</c>.
         /// </para>
         /// </summary>
-        /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
+        /// <param name="sqlInjectionMatchSetId">The <c>SqlInjectionMatchSetId</c> of the <a>SqlInjectionMatchSet</a> that you want to get. <c>SqlInjectionMatchSetId</c> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5496,7 +5496,7 @@ namespace Amazon.WAFRegional
         /// Returns the <a>WebACL</a> that is specified by <c>WebACLId</c>.
         /// </para>
         /// </summary>
-        /// <param name="webACLId">The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</param>
+        /// <param name="webACLId">The <c>WebACLId</c> of the <a>WebACL</a> that you want to get. <c>WebACLId</c> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7090,8 +7090,8 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>  </li> <li>  <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
+        /// <param name="byteMatchSetId">The <c>ByteMatchSetId</c> of the <a>ByteMatchSet</a> that you want to update. <c>ByteMatchSetId</c> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
+        /// <param name="updates">An array of <c>ByteMatchSetUpdate</c> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>ByteMatchSetUpdate</a>: Contains <c>Action</c> and <c>ByteMatchTuple</c>  </li> <li>  <a>ByteMatchTuple</a>: Contains <c>FieldToMatch</c>, <c>PositionalConstraint</c>, <c>TargetString</c>, and <c>TextTransformation</c>  </li> <li>  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7759,8 +7759,8 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul> You can insert a maximum of 1000 addresses in a single request.</param>
+        /// <param name="ipSetId">The <c>IPSetId</c> of the <a>IPSet</a> that you want to update. <c>IPSetId</c> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
+        /// <param name="updates">An array of <c>IPSetUpdate</c> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <c>Action</c> and <c>IPSetDescriptor</c>  </li> <li>  <a>IPSetDescriptor</a>: Contains <c>Type</c> and <c>Value</c>  </li> </ul> You can insert a maximum of 1000 addresses in a single request.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8801,8 +8801,8 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="ruleId">The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <a>ListRules</a>.</param>
-        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li>  <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>  </li> <li>  <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
+        /// <param name="ruleId">The <c>RuleId</c> of the <c>Rule</c> that you want to update. <c>RuleId</c> is returned by <c>CreateRule</c> and by <a>ListRules</a>.</param>
+        /// <param name="updates">An array of <c>RuleUpdate</c> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li>  <a>RuleUpdate</a>: Contains <c>Action</c> and <c>Predicate</c>  </li> <li>  <a>Predicate</a>: Contains <c>DataId</c>, <c>Negated</c>, and <c>Type</c>  </li> <li>  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9678,8 +9678,8 @@ namespace Amazon.WAFRegional
         /// Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>  </li> <li>  <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
+        /// <param name="sqlInjectionMatchSetId">The <c>SqlInjectionMatchSetId</c> of the <c>SqlInjectionMatchSet</c> that you want to update. <c>SqlInjectionMatchSetId</c> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
+        /// <param name="updates">An array of <c>SqlInjectionMatchSetUpdate</c> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>SqlInjectionMatchSetUpdate</a>: Contains <c>Action</c> and <c>SqlInjectionMatchTuple</c>  </li> <li>  <a>SqlInjectionMatchTuple</a>: Contains <c>FieldToMatch</c> and <c>TextTransformation</c>  </li> <li>  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

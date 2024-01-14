@@ -165,7 +165,7 @@ namespace Amazon.Route53.Model
         /// Instantiates ChangeResourceRecordSetsRequest with the parameterized properties
         /// </summary>
         /// <param name="hostedZoneId">The ID of the hosted zone that contains the resource record sets that you want to change.</param>
-        /// <param name="changeBatch">A complex type that contains an optional comment and the <code>Changes</code> element.</param>
+        /// <param name="changeBatch">A complex type that contains an optional comment and the <c>Changes</c> element.</param>
         public ChangeResourceRecordSetsRequest(string hostedZoneId, ChangeBatch changeBatch)
         {
             _hostedZoneId = hostedZoneId;

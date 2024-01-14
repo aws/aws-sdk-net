@@ -1378,7 +1378,7 @@ namespace Amazon.CodePipeline
         /// Represents the failure of a job as returned to the pipeline by a job worker. Used
         /// for custom actions only.
         /// </summary>
-        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</param>
+        /// <param name="jobId">The unique system-generated ID of the job that failed. This is the same ID returned from <c>PollForJobs</c>.</param>
         /// <param name="failureDetails">The details about the failure of a job.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1460,7 +1460,7 @@ namespace Amazon.CodePipeline
         /// Represents the failure of a third party job as returned to the pipeline by a job worker.
         /// Used for partner actions only.
         /// </summary>
-        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</param>
+        /// <param name="jobId">The ID of the job that failed. This is the same ID returned from <c>PollForThirdPartyJobs</c>.</param>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="failureDetails">Represents information about failure details.</param>
         /// <param name="cancellationToken">
