@@ -201,9 +201,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        ///  For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling
+        ///  For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
         /// metadata in recommendations for a campaign</a>. For information about enabling metadata
-        /// for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling
+        /// for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling
         /// metadata in recommendations for a recommender</a>. 
         /// </para>
         /// </summary>
