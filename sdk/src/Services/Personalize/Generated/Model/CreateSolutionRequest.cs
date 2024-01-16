@@ -191,8 +191,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property PerformAutoML. <important> 
         /// <para>
         /// We don't recommend enabling automated machine learning. Instead, match your use case
-        /// to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
-        /// your use case.</a> 
+        /// to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+        /// a recipe</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -247,8 +247,10 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RecipeArn. 
         /// <para>
-        /// The ARN of the recipe to use for model training. This is required when <c>performAutoML</c>
-        /// is false.
+        /// The Amazon Resource Name (ARN) of the recipe to use for model training. This is required
+        /// when <c>performAutoML</c> is false. For information about different Amazon Personalize
+        /// recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing
+        /// a recipe</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

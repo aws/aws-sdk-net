@@ -44,7 +44,8 @@ namespace Amazon.Personalize.Model
         /// Whether metadata with recommendations is enabled for the recommender. If enabled,
         /// you can specify the columns from your Items dataset in your request for recommendations.
         /// Amazon Personalize returns this data for each item in the recommendation response.
-        /// 
+        /// For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling
+        /// metadata in recommendations for a recommender</a>.
         /// </para>
         ///  
         /// <para>

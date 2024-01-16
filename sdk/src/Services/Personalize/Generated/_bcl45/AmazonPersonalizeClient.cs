@@ -496,30 +496,38 @@ namespace Amazon.Personalize
         /// </para>
         ///  <important> 
         /// <para>
-        ///  A high <c>minProvisionedTPS</c> will increase your bill. We recommend starting with
+        ///  A high <c>minProvisionedTPS</c> will increase your cost. We recommend starting with
         /// 1 for <c>minProvisionedTPS</c> (the default). Track your usage using Amazon CloudWatch
         /// metrics, and increase the <c>minProvisionedTPS</c> as necessary.
         /// </para>
         ///  </important> 
         /// <para>
-        /// A transaction is a single <c>GetRecommendations</c> or <c>GetPersonalizedRanking</c>
-        /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
-        /// Personalize. The minimum provisioned TPS (<c>minProvisionedTPS</c>) specifies the
-        /// baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
-        /// charge. 
+        ///  When you create an Amazon Personalize campaign, you can specify the minimum provisioned
+        /// transactions per second (<c>minProvisionedTPS</c>) for the campaign. This is the baseline
+        /// transaction throughput for the campaign provisioned by Amazon Personalize. It sets
+        /// the minimum billing charge for the campaign while it is active. A transaction is a
+        /// single <c>GetRecommendations</c> or <c>GetPersonalizedRanking</c> request. The default
+        /// <c>minProvisionedTPS</c> is 1.
         /// </para>
         ///  
         /// <para>
-        ///  If your TPS increases beyond <c>minProvisionedTPS</c>, Amazon Personalize auto-scales
+        ///  If your TPS increases beyond the <c>minProvisionedTPS</c>, Amazon Personalize auto-scales
         /// the provisioned capacity up and down, but never below <c>minProvisionedTPS</c>. There's
         /// a short time delay while the capacity is increased that might cause loss of transactions.
+        /// When your traffic reduces, capacity returns to the <c>minProvisionedTPS</c>. 
         /// </para>
         ///  
         /// <para>
-        /// The actual TPS used is calculated as the average requests/second within a 5-minute
-        /// window. You pay for maximum of either the minimum provisioned TPS or the actual TPS.
-        /// We recommend starting with a low <c>minProvisionedTPS</c>, track your usage using
-        /// Amazon CloudWatch metrics, and then increase the <c>minProvisionedTPS</c> as necessary.
+        /// You are charged for the the minimum provisioned TPS or, if your requests exceed the
+        /// <c>minProvisionedTPS</c>, the actual TPS. The actual TPS is the total number of recommendation
+        /// requests you make. We recommend starting with a low <c>minProvisionedTPS</c>, track
+        /// your usage using Amazon CloudWatch metrics, and then increase the <c>minProvisionedTPS</c>
+        /// as necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about campaign costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+        /// Personalize pricing</a>.
         /// </para>
         ///  
         /// <para>
@@ -615,30 +623,38 @@ namespace Amazon.Personalize
         /// </para>
         ///  <important> 
         /// <para>
-        ///  A high <c>minProvisionedTPS</c> will increase your bill. We recommend starting with
+        ///  A high <c>minProvisionedTPS</c> will increase your cost. We recommend starting with
         /// 1 for <c>minProvisionedTPS</c> (the default). Track your usage using Amazon CloudWatch
         /// metrics, and increase the <c>minProvisionedTPS</c> as necessary.
         /// </para>
         ///  </important> 
         /// <para>
-        /// A transaction is a single <c>GetRecommendations</c> or <c>GetPersonalizedRanking</c>
-        /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
-        /// Personalize. The minimum provisioned TPS (<c>minProvisionedTPS</c>) specifies the
-        /// baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
-        /// charge. 
+        ///  When you create an Amazon Personalize campaign, you can specify the minimum provisioned
+        /// transactions per second (<c>minProvisionedTPS</c>) for the campaign. This is the baseline
+        /// transaction throughput for the campaign provisioned by Amazon Personalize. It sets
+        /// the minimum billing charge for the campaign while it is active. A transaction is a
+        /// single <c>GetRecommendations</c> or <c>GetPersonalizedRanking</c> request. The default
+        /// <c>minProvisionedTPS</c> is 1.
         /// </para>
         ///  
         /// <para>
-        ///  If your TPS increases beyond <c>minProvisionedTPS</c>, Amazon Personalize auto-scales
+        ///  If your TPS increases beyond the <c>minProvisionedTPS</c>, Amazon Personalize auto-scales
         /// the provisioned capacity up and down, but never below <c>minProvisionedTPS</c>. There's
         /// a short time delay while the capacity is increased that might cause loss of transactions.
+        /// When your traffic reduces, capacity returns to the <c>minProvisionedTPS</c>. 
         /// </para>
         ///  
         /// <para>
-        /// The actual TPS used is calculated as the average requests/second within a 5-minute
-        /// window. You pay for maximum of either the minimum provisioned TPS or the actual TPS.
-        /// We recommend starting with a low <c>minProvisionedTPS</c>, track your usage using
-        /// Amazon CloudWatch metrics, and then increase the <c>minProvisionedTPS</c> as necessary.
+        /// You are charged for the the minimum provisioned TPS or, if your requests exceed the
+        /// <c>minProvisionedTPS</c>, the actual TPS. The actual TPS is the total number of recommendation
+        /// requests you make. We recommend starting with a low <c>minProvisionedTPS</c>, track
+        /// your usage using Amazon CloudWatch metrics, and then increase the <c>minProvisionedTPS</c>
+        /// as necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about campaign costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
+        /// Personalize pricing</a>.
         /// </para>
         ///  
         /// <para>
