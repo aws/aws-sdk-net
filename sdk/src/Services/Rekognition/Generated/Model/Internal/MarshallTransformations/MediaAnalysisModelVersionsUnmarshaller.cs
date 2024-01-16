@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModerationLabel Object
+    /// Response Unmarshaller for MediaAnalysisModelVersions Object
     /// </summary>  
-    public class ModerationLabelUnmarshaller : IUnmarshaller<ModerationLabel, XmlUnmarshallerContext>, IUnmarshaller<ModerationLabel, JsonUnmarshallerContext>
+    public class MediaAnalysisModelVersionsUnmarshaller : IUnmarshaller<MediaAnalysisModelVersions, XmlUnmarshallerContext>, IUnmarshaller<MediaAnalysisModelVersions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ModerationLabel IUnmarshaller<ModerationLabel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MediaAnalysisModelVersions IUnmarshaller<MediaAnalysisModelVersions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ModerationLabel Unmarshall(JsonUnmarshallerContext context)
+        public MediaAnalysisModelVersions Unmarshall(JsonUnmarshallerContext context)
         {
-            ModerationLabel unmarshalledObject = new ModerationLabel();
+            MediaAnalysisModelVersions unmarshalledObject = new MediaAnalysisModelVersions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,10 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Confidence", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Moderation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ParentName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParentName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TaxonomyLevel", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TaxonomyLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Moderation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +74,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static ModerationLabelUnmarshaller _instance = new ModerationLabelUnmarshaller();        
+        private static MediaAnalysisModelVersionsUnmarshaller _instance = new MediaAnalysisModelVersionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModerationLabelUnmarshaller Instance
+        public static MediaAnalysisModelVersionsUnmarshaller Instance
         {
             get
             {

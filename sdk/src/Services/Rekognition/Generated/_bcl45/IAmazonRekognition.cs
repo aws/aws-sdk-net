@@ -119,12 +119,22 @@ namespace Amazon.Rekognition
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html">GetMediaAnalysisJob</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html">ListCollections</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJob.html">ListMediaAnalysisJob</a>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -160,6 +170,11 @@ namespace Amazon.Rekognition
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartMediaAnalysisJob.html">StartMediaAnalysisJob</a>
     /// 
     /// </para>
     ///  </li> </ul> 
@@ -3189,7 +3204,9 @@ namespace Amazon.Rekognition
         /// object in an array (<c>CustomLabels</c>). Each <c>CustomLabel</c> object provides
         /// the label name (<c>Name</c>), the level of confidence that the image contains the
         /// object (<c>Confidence</c>), and object location information, if it exists, for the
-        /// label on the image (<c>Geometry</c>). 
+        /// label on the image (<c>Geometry</c>). Note that for the <c>DetectCustomLabelsLabels</c>
+        /// operation, <c>Polygons</c> are not returned in the <c>Geometry</c> section of the
+        /// response.
         /// </para>
         ///  
         /// <para>
@@ -3301,7 +3318,9 @@ namespace Amazon.Rekognition
         /// object in an array (<c>CustomLabels</c>). Each <c>CustomLabel</c> object provides
         /// the label name (<c>Name</c>), the level of confidence that the image contains the
         /// object (<c>Confidence</c>), and object location information, if it exists, for the
-        /// label on the image (<c>Geometry</c>). 
+        /// label on the image (<c>Geometry</c>). Note that for the <c>DetectCustomLabelsLabels</c>
+        /// operation, <c>Polygons</c> are not returned in the <c>Geometry</c> section of the
+        /// response.
         /// </para>
         ///  
         /// <para>

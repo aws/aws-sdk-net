@@ -40,8 +40,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property AssociatedFaces. 
         /// <para>
-        /// An array of AssociatedFace objects containing FaceIDs that are successfully associated
-        /// with the UserID is returned. Returned if the AssociateFaces action is successful.
+        /// An array of AssociatedFace objects containing FaceIDs that have been successfully
+        /// associated with the UserID. Returned if the AssociateFaces action is successful.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

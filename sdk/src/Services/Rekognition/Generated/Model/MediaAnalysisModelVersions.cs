@@ -29,44 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Contains the results for a media analysis job created with StartMediaAnalysisJob.
+    /// Object containing information about the model versions of selected features in a given
+    /// job.
     /// </summary>
-    public partial class MediaAnalysisResults
+    public partial class MediaAnalysisModelVersions
     {
-        private MediaAnalysisModelVersions _modelVersions;
-        private S3Object _s3Object;
+        private string _moderation;
 
         /// <summary>
-        /// Gets and sets the property ModelVersions. 
+        /// Gets and sets the property Moderation. 
         /// <para>
-        /// Information about the model versions for the features selected in a given job.
+        /// The Moderation base model version.
         /// </para>
         /// </summary>
-        public MediaAnalysisModelVersions ModelVersions
+        public string Moderation
         {
-            get { return this._modelVersions; }
-            set { this._modelVersions = value; }
+            get { return this._moderation; }
+            set { this._moderation = value; }
         }
 
-        // Check to see if ModelVersions property is set
-        internal bool IsSetModelVersions()
+        // Check to see if Moderation property is set
+        internal bool IsSetModeration()
         {
-            return this._modelVersions != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3Object.
-        /// </summary>
-        public S3Object S3Object
-        {
-            get { return this._s3Object; }
-            set { this._s3Object = value; }
-        }
-
-        // Check to see if S3Object property is set
-        internal bool IsSetS3Object()
-        {
-            return this._s3Object != null;
+            return this._moderation != null;
         }
 
     }

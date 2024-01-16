@@ -39,6 +39,7 @@ namespace Amazon.Rekognition.Model
         private float? _confidence;
         private string _name;
         private string _parentName;
+        private int? _taxonomyLevel;
 
         /// <summary>
         /// Gets and sets the property Confidence. 
@@ -100,6 +101,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetParentName()
         {
             return this._parentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxonomyLevel. 
+        /// <para>
+        /// The level of the moderation label with regard to its taxonomy, from 1 to 3.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int TaxonomyLevel
+        {
+            get { return this._taxonomyLevel.GetValueOrDefault(); }
+            set { this._taxonomyLevel = value; }
+        }
+
+        // Check to see if TaxonomyLevel property is set
+        internal bool IsSetTaxonomyLevel()
+        {
+            return this._taxonomyLevel.HasValue; 
         }
 
     }

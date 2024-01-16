@@ -29,44 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Contains the results for a media analysis job created with StartMediaAnalysisJob.
+    /// Contains information regarding the confidence and name of a detected content type.
     /// </summary>
-    public partial class MediaAnalysisResults
+    public partial class ContentType
     {
-        private MediaAnalysisModelVersions _modelVersions;
-        private S3Object _s3Object;
+        private float? _confidence;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property ModelVersions. 
+        /// Gets and sets the property Confidence. 
         /// <para>
-        /// Information about the model versions for the features selected in a given job.
+        /// The confidence level of the label given
         /// </para>
         /// </summary>
-        public MediaAnalysisModelVersions ModelVersions
+        [AWSProperty(Min=0, Max=100)]
+        public float Confidence
         {
-            get { return this._modelVersions; }
-            set { this._modelVersions = value; }
+            get { return this._confidence.GetValueOrDefault(); }
+            set { this._confidence = value; }
         }
 
-        // Check to see if ModelVersions property is set
-        internal bool IsSetModelVersions()
+        // Check to see if Confidence property is set
+        internal bool IsSetConfidence()
         {
-            return this._modelVersions != null;
+            return this._confidence.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property S3Object.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the label
+        /// </para>
         /// </summary>
-        public S3Object S3Object
+        public string Name
         {
-            get { return this._s3Object; }
-            set { this._s3Object = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if S3Object property is set
-        internal bool IsSetS3Object()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._s3Object != null;
+            return this._name != null;
         }
 
     }

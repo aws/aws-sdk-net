@@ -1301,6 +1301,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.ContentType.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CoversBodyPart.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -1633,6 +1638,10 @@
     <property>Amazon.Rekognition.Model.ModerationLabel.Confidence</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ModerationLabel.TaxonomyLevel</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.MouthOpen.Confidence</property>

@@ -63,6 +63,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ModelVersions", targetDepth))
+                {
+                    var unmarshaller = MediaAnalysisModelVersionsUnmarshaller.Instance;
+                    unmarshalledObject.ModelVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Object", targetDepth))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;

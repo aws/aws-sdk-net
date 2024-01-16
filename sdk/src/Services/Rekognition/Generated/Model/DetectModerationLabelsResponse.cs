@@ -33,10 +33,31 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectModerationLabelsResponse : AmazonWebServiceResponse
     {
+        private List<ContentType> _contentTypes = new List<ContentType>();
         private HumanLoopActivationOutput _humanLoopActivationOutput;
         private List<ModerationLabel> _moderationLabels = new List<ModerationLabel>();
         private string _moderationModelVersion;
         private string _projectVersion;
+
+        /// <summary>
+        /// Gets and sets the property ContentTypes. 
+        /// <para>
+        /// A list of predicted results for the type of content an image contains. For example,
+        /// the image content might be from animation, sports, or a video game.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<ContentType> ContentTypes
+        {
+            get { return this._contentTypes; }
+            set { this._contentTypes = value; }
+        }
+
+        // Check to see if ContentTypes property is set
+        internal bool IsSetContentTypes()
+        {
+            return this._contentTypes != null && this._contentTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property HumanLoopActivationOutput. 
