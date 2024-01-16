@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExportKeyMaterial Marshaller
+    /// ImportKeyCryptogram Marshaller
     /// </summary>
-    public class ExportKeyMaterialMarshaller : IRequestMarshaller<ExportKeyMaterial, JsonMarshallerContext> 
+    public class ImportKeyCryptogramMarshaller : IRequestMarshaller<ImportKeyCryptogram, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,41 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExportKeyMaterial requestObject, JsonMarshallerContext context)
+        public void Marshall(ImportKeyCryptogram requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetKeyCryptogram())
+            if(requestObject.IsSetExportable())
             {
-                context.Writer.WritePropertyName("KeyCryptogram");
+                context.Writer.WritePropertyName("Exportable");
+                context.Writer.Write(requestObject.Exportable);
+            }
+
+            if(requestObject.IsSetImportToken())
+            {
+                context.Writer.WritePropertyName("ImportToken");
+                context.Writer.Write(requestObject.ImportToken);
+            }
+
+            if(requestObject.IsSetKeyAttributes())
+            {
+                context.Writer.WritePropertyName("KeyAttributes");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ExportKeyCryptogramMarshaller.Instance;
-                marshaller.Marshall(requestObject.KeyCryptogram, context);
+                var marshaller = KeyAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.KeyAttributes, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetTr31KeyBlock())
+            if(requestObject.IsSetWrappedKeyCryptogram())
             {
-                context.Writer.WritePropertyName("Tr31KeyBlock");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ExportTr31KeyBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Tr31KeyBlock, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("WrappedKeyCryptogram");
+                context.Writer.Write(requestObject.WrappedKeyCryptogram);
             }
 
-            if(requestObject.IsSetTr34KeyBlock())
+            if(requestObject.IsSetWrappingSpec())
             {
-                context.Writer.WritePropertyName("Tr34KeyBlock");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ExportTr34KeyBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Tr34KeyBlock, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("WrappingSpec");
+                context.Writer.Write(requestObject.WrappingSpec);
             }
 
         }
@@ -83,7 +85,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ExportKeyMaterialMarshaller Instance = new ExportKeyMaterialMarshaller();
+        public readonly static ImportKeyCryptogramMarshaller Instance = new ImportKeyCryptogramMarshaller();
 
     }
 }

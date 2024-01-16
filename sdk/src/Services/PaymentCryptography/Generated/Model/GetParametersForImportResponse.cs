@@ -82,7 +82,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyAlgorithm. 
         /// <para>
-        /// The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.
+        /// The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

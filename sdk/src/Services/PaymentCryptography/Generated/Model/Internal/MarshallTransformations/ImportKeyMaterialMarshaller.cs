@@ -45,6 +45,17 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImportKeyMaterial requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetKeyCryptogram())
+            {
+                context.Writer.WritePropertyName("KeyCryptogram");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImportKeyCryptogramMarshaller.Instance;
+                marshaller.Marshall(requestObject.KeyCryptogram, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRootCertificatePublicKey())
             {
                 context.Writer.WritePropertyName("RootCertificatePublicKey");

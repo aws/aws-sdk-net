@@ -30,14 +30,34 @@ namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
     /// Parameter information for key material import into Amazon Web Services Payment Cryptography
-    /// using TR-31 or TR-34 key exchange method.
+    /// using TR-31 or TR-34 or RSA wrap and unwrap key exchange method.
     /// </summary>
     public partial class ImportKeyMaterial
     {
+        private ImportKeyCryptogram _keyCryptogram;
         private RootCertificatePublicKey _rootCertificatePublicKey;
         private ImportTr31KeyBlock _tr31KeyBlock;
         private ImportTr34KeyBlock _tr34KeyBlock;
         private TrustedCertificatePublicKey _trustedCertificatePublicKey;
+
+        /// <summary>
+        /// Gets and sets the property KeyCryptogram. 
+        /// <para>
+        /// Parameter information for key material import using asymmetric RSA wrap and unwrap
+        /// key exchange method.
+        /// </para>
+        /// </summary>
+        public ImportKeyCryptogram KeyCryptogram
+        {
+            get { return this._keyCryptogram; }
+            set { this._keyCryptogram = value; }
+        }
+
+        // Check to see if KeyCryptogram property is set
+        internal bool IsSetKeyCryptogram()
+        {
+            return this._keyCryptogram != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RootCertificatePublicKey. 

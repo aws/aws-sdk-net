@@ -39,7 +39,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property WrappedKey. 
         /// <para>
         /// The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.
-        /// 
+        /// or a RSA WrappedKeyCryptogram.
         /// </para>
         /// </summary>
         public WrappedKey WrappedKey

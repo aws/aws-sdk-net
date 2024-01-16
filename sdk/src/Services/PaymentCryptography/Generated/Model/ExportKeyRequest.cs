@@ -45,17 +45,20 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// For symmetric key exchange, Amazon Web Services Payment Cryptography uses the ANSI
     /// X9 TR-31 norm in accordance with PCI PIN guidelines. And for asymmetric key exchange,
-    /// Amazon Web Services Payment Cryptography supports ANSI X9 TR-34 norm . Asymmetric
-    /// key exchange methods are typically used to establish bi-directional trust between
-    /// the two parties exhanging keys and are used for initial key exchange such as Key Encryption
-    /// Key (KEK). After which you can export working keys using symmetric method to perform
-    /// various cryptographic operations within Amazon Web Services Payment Cryptography.
+    /// Amazon Web Services Payment Cryptography supports ANSI X9 TR-34 norm and RSA wrap
+    /// and unwrap key exchange mechanism. Asymmetric key exchange methods are typically used
+    /// to establish bi-directional trust between the two parties exhanging keys and are used
+    /// for initial key exchange such as Key Encryption Key (KEK). After which you can export
+    /// working keys using symmetric method to perform various cryptographic operations within
+    /// Amazon Web Services Payment Cryptography.
     /// </para>
     ///  
     /// <para>
     /// The TR-34 norm is intended for exchanging 3DES keys only and keys are imported in
     /// a WrappedKeyBlock format. Key attributes (such as KeyUsage, KeyAlgorithm, KeyModesOfUse,
-    /// Exportability) are contained within the key block.
+    /// Exportability) are contained within the key block. With RSA wrap and unwrap, you can
+    /// exchange both 3DES and AES-128 keys. The keys are imported in a WrappedKeyCryptogram
+    /// format and you will need to specify the key attributes during import. 
     /// </para>
     ///  
     /// <para>
@@ -68,7 +71,7 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>To export KEK or IPEK using TR-34</b> 
+    ///  <b>To export initial keys (KEK) or IPEK using TR-34</b> 
     /// </para>
     ///  
     /// <para>
@@ -145,7 +148,44 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>To export WK (Working Key) or IPEK using TR-31</b> 
+    ///  <b>To export initial keys (KEK) or IPEK using RSA Wrap and Unwrap</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Using this operation, you can export initial key using asymmetric RSA wrap and unwrap
+    /// key exchange method. To initiate export, generate an asymmetric key pair on the receiving
+    /// HSM and obtain the public key certificate in PEM format (base64 encoded) for the purpose
+    /// of wrapping and the root certifiate chain. Import the root certificate into Amazon
+    /// Web Services Payment Cryptography by calling <a>ImportKey</a> for <c>RootCertificatePublicKey</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Next call <c>ExportKey</c> and set the following parameters:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>CertificateAuthorityPublicKeyIdentifier</c>: The <c>KeyARN</c> of the certificate
+    /// chain that signed wrapping key certificate.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>KeyMaterial</c>: Set to <c>KeyCryptogram</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>WrappingKeyCertificate</c>: The public key certificate in PEM format (base64 encoded)
+    /// obtained by the receiving HSM and signed by the root certificate (CertificateAuthorityPublicKeyIdentifier)
+    /// imported into Amazon Web Services Payment Cryptography. The receiving HSM uses its
+    /// private key component to unwrap the WrappedKeyCryptogram.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// When this operation is successful, Amazon Web Services Payment Cryptography returns
+    /// the WrappedKeyCryptogram. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>To export working keys or IPEK using TR-31</b> 
     /// </para>
     ///  
     /// <para>
@@ -175,7 +215,7 @@ namespace Amazon.PaymentCryptography.Model
     ///  </li> </ul> 
     /// <para>
     /// When this operation is successful, Amazon Web Services Payment Cryptography returns
-    /// the WK or IPEK as a TR-31 WrappedKeyBlock.
+    /// the working key or IPEK as a TR-31 WrappedKeyBlock.
     /// </para>
     ///  
     /// <para>
