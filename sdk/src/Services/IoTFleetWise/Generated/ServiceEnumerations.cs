@@ -1089,6 +1089,72 @@ namespace Amazon.IoTFleetWise
 
 
     /// <summary>
+    /// Constants used for properties of type SignalNodeType.
+    /// </summary>
+    public class SignalNodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTUATOR for SignalNodeType
+        /// </summary>
+        public static readonly SignalNodeType ACTUATOR = new SignalNodeType("ACTUATOR");
+        /// <summary>
+        /// Constant ATTRIBUTE for SignalNodeType
+        /// </summary>
+        public static readonly SignalNodeType ATTRIBUTE = new SignalNodeType("ATTRIBUTE");
+        /// <summary>
+        /// Constant BRANCH for SignalNodeType
+        /// </summary>
+        public static readonly SignalNodeType BRANCH = new SignalNodeType("BRANCH");
+        /// <summary>
+        /// Constant CUSTOM_PROPERTY for SignalNodeType
+        /// </summary>
+        public static readonly SignalNodeType CUSTOM_PROPERTY = new SignalNodeType("CUSTOM_PROPERTY");
+        /// <summary>
+        /// Constant CUSTOM_STRUCT for SignalNodeType
+        /// </summary>
+        public static readonly SignalNodeType CUSTOM_STRUCT = new SignalNodeType("CUSTOM_STRUCT");
+        /// <summary>
+        /// Constant SENSOR for SignalNodeType
+        /// </summary>
+        public static readonly SignalNodeType SENSOR = new SignalNodeType("SENSOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SignalNodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SignalNodeType FindValue(string value)
+        {
+            return FindValue<SignalNodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SignalNodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SpoolingMode.
     /// </summary>
     public class SpoolingMode : ConstantClass

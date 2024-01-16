@@ -44,6 +44,7 @@ namespace Amazon.IoTFleetWise.Model
         private int? _maxResults;
         private string _name;
         private string _nextToken;
+        private SignalNodeType _signalNodeType;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -108,6 +109,24 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignalNodeType. 
+        /// <para>
+        /// The type of node in the signal catalog.
+        /// </para>
+        /// </summary>
+        public SignalNodeType SignalNodeType
+        {
+            get { return this._signalNodeType; }
+            set { this._signalNodeType = value; }
+        }
+
+        // Check to see if SignalNodeType property is set
+        internal bool IsSetSignalNodeType()
+        {
+            return this._signalNodeType != null;
         }
 
     }

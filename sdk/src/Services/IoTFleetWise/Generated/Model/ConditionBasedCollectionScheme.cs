@@ -61,7 +61,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// The logical expression used to recognize what data to collect. For example, <c>$variable.Vehicle.OutsideAirTemperature
+        /// The logical expression used to recognize what data to collect. For example, <c>$variable.`Vehicle.OutsideAirTemperature`
         /// &gt;= 105.0</c>.
         /// </para>
         /// </summary>

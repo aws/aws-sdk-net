@@ -85,6 +85,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSignalNodeType())
+                {
+                    context.Writer.WritePropertyName("signalNodeType");
+                    context.Writer.Write(publicRequest.SignalNodeType);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

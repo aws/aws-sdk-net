@@ -39,6 +39,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class VehicleSummary
     {
         private string _arn;
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private DateTime? _creationTime;
         private string _decoderManifestArn;
         private DateTime? _lastModificationTime;
@@ -62,6 +63,28 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// Static information about a vehicle in a key-value pair. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"engineType"</c> : <c>"1.3 L R2"</c> 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
         }
 
         /// <summary>
