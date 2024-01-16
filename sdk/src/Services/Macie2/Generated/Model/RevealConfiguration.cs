@@ -69,12 +69,20 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the configuration for the Amazon Macie account. In a request, valid
+        /// The status of the configuration for the Amazon Macie account. In a response, possible
+        /// values are: ENABLED, the configuration is currently enabled for the account; and,
+        /// DISABLED, the configuration is currently disabled for the account. In a request, valid
         /// values are: ENABLED, enable the configuration for the account; and, DISABLED, disable
-        /// the configuration for the account. In a response, possible values are: ENABLED, the
-        /// configuration is currently enabled for the account; and, DISABLED, the configuration
-        /// is currently disabled for the account.
+        /// the configuration for the account.
         /// </para>
+        ///  <important>
+        /// <para>
+        /// If you disable the configuration, you also permanently delete current settings that
+        /// specify how to access affected S3 objects. If your current access method is ASSUME_ROLE,
+        /// Macie also deletes the external ID and role name currently specified for the configuration.
+        /// These settings can't be recovered after they're deleted.
+        /// </para>
+        /// </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public RevealStatus Status

@@ -691,6 +691,10 @@ namespace Amazon.Macie2
         /// </summary>
         public static readonly EncryptionType AwsKms = new EncryptionType("aws:kms");
         /// <summary>
+        /// Constant AwsKmsDsse for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType AwsKmsDsse = new EncryptionType("aws:kms:dsse");
+        /// <summary>
         /// Constant NONE for EncryptionType
         /// </summary>
         public static readonly EncryptionType NONE = new EncryptionType("NONE");
@@ -2730,6 +2734,10 @@ namespace Amazon.Macie2
         /// Constant AwsKms for Type
         /// </summary>
         public static readonly Type AwsKms = new Type("aws:kms");
+        /// <summary>
+        /// Constant AwsKmsDsse for Type
+        /// </summary>
+        public static readonly Type AwsKmsDsse = new Type("aws:kms:dsse");
         /// <summary>
         /// Constant NONE for Type
         /// </summary>

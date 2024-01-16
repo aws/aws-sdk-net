@@ -73,8 +73,9 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// INVALID_CLASSIFICATION_RESULT - There isn't a corresponding sensitive data discovery
         /// result for the finding. Or the corresponding sensitive data discovery result isn't
-        /// available, is malformed or corrupted, or uses an unsupported storage format. Macie
-        /// can't verify the location of the sensitive data to retrieve.
+        /// available in the current Amazon Web Services Region, is malformed or corrupted, or
+        /// uses an unsupported storage format. Macie can't verify the location of the sensitive
+        /// data to retrieve.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -85,11 +86,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// MEMBER_ROLE_TOO_PERMISSIVE - The affected member account is configured to retrieve
-        /// occurrences of sensitive data by using an IAM role whose trust or permissions policy
-        /// doesn't meet Macie requirements for restricting access to the role. Or the role's
-        /// trust policy doesn't specify the correct external ID. Macie can't assume the role
-        /// to retrieve the sensitive data.
+        /// MEMBER_ROLE_TOO_PERMISSIVE - The trust or permissions policy for the IAM role in the
+        /// affected member account doesn't meet Macie requirements for restricting access to
+        /// the role. Or the role's trust policy doesn't specify the correct external ID for your
+        /// organization. Macie can't assume the role to retrieve the sensitive data.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -106,7 +106,8 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object was renamed,
-        /// moved, or deleted. Or the object was changed after Macie created the finding.
+        /// moved, deleted, or changed after Macie created the finding. Or the object is encrypted
+        /// with an KMS key that's currently disabled.
         /// </para>
         /// </li> <li>
         /// <para>

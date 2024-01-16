@@ -42,14 +42,16 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ExternalId. 
         /// <para>
         /// The external ID to specify in the trust policy for the IAM role to assume when retrieving
-        /// sensitive data from affected S3 objects (roleName). The trust policy must include
-        /// an sts:ExternalId condition that requires this ID.
+        /// sensitive data from affected S3 objects (roleName). This value is null if the value
+        /// for retrievalMode is CALLER_CREDENTIALS.
         /// </para>
         ///  
         /// <para>
         /// This ID is a unique alphanumeric string that Amazon Macie generates automatically
-        /// after you configure it to assume a role. This value is null if the value for retrievalMode
-        /// is CALLER_CREDENTIALS.
+        /// after you configure it to assume an IAM role. For a Macie administrator to retrieve
+        /// sensitive data from an affected S3 object for a member account, the trust policy for
+        /// the role in the member account must include an sts:ExternalId condition that requires
+        /// this ID.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -67,7 +69,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property RetrievalMode. 
         /// <para>
-        /// The access method that's used when retrieving sensitive data from affected S3 objects.
+        /// The access method that's used to retrieve sensitive data from affected S3 objects.
         /// Valid values are: ASSUME_ROLE, assume an IAM role that is in the affected Amazon Web
         /// Services account and delegates access to Amazon Macie (roleName); and, CALLER_CREDENTIALS,
         /// use the credentials of the IAM user who requests the sensitive data.

@@ -58,7 +58,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property RetrievalConfiguration. 
         /// <para>
-        /// The access method and settings to use to retrieve the sensitive data.
+        /// The access method and settings to use when retrieving the sensitive data.
         /// </para>
         /// </summary>
         public RetrievalConfiguration RetrievalConfiguration

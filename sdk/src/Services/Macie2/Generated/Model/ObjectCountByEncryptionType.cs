@@ -43,8 +43,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property CustomerManaged. 
         /// <para>
-        /// The total number of objects that are encrypted with a customer-provided key. The objects
-        /// use customer-provided server-side encryption (SSE-C).
+        /// The total number of objects that are encrypted with customer-provided keys. The objects
+        /// use server-side encryption with customer-provided keys (SSE-C).
         /// </para>
         /// </summary>
         public long CustomerManaged
@@ -62,8 +62,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property KmsManaged. 
         /// <para>
-        /// The total number of objects that are encrypted with an KMS key, either an Amazon Web
-        /// Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).
+        /// The total number of objects that are encrypted with KMS keys, either Amazon Web Services
+        /// managed keys or customer managed keys. The objects use dual-layer server-side encryption
+        /// or server-side encryption with KMS keys (DSSE-KMS or SSE-KMS).
         /// </para>
         /// </summary>
         public long KmsManaged
@@ -81,8 +82,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Managed. 
         /// <para>
-        /// The total number of objects that are encrypted with an Amazon S3 managed key. The
-        /// objects use Amazon S3 managed encryption (SSE-S3).
+        /// The total number of objects that are encrypted with Amazon S3 managed keys. The objects
+        /// use server-side encryption with Amazon S3 managed keys (SSE-S3).
         /// </para>
         /// </summary>
         public long S3Managed
