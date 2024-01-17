@@ -1,3 +1,9 @@
+### 3.7.728.0 (2024-01-17 19:16 UTC)
+* DynamoDBv2 (3.7.300.38)
+	* Updating note for enabling streams for UpdateTable.
+* Keyspaces (3.7.301.0)
+	* This release adds support for Multi-Region Replication with provisioned tables, and Keyspaces auto scaling APIs
+
 ### 3.7.727.0 (2024-01-16 19:23 UTC)
 * IoT (3.7.305.0)
 	* Revert release of LogTargetTypes
