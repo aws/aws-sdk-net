@@ -316,11 +316,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the CreateKeyspace service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -368,11 +368,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the CreateKeyspace service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -423,11 +423,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the CreateTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -481,11 +481,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the CreateTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -526,11 +526,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the DeleteKeyspace service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -570,11 +570,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the DeleteKeyspace service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -621,11 +621,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the DeleteTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -671,11 +671,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the DeleteTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -716,7 +716,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the GetKeyspace service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -755,7 +755,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the GetKeyspace service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -802,7 +802,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the GetTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -848,7 +848,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the GetTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -878,6 +878,107 @@ namespace Amazon.Keyspaces
 
         #endregion
         
+        #region  GetTableAutoScalingSettings
+
+
+        /// <summary>
+        /// Returns auto scaling related settings of the specified table in JSON format. If the
+        /// table is a multi-Region table, the Amazon Web Services Region specific auto scaling
+        /// settings of the table are included.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Keyspaces auto scaling helps you provision throughput capacity for variable
+        /// workloads efficiently by increasing and decreasing your table's read and write capacity
+        /// automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+        /// throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon
+        /// Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableAutoScalingSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetTableAutoScalingSettings service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings">REST API Reference for GetTableAutoScalingSettings Operation</seealso>
+        public virtual GetTableAutoScalingSettingsResponse GetTableAutoScalingSettings(GetTableAutoScalingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableAutoScalingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableAutoScalingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTableAutoScalingSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns auto scaling related settings of the specified table in JSON format. If the
+        /// table is a multi-Region table, the Amazon Web Services Region specific auto scaling
+        /// settings of the table are included.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Keyspaces auto scaling helps you provision throughput capacity for variable
+        /// workloads efficiently by increasing and decreasing your table's read and write capacity
+        /// automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+        /// throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon
+        /// Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTableAutoScalingSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTableAutoScalingSettings service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings">REST API Reference for GetTableAutoScalingSettings Operation</seealso>
+        public virtual Task<GetTableAutoScalingSettingsResponse> GetTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTableAutoScalingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTableAutoScalingSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTableAutoScalingSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListKeyspaces
 
 
@@ -888,7 +989,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the ListKeyspaces service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -927,7 +1028,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the ListKeyspaces service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -967,7 +1068,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the ListTables service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -1006,7 +1107,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the ListTables service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -1046,7 +1147,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -1085,7 +1186,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -1119,7 +1220,7 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Restores the specified table to the specified point in time within the <c>earliest_restorable_timestamp</c>
+        /// Restores the table to the specified point in time within the <c>earliest_restorable_timestamp</c>
         /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
         /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// 
@@ -1138,10 +1239,10 @@ namespace Amazon.Keyspaces
         ///  
         /// <para>
         /// In addition to the table's schema, data, and TTL settings, <c>RestoreTable</c> restores
-        /// the capacity mode, encryption, and point-in-time recovery settings from the source
-        /// table. Unlike the table's schema data and TTL settings, which are restored based on
-        /// the selected timestamp, these settings are always restored based on the table's settings
-        /// as of the current time or when the table was deleted.
+        /// the capacity mode, auto scaling settings, encryption settings, and point-in-time recovery
+        /// settings from the source table. Unlike the table's schema data and TTL settings, which
+        /// are restored based on the selected timestamp, these settings are always restored based
+        /// on the table's settings as of the current time or when the table was deleted.
         /// </para>
         ///  
         /// <para>
@@ -1153,7 +1254,11 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned throughput capacity settings
+        /// Provisioned throughput capacity units
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Auto scaling settings
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1175,10 +1280,6 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Automatic scaling policies (for tables that use provisioned capacity mode)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Identity and Access Management (IAM) policies
         /// </para>
         ///  </li> <li> 
@@ -1191,11 +1292,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the RestoreTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -1226,7 +1327,7 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Restores the specified table to the specified point in time within the <c>earliest_restorable_timestamp</c>
+        /// Restores the table to the specified point in time within the <c>earliest_restorable_timestamp</c>
         /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
         /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// 
@@ -1245,10 +1346,10 @@ namespace Amazon.Keyspaces
         ///  
         /// <para>
         /// In addition to the table's schema, data, and TTL settings, <c>RestoreTable</c> restores
-        /// the capacity mode, encryption, and point-in-time recovery settings from the source
-        /// table. Unlike the table's schema data and TTL settings, which are restored based on
-        /// the selected timestamp, these settings are always restored based on the table's settings
-        /// as of the current time or when the table was deleted.
+        /// the capacity mode, auto scaling settings, encryption settings, and point-in-time recovery
+        /// settings from the source table. Unlike the table's schema data and TTL settings, which
+        /// are restored based on the selected timestamp, these settings are always restored based
+        /// on the table's settings as of the current time or when the table was deleted.
         /// </para>
         ///  
         /// <para>
@@ -1260,7 +1361,11 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned throughput capacity settings
+        /// Provisioned throughput capacity units
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Auto scaling settings
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1282,10 +1387,6 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Automatic scaling policies (for tables that use provisioned capacity mode)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Identity and Access Management (IAM) policies
         /// </para>
         ///  </li> <li> 
@@ -1301,11 +1402,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the RestoreTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -1357,7 +1458,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the TagResource service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -1407,7 +1508,7 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the TagResource service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
@@ -1447,11 +1548,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -1491,11 +1592,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -1531,18 +1632,18 @@ namespace Amazon.Keyspaces
 
         /// <summary>
         /// Adds new columns to the table or updates one of the table's settings, for example
-        /// capacity mode, encryption, point-in-time recovery, or ttl settings. Note that you
-        /// can only update one specific table setting per update operation.
+        /// capacity mode, auto scaling, encryption, point-in-time recovery, or ttl settings.
+        /// Note that you can only update one specific table setting per update operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>
         /// 
         /// <returns>The response from the UpdateTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
@@ -1574,8 +1675,8 @@ namespace Amazon.Keyspaces
 
         /// <summary>
         /// Adds new columns to the table or updates one of the table's settings, for example
-        /// capacity mode, encryption, point-in-time recovery, or ttl settings. Note that you
-        /// can only update one specific table setting per update operation.
+        /// capacity mode, auto scaling, encryption, point-in-time recovery, or ttl settings.
+        /// Note that you can only update one specific table setting per update operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>
         /// <param name="cancellationToken">
@@ -1584,11 +1685,11 @@ namespace Amazon.Keyspaces
         /// 
         /// <returns>The response from the UpdateTable service method, as returned by Keyspaces.</returns>
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You don't have sufficient access permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
-        /// Amazon Keyspaces could not complete the requested action. This error may occur if
-        /// you try to perform an action and the same or a different action is already in progress,
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
         /// or if you try to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">

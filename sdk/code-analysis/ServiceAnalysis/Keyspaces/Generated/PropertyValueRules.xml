@@ -14,7 +14,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CreateTableRequest.DefaultTimeToLive</property>
-    <min>1</min>
+    <min>0</min>
     <max>630720000</max>
   </property-value-rule>
   <property-value-rule>
@@ -90,7 +90,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableResponse.DefaultTimeToLive</property>
-    <min>1</min>
+    <min>0</min>
     <max>630720000</max>
   </property-value-rule>
   <property-value-rule>
@@ -107,6 +107,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.GetTableResponse.TableName</property>
+    <min>1</min>
+    <max>48</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsRequest.KeyspaceName</property>
+    <min>1</min>
+    <max>48</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsRequest.TableName</property>
+    <min>1</min>
+    <max>48</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsResponse.KeyspaceName</property>
+    <min>1</min>
+    <max>48</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsResponse.ResourceArn</property>
+    <min>20</min>
+    <max>1000</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.GetTableAutoScalingSettingsResponse.TableName</property>
     <min>1</min>
     <max>48</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_]{0,47}</pattern>
@@ -212,7 +242,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.UpdateTableRequest.DefaultTimeToLive</property>
-    <min>1</min>
+    <min>0</min>
     <max>630720000</max>
   </property-value-rule>
   <property-value-rule>
@@ -232,6 +262,14 @@
     <min>20</min>
     <max>1000</max>
     <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.AutoScalingSettings.MaximumUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.AutoScalingSettings.MinimumUnits</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.CapacitySpecification.ReadCapacityUnits</property>
@@ -270,6 +308,25 @@
     <min>20</min>
     <max>1000</max>
     <pattern>arn:(aws[a-zA-Z0-9-]*):cassandra:.+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.ReplicaAutoScalingSpecification.Region</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.ReplicaSpecification.ReadCapacityUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.ReplicaSpecification.Region</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Keyspaces.Model.ReplicaSpecificationSummary.Region</property>
+    <min>2</min>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Keyspaces.Model.ReplicationSpecification.ReplicationStrategy</property>

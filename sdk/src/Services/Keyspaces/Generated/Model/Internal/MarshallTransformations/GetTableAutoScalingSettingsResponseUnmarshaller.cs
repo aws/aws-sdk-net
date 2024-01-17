@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTable operation
+    /// Response Unmarshaller for GetTableAutoScalingSettings operation
     /// </summary>  
-    public class GetTableResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetTableAutoScalingSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,46 +45,16 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTableResponse response = new GetTableResponse();
+            GetTableAutoScalingSettingsResponse response = new GetTableAutoScalingSettingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("capacitySpecification", targetDepth))
+                if (context.TestExpression("autoScalingSpecification", targetDepth))
                 {
-                    var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
-                    response.CapacitySpecification = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("clientSideTimestamps", targetDepth))
-                {
-                    var unmarshaller = ClientSideTimestampsUnmarshaller.Instance;
-                    response.ClientSideTimestamps = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("comment", targetDepth))
-                {
-                    var unmarshaller = CommentUnmarshaller.Instance;
-                    response.Comment = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("defaultTimeToLive", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.DefaultTimeToLive = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("encryptionSpecification", targetDepth))
-                {
-                    var unmarshaller = EncryptionSpecificationUnmarshaller.Instance;
-                    response.EncryptionSpecification = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AutoScalingSpecificationUnmarshaller.Instance;
+                    response.AutoScalingSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("keyspaceName", targetDepth))
@@ -93,15 +63,9 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.KeyspaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("pointInTimeRecovery", targetDepth))
-                {
-                    var unmarshaller = PointInTimeRecoverySummaryUnmarshaller.Instance;
-                    response.PointInTimeRecovery = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("replicaSpecifications", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicaSpecificationSummary, ReplicaSpecificationSummaryUnmarshaller>(ReplicaSpecificationSummaryUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<ReplicaAutoScalingSpecification, ReplicaAutoScalingSpecificationUnmarshaller>(ReplicaAutoScalingSpecificationUnmarshaller.Instance);
                     response.ReplicaSpecifications = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -111,28 +75,10 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("schemaDefinition", targetDepth))
-                {
-                    var unmarshaller = SchemaDefinitionUnmarshaller.Instance;
-                    response.SchemaDefinition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TableName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ttl", targetDepth))
-                {
-                    var unmarshaller = TimeToLiveUnmarshaller.Instance;
-                    response.Ttl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -182,9 +128,9 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             return new AmazonKeyspacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetTableResponseUnmarshaller _instance = new GetTableResponseUnmarshaller();        
+        private static GetTableAutoScalingSettingsResponseUnmarshaller _instance = new GetTableAutoScalingSettingsResponseUnmarshaller();        
 
-        internal static GetTableResponseUnmarshaller GetInstance()
+        internal static GetTableAutoScalingSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -192,7 +138,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTableResponseUnmarshaller Instance
+        public static GetTableAutoScalingSettingsResponseUnmarshaller Instance
         {
             get
             {

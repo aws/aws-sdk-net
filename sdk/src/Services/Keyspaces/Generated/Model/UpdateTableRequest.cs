@@ -31,18 +31,20 @@ namespace Amazon.Keyspaces.Model
     /// <summary>
     /// Container for the parameters to the UpdateTable operation.
     /// Adds new columns to the table or updates one of the table's settings, for example
-    /// capacity mode, encryption, point-in-time recovery, or ttl settings. Note that you
-    /// can only update one specific table setting per update operation.
+    /// capacity mode, auto scaling, encryption, point-in-time recovery, or ttl settings.
+    /// Note that you can only update one specific table setting per update operation.
     /// </summary>
     public partial class UpdateTableRequest : AmazonKeyspacesRequest
     {
         private List<ColumnDefinition> _addColumns = new List<ColumnDefinition>();
+        private AutoScalingSpecification _autoScalingSpecification;
         private CapacitySpecification _capacitySpecification;
         private ClientSideTimestamps _clientSideTimestamps;
         private int? _defaultTimeToLive;
         private EncryptionSpecification _encryptionSpecification;
         private string _keyspaceName;
         private PointInTimeRecovery _pointInTimeRecovery;
+        private List<ReplicaSpecification> _replicaSpecifications = new List<ReplicaSpecification>();
         private string _tableName;
         private TimeToLive _ttl;
 
@@ -73,6 +75,39 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetAddColumns()
         {
             return this._addColumns != null && this._addColumns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingSpecification. 
+        /// <para>
+        /// The optional auto scaling settings to update for a table in provisioned capacity mode.
+        /// Specifies if the service can manage throughput capacity of a provisioned table automatically
+        /// on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity
+        /// for variable workloads efficiently by increasing and decreasing your table's read
+        /// and write capacity automatically in response to application traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// If auto scaling is already enabled for the table, you can use <c>UpdateTable</c> to
+        /// update the minimum and maximum values or the auto scaling policy settings independently.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+        /// throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon
+        /// Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AutoScalingSpecification AutoScalingSpecification
+        {
+            get { return this._autoScalingSpecification; }
+            set { this._autoScalingSpecification = value; }
+        }
+
+        // Check to see if AutoScalingSpecification property is set
+        internal bool IsSetAutoScalingSpecification()
+        {
+            return this._autoScalingSpecification != null;
         }
 
         /// <summary>
@@ -149,7 +184,7 @@ namespace Amazon.Keyspaces.Model
         /// the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=630720000)]
+        [AWSProperty(Min=0, Max=630720000)]
         public int DefaultTimeToLive
         {
             get { return this._defaultTimeToLive.GetValueOrDefault(); }
@@ -252,6 +287,25 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetPointInTimeRecovery()
         {
             return this._pointInTimeRecovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaSpecifications. 
+        /// <para>
+        /// The Region specific settings of a multi-Regional table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ReplicaSpecification> ReplicaSpecifications
+        {
+            get { return this._replicaSpecifications; }
+            set { this._replicaSpecifications = value; }
+        }
+
+        // Check to see if ReplicaSpecifications property is set
+        internal bool IsSetReplicaSpecifications()
+        {
+            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
         }
 
         /// <summary>

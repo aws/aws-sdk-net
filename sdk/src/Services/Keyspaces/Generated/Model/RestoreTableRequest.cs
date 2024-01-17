@@ -30,7 +30,7 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreTable operation.
-    /// Restores the specified table to the specified point in time within the <c>earliest_restorable_timestamp</c>
+    /// Restores the table to the specified point in time within the <c>earliest_restorable_timestamp</c>
     /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
     /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
     /// 
@@ -49,10 +49,10 @@ namespace Amazon.Keyspaces.Model
     ///  
     /// <para>
     /// In addition to the table's schema, data, and TTL settings, <c>RestoreTable</c> restores
-    /// the capacity mode, encryption, and point-in-time recovery settings from the source
-    /// table. Unlike the table's schema data and TTL settings, which are restored based on
-    /// the selected timestamp, these settings are always restored based on the table's settings
-    /// as of the current time or when the table was deleted.
+    /// the capacity mode, auto scaling settings, encryption settings, and point-in-time recovery
+    /// settings from the source table. Unlike the table's schema data and TTL settings, which
+    /// are restored based on the selected timestamp, these settings are always restored based
+    /// on the table's settings as of the current time or when the table was deleted.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,11 @@ namespace Amazon.Keyspaces.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Provisioned throughput capacity settings
+    /// Provisioned throughput capacity units
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Auto scaling settings
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,10 +90,6 @@ namespace Amazon.Keyspaces.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Automatic scaling policies (for tables that use provisioned capacity mode)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Identity and Access Management (IAM) policies
     /// </para>
     ///  </li> <li> 
@@ -100,15 +100,45 @@ namespace Amazon.Keyspaces.Model
     /// </summary>
     public partial class RestoreTableRequest : AmazonKeyspacesRequest
     {
+        private AutoScalingSpecification _autoScalingSpecification;
         private CapacitySpecification _capacitySpecificationOverride;
         private EncryptionSpecification _encryptionSpecificationOverride;
         private PointInTimeRecovery _pointInTimeRecoveryOverride;
+        private List<ReplicaSpecification> _replicaSpecifications = new List<ReplicaSpecification>();
         private DateTime? _restoreTimestamp;
         private string _sourceKeyspaceName;
         private string _sourceTableName;
         private List<Tag> _tagsOverride = new List<Tag>();
         private string _targetKeyspaceName;
         private string _targetTableName;
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingSpecification. 
+        /// <para>
+        /// The optional auto scaling settings for the restored table in provisioned capacity
+        /// mode. Specifies if the service can manage throughput capacity of a provisioned table
+        /// automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput
+        /// capacity for variable workloads efficiently by increasing and decreasing your table's
+        /// read and write capacity automatically in response to application traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+        /// throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon
+        /// Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AutoScalingSpecification AutoScalingSpecification
+        {
+            get { return this._autoScalingSpecification; }
+            set { this._autoScalingSpecification = value; }
+        }
+
+        // Check to see if AutoScalingSpecification property is set
+        internal bool IsSetAutoScalingSpecification()
+        {
+            return this._autoScalingSpecification != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacitySpecificationOverride. 
@@ -219,6 +249,25 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetPointInTimeRecoveryOverride()
         {
             return this._pointInTimeRecoveryOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaSpecifications. 
+        /// <para>
+        /// The optional Region specific settings of a multi-Regional table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ReplicaSpecification> ReplicaSpecifications
+        {
+            get { return this._replicaSpecifications; }
+            set { this._replicaSpecifications = value; }
+        }
+
+        // Check to see if ReplicaSpecifications property is set
+        internal bool IsSetReplicaSpecifications()
+        {
+            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
         }
 
         /// <summary>

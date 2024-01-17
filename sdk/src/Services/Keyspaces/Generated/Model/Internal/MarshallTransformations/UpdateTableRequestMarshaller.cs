@@ -83,6 +83,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAutoScalingSpecification())
+                {
+                    context.Writer.WritePropertyName("autoScalingSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoScalingSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCapacitySpecification())
                 {
                     context.Writer.WritePropertyName("capacitySpecification");
@@ -137,6 +148,22 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.PointInTimeRecovery, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetReplicaSpecifications())
+                {
+                    context.Writer.WritePropertyName("replicaSpecifications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReplicaSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTableName())

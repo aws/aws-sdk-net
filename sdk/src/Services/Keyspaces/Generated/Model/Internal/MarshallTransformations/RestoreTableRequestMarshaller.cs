@@ -67,6 +67,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoScalingSpecification())
+                {
+                    context.Writer.WritePropertyName("autoScalingSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoScalingSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCapacitySpecificationOverride())
                 {
                     context.Writer.WritePropertyName("capacitySpecificationOverride");
@@ -98,6 +109,22 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.PointInTimeRecoveryOverride, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetReplicaSpecifications())
+                {
+                    context.Writer.WritePropertyName("replicaSpecifications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ReplicaSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetRestoreTimestamp())
