@@ -275,7 +275,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You receive a <c>ResourceInUseException</c> if you try to enable a stream on a table
+        /// You receive a <c>ValidationException</c> if you try to enable a stream on a table
         /// that already has a stream, or if you try to disable a stream on a table that doesn't
         /// have a stream.
         /// </para>
