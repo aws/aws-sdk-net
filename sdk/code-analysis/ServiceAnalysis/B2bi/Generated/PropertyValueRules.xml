@@ -456,7 +456,7 @@
   <property-value-rule>
     <property>Amazon.B2bi.Model.TestMappingRequest.InputFileContent</property>
     <min>0</min>
-    <max>200000</max>
+    <max>5000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.B2bi.Model.TestMappingRequest.MappingTemplate</property>

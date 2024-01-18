@@ -30,7 +30,8 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the TestParsing operation.
-    /// Parses the input EDI (electronic data interchange) file.
+    /// Parses the input EDI (electronic data interchange) file. The input file has a file
+    /// size limit of 250 KB.
     /// </summary>
     public partial class TestParsingRequest : AmazonB2biRequest
     {

@@ -67,7 +67,7 @@ namespace Amazon.B2bi.Model
         /// is used as input for the transform.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200000)]
+        [AWSProperty(Required=true, Min=0, Max=5000000)]
         public string InputFileContent
         {
             get { return this._inputFileContent; }

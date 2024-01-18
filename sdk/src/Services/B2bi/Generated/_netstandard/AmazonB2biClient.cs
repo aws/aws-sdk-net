@@ -1180,6 +1180,10 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
         /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
         /// the resource exists in a region other than the region specified in the API call.
@@ -1322,6 +1326,10 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
         /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
         /// the resource exists in a region other than the region specified in the API call.
@@ -1413,7 +1421,8 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Parses the input EDI (electronic data interchange) file.
+        /// Parses the input EDI (electronic data interchange) file. The input file has a file
+        /// size limit of 250 KB.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestParsing service method.</param>
         /// <param name="cancellationToken">
@@ -1475,6 +1484,10 @@ namespace Amazon.B2bi
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
         /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
         /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
         /// the resource exists in a region other than the region specified in the API call.
