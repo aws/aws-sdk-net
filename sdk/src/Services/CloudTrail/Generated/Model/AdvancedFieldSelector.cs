@@ -86,21 +86,25 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property Field. 
         /// <para>
         ///  A field in a CloudTrail event record on which to filter events to be logged. For
-        /// event data stores for Config configuration items, Audit Manager evidence, or non-Amazon
-        /// Web Services events, the field is used only for selecting events as filtering is not
-        /// supported. 
+        /// event data stores for CloudTrail Insights events, Config configuration items, Audit
+        /// Manager evidence, or events outside of Amazon Web Services, the field is used only
+        /// for selecting events as filtering is not supported.
         /// </para>
         ///  
         /// <para>
-        ///  For CloudTrail event records, supported fields include <c>readOnly</c>, <c>eventCategory</c>,
-        /// <c>eventSource</c> (for management events), <c>eventName</c>, <c>resources.type</c>,
-        /// and <c>resources.ARN</c>. 
+        /// For CloudTrail management events, supported fields include <c>readOnly</c>, <c>eventCategory</c>,
+        /// and <c>eventSource</c>.
         /// </para>
         ///  
         /// <para>
-        ///  For event data stores for Config configuration items, Audit Manager evidence, or
-        /// non-Amazon Web Services events, the only supported field is <c>eventCategory</c>.
-        /// 
+        /// For CloudTrail data events, supported fields include <c>readOnly</c>, <c>eventCategory</c>,
+        /// <c>eventName</c>, <c>resources.type</c>, and <c>resources.ARN</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For event data stores for CloudTrail Insights events, Config configuration items,
+        /// Audit Manager evidence, or events outside of Amazon Web Services, the only supported
+        /// field is <c>eventCategory</c>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -127,12 +131,19 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  For CloudTrail event records, the value must be <c>Management</c> or <c>Data</c>.
-        /// 
+        ///  For CloudTrail management events, the value must be <c>Management</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For CloudTrail Insights event records, the value must be <c>Insight</c>. 
+        ///  For CloudTrail data events, the value must be <c>Data</c>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following are used only for event data stores:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  For CloudTrail Insights events, the value must be <c>Insight</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -163,6 +174,26 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>AWS::S3::Object</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::B2BI::Transformer</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Bedrock::AgentAlias</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Bedrock::KnowledgeBase</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Cassandra::Table</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::CloudFront::KeyValueStore</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -206,6 +237,14 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::IoTTwinMaker::Entity</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::IoTTwinMaker::Workspace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::KendraRanking::ExecutionPlan</c> 
         /// </para>
         ///  </li> <li> 
@@ -226,7 +265,31 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::NeptuneGraph::Graph</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::PCAConnectorAD::Connector</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::QBusiness::Application</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::QBusiness::DataSource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::QBusiness::Index</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::QBusiness::WebExperience</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::RDS::DBCluster</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -242,11 +305,27 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::ServiceDiscovery::Namespace </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::ServiceDiscovery::Service</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::SCN::Instance</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::SNS::PlatformEndpoint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>AWS::SNS::Topic</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::SQS::Queue</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -263,6 +342,14 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>AWS::SSMMessages::ControlChannel</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::ThinClient::Device</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::ThinClient::Environment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -322,6 +409,56 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <c>AWS::B2BI::Transformer</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:b2bi:&lt;region&gt;:&lt;account_ID&gt;:transformer/&lt;transformer_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <c>AWS::Bedrock::AgentAlias</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:bedrock:&lt;region&gt;:&lt;account_ID&gt;:agent-alias/&lt;agent_ID&gt;/&lt;alias_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <c>AWS::Bedrock::KnowledgeBase</c>, and the operator is
+        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:bedrock:&lt;region&gt;:&lt;account_ID&gt;:knowledge-base/&lt;knowledge_base_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <c>AWS::Cassandra::Table</c>, and the operator is set to
+        /// <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:cassandra:&lt;region&gt;:&lt;account_ID&gt;:/keyspace/&lt;keyspace_name&gt;/table/&lt;table_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <c>AWS::CloudFront::KeyValueStore</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:cloudfront:&lt;region&gt;:&lt;account_ID&gt;:key-value-store/&lt;KVS_name&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -390,7 +527,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</c>
+        ///  <c>arn:&lt;partition&gt;:emrwal:&lt;region&gt;:&lt;account_ID&gt;:workspace/&lt;workspace_name&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -425,6 +562,26 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::IoTTwinMaker::Entity</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:iottwinmaker:&lt;region&gt;:&lt;account_ID&gt;:workspace/&lt;workspace_ID&gt;/entity/&lt;entity_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::IoTTwinMaker::Workspace</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:iottwinmaker:&lt;region&gt;:&lt;account_ID&gt;:workspace/&lt;workspace_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::KendraRanking::ExecutionPlan</c>, and the
         /// operator is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following
         /// format:
@@ -441,7 +598,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>arn:&lt;partition&gt;:kinesisvideo:&lt;region&gt;:&lt;account_ID&gt;:stream/&lt;stream_name/&lt;creation_time&gt;</c>
+        ///  <c>arn:&lt;partition&gt;:kinesisvideo:&lt;region&gt;:&lt;account_ID&gt;:stream/&lt;stream_name&gt;/&lt;creation_time&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -476,12 +633,72 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::NeptuneGraph::Graph</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:neptune-graph:&lt;region&gt;:&lt;account_ID&gt;:graph/&lt;graph_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::PCAConnectorAD::Connector</c>, and the operator
         /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:pca-connector-ad:&lt;region&gt;:&lt;account_ID&gt;:connector/&lt;connector_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::QBusiness::Application</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:qbusiness:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::QBusiness::DataSource</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:qbusiness:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/index/&lt;index_ID&gt;/data-source/&lt;datasource_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::QBusiness::Index</c>, and the operator is
+        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:qbusiness:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/index/&lt;index_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::QBusiness::WebExperience</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:qbusiness:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/web-experience/&lt;web_experience_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::RDS::DBCluster</c>, and the operator is
+        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -517,6 +734,37 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::SCN::Instance</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:scn:&lt;region&gt;:&lt;account_ID&gt;:instance/&lt;instance_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::ServiceDiscovery::Namespace</c>, and the
+        /// operator is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:servicediscovery:&lt;region&gt;:&lt;account_ID&gt;:namespace/&lt;namespace_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::ServiceDiscovery::Service</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:servicediscovery:&lt;region&gt;:&lt;account_ID&gt;:service/&lt;service_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::SNS::PlatformEndpoint</c>, and the operator
         /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
@@ -533,6 +781,16 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::SQS::Queue</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -583,6 +841,26 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::ThinClient::Device</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:thinclient:&lt;region&gt;:&lt;account_ID&gt;:device/&lt;device_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::ThinClient::Environment</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:thinclient:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 

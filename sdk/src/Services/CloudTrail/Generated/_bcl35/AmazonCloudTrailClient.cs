@@ -1750,10 +1750,15 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Disables Lake query federation on the specified event data store. When you disable
-        /// federation, CloudTrail removes the metadata associated with the federated event data
-        /// store in the Glue Data Catalog and removes registration for the federation role ARN
-        /// and event data store in Lake Formation. No CloudTrail Lake data is deleted when you
-        /// disable federation.
+        /// federation, CloudTrail disables the integration with Glue, Lake Formation, and Amazon
+        /// Athena. After disabling Lake query federation, you can no longer query your event
+        /// data in Amazon Athena.
+        /// 
+        ///  
+        /// <para>
+        /// No CloudTrail Lake data is deleted when you disable federation and you can continue
+        /// to run queries in CloudTrail Lake.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableFederation service method.</param>
         /// 
@@ -1874,12 +1879,12 @@ namespace Amazon.CloudTrail
         /// 
         ///  
         /// <para>
-        /// When you enable Lake query federation, CloudTrail creates a federated database named
-        /// <c>aws:cloudtrail</c> (if the database doesn't already exist) and a federated table
-        /// in the Glue Data Catalog. The event data store ID is used for the table name. CloudTrail
-        /// registers the role ARN and event data store in <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html">Lake
-        /// Formation</a>, the service responsible for revoking or granting permissions to the
-        /// federated resources in the Glue Data Catalog. 
+        /// When you enable Lake query federation, CloudTrail creates a managed database named
+        /// <c>aws:cloudtrail</c> (if the database doesn't already exist) and a managed federated
+        /// table in the Glue Data Catalog. The event data store ID is used for the table name.
+        /// CloudTrail registers the role ARN and event data store in <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation-lake-formation.html">Lake
+        /// Formation</a>, the service responsible for allowing fine-grained access control of
+        /// the federated resources in the Glue Data Catalog.
         /// </para>
         ///  
         /// <para>
@@ -3153,6 +3158,99 @@ namespace Amazon.CloudTrail
         public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInsightsMetricData
+
+        /// <summary>
+        /// Returns Insights metrics data for trails that have enabled Insights. The request must
+        /// include the <c>EventSource</c>, <c>EventName</c>, and <c>InsightType</c> parameters.
+        /// 
+        ///  
+        /// <para>
+        /// If the <c>InsightType</c> is set to <c>ApiErrorRateInsight</c>, the request must also
+        /// include the <c>ErrorCode</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following are the available time periods for <c>ListInsightsMetricData</c>. Each
+        /// cutoff is inclusive.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data points with a period of 60 seconds (1-minute) are available for 15 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 300 seconds (5-minute) are available for 63 days.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data points with a period of 3600 seconds (1 hour) are available for 90 days.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Access to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
+        /// action. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsightsMetricData service method.</param>
+        /// 
+        /// <returns>The response from the ListInsightsMetricData service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">REST API Reference for ListInsightsMetricData Operation</seealso>
+        public virtual ListInsightsMetricDataResponse ListInsightsMetricData(ListInsightsMetricDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInsightsMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<ListInsightsMetricDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInsightsMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInsightsMetricData operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInsightsMetricData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">REST API Reference for ListInsightsMetricData Operation</seealso>
+        public virtual IAsyncResult BeginListInsightsMetricData(ListInsightsMetricDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInsightsMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsMetricDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInsightsMetricData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInsightsMetricData.</param>
+        /// 
+        /// <returns>Returns a  ListInsightsMetricDataResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">REST API Reference for ListInsightsMetricData Operation</seealso>
+        public virtual ListInsightsMetricDataResponse EndListInsightsMetricData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInsightsMetricDataResponse>(asyncResult);
         }
 
         #endregion
@@ -5460,14 +5558,14 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes
-        /// or excludes management, data, or Insights events in your event data store. For more
-        /// information about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+        /// or excludes management or data events in your event data store. For more information
+        /// about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
         /// </para>
         ///  
         /// <para>
-        ///  For event data stores for Config configuration items, Audit Manager evidence, or
-        /// non-Amazon Web Services events, <c>AdvancedEventSelectors</c> includes events of that
-        /// type in your event data store.
+        ///  For event data stores for CloudTrail Insights events, Config configuration items,
+        /// Audit Manager evidence, or non-Amazon Web Services events, <c>AdvancedEventSelectors</c>
+        /// includes events of that type in your event data store.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventDataStore service method.</param>

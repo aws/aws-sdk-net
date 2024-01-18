@@ -41,14 +41,14 @@ namespace Amazon.CloudTrail.Model
     ///  
     /// <para>
     /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes
-    /// or excludes management, data, or Insights events in your event data store. For more
-    /// information about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+    /// or excludes management or data events in your event data store. For more information
+    /// about <c>AdvancedEventSelectors</c>, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
     /// </para>
     ///  
     /// <para>
-    ///  For event data stores for Config configuration items, Audit Manager evidence, or
-    /// non-Amazon Web Services events, <c>AdvancedEventSelectors</c> includes events of that
-    /// type in your event data store.
+    ///  For event data stores for CloudTrail Insights events, Config configuration items,
+    /// Audit Manager evidence, or non-Amazon Web Services events, <c>AdvancedEventSelectors</c>
+    /// includes events of that type in your event data store.
     /// </para>
     /// </summary>
     public partial class UpdateEventDataStoreRequest : AmazonCloudTrailRequest

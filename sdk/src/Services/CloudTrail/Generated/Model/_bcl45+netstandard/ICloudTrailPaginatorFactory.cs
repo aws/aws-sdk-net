@@ -51,6 +51,11 @@ namespace Amazon.CloudTrail.Model
         IListImportsPaginator ListImports(ListImportsRequest request);
 
         /// <summary>
+        /// Paginator for ListInsightsMetricData operation
+        ///</summary>
+        IListInsightsMetricDataPaginator ListInsightsMetricData(ListInsightsMetricDataRequest request);
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request);

@@ -76,6 +76,14 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Paginator for ListInsightsMetricData operation
+        ///</summary>
+        public IListInsightsMetricDataPaginator ListInsightsMetricData(ListInsightsMetricDataRequest request) 
+        {
+            return new ListInsightsMetricDataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         public IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request) 

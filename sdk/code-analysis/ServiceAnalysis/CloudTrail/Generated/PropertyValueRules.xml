@@ -411,6 +411,56 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataRequest.ErrorCode</property>
+    <max>128</max>
+    <pattern>^[\w\d\s_.,\-:\[\]]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataRequest.EventName</property>
+    <max>128</max>
+    <pattern>^[A-Za-z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataRequest.EventSource</property>
+    <max>256</max>
+    <pattern>^[a-z0-9_-]+\.amazonaws\.com$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataRequest.MaxResults</property>
+    <min>1</min>
+    <max>21600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataRequest.NextToken</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataRequest.Period</property>
+    <min>60</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataResponse.ErrorCode</property>
+    <max>128</max>
+    <pattern>^[\w\d\s_.,\-:\[\]]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataResponse.EventName</property>
+    <max>128</max>
+    <pattern>^[A-Za-z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataResponse.EventSource</property>
+    <max>256</max>
+    <pattern>^[a-z0-9_-]+\.amazonaws\.com$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListInsightsMetricDataResponse.NextToken</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.ListQueriesRequest.EventDataStore</property>
     <min>3</min>
     <max>256</max>

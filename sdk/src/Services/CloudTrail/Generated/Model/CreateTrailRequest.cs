@@ -59,12 +59,6 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// Not required unless you specify <c>CloudWatchLogsRoleArn</c>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Only the management account can configure a CloudWatch Logs log group for an organization
-        /// trail. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public string CloudWatchLogsLogGroupArn
         {
