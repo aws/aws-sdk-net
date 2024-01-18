@@ -136,6 +136,7 @@ namespace Amazon.KinesisFirehose.Model
         private MSKSourceConfiguration _mskSourceConfiguration;
         private RedshiftDestinationConfiguration _redshiftDestinationConfiguration;
         private S3DestinationConfiguration _s3DestinationConfiguration;
+        private SnowflakeDestinationConfiguration _snowflakeDestinationConfiguration;
         private SplunkDestinationConfiguration _splunkDestinationConfiguration;
         private List<Tag> _tags = new List<Tag>();
 
@@ -370,6 +371,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationConfiguration()
         {
             return this._s3DestinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowflakeDestinationConfiguration. 
+        /// <para>
+        /// Configure Snowflake destination
+        /// </para>
+        /// </summary>
+        public SnowflakeDestinationConfiguration SnowflakeDestinationConfiguration
+        {
+            get { return this._snowflakeDestinationConfiguration; }
+            set { this._snowflakeDestinationConfiguration = value; }
+        }
+
+        // Check to see if SnowflakeDestinationConfiguration property is set
+        internal bool IsSetSnowflakeDestinationConfiguration()
+        {
+            return this._snowflakeDestinationConfiguration != null;
         }
 
         /// <summary>

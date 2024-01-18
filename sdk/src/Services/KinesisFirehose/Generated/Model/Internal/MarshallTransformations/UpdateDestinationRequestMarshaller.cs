@@ -162,6 +162,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSnowflakeDestinationUpdate())
+                {
+                    context.Writer.WritePropertyName("SnowflakeDestinationUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SnowflakeDestinationUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SnowflakeDestinationUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSplunkDestinationUpdate())
                 {
                     context.Writer.WritePropertyName("SplunkDestinationUpdate");

@@ -41,6 +41,7 @@ namespace Amazon.KinesisFirehose.Model
         private HttpEndpointDestinationDescription _httpEndpointDestinationDescription;
         private RedshiftDestinationDescription _redshiftDestinationDescription;
         private S3DestinationDescription _s3DestinationDescription;
+        private SnowflakeDestinationDescription _snowflakeDestinationDescription;
         private SplunkDestinationDescription _splunkDestinationDescription;
 
         /// <summary>
@@ -186,6 +187,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationDescription()
         {
             return this._s3DestinationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowflakeDestinationDescription. 
+        /// <para>
+        /// Optional description for the destination
+        /// </para>
+        /// </summary>
+        public SnowflakeDestinationDescription SnowflakeDestinationDescription
+        {
+            get { return this._snowflakeDestinationDescription; }
+            set { this._snowflakeDestinationDescription = value; }
+        }
+
+        // Check to see if SnowflakeDestinationDescription property is set
+        internal bool IsSetSnowflakeDestinationDescription()
+        {
+            return this._snowflakeDestinationDescription != null;
         }
 
         /// <summary>

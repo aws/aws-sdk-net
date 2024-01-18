@@ -1443,6 +1443,110 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type SnowflakeDataLoadingOption.
+    /// </summary>
+    public class SnowflakeDataLoadingOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON_MAPPING for SnowflakeDataLoadingOption
+        /// </summary>
+        public static readonly SnowflakeDataLoadingOption JSON_MAPPING = new SnowflakeDataLoadingOption("JSON_MAPPING");
+        /// <summary>
+        /// Constant VARIANT_CONTENT_AND_METADATA_MAPPING for SnowflakeDataLoadingOption
+        /// </summary>
+        public static readonly SnowflakeDataLoadingOption VARIANT_CONTENT_AND_METADATA_MAPPING = new SnowflakeDataLoadingOption("VARIANT_CONTENT_AND_METADATA_MAPPING");
+        /// <summary>
+        /// Constant VARIANT_CONTENT_MAPPING for SnowflakeDataLoadingOption
+        /// </summary>
+        public static readonly SnowflakeDataLoadingOption VARIANT_CONTENT_MAPPING = new SnowflakeDataLoadingOption("VARIANT_CONTENT_MAPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnowflakeDataLoadingOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnowflakeDataLoadingOption FindValue(string value)
+        {
+            return FindValue<SnowflakeDataLoadingOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnowflakeDataLoadingOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnowflakeS3BackupMode.
+    /// </summary>
+    public class SnowflakeS3BackupMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllData for SnowflakeS3BackupMode
+        /// </summary>
+        public static readonly SnowflakeS3BackupMode AllData = new SnowflakeS3BackupMode("AllData");
+        /// <summary>
+        /// Constant FailedDataOnly for SnowflakeS3BackupMode
+        /// </summary>
+        public static readonly SnowflakeS3BackupMode FailedDataOnly = new SnowflakeS3BackupMode("FailedDataOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnowflakeS3BackupMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnowflakeS3BackupMode FindValue(string value)
+        {
+            return FindValue<SnowflakeS3BackupMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnowflakeS3BackupMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SplunkS3BackupMode.
     /// </summary>
     public class SplunkS3BackupMode : ConstantClass

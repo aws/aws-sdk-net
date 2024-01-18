@@ -83,6 +83,7 @@ namespace Amazon.KinesisFirehose.Model
         private HttpEndpointDestinationUpdate _httpEndpointDestinationUpdate;
         private RedshiftDestinationUpdate _redshiftDestinationUpdate;
         private S3DestinationUpdate _s3DestinationUpdate;
+        private SnowflakeDestinationUpdate _snowflakeDestinationUpdate;
         private SplunkDestinationUpdate _splunkDestinationUpdate;
 
         /// <summary>
@@ -272,6 +273,24 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3DestinationUpdate()
         {
             return this._s3DestinationUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowflakeDestinationUpdate. 
+        /// <para>
+        /// Update to the Snowflake destination condiguration settings
+        /// </para>
+        /// </summary>
+        public SnowflakeDestinationUpdate SnowflakeDestinationUpdate
+        {
+            get { return this._snowflakeDestinationUpdate; }
+            set { this._snowflakeDestinationUpdate = value; }
+        }
+
+        // Check to see if SnowflakeDestinationUpdate property is set
+        internal bool IsSetSnowflakeDestinationUpdate()
+        {
+            return this._snowflakeDestinationUpdate != null;
         }
 
         /// <summary>
