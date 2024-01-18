@@ -65,7 +65,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// values as strings.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<BatchGetRecordIdentifier> Identifiers
         {
             get { return this._identifiers; }
