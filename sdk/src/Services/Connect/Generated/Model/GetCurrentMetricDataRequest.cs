@@ -243,7 +243,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// When using <c>RoutingStepExpression</c>, you need to pass exactly one <c>QueueId</c>.
+        /// When using the <c>RoutingStepExpression</c> filter, you need to pass exactly one <c>QueueId</c>.
+        /// The filter is also case sensitive so when using the <c>RoutingStepExpression</c> filter,
+        /// grouping by <c>ROUTING_STEP_EXPRESSION</c> is required.
         /// </para>
         ///  
         /// <para>

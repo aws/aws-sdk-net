@@ -158,7 +158,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
+        ///  <c>ROUTING_STEP_EXPRESSION</c> is a valid filter key with a filter value up to 3000
+        /// length. This filter is case and order sensitive. JSON string fields must be sorted
+        /// in ascending order and JSON array order should be kept as is.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -194,7 +196,7 @@ namespace Amazon.Connect.Model
         /// | <c>ROUTING_STEP_EXPRESSION</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2)]
+        [AWSProperty(Max=3)]
         public List<string> Groupings
         {
             get { return this._groupings; }
@@ -714,7 +716,19 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
+        ///  </note> </dd> <dt>CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: <c>INITIATION_METHOD</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+        /// </para>
+        ///  </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -771,6 +785,14 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
         /// contact/segmentAttributes/connect:Subtype
+        /// </para>
+        ///  </dd> <dt>CONTACTS_QUEUED_BY_ENQUEUE</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
         /// </para>
         ///  </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> 
         /// <para>

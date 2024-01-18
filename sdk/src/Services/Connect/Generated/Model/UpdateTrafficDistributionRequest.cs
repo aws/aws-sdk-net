@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The identifier of the traffic distribution group. This can be the ID or the ARN if
         /// the API is being called in the Region where the traffic distribution group was created.
-        /// The ARN must be provided if the call is from the replicated Region.
+        /// The ARN must be provided if the call is from the replicated Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
