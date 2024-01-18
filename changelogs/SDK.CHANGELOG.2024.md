@@ -1,3 +1,20 @@
+### 3.7.729.0 (2024-01-18 19:19 UTC)
+* B2bi (3.7.301.0)
+	* Increasing TestMapping inputFileContent file size limit to 5MB and adding file size limit 250KB for TestParsing input file. This release also includes exposing InternalServerException for Tag APIs.
+* CloudTrail (3.7.303.0)
+	* This release adds a new API ListInsightsMetricData to retrieve metric data from CloudTrail Insights.
+* Connect (3.7.311.0)
+	* GetMetricDataV2 now supports 3 groupings
+* Drs (3.7.302.0)
+	* Removed invalid and unnecessary default values.
+* KinesisFirehose (3.7.302.0)
+	* Allow support for Snowflake as a Kinesis Data Firehose delivery destination.
+* SageMakerFeatureStoreRuntime (3.7.301.0)
+	* Increase BatchGetRecord limits from 10 items to 100 items
+* Core 3.7.301.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.728.0 (2024-01-17 19:16 UTC)
 * DynamoDBv2 (3.7.300.38)
 	* Updating note for enabling streams for UpdateTable.
