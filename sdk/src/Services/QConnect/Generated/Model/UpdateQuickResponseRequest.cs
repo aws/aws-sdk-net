@@ -219,7 +219,7 @@ namespace Amazon.QConnect.Model
         /// The name of the quick response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }
