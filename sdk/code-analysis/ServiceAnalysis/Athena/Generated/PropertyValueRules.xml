@@ -375,6 +375,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.ImportNotebookRequest.NotebookS3LocationUri</property>
+    <max>1024</max>
+    <pattern>^(https|s3|S3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.ImportNotebookRequest.Payload</property>
     <min>1</min>
     <max>10485760</max>

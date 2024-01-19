@@ -2525,9 +2525,11 @@ namespace Amazon.Athena
         #region  ImportNotebook
 
         /// <summary>
-        /// Imports a single <c>ipynb</c> file to a Spark enabled workgroup. The maximum file
-        /// size that can be imported is 10 megabytes. If an <c>ipynb</c> file with the same name
-        /// already exists in the workgroup, throws an error.
+        /// Imports a single <c>ipynb</c> file to a Spark enabled workgroup. To import the notebook,
+        /// the request must specify a value for either <c>Payload</c> or <c>NoteBookS3LocationUri</c>.
+        /// If neither is specified or both are specified, an <c>InvalidRequestException</c> occurs.
+        /// The maximum file size that can be imported is 10 megabytes. If an <c>ipynb</c> file
+        /// with the same name already exists in the workgroup, throws an error.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportNotebook service method.</param>
         /// 

@@ -79,6 +79,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNotebookS3LocationUri())
+                {
+                    context.Writer.WritePropertyName("NotebookS3LocationUri");
+                    context.Writer.Write(publicRequest.NotebookS3LocationUri);
+                }
+
                 if(publicRequest.IsSetPayload())
                 {
                     context.Writer.WritePropertyName("Payload");
