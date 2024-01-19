@@ -44,6 +44,7 @@ namespace Amazon.CodeBuild.Model
         private string _encryptionKeyOverride;
         private EnvironmentType _environmentTypeOverride;
         private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
+        private ProjectFleet _fleetOverride;
         private int? _gitCloneDepthOverride;
         private GitSubmodulesConfig _gitSubmodulesConfigOverride;
         private string _idempotencyToken;
@@ -277,6 +278,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetEnvironmentVariablesOverride()
         {
             return this._environmentVariablesOverride != null && this._environmentVariablesOverride.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FleetOverride. 
+        /// <para>
+        /// A ProjectFleet object specified for this build that overrides the one defined in the
+        /// build project.
+        /// </para>
+        /// </summary>
+        public ProjectFleet FleetOverride
+        {
+            get { return this._fleetOverride; }
+            set { this._fleetOverride = value; }
+        }
+
+        // Check to see if FleetOverride property is set
+        internal bool IsSetFleetOverride()
+        {
+            return this._fleetOverride != null;
         }
 
         /// <summary>

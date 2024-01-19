@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
         private string _certificate;
         private ComputeType _computeType;
         private List<EnvironmentVariable> _environmentVariables = new List<EnvironmentVariable>();
+        private ProjectFleet _fleet;
         private string _image;
         private ImagePullCredentialsType _imagePullCredentialsType;
         private bool? _privilegedMode;
@@ -153,7 +154,12 @@ namespace Amazon.CodeBuild.Model
         ///  For environment type <c>ARM_CONTAINER</c>, you can use up to 16 GB memory and 8 vCPUs
         /// on ARM-based processors for builds.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you're using compute fleets during project creation, <c>computeType</c> will be
+        /// ignored.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
         /// Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> 
@@ -188,6 +194,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetEnvironmentVariables()
         {
             return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Fleet. 
+        /// <para>
+        /// A ProjectFleet object to use for this build project.
+        /// </para>
+        /// </summary>
+        public ProjectFleet Fleet
+        {
+            get { return this._fleet; }
+            set { this._fleet = value; }
+        }
+
+        // Check to see if Fleet property is set
+        internal bool IsSetFleet()
+        {
+            return this._fleet != null;
         }
 
         /// <summary>
@@ -345,11 +369,10 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The environment type <c>LINUX_CONTAINER</c> with compute type <c>build.general1.2xlarge</c>
-        /// is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon),
-        /// Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo),
-        /// Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing),
-        /// and China (Ningxia).
+        /// The environment type <c>LINUX_CONTAINER</c> is available only in regions US East (N.
+        /// Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London),
+        /// EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
+        /// Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -371,7 +394,11 @@ namespace Amazon.CodeBuild.Model
         /// are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon),
         /// and EU (Ireland).
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you're using compute fleets during project creation, <c>type</c> will be ignored.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
         /// environment compute types</a> in the <i>CodeBuild user guide</i>.

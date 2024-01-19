@@ -445,6 +445,63 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  BatchGetFleets
+
+        /// <summary>
+        /// Gets information about one or more compute fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFleets service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetFleets service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">REST API Reference for BatchGetFleets Operation</seealso>
+        public virtual BatchGetFleetsResponse BatchGetFleets(BatchGetFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetFleetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFleets operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetFleets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">REST API Reference for BatchGetFleets Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetFleets(BatchGetFleetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetFleetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetFleets.</param>
+        /// 
+        /// <returns>Returns a  BatchGetFleetsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">REST API Reference for BatchGetFleets Operation</seealso>
+        public virtual BatchGetFleetsResponse EndBatchGetFleets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetFleetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchGetProjects
 
         /// <summary>
@@ -612,6 +669,71 @@ namespace Amazon.CodeBuild
         public virtual BatchGetReportsResponse EndBatchGetReports(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetReportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateFleet
+
+        /// <summary>
+        /// Creates a compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
+        /// 
+        /// <returns>The response from the CreateFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
+        /// Services resource with the same settings already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFleetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFleet.</param>
+        /// 
+        /// <returns>Returns a  CreateFleetResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        public virtual CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFleetResponse>(asyncResult);
         }
 
         #endregion
@@ -880,6 +1002,63 @@ namespace Amazon.CodeBuild
         public virtual DeleteBuildBatchResponse EndDeleteBuildBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBuildBatchResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFleet
+
+        /// <summary>
+        /// Deletes a compute fleet. When you delete a compute fleet, its builds are not deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleet operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFleet.</param>
+        /// 
+        /// <returns>Returns a  DeleteFleetResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        public virtual DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFleetResponse>(asyncResult);
         }
 
         #endregion
@@ -1889,6 +2068,64 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  ListFleets
+
+        /// <summary>
+        /// Gets a list of compute fleet names with each compute fleet name representing a single
+        /// compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
+        /// 
+        /// <returns>The response from the ListFleets service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFleetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFleets operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFleets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        public virtual IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFleets.</param>
+        /// 
+        /// <returns>Returns a  ListFleetsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        public virtual ListFleetsResponse EndListFleets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFleetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListProjects
 
         /// <summary>
@@ -2718,6 +2955,70 @@ namespace Amazon.CodeBuild
         public virtual StopBuildBatchResponse EndStopBuildBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<StopBuildBatchResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFleet
+
+        /// <summary>
+        /// Updates a compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
+        public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFleetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleet operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFleet(UpdateFleetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFleet.</param>
+        /// 
+        /// <returns>Returns a  UpdateFleetResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
+        public virtual UpdateFleetResponse EndUpdateFleet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFleetResponse>(asyncResult);
         }
 
         #endregion

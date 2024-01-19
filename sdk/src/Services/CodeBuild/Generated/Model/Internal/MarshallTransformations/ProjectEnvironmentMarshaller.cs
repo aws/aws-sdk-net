@@ -73,6 +73,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFleet())
+            {
+                context.Writer.WritePropertyName("fleet");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProjectFleetMarshaller.Instance;
+                marshaller.Marshall(requestObject.Fleet, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");

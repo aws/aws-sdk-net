@@ -899,6 +899,272 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type FleetContextCode.
+    /// </summary>
+    public class FleetContextCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode CREATE_FAILED = new FleetContextCode("CREATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for FleetContextCode
+        /// </summary>
+        public static readonly FleetContextCode UPDATE_FAILED = new FleetContextCode("UPDATE_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetContextCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetContextCode FindValue(string value)
+        {
+            return FindValue<FleetContextCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetContextCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetScalingMetricType.
+    /// </summary>
+    public class FleetScalingMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FLEET_UTILIZATION_RATE for FleetScalingMetricType
+        /// </summary>
+        public static readonly FleetScalingMetricType FLEET_UTILIZATION_RATE = new FleetScalingMetricType("FLEET_UTILIZATION_RATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetScalingMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetScalingMetricType FindValue(string value)
+        {
+            return FindValue<FleetScalingMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetScalingMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetScalingType.
+    /// </summary>
+    public class FleetScalingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TARGET_TRACKING_SCALING for FleetScalingType
+        /// </summary>
+        public static readonly FleetScalingType TARGET_TRACKING_SCALING = new FleetScalingType("TARGET_TRACKING_SCALING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetScalingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetScalingType FindValue(string value)
+        {
+            return FindValue<FleetScalingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetScalingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetSortByType.
+    /// </summary>
+    public class FleetSortByType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED_TIME for FleetSortByType
+        /// </summary>
+        public static readonly FleetSortByType CREATED_TIME = new FleetSortByType("CREATED_TIME");
+        /// <summary>
+        /// Constant LAST_MODIFIED_TIME for FleetSortByType
+        /// </summary>
+        public static readonly FleetSortByType LAST_MODIFIED_TIME = new FleetSortByType("LAST_MODIFIED_TIME");
+        /// <summary>
+        /// Constant NAME for FleetSortByType
+        /// </summary>
+        public static readonly FleetSortByType NAME = new FleetSortByType("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetSortByType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetSortByType FindValue(string value)
+        {
+            return FindValue<FleetSortByType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetSortByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetStatusCode.
+    /// </summary>
+    public class FleetStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode ACTIVE = new FleetStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode CREATE_FAILED = new FleetStatusCode("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode CREATING = new FleetStatusCode("CREATING");
+        /// <summary>
+        /// Constant DELETING for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode DELETING = new FleetStatusCode("DELETING");
+        /// <summary>
+        /// Constant ROTATING for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode ROTATING = new FleetStatusCode("ROTATING");
+        /// <summary>
+        /// Constant UPDATE_ROLLBACK_FAILED for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode UPDATE_ROLLBACK_FAILED = new FleetStatusCode("UPDATE_ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant UPDATING for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode UPDATING = new FleetStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetStatusCode FindValue(string value)
+        {
+            return FindValue<FleetStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImagePullCredentialsType.
     /// </summary>
     public class ImagePullCredentialsType : ConstantClass

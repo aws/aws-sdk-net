@@ -84,6 +84,14 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Paginator for ListFleets operation
+        ///</summary>
+        public IListFleetsPaginator ListFleets(ListFleetsRequest request) 
+        {
+            return new ListFleetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProjects operation
         ///</summary>
         public IListProjectsPaginator ListProjects(ListProjectsRequest request) 

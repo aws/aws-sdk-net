@@ -415,6 +415,53 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  BatchGetFleets
+
+
+        /// <summary>
+        /// Gets information about one or more compute fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFleets service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetFleets service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">REST API Reference for BatchGetFleets Operation</seealso>
+        public virtual BatchGetFleetsResponse BatchGetFleets(BatchGetFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetFleetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about one or more compute fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetFleets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetFleets service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">REST API Reference for BatchGetFleets Operation</seealso>
+        public virtual Task<BatchGetFleetsResponse> BatchGetFleetsAsync(BatchGetFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetFleetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetProjects
 
 
@@ -552,6 +599,69 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = BatchGetReportsResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchGetReportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFleet
+
+
+        /// <summary>
+        /// Creates a compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
+        /// 
+        /// <returns>The response from the CreateFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
+        /// Services resource with the same settings already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFleetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceAlreadyExistsException">
+        /// The specified Amazon Web Services resource cannot be created, because an Amazon Web
+        /// Services resource with the same settings already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
+        public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -820,6 +930,53 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = DeleteBuildBatchResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteBuildBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFleet
+
+
+        /// <summary>
+        /// Deletes a compute fleet. When you delete a compute fleet, its builds are not deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a compute fleet. When you delete a compute fleet, its builds are not deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
+        public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1695,6 +1852,55 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  ListFleets
+
+
+        /// <summary>
+        /// Gets a list of compute fleet names with each compute fleet name representing a single
+        /// compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
+        /// 
+        /// <returns>The response from the ListFleets service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFleetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of compute fleet names with each compute fleet name representing a single
+        /// compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFleets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFleets service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">REST API Reference for ListFleets Operation</seealso>
+        public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProjects
 
 
@@ -2419,6 +2625,67 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = StopBuildBatchResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopBuildBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFleet
+
+
+        /// <summary>
+        /// Updates a compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
+        public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFleetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a compute fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFleet service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An Amazon Web Services service limit was exceeded for the calling Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified Amazon Web Services resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
+        public virtual Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateFleetResponse>(request, options, cancellationToken);
         }
 
         #endregion

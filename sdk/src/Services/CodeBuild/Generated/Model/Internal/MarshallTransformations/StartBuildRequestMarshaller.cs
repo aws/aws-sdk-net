@@ -152,6 +152,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFleetOverride())
+                {
+                    context.Writer.WritePropertyName("fleetOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProjectFleetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FleetOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGitCloneDepthOverride())
                 {
                     context.Writer.WritePropertyName("gitCloneDepthOverride");

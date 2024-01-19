@@ -56,6 +56,11 @@ namespace Amazon.CodeBuild.Model
         IListBuildsForProjectPaginator ListBuildsForProject(ListBuildsForProjectRequest request);
 
         /// <summary>
+        /// Paginator for ListFleets operation
+        ///</summary>
+        IListFleetsPaginator ListFleets(ListFleetsRequest request);
+
+        /// <summary>
         /// Paginator for ListProjects operation
         ///</summary>
         IListProjectsPaginator ListProjects(ListProjectsRequest request);

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProjectEnvironment Object
+    /// Response Unmarshaller for Fleet Object
     /// </summary>  
-    public class ProjectEnvironmentUnmarshaller : IUnmarshaller<ProjectEnvironment, XmlUnmarshallerContext>, IUnmarshaller<ProjectEnvironment, JsonUnmarshallerContext>
+    public class FleetUnmarshaller : IUnmarshaller<Fleet, XmlUnmarshallerContext>, IUnmarshaller<Fleet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProjectEnvironment IUnmarshaller<ProjectEnvironment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Fleet IUnmarshaller<Fleet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProjectEnvironment Unmarshall(JsonUnmarshallerContext context)
+        public Fleet Unmarshall(JsonUnmarshallerContext context)
         {
-            ProjectEnvironment unmarshalledObject = new ProjectEnvironment();
+            Fleet unmarshalledObject = new Fleet();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,10 +63,16 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("certificate", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Certificate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("baseCapacity", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.BaseCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("computeType", targetDepth))
@@ -75,46 +81,52 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("environmentVariables", targetDepth))
+                if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fleet", targetDepth))
-                {
-                    var unmarshaller = ProjectFleetUnmarshaller.Instance;
-                    unmarshalledObject.Fleet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("environmentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnvironmentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("imagePullCredentialsType", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImagePullCredentialsType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("privilegedMode", targetDepth))
+                if (context.TestExpression("lastModified", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.PrivilegedMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("registryCredential", targetDepth))
-                {
-                    var unmarshaller = RegistryCredentialUnmarshaller.Instance;
-                    unmarshalledObject.RegistryCredential = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scalingConfiguration", targetDepth))
+                {
+                    var unmarshaller = ScalingConfigurationOutputUnmarshaller.Instance;
+                    unmarshalledObject.ScalingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = FleetStatusUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -122,12 +134,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProjectEnvironmentUnmarshaller _instance = new ProjectEnvironmentUnmarshaller();        
+        private static FleetUnmarshaller _instance = new FleetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProjectEnvironmentUnmarshaller Instance
+        public static FleetUnmarshaller Instance
         {
             get
             {

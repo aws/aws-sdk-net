@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CreateFleetRequest.BaseCapacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.CreateFleetRequest.Name</property>
+    <min>2</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,127}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.CreateProjectRequest.Description</property>
     <min>0</min>
     <max>255</max>
@@ -42,6 +52,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteBuildBatchRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteFleetRequest.Arn</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -148,6 +162,11 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListBuildsForProjectRequest.ProjectName</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ListFleetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ListProjectsRequest.NextToken</property>
@@ -268,6 +287,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.StopBuildBatchRequest.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateFleetRequest.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.UpdateFleetRequest.BaseCapacity</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -460,6 +487,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Fleet.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Fleet.BaseCapacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Fleet.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.Fleet.Name</property>
+    <min>2</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,127}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.NetworkInterface.NetworkInterfaceId</property>
     <min>1</min>
   </property-value-rule>
@@ -547,6 +592,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.S3ReportExportConfig.EncryptionKey</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ScalingConfigurationInput.MaxCapacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ScalingConfigurationOutput.DesiredCapacity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ScalingConfigurationOutput.MaxCapacity</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
