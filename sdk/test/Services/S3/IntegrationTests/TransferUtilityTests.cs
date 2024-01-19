@@ -230,6 +230,65 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             UploadWithSSE_C(16 * MEG_SIZE, @"SimpleUploadTest\LargeFile");            
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DirectoryUploadDonwloadWithSSE_C()
+        {
+            var directoryTest = CreateTestDirectory();
+            var directoryTestPath = directoryTest.FullName;
+            var remoteDirectory = directoryTest.Name;
+
+            // Create an encryption key
+            Aes aesEncryption = Aes.Create();
+            aesEncryption.KeySize = 256;
+            aesEncryption.GenerateKey();
+            string base64Key = Convert.ToBase64String(aesEncryption.Key);
+
+            // Upload test directory with SSE-C
+            var transferUtility = new TransferUtility(Client);
+            var requestUpload = new TransferUtilityUploadDirectoryRequest
+            {
+                BucketName = bucketName,
+                Directory = directoryTestPath,
+                KeyPrefix = remoteDirectory,
+                SearchPattern = "*",
+                SearchOption = SearchOption.AllDirectories,
+
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key
+            };
+
+            transferUtility.UploadDirectory(requestUpload);
+
+            // Download remote test directory with SSE-C
+            var downloadPath = GenerateDirectoryPath();
+
+            var requestDownload = new TransferUtilityDownloadDirectoryRequest()
+            {
+                BucketName = bucketName,
+                S3Directory = remoteDirectory,
+                LocalDirectory = downloadPath,
+
+                ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
+                ServerSideEncryptionCustomerProvidedKey = base64Key
+            };
+
+            transferUtility.DownloadDirectory(requestDownload);
+
+            // Compare each file in both directories
+            var sourceFiles = Directory.EnumerateFiles(directoryTestPath, "*", SearchOption.AllDirectories).ToList();
+            var downloadedFiles = Directory.EnumerateFiles(downloadPath, "*", SearchOption.AllDirectories).ToList();
+
+            Assert.AreEqual(sourceFiles.Count, downloadedFiles.Count);
+            
+            sourceFiles.Sort();
+            downloadedFiles.Sort();
+            for (var i = 0; i < sourceFiles.Count(); i++)
+            {
+                UtilityMethods.CompareFiles(sourceFiles[i], downloadedFiles[i]);
+            }
+        }
+
         private void TestDownloadedFile(string downloadPath)
         {
             var fileExists = File.Exists(downloadPath);
