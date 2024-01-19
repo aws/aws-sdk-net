@@ -25,6 +25,56 @@ namespace Amazon.DynamoDBv2
 {
 
     /// <summary>
+    /// Constants used for properties of type ApproximateCreationDateTimePrecision.
+    /// </summary>
+    public class ApproximateCreationDateTimePrecision : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MICROSECOND for ApproximateCreationDateTimePrecision
+        /// </summary>
+        public static readonly ApproximateCreationDateTimePrecision MICROSECOND = new ApproximateCreationDateTimePrecision("MICROSECOND");
+        /// <summary>
+        /// Constant MILLISECOND for ApproximateCreationDateTimePrecision
+        /// </summary>
+        public static readonly ApproximateCreationDateTimePrecision MILLISECOND = new ApproximateCreationDateTimePrecision("MILLISECOND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApproximateCreationDateTimePrecision(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApproximateCreationDateTimePrecision FindValue(string value)
+        {
+            return FindValue<ApproximateCreationDateTimePrecision>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApproximateCreationDateTimePrecision(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttributeAction.
     /// </summary>
     public class AttributeAction : ConstantClass
@@ -712,6 +762,10 @@ namespace Amazon.DynamoDBv2
         /// Constant ENABLING for DestinationStatus
         /// </summary>
         public static readonly DestinationStatus ENABLING = new DestinationStatus("ENABLING");
+        /// <summary>
+        /// Constant UPDATING for DestinationStatus
+        /// </summary>
+        public static readonly DestinationStatus UPDATING = new DestinationStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

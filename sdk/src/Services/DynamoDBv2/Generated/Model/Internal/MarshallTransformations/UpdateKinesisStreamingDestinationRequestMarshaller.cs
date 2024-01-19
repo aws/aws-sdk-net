@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DisableKinesisStreamingDestination Request Marshaller
+    /// UpdateKinesisStreamingDestination Request Marshaller
     /// </summary>       
-    public class DisableKinesisStreamingDestinationRequestMarshaller : IMarshaller<IRequest, DisableKinesisStreamingDestinationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateKinesisStreamingDestinationRequestMarshaller : IMarshaller<IRequest, UpdateKinesisStreamingDestinationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DisableKinesisStreamingDestinationRequest)input);
+            return this.Marshall((UpdateKinesisStreamingDestinationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DisableKinesisStreamingDestinationRequest publicRequest)
+        public IRequest Marshall(UpdateKinesisStreamingDestinationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DynamoDBv2");
-            string target = "DynamoDB_20120810.DisableKinesisStreamingDestination";
+            string target = "DynamoDB_20120810.UpdateKinesisStreamingDestination";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-08-10";
@@ -67,17 +67,6 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableKinesisStreamingConfiguration())
-                {
-                    context.Writer.WritePropertyName("EnableKinesisStreamingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EnableKinesisStreamingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EnableKinesisStreamingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetStreamArn())
                 {
                     context.Writer.WritePropertyName("StreamArn");
@@ -90,6 +79,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TableName);
                 }
 
+                if(publicRequest.IsSetUpdateKinesisStreamingConfiguration())
+                {
+                    context.Writer.WritePropertyName("UpdateKinesisStreamingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateKinesisStreamingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateKinesisStreamingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -98,9 +98,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DisableKinesisStreamingDestinationRequestMarshaller _instance = new DisableKinesisStreamingDestinationRequestMarshaller();        
+        private static UpdateKinesisStreamingDestinationRequestMarshaller _instance = new UpdateKinesisStreamingDestinationRequestMarshaller();        
 
-        internal static DisableKinesisStreamingDestinationRequestMarshaller GetInstance()
+        internal static UpdateKinesisStreamingDestinationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -108,7 +108,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisableKinesisStreamingDestinationRequestMarshaller Instance
+        public static UpdateKinesisStreamingDestinationRequestMarshaller Instance
         {
             get
             {

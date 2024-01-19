@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisableKinesisStreamingDestination operation
+    /// Response Unmarshaller for UpdateKinesisStreamingDestination operation
     /// </summary>  
-    public class DisableKinesisStreamingDestinationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateKinesisStreamingDestinationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisableKinesisStreamingDestinationResponse response = new DisableKinesisStreamingDestinationResponse();
+            UpdateKinesisStreamingDestinationResponse response = new UpdateKinesisStreamingDestinationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -55,12 +55,6 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DestinationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EnableKinesisStreamingConfiguration", targetDepth))
-                {
-                    var unmarshaller = EnableKinesisStreamingConfigurationUnmarshaller.Instance;
-                    response.EnableKinesisStreamingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StreamArn", targetDepth))
@@ -73,6 +67,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpdateKinesisStreamingConfiguration", targetDepth))
+                {
+                    var unmarshaller = UpdateKinesisStreamingConfigurationUnmarshaller.Instance;
+                    response.UpdateKinesisStreamingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,9 +118,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             return new AmazonDynamoDBException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DisableKinesisStreamingDestinationResponseUnmarshaller _instance = new DisableKinesisStreamingDestinationResponseUnmarshaller();        
+        private static UpdateKinesisStreamingDestinationResponseUnmarshaller _instance = new UpdateKinesisStreamingDestinationResponseUnmarshaller();        
 
-        internal static DisableKinesisStreamingDestinationResponseUnmarshaller GetInstance()
+        internal static UpdateKinesisStreamingDestinationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +128,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisableKinesisStreamingDestinationResponseUnmarshaller Instance
+        public static UpdateKinesisStreamingDestinationResponseUnmarshaller Instance
         {
             get
             {

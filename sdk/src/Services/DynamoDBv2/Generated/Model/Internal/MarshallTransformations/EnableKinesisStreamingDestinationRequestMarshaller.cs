@@ -67,6 +67,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnableKinesisStreamingConfiguration())
+                {
+                    context.Writer.WritePropertyName("EnableKinesisStreamingConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnableKinesisStreamingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EnableKinesisStreamingConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetStreamArn())
                 {
                     context.Writer.WritePropertyName("StreamArn");

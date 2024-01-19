@@ -7788,6 +7788,110 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  UpdateKinesisStreamingDestination
+
+        /// <summary>
+        /// The command to update the Kinesis stream destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKinesisStreamingDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        ///  
+        /// <para>
+        /// GetRecords was called with a value of more than 1000 for the limit request parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// More than 2 processes are reading from the same streams shard at the same time. Exceeding
+        /// this limit may result in request throttling.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">REST API Reference for UpdateKinesisStreamingDestination Operation</seealso>
+        public virtual UpdateKinesisStreamingDestinationResponse UpdateKinesisStreamingDestination(UpdateKinesisStreamingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = UpdateKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<UpdateKinesisStreamingDestinationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKinesisStreamingDestination operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateKinesisStreamingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">REST API Reference for UpdateKinesisStreamingDestination Operation</seealso>
+        public virtual IAsyncResult BeginUpdateKinesisStreamingDestination(UpdateKinesisStreamingDestinationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = UpdateKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateKinesisStreamingDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdateKinesisStreamingDestinationResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">REST API Reference for UpdateKinesisStreamingDestination Operation</seealso>
+        public virtual UpdateKinesisStreamingDestinationResponse EndUpdateKinesisStreamingDestination(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateKinesisStreamingDestinationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateTable
 
         /// <summary>

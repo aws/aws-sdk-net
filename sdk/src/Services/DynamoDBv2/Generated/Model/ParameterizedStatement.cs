@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents a PartiQL statment that uses parameters.
+    /// Represents a PartiQL statement that uses parameters.
     /// </summary>
     public partial class ParameterizedStatement
     {
@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Statement. 
         /// <para>
-        ///  A PartiQL statment that uses parameters. 
+        ///  A PartiQL statement that uses parameters. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]

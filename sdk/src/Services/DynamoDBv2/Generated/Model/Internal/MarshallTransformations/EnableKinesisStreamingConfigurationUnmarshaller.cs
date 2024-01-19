@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KinesisDataStreamDestination Object
+    /// Response Unmarshaller for EnableKinesisStreamingConfiguration Object
     /// </summary>  
-    public class KinesisDataStreamDestinationUnmarshaller : IUnmarshaller<KinesisDataStreamDestination, XmlUnmarshallerContext>, IUnmarshaller<KinesisDataStreamDestination, JsonUnmarshallerContext>
+    public class EnableKinesisStreamingConfigurationUnmarshaller : IUnmarshaller<EnableKinesisStreamingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EnableKinesisStreamingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KinesisDataStreamDestination IUnmarshaller<KinesisDataStreamDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnableKinesisStreamingConfiguration IUnmarshaller<EnableKinesisStreamingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public KinesisDataStreamDestination Unmarshall(JsonUnmarshallerContext context)
+        public EnableKinesisStreamingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            KinesisDataStreamDestination unmarshalledObject = new KinesisDataStreamDestination();
+            EnableKinesisStreamingConfiguration unmarshalledObject = new EnableKinesisStreamingConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -69,35 +69,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApproximateCreationDateTimePrecision = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DestinationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DestinationStatusDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationStatusDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static KinesisDataStreamDestinationUnmarshaller _instance = new KinesisDataStreamDestinationUnmarshaller();        
+        private static EnableKinesisStreamingConfigurationUnmarshaller _instance = new EnableKinesisStreamingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KinesisDataStreamDestinationUnmarshaller Instance
+        public static EnableKinesisStreamingConfigurationUnmarshaller Instance
         {
             get
             {

@@ -583,6 +583,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DynamoDBv2")]
+        public void UpdateKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateKinesisStreamingDestination");
+            var request = InstantiateClassGenerator.Execute<UpdateKinesisStreamingDestinationRequest>(operation);
+            var marshaller = new UpdateKinesisStreamingDestinationEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
         public void UpdateTableEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateTable");

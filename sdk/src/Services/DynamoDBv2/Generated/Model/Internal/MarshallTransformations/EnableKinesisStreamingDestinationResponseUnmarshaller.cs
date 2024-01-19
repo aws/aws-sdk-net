@@ -57,6 +57,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     response.DestinationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableKinesisStreamingConfiguration", targetDepth))
+                {
+                    var unmarshaller = EnableKinesisStreamingConfigurationUnmarshaller.Instance;
+                    response.EnableKinesisStreamingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StreamArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

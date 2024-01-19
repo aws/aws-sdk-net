@@ -29,58 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// This is the response object from the EnableKinesisStreamingDestination operation.
+    /// Container for the parameters to the UpdateKinesisStreamingDestination operation.
+    /// The command to update the Kinesis stream destination.
     /// </summary>
-    public partial class EnableKinesisStreamingDestinationResponse : AmazonWebServiceResponse
+    public partial class UpdateKinesisStreamingDestinationRequest : AmazonDynamoDBRequest
     {
-        private DestinationStatus _destinationStatus;
-        private EnableKinesisStreamingConfiguration _enableKinesisStreamingConfiguration;
         private string _streamArn;
         private string _tableName;
-
-        /// <summary>
-        /// Gets and sets the property DestinationStatus. 
-        /// <para>
-        /// The current status of the replication.
-        /// </para>
-        /// </summary>
-        public DestinationStatus DestinationStatus
-        {
-            get { return this._destinationStatus; }
-            set { this._destinationStatus = value; }
-        }
-
-        // Check to see if DestinationStatus property is set
-        internal bool IsSetDestinationStatus()
-        {
-            return this._destinationStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EnableKinesisStreamingConfiguration. 
-        /// <para>
-        /// The destination for the Kinesis streaming information that is being enabled.
-        /// </para>
-        /// </summary>
-        public EnableKinesisStreamingConfiguration EnableKinesisStreamingConfiguration
-        {
-            get { return this._enableKinesisStreamingConfiguration; }
-            set { this._enableKinesisStreamingConfiguration = value; }
-        }
-
-        // Check to see if EnableKinesisStreamingConfiguration property is set
-        internal bool IsSetEnableKinesisStreamingConfiguration()
-        {
-            return this._enableKinesisStreamingConfiguration != null;
-        }
+        private UpdateKinesisStreamingConfiguration _updateKinesisStreamingConfiguration;
 
         /// <summary>
         /// Gets and sets the property StreamArn. 
         /// <para>
-        /// The ARN for the specific Kinesis data stream.
+        /// The ARN for the Kinesis stream input.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=37, Max=1024)]
+        [AWSProperty(Required=true, Min=37, Max=1024)]
         public string StreamArn
         {
             get { return this._streamArn; }
@@ -96,10 +60,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table being modified.
+        /// The table name for the Kinesis streaming destination input.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string TableName
         {
             get { return this._tableName; }
@@ -110,6 +74,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableName()
         {
             return this._tableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateKinesisStreamingConfiguration. 
+        /// <para>
+        /// The command to update the Kinesis stream configuration.
+        /// </para>
+        /// </summary>
+        public UpdateKinesisStreamingConfiguration UpdateKinesisStreamingConfiguration
+        {
+            get { return this._updateKinesisStreamingConfiguration; }
+            set { this._updateKinesisStreamingConfiguration = value; }
+        }
+
+        // Check to see if UpdateKinesisStreamingConfiguration property is set
+        internal bool IsSetUpdateKinesisStreamingConfiguration()
+        {
+            return this._updateKinesisStreamingConfiguration != null;
         }
 
     }

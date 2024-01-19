@@ -37,8 +37,27 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class EnableKinesisStreamingDestinationRequest : AmazonDynamoDBRequest
     {
+        private EnableKinesisStreamingConfiguration _enableKinesisStreamingConfiguration;
         private string _streamArn;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property EnableKinesisStreamingConfiguration. 
+        /// <para>
+        /// The source for the Kinesis streaming information that is being enabled.
+        /// </para>
+        /// </summary>
+        public EnableKinesisStreamingConfiguration EnableKinesisStreamingConfiguration
+        {
+            get { return this._enableKinesisStreamingConfiguration; }
+            set { this._enableKinesisStreamingConfiguration = value; }
+        }
+
+        // Check to see if EnableKinesisStreamingConfiguration property is set
+        internal bool IsSetEnableKinesisStreamingConfiguration()
+        {
+            return this._enableKinesisStreamingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StreamArn. 
