@@ -1,3 +1,16 @@
+### 3.7.730.0 (2024-01-19 19:25 UTC)
+* Athena (3.7.303.0)
+	* Introducing new NotebookS3LocationUri parameter to Athena ImportNotebook API. Payload is no longer required and either Payload or NotebookS3LocationUri needs to be provided (not both) for a successful ImportNotebook API call. If both are provided, an InvalidRequestException will be thrown.
+* CodeBuild (3.7.302.0)
+	* Release CodeBuild Reserved Capacity feature
+* DynamoDBv2 (3.7.301.0)
+	* This release adds support for including ApproximateCreationDateTimePrecision configurations in EnableKinesisStreamingDestination API, adds the same as an optional field in the response of DescribeKinesisStreamingDestination, and adds support for a new UpdateKinesisStreamingDestination API.
+* QConnect (3.7.303.0)
+	* Increased Quick Response name max length to 100
+* Core 3.7.301.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.729.0 (2024-01-18 19:19 UTC)
 * B2bi (3.7.301.0)
 	* Increasing TestMapping inputFileContent file size limit to 5MB and adding file size limit 250KB for TestParsing input file. This release also includes exposing InternalServerException for Tag APIs.
