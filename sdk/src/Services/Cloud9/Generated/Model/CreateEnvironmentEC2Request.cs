@@ -173,11 +173,8 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  
         /// <para>
-        /// From January 22, 2024, Amazon Linux (AL1) will be removed from the list of available
-        /// image IDs for Cloud9. This is necessary as AL1 will reach the end of maintenance support
-        /// in December 2023, and as a result will no longer receive security updates. We recommend
-        /// using Amazon Linux 2023 as the AMI to create your environment as it is fully supported.
-        /// This change will only affect direct API consumers, and not Cloud9 console users.
+        /// We recommend using Amazon Linux 2023 as the AMI to create your environment as it is
+        /// fully supported. 
         /// </para>
         ///  
         /// <para>
@@ -189,10 +186,6 @@ namespace Amazon.Cloud9.Model
         ///  <b>AMI aliases </b> 
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// Amazon Linux: <c>amazonlinux-1-x86_64</c> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// Amazon Linux 2: <c>amazonlinux-2-x86_64</c> 
         /// </para>
@@ -213,10 +206,6 @@ namespace Amazon.Cloud9.Model
         ///  <b>SSM paths</b> 
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        /// Amazon Linux: <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</c> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         /// Amazon Linux 2: <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</c> 
         /// </para>
