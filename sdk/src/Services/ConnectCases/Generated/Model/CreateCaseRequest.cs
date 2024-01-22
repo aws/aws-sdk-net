@@ -30,15 +30,16 @@ namespace Amazon.ConnectCases.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCase operation.
-    /// Creates a case in the specified Cases domain. Case system and custom fields are taken
-    /// as an array id/value pairs with a declared data types.
-    /// 
-    ///  
+    /// <note> 
     /// <para>
-    /// The following fields are required when creating a case:
+    /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+    /// permission on the User ARN resource that you provide
     /// </para>
-    ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
-    /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+    ///  </note> <pre><c> &lt;p&gt;Creates a case in the specified Cases domain. Case system
+    /// and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt;
+    /// &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt;
+    /// &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full
+    /// customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
     /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
     /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
     /// </c></pre>
@@ -48,6 +49,7 @@ namespace Amazon.ConnectCases.Model
         private string _clientToken;
         private string _domainId;
         private List<FieldValue> _fields = new List<FieldValue>();
+        private UserUnion _performedBy;
         private string _templateId;
 
         /// <summary>
@@ -109,6 +111,21 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetFields()
         {
             return this._fields != null && this._fields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformedBy.
+        /// </summary>
+        public UserUnion PerformedBy
+        {
+            get { return this._performedBy; }
+            set { this._performedBy = value; }
+        }
+
+        // Check to see if PerformedBy property is set
+        internal bool IsSetPerformedBy()
+        {
+            return this._performedBy != null;
         }
 
         /// <summary>

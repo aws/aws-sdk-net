@@ -391,15 +391,16 @@ namespace Amazon.ConnectCases
 
 
         /// <summary>
-        /// Creates a case in the specified Cases domain. Case system and custom fields are taken
-        /// as an array id/value pairs with a declared data types.
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// The following fields are required when creating a case:
+        /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+        /// permission on the User ARN resource that you provide
         /// </para>
-        ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
-        /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+        ///  </note> <pre><c> &lt;p&gt;Creates a case in the specified Cases domain. Case system
+        /// and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt;
+        /// &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt;
+        /// &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full
+        /// customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
         /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
         /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </c></pre>
@@ -888,6 +889,57 @@ namespace Amazon.ConnectCases
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCaseAuditEvents
+
+        internal virtual GetCaseAuditEventsResponse GetCaseAuditEvents(GetCaseAuditEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCaseAuditEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCaseAuditEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCaseAuditEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the audit history about a specific case if it exists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCaseAuditEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCaseAuditEvents service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents">REST API Reference for GetCaseAuditEvents Operation</seealso>
+        public virtual Task<GetCaseAuditEventsResponse> GetCaseAuditEventsAsync(GetCaseAuditEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCaseAuditEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCaseAuditEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCaseAuditEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1737,14 +1789,15 @@ namespace Amazon.ConnectCases
 
 
         /// <summary>
-        /// Updates the values of fields on a case. Fields to be updated are received as an array
-        /// of id/value pairs identical to the <c>CreateCase</c> input .
-        /// 
-        ///  
+        /// <note> 
         /// <para>
-        /// If the action is successful, the service sends back an HTTP 200 response with an empty
-        /// HTTP body.
+        /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+        /// permission on the User ARN resource that you provide
         /// </para>
+        ///  </note> <pre><c> &lt;p&gt;Updates the values of fields on a case. Fields to be updated
+        /// are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt;
+        /// input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an
+        /// HTTP 200 response with an empty HTTP body.&lt;/p&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
         /// <param name="cancellationToken">

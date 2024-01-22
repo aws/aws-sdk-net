@@ -44,6 +44,14 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
+        /// Paginator for GetCaseAuditEvents operation
+        ///</summary>
+        public IGetCaseAuditEventsPaginator GetCaseAuditEvents(GetCaseAuditEventsRequest request) 
+        {
+            return new GetCaseAuditEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCasesForContact operation
         ///</summary>
         public IListCasesForContactPaginator ListCasesForContact(ListCasesForContactRequest request) 

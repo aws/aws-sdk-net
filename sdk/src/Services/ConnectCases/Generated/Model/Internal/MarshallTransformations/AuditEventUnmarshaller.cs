@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FieldValueUnion Object
+    /// Response Unmarshaller for AuditEvent Object
     /// </summary>  
-    public class FieldValueUnionUnmarshaller : IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>, IUnmarshaller<FieldValueUnion, JsonUnmarshallerContext>
+    public class AuditEventUnmarshaller : IUnmarshaller<AuditEvent, XmlUnmarshallerContext>, IUnmarshaller<AuditEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FieldValueUnion IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuditEvent IUnmarshaller<AuditEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldValueUnion Unmarshall(JsonUnmarshallerContext context)
+        public AuditEvent Unmarshall(JsonUnmarshallerContext context)
         {
-            FieldValueUnion unmarshalledObject = new FieldValueUnion();
+            AuditEvent unmarshalledObject = new AuditEvent();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,40 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("booleanValue", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("doubleValue", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("emptyValue", targetDepth))
-                {
-                    var unmarshaller = EmptyFieldValueUnmarshaller.Instance;
-                    unmarshalledObject.EmptyValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stringValue", targetDepth))
+                if (context.TestExpression("eventId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("userArnValue", targetDepth))
+                if (context.TestExpression("fields", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AuditEventField, AuditEventFieldUnmarshaller>(AuditEventFieldUnmarshaller.Instance);
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("performedBy", targetDepth))
+                {
+                    var unmarshaller = AuditEventPerformedByUnmarshaller.Instance;
+                    unmarshalledObject.PerformedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("performedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PerformedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("relatedItemType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserArnValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelatedItemType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -98,12 +104,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static FieldValueUnionUnmarshaller _instance = new FieldValueUnionUnmarshaller();        
+        private static AuditEventUnmarshaller _instance = new AuditEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FieldValueUnionUnmarshaller Instance
+        public static AuditEventUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FieldValueUnion Object
+    /// Response Unmarshaller for AuditEventPerformedBy Object
     /// </summary>  
-    public class FieldValueUnionUnmarshaller : IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>, IUnmarshaller<FieldValueUnion, JsonUnmarshallerContext>
+    public class AuditEventPerformedByUnmarshaller : IUnmarshaller<AuditEventPerformedBy, XmlUnmarshallerContext>, IUnmarshaller<AuditEventPerformedBy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FieldValueUnion IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuditEventPerformedBy IUnmarshaller<AuditEventPerformedBy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldValueUnion Unmarshall(JsonUnmarshallerContext context)
+        public AuditEventPerformedBy Unmarshall(JsonUnmarshallerContext context)
         {
-            FieldValueUnion unmarshalledObject = new FieldValueUnion();
+            AuditEventPerformedBy unmarshalledObject = new AuditEventPerformedBy();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,16 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("booleanValue", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("doubleValue", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("emptyValue", targetDepth))
-                {
-                    var unmarshaller = EmptyFieldValueUnmarshaller.Instance;
-                    unmarshalledObject.EmptyValue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stringValue", targetDepth))
+                if (context.TestExpression("iamPrincipalArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IamPrincipalArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("userArnValue", targetDepth))
+                if (context.TestExpression("user", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserArnValue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = UserUnionUnmarshaller.Instance;
+                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -98,12 +80,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static FieldValueUnionUnmarshaller _instance = new FieldValueUnionUnmarshaller();        
+        private static AuditEventPerformedByUnmarshaller _instance = new AuditEventPerformedByUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FieldValueUnionUnmarshaller Instance
+        public static AuditEventPerformedByUnmarshaller Instance
         {
             get
             {

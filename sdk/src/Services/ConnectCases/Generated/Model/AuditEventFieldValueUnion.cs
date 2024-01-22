@@ -31,14 +31,14 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Object to store union of Field values.
     /// 
-    ///  <note> 
+    ///  <important> 
     /// <para>
-    /// The <c>Summary</c> system field accepts 1500 characters while all other fields accept
-    /// 500 characters.
+    /// This data type is a UNION, so only one of the following members can be specified when
+    /// used or returned.
     /// </para>
-    ///  </note>
+    ///  </important>
     /// </summary>
-    public partial class FieldValueUnion
+    public partial class AuditEventFieldValueUnion
     {
         private bool? _booleanValue;
         private double? _doubleValue;
@@ -67,7 +67,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property DoubleValue. 
         /// <para>
-        /// Can be either null, or have a Double number value type. Only one value can be provided.
+        /// Can be either null, or have a Double value type. Only one value can be provided.
         /// </para>
         /// </summary>
         public double DoubleValue
@@ -83,10 +83,7 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmptyValue. 
-        /// <para>
-        /// An empty value.
-        /// </para>
+        /// Gets and sets the property EmptyValue.
         /// </summary>
         public EmptyFieldValue EmptyValue
         {
@@ -103,10 +100,10 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property StringValue. 
         /// <para>
-        /// String value type.
+        /// Can be either null, or have a String value type. Only one value can be provided.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1500)]
+        [AWSProperty(Min=0, Max=500)]
         public string StringValue
         {
             get { return this._stringValue; }
@@ -122,7 +119,8 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property UserArnValue. 
         /// <para>
-        /// Represents the user that performed the audit.
+        /// Can be either null, or have a String value type formatted as an ARN. Only one value
+        /// can be provided.
         /// </para>
         /// </summary>
         public string UserArnValue

@@ -74,6 +74,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StringValue);
             }
 
+            if(requestObject.IsSetUserArnValue())
+            {
+                context.Writer.WritePropertyName("userArnValue");
+                context.Writer.Write(requestObject.UserArnValue);
+            }
+
         }
 
         /// <summary>

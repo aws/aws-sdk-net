@@ -180,6 +180,31 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetCaseAuditEventsRequest.CaseId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetCaseAuditEventsRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetCaseAuditEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetCaseAuditEventsRequest.NextToken</property>
+    <min>0</min>
+    <max>9000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.GetCaseAuditEventsResponse.NextToken</property>
+    <min>0</min>
+    <max>9000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.GetCaseEventConfigurationRequest.DomainId</property>
     <min>1</min>
     <max>500</max>
@@ -522,6 +547,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.UpdateTemplateRequest.TemplateId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditEvent.EventId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditEventField.EventFieldId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditEventFieldValueUnion.StringValue</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCases.Model.AuditEventPerformedBy.IamPrincipalArn</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>

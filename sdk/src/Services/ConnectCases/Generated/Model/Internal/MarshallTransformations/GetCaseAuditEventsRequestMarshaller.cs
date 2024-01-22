@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateCase Request Marshaller
+    /// GetCaseAuditEvents Request Marshaller
     /// </summary>       
-    public class UpdateCaseRequestMarshaller : IMarshaller<IRequest, UpdateCaseRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetCaseAuditEventsRequestMarshaller : IMarshaller<IRequest, GetCaseAuditEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateCaseRequest)input);
+            return this.Marshall((GetCaseAuditEventsRequest)input);
         }
 
         /// <summary>
@@ -52,12 +52,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateCaseRequest publicRequest)
+        public IRequest Marshall(GetCaseAuditEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectCases");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-10-03";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetCaseId())
                 throw new AmazonConnectCasesException("Request object does not have required field CaseId set");
@@ -65,37 +65,22 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainId())
                 throw new AmazonConnectCasesException("Request object does not have required field DomainId set");
             request.AddPathResource("{domainId}", StringUtils.FromString(publicRequest.DomainId));
-            request.ResourcePath = "/domains/{domainId}/cases/{caseId}";
+            request.ResourcePath = "/domains/{domainId}/cases/{caseId}/audit-history";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFields())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("fields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldsListValue in publicRequest.Fields)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FieldValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetPerformedBy())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("performedBy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UserUnionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PerformedBy, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 writer.WriteObjectEnd();
@@ -106,9 +91,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateCaseRequestMarshaller _instance = new UpdateCaseRequestMarshaller();        
+        private static GetCaseAuditEventsRequestMarshaller _instance = new GetCaseAuditEventsRequestMarshaller();        
 
-        internal static UpdateCaseRequestMarshaller GetInstance()
+        internal static GetCaseAuditEventsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +101,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateCaseRequestMarshaller Instance
+        public static GetCaseAuditEventsRequestMarshaller Instance
         {
             get
             {

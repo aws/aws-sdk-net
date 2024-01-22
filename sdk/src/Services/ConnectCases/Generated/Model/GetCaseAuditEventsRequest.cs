@@ -29,23 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateCase operation.
-    /// <note> 
-    /// <para>
-    /// If you provide a value for <c>PerformedBy.UserArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-    /// permission on the User ARN resource that you provide
-    /// </para>
-    ///  </note> <pre><c> &lt;p&gt;Updates the values of fields on a case. Fields to be updated
-    /// are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt;
-    /// input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an
-    /// HTTP 200 response with an empty HTTP body.&lt;/p&gt; </c></pre>
+    /// Container for the parameters to the GetCaseAuditEvents operation.
+    /// Returns the audit history about a specific case if it exists.
     /// </summary>
-    public partial class UpdateCaseRequest : AmazonConnectCasesRequest
+    public partial class GetCaseAuditEventsRequest : AmazonConnectCasesRequest
     {
         private string _caseId;
         private string _domainId;
-        private List<FieldValue> _fields = new List<FieldValue>();
-        private UserUnion _performedBy;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property CaseId. 
@@ -69,7 +61,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The unique identifier of the Cases domain. 
+        /// The unique identifier of the Cases domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -86,38 +78,43 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Fields. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// An array of objects with <c>fieldId</c> (matching ListFields/DescribeField) and value
-        /// union data, structured identical to <c>CreateCase</c>.
+        /// The maximum number of audit events to return. The current maximum supported value
+        /// is 25. This is also the default when no other value is provided.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
-        public List<FieldValue> Fields
+        [AWSProperty(Min=1, Max=25)]
+        public int MaxResults
         {
-            get { return this._fields; }
-            set { this._fields = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Fields property is set
-        internal bool IsSetFields()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property PerformedBy.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
+        /// </para>
         /// </summary>
-        public UserUnion PerformedBy
+        [AWSProperty(Min=0, Max=9000)]
+        public string NextToken
         {
-            get { return this._performedBy; }
-            set { this._performedBy = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if PerformedBy property is set
-        internal bool IsSetPerformedBy()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._performedBy != null;
+            return this._nextToken != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FieldValueUnion Object
+    /// Response Unmarshaller for AuditEventFieldValueUnion Object
     /// </summary>  
-    public class FieldValueUnionUnmarshaller : IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>, IUnmarshaller<FieldValueUnion, JsonUnmarshallerContext>
+    public class AuditEventFieldValueUnionUnmarshaller : IUnmarshaller<AuditEventFieldValueUnion, XmlUnmarshallerContext>, IUnmarshaller<AuditEventFieldValueUnion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FieldValueUnion IUnmarshaller<FieldValueUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AuditEventFieldValueUnion IUnmarshaller<AuditEventFieldValueUnion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldValueUnion Unmarshall(JsonUnmarshallerContext context)
+        public AuditEventFieldValueUnion Unmarshall(JsonUnmarshallerContext context)
         {
-            FieldValueUnion unmarshalledObject = new FieldValueUnion();
+            AuditEventFieldValueUnion unmarshalledObject = new AuditEventFieldValueUnion();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -98,12 +98,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static FieldValueUnionUnmarshaller _instance = new FieldValueUnionUnmarshaller();        
+        private static AuditEventFieldValueUnionUnmarshaller _instance = new AuditEventFieldValueUnionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FieldValueUnionUnmarshaller Instance
+        public static AuditEventFieldValueUnionUnmarshaller Instance
         {
             get
             {
