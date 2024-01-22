@@ -163,9 +163,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services /&gt;
-    /// Regions in China. To create an organization, the master must have a valid business
-    /// license. For more information, contact customer support.
+    /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services Regions
+    /// in China. To create an organization, the master must have a valid business license.
+    /// For more information, contact customer support.
     /// </para>
     ///  </li> <li> 
     /// <para>
