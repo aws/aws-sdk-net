@@ -370,11 +370,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuSpecification. 
         /// <para>
-        /// An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that
-        /// you can attach to your Windows instance to accelerate the graphics performance of
-        /// your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
-        /// EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+        /// Deprecated.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
+        /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
+        /// G5 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ElasticGpuSpecification> ElasticGpuSpecification
         {
@@ -1056,10 +1060,6 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// Volumes
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Elastic graphics
         /// </para>
         ///  </li> <li> 
         /// <para>

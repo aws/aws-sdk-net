@@ -30,9 +30,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeElasticGpus operation.
+    /// <note> 
+    /// <para>
+    /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
+    /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
+    /// G5 instances.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes the Elastic Graphics accelerator associated with your instances. For more
     /// information about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
     /// Elastic Graphics</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeElasticGpusRequest : AmazonEC2Request
     {

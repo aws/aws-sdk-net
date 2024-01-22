@@ -42,8 +42,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The target Region or Availability Zone that the metric subscription is enabled for.
-        /// For example, <c>eu-west-1</c>.
+        /// The target Region (like <c>us-east-2</c>) or Availability Zone ID (like <c>use2-az2</c>)
+        /// that the metric subscription is enabled for. If you use Availability Zone IDs, the
+        /// Source and Destination Availability Zones must be in the same Region.
         /// </para>
         /// </summary>
         public string Destination
@@ -79,8 +80,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source Region or Availability Zone that the metric subscription is enabled for.
-        /// For example, <c>us-east-1</c>.
+        /// The source Region (like <c>us-east-1</c>) or Availability Zone ID (like <c>use1-az1</c>)
+        /// that the metric subscription is enabled for. If you use Availability Zone IDs, the
+        /// Source and Destination Availability Zones must be in the same Region.
         /// </para>
         /// </summary>
         public string Source

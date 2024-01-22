@@ -213,8 +213,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuSpecifications. 
         /// <para>
-        /// An elastic GPU to associate with the instance.
+        /// Deprecated.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
+        /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
+        /// G5 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ElasticGpuSpecification> ElasticGpuSpecifications
         {

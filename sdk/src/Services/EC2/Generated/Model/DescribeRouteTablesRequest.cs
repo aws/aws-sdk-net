@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>association.gateway-id</c> - The ID of the gateway involved in the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>association.route-table-association-id</c> - The ID of an association ID for the
         /// route table.
         /// </para>

@@ -95,13 +95,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>parent-zoneID</c> - The ID of the zone that handles some of the Local Zone and
+        ///  <c>parent-zone-id</c> - The ID of the zone that handles some of the Local Zone and
         /// Wavelength Zone control plane operations, such as API calls.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>parent-zoneName</c> - The ID of the zone that handles some of the Local Zone and
-        /// Wavelength Zone control plane operations, such as API calls.
+        ///  <c>parent-zone-name</c> - The ID of the zone that handles some of the Local Zone
+        /// and Wavelength Zone control plane operations, such as API calls.
         /// </para>
         ///  </li> <li> 
         /// <para>

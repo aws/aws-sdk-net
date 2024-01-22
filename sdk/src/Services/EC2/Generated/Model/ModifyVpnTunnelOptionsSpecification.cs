@@ -428,7 +428,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <c>540</c> 
+        /// Default: <c>270</c> 
         /// </para>
         /// </summary>
         public int RekeyMarginTimeSeconds

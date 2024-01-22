@@ -11967,9 +11967,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
+        /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
+        /// G5 instances.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes the Elastic Graphics accelerator associated with your instances. For more
         /// information about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
         /// Elastic Graphics</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
         /// 
@@ -22053,8 +22062,8 @@ namespace Amazon.EC2
         /// This action calls on other describe actions to get instance information. Depending
         /// on your instance configuration, you may need to allow the following actions in your
         /// IAM policy: <c>DescribeSpotInstanceRequests</c>, <c>DescribeInstanceCreditSpecifications</c>,
-        /// <c>DescribeVolumes</c>, <c>DescribeInstanceAttribute</c>, and <c>DescribeElasticGpus</c>.
-        /// Or, you can allow <c>describe*</c> depending on your instance requirements.
+        /// <c>DescribeVolumes</c>, and <c>DescribeInstanceAttribute</c>. Or, you can allow <c>describe*</c>
+        /// depending on your instance requirements.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLaunchTemplateData service method.</param>
@@ -29544,7 +29553,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you attempt to start a T3 instance with <c>host</c> tenancy and the <c>unlimted</c>
+        /// If you attempt to start a T3 instance with <c>host</c> tenancy and the <c>unlimited</c>
         /// CPU credit option, the request fails. The <c>unlimited</c> CPU credit option is not
         /// supported on Dedicated Hosts. Before you start the instance, either change its CPU
         /// credit option to <c>standard</c>, or change its tenancy to <c>default</c> or <c>dedicated</c>.
