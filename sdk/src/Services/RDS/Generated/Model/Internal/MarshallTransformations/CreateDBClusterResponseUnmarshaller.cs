@@ -148,6 +148,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return GlobalClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDBInstanceCapacity"))
+                {
+                    return InsufficientDBInstanceCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientStorageClusterCapacity"))
                 {
                     return InsufficientStorageClusterCapacityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

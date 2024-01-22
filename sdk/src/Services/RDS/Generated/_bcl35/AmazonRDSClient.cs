@@ -1583,6 +1583,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientDBInstanceCapacityException">
+        /// The specified DB instance class isn't available in the specified Availability Zone.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You might be able
         /// to resolve this error by updating your subnet group to use different Availability

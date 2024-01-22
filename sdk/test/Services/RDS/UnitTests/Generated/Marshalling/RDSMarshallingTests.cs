@@ -2129,6 +2129,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBCluster_InsufficientDBInstanceCapacityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBClusterRequest>(operation);
+            var marshaller = new CreateDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InsufficientDBInstanceCapacityException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBCluster_InsufficientStorageClusterCapacityExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBCluster");
