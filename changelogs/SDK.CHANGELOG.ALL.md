@@ -1,3 +1,23 @@
+### 3.7.731.0 (2024-01-22 19:25 UTC)
+* AppConfigData (3.7.301.0)
+	* Fix FIPS Endpoints in aws-us-gov.
+* Cloud9 (3.7.301.27)
+	* Doc-only update around removing AL1 from list of available AMIs for Cloud9
+* CloudFrontKeyValueStore (3.7.301.0)
+	* This release improves upon the DescribeKeyValueStore API by returning two additional fields, Status of the KeyValueStore and the FailureReason in case of failures during creation of KeyValueStore.
+* ConnectCases (3.7.302.0)
+	* This release adds the ability to view audit history on a case and introduces a new parameter, performedBy, for CreateCase and UpdateCase API's.
+* EC2 (3.7.312.6)
+	* Documentation updates for Amazon EC2.
+* ECS (3.7.305.0)
+	* This release adds support for Transport Layer Security (TLS) and Configurable Timeout to ECS Service Connect. TLS facilitates privacy and data security for inter-service communications, while Configurable Timeout allows customized per-request timeout and idle timeout for Service Connect services.
+* Finspace (3.7.304.0)
+	* Allow customer to set zip default through command line arguments.
+* Organizations (3.7.300.40)
+	* Doc only update for quota increase change
+* RDS (3.7.304.0)
+	* Introduced support for the InsufficientDBInstanceCapacityFault error in the RDS CreateDBCluster API method. This provides enhanced error handling, ensuring a more robust experience when creating database clusters with insufficient instance capacity.
+
 ### 3.7.730.0 (2024-01-19 19:25 UTC)
 * Athena (3.7.303.0)
 	* Introducing new NotebookS3LocationUri parameter to Athena ImportNotebook API. Payload is no longer required and either Payload or NotebookS3LocationUri needs to be provided (not both) for a successful ImportNotebook API call. If both are provided, an InvalidRequestException will be thrown.
