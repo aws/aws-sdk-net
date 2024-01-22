@@ -57,6 +57,12 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                     response.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.LastModified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalSizeInBytes", targetDepth))

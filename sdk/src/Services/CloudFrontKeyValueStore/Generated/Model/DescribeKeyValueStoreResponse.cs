@@ -35,9 +35,11 @@ namespace Amazon.CloudFrontKeyValueStore.Model
     {
         private DateTime? _created;
         private string _eTag;
+        private string _failureReason;
         private int? _itemCount;
         private string _kvsARN;
         private DateTime? _lastModified;
+        private string _status;
         private long? _totalSizeInBytes;
 
         /// <summary>
@@ -76,6 +78,24 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         internal bool IsSetETag()
         {
             return this._eTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason for Key Value Store creation failure.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
@@ -132,6 +152,24 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the Key Value Store.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
