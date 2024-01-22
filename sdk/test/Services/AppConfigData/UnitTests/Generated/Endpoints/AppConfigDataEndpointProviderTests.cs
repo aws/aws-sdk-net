@@ -519,7 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonAppConfigDataEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://appconfigdata-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://appconfigdata.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

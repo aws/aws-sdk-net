@@ -80,6 +80,10 @@ namespace Amazon.AppConfigData.Internal
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
+                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                            {
+                                return new Endpoint(Interpolate(@"https://appconfigdata.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://appconfigdata-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");

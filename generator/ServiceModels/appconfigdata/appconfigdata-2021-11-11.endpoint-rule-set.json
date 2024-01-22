@@ -219,6 +219,31 @@
                                     ],
                                     "rules": [
                                         {
+                                            "conditions": [
+                                                {
+                                                    "fn": "stringEquals",
+                                                    "argv": [
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "name"
+                                                            ]
+                                                        },
+                                                        "aws-us-gov"
+                                                    ]
+                                                }
+                                            ],
+                                            "endpoint": {
+                                                "url": "https://appconfigdata.{Region}.amazonaws.com",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        },
+                                        {
                                             "conditions": [],
                                             "endpoint": {
                                                 "url": "https://appconfigdata-fips.{Region}.{PartitionResult#dnsSuffix}",
