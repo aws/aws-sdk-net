@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceConnectService Object
+    /// Response Unmarshaller for ServiceConnectTlsConfiguration Object
     /// </summary>  
-    public class ServiceConnectServiceUnmarshaller : IUnmarshaller<ServiceConnectService, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectService, JsonUnmarshallerContext>
+    public class ServiceConnectTlsConfigurationUnmarshaller : IUnmarshaller<ServiceConnectTlsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServiceConnectTlsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceConnectService IUnmarshaller<ServiceConnectService, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServiceConnectTlsConfiguration IUnmarshaller<ServiceConnectTlsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConnectService Unmarshall(JsonUnmarshallerContext context)
+        public ServiceConnectTlsConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceConnectService unmarshalledObject = new ServiceConnectService();
+            ServiceConnectTlsConfiguration unmarshalledObject = new ServiceConnectTlsConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("clientAliases", targetDepth))
+                if (context.TestExpression("issuerCertificateAuthority", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServiceConnectClientAlias, ServiceConnectClientAliasUnmarshaller>(ServiceConnectClientAliasUnmarshaller.Instance);
-                    unmarshalledObject.ClientAliases = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ServiceConnectTlsCertificateAuthorityUnmarshaller.Instance;
+                    unmarshalledObject.IssuerCertificateAuthority = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("discoveryName", targetDepth))
+                if (context.TestExpression("kmsKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DiscoveryName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ingressPortOverride", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.IngressPortOverride = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("portName", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PortName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeout", targetDepth))
-                {
-                    var unmarshaller = TimeoutConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tls", targetDepth))
-                {
-                    var unmarshaller = ServiceConnectTlsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +86,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceConnectServiceUnmarshaller _instance = new ServiceConnectServiceUnmarshaller();        
+        private static ServiceConnectTlsConfigurationUnmarshaller _instance = new ServiceConnectTlsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceConnectServiceUnmarshaller Instance
+        public static ServiceConnectTlsConfigurationUnmarshaller Instance
         {
             get
             {

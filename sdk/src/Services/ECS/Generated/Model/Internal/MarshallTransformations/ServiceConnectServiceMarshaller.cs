@@ -79,6 +79,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PortName);
             }
 
+            if(requestObject.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("timeout");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimeoutConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Timeout, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTls())
+            {
+                context.Writer.WritePropertyName("tls");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ServiceConnectTlsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Tls, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

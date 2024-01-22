@@ -38,6 +38,8 @@ namespace Amazon.ECS.Model
         private string _discoveryName;
         private int? _ingressPortOverride;
         private string _portName;
+        private TimeoutConfiguration _timeout;
+        private ServiceConnectTlsConfiguration _tls;
 
         /// <summary>
         /// Gets and sets the property ClientAliases. 
@@ -149,6 +151,39 @@ namespace Amazon.ECS.Model
         internal bool IsSetPortName()
         {
             return this._portName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timeout. 
+        /// <para>
+        /// A reference to an object that represents the configured timeouts for Service Connect.
+        /// </para>
+        /// </summary>
+        public TimeoutConfiguration Timeout
+        {
+            get { return this._timeout; }
+            set { this._timeout = value; }
+        }
+
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
+        {
+            return this._timeout != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tls.
+        /// </summary>
+        public ServiceConnectTlsConfiguration Tls
+        {
+            get { return this._tls; }
+            set { this._tls = value; }
+        }
+
+        // Check to see if Tls property is set
+        internal bool IsSetTls()
+        {
+            return this._tls != null;
         }
 
     }
