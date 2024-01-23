@@ -1,3 +1,9 @@
+### 3.7.732.0 (2024-01-23 20:39 UTC)
+* Inspector2 (3.7.301.0)
+	* This release adds support for CIS scans on EC2 instances.
+* S3 (3.7.305.15)
+	* Add missing `SSE-C` properties in TransferUtilityDownloadDirectoryRequest
+
 ### 3.7.731.0 (2024-01-22 19:25 UTC)
 * AppConfigData (3.7.301.0)
 	* Fix FIPS Endpoints in aws-us-gov.
