@@ -914,6 +914,73 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  CreateCisScanConfiguration
+
+
+        /// <summary>
+        /// Creates a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCisScanConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">REST API Reference for CreateCisScanConfiguration Operation</seealso>
+        public virtual CreateCisScanConfigurationResponse CreateCisScanConfiguration(CreateCisScanConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCisScanConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCisScanConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">REST API Reference for CreateCisScanConfiguration Operation</seealso>
+        public virtual Task<CreateCisScanConfigurationResponse> CreateCisScanConfigurationAsync(CreateCisScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCisScanConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCisScanConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateFilter
 
 
@@ -1147,6 +1214,81 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = CreateSbomExportResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateSbomExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCisScanConfiguration
+
+
+        /// <summary>
+        /// Deletes a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCisScanConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">REST API Reference for DeleteCisScanConfiguration Operation</seealso>
+        public virtual DeleteCisScanConfigurationResponse DeleteCisScanConfiguration(DeleteCisScanConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCisScanConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCisScanConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">REST API Reference for DeleteCisScanConfiguration Operation</seealso>
+        public virtual Task<DeleteCisScanConfigurationResponse> DeleteCisScanConfigurationAsync(DeleteCisScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCisScanConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCisScanConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1670,6 +1812,140 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = EnableDelegatedAdminAccountResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableDelegatedAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCisScanReport
+
+
+        /// <summary>
+        /// Retrieves a CIS scan report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanReport service method.</param>
+        /// 
+        /// <returns>The response from the GetCisScanReport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">REST API Reference for GetCisScanReport Operation</seealso>
+        public virtual GetCisScanReportResponse GetCisScanReport(GetCisScanReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetCisScanReportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a CIS scan report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCisScanReport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">REST API Reference for GetCisScanReport Operation</seealso>
+        public virtual Task<GetCisScanReportResponse> GetCisScanReportAsync(GetCisScanReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanReportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCisScanReportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCisScanResultDetails
+
+
+        /// <summary>
+        /// Retrieves CIS scan result details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanResultDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetCisScanResultDetails service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">REST API Reference for GetCisScanResultDetails Operation</seealso>
+        public virtual GetCisScanResultDetailsResponse GetCisScanResultDetails(GetCisScanResultDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanResultDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanResultDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCisScanResultDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves CIS scan result details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanResultDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCisScanResultDetails service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">REST API Reference for GetCisScanResultDetails Operation</seealso>
+        public virtual Task<GetCisScanResultDetailsResponse> GetCisScanResultDetailsAsync(GetCisScanResultDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanResultDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanResultDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCisScanResultDetailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2244,6 +2520,274 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = ListAccountPermissionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAccountPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCisScanConfigurations
+
+
+        /// <summary>
+        /// Lists CIS scan configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScanConfigurations service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">REST API Reference for ListCisScanConfigurations Operation</seealso>
+        public virtual ListCisScanConfigurationsResponse ListCisScanConfigurations(ListCisScanConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScanConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists CIS scan configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCisScanConfigurations service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">REST API Reference for ListCisScanConfigurations Operation</seealso>
+        public virtual Task<ListCisScanConfigurationsResponse> ListCisScanConfigurationsAsync(ListCisScanConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCisScanConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCisScanResultsAggregatedByChecks
+
+
+        /// <summary>
+        /// Lists scan results aggregated by checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByChecks service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScanResultsAggregatedByChecks service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">REST API Reference for ListCisScanResultsAggregatedByChecks Operation</seealso>
+        public virtual ListCisScanResultsAggregatedByChecksResponse ListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByChecksResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScanResultsAggregatedByChecksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists scan results aggregated by checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCisScanResultsAggregatedByChecks service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">REST API Reference for ListCisScanResultsAggregatedByChecks Operation</seealso>
+        public virtual Task<ListCisScanResultsAggregatedByChecksResponse> ListCisScanResultsAggregatedByChecksAsync(ListCisScanResultsAggregatedByChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByChecksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCisScanResultsAggregatedByChecksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCisScanResultsAggregatedByTargetResource
+
+
+        /// <summary>
+        /// Lists scan results aggregated by a target resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByTargetResource service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScanResultsAggregatedByTargetResource service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">REST API Reference for ListCisScanResultsAggregatedByTargetResource Operation</seealso>
+        public virtual ListCisScanResultsAggregatedByTargetResourceResponse ListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByTargetResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByTargetResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScanResultsAggregatedByTargetResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists scan results aggregated by a target resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByTargetResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCisScanResultsAggregatedByTargetResource service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">REST API Reference for ListCisScanResultsAggregatedByTargetResource Operation</seealso>
+        public virtual Task<ListCisScanResultsAggregatedByTargetResourceResponse> ListCisScanResultsAggregatedByTargetResourceAsync(ListCisScanResultsAggregatedByTargetResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByTargetResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByTargetResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCisScanResultsAggregatedByTargetResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCisScans
+
+
+        /// <summary>
+        /// Returns a CIS scan list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScans service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScans service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">REST API Reference for ListCisScans Operation</seealso>
+        public virtual ListCisScansResponse ListCisScans(ListCisScansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScansResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScansResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a CIS scan list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCisScans service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">REST API Reference for ListCisScans Operation</seealso>
+        public virtual Task<ListCisScansResponse> ListCisScansAsync(ListCisScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScansResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCisScansResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2975,6 +3519,314 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  SendCisSessionHealth
+
+
+        /// <summary>
+        /// Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to
+        /// communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls
+        /// this API to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionHealth service method.</param>
+        /// 
+        /// <returns>The response from the SendCisSessionHealth service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">REST API Reference for SendCisSessionHealth Operation</seealso>
+        public virtual SendCisSessionHealthResponse SendCisSessionHealth(SendCisSessionHealthRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionHealthResponseUnmarshaller.Instance;
+
+            return Invoke<SendCisSessionHealthResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to
+        /// communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls
+        /// this API to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionHealth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendCisSessionHealth service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">REST API Reference for SendCisSessionHealth Operation</seealso>
+        public virtual Task<SendCisSessionHealthResponse> SendCisSessionHealthAsync(SendCisSessionHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionHealthResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendCisSessionHealthResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendCisSessionTelemetry
+
+
+        /// <summary>
+        /// Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin
+        /// to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
+        /// calls this API to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionTelemetry service method.</param>
+        /// 
+        /// <returns>The response from the SendCisSessionTelemetry service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">REST API Reference for SendCisSessionTelemetry Operation</seealso>
+        public virtual SendCisSessionTelemetryResponse SendCisSessionTelemetry(SendCisSessionTelemetryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionTelemetryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionTelemetryResponseUnmarshaller.Instance;
+
+            return Invoke<SendCisSessionTelemetryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin
+        /// to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
+        /// calls this API to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionTelemetry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendCisSessionTelemetry service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">REST API Reference for SendCisSessionTelemetry Operation</seealso>
+        public virtual Task<SendCisSessionTelemetryResponse> SendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionTelemetryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionTelemetryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendCisSessionTelemetryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartCisSession
+
+
+        /// <summary>
+        /// Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
+        /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
+        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCisSession service method.</param>
+        /// 
+        /// <returns>The response from the StartCisSession service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">REST API Reference for StartCisSession Operation</seealso>
+        public virtual StartCisSessionResponse StartCisSession(StartCisSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCisSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartCisSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
+        /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
+        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCisSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCisSession service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">REST API Reference for StartCisSession Operation</seealso>
+        public virtual Task<StartCisSessionResponse> StartCisSessionAsync(StartCisSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCisSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartCisSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopCisSession
+
+
+        /// <summary>
+        /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
+        /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
+        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCisSession service method.</param>
+        /// 
+        /// <returns>The response from the StopCisSession service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">REST API Reference for StopCisSession Operation</seealso>
+        public virtual StopCisSessionResponse StopCisSession(StopCisSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCisSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopCisSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
+        /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
+        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCisSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopCisSession service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">REST API Reference for StopCisSession Operation</seealso>
+        public virtual Task<StopCisSessionResponse> StopCisSessionAsync(StopCisSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCisSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopCisSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -3115,6 +3967,81 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCisScanConfiguration
+
+
+        /// <summary>
+        /// Updates a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCisScanConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">REST API Reference for UpdateCisScanConfiguration Operation</seealso>
+        public virtual UpdateCisScanConfigurationResponse UpdateCisScanConfiguration(UpdateCisScanConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCisScanConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCisScanConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">REST API Reference for UpdateCisScanConfiguration Operation</seealso>
+        public virtual Task<UpdateCisScanConfigurationResponse> UpdateCisScanConfigurationAsync(UpdateCisScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCisScanConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCisScanConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

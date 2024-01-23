@@ -891,6 +891,73 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  CreateCisScanConfiguration
+
+        /// <summary>
+        /// Creates a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCisScanConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">REST API Reference for CreateCisScanConfiguration Operation</seealso>
+        public virtual CreateCisScanConfigurationResponse CreateCisScanConfiguration(CreateCisScanConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCisScanConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCisScanConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCisScanConfiguration operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCisScanConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">REST API Reference for CreateCisScanConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateCisScanConfiguration(CreateCisScanConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCisScanConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCisScanConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateCisScanConfigurationResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration">REST API Reference for CreateCisScanConfiguration Operation</seealso>
+        public virtual CreateCisScanConfigurationResponse EndCreateCisScanConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCisScanConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateFilter
 
         /// <summary>
@@ -1106,6 +1173,77 @@ namespace Amazon.Inspector2
         public virtual CreateSbomExportResponse EndCreateSbomExport(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSbomExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCisScanConfiguration
+
+        /// <summary>
+        /// Deletes a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCisScanConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">REST API Reference for DeleteCisScanConfiguration Operation</seealso>
+        public virtual DeleteCisScanConfigurationResponse DeleteCisScanConfiguration(DeleteCisScanConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCisScanConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCisScanConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCisScanConfiguration operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCisScanConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">REST API Reference for DeleteCisScanConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCisScanConfiguration(DeleteCisScanConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCisScanConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCisScanConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteCisScanConfigurationResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration">REST API Reference for DeleteCisScanConfiguration Operation</seealso>
+        public virtual DeleteCisScanConfigurationResponse EndDeleteCisScanConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCisScanConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1602,6 +1740,140 @@ namespace Amazon.Inspector2
         public virtual EnableDelegatedAdminAccountResponse EndEnableDelegatedAdminAccount(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableDelegatedAdminAccountResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCisScanReport
+
+        /// <summary>
+        /// Retrieves a CIS scan report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanReport service method.</param>
+        /// 
+        /// <returns>The response from the GetCisScanReport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">REST API Reference for GetCisScanReport Operation</seealso>
+        public virtual GetCisScanReportResponse GetCisScanReport(GetCisScanReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetCisScanReportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCisScanReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanReport operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCisScanReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">REST API Reference for GetCisScanReport Operation</seealso>
+        public virtual IAsyncResult BeginGetCisScanReport(GetCisScanReportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCisScanReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCisScanReport.</param>
+        /// 
+        /// <returns>Returns a  GetCisScanReportResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport">REST API Reference for GetCisScanReport Operation</seealso>
+        public virtual GetCisScanReportResponse EndGetCisScanReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCisScanReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCisScanResultDetails
+
+        /// <summary>
+        /// Retrieves CIS scan result details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanResultDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetCisScanResultDetails service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">REST API Reference for GetCisScanResultDetails Operation</seealso>
+        public virtual GetCisScanResultDetailsResponse GetCisScanResultDetails(GetCisScanResultDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanResultDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanResultDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCisScanResultDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCisScanResultDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCisScanResultDetails operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCisScanResultDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">REST API Reference for GetCisScanResultDetails Operation</seealso>
+        public virtual IAsyncResult BeginGetCisScanResultDetails(GetCisScanResultDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCisScanResultDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCisScanResultDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCisScanResultDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCisScanResultDetails.</param>
+        /// 
+        /// <returns>Returns a  GetCisScanResultDetailsResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails">REST API Reference for GetCisScanResultDetails Operation</seealso>
+        public virtual GetCisScanResultDetailsResponse EndGetCisScanResultDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCisScanResultDetailsResponse>(asyncResult);
         }
 
         #endregion
@@ -2157,6 +2429,274 @@ namespace Amazon.Inspector2
         public virtual ListAccountPermissionsResponse EndListAccountPermissions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAccountPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCisScanConfigurations
+
+        /// <summary>
+        /// Lists CIS scan configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScanConfigurations service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">REST API Reference for ListCisScanConfigurations Operation</seealso>
+        public virtual ListCisScanConfigurationsResponse ListCisScanConfigurations(ListCisScanConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScanConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCisScanConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanConfigurations operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCisScanConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">REST API Reference for ListCisScanConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListCisScanConfigurations(ListCisScanConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCisScanConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCisScanConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListCisScanConfigurationsResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations">REST API Reference for ListCisScanConfigurations Operation</seealso>
+        public virtual ListCisScanConfigurationsResponse EndListCisScanConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCisScanConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCisScanResultsAggregatedByChecks
+
+        /// <summary>
+        /// Lists scan results aggregated by checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByChecks service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScanResultsAggregatedByChecks service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">REST API Reference for ListCisScanResultsAggregatedByChecks Operation</seealso>
+        public virtual ListCisScanResultsAggregatedByChecksResponse ListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByChecksResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScanResultsAggregatedByChecksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCisScanResultsAggregatedByChecks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByChecks operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCisScanResultsAggregatedByChecks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">REST API Reference for ListCisScanResultsAggregatedByChecks Operation</seealso>
+        public virtual IAsyncResult BeginListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByChecksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCisScanResultsAggregatedByChecks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCisScanResultsAggregatedByChecks.</param>
+        /// 
+        /// <returns>Returns a  ListCisScanResultsAggregatedByChecksResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks">REST API Reference for ListCisScanResultsAggregatedByChecks Operation</seealso>
+        public virtual ListCisScanResultsAggregatedByChecksResponse EndListCisScanResultsAggregatedByChecks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCisScanResultsAggregatedByChecksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCisScanResultsAggregatedByTargetResource
+
+        /// <summary>
+        /// Lists scan results aggregated by a target resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByTargetResource service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScanResultsAggregatedByTargetResource service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">REST API Reference for ListCisScanResultsAggregatedByTargetResource Operation</seealso>
+        public virtual ListCisScanResultsAggregatedByTargetResourceResponse ListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByTargetResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByTargetResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScanResultsAggregatedByTargetResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCisScanResultsAggregatedByTargetResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScanResultsAggregatedByTargetResource operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCisScanResultsAggregatedByTargetResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">REST API Reference for ListCisScanResultsAggregatedByTargetResource Operation</seealso>
+        public virtual IAsyncResult BeginListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScanResultsAggregatedByTargetResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScanResultsAggregatedByTargetResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCisScanResultsAggregatedByTargetResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCisScanResultsAggregatedByTargetResource.</param>
+        /// 
+        /// <returns>Returns a  ListCisScanResultsAggregatedByTargetResourceResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource">REST API Reference for ListCisScanResultsAggregatedByTargetResource Operation</seealso>
+        public virtual ListCisScanResultsAggregatedByTargetResourceResponse EndListCisScanResultsAggregatedByTargetResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCisScanResultsAggregatedByTargetResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCisScans
+
+        /// <summary>
+        /// Returns a CIS scan list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScans service method.</param>
+        /// 
+        /// <returns>The response from the ListCisScans service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">REST API Reference for ListCisScans Operation</seealso>
+        public virtual ListCisScansResponse ListCisScans(ListCisScansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScansResponseUnmarshaller.Instance;
+
+            return Invoke<ListCisScansResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCisScans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCisScans operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCisScans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">REST API Reference for ListCisScans Operation</seealso>
+        public virtual IAsyncResult BeginListCisScans(ListCisScansRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCisScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCisScansResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCisScans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCisScans.</param>
+        /// 
+        /// <returns>Returns a  ListCisScansResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans">REST API Reference for ListCisScans Operation</seealso>
+        public virtual ListCisScansResponse EndListCisScans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCisScansResponse>(asyncResult);
         }
 
         #endregion
@@ -2893,6 +3433,294 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  SendCisSessionHealth
+
+        /// <summary>
+        /// Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to
+        /// communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin calls
+        /// this API to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionHealth service method.</param>
+        /// 
+        /// <returns>The response from the SendCisSessionHealth service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">REST API Reference for SendCisSessionHealth Operation</seealso>
+        public virtual SendCisSessionHealthResponse SendCisSessionHealth(SendCisSessionHealthRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionHealthResponseUnmarshaller.Instance;
+
+            return Invoke<SendCisSessionHealthResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendCisSessionHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionHealth operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendCisSessionHealth
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">REST API Reference for SendCisSessionHealth Operation</seealso>
+        public virtual IAsyncResult BeginSendCisSessionHealth(SendCisSessionHealthRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionHealthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionHealthResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendCisSessionHealth operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendCisSessionHealth.</param>
+        /// 
+        /// <returns>Returns a  SendCisSessionHealthResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth">REST API Reference for SendCisSessionHealth Operation</seealso>
+        public virtual SendCisSessionHealthResponse EndSendCisSessionHealth(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendCisSessionHealthResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendCisSessionTelemetry
+
+        /// <summary>
+        /// Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin
+        /// to communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
+        /// calls this API to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionTelemetry service method.</param>
+        /// 
+        /// <returns>The response from the SendCisSessionTelemetry service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">REST API Reference for SendCisSessionTelemetry Operation</seealso>
+        public virtual SendCisSessionTelemetryResponse SendCisSessionTelemetry(SendCisSessionTelemetryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionTelemetryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionTelemetryResponseUnmarshaller.Instance;
+
+            return Invoke<SendCisSessionTelemetryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendCisSessionTelemetry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendCisSessionTelemetry operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendCisSessionTelemetry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">REST API Reference for SendCisSessionTelemetry Operation</seealso>
+        public virtual IAsyncResult BeginSendCisSessionTelemetry(SendCisSessionTelemetryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SendCisSessionTelemetryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendCisSessionTelemetryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendCisSessionTelemetry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendCisSessionTelemetry.</param>
+        /// 
+        /// <returns>Returns a  SendCisSessionTelemetryResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry">REST API Reference for SendCisSessionTelemetry Operation</seealso>
+        public virtual SendCisSessionTelemetryResponse EndSendCisSessionTelemetry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendCisSessionTelemetryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartCisSession
+
+        /// <summary>
+        /// Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
+        /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
+        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCisSession service method.</param>
+        /// 
+        /// <returns>The response from the StartCisSession service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">REST API Reference for StartCisSession Operation</seealso>
+        public virtual StartCisSessionResponse StartCisSession(StartCisSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCisSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartCisSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCisSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCisSession operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCisSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">REST API Reference for StartCisSession Operation</seealso>
+        public virtual IAsyncResult BeginStartCisSession(StartCisSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCisSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCisSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCisSession.</param>
+        /// 
+        /// <returns>Returns a  StartCisSessionResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession">REST API Reference for StartCisSession Operation</seealso>
+        public virtual StartCisSessionResponse EndStartCisSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartCisSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopCisSession
+
+        /// <summary>
+        /// Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate
+        /// with the Amazon Inspector service. The Amazon Inspector SSM plugin calls this API
+        /// to start a CIS scan session for the scan ID supplied by the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCisSession service method.</param>
+        /// 
+        /// <returns>The response from the StopCisSession service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">REST API Reference for StopCisSession Operation</seealso>
+        public virtual StopCisSessionResponse StopCisSession(StopCisSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCisSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopCisSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopCisSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopCisSession operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopCisSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">REST API Reference for StopCisSession Operation</seealso>
+        public virtual IAsyncResult BeginStopCisSession(StopCisSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopCisSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCisSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopCisSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopCisSession.</param>
+        /// 
+        /// <returns>Returns a  StopCisSessionResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">REST API Reference for StopCisSession Operation</seealso>
+        public virtual StopCisSessionResponse EndStopCisSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopCisSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -3028,6 +3856,77 @@ namespace Amazon.Inspector2
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCisScanConfiguration
+
+        /// <summary>
+        /// Updates a CIS scan configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCisScanConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCisScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">REST API Reference for UpdateCisScanConfiguration Operation</seealso>
+        public virtual UpdateCisScanConfigurationResponse UpdateCisScanConfiguration(UpdateCisScanConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCisScanConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCisScanConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCisScanConfiguration operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCisScanConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">REST API Reference for UpdateCisScanConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCisScanConfiguration(UpdateCisScanConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCisScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCisScanConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCisScanConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCisScanConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateCisScanConfigurationResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration">REST API Reference for UpdateCisScanConfiguration Operation</seealso>
+        public virtual UpdateCisScanConfigurationResponse EndUpdateCisScanConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCisScanConfigurationResponse>(asyncResult);
         }
 
         #endregion

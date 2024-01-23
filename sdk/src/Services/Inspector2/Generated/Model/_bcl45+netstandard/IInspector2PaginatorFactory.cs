@@ -26,9 +26,34 @@ namespace Amazon.Inspector2.Model
     {
 
         /// <summary>
+        /// Paginator for GetCisScanResultDetails operation
+        ///</summary>
+        IGetCisScanResultDetailsPaginator GetCisScanResultDetails(GetCisScanResultDetailsRequest request);
+
+        /// <summary>
         /// Paginator for ListAccountPermissions operation
         ///</summary>
         IListAccountPermissionsPaginator ListAccountPermissions(ListAccountPermissionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCisScanConfigurations operation
+        ///</summary>
+        IListCisScanConfigurationsPaginator ListCisScanConfigurations(ListCisScanConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCisScanResultsAggregatedByChecks operation
+        ///</summary>
+        IListCisScanResultsAggregatedByChecksPaginator ListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request);
+
+        /// <summary>
+        /// Paginator for ListCisScanResultsAggregatedByTargetResource operation
+        ///</summary>
+        IListCisScanResultsAggregatedByTargetResourcePaginator ListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request);
+
+        /// <summary>
+        /// Paginator for ListCisScans operation
+        ///</summary>
+        IListCisScansPaginator ListCisScans(ListCisScansRequest request);
 
         /// <summary>
         /// Paginator for ListCoverage operation

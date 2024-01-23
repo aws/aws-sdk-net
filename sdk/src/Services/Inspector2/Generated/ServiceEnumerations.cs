@@ -435,6 +435,1016 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type CisFindingStatus.
+    /// </summary>
+    public class CisFindingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for CisFindingStatus
+        /// </summary>
+        public static readonly CisFindingStatus FAILED = new CisFindingStatus("FAILED");
+        /// <summary>
+        /// Constant PASSED for CisFindingStatus
+        /// </summary>
+        public static readonly CisFindingStatus PASSED = new CisFindingStatus("PASSED");
+        /// <summary>
+        /// Constant SKIPPED for CisFindingStatus
+        /// </summary>
+        public static readonly CisFindingStatus SKIPPED = new CisFindingStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisFindingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisFindingStatus FindValue(string value)
+        {
+            return FindValue<CisFindingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisFindingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisFindingStatusComparison.
+    /// </summary>
+    public class CisFindingStatusComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CisFindingStatusComparison
+        /// </summary>
+        public static readonly CisFindingStatusComparison EQUALS = new CisFindingStatusComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisFindingStatusComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisFindingStatusComparison FindValue(string value)
+        {
+            return FindValue<CisFindingStatusComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisFindingStatusComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisReportStatus.
+    /// </summary>
+    public class CisReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for CisReportStatus
+        /// </summary>
+        public static readonly CisReportStatus FAILED = new CisReportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CisReportStatus
+        /// </summary>
+        public static readonly CisReportStatus IN_PROGRESS = new CisReportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for CisReportStatus
+        /// </summary>
+        public static readonly CisReportStatus SUCCEEDED = new CisReportStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisReportStatus FindValue(string value)
+        {
+            return FindValue<CisReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisResultStatus.
+    /// </summary>
+    public class CisResultStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for CisResultStatus
+        /// </summary>
+        public static readonly CisResultStatus FAILED = new CisResultStatus("FAILED");
+        /// <summary>
+        /// Constant PASSED for CisResultStatus
+        /// </summary>
+        public static readonly CisResultStatus PASSED = new CisResultStatus("PASSED");
+        /// <summary>
+        /// Constant SKIPPED for CisResultStatus
+        /// </summary>
+        public static readonly CisResultStatus SKIPPED = new CisResultStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisResultStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisResultStatus FindValue(string value)
+        {
+            return FindValue<CisResultStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisResultStatusComparison.
+    /// </summary>
+    public class CisResultStatusComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CisResultStatusComparison
+        /// </summary>
+        public static readonly CisResultStatusComparison EQUALS = new CisResultStatusComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisResultStatusComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisResultStatusComparison FindValue(string value)
+        {
+            return FindValue<CisResultStatusComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisResultStatusComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisRuleStatus.
+    /// </summary>
+    public class CisRuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus ERROR = new CisRuleStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus FAILED = new CisRuleStatus("FAILED");
+        /// <summary>
+        /// Constant INFORMATIONAL for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus INFORMATIONAL = new CisRuleStatus("INFORMATIONAL");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus NOT_APPLICABLE = new CisRuleStatus("NOT_APPLICABLE");
+        /// <summary>
+        /// Constant NOT_EVALUATED for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus NOT_EVALUATED = new CisRuleStatus("NOT_EVALUATED");
+        /// <summary>
+        /// Constant PASSED for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus PASSED = new CisRuleStatus("PASSED");
+        /// <summary>
+        /// Constant UNKNOWN for CisRuleStatus
+        /// </summary>
+        public static readonly CisRuleStatus UNKNOWN = new CisRuleStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisRuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisRuleStatus FindValue(string value)
+        {
+            return FindValue<CisRuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisRuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisScanConfigurationsSortBy.
+    /// </summary>
+    public class CisScanConfigurationsSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SCAN_CONFIGURATION_ARN for CisScanConfigurationsSortBy
+        /// </summary>
+        public static readonly CisScanConfigurationsSortBy SCAN_CONFIGURATION_ARN = new CisScanConfigurationsSortBy("SCAN_CONFIGURATION_ARN");
+        /// <summary>
+        /// Constant SCAN_NAME for CisScanConfigurationsSortBy
+        /// </summary>
+        public static readonly CisScanConfigurationsSortBy SCAN_NAME = new CisScanConfigurationsSortBy("SCAN_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisScanConfigurationsSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisScanConfigurationsSortBy FindValue(string value)
+        {
+            return FindValue<CisScanConfigurationsSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisScanConfigurationsSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisScanResultDetailsSortBy.
+    /// </summary>
+    public class CisScanResultDetailsSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHECK_ID for CisScanResultDetailsSortBy
+        /// </summary>
+        public static readonly CisScanResultDetailsSortBy CHECK_ID = new CisScanResultDetailsSortBy("CHECK_ID");
+        /// <summary>
+        /// Constant STATUS for CisScanResultDetailsSortBy
+        /// </summary>
+        public static readonly CisScanResultDetailsSortBy STATUS = new CisScanResultDetailsSortBy("STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisScanResultDetailsSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisScanResultDetailsSortBy FindValue(string value)
+        {
+            return FindValue<CisScanResultDetailsSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisScanResultDetailsSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisScanResultsAggregatedByChecksSortBy.
+    /// </summary>
+    public class CisScanResultsAggregatedByChecksSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHECK_ID for CisScanResultsAggregatedByChecksSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByChecksSortBy CHECK_ID = new CisScanResultsAggregatedByChecksSortBy("CHECK_ID");
+        /// <summary>
+        /// Constant FAILED_COUNTS for CisScanResultsAggregatedByChecksSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByChecksSortBy FAILED_COUNTS = new CisScanResultsAggregatedByChecksSortBy("FAILED_COUNTS");
+        /// <summary>
+        /// Constant PLATFORM for CisScanResultsAggregatedByChecksSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByChecksSortBy PLATFORM = new CisScanResultsAggregatedByChecksSortBy("PLATFORM");
+        /// <summary>
+        /// Constant SECURITY_LEVEL for CisScanResultsAggregatedByChecksSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByChecksSortBy SECURITY_LEVEL = new CisScanResultsAggregatedByChecksSortBy("SECURITY_LEVEL");
+        /// <summary>
+        /// Constant TITLE for CisScanResultsAggregatedByChecksSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByChecksSortBy TITLE = new CisScanResultsAggregatedByChecksSortBy("TITLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisScanResultsAggregatedByChecksSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisScanResultsAggregatedByChecksSortBy FindValue(string value)
+        {
+            return FindValue<CisScanResultsAggregatedByChecksSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisScanResultsAggregatedByChecksSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisScanResultsAggregatedByTargetResourceSortBy.
+    /// </summary>
+    public class CisScanResultsAggregatedByTargetResourceSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for CisScanResultsAggregatedByTargetResourceSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByTargetResourceSortBy ACCOUNT_ID = new CisScanResultsAggregatedByTargetResourceSortBy("ACCOUNT_ID");
+        /// <summary>
+        /// Constant FAILED_COUNTS for CisScanResultsAggregatedByTargetResourceSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByTargetResourceSortBy FAILED_COUNTS = new CisScanResultsAggregatedByTargetResourceSortBy("FAILED_COUNTS");
+        /// <summary>
+        /// Constant PLATFORM for CisScanResultsAggregatedByTargetResourceSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByTargetResourceSortBy PLATFORM = new CisScanResultsAggregatedByTargetResourceSortBy("PLATFORM");
+        /// <summary>
+        /// Constant RESOURCE_ID for CisScanResultsAggregatedByTargetResourceSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByTargetResourceSortBy RESOURCE_ID = new CisScanResultsAggregatedByTargetResourceSortBy("RESOURCE_ID");
+        /// <summary>
+        /// Constant TARGET_STATUS for CisScanResultsAggregatedByTargetResourceSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByTargetResourceSortBy TARGET_STATUS = new CisScanResultsAggregatedByTargetResourceSortBy("TARGET_STATUS");
+        /// <summary>
+        /// Constant TARGET_STATUS_REASON for CisScanResultsAggregatedByTargetResourceSortBy
+        /// </summary>
+        public static readonly CisScanResultsAggregatedByTargetResourceSortBy TARGET_STATUS_REASON = new CisScanResultsAggregatedByTargetResourceSortBy("TARGET_STATUS_REASON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisScanResultsAggregatedByTargetResourceSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisScanResultsAggregatedByTargetResourceSortBy FindValue(string value)
+        {
+            return FindValue<CisScanResultsAggregatedByTargetResourceSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisScanResultsAggregatedByTargetResourceSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisScanStatus.
+    /// </summary>
+    public class CisScanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for CisScanStatus
+        /// </summary>
+        public static readonly CisScanStatus CANCELLED = new CisScanStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for CisScanStatus
+        /// </summary>
+        public static readonly CisScanStatus COMPLETED = new CisScanStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for CisScanStatus
+        /// </summary>
+        public static readonly CisScanStatus FAILED = new CisScanStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CisScanStatus
+        /// </summary>
+        public static readonly CisScanStatus IN_PROGRESS = new CisScanStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisScanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisScanStatus FindValue(string value)
+        {
+            return FindValue<CisScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisScanStatusComparison.
+    /// </summary>
+    public class CisScanStatusComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CisScanStatusComparison
+        /// </summary>
+        public static readonly CisScanStatusComparison EQUALS = new CisScanStatusComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisScanStatusComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisScanStatusComparison FindValue(string value)
+        {
+            return FindValue<CisScanStatusComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisScanStatusComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisSecurityLevel.
+    /// </summary>
+    public class CisSecurityLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEVEL_1 for CisSecurityLevel
+        /// </summary>
+        public static readonly CisSecurityLevel LEVEL_1 = new CisSecurityLevel("LEVEL_1");
+        /// <summary>
+        /// Constant LEVEL_2 for CisSecurityLevel
+        /// </summary>
+        public static readonly CisSecurityLevel LEVEL_2 = new CisSecurityLevel("LEVEL_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisSecurityLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisSecurityLevel FindValue(string value)
+        {
+            return FindValue<CisSecurityLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisSecurityLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisSecurityLevelComparison.
+    /// </summary>
+    public class CisSecurityLevelComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CisSecurityLevelComparison
+        /// </summary>
+        public static readonly CisSecurityLevelComparison EQUALS = new CisSecurityLevelComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisSecurityLevelComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisSecurityLevelComparison FindValue(string value)
+        {
+            return FindValue<CisSecurityLevelComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisSecurityLevelComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisSortOrder.
+    /// </summary>
+    public class CisSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for CisSortOrder
+        /// </summary>
+        public static readonly CisSortOrder ASC = new CisSortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for CisSortOrder
+        /// </summary>
+        public static readonly CisSortOrder DESC = new CisSortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisSortOrder FindValue(string value)
+        {
+            return FindValue<CisSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisStringComparison.
+    /// </summary>
+    public class CisStringComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CisStringComparison
+        /// </summary>
+        public static readonly CisStringComparison EQUALS = new CisStringComparison("EQUALS");
+        /// <summary>
+        /// Constant NOT_EQUALS for CisStringComparison
+        /// </summary>
+        public static readonly CisStringComparison NOT_EQUALS = new CisStringComparison("NOT_EQUALS");
+        /// <summary>
+        /// Constant PREFIX for CisStringComparison
+        /// </summary>
+        public static readonly CisStringComparison PREFIX = new CisStringComparison("PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisStringComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisStringComparison FindValue(string value)
+        {
+            return FindValue<CisStringComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisStringComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisTargetStatus.
+    /// </summary>
+    public class CisTargetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for CisTargetStatus
+        /// </summary>
+        public static readonly CisTargetStatus CANCELLED = new CisTargetStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for CisTargetStatus
+        /// </summary>
+        public static readonly CisTargetStatus COMPLETED = new CisTargetStatus("COMPLETED");
+        /// <summary>
+        /// Constant TIMED_OUT for CisTargetStatus
+        /// </summary>
+        public static readonly CisTargetStatus TIMED_OUT = new CisTargetStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisTargetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisTargetStatus FindValue(string value)
+        {
+            return FindValue<CisTargetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisTargetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisTargetStatusComparison.
+    /// </summary>
+    public class CisTargetStatusComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for CisTargetStatusComparison
+        /// </summary>
+        public static readonly CisTargetStatusComparison EQUALS = new CisTargetStatusComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisTargetStatusComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisTargetStatusComparison FindValue(string value)
+        {
+            return FindValue<CisTargetStatusComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisTargetStatusComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CisTargetStatusReason.
+    /// </summary>
+    public class CisTargetStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SCAN_IN_PROGRESS for CisTargetStatusReason
+        /// </summary>
+        public static readonly CisTargetStatusReason SCAN_IN_PROGRESS = new CisTargetStatusReason("SCAN_IN_PROGRESS");
+        /// <summary>
+        /// Constant SSM_UNMANAGED for CisTargetStatusReason
+        /// </summary>
+        public static readonly CisTargetStatusReason SSM_UNMANAGED = new CisTargetStatusReason("SSM_UNMANAGED");
+        /// <summary>
+        /// Constant UNSUPPORTED_OS for CisTargetStatusReason
+        /// </summary>
+        public static readonly CisTargetStatusReason UNSUPPORTED_OS = new CisTargetStatusReason("UNSUPPORTED_OS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CisTargetStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CisTargetStatusReason FindValue(string value)
+        {
+            return FindValue<CisTargetStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CisTargetStatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CodeSnippetErrorCode.
     /// </summary>
     public class CodeSnippetErrorCode : ConstantClass
@@ -686,6 +1696,76 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Currency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Day.
+    /// </summary>
+    public class Day : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRI for Day
+        /// </summary>
+        public static readonly Day FRI = new Day("FRI");
+        /// <summary>
+        /// Constant MON for Day
+        /// </summary>
+        public static readonly Day MON = new Day("MON");
+        /// <summary>
+        /// Constant SAT for Day
+        /// </summary>
+        public static readonly Day SAT = new Day("SAT");
+        /// <summary>
+        /// Constant SUN for Day
+        /// </summary>
+        public static readonly Day SUN = new Day("SUN");
+        /// <summary>
+        /// Constant THU for Day
+        /// </summary>
+        public static readonly Day THU = new Day("THU");
+        /// <summary>
+        /// Constant TUE for Day
+        /// </summary>
+        public static readonly Day TUE = new Day("TUE");
+        /// <summary>
+        /// Constant WED for Day
+        /// </summary>
+        public static readonly Day WED = new Day("WED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Day(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Day FindValue(string value)
+        {
+            return FindValue<Day>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Day(string value)
         {
             return FindValue(value);
         }
@@ -1984,6 +3064,114 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LambdaLayerSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListCisScansDetailLevel.
+    /// </summary>
+    public class ListCisScansDetailLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEMBER for ListCisScansDetailLevel
+        /// </summary>
+        public static readonly ListCisScansDetailLevel MEMBER = new ListCisScansDetailLevel("MEMBER");
+        /// <summary>
+        /// Constant ORGANIZATION for ListCisScansDetailLevel
+        /// </summary>
+        public static readonly ListCisScansDetailLevel ORGANIZATION = new ListCisScansDetailLevel("ORGANIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListCisScansDetailLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListCisScansDetailLevel FindValue(string value)
+        {
+            return FindValue<ListCisScansDetailLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListCisScansDetailLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListCisScansSortBy.
+    /// </summary>
+    public class ListCisScansSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_CHECKS for ListCisScansSortBy
+        /// </summary>
+        public static readonly ListCisScansSortBy FAILED_CHECKS = new ListCisScansSortBy("FAILED_CHECKS");
+        /// <summary>
+        /// Constant SCAN_START_DATE for ListCisScansSortBy
+        /// </summary>
+        public static readonly ListCisScansSortBy SCAN_START_DATE = new ListCisScansSortBy("SCAN_START_DATE");
+        /// <summary>
+        /// Constant SCHEDULED_BY for ListCisScansSortBy
+        /// </summary>
+        public static readonly ListCisScansSortBy SCHEDULED_BY = new ListCisScansSortBy("SCHEDULED_BY");
+        /// <summary>
+        /// Constant STATUS for ListCisScansSortBy
+        /// </summary>
+        public static readonly ListCisScansSortBy STATUS = new ListCisScansSortBy("STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListCisScansSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListCisScansSortBy FindValue(string value)
+        {
+            return FindValue<ListCisScansSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListCisScansSortBy(string value)
         {
             return FindValue(value);
         }
@@ -3575,6 +4763,64 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type StopCisSessionStatus.
+    /// </summary>
+    public class StopCisSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for StopCisSessionStatus
+        /// </summary>
+        public static readonly StopCisSessionStatus FAILED = new StopCisSessionStatus("FAILED");
+        /// <summary>
+        /// Constant INTERRUPTED for StopCisSessionStatus
+        /// </summary>
+        public static readonly StopCisSessionStatus INTERRUPTED = new StopCisSessionStatus("INTERRUPTED");
+        /// <summary>
+        /// Constant SUCCESS for StopCisSessionStatus
+        /// </summary>
+        public static readonly StopCisSessionStatus SUCCESS = new StopCisSessionStatus("SUCCESS");
+        /// <summary>
+        /// Constant UNSUPPORTED_OS for StopCisSessionStatus
+        /// </summary>
+        public static readonly StopCisSessionStatus UNSUPPORTED_OS = new StopCisSessionStatus("UNSUPPORTED_OS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StopCisSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StopCisSessionStatus FindValue(string value)
+        {
+            return FindValue<StopCisSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StopCisSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StringComparison.
     /// </summary>
     public class StringComparison : ConstantClass
@@ -3622,6 +4868,52 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TagComparison.
+    /// </summary>
+    public class TagComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for TagComparison
+        /// </summary>
+        public static readonly TagComparison EQUALS = new TagComparison("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TagComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagComparison FindValue(string value)
+        {
+            return FindValue<TagComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagComparison(string value)
         {
             return FindValue(value);
         }

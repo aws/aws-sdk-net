@@ -36,11 +36,51 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Paginator for GetCisScanResultDetails operation
+        ///</summary>
+        public IGetCisScanResultDetailsPaginator GetCisScanResultDetails(GetCisScanResultDetailsRequest request) 
+        {
+            return new GetCisScanResultDetailsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccountPermissions operation
         ///</summary>
         public IListAccountPermissionsPaginator ListAccountPermissions(ListAccountPermissionsRequest request) 
         {
             return new ListAccountPermissionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCisScanConfigurations operation
+        ///</summary>
+        public IListCisScanConfigurationsPaginator ListCisScanConfigurations(ListCisScanConfigurationsRequest request) 
+        {
+            return new ListCisScanConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCisScanResultsAggregatedByChecks operation
+        ///</summary>
+        public IListCisScanResultsAggregatedByChecksPaginator ListCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request) 
+        {
+            return new ListCisScanResultsAggregatedByChecksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCisScanResultsAggregatedByTargetResource operation
+        ///</summary>
+        public IListCisScanResultsAggregatedByTargetResourcePaginator ListCisScanResultsAggregatedByTargetResource(ListCisScanResultsAggregatedByTargetResourceRequest request) 
+        {
+            return new ListCisScanResultsAggregatedByTargetResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCisScans operation
+        ///</summary>
+        public IListCisScansPaginator ListCisScans(ListCisScansRequest request) 
+        {
+            return new ListCisScansPaginator(this.client, request);
         }
 
         /// <summary>

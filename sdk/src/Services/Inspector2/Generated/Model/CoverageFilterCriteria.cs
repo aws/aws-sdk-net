@@ -223,7 +223,8 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// An array of Amazon Web Services resource types to return coverage statistics for.
-        /// The values can be <c>AWS_EC2_INSTANCE</c>, <c>AWS_LAMBDA_FUNCTION</c> or <c>AWS_ECR_REPOSITORY</c>.
+        /// The values can be <c>AWS_EC2_INSTANCE</c>, <c>AWS_LAMBDA_FUNCTION</c>, <c>AWS_ECR_CONTAINER_IMAGE</c>,
+        /// <c>AWS_ECR_REPOSITORY</c> or <c>AWS_ACCOUNT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
