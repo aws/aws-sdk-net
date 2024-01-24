@@ -33,7 +33,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateNetworkAclResponse : AmazonWebServiceResponse
     {
+        private string _clientToken;
         private NetworkAcl _networkAcl;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned
+        /// if a client token was provided in the request.
+        /// </para>
+        /// </summary>
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NetworkAcl. 

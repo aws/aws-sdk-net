@@ -1553,6 +1553,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly AvailabilityZoneState Available = new AvailabilityZoneState("available");
         /// <summary>
+        /// Constant Constrained for AvailabilityZoneState
+        /// </summary>
+        public static readonly AvailabilityZoneState Constrained = new AvailabilityZoneState("constrained");
+        /// <summary>
         /// Constant Impaired for AvailabilityZoneState
         /// </summary>
         public static readonly AvailabilityZoneState Impaired = new AvailabilityZoneState("impaired");
@@ -18200,6 +18204,10 @@ namespace Amazon.EC2
         /// Constant Pending for SubnetState
         /// </summary>
         public static readonly SubnetState Pending = new SubnetState("pending");
+        /// <summary>
+        /// Constant Unavailable for SubnetState
+        /// </summary>
+        public static readonly SubnetState Unavailable = new SubnetState("unavailable");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
