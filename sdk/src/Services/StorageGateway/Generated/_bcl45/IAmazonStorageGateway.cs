@@ -2945,9 +2945,19 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
-        /// If a <c>TapeARN</c> is not specified, returns a description of all virtual tapes associated
-        /// with the specified gateway. This operation is only supported in the tape gateway type.
+        /// Returns a description of virtual tapes that correspond to the specified Amazon Resource
+        /// Names (ARNs). If <c>TapeARN</c> is not specified, returns a description of the virtual
+        /// tapes associated with the specified gateway. This operation is only supported for
+        /// the tape gateway type.
+        /// 
+        ///  
+        /// <para>
+        /// The operation supports pagination. By default, the operation returns a maximum of
+        /// up to 100 tapes. You can optionally specify the <c>Limit</c> field in the body to
+        /// limit the number of tapes in the response. If the number of tapes returned in the
+        /// response is truncated, the response includes a <c>Marker</c> field. You can use this
+        /// <c>Marker</c> value in your subsequent request to retrieve the next set of tapes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapes service method.</param>
         /// 
@@ -2966,9 +2976,19 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
-        /// If a <c>TapeARN</c> is not specified, returns a description of all virtual tapes associated
-        /// with the specified gateway. This operation is only supported in the tape gateway type.
+        /// Returns a description of virtual tapes that correspond to the specified Amazon Resource
+        /// Names (ARNs). If <c>TapeARN</c> is not specified, returns a description of the virtual
+        /// tapes associated with the specified gateway. This operation is only supported for
+        /// the tape gateway type.
+        /// 
+        ///  
+        /// <para>
+        /// The operation supports pagination. By default, the operation returns a maximum of
+        /// up to 100 tapes. You can optionally specify the <c>Limit</c> field in the body to
+        /// limit the number of tapes in the response. If the number of tapes returned in the
+        /// response is truncated, the response includes a <c>Marker</c> field. You can use this
+        /// <c>Marker</c> value in your subsequent request to retrieve the next set of tapes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapes service method.</param>
         /// <param name="cancellationToken">
@@ -4143,7 +4163,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Sends you notification through CloudWatch Events when all files written to your file
-        /// share have been uploaded to S3. Amazon S3.
+        /// share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
@@ -4179,7 +4199,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Sends you notification through CloudWatch Events when all files written to your file
-        /// share have been uploaded to S3. Amazon S3.
+        /// share have been uploaded to Amazon S3.
         /// 
         ///  
         /// <para>
@@ -4230,9 +4250,9 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// You can subscribe to be notified through an Amazon CloudWatch event when your <c>RefreshCache</c>
-        /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
-        /// operation is Only supported for S3 File Gateways.
+        /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
+        /// This operation is Only supported for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
@@ -4247,8 +4267,8 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
         /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
-        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
+        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
@@ -4267,8 +4287,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
@@ -4298,9 +4318,9 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// You can subscribe to be notified through an Amazon CloudWatch event when your <c>RefreshCache</c>
-        /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
-        /// operation is Only supported for S3 File Gateways.
+        /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
+        /// This operation is Only supported for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
@@ -4315,8 +4335,8 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Throttle limit: This API is asynchronous, so the gateway will accept no more than
         /// two refreshes at any time. We recommend using the refresh-complete CloudWatch event
-        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
+        /// notification before issuing additional requests. For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
@@ -4335,8 +4355,8 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
-        /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification">Getting
+        /// notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
@@ -4787,10 +4807,14 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource
-        /// Name (ARN) of the gateway in the body of your request.
+        /// Shuts down a Tape Gateway or Volume Gateway. To specify which gateway to shut down,
+        /// use the Amazon Resource Name (ARN) of the gateway in the body of your request.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This API action cannot be used to shut down S3 File Gateway or FSx File Gateway.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The operation shuts down the gateway service component running in the gateway's virtual
         /// machine (VM) and not the host VM.
@@ -4836,10 +4860,14 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource
-        /// Name (ARN) of the gateway in the body of your request.
+        /// Shuts down a Tape Gateway or Volume Gateway. To specify which gateway to shut down,
+        /// use the Amazon Resource Name (ARN) of the gateway in the body of your request.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This API action cannot be used to shut down S3 File Gateway or FSx File Gateway.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The operation shuts down the gateway service component running in the gateway's virtual
         /// machine (VM) and not the host VM.

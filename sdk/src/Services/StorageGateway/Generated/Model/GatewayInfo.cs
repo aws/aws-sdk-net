@@ -33,6 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class GatewayInfo
     {
+        private string _deprecationDate;
         private string _ec2InstanceId;
         private string _ec2InstanceRegion;
         private string _gatewayARN;
@@ -42,6 +43,27 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayType;
         private HostEnvironment _hostEnvironment;
         private string _hostEnvironmentId;
+        private string _softwareVersion;
+
+        /// <summary>
+        /// Gets and sets the property DeprecationDate. 
+        /// <para>
+        /// Date after which this gateway will not receive software updates for new features and
+        /// bug fixes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string DeprecationDate
+        {
+            get { return this._deprecationDate; }
+            set { this._deprecationDate = value; }
+        }
+
+        // Check to see if DeprecationDate property is set
+        internal bool IsSetDeprecationDate()
+        {
+            return this._deprecationDate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceId. 
@@ -216,6 +238,24 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetHostEnvironmentId()
         {
             return this._hostEnvironmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareVersion. 
+        /// <para>
+        /// The version number of the software running on the gateway appliance.
+        /// </para>
+        /// </summary>
+        public string SoftwareVersion
+        {
+            get { return this._softwareVersion; }
+            set { this._softwareVersion = value; }
+        }
+
+        // Check to see if SoftwareVersion property is set
+        internal bool IsSetSoftwareVersion()
+        {
+            return this._softwareVersion != null;
         }
 
     }

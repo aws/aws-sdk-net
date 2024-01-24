@@ -30,10 +30,14 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ShutdownGateway operation.
-    /// Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource
-    /// Name (ARN) of the gateway in the body of your request.
+    /// Shuts down a Tape Gateway or Volume Gateway. To specify which gateway to shut down,
+    /// use the Amazon Resource Name (ARN) of the gateway in the body of your request.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// This API action cannot be used to shut down S3 File Gateway or FSx File Gateway.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The operation shuts down the gateway service component running in the gateway's virtual
     /// machine (VM) and not the host VM.

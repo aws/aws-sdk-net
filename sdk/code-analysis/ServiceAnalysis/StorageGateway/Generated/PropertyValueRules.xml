@@ -1848,6 +1848,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.GatewayInfo.DeprecationDate</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.GatewayInfo.GatewayARN</property>
     <min>50</min>
     <max>500</max>
