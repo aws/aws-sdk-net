@@ -55,7 +55,6 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeOrganizationConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Inspector2");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-08";
             request.HttpMethod = "POST";
 

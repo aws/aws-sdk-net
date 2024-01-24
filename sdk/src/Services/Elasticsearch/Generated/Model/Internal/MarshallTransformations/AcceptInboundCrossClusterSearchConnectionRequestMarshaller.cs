@@ -55,7 +55,6 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         public IRequest Marshall(AcceptInboundCrossClusterSearchConnectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Elasticsearch");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";
             request.HttpMethod = "PUT";
 

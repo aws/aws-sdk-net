@@ -55,7 +55,6 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListAppMonitorsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchRUM");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 

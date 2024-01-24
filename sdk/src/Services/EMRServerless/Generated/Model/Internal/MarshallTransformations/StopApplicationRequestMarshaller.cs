@@ -55,7 +55,6 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRServerless");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-13";
             request.HttpMethod = "POST";
 

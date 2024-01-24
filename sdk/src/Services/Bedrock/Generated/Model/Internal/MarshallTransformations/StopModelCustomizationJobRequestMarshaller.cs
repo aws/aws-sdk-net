@@ -55,7 +55,6 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopModelCustomizationJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Bedrock");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
             request.HttpMethod = "POST";
 

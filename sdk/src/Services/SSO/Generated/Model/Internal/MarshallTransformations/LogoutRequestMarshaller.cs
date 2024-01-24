@@ -55,7 +55,6 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         public IRequest Marshall(LogoutRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSO");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-06-10";
             request.HttpMethod = "POST";
 

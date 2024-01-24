@@ -55,7 +55,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         public IRequest Marshall(RebootBrokerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-27";
             request.HttpMethod = "POST";
 

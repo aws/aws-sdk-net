@@ -55,7 +55,6 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateChannelReadMarkerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
             request.HttpMethod = "PUT";
 

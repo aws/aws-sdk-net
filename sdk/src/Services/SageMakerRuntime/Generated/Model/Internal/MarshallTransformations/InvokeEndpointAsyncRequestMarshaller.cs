@@ -55,7 +55,6 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         public IRequest Marshall(InvokeEndpointAsyncRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerRuntime");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";
             request.HttpMethod = "POST";
 

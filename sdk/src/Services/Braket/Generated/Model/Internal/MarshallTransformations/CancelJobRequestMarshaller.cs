@@ -55,7 +55,6 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Braket");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-01";
             request.HttpMethod = "PUT";
 

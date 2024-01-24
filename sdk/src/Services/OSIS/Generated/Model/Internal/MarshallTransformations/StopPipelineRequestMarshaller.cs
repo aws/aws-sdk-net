@@ -55,7 +55,6 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopPipelineRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OSIS");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-01-01";
             request.HttpMethod = "PUT";
 

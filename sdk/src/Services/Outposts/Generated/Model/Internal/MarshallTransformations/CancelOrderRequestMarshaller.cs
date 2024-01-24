@@ -55,7 +55,6 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelOrderRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Outposts");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-03";
             request.HttpMethod = "POST";
 

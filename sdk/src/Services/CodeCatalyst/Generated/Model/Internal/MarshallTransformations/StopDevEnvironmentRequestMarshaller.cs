@@ -55,7 +55,6 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopDevEnvironmentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeCatalyst");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-09-28";
             request.HttpMethod = "PUT";
 

@@ -55,7 +55,6 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelChangeSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceCatalog");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";
             request.HttpMethod = "PATCH";
 

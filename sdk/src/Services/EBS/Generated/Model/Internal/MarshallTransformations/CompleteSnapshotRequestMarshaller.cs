@@ -55,7 +55,6 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
         public IRequest Marshall(CompleteSnapshotRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EBS");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-02";
             request.HttpMethod = "POST";
 

@@ -55,7 +55,6 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartDataSourceSyncJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QBusiness");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-11-27";
             request.HttpMethod = "POST";
 

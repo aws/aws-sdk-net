@@ -55,7 +55,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         public IRequest Marshall(SyncResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppRegistry");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-24";
             request.HttpMethod = "POST";
 

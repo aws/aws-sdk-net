@@ -55,7 +55,6 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MainframeModernization");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-28";
             request.HttpMethod = "POST";
 

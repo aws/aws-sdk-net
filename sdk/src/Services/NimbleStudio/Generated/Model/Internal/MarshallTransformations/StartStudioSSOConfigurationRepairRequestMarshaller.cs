@@ -55,7 +55,6 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartStudioSSOConfigurationRepairRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NimbleStudio");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-01";
             request.HttpMethod = "PUT";
 

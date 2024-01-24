@@ -55,7 +55,6 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisassociateFromMasterAccountRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Macie2");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
             request.HttpMethod = "POST";
 

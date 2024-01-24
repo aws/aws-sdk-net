@@ -55,7 +55,6 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         public IRequest Marshall(PauseCampaignRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectCampaignService");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-30";
             request.HttpMethod = "POST";
 

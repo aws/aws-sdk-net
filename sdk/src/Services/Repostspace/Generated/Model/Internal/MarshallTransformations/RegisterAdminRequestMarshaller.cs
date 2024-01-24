@@ -55,7 +55,6 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
         public IRequest Marshall(RegisterAdminRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Repostspace");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-05-13";
             request.HttpMethod = "POST";
 

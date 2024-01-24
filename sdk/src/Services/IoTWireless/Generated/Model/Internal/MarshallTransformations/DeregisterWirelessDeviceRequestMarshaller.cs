@@ -55,7 +55,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeregisterWirelessDeviceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTWireless");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "PATCH";
 

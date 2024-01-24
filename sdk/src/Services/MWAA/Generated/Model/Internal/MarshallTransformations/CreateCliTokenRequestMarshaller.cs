@@ -55,7 +55,6 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateCliTokenRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MWAA");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-01";
             request.HttpMethod = "POST";
 

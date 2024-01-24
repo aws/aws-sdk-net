@@ -55,7 +55,6 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteReplicationSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SSMIncidents");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 

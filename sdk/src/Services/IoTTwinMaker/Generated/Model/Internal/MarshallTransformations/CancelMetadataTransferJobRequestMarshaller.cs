@@ -55,7 +55,6 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelMetadataTransferJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTTwinMaker");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-11-29";
             request.HttpMethod = "PUT";
 

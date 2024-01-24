@@ -55,7 +55,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
         public IRequest Marshall(RedactConversationMessageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Chime");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";
             request.HttpMethod = "POST";
 

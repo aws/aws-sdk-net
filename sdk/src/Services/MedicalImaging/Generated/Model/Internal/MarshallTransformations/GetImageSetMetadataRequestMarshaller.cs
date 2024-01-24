@@ -55,7 +55,6 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetImageSetMetadataRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MedicalImaging");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-07-19";
             request.HttpMethod = "POST";
 

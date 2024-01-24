@@ -55,7 +55,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelExportJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
             request.HttpMethod = "PUT";
 

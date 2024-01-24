@@ -55,7 +55,6 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopSpeakerSearchTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKVoice");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-08-03";
             request.HttpMethod = "POST";
 

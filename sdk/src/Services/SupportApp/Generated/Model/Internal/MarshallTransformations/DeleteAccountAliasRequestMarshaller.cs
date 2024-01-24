@@ -55,7 +55,6 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteAccountAliasRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SupportApp");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-20";
             request.HttpMethod = "POST";
 

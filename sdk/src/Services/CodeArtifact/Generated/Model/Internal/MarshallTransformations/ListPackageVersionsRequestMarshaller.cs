@@ -55,7 +55,6 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListPackageVersionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "POST";
 

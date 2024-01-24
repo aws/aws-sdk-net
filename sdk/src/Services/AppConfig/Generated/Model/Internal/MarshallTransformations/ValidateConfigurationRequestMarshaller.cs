@@ -55,7 +55,6 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
         public IRequest Marshall(ValidateConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppConfig");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-09";
             request.HttpMethod = "POST";
 

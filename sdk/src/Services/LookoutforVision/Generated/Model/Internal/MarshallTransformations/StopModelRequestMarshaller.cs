@@ -55,7 +55,6 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopModelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";
             request.HttpMethod = "POST";
 

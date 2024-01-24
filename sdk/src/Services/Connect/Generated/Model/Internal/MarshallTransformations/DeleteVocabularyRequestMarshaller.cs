@@ -55,7 +55,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteVocabularyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "POST";
 

@@ -55,7 +55,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListMultipartReadSetUploadsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Omics");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
             request.HttpMethod = "POST";
 

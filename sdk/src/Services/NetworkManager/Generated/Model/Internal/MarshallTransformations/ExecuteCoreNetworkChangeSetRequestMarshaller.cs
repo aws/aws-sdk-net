@@ -55,7 +55,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(ExecuteCoreNetworkChangeSetRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkManager");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";
             request.HttpMethod = "POST";
 

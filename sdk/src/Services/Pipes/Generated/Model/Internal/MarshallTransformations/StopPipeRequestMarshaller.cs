@@ -55,7 +55,6 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopPipeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Pipes");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-07";
             request.HttpMethod = "POST";
 

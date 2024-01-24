@@ -55,7 +55,6 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisassociateRecoveryPointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Backup");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-15";
             request.HttpMethod = "POST";
 

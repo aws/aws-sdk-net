@@ -55,7 +55,6 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
         public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeStarNotifications");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-15";
             request.HttpMethod = "POST";
 

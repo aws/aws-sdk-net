@@ -55,7 +55,6 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         public IRequest Marshall(RetryWorkflowStepRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubOrchestrator");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-28";
             request.HttpMethod = "POST";
 

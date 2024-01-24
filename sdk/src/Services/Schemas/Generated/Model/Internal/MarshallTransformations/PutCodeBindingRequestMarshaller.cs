@@ -55,7 +55,6 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutCodeBindingRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Schemas");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "POST";
 

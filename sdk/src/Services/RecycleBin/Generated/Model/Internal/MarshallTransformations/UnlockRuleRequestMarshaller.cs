@@ -55,7 +55,6 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         public IRequest Marshall(UnlockRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RecycleBin");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-06-15";
             request.HttpMethod = "PATCH";
 

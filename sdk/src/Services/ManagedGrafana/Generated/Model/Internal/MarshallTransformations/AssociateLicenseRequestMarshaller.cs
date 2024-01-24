@@ -55,7 +55,6 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
         public IRequest Marshall(AssociateLicenseRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedGrafana");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-18";
             request.HttpMethod = "POST";
 

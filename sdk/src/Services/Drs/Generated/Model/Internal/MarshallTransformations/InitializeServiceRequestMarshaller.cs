@@ -55,7 +55,6 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
         public IRequest Marshall(InitializeServiceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Drs");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";
             request.HttpMethod = "POST";
 

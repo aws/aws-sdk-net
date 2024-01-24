@@ -55,7 +55,6 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
         public IRequest Marshall(CancelSolNetworkOperationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Tnb");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2008-10-21";
             request.HttpMethod = "POST";
 

@@ -55,7 +55,6 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartLaunchRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchEvidently");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-02-01";
             request.HttpMethod = "POST";
 

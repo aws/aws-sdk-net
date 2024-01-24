@@ -55,7 +55,6 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetDigestRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QLDB");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-02";
             request.HttpMethod = "POST";
 

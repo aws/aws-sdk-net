@@ -55,7 +55,6 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SnowDeviceManagement");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-04";
             request.HttpMethod = "POST";
 

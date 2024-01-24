@@ -55,7 +55,6 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisableTrustAnchorRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IAMRolesAnywhere");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 

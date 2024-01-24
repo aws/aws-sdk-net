@@ -55,7 +55,6 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisableOrganizationAdminAccountRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Detective");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-10-26";
             request.HttpMethod = "POST";
 

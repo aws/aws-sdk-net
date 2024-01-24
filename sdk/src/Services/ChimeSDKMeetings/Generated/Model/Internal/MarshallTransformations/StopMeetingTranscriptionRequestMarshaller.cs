@@ -55,7 +55,6 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
         public IRequest Marshall(StopMeetingTranscriptionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMeetings");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";
             request.HttpMethod = "POST";
 

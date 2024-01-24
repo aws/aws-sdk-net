@@ -55,7 +55,6 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDomainsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ConnectCases");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-10-03";
             request.HttpMethod = "POST";
 

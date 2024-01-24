@@ -55,7 +55,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetIamPortalLoginUrlRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataZone");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
