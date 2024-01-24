@@ -2552,6 +2552,90 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CreateDBShardGroup
+
+        /// <summary>
+        /// Creates a new DB shard group for Aurora Limitless Database. You must enable Aurora
+        /// Limitless Database to create a DB shard group.
+        /// 
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBShardGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupAlreadyExistsException">
+        /// The specified DB shard group name must be unique in your Amazon Web Services account
+        /// in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
+        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// The DB subnet group doesn't cover all Availability Zones after it's created because
+        /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.MaxDBShardGroupLimitReachedException">
+        /// The maximum number of DB shard groups for your Amazon Web Services account in the
+        /// specified Amazon Web Services Region has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.UnsupportedDBEngineVersionException">
+        /// The specified DB engine version isn't supported for Aurora Limitless Database.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">REST API Reference for CreateDBShardGroup Operation</seealso>
+        public virtual CreateDBShardGroupResponse CreateDBShardGroup(CreateDBShardGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDBShardGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDBShardGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBShardGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDBShardGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">REST API Reference for CreateDBShardGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateDBShardGroup(CreateDBShardGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDBShardGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDBShardGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateDBShardGroupResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">REST API Reference for CreateDBShardGroup Operation</seealso>
+        public virtual CreateDBShardGroupResponse EndCreateDBShardGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDBShardGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDBSnapshot
 
         /// <summary>
@@ -4063,6 +4147,69 @@ namespace Amazon.RDS
         public virtual DeleteDBSecurityGroupResponse EndDeleteDBSecurityGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDBSecurityGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDBShardGroup
+
+        /// <summary>
+        /// Deletes an Aurora Limitless Database DB shard group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBShardGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">REST API Reference for DeleteDBShardGroup Operation</seealso>
+        public virtual DeleteDBShardGroupResponse DeleteDBShardGroup(DeleteDBShardGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBShardGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDBShardGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBShardGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDBShardGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">REST API Reference for DeleteDBShardGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDBShardGroup(DeleteDBShardGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDBShardGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDBShardGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteDBShardGroupResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">REST API Reference for DeleteDBShardGroup Operation</seealso>
+        public virtual DeleteDBShardGroupResponse EndDeleteDBShardGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDBShardGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -6176,6 +6323,66 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeDBShardGroups
+
+        /// <summary>
+        /// Describes existing Aurora Limitless Database DB shard groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBShardGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBShardGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">REST API Reference for DescribeDBShardGroups Operation</seealso>
+        public virtual DescribeDBShardGroupsResponse DescribeDBShardGroups(DescribeDBShardGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBShardGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBShardGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDBShardGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBShardGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBShardGroups operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDBShardGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">REST API Reference for DescribeDBShardGroups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDBShardGroups(DescribeDBShardGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDBShardGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDBShardGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDBShardGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDBShardGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeDBShardGroupsResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">REST API Reference for DescribeDBShardGroups Operation</seealso>
+        public virtual DescribeDBShardGroupsResponse EndDescribeDBShardGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDBShardGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDBSnapshotAttributes
 
         /// <summary>
@@ -7830,9 +8037,10 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For a Multi-AZ DB cluster, failover for a DB cluster promotes one of the readable
-        /// standby DB instances (read-only instances) in the DB cluster to be the primary DB
-        /// instance (the cluster writer).
+        /// For a Multi-AZ DB cluster, after RDS terminates the primary DB instance, the internal
+        /// monitoring system detects that the primary DB instance is unhealthy and promotes a
+        /// readable standby (read-only instances) in the DB cluster to be the primary DB instance
+        /// (the cluster writer). Failover times are typically less than 35 seconds.
         /// </para>
         ///  
         /// <para>
@@ -9311,6 +9519,74 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyDBShardGroup
+
+        /// <summary>
+        /// Modifies the settings of an Aurora Limitless Database DB shard group. You can change
+        /// one or more settings by specifying these parameters and the new values in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBShardGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupAlreadyExistsException">
+        /// The specified DB shard group name must be unique in your Amazon Web Services account
+        /// in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
+        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
+        public virtual ModifyDBShardGroupResponse ModifyDBShardGroup(ModifyDBShardGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBShardGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBShardGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBShardGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBShardGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
+        public virtual IAsyncResult BeginModifyDBShardGroup(ModifyDBShardGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyDBShardGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBShardGroup.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBShardGroupResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
+        public virtual ModifyDBShardGroupResponse EndModifyDBShardGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyDBShardGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyDBSnapshot
 
         /// <summary>
@@ -10182,6 +10458,73 @@ namespace Amazon.RDS
         public virtual RebootDBInstanceResponse EndRebootDBInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootDBInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RebootDBShardGroup
+
+        /// <summary>
+        /// You might need to reboot your DB shard group, usually for maintenance reasons. For
+        /// example, if you make certain modifications, reboot the DB shard group for the changes
+        /// to take effect.
+        /// 
+        ///  
+        /// <para>
+        /// This operation applies only to Aurora Limitless Database DBb shard groups.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDBShardGroup service method.</param>
+        /// 
+        /// <returns>The response from the RebootDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">REST API Reference for RebootDBShardGroup Operation</seealso>
+        public virtual RebootDBShardGroupResponse RebootDBShardGroup(RebootDBShardGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDBShardGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RebootDBShardGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootDBShardGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootDBShardGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">REST API Reference for RebootDBShardGroup Operation</seealso>
+        public virtual IAsyncResult BeginRebootDBShardGroup(RebootDBShardGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootDBShardGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootDBShardGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootDBShardGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootDBShardGroup.</param>
+        /// 
+        /// <returns>Returns a  RebootDBShardGroupResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">REST API Reference for RebootDBShardGroup Operation</seealso>
+        public virtual RebootDBShardGroupResponse EndRebootDBShardGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RebootDBShardGroupResponse>(asyncResult);
         }
 
         #endregion

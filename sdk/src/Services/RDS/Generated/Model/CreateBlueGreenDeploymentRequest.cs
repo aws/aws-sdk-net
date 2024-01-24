@@ -171,6 +171,14 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specify the DB instance class for the databases in the green environment.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter only applies to RDS DB instances, because DB instances within an Aurora
+        /// DB cluster can have multiple different instance classes. If you're creating a blue/green
+        /// deployment from an Aurora DB cluster, don't specify this parameter. After the green
+        /// environment is created, you can individually modify the instance classes of the DB
+        /// instances within the green DB cluster.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=20)]
         public string TargetDBInstanceClass

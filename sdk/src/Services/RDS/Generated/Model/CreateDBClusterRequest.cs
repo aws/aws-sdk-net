@@ -76,6 +76,7 @@ namespace Amazon.RDS.Model
         private bool? _enableGlobalWriteForwarding;
         private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
+        private bool? _enableLimitlessDatabase;
         private bool? _enableLocalWriteForwarding;
         private bool? _enablePerformanceInsights;
         private string _engine;
@@ -730,6 +731,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnableIAMDatabaseAuthentication()
         {
             return this._enableIAMDatabaseAuthentication.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableLimitlessDatabase. 
+        /// <para>
+        /// Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless
+        /// Database to create a DB shard group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public bool EnableLimitlessDatabase
+        {
+            get { return this._enableLimitlessDatabase.GetValueOrDefault(); }
+            set { this._enableLimitlessDatabase = value; }
+        }
+
+        // Check to see if EnableLimitlessDatabase property is set
+        internal bool IsSetEnableLimitlessDatabase()
+        {
+            return this._enableLimitlessDatabase.HasValue; 
         }
 
         /// <summary>

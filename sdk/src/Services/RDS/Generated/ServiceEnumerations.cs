@@ -1025,6 +1025,80 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type LimitlessDatabaseStatus.
+    /// </summary>
+    public class LimitlessDatabaseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus Active = new LimitlessDatabaseStatus("active");
+        /// <summary>
+        /// Constant Disabled for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus Disabled = new LimitlessDatabaseStatus("disabled");
+        /// <summary>
+        /// Constant Disabling for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus Disabling = new LimitlessDatabaseStatus("disabling");
+        /// <summary>
+        /// Constant Enabled for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus Enabled = new LimitlessDatabaseStatus("enabled");
+        /// <summary>
+        /// Constant Enabling for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus Enabling = new LimitlessDatabaseStatus("enabling");
+        /// <summary>
+        /// Constant Error for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus Error = new LimitlessDatabaseStatus("error");
+        /// <summary>
+        /// Constant ModifyingMaxCapacity for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus ModifyingMaxCapacity = new LimitlessDatabaseStatus("modifying-max-capacity");
+        /// <summary>
+        /// Constant NotInUse for LimitlessDatabaseStatus
+        /// </summary>
+        public static readonly LimitlessDatabaseStatus NotInUse = new LimitlessDatabaseStatus("not-in-use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LimitlessDatabaseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LimitlessDatabaseStatus FindValue(string value)
+        {
+            return FindValue<LimitlessDatabaseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LimitlessDatabaseStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocalWriteForwardingStatus.
     /// </summary>
     public class LocalWriteForwardingStatus : ConstantClass

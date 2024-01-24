@@ -251,6 +251,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBShardGroupsRequest.MaxRecords</property>
+    <min>20</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.DescribeExportTasksRequest.MaxRecords</property>
     <min>20</min>
     <max>100</max>

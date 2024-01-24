@@ -349,6 +349,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.LatestRestorableTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LimitlessDatabase", targetDepth))
+                    {
+                        var unmarshaller = LimitlessDatabaseUnmarshaller.Instance;
+                        unmarshalledObject.LimitlessDatabase = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LocalWriteForwardingStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

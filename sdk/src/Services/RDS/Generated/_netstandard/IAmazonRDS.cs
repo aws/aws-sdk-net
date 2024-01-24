@@ -1430,6 +1430,54 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  CreateDBShardGroup
+
+
+
+        /// <summary>
+        /// Creates a new DB shard group for Aurora Limitless Database. You must enable Aurora
+        /// Limitless Database to create a DB shard group.
+        /// 
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDBShardGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupAlreadyExistsException">
+        /// The specified DB shard group name must be unique in your Amazon Web Services account
+        /// in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
+        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// The DB subnet group doesn't cover all Availability Zones after it's created because
+        /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.MaxDBShardGroupLimitReachedException">
+        /// The maximum number of DB shard groups for your Amazon Web Services account in the
+        /// specified Amazon Web Services Region has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.UnsupportedDBEngineVersionException">
+        /// The specified DB engine version isn't supported for Aurora Limitless Database.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">REST API Reference for CreateDBShardGroup Operation</seealso>
+        Task<CreateDBShardGroupResponse> CreateDBShardGroupAsync(CreateDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDBSnapshot
 
 
@@ -2222,6 +2270,33 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">REST API Reference for DeleteDBSecurityGroup Operation</seealso>
         Task<DeleteDBSecurityGroupResponse> DeleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDBShardGroup
+
+
+
+        /// <summary>
+        /// Deletes an Aurora Limitless Database DB shard group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBShardGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">REST API Reference for DeleteDBShardGroup Operation</seealso>
+        Task<DeleteDBShardGroupResponse> DeleteDBShardGroupAsync(DeleteDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3223,6 +3298,30 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  DescribeDBShardGroups
+
+
+
+        /// <summary>
+        /// Describes existing Aurora Limitless Database DB shard groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBShardGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDBShardGroups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">REST API Reference for DescribeDBShardGroups Operation</seealso>
+        Task<DescribeDBShardGroupsResponse> DescribeDBShardGroupsAsync(DescribeDBShardGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeDBSnapshotAttributes
 
 
@@ -4023,9 +4122,10 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// For a Multi-AZ DB cluster, failover for a DB cluster promotes one of the readable
-        /// standby DB instances (read-only instances) in the DB cluster to be the primary DB
-        /// instance (the cluster writer).
+        /// For a Multi-AZ DB cluster, after RDS terminates the primary DB instance, the internal
+        /// monitoring system detects that the primary DB instance is unhealthy and promotes a
+        /// readable standby (read-only instances) in the DB cluster to be the primary DB instance
+        /// (the cluster writer). Failover times are typically less than 35 seconds.
         /// </para>
         ///  
         /// <para>
@@ -4890,6 +4990,38 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  ModifyDBShardGroup
+
+
+
+        /// <summary>
+        /// Modifies the settings of an Aurora Limitless Database DB shard group. You can change
+        /// one or more settings by specifying these parameters and the new values in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBShardGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupAlreadyExistsException">
+        /// The specified DB shard group name must be unique in your Amazon Web Services account
+        /// in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
+        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
+        Task<ModifyDBShardGroupResponse> ModifyDBShardGroupAsync(ModifyDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyDBSnapshot
 
 
@@ -5330,6 +5462,37 @@ namespace Amazon.RDS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RebootDBShardGroup
+
+
+
+        /// <summary>
+        /// You might need to reboot your DB shard group, usually for maintenance reasons. For
+        /// example, if you make certain modifications, reboot the DB shard group for the changes
+        /// to take effect.
+        /// 
+        ///  
+        /// <para>
+        /// This operation applies only to Aurora Limitless Database DBb shard groups.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootDBShardGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RebootDBShardGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">REST API Reference for RebootDBShardGroup Operation</seealso>
+        Task<RebootDBShardGroupResponse> RebootDBShardGroupAsync(RebootDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

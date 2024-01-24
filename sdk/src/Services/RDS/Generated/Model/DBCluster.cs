@@ -108,6 +108,7 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
+        private LimitlessDatabase _limitlessDatabase;
         private LocalWriteForwardingStatus _localWriteForwardingStatus;
         private string _masterUsername;
         private MasterUserSecret _masterUserSecret;
@@ -1076,6 +1077,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetLatestRestorableTime()
         {
             return this._latestRestorableTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LimitlessDatabase. 
+        /// <para>
+        /// The details for Aurora Limitless Database.
+        /// </para>
+        /// </summary>
+        public LimitlessDatabase LimitlessDatabase
+        {
+            get { return this._limitlessDatabase; }
+            set { this._limitlessDatabase = value; }
+        }
+
+        // Check to see if LimitlessDatabase property is set
+        internal bool IsSetLimitlessDatabase()
+        {
+            return this._limitlessDatabase != null;
         }
 
         /// <summary>

@@ -120,9 +120,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic created for event notification. The
-        /// ARN is created by Amazon SNS when you create a topic and subscribe to it.
+        /// The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS
+        /// automatically creates the ARN when you create a topic and subscribe to it.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// RDS doesn't support FIFO (first in, first out) topics. For more information, see <a
+        /// href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering
+        /// and deduplication (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SnsTopicArn
