@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fix bug with S3 ConstantClass enumerations not working with implicit string conversion"
+            ]
+        }
+    ]
+}

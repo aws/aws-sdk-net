@@ -1764,7 +1764,7 @@ namespace Amazon.S3
         /// Construct instance of RestoreObjectRequestGlacierJobTier
         /// </summary>
         /// <param name="value"></param>
-        private GlacierJobTier(string value)
+        public GlacierJobTier(string value)
             : base(value)
         {
         }
@@ -1867,7 +1867,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly RequestPayer Requester = new RequestPayer("requester");
 
-        private RequestPayer(string value)
+        public RequestPayer(string value)
             : base(value)
         {
         }
@@ -1899,7 +1899,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly RequestCharged Requester = new RequestCharged("requester");
 
-        private RequestCharged(string value)
+        public RequestCharged(string value)
             : base(value)
         {
         }
@@ -2110,7 +2110,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly FileHeaderInfo None = new FileHeaderInfo("NONE");
 
-        private FileHeaderInfo(string value)
+        public FileHeaderInfo(string value)
             : base(value)
         {
         }
@@ -2149,7 +2149,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ExistingObjectReplicationStatus Disabled = new ExistingObjectReplicationStatus("Disabled");
 
-        private ExistingObjectReplicationStatus(string value)
+        public ExistingObjectReplicationStatus(string value)
             : base(value)
         {
         }
@@ -2188,7 +2188,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly QuoteFields AsNeeded = new QuoteFields("ASNEEDED");
 
-        private QuoteFields(string value)
+        public QuoteFields(string value)
             : base(value)
         {
         }
@@ -2222,7 +2222,7 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ExpressionType SQL = new ExpressionType("SQL");
 
-        private ExpressionType(string value)
+        public ExpressionType(string value)
             : base(value)
         {
         }
@@ -2253,7 +2253,7 @@ namespace Amazon.S3
     {
         public static readonly RestoreRequestType SELECT = new RestoreRequestType("SELECT");
 
-        private RestoreRequestType(string value)
+        public RestoreRequestType(string value)
             : base(value)
         {
         }
@@ -2283,7 +2283,7 @@ namespace Amazon.S3
         public static readonly JsonType Document = new JsonType("DOCUMENT");
         public static readonly JsonType Lines = new JsonType("LINES");
 
-        private JsonType(string value)
+        public JsonType(string value)
             : base(value)
         {
         }
@@ -2314,7 +2314,7 @@ namespace Amazon.S3
         public static readonly CompressionType Gzip = new CompressionType("GZIP");
         public static readonly CompressionType Bzip2 = new CompressionType("BZIP2");
 
-        private CompressionType(string value)
+        public CompressionType(string value)
             : base(value)
         {
         }
@@ -2545,7 +2545,7 @@ namespace Amazon.S3
     /// </summary>
     public sealed class MetricsStatus : ConstantClass
     {
-        private MetricsStatus(string value)
+        public MetricsStatus(string value)
             : base(value)
         {
 
@@ -2586,7 +2586,7 @@ namespace Amazon.S3
     /// </summary>
     public sealed class ObjectOwnership : ConstantClass
     {
-        private ObjectOwnership(string value)
+        public ObjectOwnership(string value)
             : base(value)
         {
 
@@ -2629,7 +2629,7 @@ namespace Amazon.S3
 
     public sealed class IntelligentTieringStatus : ConstantClass
     {
-        private IntelligentTieringStatus(string value)
+        public IntelligentTieringStatus(string value)
             : base(value)
         {
 
@@ -2667,7 +2667,7 @@ namespace Amazon.S3
 
     public sealed class IntelligentTieringAccessTier : ConstantClass
     {
-        private IntelligentTieringAccessTier(string value)
+        public IntelligentTieringAccessTier(string value)
             : base(value)
         {
 
@@ -2751,7 +2751,7 @@ namespace Amazon.S3
 
     public sealed class ReplicaModificationsStatus : ConstantClass
     {
-        private ReplicaModificationsStatus(string value)
+        public ReplicaModificationsStatus(string value)
             : base(value)
         {
 
