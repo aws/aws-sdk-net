@@ -1,3 +1,18 @@
+### 3.7.733.0 (2024-01-24 22:12 UTC)
+* EC2 (3.7.313.0)
+	* Introduced a new clientToken request parameter on CreateNetworkAcl and CreateRouteTable APIs. The clientToken parameter allows idempotent operations on the APIs.
+* ECS (3.7.305.1)
+	* Documentation updates for Amazon ECS.
+* Outposts (3.7.301.0)
+	* DeviceSerialNumber parameter is now optional in StartConnection API
+* RDS (3.7.305.0)
+	* This release adds support for Aurora Limitless Database.
+* StorageGateway (3.7.301.0)
+	* Add DeprecationDate and SoftwareVersion to response of ListGateways.
+* Core 3.7.301.10
+	* Skip content-type header for requests without a modeled body or payload
+	* All services packages updated to require new Core
+
 ### 3.7.732.0 (2024-01-23 20:39 UTC)
 * Inspector2 (3.7.301.0)
 	* This release adds support for CIS scans on EC2 instances.

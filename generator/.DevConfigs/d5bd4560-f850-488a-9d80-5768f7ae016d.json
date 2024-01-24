@@ -1,9 +1,0 @@
-{
-  "core": {
-      "updateMinimum": true,
-      "type": "Patch",
-      "changeLogMessages": [
-          "Skip content-type header for requests without a modeled body or payload"
-      ]
-  }
-}
