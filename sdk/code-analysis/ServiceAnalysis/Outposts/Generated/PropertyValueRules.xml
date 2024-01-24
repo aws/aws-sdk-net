@@ -516,7 +516,6 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.Quantity</property>
     <min>1</min>
-    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItemAssetInformation.AssetId</property>
@@ -533,7 +532,6 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItemRequest.Quantity</property>
     <min>1</min>
-    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Order.OrderId</property>

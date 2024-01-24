@@ -61,7 +61,7 @@ namespace Amazon.Outposts.Model
         /// The quantity of a line item request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1)]
         public int Quantity
         {
             get { return this._quantity.GetValueOrDefault(); }

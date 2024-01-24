@@ -98,7 +98,7 @@ namespace Amazon.Outposts.Model
         ///  The serial number of the dongle. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string DeviceSerialNumber
         {
             get { return this._deviceSerialNumber; }
