@@ -733,35 +733,6 @@ namespace Amazon.ECS.Model
         /// For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
         /// tasks error codes</a> in the <i>Amazon ECS User Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// The following are valid values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>TaskFailedToStart</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>EssentialContainerExited</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>UserInitiated</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>TerminationNotice</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ServiceSchedulerInitiated</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>SpotInterruption</c> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public TaskStopCode StopCode
         {

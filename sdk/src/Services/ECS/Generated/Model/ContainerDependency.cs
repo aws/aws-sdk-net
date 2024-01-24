@@ -60,7 +60,11 @@ namespace Amazon.ECS.Model
     /// <para>
     /// Windows platform version <c>1.0.0</c> or later.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> 
+    /// <para>
+    /// For more information about how to create a container dependency, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html#example_task_definition-containerdependency">Container
+    /// dependency</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ContainerDependency
     {

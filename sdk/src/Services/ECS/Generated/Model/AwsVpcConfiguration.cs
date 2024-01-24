@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the networking details for a task or service.
+    /// An object representing the networking details for a task or service. For example <c>awsvpcConfiguration={subnets=["subnet-12344321"],securityGroups=["sg-12344321"]}</c>
     /// </summary>
     public partial class AwsVpcConfiguration
     {

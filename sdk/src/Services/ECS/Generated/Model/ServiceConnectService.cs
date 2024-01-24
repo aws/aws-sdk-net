@@ -172,7 +172,10 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tls.
+        /// Gets and sets the property Tls. 
+        /// <para>
+        /// A reference to an object that represents a Transport Layer Security (TLS) configuration.
+        /// </para>
         /// </summary>
         public ServiceConnectTlsConfiguration Tls
         {

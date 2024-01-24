@@ -161,7 +161,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For services are that <i>do</i> use a load balancer, the following should be noted:
+        /// For services that <i>do</i> use a load balancer, the following should be noted:
         /// </para>
         ///  <ul> <li> 
         /// <para>
