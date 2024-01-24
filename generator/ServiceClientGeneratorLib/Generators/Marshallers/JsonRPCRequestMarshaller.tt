@@ -60,7 +60,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.Headers["Content-Type"] = "application/x-amz-json-<#=this.Config.ServiceModel.JsonVersion #>";
 <#
 		}
-		else
+		else if (this.Operation.RequestHasBodyMembers || this.Operation.RequestPayloadMember != null)
 		{
 #>
 			request.Headers["Content-Type"] = "application/json";
