@@ -47,6 +47,10 @@ namespace Amazon.ACMPCA.Model
         /// you specify, the <c>NextToken</c> element is sent in the response. Use this <c>NextToken</c>
         /// value in a subsequent request to retrieve additional items.
         /// </para>
+        ///  
+        /// <para>
+        /// Although the maximum value is 1000, the action only returns a maximum of 100 items.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
@@ -69,7 +73,7 @@ namespace Amazon.ACMPCA.Model
         /// from the response you just received.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=1, Max=43739)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -45,6 +45,17 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CrlConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCrlDistributionPointExtensionConfiguration())
+            {
+                context.Writer.WritePropertyName("CrlDistributionPointExtensionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CrlDistributionPointExtensionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CrlDistributionPointExtensionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomCname())
             {
                 context.Writer.WritePropertyName("CustomCname");

@@ -63,6 +63,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CrlDistributionPointExtensionConfiguration", targetDepth))
+                {
+                    var unmarshaller = CrlDistributionPointExtensionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CrlDistributionPointExtensionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomCname", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

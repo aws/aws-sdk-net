@@ -97,7 +97,7 @@ namespace Amazon.ACMPCA.Model
         /// response you just received.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=1, Max=43739)]
         public string NextToken
         {
             get { return this._nextToken; }

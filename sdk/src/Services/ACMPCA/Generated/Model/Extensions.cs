@@ -75,7 +75,7 @@ namespace Amazon.ACMPCA.Model
         /// see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=150)]
         public List<CustomExtension> CustomExtensions
         {
             get { return this._customExtensions; }
@@ -131,7 +131,7 @@ namespace Amazon.ACMPCA.Model
         /// the identity in the subject field of the certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=150)]
         public List<GeneralName> SubjectAlternativeNames
         {
             get { return this._subjectAlternativeNames; }

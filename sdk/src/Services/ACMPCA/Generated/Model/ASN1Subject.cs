@@ -111,7 +111,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=1, Max=150)]
         public List<CustomAttribute> CustomAttributes
         {
             get { return this._customAttributes; }
