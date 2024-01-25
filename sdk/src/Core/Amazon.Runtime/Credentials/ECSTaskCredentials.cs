@@ -26,6 +26,7 @@ namespace Amazon.Runtime
     /// When running in an ECS container and AWS_CONTAINER_CREDENTIALS_RELATIVE_URI is set,
     /// use the given end point to retrieve the credentials.
     /// </summary>
+    [Obsolete("ECSTaskCredentials only supports Amazon ECS, newer versions of the SDK use the GenericContainerCredentials provider (which also supports EKS Pod Identities)")]
     public class ECSTaskCredentials : URIBasedRefreshingCredentialHelper
     {
         /// <summary>

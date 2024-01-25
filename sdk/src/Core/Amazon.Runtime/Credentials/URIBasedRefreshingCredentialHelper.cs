@@ -123,6 +123,7 @@ namespace Amazon.Runtime
             public string Token { get; set; }
             public DateTime Expiration { get; set; }
             public string RoleArn { get; set; }
+            public string AccountId { get; set; }
         }
 #pragma warning restore CA1034
 

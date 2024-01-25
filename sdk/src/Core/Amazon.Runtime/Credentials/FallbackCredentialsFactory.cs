@@ -62,7 +62,7 @@ namespace Amazon.Runtime
                     // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
                     () => GetAWSCredentials(credentialProfileChain),
                     () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
-                    () => ECSEC2CredentialsWrapper(proxy), // either get ECS credentials or instance profile credentials
+                    () => ContainerEC2CredentialsWrapper(), // either get ECS / EKS credentials or instance profile credentials
                 };
             }
             finally
@@ -95,35 +95,32 @@ namespace Amazon.Runtime
             throw new AmazonClientException($"Unable to find the \"{ profileName }\" profile in CredentialProfileStoreChain.");
         }
 
+        /// <summary>
         /// If either AWS_CONTAINER_CREDENTIALS_RELATIVE_URI or AWS_CONTAINER_CREDENTIALS_FULL_URI environment variables are set, we want to attempt to retrieve credentials
-        /// using ECS endpoint instead of referring to instance profile credentials.
-        private static AWSCredentials ECSEC2CredentialsWrapper()
-        {
-            return ECSEC2CredentialsWrapper(null);
-        }
-
-        /// If either AWS_CONTAINER_CREDENTIALS_RELATIVE_URI or AWS_CONTAINER_CREDENTIALS_FULL_URI environment variables are set, we want to attempt to retrieve credentials
-        /// using ECS endpoint instead of referring to instance profile credentials.
-        private static AWSCredentials ECSEC2CredentialsWrapper(IWebProxy proxy)
+        /// using the generic container provider.
+        /// 
+        /// If they're not set, we will default to instance profile credentials.
+        /// </summary>
+        private static AWSCredentials ContainerEC2CredentialsWrapper()
         {
             try
             {
-                var relativeUri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
+                var relativeUri = Environment.GetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable);
                 if (!string.IsNullOrEmpty(relativeUri))
                 {
-                    return new ECSTaskCredentials(proxy);
+                    return new GenericContainerCredentials();
                 }
 
-                var fullUri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable);
+                var fullUri = Environment.GetEnvironmentVariable(GenericContainerCredentials.FullURIEnvVariable);
                 if (!string.IsNullOrEmpty(fullUri))
                 {
-                    return new ECSTaskCredentials(proxy);
+                    return new GenericContainerCredentials();
                 }
             }
             catch (SecurityException e)
             {
-                Logger.GetLogger(typeof(ECSTaskCredentials)).Error(e, $"Failed to access environment variables {ECSTaskCredentials.ContainerCredentialsURIEnvVariable} and {ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable}." +
-                    $" Either {ECSTaskCredentials.ContainerCredentialsURIEnvVariable} or {ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable} environment variables must be set.");
+                Logger.GetLogger(typeof(GenericContainerCredentials)).Error(e, $"Failed to access environment variables {GenericContainerCredentials.RelativeURIEnvVariable} and {GenericContainerCredentials.FullURIEnvVariable}." +
+                    $" Either {GenericContainerCredentials.RelativeURIEnvVariable} or {GenericContainerCredentials.FullURIEnvVariable} environment variables must be set.");
             }
             return DefaultInstanceProfileAWSCredentials.Instance;
         }

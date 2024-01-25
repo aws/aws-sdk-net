@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Minor",
+        "changeLogMessages": [
+            "Introduce a new general HTTP credentials provider, which supports retrieval of AWS credentials from an arbitrary HTTP(S) endpoint specified by the environment. It replaces the existing `ECSTaskCredentials` provider, and it's also used by EKS Pod Identities."
+        ]
+    }
+}

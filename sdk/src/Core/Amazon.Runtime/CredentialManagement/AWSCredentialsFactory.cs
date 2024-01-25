@@ -407,16 +407,16 @@ namespace Amazon.Runtime.CredentialManagement
                     credentials = new EnvironmentVariablesAWSCredentials();
                     break;
                 case CredentialSourceType.EcsContainer:
-                    var relativeUri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
-                    var fullUri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable);
+                    var relativeUri = Environment.GetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable);
+                    var fullUri = Environment.GetEnvironmentVariable(GenericContainerCredentials.FullURIEnvVariable);
 
                     if (string.IsNullOrEmpty(relativeUri) && string.IsNullOrEmpty(fullUri))
                     {
-                        return ThrowOrReturnNull($"Cannot fetch credentials from container - neither {ECSTaskCredentials.ContainerCredentialsURIEnvVariable} or {ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable}" +
+                        return ThrowOrReturnNull($"Cannot fetch credentials from container - neither {GenericContainerCredentials.RelativeURIEnvVariable} or {GenericContainerCredentials.FullURIEnvVariable}" +
                                                  " environment variables are set.", null, throwIfInvalid);
                     }
 
-                    credentials = new ECSTaskCredentials(null);
+                    credentials = new GenericContainerCredentials();
                     break;
                 default:
                     return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,

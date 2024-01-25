@@ -487,14 +487,16 @@ namespace ThirdParty.Json.LitJson
                         }
 
                     } else {
-                        if (! t_data.IsDictionary)
-                            throw new JsonException (String.Format (
-                                    "The type {0} doesn't have the " +
-                                    "property '{1}'", inst_type, property));
-
-                        ((IDictionary) instance).Add (
-                            property, ReadValue (
-                                t_data.ElementType, reader));
+                        if (t_data.IsDictionary)
+                        {
+                            ((IDictionary)instance).Add(property, ReadValue(t_data.ElementType, reader));
+                        }
+                        else
+                        {
+                            // If the current property doesn't exist in the specified type, we'll still read its value
+                            // but throw the results aways (instead of throwing an exception).
+                            ReadValue(t_data.ElementType, reader);
+                        }
                     }
 
                 }

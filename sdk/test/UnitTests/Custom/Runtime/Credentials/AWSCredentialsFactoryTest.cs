@@ -701,7 +701,7 @@ namespace AWSSDK.UnitTests
                 AWSCredentials credentials;
                 Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(AssumeRoleCredentialSourceEcsContainer.Options, ProfileStore, out credentials));
                 Assert.IsNotNull(credentials);
-                Assert.AreEqual(typeof(ECSTaskCredentials), ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType());
+                Assert.AreEqual(typeof(GenericContainerCredentials), ReflectionHelpers.Invoke(credentials, "SourceCredentials").GetType());
             }
         }
 
@@ -746,7 +746,7 @@ namespace AWSSDK.UnitTests
                 }, typeof(InvalidDataException), string.Format(CredentialSourceErrorFormat, AssumeRoleCredentialSourceEcsContainer.Options.CredentialSource,
                 AssumeRoleCredentialSourceEcsContainer.Name)).InnerException;
             }
-            , typeof(InvalidDataException), string.Format(CredentialSourceContainerNotSetErrorFormat, ECSTaskCredentials.ContainerCredentialsURIEnvVariable));
+            , typeof(InvalidDataException), string.Format(CredentialSourceContainerNotSetErrorFormat, GenericContainerCredentials.RelativeURIEnvVariable));
         }
 
         private void AssertAssumeRoleCredentialsAreEqual(AssumeRoleAWSCredentials expected, AWSCredentials actualAWSCredentials)
@@ -845,7 +845,7 @@ namespace AWSSDK.UnitTests
                         originalAWSMetadataDisabled = SetEnvironmentVariable(EC2InstanceMetadata.AWS_EC2_METADATA_DISABLED, disable ? "true" : "false");
                         break;
                     case CredentialSourceType.EcsContainer:
-                        originalContainerURIEnvVariableValue = SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, disable ? null : MOCK_ECSContainer_URIEnvVariableValue);
+                        originalContainerURIEnvVariableValue = SetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable, disable ? null : MOCK_ECSContainer_URIEnvVariableValue);
                         break;
                 }
             }
@@ -863,7 +863,7 @@ namespace AWSSDK.UnitTests
                         Environment.SetEnvironmentVariable(EC2InstanceMetadata.AWS_EC2_METADATA_DISABLED, originalAWSMetadataDisabled);
                         break;
                     case CredentialSourceType.EcsContainer:
-                        Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, originalContainerURIEnvVariableValue);
+                        Environment.SetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable, originalContainerURIEnvVariableValue);
                         break;
                 }
             }
