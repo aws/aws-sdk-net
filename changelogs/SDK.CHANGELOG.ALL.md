@@ -1,3 +1,14 @@
+### 3.7.734.0 (2024-01-25 19:24 UTC)
+* ACMPCA (3.7.301.0)
+	* AWS Private CA now supports an option to omit the CDP extension from issued certificates, when CRL revocation is enabled.
+* Lightsail (3.7.302.0)
+	* This release adds support for IPv6-only instance plans.
+* S3 (3.7.305.17)
+	* Fix bug with S3 ConstantClass enumerations not working with implicit string conversion
+* Core 3.7.302.0
+	* Introduce a new general HTTP credentials provider, which supports retrieval of AWS credentials from an arbitrary HTTP(S) endpoint specified by the environment. It replaces the existing `ECSTaskCredentials` provider, and it's also used by EKS Pod Identities.
+	* All services packages updated to require new Core
+
 ### 3.7.733.0 (2024-01-24 22:12 UTC)
 * EC2 (3.7.313.0)
 	* Introduced a new clientToken request parameter on CreateNetworkAcl and CreateRouteTable APIs. The clientToken parameter allows idempotent operations on the APIs.

@@ -32,7 +32,7 @@ namespace Amazon.DataZone
     public partial class AmazonDataZoneConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DataZone", "3.7.300.40");
+            InternalSDKUtils.BuildUserAgentString("DataZone", "3.7.300.41");
 
         private string _userAgent = UserAgentString;
         ///<summary>
