@@ -111,6 +111,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Price = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("publicIpv4AddressCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PublicIpv4AddressCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ramSizeInGb", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

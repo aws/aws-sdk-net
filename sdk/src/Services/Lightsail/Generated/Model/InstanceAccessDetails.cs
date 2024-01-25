@@ -38,6 +38,7 @@ namespace Amazon.Lightsail.Model
         private List<HostKeyAttributes> _hostKeys = new List<HostKeyAttributes>();
         private string _instanceName;
         private string _ipAddress;
+        private List<string> _ipv6Addresses = new List<string>();
         private string _password;
         private PasswordData _passwordData;
         private string _privateKey;
@@ -133,6 +134,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetIpAddress()
         {
             return this._ipAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// The IPv6 address of the Amazon Lightsail instance.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
         }
 
         /// <summary>

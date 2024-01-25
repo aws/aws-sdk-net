@@ -93,6 +93,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipv6Addresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ipv6Addresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("password", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

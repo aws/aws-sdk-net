@@ -42,6 +42,7 @@ namespace Amazon.Lightsail.Model
         private string _name;
         private int? _power;
         private float? _price;
+        private int? _publicIpv4AddressCount;
         private float? _ramSizeInGb;
         private List<string> _supportedAppCategories = new List<string>();
         private List<string> _supportedPlatforms = new List<string>();
@@ -193,6 +194,25 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetPrice()
         {
             return this._price.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIpv4AddressCount. 
+        /// <para>
+        /// An integer that indicates the public ipv4 address count included in the bundle, the
+        /// value is either 0 or 1.
+        /// </para>
+        /// </summary>
+        public int PublicIpv4AddressCount
+        {
+            get { return this._publicIpv4AddressCount.GetValueOrDefault(); }
+            set { this._publicIpv4AddressCount = value; }
+        }
+
+        // Check to see if PublicIpv4AddressCount property is set
+        internal bool IsSetPublicIpv4AddressCount()
+        {
+            return this._publicIpv4AddressCount.HasValue; 
         }
 
         /// <summary>
