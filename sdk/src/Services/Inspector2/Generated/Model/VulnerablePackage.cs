@@ -198,7 +198,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property SourceLambdaLayerArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+        /// The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected
+        /// by a finding.
         /// </para>
         /// </summary>
         public string SourceLambdaLayerArn

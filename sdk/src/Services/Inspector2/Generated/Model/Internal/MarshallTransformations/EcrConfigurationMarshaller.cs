@@ -45,6 +45,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EcrConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPullDateRescanDuration())
+            {
+                context.Writer.WritePropertyName("pullDateRescanDuration");
+                context.Writer.Write(requestObject.PullDateRescanDuration);
+            }
+
             if(requestObject.IsSetRescanDuration())
             {
                 context.Writer.WritePropertyName("rescanDuration");

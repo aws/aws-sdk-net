@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// The details that define a findings aggregation based on AWS Lambda functions.
+    /// The details that define a findings aggregation based on Amazon Web Services Lambda
+    /// functions.
     /// </summary>
     public partial class LambdaFunctionAggregation
     {
@@ -43,7 +44,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property FunctionNames. 
         /// <para>
-        /// The AWS Lambda function names to include in the aggregation results.
+        /// The Amazon Web Services Lambda function names to include in the aggregation results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -100,7 +101,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Runtimes. 
         /// <para>
-        /// Returns findings aggregated by AWS Lambda function runtime environments.
+        /// Returns findings aggregated by Amazon Web Services Lambda function runtime environments.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

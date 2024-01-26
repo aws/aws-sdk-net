@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// A response that contains the results of an AWS Lambda function finding aggregation.
+    /// A response that contains the results of an Amazon Web Services Lambda function finding
+    /// aggregation.
     /// </summary>
     public partial class LambdaFunctionAggregationResponse
     {
@@ -44,7 +45,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the AWS account that owns the AWS Lambda function. 
+        /// The ID of the Amazon Web Services account that owns the Amazon Web Services Lambda
+        /// function. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -63,7 +65,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The AWS Lambda function names included in the aggregation results.
+        /// The Amazon Web Services Lambda function names included in the aggregation results.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -99,8 +101,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LastModifiedAt. 
         /// <para>
-        /// The date that the AWS Lambda function included in the aggregation results was last
-        /// changed.
+        /// The date that the Amazon Web Services Lambda function included in the aggregation
+        /// results was last changed.
         /// </para>
         /// </summary>
         public DateTime LastModifiedAt

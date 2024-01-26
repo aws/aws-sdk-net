@@ -63,6 +63,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("pullDateRescanDuration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PullDateRescanDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rescanDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

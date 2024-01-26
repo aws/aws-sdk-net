@@ -1997,11 +1997,77 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type EcrPullDateRescanDuration.
+    /// </summary>
+    public class EcrPullDateRescanDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS_14 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_14 = new EcrPullDateRescanDuration("DAYS_14");
+        /// <summary>
+        /// Constant DAYS_180 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_180 = new EcrPullDateRescanDuration("DAYS_180");
+        /// <summary>
+        /// Constant DAYS_30 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_30 = new EcrPullDateRescanDuration("DAYS_30");
+        /// <summary>
+        /// Constant DAYS_60 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_60 = new EcrPullDateRescanDuration("DAYS_60");
+        /// <summary>
+        /// Constant DAYS_90 for EcrPullDateRescanDuration
+        /// </summary>
+        public static readonly EcrPullDateRescanDuration DAYS_90 = new EcrPullDateRescanDuration("DAYS_90");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcrPullDateRescanDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcrPullDateRescanDuration FindValue(string value)
+        {
+            return FindValue<EcrPullDateRescanDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcrPullDateRescanDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EcrRescanDuration.
     /// </summary>
     public class EcrRescanDuration : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DAYS_14 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_14 = new EcrRescanDuration("DAYS_14");
         /// <summary>
         /// Constant DAYS_180 for EcrRescanDuration
         /// </summary>
@@ -2010,6 +2076,14 @@ namespace Amazon.Inspector2
         /// Constant DAYS_30 for EcrRescanDuration
         /// </summary>
         public static readonly EcrRescanDuration DAYS_30 = new EcrRescanDuration("DAYS_30");
+        /// <summary>
+        /// Constant DAYS_60 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_60 = new EcrRescanDuration("DAYS_60");
+        /// <summary>
+        /// Constant DAYS_90 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_90 = new EcrRescanDuration("DAYS_90");
         /// <summary>
         /// Constant LIFETIME for EcrRescanDuration
         /// </summary>

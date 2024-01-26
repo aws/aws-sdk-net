@@ -37,6 +37,7 @@ namespace Amazon.Inspector2.Model
         private List<CoverageMapFilter> _ec2InstanceTags = new List<CoverageMapFilter>();
         private List<CoverageStringFilter> _ecrImageTags = new List<CoverageStringFilter>();
         private List<CoverageStringFilter> _ecrRepositoryName = new List<CoverageStringFilter>();
+        private List<CoverageDateFilter> _imagePulledAt = new List<CoverageDateFilter>();
         private List<CoverageStringFilter> _lambdaFunctionName = new List<CoverageStringFilter>();
         private List<CoverageStringFilter> _lambdaFunctionRuntime = new List<CoverageStringFilter>();
         private List<CoverageMapFilter> _lambdaFunctionTags = new List<CoverageMapFilter>();
@@ -124,9 +125,29 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImagePulledAt. 
+        /// <para>
+        /// The date an image was last pulled at.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageDateFilter> ImagePulledAt
+        {
+            get { return this._imagePulledAt; }
+            set { this._imagePulledAt = value; }
+        }
+
+        // Check to see if ImagePulledAt property is set
+        internal bool IsSetImagePulledAt()
+        {
+            return this._imagePulledAt != null && this._imagePulledAt.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LambdaFunctionName. 
         /// <para>
-        /// Returns coverage statistics for AWS Lambda functions filtered by function names.
+        /// Returns coverage statistics for Amazon Web Services Lambda functions filtered by function
+        /// names.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -145,7 +166,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionRuntime. 
         /// <para>
-        /// Returns coverage statistics for AWS Lambda functions filtered by runtime.
+        /// Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -164,7 +185,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionTags. 
         /// <para>
-        /// Returns coverage statistics for AWS Lambda functions filtered by tag.
+        /// Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

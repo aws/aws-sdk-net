@@ -77,7 +77,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property AwsLambdaFunction. 
         /// <para>
-        /// A summary of the information about an AWS Lambda function affected by a finding.
+        /// A summary of the information about an Amazon Web Services Lambda function affected
+        /// by a finding.
         /// </para>
         /// </summary>
         public AwsLambdaFunctionDetails AwsLambdaFunction

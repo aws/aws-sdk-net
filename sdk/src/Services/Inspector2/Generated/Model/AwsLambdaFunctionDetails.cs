@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// A summary of information about the AWS Lambda function.
+    /// A summary of information about the Amazon Web Services Lambda function.
     /// </summary>
     public partial class AwsLambdaFunctionDetails
     {
@@ -47,9 +47,9 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Architectures. 
         /// <para>
-        /// The instruction set architecture that the AWS Lambda function supports. Architecture
-        /// is a string array with one of the valid values. The default architecture value is
-        /// <c>x86_64</c>.
+        /// The instruction set architecture that the Amazon Web Services Lambda function supports.
+        /// Architecture is a string array with one of the valid values. The default architecture
+        /// value is <c>x86_64</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -68,7 +68,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property CodeSha256. 
         /// <para>
-        /// The SHA256 hash of the AWS Lambda function's deployment package.
+        /// The SHA256 hash of the Amazon Web Services Lambda function's deployment package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -87,7 +87,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The AWS Lambda function's execution role.
+        /// The Amazon Web Services Lambda function's execution role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,7 +106,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the AWS Lambda function.
+        /// The name of the Amazon Web Services Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,7 +144,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+        /// The Amazon Web Services Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>. A Lambda function can have up to five layers.
         /// </para>
         /// </summary>
@@ -183,7 +183,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for the AWS Lambda function.
+        /// The runtime environment for the Amazon Web Services Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -202,7 +202,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the AWS Lambda function.
+        /// The version of the Amazon Web Services Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -221,7 +221,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// The AWS Lambda function's networking configuration.
+        /// The Amazon Web Services Lambda function's networking configuration.
         /// </para>
         /// </summary>
         public LambdaVpcConfig VpcConfig

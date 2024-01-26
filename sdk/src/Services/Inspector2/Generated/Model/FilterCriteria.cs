@@ -389,7 +389,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ExploitAvailable. 
         /// <para>
-        /// Filters the list of AWS Lambda findings by the availability of exploits.
+        /// Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -525,7 +525,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionExecutionRoleArn. 
         /// <para>
-        /// Filters the list of AWS Lambda functions by execution role.
+        /// Filters the list of Amazon Web Services Lambda functions by execution role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -544,8 +544,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionLastModifiedAt. 
         /// <para>
-        /// Filters the list of AWS Lambda functions by the date and time that a user last updated
-        /// the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// Filters the list of Amazon Web Services Lambda functions by the date and time that
+        /// a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
         /// 8601 format</a> 
         /// </para>
         /// </summary>
@@ -565,7 +565,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionLayers. 
         /// <para>
-        /// Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+        /// Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
         /// layers</a>. A Lambda function can have up to five layers.
         /// </para>
         /// </summary>
@@ -585,7 +585,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionName. 
         /// <para>
-        /// Filters the list of AWS Lambda functions by the name of the function.
+        /// Filters the list of Amazon Web Services Lambda functions by the name of the function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -604,8 +604,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionRuntime. 
         /// <para>
-        /// Filters the list of AWS Lambda functions by the runtime environment for the Lambda
-        /// function.
+        /// Filters the list of Amazon Web Services Lambda functions by the runtime environment
+        /// for the Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

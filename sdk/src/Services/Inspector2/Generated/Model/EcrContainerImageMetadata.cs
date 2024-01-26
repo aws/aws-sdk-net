@@ -33,7 +33,26 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class EcrContainerImageMetadata
     {
+        private DateTime? _imagePulledAt;
         private List<string> _tags = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ImagePulledAt. 
+        /// <para>
+        /// The date an image was last pulled at.
+        /// </para>
+        /// </summary>
+        public DateTime ImagePulledAt
+        {
+            get { return this._imagePulledAt.GetValueOrDefault(); }
+            set { this._imagePulledAt = value; }
+        }
+
+        // Check to see if ImagePulledAt property is set
+        internal bool IsSetImagePulledAt()
+        {
+            return this._imagePulledAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Tags. 

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// The details that define a findings aggregation based on an AWS Lambda function's layers.
+    /// The details that define a findings aggregation based on an Amazon Web Services Lambda
+    /// function's layers.
     /// </summary>
     public partial class LambdaLayerAggregation
     {
@@ -42,7 +43,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property FunctionNames. 
         /// <para>
-        /// The names of the AWS Lambda functions associated with the layers.
+        /// The names of the Amazon Web Services Lambda functions associated with the layers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -61,7 +62,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LayerArns. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Lambda function layer. 
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -80,7 +81,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The resource IDs for the AWS Lambda function layers.
+        /// The resource IDs for the Amazon Web Services Lambda function layers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

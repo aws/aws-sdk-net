@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// A response that contains the results of an AWS Lambda function layer finding aggregation.
+    /// A response that contains the results of an Amazon Web Services Lambda function layer
+    /// finding aggregation.
     /// </summary>
     public partial class LambdaLayerAggregationResponse
     {
@@ -42,7 +43,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the AWS Lambda function layer.
+        /// The account ID of the Amazon Web Services Lambda function layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -61,7 +62,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The names of the AWS Lambda functions associated with the layers.
+        /// The names of the Amazon Web Services Lambda functions associated with the layers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -80,7 +81,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LayerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Lambda function layer.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -99,7 +100,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The Resource ID of the AWS Lambda function layer.
+        /// The Resource ID of the Amazon Web Services Lambda function layer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

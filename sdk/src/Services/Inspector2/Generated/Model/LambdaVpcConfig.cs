@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// The VPC security groups and subnets that are attached to an AWS Lambda function. For
-    /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+    /// The VPC security groups and subnets that are attached to an Amazon Web Services Lambda
+    /// function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
     /// Settings</a>.
     /// </summary>
     public partial class LambdaVpcConfig
@@ -42,8 +42,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The VPC security groups and subnets that are attached to an AWS Lambda function. For
-        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+        /// The VPC security groups and subnets that are attached to an Amazon Web Services Lambda
+        /// function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
         /// Settings</a>.
         /// </para>
         /// </summary>

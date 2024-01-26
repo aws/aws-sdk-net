@@ -46,7 +46,7 @@ namespace Amazon.Inspector2.Model
         /// The CIS session telemetry messages.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=150)]
         public List<CisSessionMessage> Messages
         {
             get { return this._messages; }

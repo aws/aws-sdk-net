@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// The AWS Lambda function metadata.
+    /// The Amazon Web Services Lambda function metadata.
     /// </summary>
     public partial class LambdaFunctionMetadata
     {
@@ -59,7 +59,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property FunctionTags. 
         /// <para>
-        /// The resource tags on an AWS Lambda function.
+        /// The resource tags on an Amazon Web Services Lambda function.
         /// </para>
         /// </summary>
         public Dictionary<string, string> FunctionTags
@@ -77,7 +77,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// The layers for an AWS Lambda function. A Lambda function can have up to five layers.
+        /// The layers for an Amazon Web Services Lambda function. A Lambda function can have
+        /// up to five layers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -96,7 +97,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// An AWS Lambda function's runtime.
+        /// An Amazon Web Services Lambda function's runtime.
         /// </para>
         /// </summary>
         public Runtime Runtime

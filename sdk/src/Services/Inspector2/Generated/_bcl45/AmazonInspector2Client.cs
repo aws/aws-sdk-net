@@ -4190,8 +4190,8 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Updates an encryption key. A <c>ResourceNotFoundException</c> means that an AWS owned
-        /// key is being used for encryption.
+        /// Updates an encryption key. A <c>ResourceNotFoundException</c> means that an Amazon
+        /// Web Services owned key is being used for encryption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
         /// 
@@ -4225,8 +4225,8 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Updates an encryption key. A <c>ResourceNotFoundException</c> means that an AWS owned
-        /// key is being used for encryption.
+        /// Updates an encryption key. A <c>ResourceNotFoundException</c> means that an Amazon
+        /// Web Services owned key is being used for encryption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
         /// <param name="cancellationToken">

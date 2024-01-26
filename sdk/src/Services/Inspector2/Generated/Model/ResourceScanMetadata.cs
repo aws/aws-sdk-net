@@ -95,7 +95,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunction. 
         /// <para>
-        /// An object that contains metadata details for an AWS Lambda function.
+        /// An object that contains metadata details for an Amazon Web Services Lambda function.
         /// </para>
         /// </summary>
         public LambdaFunctionMetadata LambdaFunction

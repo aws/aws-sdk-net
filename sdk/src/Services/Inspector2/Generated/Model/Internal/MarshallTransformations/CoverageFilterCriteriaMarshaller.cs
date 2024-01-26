@@ -109,6 +109,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetImagePulledAt())
+            {
+                context.Writer.WritePropertyName("imagePulledAt");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectImagePulledAtListValue in requestObject.ImagePulledAt)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageDateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImagePulledAtListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetLambdaFunctionName())
             {
                 context.Writer.WritePropertyName("lambdaFunctionName");

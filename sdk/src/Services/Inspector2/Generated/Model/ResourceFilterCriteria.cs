@@ -121,7 +121,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionName. 
         /// <para>
-        /// The AWS Lambda function name used as resource filter criteria.
+        /// The Amazon Web Services Lambda function name used as resource filter criteria.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -140,7 +140,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionTags. 
         /// <para>
-        /// The AWS Lambda function tags used as resource filter criteria.
+        /// The Amazon Web Services Lambda function tags used as resource filter criteria.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
