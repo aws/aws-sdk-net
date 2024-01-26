@@ -6107,6 +6107,23 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("SageMaker")]
+        public void DeleteHyperParameterTuningJobMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteHyperParameterTuningJob");
+
+            var request = InstantiateClassGenerator.Execute<DeleteHyperParameterTuningJobRequest>(operation);
+            var marshaller = new DeleteHyperParameterTuningJobRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DeleteHyperParameterTuningJobRequest>(request,jsonRequest);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
         public void DeleteImageMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteImage");

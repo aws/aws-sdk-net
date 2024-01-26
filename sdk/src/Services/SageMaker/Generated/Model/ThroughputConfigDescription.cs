@@ -29,15 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Active throughput configuration of the feature group. Used to set feature group throughput
-    /// configuration. There are two modes: <c>ON_DEMAND</c> and <c>PROVISIONED</c>. With
-    /// on-demand mode, you are charged for data reads and writes that your application performs
-    /// on your feature group. You do not need to specify read and write throughput because
-    /// Feature Store accommodates your workloads as they ramp up and down. You can switch
-    /// a feature group to on-demand only once in a 24 hour period. With provisioned throughput
-    /// mode, you specify the read and write capacity per second that you expect your application
-    /// to require, and you are billed based on those limits. Exceeding provisioned throughput
-    /// will result in your requests being throttled. 
+    /// Active throughput configuration of the feature group. There are two modes: <c>ON_DEMAND</c>
+    /// and <c>PROVISIONED</c>. With on-demand mode, you are charged for data reads and writes
+    /// that your application performs on your feature group. You do not need to specify read
+    /// and write throughput because Feature Store accommodates your workloads as they ramp
+    /// up and down. You can switch a feature group to on-demand only once in a 24 hour period.
+    /// With provisioned throughput mode, you specify the read and write capacity per second
+    /// that you expect your application to require, and you are billed based on those limits.
+    /// Exceeding provisioned throughput will result in your requests being throttled. 
     /// 
     ///  
     /// <para>

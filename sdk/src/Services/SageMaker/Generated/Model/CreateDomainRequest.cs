@@ -31,9 +31,9 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
     /// Creates a <c>Domain</c>. A domain consists of an associated Amazon Elastic File System
-    /// (EFS) volume, a list of authorized users, and a variety of security, application,
-    /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
-    /// can share notebook files and other artifacts with each other.
+    /// volume, a list of authorized users, and a variety of security, application, policy,
+    /// and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain can share
+    /// notebook files and other artifacts with each other.
     /// 
     ///  
     /// <para>
@@ -59,10 +59,10 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// All traffic between the domain and the EFS volume is through the specified VPC and
-    /// subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c> parameter.
-    /// <c>AppNetworkAccessType</c> corresponds to the network access type that you choose
-    /// when you onboard to the domain. The following options are available:
+    /// All traffic between the domain and the Amazon EFS volume is through the specified
+    /// VPC and subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c>
+    /// parameter. <c>AppNetworkAccessType</c> corresponds to the network access type that
+    /// you choose when you onboard to the domain. The following options are available:
     /// </para>
     ///  <ul> <li> 
     /// <para>

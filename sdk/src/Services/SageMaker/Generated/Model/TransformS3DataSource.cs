@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  A key name prefix might look like this: <c>s3://bucketname/exampleprefix</c>. 
+        ///  A key name prefix might look like this: <c>s3://bucketname/exampleprefix/</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

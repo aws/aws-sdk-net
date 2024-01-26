@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeModelPackageGroup operation.
-    /// Gets a description for the specified model group.
+    /// This is the response object from the DeleteHyperParameterTuningJob operation.
     /// </summary>
-    public partial class DescribeModelPackageGroupRequest : AmazonSageMakerRequest
+    public partial class DeleteHyperParameterTuningJobResponse : AmazonWebServiceResponse
     {
-        private string _modelPackageGroupName;
-
-        /// <summary>
-        /// Gets and sets the property ModelPackageGroupName. 
-        /// <para>
-        /// The name of the model group to describe.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=170)]
-        public string ModelPackageGroupName
-        {
-            get { return this._modelPackageGroupName; }
-            set { this._modelPackageGroupName = value; }
-        }
-
-        // Check to see if ModelPackageGroupName property is set
-        internal bool IsSetModelPackageGroupName()
-        {
-            return this._modelPackageGroupName != null;
-        }
 
     }
 }

@@ -29,10 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The access configuration file for the ML model. You can explicitly accept the model
-    /// end-user license agreement (EULA) within the <c>ModelAccessConfig</c>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user
-    /// license agreements</a>.
+    /// The access configuration file to control access to the ML model. You can explicitly
+    /// accept the model end-user license agreement (EULA) within the <c>ModelAccessConfig</c>.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// If you are a Jumpstart user, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user
+    /// license agreements</a> section for more details on accepting the EULA.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create
+    /// an AutoML job to fine-tune text generation models using the API</i> for details on
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How
+    /// to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ModelAccessConfig
     {

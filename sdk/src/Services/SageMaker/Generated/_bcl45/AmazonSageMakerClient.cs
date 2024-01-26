@@ -1469,9 +1469,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a <c>Domain</c>. A domain consists of an associated Amazon Elastic File System
-        /// (EFS) volume, a list of authorized users, and a variety of security, application,
-        /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
-        /// can share notebook files and other artifacts with each other.
+        /// volume, a list of authorized users, and a variety of security, application, policy,
+        /// and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain can share
+        /// notebook files and other artifacts with each other.
         /// 
         ///  
         /// <para>
@@ -1497,10 +1497,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// All traffic between the domain and the EFS volume is through the specified VPC and
-        /// subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c> parameter.
-        /// <c>AppNetworkAccessType</c> corresponds to the network access type that you choose
-        /// when you onboard to the domain. The following options are available:
+        /// All traffic between the domain and the Amazon EFS volume is through the specified
+        /// VPC and subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c>
+        /// parameter. <c>AppNetworkAccessType</c> corresponds to the network access type that
+        /// you choose when you onboard to the domain. The following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1553,9 +1553,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a <c>Domain</c>. A domain consists of an associated Amazon Elastic File System
-        /// (EFS) volume, a list of authorized users, and a variety of security, application,
-        /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
-        /// can share notebook files and other artifacts with each other.
+        /// volume, a list of authorized users, and a variety of security, application, policy,
+        /// and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain can share
+        /// notebook files and other artifacts with each other.
         /// 
         ///  
         /// <para>
@@ -1581,10 +1581,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// All traffic between the domain and the EFS volume is through the specified VPC and
-        /// subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c> parameter.
-        /// <c>AppNetworkAccessType</c> corresponds to the network access type that you choose
-        /// when you onboard to the domain. The following options are available:
+        /// All traffic between the domain and the Amazon EFS volume is through the specified
+        /// VPC and subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c>
+        /// parameter. <c>AppNetworkAccessType</c> corresponds to the network access type that
+        /// you choose when you onboard to the domain. The following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6582,6 +6582,53 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteHumanTaskUiResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteHumanTaskUiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHyperParameterTuningJob
+
+
+        /// <summary>
+        /// Deletes a hyperparameter tuning job. The <c>DeleteHyperParameterTuningJob</c> API
+        /// deletes only the tuning job entry that was created in SageMaker when you called the
+        /// <c>CreateHyperParameterTuningJob</c> API. It does not delete training jobs, artifacts,
+        /// or the IAM role that you specified when creating the model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHyperParameterTuningJob">REST API Reference for DeleteHyperParameterTuningJob Operation</seealso>
+        public virtual DeleteHyperParameterTuningJobResponse DeleteHyperParameterTuningJob(DeleteHyperParameterTuningJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHyperParameterTuningJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHyperParameterTuningJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a hyperparameter tuning job. The <c>DeleteHyperParameterTuningJob</c> API
+        /// deletes only the tuning job entry that was created in SageMaker when you called the
+        /// <c>CreateHyperParameterTuningJob</c> API. It does not delete training jobs, artifacts,
+        /// or the IAM role that you specified when creating the model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHyperParameterTuningJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHyperParameterTuningJob">REST API Reference for DeleteHyperParameterTuningJob Operation</seealso>
+        public virtual Task<DeleteHyperParameterTuningJobResponse> DeleteHyperParameterTuningJobAsync(DeleteHyperParameterTuningJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHyperParameterTuningJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHyperParameterTuningJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHyperParameterTuningJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -16868,9 +16915,12 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deploys the new <c>EndpointConfig</c> specified in the request, switches to using
-        /// newly created endpoint, and then deletes resources provisioned for the endpoint using
-        /// the previous <c>EndpointConfig</c> (there is no availability loss). 
+        /// Deploys the <c>EndpointConfig</c> specified in the request to a new fleet of instances.
+        /// SageMaker shifts endpoint traffic to the new instances with the updated endpoint configuration
+        /// and then deletes the old instances using the previous <c>EndpointConfig</c> (there
+        /// is no availability loss). For more information about how to control the update and
+        /// traffic shifting process, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html">
+        /// Update models in production</a>.
         /// 
         ///  
         /// <para>
@@ -16912,9 +16962,12 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deploys the new <c>EndpointConfig</c> specified in the request, switches to using
-        /// newly created endpoint, and then deletes resources provisioned for the endpoint using
-        /// the previous <c>EndpointConfig</c> (there is no availability loss). 
+        /// Deploys the <c>EndpointConfig</c> specified in the request to a new fleet of instances.
+        /// SageMaker shifts endpoint traffic to the new instances with the updated endpoint configuration
+        /// and then deletes the old instances using the previous <c>EndpointConfig</c> (there
+        /// is no availability loss). For more information about how to control the update and
+        /// traffic shifting process, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html">
+        /// Update models in production</a>.
         /// 
         ///  
         /// <para>

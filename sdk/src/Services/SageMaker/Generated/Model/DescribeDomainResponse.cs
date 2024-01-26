@@ -275,7 +275,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemId. 
         /// <para>
-        /// The ID of the Amazon Elastic File System (EFS) managed by this Domain.
+        /// The ID of the Amazon Elastic File System managed by this Domain.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

@@ -989,9 +989,9 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a <c>Domain</c>. A domain consists of an associated Amazon Elastic File System
-        /// (EFS) volume, a list of authorized users, and a variety of security, application,
-        /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
-        /// can share notebook files and other artifacts with each other.
+        /// volume, a list of authorized users, and a variety of security, application, policy,
+        /// and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain can share
+        /// notebook files and other artifacts with each other.
         /// 
         ///  
         /// <para>
@@ -1017,10 +1017,10 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// All traffic between the domain and the EFS volume is through the specified VPC and
-        /// subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c> parameter.
-        /// <c>AppNetworkAccessType</c> corresponds to the network access type that you choose
-        /// when you onboard to the domain. The following options are available:
+        /// All traffic between the domain and the Amazon EFS volume is through the specified
+        /// VPC and subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c>
+        /// parameter. <c>AppNetworkAccessType</c> corresponds to the network access type that
+        /// you choose when you onboard to the domain. The following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4829,6 +4829,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DeleteHumanTaskUiResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">REST API Reference for DeleteHumanTaskUi Operation</seealso>
         DeleteHumanTaskUiResponse EndDeleteHumanTaskUi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteHyperParameterTuningJob
+
+
+        /// <summary>
+        /// Deletes a hyperparameter tuning job. The <c>DeleteHyperParameterTuningJob</c> API
+        /// deletes only the tuning job entry that was created in SageMaker when you called the
+        /// <c>CreateHyperParameterTuningJob</c> API. It does not delete training jobs, artifacts,
+        /// or the IAM role that you specified when creating the model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHyperParameterTuningJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHyperParameterTuningJob service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHyperParameterTuningJob">REST API Reference for DeleteHyperParameterTuningJob Operation</seealso>
+        DeleteHyperParameterTuningJobResponse DeleteHyperParameterTuningJob(DeleteHyperParameterTuningJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHyperParameterTuningJob operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHyperParameterTuningJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHyperParameterTuningJob">REST API Reference for DeleteHyperParameterTuningJob Operation</seealso>
+        IAsyncResult BeginDeleteHyperParameterTuningJob(DeleteHyperParameterTuningJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHyperParameterTuningJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHyperParameterTuningJob.</param>
+        /// 
+        /// <returns>Returns a  DeleteHyperParameterTuningJobResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHyperParameterTuningJob">REST API Reference for DeleteHyperParameterTuningJob Operation</seealso>
+        DeleteHyperParameterTuningJobResponse EndDeleteHyperParameterTuningJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -14031,9 +14074,12 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deploys the new <c>EndpointConfig</c> specified in the request, switches to using
-        /// newly created endpoint, and then deletes resources provisioned for the endpoint using
-        /// the previous <c>EndpointConfig</c> (there is no availability loss). 
+        /// Deploys the <c>EndpointConfig</c> specified in the request to a new fleet of instances.
+        /// SageMaker shifts endpoint traffic to the new instances with the updated endpoint configuration
+        /// and then deletes the old instances using the previous <c>EndpointConfig</c> (there
+        /// is no availability loss). For more information about how to control the update and
+        /// traffic shifting process, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html">
+        /// Update models in production</a>.
         /// 
         ///  
         /// <para>

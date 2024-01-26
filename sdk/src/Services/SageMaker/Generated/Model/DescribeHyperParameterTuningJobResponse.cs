@@ -221,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobStatus. 
         /// <para>
-        /// The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.
+        /// The status of the tuning job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
