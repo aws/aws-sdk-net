@@ -1,3 +1,13 @@
+### 3.7.735.0 (2024-01-26 19:18 UTC)
+* Connect (3.7.312.0)
+	* Update list and string length limits for predefined attributes.
+* Inspector2 (3.7.302.0)
+	* This release adds ECR container image scanning based on their lastRecordedPullTime.
+* SageMaker (3.7.311.0)
+	* Amazon SageMaker Automatic Model Tuning now provides an API to programmatically delete tuning jobs.
+* Core 3.7.302.1
+	* Added support to set SupportsGettingNewToken when retrieving Credentials from SSOAWSCredentials
+
 ### 3.7.734.0 (2024-01-25 19:24 UTC)
 * ACMPCA (3.7.301.0)
 	* AWS Private CA now supports an option to omit the CDP extension from issued certificates, when CRL revocation is enabled.
