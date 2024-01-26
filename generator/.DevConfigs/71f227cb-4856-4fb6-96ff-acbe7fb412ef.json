@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Added support to set SupportsGettingNewToken when retrieving Credentials from SSOAWSCredentials"
+      ],
+      "type": "patch",
+      "updateMinimum": false
+    }
+  }

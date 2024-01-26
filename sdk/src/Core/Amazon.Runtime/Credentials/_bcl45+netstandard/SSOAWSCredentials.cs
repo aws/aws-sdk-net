@@ -196,7 +196,8 @@ namespace Amazon.Runtime
                 Region = Region,
                 SsoVerificationCallback = Options.SsoVerificationCallback,
                 StartUrl = StartUrl,
-                Session = Options.SessionName
+                Session = Options.SessionName,
+                SupportsGettingNewToken = Options.SupportsGettingNewToken
             };
 
             var token = _ssoTokenManager.GetToken(ssoTokenManagerGetTokenOptions);
@@ -219,7 +220,8 @@ namespace Amazon.Runtime
                 Region = Region,
                 SsoVerificationCallback = Options.SsoVerificationCallback,
                 StartUrl = StartUrl,
-                Session = Options.SessionName
+                Session = Options.SessionName,
+                SupportsGettingNewToken = Options.SupportsGettingNewToken
             };
 
             var token = await _ssoTokenManager.GetTokenAsync(ssoTokenManagerGetTokenOptions).ConfigureAwait(false);
