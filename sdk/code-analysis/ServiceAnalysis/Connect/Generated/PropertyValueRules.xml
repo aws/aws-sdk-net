@@ -379,7 +379,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePromptRequest.Description</property>
@@ -751,7 +751,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeletePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeletePromptRequest.InstanceId</property>
@@ -958,7 +958,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribePromptRequest.InstanceId</property>
@@ -2833,7 +2833,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePromptRequest.Description</property>
@@ -3839,7 +3839,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttribute.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttributeSummary.LastModifiedRegion</property>
@@ -3848,7 +3848,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttributeSummary.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ProblemDetail.Message</property>
@@ -4404,12 +4404,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.AttributeName</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.AttributeValue</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.Level</property>
@@ -4419,12 +4419,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiencyDisassociate.AttributeName</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiencyDisassociate.AttributeValue</property>
     <min>1</min>
-    <max>128</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserQuickConnectConfig.ContactFlowId</property>

@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// Predefined attribute values of type string list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=75)]
+        [AWSProperty(Min=1, Max=128)]
         public List<string> StringList
         {
             get { return this._stringList; }

@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// The name of user's proficiency.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AttributeName
         {
             get { return this._attributeName; }
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// The value of user's proficiency.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string AttributeValue
         {
             get { return this._attributeValue; }
