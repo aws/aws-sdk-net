@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": false,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update SigV4A signer not to include headers that are not required for the request signature"
+        ]
+    }
+}

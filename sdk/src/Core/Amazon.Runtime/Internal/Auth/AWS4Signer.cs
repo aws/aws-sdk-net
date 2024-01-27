@@ -56,6 +56,8 @@ namespace Amazon.Runtime.Internal.Auth
 
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
+        // If this list is updated to include new headers, the SigV4a signer (in "AWSSDK.Extensions.CrtIntegration\CrtAWS4aSigner.cs") may need to
+        // be updated as well.
         private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
             HeaderKeys.XAmznTraceIdHeader,
             HeaderKeys.TransferEncodingHeader,

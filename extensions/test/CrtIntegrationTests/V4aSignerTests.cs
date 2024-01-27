@@ -117,7 +117,10 @@ namespace CrtIntegrationTests
             var headers = new Dictionary<string, string>
             {
                 { "Content-Length", "13" },
-                { "Content-Type", "application/x-www-form-urlencoded"},
+                { "Content-Type", "application/x-www-form-urlencoded" },
+                { "amz-sdk-request", "attempt=1; max=5" },
+                { "amz-sdk-invocation-id", "a7d0c828-1fc1-43e8-9f9e-367a7011fc84" },
+                { "x-amzn-trace-id", "Root=1-63441c4a-abcdef012345678912345678" }
             };
 
             var pathResources = new Dictionary<string, string>();
@@ -191,6 +194,9 @@ namespace CrtIntegrationTests
             config.SignatureType = AwsSignatureType.CANONICAL_REQUEST_VIA_HEADERS;
 
             Assert.True(AwsSigner.VerifyV4aCanonicalSigning(canonicalRequest, config, signatureValue, SigningTestEccPubX, SigningTestEccPubY));
+            Assert.DoesNotContain("amz-sdk-request", result.SignedHeaders);
+            Assert.DoesNotContain("amz-sdk-invocation-id", result.SignedHeaders);
+            Assert.DoesNotContain("x-amzn-trace-id", result.SignedHeaders);
         }
         #endregion
 
