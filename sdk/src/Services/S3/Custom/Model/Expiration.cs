@@ -29,7 +29,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Defines the expiration policy for a given object.
     /// </summary>
-    public class Expiration
+    public partial class Expiration
     {
         private DateTime expiryDate;
         private DateTime expiryDateUtc;
@@ -74,23 +74,34 @@ namespace Amazon.S3.Model
             ruleId = string.Empty;
         }
 
+        private const string ExpiryRegexPattern = "expiry-date=\"(.+?)\"";
+        private const string RuleRegexPattern = "rule-id=\"(.+?)\"";
 
-        private static Regex expiryRegex = new Regex("expiry-date=\"(.+?)\"");
-        private static Regex ruleRegex = new Regex("rule-id=\"(.+?)\"");
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(ExpiryRegexPattern)]
+        private static partial Regex ExpiryRegex();
+        [GeneratedRegex(RuleRegexPattern)]
+        private static partial Regex RuleRegex();
+#else
+        private static Regex ExpiryRegex() => _expiryRegex;
+        private static Regex RuleRegex() => _ruleRegex;
+        private static readonly Regex _expiryRegex = new Regex(ExpiryRegexPattern);
+        private static readonly Regex _ruleRegex = new Regex(RuleRegexPattern);
+#endif
 
         internal Expiration(string headerValue)
         {
             if (string.IsNullOrEmpty(headerValue))
                 throw new ArgumentNullException("headerValue");
 
-            var expiryMatches = expiryRegex.Match(headerValue);
+            var expiryMatches = ExpiryRegex().Match(headerValue);
             if (!expiryMatches.Success || !expiryMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Expiry Date match");
             string expiryDateValue = expiryMatches.Groups[1].Value;
             this.expiryDateUtc = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             this.expiryDate = new DateTime(this.expiryDateUtc.Ticks, DateTimeKind.Unspecified);
 
-            var ruleMatches = ruleRegex.Match(headerValue);
+            var ruleMatches = RuleRegex().Match(headerValue);
             if (!ruleMatches.Success || !ruleMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Rule Id match");
             string ruleIdValue = ruleMatches.Groups[1].Value;

@@ -27,7 +27,7 @@ namespace Amazon.SecurityToken.SAML
     /// Implementation of IAuthenticationController, allowing authentication calls against
     /// an AD FS endpoint.
     /// </summary>
-    internal class AdfsAuthenticationController : IAuthenticationController
+    internal partial class AdfsAuthenticationController : IAuthenticationController
     {
         /// <summary>
         /// Authenticates the user with the specified AD FS endpoint and 
@@ -215,7 +215,7 @@ namespace Amazon.SecurityToken.SAML
     /// Implementation of IAuthenticationResponseParser, allowing parsing of the responses for 
     /// successful authentication calls against AD FS endpoints.
     /// </summary>
-    internal class AdfsAuthenticationResponseParser : IAuthenticationResponseParser
+    internal partial class AdfsAuthenticationResponseParser : IAuthenticationResponseParser
     {
         /// <summary>
         /// Parses the authentication response (html) and extracts the SAML response (xml)
@@ -231,8 +231,7 @@ namespace Amazon.SecurityToken.SAML
         {
             var samlAssertion = string.Empty;
 
-            var reg = new Regex("SAMLResponse\\W+value\\=\\\"([^\\\"]+)\\\"");
-            var matches = reg.Matches(authenticationResponse);
+            var matches = SamlResponseRegex().Matches(authenticationResponse);
             foreach (Match m in matches)
             {
                 var last = m.Groups[1].Value;
@@ -241,5 +240,15 @@ namespace Amazon.SecurityToken.SAML
 
             return new SAMLAssertion(samlAssertion);
         }
+
+        private const string SamlResponseRegexPattern = "SAMLResponse\\W+value\\=\\\"([^\\\"]+)\\\"";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(SamlResponseRegexPattern)]
+        private static partial Regex SamlResponseRegex();
+#else
+        private static Regex SamlResponseRegex() => _samlResponseRegex;
+        private static readonly Regex _samlResponseRegex = new Regex(SamlResponseRegexPattern);
+#endif
     }
 }

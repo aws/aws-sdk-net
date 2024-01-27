@@ -23,7 +23,7 @@ namespace Amazon.SimpleNotificationService.Util
     /// <summary>
     /// This class reads in JSON formatted Amazon SNS messages into Message objects. The messages can also be verified using the IsMessageSignatureValid operation.
     /// </summary>
-    public class Message
+    public partial class Message
     {
         private const int MAX_RETRIES = 3;
         private const string SHA1_SIGNATURE_VERSION = "1";
@@ -237,6 +237,16 @@ namespace Amazon.SimpleNotificationService.Util
             private set;
         }
 
+        private const string CertUrlRegexPattern = @"^sns\.[a-zA-Z0-9\-]{3,}\.amazonaws\.com(\.cn)?$";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(CertUrlRegexPattern)]
+        private static partial Regex CertUrlRegex();
+#else
+        private static Regex CertUrlRegex() => _certUrlRegex;
+        private static readonly Regex _certUrlRegex = new Regex(CertUrlRegexPattern);
+#endif
+
         /// <summary>
         /// Verifies that the signing certificate url is from a recognizable source. 
         /// Returns the cert url if it cen be verified, otherwise throws an exception.
@@ -248,9 +258,7 @@ namespace Amazon.SimpleNotificationService.Util
             var uri = new Uri(certUrl);
             if (uri.Scheme == "https" && certUrl.EndsWith(".pem", StringComparison.Ordinal))
             {
-                const string pattern = @"^sns\.[a-zA-Z0-9\-]{3,}\.amazonaws\.com(\.cn)?$";
-                var regex = new Regex(pattern);
-                if (regex.IsMatch(uri.Host))
+                if (CertUrlRegex().IsMatch(uri.Host))
                     return certUrl;
             }
 

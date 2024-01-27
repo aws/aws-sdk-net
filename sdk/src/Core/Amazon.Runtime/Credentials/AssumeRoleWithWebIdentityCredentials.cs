@@ -33,7 +33,7 @@ namespace Amazon.Runtime
     /// AWS Credentials that automatically refresh by calling AssumeRole on
     /// the Amazon Security Token Service.
     /// </summary>
-    public class AssumeRoleWithWebIdentityCredentials : RefreshingAWSCredentials
+    public partial class AssumeRoleWithWebIdentityCredentials : RefreshingAWSCredentials
     {
         private const int PREEMPT_EXPIRY_MINUTES = 15;
         private static readonly RegionEndpoint _defaultSTSClientRegion = RegionEndpoint.USEast1;
@@ -48,7 +48,15 @@ namespace Amazon.Runtime
         public const string RoleArnEnvVariable = "AWS_ROLE_ARN";
         public const string RoleSessionNameEnvVariable = "AWS_ROLE_SESSION_NAME";
 
-        private static readonly Regex _roleSessionNameRegex = new Regex(@"^[\w+=,.@-]{2,64}$", RegexOptions.Compiled);
+        private const string RoleSessionNameRegexPattern = @"^[\w+=,.@-]{2,64}$";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(RoleSessionNameRegexPattern)]
+        private static partial Regex RoleSessionNameRegex();
+#else
+        private static Regex RoleSessionNameRegex() => _roleSessionNameRegex;
+        private static readonly Regex _roleSessionNameRegex = new Regex(RoleSessionNameRegexPattern, RegexOptions.Compiled);
+#endif
 
         private readonly Logger _logger = Logger.GetLogger(typeof(AssumeRoleWithWebIdentityCredentials));
 
@@ -106,9 +114,9 @@ namespace Amazon.Runtime
                 throw new ArgumentNullException(nameof(roleArn), "The role ARN must be specified.");
             }
 
-            if (!string.IsNullOrEmpty(roleSessionName) && !_roleSessionNameRegex.IsMatch(roleSessionName))
+            if (!string.IsNullOrEmpty(roleSessionName) && !RoleSessionNameRegex().IsMatch(roleSessionName))
             {
-                throw new ArgumentOutOfRangeException(nameof(roleSessionName), roleSessionName, $"The value must match the regex pattern @\"{_roleSessionNameRegex}\".");
+                throw new ArgumentOutOfRangeException(nameof(roleSessionName), roleSessionName, $"The value must match the regex pattern @\"{RoleSessionNameRegex()}\".");
             }
 
             WebIdentityTokenFile = webIdentityTokenFile;
