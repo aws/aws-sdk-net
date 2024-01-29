@@ -277,8 +277,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property KmsKey. 
         /// <para>
-        /// The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt
-        /// the data in your environment.
+        /// The KMS encryption key used to encrypt the data in your environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]
@@ -703,13 +702,20 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UNAVAILABLE</c> - Indicates the request failed, but the environment was unable
-        /// to rollback and is not in a stable state.
+        ///  <c>UNAVAILABLE</c> - Indicates the request failed, but the environment did not return
+        /// to its previous state and is not stable.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>UPDATE_FAILED</c> - Indicates the request to update the environment failed, and
-        /// the environment has rolled back successfully and is ready to use.
+        /// the environment was restored to its previous state successfully and is ready to use.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MAINTENANCE</c> - Indicates that the environment is undergoing maintenance. Depending
+        /// on the type of work Amazon MWAA is performing, your environment might become unavailable
+        /// during this process. After all operations are done, your environment will return to
+        /// its status prior to mainteneace operations. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -773,7 +779,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property WebserverUrl. 
         /// <para>
-        /// The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For
+        /// The Apache Airflow <i>web server</i> host name for the Amazon MWAA environment. For
         /// more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
         /// the Apache Airflow UI</a>.
         /// </para>

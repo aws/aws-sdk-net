@@ -105,6 +105,10 @@ namespace Amazon.MWAA
         /// </summary>
         public static readonly EnvironmentStatus DELETING = new EnvironmentStatus("DELETING");
         /// <summary>
+        /// Constant MAINTENANCE for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus MAINTENANCE = new EnvironmentStatus("MAINTENANCE");
+        /// <summary>
         /// Constant PENDING for EnvironmentStatus
         /// </summary>
         public static readonly EnvironmentStatus PENDING = new EnvironmentStatus("PENDING");
