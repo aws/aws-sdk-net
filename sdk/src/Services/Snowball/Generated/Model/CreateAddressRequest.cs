@@ -33,7 +33,8 @@ namespace Amazon.Snowball.Model
     /// Creates an address for a Snow device to be shipped to. In most regions, addresses
     /// are validated at the time of creation. The address you provide must be located within
     /// the serviceable area of your region. If the address is invalid or unsupported, then
-    /// an exception is thrown.
+    /// an exception is thrown. If providing an address as a JSON file through the <c>cli-input-json</c>
+    /// option, include the full file path. For example, <c>--cli-input-json file://create-address.json</c>.
     /// </summary>
     public partial class CreateAddressRequest : AmazonSnowballRequest
     {
