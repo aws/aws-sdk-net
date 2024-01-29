@@ -198,7 +198,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the input documents
+        /// The language code of the input documents.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
