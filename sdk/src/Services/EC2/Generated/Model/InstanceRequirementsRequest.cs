@@ -95,6 +95,7 @@ namespace Amazon.EC2.Model
         private List<string> _instanceGenerations = new List<string>();
         private LocalStorage _localStorage;
         private List<string> _localStorageTypes = new List<string>();
+        private int? _maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
         private MemoryGiBPerVCpuRequest _memoryGiBPerVCpu;
         private MemoryMiBRequest _memoryMiB;
         private NetworkBandwidthGbpsRequest _networkBandwidthGbps;
@@ -614,6 +615,52 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxSpotPriceAsPercentageOfOptimalOnDemandPrice. 
+        /// <para>
+        /// [Price protection] The price protection threshold for Spot Instances, as a percentage
+        /// of an identified On-Demand price. The identified On-Demand price is the price of the
+        /// lowest priced current generation C, M, or R instance type with your specified attributes.
+        /// If no current generation C, M, or R instance type matches your attributes, then the
+        /// identified price is from the lowest priced current generation instance types, and
+        /// failing that, from the lowest priced previous generation instance types that match
+        /// your attributes. When Amazon EC2 selects instance types with your attributes, it will
+        /// exclude instance types whose price exceeds your specified threshold.
+        /// </para>
+        ///  
+        /// <para>
+        /// The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+        /// </para>
+        ///  
+        /// <para>
+        /// To indicate no price protection threshold, specify a high value, such as <c>999999</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <c>DesiredCapacityType</c> to <c>vcpu</c> or <c>memory-mib</c>, the price
+        /// protection threshold is based on the per vCPU or per memory price instead of the per
+        /// instance price.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only one of <c>SpotMaxPricePercentageOverLowestPrice</c> or <c>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</c>
+        /// can be specified. If you don't specify either, then <c>SpotMaxPricePercentageOverLowestPrice</c>
+        /// is used and the value for that parameter defaults to <c>100</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
+        {
+            get { return this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice.GetValueOrDefault(); }
+            set { this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
+        }
+
+        // Check to see if MaxSpotPriceAsPercentageOfOptimalOnDemandPrice property is set
+        internal bool IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice()
+        {
+            return this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MemoryGiBPerVCpu. 
         /// <para>
         /// The minimum and maximum amount of memory per vCPU, in GiB.
@@ -703,11 +750,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OnDemandMaxPricePercentageOverLowestPrice. 
         /// <para>
-        /// The price protection threshold for On-Demand Instances. This is the maximum you’ll
-        /// pay for an On-Demand Instance, expressed as a percentage above the least expensive
-        /// current generation M, C, or R instance type with your specified attributes. When Amazon
-        /// EC2 selects instance types with your attributes, it excludes instance types priced
-        /// above your threshold.
+        /// [Price protection] The price protection threshold for On-Demand Instances, as a percentage
+        /// higher than an identified On-Demand price. The identified On-Demand price is the price
+        /// of the lowest priced current generation C, M, or R instance type with your specified
+        /// attributes. When Amazon EC2 selects instance types with your attributes, it will exclude
+        /// instance types whose price exceeds your specified threshold.
         /// </para>
         ///  
         /// <para>
@@ -715,7 +762,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// To turn off price protection, specify a high value, such as <c>999999</c>.
+        /// To indicate no price protection threshold, specify a high value, such as <c>999999</c>.
         /// </para>
         ///  
         /// <para>
@@ -774,10 +821,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotMaxPricePercentageOverLowestPrice. 
         /// <para>
-        /// The price protection threshold for Spot Instance. This is the maximum you’ll pay for
-        /// an Spot Instance, expressed as a percentage above the least expensive current generation
-        /// M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance
-        /// types with your attributes, it excludes instance types priced above your threshold.
+        /// [Price protection] The price protection threshold for Spot Instances, as a percentage
+        /// higher than an identified Spot price. The identified Spot price is the Spot price
+        /// of the lowest priced current generation C, M, or R instance type with your specified
+        /// attributes. If no current generation C, M, or R instance type matches your attributes,
+        /// then the identified Spot price is from the lowest priced current generation instance
+        /// types, and failing that, from the lowest priced previous generation instance types
+        /// that match your attributes. When Amazon EC2 selects instance types with your attributes,
+        /// it will exclude instance types whose Spot price exceeds your specified threshold.
         /// </para>
         ///  
         /// <para>
@@ -785,7 +836,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// To turn off price protection, specify a high value, such as <c>999999</c>.
+        /// To indicate no price protection threshold, specify a high value, such as <c>999999</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set <c>TargetCapacityUnitType</c> to <c>vcpu</c> or <c>memory-mib</c>, the
+        /// price protection threshold is applied based on the per-vCPU or per-memory price instead
+        /// of the per-instance price.
         /// </para>
         ///  
         /// <para>
@@ -794,9 +851,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you set <c>TargetCapacityUnitType</c> to <c>vcpu</c> or <c>memory-mib</c>, the
-        /// price protection threshold is applied based on the per-vCPU or per-memory price instead
-        /// of the per-instance price.
+        /// Only one of <c>SpotMaxPricePercentageOverLowestPrice</c> or <c>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</c>
+        /// can be specified. If you don't specify either, then <c>SpotMaxPricePercentageOverLowestPrice</c>
+        /// is used and the value for that parameter defaults to <c>100</c>.
         /// </para>
         ///  </note> 
         /// <para>

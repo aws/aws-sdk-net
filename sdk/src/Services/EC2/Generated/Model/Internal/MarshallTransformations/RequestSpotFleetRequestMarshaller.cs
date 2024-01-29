@@ -298,6 +298,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         publicRequestSpotFleetRequestConfiglistValueInstanceRequirementslistValueIndex++;
                                     }
                                 }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
+                                }
                                 if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                                 {
                                     if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
@@ -787,6 +791,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "LocalStorageTypeSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValue));
                                                 publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementslistValueIndex++;
                                             }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
                                         }
                                         if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                                         {

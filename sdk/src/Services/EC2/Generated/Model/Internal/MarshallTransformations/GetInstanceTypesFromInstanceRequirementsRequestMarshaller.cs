@@ -186,6 +186,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+                    if(publicRequest.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
+                    {
+                        request.Parameters.Add("InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequest.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
+                    }
                     if(publicRequest.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                     {
                         if(publicRequest.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())
