@@ -2057,7 +2057,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Gets information about the instance refreshes for the specified Auto Scaling group.
+        /// Gets information about the instance refreshes for the specified Auto Scaling group
+        /// from the previous six weeks.
         /// 
         ///  
         /// <para>
@@ -2091,7 +2092,8 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Gets information about the instance refreshes for the specified Auto Scaling group.
+        /// Gets information about the instance refreshes for the specified Auto Scaling group
+        /// from the previous six weeks.
         /// 
         ///  
         /// <para>

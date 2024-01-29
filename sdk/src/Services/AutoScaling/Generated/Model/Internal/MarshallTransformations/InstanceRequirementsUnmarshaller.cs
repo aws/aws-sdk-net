@@ -146,6 +146,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalStorageTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MemoryGiBPerVCpu", targetDepth))
                     {
                         var unmarshaller = MemoryGiBPerVCpuRequestUnmarshaller.Instance;

@@ -364,6 +364,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             publicRequestMixedInstancesPolicyLaunchTemplatelistValueInstanceRequirementslistValueIndex++;
                                         }
                                     }
+                                    if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
+                                    {
+                                        request.Parameters.Add("MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "InstanceRequirements" + "." + "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice", StringUtils.FromInt(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice));
+                                    }
                                     if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetMemoryGiBPerVCpu())
                                     {
                                         if(publicRequestMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.MemoryGiBPerVCpu.IsSetMax())

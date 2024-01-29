@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This structure defines the CloudWatch metric to return, along with the statistic,
-    /// period, and unit.
+    /// This structure defines the CloudWatch metric to return, along with the statistic and
+    /// unit.
     /// 
     ///  
     /// <para>

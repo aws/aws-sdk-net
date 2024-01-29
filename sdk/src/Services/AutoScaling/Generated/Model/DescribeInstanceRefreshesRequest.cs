@@ -30,7 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceRefreshes operation.
-    /// Gets information about the instance refreshes for the specified Auto Scaling group.
+    /// Gets information about the instance refreshes for the specified Auto Scaling group
+    /// from the previous six weeks.
     /// 
     ///  
     /// <para>
