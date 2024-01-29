@@ -80,7 +80,7 @@ namespace Amazon.Runtime.Internal.Util
                 // The header key is required upfront for calculating the total length of
                 // the wrapper stream, which we need to send as the Content-Length header
                 // before the wrapper stream is transmitted.
-                request.TrailingHeaders.Add(checksumHeaderKey, string.Empty);
+                request.TrailingHeaders[checksumHeaderKey] = string.Empty;
                 request.SelectedChecksum = coreChecksumAlgoritm;
             }
             else // calculate and set the checksum in the request headers

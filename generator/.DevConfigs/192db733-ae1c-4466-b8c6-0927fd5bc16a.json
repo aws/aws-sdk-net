@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Update request checksum not to add duplicate trailing header key on retries"
+        ]
+    }
+}
