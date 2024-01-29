@@ -184,6 +184,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
+        /// Validates the PutObject request does not fail when adding the trailing header key for retried requests.
+        /// </summary>
+        /// <remarks>https://github.com/aws/aws-sdk-net/issues/3154</remarks>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestDuplicateTrailingHeaderKey()
+        {
+            var s3Config = new AmazonS3Config
+            {
+                // Unrealistic timeout so SDK will do a retry
+                Timeout = TimeSpan.FromMilliseconds(1),
+                RetryMode = RequestRetryMode.Standard,
+                MaxErrorRetry = 1
+            };
+
+            using (var s3Client = new AmazonS3Client(s3Config))
+            {
+                var putObjectRequest = new PutObjectRequest
+                {
+                    BucketName = _bucketName,
+                    Key = "s3-retry-bug",
+                    ContentBody = _testContent,
+                    ChecksumAlgorithm = ChecksumAlgorithm.CRC32C,
+                };
+
+                // Due to the low timeout in the S3Config, we'll still get an exception but verify it's not the
+                // "ArgumentException" reported in the GitHub issue.
+                AssertExtensions.ExpectException<AmazonServiceException>(() => s3Client.PutObject(putObjectRequest));
+            }
+        }
+
+        /// <summary>
         /// Puts and gets an object using a flexible checksum
         /// </summary>
         /// <param name="algorithm">Checksum algorithm to use</param>
