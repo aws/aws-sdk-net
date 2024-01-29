@@ -1,3 +1,20 @@
+### 3.7.736.0 (2024-01-29 19:24 UTC)
+* AutoScaling (3.7.302.0)
+	* EC2 Auto Scaling customers who use attribute based instance-type selection can now intuitively define their Spot instances price protection limit as a percentage of the lowest priced On-Demand instance type.
+* Comprehend (3.7.300.42)
+	* Comprehend PII analysis now supports Spanish input documents.
+* EC2 (3.7.314.0)
+	* EC2 Fleet customers who use attribute based instance-type selection can now intuitively define their Spot instances price protection limit as a percentage of the lowest priced On-Demand instance type.
+* MWAA (3.7.303.0)
+	* This release adds MAINTENANCE environment status for Amazon MWAA environments.
+* RDS (3.7.306.0)
+	* Introduced support for the InsufficientDBInstanceCapacityFault error in the RDS RestoreDBClusterFromSnapshot and RestoreDBClusterToPointInTime API methods. This provides enhanced error handling, ensuring a more robust experience.
+* Snowball (3.7.300.42)
+	* Modified description of createaddress to include direction to add path when providing a JSON file.
+* Core 3.7.302.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.735.0 (2024-01-26 19:18 UTC)
 * Connect (3.7.312.0)
 	* Update list and string length limits for predefined attributes.
