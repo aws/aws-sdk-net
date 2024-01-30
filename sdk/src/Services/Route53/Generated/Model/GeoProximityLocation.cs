@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// (Resource record sets only): A complex type that lets you control how Amazon Route 53
-    /// responds to DNS queries based on the geographic origin of the query and your resources.
-    /// Only one of , <c>LocalZoneGroup</c>, <c>Coordinates</c>, or <c>Amazon Web ServicesRegion</c>
-    /// is allowed per request at a time.
+    /// (Resource record sets only): A complex type that lets you specify where your resources
+    /// are located. Only one of <c>LocalZoneGroup</c>, <c>Coordinates</c>, or <c>Amazon Web
+    /// ServicesRegion</c> is allowed per request at a time.
     /// 
     ///  
     /// <para>
