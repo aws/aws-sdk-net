@@ -584,6 +584,11 @@
       <FileException Include="sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
       <FileException Include="sdk/nuget-content/account-management.ps1" />
       <FileException Include="sdk/nuget-content/install.ps1" />
+
+      <FileException Include="sdk/src/Core/bin/Release/net8.0/AWSSDK.Core.xml" />
+      <FileException Include="sdk/src/Services/S3/bin/Release/net8.0/AWSSDK.S3.xml" />
+      <FileException Include="Deployment/assemblies/net8.0/AWSSDK.Core.xml" />
+      <FileException Include="Deployment/assemblies/net8.0/AWSSDK.S3.xml" />      
     </ItemGroup>
 
         <ItemGroup>
