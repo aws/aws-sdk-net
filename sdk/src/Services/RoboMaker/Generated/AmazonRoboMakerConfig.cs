@@ -32,7 +32,7 @@ namespace Amazon.RoboMaker
     public partial class AmazonRoboMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("RoboMaker", "3.7.300.42");
+            InternalSDKUtils.BuildUserAgentString("RoboMaker", "3.7.300.43");
 
         private string _userAgent = UserAgentString;
         ///<summary>

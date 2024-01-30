@@ -1,3 +1,12 @@
+### 3.7.737.0 (2024-01-30 19:13 UTC)
+* DataZone (3.7.301.0)
+	* Add new skipDeletionCheck to DeleteDomain. Add new skipDeletionCheck to DeleteProject which also automatically deletes dependent objects
+* Route53 (3.7.302.10)
+	* Update the SDKs for text changes in the APIs.
+* Core 3.7.302.3
+	* Update request checksum not to add duplicate trailing header key on retries
+	* All services packages updated to require new Core
+
 ### 3.7.736.0 (2024-01-29 19:24 UTC)
 * AutoScaling (3.7.302.0)
 	* EC2 Auto Scaling customers who use attribute based instance-type selection can now intuitively define their Spot instances price protection limit as a percentage of the lowest priced On-Demand instance type.
