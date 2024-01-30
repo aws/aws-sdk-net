@@ -67,6 +67,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            
+            if (publicRequest.IsSetSkipDeletionCheck())
+                request.Parameters.Add("skipDeletionCheck", StringUtils.FromBool(publicRequest.SkipDeletionCheck));
             request.ResourcePath = "/v2/domains/{identifier}";
             request.UseQueryString = true;
 

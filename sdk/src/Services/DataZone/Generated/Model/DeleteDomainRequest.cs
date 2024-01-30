@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private string _clientToken;
         private string _identifier;
+        private bool? _skipDeletionCheck;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -73,6 +74,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipDeletionCheck. 
+        /// <para>
+        /// Optional flag to delete all child entities within the domain
+        /// </para>
+        /// </summary>
+        public bool SkipDeletionCheck
+        {
+            get { return this._skipDeletionCheck.GetValueOrDefault(); }
+            set { this._skipDeletionCheck = value; }
+        }
+
+        // Check to see if SkipDeletionCheck property is set
+        internal bool IsSetSkipDeletionCheck()
+        {
+            return this._skipDeletionCheck.HasValue; 
         }
 
     }

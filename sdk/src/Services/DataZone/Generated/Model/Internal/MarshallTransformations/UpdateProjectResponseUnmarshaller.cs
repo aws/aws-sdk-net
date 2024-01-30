@@ -75,6 +75,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failureReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProjectDeletionError, ProjectDeletionErrorUnmarshaller>(ProjectDeletionErrorUnmarshaller.Instance);
+                    response.FailureReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("glossaryTerms", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -97,6 +103,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("projectStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProjectStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

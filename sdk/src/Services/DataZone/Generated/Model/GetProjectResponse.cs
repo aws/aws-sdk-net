@@ -37,10 +37,12 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
+        private List<ProjectDeletionError> _failureReasons = new List<ProjectDeletionError>();
         private List<string> _glossaryTerms = new List<string>();
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private ProjectStatus _projectStatus;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -118,6 +120,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// Reasons for failed project deletion
+        /// </para>
+        /// </summary>
+        public List<ProjectDeletionError> FailureReasons
+        {
+            get { return this._failureReasons; }
+            set { this._failureReasons = value; }
+        }
+
+        // Check to see if FailureReasons property is set
+        internal bool IsSetFailureReasons()
+        {
+            return this._failureReasons != null && this._failureReasons.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GlossaryTerms. 
         /// <para>
         /// The business glossary terms that can be used in the project.
@@ -190,6 +210,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectStatus. 
+        /// <para>
+        /// Status of the project
+        /// </para>
+        /// </summary>
+        public ProjectStatus ProjectStatus
+        {
+            get { return this._projectStatus; }
+            set { this._projectStatus = value; }
+        }
+
+        // Check to see if ProjectStatus property is set
+        internal bool IsSetProjectStatus()
+        {
+            return this._projectStatus != null;
         }
 
     }
