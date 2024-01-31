@@ -2,96 +2,286 @@
 <docs>
     <doc>
         <members>
-            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.CancelUpdateStack(Amazon.CloudFormation.Model.CancelUpdateStackRequest)" />
-            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.CancelUpdateStack(Amazon.CloudFormation.Model.CancelUpdateStackRequest)" />
-            <member name="T:Amazon.CloudFormation.Model.CancelUpdateStackRequest" />
-            <member name="T:Amazon.CloudFormation.Model.CancelUpdateStackResponse" />
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.CreateGeneratedTemplate(Amazon.CloudFormation.Model.CreateGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.CreateGeneratedTemplate(Amazon.CloudFormation.Model.CreateGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.CreateGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.CreateGeneratedTemplateResponse" />
         </members>
         <value>
             <example>
                 <para>
-                    This example cancels an update of the specified stack.
+                    This example creates a generated template with a resources file.
                 </para>
                 <code
-                    title="To cancel a stack update in progress"
+                    title="To create a generated template"
                     source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
-                    region="to-cancel-a-stack-update-that-is-in-progress-1472747085196" />
+                    region="to-create-a-generated-template" />
             </example>
         </value>
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
-            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
-            <member name="T:Amazon.CloudFormation.Model.UpdateStackRequest" />
-            <member name="T:Amazon.CloudFormation.Model.UpdateStackResponse" />
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.DeleteGeneratedTemplate(Amazon.CloudFormation.Model.DeleteGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.DeleteGeneratedTemplate(Amazon.CloudFormation.Model.DeleteGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.DeleteGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.DeleteGeneratedTemplateResponse" />
         </members>
         <value>
             <example>
                 <para>
-                    This example updates the template and input parameters for the specified stack.
+                    This example deletes a generated template
                 </para>
                 <code
-                    title="To update an AWS CloudFormation stack"
+                    title="To delete a generated template"
                     source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
-                    region="to-update-an-aws-cloudformation-stack-1472841931621" />
+                    region="to-delete-a-generated-template" />
             </example>
         </value>
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
-            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
-            <member name="T:Amazon.CloudFormation.Model.UpdateStackRequest" />
-            <member name="T:Amazon.CloudFormation.Model.UpdateStackResponse" />
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.DescribeGeneratedTemplate(Amazon.CloudFormation.Model.DescribeGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.DescribeGeneratedTemplate(Amazon.CloudFormation.Model.DescribeGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.DescribeGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.DescribeGeneratedTemplateResponse" />
         </members>
         <value>
             <example>
                 <para>
-                    This example updates only the the specified parameter value for the specified stack. If you don't specify a parameter value, AWS CloudFormation uses the default value from the template.
+                    This example describes a generated template
                 </para>
                 <code
-                    title="To update an AWS CloudFormation stack"
+                    title="To describe a generated template"
                     source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
-                    region="to-update-an-aws-cloudformation-stack-1472841931621" />
+                    region="to-describe-a-generated-template" />
             </example>
         </value>
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
-            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
-            <member name="T:Amazon.CloudFormation.Model.UpdateStackRequest" />
-            <member name="T:Amazon.CloudFormation.Model.UpdateStackResponse" />
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.DescribeResourceScan(Amazon.CloudFormation.Model.DescribeResourceScanRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.DescribeResourceScan(Amazon.CloudFormation.Model.DescribeResourceScanRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.DescribeResourceScanRequest" />
+            <member name="T:Amazon.CloudFormation.Model.DescribeResourceScanResponse" />
         </members>
         <value>
             <example>
                 <para>
-                    This example adds two stack notification topics to the specified stack.
+                    This example describes a selected resource scan
                 </para>
                 <code
-                    title="To update an AWS CloudFormation stack"
+                    title="To describe a selected resource scan"
                     source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
-                    region="to-update-an-aws-cloudformation-stack-1472841931621" />
+                    region="to-describe-a-generated-template" />
             </example>
         </value>
     </doc>
     <doc>
         <members>
-            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ValidateTemplate(Amazon.CloudFormation.Model.ValidateTemplateRequest)" />
-            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ValidateTemplate(Amazon.CloudFormation.Model.ValidateTemplateRequest)" />
-            <member name="T:Amazon.CloudFormation.Model.ValidateTemplateRequest" />
-            <member name="T:Amazon.CloudFormation.Model.ValidateTemplateResponse" />
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.GetGeneratedTemplate(Amazon.CloudFormation.Model.GetGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.GetGeneratedTemplate(Amazon.CloudFormation.Model.GetGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.GetGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.GetGeneratedTemplateResponse" />
         </members>
         <value>
             <example>
                 <para>
-                    This example validates the specified template.
+                    This example gets a generated template ins JSON format.
                 </para>
                 <code
-                    title="To validate an AWS CloudFormation template"
+                    title="To get a generated template in JSON format"
                     source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
-                    region="to-validate-an-aws-cloudformation-template-1472839072307" />
+                    region="to-get-a-generated-template-json" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.GetGeneratedTemplate(Amazon.CloudFormation.Model.GetGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.GetGeneratedTemplate(Amazon.CloudFormation.Model.GetGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.GetGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.GetGeneratedTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets a generated template in YAML format.
+                </para>
+                <code
+                    title="To get a generated template in YAML format"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-get-a-generated-template-yaml" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ListGeneratedTemplates(Amazon.CloudFormation.Model.ListGeneratedTemplatesRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ListGeneratedTemplates(Amazon.CloudFormation.Model.ListGeneratedTemplatesRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.ListGeneratedTemplatesRequest" />
+            <member name="T:Amazon.CloudFormation.Model.ListGeneratedTemplatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the generated templates.
+                </para>
+                <code
+                    title="To list generated templates"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-list-generated-templates" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ListResourceScanRelatedResources(Amazon.CloudFormation.Model.ListResourceScanRelatedResourcesRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ListResourceScanRelatedResources(Amazon.CloudFormation.Model.ListResourceScanRelatedResourcesRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScanRelatedResourcesRequest" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScanRelatedResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the resources related to the passed in resources
+                </para>
+                <code
+                    title="To list resource scan related resources"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-list-resource-scan-related-resources" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ListResourceScanResources(Amazon.CloudFormation.Model.ListResourceScanResourcesRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ListResourceScanResources(Amazon.CloudFormation.Model.ListResourceScanResourcesRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScanResourcesRequest" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScanResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the resources in your resource scan
+                </para>
+                <code
+                    title="To list the resources in your resource scan"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-list-resource-scan-resources" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ListResourceScanResources(Amazon.CloudFormation.Model.ListResourceScanResourcesRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ListResourceScanResources(Amazon.CloudFormation.Model.ListResourceScanResourcesRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScanResourcesRequest" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScanResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the resources in your resource scan filtering only the resources that start with the passed in prefix
+                </para>
+                <code
+                    title="To list the resources in your resource scan for specific resource type"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-list-resource-scan-resources-with-resource-type-prefix" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ListResourceScans(Amazon.CloudFormation.Model.ListResourceScansRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ListResourceScans(Amazon.CloudFormation.Model.ListResourceScansRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScansRequest" />
+            <member name="T:Amazon.CloudFormation.Model.ListResourceScansResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to list resource scans
+                </para>
+                <code
+                    title="Listing Resource Scans"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-list-resource-scans" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.StartResourceScan(Amazon.CloudFormation.Model.StartResourceScanRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.StartResourceScan(Amazon.CloudFormation.Model.StartResourceScanRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.StartResourceScanRequest" />
+            <member name="T:Amazon.CloudFormation.Model.StartResourceScanResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to start a new resource scan
+                </para>
+                <code
+                    title="To start a resource scan"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-start-a-generated-template" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateGeneratedTemplate(Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateGeneratedTemplate(Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateGeneratedTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates a generated template with a new name.
+                </para>
+                <code
+                    title="To update a generated template's name"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-update-a-generated-template-new-name" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateGeneratedTemplate(Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateGeneratedTemplate(Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateGeneratedTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes resources from a generated template
+                </para>
+                <code
+                    title="To remove resources from a generated template"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-update-a-generated-template-remove-resources" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateGeneratedTemplate(Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateGeneratedTemplate(Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateGeneratedTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateGeneratedTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds resources to a generated template
+                </para>
+                <code
+                    title="To add resources to a generated template"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-update-a-generated-template-add-resources" />
             </example>
         </value>
     </doc>

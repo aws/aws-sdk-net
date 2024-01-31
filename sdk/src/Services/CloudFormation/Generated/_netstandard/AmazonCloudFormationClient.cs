@@ -610,6 +610,59 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateGeneratedTemplate
+
+        internal virtual CreateGeneratedTemplateResponse CreateGeneratedTemplate(CreateGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGeneratedTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a template from existing resources that are not already managed with CloudFormation.
+        /// You can check the status of the template generation using the <c>DescribeGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
+        public virtual Task<CreateGeneratedTemplateResponse> CreateGeneratedTemplateAsync(CreateGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGeneratedTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
         internal virtual CreateStackResponse CreateStack(CreateStackRequest request)
@@ -915,6 +968,48 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = DeleteChangeSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteChangeSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGeneratedTemplate
+
+        internal virtual DeleteGeneratedTemplateResponse DeleteGeneratedTemplate(DeleteGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGeneratedTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deleted a generated template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
+        public virtual Task<DeleteGeneratedTemplateResponse> DeleteGeneratedTemplateAsync(DeleteGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGeneratedTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1229,6 +1324,46 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeGeneratedTemplate
+
+        internal virtual DescribeGeneratedTemplateResponse DescribeGeneratedTemplate(DescribeGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGeneratedTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a generated template. The output includes details about the progress of
+        /// the creation of a generated template started by a <c>CreateGeneratedTemplate</c> API
+        /// action or the update of a generated template started with an <c>UpdateGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
+        public virtual Task<DescribeGeneratedTemplateResponse> DescribeGeneratedTemplateAsync(DescribeGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeGeneratedTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeOrganizationsAccess
 
         internal virtual DescribeOrganizationsAccessResponse DescribeOrganizationsAccess(DescribeOrganizationsAccessRequest request)
@@ -1327,6 +1462,43 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = DescribePublisherResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribePublisherResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeResourceScan
+
+        internal virtual DescribeResourceScanResponse DescribeResourceScan(DescribeResourceScanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceScanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceScanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes details of a resource scan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
+        public virtual Task<DescribeResourceScanResponse> DescribeResourceScanAsync(DescribeResourceScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceScanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeResourceScanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2175,6 +2347,46 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  GetGeneratedTemplate
+
+        internal virtual GetGeneratedTemplateResponse GetGeneratedTemplate(GetGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetGeneratedTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a generated template. If the template is in an <c>InProgress</c> or <c>Pending</c>
+        /// status then the template returned will be the template when the template was last
+        /// in a <c>Complete</c> status. If the template has not yet been in a <c>Complete</c>
+        /// status then an empty template will be returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
+        public virtual Task<GetGeneratedTemplateResponse> GetGeneratedTemplateAsync(GetGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGeneratedTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStackPolicy
 
         internal virtual GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
@@ -2457,6 +2669,40 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListGeneratedTemplates
+
+        internal virtual ListGeneratedTemplatesResponse ListGeneratedTemplates(ListGeneratedTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGeneratedTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGeneratedTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists your generated templates in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGeneratedTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGeneratedTemplates service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
+        public virtual Task<ListGeneratedTemplatesResponse> ListGeneratedTemplatesAsync(ListGeneratedTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGeneratedTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGeneratedTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListImports
 
         internal virtual ListImportsResponse ListImports(ListImportsRequest request)
@@ -2495,6 +2741,127 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceScanRelatedResources
+
+        internal virtual ListResourceScanRelatedResourcesResponse ListResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanRelatedResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceScanRelatedResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the related resources for a list of resources from a resource scan. The response
+        /// indicates whether each returned resource is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanRelatedResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceScanRelatedResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
+        public virtual Task<ListResourceScanRelatedResourcesResponse> ListResourceScanRelatedResourcesAsync(ListResourceScanRelatedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanRelatedResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceScanRelatedResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceScanResources
+
+        internal virtual ListResourceScanResourcesResponse ListResourceScanResources(ListResourceScanResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceScanResourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the resources from a resource scan. The results can be filtered by resource
+        /// identifier, resource type prefix, tag key, and tag value. Only resources that match
+        /// all specified filters are returned. The response indicates whether each returned resource
+        /// is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceScanResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
+        public virtual Task<ListResourceScanResourcesResponse> ListResourceScanResourcesAsync(ListResourceScanResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceScanResourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResourceScans
+
+        internal virtual ListResourceScansResponse ListResourceScans(ListResourceScansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScansResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceScansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the resource scans from newest to oldest. By default it will return up to 10
+        /// resource scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceScans service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
+        public virtual Task<ListResourceScansResponse> ListResourceScansAsync(ListResourceScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResourceScansResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3394,6 +3761,64 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  StartResourceScan
+
+        internal virtual StartResourceScanResponse StartResourceScan(StartResourceScanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
+
+            return Invoke<StartResourceScanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a scan of the resources in this account in this Region. You can the status
+        /// of a scan using the <c>ListResourceScans</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanLimitExceededException">
+        /// The limit on resource scans has been exceeded. Reasons include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Exceeded the daily quota for resource scans.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A resource scan recently failed. You must wait 10 minutes before starting a new resource
+        /// scan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The last resource scan failed after exceeding 100,000 resources. When this happens,
+        /// you must wait 24 hours before starting a new resource scan.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
+        public virtual Task<StartResourceScanResponse> StartResourceScanAsync(StartResourceScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartResourceScanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopStackSetOperation
 
         internal virtual StopStackSetOperationResponse StopStackSetOperation(StopStackSetOperationRequest request)
@@ -3513,6 +3938,58 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = TestTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<TestTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGeneratedTemplate
+
+        internal virtual UpdateGeneratedTemplateResponse UpdateGeneratedTemplate(UpdateGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGeneratedTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a generated template. This can be used to change the name, add and remove
+        /// resources, refresh resources, and change the <c>DeletionPolicy</c> and <c>UpdateReplacePolicy</c>
+        /// settings. You can check the status of the update to the generated template using the
+        /// <c>DescribeGeneratedTemplate</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
+        public virtual Task<UpdateGeneratedTemplateResponse> UpdateGeneratedTemplateAsync(UpdateGeneratedTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGeneratedTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

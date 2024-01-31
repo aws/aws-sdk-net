@@ -921,6 +921,238 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type GeneratedTemplateDeletionPolicy.
+    /// </summary>
+    public class GeneratedTemplateDeletionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for GeneratedTemplateDeletionPolicy
+        /// </summary>
+        public static readonly GeneratedTemplateDeletionPolicy DELETE = new GeneratedTemplateDeletionPolicy("DELETE");
+        /// <summary>
+        /// Constant RETAIN for GeneratedTemplateDeletionPolicy
+        /// </summary>
+        public static readonly GeneratedTemplateDeletionPolicy RETAIN = new GeneratedTemplateDeletionPolicy("RETAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeneratedTemplateDeletionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedTemplateDeletionPolicy FindValue(string value)
+        {
+            return FindValue<GeneratedTemplateDeletionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedTemplateDeletionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GeneratedTemplateResourceStatus.
+    /// </summary>
+    public class GeneratedTemplateResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for GeneratedTemplateResourceStatus
+        /// </summary>
+        public static readonly GeneratedTemplateResourceStatus COMPLETE = new GeneratedTemplateResourceStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for GeneratedTemplateResourceStatus
+        /// </summary>
+        public static readonly GeneratedTemplateResourceStatus FAILED = new GeneratedTemplateResourceStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for GeneratedTemplateResourceStatus
+        /// </summary>
+        public static readonly GeneratedTemplateResourceStatus IN_PROGRESS = new GeneratedTemplateResourceStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for GeneratedTemplateResourceStatus
+        /// </summary>
+        public static readonly GeneratedTemplateResourceStatus PENDING = new GeneratedTemplateResourceStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeneratedTemplateResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedTemplateResourceStatus FindValue(string value)
+        {
+            return FindValue<GeneratedTemplateResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedTemplateResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GeneratedTemplateStatus.
+    /// </summary>
+    public class GeneratedTemplateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus COMPLETE = new GeneratedTemplateStatus("COMPLETE");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus CREATE_IN_PROGRESS = new GeneratedTemplateStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_PENDING for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus CREATE_PENDING = new GeneratedTemplateStatus("CREATE_PENDING");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus DELETE_IN_PROGRESS = new GeneratedTemplateStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_PENDING for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus DELETE_PENDING = new GeneratedTemplateStatus("DELETE_PENDING");
+        /// <summary>
+        /// Constant FAILED for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus FAILED = new GeneratedTemplateStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus UPDATE_IN_PROGRESS = new GeneratedTemplateStatus("UPDATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_PENDING for GeneratedTemplateStatus
+        /// </summary>
+        public static readonly GeneratedTemplateStatus UPDATE_PENDING = new GeneratedTemplateStatus("UPDATE_PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeneratedTemplateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedTemplateStatus FindValue(string value)
+        {
+            return FindValue<GeneratedTemplateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedTemplateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GeneratedTemplateUpdateReplacePolicy.
+    /// </summary>
+    public class GeneratedTemplateUpdateReplacePolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for GeneratedTemplateUpdateReplacePolicy
+        /// </summary>
+        public static readonly GeneratedTemplateUpdateReplacePolicy DELETE = new GeneratedTemplateUpdateReplacePolicy("DELETE");
+        /// <summary>
+        /// Constant RETAIN for GeneratedTemplateUpdateReplacePolicy
+        /// </summary>
+        public static readonly GeneratedTemplateUpdateReplacePolicy RETAIN = new GeneratedTemplateUpdateReplacePolicy("RETAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeneratedTemplateUpdateReplacePolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedTemplateUpdateReplacePolicy FindValue(string value)
+        {
+            return FindValue<GeneratedTemplateUpdateReplacePolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedTemplateUpdateReplacePolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HandlerErrorCode.
     /// </summary>
     public class HandlerErrorCode : ConstantClass
@@ -2049,6 +2281,64 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceScanStatus.
+    /// </summary>
+    public class ResourceScanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ResourceScanStatus
+        /// </summary>
+        public static readonly ResourceScanStatus COMPLETE = new ResourceScanStatus("COMPLETE");
+        /// <summary>
+        /// Constant EXPIRED for ResourceScanStatus
+        /// </summary>
+        public static readonly ResourceScanStatus EXPIRED = new ResourceScanStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for ResourceScanStatus
+        /// </summary>
+        public static readonly ResourceScanStatus FAILED = new ResourceScanStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ResourceScanStatus
+        /// </summary>
+        public static readonly ResourceScanStatus IN_PROGRESS = new ResourceScanStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceScanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceScanStatus FindValue(string value)
+        {
+            return FindValue<ResourceScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceSignalStatus.
     /// </summary>
     public class ResourceSignalStatus : ConstantClass
@@ -3063,6 +3353,56 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type TemplateFormat.
+    /// </summary>
+    public class TemplateFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for TemplateFormat
+        /// </summary>
+        public static readonly TemplateFormat JSON = new TemplateFormat("JSON");
+        /// <summary>
+        /// Constant YAML for TemplateFormat
+        /// </summary>
+        public static readonly TemplateFormat YAML = new TemplateFormat("YAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateFormat FindValue(string value)
+        {
+            return FindValue<TemplateFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TemplateStage.
     /// </summary>
     public class TemplateStage : ConstantClass
@@ -3318,6 +3658,60 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Visibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarningType.
+    /// </summary>
+    public class WarningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MUTUALLY_EXCLUSIVE_PROPERTIES for WarningType
+        /// </summary>
+        public static readonly WarningType MUTUALLY_EXCLUSIVE_PROPERTIES = new WarningType("MUTUALLY_EXCLUSIVE_PROPERTIES");
+        /// <summary>
+        /// Constant MUTUALLY_EXCLUSIVE_TYPES for WarningType
+        /// </summary>
+        public static readonly WarningType MUTUALLY_EXCLUSIVE_TYPES = new WarningType("MUTUALLY_EXCLUSIVE_TYPES");
+        /// <summary>
+        /// Constant UNSUPPORTED_PROPERTIES for WarningType
+        /// </summary>
+        public static readonly WarningType UNSUPPORTED_PROPERTIES = new WarningType("UNSUPPORTED_PROPERTIES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarningType FindValue(string value)
+        {
+            return FindValue<WarningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarningType(string value)
         {
             return FindValue(value);
         }

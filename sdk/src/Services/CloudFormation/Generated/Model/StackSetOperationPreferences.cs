@@ -254,6 +254,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The order of the Regions where you want to perform the stack operation.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>RegionOrder</c> isn't followed if <c>AutoDeployment</c> is enabled.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> RegionOrder
         {

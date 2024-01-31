@@ -460,6 +460,72 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateGeneratedTemplate
+
+
+        /// <summary>
+        /// Creates a template from existing resources that are not already managed with CloudFormation.
+        /// You can check the status of the template generation using the <c>DescribeGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
+        CreateGeneratedTemplateResponse CreateGeneratedTemplate(CreateGeneratedTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Creates a template from existing resources that are not already managed with CloudFormation.
+        /// You can check the status of the template generation using the <c>DescribeGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
+        Task<CreateGeneratedTemplateResponse> CreateGeneratedTemplateAsync(CreateGeneratedTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateStack
 
 
@@ -838,6 +904,50 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DeleteGeneratedTemplate
+
+
+        /// <summary>
+        /// Deleted a generated template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
+        DeleteGeneratedTemplateResponse DeleteGeneratedTemplate(DeleteGeneratedTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Deleted a generated template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
+        Task<DeleteGeneratedTemplateResponse> DeleteGeneratedTemplateAsync(DeleteGeneratedTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteStack
 
 
@@ -1178,6 +1288,46 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeGeneratedTemplate
+
+
+        /// <summary>
+        /// Describes a generated template. The output includes details about the progress of
+        /// the creation of a generated template started by a <c>CreateGeneratedTemplate</c> API
+        /// action or the update of a generated template started with an <c>UpdateGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
+        DescribeGeneratedTemplateResponse DescribeGeneratedTemplate(DescribeGeneratedTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Describes a generated template. The output includes details about the progress of
+        /// the creation of a generated template started by a <c>CreateGeneratedTemplate</c> API
+        /// action or the update of a generated template started with an <c>UpdateGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
+        Task<DescribeGeneratedTemplateResponse> DescribeGeneratedTemplateAsync(DescribeGeneratedTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeOrganizationsAccess
 
 
@@ -1299,6 +1449,40 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">REST API Reference for DescribePublisher Operation</seealso>
         Task<DescribePublisherResponse> DescribePublisherAsync(DescribePublisherRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeResourceScan
+
+
+        /// <summary>
+        /// Describes details of a resource scan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceScan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
+        DescribeResourceScanResponse DescribeResourceScan(DescribeResourceScanRequest request);
+
+
+
+        /// <summary>
+        /// Describes details of a resource scan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
+        Task<DescribeResourceScanResponse> DescribeResourceScanAsync(DescribeResourceScanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2333,6 +2517,46 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  GetGeneratedTemplate
+
+
+        /// <summary>
+        /// Retrieves a generated template. If the template is in an <c>InProgress</c> or <c>Pending</c>
+        /// status then the template returned will be the template when the template was last
+        /// in a <c>Complete</c> status. If the template has not yet been in a <c>Complete</c>
+        /// status then an empty template will be returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
+        GetGeneratedTemplateResponse GetGeneratedTemplate(GetGeneratedTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a generated template. If the template is in an <c>InProgress</c> or <c>Pending</c>
+        /// status then the template returned will be the template when the template was last
+        /// in a <c>Complete</c> status. If the template has not yet been in a <c>Complete</c>
+        /// status then an empty template will be returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
+        Task<GetGeneratedTemplateResponse> GetGeneratedTemplateAsync(GetGeneratedTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetStackPolicy
 
 
@@ -2657,6 +2881,34 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListGeneratedTemplates
+
+
+        /// <summary>
+        /// Lists your generated templates in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGeneratedTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListGeneratedTemplates service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
+        ListGeneratedTemplatesResponse ListGeneratedTemplates(ListGeneratedTemplatesRequest request);
+
+
+
+        /// <summary>
+        /// Lists your generated templates in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGeneratedTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGeneratedTemplates service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
+        Task<ListGeneratedTemplatesResponse> ListGeneratedTemplatesAsync(ListGeneratedTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListImports
 
 
@@ -2698,6 +2950,128 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
         Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResourceScanRelatedResources
+
+
+        /// <summary>
+        /// Lists the related resources for a list of resources from a resource scan. The response
+        /// indicates whether each returned resource is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanRelatedResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceScanRelatedResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
+        ListResourceScanRelatedResourcesResponse ListResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the related resources for a list of resources from a resource scan. The response
+        /// indicates whether each returned resource is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanRelatedResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceScanRelatedResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
+        Task<ListResourceScanRelatedResourcesResponse> ListResourceScanRelatedResourcesAsync(ListResourceScanRelatedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResourceScanResources
+
+
+        /// <summary>
+        /// Lists the resources from a resource scan. The results can be filtered by resource
+        /// identifier, resource type prefix, tag key, and tag value. Only resources that match
+        /// all specified filters are returned. The response indicates whether each returned resource
+        /// is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceScanResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
+        ListResourceScanResourcesResponse ListResourceScanResources(ListResourceScanResourcesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the resources from a resource scan. The results can be filtered by resource
+        /// identifier, resource type prefix, tag key, and tag value. Only resources that match
+        /// all specified filters are returned. The response indicates whether each returned resource
+        /// is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceScanResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
+        Task<ListResourceScanResourcesResponse> ListResourceScanResourcesAsync(ListResourceScanResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListResourceScans
+
+
+        /// <summary>
+        /// List the resource scans from newest to oldest. By default it will return up to 10
+        /// resource scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScans service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceScans service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
+        ListResourceScansResponse ListResourceScans(ListResourceScansRequest request);
+
+
+
+        /// <summary>
+        /// List the resource scans from newest to oldest. By default it will return up to 10
+        /// resource scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourceScans service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
+        Task<ListResourceScansResponse> ListResourceScansAsync(ListResourceScansRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3714,6 +4088,82 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  StartResourceScan
+
+
+        /// <summary>
+        /// Starts a scan of the resources in this account in this Region. You can the status
+        /// of a scan using the <c>ListResourceScans</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
+        /// 
+        /// <returns>The response from the StartResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanLimitExceededException">
+        /// The limit on resource scans has been exceeded. Reasons include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Exceeded the daily quota for resource scans.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A resource scan recently failed. You must wait 10 minutes before starting a new resource
+        /// scan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The last resource scan failed after exceeding 100,000 resources. When this happens,
+        /// you must wait 24 hours before starting a new resource scan.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
+        StartResourceScanResponse StartResourceScan(StartResourceScanRequest request);
+
+
+
+        /// <summary>
+        /// Starts a scan of the resources in this account in this Region. You can the status
+        /// of a scan using the <c>ListResourceScans</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanLimitExceededException">
+        /// The limit on resource scans has been exceeded. Reasons include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Exceeded the daily quota for resource scans.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A resource scan recently failed. You must wait 10 minutes before starting a new resource
+        /// scan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The last resource scan failed after exceeding 100,000 resources. When this happens,
+        /// you must wait 24 hours before starting a new resource scan.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
+        Task<StartResourceScanResponse> StartResourceScanAsync(StartResourceScanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopStackSetOperation
 
 
@@ -3877,6 +4327,70 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">REST API Reference for TestType Operation</seealso>
         Task<TestTypeResponse> TestTypeAsync(TestTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateGeneratedTemplate
+
+
+        /// <summary>
+        /// Updates a generated template. This can be used to change the name, add and remove
+        /// resources, refresh resources, and change the <c>DeletionPolicy</c> and <c>UpdateReplacePolicy</c>
+        /// settings. You can check the status of the update to the generated template using the
+        /// <c>DescribeGeneratedTemplate</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
+        UpdateGeneratedTemplateResponse UpdateGeneratedTemplate(UpdateGeneratedTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Updates a generated template. This can be used to change the name, add and remove
+        /// resources, refresh resources, and change the <c>DeletionPolicy</c> and <c>UpdateReplacePolicy</c>
+        /// settings. You can check the status of the update to the generated template using the
+        /// <c>DescribeGeneratedTemplate</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeneratedTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
+        Task<UpdateGeneratedTemplateResponse> UpdateGeneratedTemplateAsync(UpdateGeneratedTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

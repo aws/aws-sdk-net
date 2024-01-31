@@ -424,6 +424,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void CreateGeneratedTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateGeneratedTemplateRequest>(operation);
+            var marshaller = new CreateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateGeneratedTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateGeneratedTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void CreateGeneratedTemplate_AlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateGeneratedTemplateRequest>(operation);
+            var marshaller = new CreateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void CreateGeneratedTemplate_ConcurrentResourcesLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateGeneratedTemplateRequest>(operation);
+            var marshaller = new CreateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentResourcesLimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void CreateGeneratedTemplate_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateGeneratedTemplateRequest>(operation);
+            var marshaller = new CreateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void CreateStackMarshallTest()
         {
             var operation = service_model.FindOperation("CreateStack");
@@ -970,6 +1061,69 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void DeleteGeneratedTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGeneratedTemplateRequest>(operation);
+            var marshaller = new DeleteGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DeleteGeneratedTemplate_ConcurrentResourcesLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGeneratedTemplateRequest>(operation);
+            var marshaller = new DeleteGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentResourcesLimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DeleteGeneratedTemplate_GeneratedTemplateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGeneratedTemplateRequest>(operation);
+            var marshaller = new DeleteGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GeneratedTemplateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DeleteGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void DeleteStackMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteStack");
@@ -1395,6 +1549,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void DescribeGeneratedTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<DescribeGeneratedTemplateRequest>(operation);
+            var marshaller = new DescribeGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeGeneratedTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeGeneratedTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DescribeGeneratedTemplate_GeneratedTemplateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<DescribeGeneratedTemplateRequest>(operation);
+            var marshaller = new DescribeGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GeneratedTemplateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void DescribeOrganizationsAccessMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeOrganizationsAccess");
@@ -1500,6 +1699,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = DescribePublisherResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DescribeResourceScanMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeResourceScan");
+
+            var request = InstantiateClassGenerator.Execute<DescribeResourceScanRequest>(operation);
+            var marshaller = new DescribeResourceScanRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeResourceScanResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeResourceScanResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void DescribeResourceScan_ResourceScanNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeResourceScan");
+
+            var request = InstantiateClassGenerator.Execute<DescribeResourceScanRequest>(operation);
+            var marshaller = new DescribeResourceScanRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = DescribeResourceScanResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2205,6 +2449,51 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void GetGeneratedTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<GetGeneratedTemplateRequest>(operation);
+            var marshaller = new GetGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetGeneratedTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetGeneratedTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void GetGeneratedTemplate_GeneratedTemplateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<GetGeneratedTemplateRequest>(operation);
+            var marshaller = new GetGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GeneratedTemplateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void GetStackPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetStackPolicy");
@@ -2544,6 +2833,28 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void ListGeneratedTemplatesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListGeneratedTemplates");
+
+            var request = InstantiateClassGenerator.Execute<ListGeneratedTemplatesRequest>(operation);
+            var marshaller = new ListGeneratedTemplatesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListGeneratedTemplatesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListGeneratedTemplatesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void ListImportsMarshallTest()
         {
             var operation = service_model.FindOperation("ListImports");
@@ -2559,6 +2870,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListImportsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListImportsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScanRelatedResourcesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScanRelatedResources");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScanRelatedResourcesRequest>(operation);
+            var marshaller = new ListResourceScanRelatedResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListResourceScanRelatedResourcesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScanRelatedResources_ResourceScanInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScanRelatedResources");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScanRelatedResourcesRequest>(operation);
+            var marshaller = new ListResourceScanRelatedResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScanRelatedResources_ResourceScanNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScanRelatedResources");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScanRelatedResourcesRequest>(operation);
+            var marshaller = new ListResourceScanRelatedResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScanResourcesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScanResources");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScanResourcesRequest>(operation);
+            var marshaller = new ListResourceScanResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListResourceScanResourcesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListResourceScanResourcesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScanResources_ResourceScanInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScanResources");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScanResourcesRequest>(operation);
+            var marshaller = new ListResourceScanResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListResourceScanResourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScanResources_ResourceScanNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScanResources");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScanResourcesRequest>(operation);
+            var marshaller = new ListResourceScanResourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListResourceScanResourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListResourceScansMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListResourceScans");
+
+            var request = InstantiateClassGenerator.Execute<ListResourceScansRequest>(operation);
+            var marshaller = new ListResourceScansRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListResourceScansResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListResourceScansResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -3457,6 +3926,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void StartResourceScanMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartResourceScan");
+
+            var request = InstantiateClassGenerator.Execute<StartResourceScanRequest>(operation);
+            var marshaller = new StartResourceScanRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartResourceScanResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartResourceScanResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void StartResourceScan_ResourceScanInProgressExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartResourceScan");
+
+            var request = InstantiateClassGenerator.Execute<StartResourceScanRequest>(operation);
+            var marshaller = new StartResourceScanRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanInProgressException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartResourceScanResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void StartResourceScan_ResourceScanLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartResourceScan");
+
+            var request = InstantiateClassGenerator.Execute<StartResourceScanRequest>(operation);
+            var marshaller = new StartResourceScanRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceScanLimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartResourceScanResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void StopStackSetOperationMarshallTest()
         {
             var operation = service_model.FindOperation("StopStackSetOperation");
@@ -3608,6 +4145,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = TestTypeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void UpdateGeneratedTemplateMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGeneratedTemplateRequest>(operation);
+            var marshaller = new UpdateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateGeneratedTemplateResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateGeneratedTemplateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void UpdateGeneratedTemplate_AlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGeneratedTemplateRequest>(operation);
+            var marshaller = new UpdateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AlreadyExistsException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void UpdateGeneratedTemplate_GeneratedTemplateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGeneratedTemplateRequest>(operation);
+            var marshaller = new UpdateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GeneratedTemplateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void UpdateGeneratedTemplate_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateGeneratedTemplate");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGeneratedTemplateRequest>(operation);
+            var marshaller = new UpdateGeneratedTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = UpdateGeneratedTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

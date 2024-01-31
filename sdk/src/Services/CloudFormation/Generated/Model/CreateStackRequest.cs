@@ -599,9 +599,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// The amount of time that can pass before the stack status becomes CREATE_FAILED; if
-        /// <c>DisableRollback</c> is not set or is set to <c>false</c>, the stack will be rolled
-        /// back.
+        /// The amount of time that can pass before the stack status becomes <c>CREATE_FAILED</c>;
+        /// if <c>DisableRollback</c> is not set or is set to <c>false</c>, the stack will be
+        /// rolled back.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -726,6 +726,79 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  CreateGeneratedTemplate
+
+        /// <summary>
+        /// Creates a template from existing resources that are not already managed with CloudFormation.
+        /// You can check the status of the template generation using the <c>DescribeGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
+        public virtual CreateGeneratedTemplateResponse CreateGeneratedTemplate(CreateGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGeneratedTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGeneratedTemplate operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGeneratedTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateGeneratedTemplate(CreateGeneratedTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGeneratedTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateGeneratedTemplateResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">REST API Reference for CreateGeneratedTemplate Operation</seealso>
+        public virtual CreateGeneratedTemplateResponse EndCreateGeneratedTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateGeneratedTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateStack
 
         /// <summary>
@@ -1151,6 +1224,68 @@ namespace Amazon.CloudFormation
         public virtual DeleteChangeSetResponse EndDeleteChangeSet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteChangeSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteGeneratedTemplate
+
+        /// <summary>
+        /// Deleted a generated template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ConcurrentResourcesLimitExceededException">
+        /// No more than 5 generated templates can be in an <c>InProgress</c> or <c>Pending</c>
+        /// status at one time. This error is also returned if a generated template that is in
+        /// an <c>InProgress</c> or <c>Pending</c> status is attempted to be updated or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
+        public virtual DeleteGeneratedTemplateResponse DeleteGeneratedTemplate(DeleteGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGeneratedTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGeneratedTemplate operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGeneratedTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteGeneratedTemplate(DeleteGeneratedTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGeneratedTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteGeneratedTemplateResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">REST API Reference for DeleteGeneratedTemplate Operation</seealso>
+        public virtual DeleteGeneratedTemplateResponse EndDeleteGeneratedTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteGeneratedTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -1605,6 +1740,66 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeGeneratedTemplate
+
+        /// <summary>
+        /// Describes a generated template. The output includes details about the progress of
+        /// the creation of a generated template started by a <c>CreateGeneratedTemplate</c> API
+        /// action or the update of a generated template started with an <c>UpdateGeneratedTemplate</c>
+        /// API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
+        public virtual DescribeGeneratedTemplateResponse DescribeGeneratedTemplate(DescribeGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGeneratedTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGeneratedTemplate operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGeneratedTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeGeneratedTemplate(DescribeGeneratedTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGeneratedTemplate.</param>
+        /// 
+        /// <returns>Returns a  DescribeGeneratedTemplateResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">REST API Reference for DescribeGeneratedTemplate Operation</seealso>
+        public virtual DescribeGeneratedTemplateResponse EndDescribeGeneratedTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeGeneratedTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeOrganizationsAccess
 
         /// <summary>
@@ -1743,6 +1938,63 @@ namespace Amazon.CloudFormation
         public virtual DescribePublisherResponse EndDescribePublisher(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePublisherResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeResourceScan
+
+        /// <summary>
+        /// Describes details of a resource scan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceScan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
+        public virtual DescribeResourceScanResponse DescribeResourceScan(DescribeResourceScanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceScanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeResourceScanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeResourceScan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeResourceScan operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourceScan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
+        public virtual IAsyncResult BeginDescribeResourceScan(DescribeResourceScanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeResourceScanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeResourceScan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResourceScan.</param>
+        /// 
+        /// <returns>Returns a  DescribeResourceScanResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">REST API Reference for DescribeResourceScan Operation</seealso>
+        public virtual DescribeResourceScanResponse EndDescribeResourceScan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeResourceScanResponse>(asyncResult);
         }
 
         #endregion
@@ -2903,6 +3155,66 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  GetGeneratedTemplate
+
+        /// <summary>
+        /// Retrieves a generated template. If the template is in an <c>InProgress</c> or <c>Pending</c>
+        /// status then the template returned will be the template when the template was last
+        /// in a <c>Complete</c> status. If the template has not yet been in a <c>Complete</c>
+        /// status then an empty template will be returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
+        public virtual GetGeneratedTemplateResponse GetGeneratedTemplate(GetGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetGeneratedTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGeneratedTemplate operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGeneratedTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
+        public virtual IAsyncResult BeginGetGeneratedTemplate(GetGeneratedTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGeneratedTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetGeneratedTemplateResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">REST API Reference for GetGeneratedTemplate Operation</seealso>
+        public virtual GetGeneratedTemplateResponse EndGetGeneratedTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetGeneratedTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetStackPolicy
 
         /// <summary>
@@ -3305,6 +3617,60 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListGeneratedTemplates
+
+        /// <summary>
+        /// Lists your generated templates in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGeneratedTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListGeneratedTemplates service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
+        public virtual ListGeneratedTemplatesResponse ListGeneratedTemplates(ListGeneratedTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGeneratedTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGeneratedTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGeneratedTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGeneratedTemplates operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGeneratedTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListGeneratedTemplates(ListGeneratedTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListGeneratedTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGeneratedTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGeneratedTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListGeneratedTemplatesResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">REST API Reference for ListGeneratedTemplates Operation</seealso>
+        public virtual ListGeneratedTemplatesResponse EndListGeneratedTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListGeneratedTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListImports
 
         /// <summary>
@@ -3363,6 +3729,187 @@ namespace Amazon.CloudFormation
         public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceScanRelatedResources
+
+        /// <summary>
+        /// Lists the related resources for a list of resources from a resource scan. The response
+        /// indicates whether each returned resource is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanRelatedResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceScanRelatedResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
+        public virtual ListResourceScanRelatedResourcesResponse ListResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanRelatedResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceScanRelatedResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceScanRelatedResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanRelatedResources operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceScanRelatedResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
+        public virtual IAsyncResult BeginListResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanRelatedResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanRelatedResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceScanRelatedResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceScanRelatedResources.</param>
+        /// 
+        /// <returns>Returns a  ListResourceScanRelatedResourcesResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">REST API Reference for ListResourceScanRelatedResources Operation</seealso>
+        public virtual ListResourceScanRelatedResourcesResponse EndListResourceScanRelatedResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceScanRelatedResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceScanResources
+
+        /// <summary>
+        /// Lists the resources from a resource scan. The results can be filtered by resource
+        /// identifier, resource type prefix, tag key, and tag value. Only resources that match
+        /// all specified filters are returned. The response indicates whether each returned resource
+        /// is already managed by CloudFormation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanResources service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceScanResources service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanNotFoundException">
+        /// The resource scan was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
+        public virtual ListResourceScanResourcesResponse ListResourceScanResources(ListResourceScanResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceScanResourcesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceScanResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScanResources operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceScanResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
+        public virtual IAsyncResult BeginListResourceScanResources(ListResourceScanResourcesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScanResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScanResourcesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceScanResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceScanResources.</param>
+        /// 
+        /// <returns>Returns a  ListResourceScanResourcesResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">REST API Reference for ListResourceScanResources Operation</seealso>
+        public virtual ListResourceScanResourcesResponse EndListResourceScanResources(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceScanResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResourceScans
+
+        /// <summary>
+        /// List the resource scans from newest to oldest. By default it will return up to 10
+        /// resource scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScans service method.</param>
+        /// 
+        /// <returns>The response from the ListResourceScans service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
+        public virtual ListResourceScansResponse ListResourceScans(ListResourceScansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScansResponseUnmarshaller.Instance;
+
+            return Invoke<ListResourceScansResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResourceScans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceScans operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceScans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
+        public virtual IAsyncResult BeginListResourceScans(ListResourceScansRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResourceScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResourceScansResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResourceScans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceScans.</param>
+        /// 
+        /// <returns>Returns a  ListResourceScansResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">REST API Reference for ListResourceScans Operation</seealso>
+        public virtual ListResourceScansResponse EndListResourceScans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResourceScansResponse>(asyncResult);
         }
 
         #endregion
@@ -4634,6 +5181,84 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  StartResourceScan
+
+        /// <summary>
+        /// Starts a scan of the resources in this account in this Region. You can the status
+        /// of a scan using the <c>ListResourceScans</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceScan service method.</param>
+        /// 
+        /// <returns>The response from the StartResourceScan service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanInProgressException">
+        /// A resource scan is currently in progress. Only one can be run at a time for an account
+        /// in a Region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.ResourceScanLimitExceededException">
+        /// The limit on resource scans has been exceeded. Reasons include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Exceeded the daily quota for resource scans.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A resource scan recently failed. You must wait 10 minutes before starting a new resource
+        /// scan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The last resource scan failed after exceeding 100,000 resources. When this happens,
+        /// you must wait 24 hours before starting a new resource scan.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
+        public virtual StartResourceScanResponse StartResourceScan(StartResourceScanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
+
+            return Invoke<StartResourceScanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartResourceScan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartResourceScan operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartResourceScan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
+        public virtual IAsyncResult BeginStartResourceScan(StartResourceScanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartResourceScanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartResourceScanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartResourceScan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartResourceScan.</param>
+        /// 
+        /// <returns>Returns a  StartResourceScanResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">REST API Reference for StartResourceScan Operation</seealso>
+        public virtual StartResourceScanResponse EndStartResourceScan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartResourceScanResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopStackSetOperation
 
         /// <summary>
@@ -4793,6 +5418,78 @@ namespace Amazon.CloudFormation
         public virtual TestTypeResponse EndTestType(IAsyncResult asyncResult)
         {
             return EndInvoke<TestTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateGeneratedTemplate
+
+        /// <summary>
+        /// Updates a generated template. This can be used to change the name, add and remove
+        /// resources, refresh resources, and change the <c>DeletionPolicy</c> and <c>UpdateReplacePolicy</c>
+        /// settings. You can check the status of the update to the generated template using the
+        /// <c>DescribeGeneratedTemplate</c> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeneratedTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGeneratedTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.AlreadyExistsException">
+        /// The resource with the name requested already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.GeneratedTemplateNotFoundException">
+        /// The generated template was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
+        /// The quota for the resource has already been reached.
+        /// 
+        ///  
+        /// <para>
+        /// For information about resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
+        /// quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
+        public virtual UpdateGeneratedTemplateResponse UpdateGeneratedTemplate(UpdateGeneratedTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGeneratedTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGeneratedTemplate operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGeneratedTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
+        public virtual IAsyncResult BeginUpdateGeneratedTemplate(UpdateGeneratedTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGeneratedTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGeneratedTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGeneratedTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGeneratedTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateGeneratedTemplateResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">REST API Reference for UpdateGeneratedTemplate Operation</seealso>
+        public virtual UpdateGeneratedTemplateResponse EndUpdateGeneratedTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateGeneratedTemplateResponse>(asyncResult);
         }
 
         #endregion

@@ -84,11 +84,43 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Paginator for ListGeneratedTemplates operation
+        ///</summary>
+        public IListGeneratedTemplatesPaginator ListGeneratedTemplates(ListGeneratedTemplatesRequest request) 
+        {
+            return new ListGeneratedTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListImports operation
         ///</summary>
         public IListImportsPaginator ListImports(ListImportsRequest request) 
         {
             return new ListImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceScanRelatedResources operation
+        ///</summary>
+        public IListResourceScanRelatedResourcesPaginator ListResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request) 
+        {
+            return new ListResourceScanRelatedResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceScanResources operation
+        ///</summary>
+        public IListResourceScanResourcesPaginator ListResourceScanResources(ListResourceScanResourcesRequest request) 
+        {
+            return new ListResourceScanResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceScans operation
+        ///</summary>
+        public IListResourceScansPaginator ListResourceScans(ListResourceScansRequest request) 
+        {
+            return new ListResourceScansPaginator(this.client, request);
         }
 
         /// <summary>
