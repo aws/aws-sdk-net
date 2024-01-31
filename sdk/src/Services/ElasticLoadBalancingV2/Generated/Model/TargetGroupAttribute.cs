@@ -202,6 +202,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// the load balancer terminates connections to unhealthy targets. The value is <c>true</c>
         /// or <c>false</c>. The default is <c>true</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>target_health_state.unhealthy.draining_interval_seconds</c> - The amount of time
+        /// for Elastic Load Balancing to wait before changing the state of an unhealthy target
+        /// from <c>unhealthy.draining</c> to <c>unhealthy</c>. The range is 0-360000 seconds.
+        /// The default value is 0 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: This attribute can only be configured when <c>target_health_state.unhealthy.connection_termination.enabled</c>
+        /// is <c>false</c>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The following attributes are supported only by Gateway Load Balancers:

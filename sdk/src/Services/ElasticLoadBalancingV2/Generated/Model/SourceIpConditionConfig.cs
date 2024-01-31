@@ -55,6 +55,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For
         /// header, use <a>HttpHeaderConditionConfig</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The total number of values must be less than, or equal to five.
+        /// </para>
         /// </summary>
         public List<string> Values
         {

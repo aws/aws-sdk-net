@@ -939,6 +939,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly TargetHealthStateEnum Unhealthy = new TargetHealthStateEnum("unhealthy");
         /// <summary>
+        /// Constant UnhealthyDraining for TargetHealthStateEnum
+        /// </summary>
+        public static readonly TargetHealthStateEnum UnhealthyDraining = new TargetHealthStateEnum("unhealthy.draining");
+        /// <summary>
         /// Constant Unused for TargetHealthStateEnum
         /// </summary>
         public static readonly TargetHealthStateEnum Unused = new TargetHealthStateEnum("unused");

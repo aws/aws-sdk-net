@@ -192,8 +192,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SubnetMappings. 
         /// <para>
-        /// The IDs of the public subnets. You can specify only one subnet per Availability Zone.
-        /// You must specify either subnets or subnet mappings, but not both.
+        /// The IDs of the subnets. You can specify only one subnet per Availability Zone. You
+        /// must specify either subnets or subnet mappings, but not both.
         /// </para>
         ///  
         /// <para>
@@ -238,8 +238,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The IDs of the public subnets. You can specify only one subnet per Availability Zone.
-        /// You must specify either subnets or subnet mappings, but not both. To specify an Elastic
+        /// The IDs of the subnets. You can specify only one subnet per Availability Zone. You
+        /// must specify either subnets or subnet mappings, but not both. To specify an Elastic
         /// IP address, specify subnet mappings instead of subnets.
         /// </para>
         ///  
