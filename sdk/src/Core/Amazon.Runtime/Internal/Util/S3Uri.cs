@@ -30,14 +30,23 @@ namespace Amazon.Runtime.Internal.Util
     /// Uri wrapper that can parse out information (bucket, key, region, style) from an
     /// S3 URI.
     /// </summary>
-    public class S3Uri
+    public partial class S3Uri
     {
         private const string S3EndpointPattern = @"^(.+\.)?s3[.-]([a-z0-9-]+)\.";
         //s3-control has a similar pattern to s3-region host names, so we explicitly exclude it
         private const string S3ControlExlusionPattern = @"^(.+\.)?s3-control\.";
 
-        private static readonly Regex S3EndpointRegex = new Regex(S3EndpointPattern, RegexOptions.Compiled);
-        private static readonly Regex S3ControlExlusionRegex = new Regex(S3ControlExlusionPattern, RegexOptions.Compiled);
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(S3EndpointPattern)]
+        private static partial Regex S3EndpointRegex();
+        [GeneratedRegex(S3ControlExlusionPattern)]
+        private static partial Regex S3ControlExlusionRegex();
+#else
+        private static Regex S3EndpointRegex() => _s3EndpointRegex;
+        private static Regex S3ControlExlusionRegex() => _s3ControlExlusionRegex;
+        private static readonly Regex _s3EndpointRegex = new Regex(S3EndpointPattern, RegexOptions.Compiled);
+        private static readonly Regex _s3ControlExlusionRegex = new Regex(S3ControlExlusionPattern, RegexOptions.Compiled);
+#endif
 
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
@@ -80,8 +89,8 @@ namespace Amazon.Runtime.Internal.Util
             if (string.IsNullOrEmpty(uri.Host))
                 throw new ArgumentException("Invalid URI - no hostname present");
 
-            var match = S3EndpointRegex.Match(uri.Host);
-            if (!match.Success && !S3ControlExlusionRegex.Match(uri.Host).Success)
+            var match = S3EndpointRegex().Match(uri.Host);
+            if (!match.Success && !S3ControlExlusionRegex().Match(uri.Host).Success)
                 throw new ArgumentException("Invalid S3 URI - hostname does not appear to be a valid S3 endpoint");
 
             // for host style urls:
@@ -153,7 +162,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public static bool IsS3Uri(Uri uri)
         {
-            return S3EndpointRegex.Match(uri.Host).Success && !S3ControlExlusionRegex.Match(uri.Host).Success;
+            return S3EndpointRegex().Match(uri.Host).Success && !S3ControlExlusionRegex().Match(uri.Host).Success;
         }
 
         /// <summary>

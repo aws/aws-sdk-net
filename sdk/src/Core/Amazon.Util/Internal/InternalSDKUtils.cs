@@ -36,7 +36,15 @@ namespace Amazon.Util.Internal
         const string USER_AGENT_VERSION = "ua/2.0";
 
         // Define a regular expression to match disallowed characters
-        private static readonly Regex DisallowedCharactersRegex = new Regex("[^ /!#$%&'*+-.^_`|~\\w\\d]", RegexOptions.Compiled);
+        private const string DisallowedCharactersRegexPattern = "[^ /!#$%&'*+-.^_`|~\\w\\d]";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(DisallowedCharactersRegexPattern)]
+        private static partial Regex DisallowedCharactersRegex();
+#else
+        private static Regex DisallowedCharactersRegex() => _disallowedCharactersRegex;
+        private static readonly Regex _disallowedCharactersRegex = new Regex(DisallowedCharactersRegexPattern, RegexOptions.Compiled);
+#endif
 
         public static void SetUserAgent(string productName, string versionNumber)
         {
@@ -60,7 +68,7 @@ namespace Amazon.Util.Internal
         internal static string ReplaceInvalidUserAgentCharacters(string userAgent)
         {
             // Use the regular expression to replace disallowed characters by a hyphen
-            var validUserAgent = DisallowedCharactersRegex.Replace(userAgent, "-");
+            var validUserAgent = DisallowedCharactersRegex().Replace(userAgent, "-");
 
             return validUserAgent;
         }

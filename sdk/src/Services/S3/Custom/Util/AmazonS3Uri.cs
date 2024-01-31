@@ -30,9 +30,17 @@ namespace Amazon.S3.Util
     /// Uri wrapper that can parse out information (bucket, key, region, style) from an
     /// S3 URI.
     /// </summary>
-    public class AmazonS3Uri
+    public partial class AmazonS3Uri
     {
-        private static readonly Regex EndpointRegexMatch = new Regex(@"^(.+\.)?(?:s3|s3express)[.-]([a-z0-9-]+)\.", RegexOptions.Compiled);
+        private const string EndpointRegexPattern = @"^(.+\.)?(?:s3|s3express)[.-]([a-z0-9-]+)\.";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(EndpointRegexPattern)]
+        private static partial Regex EndpointRegexMatch();
+#else
+        private static Regex EndpointRegexMatch() => _endpointRegexMatch;
+        private static readonly Regex _endpointRegexMatch = new Regex(EndpointRegexPattern, RegexOptions.Compiled);
+#endif
 
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
@@ -93,7 +101,7 @@ namespace Amazon.S3.Util
                 return;
             }
 
-            var match = EndpointRegexMatch.Match(uri.Host);
+            var match = EndpointRegexMatch().Match(uri.Host);
             if (!match.Success)
                 throw new ArgumentException("Invalid S3 URI - hostname does not appear to be a valid S3 endpoint");
 
@@ -269,7 +277,7 @@ namespace Amazon.S3.Util
 
             if (uri.IsAbsoluteUri && (uri.Host.EndsWith("amazonaws.com", StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith("amazonaws.com.cn", StringComparison.OrdinalIgnoreCase)))
             {
-                return EndpointRegexMatch.Match(uri.Host).Success;
+                return EndpointRegexMatch().Match(uri.Host).Success;
             }
             else if (uri.IsAbsoluteUri && uri.Scheme == "s3") // For S3 scheme URI, URI Authority is bucket name
             {

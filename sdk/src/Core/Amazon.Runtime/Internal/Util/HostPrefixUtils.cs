@@ -26,9 +26,17 @@ namespace Amazon.Runtime.Internal.Util
     /// <summary>
     /// Utilities for validating label values for host prefix templates
     /// </summary>
-    public static class HostPrefixUtils
+    public static partial class HostPrefixUtils
     {
-        private static Regex labelValidationRegex = new Regex(@"^[A-Za-z0-9\-]+$", RegexOptions.Compiled | RegexOptions.Singleline);
+        private const string LabelValidationRegexPattern = @"^[A-Za-z0-9\-]+$";
+
+#if NET8_0_OR_GREATER
+        [GeneratedRegex(LabelValidationRegexPattern, RegexOptions.Singleline)]
+        private static partial Regex LabelValidationRegex();
+#else
+        private static Regex LabelValidationRegex() => _labelValidationRegex;
+        private static Regex _labelValidationRegex = new Regex(LabelValidationRegexPattern, RegexOptions.Compiled | RegexOptions.Singleline);
+#endif
 
         /// <summary>
         /// Validates a label value
@@ -46,7 +54,7 @@ namespace Amazon.Runtime.Internal.Util
             // Check that the value only contains:
             //  uppercase letters, lowercase letters, numbers,
             //  dashes (-)
-            if (!labelValidationRegex.IsMatch(value))
+            if (!LabelValidationRegex().IsMatch(value))
                 return false;
 
             return true;
