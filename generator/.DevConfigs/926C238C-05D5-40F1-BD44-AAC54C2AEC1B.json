@@ -1,9 +1,0 @@
-{
-    "core": {
-        "updateMinimum": true,
-        "type": "Patch",
-        "changeLogMessages": [
-            "Performance optimization using source generated Regex for .NET 8 target."
-        ]
-    }
-}

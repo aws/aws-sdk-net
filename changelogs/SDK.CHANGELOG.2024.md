@@ -1,3 +1,17 @@
+### 3.7.738.0 (2024-01-31 19:15 UTC)
+* CloudFormation (3.7.303.0)
+	* CloudFormation IaC generator allows you to scan existing resources in your account and select resources to generate a template for a new or existing CloudFormation stack.
+* ElasticLoadBalancingV2 (3.7.302.0)
+	* This release enables unhealthy target draining intervals for Network Load Balancers.
+* Glue (3.7.306.0)
+	* Update page size limits for GetJobRuns and GetTriggers APIs.
+* SimpleSystemsManagement (3.7.302.0)
+	* This release adds an optional Duration parameter to StateManager Associations. This allows customers to specify how long an apply-only-on-cron association execution should run. Once the specified Duration is out all the ongoing cancellable commands or automations are cancelled.
+* Core 3.7.302.4
+	* Performance optimization using source generated Regex for .NET 8 target.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.737.0 (2024-01-30 19:13 UTC)
 * DataZone (3.7.301.0)
 	* Add new skipDeletionCheck to DeleteDomain. Add new skipDeletionCheck to DeleteProject which also automatically deletes dependent objects
