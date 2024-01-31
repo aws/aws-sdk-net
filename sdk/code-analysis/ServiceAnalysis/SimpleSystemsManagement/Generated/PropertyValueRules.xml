@@ -64,6 +64,11 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.InstanceId</property>
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
@@ -1738,6 +1743,11 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.MaxConcurrency</property>
     <min>1</min>
     <max>7</max>
@@ -2213,6 +2223,11 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Association.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.InstanceId</property>
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
@@ -2250,6 +2265,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.Duration</property>
+    <min>1</min>
+    <max>24</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.InstanceId</property>
@@ -2351,6 +2371,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.Duration</property>
+    <min>1</min>
+    <max>24</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.MaxConcurrency</property>
@@ -2653,6 +2678,11 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.Duration</property>
+    <min>1</min>
+    <max>24</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.InstanceId</property>

@@ -2763,6 +2763,13 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Lists all patches eligible to be included in a patch baseline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Currently, <c>DescribeAvailablePatches</c> supports only the Amazon Linux 1, Amazon
+        /// Linux 2, and Windows Server operating systems.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches service method.</param>
         /// <param name="cancellationToken">

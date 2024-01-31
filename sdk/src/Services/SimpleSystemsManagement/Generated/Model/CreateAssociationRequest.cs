@@ -51,6 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<string> _calendarNames = new List<string>();
         private AssociationComplianceSeverity _complianceSeverity;
         private string _documentVersion;
+        private int? _duration;
         private string _instanceId;
         private string _maxConcurrency;
         private string _maxErrors;
@@ -222,6 +223,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentVersion()
         {
             return this._documentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The number of hours the association can run before it is canceled. Duration applies
+        /// to associations that are currently running, and any pending and in progress commands
+        /// on all targets. If a target was taken offline for the association to run, it is made
+        /// available again immediately, without a reboot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>Duration</c> parameter applies only when both these conditions are true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The association for which you specify a duration is cancelable according to the parameters
+        /// of the SSM command document or Automation runbook associated with this execution.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The command specifies the <c> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a>
+        /// </c> parameter, which means that the association doesn't run immediately after it
+        /// is created, but only according to the specified schedule.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public int Duration
+        {
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration.HasValue; 
         }
 
         /// <summary>

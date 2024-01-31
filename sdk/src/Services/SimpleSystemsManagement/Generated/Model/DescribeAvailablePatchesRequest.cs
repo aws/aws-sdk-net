@@ -31,6 +31,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeAvailablePatches operation.
     /// Lists all patches eligible to be included in a patch baseline.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Currently, <c>DescribeAvailablePatches</c> supports only the Amazon Linux 1, Amazon
+    /// Linux 2, and Windows Server operating systems.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAvailablePatchesRequest : AmazonSimpleSystemsManagementRequest
     {

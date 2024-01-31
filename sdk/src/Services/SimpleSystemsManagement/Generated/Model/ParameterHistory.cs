@@ -112,7 +112,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The ID of the query key used for this parameter.
+        /// The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies
+        /// to <c>SecureString</c> parameters only
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

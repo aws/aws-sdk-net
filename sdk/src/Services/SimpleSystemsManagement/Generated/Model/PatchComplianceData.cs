@@ -68,6 +68,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved
         /// by the patch.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, CVE ID values are reported only for patches with a status of <c>Missing</c>
+        /// or <c>Failed</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string CVEIds
         {

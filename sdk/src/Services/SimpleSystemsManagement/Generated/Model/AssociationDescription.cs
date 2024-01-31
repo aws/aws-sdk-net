@@ -43,6 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private AssociationComplianceSeverity _complianceSeverity;
         private DateTime? _date;
         private string _documentVersion;
+        private int? _duration;
         private string _instanceId;
         private DateTime? _lastExecutionDate;
         private DateTime? _lastSuccessfulExecutionDate;
@@ -246,6 +247,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentVersion()
         {
             return this._documentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The number of hours that an association can run on specified targets. After the resulting
+        /// cutoff time passes, associations that are currently running are cancelled, and no
+        /// pending executions are started on remaining targets.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public int Duration
+        {
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration.HasValue; 
         }
 
         /// <summary>
