@@ -81,8 +81,8 @@ namespace Amazon.Glue.Model
         /// <para>
         /// In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional
         /// libraries available in your environment. This field is not used in other job types.
-        /// For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-        /// with Ray jobs</a> in the Glue Developer Guide.
+        /// For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+        /// Ray runtime environments</a> in the Glue Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

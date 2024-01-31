@@ -1171,7 +1171,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetJobRunsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetJobsRequest.MaxResults</property>
@@ -1606,7 +1606,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetTriggersRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetUnfilteredPartitionMetadataRequest.CatalogId</property>
@@ -1763,7 +1763,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.ListBlueprintsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListColumnStatisticsTaskRunsRequest.MaxResults</property>
@@ -1916,12 +1916,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.ListTriggersRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ListWorkflowsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutDataCatalogEncryptionSettingsRequest.CatalogId</property>
