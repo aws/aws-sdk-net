@@ -35,9 +35,53 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class RemixSettings
     {
+        private int? _audioDescriptionAudioChannel;
+        private int? _audioDescriptionDataChannel;
         private ChannelMapping _channelMapping;
         private int? _channelsIn;
         private int? _channelsOut;
+
+        /// <summary>
+        /// Gets and sets the property AudioDescriptionAudioChannel. Optionally specify the channel
+        /// in your input that contains your audio description audio signal. MediaConvert mixes
+        /// your audio signal across all output channels, while reducing their volume according
+        /// to your data stream. When you specify an audio description audio channel, you must
+        /// also specify an audio description data channel. For more information about audio description
+        /// signals, see the BBC WHP 198 and 051 white papers.
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public int AudioDescriptionAudioChannel
+        {
+            get { return this._audioDescriptionAudioChannel.GetValueOrDefault(); }
+            set { this._audioDescriptionAudioChannel = value; }
+        }
+
+        // Check to see if AudioDescriptionAudioChannel property is set
+        internal bool IsSetAudioDescriptionAudioChannel()
+        {
+            return this._audioDescriptionAudioChannel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioDescriptionDataChannel. Optionally specify the channel
+        /// in your input that contains your audio description data stream. MediaConvert mixes
+        /// your audio signal across all output channels, while reducing their volume according
+        /// to your data stream. When you specify an audio description data channel, you must
+        /// also specify an audio description audio channel. For more information about audio
+        /// description signals, see the BBC WHP 198 and 051 white papers.
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public int AudioDescriptionDataChannel
+        {
+            get { return this._audioDescriptionDataChannel.GetValueOrDefault(); }
+            set { this._audioDescriptionDataChannel = value; }
+        }
+
+        // Check to see if AudioDescriptionDataChannel property is set
+        internal bool IsSetAudioDescriptionDataChannel()
+        {
+            return this._audioDescriptionDataChannel.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelMapping. Channel mapping contains the group of fields

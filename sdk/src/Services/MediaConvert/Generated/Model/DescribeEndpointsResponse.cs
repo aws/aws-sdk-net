@@ -31,6 +31,7 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// This is the response object from the DescribeEndpoints operation.
     /// </summary>
+    [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
     public partial class DescribeEndpointsResponse : AmazonWebServiceResponse
     {
         private List<Endpoint> _endpoints = new List<Endpoint>();

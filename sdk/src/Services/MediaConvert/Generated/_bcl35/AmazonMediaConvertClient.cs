@@ -1048,6 +1048,7 @@ namespace Amazon.MediaConvert
         /// at which it will accept requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
         public virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
             var options = new InvokeOptions();
@@ -1069,6 +1070,7 @@ namespace Amazon.MediaConvert
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoints
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
         public virtual IAsyncResult BeginDescribeEndpoints(DescribeEndpointsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1086,6 +1088,7 @@ namespace Amazon.MediaConvert
         /// 
         /// <returns>Returns a  DescribeEndpointsResult from MediaConvert.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
         public virtual DescribeEndpointsResponse EndDescribeEndpoints(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEndpointsResponse>(asyncResult);

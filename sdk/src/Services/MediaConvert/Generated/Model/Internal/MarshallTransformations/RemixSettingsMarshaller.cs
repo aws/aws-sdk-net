@@ -45,6 +45,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RemixSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioDescriptionAudioChannel())
+            {
+                context.Writer.WritePropertyName("audioDescriptionAudioChannel");
+                context.Writer.Write(requestObject.AudioDescriptionAudioChannel);
+            }
+
+            if(requestObject.IsSetAudioDescriptionDataChannel())
+            {
+                context.Writer.WritePropertyName("audioDescriptionDataChannel");
+                context.Writer.Write(requestObject.AudioDescriptionDataChannel);
+            }
+
             if(requestObject.IsSetChannelMapping())
             {
                 context.Writer.WritePropertyName("channelMapping");

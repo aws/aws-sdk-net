@@ -823,6 +823,7 @@ namespace Amazon.MediaConvert
         
         #region  DescribeEndpoints
 
+        [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
         internal virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
             var options = new InvokeOptions();
@@ -866,6 +867,7 @@ namespace Amazon.MediaConvert
         /// at which it will accept requests.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
+        [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
         public virtual Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();

@@ -33,6 +33,7 @@ namespace Amazon.MediaConvert.Model
     /// Send an request with an empty body to the regional API endpoint to get your account
     /// API endpoint.
     /// </summary>
+    [Obsolete("DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead.")]
     public partial class DescribeEndpointsRequest : AmazonMediaConvertRequest
     {
         private int? _maxResults;

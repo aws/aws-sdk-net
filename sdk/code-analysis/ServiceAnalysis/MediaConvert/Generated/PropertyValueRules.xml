@@ -97,7 +97,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AudioDescription.CustomLanguageCode</property>
-    <pattern>^[A-Za-z]{2,3}(-[A-Za-z-]+)?$</pattern>
+    <pattern>^[A-Za-z]{2,3}(-[A-Za-z0-9-]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AudioDescription.StreamName</property>
@@ -1719,6 +1719,16 @@
     <property>Amazon.MediaConvert.Model.Rectangle.Y</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.RemixSettings.AudioDescriptionAudioChannel</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.RemixSettings.AudioDescriptionDataChannel</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.RemixSettings.ChannelsIn</property>
