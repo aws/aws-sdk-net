@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateChannel Request Marshaller
+    /// ListPlaybackRestrictionPolicies Request Marshaller
     /// </summary>       
-    public class UpdateChannelRequestMarshaller : IMarshaller<IRequest, UpdateChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListPlaybackRestrictionPoliciesRequestMarshaller : IMarshaller<IRequest, ListPlaybackRestrictionPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateChannelRequest)input);
+            return this.Marshall((ListPlaybackRestrictionPoliciesRequest)input);
         }
 
         /// <summary>
@@ -52,71 +52,29 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateChannelRequest publicRequest)
+        public IRequest Marshall(ListPlaybackRestrictionPoliciesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/UpdateChannel";
+            request.ResourcePath = "/ListPlaybackRestrictionPolicies";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("arn");
-                    context.Writer.Write(publicRequest.Arn);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetAuthorized())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("authorized");
-                    context.Writer.Write(publicRequest.Authorized);
-                }
-
-                if(publicRequest.IsSetInsecureIngest())
-                {
-                    context.Writer.WritePropertyName("insecureIngest");
-                    context.Writer.Write(publicRequest.InsecureIngest);
-                }
-
-                if(publicRequest.IsSetLatencyMode())
-                {
-                    context.Writer.WritePropertyName("latencyMode");
-                    context.Writer.Write(publicRequest.LatencyMode);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
-                {
-                    context.Writer.WritePropertyName("playbackRestrictionPolicyArn");
-                    context.Writer.Write(publicRequest.PlaybackRestrictionPolicyArn);
-                }
-
-                if(publicRequest.IsSetPreset())
-                {
-                    context.Writer.WritePropertyName("preset");
-                    context.Writer.Write(publicRequest.Preset);
-                }
-
-                if(publicRequest.IsSetRecordingConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("recordingConfigurationArn");
-                    context.Writer.Write(publicRequest.RecordingConfigurationArn);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 writer.WriteObjectEnd();
@@ -127,9 +85,9 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateChannelRequestMarshaller _instance = new UpdateChannelRequestMarshaller();        
+        private static ListPlaybackRestrictionPoliciesRequestMarshaller _instance = new ListPlaybackRestrictionPoliciesRequestMarshaller();        
 
-        internal static UpdateChannelRequestMarshaller GetInstance()
+        internal static ListPlaybackRestrictionPoliciesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +95,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateChannelRequestMarshaller Instance
+        public static ListPlaybackRestrictionPoliciesRequestMarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateChannel Request Marshaller
+    /// DeletePlaybackRestrictionPolicy Request Marshaller
     /// </summary>       
-    public class UpdateChannelRequestMarshaller : IMarshaller<IRequest, UpdateChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeletePlaybackRestrictionPolicyRequestMarshaller : IMarshaller<IRequest, DeletePlaybackRestrictionPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateChannelRequest)input);
+            return this.Marshall((DeletePlaybackRestrictionPolicyRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateChannelRequest publicRequest)
+        public IRequest Marshall(DeletePlaybackRestrictionPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IVS");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-14";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/UpdateChannel";
+            request.ResourcePath = "/DeletePlaybackRestrictionPolicy";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -71,54 +71,6 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
-                if(publicRequest.IsSetAuthorized())
-                {
-                    context.Writer.WritePropertyName("authorized");
-                    context.Writer.Write(publicRequest.Authorized);
-                }
-
-                if(publicRequest.IsSetInsecureIngest())
-                {
-                    context.Writer.WritePropertyName("insecureIngest");
-                    context.Writer.Write(publicRequest.InsecureIngest);
-                }
-
-                if(publicRequest.IsSetLatencyMode())
-                {
-                    context.Writer.WritePropertyName("latencyMode");
-                    context.Writer.Write(publicRequest.LatencyMode);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
-                {
-                    context.Writer.WritePropertyName("playbackRestrictionPolicyArn");
-                    context.Writer.Write(publicRequest.PlaybackRestrictionPolicyArn);
-                }
-
-                if(publicRequest.IsSetPreset())
-                {
-                    context.Writer.WritePropertyName("preset");
-                    context.Writer.Write(publicRequest.Preset);
-                }
-
-                if(publicRequest.IsSetRecordingConfigurationArn())
-                {
-                    context.Writer.WritePropertyName("recordingConfigurationArn");
-                    context.Writer.Write(publicRequest.RecordingConfigurationArn);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -127,9 +79,9 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateChannelRequestMarshaller _instance = new UpdateChannelRequestMarshaller();        
+        private static DeletePlaybackRestrictionPolicyRequestMarshaller _instance = new DeletePlaybackRestrictionPolicyRequestMarshaller();        
 
-        internal static UpdateChannelRequestMarshaller GetInstance()
+        internal static DeletePlaybackRestrictionPolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +89,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateChannelRequestMarshaller Instance
+        public static DeletePlaybackRestrictionPolicyRequestMarshaller Instance
         {
             get
             {

@@ -52,6 +52,14 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Paginator for ListPlaybackRestrictionPolicies operation
+        ///</summary>
+        public IListPlaybackRestrictionPoliciesPaginator ListPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request) 
+        {
+            return new ListPlaybackRestrictionPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecordingConfigurations operation
         ///</summary>
         public IListRecordingConfigurationsPaginator ListRecordingConfigurations(ListRecordingConfigurationsRequest request) 

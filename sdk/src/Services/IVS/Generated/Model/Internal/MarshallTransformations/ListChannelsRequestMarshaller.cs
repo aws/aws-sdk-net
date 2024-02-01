@@ -71,6 +71,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FilterByName);
                 }
 
+                if(publicRequest.IsSetFilterByPlaybackRestrictionPolicyArn())
+                {
+                    context.Writer.WritePropertyName("filterByPlaybackRestrictionPolicyArn");
+                    context.Writer.Write(publicRequest.FilterByPlaybackRestrictionPolicyArn);
+                }
+
                 if(publicRequest.IsSetFilterByRecordingConfigurationArn())
                 {
                     context.Writer.WritePropertyName("filterByRecordingConfigurationArn");

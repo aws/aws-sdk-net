@@ -109,6 +109,11 @@ namespace Amazon.IVS
     /// stream and where to store the recorded content. Multiple channels can reference the
     /// same recording configuration. See the Recording Configuration endpoints for more information.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Playback restriction policy</b> — Restricts playback by countries and/or origin
+    /// sites. See the Playback Restriction Policy endpoints for more information.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Tagging</b> 
@@ -240,66 +245,31 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>StreamKey Endpoints</b> 
+    ///  <b>Playback Restriction Policy Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the
-    /// specified channel ARN.
+    ///  <a>CreatePlaybackRestrictionPolicy</a> — Creates a new playback restriction policy,
+    /// for constraining playback by countries and/or origins.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetStreamKey</a> — Gets stream key information for the specified ARN.
+    ///  <a>DeletePlaybackRestrictionPolicy</a> — Deletes the specified playback restriction
+    /// policy
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
+    ///  <a>GetPlaybackRestrictionPolicy</a> — Gets the specified playback restriction policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified
-    /// channel.
+    ///  <a>ListPlaybackRestrictionPolicies</a> — Gets summary information about playback
+    /// restriction policies.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
-    /// no longer be used to stream.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Stream Endpoints</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>GetStream</a> — Gets information about the active (live) stream on a specified
-    /// channel.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetStreamSession</a> — Gets metadata on a specified stream.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListStreams</a> — Gets summary information about live streams in your account,
-    /// in the Amazon Web Services region where the API request is processed.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListStreamSessions</a> — Gets a summary of current and previous streams for a
-    /// specified channel in your account, in the AWS region where the API request is processed.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>StopStream</a> — Disconnects the incoming RTMPS stream for the specified channel.
-    /// Can be used in conjunction with <a>DeleteStreamKey</a> to prevent further streaming
-    /// to a channel.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>PutMetadata</a> — Inserts metadata into the active stream of the specified channel.
-    /// At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload.
-    /// (If 5 TPS is not sufficient for your needs, we recommend batching your data into a
-    /// single PutMetadata call.) At most 155 requests per second per account are allowed.
+    ///  <a>UpdatePlaybackRestrictionPolicy</a> — Updates a specified playback restriction
+    /// policy.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -368,6 +338,69 @@ namespace Amazon.IVS
     /// <para>
     ///  <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for the
     /// specified ARN.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Stream Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetStream</a> — Gets information about the active (live) stream on a specified
+    /// channel.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetStreamSession</a> — Gets metadata on a specified stream.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStreams</a> — Gets summary information about live streams in your account,
+    /// in the Amazon Web Services region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStreamSessions</a> — Gets a summary of current and previous streams for a
+    /// specified channel in your account, in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopStream</a> — Disconnects the incoming RTMPS stream for the specified channel.
+    /// Can be used in conjunction with <a>DeleteStreamKey</a> to prevent further streaming
+    /// to a channel.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutMetadata</a> — Inserts metadata into the active stream of the specified channel.
+    /// At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload.
+    /// (If 5 TPS is not sufficient for your needs, we recommend batching your data into a
+    /// single PutMetadata call.) At most 155 requests per second per account are allowed.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>StreamKey Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the
+    /// specified channel ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetStreamKey</a> — Gets stream key information for the specified ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified
+    /// channel.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can
+    /// no longer be used to stream.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -859,6 +892,76 @@ namespace Amazon.IVS
 
         #endregion
         
+        #region  CreatePlaybackRestrictionPolicy
+
+        /// <summary>
+        /// Creates a new playback restriction policy, for constraining playback by countries
+        /// and/or origins.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlaybackRestrictionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreatePlaybackRestrictionPolicy service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">REST API Reference for CreatePlaybackRestrictionPolicy Operation</seealso>
+        public virtual CreatePlaybackRestrictionPolicyResponse CreatePlaybackRestrictionPolicy(CreatePlaybackRestrictionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePlaybackRestrictionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlaybackRestrictionPolicy operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlaybackRestrictionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">REST API Reference for CreatePlaybackRestrictionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginCreatePlaybackRestrictionPolicy(CreatePlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlaybackRestrictionPolicy.</param>
+        /// 
+        /// <returns>Returns a  CreatePlaybackRestrictionPolicyResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">REST API Reference for CreatePlaybackRestrictionPolicy Operation</seealso>
+        public virtual CreatePlaybackRestrictionPolicyResponse EndCreatePlaybackRestrictionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePlaybackRestrictionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateRecordingConfiguration
 
         /// <summary>
@@ -1170,6 +1273,75 @@ namespace Amazon.IVS
 
         #endregion
         
+        #region  DeletePlaybackRestrictionPolicy
+
+        /// <summary>
+        /// Deletes the specified playback restriction policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackRestrictionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePlaybackRestrictionPolicy service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">REST API Reference for DeletePlaybackRestrictionPolicy Operation</seealso>
+        public virtual DeletePlaybackRestrictionPolicyResponse DeletePlaybackRestrictionPolicy(DeletePlaybackRestrictionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePlaybackRestrictionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackRestrictionPolicy operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePlaybackRestrictionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">REST API Reference for DeletePlaybackRestrictionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeletePlaybackRestrictionPolicy(DeletePlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlaybackRestrictionPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePlaybackRestrictionPolicyResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">REST API Reference for DeletePlaybackRestrictionPolicy Operation</seealso>
+        public virtual DeletePlaybackRestrictionPolicyResponse EndDeletePlaybackRestrictionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePlaybackRestrictionPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteRecordingConfiguration
 
         /// <summary>
@@ -1439,6 +1611,72 @@ namespace Amazon.IVS
         public virtual GetPlaybackKeyPairResponse EndGetPlaybackKeyPair(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPlaybackKeyPairResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPlaybackRestrictionPolicy
+
+        /// <summary>
+        /// Gets the specified playback restriction policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlaybackRestrictionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPlaybackRestrictionPolicy service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">REST API Reference for GetPlaybackRestrictionPolicy Operation</seealso>
+        public virtual GetPlaybackRestrictionPolicyResponse GetPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPlaybackRestrictionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPlaybackRestrictionPolicy operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPlaybackRestrictionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">REST API Reference for GetPlaybackRestrictionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlaybackRestrictionPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPlaybackRestrictionPolicyResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">REST API Reference for GetPlaybackRestrictionPolicy Operation</seealso>
+        public virtual GetPlaybackRestrictionPolicyResponse EndGetPlaybackRestrictionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPlaybackRestrictionPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -1896,6 +2134,72 @@ namespace Amazon.IVS
         public virtual ListPlaybackKeyPairsResponse EndListPlaybackKeyPairs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPlaybackKeyPairsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPlaybackRestrictionPolicies
+
+        /// <summary>
+        /// Gets summary information about playback restriction policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlaybackRestrictionPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListPlaybackRestrictionPolicies service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">REST API Reference for ListPlaybackRestrictionPolicies Operation</seealso>
+        public virtual ListPlaybackRestrictionPoliciesResponse ListPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackRestrictionPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackRestrictionPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPlaybackRestrictionPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlaybackRestrictionPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlaybackRestrictionPolicies operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlaybackRestrictionPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">REST API Reference for ListPlaybackRestrictionPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPlaybackRestrictionPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPlaybackRestrictionPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPlaybackRestrictionPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlaybackRestrictionPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListPlaybackRestrictionPoliciesResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">REST API Reference for ListPlaybackRestrictionPolicies Operation</seealso>
+        public virtual ListPlaybackRestrictionPoliciesResponse EndListPlaybackRestrictionPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPlaybackRestrictionPoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -2635,6 +2939,75 @@ namespace Amazon.IVS
         public virtual UpdateChannelResponse EndUpdateChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePlaybackRestrictionPolicy
+
+        /// <summary>
+        /// Updates a specified playback restriction policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlaybackRestrictionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePlaybackRestrictionPolicy service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">REST API Reference for UpdatePlaybackRestrictionPolicy Operation</seealso>
+        public virtual UpdatePlaybackRestrictionPolicyResponse UpdatePlaybackRestrictionPolicy(UpdatePlaybackRestrictionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePlaybackRestrictionPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePlaybackRestrictionPolicy operation on AmazonIVSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePlaybackRestrictionPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">REST API Reference for UpdatePlaybackRestrictionPolicy Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePlaybackRestrictionPolicy(UpdatePlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePlaybackRestrictionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePlaybackRestrictionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePlaybackRestrictionPolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdatePlaybackRestrictionPolicyResult from IVS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">REST API Reference for UpdatePlaybackRestrictionPolicy Operation</seealso>
+        public virtual UpdatePlaybackRestrictionPolicyResponse EndUpdatePlaybackRestrictionPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePlaybackRestrictionPolicyResponse>(asyncResult);
         }
 
         #endregion

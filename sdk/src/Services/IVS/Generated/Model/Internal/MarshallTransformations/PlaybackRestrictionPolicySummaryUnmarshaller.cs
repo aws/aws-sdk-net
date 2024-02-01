@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Channel Object
+    /// Response Unmarshaller for PlaybackRestrictionPolicySummary Object
     /// </summary>  
-    public class ChannelUnmarshaller : IUnmarshaller<Channel, XmlUnmarshallerContext>, IUnmarshaller<Channel, JsonUnmarshallerContext>
+    public class PlaybackRestrictionPolicySummaryUnmarshaller : IUnmarshaller<PlaybackRestrictionPolicySummary, XmlUnmarshallerContext>, IUnmarshaller<PlaybackRestrictionPolicySummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Channel IUnmarshaller<Channel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PlaybackRestrictionPolicySummary IUnmarshaller<PlaybackRestrictionPolicySummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Channel Unmarshall(JsonUnmarshallerContext context)
+        public PlaybackRestrictionPolicySummary Unmarshall(JsonUnmarshallerContext context)
         {
-            Channel unmarshalledObject = new Channel();
+            PlaybackRestrictionPolicySummary unmarshalledObject = new PlaybackRestrictionPolicySummary();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,28 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("allowedCountries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedCountries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("allowedOrigins", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedOrigins = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("authorized", targetDepth))
+                if (context.TestExpression("enableStrictOriginEnforcement", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Authorized = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ingestEndpoint", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IngestEndpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("insecureIngest", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.InsecureIngest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latencyMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatencyMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableStrictOriginEnforcement = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -99,40 +93,10 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("playbackRestrictionPolicyArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlaybackRestrictionPolicyArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("playbackUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("preset", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Preset = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recordingConfigurationArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecordingConfigurationArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -140,12 +104,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChannelUnmarshaller _instance = new ChannelUnmarshaller();        
+        private static PlaybackRestrictionPolicySummaryUnmarshaller _instance = new PlaybackRestrictionPolicySummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChannelUnmarshaller Instance
+        public static PlaybackRestrictionPolicySummaryUnmarshaller Instance
         {
             get
             {

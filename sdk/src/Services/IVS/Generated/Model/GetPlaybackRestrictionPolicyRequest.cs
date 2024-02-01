@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateChannel operation.
+    /// Container for the parameters to the GetPlaybackRestrictionPolicy operation.
+    /// Gets the specified playback restriction policy.
     /// </summary>
-    public partial class UpdateChannelResponse : AmazonWebServiceResponse
+    public partial class GetPlaybackRestrictionPolicyRequest : AmazonIVSRequest
     {
-        private Channel _channel;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Channel. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// Object specifying the updated channel.
+        /// ARN of the playback restriction policy to be returned.
         /// </para>
         /// </summary>
-        public Channel Channel
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Arn
         {
-            get { return this._channel; }
-            set { this._channel = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Channel property is set
-        internal bool IsSetChannel()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._channel != null;
+            return this._arn != null;
         }
 
     }

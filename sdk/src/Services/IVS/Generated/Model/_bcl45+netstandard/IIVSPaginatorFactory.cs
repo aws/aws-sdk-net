@@ -36,6 +36,11 @@ namespace Amazon.IVS.Model
         IListPlaybackKeyPairsPaginator ListPlaybackKeyPairs(ListPlaybackKeyPairsRequest request);
 
         /// <summary>
+        /// Paginator for ListPlaybackRestrictionPolicies operation
+        ///</summary>
+        IListPlaybackRestrictionPoliciesPaginator ListPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListRecordingConfigurations operation
         ///</summary>
         IListRecordingConfigurationsPaginator ListRecordingConfigurations(ListRecordingConfigurationsRequest request);

@@ -39,6 +39,7 @@ namespace Amazon.IVS.Model
         private bool? _insecureIngest;
         private ChannelLatencyMode _latencyMode;
         private string _name;
+        private string _playbackRestrictionPolicyArn;
         private string _playbackUrl;
         private TranscodePreset _preset;
         private string _recordingConfigurationArn;
@@ -160,6 +161,27 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlaybackRestrictionPolicyArn. 
+        /// <para>
+        /// Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and
+        /// enables playback restriction. Default: "" (empty string, no playback restriction policy
+        /// is applied).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string PlaybackRestrictionPolicyArn
+        {
+            get { return this._playbackRestrictionPolicyArn; }
+            set { this._playbackRestrictionPolicyArn = value; }
+        }
+
+        // Check to see if PlaybackRestrictionPolicyArn property is set
+        internal bool IsSetPlaybackRestrictionPolicyArn()
+        {
+            return this._playbackRestrictionPolicyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlaybackUrl. 
         /// <para>
         /// Channel playback URL.
@@ -201,8 +223,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property RecordingConfigurationArn. 
         /// <para>
-        /// Recording-configuration ARN. A value other than an empty string indicates that recording
-        /// is enabled. Default: "" (empty string, recording is disabled).
+        /// Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables
+        /// recording. Default: "" (empty string, recording is disabled).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

@@ -16,42 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the ivs-2020-07-14.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateChannel operation.
-    /// </summary>
-    public partial class UpdateChannelResponse : AmazonWebServiceResponse
+    /// Paginator for the ListPlaybackRestrictionPolicies operation
+    ///</summary>
+    public interface IListPlaybackRestrictionPoliciesPaginator
     {
-        private Channel _channel;
-
         /// <summary>
-        /// Gets and sets the property Channel. 
-        /// <para>
-        /// Object specifying the updated channel.
-        /// </para>
+        /// Enumerable containing all full responses for the operation
         /// </summary>
-        public Channel Channel
-        {
-            get { return this._channel; }
-            set { this._channel = value; }
-        }
-
-        // Check to see if Channel property is set
-        internal bool IsSetChannel()
-        {
-            return this._channel != null;
-        }
-
+        IPaginatedEnumerable<ListPlaybackRestrictionPoliciesResponse> Responses { get; }
     }
 }

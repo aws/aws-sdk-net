@@ -93,6 +93,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("playbackRestrictionPolicyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlaybackRestrictionPolicyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("preset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
