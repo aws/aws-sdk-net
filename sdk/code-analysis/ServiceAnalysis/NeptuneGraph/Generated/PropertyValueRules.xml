@@ -17,6 +17,10 @@
     <pattern>t-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.CancelQueryRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphRequest.GraphName</property>
     <min>1</min>
     <max>63</max>
@@ -232,6 +236,10 @@
     <pattern>vpc-[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ExecuteQueryRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetGraphRequest.GraphIdentifier</property>
     <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
@@ -290,6 +298,10 @@
     <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetGraphSummaryRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetImportTaskRequest.TaskIdentifier</property>
     <pattern>t-[a-z0-9]{10}</pattern>
   </property-value-rule>
@@ -320,6 +332,10 @@
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetPrivateGraphEndpointResponse.VpcId</property>
     <pattern>vpc-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.GetQueryRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ListGraphsRequest.MaxResults</property>
@@ -388,6 +404,10 @@
     <property>Amazon.NeptuneGraph.Model.ListPrivateGraphEndpointsResponse.NextToken</property>
     <min>1</min>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ListQueriesRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ListTagsForResourceRequest.ResourceArn</property>

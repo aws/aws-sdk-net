@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelImportTask operation.
-    /// Deletes the specified import task.
+    /// This is the response object from the CancelQuery operation.
     /// </summary>
-    public partial class CancelImportTaskRequest : AmazonNeptuneGraphRequest
+    public partial class CancelQueryResponse : AmazonWebServiceResponse
     {
-        private string _taskIdentifier;
-
-        /// <summary>
-        /// Gets and sets the property TaskIdentifier. 
-        /// <para>
-        /// The unique identifier of the import task.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string TaskIdentifier
-        {
-            get { return this._taskIdentifier; }
-            set { this._taskIdentifier = value; }
-        }
-
-        // Check to see if TaskIdentifier property is set
-        internal bool IsSetTaskIdentifier()
-        {
-            return this._taskIdentifier != null;
-        }
 
     }
 }

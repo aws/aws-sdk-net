@@ -67,7 +67,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// Neptune Analytics currently does not support user defined edge ids. The edge ids are
         /// not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true,
-        /// and ids are stored as properties on the relationships with the property name neptuneEdgeId.
+        /// and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.
         /// </para>
         /// </summary>
         public bool PreserveEdgeIds

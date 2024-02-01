@@ -31,9 +31,10 @@ namespace Amazon.NeptuneGraph
     /// <summary>
     /// <para>Interface for accessing NeptuneGraph</para>
     ///
-    /// Neptune Analytics is a serverless in-memory graph database service for analytics that
-    /// delivers high-performance analytics and real-time queries for any graph type. It complements
-    /// the Amazon Neptune Database, an industry-leading managed graph database.
+    /// Neptune Analytics is a new analytics database engine for Amazon Neptune that helps
+    /// customers get to insights faster by quickly processing large amounts of graph data,
+    /// invoking popular graph analytic algorithms in low-latency queries, and getting analytics
+    /// results in seconds.
     /// </summary>
     public partial interface IAmazonNeptuneGraph : IAmazonService, IDisposable
     {
@@ -49,7 +50,7 @@ namespace Amazon.NeptuneGraph
 
 
         /// <summary>
-        /// Deletes the specified import task
+        /// Deletes the specified import task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
         /// <param name="cancellationToken">
@@ -70,10 +71,43 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelQuery
+
+
+
+        /// <summary>
+        /// Cancels a specified query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelQuery service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelQuery">REST API Reference for CancelQuery Operation</seealso>
+        Task<CancelQueryResponse> CancelQueryAsync(CancelQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -103,7 +137,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         Task<CreateGraphResponse> CreateGraphAsync(CreateGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -139,7 +173,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphSnapshot">REST API Reference for CreateGraphSnapshot Operation</seealso>
         Task<CreateGraphSnapshotResponse> CreateGraphSnapshotAsync(CreateGraphSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -180,7 +214,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphUsingImportTask">REST API Reference for CreateGraphUsingImportTask Operation</seealso>
         Task<CreateGraphUsingImportTaskResponse> CreateGraphUsingImportTaskAsync(CreateGraphUsingImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -218,7 +252,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreatePrivateGraphEndpoint">REST API Reference for CreatePrivateGraphEndpoint Operation</seealso>
         Task<CreatePrivateGraphEndpointResponse> CreatePrivateGraphEndpointAsync(CreatePrivateGraphEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -251,7 +285,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraph">REST API Reference for DeleteGraph Operation</seealso>
         Task<DeleteGraphResponse> DeleteGraphAsync(DeleteGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -284,7 +318,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraphSnapshot">REST API Reference for DeleteGraphSnapshot Operation</seealso>
         Task<DeleteGraphSnapshotResponse> DeleteGraphSnapshotAsync(DeleteGraphSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -317,10 +351,56 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeletePrivateGraphEndpoint">REST API Reference for DeletePrivateGraphEndpoint Operation</seealso>
         Task<DeletePrivateGraphEndpointResponse> DeletePrivateGraphEndpointAsync(DeletePrivateGraphEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ExecuteQuery
+
+
+
+        /// <summary>
+        /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
+        /// If you want to make a parameterized query call, you can use an HTTP request. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  Non-parametrized queries are not considered for plan caching. You can force plan
+        /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
+        /// same exact query. Slight variations in the query will not be able to reuse the query
+        /// plan cache. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteQuery service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ConflictException">
+        /// Raised when a conflict is encountered.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.UnprocessableException">
+        /// Request cannot be processed due to known reasons. Eg. partition full.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -347,7 +427,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraph">REST API Reference for GetGraph Operation</seealso>
         Task<GetGraphResponse> GetGraphAsync(GetGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -377,10 +457,43 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraphSnapshot">REST API Reference for GetGraphSnapshot Operation</seealso>
         Task<GetGraphSnapshotResponse> GetGraphSnapshotAsync(GetGraphSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetGraphSummary
+
+
+
+        /// <summary>
+        /// Gets a graph summary for a property graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGraphSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGraphSummary service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraphSummary">REST API Reference for GetGraphSummary Operation</seealso>
+        Task<GetGraphSummaryResponse> GetGraphSummaryAsync(GetGraphSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -407,7 +520,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetImportTask">REST API Reference for GetImportTask Operation</seealso>
         Task<GetImportTaskResponse> GetImportTaskAsync(GetImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -437,10 +550,43 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetPrivateGraphEndpoint">REST API Reference for GetPrivateGraphEndpoint Operation</seealso>
         Task<GetPrivateGraphEndpointResponse> GetPrivateGraphEndpointAsync(GetPrivateGraphEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetQuery
+
+
+
+        /// <summary>
+        /// Retrieves the status of a specified query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQuery service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ResourceNotFoundException">
+        /// A specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetQuery">REST API Reference for GetQuery Operation</seealso>
+        Task<GetQueryResponse> GetQueryAsync(GetQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -494,7 +640,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListGraphSnapshots">REST API Reference for ListGraphSnapshots Operation</seealso>
         Task<ListGraphSnapshotsResponse> ListGraphSnapshotsAsync(ListGraphSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -524,7 +670,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListImportTasks">REST API Reference for ListImportTasks Operation</seealso>
         Task<ListImportTasksResponse> ListImportTasksAsync(ListImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -554,10 +700,40 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListPrivateGraphEndpoints">REST API Reference for ListPrivateGraphEndpoints Operation</seealso>
         Task<ListPrivateGraphEndpointsResponse> ListPrivateGraphEndpointsAsync(ListPrivateGraphEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListQueries
+
+
+
+        /// <summary>
+        /// Lists active openCypher queries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQueries service method, as returned by NeptuneGraph.</returns>
+        /// <exception cref="Amazon.NeptuneGraph.Model.AccessDeniedException">
+        /// Raised in case of an authentication or authorization failure.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.InternalServerException">
+        /// A failure occurred on the server.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ThrottlingException">
+        /// The exception was interrupted by throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
+        /// A resource could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListQueries">REST API Reference for ListQueries Operation</seealso>
+        Task<ListQueriesResponse> ListQueriesAsync(ListQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -584,7 +760,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -617,7 +793,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ResetGraph">REST API Reference for ResetGraph Operation</seealso>
         Task<ResetGraphResponse> ResetGraphAsync(ResetGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -653,7 +829,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/RestoreGraphFromSnapshot">REST API Reference for RestoreGraphFromSnapshot Operation</seealso>
         Task<RestoreGraphFromSnapshotResponse> RestoreGraphFromSnapshotAsync(RestoreGraphFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -683,7 +859,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -713,7 +889,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -746,7 +922,7 @@ namespace Amazon.NeptuneGraph
         /// The exception was interrupted by throttling.
         /// </exception>
         /// <exception cref="Amazon.NeptuneGraph.Model.ValidationException">
-        /// A resource could not be validated
+        /// A resource could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/UpdateGraph">REST API Reference for UpdateGraph Operation</seealso>
         Task<UpdateGraphResponse> UpdateGraphAsync(UpdateGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

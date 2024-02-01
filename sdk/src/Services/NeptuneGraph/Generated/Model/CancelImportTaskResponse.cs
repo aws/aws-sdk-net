@@ -102,7 +102,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// A URL identifying to the location of the data to be imported. This can be an Amazon
-        /// S3 path, or can point to a Neptune database endpoint or snapshot
+        /// S3 path, or can point to a Neptune database endpoint or snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

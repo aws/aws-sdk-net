@@ -148,7 +148,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property ReplicaCount. 
         /// <para>
-        /// The number of replicas in other AZs. Min =0, Max = 2, Default =1
+        /// The number of replicas in other AZs. Min =0, Max = 2, Default = 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]

@@ -29,31 +29,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelImportTask operation.
-    /// Deletes the specified import task.
+    /// This is the response object from the ExecuteQuery operation.
     /// </summary>
-    public partial class CancelImportTaskRequest : AmazonNeptuneGraphRequest
+    public partial class ExecuteQueryResponse : AmazonWebServiceResponse, IDisposable
     {
-        private string _taskIdentifier;
+        private Stream _payload;
 
         /// <summary>
-        /// Gets and sets the property TaskIdentifier. 
+        /// Gets and sets the property Payload. 
         /// <para>
-        /// The unique identifier of the import task.
+        /// The query results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TaskIdentifier
+        public Stream Payload
         {
-            get { return this._taskIdentifier; }
-            set { this._taskIdentifier = value; }
+            get { return this._payload; }
+            set { this._payload = value; }
         }
 
-        // Check to see if TaskIdentifier property is set
-        internal bool IsSetTaskIdentifier()
+        // Check to see if Payload property is set
+        internal bool IsSetPayload()
         {
-            return this._taskIdentifier != null;
+            return this._payload != null;
         }
 
+        #region Dispose Pattern
+
+        private bool _disposed;
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+                return;
+
+            if (disposing)
+            {
+                this._payload?.Dispose();
+                this._payload = null;
+            }
+
+            this._disposed = true;
+         }
+
+         #endregion
     }
 }

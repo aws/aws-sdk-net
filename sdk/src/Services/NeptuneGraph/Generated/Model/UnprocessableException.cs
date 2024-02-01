@@ -29,42 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// A resource could not be validated.
+    /// Request cannot be processed due to known reasons. Eg. partition full.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ValidationException : AmazonNeptuneGraphException
+    public partial class UnprocessableException : AmazonNeptuneGraphException
     {
-        private ValidationExceptionReason _reason;
+        private UnprocessableExceptionReason _reason;
 
         /// <summary>
-        /// Constructs a new ValidationException with the specified error
+        /// Constructs a new UnprocessableException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ValidationException(string message) 
+        public UnprocessableException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of UnprocessableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ValidationException(string message, Exception innerException) 
+        public UnprocessableException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of UnprocessableException
         /// </summary>
         /// <param name="innerException"></param>
-        public ValidationException(Exception innerException) 
+        public UnprocessableException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of UnprocessableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,33 +72,33 @@ namespace Amazon.NeptuneGraph.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public UnprocessableException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ValidationException
+        /// Construct instance of UnprocessableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ValidationException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public UnprocessableException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ValidationException class with serialized data.
+        /// Constructs a new instance of the UnprocessableException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected UnprocessableException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
+            this.Reason = (UnprocessableExceptionReason)info.GetValue("Reason", typeof(UnprocessableExceptionReason));
         }
 
         /// <summary>
@@ -126,10 +126,11 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason that the resource could not be validated.
+        /// The reason for the unprocessable exception.
         /// </para>
         /// </summary>
-        public ValidationExceptionReason Reason
+        [AWSProperty(Required=true)]
+        public UnprocessableExceptionReason Reason
         {
             get { return this._reason; }
             set { this._reason = value; }

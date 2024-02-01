@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelImportTask operation.
-    /// Deletes the specified import task.
+    /// This is the response object from the ListQueries operation.
     /// </summary>
-    public partial class CancelImportTaskRequest : AmazonNeptuneGraphRequest
+    public partial class ListQueriesResponse : AmazonWebServiceResponse
     {
-        private string _taskIdentifier;
+        private List<QuerySummary> _queries = new List<QuerySummary>();
 
         /// <summary>
-        /// Gets and sets the property TaskIdentifier. 
+        /// Gets and sets the property Queries. 
         /// <para>
-        /// The unique identifier of the import task.
+        /// A list of current openCypher queries.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TaskIdentifier
+        public List<QuerySummary> Queries
         {
-            get { return this._taskIdentifier; }
-            set { this._taskIdentifier = value; }
+            get { return this._queries; }
+            set { this._queries = value; }
         }
 
-        // Check to see if TaskIdentifier property is set
-        internal bool IsSetTaskIdentifier()
+        // Check to see if Queries property is set
+        internal bool IsSetQueries()
         {
-            return this._taskIdentifier != null;
+            return this._queries != null && this._queries.Count > 0; 
         }
 
     }

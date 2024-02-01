@@ -88,6 +88,10 @@ namespace Amazon.NeptuneGraph.Internal
                 result.ApiType = "ControlPlane";
                 return result;
             }
+            if (requestContext.RequestName == "CancelQueryRequest") {
+                result.ApiType = "DataPlane";
+                return result;
+            }
             if (requestContext.RequestName == "CreateGraphRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
@@ -116,6 +120,10 @@ namespace Amazon.NeptuneGraph.Internal
                 result.ApiType = "ControlPlane";
                 return result;
             }
+            if (requestContext.RequestName == "ExecuteQueryRequest") {
+                result.ApiType = "DataPlane";
+                return result;
+            }
             if (requestContext.RequestName == "GetGraphRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
@@ -124,12 +132,20 @@ namespace Amazon.NeptuneGraph.Internal
                 result.ApiType = "ControlPlane";
                 return result;
             }
+            if (requestContext.RequestName == "GetGraphSummaryRequest") {
+                result.ApiType = "DataPlane";
+                return result;
+            }
             if (requestContext.RequestName == "GetImportTaskRequest") {
                 result.ApiType = "ControlPlane";
                 return result;
             }
             if (requestContext.RequestName == "GetPrivateGraphEndpointRequest") {
                 result.ApiType = "ControlPlane";
+                return result;
+            }
+            if (requestContext.RequestName == "GetQueryRequest") {
+                result.ApiType = "DataPlane";
                 return result;
             }
             if (requestContext.RequestName == "ListGraphsRequest") {
@@ -146,6 +162,10 @@ namespace Amazon.NeptuneGraph.Internal
             }
             if (requestContext.RequestName == "ListPrivateGraphEndpointsRequest") {
                 result.ApiType = "ControlPlane";
+                return result;
+            }
+            if (requestContext.RequestName == "ListQueriesRequest") {
+                result.ApiType = "DataPlane";
                 return result;
             }
             if (requestContext.RequestName == "ListTagsForResourceRequest") {
