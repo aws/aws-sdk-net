@@ -129,7 +129,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthFlows. 
         /// <para>
-        /// The allowed OAuth flows.
+        /// The OAuth grant types that you want your app client to generate. To create an app
+        /// client that generates client credentials grants, you must add <c>client_credentials</c>
+        /// as the only allowed OAuth flow.
         /// </para>
         ///  <dl> <dt>code</dt> <dd> 
         /// <para>

@@ -39,7 +39,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property CloudFrontDomain. 
         /// <para>
         /// The Amazon CloudFront endpoint that you use as the target of the alias that you set
-        /// up with your Domain Name Service (DNS) provider.
+        /// up with your Domain Name Service (DNS) provider. Amazon Cognito returns this value
+        /// if you set a custom domain with <c>CustomDomainConfig</c>. If you set an Amazon Cognito
+        /// prefix domain, this operation returns a blank response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

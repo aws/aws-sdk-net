@@ -2898,7 +2898,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2966,13 +2966,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Changes the password for a specified user in a user pool.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3051,14 +3056,21 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Confirms tracking of the device. This API call is the call that begins device tracking.
+        /// For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with user devices in your user pool</a>.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3150,7 +3162,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3269,7 +3281,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3452,7 +3464,8 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Creates an IdP for a user pool.
+        /// Adds a configuration and trust relationship between a third-party identity provider
+        /// (IdP) and a user pool.
         /// 
         ///  <note> 
         /// <para>
@@ -4185,13 +4198,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Allows a user to delete their own user profile.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4264,13 +4282,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Deletes the attributes for a user.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4953,15 +4976,22 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Forgets the specified device.
+        /// Forgets the specified device. For more information about device authentication, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with user devices in your user pool</a>.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5056,7 +5086,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -5231,15 +5261,21 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Gets the device.
+        /// Gets the device. For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with user devices in your user pool</a>.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5606,13 +5642,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Gets the user attributes and metadata for a user.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5686,13 +5727,18 @@ namespace Amazon.CognitoIdentityProvider
         /// Generates a user attribute verification code for the specified attribute name. Sends
         /// a message to a user with a code that they must return in a VerifyUserAttribute request.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -5902,13 +5948,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Other requests might be valid until your user's token expires.
         /// </para>
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5987,7 +6038,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -6104,14 +6155,21 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists the sign-in devices that Amazon Cognito has registered to the current user.
+        /// For more information about device authentication, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with user devices in your user pool</a>.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6880,7 +6938,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -7015,7 +7073,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -7165,7 +7223,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7442,13 +7500,18 @@ namespace Amazon.CognitoIdentityProvider
         /// to be applied selectively based on the assessed risk level of sign-in attempts, deactivate
         /// MFA for users and turn on Adaptive Authentication for the user pool.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7610,13 +7673,18 @@ namespace Amazon.CognitoIdentityProvider
         /// To configure either type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
         /// instead.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7693,7 +7761,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -8075,7 +8143,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8139,15 +8207,22 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Updates the device status.
+        /// Updates the device status. For more information about device authentication, see <a
+        /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// with user devices in your user pool</a>.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8470,13 +8545,18 @@ namespace Amazon.CognitoIdentityProvider
         /// an attribute from your user, submit the attribute in your API request with a blank
         /// value. Custom attribute values in this request must include the <c>custom:</c> prefix.
         /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -8966,7 +9046,7 @@ namespace Amazon.CognitoIdentityProvider
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9060,13 +9140,18 @@ namespace Amazon.CognitoIdentityProvider
         /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
         /// UserAttributeUpdateSettingsType</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you can't use IAM credentials to authorize
         /// requests, and you can't grant IAM permissions in policies. For more information about
         /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
-        /// the Amazon Cognito native and OIDC APIs</a>.
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
         /// </para>
         ///  </note>
         /// </summary>
