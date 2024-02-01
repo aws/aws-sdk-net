@@ -32,7 +32,7 @@ namespace Amazon.IoTRoboRunner
     public partial class AmazonIoTRoboRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT RoboRunner", "3.7.300.44");
+            InternalSDKUtils.BuildUserAgentString("IoT RoboRunner", "3.7.300.45");
 
         private string _userAgent = UserAgentString;
         ///<summary>

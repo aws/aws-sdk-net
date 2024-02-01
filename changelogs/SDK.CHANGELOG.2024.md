@@ -1,3 +1,18 @@
+### 3.7.739.0 (2024-02-01 19:18 UTC)
+* CognitoIdentityProvider (3.7.302.0)
+	* Added CreateIdentityProvider and UpdateIdentityProvider details for new SAML IdP features
+* IVS (3.7.302.0)
+	* This release introduces a new resource Playback Restriction Policy which can be used to geo-restrict or domain-restrict channel stream playback when associated with a channel.  New APIs to support this resource were introduced in the form of Create/Delete/Get/Update/List.
+* ManagedBlockchainQuery (3.7.302.0)
+	* This release adds support for transactions that have not reached finality. It also removes support for the status property from the response of the GetTransaction operation. You can use the confirmationStatus and executionStatus properties to determine the status of the transaction.
+* MediaConvert (3.7.303.0)
+	* This release includes support for broadcast-mixed audio description tracks.
+* NeptuneGraph (3.7.302.0)
+	* Adding new APIs in SDK for Amazon Neptune Analytics. These APIs include operations to execute, cancel, list queries and get the graph summary.
+* Core 3.7.302.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.738.0 (2024-01-31 19:15 UTC)
 * CloudFormation (3.7.303.0)
 	* CloudFormation IaC generator allows you to scan existing resources in your account and select resources to generate a template for a new or existing CloudFormation stack.
