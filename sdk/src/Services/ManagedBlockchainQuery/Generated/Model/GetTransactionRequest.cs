@@ -30,7 +30,15 @@ namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTransaction operation.
-    /// Get the details of a transaction.
+    /// Gets the details of a transaction.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action will return transaction details for all transactions that are <i>confirmed</i>
+    /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+    /// 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetTransactionRequest : AmazonManagedBlockchainQueryRequest
     {

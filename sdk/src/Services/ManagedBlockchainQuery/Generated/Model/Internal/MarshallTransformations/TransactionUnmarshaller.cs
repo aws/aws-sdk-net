@@ -147,12 +147,6 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     unmarshalledObject.SignatureV = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("to", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

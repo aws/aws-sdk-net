@@ -32,6 +32,14 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// Container for the parameters to the ListTransactionEvents operation.
     /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
     /// transaction event.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action will return transaction details for all transactions that are <i>confirmed</i>
+    /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+    /// 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListTransactionEventsRequest : AmazonManagedBlockchainQueryRequest
     {
@@ -44,6 +52,10 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of transaction events to list.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default:<c>100</c> 
         /// </para>
         ///  <note> 
         /// <para>

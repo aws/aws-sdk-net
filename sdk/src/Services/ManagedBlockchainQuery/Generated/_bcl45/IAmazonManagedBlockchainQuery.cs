@@ -58,7 +58,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// 
         ///  <note> 
         /// <para>
-        /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
+        /// Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
         /// are supported.
         /// </para>
         ///  </note>
@@ -98,7 +98,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// 
         ///  <note> 
         /// <para>
-        /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
+        /// Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
         /// are supported.
         /// </para>
         ///  </note>
@@ -236,7 +236,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// 
         ///  <note> 
         /// <para>
-        /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
+        /// Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
         /// are supported.
         /// </para>
         ///  </note>
@@ -276,7 +276,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// 
         ///  <note> 
         /// <para>
-        /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
+        /// Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
         /// are supported.
         /// </para>
         ///  </note>
@@ -317,7 +317,15 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Get the details of a transaction.
+        /// Gets the details of a transaction.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action will return transaction details for all transactions that are <i>confirmed</i>
+        /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTransaction service method.</param>
         /// 
@@ -349,7 +357,15 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Get the details of a transaction.
+        /// Gets the details of a transaction.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action will return transaction details for all transactions that are <i>confirmed</i>
+        /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTransaction service method.</param>
         /// <param name="cancellationToken">
@@ -569,6 +585,14 @@ namespace Amazon.ManagedBlockchainQuery
         /// <summary>
         /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
         /// transaction event.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action will return transaction details for all transactions that are <i>confirmed</i>
+        /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransactionEvents service method.</param>
         /// 
@@ -599,6 +623,14 @@ namespace Amazon.ManagedBlockchainQuery
         /// <summary>
         /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
         /// transaction event.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action will return transaction details for all transactions that are <i>confirmed</i>
+        /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransactionEvents service method.</param>
         /// <param name="cancellationToken">

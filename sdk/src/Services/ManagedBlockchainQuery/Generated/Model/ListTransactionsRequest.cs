@@ -35,6 +35,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     public partial class ListTransactionsRequest : AmazonManagedBlockchainQueryRequest
     {
         private string _address;
+        private ConfirmationStatusFilter _confirmationStatusFilter;
         private BlockchainInstant _fromBlockchainInstant;
         private int? _maxResults;
         private QueryNetwork _network;
@@ -62,6 +63,27 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfirmationStatusFilter. 
+        /// <para>
+        /// This filter is used to include transactions in the response that haven't reached <a
+        /// href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
+        /// <i>finality</i> </a>. Transactions that have reached finiality are always part of
+        /// the response.
+        /// </para>
+        /// </summary>
+        public ConfirmationStatusFilter ConfirmationStatusFilter
+        {
+            get { return this._confirmationStatusFilter; }
+            set { this._confirmationStatusFilter = value; }
+        }
+
+        // Check to see if ConfirmationStatusFilter property is set
+        internal bool IsSetConfirmationStatusFilter()
+        {
+            return this._confirmationStatusFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FromBlockchainInstant.
         /// </summary>
         public BlockchainInstant FromBlockchainInstant
@@ -80,6 +102,10 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of transactions to list.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default:<c>100</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -148,8 +174,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// Sorts items in an ascending order if the first page starts at <c>fromTime</c>. Sorts
-        /// items in a descending order if the first page starts at <c>toTime</c>.
+        /// The order by which the results will be sorted. If <c>ASCENNDING</c> is selected, the
+        /// results will be ordered by <c>fromTime</c>. 
         /// </para>
         /// </summary>
         public ListTransactionsSort Sort

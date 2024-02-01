@@ -33,9 +33,28 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class TransactionOutputItem
     {
+        private ConfirmationStatus _confirmationStatus;
         private QueryNetwork _network;
         private string _transactionHash;
         private DateTime? _transactionTimestamp;
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationStatus. 
+        /// <para>
+        /// Specifies whether to list transactions that have not reached Finality.
+        /// </para>
+        /// </summary>
+        public ConfirmationStatus ConfirmationStatus
+        {
+            get { return this._confirmationStatus; }
+            set { this._confirmationStatus = value; }
+        }
+
+        // Check to see if ConfirmationStatus property is set
+        internal bool IsSetConfirmationStatus()
+        {
+            return this._confirmationStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Network. 

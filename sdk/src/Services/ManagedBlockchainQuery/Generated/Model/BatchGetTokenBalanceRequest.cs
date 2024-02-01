@@ -35,7 +35,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
+    /// Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards
     /// are supported.
     /// </para>
     ///  </note>

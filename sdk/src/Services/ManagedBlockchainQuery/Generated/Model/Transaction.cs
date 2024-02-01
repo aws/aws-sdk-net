@@ -60,7 +60,6 @@ namespace Amazon.ManagedBlockchainQuery.Model
         private string _signaturer;
         private string _signatures;
         private int? _signaturev;
-        private QueryTransactionStatus _status;
         private string _to;
         private string _transactionFee;
         private string _transactionHash;
@@ -323,42 +322,6 @@ namespace Amazon.ManagedBlockchainQuery.Model
         internal bool IsSetSignatureV()
         {
             return this._signaturev.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// The status of the transaction.
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// This property is deprecated. You must use the <c>confirmationStatus</c> and the <c>executionStatus</c>
-        /// properties to determine if the <c>status</c> of the transaction is <c>FINAL</c> or
-        /// <c>FAILED</c>.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Transactions with a <c>status</c> of <c>FINAL</c> will now have the <c>confirmationStatus</c>
-        /// set to <c>FINAL</c> and the <c>executionStatus</c> set to <c>SUCCEEDED</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Transactions with a <c>status</c> of <c>FAILED</c> will now have the <c>confirmationStatus</c>
-        /// set to <c>FINAL</c> and the <c>executionStatus</c> set to <c>FAILED</c>.
-        /// </para>
-        ///  </li> </ul> </important>
-        /// </summary>
-        [Obsolete("The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields.")]
-        public QueryTransactionStatus Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null;
         }
 
         /// <summary>

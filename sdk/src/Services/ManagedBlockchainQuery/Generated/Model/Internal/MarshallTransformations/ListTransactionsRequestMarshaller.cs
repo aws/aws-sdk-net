@@ -71,6 +71,17 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Address);
                 }
 
+                if(publicRequest.IsSetConfirmationStatusFilter())
+                {
+                    context.Writer.WritePropertyName("confirmationStatusFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConfirmationStatusFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConfirmationStatusFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFromBlockchainInstant())
                 {
                     context.Writer.WritePropertyName("fromBlockchainInstant");
