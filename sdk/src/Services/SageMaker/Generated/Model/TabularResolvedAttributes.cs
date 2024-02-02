@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// The type of supervised learning problem available for the model candidates of the
         /// AutoML job V2 (Binary Classification, Multiclass Classification, Regression). For
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-        /// Amazon SageMaker Autopilot problem types</a>.
+        /// SageMaker Autopilot problem types</a>.
         /// </para>
         /// </summary>
         public ProblemType ProblemType

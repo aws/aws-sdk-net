@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The retention policy for data stored on an Amazon Elastic File System (EFS) volume.
+    /// The retention policy for data stored on an Amazon Elastic File System volume.
     /// </summary>
     public partial class RetentionPolicy
     {
@@ -38,11 +38,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystem. 
         /// <para>
-        /// The default is <c>Retain</c>, which specifies to keep the data stored on the EFS volume.
+        /// The default is <c>Retain</c>, which specifies to keep the data stored on the Amazon
+        /// EFS volume.
         /// </para>
         ///  
         /// <para>
-        /// Specify <c>Delete</c> to delete the data stored on the EFS volume.
+        /// Specify <c>Delete</c> to delete the data stored on the Amazon EFS volume.
         /// </para>
         /// </summary>
         public RetentionType HomeEfsFileSystem

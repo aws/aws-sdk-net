@@ -31,8 +31,8 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateImage operation.
     /// Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each
-    /// image version represents a container image stored in Amazon Elastic Container Registry
-    /// (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
+    /// image version represents a container image stored in Amazon ECR. For more information,
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
     /// your own SageMaker image</a>.
     /// </summary>
     public partial class CreateImageRequest : AmazonSageMakerRequest

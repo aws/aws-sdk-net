@@ -709,8 +709,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a configuration for running a SageMaker image as a KernelGateway app. The
-        /// configuration specifies the Amazon Elastic File System (EFS) storage volume on the
-        /// image, and a list of the kernels in the image.
+        /// configuration specifies the Amazon Elastic File System storage volume on the image,
+        /// and a list of the kernels in the image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppImageConfig service method.</param>
         /// 
@@ -731,8 +731,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a configuration for running a SageMaker image as a KernelGateway app. The
-        /// configuration specifies the Amazon Elastic File System (EFS) storage volume on the
-        /// image, and a list of the kernels in the image.
+        /// configuration specifies the Amazon Elastic File System storage volume on the image,
+        /// and a list of the kernels in the image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppImageConfig service method.</param>
         /// <param name="cancellationToken">
@@ -2683,8 +2683,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each
-        /// image version represents a container image stored in Amazon Elastic Container Registry
-        /// (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
+        /// image version represents a container image stored in Amazon ECR. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
         /// your own SageMaker image</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -2710,8 +2710,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each
-        /// image version represents a container image stored in Amazon Elastic Container Registry
-        /// (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
+        /// image version represents a container image stored in Amazon ECR. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
         /// your own SageMaker image</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
@@ -2744,8 +2744,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a version of the SageMaker image specified by <c>ImageName</c>. The version
-        /// represents the Amazon Elastic Container Registry (ECR) container image specified by
-        /// <c>BaseImage</c>.
+        /// represents the Amazon ECR container image specified by <c>BaseImage</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageVersion service method.</param>
         /// 
@@ -2773,8 +2772,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a version of the SageMaker image specified by <c>ImageName</c>. The version
-        /// represents the Amazon Elastic Container Registry (ECR) container image specified by
-        /// <c>BaseImage</c>.
+        /// represents the Amazon ECR container image specified by <c>BaseImage</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageVersion service method.</param>
         /// <param name="cancellationToken">
@@ -3991,8 +3989,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// View CloudWatch Logs for notebook instance lifecycle configurations in log group <c>/aws/sagemaker/NotebookInstances</c>
-        /// in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
+        /// View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log
+        /// group <c>/aws/sagemaker/NotebookInstances</c> in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
         /// </para>
         ///  
         /// <para>
@@ -4040,8 +4038,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// View CloudWatch Logs for notebook instance lifecycle configurations in log group <c>/aws/sagemaker/NotebookInstances</c>
-        /// in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
+        /// View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log
+        /// group <c>/aws/sagemaker/NotebookInstances</c> in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
         /// </para>
         ///  
         /// <para>
@@ -4146,9 +4144,8 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser,
         /// the user will be automatically signed in to the domain, and granted access to all
-        /// of the Apps and files associated with the Domain's Amazon Elastic File System (EFS)
-        /// volume. This operation can only be called when the authentication mode equals IAM.
-        /// 
+        /// of the Apps and files associated with the Domain's Amazon Elastic File System volume.
+        /// This operation can only be called when the authentication mode equals IAM. 
         /// 
         ///  
         /// <para>
@@ -4193,9 +4190,8 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser,
         /// the user will be automatically signed in to the domain, and granted access to all
-        /// of the Apps and files associated with the Domain's Amazon Elastic File System (EFS)
-        /// volume. This operation can only be called when the authentication mode equals IAM.
-        /// 
+        /// of the Apps and files associated with the Domain's Amazon Elastic File System volume.
+        /// This operation can only be called when the authentication mode equals IAM. 
         /// 
         ///  
         /// <para>
@@ -4452,7 +4448,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a Domain.
+        /// Creates a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// 
@@ -4476,7 +4472,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a space used for real time collaboration in a Domain.
+        /// Creates a space used for real time collaboration in a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSpace service method.</param>
         /// <param name="cancellationToken">
@@ -5112,7 +5108,7 @@ namespace Amazon.SageMaker
         /// If an administrator invites a person by email or imports them from IAM Identity Center,
         /// a user profile is automatically created. A user profile is the primary holder of settings
         /// for an individual user and has a reference to the user's private Amazon Elastic File
-        /// System (EFS) home directory.
+        /// System home directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserProfile service method.</param>
         /// 
@@ -5142,7 +5138,7 @@ namespace Amazon.SageMaker
         /// If an administrator invites a person by email or imports them from IAM Identity Center,
         /// a user profile is automatically created. A user profile is the primary holder of settings
         /// for an individual user and has a reference to the user's private Amazon Elastic File
-        /// System (EFS) home directory.
+        /// System home directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUserProfile service method.</param>
         /// <param name="cancellationToken">

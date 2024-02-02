@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FileSystemConfig. 
         /// <para>
-        /// The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+        /// The Amazon Elastic File System storage configuration for a SageMaker image.
         /// </para>
         /// </summary>
         public FileSystemConfig FileSystemConfig

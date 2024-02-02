@@ -65,9 +65,8 @@ namespace Amazon.SageMaker.Model
         ///  <note> 
         /// <para>
         /// The Amazon SageMaker Studio UI does not use the default instance type value set here.
-        /// The default instance type set here is used when Apps are created using the Amazon
-        /// Web Services Command Line Interface or Amazon Web Services CloudFormation and the
-        /// instance type parameter value is not passed.
+        /// The default instance type set here is used when Apps are created using the CLI or
+        /// CloudFormation and the instance type parameter value is not passed.
         /// </para>
         ///  </note>
         /// </summary>

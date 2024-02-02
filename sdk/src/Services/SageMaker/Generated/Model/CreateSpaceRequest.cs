@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSpace operation.
-    /// Creates a space used for real time collaboration in a Domain.
+    /// Creates a space used for real time collaboration in a domain.
     /// </summary>
     public partial class CreateSpaceRequest : AmazonSageMakerRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The ID of the associated Domain.
+        /// The ID of the associated domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]

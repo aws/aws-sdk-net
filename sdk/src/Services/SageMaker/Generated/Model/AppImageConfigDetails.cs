@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AppImageConfigArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AppImageConfig.
+        /// The ARN of the AppImageConfig.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

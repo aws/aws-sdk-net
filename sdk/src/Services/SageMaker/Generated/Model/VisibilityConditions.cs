@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for that specifies the tag that you're using to filter the search results.
-        /// The key must start with <c>Tags.</c>.
+        /// The key that specifies the tag that you're using to filter the search results. It
+        /// must be in the following format: <c>Tags.&lt;key&gt;/EqualsIfExists</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

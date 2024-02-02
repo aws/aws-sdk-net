@@ -31,8 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateImageVersion operation.
     /// Creates a version of the SageMaker image specified by <c>ImageName</c>. The version
-    /// represents the Amazon Elastic Container Registry (ECR) container image specified by
-    /// <c>BaseImage</c>.
+    /// represents the Amazon ECR container image specified by <c>BaseImage</c>.
     /// </summary>
     public partial class CreateImageVersionRequest : AmazonSageMakerRequest
     {
@@ -70,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property BaseImage. 
         /// <para>
         /// The registry path of the container image to use as the starting point for this version.
-        /// The path is an Amazon Elastic Container Registry (ECR) URI in the following format:
+        /// The path is an Amazon ECR URI in the following format:
         /// </para>
         ///  
         /// <para>

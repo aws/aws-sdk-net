@@ -69,6 +69,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DirectDeploySettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GenerativeAiSettings", targetDepth))
+                {
+                    var unmarshaller = GenerativeAiSettingsUnmarshaller.Instance;
+                    unmarshalledObject.GenerativeAiSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IdentityProviderOAuthSettings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<IdentityProviderOAuthSetting, IdentityProviderOAuthSettingUnmarshaller>(IdentityProviderOAuthSettingUnmarshaller.Instance);

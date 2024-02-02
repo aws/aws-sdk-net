@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainIdEquals. 
         /// <para>
-        /// A parameter to search for the Domain ID.
+        /// A parameter to search for the domain ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

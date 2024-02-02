@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings that apply to spaces created in the Domain.
+    /// A collection of settings that apply to spaces created in the domain.
     /// </summary>
     public partial class DefaultSpaceSettings
     {
@@ -90,8 +90,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The security group IDs for the Amazon Virtual Private Cloud that the space uses for
-        /// communication.
+        /// The security group IDs for the Amazon VPC that the space uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

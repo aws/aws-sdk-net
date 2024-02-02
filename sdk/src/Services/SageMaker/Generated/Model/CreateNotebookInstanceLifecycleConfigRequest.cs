@@ -45,8 +45,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// View CloudWatch Logs for notebook instance lifecycle configurations in log group <c>/aws/sagemaker/NotebookInstances</c>
-    /// in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
+    /// View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log
+    /// group <c>/aws/sagemaker/NotebookInstances</c> in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
     /// </para>
     ///  
     /// <para>

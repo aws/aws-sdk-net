@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class CanvasAppSettings
     {
         private DirectDeploySettings _directDeploySettings;
+        private GenerativeAiSettings _generativeAiSettings;
         private List<IdentityProviderOAuthSetting> _identityProviderOAuthSettings = new List<IdentityProviderOAuthSetting>();
         private KendraSettings _kendraSettings;
         private ModelRegisterSettings _modelRegisterSettings;
@@ -56,6 +57,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDirectDeploySettings()
         {
             return this._directDeploySettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerativeAiSettings. 
+        /// <para>
+        /// The generative AI settings for the SageMaker Canvas application.
+        /// </para>
+        /// </summary>
+        public GenerativeAiSettings GenerativeAiSettings
+        {
+            get { return this._generativeAiSettings; }
+            set { this._generativeAiSettings = value; }
+        }
+
+        // Check to see if GenerativeAiSettings property is set
+        internal bool IsSetGenerativeAiSettings()
+        {
+            return this._generativeAiSettings != null;
         }
 
         /// <summary>

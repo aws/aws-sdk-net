@@ -211,7 +211,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Defines the type of supervised learning problem available for the candidates. For
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-        /// Amazon SageMaker Autopilot problem types</a>.
+        /// SageMaker Autopilot problem types</a>.
         /// </para>
         /// </summary>
         public ProblemType ProblemType

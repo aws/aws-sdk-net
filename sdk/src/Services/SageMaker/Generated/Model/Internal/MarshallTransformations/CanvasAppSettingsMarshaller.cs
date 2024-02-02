@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGenerativeAiSettings())
+            {
+                context.Writer.WritePropertyName("GenerativeAiSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GenerativeAiSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenerativeAiSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIdentityProviderOAuthSettings())
             {
                 context.Writer.WritePropertyName("IdentityProviderOAuthSettings");

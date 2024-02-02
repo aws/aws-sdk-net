@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemUid. 
         /// <para>
-        /// The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+        /// The ID of the user's profile in the Amazon Elastic File System volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

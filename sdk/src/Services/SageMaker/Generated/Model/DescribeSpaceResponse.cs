@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The ID of the associated Domain.
+        /// The ID of the associated domain.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemUid. 
         /// <para>
-        /// The ID of the space's profile in the Amazon Elastic File System volume.
+        /// The ID of the space's profile in the Amazon EFS volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
