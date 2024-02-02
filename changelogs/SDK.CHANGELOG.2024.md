@@ -1,3 +1,12 @@
+### 3.7.740.0 (2024-02-02 19:13 UTC)
+* DynamoDBv2 (3.7.301.7)
+	* Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account.
+* SageMaker (3.7.312.0)
+	* Amazon SageMaker Canvas adds GenerativeAiSettings support for CanvasAppSettings.
+* Core 3.7.302.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.739.0 (2024-02-01 19:18 UTC)
 * CognitoIdentityProvider (3.7.302.0)
 	* Added CreateIdentityProvider and UpdateIdentityProvider details for new SAML IdP features
