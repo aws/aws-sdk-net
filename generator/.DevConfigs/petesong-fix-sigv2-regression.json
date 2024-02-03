@@ -1,0 +1,7 @@
+{
+    "core": {
+      "changeLogMessages": ["Fixed a regression for SigV2 signing for S3"],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

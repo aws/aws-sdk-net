@@ -43,7 +43,7 @@ namespace AWSSDK.UnitTests
         private static readonly DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         DateTime StartDate = epoch.AddSeconds(1576540098);
         [TestMethod]
-        public void RestJsonInputWithHeadersAndAllParams()
+        public void RestJsonInputWithHeadersAndAllParamsSigV4()
         {
 
             HttpRequestWithLabelsInput request = new HttpRequestWithLabelsInput
@@ -58,12 +58,34 @@ namespace AWSSDK.UnitTests
                 IsGreedy = false,
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
+            requestContext.Request.SignatureVersion = SignatureVersion.SigV4;
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
             var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/string/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
             Assert.AreEqual(expectedUrl, actualUrl);
         }
         [TestMethod]
-        public void RestJsonHttpRequestLabelEscaping()
+        public void RestJsonInputWithHeadersAndAllParamsSigV2()
+        {
+
+            HttpRequestWithLabelsInput request = new HttpRequestWithLabelsInput
+            {
+                StringProperty = "string",
+                IntProperty = 2,
+                LongProperty = 3,
+                FloatProperty = 4.1F,
+                DoubleProperty = 5.1,
+                BooleanProperty = true,
+                DateTimeProperty = StartDate,
+                IsGreedy = false,
+            };
+            var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
+            requestContext.Request.SignatureVersion = SignatureVersion.SigV2;
+            var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
+            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/string/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
+            Assert.AreEqual(expectedUrl, actualUrl);
+        }
+        [TestMethod]
+        public void RestJsonHttpRequestLabelEscapingSigV4()
         {
             HttpRequestWithLabelsInput request = new HttpRequestWithLabelsInput
             {
@@ -77,12 +99,33 @@ namespace AWSSDK.UnitTests
                 IsGreedy = false
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
+            requestContext.Request.SignatureVersion = SignatureVersion.SigV4;
             var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
             Assert.AreEqual(expectedUrl,actualUrl);
         }
         [TestMethod]
-        public void HttpRequestWithGreedyLabelInPath()
+        public void RestJsonHttpRequestLabelEscapingSigV2()
+        {
+            HttpRequestWithLabelsInput request = new HttpRequestWithLabelsInput
+            {
+                StringProperty = " %:/?#[]@!$&'()*+,;=😹",
+                IntProperty = 2,
+                LongProperty = 3,
+                FloatProperty = 4.1F,
+                DoubleProperty = 5.1,
+                BooleanProperty = true,
+                DateTimeProperty = StartDate,
+                IsGreedy = false
+            };
+            var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
+            requestContext.Request.SignatureVersion = SignatureVersion.SigV2;
+            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
+            var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
+            Assert.AreEqual(expectedUrl, actualUrl);
+        }
+        [TestMethod]
+        public void HttpRequestWithGreedyLabelInPathSigV4()
         {
             HttpRequestWithLabelsInput request = new HttpRequestWithLabelsInput
             {
@@ -91,6 +134,22 @@ namespace AWSSDK.UnitTests
                 BazProperty = "there/guy"
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
+            requestContext.Request.SignatureVersion = SignatureVersion.SigV4;
+            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/foo/hello%2Fescape/baz/there/guy");
+            var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
+            Assert.AreEqual(expectedUrl, actualUrl);
+        }
+        [TestMethod]
+        public void HttpRequestWithGreedyLabelInPathSigV2()
+        {
+            HttpRequestWithLabelsInput request = new HttpRequestWithLabelsInput
+            {
+                IsGreedy = true,
+                FooProperty = "hello/escape",
+                BazProperty = "there/guy"
+            };
+            var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
+            requestContext.Request.SignatureVersion = SignatureVersion.SigV2;
             var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/foo/hello%2Fescape/baz/there/guy");
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
             Assert.AreEqual(expectedUrl, actualUrl);

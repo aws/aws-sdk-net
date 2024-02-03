@@ -30,7 +30,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             @"ObjectWith\InKeynÄme",
             @"ObjectWith/InKeynÄme",
             @"ObjectWith$InKeynÄme",
-            @"ObjectWith%2FInKeyname.Ext"
+            @"ObjectWith%2FInKeyname.Ext",
+            @"!@#$%^&*()_+_+!(@#*$)_@[]\/.txt"
         };
 
         static string bucketName;

@@ -577,11 +577,9 @@ namespace Amazon.Runtime
                         "Target resource path [{0}] has bidirectional characters, which are not supported" +
                         "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
                 }
-#endif          
-                //For presignedUrls that use SigV2 we must send the url unencoded, since netframework versions of the URI class automatically
-                //decode the uri and causes a signature mismatch if special characters were encoded in the signer and since that is incompatible with the
-                //SigV2 backend implementation.
-                if(internalRequest.SignatureVersion == SignatureVersion.SigV2 && String.Equals(internalRequest.RequestName, "getpresignedurlrequest", StringComparison.OrdinalIgnoreCase))
+#endif          // Since S3 is the only service that is single encoded, we send the URL unencoded for special characters
+                // to match the previous behavior compatible with the SigV2 backend.
+                if (internalRequest.SignatureVersion == SignatureVersion.SigV2 && String.Equals(internalRequest.ServiceName, "AmazonS3"))
                 {
 #pragma warning disable CS0618 // Type or member is obsolete
                     resourcePath = AWSSDKUtils.ResolveResourcePath(resourcePath, internalRequest.PathResources,skipEncodingValidPathChars);
