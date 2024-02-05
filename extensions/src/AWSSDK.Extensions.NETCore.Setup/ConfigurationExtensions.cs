@@ -21,6 +21,7 @@ using Amazon.Util;
 
 using Amazon.Extensions.NETCore.Setup;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -28,9 +29,6 @@ namespace Microsoft.Extensions.Configuration
     /// This class adds extension methods to IConfiguration making it easier to pull out
     /// AWS configuration options.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.Extensions.NETCore.Setup.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public static class ConfigurationExtensions
     {
         /// <summary>
@@ -65,7 +63,11 @@ namespace Microsoft.Extensions.Configuration
         /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
         /// <param name="config"></param>
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
+#if NET8_0_OR_GREATER
+        public static AWSOptions GetAWSOptions<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)] TConfig>(this IConfiguration config) where TConfig : ClientConfig, new()
+#else
         public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config) where TConfig : ClientConfig, new()
+#endif
         {
             return GetAWSOptions<TConfig>(config, DEFAULT_CONFIG_SECTION);
         }
@@ -77,7 +79,11 @@ namespace Microsoft.Extensions.Configuration
         /// <param name="config"></param>
         /// <param name="configSection">The config section to extract AWS options from.</param>
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
+#if NET8_0_OR_GREATER
+        public static AWSOptions GetAWSOptions<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)] TConfig>(this IConfiguration config, string configSection) where TConfig : ClientConfig, new()
+#else
         public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config, string configSection) where TConfig : ClientConfig, new()
+#endif
         {
             var options = new AWSOptions
             {

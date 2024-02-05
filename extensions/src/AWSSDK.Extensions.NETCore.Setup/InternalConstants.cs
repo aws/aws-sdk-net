@@ -17,6 +17,6 @@ namespace Amazon.Extensions.NETCore.Setup
 {
     internal static class InternalConstants
     {
-        internal const string RequiresUnreferencedCodeMessage = "The AWSSDK.Extensions.NETCore.Setup package has not been updated to support Native AOT compilations.";
+        internal const string RequiresUnreferencedCodeMessage = "This method requires code to be dynamically loaded and is not supported in applications using Native AOT compilation.";
     }
 }
