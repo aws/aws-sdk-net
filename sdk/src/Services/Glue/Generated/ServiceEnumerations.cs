@@ -368,6 +368,10 @@ namespace Amazon.Glue
         /// Constant SSEKMS for CatalogEncryptionMode
         /// </summary>
         public static readonly CatalogEncryptionMode SSEKMS = new CatalogEncryptionMode("SSE-KMS");
+        /// <summary>
+        /// Constant SSEKMSWITHSERVICEROLE for CatalogEncryptionMode
+        /// </summary>
+        public static readonly CatalogEncryptionMode SSEKMSWITHSERVICEROLE = new CatalogEncryptionMode("SSE-KMS-WITH-SERVICE-ROLE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -815,6 +819,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD");
         /// <summary>
+        /// Constant ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD");
+        /// <summary>
         /// Constant ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD");
@@ -894,6 +902,14 @@ namespace Amazon.Glue
         /// Constant KAFKA_SASL_MECHANISM for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey KAFKA_SASL_MECHANISM = new ConnectionPropertyKey("KAFKA_SASL_MECHANISM");
+        /// <summary>
+        /// Constant KAFKA_SASL_PLAIN_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_PLAIN_PASSWORD = new ConnectionPropertyKey("KAFKA_SASL_PLAIN_PASSWORD");
+        /// <summary>
+        /// Constant KAFKA_SASL_PLAIN_USERNAME for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey KAFKA_SASL_PLAIN_USERNAME = new ConnectionPropertyKey("KAFKA_SASL_PLAIN_USERNAME");
         /// <summary>
         /// Constant KAFKA_SASL_SCRAM_PASSWORD for ConnectionPropertyKey
         /// </summary>

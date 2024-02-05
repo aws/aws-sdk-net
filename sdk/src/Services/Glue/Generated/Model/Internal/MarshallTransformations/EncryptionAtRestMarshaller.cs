@@ -51,6 +51,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CatalogEncryptionMode);
             }
 
+            if(requestObject.IsSetCatalogEncryptionServiceRole())
+            {
+                context.Writer.WritePropertyName("CatalogEncryptionServiceRole");
+                context.Writer.Write(requestObject.CatalogEncryptionServiceRole);
+            }
+
             if(requestObject.IsSetSseAwsKmsKeyId())
             {
                 context.Writer.WritePropertyName("SseAwsKmsKeyId");

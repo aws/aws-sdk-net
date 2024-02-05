@@ -69,6 +69,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogEncryptionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CatalogEncryptionServiceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CatalogEncryptionServiceRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SseAwsKmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

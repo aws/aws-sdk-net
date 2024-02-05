@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class EncryptionAtRest
     {
         private CatalogEncryptionMode _catalogEncryptionMode;
+        private string _catalogEncryptionServiceRole;
         private string _sseAwsKmsKeyId;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetCatalogEncryptionMode()
         {
             return this._catalogEncryptionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogEncryptionServiceRole. 
+        /// <para>
+        /// The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the
+        /// caller's behalf.
+        /// </para>
+        /// </summary>
+        public string CatalogEncryptionServiceRole
+        {
+            get { return this._catalogEncryptionServiceRole; }
+            set { this._catalogEncryptionServiceRole = value; }
+        }
+
+        // Check to see if CatalogEncryptionServiceRole property is set
+        internal bool IsSetCatalogEncryptionServiceRole()
+        {
+            return this._catalogEncryptionServiceRole != null;
         }
 
         /// <summary>

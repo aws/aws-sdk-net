@@ -202,9 +202,24 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>KAFKA_SASL_MECHANISM</c> - <c>"SCRAM-SHA-512"</c>, <c>"GSSAPI"</c>, or <c>"AWS_MSK_IAM"</c>.
-        /// These are the supported <a href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+        ///  <c>KAFKA_SASL_MECHANISM</c> - <c>"SCRAM-SHA-512"</c>, <c>"GSSAPI"</c>, <c>"AWS_MSK_IAM"</c>,
+        /// or <c>"PLAIN"</c>. These are the supported <a href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
         /// Mechanisms</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KAFKA_SASL_PLAIN_USERNAME</c> - A plaintext username used to authenticate with
+        /// the "PLAIN" mechanism.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KAFKA_SASL_PLAIN_PASSWORD</c> - A plaintext password used to authenticate with
+        /// the "PLAIN" mechanism.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD</c> - The encrypted version of the Kafka SASL
+        /// PLAIN password (if the user has the Glue encrypt passwords setting selected).
         /// </para>
         ///  </li> <li> 
         /// <para>
