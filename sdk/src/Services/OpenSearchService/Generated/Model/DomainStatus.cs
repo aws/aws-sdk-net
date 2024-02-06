@@ -46,6 +46,7 @@ namespace Amazon.OpenSearchService.Model
         private DomainEndpointOptions _domainEndpointOptions;
         private string _domainId;
         private string _domainName;
+        private DomainProcessingStatusType _domainProcessingStatus;
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
@@ -54,6 +55,7 @@ namespace Amazon.OpenSearchService.Model
         private string _engineVersion;
         private IPAddressType _ipAddressType;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
+        private List<ModifyingProperties> _modifyingProperties = new List<ModifyingProperties>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private OffPeakWindowOptions _offPeakWindowOptions;
         private bool? _processing;
@@ -310,6 +312,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DomainProcessingStatus. 
+        /// <para>
+        /// The status of any changes that are currently in progress for the domain.
+        /// </para>
+        /// </summary>
+        public DomainProcessingStatusType DomainProcessingStatus
+        {
+            get { return this._domainProcessingStatus; }
+            set { this._domainProcessingStatus = value; }
+        }
+
+        // Check to see if DomainProcessingStatus property is set
+        internal bool IsSetDomainProcessingStatus()
+        {
+            return this._domainProcessingStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EBSOptions. 
         /// <para>
         /// Container for EBS-based storage settings for the domain.
@@ -458,6 +478,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetLogPublishingOptions()
         {
             return this._logPublishingOptions != null && this._logPublishingOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifyingProperties. 
+        /// <para>
+        /// Information about the domain properties that are currently being modified.
+        /// </para>
+        /// </summary>
+        public List<ModifyingProperties> ModifyingProperties
+        {
+            get { return this._modifyingProperties; }
+            set { this._modifyingProperties = value; }
+        }
+
+        // Check to see if ModifyingProperties property is set
+        internal bool IsSetModifyingProperties()
+        {
+            return this._modifyingProperties != null && this._modifyingProperties.Count > 0; 
         }
 
         /// <summary>

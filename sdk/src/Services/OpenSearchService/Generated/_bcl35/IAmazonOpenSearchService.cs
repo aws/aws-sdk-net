@@ -346,6 +346,61 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  CancelDomainConfigChange
+
+
+        /// <summary>
+        /// Cancels a pending configuration change on an Amazon OpenSearch Service domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDomainConfigChange service method.</param>
+        /// 
+        /// <returns>The response from the CancelDomainConfigChange service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
+        CancelDomainConfigChangeResponse CancelDomainConfigChange(CancelDomainConfigChangeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDomainConfigChange operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDomainConfigChange operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelDomainConfigChange
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
+        IAsyncResult BeginCancelDomainConfigChange(CancelDomainConfigChangeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelDomainConfigChange operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelDomainConfigChange.</param>
+        /// 
+        /// <returns>Returns a  CancelDomainConfigChangeResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
+        CancelDomainConfigChangeResponse EndCancelDomainConfigChange(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelServiceSoftwareUpdate
 
 

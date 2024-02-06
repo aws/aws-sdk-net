@@ -46,6 +46,7 @@ namespace Amazon.OpenSearchService.Model
         private VersionStatus _engineVersion;
         private IPAddressTypeStatus _ipAddressType;
         private LogPublishingOptionsStatus _logPublishingOptions;
+        private List<ModifyingProperties> _modifyingProperties = new List<ModifyingProperties>();
         private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
         private OffPeakWindowOptionsStatus _offPeakWindowOptions;
         private SnapshotOptionsStatus _snapshotOptions;
@@ -290,6 +291,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetLogPublishingOptions()
         {
             return this._logPublishingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifyingProperties. 
+        /// <para>
+        /// Information about the domain properties that are currently being modified.
+        /// </para>
+        /// </summary>
+        public List<ModifyingProperties> ModifyingProperties
+        {
+            get { return this._modifyingProperties; }
+            set { this._modifyingProperties = value; }
+        }
+
+        // Check to see if ModifyingProperties property is set
+        internal bool IsSetModifyingProperties()
+        {
+            return this._modifyingProperties != null && this._modifyingProperties.Count > 0; 
         }
 
         /// <summary>
