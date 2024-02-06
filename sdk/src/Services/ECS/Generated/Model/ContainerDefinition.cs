@@ -1332,26 +1332,6 @@ namespace Amazon.ECS.Model
         /// run</a>. For example, you can configure <c>net.ipv4.tcp_keepalive_time</c> setting
         /// to maintain longer lived connections.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We don't recommended that you specify network-related <c>systemControls</c> parameters
-        /// for multiple containers in a single task that also uses either the <c>awsvpc</c> or
-        /// <c>host</c> network modes. For tasks that use the <c>awsvpc</c> network mode, the
-        /// container that's started last determines which <c>systemControls</c> parameters take
-        /// effect. For tasks that use the <c>host</c> network mode, it changes the container
-        /// instance's namespaced kernel parameters as well as the containers.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// This parameter is not supported for Windows containers.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// This parameter is only supported for tasks that are hosted on Fargate if the tasks
-        /// are using platform version <c>1.4.0</c> or later (Linux). This isn't supported for
-        /// Windows containers on Fargate.
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<SystemControl> SystemControls
         {

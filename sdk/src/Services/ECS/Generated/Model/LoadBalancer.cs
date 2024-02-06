@@ -62,6 +62,11 @@ namespace Amazon.ECS.Model
         /// The name of the container (as it appears in a container definition) to associate with
         /// the load balancer.
         /// </para>
+        ///  
+        /// <para>
+        /// You need to specify the container name when configuring the target group for an Amazon
+        /// ECS load balancer.
+        /// </para>
         /// </summary>
         public string ContainerName
         {

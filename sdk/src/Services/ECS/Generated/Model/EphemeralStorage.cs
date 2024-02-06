@@ -31,8 +31,8 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// The amount of ephemeral storage to allocate for the task. This parameter is used to
     /// expand the total amount of ephemeral storage available, beyond the default amount,
-    /// for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-    /// task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+    /// for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+    /// data volumes in tasks</a> in the <i>Amazon ECS Developer Guide;</i>.
     /// 
     ///  <note> 
     /// <para>

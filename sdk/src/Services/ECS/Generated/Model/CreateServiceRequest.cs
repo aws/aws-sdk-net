@@ -405,7 +405,7 @@ namespace Amazon.ECS.Model
         ///  <note> 
         /// <para>
         /// Fargate Spot infrastructure is available for use but a capacity provider strategy
-        /// must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
+        /// must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
         /// capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
         /// </para>
         ///  </note> 

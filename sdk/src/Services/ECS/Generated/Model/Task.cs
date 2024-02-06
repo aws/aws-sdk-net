@@ -730,8 +730,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped
-        /// tasks error codes</a> in the <i>Amazon ECS User Guide</i>.
+        /// For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/stopped-task-error-codes.html">Stopped
+        /// tasks error codes</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         public TaskStopCode StopCode
