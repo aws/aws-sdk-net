@@ -1111,6 +1111,89 @@ namespace Amazon.WAFV2
 
         #endregion
         
+        #region  DeleteAPIKey
+
+        internal virtual DeleteAPIKeyResponse DeleteAPIKey(DeleteAPIKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAPIKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAPIKeyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified API key. 
+        /// 
+        ///  
+        /// <para>
+        /// After you delete a key, it can take up to 24 hours for WAF to disallow use of the
+        /// key in all regions. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAPIKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFOptimisticLockException">
+        /// WAF couldn’t save your changes because you tried to update or delete a resource that
+        /// has changed since you last retrieved it. Get the resource again, make any changes
+        /// you need to make to the new copy, and retry your operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteAPIKey">REST API Reference for DeleteAPIKey Operation</seealso>
+        public virtual Task<DeleteAPIKeyResponse> DeleteAPIKeyAsync(DeleteAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAPIKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAPIKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteFirewallManagerRuleGroups
 
         internal virtual DeleteFirewallManagerRuleGroupsResponse DeleteFirewallManagerRuleGroups(DeleteFirewallManagerRuleGroupsRequest request)

@@ -75,6 +75,12 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DeleteAPIKeyRequest.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.DeleteFirewallManagerRuleGroupsRequest.WebACLArn</property>
     <min>20</min>
     <max>2048</max>

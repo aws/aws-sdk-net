@@ -29,27 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateAPIKey operation.
-    /// Creates an API key that contains a set of token domains.
+    /// Container for the parameters to the DeleteAPIKey operation.
+    /// Deletes the specified API key. 
     /// 
     ///  
     /// <para>
-    /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
-    /// applications. The API lets you customize the placement and characteristics of the
-    /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
-    /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-    /// client application integration</a> in the <i>WAF Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use a single key for up to 5 domains. After you generate a key, you can copy
-    /// it for use in your JavaScript integration. 
+    /// After you delete a key, it can take up to 24 hours for WAF to disallow use of the
+    /// key in all regions. 
     /// </para>
     /// </summary>
-    public partial class CreateAPIKeyRequest : AmazonWAFV2Request
+    public partial class DeleteAPIKeyRequest : AmazonWAFV2Request
     {
+        private string _apiKey;
         private Scope _scope;
-        private List<string> _tokenDomains = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property APIKey. 
+        /// <para>
+        /// The encrypted API key that you want to delete. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string APIKey
+        {
+            get { return this._apiKey; }
+            set { this._apiKey = value; }
+        }
+
+        // Check to see if APIKey property is set
+        internal bool IsSetAPIKey()
+        {
+            return this._apiKey != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Scope. 
@@ -86,34 +97,6 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TokenDomains. 
-        /// <para>
-        /// The client application domains that you want to use this API key for. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example JSON: <c>"TokenDomains": ["abc.com", "store.abc.com"]</c> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Public suffixes aren't allowed. For example, you can't use <c>gov.au</c> or <c>co.uk</c>
-        /// as token domains.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public List<string> TokenDomains
-        {
-            get { return this._tokenDomains; }
-            set { this._tokenDomains = value; }
-        }
-
-        // Check to see if TokenDomains property is set
-        internal bool IsSetTokenDomains()
-        {
-            return this._tokenDomains != null && this._tokenDomains.Count > 0; 
         }
 
     }

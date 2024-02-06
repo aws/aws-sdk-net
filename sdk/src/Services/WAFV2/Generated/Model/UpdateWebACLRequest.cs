@@ -402,7 +402,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Public suffixes aren't allowed. For example, you can't use <c>usa.gov</c> or <c>co.uk</c>
+        /// Public suffixes aren't allowed. For example, you can't use <c>gov.au</c> or <c>co.uk</c>
         /// as token domains.
         /// </para>
         /// </summary>
