@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChangeProgressDetails Object
+    /// Response Unmarshaller for CancelledChangeProperty Object
     /// </summary>  
-    public class ChangeProgressDetailsUnmarshaller : IUnmarshaller<ChangeProgressDetails, XmlUnmarshallerContext>, IUnmarshaller<ChangeProgressDetails, JsonUnmarshallerContext>
+    public class CancelledChangePropertyUnmarshaller : IUnmarshaller<CancelledChangeProperty, XmlUnmarshallerContext>, IUnmarshaller<CancelledChangeProperty, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChangeProgressDetails IUnmarshaller<ChangeProgressDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CancelledChangeProperty IUnmarshaller<CancelledChangeProperty, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChangeProgressDetails Unmarshall(JsonUnmarshallerContext context)
+        public CancelledChangeProperty Unmarshall(JsonUnmarshallerContext context)
         {
-            ChangeProgressDetails unmarshalledObject = new ChangeProgressDetails();
+            CancelledChangeProperty unmarshalledObject = new CancelledChangeProperty();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,40 +63,22 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChangeId", targetDepth))
+                if (context.TestExpression("ActiveValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChangeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConfigChangeStatus", targetDepth))
+                if (context.TestExpression("CancelledValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigChangeStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CancelledValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InitiatedBy", targetDepth))
+                if (context.TestExpression("PropertyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InitiatedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Message", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PropertyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -104,12 +86,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChangeProgressDetailsUnmarshaller _instance = new ChangeProgressDetailsUnmarshaller();        
+        private static CancelledChangePropertyUnmarshaller _instance = new CancelledChangePropertyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChangeProgressDetailsUnmarshaller Instance
+        public static CancelledChangePropertyUnmarshaller Instance
         {
             get
             {

@@ -45,6 +45,7 @@ namespace Amazon.Elasticsearch.Model
         private ElasticsearchVersionStatus _elasticsearchVersion;
         private EncryptionAtRestOptionsStatus _encryptionAtRestOptions;
         private LogPublishingOptionsStatus _logPublishingOptions;
+        private List<ModifyingProperties> _modifyingProperties = new List<ModifyingProperties>();
         private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
         private SnapshotOptionsStatus _snapshotOptions;
         private VPCDerivedInfoStatus _vpcOptions;
@@ -265,6 +266,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetLogPublishingOptions()
         {
             return this._logPublishingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifyingProperties. 
+        /// <para>
+        /// Information about the domain properties that are currently being modified.
+        /// </para>
+        /// </summary>
+        public List<ModifyingProperties> ModifyingProperties
+        {
+            get { return this._modifyingProperties; }
+            set { this._modifyingProperties = value; }
+        }
+
+        // Check to see if ModifyingProperties property is set
+        internal bool IsSetModifyingProperties()
+        {
+            return this._modifyingProperties != null && this._modifyingProperties.Count > 0; 
         }
 
         /// <summary>

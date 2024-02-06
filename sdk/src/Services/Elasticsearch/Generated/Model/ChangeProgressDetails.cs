@@ -34,7 +34,11 @@ namespace Amazon.Elasticsearch.Model
     public partial class ChangeProgressDetails
     {
         private string _changeId;
+        private ConfigChangeStatus _configChangeStatus;
+        private InitiatedBy _initiatedBy;
+        private DateTime? _lastUpdatedTime;
         private string _message;
+        private DateTime? _startTime;
 
         /// <summary>
         /// Gets and sets the property ChangeId. 
@@ -55,6 +59,60 @@ namespace Amazon.Elasticsearch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigChangeStatus. 
+        /// <para>
+        /// The current status of the configuration change.
+        /// </para>
+        /// </summary>
+        public ConfigChangeStatus ConfigChangeStatus
+        {
+            get { return this._configChangeStatus; }
+            set { this._configChangeStatus = value; }
+        }
+
+        // Check to see if ConfigChangeStatus property is set
+        internal bool IsSetConfigChangeStatus()
+        {
+            return this._configChangeStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitiatedBy. 
+        /// <para>
+        /// The IAM principal who initiated the configuration change.
+        /// </para>
+        /// </summary>
+        public InitiatedBy InitiatedBy
+        {
+            get { return this._initiatedBy; }
+            set { this._initiatedBy = value; }
+        }
+
+        // Check to see if InitiatedBy property is set
+        internal bool IsSetInitiatedBy()
+        {
+            return this._initiatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedTime. 
+        /// <para>
+        /// The last time that the configuration change was updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedTime
+        {
+            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            set { this._lastUpdatedTime = value; }
+        }
+
+        // Check to see if LastUpdatedTime property is set
+        internal bool IsSetLastUpdatedTime()
+        {
+            return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
         /// Contains an optional message associated with the domain configuration change.
@@ -71,6 +129,25 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The time that the configuration change was initiated, in Universal Coordinated Time
+        /// (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }
