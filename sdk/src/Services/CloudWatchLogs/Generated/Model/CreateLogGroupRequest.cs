@@ -50,6 +50,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
     /// '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Log group names can't start with the string <c>aws/</c> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// When you create a log group, by default the log events in the log group do not expire.

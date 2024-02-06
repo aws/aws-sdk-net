@@ -91,8 +91,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// Defines the type of log that the source is sending. For valid values for this parameter,
-        /// see the documentation for the source service.
+        /// Defines the type of log that the source is sending. For Amazon CodeWhisperer, the
+        /// valid value is <c>EVENT_LOGS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
