@@ -1,3 +1,17 @@
+### 3.7.742.0 (2024-02-06 19:18 UTC)
+* AppSync (3.7.303.0)
+	* Support for environment variables in AppSync GraphQL APIs
+* CloudWatchLogs (3.7.304.0)
+	* This release adds a new field, logGroupArn, to the response of the logs:DescribeLogGroups action.
+* ECS (3.7.305.8)
+	* This release is a documentation only update to address customer issues.
+* Elasticsearch (3.7.302.0)
+	* This release adds clear visibility to the customers on the changes that they make on the domain.
+* OpenSearchService (3.7.304.0)
+	* This release adds clear visibility to the customers on the changes that they make on the domain.
+* WAFV2 (3.7.301.0)
+	* You can now delete an API key that you've created for use with your CAPTCHA JavaScript integration API.
+
 ### 3.7.741.0 (2024-02-05 19:15 UTC)
 * Glue (3.7.307.0)
 	* Introduce Catalog Encryption Role within Glue Data Catalog Settings. Introduce SASL/PLAIN as an authentication method for Glue Kafka connections
