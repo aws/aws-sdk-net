@@ -2692,6 +2692,83 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  GetGraphqlApiEnvironmentVariables
+
+
+        /// <summary>
+        /// Retrieves the list of environmental variable key-value pairs associated with an API
+        /// by its ID value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGraphqlApiEnvironmentVariables service method.</param>
+        /// 
+        /// <returns>The response from the GetGraphqlApiEnvironmentVariables service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApiEnvironmentVariables">REST API Reference for GetGraphqlApiEnvironmentVariables Operation</seealso>
+        public virtual GetGraphqlApiEnvironmentVariablesResponse GetGraphqlApiEnvironmentVariables(GetGraphqlApiEnvironmentVariablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGraphqlApiEnvironmentVariablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGraphqlApiEnvironmentVariablesResponseUnmarshaller.Instance;
+
+            return Invoke<GetGraphqlApiEnvironmentVariablesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the list of environmental variable key-value pairs associated with an API
+        /// by its ID value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGraphqlApiEnvironmentVariables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGraphqlApiEnvironmentVariables service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApiEnvironmentVariables">REST API Reference for GetGraphqlApiEnvironmentVariables Operation</seealso>
+        public virtual Task<GetGraphqlApiEnvironmentVariablesResponse> GetGraphqlApiEnvironmentVariablesAsync(GetGraphqlApiEnvironmentVariablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGraphqlApiEnvironmentVariablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGraphqlApiEnvironmentVariablesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGraphqlApiEnvironmentVariablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetIntrospectionSchema
 
 
@@ -3820,6 +3897,209 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = ListTypesByAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTypesByAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutGraphqlApiEnvironmentVariables
+
+
+        /// <summary>
+        /// Creates a list of environmental variables in an API by its ID value. 
+        /// 
+        ///  
+        /// <para>
+        /// When creating an environmental variable, it must follow the constraints below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Both JavaScript and VTL templates support environmental variables.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Environmental variables are not evaluated before function invocation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Environmental variables only support string values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any defined value in an environmental variable is considered a string literal and
+        /// not expanded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Variable evaluations should ideally be performed in the function code.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When creating an environmental variable key-value pair, it must follow the additional
+        /// constraints below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Keys must begin with a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys must be at least two characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys can only contain letters, numbers, and the underscore character (_).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Values can be up to 512 characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can configure up to 50 key-value pairs in a GraphQL API.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can create a list of environmental variables by adding it to the <c>environmentVariables</c>
+        /// payload as a list in the format <c>{"key1":"value1","key2":"value2", …}</c>. Note
+        /// that each call of the <c>PutGraphqlApiEnvironmentVariables</c> action will result
+        /// in the overwriting of the existing environmental variable list of that API. This means
+        /// the existing environmental variables will be lost. To avoid this, you must include
+        /// all existing and new environmental variables in the list each time you call this action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGraphqlApiEnvironmentVariables service method.</param>
+        /// 
+        /// <returns>The response from the PutGraphqlApiEnvironmentVariables service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/PutGraphqlApiEnvironmentVariables">REST API Reference for PutGraphqlApiEnvironmentVariables Operation</seealso>
+        public virtual PutGraphqlApiEnvironmentVariablesResponse PutGraphqlApiEnvironmentVariables(PutGraphqlApiEnvironmentVariablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutGraphqlApiEnvironmentVariablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGraphqlApiEnvironmentVariablesResponseUnmarshaller.Instance;
+
+            return Invoke<PutGraphqlApiEnvironmentVariablesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a list of environmental variables in an API by its ID value. 
+        /// 
+        ///  
+        /// <para>
+        /// When creating an environmental variable, it must follow the constraints below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Both JavaScript and VTL templates support environmental variables.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Environmental variables are not evaluated before function invocation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Environmental variables only support string values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any defined value in an environmental variable is considered a string literal and
+        /// not expanded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Variable evaluations should ideally be performed in the function code.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When creating an environmental variable key-value pair, it must follow the additional
+        /// constraints below:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Keys must begin with a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys must be at least two characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Keys can only contain letters, numbers, and the underscore character (_).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Values can be up to 512 characters long.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can configure up to 50 key-value pairs in a GraphQL API.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can create a list of environmental variables by adding it to the <c>environmentVariables</c>
+        /// payload as a list in the format <c>{"key1":"value1","key2":"value2", …}</c>. Note
+        /// that each call of the <c>PutGraphqlApiEnvironmentVariables</c> action will result
+        /// in the overwriting of the existing environmental variable list of that API. This means
+        /// the existing environmental variables will be lost. To avoid this, you must include
+        /// all existing and new environmental variables in the list each time you call this action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGraphqlApiEnvironmentVariables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutGraphqlApiEnvironmentVariables service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/PutGraphqlApiEnvironmentVariables">REST API Reference for PutGraphqlApiEnvironmentVariables Operation</seealso>
+        public virtual Task<PutGraphqlApiEnvironmentVariablesResponse> PutGraphqlApiEnvironmentVariablesAsync(PutGraphqlApiEnvironmentVariablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutGraphqlApiEnvironmentVariablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGraphqlApiEnvironmentVariablesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutGraphqlApiEnvironmentVariablesResponse>(request, options, cancellationToken);
         }
 
         #endregion
