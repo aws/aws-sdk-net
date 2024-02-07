@@ -95,12 +95,12 @@ namespace AWSSDK_DotNet35.UnitTests
             var resourcePath = "http://*";
             var dateTime = new DateTime(2013, 1, 1, 10, 00, 0, DateTimeKind.Utc);
             var ipRange = "192.0.2.0/24";
-            var cookies = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(
+            var policyDocument = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(
                                     resourcePath,
                                     dateTime,
                                     ipRange);
 
-            var jsonObject = JsonMapper.ToObject(cookies);
+            var jsonObject = JsonMapper.ToObject(policyDocument);
 
             var statementList = jsonObject["Statement"];
             Assert.IsTrue(statementList.IsArray);
