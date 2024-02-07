@@ -1613,6 +1613,68 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type BotAliasReplicationStatus.
+    /// </summary>
+    public class BotAliasReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for BotAliasReplicationStatus
+        /// </summary>
+        public static readonly BotAliasReplicationStatus Available = new BotAliasReplicationStatus("Available");
+        /// <summary>
+        /// Constant Creating for BotAliasReplicationStatus
+        /// </summary>
+        public static readonly BotAliasReplicationStatus Creating = new BotAliasReplicationStatus("Creating");
+        /// <summary>
+        /// Constant Deleting for BotAliasReplicationStatus
+        /// </summary>
+        public static readonly BotAliasReplicationStatus Deleting = new BotAliasReplicationStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for BotAliasReplicationStatus
+        /// </summary>
+        public static readonly BotAliasReplicationStatus Failed = new BotAliasReplicationStatus("Failed");
+        /// <summary>
+        /// Constant Updating for BotAliasReplicationStatus
+        /// </summary>
+        public static readonly BotAliasReplicationStatus Updating = new BotAliasReplicationStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BotAliasReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotAliasReplicationStatus FindValue(string value)
+        {
+            return FindValue<BotAliasReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotAliasReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BotAliasStatus.
     /// </summary>
     public class BotAliasStatus : ConstantClass
@@ -2073,6 +2135,64 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type BotReplicaStatus.
+    /// </summary>
+    public class BotReplicaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deleting for BotReplicaStatus
+        /// </summary>
+        public static readonly BotReplicaStatus Deleting = new BotReplicaStatus("Deleting");
+        /// <summary>
+        /// Constant Enabled for BotReplicaStatus
+        /// </summary>
+        public static readonly BotReplicaStatus Enabled = new BotReplicaStatus("Enabled");
+        /// <summary>
+        /// Constant Enabling for BotReplicaStatus
+        /// </summary>
+        public static readonly BotReplicaStatus Enabling = new BotReplicaStatus("Enabling");
+        /// <summary>
+        /// Constant Failed for BotReplicaStatus
+        /// </summary>
+        public static readonly BotReplicaStatus Failed = new BotReplicaStatus("Failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BotReplicaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotReplicaStatus FindValue(string value)
+        {
+            return FindValue<BotReplicaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotReplicaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BotSortAttribute.
     /// </summary>
     public class BotSortAttribute : ConstantClass
@@ -2236,6 +2356,110 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BotType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BotVersionReplicaSortAttribute.
+    /// </summary>
+    public class BotVersionReplicaSortAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotVersion for BotVersionReplicaSortAttribute
+        /// </summary>
+        public static readonly BotVersionReplicaSortAttribute BotVersion = new BotVersionReplicaSortAttribute("BotVersion");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BotVersionReplicaSortAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotVersionReplicaSortAttribute FindValue(string value)
+        {
+            return FindValue<BotVersionReplicaSortAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotVersionReplicaSortAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BotVersionReplicationStatus.
+    /// </summary>
+    public class BotVersionReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for BotVersionReplicationStatus
+        /// </summary>
+        public static readonly BotVersionReplicationStatus Available = new BotVersionReplicationStatus("Available");
+        /// <summary>
+        /// Constant Creating for BotVersionReplicationStatus
+        /// </summary>
+        public static readonly BotVersionReplicationStatus Creating = new BotVersionReplicationStatus("Creating");
+        /// <summary>
+        /// Constant Deleting for BotVersionReplicationStatus
+        /// </summary>
+        public static readonly BotVersionReplicationStatus Deleting = new BotVersionReplicationStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for BotVersionReplicationStatus
+        /// </summary>
+        public static readonly BotVersionReplicationStatus Failed = new BotVersionReplicationStatus("Failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BotVersionReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotVersionReplicationStatus FindValue(string value)
+        {
+            return FindValue<BotVersionReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotVersionReplicationStatus(string value)
         {
             return FindValue(value);
         }

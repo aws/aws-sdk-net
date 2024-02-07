@@ -538,6 +538,78 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  CreateBotReplica
+
+
+        /// <summary>
+        /// Action to create a replication of the source bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBotReplica service method.</param>
+        /// 
+        /// <returns>The response from the CreateBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">REST API Reference for CreateBotReplica Operation</seealso>
+        CreateBotReplicaResponse CreateBotReplica(CreateBotReplicaRequest request);
+
+
+
+        /// <summary>
+        /// Action to create a replication of the source bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBotReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">REST API Reference for CreateBotReplica Operation</seealso>
+        Task<CreateBotReplicaResponse> CreateBotReplicaAsync(CreateBotReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateBotVersion
 
 
@@ -1598,6 +1670,78 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteBotReplica
+
+
+        /// <summary>
+        /// The action to delete the replicated bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotReplica service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">REST API Reference for DeleteBotReplica Operation</seealso>
+        DeleteBotReplicaResponse DeleteBotReplica(DeleteBotReplicaRequest request);
+
+
+
+        /// <summary>
+        /// The action to delete the replicated bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">REST API Reference for DeleteBotReplica Operation</seealso>
+        Task<DeleteBotReplicaResponse> DeleteBotReplicaAsync(DeleteBotReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBotVersion
 
 
@@ -2625,6 +2769,68 @@ namespace Amazon.LexModelsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotRecommendation">REST API Reference for DescribeBotRecommendation Operation</seealso>
         Task<DescribeBotRecommendationResponse> DescribeBotRecommendationAsync(DescribeBotRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeBotReplica
+
+
+        /// <summary>
+        /// Monitors the bot replication status through the UI console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotReplica service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">REST API Reference for DescribeBotReplica Operation</seealso>
+        DescribeBotReplicaResponse DescribeBotReplica(DescribeBotReplicaRequest request);
+
+
+
+        /// <summary>
+        /// Monitors the bot replication status through the UI console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">REST API Reference for DescribeBotReplica Operation</seealso>
+        Task<DescribeBotReplicaResponse> DescribeBotReplicaAsync(DescribeBotReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3730,6 +3936,60 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListBotAliasReplicas
+
+
+        /// <summary>
+        /// The action to list the replicated bots created from the source bot alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAliasReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListBotAliasReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
+        ListBotAliasReplicasResponse ListBotAliasReplicas(ListBotAliasReplicasRequest request);
+
+
+
+        /// <summary>
+        /// The action to list the replicated bots created from the source bot alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAliasReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotAliasReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
+        Task<ListBotAliasReplicasResponse> ListBotAliasReplicasAsync(ListBotAliasReplicasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListBotLocales
 
 
@@ -3840,6 +4100,60 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListBotReplicas
+
+
+        /// <summary>
+        /// The action to list the replicated bots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListBotReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">REST API Reference for ListBotReplicas Operation</seealso>
+        ListBotReplicasResponse ListBotReplicas(ListBotReplicasRequest request);
+
+
+
+        /// <summary>
+        /// The action to list the replicated bots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">REST API Reference for ListBotReplicas Operation</seealso>
+        Task<ListBotReplicasResponse> ListBotReplicasAsync(ListBotReplicasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListBotResourceGenerations
 
 
@@ -3947,6 +4261,62 @@ namespace Amazon.LexModelsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBots">REST API Reference for ListBots Operation</seealso>
         Task<ListBotsResponse> ListBotsAsync(ListBotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBotVersionReplicas
+
+
+        /// <summary>
+        /// Contains information about all the versions replication statuses applicable for Global
+        /// Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotVersionReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListBotVersionReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">REST API Reference for ListBotVersionReplicas Operation</seealso>
+        ListBotVersionReplicasResponse ListBotVersionReplicas(ListBotVersionReplicasRequest request);
+
+
+
+        /// <summary>
+        /// Contains information about all the versions replication statuses applicable for Global
+        /// Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotVersionReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotVersionReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">REST API Reference for ListBotVersionReplicas Operation</seealso>
+        Task<ListBotVersionReplicasResponse> ListBotVersionReplicasAsync(ListBotVersionReplicasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -791,6 +791,82 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  CreateBotReplica
+
+        /// <summary>
+        /// Action to create a replication of the source bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBotReplica service method.</param>
+        /// 
+        /// <returns>The response from the CreateBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">REST API Reference for CreateBotReplica Operation</seealso>
+        public virtual CreateBotReplicaResponse CreateBotReplica(CreateBotReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBotReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBotReplicaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBotReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBotReplica operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBotReplica
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">REST API Reference for CreateBotReplica Operation</seealso>
+        public virtual IAsyncResult BeginCreateBotReplica(CreateBotReplicaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBotReplicaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBotReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBotReplica.</param>
+        /// 
+        /// <returns>Returns a  CreateBotReplicaResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">REST API Reference for CreateBotReplica Operation</seealso>
+        public virtual CreateBotReplicaResponse EndCreateBotReplica(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBotReplicaResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateBotVersion
 
         /// <summary>
@@ -1797,6 +1873,82 @@ namespace Amazon.LexModelsV2
         public virtual DeleteBotLocaleResponse EndDeleteBotLocale(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBotLocaleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBotReplica
+
+        /// <summary>
+        /// The action to delete the replicated bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotReplica service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">REST API Reference for DeleteBotReplica Operation</seealso>
+        public virtual DeleteBotReplicaResponse DeleteBotReplica(DeleteBotReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBotReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBotReplicaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBotReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotReplica operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBotReplica
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">REST API Reference for DeleteBotReplica Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBotReplica(DeleteBotReplicaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBotReplicaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBotReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBotReplica.</param>
+        /// 
+        /// <returns>Returns a  DeleteBotReplicaResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">REST API Reference for DeleteBotReplica Operation</seealso>
+        public virtual DeleteBotReplicaResponse EndDeleteBotReplica(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBotReplicaResponse>(asyncResult);
         }
 
         #endregion
@@ -2912,6 +3064,77 @@ namespace Amazon.LexModelsV2
         public virtual DescribeBotRecommendationResponse EndDescribeBotRecommendation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBotRecommendationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBotReplica
+
+        /// <summary>
+        /// Monitors the bot replication status through the UI console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotReplica service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">REST API Reference for DescribeBotReplica Operation</seealso>
+        public virtual DescribeBotReplicaResponse DescribeBotReplica(DescribeBotReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBotReplicaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBotReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotReplica operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBotReplica
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">REST API Reference for DescribeBotReplica Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBotReplica(DescribeBotReplicaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotReplicaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBotReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBotReplica.</param>
+        /// 
+        /// <returns>Returns a  DescribeBotReplicaResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">REST API Reference for DescribeBotReplica Operation</seealso>
+        public virtual DescribeBotReplicaResponse EndDescribeBotReplica(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBotReplicaResponse>(asyncResult);
         }
 
         #endregion
@@ -4147,6 +4370,73 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListBotAliasReplicas
+
+        /// <summary>
+        /// The action to list the replicated bots created from the source bot alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAliasReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListBotAliasReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
+        public virtual ListBotAliasReplicasResponse ListBotAliasReplicas(ListBotAliasReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotAliasReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotAliasReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotAliasReplicasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBotAliasReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAliasReplicas operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBotAliasReplicas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
+        public virtual IAsyncResult BeginListBotAliasReplicas(ListBotAliasReplicasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotAliasReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotAliasReplicasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBotAliasReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBotAliasReplicas.</param>
+        /// 
+        /// <returns>Returns a  ListBotAliasReplicasResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
+        public virtual ListBotAliasReplicasResponse EndListBotAliasReplicas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBotAliasReplicasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListBotLocales
 
         /// <summary>
@@ -4282,6 +4572,73 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListBotReplicas
+
+        /// <summary>
+        /// The action to list the replicated bots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListBotReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">REST API Reference for ListBotReplicas Operation</seealso>
+        public virtual ListBotReplicasResponse ListBotReplicas(ListBotReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotReplicasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBotReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBotReplicas operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBotReplicas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">REST API Reference for ListBotReplicas Operation</seealso>
+        public virtual IAsyncResult BeginListBotReplicas(ListBotReplicasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotReplicasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBotReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBotReplicas.</param>
+        /// 
+        /// <returns>Returns a  ListBotReplicasResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">REST API Reference for ListBotReplicas Operation</seealso>
+        public virtual ListBotReplicasResponse EndListBotReplicas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBotReplicasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListBotResourceGenerations
 
         /// <summary>
@@ -4413,6 +4770,74 @@ namespace Amazon.LexModelsV2
         public virtual ListBotsResponse EndListBots(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBotVersionReplicas
+
+        /// <summary>
+        /// Contains information about all the versions replication statuses applicable for Global
+        /// Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotVersionReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListBotVersionReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">REST API Reference for ListBotVersionReplicas Operation</seealso>
+        public virtual ListBotVersionReplicasResponse ListBotVersionReplicas(ListBotVersionReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotVersionReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotVersionReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotVersionReplicasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBotVersionReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBotVersionReplicas operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBotVersionReplicas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">REST API Reference for ListBotVersionReplicas Operation</seealso>
+        public virtual IAsyncResult BeginListBotVersionReplicas(ListBotVersionReplicasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotVersionReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotVersionReplicasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBotVersionReplicas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBotVersionReplicas.</param>
+        /// 
+        /// <returns>Returns a  ListBotVersionReplicasResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">REST API Reference for ListBotVersionReplicas Operation</seealso>
+        public virtual ListBotVersionReplicasResponse EndListBotVersionReplicas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBotVersionReplicasResponse>(asyncResult);
         }
 
         #endregion

@@ -655,6 +655,62 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  CreateBotReplica
+
+        internal virtual CreateBotReplicaResponse CreateBotReplica(CreateBotReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBotReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBotReplicaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Action to create a replication of the source bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBotReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica">REST API Reference for CreateBotReplica Operation</seealso>
+        public virtual Task<CreateBotReplicaResponse> CreateBotReplicaAsync(CreateBotReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBotReplicaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBotReplicaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateBotVersion
 
         internal virtual CreateBotVersionResponse CreateBotVersion(CreateBotVersionRequest request)
@@ -1421,6 +1477,62 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DeleteBotLocaleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBotLocaleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBotReplica
+
+        internal virtual DeleteBotReplicaResponse DeleteBotReplica(DeleteBotReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBotReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBotReplicaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The action to delete the replicated bot in the secondary region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.PreconditionFailedException">
+        /// Your request couldn't be completed because one or more request fields aren't valid.
+        /// Check the fields in your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica">REST API Reference for DeleteBotReplica Operation</seealso>
+        public virtual Task<DeleteBotReplicaResponse> DeleteBotReplicaAsync(DeleteBotReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBotReplicaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBotReplicaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2236,6 +2348,57 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DescribeBotRecommendationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBotRecommendationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBotReplica
+
+        internal virtual DescribeBotReplicaResponse DescribeBotReplica(DescribeBotReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBotReplicaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Monitors the bot replication status through the UI console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBotReplica service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica">REST API Reference for DescribeBotReplica Operation</seealso>
+        public virtual Task<DescribeBotReplicaResponse> DescribeBotReplicaAsync(DescribeBotReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBotReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotReplicaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBotReplicaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3131,6 +3294,53 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListBotAliasReplicas
+
+        internal virtual ListBotAliasReplicasResponse ListBotAliasReplicas(ListBotAliasReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotAliasReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotAliasReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotAliasReplicasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The action to list the replicated bots created from the source bot alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAliasReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotAliasReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
+        public virtual Task<ListBotAliasReplicasResponse> ListBotAliasReplicasAsync(ListBotAliasReplicasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotAliasReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotAliasReplicasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBotAliasReplicasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBotLocales
 
         internal virtual ListBotLocalesResponse ListBotLocales(ListBotLocalesRequest request)
@@ -3226,6 +3436,53 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  ListBotReplicas
+
+        internal virtual ListBotReplicasResponse ListBotReplicas(ListBotReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotReplicasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The action to list the replicated bots.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas">REST API Reference for ListBotReplicas Operation</seealso>
+        public virtual Task<ListBotReplicasResponse> ListBotReplicasAsync(ListBotReplicasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotReplicasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBotReplicasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBotResourceGenerations
 
         internal virtual ListBotResourceGenerationsResponse ListBotResourceGenerations(ListBotResourceGenerationsRequest request)
@@ -3317,6 +3574,54 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = ListBotsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBotsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBotVersionReplicas
+
+        internal virtual ListBotVersionReplicasResponse ListBotVersionReplicas(ListBotVersionReplicasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotVersionReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotVersionReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotVersionReplicasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information about all the versions replication statuses applicable for Global
+        /// Resiliency.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotVersionReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotVersionReplicas service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ServiceQuotaExceededException">
+        /// You have reached a quota for your bot.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas">REST API Reference for ListBotVersionReplicas Operation</seealso>
+        public virtual Task<ListBotVersionReplicasResponse> ListBotVersionReplicasAsync(ListBotVersionReplicasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBotVersionReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotVersionReplicasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBotVersionReplicasResponse>(request, options, cancellationToken);
         }
 
         #endregion

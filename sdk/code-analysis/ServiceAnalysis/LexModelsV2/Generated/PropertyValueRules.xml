@@ -243,6 +243,33 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.CreateBotReplicaRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.CreateBotReplicaRequest.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.CreateBotReplicaResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.CreateBotReplicaResponse.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.CreateBotReplicaResponse.SourceRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CreateBotVersionRequest.BotId</property>
     <min>10</min>
     <max>10</max>
@@ -599,6 +626,28 @@
     <pattern>^DRAFT$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DeleteBotReplicaRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DeleteBotReplicaRequest.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DeleteBotReplicaResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DeleteBotReplicaResponse.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DeleteBotVersionRequest.BotId</property>
     <min>10</min>
     <max>10</max>
@@ -942,6 +991,33 @@
     <min>5</min>
     <max>5</max>
     <pattern>^DRAFT$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DescribeBotReplicaRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DescribeBotReplicaRequest.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DescribeBotReplicaResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DescribeBotReplicaResponse.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DescribeBotReplicaResponse.SourceRegion</property>
+    <min>2</min>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DescribeBotResourceGenerationRequest.BotId</property>
@@ -1506,6 +1582,38 @@
     <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotAliasReplicasRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotAliasReplicasRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotAliasReplicasRequest.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotAliasReplicasResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotAliasReplicasResponse.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotAliasReplicasResponse.SourceRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ListBotLocalesRequest.BotId</property>
     <min>10</min>
     <max>10</max>
@@ -1564,6 +1672,23 @@
     <pattern>^DRAFT$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotReplicasRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotReplicasResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotReplicasResponse.SourceRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ListBotResourceGenerationsRequest.BotId</property>
     <min>10</min>
     <max>10</max>
@@ -1596,6 +1721,38 @@
     <property>Amazon.LexModelsV2.Model.ListBotsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotVersionReplicasRequest.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotVersionReplicasRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotVersionReplicasRequest.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotVersionReplicasResponse.BotId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotVersionReplicasResponse.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ListBotVersionReplicasResponse.SourceRegion</property>
+    <min>2</min>
+    <max>25</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ListBotVersionsRequest.BotId</property>
@@ -2807,6 +2964,18 @@
     <pattern>^(DRAFT|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BotAliasReplicaSummary.BotAliasId</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>^(\bTSTALIASID\b|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BotAliasReplicaSummary.BotVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotAliasSummary.BotAliasId</property>
     <min>10</min>
     <max>10</max>
@@ -2951,6 +3120,11 @@
     <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BotReplicaSummary.ReplicaRegion</property>
+    <min>2</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotSummary.BotId</property>
     <min>10</min>
     <max>10</max>
@@ -2975,6 +3149,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotVersionLocaleDetails.SourceBotVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.BotVersionReplicaSummary.BotVersion</property>
     <min>1</min>
     <max>5</max>
     <pattern>^(DRAFT|[0-9]+)$</pattern>

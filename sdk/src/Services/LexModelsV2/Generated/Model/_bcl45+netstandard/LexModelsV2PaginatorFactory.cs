@@ -52,6 +52,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListBotAliasReplicas operation
+        ///</summary>
+        public IListBotAliasReplicasPaginator ListBotAliasReplicas(ListBotAliasReplicasRequest request) 
+        {
+            return new ListBotAliasReplicasPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBotLocales operation
         ///</summary>
         public IListBotLocalesPaginator ListBotLocales(ListBotLocalesRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.LexModelsV2.Model
         public IListBotsPaginator ListBots(ListBotsRequest request) 
         {
             return new ListBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBotVersionReplicas operation
+        ///</summary>
+        public IListBotVersionReplicasPaginator ListBotVersionReplicas(ListBotVersionReplicasRequest request) 
+        {
+            return new ListBotVersionReplicasPaginator(this.client, request);
         }
 
         /// <summary>
