@@ -525,9 +525,6 @@ namespace Amazon.CloudFront
             {
                 throw new AmazonClientException("Invalid RSA Private Key", e);
             }
-
-            var rsa = RSA.Create();
-            rsa.ImportParameters(rsaParams);
             return rsaParams;
         }
 
