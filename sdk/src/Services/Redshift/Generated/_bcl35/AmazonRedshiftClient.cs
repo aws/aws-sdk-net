@@ -7718,6 +7718,67 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ListRecommendations
+
+        /// <summary>
+        /// List the Amazon Redshift Advisor recommendations for one or multiple Amazon Redshift
+        /// clusters in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommendations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        public virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginListRecommendations(ListRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRecommendations.</param>
+        /// 
+        /// <returns>Returns a  ListRecommendationsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        public virtual ListRecommendationsResponse EndListRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyAquaConfiguration
 
         /// <summary>

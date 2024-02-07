@@ -314,5 +314,13 @@ namespace Amazon.Redshift.Model
         {
             return new GetReservedNodeExchangeOfferingsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRecommendations operation
+        ///</summary>
+        public IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request) 
+        {
+            return new ListRecommendationsPaginator(this.client, request);
+        }
     }
 }

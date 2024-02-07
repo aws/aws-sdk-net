@@ -199,5 +199,10 @@ namespace Amazon.Redshift.Model
         /// Paginator for GetReservedNodeExchangeOfferings operation
         ///</summary>
         IGetReservedNodeExchangeOfferingsPaginator GetReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecommendations operation
+        ///</summary>
+        IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
     }
 }
