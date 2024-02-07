@@ -39,8 +39,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin returning the next
-        /// list of executed tasks.
+        /// The opaque string that indicates the position to begin the next list of results in
+        /// the response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
@@ -59,7 +59,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutions. 
         /// <para>
-        /// A list of executed tasks.
+        /// A list of the task's executions.
         /// </para>
         /// </summary>
         public List<TaskExecutionListEntry> TaskExecutions

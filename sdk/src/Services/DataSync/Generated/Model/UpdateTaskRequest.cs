@@ -30,13 +30,14 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTask operation.
-    /// Updates the configuration of a DataSync transfer task.
+    /// Updates the configuration of an DataSync transfer task.
     /// </summary>
     public partial class UpdateTaskRequest : AmazonDataSyncRequest
     {
         private string _cloudWatchLogGroupArn;
         private List<FilterRule> _excludes = new List<FilterRule>();
         private List<FilterRule> _includes = new List<FilterRule>();
+        private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
@@ -102,6 +103,36 @@ namespace Amazon.DataSync.Model
         internal bool IsSetIncludes()
         {
             return this._includes != null && this._includes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestConfig. 
+        /// <para>
+        /// Configures a manifest, which is a list of files or objects that you want DataSync
+        /// to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+        /// what DataSync transfers by using a manifest</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this parameter, your caller identity (the IAM role that you're using DataSync
+        /// with) must have the <c>iam:PassRole</c> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+        /// policy includes this permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a manifest configuration, specify this parameter as empty.
+        /// </para>
+        /// </summary>
+        public ManifestConfig ManifestConfig
+        {
+            get { return this._manifestConfig; }
+            set { this._manifestConfig = value; }
+        }
+
+        // Check to see if ManifestConfig property is set
+        internal bool IsSetManifestConfig()
+        {
+            return this._manifestConfig != null;
         }
 
         /// <summary>
@@ -183,7 +214,18 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property TaskReportConfig. 
         /// <para>
         /// Specifies how you want to configure a task report, which provides detailed information
-        /// about for your DataSync transfer.
+        /// about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+        /// your DataSync transfers with task reports</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using this parameter, your caller identity (the IAM role that you're using DataSync
+        /// with) must have the <c>iam:PassRole</c> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a>
+        /// policy includes this permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a task report configuration, specify this parameter as empty.
         /// </para>
         /// </summary>
         public TaskReportConfig TaskReportConfig

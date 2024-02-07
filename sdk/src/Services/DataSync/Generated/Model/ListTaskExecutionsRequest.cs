@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTaskExecutions operation.
-    /// Returns a list of executed tasks.
+    /// Returns a list of executions for an DataSync transfer task.
     /// </summary>
     public partial class ListTaskExecutionsRequest : AmazonDataSyncRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of executed tasks to list.
+        /// Specifies how many results you want in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -60,8 +60,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin the next list of the
-        /// executed tasks.
+        /// Specifies an opaque string that indicates the position at which to begin the next
+        /// list of results in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
@@ -80,7 +80,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task whose tasks you want to list.
+        /// Specifies the Amazon Resource Name (ARN) of the task that you want execution information
+        /// about.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

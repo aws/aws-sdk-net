@@ -29,30 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLocation operation.
-    /// Deletes a transfer location resource from DataSync.
+    /// Specifies the manifest that you want DataSync to use and where it's hosted. For more
+    /// information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+    /// what DataSync transfers by using a manifest</a>.
     /// </summary>
-    public partial class DeleteLocationRequest : AmazonDataSyncRequest
+    public partial class SourceManifestConfig
     {
-        private string _locationArn;
+        private S3ManifestConfig _s3;
 
         /// <summary>
-        /// Gets and sets the property LocationArn. 
+        /// Gets and sets the property S3. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the location to delete.
+        /// Specifies the S3 bucket where you're hosting your manifest.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
-        public string LocationArn
+        [AWSProperty(Required=true)]
+        public S3ManifestConfig S3
         {
-            get { return this._locationArn; }
-            set { this._locationArn = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if LocationArn property is set
-        internal bool IsSetLocationArn()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._locationArn != null;
+            return this._s3 != null;
         }
 
     }

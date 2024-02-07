@@ -79,7 +79,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the NFS location.
+        /// The URI of the NFS location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4360)]

@@ -42,10 +42,10 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Beginning December 7, 2023, we will discontinue version 1 DataSync agents. Check the
-        /// DataSync console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a>
-        /// those agents before then to avoid data transfer or storage discovery disruptions.
-        /// If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon
+        /// On December 7, 2023, we discontinued version 1 DataSync agents. Check the DataSync
+        /// console to see if you have affected agents. If you do, <a href="https://docs.aws.amazon.com/datasync/latest/userguide/replacing-agent.html">replace</a>
+        /// those agents or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deleting-agent.html">delete</a>
+        /// them if they aren't in use. If you need more help, contact <a href="https://aws.amazon.com/contact-us/">Amazon
         /// Web Services Support</a>.
         /// </para>
         ///  </important>

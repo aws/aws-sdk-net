@@ -65,7 +65,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The ARNs of the DataSync agents that can securely connect with your location.
+        /// The ARNs of the DataSync agents that can connect with your object storage system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -121,7 +121,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URL of the object storage system location.
+        /// The URI of the object storage system location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4360)]

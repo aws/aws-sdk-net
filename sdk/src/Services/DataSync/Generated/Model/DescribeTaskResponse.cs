@@ -42,6 +42,7 @@ namespace Amazon.DataSync.Model
         private string _errorDetail;
         private List<FilterRule> _excludes = new List<FilterRule>();
         private List<FilterRule> _includes = new List<FilterRule>();
+        private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
@@ -233,6 +234,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManifestConfig. 
+        /// <para>
+        /// The configuration of the manifest that lists the files or objects to transfer. For
+        /// more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+        /// what DataSync transfers by using a manifest</a>.
+        /// </para>
+        /// </summary>
+        public ManifestConfig ManifestConfig
+        {
+            get { return this._manifestConfig; }
+            set { this._manifestConfig = value; }
+        }
+
+        // Check to see if ManifestConfig property is set
+        internal bool IsSetManifestConfig()
+        {
+            return this._manifestConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the task that was described.
@@ -378,7 +399,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskReportConfig. 
         /// <para>
-        /// The configuration of your task report. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+        /// The configuration of your task report, which provides detailed information about for
+        /// your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
         /// a task report</a>.
         /// </para>
         /// </summary>

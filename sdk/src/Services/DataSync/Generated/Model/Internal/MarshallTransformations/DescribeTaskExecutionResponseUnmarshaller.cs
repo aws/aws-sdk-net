@@ -123,6 +123,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.Includes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManifestConfig", targetDepth))
+                {
+                    var unmarshaller = ManifestConfigUnmarshaller.Instance;
+                    response.ManifestConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Options", targetDepth))
                 {
                     var unmarshaller = OptionsUnmarshaller.Instance;

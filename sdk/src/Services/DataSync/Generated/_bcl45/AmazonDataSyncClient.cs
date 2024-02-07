@@ -503,8 +503,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can
-        /// use as a transfer source or destination.
+        /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
+        /// can use this location as a transfer source or destination.
         /// 
         ///  
         /// <para>
@@ -536,8 +536,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can
-        /// use as a transfer source or destination.
+        /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
+        /// can use this location as a transfer source or destination.
         /// 
         ///  
         /// <para>
@@ -576,9 +576,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
-        /// a location for Amazon EFS</a>.
+        /// Creates a transfer <i>location</i> for an Amazon EFS file system. DataSync can use
+        /// this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-access">accesses
+        /// Amazon EFS file systems</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationEfs service method.</param>
         /// 
@@ -601,9 +606,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
-        /// a location for Amazon EFS</a>.
+        /// Creates a transfer <i>location</i> for an Amazon EFS file system. DataSync can use
+        /// this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-access">accesses
+        /// Amazon EFS file systems</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationEfs service method.</param>
         /// <param name="cancellationToken">
@@ -633,7 +643,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for Lustre file system.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for Lustre file system. DataSync
+        /// can use this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html#create-lustre-location-access">accesses
+        /// FSx for Lustre file systems</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxLustre service method.</param>
         /// 
@@ -656,7 +673,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for Lustre file system.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for Lustre file system. DataSync
+        /// can use this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html#create-lustre-location-access">accesses
+        /// FSx for Lustre file systems</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxLustre service method.</param>
         /// <param name="cancellationToken">
@@ -686,13 +710,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can
-        /// use for a data transfer.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for NetApp ONTAP file system.
+        /// DataSync can use this location as a source or destination for transferring data.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses
-        /// an FSx for ONTAP file system</a>.
+        /// FSx for ONTAP file systems</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxOntap service method.</param>
@@ -716,13 +740,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can
-        /// use for a data transfer.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for NetApp ONTAP file system.
+        /// DataSync can use this location as a source or destination for transferring data.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses
-        /// an FSx for ONTAP file system</a>.
+        /// FSx for ONTAP file systems</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxOntap service method.</param>
@@ -753,10 +777,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access
-        /// for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating
-        /// a location for FSx for OpenZFS</a>.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for OpenZFS file system. DataSync
+        /// can use this location as a source or destination for transferring data.
         /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html#create-openzfs-access">accesses
+        /// FSx for OpenZFS file systems</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Request parameters related to <c>SMB</c> aren't supported with the <c>CreateLocationFsxOpenZfs</c>
@@ -785,10 +813,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access
-        /// for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating
-        /// a location for FSx for OpenZFS</a>.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for OpenZFS file system. DataSync
+        /// can use this location as a source or destination for transferring data.
         /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html#create-openzfs-access">accesses
+        /// FSx for OpenZFS file systems</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Request parameters related to <c>SMB</c> aren't supported with the <c>CreateLocationFsxOpenZfs</c>
@@ -824,13 +856,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for Windows File Server file system that DataSync
-        /// can use for a data transfer.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for Windows File Server file
+        /// system. DataSync can use this location as a source or destination for transferring
+        /// data.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access">accesses
-        /// an FSx for Windows File Server</a>.
+        /// FSx for Windows File Server file systems</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows service method.</param>
@@ -854,13 +887,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an Amazon FSx for Windows File Server file system that DataSync
-        /// can use for a data transfer.
+        /// Creates a transfer <i>location</i> for an Amazon FSx for Windows File Server file
+        /// system. DataSync can use this location as a source or destination for transferring
+        /// data.
         /// 
         ///  
         /// <para>
         /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access">accesses
-        /// an FSx for Windows File Server</a>.
+        /// FSx for Windows File Server file systems</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxWindows service method.</param>
@@ -891,7 +925,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Hadoop Distributed File System (HDFS).
+        /// Creates a transfer <i>location</i> for a Hadoop Distributed File System (HDFS). DataSync
+        /// can use this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html#accessing-hdfs">accesses
+        /// HDFS clusters</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationHdfs service method.</param>
         /// 
@@ -914,7 +955,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Hadoop Distributed File System (HDFS).
+        /// Creates a transfer <i>location</i> for a Hadoop Distributed File System (HDFS). DataSync
+        /// can use this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html#accessing-hdfs">accesses
+        /// HDFS clusters</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationHdfs service method.</param>
         /// <param name="cancellationToken">
@@ -944,13 +992,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Network File System (NFS) file server that DataSync can
-        /// use for a data transfer.
+        /// Creates a transfer <i>location</i> for a Network File System (NFS) file server. DataSync
+        /// can use this location as a source or destination for transferring data.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-        /// transfers to or from an NFS file server</a>.
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses
+        /// NFS file servers</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -981,13 +1029,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Network File System (NFS) file server that DataSync can
-        /// use for a data transfer.
+        /// Creates a transfer <i>location</i> for a Network File System (NFS) file server. DataSync
+        /// can use this location as a source or destination for transferring data.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-        /// transfers to or from an NFS file server</a>.
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses
+        /// NFS file servers</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1025,9 +1073,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an object storage system that DataSync can access for a transfer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
+        /// this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html#create-object-location-prerequisites">prerequisites</a>
+        /// for DataSync to work with object storage systems.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
         /// 
@@ -1050,9 +1103,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for an object storage system that DataSync can access for a transfer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Creates a transfer <i>location</i> for an object storage system. DataSync can use
+        /// this location as a source or destination for transferring data.
+        /// 
+        ///  
+        /// <para>
+        /// Before you begin, make sure that you understand the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html#create-object-location-prerequisites">prerequisites</a>
+        /// for DataSync to work with object storage systems.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">
@@ -1082,12 +1140,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// A <i>location</i> is an endpoint for an Amazon S3 bucket. DataSync can use the location
-        /// as a source or destination for copying data.
+        /// Creates a transfer <i>location</i> for an Amazon S3 bucket. DataSync can use this
+        /// location as a source or destination for transferring data.
         /// 
         ///  <important> 
         /// <para>
-        /// Before you create your location, make sure that you read the following sections:
+        /// Before you begin, make sure that you read the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1101,8 +1159,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        ///  For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Creating
-        /// an Amazon S3 location</a>.
+        ///  For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html">Configuring
+        /// transfers with Amazon S3</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -1126,12 +1184,12 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// A <i>location</i> is an endpoint for an Amazon S3 bucket. DataSync can use the location
-        /// as a source or destination for copying data.
+        /// Creates a transfer <i>location</i> for an Amazon S3 bucket. DataSync can use this
+        /// location as a source or destination for transferring data.
         /// 
         ///  <important> 
         /// <para>
-        /// Before you create your location, make sure that you read the following sections:
+        /// Before you begin, make sure that you read the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1145,8 +1203,8 @@ namespace Amazon.DataSync
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        ///  For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Creating
-        /// an Amazon S3 location</a>.
+        ///  For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html">Configuring
+        /// transfers with Amazon S3</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -1177,13 +1235,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
-        /// use for a data transfer.
+        /// Creates a transfer <i>location</i> for a Server Message Block (SMB) file server. DataSync
+        /// can use this location as a source or destination for transferring data.
         /// 
         ///  
         /// <para>
-        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
-        /// an SMB file server</a>.
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
+        /// SMB file servers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
@@ -1207,13 +1265,13 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
-        /// use for a data transfer.
+        /// Creates a transfer <i>location</i> for a Server Message Block (SMB) file server. DataSync
+        /// can use this location as a source or destination for transferring data.
         /// 
         ///  
         /// <para>
-        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
-        /// an SMB file server</a>.
+        /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
+        /// SMB file servers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationSmb service method.</param>
@@ -1396,7 +1454,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes the configuration of a location used by DataSync.
+        /// Deletes a transfer location resource from DataSync.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLocation service method.</param>
         /// 
@@ -1419,7 +1477,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes the configuration of a location used by DataSync.
+        /// Deletes a transfer location resource from DataSync.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLocation service method.</param>
         /// <param name="cancellationToken">
@@ -1449,7 +1507,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes an DataSync transfer task.
+        /// Deletes a transfer task resource from DataSync.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTask service method.</param>
         /// 
@@ -1472,7 +1530,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Deletes an DataSync transfer task.
+        /// Deletes a transfer task resource from DataSync.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTask service method.</param>
         /// <param name="cancellationToken">
@@ -1665,7 +1723,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about your DataSync location for an Amazon EFS file system.
+        /// Provides details about how an DataSync transfer location for an Amazon EFS file system
+        /// is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationEfs service method.</param>
         /// 
@@ -1688,7 +1747,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about your DataSync location for an Amazon EFS file system.
+        /// Provides details about how an DataSync transfer location for an Amazon EFS file system
+        /// is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationEfs service method.</param>
         /// <param name="cancellationToken">
@@ -1718,8 +1778,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides details about how an DataSync location for an Amazon FSx for Lustre file
-        /// system is configured.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for Lustre
+        /// file system is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxLustre service method.</param>
         /// 
@@ -1742,8 +1802,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides details about how an DataSync location for an Amazon FSx for Lustre file
-        /// system is configured.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for Lustre
+        /// file system is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxLustre service method.</param>
         /// <param name="cancellationToken">
@@ -1773,8 +1833,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
-        /// file system is configured.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for NetApp
+        /// ONTAP file system is configured.
         /// 
         ///  <note> 
         /// <para>
@@ -1804,8 +1864,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
-        /// file system is configured.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for NetApp
+        /// ONTAP file system is configured.
         /// 
         ///  <note> 
         /// <para>
@@ -1842,8 +1902,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides details about how an DataSync location for an Amazon FSx for OpenZFS file
-        /// system is configured.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for OpenZFS
+        /// file system is configured.
         /// 
         ///  <note> 
         /// <para>
@@ -1873,8 +1933,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Provides details about how an DataSync location for an Amazon FSx for OpenZFS file
-        /// system is configured.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for OpenZFS
+        /// file system is configured.
         /// 
         ///  <note> 
         /// <para>
@@ -1911,8 +1971,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about an Amazon FSx for Windows File Server location, such as information
-        /// about its path.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for Windows
+        /// File Server file system is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows service method.</param>
         /// 
@@ -1935,8 +1995,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about an Amazon FSx for Windows File Server location, such as information
-        /// about its path.
+        /// Provides details about how an DataSync transfer location for an Amazon FSx for Windows
+        /// File Server file system is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxWindows service method.</param>
         /// <param name="cancellationToken">
@@ -1966,8 +2026,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as the authentication information about the Hadoop Distributed
-        /// File System (HDFS) location.
+        /// Provides details about how an DataSync transfer location for a Hadoop Distributed
+        /// File System (HDFS) is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationHdfs service method.</param>
         /// 
@@ -1990,8 +2050,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as the authentication information about the Hadoop Distributed
-        /// File System (HDFS) location.
+        /// Provides details about how an DataSync transfer location for a Hadoop Distributed
+        /// File System (HDFS) is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationHdfs service method.</param>
         /// <param name="cancellationToken">
@@ -2076,7 +2136,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about your DataSync location for an object storage system.
+        /// Provides details about how an DataSync transfer location for an object storage system
+        /// is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// 
@@ -2099,7 +2160,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about your DataSync location for an object storage system.
+        /// Provides details about how an DataSync transfer location for an object storage system
+        /// is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">
@@ -2129,7 +2191,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as bucket name, about an Amazon S3 bucket location.
+        /// Provides details about how an DataSync transfer location for an S3 bucket is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationS3 service method.</param>
         /// 
@@ -2152,7 +2214,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as bucket name, about an Amazon S3 bucket location.
+        /// Provides details about how an DataSync transfer location for an S3 bucket is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationS3 service method.</param>
         /// <param name="cancellationToken">
@@ -2182,7 +2244,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as the path and user information about an SMB location.
+        /// Provides details about how an DataSync transfer location for a Server Message Block
+        /// (SMB) file server is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationSmb service method.</param>
         /// 
@@ -2205,7 +2268,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata, such as the path and user information about an SMB location.
+        /// Provides details about how an DataSync transfer location for a Server Message Block
+        /// (SMB) file server is configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationSmb service method.</param>
         /// <param name="cancellationToken">
@@ -2894,7 +2958,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of executed tasks.
+        /// Returns a list of executions for an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskExecutions service method.</param>
         /// 
@@ -2917,7 +2981,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of executed tasks.
+        /// Returns a list of executions for an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -3832,7 +3896,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates the configuration of a DataSync transfer task.
+        /// Updates the configuration of an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTask service method.</param>
         /// 
@@ -3855,7 +3919,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Updates the configuration of a DataSync transfer task.
+        /// Updates the configuration of an DataSync transfer task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTask service method.</param>
         /// <param name="cancellationToken">

@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTask operation.
-    /// Deletes an DataSync transfer task.
+    /// Deletes a transfer task resource from DataSync.
     /// </summary>
     public partial class DeleteTaskRequest : AmazonDataSyncRequest
     {

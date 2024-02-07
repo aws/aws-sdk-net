@@ -49,7 +49,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The ARNs of the agents that are used to connect to the HDFS cluster. 
+        /// The ARNs of the DataSync agents that can connect with your HDFS cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -162,7 +162,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The ARN of the HDFS cluster location.
+        /// The ARN of the HDFS location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -181,7 +181,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The URI of the HDFS cluster location.
+        /// The URI of the HDFS location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4360)]
@@ -200,7 +200,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NameNodes. 
         /// <para>
-        /// The NameNode that manage the HDFS namespace. 
+        /// The NameNode that manages the HDFS namespace. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -219,9 +219,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property QopConfiguration. 
         /// <para>
-        /// The Quality of Protection (QOP) configuration specifies the Remote Procedure Call
-        /// (RPC) and data transfer protection settings configured on the Hadoop Distributed File
-        /// System (HDFS) cluster. 
+        /// The Quality of Protection (QOP) configuration, which specifies the Remote Procedure
+        /// Call (RPC) and data transfer protection settings configured on the HDFS cluster. 
         /// </para>
         /// </summary>
         public QopConfiguration QopConfiguration
@@ -259,7 +258,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SimpleUser. 
         /// <para>
-        /// The user name used to identify the client on the host operating system. This parameter
+        /// The user name to identify the client on the host operating system. This parameter
         /// is used if the <c>AuthenticationType</c> is defined as <c>SIMPLE</c>.
         /// </para>
         /// </summary>

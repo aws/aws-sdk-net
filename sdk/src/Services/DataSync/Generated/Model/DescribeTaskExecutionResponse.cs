@@ -45,6 +45,7 @@ namespace Amazon.DataSync.Model
         private long? _filesTransferred;
         private long? _filesVerified;
         private List<FilterRule> _includes = new List<FilterRule>();
+        private ManifestConfig _manifestConfig;
         private Options _options;
         private ReportResult _reportResult;
         private TaskExecutionResultDetail _result;
@@ -305,6 +306,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManifestConfig. 
+        /// <para>
+        /// The configuration of the manifest that lists the files or objects to transfer. For
+        /// more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+        /// what DataSync transfers by using a manifest</a>.
+        /// </para>
+        /// </summary>
+        public ManifestConfig ManifestConfig
+        {
+            get { return this._manifestConfig; }
+            set { this._manifestConfig = value; }
+        }
+
+        // Check to see if ManifestConfig property is set
+        internal bool IsSetManifestConfig()
+        {
+            return this._manifestConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Options.
         /// </summary>
         public Options Options
@@ -422,7 +443,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property TaskReportConfig. 
         /// <para>
         /// The configuration of your task report, which provides detailed information about for
-        /// your DataSync transfer.
+        /// your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
+        /// a task report</a>.
         /// </para>
         /// </summary>
         public TaskReportConfig TaskReportConfig

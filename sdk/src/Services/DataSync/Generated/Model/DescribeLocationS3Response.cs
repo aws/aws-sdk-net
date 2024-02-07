@@ -43,9 +43,12 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name
-        /// (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching
-        /// a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+        /// The ARNs of the DataSync agents deployed on your Outpost when using working with Amazon
+        /// S3 on Outposts.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
         /// your DataSync agent on Outposts</a>.
         /// </para>
         /// </summary>
@@ -65,7 +68,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the Amazon S3 bucket location was created.
+        /// The time that the Amazon S3 location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -83,7 +86,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
+        /// The ARN of the Amazon S3 location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -136,12 +139,14 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property S3StorageClass. 
         /// <para>
-        /// The Amazon S3 storage class that you chose to store your files in when this location
-        /// is used as a task destination. For more information about S3 storage classes, see
-        /// <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>.
-        /// Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-        /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-        /// when working with S3 storage classes in DataSync</a>.
+        /// When Amazon S3 is a destination location, this is the storage class that you chose
+        /// for your objects.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some storage classes have behaviors that can affect your Amazon S3 storage costs.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
+        /// class considerations with Amazon S3 transfers</a>.
         /// </para>
         /// </summary>
         public S3StorageClass S3StorageClass

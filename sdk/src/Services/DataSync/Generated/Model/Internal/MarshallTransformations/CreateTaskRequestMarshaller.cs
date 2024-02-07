@@ -111,6 +111,17 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetManifestConfig())
+                {
+                    context.Writer.WritePropertyName("ManifestConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManifestConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManifestConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

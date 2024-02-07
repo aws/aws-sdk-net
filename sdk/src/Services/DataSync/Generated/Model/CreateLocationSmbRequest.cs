@@ -30,13 +30,13 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationSmb operation.
-    /// Creates an endpoint for a Server Message Block (SMB) file server that DataSync can
-    /// use for a data transfer.
+    /// Creates a transfer <i>location</i> for a Server Message Block (SMB) file server. DataSync
+    /// can use this location as a source or destination for transferring data.
     /// 
     ///  
     /// <para>
-    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
-    /// an SMB file server</a>.
+    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb">accesses
+    /// SMB file servers</a>.
     /// </para>
     /// </summary>
     public partial class CreateLocationSmbRequest : AmazonDataSyncRequest
@@ -73,17 +73,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specifies the Windows domain name that your SMB file server belongs to. 
+        /// Specifies the name of the Active Directory domain that your SMB file server belongs
+        /// to. 
         /// </para>
         ///  
         /// <para>
-        /// If you have multiple domains in your environment, configuring this parameter makes
-        /// sure that DataSync connects to the right file server.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
-        /// permissions</a> for SMB locations.
+        /// If you have multiple Active Directory domains in your environment, configuring this
+        /// parameter makes sure that DataSync connects to the right file server.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -178,8 +174,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// To copy all data in the specified subdirectory, DataSync must be able to mount the
-        /// SMB share and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
+        /// To copy all data in the subdirectory, DataSync must be able to mount the SMB share
+        /// and access all of its data. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">required
         /// permissions</a> for SMB locations.
         /// </para>
         /// </summary>
@@ -219,8 +215,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// Specifies the user name that can mount your SMB file server and has permission to
-        /// access the files and folders involved in your transfer.
+        /// Specifies the user that can mount and access the files, folders, and file metadata
+        /// in your SMB file server.
         /// </para>
         ///  
         /// <para>

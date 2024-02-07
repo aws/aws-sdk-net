@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationS3 operation.
-    /// Returns metadata, such as bucket name, about an Amazon S3 bucket location.
+    /// Provides details about how an DataSync transfer location for an S3 bucket is configured.
     /// </summary>
     public partial class DescribeLocationS3Request : AmazonDataSyncRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.
+        /// Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

@@ -30,8 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationFsxOntap operation.
-    /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
-    /// file system is configured.
+    /// Provides details about how an DataSync transfer location for an Amazon FSx for NetApp
+    /// ONTAP file system is configured.
     /// 
     ///  <note> 
     /// <para>

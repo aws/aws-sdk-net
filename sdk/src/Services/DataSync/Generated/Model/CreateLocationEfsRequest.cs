@@ -30,9 +30,14 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationEfs operation.
-    /// Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer.
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
-    /// a location for Amazon EFS</a>.
+    /// Creates a transfer <i>location</i> for an Amazon EFS file system. DataSync can use
+    /// this location as a source or destination for transferring data.
+    /// 
+    ///  
+    /// <para>
+    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-access">accesses
+    /// Amazon EFS file systems</a>.
+    /// </para>
     /// </summary>
     public partial class CreateLocationEfsRequest : AmazonDataSyncRequest
     {

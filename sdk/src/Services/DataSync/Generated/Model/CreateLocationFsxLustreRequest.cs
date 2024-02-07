@@ -30,7 +30,14 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationFsxLustre operation.
-    /// Creates an endpoint for an Amazon FSx for Lustre file system.
+    /// Creates a transfer <i>location</i> for an Amazon FSx for Lustre file system. DataSync
+    /// can use this location as a source or destination for transferring data.
+    /// 
+    ///  
+    /// <para>
+    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html#create-lustre-location-access">accesses
+    /// FSx for Lustre file systems</a>.
+    /// </para>
     /// </summary>
     public partial class CreateLocationFsxLustreRequest : AmazonDataSyncRequest
     {

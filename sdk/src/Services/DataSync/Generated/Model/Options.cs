@@ -62,28 +62,24 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Atime. 
         /// <para>
         /// Specifies whether to preserve metadata indicating the last time a file was read or
-        /// written to. If you set <c>Atime</c> to <c>BEST_EFFORT</c>, DataSync attempts to preserve
-        /// the original <c>Atime</c> attribute on all source files (that is, the version before
-        /// the <c>PREPARING</c> phase of the task execution).
+        /// written to.
         /// </para>
         ///  <note> 
         /// <para>
         /// The behavior of <c>Atime</c> isn't fully standard across platforms, so DataSync can
         /// only do this on a best-effort basis.
         /// </para>
-        ///  </note> 
+        ///  </note> <ul> <li> 
         /// <para>
-        /// Default value: <c>BEST_EFFORT</c> 
+        ///  <c>BEST_EFFORT</c> (default) - DataSync attempts to preserve the original <c>Atime</c>
+        /// attribute on all source files (that is, the version before the <c>PREPARING</c> phase
+        /// of the task execution). This option is recommended.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>BEST_EFFORT</c>: Attempt to preserve the per-file <c>Atime</c> value (recommended).
+        ///  <c>NONE</c> - Ignores <c>Atime</c>.
         /// </para>
-        ///  
-        /// <para>
-        ///  <c>NONE</c>: Ignore <c>Atime</c>.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// If <c>Atime</c> is set to <c>BEST_EFFORT</c>, <c>Mtime</c> must be set to <c>PRESERVE</c>.
         /// 
@@ -131,22 +127,19 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the POSIX group ID (GID) of the file's owners.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INT_VALUE</c> (default) - Preserves the integer value of user ID (UID) and GID,
+        /// which is recommended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> - Ignores UID and GID.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
         /// copied by DataSync</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <c>INT_VALUE</c>. This preserves the integer value of the ID.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>INT_VALUE</c>: Preserve the integer value of user ID (UID) and GID (recommended).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>NONE</c>: Ignore UID and GID.
         /// </para>
         /// </summary>
         public Gid Gid
@@ -167,12 +160,20 @@ namespace Amazon.DataSync.Model
         /// Specifies the type of logs that DataSync publishes to a Amazon CloudWatch Logs log
         /// group. To specify the log group, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If you set <c>LogLevel</c> to <c>OFF</c>, no logs are published. <c>BASIC</c> publishes
-        /// logs on errors for individual files transferred. <c>TRANSFER</c> publishes logs for
-        /// every file or object that is transferred and integrity checked.
+        ///  <c>BASIC</c> - Publishes logs with only basic information (such as transfer errors).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRANSFER</c> - Publishes logs for all files or objects that your DataSync task
+        /// transfers and performs data-integrity checks on.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OFF</c> - No logs are published.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LogLevel LogLevel
         {
@@ -193,19 +194,15 @@ namespace Amazon.DataSync.Model
         /// to before the <c>PREPARING</c> phase of your task execution. This option is required
         /// when you need to run the a task more than once.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default Value: <c>PRESERVE</c> 
+        ///  <c>PRESERVE</c> (default) - Preserves original <c>Mtime</c>, which is recommended.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>PRESERVE</c>: Preserve original <c>Mtime</c> (recommended)
+        ///  <c>NONE</c> - Ignores <c>Mtime</c>.
         /// </para>
-        ///  
-        /// <para>
-        ///  <c>NONE</c>: Ignore <c>Mtime</c>. 
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// If <c>Mtime</c> is set to <c>PRESERVE</c>, <c>Atime</c> must be set to <c>BEST_EFFORT</c>.
         /// </para>
@@ -231,13 +228,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ObjectTags. 
         /// <para>
-        /// Specifies whether object tags are preserved when transferring between object storage
-        /// systems. If you want your DataSync task to ignore object tags, specify the <c>NONE</c>
-        /// value.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default Value: <c>PRESERVE</c> 
+        /// Specifies whether you want DataSync to <c>PRESERVE</c> object tags (default behavior)
+        /// when transferring between object storage systems. If you want your DataSync task to
+        /// ignore object tags, specify the <c>NONE</c> value.
         /// </para>
         /// </summary>
         public ObjectTags ObjectTags
@@ -255,18 +248,27 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property OverwriteMode. 
         /// <para>
-        /// Specifies whether data at the destination location should be overwritten or preserved.
-        /// If set to <c>NEVER</c>, a destination file for example will not be replaced by a source
-        /// file (even if the destination file differs from the source file). If you modify files
-        /// in the destination and you sync the files, you can use this value to protect against
-        /// overwriting those changes. 
+        /// Specifies whether DataSync should modify or preserve data at the destination location.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ALWAYS</c> (default) - DataSync modifies data in the destination location when
+        /// source data (including metadata) has changed.
         /// </para>
         ///  
         /// <para>
-        /// Some storage classes have specific behaviors that can affect your Amazon S3 storage
-        /// cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-        /// when working with Amazon S3 storage classes in DataSync</a>.
+        /// If DataSync overwrites objects, you might incur additional charges for certain Amazon
+        /// S3 storage classes (for example, for retrieval or early deletion). For more information,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
+        /// class considerations with Amazon S3 transfers</a>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NEVER</c> - DataSync doesn't overwrite data in the destination location even if
+        /// the source data has changed. You can use this option to protect against overwriting
+        /// changes made to files or objects in the destination.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OverwriteMode OverwriteMode
         {
@@ -291,19 +293,15 @@ namespace Amazon.DataSync.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
         /// copied by DataSync</a>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default value: <c>PRESERVE</c> 
+        ///  <c>PRESERVE</c> (default) - Preserves POSIX-style permissions, which is recommended.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>PRESERVE</c>: Preserve POSIX-style permissions (recommended).
+        ///  <c>NONE</c> - Ignores POSIX-style permissions. 
         /// </para>
-        ///  
-        /// <para>
-        ///  <c>NONE</c>: Ignore permissions. 
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// DataSync can preserve extant permissions of a source location.
         /// </para>
@@ -330,19 +328,16 @@ namespace Amazon.DataSync.Model
         /// classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
         /// when working with Amazon S3 storage classes in DataSync</a>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default value: <c>PRESERVE</c> 
+        ///  <c>PRESERVE</c> (default) - Ignores such destination files, which is recommended.
+        /// 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>PRESERVE</c>: Ignore such destination files (recommended). 
+        ///  <c>REMOVE</c> - Deletes destination files that aren’t present in the source.
         /// </para>
-        ///  
-        /// <para>
-        ///  <c>REMOVE</c>: Delete destination files that aren’t present in the source.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// If you set this parameter to <c>REMOVE</c>, you can't set <c>TransferMode</c> to <c>ALL</c>.
         /// When you transfer all data, DataSync doesn't scan your destination location and doesn't
@@ -374,19 +369,16 @@ namespace Amazon.DataSync.Model
         /// DataSync can't copy the actual contents of these devices because they're nonterminal
         /// and don't return an end-of-file (EOF) marker.
         /// </para>
-        ///  </note> 
+        ///  </note> <ul> <li> 
         /// <para>
-        /// Default value: <c>NONE</c> 
+        ///  <c>NONE</c> (default) - Ignores special devices (recommended).
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>NONE</c>: Ignore special devices (recommended). 
+        ///  <c>PRESERVE</c> - Preserves character and block device metadata. This option currently
+        /// isn't supported for Amazon EFS.
         /// </para>
-        ///  
-        /// <para>
-        ///  <c>PRESERVE</c>: Preserve character and block device metadata. This option currently
-        /// isn't supported for Amazon EFS. 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PreserveDevices PreserveDevices
         {
@@ -413,13 +405,10 @@ namespace Amazon.DataSync.Model
         /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how
         /// DataSync handles metadata</a>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default value: <c>OWNER_DACL</c> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>OWNER_DACL</c>: For each copied object, DataSync copies the following metadata:
+        ///  <c>OWNER_DACL</c> (default) - For each copied object, DataSync copies the following
+        /// metadata:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -434,9 +423,9 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// DataSync won't copy NTFS system access control lists (SACLs) with this option.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>OWNER_DACL_SACL</c>: For each copied object, DataSync copies the following metadata:
+        ///  <c>OWNER_DACL_SACL</c> - For each copied object, DataSync copies the following metadata:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -454,15 +443,19 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// Copying SACLs requires granting additional permissions to the Windows user that DataSync
-        /// uses to access your SMB location. For information about choosing a user that ensures
-        /// sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+        /// uses to access your SMB location. For information about choosing a user with the right
+        /// permissions, see required permissions for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">SMB</a>,
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">FSx
+        /// for Windows File Server</a>, or <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">FSx
+        /// for ONTAP</a> (depending on the type of location in your transfer).
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>NONE</c>: None of the SMB security descriptor components are copied. Destination
+        ///  <c>NONE</c> - None of the SMB security descriptor components are copied. Destination
         /// objects are owned by the user that was provided for accessing the destination location.
         /// DACLs and SACLs are set based on the destination server’s configuration. 
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SmbSecurityDescriptorCopyFlags SecurityDescriptorCopyFlags
         {
@@ -503,16 +496,17 @@ namespace Amazon.DataSync.Model
         /// the source and the destination location or transfers all the content from the source
         /// (without comparing what's in the destination).
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <c>CHANGED</c>: DataSync copies only data or metadata that is new or different content
-        /// from the source location to the destination location.
+        ///  <c>CHANGED</c> (default) - DataSync copies only data or metadata that is new or different
+        /// content from the source location to the destination location.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>ALL</c>: DataSync copies all source location content to the destination (without
-        /// comparing what's in the destination).
+        ///  <c>ALL</c> - DataSync copies everything in the source to the destination without
+        /// comparing differences between the locations.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TransferMode TransferMode
         {
@@ -531,22 +525,19 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the POSIX user ID (UID) of the file's owner.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INT_VALUE</c> (default) - Preserves the integer value of UID and group ID (GID),
+        /// which is recommended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> - Ignores UID and GID. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
         /// copied by DataSync</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <c>INT_VALUE</c>. This preserves the integer value of the ID.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>INT_VALUE</c>: Preserve the integer value of UID and group ID (GID) (recommended).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>NONE</c>: Ignore UID and GID. 
         /// </para>
         /// </summary>
         public Uid Uid
@@ -565,15 +556,10 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property VerifyMode. 
         /// <para>
         /// Specifies how and when DataSync checks the integrity of your data during a transfer.
-        /// 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default value: <c>POINT_IN_TIME_CONSISTENT</c> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>ONLY_FILES_TRANSFERRED</c> (recommended): DataSync calculates the checksum of
+        ///  <c>ONLY_FILES_TRANSFERRED</c> (recommended) - DataSync calculates the checksum of
         /// transferred files and metadata at the source location. At the end of the transfer,
         /// DataSync then compares this checksum to the checksum calculated on those files at
         /// the destination.
@@ -584,10 +570,10 @@ namespace Amazon.DataSync.Model
         /// Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
         /// class considerations with Amazon S3 locations</a>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>POINT_IN_TIME_CONSISTENT</c>: At the end of the transfer, DataSync scans the entire
-        /// source and destination to verify that both locations are fully synchronized.
+        ///  <c>POINT_IN_TIME_CONSISTENT</c> (default) - At the end of the transfer, DataSync
+        /// scans the entire source and destination to verify that both locations are fully synchronized.
         /// </para>
         ///  
         /// <para>
@@ -595,12 +581,13 @@ namespace Amazon.DataSync.Model
         /// Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
         /// class considerations with Amazon S3 locations</a>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <c>NONE</c>: DataSync doesn't run additional verification at the end of the transfer.
+        ///  <c>NONE</c> - DataSync doesn't run additional verification at the end of the transfer.
         /// All data transmissions are still integrity-checked with checksum verification during
         /// the transfer.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public VerifyMode VerifyMode
         {

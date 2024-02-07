@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents a single entry in a list of task executions. <c>TaskExecutionListEntry</c>
-    /// returns an array that contains a list of specific invocations of a task when the <a
-    /// href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a>
-    /// operation is called.
+    /// Represents a single entry in a list of DataSync task executions that's returned with
+    /// the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a>
+    /// operation.
     /// </summary>
     public partial class TaskExecutionListEntry
     {
@@ -42,7 +41,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a task execution.
+        /// The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task
+        /// execution statuses</a>.
         /// </para>
         /// </summary>
         public TaskExecutionStatus Status
@@ -60,7 +60,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task that was executed.
+        /// The Amazon Resource Name (ARN) of a task execution.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

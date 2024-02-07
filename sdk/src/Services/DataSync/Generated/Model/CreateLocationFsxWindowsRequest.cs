@@ -30,13 +30,14 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationFsxWindows operation.
-    /// Creates an endpoint for an Amazon FSx for Windows File Server file system that DataSync
-    /// can use for a data transfer.
+    /// Creates a transfer <i>location</i> for an Amazon FSx for Windows File Server file
+    /// system. DataSync can use this location as a source or destination for transferring
+    /// data.
     /// 
     ///  
     /// <para>
     /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-location-access">accesses
-    /// an FSx for Windows File Server</a>.
+    /// FSx for Windows File Server file systems</a>.
     /// </para>
     /// </summary>
     public partial class CreateLocationFsxWindowsRequest : AmazonDataSyncRequest
@@ -52,18 +53,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Specifies the name of the Windows domain that the FSx for Windows File Server belongs
-        /// to.
+        /// Specifies the name of the Microsoft Active Directory domain that the FSx for Windows
+        /// File Server file system belongs to.
         /// </para>
         ///  
         /// <para>
-        /// If you have multiple domains in your environment, configuring this parameter makes
-        /// sure that DataSync connects to the right file server.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
-        /// permissions</a> for FSx for Windows File Server locations.
+        /// If you have multiple Active Directory domains in your environment, configuring this
+        /// parameter makes sure that DataSync connects to the right file system.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -102,13 +98,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// Specifies the password of the user who has the permissions to access files and folders
-        /// in the file system.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
-        /// permissions</a> for FSx for Windows File Server locations.
+        /// Specifies the password of the user with the permissions to mount and access the files,
+        /// folders, and file metadata in your FSx for Windows File Server file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Max=104)]
@@ -202,8 +193,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// Specifies the user who has the permissions to access files, folders, and metadata
-        /// in your file system.
+        /// Specifies the user with the permissions to mount and access the files, folders, and
+        /// file metadata in your FSx for Windows File Server file system.
         /// </para>
         ///  
         /// <para>

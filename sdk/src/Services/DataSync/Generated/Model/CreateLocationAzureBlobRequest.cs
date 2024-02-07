@@ -30,8 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationAzureBlob operation.
-    /// Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can
-    /// use as a transfer source or destination.
+    /// Creates a transfer <i>location</i> for a Microsoft Azure Blob Storage container. DataSync
+    /// can use this location as a transfer source or destination.
     /// 
     ///  
     /// <para>

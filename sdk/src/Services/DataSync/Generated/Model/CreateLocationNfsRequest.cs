@@ -30,13 +30,13 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationNfs operation.
-    /// Creates an endpoint for a Network File System (NFS) file server that DataSync can
-    /// use for a data transfer.
+    /// Creates a transfer <i>location</i> for a Network File System (NFS) file server. DataSync
+    /// can use this location as a source or destination for transferring data.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Configuring
-    /// transfers to or from an NFS file server</a>.
+    /// Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">accesses
+    /// NFS file servers</a>.
     /// </para>
     ///  <note> 
     /// <para>
