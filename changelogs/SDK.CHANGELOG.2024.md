@@ -1,3 +1,15 @@
+### 3.7.743.0 (2024-02-07 19:16 UTC)
+* DataSync (3.7.301.0)
+	* AWS DataSync now supports manifests for specifying files or objects to transfer.
+* LexModelsV2 (3.7.302.0)
+	* This release introduces a new bot replication feature as part of Lex Global Resiliency offering. This feature leverages a new set of APIs that allow customers to create bot replicas and replicate changes to bots across regions.
+* Redshift (3.7.304.0)
+	* LisRecommendations API to fetch Amazon Redshift Advisor recommendations.
+* Core 3.7.302.7
+	* Update SigV4A signer not to include headers that are not required for the request signature
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.742.0 (2024-02-06 19:18 UTC)
 * AppSync (3.7.303.0)
 	* Support for environment variables in AppSync GraphQL APIs
