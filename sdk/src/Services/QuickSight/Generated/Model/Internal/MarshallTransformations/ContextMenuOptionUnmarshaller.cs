@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KPIConfiguration Object
+    /// Response Unmarshaller for ContextMenuOption Object
     /// </summary>  
-    public class KPIConfigurationUnmarshaller : IUnmarshaller<KPIConfiguration, XmlUnmarshallerContext>, IUnmarshaller<KPIConfiguration, JsonUnmarshallerContext>
+    public class ContextMenuOptionUnmarshaller : IUnmarshaller<ContextMenuOption, XmlUnmarshallerContext>, IUnmarshaller<ContextMenuOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KPIConfiguration IUnmarshaller<KPIConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ContextMenuOption IUnmarshaller<ContextMenuOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public KPIConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ContextMenuOption Unmarshall(JsonUnmarshallerContext context)
         {
-            KPIConfiguration unmarshalledObject = new KPIConfiguration();
+            ContextMenuOption unmarshalledObject = new ContextMenuOption();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("AvailabilityStatus", targetDepth))
                 {
-                    var unmarshaller = KPIFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Interactions", targetDepth))
-                {
-                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KPIOptions", targetDepth))
-                {
-                    var unmarshaller = KPIOptionsUnmarshaller.Instance;
-                    unmarshalledObject.KPIOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SortConfiguration", targetDepth))
-                {
-                    var unmarshaller = KPISortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +74,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KPIConfigurationUnmarshaller _instance = new KPIConfigurationUnmarshaller();        
+        private static ContextMenuOptionUnmarshaller _instance = new ContextMenuOptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KPIConfigurationUnmarshaller Instance
+        public static ContextMenuOptionUnmarshaller Instance
         {
             get
             {

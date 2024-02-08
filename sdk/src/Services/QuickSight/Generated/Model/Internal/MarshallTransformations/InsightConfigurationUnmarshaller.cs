@@ -75,6 +75,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomNarrative = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Interactions", targetDepth))
+                {
+                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

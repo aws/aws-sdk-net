@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
         private CustomContentType _contentType;
         private string _contentUrl;
         private CustomContentImageScalingConfiguration _imageScaling;
+        private VisualInteractionOptions _interactions;
 
         /// <summary>
         /// Gets and sets the property ContentType. 
@@ -92,6 +93,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetImageScaling()
         {
             return this._imageScaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
     }

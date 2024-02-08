@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InsightConfiguration Marshaller
+    /// VisualInteractionOptions Marshaller
     /// </summary>
-    public class InsightConfigurationMarshaller : IRequestMarshaller<InsightConfiguration, JsonMarshallerContext> 
+    public class VisualInteractionOptionsMarshaller : IRequestMarshaller<VisualInteractionOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,42 +43,26 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InsightConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VisualInteractionOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComputations())
+            if(requestObject.IsSetContextMenuOption())
             {
-                context.Writer.WritePropertyName("Computations");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectComputationsListValue in requestObject.Computations)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ComputationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectComputationsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetCustomNarrative())
-            {
-                context.Writer.WritePropertyName("CustomNarrative");
+                context.Writer.WritePropertyName("ContextMenuOption");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CustomNarrativeOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomNarrative, context);
+                var marshaller = ContextMenuOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContextMenuOption, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetInteractions())
+            if(requestObject.IsSetVisualMenuOption())
             {
-                context.Writer.WritePropertyName("Interactions");
+                context.Writer.WritePropertyName("VisualMenuOption");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = VisualInteractionOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Interactions, context);
+                var marshaller = VisualMenuOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualMenuOption, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -88,7 +72,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InsightConfigurationMarshaller Instance = new InsightConfigurationMarshaller();
+        public readonly static VisualInteractionOptionsMarshaller Instance = new VisualInteractionOptionsMarshaller();
 
     }
 }

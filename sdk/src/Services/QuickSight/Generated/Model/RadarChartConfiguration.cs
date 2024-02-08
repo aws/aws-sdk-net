@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private AxisDisplayOptions _colorAxis;
         private ChartAxisLabelOptions _colorLabelOptions;
         private RadarChartFieldWells _fieldWells;
+        private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
         private RadarChartShape _shape;
         private RadarChartSortConfiguration _sortConfiguration;
@@ -227,6 +228,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFieldWells()
         {
             return this._fieldWells != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
         /// <summary>

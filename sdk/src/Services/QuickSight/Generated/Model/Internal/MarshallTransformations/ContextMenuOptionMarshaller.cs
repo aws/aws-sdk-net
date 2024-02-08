@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomContentConfiguration Marshaller
+    /// ContextMenuOption Marshaller
     /// </summary>
-    public class CustomContentConfigurationMarshaller : IRequestMarshaller<CustomContentConfiguration, JsonMarshallerContext> 
+    public class ContextMenuOptionMarshaller : IRequestMarshaller<ContextMenuOption, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomContentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ContextMenuOption requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetContentType())
+            if(requestObject.IsSetAvailabilityStatus())
             {
-                context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
-            }
-
-            if(requestObject.IsSetContentUrl())
-            {
-                context.Writer.WritePropertyName("ContentUrl");
-                context.Writer.Write(requestObject.ContentUrl);
-            }
-
-            if(requestObject.IsSetImageScaling())
-            {
-                context.Writer.WritePropertyName("ImageScaling");
-                context.Writer.Write(requestObject.ImageScaling);
-            }
-
-            if(requestObject.IsSetInteractions())
-            {
-                context.Writer.WritePropertyName("Interactions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VisualInteractionOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Interactions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("AvailabilityStatus");
+                context.Writer.Write(requestObject.AvailabilityStatus);
             }
 
         }
@@ -79,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomContentConfigurationMarshaller Instance = new CustomContentConfigurationMarshaller();
+        public readonly static ContextMenuOptionMarshaller Instance = new ContextMenuOptionMarshaller();
 
     }
 }

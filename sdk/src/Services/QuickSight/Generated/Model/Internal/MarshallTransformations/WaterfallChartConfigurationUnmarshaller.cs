@@ -75,6 +75,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CategoryAxisLabelOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ColorConfiguration", targetDepth))
+                {
+                    var unmarshaller = WaterfallChartColorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ColorConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataLabels", targetDepth))
                 {
                     var unmarshaller = DataLabelOptionsUnmarshaller.Instance;
@@ -85,6 +91,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = WaterfallChartFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Interactions", targetDepth))
+                {
+                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Legend", targetDepth))

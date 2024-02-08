@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KPIConfiguration Object
+    /// Response Unmarshaller for WaterfallChartColorConfiguration Object
     /// </summary>  
-    public class KPIConfigurationUnmarshaller : IUnmarshaller<KPIConfiguration, XmlUnmarshallerContext>, IUnmarshaller<KPIConfiguration, JsonUnmarshallerContext>
+    public class WaterfallChartColorConfigurationUnmarshaller : IUnmarshaller<WaterfallChartColorConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WaterfallChartColorConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KPIConfiguration IUnmarshaller<KPIConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WaterfallChartColorConfiguration IUnmarshaller<WaterfallChartColorConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public KPIConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WaterfallChartColorConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            KPIConfiguration unmarshalledObject = new KPIConfiguration();
+            WaterfallChartColorConfiguration unmarshalledObject = new WaterfallChartColorConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("GroupColorConfiguration", targetDepth))
                 {
-                    var unmarshaller = KPIFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Interactions", targetDepth))
-                {
-                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KPIOptions", targetDepth))
-                {
-                    var unmarshaller = KPIOptionsUnmarshaller.Instance;
-                    unmarshalledObject.KPIOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SortConfiguration", targetDepth))
-                {
-                    var unmarshaller = KPISortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = WaterfallChartGroupColorConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GroupColorConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +74,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KPIConfigurationUnmarshaller _instance = new KPIConfigurationUnmarshaller();        
+        private static WaterfallChartColorConfigurationUnmarshaller _instance = new WaterfallChartColorConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KPIConfigurationUnmarshaller Instance
+        public static WaterfallChartColorConfigurationUnmarshaller Instance
         {
             get
             {

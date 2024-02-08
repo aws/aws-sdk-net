@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomContentConfiguration Marshaller
+    /// WaterfallChartGroupColorConfiguration Marshaller
     /// </summary>
-    public class CustomContentConfigurationMarshaller : IRequestMarshaller<CustomContentConfiguration, JsonMarshallerContext> 
+    public class WaterfallChartGroupColorConfigurationMarshaller : IRequestMarshaller<WaterfallChartGroupColorConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomContentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(WaterfallChartGroupColorConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetContentType())
+            if(requestObject.IsSetNegativeBarColor())
             {
-                context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WritePropertyName("NegativeBarColor");
+                context.Writer.Write(requestObject.NegativeBarColor);
             }
 
-            if(requestObject.IsSetContentUrl())
+            if(requestObject.IsSetPositiveBarColor())
             {
-                context.Writer.WritePropertyName("ContentUrl");
-                context.Writer.Write(requestObject.ContentUrl);
+                context.Writer.WritePropertyName("PositiveBarColor");
+                context.Writer.Write(requestObject.PositiveBarColor);
             }
 
-            if(requestObject.IsSetImageScaling())
+            if(requestObject.IsSetTotalBarColor())
             {
-                context.Writer.WritePropertyName("ImageScaling");
-                context.Writer.Write(requestObject.ImageScaling);
-            }
-
-            if(requestObject.IsSetInteractions())
-            {
-                context.Writer.WritePropertyName("Interactions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VisualInteractionOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Interactions, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("TotalBarColor");
+                context.Writer.Write(requestObject.TotalBarColor);
             }
 
         }
@@ -79,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomContentConfigurationMarshaller Instance = new CustomContentConfigurationMarshaller();
+        public readonly static WaterfallChartGroupColorConfigurationMarshaller Instance = new WaterfallChartGroupColorConfigurationMarshaller();
 
     }
 }

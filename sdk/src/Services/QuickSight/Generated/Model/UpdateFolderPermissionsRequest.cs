@@ -80,7 +80,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property GrantPermissions. 
         /// <para>
-        /// The permissions that you want to grant on a resource.
+        /// The permissions that you want to grant on a resource. Namespace ARNs are not supported
+        /// <c>Principal</c> values for folder permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -99,7 +100,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RevokePermissions. 
         /// <para>
-        /// The permissions that you want to revoke from a resource.
+        /// The permissions that you want to revoke from a resource. Namespace ARNs are not supported
+        /// <c>Principal</c> values for folder permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

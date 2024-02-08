@@ -35,8 +35,10 @@ namespace Amazon.QuickSight.Model
     {
         private AxisDisplayOptions _categoryAxisDisplayOptions;
         private ChartAxisLabelOptions _categoryAxisLabelOptions;
+        private WaterfallChartColorConfiguration _colorConfiguration;
         private DataLabelOptions _dataLabels;
         private WaterfallChartFieldWells _fieldWells;
+        private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
         private AxisDisplayOptions _primaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _primaryYAxisLabelOptions;
@@ -81,6 +83,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ColorConfiguration. 
+        /// <para>
+        /// The color configuration of a waterfall visual.
+        /// </para>
+        /// </summary>
+        public WaterfallChartColorConfiguration ColorConfiguration
+        {
+            get { return this._colorConfiguration; }
+            set { this._colorConfiguration = value; }
+        }
+
+        // Check to see if ColorConfiguration property is set
+        internal bool IsSetColorConfiguration()
+        {
+            return this._colorConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DataLabels. 
         /// <para>
         /// The data label configuration of a waterfall visual.
@@ -114,6 +134,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFieldWells()
         {
             return this._fieldWells != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
         /// <summary>

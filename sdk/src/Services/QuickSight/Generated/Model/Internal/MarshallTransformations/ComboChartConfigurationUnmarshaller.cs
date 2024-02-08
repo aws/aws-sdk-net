@@ -99,6 +99,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Interactions", targetDepth))
+                {
+                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Legend", targetDepth))
                 {
                     var unmarshaller = LegendOptionsUnmarshaller.Instance;

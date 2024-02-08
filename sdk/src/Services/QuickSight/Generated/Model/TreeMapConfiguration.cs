@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private DataLabelOptions _dataLabels;
         private TreeMapFieldWells _fieldWells;
         private ChartAxisLabelOptions _groupLabelOptions;
+        private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
         private ChartAxisLabelOptions _sizeLabelOptions;
         private TreeMapSortConfiguration _sortConfiguration;
@@ -133,6 +134,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGroupLabelOptions()
         {
             return this._groupLabelOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KPIConfiguration Object
+    /// Response Unmarshaller for VisualInteractionOptions Object
     /// </summary>  
-    public class KPIConfigurationUnmarshaller : IUnmarshaller<KPIConfiguration, XmlUnmarshallerContext>, IUnmarshaller<KPIConfiguration, JsonUnmarshallerContext>
+    public class VisualInteractionOptionsUnmarshaller : IUnmarshaller<VisualInteractionOptions, XmlUnmarshallerContext>, IUnmarshaller<VisualInteractionOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KPIConfiguration IUnmarshaller<KPIConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VisualInteractionOptions IUnmarshaller<VisualInteractionOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public KPIConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public VisualInteractionOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            KPIConfiguration unmarshalledObject = new KPIConfiguration();
+            VisualInteractionOptions unmarshalledObject = new VisualInteractionOptions();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FieldWells", targetDepth))
+                if (context.TestExpression("ContextMenuOption", targetDepth))
                 {
-                    var unmarshaller = KPIFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ContextMenuOptionUnmarshaller.Instance;
+                    unmarshalledObject.ContextMenuOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("VisualMenuOption", targetDepth))
                 {
-                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KPIOptions", targetDepth))
-                {
-                    var unmarshaller = KPIOptionsUnmarshaller.Instance;
-                    unmarshalledObject.KPIOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SortConfiguration", targetDepth))
-                {
-                    var unmarshaller = KPISortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = VisualMenuOptionUnmarshaller.Instance;
+                    unmarshalledObject.VisualMenuOption = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +80,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static KPIConfigurationUnmarshaller _instance = new KPIConfigurationUnmarshaller();        
+        private static VisualInteractionOptionsUnmarshaller _instance = new VisualInteractionOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KPIConfigurationUnmarshaller Instance
+        public static VisualInteractionOptionsUnmarshaller Instance
         {
             get
             {

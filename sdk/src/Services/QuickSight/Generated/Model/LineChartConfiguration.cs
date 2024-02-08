@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private LineChartDefaultSeriesSettings _defaultSeriesSettings;
         private LineChartFieldWells _fieldWells;
         private List<ForecastConfiguration> _forecastConfigurations = new List<ForecastConfiguration>();
+        private VisualInteractionOptions _interactions;
         private LegendOptions _legend;
         private LineSeriesAxisDisplayOptions _primaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _primaryYAxisLabelOptions;
@@ -144,6 +145,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetForecastConfigurations()
         {
             return this._forecastConfigurations != null && this._forecastConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
         /// <summary>

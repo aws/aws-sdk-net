@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
         private DataLabelOptions _dataLabels;
         private GaugeChartFieldWells _fieldWells;
         private GaugeChartOptions _gaugeChartOptions;
+        private VisualInteractionOptions _interactions;
         private TooltipOptions _tooltipOptions;
         private VisualPalette _visualPalette;
 
@@ -91,6 +92,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGaugeChartOptions()
         {
             return this._gaugeChartOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions
+        {
+            get { return this._interactions; }
+            set { this._interactions = value; }
+        }
+
+        // Check to see if Interactions property is set
+        internal bool IsSetInteractions()
+        {
+            return this._interactions != null;
         }
 
         /// <summary>
