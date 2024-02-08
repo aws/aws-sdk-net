@@ -108,6 +108,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetWorkspaceName())
+                {
+                    context.Writer.WritePropertyName("WorkspaceName");
+                    context.Writer.Write(publicRequest.WorkspaceName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

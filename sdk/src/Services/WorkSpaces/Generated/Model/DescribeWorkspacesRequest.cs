@@ -46,6 +46,7 @@ namespace Amazon.WorkSpaces.Model
         private string _nextToken;
         private string _userName;
         private List<string> _workspaceIds = new List<string>();
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property BundleId. 
@@ -169,6 +170,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetWorkspaceIds()
         {
             return this._workspaceIds != null && this._workspaceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the user-decoupled WorkSpace.
+        /// </para>
+        /// </summary>
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

@@ -50,6 +50,7 @@ namespace Amazon.WorkSpaces.Model
         private bool? _userVolumeEncryptionEnabled;
         private string _volumeEncryptionKey;
         private string _workspaceId;
+        private string _workspaceName;
         private WorkspaceProperties _workspaceProperties;
 
         /// <summary>
@@ -258,79 +259,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The operational state of the WorkSpace.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>PENDING</c> – The WorkSpace is in a waiting state (for example, the WorkSpace
-        /// is being created).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AVAILABLE</c> – The WorkSpace is running and has passed the health checks.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>IMPAIRED</c> – Refer to <c>UNHEALTHY</c> state.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>UNHEALTHY</c> – The WorkSpace is not responding to health checks.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>REBOOTING</c> – The WorkSpace is being rebooted (restarted).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>STARTING</c> – The WorkSpace is starting up and health checks are being run.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>REBUILDING</c> – The WorkSpace is being rebuilt.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>RESTORING</c> – The WorkSpace is being restored.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>MAINTENANCE</c> – The WorkSpace is undergoing scheduled maintenance by Amazon
-        /// Web Services.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ADMIN_MAINTENANCE</c> – The WorkSpace is undergoing maintenance by the WorkSpaces
-        /// administrator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>TERMINATING</c> – The WorkSpace is being deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>TERMINATED</c> – The WorkSpace has been deleted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>SUSPENDED</c> – The WorkSpace has been suspended for image creation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>UPDATING</c> – The WorkSpace is undergoing an update.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>STOPPING</c> – The WorkSpace is being stopped.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>STOPPED</c> – The WorkSpace has been stopped.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ERROR </c> – The WorkSpace is an error state (for example, an error occurred during
-        /// startup).
-        /// </para>
-        ///  </li> </ul> <note> 
+        ///  <note> 
         /// <para>
         /// After a WorkSpace is terminated, the <c>TERMINATED</c> state is returned only briefly
         /// before the WorkSpace directory metadata is cleaned up, so this state is rarely returned.
@@ -444,6 +373,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetWorkspaceId()
         {
             return this._workspaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the user-decoupled WorkSpace.
+        /// </para>
+        /// </summary>
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
         /// <summary>

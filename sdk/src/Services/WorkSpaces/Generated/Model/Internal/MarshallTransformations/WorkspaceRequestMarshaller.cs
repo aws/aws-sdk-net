@@ -97,6 +97,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VolumeEncryptionKey);
             }
 
+            if(requestObject.IsSetWorkspaceName())
+            {
+                context.Writer.WritePropertyName("WorkspaceName");
+                context.Writer.Write(requestObject.WorkspaceName);
+            }
+
             if(requestObject.IsSetWorkspaceProperties())
             {
                 context.Writer.WritePropertyName("WorkspaceProperties");

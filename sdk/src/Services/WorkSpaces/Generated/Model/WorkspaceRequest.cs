@@ -40,6 +40,7 @@ namespace Amazon.WorkSpaces.Model
         private string _userName;
         private bool? _userVolumeEncryptionEnabled;
         private string _volumeEncryptionKey;
+        private string _workspaceName;
         private WorkspaceProperties _workspaceProperties;
 
         /// <summary>
@@ -124,6 +125,10 @@ namespace Amazon.WorkSpaces.Model
         /// The user name of the user for the WorkSpace. This user name must exist in the Directory
         /// Service directory for the WorkSpace.
         /// </para>
+        ///  
+        /// <para>
+        /// The reserved keyword, <c>[UNDEFINED]</c>, is used when creating user-decoupled WorkSpaces.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
         public string UserName
@@ -173,6 +178,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetVolumeEncryptionKey()
         {
             return this._volumeEncryptionKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the user-decoupled WorkSpace.
+        /// </para>
+        /// </summary>
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
         /// <summary>

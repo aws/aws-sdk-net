@@ -477,6 +477,10 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeWorkspacesRequest.WorkspaceName</property>
+    <pattern>^[a-zA-Z0-9_()][a-zA-Z0-9_.()-]{1,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
@@ -1047,6 +1051,10 @@
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.Workspace.WorkspaceName</property>
+    <pattern>^[a-zA-Z0-9_()][a-zA-Z0-9_.()-]{1,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkSpaceApplication.ApplicationId</property>
     <pattern>^wsa-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
@@ -1145,6 +1153,10 @@
     <property>Amazon.WorkSpaces.Model.WorkspaceRequest.UserName</property>
     <min>1</min>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.WorkspaceRequest.WorkspaceName</property>
+    <pattern>^[a-zA-Z0-9_()][a-zA-Z0-9_.()-]{1,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.WorkspaceResourceAssociation.AssociatedResourceId</property>

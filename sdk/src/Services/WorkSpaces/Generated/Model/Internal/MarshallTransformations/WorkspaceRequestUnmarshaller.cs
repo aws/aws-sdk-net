@@ -105,6 +105,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.VolumeEncryptionKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkspaceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WorkspaceProperties", targetDepth))
                 {
                     var unmarshaller = WorkspacePropertiesUnmarshaller.Instance;
