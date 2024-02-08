@@ -69,6 +69,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactRevisions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("executionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("pipelineExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

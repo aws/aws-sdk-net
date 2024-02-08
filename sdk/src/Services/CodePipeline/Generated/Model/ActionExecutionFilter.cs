@@ -33,7 +33,32 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionExecutionFilter
     {
+        private LatestInPipelineExecutionFilter _latestInPipelineExecution;
         private string _pipelineExecutionId;
+
+        /// <summary>
+        /// Gets and sets the property LatestInPipelineExecution. 
+        /// <para>
+        /// The latest execution in the pipeline.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Filtering on the latest execution is available for executions run on or after February
+        /// 08, 2024.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LatestInPipelineExecutionFilter LatestInPipelineExecution
+        {
+            get { return this._latestInPipelineExecution; }
+            set { this._latestInPipelineExecution = value; }
+        }
+
+        // Check to see if LatestInPipelineExecution property is set
+        internal bool IsSetLatestInPipelineExecution()
+        {
+            return this._latestInPipelineExecution != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 

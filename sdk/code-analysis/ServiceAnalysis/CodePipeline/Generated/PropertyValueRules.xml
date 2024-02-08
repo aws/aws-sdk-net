@@ -832,6 +832,10 @@
     <pattern>arn:aws(-[\w]+)*:lambda:.+:[0-9]{12}:function:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.LatestInPipelineExecutionFilter.PipelineExecutionId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ListWebhookItem.Url</property>
     <min>1</min>
     <max>1000</max>

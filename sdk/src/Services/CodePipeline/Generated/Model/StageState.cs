@@ -35,6 +35,7 @@ namespace Amazon.CodePipeline.Model
     {
         private List<ActionState> _actionStates = new List<ActionState>();
         private StageExecution _inboundExecution;
+        private List<StageExecution> _inboundExecutions = new List<StageExecution>();
         private TransitionState _inboundTransitionState;
         private StageExecution _latestExecution;
         private string _stageName;
@@ -70,6 +71,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetInboundExecution()
         {
             return this._inboundExecution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InboundExecutions. 
+        /// <para>
+        /// The inbound executions for a stage.
+        /// </para>
+        /// </summary>
+        public List<StageExecution> InboundExecutions
+        {
+            get { return this._inboundExecutions; }
+            set { this._inboundExecutions = value; }
+        }
+
+        // Check to see if InboundExecutions property is set
+        internal bool IsSetInboundExecutions()
+        {
+            return this._inboundExecutions != null && this._inboundExecutions.Count > 0; 
         }
 
         /// <summary>

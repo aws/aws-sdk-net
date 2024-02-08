@@ -63,6 +63,18 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("branches", targetDepth))
+                {
+                    var unmarshaller = GitBranchFilterCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.Branches = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("filePaths", targetDepth))
+                {
+                    var unmarshaller = GitFilePathFilterCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.FilePaths = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = GitTagFilterCriteriaUnmarshaller.Instance;

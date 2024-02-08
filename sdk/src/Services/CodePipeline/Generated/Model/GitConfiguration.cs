@@ -36,19 +36,33 @@ namespace Amazon.CodePipeline.Model
     /// You can specify the Git configuration trigger type for all third-party Git-based source
     /// actions that are supported by the <c>CodeStarSourceConnection</c> action type.
     /// </para>
-    ///  </note> <note> 
-    /// <para>
-    /// V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are
-    /// not currently supported for CloudFormation and CDK resources in CodePipeline. For
-    /// more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-    /// types</a> in the <i>CodePipeline User Guide</i>.
-    /// </para>
     ///  </note>
     /// </summary>
     public partial class GitConfiguration
     {
+        private List<GitPullRequestFilter> _pullRequest = new List<GitPullRequestFilter>();
         private List<GitPushFilter> _push = new List<GitPushFilter>();
         private string _sourceActionName;
+
+        /// <summary>
+        /// Gets and sets the property PullRequest. 
+        /// <para>
+        /// The field where the repository event that will start the pipeline is specified as
+        /// pull requests.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<GitPullRequestFilter> PullRequest
+        {
+            get { return this._pullRequest; }
+            set { this._pullRequest = value; }
+        }
+
+        // Check to see if PullRequest property is set
+        internal bool IsSetPullRequest()
+        {
+            return this._pullRequest != null && this._pullRequest.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Push. 
@@ -56,13 +70,8 @@ namespace Amazon.CodePipeline.Model
         /// The field where the repository event that will start the pipeline, such as pushing
         /// Git tags, is specified with details.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Git tags is the only supported event type.
-        /// </para>
-        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=3)]
         public List<GitPushFilter> Push
         {
             get { return this._push; }

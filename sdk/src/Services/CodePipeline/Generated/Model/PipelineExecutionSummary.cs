@@ -33,6 +33,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class PipelineExecutionSummary
     {
+        private ExecutionMode _executionMode;
         private DateTime? _lastUpdateTime;
         private string _pipelineExecutionId;
         private List<SourceRevision> _sourceRevisions = new List<SourceRevision>();
@@ -40,6 +41,25 @@ namespace Amazon.CodePipeline.Model
         private PipelineExecutionStatus _status;
         private StopExecutionTrigger _stopTrigger;
         private ExecutionTrigger _trigger;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMode. 
+        /// <para>
+        /// The method that the pipeline will use to handle multiple executions. The default mode
+        /// is SUPERSEDED.
+        /// </para>
+        /// </summary>
+        public ExecutionMode ExecutionMode
+        {
+            get { return this._executionMode; }
+            set { this._executionMode = value; }
+        }
+
+        // Check to see if ExecutionMode property is set
+        internal bool IsSetExecutionMode()
+        {
+            return this._executionMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 

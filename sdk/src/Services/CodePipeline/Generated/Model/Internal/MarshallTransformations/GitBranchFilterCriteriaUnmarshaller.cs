@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActionExecutionResult Object
+    /// Response Unmarshaller for GitBranchFilterCriteria Object
     /// </summary>  
-    public class ActionExecutionResultUnmarshaller : IUnmarshaller<ActionExecutionResult, XmlUnmarshallerContext>, IUnmarshaller<ActionExecutionResult, JsonUnmarshallerContext>
+    public class GitBranchFilterCriteriaUnmarshaller : IUnmarshaller<GitBranchFilterCriteria, XmlUnmarshallerContext>, IUnmarshaller<GitBranchFilterCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActionExecutionResult IUnmarshaller<ActionExecutionResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GitBranchFilterCriteria IUnmarshaller<GitBranchFilterCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionExecutionResult Unmarshall(JsonUnmarshallerContext context)
+        public GitBranchFilterCriteria Unmarshall(JsonUnmarshallerContext context)
         {
-            ActionExecutionResult unmarshalledObject = new ActionExecutionResult();
+            GitBranchFilterCriteria unmarshalledObject = new GitBranchFilterCriteria();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,28 +63,16 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("errorDetails", targetDepth))
+                if (context.TestExpression("excludes", targetDepth))
                 {
-                    var unmarshaller = ErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Excludes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("externalExecutionId", targetDepth))
+                if (context.TestExpression("includes", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalExecutionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("externalExecutionSummary", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalExecutionSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("externalExecutionUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalExecutionUrl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Includes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,12 +80,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActionExecutionResultUnmarshaller _instance = new ActionExecutionResultUnmarshaller();        
+        private static GitBranchFilterCriteriaUnmarshaller _instance = new GitBranchFilterCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActionExecutionResultUnmarshaller Instance
+        public static GitBranchFilterCriteriaUnmarshaller Instance
         {
             get
             {

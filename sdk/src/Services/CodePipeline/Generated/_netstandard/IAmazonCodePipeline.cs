@@ -1675,6 +1675,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
         /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
         /// Try again later.
@@ -1699,6 +1702,9 @@ namespace Amazon.CodePipeline
         /// </param>
         /// 
         /// <returns>The response from the StartPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.ConcurrentPipelineExecutionsLimitExceededException">
+        /// The pipeline has reached the limit for concurrent pipeline executions.
+        /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.ConflictException">
         /// Your request cannot be handled because the pipeline is busy handling ongoing activities.
         /// Try again later.

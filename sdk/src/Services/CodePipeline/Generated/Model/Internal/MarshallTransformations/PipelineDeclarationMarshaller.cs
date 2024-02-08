@@ -75,6 +75,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExecutionMode())
+            {
+                context.Writer.WritePropertyName("executionMode");
+                context.Writer.Write(requestObject.ExecutionMode);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

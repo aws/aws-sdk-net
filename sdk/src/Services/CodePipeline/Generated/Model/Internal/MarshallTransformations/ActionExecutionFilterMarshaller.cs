@@ -45,6 +45,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ActionExecutionFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLatestInPipelineExecution())
+            {
+                context.Writer.WritePropertyName("latestInPipelineExecution");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LatestInPipelineExecutionFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.LatestInPipelineExecution, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPipelineExecutionId())
             {
                 context.Writer.WritePropertyName("pipelineExecutionId");

@@ -44,6 +44,7 @@ namespace Amazon.CodePipeline.Model
         private string _stageName;
         private DateTime? _startTime;
         private ActionExecutionStatus _status;
+        private string _updatedBy;
 
         /// <summary>
         /// Gets and sets the property ActionExecutionId. 
@@ -227,6 +228,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBy. 
+        /// <para>
+        /// The ARN of the user who changed the pipeline execution details.
+        /// </para>
+        /// </summary>
+        public string UpdatedBy
+        {
+            get { return this._updatedBy; }
+            set { this._updatedBy = value; }
+        }
+
+        // Check to see if UpdatedBy property is set
+        internal bool IsSetUpdatedBy()
+        {
+            return this._updatedBy != null;
         }
 
     }

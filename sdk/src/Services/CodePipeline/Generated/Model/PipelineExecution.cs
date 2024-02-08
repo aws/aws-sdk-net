@@ -34,6 +34,7 @@ namespace Amazon.CodePipeline.Model
     public partial class PipelineExecution
     {
         private List<ArtifactRevision> _artifactRevisions = new List<ArtifactRevision>();
+        private ExecutionMode _executionMode;
         private string _pipelineExecutionId;
         private string _pipelineName;
         private int? _pipelineVersion;
@@ -58,6 +59,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetArtifactRevisions()
         {
             return this._artifactRevisions != null && this._artifactRevisions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMode. 
+        /// <para>
+        /// The method that the pipeline will use to handle multiple executions. The default mode
+        /// is SUPERSEDED.
+        /// </para>
+        /// </summary>
+        public ExecutionMode ExecutionMode
+        {
+            get { return this._executionMode; }
+            set { this._executionMode = value; }
+        }
+
+        // Check to see if ExecutionMode property is set
+        internal bool IsSetExecutionMode()
+        {
+            return this._executionMode != null;
         }
 
         /// <summary>

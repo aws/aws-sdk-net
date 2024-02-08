@@ -34,6 +34,7 @@ namespace Amazon.CodePipeline.Model
     public partial class PipelineSummary
     {
         private DateTime? _created;
+        private ExecutionMode _executionMode;
         private string _name;
         private PipelineType _pipelineType;
         private DateTime? _updated;
@@ -55,6 +56,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetCreated()
         {
             return this._created.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMode. 
+        /// <para>
+        /// The method that the pipeline will use to handle multiple executions. The default mode
+        /// is SUPERSEDED.
+        /// </para>
+        /// </summary>
+        public ExecutionMode ExecutionMode
+        {
+            get { return this._executionMode; }
+            set { this._executionMode = value; }
+        }
+
+        // Check to see if ExecutionMode property is set
+        internal bool IsSetExecutionMode()
+        {
+            return this._executionMode != null;
         }
 
         /// <summary>
@@ -101,21 +121,13 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
+        /// For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.
         /// </para>
         ///  
         /// <para>
         ///  For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
         /// type of pipeline is right for me?</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are
-        /// not currently supported for CloudFormation and CDK resources in CodePipeline. For
-        /// more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline
-        /// types</a> in the <i>CodePipeline User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public PipelineType PipelineType
         {

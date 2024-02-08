@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitPushFilter Marshaller
+    /// GitBranchFilterCriteria Marshaller
     /// </summary>
-    public class GitPushFilterMarshaller : IRequestMarshaller<GitPushFilter, JsonMarshallerContext> 
+    public class GitBranchFilterCriteriaMarshaller : IRequestMarshaller<GitBranchFilterCriteria, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,28 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GitPushFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(GitBranchFilterCriteria requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBranches())
+            if(requestObject.IsSetExcludes())
             {
-                context.Writer.WritePropertyName("branches");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GitBranchFilterCriteriaMarshaller.Instance;
-                marshaller.Marshall(requestObject.Branches, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("excludes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExcludesListValue in requestObject.Excludes)
+                {
+                        context.Writer.Write(requestObjectExcludesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetFilePaths())
+            if(requestObject.IsSetIncludes())
             {
-                context.Writer.WritePropertyName("filePaths");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GitFilePathFilterCriteriaMarshaller.Instance;
-                marshaller.Marshall(requestObject.FilePaths, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GitTagFilterCriteriaMarshaller.Instance;
-                marshaller.Marshall(requestObject.Tags, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("includes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIncludesListValue in requestObject.Includes)
+                {
+                        context.Writer.Write(requestObjectIncludesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -83,7 +72,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GitPushFilterMarshaller Instance = new GitPushFilterMarshaller();
+        public readonly static GitBranchFilterCriteriaMarshaller Instance = new GitBranchFilterCriteriaMarshaller();
 
     }
 }

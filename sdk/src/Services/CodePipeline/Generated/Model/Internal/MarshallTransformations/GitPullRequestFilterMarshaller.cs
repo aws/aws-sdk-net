@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitPushFilter Marshaller
+    /// GitPullRequestFilter Marshaller
     /// </summary>
-    public class GitPushFilterMarshaller : IRequestMarshaller<GitPushFilter, JsonMarshallerContext> 
+    public class GitPullRequestFilterMarshaller : IRequestMarshaller<GitPullRequestFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GitPushFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(GitPullRequestFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetBranches())
             {
@@ -54,6 +54,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Branches, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEvents())
+            {
+                context.Writer.WritePropertyName("events");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEventsListValue in requestObject.Events)
+                {
+                        context.Writer.Write(requestObjectEventsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetFilePaths())
@@ -67,23 +78,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GitTagFilterCriteriaMarshaller.Instance;
-                marshaller.Marshall(requestObject.Tags, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GitPushFilterMarshaller Instance = new GitPushFilterMarshaller();
+        public readonly static GitPullRequestFilterMarshaller Instance = new GitPullRequestFilterMarshaller();
 
     }
 }

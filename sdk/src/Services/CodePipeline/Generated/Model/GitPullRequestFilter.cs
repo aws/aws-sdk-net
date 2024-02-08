@@ -29,20 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The event criteria that specify when a specified repository event will start the pipeline
-    /// for the specified trigger configuration, such as the lists of Git tags to include
-    /// and exclude.
+    /// The event criteria for the pull request trigger configuration, such as the lists of
+    /// branches or file paths to include and exclude.
     /// </summary>
-    public partial class GitPushFilter
+    public partial class GitPullRequestFilter
     {
         private GitBranchFilterCriteria _branches;
+        private List<string> _events = new List<string>();
         private GitFilePathFilterCriteria _filePaths;
-        private GitTagFilterCriteria _tags;
 
         /// <summary>
         /// Gets and sets the property Branches. 
         /// <para>
-        /// The field that specifies to filter on branches for the push trigger configuration.
+        /// The field that specifies to filter on branches for the pull request trigger configuration.
         /// </para>
         /// </summary>
         public GitBranchFilterCriteria Branches
@@ -58,9 +57,29 @@ namespace Amazon.CodePipeline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// The field that specifies which pull request events to filter on (opened, updated,
+        /// closed) for the trigger configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Events
+        {
+            get { return this._events; }
+            set { this._events = value; }
+        }
+
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FilePaths. 
         /// <para>
-        /// The field that specifies to filter on file paths for the push trigger configuration.
+        /// The field that specifies to filter on file paths for the pull request trigger configuration.
         /// </para>
         /// </summary>
         public GitFilePathFilterCriteria FilePaths
@@ -73,24 +92,6 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetFilePaths()
         {
             return this._filePaths != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The field that contains the details for the Git tags trigger configuration.
-        /// </para>
-        /// </summary>
-        public GitTagFilterCriteria Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null;
         }
 
     }

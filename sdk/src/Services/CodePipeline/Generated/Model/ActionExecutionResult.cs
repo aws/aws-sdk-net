@@ -33,9 +33,25 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionExecutionResult
     {
+        private ErrorDetails _errorDetails;
         private string _externalExecutionId;
         private string _externalExecutionSummary;
         private string _externalExecutionUrl;
+
+        /// <summary>
+        /// Gets and sets the property ErrorDetails.
+        /// </summary>
+        public ErrorDetails ErrorDetails
+        {
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
+        }
+
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
+        {
+            return this._errorDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExternalExecutionId. 

@@ -34,64 +34,47 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GitConfiguration Object
+    /// Response Unmarshaller for ConcurrentPipelineExecutionsLimitExceededException Object
     /// </summary>  
-    public class GitConfigurationUnmarshaller : IUnmarshaller<GitConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GitConfiguration, JsonUnmarshallerContext>
+    public class ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ConcurrentPipelineExecutionsLimitExceededException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GitConfiguration IUnmarshaller<GitConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ConcurrentPipelineExecutionsLimitExceededException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns>The unmarshalled object</returns>
-        public GitConfiguration Unmarshall(JsonUnmarshallerContext context)
+        /// <param name="errorResponse"></param>
+        /// <returns></returns>
+        public ConcurrentPipelineExecutionsLimitExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            GitConfiguration unmarshalledObject = new GitConfiguration();
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
+            ConcurrentPipelineExecutionsLimitExceededException unmarshalledObject = new ConcurrentPipelineExecutionsLimitExceededException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("pullRequest", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<GitPullRequestFilter, GitPullRequestFilterUnmarshaller>(GitPullRequestFilterUnmarshaller.Instance);
-                    unmarshalledObject.PullRequest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("push", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<GitPushFilter, GitPushFilterUnmarshaller>(GitPushFilterUnmarshaller.Instance);
-                    unmarshalledObject.Push = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceActionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceActionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static GitConfigurationUnmarshaller _instance = new GitConfigurationUnmarshaller();        
+        private static ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller _instance = new ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GitConfigurationUnmarshaller Instance
+        public static ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller Instance
         {
             get
             {

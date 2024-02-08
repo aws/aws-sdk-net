@@ -45,6 +45,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GitConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPullRequest())
+            {
+                context.Writer.WritePropertyName("pullRequest");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPullRequestListValue in requestObject.PullRequest)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GitPullRequestFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPullRequestListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPush())
             {
                 context.Writer.WritePropertyName("push");
