@@ -108,6 +108,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse DescribeServices(DescribeServicesRequest request);
 
@@ -142,6 +145,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -174,6 +180,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         GetAttributeValuesResponse GetAttributeValues(GetAttributeValuesRequest request);
 
@@ -205,6 +214,9 @@ namespace Amazon.Pricing
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         Task<GetAttributeValuesResponse> GetAttributeValuesAsync(GetAttributeValuesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -243,6 +255,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
         GetPriceListFileUrlResponse GetPriceListFileUrl(GetPriceListFileUrlRequest request);
 
@@ -280,6 +295,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
         Task<GetPriceListFileUrlResponse> GetPriceListFileUrlAsync(GetPriceListFileUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -309,6 +327,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         GetProductsResponse GetProducts(GetProductsRequest request);
 
@@ -337,6 +358,9 @@ namespace Amazon.Pricing
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         Task<GetProductsResponse> GetProductsAsync(GetProductsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -385,6 +409,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
         ListPriceListsResponse ListPriceLists(ListPriceListsRequest request);
 
@@ -431,6 +458,9 @@ namespace Amazon.Pricing
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
         Task<ListPriceListsResponse> ListPriceListsAsync(ListPriceListsRequest request, CancellationToken cancellationToken = default(CancellationToken));

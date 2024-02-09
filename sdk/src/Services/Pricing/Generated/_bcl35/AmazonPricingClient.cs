@@ -328,6 +328,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
@@ -399,6 +402,9 @@ namespace Amazon.Pricing
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">REST API Reference for GetAttributeValues Operation</seealso>
         public virtual GetAttributeValuesResponse GetAttributeValues(GetAttributeValuesRequest request)
@@ -477,6 +483,9 @@ namespace Amazon.Pricing
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
         /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
         public virtual GetPriceListFileUrlResponse GetPriceListFileUrl(GetPriceListFileUrlRequest request)
         {
@@ -545,6 +554,9 @@ namespace Amazon.Pricing
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         public virtual GetProductsResponse GetProducts(GetProductsRequest request)
@@ -632,6 +644,9 @@ namespace Amazon.Pricing
         /// </exception>
         /// <exception cref="Amazon.Pricing.Model.NotFoundException">
         /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ThrottlingException">
+        /// You've made too many requests exceeding service quotas.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
         public virtual ListPriceListsResponse ListPriceLists(ListPriceListsRequest request)
