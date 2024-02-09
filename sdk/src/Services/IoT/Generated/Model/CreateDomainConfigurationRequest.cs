@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         private string _domainConfigurationName;
         private string _domainName;
         private List<string> _serverCertificateArns = new List<string>();
+        private ServerCertificateConfig _serverCertificateConfig;
         private ServiceType _serviceType;
         private List<Tag> _tags = new List<Tag>();
         private TlsConfig _tlsConfig;
@@ -124,6 +125,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetServerCertificateArns()
         {
             return this._serverCertificateArns != null && this._serverCertificateArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateConfig. 
+        /// <para>
+        /// The server certificate configuration.
+        /// </para>
+        /// </summary>
+        public ServerCertificateConfig ServerCertificateConfig
+        {
+            get { return this._serverCertificateConfig; }
+            set { this._serverCertificateConfig = value; }
+        }
+
+        // Check to see if ServerCertificateConfig property is set
+        internal bool IsSetServerCertificateConfig()
+        {
+            return this._serverCertificateConfig != null;
         }
 
         /// <summary>

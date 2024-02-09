@@ -93,6 +93,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.LastStatusChangeDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serverCertificateConfig", targetDepth))
+                {
+                    var unmarshaller = ServerCertificateConfigUnmarshaller.Instance;
+                    response.ServerCertificateConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serverCertificates", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ServerCertificateSummary, ServerCertificateSummaryUnmarshaller>(ServerCertificateSummaryUnmarshaller.Instance);

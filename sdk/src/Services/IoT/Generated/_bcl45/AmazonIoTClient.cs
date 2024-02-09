@@ -10929,9 +10929,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// Returns or creates a unique endpoint specific to the Amazon Web Services account making
+        /// the call.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The first time <c>DescribeEndpoint</c> is called, an endpoint is created. All subsequent
+        /// calls to <c>DescribeEndpoint</c> return the same endpoint.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
         /// action.
@@ -10960,9 +10966,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// Returns or creates a unique endpoint specific to the Amazon Web Services account making
+        /// the call.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The first time <c>DescribeEndpoint</c> is called, an endpoint is created. All subsequent
+        /// calls to <c>DescribeEndpoint</c> return the same endpoint.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
         /// action.
@@ -10995,9 +11007,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// Returns or creates a unique endpoint specific to the Amazon Web Services account making
+        /// the call.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The first time <c>DescribeEndpoint</c> is called, an endpoint is created. All subsequent
+        /// calls to <c>DescribeEndpoint</c> return the same endpoint.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
         /// action.
@@ -11029,9 +11047,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a unique endpoint specific to the Amazon Web Services account making the call.
+        /// Returns or creates a unique endpoint specific to the Amazon Web Services account making
+        /// the call.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The first time <c>DescribeEndpoint</c> is called, an endpoint is created. All subsequent
+        /// calls to <c>DescribeEndpoint</c> return the same endpoint.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a>
         /// action.
@@ -14752,6 +14776,12 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
+        /// IoT will create a registration code as part of this API call if the registration code
+        /// doesn't exist or has been deleted. If you already have a registration code, this API
+        /// call will return the same registration code.
+        /// </para>
+        ///  
+        /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>
         /// action.
         /// </para>
@@ -14788,6 +14818,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Gets a registration code used to register a CA certificate with IoT.
         /// 
+        ///  
+        /// <para>
+        /// IoT will create a registration code as part of this API call if the registration code
+        /// doesn't exist or has been deleted. If you already have a registration code, this API
+        /// call will return the same registration code.
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a>

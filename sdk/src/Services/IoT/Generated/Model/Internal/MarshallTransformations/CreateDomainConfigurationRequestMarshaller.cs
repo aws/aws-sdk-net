@@ -96,6 +96,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetServerCertificateConfig())
+                {
+                    context.Writer.WritePropertyName("serverCertificateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServerCertificateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceType())
                 {
                     context.Writer.WritePropertyName("serviceType");

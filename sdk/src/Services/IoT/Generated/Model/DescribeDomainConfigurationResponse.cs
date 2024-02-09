@@ -40,6 +40,7 @@ namespace Amazon.IoT.Model
         private string _domainName;
         private DomainType _domainType;
         private DateTime? _lastStatusChangeDate;
+        private ServerCertificateConfig _serverCertificateConfig;
         private List<ServerCertificateSummary> _serverCertificates = new List<ServerCertificateSummary>();
         private ServiceType _serviceType;
         private TlsConfig _tlsConfig;
@@ -170,6 +171,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetLastStatusChangeDate()
         {
             return this._lastStatusChangeDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateConfig. 
+        /// <para>
+        /// The server certificate configuration.
+        /// </para>
+        /// </summary>
+        public ServerCertificateConfig ServerCertificateConfig
+        {
+            get { return this._serverCertificateConfig; }
+            set { this._serverCertificateConfig = value; }
+        }
+
+        // Check to see if ServerCertificateConfig property is set
+        internal bool IsSetServerCertificateConfig()
+        {
+            return this._serverCertificateConfig != null;
         }
 
         /// <summary>

@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         private string _domainConfigurationName;
         private DomainConfigurationStatus _domainConfigurationStatus;
         private bool? _removeAuthorizerConfig;
+        private ServerCertificateConfig _serverCertificateConfig;
         private TlsConfig _tlsConfig;
 
         /// <summary>
@@ -118,6 +119,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetRemoveAuthorizerConfig()
         {
             return this._removeAuthorizerConfig.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificateConfig. 
+        /// <para>
+        /// The server certificate configuration.
+        /// </para>
+        /// </summary>
+        public ServerCertificateConfig ServerCertificateConfig
+        {
+            get { return this._serverCertificateConfig; }
+            set { this._serverCertificateConfig = value; }
+        }
+
+        // Check to see if ServerCertificateConfig property is set
+        internal bool IsSetServerCertificateConfig()
+        {
+            return this._serverCertificateConfig != null;
         }
 
         /// <summary>
