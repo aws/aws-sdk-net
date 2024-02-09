@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLoggingConfiguration operation.
-    /// Update logging configuration.
+    /// Updates the log group ARN or the workspace ID of the current logging configuration.
     /// </summary>
     public partial class UpdateLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
+        /// A unique identifier that you can provide to ensure the idempotency of the request.
+        /// Case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -61,7 +61,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property LogGroupArn. 
         /// <para>
-        /// The ARN of the CW log group to which the vended log data will be published.
+        /// The ARN of the CloudWatch log group to which the vended log data will be published.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to vend logs to.
+        /// The ID of the workspace to update the logging configuration for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

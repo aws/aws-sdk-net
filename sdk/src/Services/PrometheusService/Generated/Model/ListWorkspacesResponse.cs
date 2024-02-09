@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a ListWorkspaces operation.
+    /// Represents the output of a <c>ListWorkspaces</c> operation.
     /// </summary>
     public partial class ListWorkspacesResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to use when requesting the next page in this list.
+        /// A token indicating that there are more results to retrieve. You can use this token
+        /// as part of your next <c>ListWorkspaces</c> request to retrieve those results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -58,7 +59,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Workspaces. 
         /// <para>
-        /// The list of existing workspaces, including those undergoing creation or deletion.
+        /// An array of <c>WorkspaceSummary</c> structures containing information about the workspaces
+        /// requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

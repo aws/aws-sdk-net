@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkspaceAlias operation.
-    /// Updates an AMP workspace alias.
+    /// Updates the alias of an existing workspace.
     /// </summary>
     public partial class UpdateWorkspaceAliasRequest : AmazonPrometheusServiceRequest
     {
@@ -41,7 +41,12 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// The new alias of the workspace.
+        /// The new alias for the workspace. It does not need to be unique.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Managed Service for Prometheus will automatically strip any blank spaces from
+        /// the beginning and end of the alias that you specify.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,8 +65,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
+        /// A unique identifier that you can provide to ensure the idempotency of the request.
+        /// Case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -80,7 +85,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace being updated.
+        /// The ID of the workspace to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

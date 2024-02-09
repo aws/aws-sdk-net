@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the status of a logging configuration.
+    /// The status of the logging configuration.
     /// </summary>
     public partial class LoggingConfigurationStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// Status code of the logging configuration.
+        /// The current status of the logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason for failure if any.
+        /// If failed, the reason for the failure.
         /// </para>
         /// </summary>
         public string StatusReason

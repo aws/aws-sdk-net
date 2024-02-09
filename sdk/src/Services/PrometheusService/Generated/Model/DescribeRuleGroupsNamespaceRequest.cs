@@ -30,7 +30,8 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRuleGroupsNamespace operation.
-    /// Describe a rule groups namespace.
+    /// Returns complete information about one rule groups namespace. To retrieve a list of
+    /// rule groups namespaces, use <c>ListRuleGroupsNamespaces</c>.
     /// </summary>
     public partial class DescribeRuleGroupsNamespaceRequest : AmazonPrometheusServiceRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The rule groups namespace.
+        /// The name of the rule groups namespace that you want information for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -59,7 +60,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to describe.
+        /// The ID of the workspace containing the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

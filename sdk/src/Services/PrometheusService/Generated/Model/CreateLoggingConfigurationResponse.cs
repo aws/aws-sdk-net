@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a CreateLoggingConfiguration operation.
+    /// Represents the output of a <c>CreateLoggingConfiguration</c> operation.
     /// </summary>
     public partial class CreateLoggingConfigurationResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the logging configuration.
+        /// A structure that displays the current status of the logging configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

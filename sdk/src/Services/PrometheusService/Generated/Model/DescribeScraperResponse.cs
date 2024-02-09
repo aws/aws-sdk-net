@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a DescribeScraper operation.
+    /// Represents the output of a <c>DescribeScraper</c> operation.
     /// </summary>
     public partial class DescribeScraperResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Scraper. 
         /// <para>
-        /// The properties of the selected scrapers.
+        /// Contains details about the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

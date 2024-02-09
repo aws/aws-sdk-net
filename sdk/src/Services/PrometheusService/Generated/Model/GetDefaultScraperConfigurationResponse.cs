@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a GetDefaultScraperConfiguration operation.
+    /// Represents the output of a <c>GetDefaultScraperConfiguration</c> operation.
     /// </summary>
     public partial class GetDefaultScraperConfigurationResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The default configuration.
+        /// The configuration file. Base 64 encoded. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+        /// configuration</a>in the <i>Amazon Managed Service for Prometheus User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

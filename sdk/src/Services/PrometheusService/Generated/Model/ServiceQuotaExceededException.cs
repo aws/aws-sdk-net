@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Request would cause a service quota to be exceeded.
+    /// Completing the request would cause a service quota to be exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -135,7 +135,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating quota.
+        /// Service quotas code of the originating quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,7 +192,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating service.
+        /// Service quotas code for the originating service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

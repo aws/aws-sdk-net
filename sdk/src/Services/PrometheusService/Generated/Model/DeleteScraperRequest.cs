@@ -30,7 +30,8 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScraper operation.
-    /// Deletes a scraper.
+    /// The <c>DeleteScraper</c> operation deletes one scraper, and stops any metrics collection
+    /// that the scraper performs.
     /// </summary>
     public partial class DeleteScraperRequest : AmazonPrometheusServiceRequest
     {
@@ -40,8 +41,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
+        /// (Optional) A unique, case-sensitive identifier that you can provide to ensure the
+        /// idempotency of the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

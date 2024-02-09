@@ -30,7 +30,37 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScraper operation.
-    /// Create a scraper.
+    /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
+    /// pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and
+    /// sends them to your Amazon Managed Service for Prometheus workspace. You can configure
+    /// the scraper to control what metrics are collected, and what transformations are applied
+    /// prior to sending them to your workspace.
+    /// 
+    ///  
+    /// <para>
+    /// If needed, an IAM role will be created for you that gives Amazon Managed Service for
+    /// Prometheus access to the metrics in your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/using-service-linked-roles.html#using-service-linked-roles-prom-scraper">Using
+    /// roles for scraping metrics from EKS</a> in the <i>Amazon Managed Service for Prometheus
+    /// User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You cannot update a scraper. If you want to change the configuration of the scraper,
+    /// create a new scraper and delete the old one.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <c>scrapeConfiguration</c> parameter contains the base64-encoded version of the
+    /// YAML configuration file.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// For more information about collectors, including what metrics are collected, and how
+    /// to configure the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html">Amazon
+    /// Web Services managed collectors</a> in the <i>Amazon Managed Service for Prometheus
+    /// User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateScraperRequest : AmazonPrometheusServiceRequest
     {
@@ -44,8 +74,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// An optional user-assigned alias for this scraper. This alias is for user reference
-        /// and does not need to be unique.
+        /// (optional) a name to associate with the scraper. This is for your use, and does not
+        /// need to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -64,8 +94,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
+        /// (Optional) A unique, case-sensitive identifier that you can provide to ensure the
+        /// idempotency of the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -84,7 +114,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination that the scraper will be producing metrics to.
+        /// The Amazon Managed Service for Prometheus workspace to send metrics to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +133,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScrapeConfiguration. 
         /// <para>
-        /// The configuration used to create the scraper.
+        /// The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+        /// configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +153,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source that the scraper will be discovering and collecting metrics from.
+        /// The Amazon EKS cluster from which the scraper will collect metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +172,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Optional, user-provided tags for this scraper.
+        /// (Optional) The list of tag keys and values to associate with the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

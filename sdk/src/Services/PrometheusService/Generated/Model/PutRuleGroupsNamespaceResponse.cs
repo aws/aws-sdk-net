@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a PutRuleGroupsNamespace operation.
+    /// Represents the output of a <c>PutRuleGroupsNamespace</c> operation.
     /// </summary>
     public partial class PutRuleGroupsNamespaceResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of this rule groups namespace.
+        /// The ARN of the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The rule groups namespace name.
+        /// The name of the rule groups namespace that was updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -79,7 +79,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of rule groups namespace.
+        /// A structure that includes the current status of the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,7 +98,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of this rule groups namespace.
+        /// The list of tag keys and values that are associated with the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

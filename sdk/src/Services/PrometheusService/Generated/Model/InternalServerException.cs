@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Unexpected error during processing of request.
+    /// An unexpected error occurred during the processing of the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

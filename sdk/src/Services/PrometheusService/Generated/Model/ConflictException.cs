@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Updating or deleting a resource can cause an inconsistent state.
+    /// The request would cause an inconsistent state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

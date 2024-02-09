@@ -30,7 +30,14 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWorkspace operation.
-    /// Deletes an AMP workspace.
+    /// Deletes an existing workspace. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When you delete a workspace, the data that has been ingested into it is not immediately
+    /// deleted. It will be permanently deleted within one month.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteWorkspaceRequest : AmazonPrometheusServiceRequest
     {
@@ -40,8 +47,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
+        /// A unique identifier that you can provide to ensure the idempotency of the request.
+        /// Case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

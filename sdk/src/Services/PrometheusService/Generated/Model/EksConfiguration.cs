@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// A representation of an EKS source.
+    /// The <c>EksConfiguration</c> structure describes the connection to the Amazon EKS cluster
+    /// from which a scraper collects metrics.
     /// </summary>
     public partial class EksConfiguration
     {
@@ -40,7 +41,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The ARN of an EKS cluster.
+        /// ARN of the Amazon EKS cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of security group IDs specified for VPC configuration.
+        /// A list of the security group IDs for the Amazon EKS cluster VPC configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -78,7 +79,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet IDs specified for VPC configuration.
+        /// A list of subnet IDs for the Amazon EKS cluster VPC configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents a summary of the properties of a workspace.
+    /// The information about one Amazon Managed Service for Prometheus workspace in your
+    /// account.
     /// </summary>
     public partial class WorkspaceSummary
     {
@@ -44,7 +45,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// Alias of this workspace.
+        /// The alias that is assigned to this workspace to help identify it. It may not be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -63,7 +64,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The AmazonResourceName of this workspace.
+        /// The ARN of the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when the workspace was created.
+        /// The date and time that the workspace was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +102,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// Customer managed KMS key ARN for this workspace
+        /// (optional) If the workspace was created with a customer managed KMS key, the ARN for
+        /// the key used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -120,7 +122,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this workspace.
+        /// The current status of the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +141,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of this workspace.
+        /// The list of tag keys and values that are associated with the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -158,7 +160,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// Unique string identifying this workspace.
+        /// The unique ID for the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

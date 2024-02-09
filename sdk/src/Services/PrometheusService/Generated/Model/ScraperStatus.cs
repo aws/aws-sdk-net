@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the status of a scraper.
+    /// The <c>ScraperStatus</c> structure contains status information about the scraper.
     /// </summary>
     public partial class ScraperStatus
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// Status code of this scraper.
+        /// The current status of the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

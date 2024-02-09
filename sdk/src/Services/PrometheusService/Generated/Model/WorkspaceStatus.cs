@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the status of a workspace.
+    /// The status of the workspace.
     /// </summary>
     public partial class WorkspaceStatus
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// Status code of this workspace.
+        /// The current status of the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

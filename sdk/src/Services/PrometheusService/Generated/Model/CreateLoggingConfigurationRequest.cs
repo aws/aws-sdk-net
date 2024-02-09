@@ -30,7 +30,9 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoggingConfiguration operation.
-    /// Create logging configuration.
+    /// The <c>CreateLoggingConfiguration</c> operation creates a logging configuration for
+    /// the workspace. Use this operation to set the CloudWatch log group to which the logs
+    /// will be published to.
     /// </summary>
     public partial class CreateLoggingConfigurationRequest : AmazonPrometheusServiceRequest
     {
@@ -41,8 +43,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency
-        /// of the request.
+        /// A unique identifier that you can provide to ensure the idempotency of the request.
+        /// Case-sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -61,7 +63,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property LogGroupArn. 
         /// <para>
-        /// The ARN of the CW log group to which the vended log data will be published.
+        /// The ARN of the CloudWatch log group to which the vended log data will be published.
+        /// This log group must exist prior to calling this API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +83,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to vend logs to.
+        /// The ID of the workspace to create the logging configuration for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

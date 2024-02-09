@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// A representation of a destination that a scraper can produce metrics to.
+    /// Where to send the metrics from a scraper.
     /// </summary>
     public partial class Destination
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property AmpConfiguration. 
         /// <para>
-        /// A representation of an AMP destination.
+        /// The Amazon Managed Service for Prometheusworkspace to send metrics to.
         /// </para>
         /// </summary>
         public AmpConfiguration AmpConfiguration

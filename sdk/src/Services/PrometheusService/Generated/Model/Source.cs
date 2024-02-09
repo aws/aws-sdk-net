@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// A representation of a source that a scraper can discover and collect metrics from.
+    /// The source of collected metrics for a scraper.
     /// </summary>
     public partial class Source
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property EksConfiguration. 
         /// <para>
-        /// A representation of an EKS source.
+        /// The Amazon EKS cluster from which a scraper collects metrics.
         /// </para>
         /// </summary>
         public EksConfiguration EksConfiguration

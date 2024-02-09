@@ -30,7 +30,8 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDefaultScraperConfiguration operation.
-    /// Gets a default configuration.
+    /// The <c>GetDefaultScraperConfiguration</c> operation returns the default scraper configuration
+    /// used when Amazon EKS creates a scraper for you.
     /// </summary>
     public partial class GetDefaultScraperConfigurationRequest : AmazonPrometheusServiceRequest
     {

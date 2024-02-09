@@ -30,7 +30,17 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Creates tags for the specified resource.
+    /// The <c>TagResource</c> operation associates tags with an Amazon Managed Service for
+    /// Prometheus resource. The only resources that can be tagged are workspaces and rule
+    /// groups namespaces. 
+    /// 
+    ///  
+    /// <para>
+    /// If you specify a new tag key for the resource, this tag is appended to the list of
+    /// tags associated with the resource. If you specify a tag key that is already associated
+    /// with the resource, the new tag value that you specify replaces the previous value
+    /// for that tag.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonPrometheusServiceRequest
     {
@@ -40,7 +50,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The ARN of the workspace or rule groups namespace to apply tags to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -57,7 +67,14 @@ namespace Amazon.PrometheusService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tag keys and values to associate with the resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Keys may not begin with <c>aws:</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags

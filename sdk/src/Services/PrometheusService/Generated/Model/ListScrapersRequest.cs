@@ -30,8 +30,9 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListScrapers operation.
-    /// Lists all scrapers in a customer account, including scrapers being created or deleted.
-    /// You may provide filters to return a more specific list of results.
+    /// The <c>ListScrapers</c> operation lists all of the scrapers in your account. This
+    /// includes scrapers being created or deleted. You can optionally filter the returned
+    /// list.
     /// </summary>
     public partial class ListScrapersRequest : AmazonPrometheusServiceRequest
     {
@@ -42,7 +43,29 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A list of scraper filters.
+        /// (Optional) A list of key-value pairs to filter the list of scrapers returned. Keys
+        /// include <c>status</c>, <c>sourceArn</c>, <c>destinationArn</c>, and <c>alias</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Filters on the same key are <c>OR</c>'d together, and filters on different keys are
+        /// <c>AND</c>'d together. For example, <c>status=ACTIVE&amp;status=CREATING&amp;alias=Test</c>,
+        /// will return all scrapers that have the alias Test, and are either in status ACTIVE
+        /// or CREATING.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find all active scrapers that are sending metrics to a specific Amazon Managed
+        /// Service for Prometheus workspace, you would use the ARN of the workspace in a query:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>status=ACTIVE&amp;destinationArn=arn:aws:aps:us-east-1:123456789012:workspace/ws-example1-1234-abcd-56ef-123456789012</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If this is included, it filters the results to only the scrapers that match the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -61,7 +84,12 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum results to return in response (default=100, maximum=1000).
+        /// Optional) The maximum number of scrapers to return in one <c>ListScrapers</c> operation.
+        /// The range is 1-1000.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the default of 100 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -80,8 +108,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to request the next page in a paginated list. This token is obtained
-        /// from the output of the previous ListScrapers request.
+        /// (Optional) The token for the next set of items to return. (You received this token
+        /// from a previous call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

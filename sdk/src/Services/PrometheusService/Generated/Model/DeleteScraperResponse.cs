@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a DeleteScraper operation.
+    /// Represents the output of a <c>DeleteScraper</c> operation.
     /// </summary>
     public partial class DeleteScraperResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScraperId. 
         /// <para>
-        /// The ID of the scraper that was deleted.
+        /// The ID of the scraper to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -58,7 +58,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the scraper that is being deleted.
+        /// The current status of the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

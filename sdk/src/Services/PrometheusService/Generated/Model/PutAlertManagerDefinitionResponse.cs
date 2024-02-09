@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a PutAlertManagerDefinition operation.
+    /// Represents the output of a <c>PutAlertManagerDefinition</c> operation.
     /// </summary>
     public partial class PutAlertManagerDefinitionResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of alert manager definition.
+        /// A structure that returns the current status of the alert manager definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

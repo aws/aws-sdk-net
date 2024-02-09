@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// A representation of an AMP destination.
+    /// The <c>AmpConfiguration</c> structure defines the Amazon Managed Service for Prometheus
+    /// instance a scraper should send metrics to.
     /// </summary>
     public partial class AmpConfiguration
     {
@@ -38,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceArn. 
         /// <para>
-        /// The ARN of an AMP workspace.
+        /// ARN of the Amazon Managed Service for Prometheus workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// A representation of a Prometheus configuration file.
+    /// A scrape configuration for a scraper, base 64 encoded. For more information, see <a
+    /// href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+    /// configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
     /// </summary>
     public partial class ScrapeConfiguration
     {
@@ -38,7 +40,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationBlob. 
         /// <para>
-        /// Binary data representing a Prometheus configuration file.
+        /// The base 64 encoded scrape configuration file.
         /// </para>
         /// </summary>
         public MemoryStream ConfigurationBlob

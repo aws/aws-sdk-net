@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a ListRuleGroupsNamespaces operation.
+    /// Represents the output of a <c>ListRuleGroupsNamespaces</c> operation.
     /// </summary>
     public partial class ListRuleGroupsNamespacesResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to use when requesting the next page in this list.
+        /// A token indicating that there are more results to retrieve. You can use this token
+        /// as part of your next <c>ListRuleGroupsNamespaces</c> request to retrieve those results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -58,7 +59,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property RuleGroupsNamespaces. 
         /// <para>
-        /// The list of the selected rule groups namespaces.
+        /// The returned list of rule groups namespaces.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

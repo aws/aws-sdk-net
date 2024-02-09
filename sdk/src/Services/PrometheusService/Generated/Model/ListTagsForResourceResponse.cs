@@ -36,7 +36,10 @@ namespace Amazon.PrometheusService.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tag keys and values associated with the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags

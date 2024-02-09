@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the status of a namespace.
+    /// The status information about a rule groups namespace.
     /// </summary>
     public partial class RuleGroupsNamespaceStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// Status code of this namespace.
+        /// The current status of the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason for failure if any.
+        /// The reason for the failure, if any.
         /// </para>
         /// </summary>
         public string StatusReason

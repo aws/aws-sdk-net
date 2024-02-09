@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// User does not have sufficient access to perform this action.
+    /// You do not have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an AWS service.
+    /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -129,8 +129,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property FieldList. 
         /// <para>
-        /// The field that caused the error, if applicable. If more than one field caused the
-        /// error, pick one and elaborate in the message.
+        /// The field that caused the error, if applicable.
         /// </para>
         /// </summary>
         public List<ValidationExceptionField> FieldList

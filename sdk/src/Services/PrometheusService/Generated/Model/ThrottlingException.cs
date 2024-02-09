@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Request was denied due to request throttling.
+    /// The request was denied due to request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -134,7 +134,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating quota.
+        /// Service quotas code for the originating quota.
         /// </para>
         /// </summary>
         public string QuotaCode
@@ -170,7 +170,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Service Quotas requirement to identify originating service.
+        /// Service quotas code for the originating service.
         /// </para>
         /// </summary>
         public string ServiceCode

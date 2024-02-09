@@ -30,7 +30,8 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Deletes tags from the specified resource.
+    /// Removes the specified tags from an Amazon Managed Service for Prometheus resource.
+    /// The only resources that can be tagged are workspaces and rule groups namespaces.
     /// </summary>
     public partial class UntagResourceRequest : AmazonPrometheusServiceRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource.
+        /// The ARN of the workspace or rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// One or more tag keys
+        /// The keys of the tags to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

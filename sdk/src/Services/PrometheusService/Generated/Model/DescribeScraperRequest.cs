@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScraper operation.
-    /// Describe an existing scraper.
+    /// The <c>DescribeScraper</c> operation displays information about an existing scraper.
     /// </summary>
     public partial class DescribeScraperRequest : AmazonPrometheusServiceRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScraperId. 
         /// <para>
-        /// The IDs of the scraper to describe.
+        /// The ID of the scraper to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

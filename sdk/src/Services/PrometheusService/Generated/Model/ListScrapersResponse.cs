@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a ListScrapers operation.
+    /// Represents the output of a <c>ListScrapers</c> operation.
     /// </summary>
     public partial class ListScrapersResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to use when requesting the next page in this list.
+        /// A token indicating that there are more results to retrieve. You can use this token
+        /// as part of your next <c>ListScrapers</c> operation to retrieve those results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -58,7 +59,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Scrapers. 
         /// <para>
-        /// The list of scrapers, filtered down if a set of filters was provided in the request.
+        /// A list of <c>ScraperSummary</c> structures giving information about scrapers in the
+        /// account that match the filters provided.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

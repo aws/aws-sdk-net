@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents a description of the rule groups namespace.
+    /// The details about one rule groups namespace.
     /// </summary>
     public partial class RuleGroupsNamespaceDescription
     {
@@ -44,7 +44,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of this rule groups namespace.
+        /// The ARN of the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when the rule groups namespace was created.
+        /// The date and time that the rule groups namespace was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,11 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The rule groups namespace data.
+        /// The rule groups file used in the namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +105,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ModifiedAt. 
         /// <para>
-        /// The time when the rule groups namespace was modified.
+        /// The date and time that the rule groups namespace was most recently changed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +124,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The rule groups namespace name.
+        /// The name of the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -139,7 +143,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of rule groups namespace.
+        /// The current status of the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,7 +162,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of this rule groups namespace.
+        /// The list of tag keys and values that are associated with the rule groups namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

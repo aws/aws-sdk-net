@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the output of a CreateScraper operation.
+    /// Represents the output of a <c>CreateScraper</c> operation.
     /// </summary>
     public partial class CreateScraperResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the scraper that was just created.
+        /// The Amazon Resource Name (ARN) of the new scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScraperId. 
         /// <para>
-        /// The generated ID of the scraper that was just created.
+        /// The ID of the new scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -79,7 +79,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the scraper that was just created (usually CREATING).
+        /// A structure that displays the current status of the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,7 +98,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of this scraper.
+        /// The list of tag keys and values that are associated with the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

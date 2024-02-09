@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Represents the properties of a scraper.
+    /// The <c>ScraperDescription</c> structure contains the full details about one scraper
+    /// in your account.
     /// </summary>
     public partial class ScraperDescription
     {
@@ -49,7 +50,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// Alias of this scraper.
+        /// (Optional) A name associated with the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -68,7 +69,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of this scraper.
+        /// The Amazon Resource Name (ARN) of the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +88,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when the scraper was created.
+        /// The date and time that the scraper was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,7 +107,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination that the scraper is producing metrics to.
+        /// The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,7 +126,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property LastModifiedAt. 
         /// <para>
-        /// The time when the scraper was last modified.
+        /// The date and time that the scraper was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +146,7 @@ namespace Amazon.PrometheusService.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper
-        /// to dsicover, collect, and produce metrics on your behalf.
+        /// to discover and collect metrics on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,7 +165,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScrapeConfiguration. 
         /// <para>
-        /// The configuration used to create the scraper.
+        /// The configuration file in use by the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -183,7 +184,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScraperId. 
         /// <para>
-        /// Unique string identifying this scraper.
+        /// The ID of the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -202,7 +203,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source that the scraper is discovering and collecting metrics from.
+        /// The Amazon EKS cluster from which the scraper collects metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -221,7 +222,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this scraper.
+        /// A structure that contains the current status of the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -240,7 +241,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason for failure if any.
+        /// If there is a failure, the reason for the failure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -259,7 +260,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of this scraper.
+        /// (Optional) The list of tag keys and values associated with the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

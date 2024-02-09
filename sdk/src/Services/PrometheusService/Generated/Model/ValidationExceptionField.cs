@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Stores information about a field passed inside a request that resulted in an exception.
+    /// Information about a field passed into a request that resulted in an exception.
     /// </summary>
     public partial class ValidationExceptionField
     {
@@ -39,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Message describing why the field failed validation.
+        /// A message describing why the field caused an exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The field name.
+        /// The name of the field that caused an exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
