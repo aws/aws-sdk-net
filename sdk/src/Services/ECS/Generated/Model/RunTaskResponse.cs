@@ -41,6 +41,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Any failures associated with the call.
         /// </para>
+        ///  
+        /// <para>
+        /// For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service
+        /// event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+        /// failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         public List<Failure> Failures
         {
