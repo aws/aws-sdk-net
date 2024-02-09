@@ -444,6 +444,9 @@ namespace Amazon.Braket
         /// <exception cref="Amazon.Braket.Model.ConflictException">
         /// An error occurred due to a conflict.
         /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceOfflineException">
+        /// The specified device is currently offline.
+        /// </exception>
         /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
         /// The specified device has been retired.
         /// </exception>
@@ -484,6 +487,9 @@ namespace Amazon.Braket
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ConflictException">
         /// An error occurred due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceOfflineException">
+        /// The specified device is currently offline.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
         /// The specified device has been retired.

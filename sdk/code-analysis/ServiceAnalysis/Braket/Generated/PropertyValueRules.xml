@@ -2,11 +2,11 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Braket.Model.CancelJobRequest.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CancelJobResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CancelQuantumTaskRequest.ClientToken</property>
@@ -40,7 +40,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateJobResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.ClientToken</property>
@@ -93,7 +93,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobRequest.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.FailureReason</property>
@@ -102,7 +102,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.JobName</property>
@@ -126,7 +126,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskResponse.QuantumTaskArn</property>
@@ -226,7 +226,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.JobSummary.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:job/.*$</pattern>
+    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.QuantumTaskSummary.DeviceArn</property>
