@@ -1,3 +1,22 @@
+### 3.7.745.0 (2024-02-09 19:19 UTC)
+* Batch (3.7.301.0)
+	* This feature allows Batch to support configuration of repository credentials for jobs running on ECS
+* Braket (3.7.302.0)
+	* Creating a job will result in DeviceOfflineException when using an offline device, and DeviceRetiredException when using a retired device.
+* CostOptimizationHub (3.7.301.0)
+	* Adding includeMemberAccounts field to the response of ListEnrollmentStatuses API.
+* ECS (3.7.305.10)
+	* Documentation only update for Amazon ECS.
+* IoT (3.7.306.0)
+	* This release allows AWS IoT Core users to enable Online Certificate Status Protocol (OCSP) Stapling for TLS X.509 Server Certificates when creating and updating AWS IoT Domain Configurations with Custom Domain.
+* Pricing (3.7.301.0)
+	* Add Throttling Exception to all APIs.
+* PrometheusService (3.7.302.24)
+	* Overall documentation updates.
+* Core 3.7.302.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.744.0 (2024-02-08 19:13 UTC)
 * CloudFront (3.7.301.41)
 	* Remove duplicate `RSA.ImportParameters` call from AmazonCloudFrontUrlSigner (which caused a performance regression issue in OpenSSL 3.0)

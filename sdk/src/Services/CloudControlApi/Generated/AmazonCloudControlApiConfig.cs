@@ -32,7 +32,7 @@ namespace Amazon.CloudControlApi
     public partial class AmazonCloudControlApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudControl", "3.7.300.47");
+            InternalSDKUtils.BuildUserAgentString("CloudControl", "3.7.300.48");
 
         private string _userAgent = UserAgentString;
         ///<summary>
