@@ -43,7 +43,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The enrollment status of a specific account ID in the organization.
+        /// The account ID of a member account in the organization.
         /// </para>
         /// </summary>
         public string AccountId

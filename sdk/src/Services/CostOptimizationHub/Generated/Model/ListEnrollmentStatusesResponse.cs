@@ -33,13 +33,34 @@ namespace Amazon.CostOptimizationHub.Model
     /// </summary>
     public partial class ListEnrollmentStatusesResponse : AmazonWebServiceResponse
     {
+        private bool? _includeMemberAccounts;
         private List<AccountEnrollmentStatus> _items = new List<AccountEnrollmentStatus>();
         private string _nextToken;
 
         /// <summary>
+        /// Gets and sets the property IncludeMemberAccounts. 
+        /// <para>
+        /// The enrollment status of all member accounts in the organization if the account is
+        /// the management account.
+        /// </para>
+        /// </summary>
+        public bool IncludeMemberAccounts
+        {
+            get { return this._includeMemberAccounts.GetValueOrDefault(); }
+            set { this._includeMemberAccounts = value; }
+        }
+
+        // Check to see if IncludeMemberAccounts property is set
+        internal bool IsSetIncludeMemberAccounts()
+        {
+            return this._includeMemberAccounts.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The account enrollment statuses.
+        /// The enrollment status of a specific account ID, including creation and last updated
+        /// timestamps.
         /// </para>
         /// </summary>
         public List<AccountEnrollmentStatus> Items
