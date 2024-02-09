@@ -197,6 +197,7 @@ namespace Amazon.Runtime
                 SsoVerificationCallback = Options.SsoVerificationCallback,
                 StartUrl = StartUrl,
                 Session = Options.SessionName,
+                Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken
             };
 
@@ -221,6 +222,7 @@ namespace Amazon.Runtime
                 SsoVerificationCallback = Options.SsoVerificationCallback,
                 StartUrl = StartUrl,
                 Session = Options.SessionName,
+                Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken
             };
 
