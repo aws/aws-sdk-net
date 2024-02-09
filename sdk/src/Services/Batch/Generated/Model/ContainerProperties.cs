@@ -49,6 +49,7 @@ namespace Amazon.Batch.Model
         private NetworkConfiguration _networkConfiguration;
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
+        private RepositoryCredentials _repositoryCredentials;
         private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
         private RuntimePlatform _runtimePlatform;
         private List<Secret> _secrets = new List<Secret>();
@@ -175,8 +176,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The image used to start a container. This string is passed directly to the Docker
-        /// daemon. Images in the Docker Hub registry are available by default. Other repositories
+        /// Required. The image used to start a container. This string is passed directly to the
+        /// Docker daemon. Images in the Docker Hub registry are available by default. Other repositories
         /// are specified with <c> <i>repository-url</i>/<i>image</i>:<i>tag</i> </c>. It can
         /// be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens
         /// (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -465,6 +466,24 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RepositoryCredentials. 
+        /// <para>
+        /// The private repository authentication credentials to use.
+        /// </para>
+        /// </summary>
+        public RepositoryCredentials RepositoryCredentials
+        {
+            get { return this._repositoryCredentials; }
+            set { this._repositoryCredentials = value; }
+        }
+
+        // Check to see if RepositoryCredentials property is set
+        internal bool IsSetRepositoryCredentials()
+        {
+            return this._repositoryCredentials != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
         /// The type and amount of resources to assign to a container. The supported resources
@@ -484,7 +503,10 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuntimePlatform.
+        /// Gets and sets the property RuntimePlatform. 
+        /// <para>
+        /// An object that represents the compute environment architecture for Batch jobs on Fargate.
+        /// </para>
         /// </summary>
         public RuntimePlatform RuntimePlatform
         {

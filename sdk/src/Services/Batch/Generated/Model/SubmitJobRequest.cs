@@ -316,7 +316,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The scheduling priority for the job. This only affects jobs in job queues with a fair
         /// share policy. Jobs with a higher scheduling priority are scheduled before jobs with
-        /// a lower scheduling priority. This overrides any scheduling priority in the job definition.
+        /// a lower scheduling priority. This overrides any scheduling priority in the job definition
+        /// and works only within a single share identifier.
         /// </para>
         ///  
         /// <para>

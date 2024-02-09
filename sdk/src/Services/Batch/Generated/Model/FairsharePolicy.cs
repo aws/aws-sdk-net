@@ -50,7 +50,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, a <c>computeReservation</c> value of 50 indicates that Batchreserves
+        /// For example, a <c>computeReservation</c> value of 50 indicates that Batch reserves
         /// 50% of the maximum available vCPU if there's only one fair share identifier. It reserves
         /// 25% if there are two fair share identifiers. It reserves 12.5% if there are three
         /// fair share identifiers. A <c>computeReservation</c> value of 25 indicates that Batch

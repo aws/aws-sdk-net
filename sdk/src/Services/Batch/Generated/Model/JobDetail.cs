@@ -487,8 +487,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was started. More specifically,
         /// it's when the job transitioned from the <c>STARTING</c> state to the <c>RUNNING</c>
-        /// state. This parameter isn't provided for child jobs of array jobs or multi-node parallel
-        /// jobs.
+        /// state. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

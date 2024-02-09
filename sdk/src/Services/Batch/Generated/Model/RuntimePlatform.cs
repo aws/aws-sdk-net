@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object that represents the compute environment architecture for Batch jobs on Fargate.
+    /// An object that represents the compute environment architecture for Batch jobs on
+    /// Fargate.
     /// </summary>
     public partial class RuntimePlatform
     {
@@ -39,12 +40,19 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CpuArchitecture. 
         /// <para>
-        /// The vCPU architecture. The default value is <c>X86_64</c>. Valid values are <c>X86_64</c>
+        ///  The vCPU architecture. The default value is <c>X86_64</c>. Valid values are <c>X86_64</c>
         /// and <c>ARM64</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This parameter must be set to <c>X86_64</c> for Windows containers.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Fargate Spot is not supported for <c>ARM64</c> and Windows-based containers on Fargate.
+        /// A job queue will be blocked if a Fargate <c>ARM64</c> or Windows job is submitted
+        /// to a job queue with only Fargate Spot compute environments. However, you can attach
+        /// both <c>FARGATE</c> and <c>FARGATE_SPOT</c> compute environments to the same job queue.
         /// </para>
         ///  </note>
         /// </summary>
@@ -75,17 +83,18 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// The Batch Scheduler checks before registering a task definition with Fargate. If the
-        /// job requires a Windows container and the first compute environment is <c>LINUX</c>,
-        /// the compute environment is skipped and the next is checked until a Windows-based compute
-        /// environment is found.
+        /// The Batch Scheduler checks the compute environments that are attached to the job queue
+        /// before registering a task definition with Fargate. In this scenario, the job queue
+        /// is where the job is submitted. If the job requires a Windows container and the first
+        /// compute environment is <c>LINUX</c>, the compute environment is skipped and the next
+        /// compute environment is checked until a Windows-based compute environment is found.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Fargate Spot is not supported for Windows-based containers on Fargate. A job queue
-        /// will be blocked if a Fargate Windows job is submitted to a job queue with only Fargate
-        /// Spot compute environments. However, you can attach both <c>FARGATE</c> and <c>FARGATE_SPOT</c>
-        /// compute environments to the same job queue.
+        /// Fargate Spot is not supported for <c>ARM64</c> and Windows-based containers on Fargate.
+        /// A job queue will be blocked if a Fargate <c>ARM64</c> or Windows job is submitted
+        /// to a job queue with only Fargate Spot compute environments. However, you can attach
+        /// both <c>FARGATE</c> and <c>FARGATE_SPOT</c> compute environments to the same job queue.
         /// </para>
         ///  </note>
         /// </summary>

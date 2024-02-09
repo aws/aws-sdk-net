@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Details for a Docker volume mount point that's used in a job's container properties.
-    /// This parameter maps to <c>Volumes</c> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create
+    /// This parameter maps to <c>Volumes</c> in the <a href="https://docs.docker.com/engine/api/v1.43/#tag/Container/operation/ContainerCreate">Create
     /// a container</a> section of the <i>Docker Remote API</i> and the <c>--volume</c> option
     /// to docker run.
     /// </summary>

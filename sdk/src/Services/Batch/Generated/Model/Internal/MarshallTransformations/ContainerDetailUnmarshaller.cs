@@ -183,6 +183,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("repositoryCredentials", targetDepth))
+                {
+                    var unmarshaller = RepositoryCredentialsUnmarshaller.Instance;
+                    unmarshalledObject.RepositoryCredentials = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceRequirements", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceRequirement, ResourceRequirementUnmarshaller>(ResourceRequirementUnmarshaller.Instance);

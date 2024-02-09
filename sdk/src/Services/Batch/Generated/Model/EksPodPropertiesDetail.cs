@@ -118,7 +118,13 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Metadata.
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Describes and uniquely identifies Kubernetes resources. For example, the compute environment
+        /// that a pod runs in or the <c>jobID</c> for a job running in the pod. For more information,
+        /// see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+        /// Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.
+        /// </para>
         /// </summary>
         public EksMetadata Metadata
         {
