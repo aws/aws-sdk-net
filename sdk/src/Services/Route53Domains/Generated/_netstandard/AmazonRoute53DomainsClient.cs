@@ -1905,7 +1905,14 @@ namespace Amazon.Route53Domains
         /// a Domain from Amazon Route 53 to Another Registrar</a> in the <i>Amazon Route 53 Developer
         /// Guide</i>.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// During the transfer of any country code top-level domains (ccTLDs) to Route 53, except
+        /// for .cc and .tv, updates to the owner contact are ignored and the owner contact data
+        /// from the registry is used. You can update the owner contact after the transfer is
+        /// complete. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html">UpdateDomainContact</a>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If the registrar for your domain is also the DNS service provider for the domain,
         /// we highly recommend that you transfer your DNS service to Route 53 or to another DNS

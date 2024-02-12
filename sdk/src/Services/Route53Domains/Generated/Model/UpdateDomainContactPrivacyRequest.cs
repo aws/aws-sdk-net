@@ -63,6 +63,7 @@ namespace Amazon.Route53Domains.Model
     public partial class UpdateDomainContactPrivacyRequest : AmazonRoute53DomainsRequest
     {
         private bool? _adminPrivacy;
+        private bool? _billingPrivacy;
         private string _domainName;
         private bool? _registrantPrivacy;
         private bool? _techPrivacy;
@@ -72,14 +73,13 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
         /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
-        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
-        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
-        /// that you entered for the admin contact.
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the admin contact.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
         /// </para>
         ///  </note>
         /// </summary>
@@ -93,6 +93,33 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetAdminPrivacy()
         {
             return this._adminPrivacy.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingPrivacy. 
+        /// <para>
+        ///  Whether you want to conceal contact information from WHOIS queries. If you specify
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the billing contact. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool BillingPrivacy
+        {
+            get { return this._billingPrivacy.GetValueOrDefault(); }
+            set { this._billingPrivacy = value; }
+        }
+
+        // Check to see if BillingPrivacy property is set
+        internal bool IsSetBillingPrivacy()
+        {
+            return this._billingPrivacy.HasValue; 
         }
 
         /// <summary>
@@ -119,14 +146,14 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
         /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
-        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
-        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
-        /// that you entered for the registrant contact (domain owner).
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the registrant contact (domain
+        /// owner).
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
         /// </para>
         ///  </note>
         /// </summary>
@@ -147,14 +174,13 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
         /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
-        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
-        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
-        /// that you entered for the technical contact.
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the technical contact.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
         /// </para>
         ///  </note>
         /// </summary>

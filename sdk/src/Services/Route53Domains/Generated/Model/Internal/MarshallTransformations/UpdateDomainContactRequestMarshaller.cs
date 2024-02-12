@@ -78,6 +78,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBillingContact())
+                {
+                    context.Writer.WritePropertyName("BillingContact");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContactDetailMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BillingContact, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetConsent())
                 {
                     context.Writer.WritePropertyName("Consent");

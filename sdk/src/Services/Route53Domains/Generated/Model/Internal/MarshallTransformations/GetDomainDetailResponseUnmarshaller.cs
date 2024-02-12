@@ -81,6 +81,18 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     response.AutoRenew = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingContact", targetDepth))
+                {
+                    var unmarshaller = ContactDetailUnmarshaller.Instance;
+                    response.BillingContact = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BillingPrivacy", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.BillingPrivacy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

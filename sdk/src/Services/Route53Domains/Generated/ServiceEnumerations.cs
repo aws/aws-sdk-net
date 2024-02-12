@@ -1155,6 +1155,14 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly DomainAvailability DONT_KNOW = new DomainAvailability("DONT_KNOW");
         /// <summary>
+        /// Constant INVALID_NAME_FOR_TLD for DomainAvailability
+        /// </summary>
+        public static readonly DomainAvailability INVALID_NAME_FOR_TLD = new DomainAvailability("INVALID_NAME_FOR_TLD");
+        /// <summary>
+        /// Constant PENDING for DomainAvailability
+        /// </summary>
+        public static readonly DomainAvailability PENDING = new DomainAvailability("PENDING");
+        /// <summary>
         /// Constant RESERVED for DomainAvailability
         /// </summary>
         public static readonly DomainAvailability RESERVED = new DomainAvailability("RESERVED");
@@ -1585,6 +1593,10 @@ namespace Amazon.Route53Domains
         /// </summary>
         public static readonly OperationType REGISTER_DOMAIN = new OperationType("REGISTER_DOMAIN");
         /// <summary>
+        /// Constant RELEASE_TO_GANDI for OperationType
+        /// </summary>
+        public static readonly OperationType RELEASE_TO_GANDI = new OperationType("RELEASE_TO_GANDI");
+        /// <summary>
         /// Constant REMOVE_DNSSEC for OperationType
         /// </summary>
         public static readonly OperationType REMOVE_DNSSEC = new OperationType("REMOVE_DNSSEC");
@@ -1596,6 +1608,10 @@ namespace Amazon.Route53Domains
         /// Constant TRANSFER_IN_DOMAIN for OperationType
         /// </summary>
         public static readonly OperationType TRANSFER_IN_DOMAIN = new OperationType("TRANSFER_IN_DOMAIN");
+        /// <summary>
+        /// Constant TRANSFER_ON_RENEW for OperationType
+        /// </summary>
+        public static readonly OperationType TRANSFER_ON_RENEW = new OperationType("TRANSFER_ON_RENEW");
         /// <summary>
         /// Constant TRANSFER_OUT_DOMAIN for OperationType
         /// </summary>

@@ -43,6 +43,7 @@ namespace Amazon.Route53Domains.Model
     public partial class UpdateDomainContactRequest : AmazonRoute53DomainsRequest
     {
         private ContactDetail _adminContact;
+        private ContactDetail _billingContact;
         private Consent _consent;
         private string _domainName;
         private ContactDetail _registrantContact;
@@ -65,6 +66,25 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetAdminContact()
         {
             return this._adminContact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingContact. 
+        /// <para>
+        /// Provides detailed contact information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ContactDetail BillingContact
+        {
+            get { return this._billingContact; }
+            set { this._billingContact = value; }
+        }
+
+        // Check to see if BillingContact property is set
+        internal bool IsSetBillingContact()
+        {
+            return this._billingContact != null;
         }
 
         /// <summary>

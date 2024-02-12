@@ -90,6 +90,17 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoRenew);
                 }
 
+                if(publicRequest.IsSetBillingContact())
+                {
+                    context.Writer.WritePropertyName("BillingContact");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContactDetailMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BillingContact, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");
@@ -128,6 +139,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("PrivacyProtectAdminContact");
                     context.Writer.Write(publicRequest.PrivacyProtectAdminContact);
+                }
+
+                if(publicRequest.IsSetPrivacyProtectBillingContact())
+                {
+                    context.Writer.WritePropertyName("PrivacyProtectBillingContact");
+                    context.Writer.Write(publicRequest.PrivacyProtectBillingContact);
                 }
 
                 if(publicRequest.IsSetPrivacyProtectRegistrantContact())

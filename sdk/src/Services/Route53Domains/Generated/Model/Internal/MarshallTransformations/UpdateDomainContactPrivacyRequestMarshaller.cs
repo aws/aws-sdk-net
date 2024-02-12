@@ -73,6 +73,12 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AdminPrivacy);
                 }
 
+                if(publicRequest.IsSetBillingPrivacy())
+                {
+                    context.Writer.WritePropertyName("BillingPrivacy");
+                    context.Writer.Write(publicRequest.BillingPrivacy);
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");

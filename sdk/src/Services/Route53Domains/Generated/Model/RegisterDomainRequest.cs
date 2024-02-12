@@ -79,10 +79,12 @@ namespace Amazon.Route53Domains.Model
     {
         private ContactDetail _adminContact;
         private bool? _autoRenew;
+        private ContactDetail _billingContact;
         private string _domainName;
         private int? _durationInYears;
         private string _idnLangCode;
         private bool? _privacyProtectAdminContact;
+        private bool? _privacyProtectBillingContact;
         private bool? _privacyProtectRegistrantContact;
         private bool? _privacyProtectTechContact;
         private ContactDetail _registrantContact;
@@ -129,6 +131,26 @@ namespace Amazon.Route53Domains.Model
         internal bool IsSetAutoRenew()
         {
             return this._autoRenew.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingContact. 
+        /// <para>
+        /// Provides detailed contact information. For information about the values that you specify
+        /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ContactDetail BillingContact
+        {
+            get { return this._billingContact; }
+            set { this._billingContact = value; }
+        }
+
+        // Check to see if BillingContact property is set
+        internal bool IsSetBillingContact()
+        {
+            return this._billingContact != null;
         }
 
         /// <summary>
@@ -232,14 +254,13 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
         /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
-        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
-        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
-        /// that you entered for the admin contact.
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the admin contact.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
         /// </para>
         ///  </note> 
         /// <para>
@@ -259,18 +280,45 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivacyProtectBillingContact. 
+        /// <para>
+        /// Whether you want to conceal contact information from WHOIS queries. If you specify
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the billing contact.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool PrivacyProtectBillingContact
+        {
+            get { return this._privacyProtectBillingContact.GetValueOrDefault(); }
+            set { this._privacyProtectBillingContact = value; }
+        }
+
+        // Check to see if PrivacyProtectBillingContact property is set
+        internal bool IsSetPrivacyProtectBillingContact()
+        {
+            return this._privacyProtectBillingContact.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivacyProtectRegistrantContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
         /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
-        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
-        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
-        /// that you entered for the registrant contact (the domain owner).
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the registrant contact (the domain
+        /// owner).
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
         /// </para>
         ///  </note> 
         /// <para>
@@ -294,14 +342,13 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
         /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
-        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
-        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
-        /// that you entered for the technical contact.
+        /// Registrar or for our registrar associate, Gandi. If you specify <c>false</c>, WHOIS
+        /// queries return the information that you entered for the technical contact.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// You must specify the same privacy setting for the administrative, billing, registrant,
+        /// and technical contacts.
         /// </para>
         ///  </note> 
         /// <para>

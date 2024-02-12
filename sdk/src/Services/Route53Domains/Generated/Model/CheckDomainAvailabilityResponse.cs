@@ -66,6 +66,10 @@ namespace Amazon.Route53Domains.Model
         /// is available. Route 53 can return this response for a variety of reasons, for example,
         /// the registry is performing maintenance. Try again later.
         /// </para>
+        ///  </dd> <dt>INVALID_NAME_FOR_TLD</dt> <dd> 
+        /// <para>
+        /// The TLD isn't valid. For example, it can contain characters that aren't allowed.
+        /// </para>
         ///  </dd> <dt>PENDING</dt> <dd> 
         /// <para>
         /// The TLD registry didn't return a response in the expected amount of time. When the
