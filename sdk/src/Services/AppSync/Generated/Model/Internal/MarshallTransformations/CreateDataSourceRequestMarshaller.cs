@@ -129,6 +129,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("metricsConfig");
+                    context.Writer.Write(publicRequest.MetricsConfig);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

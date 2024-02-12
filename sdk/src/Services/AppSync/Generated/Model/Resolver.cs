@@ -39,6 +39,7 @@ namespace Amazon.AppSync.Model
         private string _fieldName;
         private ResolverKind _kind;
         private int? _maxBatchSize;
+        private ResolverLevelMetricsConfig _metricsConfig;
         private PipelineConfig _pipelineConfig;
         private string _requestMappingTemplate;
         private string _resolverArn;
@@ -170,6 +171,31 @@ namespace Amazon.AppSync.Model
         internal bool IsSetMaxBatchSize()
         {
             return this._maxBatchSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// Enables or disables enhanced resolver metrics for specified resolvers. Note that <c>metricsConfig</c>
+        /// won't be used unless the <c>resolverLevelMetricsBehavior</c> value is set to <c>PER_RESOLVER_METRICS</c>.
+        /// If the <c>resolverLevelMetricsBehavior</c> is set to <c>FULL_REQUEST_RESOLVER_METRICS</c>
+        /// instead, <c>metricsConfig</c> will be ignored. However, you can still set its value.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>metricsConfig</c> can be <c>ENABLED</c> or <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public ResolverLevelMetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
         }
 
         /// <summary>

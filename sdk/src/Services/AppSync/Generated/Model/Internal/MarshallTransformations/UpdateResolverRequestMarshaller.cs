@@ -109,6 +109,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxBatchSize);
                 }
 
+                if(publicRequest.IsSetMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("metricsConfig");
+                    context.Writer.Write(publicRequest.MetricsConfig);
+                }
+
                 if(publicRequest.IsSetPipelineConfig())
                 {
                     context.Writer.WritePropertyName("pipelineConfig");

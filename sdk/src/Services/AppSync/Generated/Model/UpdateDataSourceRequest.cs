@@ -41,6 +41,7 @@ namespace Amazon.AppSync.Model
         private EventBridgeDataSourceConfig _eventBridgeConfig;
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
+        private DataSourceLevelMetricsConfig _metricsConfig;
         private string _name;
         private OpenSearchServiceDataSourceConfig _openSearchServiceConfig;
         private RelationalDatabaseDataSourceConfig _relationalDatabaseConfig;
@@ -178,6 +179,32 @@ namespace Amazon.AppSync.Model
         internal bool IsSetLambdaConfig()
         {
             return this._lambdaConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// Enables or disables enhanced data source metrics for specified data sources. Note
+        /// that <c>metricsConfig</c> won't be used unless the <c>dataSourceLevelMetricsBehavior</c>
+        /// value is set to <c>PER_DATA_SOURCE_METRICS</c>. If the <c>dataSourceLevelMetricsBehavior</c>
+        /// is set to <c>FULL_REQUEST_DATA_SOURCE_METRICS</c> instead, <c>metricsConfig</c> will
+        /// be ignored. However, you can still set its value.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>metricsConfig</c> can be <c>ENABLED</c> or <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public DataSourceLevelMetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
         }
 
         /// <summary>

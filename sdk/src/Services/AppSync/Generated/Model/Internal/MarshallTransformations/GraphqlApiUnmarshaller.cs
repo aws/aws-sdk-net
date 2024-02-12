@@ -99,6 +99,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("enhancedMetricsConfig", targetDepth))
+                {
+                    var unmarshaller = EnhancedMetricsConfigUnmarshaller.Instance;
+                    unmarshalledObject.EnhancedMetricsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("introspectionConfig", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

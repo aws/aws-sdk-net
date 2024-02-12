@@ -74,6 +74,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApiCachingBehavior);
                 }
 
+                if(publicRequest.IsSetHealthMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("healthMetricsConfig");
+                    context.Writer.Write(publicRequest.HealthMetricsConfig);
+                }
+
                 if(publicRequest.IsSetTtl())
                 {
                     context.Writer.WritePropertyName("ttl");

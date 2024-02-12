@@ -80,6 +80,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AtRestEncryptionEnabled);
                 }
 
+                if(publicRequest.IsSetHealthMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("healthMetricsConfig");
+                    context.Writer.Write(publicRequest.HealthMetricsConfig);
+                }
+
                 if(publicRequest.IsSetTransitEncryptionEnabled())
                 {
                     context.Writer.WritePropertyName("transitEncryptionEnabled");

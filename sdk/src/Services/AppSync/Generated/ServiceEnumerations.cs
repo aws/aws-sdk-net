@@ -447,6 +447,56 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type CacheHealthMetricsConfig.
+    /// </summary>
+    public class CacheHealthMetricsConfig : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CacheHealthMetricsConfig
+        /// </summary>
+        public static readonly CacheHealthMetricsConfig DISABLED = new CacheHealthMetricsConfig("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CacheHealthMetricsConfig
+        /// </summary>
+        public static readonly CacheHealthMetricsConfig ENABLED = new CacheHealthMetricsConfig("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheHealthMetricsConfig(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheHealthMetricsConfig FindValue(string value)
+        {
+            return FindValue<CacheHealthMetricsConfig>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheHealthMetricsConfig(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictDetectionType.
     /// </summary>
     public class ConflictDetectionType : ConstantClass
@@ -602,6 +652,106 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSourceIntrospectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSourceLevelMetricsBehavior.
+    /// </summary>
+    public class DataSourceLevelMetricsBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_REQUEST_DATA_SOURCE_METRICS for DataSourceLevelMetricsBehavior
+        /// </summary>
+        public static readonly DataSourceLevelMetricsBehavior FULL_REQUEST_DATA_SOURCE_METRICS = new DataSourceLevelMetricsBehavior("FULL_REQUEST_DATA_SOURCE_METRICS");
+        /// <summary>
+        /// Constant PER_DATA_SOURCE_METRICS for DataSourceLevelMetricsBehavior
+        /// </summary>
+        public static readonly DataSourceLevelMetricsBehavior PER_DATA_SOURCE_METRICS = new DataSourceLevelMetricsBehavior("PER_DATA_SOURCE_METRICS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceLevelMetricsBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceLevelMetricsBehavior FindValue(string value)
+        {
+            return FindValue<DataSourceLevelMetricsBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceLevelMetricsBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSourceLevelMetricsConfig.
+    /// </summary>
+    public class DataSourceLevelMetricsConfig : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DataSourceLevelMetricsConfig
+        /// </summary>
+        public static readonly DataSourceLevelMetricsConfig DISABLED = new DataSourceLevelMetricsConfig("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DataSourceLevelMetricsConfig
+        /// </summary>
+        public static readonly DataSourceLevelMetricsConfig ENABLED = new DataSourceLevelMetricsConfig("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceLevelMetricsConfig(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceLevelMetricsConfig FindValue(string value)
+        {
+            return FindValue<DataSourceLevelMetricsConfig>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceLevelMetricsConfig(string value)
         {
             return FindValue(value);
         }
@@ -987,6 +1137,56 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type OperationLevelMetricsConfig.
+    /// </summary>
+    public class OperationLevelMetricsConfig : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for OperationLevelMetricsConfig
+        /// </summary>
+        public static readonly OperationLevelMetricsConfig DISABLED = new OperationLevelMetricsConfig("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for OperationLevelMetricsConfig
+        /// </summary>
+        public static readonly OperationLevelMetricsConfig ENABLED = new OperationLevelMetricsConfig("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationLevelMetricsConfig(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationLevelMetricsConfig FindValue(string value)
+        {
+            return FindValue<OperationLevelMetricsConfig>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationLevelMetricsConfig(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OutputType.
     /// </summary>
     public class OutputType : ConstantClass
@@ -1176,6 +1376,106 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResolverKind(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverLevelMetricsBehavior.
+    /// </summary>
+    public class ResolverLevelMetricsBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_REQUEST_RESOLVER_METRICS for ResolverLevelMetricsBehavior
+        /// </summary>
+        public static readonly ResolverLevelMetricsBehavior FULL_REQUEST_RESOLVER_METRICS = new ResolverLevelMetricsBehavior("FULL_REQUEST_RESOLVER_METRICS");
+        /// <summary>
+        /// Constant PER_RESOLVER_METRICS for ResolverLevelMetricsBehavior
+        /// </summary>
+        public static readonly ResolverLevelMetricsBehavior PER_RESOLVER_METRICS = new ResolverLevelMetricsBehavior("PER_RESOLVER_METRICS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverLevelMetricsBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverLevelMetricsBehavior FindValue(string value)
+        {
+            return FindValue<ResolverLevelMetricsBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverLevelMetricsBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverLevelMetricsConfig.
+    /// </summary>
+    public class ResolverLevelMetricsConfig : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ResolverLevelMetricsConfig
+        /// </summary>
+        public static readonly ResolverLevelMetricsConfig DISABLED = new ResolverLevelMetricsConfig("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ResolverLevelMetricsConfig
+        /// </summary>
+        public static readonly ResolverLevelMetricsConfig ENABLED = new ResolverLevelMetricsConfig("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverLevelMetricsConfig(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverLevelMetricsConfig FindValue(string value)
+        {
+            return FindValue<ResolverLevelMetricsConfig>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverLevelMetricsConfig(string value)
         {
             return FindValue(value);
         }

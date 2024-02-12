@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
         private ApiCachingBehavior _apiCachingBehavior;
         private string _apiId;
         private bool? _atRestEncryptionEnabled;
+        private CacheHealthMetricsConfig _healthMetricsConfig;
         private bool? _transitEncryptionEnabled;
         private long? _ttl;
         private ApiCacheType _type;
@@ -104,6 +105,39 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAtRestEncryptionEnabled()
         {
             return this._atRestEncryptionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthMetricsConfig. 
+        /// <para>
+        /// Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics
+        /// include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation
+        /// was called.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EngineCPUUtilization: The number of GraphQL errors that occurred during a specified
+        /// GraphQL operation.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Metrics will be recorded by API ID. You can set the value to <c>ENABLED</c> or <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public CacheHealthMetricsConfig HealthMetricsConfig
+        {
+            get { return this._healthMetricsConfig; }
+            set { this._healthMetricsConfig = value; }
+        }
+
+        // Check to see if HealthMetricsConfig property is set
+        internal bool IsSetHealthMetricsConfig()
+        {
+            return this._healthMetricsConfig != null;
         }
 
         /// <summary>

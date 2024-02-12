@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ApiCache Object
+    /// Response Unmarshaller for EnhancedMetricsConfig Object
     /// </summary>  
-    public class ApiCacheUnmarshaller : IUnmarshaller<ApiCache, XmlUnmarshallerContext>, IUnmarshaller<ApiCache, JsonUnmarshallerContext>
+    public class EnhancedMetricsConfigUnmarshaller : IUnmarshaller<EnhancedMetricsConfig, XmlUnmarshallerContext>, IUnmarshaller<EnhancedMetricsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ApiCache IUnmarshaller<ApiCache, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EnhancedMetricsConfig IUnmarshaller<EnhancedMetricsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApiCache Unmarshall(JsonUnmarshallerContext context)
+        public EnhancedMetricsConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            ApiCache unmarshalledObject = new ApiCache();
+            EnhancedMetricsConfig unmarshalledObject = new EnhancedMetricsConfig();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,46 +63,22 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("apiCachingBehavior", targetDepth))
+                if (context.TestExpression("dataSourceLevelMetricsBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiCachingBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSourceLevelMetricsBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("atRestEncryptionEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.AtRestEncryptionEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("healthMetricsConfig", targetDepth))
+                if (context.TestExpression("operationLevelMetricsConfig", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HealthMetricsConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperationLevelMetricsConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("resolverLevelMetricsBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transitEncryptionEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.TransitEncryptionEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ttl", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Ttl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResolverLevelMetricsBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -110,12 +86,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static ApiCacheUnmarshaller _instance = new ApiCacheUnmarshaller();        
+        private static EnhancedMetricsConfigUnmarshaller _instance = new EnhancedMetricsConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ApiCacheUnmarshaller Instance
+        public static EnhancedMetricsConfigUnmarshaller Instance
         {
             get
             {

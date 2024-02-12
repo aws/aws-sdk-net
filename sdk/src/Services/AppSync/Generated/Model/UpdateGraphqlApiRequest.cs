@@ -37,6 +37,7 @@ namespace Amazon.AppSync.Model
         private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
         private string _apiId;
         private AuthenticationType _authenticationType;
+        private EnhancedMetricsConfig _enhancedMetricsConfig;
         private GraphQLApiIntrospectionConfig _introspectionConfig;
         private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
@@ -102,6 +103,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnhancedMetricsConfig. 
+        /// <para>
+        /// The <c>enhancedMetricsConfig</c> object.
+        /// </para>
+        /// </summary>
+        public EnhancedMetricsConfig EnhancedMetricsConfig
+        {
+            get { return this._enhancedMetricsConfig; }
+            set { this._enhancedMetricsConfig = value; }
+        }
+
+        // Check to see if EnhancedMetricsConfig property is set
+        internal bool IsSetEnhancedMetricsConfig()
+        {
+            return this._enhancedMetricsConfig != null;
         }
 
         /// <summary>

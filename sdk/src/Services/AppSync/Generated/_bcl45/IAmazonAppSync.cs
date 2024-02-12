@@ -506,6 +506,10 @@ namespace Amazon.AppSync
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -540,6 +544,10 @@ namespace Amazon.AppSync
         /// </param>
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -1024,6 +1032,10 @@ namespace Amazon.AppSync
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -1052,6 +1064,10 @@ namespace Amazon.AppSync
         /// </param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -3848,6 +3864,10 @@ namespace Amazon.AppSync
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
         /// 
         /// <returns>The response from the UpdateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -3876,6 +3896,10 @@ namespace Amazon.AppSync
         /// </param>
         /// 
         /// <returns>The response from the UpdateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.

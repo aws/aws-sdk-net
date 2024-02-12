@@ -90,6 +90,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthenticationType);
                 }
 
+                if(publicRequest.IsSetEnhancedMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("enhancedMetricsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnhancedMetricsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EnhancedMetricsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIntrospectionConfig())
                 {
                     context.Writer.WritePropertyName("introspectionConfig");

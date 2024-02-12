@@ -39,6 +39,7 @@ namespace Amazon.AppSync.Model
         private string _arn;
         private AuthenticationType _authenticationType;
         private Dictionary<string, string> _dns = new Dictionary<string, string>();
+        private EnhancedMetricsConfig _enhancedMetricsConfig;
         private GraphQLApiIntrospectionConfig _introspectionConfig;
         private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
@@ -163,6 +164,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetDns()
         {
             return this._dns != null && this._dns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnhancedMetricsConfig. 
+        /// <para>
+        /// The <c>enhancedMetricsConfig</c> object.
+        /// </para>
+        /// </summary>
+        public EnhancedMetricsConfig EnhancedMetricsConfig
+        {
+            get { return this._enhancedMetricsConfig; }
+            set { this._enhancedMetricsConfig = value; }
+        }
+
+        // Check to see if EnhancedMetricsConfig property is set
+        internal bool IsSetEnhancedMetricsConfig()
+        {
+            return this._enhancedMetricsConfig != null;
         }
 
         /// <summary>
