@@ -53,6 +53,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutMetricDataRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
+            CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.gzip);
             request.Parameters.Add("Action", "PutMetricData");
             request.Parameters.Add("Version", "2010-08-01");
 
