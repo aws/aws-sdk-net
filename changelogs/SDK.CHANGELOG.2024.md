@@ -1,3 +1,13 @@
+### 3.7.746.0 (2024-02-12 19:19 UTC)
+* AppSync (3.7.304.0)
+	* Adds support for new options on GraphqlAPIs, Resolvers and  Data Sources for emitting Amazon CloudWatch metrics for enhanced monitoring of AppSync APIs.
+* CloudWatch (3.7.302.0)
+	* This release enables PutMetricData API request payload compression by default.
+* NeptuneGraph (3.7.303.0)
+	* Adding a new option "parameters" for data plane api ExecuteQuery to support running parameterized query via SDK.
+* Route53Domains (3.7.301.0)
+	* This release adds bill contact support for RegisterDomain, TransferDomain, UpdateDomainContact and GetDomainDetail API.
+
 ### 3.7.745.0 (2024-02-09 19:19 UTC)
 * Batch (3.7.301.0)
 	* This feature allows Batch to support configuration of repository credentials for jobs running on ECS
