@@ -33,7 +33,25 @@ namespace Amazon.NeptuneGraph.Model
     /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
     /// If you want to make a parameterized query call, you can use an HTTP request. 
     /// 
-    ///  <note> 
+    ///  
+    /// <para>
+    ///  When invoking this operation in a Neptune Analytics cluster, the IAM user or role
+    /// making the request must have a policy attached that allows one of the following IAM
+    /// actions in that cluster, depending on the query: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// neptune-graph:ReadDataViaQuery
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// neptune-graph:WriteDataViaQuery
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// neptune-graph:DeleteDataViaQuery
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     ///  Non-parametrized queries are not considered for plan caching. You can force plan
     /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
@@ -47,6 +65,7 @@ namespace Amazon.NeptuneGraph.Model
         private ExplainMode _explainMode;
         private string _graphIdentifier;
         private QueryLanguage _language;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _parameters = new Dictionary<string, Amazon.Runtime.Documents.Document>();
         private PlanCacheType _planCache;
         private string _queryString;
         private int? _queryTimeoutMilliseconds;
@@ -107,6 +126,25 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetLanguage()
         {
             return this._language != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The data parameters the query can use in JSON format. For example: {"name": "john",
+        /// "age": 20}. (optional) 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Amazon.Runtime.Documents.Document> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>

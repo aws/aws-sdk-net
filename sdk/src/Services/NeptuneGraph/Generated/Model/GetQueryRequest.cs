@@ -31,6 +31,14 @@ namespace Amazon.NeptuneGraph.Model
     /// <summary>
     /// Container for the parameters to the GetQuery operation.
     /// Retrieves the status of a specified query.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  When invoking this operation in a Neptune Analytics cluster, the IAM user or role
+    /// making the request must have the <c>neptune-graph:GetQueryStatus</c> IAM action attached.
+    /// 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetQueryRequest : AmazonNeptuneGraphRequest
     {

@@ -228,7 +228,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property PublicConnectivity. 
         /// <para>
         /// Specifies whether or not the graph can be reachable over the internet. All access
-        /// to graphs IAM authenticated.
+        /// to graphs is IAM authenticated.
         /// </para>
         /// </summary>
         public bool PublicConnectivity

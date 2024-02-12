@@ -606,7 +606,25 @@ namespace Amazon.NeptuneGraph
         /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
         /// If you want to make a parameterized query call, you can use an HTTP request. 
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        ///  When invoking this operation in a Neptune Analytics cluster, the IAM user or role
+        /// making the request must have a policy attached that allows one of the following IAM
+        /// actions in that cluster, depending on the query: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// neptune-graph:ReadDataViaQuery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// neptune-graph:WriteDataViaQuery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// neptune-graph:DeleteDataViaQuery
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         ///  Non-parametrized queries are not considered for plan caching. You can force plan
         /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
@@ -645,7 +663,25 @@ namespace Amazon.NeptuneGraph
         /// Execute an openCypher query. Currently, the SDK does not support parameterized queries.
         /// If you want to make a parameterized query call, you can use an HTTP request. 
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        ///  When invoking this operation in a Neptune Analytics cluster, the IAM user or role
+        /// making the request must have a policy attached that allows one of the following IAM
+        /// actions in that cluster, depending on the query: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// neptune-graph:ReadDataViaQuery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// neptune-graph:WriteDataViaQuery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// neptune-graph:DeleteDataViaQuery
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         ///  Non-parametrized queries are not considered for plan caching. You can force plan
         /// caching with <c>planCache=enabled</c>. The plan cache will be reused only for the
@@ -954,6 +990,14 @@ namespace Amazon.NeptuneGraph
 
         /// <summary>
         /// Retrieves the status of a specified query.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  When invoking this operation in a Neptune Analytics cluster, the IAM user or role
+        /// making the request must have the <c>neptune-graph:GetQueryStatus</c> IAM action attached.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQuery service method.</param>
         /// 
@@ -980,6 +1024,14 @@ namespace Amazon.NeptuneGraph
 
         /// <summary>
         /// Retrieves the status of a specified query.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  When invoking this operation in a Neptune Analytics cluster, the IAM user or role
+        /// making the request must have the <c>neptune-graph:GetQueryStatus</c> IAM action attached.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQuery service method.</param>
         /// <param name="cancellationToken">

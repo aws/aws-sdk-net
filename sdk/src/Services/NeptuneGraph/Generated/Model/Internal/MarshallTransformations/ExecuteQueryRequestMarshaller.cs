@@ -77,6 +77,20 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Language);
                 }
 
+                if(publicRequest.IsSetParameters())
+                {
+                    context.Writer.WritePropertyName("parameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                        var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestParametersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPlanCache())
                 {
                     context.Writer.WritePropertyName("planCache");
