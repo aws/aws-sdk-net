@@ -55,6 +55,7 @@ namespace Amazon.Lightsail.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
+        private string _relationalDatabaseBlueprintId;
         private string _relationalDatabaseName;
         private bool? _rotateMasterUserPassword;
 
@@ -298,6 +299,30 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelationalDatabaseBlueprintId. 
+        /// <para>
+        /// This parameter is used to update the major version of the database. Enter the <c>blueprintId</c>
+        /// for the major version that you want to update to.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+        /// action to get a list of available blueprint IDs.
+        /// </para>
+        /// </summary>
+        public string RelationalDatabaseBlueprintId
+        {
+            get { return this._relationalDatabaseBlueprintId; }
+            set { this._relationalDatabaseBlueprintId = value; }
+        }
+
+        // Check to see if RelationalDatabaseBlueprintId property is set
+        internal bool IsSetRelationalDatabaseBlueprintId()
+        {
+            return this._relationalDatabaseBlueprintId != null;
         }
 
         /// <summary>

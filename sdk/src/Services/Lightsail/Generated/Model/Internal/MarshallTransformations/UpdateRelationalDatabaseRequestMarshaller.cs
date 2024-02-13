@@ -115,6 +115,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PubliclyAccessible);
                 }
 
+                if(publicRequest.IsSetRelationalDatabaseBlueprintId())
+                {
+                    context.Writer.WritePropertyName("relationalDatabaseBlueprintId");
+                    context.Writer.Write(publicRequest.RelationalDatabaseBlueprintId);
+                }
+
                 if(publicRequest.IsSetRelationalDatabaseName())
                 {
                     context.Writer.WritePropertyName("relationalDatabaseName");
