@@ -100,7 +100,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The list of regions for which log sources are displayed.
+        /// The list of Regions for which log sources are displayed.
         /// </para>
         /// </summary>
         public List<string> Regions

@@ -87,7 +87,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// List the Amazon Web Services Regions from which exceptions are retrieved.
+        /// The Amazon Web Services Regions from which exceptions are retrieved.
         /// </para>
         /// </summary>
         public List<string> Regions

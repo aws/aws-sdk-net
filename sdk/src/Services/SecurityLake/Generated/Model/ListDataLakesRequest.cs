@@ -41,7 +41,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The list of regions where Security Lake is enabled.
+        /// The list of Regions where Security Lake is enabled.
         /// </para>
         /// </summary>
         public List<string> Regions
