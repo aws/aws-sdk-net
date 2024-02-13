@@ -32,7 +32,7 @@ namespace Amazon.CleanRooms
     public partial class AmazonCleanRoomsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CleanRooms", "3.7.302.37");
+            InternalSDKUtils.BuildUserAgentString("CleanRooms", "3.7.302.38");
 
         private string _userAgent = UserAgentString;
         ///<summary>

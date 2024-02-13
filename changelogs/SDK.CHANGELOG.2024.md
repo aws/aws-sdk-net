@@ -1,3 +1,17 @@
+### 3.7.747.0 (2024-02-13 19:20 UTC)
+* Lightsail (3.7.303.0)
+	* This release adds support to upgrade the major version of a database.
+* MarketplaceCatalog (3.7.303.0)
+	* AWS Marketplace Catalog API now supports setting intent on requests
+* ResourceExplorer2 (3.7.302.0)
+	* Resource Explorer now uses newly supported IPv4 'amazonaws.com' endpoints by default.
+* SecurityLake (3.7.300.49)
+	* Documentation updates for Security Lake
+* Core 3.7.302.9
+	* Fixed a regression for SigV2 signing for S3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.746.0 (2024-02-12 19:19 UTC)
 * AppSync (3.7.304.0)
 	* Adds support for new options on GraphqlAPIs, Resolvers and  Data Sources for emitting Amazon CloudWatch metrics for enhanced monitoring of AppSync APIs.
