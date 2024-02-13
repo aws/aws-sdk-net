@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _endTime;
         private FailureCode _failureCode;
         private string _failureDescription;
+        private Intent _intent;
         private string _startTime;
         private ChangeStatus _status;
 
@@ -180,6 +181,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetFailureDescription()
         {
             return this._failureDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Intent. 
+        /// <para>
+        /// The optional intent provided in the <c>StartChangeSet</c> request. If you do not provide
+        /// an intent, <c>APPLY</c> is set by default.
+        /// </para>
+        /// </summary>
+        public Intent Intent
+        {
+            get { return this._intent; }
+            set { this._intent = value; }
+        }
+
+        // Check to see if Intent property is set
+        internal bool IsSetIntent()
+        {
+            return this._intent != null;
         }
 
         /// <summary>

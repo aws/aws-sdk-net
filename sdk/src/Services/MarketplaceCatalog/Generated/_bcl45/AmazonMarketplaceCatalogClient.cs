@@ -276,7 +276,9 @@ namespace Amazon.MarketplaceCatalog
 
 
         /// <summary>
-        /// Returns metadata and content for multiple entities.
+        /// Returns metadata and content for multiple entities. This is the Batch version of the
+        /// <c>DescribeEntity</c> API and uses the same IAM permission action as <c>DescribeEntity</c>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDescribeEntities service method.</param>
         /// 
@@ -325,7 +327,9 @@ namespace Amazon.MarketplaceCatalog
 
 
         /// <summary>
-        /// Returns metadata and content for multiple entities.
+        /// Returns metadata and content for multiple entities. This is the Batch version of the
+        /// <c>DescribeEntity</c> API and uses the same IAM permission action as <c>DescribeEntity</c>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDescribeEntities service method.</param>
         /// <param name="cancellationToken">

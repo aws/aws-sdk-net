@@ -60,6 +60,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _changeSetName;
         private List<Tag> _changeSetTags = new List<Tag>();
         private string _clientRequestToken;
+        private Intent _intent;
 
         /// <summary>
         /// Gets and sets the property Catalog. 
@@ -156,6 +157,28 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Intent. 
+        /// <para>
+        /// The intent related to the request. The default is <c>APPLY</c>. To test your request
+        /// before applying changes to your entities, use <c>VALIDATE</c>. This feature is currently
+        /// available for adding versions to single-AMI products. For more information, see <a
+        /// href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+        /// a new version</a>.
+        /// </para>
+        /// </summary>
+        public Intent Intent
+        {
+            get { return this._intent; }
+            set { this._intent = value; }
+        }
+
+        // Check to see if Intent property is set
+        internal bool IsSetIntent()
+        {
+            return this._intent != null;
         }
 
     }

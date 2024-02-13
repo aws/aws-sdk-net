@@ -120,6 +120,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetIntent())
+                {
+                    context.Writer.WritePropertyName("Intent");
+                    context.Writer.Write(publicRequest.Intent);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

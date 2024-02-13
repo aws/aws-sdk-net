@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// A filter for offers entity.
+    /// Object containing all the filter fields for offers entity. Client can add only one
+    /// wildcard filter and a maximum of 8 filters in a single <c>ListEntities</c> request.
     /// </summary>
     public partial class OfferFilters
     {

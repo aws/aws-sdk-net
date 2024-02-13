@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Object containing all the filter fields for SaaS products. Client can add a maximum
-    /// of 8 filters in a single <c>ListEntities</c> request.
+    /// Object containing all the filter fields for SaaS products. Client can add only one
+    /// wildcard filter and a maximum of 8 filters in a single <c>ListEntities</c> request.
     /// </summary>
     public partial class SaaSProductFilters
     {
