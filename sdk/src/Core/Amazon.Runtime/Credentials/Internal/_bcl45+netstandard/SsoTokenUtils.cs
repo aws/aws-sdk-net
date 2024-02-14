@@ -87,7 +87,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 !string.IsNullOrEmpty(token.ClientId) &&
                 !string.IsNullOrEmpty(token.ClientSecret);
         }
-        
+
         /// <summary>
         /// Serializes the SSO Token to JSON
         /// </summary>
@@ -136,10 +136,11 @@ namespace Amazon.Runtime.Credentials.Internal
         }
 
         /// <summary>
-        /// Deserializes the SSO Token from JSON
+        /// Deserializes the SSO Token from JSON. Returns null when throwIfTokenInvalid is false and token is invalid.
         /// </summary>
-        /// <param name="json">JSON (string) to deserialize</param>
-        public static SsoToken FromJson(string json)
+        /// <param name="json">JSON (string) to deserialize.</param>
+        /// <param name="throwIfTokenInvalid">if set, throws exception of type AmazonClientException when the json doesn't have AccessToken and ExpiresAt properties.</param>
+        public static SsoToken FromJson(string json, bool throwIfTokenInvalid)
         {
             var jsonData = JsonMapper.ToObject(json);
 
@@ -148,13 +149,29 @@ namespace Amazon.Runtime.Credentials.Internal
             if (jsonData.PropertyNames.Contains(JsonPropertyNames.AccessToken))
                 token.AccessToken = jsonData[JsonPropertyNames.AccessToken].ToString();
             else
-                throw new AmazonClientException($"Token is invalid: missing required field [{JsonPropertyNames.AccessToken}]");
-
+            {
+                if (throwIfTokenInvalid)
+                {
+                    throw new AmazonClientException($"Token is invalid: missing required field [{JsonPropertyNames.AccessToken}]");
+                }
+                else
+                {
+                    return null;
+                }
+            }
             if (jsonData.PropertyNames.Contains(JsonPropertyNames.ExpiresAt))
                 token.ExpiresAt = XmlConvert.ToDateTime(jsonData[JsonPropertyNames.ExpiresAt].ToString(), XmlDateTimeSerializationMode.Utc);
             else
-                throw new AmazonClientException($"Token is invalid: missing required field [{JsonPropertyNames.ExpiresAt}]");
-
+            {
+                if (throwIfTokenInvalid)
+                {
+                    throw new AmazonClientException($"Token is invalid: missing required field [{JsonPropertyNames.ExpiresAt}]");
+                }
+                else
+                {
+                    return null;
+                }
+            }
             if (jsonData.PropertyNames.Contains(JsonPropertyNames.RefreshToken))
                 token.RefreshToken = jsonData[JsonPropertyNames.RefreshToken]?.ToString();
 
@@ -172,8 +189,17 @@ namespace Amazon.Runtime.Credentials.Internal
 
             if (jsonData.PropertyNames.Contains(JsonPropertyNames.StartUrl))
                 token.StartUrl = jsonData[JsonPropertyNames.StartUrl]?.ToString();
-            
+
             return token;
+        }
+
+        /// <summary>
+        /// Deserializes the SSO Token from JSON
+        /// </summary>
+        /// <param name="json">JSON (string) to deserialize</param>
+        public static SsoToken FromJson(string json)
+        {
+            return FromJson(json, throwIfTokenInvalid: true);
         }
         #region private methods
         /// <summary>

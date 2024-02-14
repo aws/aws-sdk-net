@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Util.Internal;
@@ -49,6 +50,19 @@ namespace AWSSDK.UnitTests
         {
             // no op
             return null;
+        }
+
+        public void Delete(string path)
+        {
+            Files.Remove(path);
+        }
+
+        public string[] GetFiles(string path, string searchPattern)
+        {
+            // build regex from glob pattern.
+            string regexGlob = $"^{Regex.Escape(searchPattern).Replace(@"\*", ".*").Replace(@"\?", ".")}$";
+            return Files.Keys.Where(p => p.StartsWith(path, StringComparison.InvariantCultureIgnoreCase)
+                                        && Regex.IsMatch(p, regexGlob)).ToArray();
         }
     }
 }

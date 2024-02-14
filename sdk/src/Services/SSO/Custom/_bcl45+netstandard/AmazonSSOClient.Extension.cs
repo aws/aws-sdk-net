@@ -14,6 +14,7 @@
  */
 
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
@@ -30,6 +31,10 @@ namespace Amazon.SSO
         {
             return CoreAmazonSSO.CredentialsFromSsoAccessToken(this, accountId, roleName, accessToken, additionalProperties);
         }
+        void ICoreAmazonSSO_Logout.Logout(string accessToken)
+        {
+            CoreAmazonSSO.Logout(this, accessToken);
+        }
 #endif
 
 #if AWS_ASYNC_API
@@ -38,6 +43,10 @@ namespace Amazon.SSO
             IDictionary<string, object> additionalProperties)
         {
             return CoreAmazonSSO.CredentialsFromSsoAccessTokenAsync(this, accountId, roleName, accessToken, additionalProperties);
+        }
+        Task ICoreAmazonSSO_Logout.LogoutAsync(string accessToken, CancellationToken cancellationToken = default)
+        {
+            return CoreAmazonSSO.LogoutAsync(this, accessToken, cancellationToken);
         }
 #endif
     }

@@ -15,8 +15,10 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
@@ -27,10 +29,15 @@ namespace Amazon.Runtime.Credentials.Internal
     {
 #if BCL
         SsoToken GetToken(SSOTokenManagerGetTokenOptions options);
+        void Logout(string ssoCacheDirectory = null);
+        void Logout(SSOTokenManagerGetTokenOptions options);
+
 #endif
 
 #if AWS_ASYNC_API
         Task<SsoToken> GetTokenAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default);
+        Task LogoutAsync(string ssoCacheDirectory = null, CancellationToken cancellationToken = default);
+        Task LogoutAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default);
 #endif
     }
     public class SSOTokenManager : ISSOTokenManager
@@ -38,7 +45,6 @@ namespace Amazon.Runtime.Credentials.Internal
         private readonly ILogger _logger = Logger.GetLogger(typeof(SSOTokenManager));
         private readonly ICoreAmazonSSOOIDC _ssooidcClient;
         private readonly ISSOTokenFileCache _ssoTokenFileCache;
-
         private readonly InMemoryCache _inMemoryCache;
 
         public SSOTokenManager(
@@ -49,6 +55,18 @@ namespace Amazon.Runtime.Credentials.Internal
             _ssoTokenFileCache = ssoTokenFileCache;
 
             _inMemoryCache = new InMemoryCache();
+        }
+
+        protected virtual ICoreAmazonSSO_Logout CreateSSOLogoutClient(string region,
+
+#if BCL
+            WebProxy proxySettings = null
+#elif NETSTANDARD
+            IWebProxy proxySettings = null
+#endif
+        )
+        {
+            return SSOServiceClientHelpers.BuildSSOLogoutClient(RegionEndpoint.GetBySystemName(region), proxySettings);
         }
 
         private class InMemoryCache
@@ -117,7 +135,7 @@ namespace Amazon.Runtime.Credentials.Internal
             if (_ssoTokenFileCache.TryGetSsoToken(options, options.CacheFolderLocation, out var ssoToken))
             {
                 _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
-                
+
                 // token is not expired and doesn't need a refresh
                 if (!ssoToken.NeedsRefresh())
                 {
@@ -254,6 +272,67 @@ namespace Amazon.Runtime.Credentials.Internal
             }
         }
 
+        public void Logout(string ssoCacheDirectory = null)
+        {
+            var cachedFileTokens = _ssoTokenFileCache.ScanSsoTokens(ssoCacheDirectory);
+#pragma warning disable CA1031 // Do not catch general exception types.
+            // specific exceptions cannot be caught here since the exception types exist in Amazon.SSO.Model namespace
+            // and are not accessible in Core.
+            foreach (var cachedFileToken in cachedFileTokens)
+            {
+                _ssoTokenFileCache.DeleteSsoToken(cachedFileToken.SsoTokenFilePath);
+
+                if (cachedFileToken.SsoToken.Region != null)
+                {
+                    // Per the SSO Login Token Flow SEP,
+                    // If the region to be used is not present in cached token for any reason the tool
+                    // SHOULD gracefully handle this by skipping the Logout API call.
+                    try
+                    {
+                        // create a new sso client using the region from the cached token.
+                        var _ssoClient = CreateSSOLogoutClient(cachedFileToken.SsoToken.Region);
+                        _ssoClient.Logout(cachedFileToken.SsoToken.AccessToken);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Per the SSO Login Token Flow SEP,
+                        // If the Logout API call fails due to a service error the error SHOULD be logged and
+                        // the tool MUST gracefully continue the logout of any other cached tokens.
+                        _logger.Error(ex, "Unable to Logout cached sso token from {0}", cachedFileToken.SsoTokenFilePath);
+                    }
+                }
+            }
+#pragma warning restore CA1031 // Do not catch general exception types
+        }
+
+        public void Logout(SSOTokenManagerGetTokenOptions options)
+        {
+            if (_ssoTokenFileCache.TryGetSsoToken(options, options.CacheFolderLocation, out var ssoToken))
+            {
+                _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
+
+                _ssoTokenFileCache.DeleteSsoToken(options, options.CacheFolderLocation);
+#pragma warning disable CA1031 // Do not catch general exception types.
+                // specific exceptions cannot be caught here since the exception types exist in Amazon.SSO.Model namespace
+                // and are not accessible in Core.
+                try
+                {
+                    // create a new sso client using the region from the cached file.
+                    var _ssoClient = CreateSSOLogoutClient(options.Region);
+                    _ssoClient.Logout(ssoToken.AccessToken);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Error(ex, $"Unable to Logout cached sso token for [{options.StartUrl}]");
+                }
+#pragma warning restore CA1031 // Do not catch general exception types
+            }
+            else
+            {
+                _logger.InfoFormat($"No cached sso token found for [{options.StartUrl}]");
+            }
+        }
+
         private SsoToken GenerateNewToken(SSOTokenManagerGetTokenOptions options)
         {
             if (string.IsNullOrEmpty(options.ClientName))
@@ -283,6 +362,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
             return token;
         }
+
 #endif
 
 #if AWS_ASYNC_API
@@ -442,6 +522,74 @@ namespace Amazon.Runtime.Credentials.Internal
                 throw new AmazonClientException("No valid SSO Token could be found.");
             }
         }
+
+        public async Task LogoutAsync(string ssoCacheDirectory = null, CancellationToken cancellationToken = default)
+        {
+            var cachedFileTokens = await _ssoTokenFileCache.ScanSsoTokensAsync(ssoCacheDirectory, cancellationToken).ConfigureAwait(false);
+#pragma warning disable CA1031 // Do not catch general exception types.
+            // specific exceptions cannot be caught here since the exception types exist in Amazon.SSO.Model namespace
+            // and are not accessible in Core.
+            foreach (var cachedFileToken in cachedFileTokens)
+            {
+                _ssoTokenFileCache.DeleteSsoToken(cachedFileToken.SsoTokenFilePath);
+
+                if (cachedFileToken.SsoToken.Region != null)
+                {
+                    // Per the SSO Login Token Flow SEP,
+                    // If the region to be used is not present in cached token for any reason the tool
+                    // SHOULD gracefully handle this by skipping the Logout API call.
+                    try
+                    {
+                        // create a new sso client using the region from the cached token.
+                        var _ssoClient = CreateSSOLogoutClient(cachedFileToken.SsoToken.Region);
+                        await _ssoClient.LogoutAsync(cachedFileToken.SsoToken.AccessToken, cancellationToken).ConfigureAwait(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Per the SSO Login Token Flow SEP,
+                        // If the Logout API call fails due to a service error the error SHOULD be logged and
+                        // the tool MUST gracefully continue the logout of any other cached tokens.
+                        _logger.Error(ex, "Unable to Logout cached sso token from {0}", cachedFileToken.SsoTokenFilePath);
+                    }
+                }
+            }
+#pragma warning restore CA1031 // Do not catch general exception types
+        }
+
+        public async Task LogoutAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default)
+        {
+            var cachedToken = await _ssoTokenFileCache.TryGetSsoTokenAsync(
+                 options,
+                 options.CacheFolderLocation,
+                 cancellationToken)
+             .ConfigureAwait(false);
+
+            if (cachedToken.Success)
+            {
+                _logger.InfoFormat($"File cache has SSOToken for [{options.StartUrl}]");
+                var ssoToken = cachedToken.Value;
+                _ssoTokenFileCache.DeleteSsoToken(options, options.CacheFolderLocation);
+#pragma warning disable CA1031 // Do not catch general exception types.
+                // specific exceptions cannot be caught here since the exception types exist in Amazon.SSO.Model namespace
+                // and are not accessible in Core.
+                try
+                {
+                    // create a new sso client using the region from the cached file.
+                    var _ssoClient = CreateSSOLogoutClient(options.Region);
+                    await _ssoClient.LogoutAsync(ssoToken.AccessToken, cancellationToken).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Error(ex, $"Unable to Logout cached sso token for [{options.StartUrl}]");
+                }
+#pragma warning restore CA1031 // Do not catch general exception types
+            }
+            else
+            {
+                _logger.InfoFormat($"No cached sso token found for [{options.StartUrl}]");
+            }
+        }
+
         private async Task<SsoToken> GenerateNewTokenAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(options.ClientName))
@@ -517,5 +665,6 @@ namespace Amazon.Runtime.Credentials.Internal
 #pragma warning restore CS0618 // Type or member is obsolete
             return $"{clientName}-{dateStamp}";
         }
+
     }
 }

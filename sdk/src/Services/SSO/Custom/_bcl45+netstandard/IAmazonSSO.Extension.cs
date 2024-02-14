@@ -18,7 +18,7 @@ using Amazon.Runtime.SharedInterfaces;
 
 namespace Amazon.SSO
 {
-    public partial interface IAmazonSSO : IDisposable, ICoreAmazonSSO
+    public partial interface IAmazonSSO : IDisposable, ICoreAmazonSSO, ICoreAmazonSSO_Logout
     {
     }
 }

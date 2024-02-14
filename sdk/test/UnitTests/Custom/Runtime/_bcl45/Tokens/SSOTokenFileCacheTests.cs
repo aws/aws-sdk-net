@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests.Runtime
                 Session = sessionName
             };
 
-            var ssoTokenFileCache = 
+            var ssoTokenFileCache =
                 new SSOTokenFileCache(
                     CryptoUtilFactory.CryptoInstance,
                     mockFileSystem,
@@ -68,7 +68,7 @@ namespace AWSSDK.UnitTests.Runtime
             ssoTokenFileCache.SaveSsoToken(cachedSsoToken, testCacheFolder);
 
             var success = ssoTokenFileCache.TryGetSsoToken(getTokenOptions, testCacheFolder, out var token);
-            
+
             Assert.IsTrue(success);
             Assert.AreEqual(cachedSsoToken.AccessToken, token.AccessToken);
 
@@ -121,6 +121,115 @@ namespace AWSSDK.UnitTests.Runtime
 
             // assert file was written to the correct location
             Assert.AreEqual(Path.Combine(testCacheFolder, expectedCacheFile), mockFileSystem.Files.First().Key);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public async Task ValidateTokenCacheScanAndDeleteAsync()
+        {
+            int sampleCacheFileCount = 5;
+            int expectedFileCount = 3; // first.json has AccessToken removed and fifth.txt is invalid file
+            int invalidFileCount = sampleCacheFileCount - expectedFileCount;
+            var testCacheFolder = "test";
+
+            var mockFileSystem = new MockFileSystem();
+            var ssoTokenFileCache =
+                   new SSOTokenFileCache(
+                       CryptoUtilFactory.CryptoInstance,
+                       mockFileSystem,
+                       mockFileSystem);
+            // setup mock filesystem for all but one file
+            for (int i = 0; i < sampleCacheFileCount - 1; i++)
+            {
+                var sessionName = Guid.NewGuid().ToString();
+                var cachedSsoToken = new SsoToken
+                {
+                    Session = sessionName,
+                    AccessToken = "cachedToken",
+                    ExpiresAt = DateTime.Parse("3000-12-25T21:30:00Z").ToUniversalTime()
+                };
+
+                var getTokenOptions = new SSOTokenManagerGetTokenOptions
+                {
+                    Session = sessionName
+                };
+
+                await ssoTokenFileCache.SaveSsoTokenAsync(cachedSsoToken, testCacheFolder);
+                if (i == 0)
+                {
+                    var dkey = mockFileSystem.Files.First().Key;
+                    var dvalue = mockFileSystem.Files.First().Value.Replace("accessToken", "noToken");
+                    mockFileSystem.Files = new System.Collections.Generic.Dictionary<string, string> { { dkey, dvalue } };
+                }
+            }
+
+            mockFileSystem.Files.Add($@"{testCacheFolder}\fifth.txt", mockFileSystem.Files.Last().Value);
+
+            var result = await ssoTokenFileCache.ScanSsoTokensAsync(testCacheFolder);
+
+            Assert.AreEqual(result.Count, expectedFileCount);
+            foreach (var file in result)
+            {
+                ssoTokenFileCache.DeleteSsoToken(file.SsoTokenFilePath);
+            }
+            // assert that after files are deleted, only the invalid files remain
+            Assert.AreEqual(mockFileSystem.Files.Count, invalidFileCount);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ValidateTokenCacheScanAndDelete()
+        {
+            int sampleCacheFileCount = 5;
+            int expectedFileCount = 3; // first.json has AccessToken removed and fifth.txt is invalid file
+            int invalidFileCount = sampleCacheFileCount - expectedFileCount;
+            var testCacheFolder = "test";
+
+            var mockFileSystem = new MockFileSystem();
+            var ssoTokenFileCache =
+                   new SSOTokenFileCache(
+                       CryptoUtilFactory.CryptoInstance,
+                       mockFileSystem,
+                       mockFileSystem);
+            // setup mock filesystem for all but one file
+            for (int i = 0; i < sampleCacheFileCount - 1; i++)
+            {
+                var sessionName = Guid.NewGuid().ToString();
+                var cachedSsoToken = new SsoToken
+                {
+                    Session = sessionName,
+                    AccessToken = "cachedToken",
+                    ExpiresAt = DateTime.Parse("3000-12-25T21:30:00Z").ToUniversalTime()
+                };
+
+                var getTokenOptions = new SSOTokenManagerGetTokenOptions
+                {
+                    Session = sessionName
+                };
+
+                ssoTokenFileCache.SaveSsoToken(cachedSsoToken, testCacheFolder);
+                if (i == 0)
+                {
+                    var dkey = mockFileSystem.Files.First().Key;
+                    var dvalue = mockFileSystem.Files.First().Value.Replace("accessToken", "noToken");
+                    mockFileSystem.Files = new System.Collections.Generic.Dictionary<string, string> { { dkey, dvalue } };
+                }
+            }
+
+            mockFileSystem.Files.Add($@"{testCacheFolder}\fifth.txt", mockFileSystem.Files.Last().Value);
+
+            var result = ssoTokenFileCache.ScanSsoTokens(testCacheFolder);
+
+            Assert.AreEqual(result.Count, expectedFileCount);
+            foreach (var file in result)
+            {
+                ssoTokenFileCache.DeleteSsoToken(file.SsoTokenFilePath);
+            }
+            // assert that after files are deleted, only the invalid files remain
+            Assert.AreEqual(mockFileSystem.Files.Count, invalidFileCount);
         }
     }
 }

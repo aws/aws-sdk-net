@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.SSO.Model;
@@ -49,6 +50,11 @@ namespace Amazon.SSO.Internal
                 response.RoleCredentials.SessionToken,
                 credentialsExpiration);
         }
+
+        public static void Logout(IAmazonSSO client, string accessToken)
+        {
+            client.Logout(new LogoutRequest() { AccessToken = accessToken });
+        }
 #endif
 
 #if AWS_ASYNC_API
@@ -74,6 +80,11 @@ namespace Amazon.SSO.Internal
                 response.RoleCredentials.SecretAccessKey,
                 response.RoleCredentials.SessionToken,
                 credentialsExpiration);
+        }
+
+        public static async Task LogoutAsync(IAmazonSSO client, string accessToken, CancellationToken cancellationToken = default)
+        {
+            await client.LogoutAsync(new LogoutRequest() { AccessToken = accessToken }, cancellationToken).ConfigureAwait(false);
         }
 #endif
     }

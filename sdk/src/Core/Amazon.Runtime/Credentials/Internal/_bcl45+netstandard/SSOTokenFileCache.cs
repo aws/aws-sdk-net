@@ -25,6 +25,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using Amazon.Util.Internal;
+using System.Collections.Generic;
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -39,6 +40,11 @@ namespace Amazon.Runtime.Credentials.Internal
         bool TryGetSsoToken(SSOTokenManagerGetTokenOptions getSsoTokenOptions, string ssoCacheDirectory, out SsoToken ssoToken);
         /// <inheritdoc cref="SaveSsoTokenAsync"/>
         void SaveSsoToken(SsoToken token, string ssoCacheDirectory);
+        void DeleteSsoToken(SSOTokenManagerGetTokenOptions getSsoTokenOptions, string ssoCacheDirectory);
+        void DeleteSsoToken(string filePath);
+        /// <inheritdoc cref="ScanSsoTokensAsync"/>
+        List<SSOTokenFile> ScanSsoTokens(string ssoCacheDirectory);
+
 
 #if AWS_ASYNC_API
         /// <summary>
@@ -70,6 +76,16 @@ namespace Amazon.Runtime.Credentials.Internal
         /// Cancels the operation
         /// </param>
         Task SaveSsoTokenAsync(SsoToken token, string ssoCacheDirectory, CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Scans <paramref name="ssoCacheDirectory"/> for all json files that have accessToken property and returns a list of SsoToken and the file path.
+        /// </summary>
+        /// <param name="ssoCacheDirectory">
+        /// Optional: Leave null/empty to default to (user profile)/.aws/sso/cache/
+        /// </param>
+        /// <param name="cancellationToken">
+        /// Cancels the operation
+        /// </param>
+        Task<List<SSOTokenFile>> ScanSsoTokensAsync(string ssoCacheDirectory, CancellationToken cancellationToken = default);
 #endif
     }
 
@@ -81,6 +97,7 @@ namespace Amazon.Runtime.Credentials.Internal
         private readonly ICryptoUtil _cryptoUtil;
         private readonly IFile _file;
         private readonly IDirectory _directory;
+        private readonly string _defaultSSOCacheDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".aws", "sso", "cache");
 
         public SSOTokenFileCache(
             ICryptoUtil cryptoUtil,
@@ -108,7 +125,7 @@ namespace Amazon.Runtime.Credentials.Internal
             ssoToken = null;
 
             var cacheFilePath = BuildCacheFileFullPath(getSsoTokenOptions, ssoCacheDirectory);
-            
+
             try
             {
                 if (string.IsNullOrWhiteSpace(cacheFilePath) || !_file.Exists(cacheFilePath))
@@ -153,7 +170,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                 result.Value = SsoTokenUtils.FromJson(json);
                 result.Success = true;
-                
+
                 _logger.InfoFormat("SSO Token loaded from cache");
 
                 return result;
@@ -163,6 +180,29 @@ namespace Amazon.Runtime.Credentials.Internal
                 _logger.Error(e, "Unable to load token cache for start url: {0}", getSsoTokenOptions?.StartUrl);
                 return result;
             }
+        }
+
+        public async Task<List<SSOTokenFile>> ScanSsoTokensAsync(string ssoCacheDirectory, CancellationToken cancellationToken = default)
+        {
+            List<SSOTokenFile> result = new List<SSOTokenFile>();
+            if (string.IsNullOrWhiteSpace(ssoCacheDirectory))
+            {
+                ssoCacheDirectory = _defaultSSOCacheDirectory;
+            }
+            var cachedFiles = _directory.GetFiles(ssoCacheDirectory, "*.json");
+
+            foreach (var cacheFilePath in cachedFiles)
+            {
+                var json = await _file.ReadAllTextAsync(cacheFilePath, cancellationToken).ConfigureAwait(false);
+                var ssoToken = SsoTokenUtils.FromJson(json, false);
+                if (ssoToken != null)
+                {
+                    result.Add(new SSOTokenFile { SsoToken = ssoToken, SsoTokenFilePath = cacheFilePath });
+                }
+            }
+            _logger.InfoFormat("Number of cached sso tokens {0}", result.Count);
+
+            return result;
         }
 
         public void SaveSsoToken(SsoToken token, string ssoCacheDirectory)
@@ -202,7 +242,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 {
                     return;
                 }
-                
+
                 var json = SsoTokenUtils.ToJson(token);
                 _directory.CreateDirectory(Path.GetDirectoryName(cacheFilePath));
                 await _file.WriteAllTextAsync(cacheFilePath, json, cancellationToken).ConfigureAwait(false);
@@ -211,6 +251,27 @@ namespace Amazon.Runtime.Credentials.Internal
             catch (Exception e)
             {
                 _logger.Error(e, "Warning: Unable to save SSO Token Cache. Future retrieval will have to produce a token.");
+            }
+        }
+
+        public void DeleteSsoToken(SSOTokenManagerGetTokenOptions getSsoTokenOptions, string ssoCacheDirectory)
+        {
+            if (null == getSsoTokenOptions)
+                return;
+
+            var cacheFilePath = BuildCacheFileFullPath(getSsoTokenOptions, ssoCacheDirectory);
+            DeleteSsoToken(cacheFilePath);
+        }
+
+        public void DeleteSsoToken(string filePath)
+        {
+            try
+            {
+                _file.Delete(filePath);
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, "Unable to delete sso token file {0}", filePath);
             }
         }
 
@@ -228,10 +289,7 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             if (string.IsNullOrWhiteSpace(ssoCacheDirectory))
             {
-                ssoCacheDirectory =
-                    Path.Combine(
-                        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                        ".aws", "sso", "cache");
+                ssoCacheDirectory = _defaultSSOCacheDirectory;
             }
 
             var cacheFile = GetCacheFilename(startUrl, session);
@@ -253,7 +311,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 !string.IsNullOrEmpty(session)
                     ? GenerateSha1Hash(session)
                     : GenerateSha1Hash(startUrl);
-            
+
             var filename = $"{fileSha}.json";
             return filename;
         }
@@ -270,5 +328,32 @@ namespace Amazon.Runtime.Credentials.Internal
             var hash = _cryptoUtil.ComputeSHA1Hash(Encoding.UTF8.GetBytes(text ?? ""));
             return AWSSDKUtils.ToHex(hash, true);
         }
+
+        public List<SSOTokenFile> ScanSsoTokens(string ssoCacheDirectory)
+        {
+            List<SSOTokenFile> result = new List<SSOTokenFile>();
+            if (string.IsNullOrWhiteSpace(ssoCacheDirectory))
+            {
+                ssoCacheDirectory = _defaultSSOCacheDirectory;
+            }
+            var cachedFiles = _directory.GetFiles(ssoCacheDirectory, "*.json");
+            foreach (var cacheFilePath in cachedFiles)
+            {
+                var json = _file.ReadAllText(cacheFilePath);
+                var ssoToken = SsoTokenUtils.FromJson(json, false);
+                if (ssoToken != null)
+                {
+                    result.Add(new SSOTokenFile { SsoToken = ssoToken, SsoTokenFilePath = cacheFilePath });
+                }
+            }
+            _logger.InfoFormat("Number of cached sso tokens {0}", result.Count);
+            return result;
+        }
+    }
+
+    public class SSOTokenFile
+    {
+        public SsoToken SsoToken { get; set; }
+        public string SsoTokenFilePath { get; set; }
     }
 }

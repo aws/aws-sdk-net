@@ -69,6 +69,33 @@ namespace Amazon.Runtime.Internal
             return coreSSO;
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
+        public static ICoreAmazonSSO_Logout BuildSSOLogoutClient(
+            RegionEndpoint region,
+#if BCL
+            WebProxy proxySettings = null
+#elif NETSTANDARD
+            IWebProxy proxySettings = null
+#endif
+        )
+        {
+            ICoreAmazonSSO_Logout coreSSOLogout = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSO_Logout>(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOClientContext { Region = region, ProxySettings = proxySettings }));
+            if(coreSSOLogout == null)
+            {
+                coreSSOLogout = CreateClient<ICoreAmazonSSO_Logout>(
+                    region,
+                    ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
+                    ServiceClientHelpers.SSO_SERVICE_CONFIG_NAME,
+                    ServiceClientHelpers.SSO_ASSEMBLY_NAME,
+                    nameof(GlobalRuntimeDependencyRegistry.RegisterSSOClient),
+                    proxySettings);
+            }
+            return coreSSOLogout;
+        }
+
         /// <summary>
         /// Attempts to get a service client at runtime which cannot be made a project reference.
         /// </summary>

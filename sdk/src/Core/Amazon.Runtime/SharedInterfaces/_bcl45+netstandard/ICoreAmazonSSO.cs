@@ -14,6 +14,7 @@
  */
 
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Amazon.Runtime.SharedInterfaces
@@ -28,10 +29,29 @@ namespace Amazon.Runtime.SharedInterfaces
     {
 #if BCL
         ImmutableCredentials CredentialsFromSsoAccessToken(string accountId, string roleName, string accessToken, IDictionary<string, object> additionalProperties);
+
 #endif
 
 #if AWS_ASYNC_API
         Task<ImmutableCredentials> CredentialsFromSsoAccessTokenAsync(string accountId, string roleName, string accessToken, IDictionary<string, object> additionalProperties);
+#endif
+    }
+
+    /// <summary>
+    /// ICoreAmazonSSO_Logout is not meant to be used directly. It defines SSO 
+    /// service with Logout functionality and allows other services to be able to use the service as 
+    /// a runtime dependency. This interface is implemented by the AmazonSSOClient 
+    /// defined in the AWSSDK.SSO assembly.
+    /// </summary>
+    public interface ICoreAmazonSSO_Logout
+    {
+#if BCL
+        void Logout(string accessToken);
+
+#endif
+
+#if AWS_ASYNC_API
+        Task LogoutAsync(string accessToken, CancellationToken cancellationToken = default);
 #endif
     }
 }

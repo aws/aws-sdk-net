@@ -25,11 +25,16 @@ namespace Amazon.Util.Internal
     {
         /// <inheritdoc cref="Directory.CreateDirectory"/>
         DirectoryInfo CreateDirectory(string path);
+        /// <inheritdoc cref="Directory.GetFiles"/>
+        string[] GetFiles(string path, string searchPattern);
     }
 
     /// <inheritdoc cref="IDirectory"/>
     public class DirectoryRetriever : IDirectory
     {
         public DirectoryInfo CreateDirectory(string path) => Directory.CreateDirectory(path);
+
+        public string[] GetFiles(string path, string searchPattern) => Directory.GetFiles(path, searchPattern);
+
     }
 }
