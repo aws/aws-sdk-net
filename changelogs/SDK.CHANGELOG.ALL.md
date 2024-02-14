@@ -1,3 +1,15 @@
+### 3.7.748.0 (2024-02-14 19:15 UTC)
+* ControlTower (3.7.304.0)
+	* Adds support for new Baseline and EnabledBaseline APIs for automating multi-account governance.
+* LookoutEquipment (3.7.301.0)
+	* This feature allows customers to see pointwise model diagnostics results for their models.
+* QBusiness (3.7.301.0)
+	* This release adds the metadata-boosting feature, which allows customers to easily fine-tune the underlying ranking of retrieved RAG passages in order to optimize Q&A answer relevance. It also adds new feedback reasons for the PutFeedback API.
+* Core 3.7.302.10
+	* Added SSO Logout to SSOTokenManager
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.747.0 (2024-02-13 19:20 UTC)
 * Lightsail (3.7.303.0)
 	* This release adds support to upgrade the major version of a database.

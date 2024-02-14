@@ -32,7 +32,7 @@ namespace Amazon.Panorama
     public partial class AmazonPanoramaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Panorama", "3.7.300.49");
+            InternalSDKUtils.BuildUserAgentString("Panorama", "3.7.300.50");
 
         private string _userAgent = UserAgentString;
         ///<summary>
