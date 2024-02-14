@@ -96,7 +96,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property RuleType. 
         /// <para>
-        /// The type fo rule.
+        /// The type of rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

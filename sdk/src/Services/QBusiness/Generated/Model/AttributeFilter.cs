@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Enables filtering of Amazon Q web experience responses based on document attributes
-    /// or metadata fields.
+    /// Enables filtering of responses based on document attributes or metadata fields.
     /// </summary>
     public partial class AttributeFilter
     {

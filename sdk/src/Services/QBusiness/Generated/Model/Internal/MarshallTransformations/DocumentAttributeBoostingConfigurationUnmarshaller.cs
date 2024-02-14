@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NativeIndexConfiguration Object
+    /// Response Unmarshaller for DocumentAttributeBoostingConfiguration Object
     /// </summary>  
-    public class NativeIndexConfigurationUnmarshaller : IUnmarshaller<NativeIndexConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NativeIndexConfiguration, JsonUnmarshallerContext>
+    public class DocumentAttributeBoostingConfigurationUnmarshaller : IUnmarshaller<DocumentAttributeBoostingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DocumentAttributeBoostingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NativeIndexConfiguration IUnmarshaller<NativeIndexConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DocumentAttributeBoostingConfiguration IUnmarshaller<DocumentAttributeBoostingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NativeIndexConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DocumentAttributeBoostingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            NativeIndexConfiguration unmarshalledObject = new NativeIndexConfiguration();
+            DocumentAttributeBoostingConfiguration unmarshalledObject = new DocumentAttributeBoostingConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,16 +63,28 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("boostingOverride", targetDepth))
+                if (context.TestExpression("dateConfiguration", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, DocumentAttributeBoostingConfiguration, StringUnmarshaller, DocumentAttributeBoostingConfigurationUnmarshaller>(StringUnmarshaller.Instance, DocumentAttributeBoostingConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.BoostingOverride = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateAttributeBoostingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DateConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("indexId", targetDepth))
+                if (context.TestExpression("numberConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NumberAttributeBoostingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NumberConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stringConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringAttributeBoostingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.StringConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stringListConfiguration", targetDepth))
+                {
+                    var unmarshaller = StringListAttributeBoostingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.StringListConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,12 +92,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static NativeIndexConfigurationUnmarshaller _instance = new NativeIndexConfigurationUnmarshaller();        
+        private static DocumentAttributeBoostingConfigurationUnmarshaller _instance = new DocumentAttributeBoostingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NativeIndexConfigurationUnmarshaller Instance
+        public static DocumentAttributeBoostingConfigurationUnmarshaller Instance
         {
             get
             {

@@ -44,13 +44,13 @@ namespace Amazon.QBusiness.Model
     /// <para>
     /// Amazon Q can't create a target field if it has not already been created as an index
     /// field. After you create your index field, you can create a document metadata field
-    /// using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html">
+    /// using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
     /// <c>DocumentAttributeTarget</c> </a>. Amazon Q will then map your newly created document
     /// attribute to your index field.
     /// </para>
     ///  
     /// <para>
-    /// You can also use this with <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeCondition.html">
+    /// You can also use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeCondition.html">
     /// <c>DocumentAttributeCondition</c> </a>.
     /// </para>
     /// </summary>

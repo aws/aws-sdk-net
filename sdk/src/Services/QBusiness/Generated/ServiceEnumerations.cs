@@ -575,6 +575,68 @@ namespace Amazon.QBusiness
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentAttributeBoostingLevel.
+    /// </summary>
+    public class DocumentAttributeBoostingLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel HIGH = new DocumentAttributeBoostingLevel("HIGH");
+        /// <summary>
+        /// Constant LOW for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel LOW = new DocumentAttributeBoostingLevel("LOW");
+        /// <summary>
+        /// Constant MEDIUM for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel MEDIUM = new DocumentAttributeBoostingLevel("MEDIUM");
+        /// <summary>
+        /// Constant NONE for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel NONE = new DocumentAttributeBoostingLevel("NONE");
+        /// <summary>
+        /// Constant VERY_HIGH for DocumentAttributeBoostingLevel
+        /// </summary>
+        public static readonly DocumentAttributeBoostingLevel VERY_HIGH = new DocumentAttributeBoostingLevel("VERY_HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentAttributeBoostingLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentAttributeBoostingLevel FindValue(string value)
+        {
+            return FindValue<DocumentAttributeBoostingLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentAttributeBoostingLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentContentOperator.
     /// </summary>
     public class DocumentContentOperator : ConstantClass
@@ -1189,6 +1251,18 @@ namespace Amazon.QBusiness
         /// </summary>
         public static readonly MessageUsefulnessReason INCORRECT_OR_MISSING_SOURCES = new MessageUsefulnessReason("INCORRECT_OR_MISSING_SOURCES");
         /// <summary>
+        /// Constant NOT_BASED_ON_DOCUMENTS for MessageUsefulnessReason
+        /// </summary>
+        public static readonly MessageUsefulnessReason NOT_BASED_ON_DOCUMENTS = new MessageUsefulnessReason("NOT_BASED_ON_DOCUMENTS");
+        /// <summary>
+        /// Constant NOT_COMPLETE for MessageUsefulnessReason
+        /// </summary>
+        public static readonly MessageUsefulnessReason NOT_COMPLETE = new MessageUsefulnessReason("NOT_COMPLETE");
+        /// <summary>
+        /// Constant NOT_CONCISE for MessageUsefulnessReason
+        /// </summary>
+        public static readonly MessageUsefulnessReason NOT_CONCISE = new MessageUsefulnessReason("NOT_CONCISE");
+        /// <summary>
         /// Constant NOT_FACTUALLY_CORRECT for MessageUsefulnessReason
         /// </summary>
         public static readonly MessageUsefulnessReason NOT_FACTUALLY_CORRECT = new MessageUsefulnessReason("NOT_FACTUALLY_CORRECT");
@@ -1196,6 +1270,10 @@ namespace Amazon.QBusiness
         /// Constant NOT_HELPFUL for MessageUsefulnessReason
         /// </summary>
         public static readonly MessageUsefulnessReason NOT_HELPFUL = new MessageUsefulnessReason("NOT_HELPFUL");
+        /// <summary>
+        /// Constant OTHER for MessageUsefulnessReason
+        /// </summary>
+        public static readonly MessageUsefulnessReason OTHER = new MessageUsefulnessReason("OTHER");
         /// <summary>
         /// Constant RELEVANT_SOURCES for MessageUsefulnessReason
         /// </summary>
@@ -1230,6 +1308,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageUsefulnessReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NumberAttributeBoostingType.
+    /// </summary>
+    public class NumberAttributeBoostingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIORITIZE_LARGER_VALUES for NumberAttributeBoostingType
+        /// </summary>
+        public static readonly NumberAttributeBoostingType PRIORITIZE_LARGER_VALUES = new NumberAttributeBoostingType("PRIORITIZE_LARGER_VALUES");
+        /// <summary>
+        /// Constant PRIORITIZE_SMALLER_VALUES for NumberAttributeBoostingType
+        /// </summary>
+        public static readonly NumberAttributeBoostingType PRIORITIZE_SMALLER_VALUES = new NumberAttributeBoostingType("PRIORITIZE_SMALLER_VALUES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NumberAttributeBoostingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NumberAttributeBoostingType FindValue(string value)
+        {
+            return FindValue<NumberAttributeBoostingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NumberAttributeBoostingType(string value)
         {
             return FindValue(value);
         }
@@ -1642,6 +1770,64 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StringAttributeValueBoostingLevel.
+    /// </summary>
+    public class StringAttributeValueBoostingLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel HIGH = new StringAttributeValueBoostingLevel("HIGH");
+        /// <summary>
+        /// Constant LOW for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel LOW = new StringAttributeValueBoostingLevel("LOW");
+        /// <summary>
+        /// Constant MEDIUM for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel MEDIUM = new StringAttributeValueBoostingLevel("MEDIUM");
+        /// <summary>
+        /// Constant VERY_HIGH for StringAttributeValueBoostingLevel
+        /// </summary>
+        public static readonly StringAttributeValueBoostingLevel VERY_HIGH = new StringAttributeValueBoostingLevel("VERY_HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StringAttributeValueBoostingLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StringAttributeValueBoostingLevel FindValue(string value)
+        {
+            return FindValue<StringAttributeValueBoostingLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StringAttributeValueBoostingLevel(string value)
         {
             return FindValue(value);
         }

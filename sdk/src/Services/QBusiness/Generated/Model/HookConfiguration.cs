@@ -34,13 +34,13 @@ namespace Amazon.QBusiness.Model
     /// 
     ///  
     /// <para>
-    /// You can configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a>
+    /// You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a>
     /// if you want to apply advanced alterations on the original or raw documents.
     /// </para>
     ///  
     /// <para>
     /// If you want to apply advanced alterations on the Amazon Q structured documents, you
-    /// must configure your Lambda function using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.
+    /// must configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.
     /// </para>
     ///  
     /// <para>

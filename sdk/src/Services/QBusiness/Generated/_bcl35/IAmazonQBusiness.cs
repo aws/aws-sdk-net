@@ -29,7 +29,85 @@ namespace Amazon.QBusiness
     /// <summary>
     /// <para>Interface for accessing QBusiness</para>
     ///
+    /// <note> 
+    /// <para>
+    /// Amazon Q is in preview release and is subject to change.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// This is the <i>Amazon Q (for business use)</i> API Reference. Amazon Q is a fully
+    /// managed, generative-AI powered enterprise chat assistant that you can deploy within
+    /// your organization. Amazon Q enhances employee productivity by supporting key tasks
+    /// such as question-answering, knowledge discovery, writing email messages, summarizing
+    /// text, drafting document outlines, and brainstorming ideas. Users ask questions of
+    /// Amazon Q and get answers that are presented in a conversational manner. For an introduction
+    /// to the service, see the <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html">
+    /// <i>Amazon Q (for business use) Developer Guide</i> </a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For an overview of the Amazon Q APIs, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview">Overview
+    /// of Amazon Q API operations</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For information about the IAM access control permissions you need to use this API,
+    /// see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html">IAM
+    /// roles for Amazon Q</a> in the <i>Amazon Q (for business use) Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use the following AWS SDKs to access Amazon Q APIs:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-cpp">AWS SDK for C++</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-go">AWS SDK for Go</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-java">AWS SDK for Java</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-javascript">AWS SDK for JavaScript</a>
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-net">AWS SDK for .NET</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/pythonsdk">AWS SDK for Python (Boto3)</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/sdk-for-ruby">AWS SDK for Ruby</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The following resources provide additional information about using the Amazon Q API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i> <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html">Setting
+    /// up for Amazon Q</a> </i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i> <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html">Amazon
+    /// Q CLI Reference</a> </i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <i> <a href="https://docs.aws.amazon.com/general/latest/gr/amazonq.html">Amazon Web
+    /// Services General Reference</a> </i> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonQBusiness : IAmazonService, IDisposable
     {
@@ -427,8 +505,8 @@ namespace Amazon.QBusiness
         /// </para>
         ///  
         /// <para>
-        /// Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_BatchPutDocument.html">
-        /// <c>BatchPutDocument</c> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
+        /// Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html">
+        /// <c>BatchPutDocument</c> </a> API or the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html">
         /// <c>CreateDataSource</c> </a> API.
         /// </para>
         /// </summary>

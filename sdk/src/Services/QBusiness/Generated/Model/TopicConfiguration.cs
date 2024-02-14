@@ -41,7 +41,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for your topic control configuration. Use this outline how the large
+        /// A description for your topic control configuration. Use this to outline how the large
         /// language model (LLM) should use this topic control configuration.
         /// </para>
         /// </summary>

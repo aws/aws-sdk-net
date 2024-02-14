@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// The condition used for the target document attribute or metadata field when ingesting
-    /// documents into Amazon Q. You use this with <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html">
+    /// documents into Amazon Q. You use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html">
     /// <c>DocumentAttributeTarget</c> </a> to apply the condition.
     /// 
     ///  

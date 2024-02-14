@@ -33,7 +33,28 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class NativeIndexConfiguration
     {
+        private Dictionary<string, DocumentAttributeBoostingConfiguration> _boostingOverride = new Dictionary<string, DocumentAttributeBoostingConfiguration>();
         private string _indexId;
+
+        /// <summary>
+        /// Gets and sets the property BoostingOverride. 
+        /// <para>
+        /// Overrides the default boosts applied by Amazon Q to supported document attribute data
+        /// types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public Dictionary<string, DocumentAttributeBoostingConfiguration> BoostingOverride
+        {
+            get { return this._boostingOverride; }
+            set { this._boostingOverride = value; }
+        }
+
+        // Check to see if BoostingOverride property is set
+        internal bool IsSetBoostingOverride()
+        {
+            return this._boostingOverride != null && this._boostingOverride.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property IndexId. 

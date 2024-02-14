@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NativeIndexConfiguration Marshaller
+    /// NumberAttributeBoostingConfiguration Marshaller
     /// </summary>
-    public class NativeIndexConfigurationMarshaller : IRequestMarshaller<NativeIndexConfiguration, JsonMarshallerContext> 
+    public class NumberAttributeBoostingConfigurationMarshaller : IRequestMarshaller<NumberAttributeBoostingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,31 +43,18 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NativeIndexConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(NumberAttributeBoostingConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBoostingOverride())
+            if(requestObject.IsSetBoostingLevel())
             {
-                context.Writer.WritePropertyName("boostingOverride");
-                context.Writer.WriteObjectStart();
-                foreach (var requestObjectBoostingOverrideKvp in requestObject.BoostingOverride)
-                {
-                    context.Writer.WritePropertyName(requestObjectBoostingOverrideKvp.Key);
-                    var requestObjectBoostingOverrideValue = requestObjectBoostingOverrideKvp.Value;
-
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DocumentAttributeBoostingConfigurationMarshaller.Instance;
-                    marshaller.Marshall(requestObjectBoostingOverrideValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("boostingLevel");
+                context.Writer.Write(requestObject.BoostingLevel);
             }
 
-            if(requestObject.IsSetIndexId())
+            if(requestObject.IsSetBoostingType())
             {
-                context.Writer.WritePropertyName("indexId");
-                context.Writer.Write(requestObject.IndexId);
+                context.Writer.WritePropertyName("boostingType");
+                context.Writer.Write(requestObject.BoostingType);
             }
 
         }
@@ -75,7 +62,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NativeIndexConfigurationMarshaller Instance = new NativeIndexConfigurationMarshaller();
+        public readonly static NumberAttributeBoostingConfigurationMarshaller Instance = new NumberAttributeBoostingConfigurationMarshaller();
 
     }
 }

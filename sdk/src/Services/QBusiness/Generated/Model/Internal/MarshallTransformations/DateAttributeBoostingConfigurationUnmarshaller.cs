@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NativeIndexConfiguration Object
+    /// Response Unmarshaller for DateAttributeBoostingConfiguration Object
     /// </summary>  
-    public class NativeIndexConfigurationUnmarshaller : IUnmarshaller<NativeIndexConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NativeIndexConfiguration, JsonUnmarshallerContext>
+    public class DateAttributeBoostingConfigurationUnmarshaller : IUnmarshaller<DateAttributeBoostingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DateAttributeBoostingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NativeIndexConfiguration IUnmarshaller<NativeIndexConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DateAttributeBoostingConfiguration IUnmarshaller<DateAttributeBoostingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NativeIndexConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DateAttributeBoostingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            NativeIndexConfiguration unmarshalledObject = new NativeIndexConfiguration();
+            DateAttributeBoostingConfiguration unmarshalledObject = new DateAttributeBoostingConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,16 +63,16 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("boostingOverride", targetDepth))
+                if (context.TestExpression("boostingDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, DocumentAttributeBoostingConfiguration, StringUnmarshaller, DocumentAttributeBoostingConfigurationUnmarshaller>(StringUnmarshaller.Instance, DocumentAttributeBoostingConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.BoostingOverride = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.BoostingDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("indexId", targetDepth))
+                if (context.TestExpression("boostingLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BoostingLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,12 +80,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static NativeIndexConfigurationUnmarshaller _instance = new NativeIndexConfigurationUnmarshaller();        
+        private static DateAttributeBoostingConfigurationUnmarshaller _instance = new DateAttributeBoostingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NativeIndexConfigurationUnmarshaller Instance
+        public static DateAttributeBoostingConfigurationUnmarshaller Instance
         {
             get
             {

@@ -40,8 +40,8 @@ namespace Amazon.QBusiness.Model
     /// </para>
     ///  
     /// <para>
-    /// Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_BatchPutDocument.html">
-    /// <c>BatchPutDocument</c> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
+    /// Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html">
+    /// <c>BatchPutDocument</c> </a> API or the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html">
     /// <c>CreateDataSource</c> </a> API.
     /// </para>
     /// </summary>
