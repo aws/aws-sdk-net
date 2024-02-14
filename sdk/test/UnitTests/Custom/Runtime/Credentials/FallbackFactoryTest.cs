@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
+using Amazon.Util;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -42,6 +43,7 @@ namespace AWSSDK.UnitTests
         private const string AWS_USE_DUALSTACK_ENDPOINT_ENVIRONMENT_VARIABLE = "AWS_USE_DUALSTACK_ENDPOINT";
         private const string AWS_DISABLE_REQUEST_COMPRESSION = "AWS_DISABLE_REQUEST_COMPRESSION";
         private const string AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
+        private const string AWS_EC2_METADATA_V1_DISABLED = "AWS_EC2_METADATA_V1_DISABLED";
         private const string AWS_SDK_UA_APP_ID = "AWS_SDK_UA_APP_ID";
         private const string AWS_USE_FIPS_ENDPOINT_ENVIRONMENT_VARIABLE = EnvironmentVariableInternalConfiguration.ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT;
         private const long DefaultMinCompressionSizeBytes = 10240;
@@ -87,6 +89,10 @@ namespace AWSSDK.UnitTests
             .AppendLine("request_min_compression_size_bytes=128")
             .AppendLine("[set_sdk_ua_app_id]")
             .AppendLine("sdk_ua_app_id=myAppId")
+            .AppendLine("[ec-metadata-v1-enabled]")
+            .AppendLine("ec2_metadata_v1_disabled=false")
+            .AppendLine("[ec-metadata-v1-disabled]")
+            .AppendLine("ec2_metadata_v1_disabled=true")
             .ToString();
 
         [DataTestMethod]
@@ -212,6 +218,37 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(maxAttempts.HasValue);
                 Assert.AreEqual(100, maxAttempts.Value);                    
             }
+        }
+
+        [DataTestMethod]
+        [DataRow(true, false, "ec-metadata-v1-enabled", true)]  // service client should supersede conflicting env var and profile values
+        [DataRow(false, true, "ec-metadata-v1-disabled", false)]
+        [DataRow(null, true, "ec-metadata-v1-enabled", true)]   // env var should supersede conflicting profile value
+        [DataRow(null, false, "ec-metadata-v1-disabled", false)]
+        [DataRow(null, null, "ec-metadata-v1-disabled", true)]    // profile should drive value
+        [DataRow(null, null, "ec-metadata-v1-enabled", false)]
+        [DataRow(null, null, "default", false)]             // should default to false when no config values specified
+        public void TestEC2MetadataV1DisabledConfigurationHierarchy(bool? ec2InstanceMetadataConfigValue, bool? envVarValue, string profileName, bool expectedEC2MetadataV1DisabledValue)
+        {
+            // Reset private _ec2MetadataV1Disabled field to its null
+            ReflectionHelpers.Invoke(typeof(EC2InstanceMetadata), "_ec2MetadataV1Disabled", new object[] { null });
+
+            if (ec2InstanceMetadataConfigValue.HasValue)
+            {
+                EC2InstanceMetadata.EC2MetadataV1Disabled = ec2InstanceMetadataConfigValue.Value;
+            }
+
+            var envVariables = new Dictionary<string, string>();
+            if (envVarValue.HasValue)
+            {
+                envVariables.Add(AWS_EC2_METADATA_V1_DISABLED, envVarValue.Value.ToString());
+            }
+
+            using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
+            {
+                Assert.AreEqual(expectedEC2MetadataV1DisabledValue, EC2InstanceMetadata.EC2MetadataV1Disabled);
+            }
+
         }
 
         [TestMethod]

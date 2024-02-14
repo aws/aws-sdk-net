@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Reflection;
 using Amazon.Util;
 using AWSSDK.UnitTests;
@@ -160,6 +162,46 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
                     Assert.AreEqual("value1", creds.AccessKeyId);
                     Assert.AreEqual("value2", creds.SecretAccessKey);
                     Assert.AreEqual("value3", creds.Token);
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
+        public void TestEC2MetadataV1DisabledFlagDisablesFallbackToIMDSv1()
+        {
+            EC2InstanceMetadata.EC2MetadataV1Disabled = true;
+
+            var failFastStatusCodes = new HttpStatusCode[]
+            {
+                HttpStatusCode.NotFound,
+                HttpStatusCode.Forbidden,
+                HttpStatusCode.MethodNotAllowed,
+                HttpStatusCode.ServiceUnavailable
+            };
+
+            foreach (var failFastStatusCode in failFastStatusCodes)
+            {
+                var token = string.Empty;
+                using (var servlet = new EC2InstanceMetadataServlet())
+                {
+                    // Add 3 response for retries
+                    servlet.AddTokenFetchResponse(token, failFastStatusCode);
+                    servlet.AddTokenFetchResponse(token, failFastStatusCode);
+                    servlet.AddTokenFetchResponse(token, failFastStatusCode);
+
+                    IDictionary<string, IAMSecurityCredentialMetadata> metadata = null;
+                    try
+                    {
+                        metadata = EC2InstanceMetadata.IAMSecurityCredentials;
+                    }
+                    catch (InvalidOperationException ex)
+                    {
+                        Assert.IsTrue(ex.Message.Contains("IMDSv1 has been disabled"));
+                    }
+
+                    Assert.IsNull(metadata);
                 }
             }
         }
