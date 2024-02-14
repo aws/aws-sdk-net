@@ -69,6 +69,18 @@ namespace Amazon.Runtime.Credentials.Internal
             return SSOServiceClientHelpers.BuildSSOLogoutClient(RegionEndpoint.GetBySystemName(region), proxySettings);
         }
 
+        protected virtual ICoreAmazonSSOOIDC_V2 CreateSSOOIDC_V2Client(string region,
+
+#if BCL
+            WebProxy proxySettings = null
+#elif NETSTANDARD
+            IWebProxy proxySettings = null
+#endif
+        )
+        {
+            return SSOServiceClientHelpers.BuildSSOIDC_V2Client(RegionEndpoint.GetBySystemName(region), proxySettings);
+        }
+
         private class InMemoryCache
         {
             private readonly ConcurrentDictionary<string, SSOTokenManager.CacheState> _inMemoryCache =
@@ -611,10 +623,24 @@ namespace Amazon.Runtime.Credentials.Internal
                 Scopes = options.Scopes
             };
 
-            var response = await _ssooidcClient.GetSsoTokenAsync(request).ConfigureAwait(false);
+            // The SSO OIDC client used throughout this class does not propagate the cancellation token to the service operations.
+            // ICoreAmazonSSOOIDC_V2 was created to allow cancellations, but it will only be available if customers update both their
+            // Core and service packages.
+            GetSsoTokenResponse response;
+            var ssooidc_V2Client = CreateSSOOIDC_V2Client(options.Region);
+
+            // If only Core was updated, trying to retrieve ICoreAmazonSSOOIDC_V2 will fail and we must fallback to the
+            // original client (which still works, but will not allow the GetSsoTokenAsync operation to be cancelled).
+            if (ssooidc_V2Client != null)
+            {
+                response = await ssooidc_V2Client.GetSsoTokenAsync(request, cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                response = await _ssooidcClient.GetSsoTokenAsync(request).ConfigureAwait(false);
+            }
 
             var token = MapGetSsoTokenResponseToSsoToken(response, options.Session);
-
             await _ssoTokenFileCache.SaveSsoTokenAsync(token, options.CacheFolderLocation, cancellationToken).ConfigureAwait(false);
 
             return token;

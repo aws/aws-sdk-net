@@ -15,7 +15,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Amazon.Runtime;
@@ -122,7 +122,17 @@ namespace Amazon.SSOOIDC.Internal
             return GetSsoTokenAsync(client, request, new GetSsoTokenContext());
         }
 
+        public static Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, CancellationToken cancellationToken)
+        {
+            return GetSsoTokenAsync(client, request, new GetSsoTokenContext(), cancellationToken);
+        }
+
         public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context)
+        {
+            return await GetSsoTokenAsync(client, request, context, cancellationToken: default).ConfigureAwait(false);
+        }
+
+        public static async Task<GetSsoTokenResponse> GetSsoTokenAsync(IAmazonSSOOIDC client, GetSsoTokenRequest request, IGetSsoTokenContext context, CancellationToken cancellationToken)
         {
             var registerClientRequest = new RegisterClientRequest
             {
@@ -137,8 +147,7 @@ namespace Amazon.SSOOIDC.Internal
 
             InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
 
-            var registerClientResponse = await client.RegisterClientAsync(registerClientRequest).ConfigureAwait(false);
-
+            var registerClientResponse = await client.RegisterClientAsync(registerClientRequest, cancellationToken).ConfigureAwait(false);
 
             var startDeviceAuthorizationRequest = new StartDeviceAuthorizationRequest
             {
@@ -149,8 +158,7 @@ namespace Amazon.SSOOIDC.Internal
             InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
 
             var startDeviceAuthorizationResponse =
-                await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest).ConfigureAwait(false);
-
+                await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest, cancellationToken).ConfigureAwait(false);
 
             // Spec: The expiration time must be calculated by adding the number of seconds 
             // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
@@ -163,7 +171,6 @@ namespace Amazon.SSOOIDC.Internal
                 VerificationUriComplete = startDeviceAuthorizationResponse.VerificationUriComplete,
             });
 
-
             var createTokenRequest = new CreateTokenRequest
             {
                 ClientId = registerClientResponse.ClientId,
@@ -173,11 +180,15 @@ namespace Amazon.SSOOIDC.Internal
             };
             InternalSDKUtils.ApplyValues(request, request.AdditionalProperties);
 
-            var ssoToken = await PollForSsoTokenAsync(client,
+            var ssoToken = await PollForSsoTokenAsync(
+                client,
                 createTokenRequest,
                 startDeviceAuthorizationResponse.Interval,
                 deviceCodeExpiration,
-                context).ConfigureAwait(false);
+                context,
+                cancellationToken
+            ).ConfigureAwait(false);
+            
             var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
             return new GetSsoTokenResponse
             {
@@ -190,7 +201,6 @@ namespace Amazon.SSOOIDC.Internal
                 ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
                 StartUrl = request.StartUrl
             };
-            
         }
 
 #if BCL
@@ -268,12 +278,12 @@ namespace Amazon.SSOOIDC.Internal
                     // If we reach here, the user has completed the SSO Login authorization.
                     return response;
                 }
-                catch (AuthorizationPendingException e)
+                catch (AuthorizationPendingException)
                 {
                     // Service is still waiting for user to complete authorization.
                     // Repeat the loop after an interval.
                 }
-                catch (SlowDownException e)
+                catch (SlowDownException)
                 {
                     // Spec: Add 5 seconds to the polling interval
                     intervalSec += PollingSlowdownIncrementSeconds;
@@ -284,7 +294,7 @@ namespace Amazon.SSOOIDC.Internal
                     // and the SSO login flow must be re-initiated.
                     throw new AmazonSSOOIDCException("Device code has expired while polling for SSO token, login flow must be re-initiated.", e);
                 }
-                catch (TimeoutException e)
+                catch (TimeoutException)
                 {
                     // Spec: If the call times out then the tool should double its polling interval and then retry.
                     intervalSec *= 2;
@@ -309,7 +319,8 @@ namespace Amazon.SSOOIDC.Internal
             CreateTokenRequest createTokenRequest,
             int pollingIntervalSeconds,
             DateTime deviceCodeExpiration,
-            IGetSsoTokenContext context)
+            IGetSsoTokenContext context,
+            CancellationToken cancellationToken)
         {
             var logger = Logger.GetLogger(typeof(CoreAmazonSSOOIDC));
 
@@ -322,17 +333,17 @@ namespace Amazon.SSOOIDC.Internal
             {
                 try
                 {
-                    var response = await client.CreateTokenAsync(createTokenRequest).ConfigureAwait(false);
+                    var response = await client.CreateTokenAsync(createTokenRequest, cancellationToken).ConfigureAwait(false);
 
                     // If we reach here, the user has completed the SSO Login authorization.
                     return response;
                 }
-                catch (AuthorizationPendingException e)
+                catch (AuthorizationPendingException)
                 {
                     // Service is still waiting for user to complete authorization.
                     // Repeat the loop after an interval.
                 }
-                catch (SlowDownException e)
+                catch (SlowDownException)
                 {
                     // Spec: Add 5 seconds to the polling interval
                     intervalSec += PollingSlowdownIncrementSeconds;
@@ -343,7 +354,7 @@ namespace Amazon.SSOOIDC.Internal
                     // and the SSO login flow must be re-initiated.
                     throw new AmazonSSOOIDCException("Device code has expired while polling for SSO token, login flow must be re-initiated.", e);
                 }
-                catch (TimeoutException e)
+                catch (TimeoutException)
                 {
                     // Spec: If the call times out then the tool should double its polling interval and then retry.
                     intervalSec *= 2;

@@ -18,7 +18,7 @@ using Amazon.Runtime.SharedInterfaces;
 
 namespace Amazon.SSOOIDC
 {
-    public partial interface IAmazonSSOOIDC : IDisposable, ICoreAmazonSSOOIDC
+    public partial interface IAmazonSSOOIDC : IDisposable, ICoreAmazonSSOOIDC, ICoreAmazonSSOOIDC_V2
     {
     }
 }

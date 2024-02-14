@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 #if AWS_ASYNC_API
+using System.Threading;
 using System.Threading.Tasks;
 #endif
 
@@ -31,42 +32,81 @@ namespace Amazon.Runtime.SharedInterfaces
     {
 #if BCL
         /// <summary>
+        /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
         /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// </para>
         /// 
-        /// Use Amazon SSO OIDC to get an SSO Token
+        /// <para>
+        /// Use Amazon SSO OIDC to get an SSO Token.
+        /// </para>
         /// </summary>
         GetSsoTokenResponse GetSsoToken(GetSsoTokenRequest getSsoTokenRequest);
 #endif
 
 #if AWS_ASYNC_API
         /// <summary>
+        /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
         /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// </para>
         /// 
-        /// Use Amazon SSO OIDC to get an SSO Token
+        /// <para>
+        /// Use Amazon SSO OIDC to get an SSO Token.
+        /// </para>
         /// </summary>
         Task<GetSsoTokenResponse> GetSsoTokenAsync(GetSsoTokenRequest getSsoTokenRequest);
 #endif
 
 #if BCL
         /// <summary>
+        /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
         /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// </para>
         /// 
-        /// Use Amazon SSO OIDC to refresh <paramref name="previousResponse"/>
+        /// <para>
+        /// Use Amazon SSO OIDC to refresh <paramref name="previousResponse"/>.
+        /// </para>
         /// </summary>
         GetSsoTokenResponse RefreshToken(GetSsoTokenResponse previousResponse);
 #endif
 
 #if AWS_ASYNC_API
         /// <summary>
+        /// <para>
         /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
         /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// </para>
         /// 
-        /// Use Amazon SSO OIDC to refresh <paramref name="previousResponse"/>
+        /// <para>
+        /// Use Amazon SSO OIDC to refresh <paramref name="previousResponse"/>.
+        /// </para>
         /// </summary>
         Task<GetSsoTokenResponse> RefreshTokenAsync(GetSsoTokenResponse previousResponse);
+#endif
+    }
+
+    /// <summary>
+    /// ICoreAmazonSSOOIDC_V2 is not meant to be used directly. It defines SSO OIDC
+    /// service with basic .NET types and allows other services to be able to use the service as 
+    /// a runtime dependency. This interface is implemented by the AmazonSSOOIDCClient 
+    /// defined in the AWSSDK.SSOOIDC assembly.
+    /// </summary>
+    public interface ICoreAmazonSSOOIDC_V2
+    {
+#if AWS_ASYNC_API
+        /// <summary>
+        /// <para>
+        /// This method is used internally to access the Amazon SSO OIDC service within other service assemblies.
+        /// Please use AmazonSSOOIDCClient to access the Amazon SSO OIDC service instead.
+        /// </para>
+        /// 
+        /// <para>
+        /// Use Amazon SSO OIDC to get an SSO Token.
+        /// </para>
+        /// </summary>
+        Task<GetSsoTokenResponse> GetSsoTokenAsync(GetSsoTokenRequest getSsoTokenRequest, CancellationToken cancellationToken);
 #endif
     }
 

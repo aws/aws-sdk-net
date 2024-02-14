@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
@@ -33,6 +34,11 @@ namespace Amazon.SSOOIDC
         async Task<GetSsoTokenResponse> ICoreAmazonSSOOIDC.GetSsoTokenAsync(GetSsoTokenRequest request)
         {
             return await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request).ConfigureAwait(false);
+        }
+
+        async Task<GetSsoTokenResponse> ICoreAmazonSSOOIDC_V2.GetSsoTokenAsync(GetSsoTokenRequest request, CancellationToken cancellationToken)
+        {
+            return await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request, cancellationToken).ConfigureAwait(false);
         }
 #endif
 

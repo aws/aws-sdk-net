@@ -96,6 +96,34 @@ namespace Amazon.Runtime.Internal
             return coreSSOLogout;
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
+#endif
+        public static ICoreAmazonSSOOIDC_V2 BuildSSOIDC_V2Client(
+            RegionEndpoint region,
+#if BCL
+            WebProxy proxySettings = null
+#elif NETSTANDARD
+            IWebProxy proxySettings = null
+#endif
+        )
+        {
+            ICoreAmazonSSOOIDC_V2 coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSOOIDC_V2>(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOOIDCClientContext { Region = region, ProxySettings = proxySettings }));
+            if (coreSSO == null)
+            {
+                coreSSO = CreateClient<ICoreAmazonSSOOIDC_V2>(
+                    region,
+                    ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
+                    ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_NAME,
+                    ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME,
+                    nameof(GlobalRuntimeDependencyRegistry.RegisterSSOOIDCClient),
+                    proxySettings);
+            }
+
+            return coreSSO;
+        }
+
         /// <summary>
         /// Attempts to get a service client at runtime which cannot be made a project reference.
         /// </summary>
