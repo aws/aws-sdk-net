@@ -152,7 +152,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// The number of seconds to wait before retrying.
+        /// The number of seconds the caller should wait before retrying.
         /// </para>
         /// </summary>
         public int RetryAfterSeconds
@@ -170,7 +170,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The ID of the service that is associated with the error. 
+        /// The ID of the service that is associated with the error.
         /// </para>
         /// </summary>
         public string ServiceCode

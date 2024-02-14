@@ -43,9 +43,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The manifest JSON file is a text file that describes your Amazon Web Services resources.
-        /// For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch">Launch
-        /// your landing zone</a>. 
+        /// The manifest.yaml file is a text file that describes your Amazon Web Services resources.
+        /// For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The
+        /// manifest file</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

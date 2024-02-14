@@ -99,7 +99,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Manifest. 
         /// <para>
-        /// The landing zone manifest JSON text file that specifies the landing zone configurations.
+        /// The landing zone <c>manifest.yaml</c> text file that specifies the landing zone configurations.
         /// 
         /// </para>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The landing zone deployment status.
+        /// The landing zone deployment status. One of <c>ACTIVE</c>, <c>PROCESSING</c>, <c>FAILED</c>.
         /// </para>
         /// </summary>
         public LandingZoneStatus Status

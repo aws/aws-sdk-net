@@ -31,9 +31,9 @@ namespace Amazon.ControlTower.Model
     /// <summary>
     /// Container for the parameters to the DisableControl operation.
     /// This API call turns off a control. It starts an asynchronous operation that deletes
-    /// Amazon Web Services resources on the specified organizational unit and the accounts
-    /// it contains. The resources will vary according to the control that you specify. For
-    /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+    /// AWS resources on the specified organizational unit and the accounts it contains. The
+    /// resources will vary according to the control that you specify. For usage examples,
+    /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
     /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
     /// </summary>
     public partial class DisableControlRequest : AmazonControlTowerRequest
@@ -45,8 +45,8 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
         /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>landing zone Region deny</b> control.
-        /// For information on how to find the <c>controlIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// are permitted, with the exception of the <b>Region deny</b> control. For information
+        /// on how to find the <c>controlIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>
         /// </summary>

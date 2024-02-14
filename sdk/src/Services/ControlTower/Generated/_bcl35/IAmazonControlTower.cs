@@ -304,14 +304,78 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  DisableBaseline
+
+
+        /// <summary>
+        /// Disable an <c>EnabledBaseline</c> resource on the specified Target. This API starts
+        /// an asynchronous operation to remove all resources deployed as part of the baseline
+        /// enablement. The resource will vary depending on the enabled baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DisableBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">REST API Reference for DisableBaseline Operation</seealso>
+        DisableBaselineResponse DisableBaseline(DisableBaselineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableBaseline operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">REST API Reference for DisableBaseline Operation</seealso>
+        IAsyncResult BeginDisableBaseline(DisableBaselineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableBaseline.</param>
+        /// 
+        /// <returns>Returns a  DisableBaselineResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">REST API Reference for DisableBaseline Operation</seealso>
+        DisableBaselineResponse EndDisableBaseline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableControl
 
 
         /// <summary>
         /// This API call turns off a control. It starts an asynchronous operation that deletes
-        /// Amazon Web Services resources on the specified organizational unit and the accounts
-        /// it contains. The resources will vary according to the control that you specify. For
-        /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// AWS resources on the specified organizational unit and the accounts it contains. The
+        /// resources will vary according to the control that you specify. For usage examples,
+        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableControl service method.</param>
@@ -367,6 +431,69 @@ namespace Amazon.ControlTower
         /// <returns>Returns a  DisableControlResult from ControlTower.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">REST API Reference for DisableControl Operation</seealso>
         DisableControlResponse EndDisableControl(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableBaseline
+
+
+        /// <summary>
+        /// Enable (apply) a <c>Baseline</c> to a Target. This API starts an asynchronous operation
+        /// to deploy resources specified by the <c>Baseline</c> to the specified Target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableBaseline service method.</param>
+        /// 
+        /// <returns>The response from the EnableBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">REST API Reference for EnableBaseline Operation</seealso>
+        EnableBaselineResponse EnableBaseline(EnableBaselineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableBaseline operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">REST API Reference for EnableBaseline Operation</seealso>
+        IAsyncResult BeginEnableBaseline(EnableBaselineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableBaseline.</param>
+        /// 
+        /// <returns>Returns a  EnableBaselineResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">REST API Reference for EnableBaseline Operation</seealso>
+        EnableBaselineResponse EndEnableBaseline(IAsyncResult asyncResult);
 
         #endregion
         
@@ -436,6 +563,118 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  GetBaseline
+
+
+        /// <summary>
+        /// Retrieve details about an existing <c>Baseline</c> resource by specifying its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">REST API Reference for GetBaseline Operation</seealso>
+        GetBaselineResponse GetBaseline(GetBaselineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBaseline operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">REST API Reference for GetBaseline Operation</seealso>
+        IAsyncResult BeginGetBaseline(GetBaselineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBaseline.</param>
+        /// 
+        /// <returns>Returns a  GetBaselineResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">REST API Reference for GetBaseline Operation</seealso>
+        GetBaselineResponse EndGetBaseline(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBaselineOperation
+
+
+        /// <summary>
+        /// Returns the details of an asynchronous baseline operation, as initiated by any of
+        /// these APIs: <c>EnableBaseline</c>, <c>DisableBaseline</c>, <c>UpdateEnabledBaseline</c>,
+        /// <c>ResetEnabledBaseline</c>. A status message is displayed in case of operation failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaselineOperation service method.</param>
+        /// 
+        /// <returns>The response from the GetBaselineOperation service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">REST API Reference for GetBaselineOperation Operation</seealso>
+        GetBaselineOperationResponse GetBaselineOperation(GetBaselineOperationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBaselineOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBaselineOperation operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBaselineOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">REST API Reference for GetBaselineOperation Operation</seealso>
+        IAsyncResult BeginGetBaselineOperation(GetBaselineOperationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBaselineOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBaselineOperation.</param>
+        /// 
+        /// <returns>Returns a  GetBaselineOperationResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">REST API Reference for GetBaselineOperation Operation</seealso>
+        GetBaselineOperationResponse EndGetBaselineOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetControlOperation
 
 
@@ -491,6 +730,61 @@ namespace Amazon.ControlTower
         /// <returns>Returns a  GetControlOperationResult from ControlTower.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">REST API Reference for GetControlOperation Operation</seealso>
         GetControlOperationResponse EndGetControlOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetEnabledBaseline
+
+
+        /// <summary>
+        /// Retrieve details of an <c>EnabledBaseline</c> resource by specifying its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">REST API Reference for GetEnabledBaseline Operation</seealso>
+        GetEnabledBaselineResponse GetEnabledBaseline(GetEnabledBaselineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEnabledBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledBaseline operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEnabledBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">REST API Reference for GetEnabledBaseline Operation</seealso>
+        IAsyncResult BeginGetEnabledBaseline(GetEnabledBaselineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEnabledBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEnabledBaseline.</param>
+        /// 
+        /// <returns>Returns a  GetEnabledBaselineResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">REST API Reference for GetEnabledBaseline Operation</seealso>
+        GetEnabledBaselineResponse EndGetEnabledBaseline(IAsyncResult asyncResult);
 
         #endregion
         
@@ -661,6 +955,112 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  ListBaselines
+
+
+        /// <summary>
+        /// Returns a summary list of all available baselines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBaselines service method.</param>
+        /// 
+        /// <returns>The response from the ListBaselines service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">REST API Reference for ListBaselines Operation</seealso>
+        ListBaselinesResponse ListBaselines(ListBaselinesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBaselines operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBaselines
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">REST API Reference for ListBaselines Operation</seealso>
+        IAsyncResult BeginListBaselines(ListBaselinesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBaselines.</param>
+        /// 
+        /// <returns>Returns a  ListBaselinesResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">REST API Reference for ListBaselines Operation</seealso>
+        ListBaselinesResponse EndListBaselines(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListEnabledBaselines
+
+
+        /// <summary>
+        /// Returns a list of summaries describing <c>EnabledBaseline</c> resources. You can filter
+        /// the list by the corresponding <c>Baseline</c> or <c>Target</c> of the <c>EnabledBaseline</c>
+        /// resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnabledBaselines service method.</param>
+        /// 
+        /// <returns>The response from the ListEnabledBaselines service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">REST API Reference for ListEnabledBaselines Operation</seealso>
+        ListEnabledBaselinesResponse ListEnabledBaselines(ListEnabledBaselinesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEnabledBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEnabledBaselines operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnabledBaselines
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">REST API Reference for ListEnabledBaselines Operation</seealso>
+        IAsyncResult BeginListEnabledBaselines(ListEnabledBaselinesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEnabledBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEnabledBaselines.</param>
+        /// 
+        /// <returns>Returns a  ListEnabledBaselinesResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">REST API Reference for ListEnabledBaselines Operation</seealso>
+        ListEnabledBaselinesResponse EndListEnabledBaselines(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListEnabledControls
 
 
@@ -827,6 +1227,69 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  ResetEnabledBaseline
+
+
+        /// <summary>
+        /// Re-enables an <c>EnabledBaseline</c> resource. For example, this API can re-apply
+        /// the existing <c>Baseline</c> after a new member account is moved to the target OU.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEnabledBaseline service method.</param>
+        /// 
+        /// <returns>The response from the ResetEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">REST API Reference for ResetEnabledBaseline Operation</seealso>
+        ResetEnabledBaselineResponse ResetEnabledBaseline(ResetEnabledBaselineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetEnabledBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetEnabledBaseline operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetEnabledBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">REST API Reference for ResetEnabledBaseline Operation</seealso>
+        IAsyncResult BeginResetEnabledBaseline(ResetEnabledBaselineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetEnabledBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetEnabledBaseline.</param>
+        /// 
+        /// <returns>Returns a  ResetEnabledBaselineResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">REST API Reference for ResetEnabledBaseline Operation</seealso>
+        ResetEnabledBaselineResponse EndResetEnabledBaseline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ResetLandingZone
 
 
@@ -983,6 +1446,68 @@ namespace Amazon.ControlTower
         /// <returns>Returns a  UntagResourceResult from ControlTower.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateEnabledBaseline
+
+
+        /// <summary>
+        /// Updates an <c>EnabledBaseline</c> resource's applied parameters or version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledBaseline service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">REST API Reference for UpdateEnabledBaseline Operation</seealso>
+        UpdateEnabledBaselineResponse UpdateEnabledBaseline(UpdateEnabledBaselineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEnabledBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledBaseline operation on AmazonControlTowerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEnabledBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">REST API Reference for UpdateEnabledBaseline Operation</seealso>
+        IAsyncResult BeginUpdateEnabledBaseline(UpdateEnabledBaselineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEnabledBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEnabledBaseline.</param>
+        /// 
+        /// <returns>Returns a  UpdateEnabledBaselineResult from ControlTower.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">REST API Reference for UpdateEnabledBaseline Operation</seealso>
+        UpdateEnabledBaselineResponse EndUpdateEnabledBaseline(IAsyncResult asyncResult);
 
         #endregion
         

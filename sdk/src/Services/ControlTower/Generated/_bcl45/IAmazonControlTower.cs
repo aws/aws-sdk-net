@@ -315,14 +315,90 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  DisableBaseline
+
+
+        /// <summary>
+        /// Disable an <c>EnabledBaseline</c> resource on the specified Target. This API starts
+        /// an asynchronous operation to remove all resources deployed as part of the baseline
+        /// enablement. The resource will vary depending on the enabled baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DisableBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">REST API Reference for DisableBaseline Operation</seealso>
+        DisableBaselineResponse DisableBaseline(DisableBaselineRequest request);
+
+
+
+        /// <summary>
+        /// Disable an <c>EnabledBaseline</c> resource on the specified Target. This API starts
+        /// an asynchronous operation to remove all resources deployed as part of the baseline
+        /// enablement. The resource will vary depending on the enabled baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">REST API Reference for DisableBaseline Operation</seealso>
+        Task<DisableBaselineResponse> DisableBaselineAsync(DisableBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableControl
 
 
         /// <summary>
         /// This API call turns off a control. It starts an asynchronous operation that deletes
-        /// Amazon Web Services resources on the specified organizational unit and the accounts
-        /// it contains. The resources will vary according to the control that you specify. For
-        /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// AWS resources on the specified organizational unit and the accounts it contains. The
+        /// resources will vary according to the control that you specify. For usage examples,
+        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableControl service method.</param>
@@ -357,9 +433,9 @@ namespace Amazon.ControlTower
 
         /// <summary>
         /// This API call turns off a control. It starts an asynchronous operation that deletes
-        /// Amazon Web Services resources on the specified organizational unit and the accounts
-        /// it contains. The resources will vary according to the control that you specify. For
-        /// usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// AWS resources on the specified organizational unit and the accounts it contains. The
+        /// resources will vary according to the control that you specify. For usage examples,
+        /// see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableControl service method.</param>
@@ -392,6 +468,80 @@ namespace Amazon.ControlTower
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">REST API Reference for DisableControl Operation</seealso>
         Task<DisableControlResponse> DisableControlAsync(DisableControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableBaseline
+
+
+        /// <summary>
+        /// Enable (apply) a <c>Baseline</c> to a Target. This API starts an asynchronous operation
+        /// to deploy resources specified by the <c>Baseline</c> to the specified Target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableBaseline service method.</param>
+        /// 
+        /// <returns>The response from the EnableBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">REST API Reference for EnableBaseline Operation</seealso>
+        EnableBaselineResponse EnableBaseline(EnableBaselineRequest request);
+
+
+
+        /// <summary>
+        /// Enable (apply) a <c>Baseline</c> to a Target. This API starts an asynchronous operation
+        /// to deploy resources specified by the <c>Baseline</c> to the specified Target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">REST API Reference for EnableBaseline Operation</seealso>
+        Task<EnableBaselineResponse> EnableBaselineAsync(EnableBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -475,6 +625,126 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  GetBaseline
+
+
+        /// <summary>
+        /// Retrieve details about an existing <c>Baseline</c> resource by specifying its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">REST API Reference for GetBaseline Operation</seealso>
+        GetBaselineResponse GetBaseline(GetBaselineRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve details about an existing <c>Baseline</c> resource by specifying its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">REST API Reference for GetBaseline Operation</seealso>
+        Task<GetBaselineResponse> GetBaselineAsync(GetBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBaselineOperation
+
+
+        /// <summary>
+        /// Returns the details of an asynchronous baseline operation, as initiated by any of
+        /// these APIs: <c>EnableBaseline</c>, <c>DisableBaseline</c>, <c>UpdateEnabledBaseline</c>,
+        /// <c>ResetEnabledBaseline</c>. A status message is displayed in case of operation failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaselineOperation service method.</param>
+        /// 
+        /// <returns>The response from the GetBaselineOperation service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">REST API Reference for GetBaselineOperation Operation</seealso>
+        GetBaselineOperationResponse GetBaselineOperation(GetBaselineOperationRequest request);
+
+
+
+        /// <summary>
+        /// Returns the details of an asynchronous baseline operation, as initiated by any of
+        /// these APIs: <c>EnableBaseline</c>, <c>DisableBaseline</c>, <c>UpdateEnabledBaseline</c>,
+        /// <c>ResetEnabledBaseline</c>. A status message is displayed in case of operation failure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBaselineOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBaselineOperation service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">REST API Reference for GetBaselineOperation Operation</seealso>
+        Task<GetBaselineOperationResponse> GetBaselineOperationAsync(GetBaselineOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetControlOperation
 
 
@@ -536,6 +806,64 @@ namespace Amazon.ControlTower
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">REST API Reference for GetControlOperation Operation</seealso>
         Task<GetControlOperationResponse> GetControlOperationAsync(GetControlOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetEnabledBaseline
+
+
+        /// <summary>
+        /// Retrieve details of an <c>EnabledBaseline</c> resource by specifying its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">REST API Reference for GetEnabledBaseline Operation</seealso>
+        GetEnabledBaselineResponse GetEnabledBaseline(GetEnabledBaselineRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve details of an <c>EnabledBaseline</c> resource by specifying its identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">REST API Reference for GetEnabledBaseline Operation</seealso>
+        Task<GetEnabledBaselineResponse> GetEnabledBaselineAsync(GetEnabledBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -717,6 +1045,114 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  ListBaselines
+
+
+        /// <summary>
+        /// Returns a summary list of all available baselines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBaselines service method.</param>
+        /// 
+        /// <returns>The response from the ListBaselines service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">REST API Reference for ListBaselines Operation</seealso>
+        ListBaselinesResponse ListBaselines(ListBaselinesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a summary list of all available baselines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBaselines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBaselines service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">REST API Reference for ListBaselines Operation</seealso>
+        Task<ListBaselinesResponse> ListBaselinesAsync(ListBaselinesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListEnabledBaselines
+
+
+        /// <summary>
+        /// Returns a list of summaries describing <c>EnabledBaseline</c> resources. You can filter
+        /// the list by the corresponding <c>Baseline</c> or <c>Target</c> of the <c>EnabledBaseline</c>
+        /// resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnabledBaselines service method.</param>
+        /// 
+        /// <returns>The response from the ListEnabledBaselines service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">REST API Reference for ListEnabledBaselines Operation</seealso>
+        ListEnabledBaselinesResponse ListEnabledBaselines(ListEnabledBaselinesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of summaries describing <c>EnabledBaseline</c> resources. You can filter
+        /// the list by the corresponding <c>Baseline</c> or <c>Target</c> of the <c>EnabledBaseline</c>
+        /// resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnabledBaselines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEnabledBaselines service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">REST API Reference for ListEnabledBaselines Operation</seealso>
+        Task<ListEnabledBaselinesResponse> ListEnabledBaselinesAsync(ListEnabledBaselinesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEnabledControls
 
 
@@ -893,6 +1329,80 @@ namespace Amazon.ControlTower
 
         #endregion
         
+        #region  ResetEnabledBaseline
+
+
+        /// <summary>
+        /// Re-enables an <c>EnabledBaseline</c> resource. For example, this API can re-apply
+        /// the existing <c>Baseline</c> after a new member account is moved to the target OU.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEnabledBaseline service method.</param>
+        /// 
+        /// <returns>The response from the ResetEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">REST API Reference for ResetEnabledBaseline Operation</seealso>
+        ResetEnabledBaselineResponse ResetEnabledBaseline(ResetEnabledBaselineRequest request);
+
+
+
+        /// <summary>
+        /// Re-enables an <c>EnabledBaseline</c> resource. For example, this API can re-apply
+        /// the existing <c>Baseline</c> after a new member account is moved to the target OU.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEnabledBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">REST API Reference for ResetEnabledBaseline Operation</seealso>
+        Task<ResetEnabledBaselineResponse> ResetEnabledBaselineAsync(ResetEnabledBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ResetLandingZone
 
 
@@ -1052,6 +1562,78 @@ namespace Amazon.ControlTower
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateEnabledBaseline
+
+
+        /// <summary>
+        /// Updates an <c>EnabledBaseline</c> resource's applied parameters or version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledBaseline service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">REST API Reference for UpdateEnabledBaseline Operation</seealso>
+        UpdateEnabledBaselineResponse UpdateEnabledBaseline(UpdateEnabledBaselineRequest request);
+
+
+
+        /// <summary>
+        /// Updates an <c>EnabledBaseline</c> resource's applied parameters or version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnabledBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEnabledBaseline service method, as returned by ControlTower.</returns>
+        /// <exception cref="Amazon.ControlTower.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ConflictException">
+        /// Updating or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.InternalServerException">
+        /// An unexpected error occurred during processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded. The limit is 10 concurrent
+        /// operations.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ControlTower.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">REST API Reference for UpdateEnabledBaseline Operation</seealso>
+        Task<UpdateEnabledBaselineResponse> UpdateEnabledBaselineAsync(UpdateEnabledBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

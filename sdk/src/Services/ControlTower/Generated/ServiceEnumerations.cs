@@ -25,6 +25,118 @@ namespace Amazon.ControlTower
 {
 
     /// <summary>
+    /// Constants used for properties of type BaselineOperationStatus.
+    /// </summary>
+    public class BaselineOperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for BaselineOperationStatus
+        /// </summary>
+        public static readonly BaselineOperationStatus FAILED = new BaselineOperationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for BaselineOperationStatus
+        /// </summary>
+        public static readonly BaselineOperationStatus IN_PROGRESS = new BaselineOperationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for BaselineOperationStatus
+        /// </summary>
+        public static readonly BaselineOperationStatus SUCCEEDED = new BaselineOperationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BaselineOperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BaselineOperationStatus FindValue(string value)
+        {
+            return FindValue<BaselineOperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BaselineOperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BaselineOperationType.
+    /// </summary>
+    public class BaselineOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE_BASELINE for BaselineOperationType
+        /// </summary>
+        public static readonly BaselineOperationType DISABLE_BASELINE = new BaselineOperationType("DISABLE_BASELINE");
+        /// <summary>
+        /// Constant ENABLE_BASELINE for BaselineOperationType
+        /// </summary>
+        public static readonly BaselineOperationType ENABLE_BASELINE = new BaselineOperationType("ENABLE_BASELINE");
+        /// <summary>
+        /// Constant RESET_ENABLED_BASELINE for BaselineOperationType
+        /// </summary>
+        public static readonly BaselineOperationType RESET_ENABLED_BASELINE = new BaselineOperationType("RESET_ENABLED_BASELINE");
+        /// <summary>
+        /// Constant UPDATE_ENABLED_BASELINE for BaselineOperationType
+        /// </summary>
+        public static readonly BaselineOperationType UPDATE_ENABLED_BASELINE = new BaselineOperationType("UPDATE_ENABLED_BASELINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BaselineOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BaselineOperationType FindValue(string value)
+        {
+            return FindValue<BaselineOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BaselineOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ControlOperationStatus.
     /// </summary>
     public class ControlOperationStatus : ConstantClass

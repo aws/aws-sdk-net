@@ -36,6 +36,22 @@ namespace Amazon.ControlTower.Model
         }
 
         /// <summary>
+        /// Paginator for ListBaselines operation
+        ///</summary>
+        public IListBaselinesPaginator ListBaselines(ListBaselinesRequest request) 
+        {
+            return new ListBaselinesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEnabledBaselines operation
+        ///</summary>
+        public IListEnabledBaselinesPaginator ListEnabledBaselines(ListEnabledBaselinesRequest request) 
+        {
+            return new ListEnabledBaselinesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnabledControls operation
         ///</summary>
         public IListEnabledControlsPaginator ListEnabledControls(ListEnabledControlsRequest request) 

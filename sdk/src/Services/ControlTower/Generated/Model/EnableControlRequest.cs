@@ -47,8 +47,8 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
         /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
-        /// are permitted, with the exception of the <b>landing zone Region deny</b> control.
-        /// For information on how to find the <c>controlIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// are permitted, with the exception of the <b>Region deny</b> control. For information
+        /// on how to find the <c>controlIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>
         /// </summary>
@@ -68,7 +68,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// An array of <c>EnabledControlParameter</c> objects
+        /// A list of input parameter values, which are specified to configure the control when
+        /// you enable it.
         /// </para>
         /// </summary>
         public List<EnabledControlParameter> Parameters
