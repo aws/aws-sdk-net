@@ -78,6 +78,17 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetModelDiagnosticsOutputConfiguration())
+                {
+                    context.Writer.WritePropertyName("ModelDiagnosticsOutputConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelDiagnosticsOutputConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelDiagnosticsOutputConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelName())
                 {
                     context.Writer.WritePropertyName("ModelName");

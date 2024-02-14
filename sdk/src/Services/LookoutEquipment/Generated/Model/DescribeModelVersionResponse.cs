@@ -48,6 +48,8 @@ namespace Amazon.LookoutEquipment.Model
         private LabelsInputConfiguration _labelsInputConfiguration;
         private DateTime? _lastUpdatedTime;
         private string _modelArn;
+        private ModelDiagnosticsOutputConfiguration _modelDiagnosticsOutputConfiguration;
+        private S3Object _modelDiagnosticsResultsObject;
         private string _modelMetrics;
         private string _modelName;
         private long? _modelVersion;
@@ -347,6 +349,44 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDiagnosticsOutputConfiguration. 
+        /// <para>
+        /// The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model
+        /// diagnostics for the model version.
+        /// </para>
+        /// </summary>
+        public ModelDiagnosticsOutputConfiguration ModelDiagnosticsOutputConfiguration
+        {
+            get { return this._modelDiagnosticsOutputConfiguration; }
+            set { this._modelDiagnosticsOutputConfiguration = value; }
+        }
+
+        // Check to see if ModelDiagnosticsOutputConfiguration property is set
+        internal bool IsSetModelDiagnosticsOutputConfiguration()
+        {
+            return this._modelDiagnosticsOutputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDiagnosticsResultsObject. 
+        /// <para>
+        /// The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model
+        /// diagnostics for the model version.
+        /// </para>
+        /// </summary>
+        public S3Object ModelDiagnosticsResultsObject
+        {
+            get { return this._modelDiagnosticsResultsObject; }
+            set { this._modelDiagnosticsResultsObject = value; }
+        }
+
+        // Check to see if ModelDiagnosticsResultsObject property is set
+        internal bool IsSetModelDiagnosticsResultsObject()
+        {
+            return this._modelDiagnosticsResultsObject != null;
         }
 
         /// <summary>

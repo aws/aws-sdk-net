@@ -38,7 +38,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property AffectedSensorCount. 
         /// <para>
-        ///  Indicates the number of sensors that have less than 90 days of data. 
+        ///  Indicates the number of sensors that have less than 14 days of data. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

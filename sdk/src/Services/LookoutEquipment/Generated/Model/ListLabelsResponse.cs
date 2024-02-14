@@ -41,6 +41,13 @@ namespace Amazon.LookoutEquipment.Model
         /// <para>
         ///  A summary of the items in the label group. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't supply the <c>LabelGroupName</c> request parameter, or if you supply
+        /// the name of a label group that doesn't exist, <c>ListLabels</c> returns an empty array
+        /// in <c>LabelSummaries</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<LabelSummary> LabelSummaries
         {

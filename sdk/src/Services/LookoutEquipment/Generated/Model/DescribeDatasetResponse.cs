@@ -166,8 +166,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property IngestedFilesSummary. 
         /// <para>
-        ///  IngestedFilesSummary associated with the given dataset for the latest successful
-        /// associated ingestion job id. 
+        /// IngestedFilesSummary associated with the given dataset for the latest successful associated
+        /// ingestion job id. 
         /// </para>
         /// </summary>
         public IngestedFilesSummary IngestedFilesSummary

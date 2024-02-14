@@ -42,6 +42,13 @@ namespace Amazon.LookoutEquipment.Model
         /// Provides information on the specified model version, including the created time, model
         /// and dataset ARNs, and status.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't supply the <c>ModelName</c> request parameter, or if you supply the name
+        /// of a model that doesn't exist, <c>ListModelVersions</c> returns an empty array in
+        /// <c>ModelVersionSummaries</c>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ModelVersionSummary> ModelVersionSummaries
         {

@@ -120,7 +120,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property LabelGroupName. 
         /// <para>
-        ///  Retruns the name of the label group. 
+        ///  Returns the name of the label group. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

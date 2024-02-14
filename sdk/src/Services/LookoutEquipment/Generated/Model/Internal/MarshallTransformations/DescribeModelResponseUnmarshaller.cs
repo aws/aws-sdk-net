@@ -177,6 +177,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.ModelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelDiagnosticsOutputConfiguration", targetDepth))
+                {
+                    var unmarshaller = ModelDiagnosticsOutputConfigurationUnmarshaller.Instance;
+                    response.ModelDiagnosticsOutputConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelMetrics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

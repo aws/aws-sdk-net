@@ -60,7 +60,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property SensorsWithShortDateRange. 
         /// <para>
         ///  Parameter that describes the total number of sensors that have a short date range
-        /// of less than 90 days of data overall. 
+        /// of less than 14 days of data overall. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

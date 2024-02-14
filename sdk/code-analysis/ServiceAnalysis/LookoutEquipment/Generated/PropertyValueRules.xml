@@ -21,7 +21,7 @@
     <property>Amazon.LookoutEquipment.Model.CreateDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateDatasetResponse.DatasetName</property>
@@ -261,7 +261,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.FailedReason</property>
@@ -288,7 +288,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.SourceDatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDataIngestionJobResponse.StatusDetail</property>
@@ -306,7 +306,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.DatasetName</property>
@@ -335,7 +335,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeDatasetResponse.SourceDatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeInferenceSchedulerRequest.InferenceSchedulerName</property>
@@ -462,13 +462,13 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.ActiveModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.DatasetName</property>
@@ -522,7 +522,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.PreviousActiveModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.PriorModelMetrics</property>
@@ -550,7 +550,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelResponse.SourceModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionRequest.ModelName</property>
@@ -571,7 +571,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.DatasetName</property>
@@ -614,7 +614,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.ModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.OffCondition</property>
@@ -647,7 +647,7 @@
     <property>Amazon.LookoutEquipment.Model.DescribeModelVersionResponse.SourceModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeResourcePolicyRequest.ResourceArn</property>
@@ -715,13 +715,13 @@
     <property>Amazon.LookoutEquipment.Model.ImportDatasetRequest.SourceDatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportDatasetResponse.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportDatasetResponse.DatasetName</property>
@@ -767,7 +767,7 @@
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionRequest.SourceModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionResponse.ModelArn</property>
@@ -789,7 +789,7 @@
     <property>Amazon.LookoutEquipment.Model.ImportModelVersionResponse.ModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListDataIngestionJobsRequest.DatasetName</property>
@@ -1221,7 +1221,7 @@
     <property>Amazon.LookoutEquipment.Model.UpdateActiveModelVersionResponse.CurrentActiveVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.UpdateActiveModelVersionResponse.ModelArn</property>
@@ -1243,7 +1243,7 @@
     <property>Amazon.LookoutEquipment.Model.UpdateActiveModelVersionResponse.PreviousActiveVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.UpdateInferenceSchedulerRequest.DataDelayOffsetInMinutes</property>
@@ -1300,7 +1300,7 @@
     <property>Amazon.LookoutEquipment.Model.DataIngestionJobSummary.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DataIngestionJobSummary.DatasetName</property>
@@ -1322,7 +1322,7 @@
     <property>Amazon.LookoutEquipment.Model.DatasetSummary.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DatasetSummary.DatasetName</property>
@@ -1389,7 +1389,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.ModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceInputConfiguration.InputTimeZoneOffset</property>
@@ -1540,6 +1540,24 @@
     <pattern>[A-Fa-f0-9]{0,32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ModelDiagnosticsOutputConfiguration.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ModelDiagnosticsS3OutputConfiguration.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ModelDiagnosticsS3OutputConfiguration.Prefix</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.ActiveModelVersion</property>
     <min>1</min>
   </property-value-rule>
@@ -1547,13 +1565,13 @@
     <property>Amazon.LookoutEquipment.Model.ModelSummary.ActiveModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.DatasetArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/.+</pattern>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:dataset\/[0-9a-zA-Z_-]{1,200}\/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.DatasetName</property>
@@ -1597,7 +1615,7 @@
     <property>Amazon.LookoutEquipment.Model.ModelVersionSummary.ModelVersionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/.+\/.+\/model-version\/[0-9]{1,}$</pattern>
+    <pattern>^arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:model\/[0-9a-zA-Z_-]{1,200}\/.+\/model-version\/[0-9]{1,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.RetrainingSchedulerSummary.LookbackWindow</property>

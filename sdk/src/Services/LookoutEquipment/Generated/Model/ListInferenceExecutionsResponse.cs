@@ -43,6 +43,13 @@ namespace Amazon.LookoutEquipment.Model
         /// from the <c>ListInferenceExecutions</c> operation, including model used, inference
         /// scheduler, data configuration, and so on. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't supply the <c>InferenceSchedulerName</c> request parameter, or if you
+        /// supply the name of an inference scheduler that doesn't exist, <c>ListInferenceExecutions</c>
+        /// returns an empty array in <c>InferenceExecutionSummaries</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<InferenceExecutionSummary> InferenceExecutionSummaries
         {

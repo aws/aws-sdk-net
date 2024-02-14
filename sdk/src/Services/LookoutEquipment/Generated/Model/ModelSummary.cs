@@ -43,6 +43,7 @@ namespace Amazon.LookoutEquipment.Model
         private DateTime? _latestScheduledRetrainingStartTime;
         private ModelVersionStatus _latestScheduledRetrainingStatus;
         private string _modelArn;
+        private ModelDiagnosticsOutputConfiguration _modelDiagnosticsOutputConfiguration;
         private string _modelName;
         private DateTime? _nextScheduledRetrainingStartDate;
         private RetrainingSchedulerStatus _retrainingSchedulerStatus;
@@ -216,6 +217,21 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDiagnosticsOutputConfiguration.
+        /// </summary>
+        public ModelDiagnosticsOutputConfiguration ModelDiagnosticsOutputConfiguration
+        {
+            get { return this._modelDiagnosticsOutputConfiguration; }
+            set { this._modelDiagnosticsOutputConfiguration = value; }
+        }
+
+        // Check to see if ModelDiagnosticsOutputConfiguration property is set
+        internal bool IsSetModelDiagnosticsOutputConfiguration()
+        {
+            return this._modelDiagnosticsOutputConfiguration != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.LookoutEquipment.Model
     public partial class UpdateModelRequest : AmazonLookoutEquipmentRequest
     {
         private LabelsInputConfiguration _labelsInputConfiguration;
+        private ModelDiagnosticsOutputConfiguration _modelDiagnosticsOutputConfiguration;
         private string _modelName;
         private string _roleArn;
 
@@ -51,6 +52,26 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetLabelsInputConfiguration()
         {
             return this._labelsInputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDiagnosticsOutputConfiguration. 
+        /// <para>
+        /// The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise
+        /// model diagnostics for the model. You must also specify the <c>RoleArn</c> request
+        /// parameter.
+        /// </para>
+        /// </summary>
+        public ModelDiagnosticsOutputConfiguration ModelDiagnosticsOutputConfiguration
+        {
+            get { return this._modelDiagnosticsOutputConfiguration; }
+            set { this._modelDiagnosticsOutputConfiguration = value; }
+        }
+
+        // Check to see if ModelDiagnosticsOutputConfiguration property is set
+        internal bool IsSetModelDiagnosticsOutputConfiguration()
+        {
+            return this._modelDiagnosticsOutputConfiguration != null;
         }
 
         /// <summary>
