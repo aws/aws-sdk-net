@@ -1,3 +1,28 @@
+### 3.7.749.0 (2024-02-15 19:22 UTC)
+* Artifact (3.7.300.0)
+	* This is the initial SDK release for AWS Artifact. AWS Artifact provides on-demand access to compliance and third-party compliance reports. This release includes access to List and Get reports, along with their metadata. This release also includes access to AWS Artifact notifications settings.
+* CodePipeline (3.7.303.0)
+	* Add ability to override timeout on action level.
+* Detective (3.7.301.43)
+	* Doc only updates for content enhancement
+* GuardDuty (3.7.303.0)
+	* Marked fields IpAddressV4, PrivateIpAddress, Email as Sensitive.
+* HealthLake (3.7.301.0)
+	* This release adds a new response parameter, JobProgressReport, to the DescribeFHIRImportJob and ListFHIRImportJobs API operation. JobProgressReport provides details on the progress of the import job on the server.
+* OpenSearchService (3.7.305.0)
+	* Adds additional supported instance types.
+* Polly (3.7.302.0)
+	* Amazon Polly adds 1 new voice - Burcu (tr-TR)
+* SageMaker (3.7.313.0)
+	* This release adds a new API UpdateClusterSoftware for SageMaker HyperPod. This API allows users to patch HyperPod clusters with latest platform softwares.
+* SecretsManager (3.7.302.26)
+	* Doc only update for Secrets Manager
+* Core 3.7.302.11
+	* Add configuration support to disable IMDSv1 fallback
+	* Change Is<property-name>Set properties to not reset the value of the backing field.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.748.0 (2024-02-14 19:15 UTC)
 * ControlTower (3.7.304.0)
 	* Adds support for new Baseline and EnabledBaseline APIs for automating multi-account governance.
