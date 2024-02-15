@@ -386,7 +386,7 @@ namespace Amazon.Util.Internal
                 True -> set to empty AlwaysSend*
                 False -> set to empty collection type
               Value type
-                True -> set to default(T)
+                True and field has no value -> set to default(T)
                 False -> set to null
 
             Get
@@ -402,9 +402,16 @@ namespace Amazon.Util.Internal
             where T : struct
         {
             if (isSet)
-                field = default(T);
+            {
+                if (!field.HasValue)
+                {
+                    field = default(T);
+                }
+            }
             else
+            {
                 field = null;
+            }
         }
         public static void SetIsSet<T>(bool isSet, ref List<T> field)
         {

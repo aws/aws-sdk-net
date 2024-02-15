@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Change Is<property-name>Set properties to not reset the value of the backing field."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
