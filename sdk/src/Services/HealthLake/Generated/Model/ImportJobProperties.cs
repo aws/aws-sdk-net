@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Displays the properties of the import job, including the ID, Arn, Name, and the status
-    /// of the data store.
+    /// Displays the properties of the import job, including the ID, Arn, Name, the status
+    /// of the job, and the progress report of the job.
     /// </summary>
     public partial class ImportJobProperties
     {
@@ -41,6 +41,7 @@ namespace Amazon.HealthLake.Model
         private string _jobId;
         private string _jobName;
         private OutputDataConfig _jobOutputDataConfig;
+        private JobProgressReport _jobProgressReport;
         private JobStatus _jobStatus;
         private string _message;
         private DateTime? _submitTime;
@@ -171,6 +172,25 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetJobOutputDataConfig()
         {
             return this._jobOutputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobProgressReport. 
+        /// <para>
+        /// Displays the progress of the import job, including total resources scanned, total
+        /// resources ingested, and total size of data ingested.
+        /// </para>
+        /// </summary>
+        public JobProgressReport JobProgressReport
+        {
+            get { return this._jobProgressReport; }
+            set { this._jobProgressReport = value; }
+        }
+
+        // Check to see if JobProgressReport property is set
+        internal bool IsSetJobProgressReport()
+        {
+            return this._jobProgressReport != null;
         }
 
         /// <summary>
