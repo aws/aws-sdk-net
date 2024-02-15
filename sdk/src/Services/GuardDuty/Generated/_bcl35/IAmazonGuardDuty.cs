@@ -1668,6 +1668,13 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists Amazon GuardDuty findings statistics for the specified detector ID.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some flags might not be available in all
+        /// the Regions where GuardDuty is currently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsStatistics service method.</param>
         /// 
@@ -2426,7 +2433,14 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists Amazon GuardDuty findings for the specified detector ID.
+        /// Lists GuardDuty findings for the specified detector ID.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some flags might not be available in all
+        /// the Regions where GuardDuty is currently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindings service method.</param>
         /// 
@@ -3101,7 +3115,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates the Amazon GuardDuty detector specified by the detectorId.
+        /// Updates the GuardDuty detector specified by the detectorId.
         /// 
         ///  
         /// <para>

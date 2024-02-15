@@ -104,7 +104,7 @@ namespace Amazon.GuardDuty.Model
         /// The email address of the member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Email
         {
             get { return this._email; }

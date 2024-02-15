@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// The IPv4 local address of the connection.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string IpAddressV4
         {
             get { return this._ipAddressV4; }

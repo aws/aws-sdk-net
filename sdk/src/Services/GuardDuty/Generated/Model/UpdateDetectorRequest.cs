@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDetector operation.
-    /// Updates the Amazon GuardDuty detector specified by the detectorId.
+    /// Updates the GuardDuty detector specified by the detectorId.
     /// 
     ///  
     /// <para>

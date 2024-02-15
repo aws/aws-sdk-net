@@ -104,6 +104,7 @@ namespace Amazon.GuardDuty.Model
         /// The private IP address of the EC2 instance.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PrivateIpAddress
         {
             get { return this._privateIpAddress; }
