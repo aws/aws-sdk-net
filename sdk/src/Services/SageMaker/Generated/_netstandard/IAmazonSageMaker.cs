@@ -7504,7 +7504,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Update a SageMaker HyperPod cluster.
+        /// Updates a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// <param name="cancellationToken">
@@ -7525,6 +7525,33 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateClusterSoftware
+
+
+
+        /// <summary>
+        /// Updates the platform software of a SageMaker HyperPod cluster for security patching.
+        /// To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSoftware service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateClusterSoftware service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">REST API Reference for UpdateClusterSoftware Operation</seealso>
+        Task<UpdateClusterSoftwareResponse> UpdateClusterSoftwareAsync(UpdateClusterSoftwareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

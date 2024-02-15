@@ -29,18 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateCluster operation.
-    /// Updates a SageMaker HyperPod cluster.
+    /// Container for the parameters to the UpdateClusterSoftware operation.
+    /// Updates the platform software of a SageMaker HyperPod cluster for security patching.
+    /// To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+    /// the SageMaker HyperPod platform software of a cluster</a>.
     /// </summary>
-    public partial class UpdateClusterRequest : AmazonSageMakerRequest
+    public partial class UpdateClusterSoftwareRequest : AmazonSageMakerRequest
     {
         private string _clusterName;
-        private List<ClusterInstanceGroupSpecification> _instanceGroups = new List<ClusterInstanceGroupSpecification>();
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// Specify the name of the SageMaker HyperPod cluster you want to update.
+        /// Specify the name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster
+        /// you want to update for security patching.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -54,25 +56,6 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceGroups. 
-        /// <para>
-        /// Specify the instance groups to update.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
-        public List<ClusterInstanceGroupSpecification> InstanceGroups
-        {
-            get { return this._instanceGroups; }
-            set { this._instanceGroups = value; }
-        }
-
-        // Check to see if InstanceGroups property is set
-        internal bool IsSetInstanceGroups()
-        {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
         }
 
     }

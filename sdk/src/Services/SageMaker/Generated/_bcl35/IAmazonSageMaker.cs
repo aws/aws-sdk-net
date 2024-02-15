@@ -13797,7 +13797,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Update a SageMaker HyperPod cluster.
+        /// Updates a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// 
@@ -13841,6 +13841,55 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  UpdateClusterResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateClusterSoftware
+
+
+        /// <summary>
+        /// Updates the platform software of a SageMaker HyperPod cluster for security patching.
+        /// To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSoftware service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterSoftware service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">REST API Reference for UpdateClusterSoftware Operation</seealso>
+        UpdateClusterSoftwareResponse UpdateClusterSoftware(UpdateClusterSoftwareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterSoftware operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSoftware operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClusterSoftware
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">REST API Reference for UpdateClusterSoftware Operation</seealso>
+        IAsyncResult BeginUpdateClusterSoftware(UpdateClusterSoftwareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClusterSoftware operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClusterSoftware.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterSoftwareResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">REST API Reference for UpdateClusterSoftware Operation</seealso>
+        UpdateClusterSoftwareResponse EndUpdateClusterSoftware(IAsyncResult asyncResult);
 
         #endregion
         

@@ -34,9 +34,11 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// Model artifacts are the output that results from training a model, and typically consist
+    /// Model artifacts are outputs that result from training a model. They typically consist
     /// of trained parameters, a model definition that describes how to compute inferences,
-    /// and other metadata.
+    /// and other metadata. A SageMaker container stores your trained model artifacts in the
+    /// <c>/opt/ml/model</c> directory. After training has completed, by default, these artifacts
+    /// are uploaded to your Amazon S3 bucket as compressed files.
     /// </para>
     /// </summary>
     public partial class ModelArtifacts

@@ -12314,7 +12314,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Update a SageMaker HyperPod cluster.
+        /// Updates a SageMaker HyperPod cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// <param name="cancellationToken">
@@ -12341,6 +12341,49 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterSoftware
+
+        internal virtual UpdateClusterSoftwareResponse UpdateClusterSoftware(UpdateClusterSoftwareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterSoftwareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterSoftwareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterSoftwareResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the platform software of a SageMaker HyperPod cluster for security patching.
+        /// To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSoftware service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateClusterSoftware service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">REST API Reference for UpdateClusterSoftware Operation</seealso>
+        public virtual Task<UpdateClusterSoftwareResponse> UpdateClusterSoftwareAsync(UpdateClusterSoftwareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterSoftwareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterSoftwareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterSoftwareResponse>(request, options, cancellationToken);
         }
 
         #endregion
