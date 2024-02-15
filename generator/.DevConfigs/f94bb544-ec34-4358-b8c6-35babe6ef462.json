@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Add configuration support to disable IMDSv1 fallback"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
