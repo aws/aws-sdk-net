@@ -58,8 +58,8 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// When <c>nextToken</c> is returned, there are more results available. The value of
-        /// <c>nextToken</c> is a unique pagination token for each page. Make the call again using
-        /// the returned token to retrieve the next page.
+        /// <c>nextToken</c> is a unique pagination token for each page. Send the request again
+        /// using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -40,7 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether to enable or disable cold storage on the domain.
+        /// Whether to enable or disable cold storage on the domain. You must enable UltraWarm
+        /// storage to enable cold storage.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

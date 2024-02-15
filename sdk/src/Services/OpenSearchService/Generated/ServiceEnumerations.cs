@@ -1677,6 +1677,38 @@ namespace Amazon.OpenSearchService
         /// </summary>
         public static readonly OpenSearchPartitionInstanceType M6gXlargeSearch = new OpenSearchPartitionInstanceType("m6g.xlarge.search");
         /// <summary>
+        /// Constant Or112xlargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or112xlargeSearch = new OpenSearchPartitionInstanceType("or1.12xlarge.search");
+        /// <summary>
+        /// Constant Or116xlargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or116xlargeSearch = new OpenSearchPartitionInstanceType("or1.16xlarge.search");
+        /// <summary>
+        /// Constant Or12xlargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or12xlargeSearch = new OpenSearchPartitionInstanceType("or1.2xlarge.search");
+        /// <summary>
+        /// Constant Or14xlargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or14xlargeSearch = new OpenSearchPartitionInstanceType("or1.4xlarge.search");
+        /// <summary>
+        /// Constant Or18xlargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or18xlargeSearch = new OpenSearchPartitionInstanceType("or1.8xlarge.search");
+        /// <summary>
+        /// Constant Or1LargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or1LargeSearch = new OpenSearchPartitionInstanceType("or1.large.search");
+        /// <summary>
+        /// Constant Or1MediumSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or1MediumSearch = new OpenSearchPartitionInstanceType("or1.medium.search");
+        /// <summary>
+        /// Constant Or1XlargeSearch for OpenSearchPartitionInstanceType
+        /// </summary>
+        public static readonly OpenSearchPartitionInstanceType Or1XlargeSearch = new OpenSearchPartitionInstanceType("or1.xlarge.search");
+        /// <summary>
         /// Constant R32xlargeSearch for OpenSearchPartitionInstanceType
         /// </summary>
         public static readonly OpenSearchPartitionInstanceType R32xlargeSearch = new OpenSearchPartitionInstanceType("r3.2xlarge.search");
