@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// Investigations triages indicators of compromises such as a finding and surfaces only
-    /// the most critical and suspicious issues, so you can focus on high-level investigations.
+    /// Detective investigations triages indicators of compromises such as a finding and surfaces
+    /// only the most critical and suspicious issues, so you can focus on high-level investigations.
+    /// An <c>Indicator</c> lets you determine if an Amazon Web Services resource is involved
+    /// in unusual activity that could indicate malicious behavior and its impact.
     /// </summary>
     public partial class Indicator
     {
@@ -40,7 +42,10 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property IndicatorDetail. 
         /// <para>
-        /// Details about the indicator of compromise.
+        /// Details about the indicators of compromise that are used to determine if a resource
+        /// is involved in a security incident. An indicator of compromise (IOC) is an artifact
+        /// observed in or on a network, system, or environment that can (with a high level of
+        /// confidence) identify malicious activity or a security incident.
         /// </para>
         /// </summary>
         public IndicatorDetail IndicatorDetail
@@ -58,7 +63,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property IndicatorType. 
         /// <para>
-        /// The type of indicator.
+        /// The type of indicator. 
         /// </para>
         /// </summary>
         public IndicatorType IndicatorType

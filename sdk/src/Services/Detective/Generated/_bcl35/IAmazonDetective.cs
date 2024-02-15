@@ -138,7 +138,7 @@ namespace Amazon.Detective
     /// </para>
     ///  <note> 
     /// <para>
-    /// We replaced the term "master account" with the term "administrator account." An administrator
+    /// We replaced the term "master account" with the term "administrator account". An administrator
     /// account is used to centrally manage multiple accounts. In the case of Detective, the
     /// administrator account manages the accounts in their behavior graph.
     /// </para>
@@ -338,14 +338,6 @@ namespace Amazon.Detective
         /// 
         ///  
         /// <para>
-        /// Before you try to enable Detective, make sure that your account has been enrolled
-        /// in Amazon GuardDuty for at least 48 hours. If you do not meet this requirement, you
-        /// cannot enable Detective. If you do meet the GuardDuty prerequisite, then when you
-        /// make the request to enable Detective, it checks whether your data volume is within
-        /// the Detective quota. If it exceeds the quota, then you cannot enable Detective. 
-        /// </para>
-        ///  
-        /// <para>
         /// The operation also enables Detective for the calling account in the currently selected
         /// Region. It returns the ARN of the new behavior graph.
         /// </para>
@@ -379,18 +371,14 @@ namespace Amazon.Detective
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// This request cannot be completed if it would cause the number of member accounts in
+        /// the behavior graph to exceed the maximum allowed. A behavior graph cannot have more
+        /// than 1,200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request would cause the data rate for the behavior graph to exceed the maximum
-        /// allowed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// This request cannot be completed if the current volume ingested is above the limit
+        /// of 10 TB per day. Detective will not allow you to add additional member accounts.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -493,18 +481,14 @@ namespace Amazon.Detective
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// This request cannot be completed if it would cause the number of member accounts in
+        /// the behavior graph to exceed the maximum allowed. A behavior graph cannot have more
+        /// than 1,200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request would cause the data rate for the behavior graph to exceed the maximum
-        /// allowed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// This request cannot be completed if the current volume ingested is above the limit
+        /// of 10 TB per day. Detective will not allow you to add additional member accounts.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -959,7 +943,11 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Returns the investigation results of an investigation for a behavior graph.
+        /// Detective investigations lets you investigate IAM users and IAM roles using indicators
+        /// of compromise. An indicator of compromise (IOC) is an artifact observed in or on a
+        /// network, system, or environment that can (with a high level of confidence) identify
+        /// malicious activity or a security incident. <c>GetInvestigation</c> returns the investigation
+        /// results of an investigation for a behavior graph.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInvestigation service method.</param>
         /// 
@@ -1179,7 +1167,9 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Get the indicators from an investigation
+        /// Gets the indicators from an investigation. You can use the information from the indicators
+        /// to determine if an IAM user and/or IAM role is involved in an unusual activity that
+        /// could indicate malicious behavior and its impact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIndicators service method.</param>
         /// 
@@ -1236,7 +1226,11 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// List all Investigations.
+        /// Detective investigations lets you investigate IAM users and IAM roles using indicators
+        /// of compromise. An indicator of compromise (IOC) is an artifact observed in or on a
+        /// network, system, or environment that can (with a high level of confidence) identify
+        /// malicious activity or a security incident. <c>ListInvestigations</c> lists all active
+        /// Detective investigations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
         /// 
@@ -1591,7 +1585,11 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// initiate an investigation on an entity in a graph
+        /// Detective investigations lets you investigate IAM users and IAM roles using indicators
+        /// of compromise. An indicator of compromise (IOC) is an artifact observed in or on a
+        /// network, system, or environment that can (with a high level of confidence) identify
+        /// malicious activity or a security incident. <c>StartInvestigation</c> initiates an
+        /// investigation on an entity in a behavior graph.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInvestigation service method.</param>
         /// 
@@ -1686,18 +1684,14 @@ namespace Amazon.Detective
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// This request cannot be completed if it would cause the number of member accounts in
+        /// the behavior graph to exceed the maximum allowed. A behavior graph cannot have more
+        /// than 1,200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request would cause the data rate for the behavior graph to exceed the maximum
-        /// allowed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// This request cannot be completed if the current volume ingested is above the limit
+        /// of 10 TB per day. Detective will not allow you to add additional member accounts.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1865,18 +1859,14 @@ namespace Amazon.Detective
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The request would cause the number of member accounts in the behavior graph to exceed
-        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// This request cannot be completed if it would cause the number of member accounts in
+        /// the behavior graph to exceed the maximum allowed. A behavior graph cannot have more
+        /// than 1,200 member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The request would cause the data rate for the behavior graph to exceed the maximum
-        /// allowed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Detective is unable to verify the data rate for the member account. This is usually
-        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// This request cannot be completed if the current volume ingested is above the limit
+        /// of 10 TB per day. Detective will not allow you to add additional member accounts.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1918,7 +1908,7 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Update the state of an investigation.
+        /// Updates the state of an investigation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInvestigationState service method.</param>
         /// 

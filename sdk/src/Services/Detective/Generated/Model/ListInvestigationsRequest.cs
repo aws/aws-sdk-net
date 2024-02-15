@@ -30,7 +30,11 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvestigations operation.
-    /// List all Investigations.
+    /// Detective investigations lets you investigate IAM users and IAM roles using indicators
+    /// of compromise. An indicator of compromise (IOC) is an artifact observed in or on a
+    /// network, system, or environment that can (with a high level of confidence) identify
+    /// malicious activity or a security incident. <c>ListInvestigations</c> lists all active
+    /// Detective investigations.
     /// </summary>
     public partial class ListInvestigationsRequest : AmazonDetectiveRequest
     {
@@ -43,7 +47,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property FilterCriteria. 
         /// <para>
-        /// Filter the investigation results based on a criteria.
+        /// Filters the investigation results based on a criteria.
         /// </para>
         /// </summary>
         public FilterCriteria FilterCriteria
@@ -61,7 +65,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph.
+        /// The Amazon Resource Name (ARN) of the behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +84,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// List the maximum number of investigations in a page.
+        /// Lists the maximum number of investigations in a page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -99,7 +103,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// List if there are more results available. The value of nextToken is a unique pagination
+        /// Lists if there are more results available. The value of nextToken is a unique pagination
         /// token for each page. Repeat the call using the returned token to retrieve the next
         /// page. Keep all other arguments unchanged.
         /// </para>

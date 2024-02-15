@@ -30,7 +30,11 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the StartInvestigation operation.
-    /// initiate an investigation on an entity in a graph
+    /// Detective investigations lets you investigate IAM users and IAM roles using indicators
+    /// of compromise. An indicator of compromise (IOC) is an artifact observed in or on a
+    /// network, system, or environment that can (with a high level of confidence) identify
+    /// malicious activity or a security incident. <c>StartInvestigation</c> initiates an
+    /// investigation on an entity in a behavior graph.
     /// </summary>
     public partial class StartInvestigationRequest : AmazonDetectiveRequest
     {
@@ -61,7 +65,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph.
+        /// The Amazon Resource Name (ARN) of the behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +84,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property ScopeEndTime. 
         /// <para>
-        /// The data and time when the investigation began. The value is an UTC ISO8601 formatted
+        /// The data and time when the investigation ended. The value is an UTC ISO8601 formatted
         /// string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>

@@ -97,7 +97,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property StartingIpAddress. 
         /// <para>
-        /// IP address where the resource was first used in the impossible travel
+        /// IP address where the resource was first used in the impossible travel.
         /// </para>
         /// </summary>
         public string StartingIpAddress
@@ -115,7 +115,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property StartingLocation. 
         /// <para>
-        /// Location where the resource was first used in the impossible travel
+        /// Location where the resource was first used in the impossible travel.
         /// </para>
         /// </summary>
         public string StartingLocation

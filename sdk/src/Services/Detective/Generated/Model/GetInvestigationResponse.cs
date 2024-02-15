@@ -47,7 +47,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The UTC time stamp of the creation time of the investigation report.
+        /// The creation time of the investigation report in UTC time stamp format.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -65,7 +65,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property EntityArn. 
         /// <para>
-        /// The unique Amazon Resource Name (ARN) of the IAM user and IAM role.
+        /// The unique Amazon Resource Name (ARN). Detective supports IAM user ARNs and IAM role
+        /// ARNs.
         /// </para>
         /// </summary>
         public string EntityArn
@@ -83,7 +84,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property EntityType. 
         /// <para>
-        /// Type of entity. For example, Amazon Web Services accounts, such as IAM user and role.
+        /// Type of entity. For example, Amazon Web Services accounts, such as an IAM user and/or
+        /// IAM role.
         /// </para>
         /// </summary>
         public EntityType EntityType
@@ -101,7 +103,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph.
+        /// The Amazon Resource Name (ARN) of the behavior graph.
         /// </para>
         /// </summary>
         public string GraphArn
@@ -139,7 +141,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property ScopeEndTime. 
         /// <para>
         /// The data and time when the investigation began. The value is an UTC ISO8601 formatted
-        /// string. For example, 2021-08-18T16:35:56.284Z.
+        /// string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime ScopeEndTime
@@ -157,7 +159,9 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property ScopeStartTime. 
         /// <para>
-        /// The start date and time for the scope time set to generate the investigation report.
+        /// The start date and time used to set the scope time within which you want to generate
+        /// the investigation report. The value is an UTC ISO8601 formatted string. For example,
+        /// <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime ScopeStartTime
@@ -175,8 +179,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// Severity based on the likelihood and impact of the indicators of compromise discovered
-        /// in the investigation.
+        /// The severity assigned is based on the likelihood and impact of the indicators of compromise
+        /// discovered in the investigation.
         /// </para>
         /// </summary>
         public Severity Severity
@@ -194,8 +198,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the investigation. An archived investigation indicates you have
-        /// completed reviewing the investigation.
+        /// The current state of the investigation. An archived investigation indicates that you
+        /// have completed reviewing the investigation.
         /// </para>
         /// </summary>
         public State State
@@ -213,7 +217,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status based on the completion status of the investigation.
+        /// The status based on the completion status of the investigation.
         /// </para>
         /// </summary>
         public Status Status

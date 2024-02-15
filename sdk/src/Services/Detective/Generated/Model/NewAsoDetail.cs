@@ -58,7 +58,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property IsNewForEntireAccount. 
         /// <para>
-        /// Checks if the ASO is for new for the entire account.
+        /// Checks if the Autonomous System Organization (ASO) is new for the entire account.
         /// </para>
         /// </summary>
         public bool IsNewForEntireAccount

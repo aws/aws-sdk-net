@@ -60,7 +60,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property IsNewForEntireAccount. 
         /// <para>
-        /// Checks if the gelocation is new for the entire account.
+        /// Checks if the geolocation is new for the entire account.
         /// </para>
         /// </summary>
         public bool IsNewForEntireAccount

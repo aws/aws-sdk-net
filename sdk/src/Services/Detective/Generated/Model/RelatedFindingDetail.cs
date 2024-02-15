@@ -41,7 +41,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the related finding.
+        /// The Amazon Resource Name (ARN) of the related finding.
         /// </para>
         /// </summary>
         public string Arn

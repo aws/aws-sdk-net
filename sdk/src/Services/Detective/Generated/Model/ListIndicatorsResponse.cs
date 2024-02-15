@@ -41,7 +41,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph.
+        /// The Amazon Resource Name (ARN) of the behavior graph.
         /// </para>
         /// </summary>
         public string GraphArn
@@ -59,7 +59,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Indicators. 
         /// <para>
-        /// Indicators of compromise listed based on severity.
+        /// Lists the indicators of compromise.
         /// </para>
         /// </summary>
         public List<Indicator> Indicators
@@ -96,7 +96,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// List if there are more results available. The value of nextToken is a unique pagination
+        /// Lists if there are more results available. The value of nextToken is a unique pagination
         /// token for each page. Repeat the call using the returned token to retrieve the next
         /// page. Keep all other arguments unchanged.
         /// </para>

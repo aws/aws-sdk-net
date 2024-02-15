@@ -64,7 +64,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property APIName. 
         /// <para>
-        /// The name of the API where the TTP was observed.
+        /// The name of the API where the tactics, techniques, and procedure (TTP) was observed.
         /// </para>
         /// </summary>
         public string APIName
@@ -100,7 +100,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address where the TTP was observed.
+        /// The IP address where the tactics, techniques, and procedure (TTP) was observed.
         /// </para>
         /// </summary>
         public string IpAddress

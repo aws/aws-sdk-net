@@ -39,8 +39,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property InvestigationDetails. 
         /// <para>
-        /// Investigations details lists the summary of uncommon behavior or malicious activity
-        /// which indicates a compromise.
+        /// Lists the summary of uncommon behavior or malicious activity which indicates a compromise.
         /// </para>
         /// </summary>
         public List<InvestigationDetail> InvestigationDetails
@@ -58,14 +57,13 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// List if there are more results available. The value of nextToken is a unique pagination
+        /// Lists if there are more results available. The value of nextToken is a unique pagination
         /// token for each page. Repeat the call using the returned token to retrieve the next
         /// page. Keep all other arguments unchanged.
         /// </para>
         ///  
         /// <para>
-        /// Each pagination token expires after 24 hours. Using an expired pagination token will
-        /// return an HTTP 400 InvalidToken error.
+        /// Each pagination token expires after 24 hours. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

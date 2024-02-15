@@ -30,7 +30,7 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInvestigationState operation.
-    /// Update the state of an investigation.
+    /// Updates the state of an investigation.
     /// </summary>
     public partial class UpdateInvestigationStateRequest : AmazonDetectiveRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The ARN of the behavior graph.
+        /// The Amazon Resource Name (ARN) of the behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,8 +39,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property EndInclusive. 
         /// <para>
-        /// A timestamp representing the end date of the time period until when data is filtered
-        /// , including the end date.
+        /// A timestamp representing the end date of the time period until when data is filtered,
+        /// including the end date.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

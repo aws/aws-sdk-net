@@ -30,7 +30,7 @@ namespace Amazon.Detective.Model
 {
     /// <summary>
     /// Details about the investigation related to a potential security event identified by
-    /// Detective
+    /// Detective.
     /// </summary>
     public partial class InvestigationDetail
     {
@@ -45,7 +45,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The UTC time stamp of the creation time of the investigation report.
+        /// The time stamp of the creation time of the investigation report. The value is an UTC
+        /// ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
