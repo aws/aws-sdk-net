@@ -236,6 +236,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The next rotation is scheduled to occur on or before this date. If the secret isn't
         /// configured for rotation or rotation has been disabled, Secrets Manager returns null.
+        /// If rotation fails, Secrets Manager retries the entire rotation process multiple times.
+        /// If rotation is unsuccessful, this date may be in the past.
         /// </para>
         /// </summary>
         public DateTime NextRotationDate
