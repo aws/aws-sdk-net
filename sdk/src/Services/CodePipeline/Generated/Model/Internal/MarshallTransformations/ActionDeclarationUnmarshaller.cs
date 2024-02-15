@@ -117,6 +117,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.RunOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeoutInMinutes", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutInMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

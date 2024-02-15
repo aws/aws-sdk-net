@@ -132,6 +132,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RunOrder);
             }
 
+            if(requestObject.IsSetTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("timeoutInMinutes");
+                context.Writer.Write(requestObject.TimeoutInMinutes);
+            }
+
         }
 
         /// <summary>

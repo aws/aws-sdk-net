@@ -42,6 +42,7 @@ namespace Amazon.CodePipeline.Model
         private string _region;
         private string _roleArn;
         private int? _runOrder;
+        private int? _timeoutInMinutes;
 
         /// <summary>
         /// Gets and sets the property ActionTypeId. 
@@ -231,6 +232,27 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetRunOrder()
         {
             return this._runOrder.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutInMinutes. 
+        /// <para>
+        /// A timeout duration in minutes that can be applied against the ActionType’s default
+        /// timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas
+        /// for CodePipeline </a>. This attribute is available only to the manual approval ActionType.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=86400)]
+        public int TimeoutInMinutes
+        {
+            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            set { this._timeoutInMinutes = value; }
+        }
+
+        // Check to see if TimeoutInMinutes property is set
+        internal bool IsSetTimeoutInMinutes()
+        {
+            return this._timeoutInMinutes.HasValue; 
         }
 
     }
