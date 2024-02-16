@@ -35,7 +35,33 @@ namespace Amazon.ConnectParticipant.Model
     /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
     /// persistent chat</a>. 
     /// 
-    ///  <note> 
+    ///  
+    /// <para>
+    /// If you have a process that consumes events in the transcript of an chat that has ended,
+    /// note that chat transcripts contain the following event content types if the event
+    /// has occurred during the chat session:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>application/vnd.amazonaws.connect.event.participant.joined</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>application/vnd.amazonaws.connect.event.chat.ended</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>application/vnd.amazonaws.connect.event.transfer.succeeded</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>application/vnd.amazonaws.connect.event.transfer.failed</c> 
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
     /// </para>

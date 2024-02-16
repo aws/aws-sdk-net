@@ -59,7 +59,8 @@ namespace Amazon.ConnectParticipant
 
         /// <summary>
         /// Allows you to confirm that the attachment has been uploaded using the pre-signed URL
-        /// provided in StartAttachmentUpload API. 
+        /// provided in StartAttachmentUpload API. A conflict exception is thrown when an attachment
+        /// with that identifier is already being uploaded.
         /// 
         ///  <note> 
         /// <para>
@@ -78,7 +79,8 @@ namespace Amazon.ConnectParticipant
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
-        /// An attachment with that identifier is already being uploaded.
+        /// The requested operation conflicts with the current state of a service resource associated
+        /// with the request.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Amazon Connect service.
@@ -99,7 +101,8 @@ namespace Amazon.ConnectParticipant
 
         /// <summary>
         /// Allows you to confirm that the attachment has been uploaded using the pre-signed URL
-        /// provided in StartAttachmentUpload API. 
+        /// provided in StartAttachmentUpload API. A conflict exception is thrown when an attachment
+        /// with that identifier is already being uploaded.
         /// 
         ///  <note> 
         /// <para>
@@ -121,7 +124,8 @@ namespace Amazon.ConnectParticipant
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
-        /// An attachment with that identifier is already being uploaded.
+        /// The requested operation conflicts with the current state of a service resource associated
+        /// with the request.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Amazon Connect service.
@@ -505,7 +509,33 @@ namespace Amazon.ConnectParticipant
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
         /// persistent chat</a>. 
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// If you have a process that consumes events in the transcript of an chat that has ended,
+        /// note that chat transcripts contain the following event content types if the event
+        /// has occurred during the chat session:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.participant.joined</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.chat.ended</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.transfer.succeeded</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.transfer.failed</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
@@ -541,7 +571,33 @@ namespace Amazon.ConnectParticipant
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
         /// persistent chat</a>. 
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// If you have a process that consumes events in the transcript of an chat that has ended,
+        /// note that chat transcripts contain the following event content types if the event
+        /// has occurred during the chat session:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.participant.left</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.participant.joined</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.chat.ended</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.transfer.succeeded</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application/vnd.amazonaws.connect.event.transfer.failed</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
@@ -578,8 +634,19 @@ namespace Amazon.ConnectParticipant
 
 
         /// <summary>
-        /// Sends an event. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <c>application/vnd.amazonaws.connect.event.connection.acknowledged</c> ContentType
+        /// will no longer be supported starting December 31, 2024. This event has been migrated
+        /// to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// API using the <c>ConnectParticipant</c> field.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sends an event. Message receipts are not supported when there are more than two active
+        /// participants in the chat. Using the SendEvent API for message receipts when a supervisor
+        /// is barged-in will result in a conflict exception.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -597,7 +664,8 @@ namespace Amazon.ConnectParticipant
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
-        /// An attachment with that identifier is already being uploaded.
+        /// The requested operation conflicts with the current state of a service resource associated
+        /// with the request.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Amazon Connect service.
@@ -614,8 +682,19 @@ namespace Amazon.ConnectParticipant
 
 
         /// <summary>
-        /// Sends an event. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The <c>application/vnd.amazonaws.connect.event.connection.acknowledged</c> ContentType
+        /// will no longer be supported starting December 31, 2024. This event has been migrated
+        /// to the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// API using the <c>ConnectParticipant</c> field.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Sends an event. Message receipts are not supported when there are more than two active
+        /// participants in the chat. Using the SendEvent API for message receipts when a supervisor
+        /// is barged-in will result in a conflict exception.
+        /// </para>
         ///  <note> 
         /// <para>
         ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
@@ -636,7 +715,8 @@ namespace Amazon.ConnectParticipant
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
-        /// An attachment with that identifier is already being uploaded.
+        /// The requested operation conflicts with the current state of a service resource associated
+        /// with the request.
         /// </exception>
         /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Amazon Connect service.

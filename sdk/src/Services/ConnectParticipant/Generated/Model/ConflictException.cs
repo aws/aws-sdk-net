@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// An attachment with that identifier is already being uploaded.
+    /// The requested operation conflicts with the current state of a service resource associated
+    /// with the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
