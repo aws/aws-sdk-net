@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <c>postgres12</c> 
+        /// Example: <c>postgres13</c> 
         /// </para>
         ///  
         /// <para>

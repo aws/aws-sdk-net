@@ -64,6 +64,10 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>DescribeDBShardGroups</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>DescribePendingMaintenanceActions</c> 
     /// </para>
     ///  </li> </ul>

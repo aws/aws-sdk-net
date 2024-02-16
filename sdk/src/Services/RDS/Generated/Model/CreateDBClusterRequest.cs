@@ -340,7 +340,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 letters, numbers, or hyphens.
+        /// Must contain from 1 to 63 (for Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters)
+        /// letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
