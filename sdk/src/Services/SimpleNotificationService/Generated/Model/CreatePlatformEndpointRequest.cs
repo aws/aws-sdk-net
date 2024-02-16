@@ -58,7 +58,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.
+        /// For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+        /// <c>SetEndpointAttributes</c> </a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -95,8 +96,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property PlatformApplicationArn. 
         /// <para>
-        /// PlatformApplicationArn returned from CreatePlatformApplication is used to create a
-        /// an endpoint.
+        ///  <c>PlatformApplicationArn</c> returned from CreatePlatformApplication is used to
+        /// create a an endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

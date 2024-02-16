@@ -62,8 +62,16 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <c>GCM</c> (Firebase Cloud Messaging), there is no <c>PlatformPrincipal</c> and
-    /// the <c>PlatformCredential</c> is <c>API key</c>.
+    /// For GCM (Firebase Cloud Messaging) using key credentials, there is no <c>PlatformPrincipal</c>.
+    /// The <c>PlatformCredential</c> is <c>API key</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For GCM (Firebase Cloud Messaging) using token credentials, there is no <c>PlatformPrincipal</c>.
+    /// The <c>PlatformCredential</c> is a JSON formatted private key file. When using the
+    /// Amazon Web Services CLI, the file must be in string format and special characters
+    /// must be ignored. To format the file correctly, Amazon SNS recommends using the following
+    /// command: <c>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -90,7 +98,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.
+        /// For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+        /// <c>SetPlatformApplicationAttributes</c> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -328,6 +328,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// a value for the <c>TargetArn</c> or <c>TopicArn</c> parameters.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

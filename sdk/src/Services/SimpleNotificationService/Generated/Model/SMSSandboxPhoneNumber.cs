@@ -54,7 +54,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The destination phone number.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Sensitive=true, Max=20)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

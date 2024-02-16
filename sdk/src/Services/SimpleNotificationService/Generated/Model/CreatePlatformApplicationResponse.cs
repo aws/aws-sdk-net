@@ -38,7 +38,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property PlatformApplicationArn. 
         /// <para>
-        /// PlatformApplicationArn is returned.
+        ///  <c>PlatformApplicationArn</c> is returned.
         /// </para>
         /// </summary>
         public string PlatformApplicationArn

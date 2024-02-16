@@ -42,7 +42,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property PlatformApplicationArn. 
         /// <para>
-        /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+        ///  <c>PlatformApplicationArn</c> for GetPlatformApplicationAttributesInput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

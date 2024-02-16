@@ -80,7 +80,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// EndpointArn used for SetEndpointAttributes action.
+        /// EndpointArn used for <c>SetEndpointAttributes</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Response for GetPlatformApplicationAttributes action.
+    /// Response for <c>GetPlatformApplicationAttributes</c> action.
     /// </summary>
     public partial class GetPlatformApplicationAttributesResponse : AmazonWebServiceResponse
     {
@@ -55,6 +55,19 @@ namespace Amazon.SimpleNotificationService.Model
         ///  <c>ApplePlatformBundleID</c> – The app identifier used to configure token-based authentication.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <c>AuthenticationMethod</c> – Returns the credential type used when sending push
+        /// notifications from application to APNS/APNS_Sandbox, or application to GCM.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// APNS – Returns the token or certificate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GCM – Returns the token or key.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <c>EventEndpointCreated</c> – Topic ARN to which EndpointCreated event notifications
         /// should be sent.

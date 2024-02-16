@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Response from GetEndpointAttributes of the EndpointArn.
+    /// Response from <c>GetEndpointAttributes</c> of the <c>EndpointArn</c>.
     /// </summary>
     public partial class GetEndpointAttributesResponse : AmazonWebServiceResponse
     {

@@ -76,7 +76,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The destination phone number to verify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=20)]
+        [AWSProperty(Required=true, Sensitive=true, Max=20)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

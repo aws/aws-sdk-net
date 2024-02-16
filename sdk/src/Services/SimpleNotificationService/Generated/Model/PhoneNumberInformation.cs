@@ -101,6 +101,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// The phone number.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }

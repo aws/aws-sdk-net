@@ -52,8 +52,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// NextToken string is used when calling ListEndpointsByPlatformApplication action to
-        /// retrieve additional records that are available after the first page results.
+        ///  <c>NextToken</c> string is used when calling <c>ListEndpointsByPlatformApplication</c>
+        /// action to retrieve additional records that are available after the first page results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -71,7 +71,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property PlatformApplicationArn. 
         /// <para>
-        /// PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.
+        ///  <c>PlatformApplicationArn</c> for <c>ListEndpointsByPlatformApplicationInput</c>
+        /// action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

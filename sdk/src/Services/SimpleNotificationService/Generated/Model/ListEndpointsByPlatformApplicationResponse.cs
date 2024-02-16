@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Response for ListEndpointsByPlatformApplication action.
+    /// Response for <c>ListEndpointsByPlatformApplication</c> action.
     /// </summary>
     public partial class ListEndpointsByPlatformApplicationResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// Endpoints returned for ListEndpointsByPlatformApplication action.
+        /// Endpoints returned for <c>ListEndpointsByPlatformApplication</c> action.
         /// </para>
         /// </summary>
         public List<Endpoint> Endpoints
@@ -57,8 +57,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// NextToken string is returned when calling ListEndpointsByPlatformApplication action
-        /// if additional records are available after the first page results.
+        ///  <c>NextToken</c> string is returned when calling <c>ListEndpointsByPlatformApplication</c>
+        /// action if additional records are available after the first page results.
         /// </para>
         /// </summary>
         public string NextToken

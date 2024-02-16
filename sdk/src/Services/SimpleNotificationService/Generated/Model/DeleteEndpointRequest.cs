@@ -47,7 +47,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// EndpointArn of endpoint to delete.
+        ///  <c>EndpointArn</c> of endpoint to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

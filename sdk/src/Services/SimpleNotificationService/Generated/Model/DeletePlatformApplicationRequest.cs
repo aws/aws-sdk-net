@@ -41,7 +41,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property PlatformApplicationArn. 
         /// <para>
-        /// PlatformApplicationArn of platform application object to delete.
+        ///  <c>PlatformApplicationArn</c> of platform application object to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

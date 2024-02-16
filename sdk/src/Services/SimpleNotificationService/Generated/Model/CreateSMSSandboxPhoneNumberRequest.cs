@@ -75,7 +75,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// number to the list of verified phone numbers that you can send SMS messages to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=20)]
+        [AWSProperty(Required=true, Sensitive=true, Max=20)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
