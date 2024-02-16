@@ -65,6 +65,7 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _stepConcurrencyLevel;
         private List<Tag> _tags = new List<Tag>();
         private bool? _terminationProtected;
+        private bool? _unhealthyNodeReplacement;
         private bool? _visibleToAllUsers;
 
         /// <summary>
@@ -691,6 +692,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetTerminationProtected()
         {
             return this._terminationProtected.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnhealthyNodeReplacement. 
+        /// <para>
+        /// Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that
+        /// have degraded within the cluster.
+        /// </para>
+        /// </summary>
+        public bool UnhealthyNodeReplacement
+        {
+            get { return this._unhealthyNodeReplacement.GetValueOrDefault(); }
+            set { this._unhealthyNodeReplacement = value; }
+        }
+
+        // Check to see if UnhealthyNodeReplacement property is set
+        internal bool IsSetUnhealthyNodeReplacement()
+        {
+            return this._unhealthyNodeReplacement.HasValue; 
         }
 
         /// <summary>

@@ -46,6 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         private PlacementType _placement;
         private string _slaveInstanceType;
         private bool? _terminationProtected;
+        private bool? _unhealthyNodeReplacement;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -316,6 +317,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetTerminationProtected()
         {
             return this._terminationProtected.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnhealthyNodeReplacement. 
+        /// <para>
+        /// Indicates whether Amazon EMR should gracefully replace core nodes that have degraded
+        /// within the cluster.
+        /// </para>
+        /// </summary>
+        public bool UnhealthyNodeReplacement
+        {
+            get { return this._unhealthyNodeReplacement.GetValueOrDefault(); }
+            set { this._unhealthyNodeReplacement = value; }
+        }
+
+        // Check to see if UnhealthyNodeReplacement property is set
+        internal bool IsSetUnhealthyNodeReplacement()
+        {
+            return this._unhealthyNodeReplacement.HasValue; 
         }
 
     }

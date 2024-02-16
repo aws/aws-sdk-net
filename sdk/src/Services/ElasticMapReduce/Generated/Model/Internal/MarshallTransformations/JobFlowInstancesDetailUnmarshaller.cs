@@ -141,6 +141,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.TerminationProtected = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UnhealthyNodeReplacement", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UnhealthyNodeReplacement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

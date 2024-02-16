@@ -187,6 +187,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TerminationProtected);
             }
 
+            if(requestObject.IsSetUnhealthyNodeReplacement())
+            {
+                context.Writer.WritePropertyName("UnhealthyNodeReplacement");
+                context.Writer.Write(requestObject.UnhealthyNodeReplacement);
+            }
+
         }
 
         /// <summary>

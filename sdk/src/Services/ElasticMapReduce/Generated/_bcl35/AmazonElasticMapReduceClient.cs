@@ -3511,7 +3511,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see<a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+        ///  For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
         /// Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. 
         /// </para>
         /// </summary>
@@ -3564,6 +3564,82 @@ namespace Amazon.ElasticMapReduce
         public virtual SetTerminationProtectionResponse EndSetTerminationProtection(IAsyncResult asyncResult)
         {
             return EndInvoke<SetTerminationProtectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetUnhealthyNodeReplacement
+
+        /// <summary>
+        /// Specify whether to enable unhealthy node replacement, which lets Amazon EMR gracefully
+        /// replace core nodes on a cluster if any nodes become unhealthy. For example, a node
+        /// becomes unhealthy if disk usage is above 90%. If unhealthy node replacement is on
+        /// and <c>TerminationProtected</c> are off, Amazon EMR immediately terminates the unhealthy
+        /// core nodes. To use unhealthy node replacement and retain unhealthy core nodes, use
+        /// to turn on termination protection. In such cases, Amazon EMR adds the unhealthy nodes
+        /// to a denylist, reducing job interruptions and failures.
+        /// 
+        ///  
+        /// <para>
+        /// If unhealthy node replacement is on, Amazon EMR notifies YARN and other applications
+        /// on the cluster to stop scheduling tasks with these nodes, moves the data, and then
+        /// terminates the nodes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
+        /// node replacement</a> in the <i>Amazon EMR Management Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetUnhealthyNodeReplacement service method.</param>
+        /// 
+        /// <returns>The response from the SetUnhealthyNodeReplacement service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement">REST API Reference for SetUnhealthyNodeReplacement Operation</seealso>
+        public virtual SetUnhealthyNodeReplacementResponse SetUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetUnhealthyNodeReplacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUnhealthyNodeReplacementResponseUnmarshaller.Instance;
+
+            return Invoke<SetUnhealthyNodeReplacementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetUnhealthyNodeReplacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetUnhealthyNodeReplacement operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetUnhealthyNodeReplacement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement">REST API Reference for SetUnhealthyNodeReplacement Operation</seealso>
+        public virtual IAsyncResult BeginSetUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetUnhealthyNodeReplacementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetUnhealthyNodeReplacementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetUnhealthyNodeReplacement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetUnhealthyNodeReplacement.</param>
+        /// 
+        /// <returns>Returns a  SetUnhealthyNodeReplacementResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement">REST API Reference for SetUnhealthyNodeReplacement Operation</seealso>
+        public virtual SetUnhealthyNodeReplacementResponse EndSetUnhealthyNodeReplacement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetUnhealthyNodeReplacementResponse>(asyncResult);
         }
 
         #endregion
