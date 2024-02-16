@@ -1,3 +1,21 @@
+### 3.7.750.0 (2024-02-16 19:21 UTC)
+* ConnectParticipant (3.7.301.17)
+	* Doc only update to GetTranscript API reference guide to inform users about presence of events in the chat transcript.
+* ElasticMapReduce (3.7.304.0)
+	* adds fine grained control over Unhealthy Node Replacement to Amazon ElasticMapReduce
+* KinesisFirehose (3.7.303.0)
+	* This release adds support for Data Message Extraction for decompressed CloudWatch logs, and to use a custom file extension or time zone for S3 destinations.
+* Lambda (3.7.303.48)
+	* Documentation-only updates for Lambda to clarify a number of existing actions and properties.
+* RDS (3.7.306.10)
+	* Doc only update for a valid option in DB parameter group
+* SimpleNotificationService (3.7.301.0)
+	* This release marks phone numbers as sensitive inputs.
+* Core 3.7.302.12
+	* Update `SSOTokenManager` to propagate cancellation token to `GetSsoTokenAsync` flow
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.749.0 (2024-02-15 19:22 UTC)
 * Artifact (3.7.300.0)
 	* This is the initial SDK release for AWS Artifact. AWS Artifact provides on-demand access to compliance and third-party compliance reports. This release includes access to List and Get reports, along with their metadata. This release also includes access to AWS Artifact notifications settings.
