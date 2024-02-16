@@ -239,8 +239,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon
-        /// SNS topic destination for discarded records.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration
+        /// object that specifies the destination of an event after Lambda processes it.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig

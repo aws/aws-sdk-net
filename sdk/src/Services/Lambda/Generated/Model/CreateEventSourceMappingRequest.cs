@@ -265,8 +265,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon
-        /// SNS topic destination for discarded records.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration
+        /// object that specifies the destination of an event after Lambda processes it.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -341,7 +341,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+        ///  <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the
+        /// ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+        /// event source mappings</a>).
         /// </para>
         ///  </li> <li> 
         /// <para>
