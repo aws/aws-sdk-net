@@ -41,8 +41,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose
-        /// delivery stream.
+        /// Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -60,8 +59,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon
-        /// S3 prefix.
+        /// The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
         /// </para>
         /// </summary>
         public RetryOptions RetryOptions

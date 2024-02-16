@@ -47,7 +47,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Hadoop Distributed File System (HDFS) block size. This is useful if you intend
         /// to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and
-        /// the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.
+        /// the minimum is 64 MiB. Firehose uses this value for padding calculations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=67108864)]

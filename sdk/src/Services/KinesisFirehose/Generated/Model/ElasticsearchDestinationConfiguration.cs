@@ -108,8 +108,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DocumentIdOptions. 
         /// <para>
-        /// Indicates the method for setting up document ID. The supported methods are Kinesis
-        /// Data Firehose generated document ID and OpenSearch Service generated document ID.
+        /// Indicates the method for setting up document ID. The supported methods are Firehose
+        /// generated document ID and OpenSearch Service generated document ID.
         /// </para>
         /// </summary>
         public DocumentIdOptions DocumentIdOptions
@@ -211,8 +211,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Data Firehose is unable to deliver documents to
-        /// Amazon ES. The default value is 300 (5 minutes).
+        /// The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The
+        /// default value is 300 (5 minutes).
         /// </para>
         /// </summary>
         public ElasticsearchRetryOptions RetryOptions
@@ -230,10 +230,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
-        /// for calling the Amazon ES Configuration API and for indexing documents. For more information,
+        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling
+        /// the Amazon ES Configuration API and for indexing documents. For more information,
         /// see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-        /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Firehose Access to an Amazon S3 Destination</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
         /// </summary>
@@ -254,11 +254,11 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property S3BackupMode. 
         /// <para>
         /// Defines how documents should be delivered to Amazon S3. When it is set to <c>FailedDocumentsOnly</c>,
-        /// Kinesis Data Firehose writes any documents that could not be indexed to the configured
-        /// Amazon S3 destination, with <c>AmazonOpenSearchService-failed/</c> appended to the
-        /// key prefix. When set to <c>AllDocuments</c>, Kinesis Data Firehose delivers all incoming
-        /// records to Amazon S3, and also writes failed documents with <c>AmazonOpenSearchService-failed/</c>
-        /// appended to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
+        /// Firehose writes any documents that could not be indexed to the configured Amazon S3
+        /// destination, with <c>AmazonOpenSearchService-failed/</c> appended to the key prefix.
+        /// When set to <c>AllDocuments</c>, Firehose delivers all incoming records to Amazon
+        /// S3, and also writes failed documents with <c>AmazonOpenSearchService-failed/</c> appended
+        /// to the prefix. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
         /// S3 Backup for the Amazon ES Destination</a>. Default value is <c>FailedDocumentsOnly</c>.
         /// </para>
         ///  
@@ -302,7 +302,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per
         /// index. If you try to specify a new type for an existing index that already has another
-        /// type, Kinesis Data Firehose returns an error during run time.
+        /// type, Firehose returns an error during run time.
         /// </para>
         ///  
         /// <para>

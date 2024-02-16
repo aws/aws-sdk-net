@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data
-    /// to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment
-    /// of receipt from the specified HTTP endpoint destination.
+    /// Describes the retry behavior in case Firehose is unable to deliver data to the specified
+    /// HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt
+    /// from the specified HTTP endpoint destination.
     /// </summary>
     public partial class HttpEndpointRetryOptions
     {
@@ -40,10 +40,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// The total amount of time that Kinesis Data Firehose spends on retries. This duration
-        /// starts after the initial attempt to send data to the custom destination via HTTPS
-        /// endpoint fails. It doesn't include the periods during which Kinesis Data Firehose
-        /// waits for acknowledgment from the specified destination after each attempt. 
+        /// The total amount of time that Firehose spends on retries. This duration starts after
+        /// the initial attempt to send data to the custom destination via HTTPS endpoint fails.
+        /// It doesn't include the periods during which Firehose waits for acknowledgment from
+        /// the specified destination after each attempt. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=7200)]

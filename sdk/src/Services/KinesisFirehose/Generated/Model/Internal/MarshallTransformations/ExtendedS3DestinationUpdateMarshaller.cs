@@ -79,6 +79,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionFormat);
             }
 
+            if(requestObject.IsSetCustomTimeZone())
+            {
+                context.Writer.WritePropertyName("CustomTimeZone");
+                context.Writer.Write(requestObject.CustomTimeZone);
+            }
+
             if(requestObject.IsSetDataFormatConversionConfiguration())
             {
                 context.Writer.WritePropertyName("DataFormatConversionConfiguration");
@@ -116,6 +122,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ErrorOutputPrefix");
                 context.Writer.Write(requestObject.ErrorOutputPrefix);
+            }
+
+            if(requestObject.IsSetFileExtension())
+            {
+                context.Writer.WritePropertyName("FileExtension");
+                context.Writer.Write(requestObject.FileExtension);
             }
 
             if(requestObject.IsSetPrefix())

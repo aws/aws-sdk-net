@@ -355,6 +355,163 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("KinesisFirehose")]
+        public void GetKinesisStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<GetKinesisStreamRequest>(operation);
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<GetKinesisStreamRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetKinesisStreamResponseUnmarshaller.Instance.Unmarshall(context) as GetKinesisStreamResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void GetKinesisStream_InvalidArgumentExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<GetKinesisStreamRequest>(operation);
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetKinesisStreamRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidArgumentException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidArgumentException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetKinesisStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void GetKinesisStream_InvalidKMSResourceExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<GetKinesisStreamRequest>(operation);
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetKinesisStreamRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKMSResourceException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidKMSResourceException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetKinesisStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void GetKinesisStream_InvalidStreamTypeExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<GetKinesisStreamRequest>(operation);
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetKinesisStreamRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidStreamTypeException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidStreamTypeException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetKinesisStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void GetKinesisStream_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetKinesisStream");
+
+            var request = InstantiateClassGenerator.Execute<GetKinesisStreamRequest>(operation);
+            var marshaller = new GetKinesisStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetKinesisStreamRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetKinesisStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
         public void ListDeliveryStreamsMarshallTest()
         {
             var operation = service_model.FindOperation("ListDeliveryStreams");
@@ -1696,6 +1853,227 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = UpdateDestinationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagrisMarshallTest()
+        {
+            var operation = service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.Unmarshall(context) as VerifyResourcesExistForTagrisResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagris_TagrisAccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TagrisAccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TagrisAccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagris_TagrisInternalServiceExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TagrisInternalServiceException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TagrisInternalServiceException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagris_TagrisInvalidArnExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TagrisInvalidArnException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TagrisInvalidArnException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagris_TagrisInvalidParameterExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TagrisInvalidParameterException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TagrisInvalidParameterException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagris_TagrisPartialResourcesExistResultsExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TagrisPartialResourcesExistResultsException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TagrisPartialResourcesExistResultsException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("KinesisFirehose")]
+        public void VerifyResourcesExistForTagris_TagrisThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("VerifyResourcesExistForTagris");
+
+            var request = InstantiateClassGenerator.Execute<VerifyResourcesExistForTagrisRequest>(operation);
+            var marshaller = new VerifyResourcesExistForTagrisRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<VerifyResourcesExistForTagrisRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TagrisThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TagrisThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = VerifyResourcesExistForTagrisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

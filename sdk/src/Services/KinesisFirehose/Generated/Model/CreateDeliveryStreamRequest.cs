@@ -30,7 +30,7 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeliveryStream operation.
-    /// Creates a Kinesis Data Firehose delivery stream.
+    /// Creates a Firehose delivery stream.
     /// 
     ///  
     /// <para>
@@ -53,11 +53,11 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// A Kinesis Data Firehose delivery stream can be configured to receive records directly
-    /// from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured
-    /// to use an existing Kinesis stream as its source. To specify a Kinesis data stream
-    /// as input, set the <c>DeliveryStreamType</c> parameter to <c>KinesisStreamAsSource</c>,
-    /// and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <c>KinesisStreamSourceConfiguration</c>
+    /// A Firehose delivery stream can be configured to receive records directly from providers
+    /// using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured to use an
+    /// existing Kinesis stream as its source. To specify a Kinesis data stream as input,
+    /// set the <c>DeliveryStreamType</c> parameter to <c>KinesisStreamAsSource</c>, and provide
+    /// the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <c>KinesisStreamSourceConfiguration</c>
     /// parameter.
     /// </para>
     ///  
@@ -81,8 +81,8 @@ namespace Amazon.KinesisFirehose.Model
     /// <para>
     /// When you specify <c>S3DestinationConfiguration</c>, you can also provide the following
     /// optional values: BufferingHints, <c>EncryptionConfiguration</c>, and <c>CompressionFormat</c>.
-    /// By default, if no <c>BufferingHints</c> value is provided, Kinesis Data Firehose buffers
-    /// data up to 5 MB or for 5 minutes, whichever condition is satisfied first. <c>BufferingHints</c>
+    /// By default, if no <c>BufferingHints</c> value is provided, Firehose buffers data up
+    /// to 5 MB or for 5 minutes, whichever condition is satisfied first. <c>BufferingHints</c>
     /// is a hint, so there are some cases where the service cannot adhere to these conditions
     /// strictly. For example, record boundaries might be such that the size is a little over
     /// or under the configured buffering size. By default, no encryption is performed. We
@@ -95,9 +95,9 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis
-    /// Data Firehose first delivers data to Amazon S3 and then uses <c>COPY</c> syntax to
-    /// load data into an Amazon Redshift table. This is specified in the <c>RedshiftDestinationConfiguration.S3Configuration</c>
+    /// An Amazon Redshift destination requires an S3 bucket as intermediate location. Firehose
+    /// first delivers data to Amazon S3 and then uses <c>COPY</c> syntax to load data into
+    /// an Amazon Redshift table. This is specified in the <c>RedshiftDestinationConfiguration.S3Configuration</c>
     /// parameter.
     /// </para>
     ///  </li> <li> 
@@ -109,17 +109,16 @@ namespace Amazon.KinesisFirehose.Model
     ///  </li> <li> 
     /// <para>
     /// We strongly recommend that you use the user name and password you provide exclusively
-    /// with Kinesis Data Firehose, and that the permissions for the account are restricted
-    /// for Amazon Redshift <c>INSERT</c> permissions.
+    /// with Firehose, and that the permissions for the account are restricted for Amazon
+    /// Redshift <c>INSERT</c> permissions.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Kinesis Data Firehose assumes the IAM role that is configured as part of the destination.
-    /// The role should allow the Kinesis Data Firehose principal to assume the role, and
-    /// the role should have permissions that allow the service to deliver the data. For more
-    /// information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
-    /// Kinesis Data Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Kinesis
-    /// Data Firehose Developer Guide</i>.
+    /// Firehose assumes the IAM role that is configured as part of the destination. The role
+    /// should allow the Firehose principal to assume the role, and the role should have permissions
+    /// that allow the service to deliver the data. For more information, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+    /// Firehose Access to an Amazon S3 Destination</a> in the <i>Amazon Firehose Developer
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateDeliveryStreamRequest : AmazonKinesisFirehoseRequest

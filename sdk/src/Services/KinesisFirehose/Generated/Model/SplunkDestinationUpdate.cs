@@ -84,10 +84,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECAcknowledgmentTimeoutInSeconds. 
         /// <para>
-        /// The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from
-        /// Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose
-        /// either tries to send the data again or considers it an error, based on your retry
-        /// settings.
+        /// The amount of time that Firehose waits to receive an acknowledgment from Splunk after
+        /// it sends data. At the end of the timeout period, Firehose either tries to send the
+        /// data again or considers it an error, based on your retry settings.
         /// </para>
         /// </summary>
         [AWSProperty(Min=180, Max=600)]
@@ -106,8 +105,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HECEndpoint. 
         /// <para>
-        /// The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your
-        /// data.
+        /// The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -181,8 +179,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk
-        /// or if it doesn't receive an acknowledgment of receipt from Splunk.
+        /// The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't
+        /// receive an acknowledgment of receipt from Splunk.
         /// </para>
         /// </summary>
         public SplunkRetryOptions RetryOptions
@@ -200,11 +198,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When
-        /// set to <c>FailedDocumentsOnly</c>, Kinesis Data Firehose writes any data that could
-        /// not be indexed to the configured Amazon S3 destination. When set to <c>AllEvents</c>,
-        /// Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-        /// failed documents to Amazon S3. The default value is <c>FailedEventsOnly</c>.
+        /// Specifies how you want Firehose to back up documents to Amazon S3. When set to <c>FailedDocumentsOnly</c>,
+        /// Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
+        /// When set to <c>AllEvents</c>, Firehose delivers all incoming records to Amazon S3,
+        /// and also writes failed documents to Amazon S3. The default value is <c>FailedEventsOnly</c>.
         /// </para>
         ///  
         /// <para>

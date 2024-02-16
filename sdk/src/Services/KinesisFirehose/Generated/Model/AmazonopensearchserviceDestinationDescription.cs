@@ -84,9 +84,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ClusterEndpoint. 
         /// <para>
-        /// The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses
-        /// either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
-        /// Service. 
+        /// The endpoint to use when communicating with the cluster. Firehose uses either this
+        /// ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -105,8 +105,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DocumentIdOptions. 
         /// <para>
-        /// Indicates the method for setting up document ID. The supported methods are Kinesis
-        /// Data Firehose generated document ID and OpenSearch Service generated document ID.
+        /// Indicates the method for setting up document ID. The supported methods are Firehose
+        /// generated document ID and OpenSearch Service generated document ID.
         /// </para>
         /// </summary>
         public DocumentIdOptions DocumentIdOptions

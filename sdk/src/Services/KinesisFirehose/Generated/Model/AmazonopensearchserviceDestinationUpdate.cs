@@ -103,8 +103,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DocumentIdOptions. 
         /// <para>
-        /// Indicates the method for setting up document ID. The supported methods are Kinesis
-        /// Data Firehose generated document ID and OpenSearch Service generated document ID.
+        /// Indicates the method for setting up document ID. The supported methods are Firehose
+        /// generated document ID and OpenSearch Service generated document ID.
         /// </para>
         /// </summary>
         public DocumentIdOptions DocumentIdOptions
@@ -196,8 +196,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Data Firehose is unable to deliver documents to
-        /// Amazon OpenSearch Service. The default value is 300 (5 minutes). 
+        /// The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch
+        /// Service. The default value is 300 (5 minutes). 
         /// </para>
         /// </summary>
         public AmazonopensearchserviceRetryOptions RetryOptions
@@ -215,9 +215,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
-        /// for calling the Amazon OpenSearch Service Configuration API and for indexing documents.
-        /// 
+        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling
+        /// the Amazon OpenSearch Service Configuration API and for indexing documents. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -253,14 +252,14 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only
         /// one type per index. If you try to specify a new type for an existing index that already
-        /// has another type, Kinesis Data Firehose returns an error during runtime. 
+        /// has another type, Firehose returns an error during runtime. 
         /// </para>
         ///  
         /// <para>
         /// If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
-        /// Kinesis Data Firehose still delivers data to Elasticsearch with the old index name
-        /// and type name. If you want to update your delivery stream with a new index name, provide
-        /// an empty string for TypeName. 
+        /// Firehose still delivers data to Elasticsearch with the old index name and type name.
+        /// If you want to update your delivery stream with a new index name, provide an empty
+        /// string for TypeName. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

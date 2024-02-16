@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Details about a Kinesis data stream used as the source for a Kinesis Data Firehose
-    /// delivery stream.
+    /// Details about a Kinesis data stream used as the source for a Firehose delivery stream.
     /// </summary>
     public partial class KinesisStreamSourceDescription
     {
@@ -41,8 +40,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStartTimestamp. 
         /// <para>
-        /// Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting
-        /// with this timestamp.
+        /// Firehose starts retrieving records from the Kinesis data stream starting with this
+        /// timestamp.
         /// </para>
         /// </summary>
         public DateTime DeliveryStartTimestamp

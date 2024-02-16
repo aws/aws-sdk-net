@@ -136,9 +136,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The retry behavior in case Kinesis Data Firehose is unable to deliver documents to
-        /// the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
-        /// minutes).
+        /// The retry behavior in case Firehose is unable to deliver documents to the Serverless
+        /// offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).
         /// </para>
         /// </summary>
         public AmazonOpenSearchServerlessRetryOptions RetryOptions
@@ -156,9 +155,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose
-        /// for calling the Serverless offering for Amazon OpenSearch Service Configuration API
-        /// and for indexing documents.
+        /// The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling
+        /// the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing
+        /// documents.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -178,11 +177,10 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property S3BackupMode. 
         /// <para>
         /// Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly,
-        /// Kinesis Data Firehose writes any documents that could not be indexed to the configured
-        /// Amazon S3 destination, with AmazonOpenSearchService-failed/ appended to the key prefix.
-        /// When set to AllDocuments, Kinesis Data Firehose delivers all incoming records to Amazon
-        /// S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended
-        /// to the prefix.
+        /// Firehose writes any documents that could not be indexed to the configured Amazon S3
+        /// destination, with AmazonOpenSearchService-failed/ appended to the key prefix. When
+        /// set to AllDocuments, Firehose delivers all incoming records to Amazon S3, and also
+        /// writes failed documents with AmazonOpenSearchService-failed/ appended to the prefix.
         /// </para>
         /// </summary>
         public AmazonOpenSearchServerlessS3BackupMode S3BackupMode

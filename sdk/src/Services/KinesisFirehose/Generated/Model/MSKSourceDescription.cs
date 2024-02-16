@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Details about the Amazon MSK cluster used as the source for a Kinesis Data Firehose
-    /// delivery stream.
+    /// Details about the Amazon MSK cluster used as the source for a Firehose delivery stream.
     /// </summary>
     public partial class MSKSourceDescription
     {
@@ -60,8 +59,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStartTimestamp. 
         /// <para>
-        /// Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK
-        /// cluster starting with this timestamp.
+        /// Firehose starts retrieving records from the topic within the Amazon MSK cluster starting
+        /// with this timestamp.
         /// </para>
         /// </summary>
         public DateTime DeliveryStartTimestamp

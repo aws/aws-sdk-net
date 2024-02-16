@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Specifies the schema to which you want Kinesis Data Firehose to configure your data
-    /// before it writes it to Amazon S3. This parameter is required if <c>Enabled</c> is
-    /// set to true.
+    /// Specifies the schema to which you want Firehose to configure your data before it writes
+    /// it to Amazon S3. This parameter is required if <c>Enabled</c> is set to true.
     /// </summary>
     public partial class SchemaConfiguration
     {
@@ -111,9 +110,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This
-        /// role must be in the same account you use for Kinesis Data Firehose. Cross-account
-        /// roles aren't allowed.
+        /// The role that Firehose can use to access Amazon Web Services Glue. This role must
+        /// be in the same account you use for Firehose. Cross-account roles aren't allowed.
         /// </para>
         ///  <important> 
         /// <para>
@@ -167,9 +165,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// Specifies the table version for the output data schema. If you don't specify this
-        /// version ID, or if you set it to <c>LATEST</c>, Kinesis Data Firehose uses the most
-        /// recent version. This means that any updates to the table are automatically picked
-        /// up.
+        /// version ID, or if you set it to <c>LATEST</c>, Firehose uses the most recent version.
+        /// This means that any updates to the table are automatically picked up.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -32,7 +32,7 @@ namespace Amazon.KinesisFirehose.Model
     /// The service is unavailable. Back off and retry the operation. If you continue to see
     /// the exception, throughput limits for the delivery stream may have been exceeded. For
     /// more information about limits and how to request an increase, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-    /// Kinesis Data Firehose Limits</a>.
+    /// Firehose Limits</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

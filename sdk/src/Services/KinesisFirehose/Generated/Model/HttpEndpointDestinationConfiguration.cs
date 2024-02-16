@@ -47,10 +47,10 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property BufferingHints. 
         /// <para>
         /// The buffering options that can be used before data is delivered to the specified destination.
-        /// Kinesis Data Firehose treats these options as hints, and it might choose to use more
-        /// optimal values. The <c>SizeInMBs</c> and <c>IntervalInSeconds</c> parameters are optional.
-        /// However, if you specify a value for one of them, you must also provide a value for
-        /// the other. 
+        /// Firehose treats these options as hints, and it might choose to use more optimal values.
+        /// The <c>SizeInMBs</c> and <c>IntervalInSeconds</c> parameters are optional. However,
+        /// if you specify a value for one of them, you must also provide a value for the other.
+        /// 
         /// </para>
         /// </summary>
         public HttpEndpointBufferingHints BufferingHints
@@ -135,9 +135,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data
-        /// to the specified HTTP endpoint destination, or if it doesn't receive a valid acknowledgment
-        /// of receipt from the specified HTTP endpoint destination.
+        /// Describes the retry behavior in case Firehose is unable to deliver data to the specified
+        /// HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt
+        /// from the specified HTTP endpoint destination.
         /// </para>
         /// </summary>
         public HttpEndpointRetryOptions RetryOptions
@@ -155,8 +155,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// Kinesis Data Firehose uses this IAM role for all the permissions that the delivery
-        /// stream needs.
+        /// Firehose uses this IAM role for all the permissions that the delivery stream needs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -175,10 +174,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers
-        /// to the HTTP endpoint destination. You can back up all documents (<c>AllData</c>) or
-        /// only the documents that Kinesis Data Firehose could not deliver to the specified HTTP
-        /// endpoint destination (<c>FailedDataOnly</c>).
+        /// Describes the S3 bucket backup options for the data that Firehose delivers to the
+        /// HTTP endpoint destination. You can back up all documents (<c>AllData</c>) or only
+        /// the documents that Firehose could not deliver to the specified HTTP endpoint destination
+        /// (<c>FailedDataOnly</c>).
         /// </para>
         /// </summary>
         public HttpEndpointS3BackupMode S3BackupMode

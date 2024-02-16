@@ -49,25 +49,24 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// If the destination type is the same, Kinesis Data Firehose merges the configuration
-    /// parameters specified with the destination configuration that already exists on the
-    /// delivery stream. If any of the parameters are not specified in the call, the existing
-    /// values are retained. For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a>
-    /// is not specified, then the existing <c>EncryptionConfiguration</c> is maintained on
-    /// the destination.
+    /// If the destination type is the same, Firehose merges the configuration parameters
+    /// specified with the destination configuration that already exists on the delivery stream.
+    /// If any of the parameters are not specified in the call, the existing values are retained.
+    /// For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not
+    /// specified, then the existing <c>EncryptionConfiguration</c> is maintained on the destination.
     /// </para>
     ///  
     /// <para>
     /// If the destination type is not the same, for example, changing the destination from
-    /// Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any parameters.
-    /// In this case, all parameters must be specified.
+    /// Amazon S3 to Amazon Redshift, Firehose does not merge any parameters. In this case,
+    /// all parameters must be specified.
     /// </para>
     ///  
     /// <para>
-    /// Kinesis Data Firehose uses <c>CurrentDeliveryStreamVersionId</c> to avoid race conditions
-    /// and conflicting merges. This is a required field, and the service updates the configuration
-    /// only if the existing configuration has a version ID that matches. After the update
-    /// is applied successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
+    /// Firehose uses <c>CurrentDeliveryStreamVersionId</c> to avoid race conditions and conflicting
+    /// merges. This is a required field, and the service updates the configuration only if
+    /// the existing configuration has a version ID that matches. After the update is applied
+    /// successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
     /// Use the new version ID to set <c>CurrentDeliveryStreamVersionId</c> in the next call.
     /// </para>
     /// </summary>

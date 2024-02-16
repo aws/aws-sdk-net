@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The deserializer you want Kinesis Data Firehose to use for converting the input data
-    /// from JSON. Kinesis Data Firehose then serializes the data to its final format using
-    /// the <a>Serializer</a>. Kinesis Data Firehose supports two types of deserializers:
-    /// the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache
+    /// The deserializer you want Firehose to use for converting the input data from JSON.
+    /// Firehose then serializes the data to its final format using the <a>Serializer</a>.
+    /// Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache
     /// Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX
     /// JSON SerDe</a>.
     /// </summary>
@@ -44,11 +43,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HiveJsonSerDe. 
         /// <para>
-        /// The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing
-        /// data, which means converting it from the JSON format in preparation for serializing
-        /// it to the Parquet or ORC format. This is one of two deserializers you can choose,
-        /// depending on which one offers the functionality you need. The other option is the
-        /// OpenX SerDe.
+        /// The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which
+        /// means converting it from the JSON format in preparation for serializing it to the
+        /// Parquet or ORC format. This is one of two deserializers you can choose, depending
+        /// on which one offers the functionality you need. The other option is the OpenX SerDe.
         /// </para>
         /// </summary>
         public HiveJsonSerDe HiveJsonSerDe
@@ -66,11 +64,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property OpenXJsonSerDe. 
         /// <para>
-        /// The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means
-        /// converting it from the JSON format in preparation for serializing it to the Parquet
-        /// or ORC format. This is one of two deserializers you can choose, depending on which
-        /// one offers the functionality you need. The other option is the native Hive / HCatalog
-        /// JsonSerDe.
+        /// The OpenX SerDe. Used by Firehose for deserializing data, which means converting it
+        /// from the JSON format in preparation for serializing it to the Parquet or ORC format.
+        /// This is one of two deserializers you can choose, depending on which one offers the
+        /// functionality you need. The other option is the native Hive / HCatalog JsonSerDe.
         /// </para>
         /// </summary>
         public OpenXJsonSerDe OpenXJsonSerDe

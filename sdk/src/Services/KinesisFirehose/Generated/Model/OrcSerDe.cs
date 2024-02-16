@@ -50,7 +50,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The Hadoop Distributed File System (HDFS) block size. This is useful if you intend
         /// to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and
-        /// the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.
+        /// the minimum is 64 MiB. Firehose uses this value for padding calculations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=67108864)]
@@ -69,8 +69,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BloomFilterColumns. 
         /// <para>
-        /// The column names for which you want Kinesis Data Firehose to create bloom filters.
-        /// The default is <c>null</c>.
+        /// The column names for which you want Firehose to create bloom filters. The default
+        /// is <c>null</c>.
         /// </para>
         /// </summary>
         public List<string> BloomFilterColumns
@@ -201,8 +201,7 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
-        /// <c>false</c>.
+        /// Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <c>false</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

@@ -34,16 +34,15 @@ namespace Amazon.KinesisFirehose.Model
     /// 
     ///  
     /// <para>
-    /// This operation is asynchronous. It returns immediately. When you invoke it, Kinesis
-    /// Data Firehose first sets the encryption status of the stream to <c>ENABLING</c>, and
-    /// then to <c>ENABLED</c>. The encryption status of a delivery stream is the <c>Status</c>
-    /// property in <a>DeliveryStreamEncryptionConfiguration</a>. If the operation fails,
-    /// the encryption status changes to <c>ENABLING_FAILED</c>. You can continue to read
-    /// and write data to your delivery stream while the encryption status is <c>ENABLING</c>,
-    /// but the data is not encrypted. It can take up to 5 seconds after the encryption status
-    /// changes to <c>ENABLED</c> before all records written to the delivery stream are encrypted.
-    /// To find out whether a record or a batch of records was encrypted, check the response
-    /// elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>,
+    /// This operation is asynchronous. It returns immediately. When you invoke it, Firehose
+    /// first sets the encryption status of the stream to <c>ENABLING</c>, and then to <c>ENABLED</c>.
+    /// The encryption status of a delivery stream is the <c>Status</c> property in <a>DeliveryStreamEncryptionConfiguration</a>.
+    /// If the operation fails, the encryption status changes to <c>ENABLING_FAILED</c>. You
+    /// can continue to read and write data to your delivery stream while the encryption status
+    /// is <c>ENABLING</c>, but the data is not encrypted. It can take up to 5 seconds after
+    /// the encryption status changes to <c>ENABLED</c> before all records written to the
+    /// delivery stream are encrypted. To find out whether a record or a batch of records
+    /// was encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>,
     /// respectively.
     /// </para>
     ///  
@@ -55,14 +54,13 @@ namespace Amazon.KinesisFirehose.Model
     /// Even if encryption is currently enabled for a delivery stream, you can still invoke
     /// this operation on it to change the ARN of the CMK or both its type and ARN. If you
     /// invoke this method to change the CMK, and the old CMK is of type <c>CUSTOMER_MANAGED_CMK</c>,
-    /// Kinesis Data Firehose schedules the grant it had on the old CMK for retirement. If
-    /// the new CMK is of type <c>CUSTOMER_MANAGED_CMK</c>, Kinesis Data Firehose creates
-    /// a grant that enables it to use the new CMK to encrypt and decrypt data and to manage
-    /// the grant.
+    /// Firehose schedules the grant it had on the old CMK for retirement. If the new CMK
+    /// is of type <c>CUSTOMER_MANAGED_CMK</c>, Firehose creates a grant that enables it to
+    /// use the new CMK to encrypt and decrypt data and to manage the grant.
     /// </para>
     ///  
     /// <para>
-    /// For the KMS grant creation to be successful, Kinesis Data Firehose APIs <c>StartDeliveryStreamEncryption</c>
+    /// For the KMS grant creation to be successful, Firehose APIs <c>StartDeliveryStreamEncryption</c>
     /// and <c>CreateDeliveryStream</c> should not be called with session credentials that
     /// are more than 6 hours old.
     /// </para>
@@ -77,8 +75,8 @@ namespace Amazon.KinesisFirehose.Model
     /// <para>
     /// If the encryption status of your delivery stream is <c>ENABLING_FAILED</c>, you can
     /// invoke this operation again with a valid CMK. The CMK must be enabled and the key
-    /// policy mustn't explicitly deny the permission for Kinesis Data Firehose to invoke
-    /// KMS encrypt and decrypt operations.
+    /// policy mustn't explicitly deny the permission for Firehose to invoke KMS encrypt and
+    /// decrypt operations.
     /// </para>
     ///  
     /// <para>

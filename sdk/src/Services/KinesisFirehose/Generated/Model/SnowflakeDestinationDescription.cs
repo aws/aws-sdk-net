@@ -180,8 +180,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// The time period where Kinesis Data Firehose will retry sending data to the chosen
-        /// HTTP endpoint.
+        /// The time period where Firehose will retry sending data to the chosen HTTP endpoint.
         /// </para>
         /// </summary>
         public SnowflakeRetryOptions RetryOptions

@@ -144,9 +144,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ErrorOutputPrefix. 
         /// <para>
-        /// A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
-        /// them to S3. This prefix appears immediately following the bucket name. For information
-        /// about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
+        /// A prefix that Firehose evaluates and adds to failed records before writing them to
+        /// S3. This prefix appears immediately following the bucket name. For information about
+        /// how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
         /// Prefixes for Amazon S3 Objects</a>.
         /// </para>
         /// </summary>

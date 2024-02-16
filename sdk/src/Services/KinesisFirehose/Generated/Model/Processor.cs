@@ -30,6 +30,15 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Describes a data processor.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If you want to add a new line delimiter between records in objects that are delivered
+    /// to Amazon S3, choose <c>AppendDelimiterToRecord</c> as a processor type. You don’t
+    /// have to put a processor parameter when you select <c>AppendDelimiterToRecord</c>.
+    /// 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Processor
     {

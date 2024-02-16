@@ -58,8 +58,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ContentEncoding. 
         /// <para>
-        /// Kinesis Data Firehose uses the content encoding to compress the body of a request
-        /// before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
+        /// Firehose uses the content encoding to compress the body of a request before sending
+        /// the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
         /// in MDN Web Docs, the official Mozilla documentation.
         /// </para>
         /// </summary>

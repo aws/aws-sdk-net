@@ -30,10 +30,10 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Describes hints for the buffering to perform before delivering data to the destination.
-    /// These options are treated as hints, and therefore Kinesis Data Firehose might choose
-    /// to use different values when it is optimal. The <c>SizeInMBs</c> and <c>IntervalInSeconds</c>
-    /// parameters are optional. However, if specify a value for one of them, you must also
-    /// provide a value for the other.
+    /// These options are treated as hints, and therefore Firehose might choose to use different
+    /// values when it is optimal. The <c>SizeInMBs</c> and <c>IntervalInSeconds</c> parameters
+    /// are optional. However, if specify a value for one of them, you must also provide a
+    /// value for the other.
     /// </summary>
     public partial class BufferingHints
     {

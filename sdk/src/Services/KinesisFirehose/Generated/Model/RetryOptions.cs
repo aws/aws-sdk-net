@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The retry behavior in case Kinesis Data Firehose is unable to deliver data to an
-    /// Amazon S3 prefix.
+    /// The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
     /// </summary>
     public partial class RetryOptions
     {
@@ -39,8 +38,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// The period of time during which Kinesis Data Firehose retries to deliver data to the
-        /// specified Amazon S3 prefix.
+        /// The period of time during which Firehose retries to deliver data to the specified
+        /// Amazon S3 prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=7200)]
