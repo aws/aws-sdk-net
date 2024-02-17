@@ -1,7 +1,9 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
+using System.Text;
 using Amazon.CloudFront;
+using Json.LitJson;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK_DotNet35.UnitTests
 {
@@ -73,6 +75,42 @@ namespace AWSSDK_DotNet35.UnitTests
 
             Assert.AreEqual("CloudFront-Key-Pair-Id", cookies.KeyPairId.Key);
             Assert.AreEqual(expectedKeyPair, cookies.KeyPairId.Value);
+        }
+        
+        [TestMethod]
+        [TestCategory("CloudFront")]
+        public void CustomPolicyResourceValidation_WhenPassingResourceWithLeadingSlash()
+        {
+            // This is the base64 representation of the IAM policy:
+            // {"Statement": [{"Resource":"https://awesome.dot.com/amazing/uri","Condition":{"DateLessThan":{"AWS:EpochTime":1704110400},"IpAddress":{"AWS:SourceIp":"192.0.2.0/24"}}}]}
+            string expectedPolicy =
+                "eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vYXdlc29tZS5kb3QuY29tL2FtYXppbmcvdXJpIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzA0MTEwNDAwfSwiSXBBZGRyZXNzIjp7IkFXUzpTb3VyY2VJcCI6IjE5Mi4wLjIuMC8yNCJ9fX1dfQ__";
+            
+            string expectedResourceUrl = "https://awesome.dot.com/amazing/uri"; // contains only a single slash (/) between ".com" and "amazing"
+
+            string resourcePathWithLeadingSlash = "/amazing/uri";  // Resource path containing leading slash
+
+            var cookies = AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy(
+                AmazonCloudFrontCookieSigner.Protocols.Https,
+                "awesome.dot.com", 
+                privateRSAKeyStreamReader,
+                resourcePathWithLeadingSlash,
+                "CustomKeyPairId",
+                new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
+                "192.0.2.0/24"
+            );
+            Assert.IsNotNull(cookies);
+
+            Assert.AreEqual("CloudFront-Policy", cookies.Policy.Key);
+            Assert.AreEqual(expectedPolicy, cookies.Policy.Value);
+            
+            string policyJson = Encoding.UTF8.GetString(
+                Convert.FromBase64String(cookies.Policy.Value.Replace('-', '+').Replace('_', '=').Replace('~', '/')));
+            
+            var policyData = JsonMapper.ToObject(policyJson);
+            var actualResourceUrl = policyData["Statement"][0]["Resource"].ToString();
+
+            Assert.AreEqual(expectedResourceUrl, actualResourceUrl);
         }
     }
 }
