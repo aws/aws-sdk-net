@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "CloudFront",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update `AmazonCloudFrontCookieSigner` to handle paths with leading slashes"
+      ]
+    }
+  ]
+}
