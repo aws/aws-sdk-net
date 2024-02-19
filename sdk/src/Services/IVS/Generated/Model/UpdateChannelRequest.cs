@@ -105,9 +105,7 @@ namespace Amazon.IVS.Model
         /// Gets and sets the property LatencyMode. 
         /// <para>
         /// Channel latency mode. Use <c>NORMAL</c> to broadcast and deliver live video up to
-        /// Full HD. Use <c>LOW</c> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <c>LOW</c> and <c>NORMAL</c> correspond to Ultra-low and Standard,
-        /// respectively.)
+        /// Full HD. Use <c>LOW</c> for near-real-time interaction with viewers.
         /// </para>
         /// </summary>
         public ChannelLatencyMode LatencyMode
