@@ -1,3 +1,17 @@
+### 3.7.751.0 (2024-02-19 19:20 UTC)
+* Amplify (3.7.301.0)
+	* This release contains API changes that enable users to configure their Amplify domains with their own custom SSL/TLS certificate.
+* Chatbot (3.7.300.0)
+	* This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.
+* ConfigService (3.7.302.23)
+	* Documentation updates for the AWS Config CLI
+* IVS (3.7.302.8)
+	* Changed description for latencyMode in Create/UpdateChannel and Channel/ChannelSummary.
+* Keyspaces (3.7.301.16)
+	* Documentation updates for Amazon Keyspaces
+* MediaTailor (3.7.303.0)
+	* MediaTailor: marking #AdBreak.OffsetMillis as required.
+
 ### 3.7.750.0 (2024-02-16 19:21 UTC)
 * ConnectParticipant (3.7.301.17)
 	* Doc only update to GetTranscript API reference guide to inform users about presence of events in the chat transcript.
