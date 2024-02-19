@@ -85,6 +85,7 @@ namespace Amazon.MediaTailor.Model
         /// skipped.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long OffsetMillis
         {
             get { return this._offsetMillis.GetValueOrDefault(); }
