@@ -38,8 +38,8 @@ namespace Amazon.Keyspaces.Model
     /// </para>
     ///  
     /// <para>
-    /// Configure the minimum and maximum units for write and read capacity. The auto scaling
-    /// policy ensures that capacity never goes below the minimum or above the maximum range.
+    /// Configure the minimum and maximum capacity units. The auto scaling policy ensures
+    /// that capacity never goes below the minimum or above the maximum range.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -56,8 +56,7 @@ namespace Amazon.Keyspaces.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>scalingPolicy</c>: Amazon Keyspaces supports the <c>target tracking</c> scaling
-    /// policy. The auto scaling target is the provisioned read and write capacity of the
-    /// table. 
+    /// policy. The auto scaling target is the provisioned capacity of the table. 
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// The optional auto scaling settings for read and write capacity of a table in provisioned
-    /// capacity mode.
+    /// The optional auto scaling capacity settings for a table in provisioned capacity mode.
     /// </summary>
     public partial class AutoScalingSpecification
     {

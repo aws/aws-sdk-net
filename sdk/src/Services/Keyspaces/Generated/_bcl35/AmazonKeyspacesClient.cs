@@ -802,6 +802,24 @@ namespace Amazon.Keyspaces
         /// throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon
         /// Keyspaces Developer Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <c>GetTableAutoScalingSettings</c> can't be used as an action in an IAM policy.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// To define permissions for <c>GetTableAutoScalingSettings</c>, you must allow the following
+        /// two actions in the IAM policy statement's <c>Action</c> element:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DescribeScalableTargets</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DescribeScalingPolicies</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableAutoScalingSettings service method.</param>
         /// 
