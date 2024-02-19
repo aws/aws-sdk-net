@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <i>For accounts within an organzation</i> 
+    ///  <i>For accounts within an organization</i> 
     /// </para>
     ///  
     /// <para>

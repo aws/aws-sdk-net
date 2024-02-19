@@ -3855,7 +3855,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        ///  <i>For accounts within an organzation</i> 
+        ///  <i>For accounts within an organization</i> 
         /// </para>
         ///  
         /// <para>
@@ -3945,7 +3945,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        ///  <i>For accounts within an organzation</i> 
+        ///  <i>For accounts within an organization</i> 
         /// </para>
         ///  
         /// <para>
@@ -4202,7 +4202,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        ///  <i>For accounts within an organzation</i> 
+        ///  <i>For accounts within an organization</i> 
         /// </para>
         ///  
         /// <para>
@@ -4297,7 +4297,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        ///  <i>For accounts within an organzation</i> 
+        ///  <i>For accounts within an organization</i> 
         /// </para>
         ///  
         /// <para>
@@ -9516,6 +9516,10 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
+        ///  <b>Be aware of backward incompatible changes</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// If you make backward incompatible changes to the SSM document, you must call this
         /// again to ensure the remediations can run.
         /// </para>
@@ -9527,6 +9531,10 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note> <note> 
         /// <para>
+        ///  <b>Required fields</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// For manual remediation configuration, you need to provide a value for <c>automationAssumeRole</c>
         /// or use a value in the <c>assumeRole</c>field to remediate your resources. The SSM
         /// automation document can use either as long as it maps to a valid parameter.
@@ -9536,6 +9544,25 @@ namespace Amazon.ConfigService
         /// However, for automatic remediation configuration, the only valid <c>assumeRole</c>
         /// field value is <c>AutomationAssumeRole</c> and you need to provide a value for <c>AutomationAssumeRole</c>
         /// to remediate your resources.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Auto remediation can be initiated even for compliant resources</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you enable auto remediation for a specific Config rule using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+        /// API or the Config console, it initiates the remediation process for all non-compliant
+        /// resources for that specific rule. The auto remediation process relies on the compliance
+        /// data snapshot which is captured on a periodic basis. Any non-compliant resource that
+        /// is updated between the snapshot schedule will continue to be remediated based on the
+        /// last known compliance data snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that in some cases auto remediation can be initiated even for compliant
+        /// resources, since the bootstrap processor uses a database that can have stale evaluation
+        /// results based on the last known compliance data snapshot.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9601,6 +9628,10 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
+        ///  <b>Be aware of backward incompatible changes</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// If you make backward incompatible changes to the SSM document, you must call this
         /// again to ensure the remediations can run.
         /// </para>
@@ -9612,6 +9643,10 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note> <note> 
         /// <para>
+        ///  <b>Required fields</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// For manual remediation configuration, you need to provide a value for <c>automationAssumeRole</c>
         /// or use a value in the <c>assumeRole</c>field to remediate your resources. The SSM
         /// automation document can use either as long as it maps to a valid parameter.
@@ -9621,6 +9656,25 @@ namespace Amazon.ConfigService
         /// However, for automatic remediation configuration, the only valid <c>assumeRole</c>
         /// field value is <c>AutomationAssumeRole</c> and you need to provide a value for <c>AutomationAssumeRole</c>
         /// to remediate your resources.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Auto remediation can be initiated even for compliant resources</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you enable auto remediation for a specific Config rule using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+        /// API or the Config console, it initiates the remediation process for all non-compliant
+        /// resources for that specific rule. The auto remediation process relies on the compliance
+        /// data snapshot which is captured on a periodic basis. Any non-compliant resource that
+        /// is updated between the snapshot schedule will continue to be remediated based on the
+        /// last known compliance data snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that in some cases auto remediation can be initiated even for compliant
+        /// resources, since the bootstrap processor uses a database that can have stale evaluation
+        /// results based on the last known compliance data snapshot.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9691,11 +9745,19 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
+        ///  <b>Exceptions block auto remediation</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// Config generates a remediation exception when a problem occurs running a remediation
         /// action for a specified resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
         ///  </note> <note> 
+        /// <para>
+        ///  <b>Manual remediation is recommended when placing an exception</b> 
+        /// </para>
+        ///  
         /// <para>
         /// When placing an exception on an Amazon Web Services resource, it is recommended that
         /// remediation is set as manual remediation until the given Config rule for the specified
@@ -9707,11 +9769,34 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note> <note> 
         /// <para>
+        ///  <b>Exceptions can only be performed on non-compliant resources</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// Placing an exception can only be performed on resources that are <c>NON_COMPLIANT</c>.
         /// If you use this API for <c>COMPLIANT</c> resources or resources that are <c>NOT_APPLICABLE</c>,
         /// a remediation exception will not be generated. For more information on the conditions
         /// that initiate the possible Config evaluation results, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
         /// | Config Rules</a> in the <i>Config Developer Guide</i>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Auto remediation can be initiated even for compliant resources</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you enable auto remediation for a specific Config rule using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+        /// API or the Config console, it initiates the remediation process for all non-compliant
+        /// resources for that specific rule. The auto remediation process relies on the compliance
+        /// data snapshot which is captured on a periodic basis. Any non-compliant resource that
+        /// is updated between the snapshot schedule will continue to be remediated based on the
+        /// last known compliance data snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that in some cases auto remediation can be initiated even for compliant
+        /// resources, since the bootstrap processor uses a database that can have stale evaluation
+        /// results based on the last known compliance data snapshot.
         /// </para>
         ///  </note>
         /// </summary>
@@ -9775,11 +9860,19 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
+        ///  <b>Exceptions block auto remediation</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// Config generates a remediation exception when a problem occurs running a remediation
         /// action for a specified resource. Remediation exceptions blocks auto-remediation until
         /// the exception is cleared.
         /// </para>
         ///  </note> <note> 
+        /// <para>
+        ///  <b>Manual remediation is recommended when placing an exception</b> 
+        /// </para>
+        ///  
         /// <para>
         /// When placing an exception on an Amazon Web Services resource, it is recommended that
         /// remediation is set as manual remediation until the given Config rule for the specified
@@ -9791,11 +9884,34 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </note> <note> 
         /// <para>
+        ///  <b>Exceptions can only be performed on non-compliant resources</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// Placing an exception can only be performed on resources that are <c>NON_COMPLIANT</c>.
         /// If you use this API for <c>COMPLIANT</c> resources or resources that are <c>NOT_APPLICABLE</c>,
         /// a remediation exception will not be generated. For more information on the conditions
         /// that initiate the possible Config evaluation results, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
         /// | Config Rules</a> in the <i>Config Developer Guide</i>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Auto remediation can be initiated even for compliant resources</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you enable auto remediation for a specific Config rule using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+        /// API or the Config console, it initiates the remediation process for all non-compliant
+        /// resources for that specific rule. The auto remediation process relies on the compliance
+        /// data snapshot which is captured on a periodic basis. Any non-compliant resource that
+        /// is updated between the snapshot schedule will continue to be remediated based on the
+        /// last known compliance data snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that in some cases auto remediation can be initiated even for compliant
+        /// resources, since the bootstrap processor uses a database that can have stale evaluation
+        /// results based on the last known compliance data snapshot.
         /// </para>
         ///  </note>
         /// </summary>

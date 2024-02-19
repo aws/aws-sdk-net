@@ -131,6 +131,10 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Canada West (Calgary)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Europe (Spain)
         /// </para>
         ///  </li> <li> 

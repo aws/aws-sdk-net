@@ -176,6 +176,10 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Canada West (Calgary)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Europe (Spain)
         /// </para>
         ///  </li> <li> 
@@ -198,8 +202,8 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The <c>AWS::RDS::GlobalCluster</c> resource type will be recorded in all supported
         /// Config Regions where the configuration recorder is enabled, even if <c>includeGlobalResourceTypes</c>
-        /// is not set to <c>true</c>. The <c>includeGlobalResourceTypes</c> option is a bundle
-        /// which only applies to IAM users, groups, roles, and customer managed policies. 
+        /// is set<c>false</c>. The <c>includeGlobalResourceTypes</c> option is a bundle which
+        /// only applies to IAM users, groups, roles, and customer managed policies. 
         /// </para>
         ///  
         /// <para>
@@ -220,7 +224,37 @@ namespace Amazon.ConfigService.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Selecting
         /// Which Resources are Recorded</a> in the <i>Config developer guide</i>.
         /// </para>
+        ///  </important> <important> 
+        /// <para>
+        ///  <b>includeGlobalResourceTypes and the exclusion recording strategy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>includeGlobalResourceTypes</c> field has no impact on the <c>EXCLUSION_BY_RESOURCE_TYPES</c>
+        /// recording strategy. This means that the global IAM resource types (IAM users, groups,
+        /// roles, and customer managed policies) will not be automatically added as exclusions
+        /// for <c>exclusionByResourceTypes</c> when <c>includeGlobalResourceTypes</c> is set
+        /// to <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>includeGlobalResourceTypes</c> field should only be used to modify the <c>AllSupported</c>
+        /// field, as the default for the <c>AllSupported</c> field is to record configuration
+        /// changes for all supported resource types excluding the global IAM resource types.
+        /// To include the global IAM resource types when <c>AllSupported</c> is set to <c>true</c>,
+        /// make sure to set <c>includeGlobalResourceTypes</c> to <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To exclude the global IAM resource types for the <c>EXCLUSION_BY_RESOURCE_TYPES</c>
+        /// recording strategy, you need to manually add them to the <c>resourceTypes</c> field
+        /// of <c>exclusionByResourceTypes</c>.
+        /// </para>
         ///  </important> <note> 
+        /// <para>
+        ///  <b>Required and optional fields</b> 
+        /// </para>
+        ///  
         /// <para>
         /// Before you set this field to <c>true</c>, set the <c>allSupported</c> field of <a
         /// href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
@@ -352,6 +386,10 @@ namespace Amazon.ConfigService.Model
         ///  </li> <li> 
         /// <para>
         /// Asia Pacific (Melbourne)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canada West (Calgary)
         /// </para>
         ///  </li> <li> 
         /// <para>
