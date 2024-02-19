@@ -196,6 +196,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Budget service will provide create/get/list/update/delete budgets for cost management. 
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
 	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform.
+* [AWSSDK.Chatbot](https://www.nuget.org/packages/AWSSDK.Chatbot/)
+	* This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.
 * [AWSSDK.Chime](https://www.nuget.org/packages/AWSSDK.Chime/)
 	* The Amazon Chime API (application programming interface) is designed for administrators to use to perform key tasks, such as creating and managing Amazon Chime accounts and users.
 * [AWSSDK.ChimeSDKIdentity](https://www.nuget.org/packages/AWSSDK.ChimeSDKIdentity/)

@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.",
+  "generate-client-constructors": true
+}
