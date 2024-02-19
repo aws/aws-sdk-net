@@ -85,6 +85,17 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoSubDomainIAMRole);
                 }
 
+                if(publicRequest.IsSetCertificateSettings())
+                {
+                    context.Writer.WritePropertyName("certificateSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CertificateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("domainName");

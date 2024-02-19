@@ -87,7 +87,7 @@ namespace Amazon.Amplify.Model
         /// </para>
         ///  </dd> <dt>301</dt> <dd> 
         /// <para>
-        /// Represents a 301 (moved pemanently) redirect rule. This and all future requests should
+        /// Represents a 301 (moved permanently) redirect rule. This and all future requests should
         /// be directed to the target URL. 
         /// </para>
         ///  </dd> <dt>302</dt> <dd> 

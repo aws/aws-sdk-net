@@ -38,6 +38,7 @@ namespace Amazon.Amplify.Model
         private string _appId;
         private List<string> _autoSubDomainCreationPatterns = new List<string>();
         private string _autoSubDomainIAMRole;
+        private CertificateSettings _certificateSettings;
         private string _domainName;
         private bool? _enableAutoSubDomain;
         private List<SubDomainSetting> _subDomainSettings = new List<SubDomainSetting>();
@@ -97,6 +98,26 @@ namespace Amazon.Amplify.Model
         internal bool IsSetAutoSubDomainIAMRole()
         {
             return this._autoSubDomainIAMRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateSettings. 
+        /// <para>
+        /// The type of SSL/TLS certificate to use for your custom domain. If you don't specify
+        /// a certificate type, Amplify uses the default certificate that it provisions and manages
+        /// for you.
+        /// </para>
+        /// </summary>
+        public CertificateSettings CertificateSettings
+        {
+            get { return this._certificateSettings; }
+            set { this._certificateSettings = value; }
+        }
+
+        // Check to see if CertificateSettings property is set
+        internal bool IsSetCertificateSettings()
+        {
+            return this._certificateSettings != null;
         }
 
         /// <summary>

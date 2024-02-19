@@ -25,6 +25,56 @@ namespace Amazon.Amplify
 {
 
     /// <summary>
+    /// Constants used for properties of type CertificateType.
+    /// </summary>
+    public class CertificateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMPLIFY_MANAGED for CertificateType
+        /// </summary>
+        public static readonly CertificateType AMPLIFY_MANAGED = new CertificateType("AMPLIFY_MANAGED");
+        /// <summary>
+        /// Constant CUSTOM for CertificateType
+        /// </summary>
+        public static readonly CertificateType CUSTOM = new CertificateType("CUSTOM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateType FindValue(string value)
+        {
+            return FindValue<CertificateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DomainStatus.
     /// </summary>
     public class DomainStatus : ConstantClass
@@ -35,6 +85,10 @@ namespace Amazon.Amplify
         /// </summary>
         public static readonly DomainStatus AVAILABLE = new DomainStatus("AVAILABLE");
         /// <summary>
+        /// Constant AWAITING_APP_CNAME for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus AWAITING_APP_CNAME = new DomainStatus("AWAITING_APP_CNAME");
+        /// <summary>
         /// Constant CREATING for DomainStatus
         /// </summary>
         public static readonly DomainStatus CREATING = new DomainStatus("CREATING");
@@ -42,6 +96,10 @@ namespace Amazon.Amplify
         /// Constant FAILED for DomainStatus
         /// </summary>
         public static readonly DomainStatus FAILED = new DomainStatus("FAILED");
+        /// <summary>
+        /// Constant IMPORTING_CUSTOM_CERTIFICATE for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus IMPORTING_CUSTOM_CERTIFICATE = new DomainStatus("IMPORTING_CUSTOM_CERTIFICATE");
         /// <summary>
         /// Constant IN_PROGRESS for DomainStatus
         /// </summary>
@@ -390,6 +448,76 @@ namespace Amazon.Amplify
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Stage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateStatus.
+    /// </summary>
+    public class UpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWAITING_APP_CNAME for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus AWAITING_APP_CNAME = new UpdateStatus("AWAITING_APP_CNAME");
+        /// <summary>
+        /// Constant IMPORTING_CUSTOM_CERTIFICATE for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus IMPORTING_CUSTOM_CERTIFICATE = new UpdateStatus("IMPORTING_CUSTOM_CERTIFICATE");
+        /// <summary>
+        /// Constant PENDING_DEPLOYMENT for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus PENDING_DEPLOYMENT = new UpdateStatus("PENDING_DEPLOYMENT");
+        /// <summary>
+        /// Constant PENDING_VERIFICATION for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus PENDING_VERIFICATION = new UpdateStatus("PENDING_VERIFICATION");
+        /// <summary>
+        /// Constant REQUESTING_CERTIFICATE for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus REQUESTING_CERTIFICATE = new UpdateStatus("REQUESTING_CERTIFICATE");
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus UPDATE_COMPLETE = new UpdateStatus("UPDATE_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus UPDATE_FAILED = new UpdateStatus("UPDATE_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateStatus FindValue(string value)
+        {
+            return FindValue<UpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateStatus(string value)
         {
             return FindValue(value);
         }

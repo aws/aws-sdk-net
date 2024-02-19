@@ -75,6 +75,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoSubDomainIAMRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("certificate", targetDepth))
+                {
+                    var unmarshaller = CertificateUnmarshaller.Instance;
+                    unmarshalledObject.Certificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("certificateVerificationDNSRecord", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<SubDomain, SubDomainUnmarshaller>(SubDomainUnmarshaller.Instance);
                     unmarshalledObject.SubDomains = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
