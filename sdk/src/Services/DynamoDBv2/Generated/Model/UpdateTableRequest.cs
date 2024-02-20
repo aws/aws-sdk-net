@@ -57,10 +57,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <c>UpdateTable</c> is an asynchronous operation; while it is executing, the table
-    /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it is <c>UPDATING</c>,
-    /// you cannot issue another <c>UpdateTable</c> request. When the table returns to the
-    /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
+    ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
+    /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
+    /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
+    /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
+    /// is complete.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
