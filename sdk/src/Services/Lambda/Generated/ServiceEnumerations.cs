@@ -1031,6 +1031,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Dotnet6 = new Runtime("dotnet6");
         /// <summary>
+        /// Constant Dotnet8 for Runtime
+        /// </summary>
+        public static readonly Runtime Dotnet8 = new Runtime("dotnet8");
+        /// <summary>
         /// Constant Dotnetcore10 for Runtime
         /// </summary>
         public static readonly Runtime Dotnetcore10 = new Runtime("dotnetcore1.0");
