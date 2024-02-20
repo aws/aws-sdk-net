@@ -295,6 +295,8 @@ namespace Amazon.CloudFront
                                                    string distributionDomain,
                                                    string path)
         {
+            path = path.TrimStart('/');
+            
             if (protocol == 0)
             {
                 // Uninitialized protocol value.
