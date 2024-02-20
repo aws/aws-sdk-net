@@ -285,39 +285,6 @@ namespace Amazon.KinesisFirehose
 
         #endregion
                 
-        #region  GetKinesisStream
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetKinesisStream service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetKinesisStream service method, as returned by KinesisFirehose.</returns>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidArgumentException">
-        /// The specified input parameter has a value that is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidKMSResourceException">
-        /// Firehose throws this exception when an attempt to put records or to start or stop
-        /// delivery stream encryption fails. This happens when the KMS service throws one of
-        /// the following exception types: <c>AccessDeniedException</c>, <c>InvalidStateException</c>,
-        /// <c>DisabledException</c>, or <c>NotFoundException</c>.
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.InvalidStreamTypeException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream">REST API Reference for GetKinesisStream Operation</seealso>
-        Task<GetKinesisStreamResponse> GetKinesisStreamAsync(GetKinesisStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
         #region  ListDeliveryStreams
 
 
@@ -1161,42 +1128,6 @@ namespace Amazon.KinesisFirehose
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         Task<UpdateDestinationResponse> UpdateDestinationAsync(UpdateDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  VerifyResourcesExistForTagris
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the VerifyResourcesExistForTagris service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the VerifyResourcesExistForTagris service method, as returned by KinesisFirehose.</returns>
-        /// <exception cref="Amazon.KinesisFirehose.Model.TagrisAccessDeniedException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.TagrisInternalServiceException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.TagrisInvalidArnException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.TagrisInvalidParameterException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.TagrisPartialResourcesExistResultsException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.KinesisFirehose.Model.TagrisThrottledException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/VerifyResourcesExistForTagris">REST API Reference for VerifyResourcesExistForTagris Operation</seealso>
-        Task<VerifyResourcesExistForTagrisResponse> VerifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
