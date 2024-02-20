@@ -1,3 +1,13 @@
+### 3.7.752.0 (2024-02-20 19:14 UTC)
+* CloudFront (3.7.301.47)
+	* Update `AmazonCloudFrontCookieSigner` to handle paths with leading slashes
+* DynamoDBv2 (3.7.301.14)
+	* Publishing quick fix for doc only update.
+* KinesisFirehose (3.7.304.0)
+	* This release updates a few Firehose related APIs.
+* Lambda (3.7.304.0)
+	* Add .NET 8 (dotnet8) Runtime support to AWS Lambda.
+
 ### 3.7.751.0 (2024-02-19 19:20 UTC)
 * Amplify (3.7.301.0)
 	* This release contains API changes that enable users to configure their Amplify domains with their own custom SSL/TLS certificate.
