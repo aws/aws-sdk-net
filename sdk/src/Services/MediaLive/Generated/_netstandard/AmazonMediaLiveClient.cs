@@ -2864,6 +2864,64 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  RestartChannelPipelines
+
+        internal virtual RestartChannelPipelinesResponse RestartChannelPipelines(RestartChannelPipelinesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestartChannelPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartChannelPipelinesResponseUnmarshaller.Instance;
+
+            return Invoke<RestartChannelPipelinesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restart pipelines in one channel that is currently running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartChannelPipelines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestartChannelPipelines service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines">REST API Reference for RestartChannelPipelines Operation</seealso>
+        public virtual Task<RestartChannelPipelinesResponse> RestartChannelPipelinesAsync(RestartChannelPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestartChannelPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartChannelPipelinesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestartChannelPipelinesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartChannel
 
         internal virtual StartChannelResponse StartChannel(StartChannelRequest request)
