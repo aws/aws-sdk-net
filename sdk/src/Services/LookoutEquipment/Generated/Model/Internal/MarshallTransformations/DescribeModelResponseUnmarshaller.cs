@@ -195,6 +195,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.ModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelQuality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelQuality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelVersionActivatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

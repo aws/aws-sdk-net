@@ -585,6 +585,60 @@ namespace Amazon.LookoutEquipment
 
 
     /// <summary>
+    /// Constants used for properties of type ModelQuality.
+    /// </summary>
+    public class ModelQuality : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANNOT_DETERMINE_QUALITY for ModelQuality
+        /// </summary>
+        public static readonly ModelQuality CANNOT_DETERMINE_QUALITY = new ModelQuality("CANNOT_DETERMINE_QUALITY");
+        /// <summary>
+        /// Constant POOR_QUALITY_DETECTED for ModelQuality
+        /// </summary>
+        public static readonly ModelQuality POOR_QUALITY_DETECTED = new ModelQuality("POOR_QUALITY_DETECTED");
+        /// <summary>
+        /// Constant QUALITY_THRESHOLD_MET for ModelQuality
+        /// </summary>
+        public static readonly ModelQuality QUALITY_THRESHOLD_MET = new ModelQuality("QUALITY_THRESHOLD_MET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelQuality(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelQuality FindValue(string value)
+        {
+            return FindValue<ModelQuality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelQuality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelStatus.
     /// </summary>
     public class ModelStatus : ConstantClass

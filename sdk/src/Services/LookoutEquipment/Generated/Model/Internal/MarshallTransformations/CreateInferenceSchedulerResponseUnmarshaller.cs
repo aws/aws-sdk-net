@@ -63,6 +63,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                     response.InferenceSchedulerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelQuality", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelQuality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
