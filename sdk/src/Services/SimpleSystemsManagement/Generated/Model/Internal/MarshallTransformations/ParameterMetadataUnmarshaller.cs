@@ -69,6 +69,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowedPattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

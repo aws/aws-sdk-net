@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Metadata includes information like the ARN of the last user and the date/time the
-    /// parameter was last used.
+    /// Metadata includes information like the Amazon Resource Name (ARN) of the last user
+    /// to update the parameter and the date and time the parameter was last used.
     /// </summary>
     public partial class ParameterMetadata
     {
         private string _allowedPattern;
+        private string _arn;
         private string _dataType;
         private string _description;
         private string _keyId;
@@ -67,6 +68,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAllowedPattern()
         {
             return this._allowedPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The (ARN) of the last user to update the parameter.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
         }
 
         /// <summary>

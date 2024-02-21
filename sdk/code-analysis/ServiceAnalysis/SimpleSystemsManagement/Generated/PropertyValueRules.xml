@@ -1414,7 +1414,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutResourcePolicyRequest.Policy</property>
-    <pattern>\S+</pattern>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutResourcePolicyRequest.ResourceArn</property>
@@ -2854,7 +2854,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetResourcePoliciesResponseEntry.Policy</property>
-    <pattern>\S+</pattern>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.AssociationId</property>

@@ -30,7 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeParameters operation.
-    /// Get information about a parameter.
+    /// Lists the parameters in your Amazon Web Services account or the parameters shared
+    /// with you when you enable the <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared">Shared</a>
+    /// option.
     /// 
     ///  
     /// <para>
@@ -55,6 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _maxResults;
         private string _nextToken;
         private List<ParameterStringFilter> _parameterFilters = new List<ParameterStringFilter>();
+        private bool? _shared;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -129,6 +132,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameterFilters()
         {
             return this._parameterFilters != null && this._parameterFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Shared. 
+        /// <para>
+        /// Lists parameters that are shared with you.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// By default when using this option, the command returns parameters that have been shared
+        /// using a standard Resource Access Manager Resource Share. In order for a parameter
+        /// that was shared using the <a>PutResourcePolicy</a> command to be returned, the associated
+        /// <c>RAM Resource Share Created From Policy</c> must have been promoted to a standard
+        /// Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// API operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+        /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool Shared
+        {
+            get { return this._shared.GetValueOrDefault(); }
+            set { this._shared = value; }
+        }
+
+        // Check to see if Shared property is set
+        internal bool IsSetShared()
+        {
+            return this._shared.HasValue; 
         }
 
     }

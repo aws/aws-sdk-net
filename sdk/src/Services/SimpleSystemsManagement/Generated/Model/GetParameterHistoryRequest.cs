@@ -70,7 +70,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the parameter for which you want to review history.
+        /// The name or Amazon Resource Name (ARN) of the parameter for which you want to review
+        /// history. For parameters shared with you from another account, you must use the full
+        /// ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

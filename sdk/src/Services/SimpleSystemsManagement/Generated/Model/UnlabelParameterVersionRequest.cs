@@ -62,6 +62,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The name of the parameter from which you want to delete one or more labels.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter
+        /// name itself.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Name

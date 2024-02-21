@@ -1487,10 +1487,21 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Deletes a Systems Manager resource policy. A resource policy helps you to define the
         /// IAM entity (for example, an Amazon Web Services account) that can manage your Systems
-        /// Manager resources. Currently, <c>OpsItemGroup</c> is the only resource that supports
-        /// Systems Manager resource policies. The resource policy for <c>OpsItemGroup</c> enables
-        /// Amazon Web Services accounts to view and interact with OpsCenter operational work
-        /// items (OpsItems).
+        /// Manager resources. The following resources support Systems Manager resource policies.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>OpsItemGroup</c> - The resource policy for <c>OpsItemGroup</c> enables Amazon
+        /// Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Parameter</c> - The resource policy is used to share a parameter with other accounts
+        /// using Resource Access Manager (RAM). For more information about cross-account sharing
+        /// of parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+        /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1501,6 +1512,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MalformedResourcePolicyDocumentException">
+        /// The specified policy document is malformed or invalid, or excessive <c>PutResourcePolicy</c>
+        /// or <c>DeleteResourcePolicy</c> calls have been made.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
         /// The hash provided in the call doesn't match the stored hash. This exception is thrown
         /// when trying to update an obsolete policy version or when multiple requests to update
@@ -1509,6 +1527,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
         /// One or more parameters specified for the call aren't valid. Verify the parameters
         /// and their values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyNotFoundException">
+        /// No policies with the specified policy ID and hash could be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2706,7 +2727,9 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Get information about a parameter.
+        /// Lists the parameters in your Amazon Web Services account or the parameters shared
+        /// with you when you enable the <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared">Shared</a>
+        /// option.
         /// 
         ///  
         /// <para>
@@ -3815,6 +3838,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetResourcePolicies service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
         /// One or more parameters specified for the call aren't valid. Verify the parameters
@@ -5076,10 +5102,52 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Creates or updates a Systems Manager resource policy. A resource policy helps you
         /// to define the IAM entity (for example, an Amazon Web Services account) that can manage
-        /// your Systems Manager resources. Currently, <c>OpsItemGroup</c> is the only resource
-        /// that supports Systems Manager resource policies. The resource policy for <c>OpsItemGroup</c>
-        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
-        /// work items (OpsItems).
+        /// your Systems Manager resources. The following resources support Systems Manager resource
+        /// policies.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>OpsItemGroup</c> - The resource policy for <c>OpsItemGroup</c> enables Amazon
+        /// Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Parameter</c> - The resource policy is used to share a parameter with other accounts
+        /// using Resource Access Manager (RAM). 
+        /// </para>
+        ///  
+        /// <para>
+        /// To share a parameter, it must be in the advanced parameter tier. For information about
+        /// parameter tiers, see <a href="https://docs.aws.amazon.com/parameter-store- advanced-parameters.html">Managing
+        /// parameter tiers</a>. For information about changing an existing standard parameter
+        /// to an advanced parameter, see <a href="https://docs.aws.amazon.com/parameter-store-advanced-parameters.html#parameter-
+        /// store-advanced-parameters-enabling">Changing a standard parameter to an advanced parameter</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To share a <c>SecureString</c> parameter, it must be encrypted with a customer managed
+        /// key, and you must share the key separately through Key Management Service. Amazon
+        /// Web Services managed keys cannot be shared. Parameters encrypted with the default
+        /// Amazon Web Services managed key can be updated to use a customer managed key instead.
+        /// For KMS key definitions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-mgmt">KMS
+        /// concepts</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// While you can share a parameter using the Systems Manager <c>PutResourcePolicy</c>
+        /// operation, we recommend using Resource Access Manager (RAM) instead. This is because
+        /// using <c>PutResourcePolicy</c> requires the extra step of promoting the parameter
+        /// to a standard RAM Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// API operation. Otherwise, the parameter won't be returned by the Systems Manager <a
+        /// href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html">DescribeParameters</a>
+        /// API operation using the <c>--shared</c> option.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share">Sharing
+        /// a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i> 
+        /// </para>
+        ///  </important> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5089,6 +5157,13 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the PutResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MalformedResourcePolicyDocumentException">
+        /// The specified policy document is malformed or invalid, or excessive <c>PutResourcePolicy</c>
+        /// or <c>DeleteResourcePolicy</c> calls have been made.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
         /// The hash provided in the call doesn't match the stored hash. This exception is thrown
@@ -5103,6 +5178,9 @@ namespace Amazon.SimpleSystemsManagement
         /// The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater
         /// than 1024 bytes in size. And only one policy can be attached to <c>OpsItemGroup</c>.
         /// Verify these limits and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyNotFoundException">
+        /// No policies with the specified policy ID and hash could be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

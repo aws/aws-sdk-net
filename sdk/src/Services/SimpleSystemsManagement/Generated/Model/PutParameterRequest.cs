@@ -185,9 +185,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully qualified name of the parameter that you want to add to the system. The
-        /// fully qualified name includes the complete hierarchy of the parameter path and name.
-        /// For parameters in a hierarchy, you must include a leading forward slash character
+        /// The fully qualified name of the parameter that you want to add to the system.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter
+        /// name itself.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The fully qualified name includes the complete hierarchy of the parameter path and
+        /// name. For parameters in a hierarchy, you must include a leading forward slash character
         /// (/) when you create or reference a parameter. For example: <c>/Dev/DBServer/MySQL/db-string13</c>
         /// 
         /// </para>
