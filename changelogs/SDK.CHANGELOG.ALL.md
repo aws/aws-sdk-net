@@ -1,3 +1,13 @@
+### 3.7.753.0 (2024-02-21 19:17 UTC)
+* IoTEvents (3.7.301.0)
+	* Increase the maximum length of descriptions for Inputs, Detector Models, and Alarm Models
+* LookoutEquipment (3.7.302.0)
+	* This release adds a field exposing model quality to read APIs for models. It also adds a model quality field to the API response when creating an inference scheduler.
+* MediaLive (3.7.304.0)
+	* MediaLive now supports the ability to restart pipelines in a running channel.
+* SimpleSystemsManagement (3.7.303.0)
+	* This release adds support for sharing Systems Manager parameters with other AWS accounts.
+
 ### 3.7.752.0 (2024-02-20 19:14 UTC)
 * CloudFront (3.7.301.47)
 	* Update `AmazonCloudFrontCookieSigner` to handle paths with leading slashes
