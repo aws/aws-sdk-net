@@ -43,7 +43,7 @@ namespace Amazon.IoTEvents.Model
         /// The description of the alarm model.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Max=1024)]
         public string AlarmModelDescription
         {
             get { return this._alarmModelDescription; }

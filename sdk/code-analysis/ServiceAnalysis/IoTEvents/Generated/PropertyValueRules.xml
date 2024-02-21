@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.AlarmModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateAlarmModelRequest.AlarmModelName</property>
@@ -33,7 +33,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateDetectorModelRequest.DetectorModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateDetectorModelRequest.DetectorModelName</property>
@@ -54,7 +54,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateInputRequest.InputDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.CreateInputRequest.InputName</property>
@@ -93,7 +93,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.AlarmModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DescribeAlarmModelResponse.AlarmModelName</property>
@@ -198,7 +198,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateAlarmModelRequest.AlarmModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateAlarmModelRequest.AlarmModelName</property>
@@ -223,7 +223,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateDetectorModelRequest.DetectorModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateDetectorModelRequest.DetectorModelName</property>
@@ -238,7 +238,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateInputRequest.InputDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.UpdateInputRequest.InputName</property>
@@ -248,7 +248,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.AlarmModelSummary.AlarmModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.AlarmModelSummary.AlarmModelName</property>
@@ -297,7 +297,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DetectorModelConfiguration.DetectorModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DetectorModelConfiguration.DetectorModelName</property>
@@ -328,7 +328,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DetectorModelSummary.DetectorModelDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.DetectorModelSummary.DetectorModelName</property>
@@ -366,7 +366,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.InputConfiguration.InputDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.InputConfiguration.InputName</property>
@@ -376,7 +376,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.InputSummary.InputDescription</property>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTEvents.Model.InputSummary.InputName</property>

@@ -82,7 +82,7 @@ namespace Amazon.IoTEvents.Model
         /// A brief description of the input.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Max=1024)]
         public string InputDescription
         {
             get { return this._inputDescription; }

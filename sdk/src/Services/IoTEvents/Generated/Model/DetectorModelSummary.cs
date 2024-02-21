@@ -61,7 +61,7 @@ namespace Amazon.IoTEvents.Model
         /// A brief description of the detector model.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=128)]
+        [AWSProperty(Max=1024)]
         public string DetectorModelDescription
         {
             get { return this._detectorModelDescription; }
