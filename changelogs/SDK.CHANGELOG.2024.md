@@ -1,3 +1,9 @@
+### 3.7.754.0 (2024-02-22 19:29 UTC)
+* InternetMonitor (3.7.302.0)
+	* This release adds IPv4 prefixes to health events
+* KinesisVideo (3.7.301.0)
+	* Increasing NextToken parameter length restriction for List APIs from 512 to 1024.
+
 ### 3.7.753.0 (2024-02-21 19:17 UTC)
 * IoTEvents (3.7.301.0)
 	* Increase the maximum length of descriptions for Inputs, Detector Models, and Alarm Models
