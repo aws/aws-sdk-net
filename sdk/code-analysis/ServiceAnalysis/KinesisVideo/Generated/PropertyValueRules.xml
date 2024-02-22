@@ -126,7 +126,7 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationRequest.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -144,7 +144,7 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.DescribeMappedResourceConfigurationResponse.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -227,13 +227,13 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsRequest.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListEdgeAgentConfigurationsResponse.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -244,13 +244,13 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListSignalingChannelsRequest.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListSignalingChannelsResponse.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -261,19 +261,19 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListStreamsRequest.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListStreamsResponse.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListTagsForResourceRequest.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -285,13 +285,13 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListTagsForResourceResponse.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListTagsForStreamRequest.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -309,7 +309,7 @@
   <property-value-rule>
     <property>Amazon.KinesisVideo.Model.ListTagsForStreamResponse.NextToken</property>
     <min>0</min>
-    <max>512</max>
+    <max>1024</max>
     <pattern>[a-zA-Z0-9+/=]*</pattern>
   </property-value-rule>
   <property-value-rule>
