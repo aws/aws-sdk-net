@@ -12,11 +12,6 @@
     <tags>AWS Amazon aws-sdk-v3</tags>
     <icon>images\AWSLogo.png</icon>
     <dependencies>
-      <group targetFramework="net35">
-        <dependency id="AWSSDK.Core" version="3.7.300" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
-      </group>
       <group targetFramework="net45">
         <dependency id="AWSSDK.Core" version="3.7.300" />
         <dependency id="AWSCRT-AUTH" version="0.4.4" />
@@ -32,8 +27,6 @@
   </metadata> 
   <files>
     <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
-    <file src=".\bin\Release\net35\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Extensions.CrtIntegration.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Extensions.CrtIntegration.pdb" target="lib\net45" />
