@@ -15,8 +15,6 @@
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
     <icon>images\AWSLogo.png</icon>
     <dependencies>
-      <group targetFramework="net35">
-      </group>
       <group targetFramework="net45">
       </group>
 	    <group targetFramework="netstandard2.0">
@@ -31,10 +29,6 @@
   <files>
     <file src="..\..\nuget-content\AWSLogo.png" target="images\" />
     <file src="..\..\nuget-content\account-management.ps1" target="tools" />
-
-    <file src=".\bin\Release\net35\AWSSDK.Core.dll" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.Core.xml" target="lib\net35" />
-    <file src=".\bin\Release\net35\AWSSDK.Core.pdb" target="lib\net35" />
 
     <file src=".\bin\Release\net45\AWSSDK.Core.dll" target="lib\net45" />
     <file src=".\bin\Release\net45\AWSSDK.Core.xml" target="lib\net45" />
