@@ -82,7 +82,6 @@ namespace ServiceClientGenerator
         private readonly HashSet<string> _processedUnmarshallers = new HashSet<string>();
         private readonly HashSet<string> _processedMarshallers = new HashSet<string>();
 
-        private const string Bcl35SubFolder = "_bcl35";
         private const string Bcl45SubFolder = "_bcl45";
         private const string NetStandardSubFolder = "_netstandard";
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.AltDirectorySeparatorChar);
@@ -153,10 +152,6 @@ namespace ServiceClientGenerator
                 Directory.Delete(GeneratedFilesRoot, true);
                 Directory.CreateDirectory(GeneratedFilesRoot);
             }
-
-            // .NET Framework 3.5 version
-            ExecuteGenerator(new ServiceClients(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl35SubFolder);
-            ExecuteGenerator(new ServiceInterface(), "IAmazon" + Configuration.ClassName + ".cs", Bcl35SubFolder);
 
             // .NET Framework 4.5 version
             ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);

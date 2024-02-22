@@ -65,14 +65,6 @@
 <#
     }
 
-    if (this.Project.TargetFrameworks.Contains("net35"))
-    {
-#>
-    <!-- workaround per https://github.com/dotnet/msbuild/issues/5985 -->
-    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
-<#
-    }
-
     if (!string.IsNullOrEmpty(this.Project.SupressWarnings))
     {
 #>
