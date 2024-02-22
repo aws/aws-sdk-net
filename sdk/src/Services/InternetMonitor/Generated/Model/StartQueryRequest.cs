@@ -124,15 +124,19 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>MEASUREMENTS</c>: TBD definition
+        ///  <c>MEASUREMENTS</c>: Provides availability score, performance score, total traffic,
+        /// and round-trip times, at 5 minute intervals.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TOP_LOCATIONS</c>: TBD definition
+        ///  <c>TOP_LOCATIONS</c>: Provides availability score, performance score, total traffic,
+        /// and time to first byte (TTFB) information, for the top location and ASN combinations
+        /// that you're monitoring, by traffic volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TOP_LOCATION_DETAILS</c>: TBD definition
+        ///  <c>TOP_LOCATION_DETAILS</c>: Provides TTFB for Amazon CloudFront, your current configuration,
+        /// and the best performing EC2 configuration, at 1 hour intervals.
         /// </para>
         ///  </li> </ul> 
         /// <para>
