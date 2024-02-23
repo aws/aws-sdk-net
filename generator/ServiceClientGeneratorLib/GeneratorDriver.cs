@@ -153,9 +153,9 @@ namespace ServiceClientGenerator
                 Directory.CreateDirectory(GeneratedFilesRoot);
             }
 
-            // .NET Framework 4.5 version
-            ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);
-            ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.ClassName + ".cs", Bcl45SubFolder);
+            // .NET Framework version
+            ExecuteGenerator(new ServiceClientsNetFramework(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceInterfaceNetFramework(), "IAmazon" + Configuration.ClassName + ".cs", Bcl45SubFolder);
 
             // .NET Standard version
             ExecuteGenerator(new ServiceClientsNetStandard(), "Amazon" + Configuration.ClassName + "Client.cs", NetStandardSubFolder);

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>Net45</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -58,8 +58,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj" />
-    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.Net45.csproj" />
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.NetFramework.csproj" />
     <ProjectReference Include="..\..\Common\AWSSDK.CommonTest.csproj" />
   </ItemGroup>
 
