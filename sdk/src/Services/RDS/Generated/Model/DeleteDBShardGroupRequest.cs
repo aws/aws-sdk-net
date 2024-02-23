@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// Teh name of the DB shard group to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBShardGroupIdentifier
         {
             get { return this._dbShardGroupIdentifier; }

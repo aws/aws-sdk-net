@@ -101,6 +101,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB shard group.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string DBShardGroupIdentifier
         {
             get { return this._dbShardGroupIdentifier; }

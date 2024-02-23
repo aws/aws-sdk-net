@@ -109,6 +109,12 @@
     <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.CreateDBShardGroupResponse.DBShardGroupIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.CreateIntegrationRequest.IntegrationName</property>
     <min>1</min>
     <max>63</max>
@@ -174,6 +180,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteDBProxyEndpointRequest.DBProxyEndpointName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DeleteDBShardGroupRequest.DBShardGroupIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DeleteDBShardGroupResponse.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
@@ -249,6 +267,12 @@
     <property>Amazon.RDS.Model.DescribeDBProxyTargetsRequest.MaxRecords</property>
     <min>20</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DescribeDBShardGroupsRequest.DBShardGroupIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DescribeDBShardGroupsRequest.MaxRecords</property>
@@ -332,6 +356,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBProxyEndpointRequest.NewDBProxyEndpointName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.ModifyDBShardGroupRequest.DBShardGroupIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.ModifyDBShardGroupResponse.DBShardGroupIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.RebootDBShardGroupRequest.DBShardGroupIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.RebootDBShardGroupResponse.DBShardGroupIdentifier</property>
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>

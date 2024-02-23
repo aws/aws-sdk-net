@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string DBShardGroupIdentifier
         {
             get { return this._dbShardGroupIdentifier; }
