@@ -1,3 +1,15 @@
+### 3.7.755.0 (2024-02-23 19:20 UTC)
+* AppSync (3.7.304.5)
+	* Documentation only updates for AppSync
+* CloudWatchRUM (3.7.300.53)
+	* Doc-only update for new RUM metrics that were added
+* QLDB (3.7.300.53)
+	* Clarify possible values for KmsKeyArn and EncryptionDescription.
+* RDS (3.7.307.0)
+	* Add pattern and length based validations for DBShardGroupIdentifier
+* Core 3.7.302.13
+	* Use sso_registration_scopes when retrieving SSO token with SSOAWSCredentials
+
 ### 3.7.754.0 (2024-02-22 19:29 UTC)
 * InternetMonitor (3.7.302.0)
 	* This release adds IPv4 prefixes to health events
