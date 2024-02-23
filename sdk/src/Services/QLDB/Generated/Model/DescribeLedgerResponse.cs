@@ -109,7 +109,8 @@ namespace Amazon.QLDB.Model
         /// <para>
         /// Information about the encryption of data at rest in the ledger. This includes the
         /// current status, the KMS key, and when the key became inaccessible (in the case of
-        /// an error).
+        /// an error). If this parameter is undefined, the ledger uses an Amazon Web Services
+        /// owned KMS key for encryption.
         /// </para>
         /// </summary>
         public LedgerEncryptionDescription EncryptionDescription
