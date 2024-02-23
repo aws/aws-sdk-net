@@ -305,24 +305,24 @@ namespace Amazon.CloudWatchRUM
         /// </para>
         ///  
         /// <para>
-        /// In addition to these default metrics, you can choose to send extended metrics or custom
-        /// metrics or both.
+        /// In addition to these default metrics, you can choose to send extended metrics, custom
+        /// metrics, or both.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Extended metrics enable you to send metrics with additional dimensions not included
-        /// in the default metrics. You can also send extended metrics to Evidently as well as
-        /// CloudWatch. The valid dimension names for the additional dimensions for extended metrics
-        /// are <c>BrowserName</c>, <c>CountryCode</c>, <c>DeviceType</c>, <c>FileType</c>, <c>OSName</c>,
-        /// and <c>PageId</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+        /// Extended metrics let you send metrics with additional dimensions that aren't included
+        /// in the default metrics. You can also send extended metrics to both Evidently and CloudWatch.
+        /// The valid dimension names for the additional dimensions for extended metrics are <c>BrowserName</c>,
+        /// <c>CountryCode</c>, <c>DeviceType</c>, <c>FileType</c>, <c>OSName</c>, and <c>PageId</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
         /// Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Custom metrics are metrics that you define. You can send custom metrics to CloudWatch
-        /// or to CloudWatch Evidently or to both. With custom metrics, you can use any metric
-        /// name and namespace, and to derive the metrics you can use any custom events, built-in
-        /// events, custom attributes, or default attributes. 
+        /// Custom metrics are metrics that you define. You can send custom metrics to CloudWatch.
+        /// CloudWatch Evidently, or both. With custom metrics, you can use any metric name and
+        /// namespace. To derive the metrics, you can use any custom events, built-in events,
+        /// custom attributes, or default attributes. 
         /// </para>
         ///  
         /// <para>
