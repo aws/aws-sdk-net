@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Use sso_registration_scopes when retrieving SSO token with SSOAWSCredentials"
+      ],
+      "type": "patch",
+      "updateMinimum": false
+    }
+  }
