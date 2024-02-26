@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// A plugin is an Amazon Web Services resource that contains the code that defines your
-    /// connector logic.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class Plugin
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private CustomPlugin _customPlugin;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property CustomPlugin. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// Details about a custom plugin.
+        /// Lists the tags attached to the specified resource in the corresponding request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public CustomPlugin CustomPlugin
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._customPlugin; }
-            set { this._customPlugin = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if CustomPlugin property is set
-        internal bool IsSetCustomPlugin()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._customPlugin != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

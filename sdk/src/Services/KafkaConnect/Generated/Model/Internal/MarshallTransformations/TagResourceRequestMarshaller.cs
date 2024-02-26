@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateWorkerConfiguration Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateWorkerConfigurationRequestMarshaller : IMarshaller<IRequest, CreateWorkerConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateWorkerConfigurationRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,37 +52,22 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateWorkerConfigurationRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KafkaConnect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/worker-configurations";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonKafkaConnectException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/v1/tags/{resourceArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPropertiesFileContent())
-                {
-                    context.Writer.WritePropertyName("propertiesFileContent");
-                    context.Writer.Write(publicRequest.PropertiesFileContent);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -105,9 +90,9 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateWorkerConfigurationRequestMarshaller _instance = new CreateWorkerConfigurationRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateWorkerConfigurationRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +100,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateWorkerConfigurationRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

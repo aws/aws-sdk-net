@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListWorkerConfigurations Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class ListWorkerConfigurationsRequestMarshaller : IMarshaller<IRequest, ListWorkerConfigurationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListWorkerConfigurationsRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,29 +52,26 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListWorkerConfigurationsRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KafkaConnect");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-09-14";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonKafkaConnectException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNamePrefix())
-                request.Parameters.Add("namePrefix", StringUtils.FromString(publicRequest.NamePrefix));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/v1/worker-configurations";
+            if (publicRequest.IsSetTagKeys())
+                request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
+            request.ResourcePath = "/v1/tags/{resourceArn}";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListWorkerConfigurationsRequestMarshaller _instance = new ListWorkerConfigurationsRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static ListWorkerConfigurationsRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +79,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListWorkerConfigurationsRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {

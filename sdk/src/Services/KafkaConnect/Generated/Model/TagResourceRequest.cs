@@ -29,50 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// A plugin is an Amazon Web Services resource that contains the code that defines a
-    /// connector's logic.
+    /// Container for the parameters to the TagResource operation.
+    /// Attaches tags to the specified resource.
     /// </summary>
-    public partial class CustomPlugin
+    public partial class TagResourceRequest : AmazonKafkaConnectRequest
     {
-        private string _customPluginArn;
-        private long? _revision;
+        private string _resourceArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property CustomPluginArn. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the custom plugin.
+        /// The Amazon Resource Name (ARN) of the resource to which you want to attach tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string CustomPluginArn
+        public string ResourceArn
         {
-            get { return this._customPluginArn; }
-            set { this._customPluginArn = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if CustomPluginArn property is set
-        internal bool IsSetCustomPluginArn()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._customPluginArn != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The revision of the custom plugin.
+        /// The tags that you want to attach to the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=9223372036854775807)]
-        public long Revision
+        [AWSProperty(Required=true, Min=0, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._revision.GetValueOrDefault(); }
-            set { this._revision = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Revision property is set
-        internal bool IsSetRevision()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._revision.HasValue; 
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

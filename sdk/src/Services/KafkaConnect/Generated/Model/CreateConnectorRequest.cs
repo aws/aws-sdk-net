@@ -45,6 +45,7 @@ namespace Amazon.KafkaConnect.Model
         private LogDelivery _logDelivery;
         private List<Plugin> _plugins = new List<Plugin>();
         private string _serviceExecutionRoleArn;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private WorkerConfiguration _workerConfiguration;
 
         /// <summary>
@@ -220,9 +221,16 @@ namespace Amazon.KafkaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Plugins. 
+        /// Gets and sets the property Plugins. <important> 
         /// <para>
-        /// Specifies which plugins to use for the connector.
+        /// Amazon MSK Connect does not currently support specifying multiple plugins as a list.
+        /// To use more than one plugin for your connector, you can create a single custom plugin
+        /// using a ZIP file that bundles multiple plugins together.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Specifies which plugin to use for the connector. You must specify a single-element
+        /// list containing one <c>customPlugin</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -258,6 +266,25 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetServiceExecutionRoleArn()
         {
             return this._serviceExecutionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags you want to attach to the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

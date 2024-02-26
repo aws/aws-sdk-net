@@ -29,30 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// A plugin is an Amazon Web Services resource that contains the code that defines your
-    /// connector logic.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Lists all the tags attached to the specified resource.
     /// </summary>
-    public partial class Plugin
+    public partial class ListTagsForResourceRequest : AmazonKafkaConnectRequest
     {
-        private CustomPlugin _customPlugin;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property CustomPlugin. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Details about a custom plugin.
+        /// The Amazon Resource Name (ARN) of the resource for which you want to list all attached
+        /// tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public CustomPlugin CustomPlugin
+        public string ResourceArn
         {
-            get { return this._customPlugin; }
-            set { this._customPlugin = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if CustomPlugin property is set
-        internal bool IsSetCustomPlugin()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._customPlugin != null;
+            return this._resourceArn != null;
         }
 
     }

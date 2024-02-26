@@ -29,74 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// This is the response object from the CreateWorkerConfiguration operation.
+    /// This is the response object from the DeleteWorkerConfiguration operation.
     /// </summary>
-    public partial class CreateWorkerConfigurationResponse : AmazonWebServiceResponse
+    public partial class DeleteWorkerConfigurationResponse : AmazonWebServiceResponse
     {
-        private DateTime? _creationTime;
-        private WorkerConfigurationRevisionSummary _latestRevision;
-        private string _name;
         private string _workerConfigurationArn;
         private WorkerConfigurationState _workerConfigurationState;
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
-        /// <para>
-        /// The time that the worker configuration was created.
-        /// </para>
-        /// </summary>
-        public DateTime CreationTime
-        {
-            get { return this._creationTime.GetValueOrDefault(); }
-            set { this._creationTime = value; }
-        }
-
-        // Check to see if CreationTime property is set
-        internal bool IsSetCreationTime()
-        {
-            return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LatestRevision. 
-        /// <para>
-        /// The latest revision of the worker configuration.
-        /// </para>
-        /// </summary>
-        public WorkerConfigurationRevisionSummary LatestRevision
-        {
-            get { return this._latestRevision; }
-            set { this._latestRevision = value; }
-        }
-
-        // Check to see if LatestRevision property is set
-        internal bool IsSetLatestRevision()
-        {
-            return this._latestRevision != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the worker configuration.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property WorkerConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.
+        /// The Amazon Resource Name (ARN) of the worker configuration that you requested to delete.
         /// </para>
         /// </summary>
         public string WorkerConfigurationArn

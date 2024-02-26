@@ -29,30 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// A plugin is an Amazon Web Services resource that contains the code that defines your
-    /// connector logic.
+    /// Container for the parameters to the DeleteWorkerConfiguration operation.
+    /// Deletes the specified worker configuration.
     /// </summary>
-    public partial class Plugin
+    public partial class DeleteWorkerConfigurationRequest : AmazonKafkaConnectRequest
     {
-        private CustomPlugin _customPlugin;
+        private string _workerConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property CustomPlugin. 
+        /// Gets and sets the property WorkerConfigurationArn. 
         /// <para>
-        /// Details about a custom plugin.
+        /// The Amazon Resource Name (ARN) of the worker configuration that you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public CustomPlugin CustomPlugin
+        public string WorkerConfigurationArn
         {
-            get { return this._customPlugin; }
-            set { this._customPlugin = value; }
+            get { return this._workerConfigurationArn; }
+            set { this._workerConfigurationArn = value; }
         }
 
-        // Check to see if CustomPlugin property is set
-        internal bool IsSetCustomPlugin()
+        // Check to see if WorkerConfigurationArn property is set
+        internal bool IsSetWorkerConfigurationArn()
         {
-            return this._customPlugin != null;
+            return this._workerConfigurationArn != null;
         }
 
     }

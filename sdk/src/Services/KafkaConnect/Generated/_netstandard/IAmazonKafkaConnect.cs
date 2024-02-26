@@ -274,6 +274,50 @@ namespace Amazon.KafkaConnect
 
         #endregion
                 
+        #region  DeleteWorkerConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the specified worker configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkerConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkerConfiguration service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">REST API Reference for DeleteWorkerConfiguration Operation</seealso>
+        Task<DeleteWorkerConfigurationResponse> DeleteWorkerConfigurationAsync(DeleteWorkerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeConnector
 
 
@@ -496,6 +540,50 @@ namespace Amazon.KafkaConnect
 
         #endregion
                 
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Lists all the tags attached to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListWorkerConfigurations
 
 
@@ -537,6 +625,98 @@ namespace Amazon.KafkaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations">REST API Reference for ListWorkerConfigurations Operation</seealso>
         Task<ListWorkerConfigurationsResponse> ListWorkerConfigurationsAsync(ListWorkerConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Attaches tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ConflictException">
+        /// HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your
+        /// request with another name.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Removes tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

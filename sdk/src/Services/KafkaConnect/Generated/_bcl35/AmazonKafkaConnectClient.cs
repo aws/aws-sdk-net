@@ -675,6 +675,86 @@ namespace Amazon.KafkaConnect
 
         #endregion
         
+        #region  DeleteWorkerConfiguration
+
+        /// <summary>
+        /// Deletes the specified worker configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkerConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkerConfiguration service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">REST API Reference for DeleteWorkerConfiguration Operation</seealso>
+        public virtual DeleteWorkerConfigurationResponse DeleteWorkerConfiguration(DeleteWorkerConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkerConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkerConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkerConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkerConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkerConfiguration operation on AmazonKafkaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkerConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">REST API Reference for DeleteWorkerConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkerConfiguration(DeleteWorkerConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWorkerConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkerConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkerConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkerConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkerConfigurationResult from KafkaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">REST API Reference for DeleteWorkerConfiguration Operation</seealso>
+        public virtual DeleteWorkerConfigurationResponse EndDeleteWorkerConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkerConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeConnector
 
         /// <summary>
@@ -1077,6 +1157,86 @@ namespace Amazon.KafkaConnect
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists all the tags attached to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonKafkaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from KafkaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListWorkerConfigurations
 
         /// <summary>
@@ -1153,6 +1313,170 @@ namespace Amazon.KafkaConnect
         public virtual ListWorkerConfigurationsResponse EndListWorkerConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListWorkerConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Attaches tags to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ConflictException">
+        /// HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your
+        /// request with another name.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonKafkaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from KafkaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by KafkaConnect.</returns>
+        /// <exception cref="Amazon.KafkaConnect.Model.BadRequestException">
+        /// HTTP Status Code 400: Bad request due to incorrect input. Correct your request and
+        /// then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ForbiddenException">
+        /// HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.InternalServerErrorException">
+        /// HTTP Status Code 500: Unexpected internal server error. Retrying your request might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.NotFoundException">
+        /// HTTP Status Code 404: Resource not found due to incorrect input. Correct your request
+        /// and then retry it.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.ServiceUnavailableException">
+        /// HTTP Status Code 503: Service Unavailable. Retrying your request in some time might
+        /// resolve the issue.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.TooManyRequestsException">
+        /// HTTP Status Code 429: Limit exceeded. Resource limit reached.
+        /// </exception>
+        /// <exception cref="Amazon.KafkaConnect.Model.UnauthorizedException">
+        /// HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonKafkaConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from KafkaConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeWorkerConfiguration operation
+    /// Response Unmarshaller for DeleteWorkerConfiguration operation
     /// </summary>  
-    public class DescribeWorkerConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteWorkerConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,36 +45,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeWorkerConfigurationResponse response = new DescribeWorkerConfigurationResponse();
+            DeleteWorkerConfigurationResponse response = new DeleteWorkerConfigurationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestRevision", targetDepth))
-                {
-                    var unmarshaller = WorkerConfigurationRevisionDescriptionUnmarshaller.Instance;
-                    response.LatestRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("workerConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,9 +118,9 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             return new AmazonKafkaConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeWorkerConfigurationResponseUnmarshaller _instance = new DescribeWorkerConfigurationResponseUnmarshaller();        
+        private static DeleteWorkerConfigurationResponseUnmarshaller _instance = new DeleteWorkerConfigurationResponseUnmarshaller();        
 
-        internal static DescribeWorkerConfigurationResponseUnmarshaller GetInstance()
+        internal static DeleteWorkerConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -152,7 +128,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeWorkerConfigurationResponseUnmarshaller Instance
+        public static DeleteWorkerConfigurationResponseUnmarshaller Instance
         {
             get
             {
