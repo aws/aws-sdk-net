@@ -140,9 +140,6 @@ namespace ServiceClientGenerator
             GenerateVS2017ServiceSolution(netFrameworkProjectConfigs);
             GenerateVS2017Solution("AWSSDK.NetFramework.sln", true, false, netFrameworkProjectConfigs);
             GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);
-
-            // Include solutions that Travis CI can build
-            GenerateVS2017Solution("AWSSDK.NetFramework.Travis.sln", false, true, netFrameworkProjectConfigs);
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
