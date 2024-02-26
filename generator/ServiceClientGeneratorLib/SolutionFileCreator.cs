@@ -18,7 +18,7 @@ namespace ServiceClientGenerator
         /// </summary>
         public abstract class ProjectTypes
         {
-            public const string Net45 = "Net45";
+            public const string NetFramework = "NetFramework";
             public const string NetStandard = "NetStandard";
             public const string Partial = "partial";
         }
@@ -38,11 +38,11 @@ namespace ServiceClientGenerator
         private const string CommonTestProjectGuid = "{66F78F86-68D7-4538-8EA5-A669A08E1C19}";
         private const string CommonTestProjectName = "AWSSDK.CommonTest";
 
-        private const string UnitTestUtilityProjectFileName45 = "AWSSDK.UnitTestUtilities.Net45";
-        private const string UtilityProjectFileGuid45 = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
+        private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities.NetFramework";
+        private const string UtilityProjectFileGuid = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
 
-        private const string IntegrationTestUtilityName45 = "AWSSDK.IntegrationTestUtilities.Net45";
-        private const string IntegrationTestUtilityGuid45 = "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}";
+        private const string IntegrationTestUtilityName = "AWSSDK.IntegrationTestUtilities.NetFramework";
+        private const string IntegrationTestUtilityGuid = "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}";
 
         private static Regex ProjectReferenceRegex = new Regex("\"([^\"]*)\"");
 
@@ -84,27 +84,27 @@ namespace ServiceClientGenerator
 
         private static readonly Project UnitTestUtilityProject45 = new Project
         {
-            Name = UnitTestUtilityProjectFileName45,
-            ProjectGuid = UtilityProjectFileGuid45,
-            ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "sdk", "test", "UnitTests", "Custom", $"{UnitTestUtilityProjectFileName45}.csproj"),
-            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "UnitTests", "Custom", $"{UnitTestUtilityProjectFileName45}.csproj")
+            Name = UnitTestUtilityProjectFileName,
+            ProjectGuid = UtilityProjectFileGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "sdk", "test", "UnitTests", "Custom", $"{UnitTestUtilityProjectFileName}.csproj"),
+            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "UnitTests", "Custom", $"{UnitTestUtilityProjectFileName}.csproj")
         };
 
         private static readonly Project IntegrationTestUtility45Project = new Project
         {
-            Name = IntegrationTestUtilityName45,
-            ProjectGuid = IntegrationTestUtilityGuid45,
-            ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "sdk", "test", "IntegrationTests", $"{IntegrationTestUtilityName45}.csproj"),
-            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "IntegrationTests", $"{IntegrationTestUtilityName45}.csproj")
+            Name = IntegrationTestUtilityName,
+            ProjectGuid = IntegrationTestUtilityGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "sdk", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj"),
+            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj")
         };
 
         private static readonly List<Project> CoreProjects = new List<Project>
         {
             new Project
             {
-                Name = "AWSSDK.Core.Net45",
+                Name = "AWSSDK.Core.NetFramework",
                 ProjectGuid = "{7DE3AFA0-1B2D-41B1-82BD-120B8B210B43}",
-                ProjectPath = Utils.PathCombineAlt("..", "..", "Core", "AWSSDK.Core.Net45.csproj")
+                ProjectPath = Utils.PathCombineAlt("..", "..", "Core", "AWSSDK.Core.NetFramework.csproj")
             },
             new Project
             {
@@ -131,18 +131,15 @@ namespace ServiceClientGenerator
             ScanForExistingProjects();
 
             // Build project configurations for each solution
-            var net45ProjectConfigs = new List<ProjectFileConfiguration> { GetProjectConfig(ProjectTypes.Net45) };
+            var netFrameworkProjectConfigs = new List<ProjectFileConfiguration> { GetProjectConfig(ProjectTypes.NetFramework) };
             var netStandardProjectConfigs = new List<ProjectFileConfiguration>
             {
                 GetProjectConfig(ProjectTypes.NetStandard)
             };
 
-            GenerateVS2017ServiceSolution(net45ProjectConfigs);
-            GenerateVS2017Solution("AWSSDK.Net45.sln", true, false, net45ProjectConfigs);
+            GenerateVS2017ServiceSolution(netFrameworkProjectConfigs);
+            GenerateVS2017Solution("AWSSDK.NetFramework.sln", true, false, netFrameworkProjectConfigs);
             GenerateVS2017Solution("AWSSDK.NetStandard.sln", true, false, netStandardProjectConfigs);
-
-            // Include solutions that Travis CI can build
-            GenerateVS2017Solution("AWSSDK.Net45.Travis.sln", false, true, net45ProjectConfigs);
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -345,7 +342,7 @@ namespace ServiceClientGenerator
                         });
                     }
 
-                    if (configuration.Name.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
+                    if (configuration.Name.Equals(ProjectTypes.NetFramework, StringComparison.Ordinal))
                     {
                         testProjects.Add(GeneratorLibProject);
                         SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
@@ -419,7 +416,7 @@ namespace ServiceClientGenerator
 
                 // Include only the service csproj files in the service specific solution.
                 foreach (var projectFile in Directory.EnumerateFiles(servicePath, "*.*", SearchOption.TopDirectoryOnly)
-                    .Where(s => s.Contains("NetStandard") || s.Contains("Net45")).OrderBy(f => f))
+                    .Where(s => s.Contains("NetStandard") || s.Contains("NetFramework")).OrderBy(f => f))
                 {
                     var projectFileAlt = Utils.ConvertPathAlt(projectFile);
                     serviceProjectDependencies.AddRange(AddProjectDependencies(projectFileAlt, serviceDirectory.Name, new List<string>()));
@@ -522,8 +519,8 @@ namespace ServiceClientGenerator
             var testProjectsRoot = Utils.PathCombineAlt(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername, GeneratorDriver.ServicesSubFoldername, serviceDirectory.Name);
             foreach (var configuration in projectFileConfigurations)
             {
-                // TODO: At the moment the project files for net35 have not been deleted yet, so the previous file pattern ("*.csproj") would include them in the service solution.
-                // We'll filter for the current target framework (similar to what's done for the CRT project), but this method is only invoked for net45.
+                // TODO: At the moment the project files for net35 / net45 have not been deleted yet, so the previous file pattern ("*.csproj") would include them in the service solution.
+                // We'll filter for the current target framework (similar to what's done for the CRT project), but this method is only invoked for the .NET Framework.
                 //
                 // We should revert the filter later so that the service specific solution includes all tests files (including any we eventually add for .NET Standard).
                 string filePattern = string.Format($"*.{configuration.Name}.csproj");
@@ -552,7 +549,7 @@ namespace ServiceClientGenerator
                     });
                 }
 
-                if (configuration.Name.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
+                if (configuration.Name.Equals(ProjectTypes.NetFramework, StringComparison.Ordinal))
                 {
                     testProjects.Add(ServiceSlnGeneratorLibProject);
                     SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <AssemblyName>AWSSDK.Extensions.CrtIntegration</AssemblyName>
     <PackageId>AWSSDK.Extensions.CrtIntegration</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -12,13 +12,8 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <!-- workaround per https://github.com/Microsoft/msbuild/issues/1333 -->
-    <FrameworkPathOverride>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5\Profile\Client</FrameworkPathOverride>
-    <!-- workaround per https://github.com/dotnet/msbuild/issues/5985 -->
-    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
-
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Compile Remove="**/obj/**" />
   </ItemGroup>
@@ -41,8 +36,7 @@
     <PackageReference Include="AWSCRT-CHECKSUMS" Version="0.4.4" />
   </ItemGroup>
 
-  
   <ItemGroup>
-    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.Net35.csproj" />
+    <ProjectReference Include="..\..\..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
   </ItemGroup>
 </Project>
