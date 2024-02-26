@@ -73,7 +73,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 
         /// <para>
-        /// Specifies whether a cache cluster is enabled for the stage.
+        /// Specifies whether a cache cluster is enabled for the stage. To activate a method-level
+        /// cache, set <c>CachingEnabled</c> to <c>true</c> for a method. 
         /// </para>
         /// </summary>
         public bool CacheClusterEnabled

@@ -119,7 +119,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Schema. 
         /// <para>
         /// The schema for the model. For <c>application/json</c> models, this should be JSON
-        /// schema draft 4 model.
+        /// schema draft 4 model. The maximum size of the model is 400 KB.
         /// </para>
         /// </summary>
         public string Schema

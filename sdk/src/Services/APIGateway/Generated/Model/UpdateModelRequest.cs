@@ -30,7 +30,7 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateModel operation.
-    /// Changes information about a model.
+    /// Changes information about a model. The maximum size of the model is 400 KB.
     /// </summary>
     public partial class UpdateModelRequest : AmazonAPIGatewayRequest
     {
