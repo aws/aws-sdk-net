@@ -1215,6 +1215,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.ProductCode.ProductCodeId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^([A-Za-z0-9])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.AgentVersion</property>
     <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
   </property-value-rule>

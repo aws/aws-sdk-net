@@ -38,6 +38,7 @@ namespace Amazon.Drs.Model
         private long? _replicatedStorageBytes;
         private long? _rescannedStorageBytes;
         private long? _totalStorageBytes;
+        private VolumeStatus _volumeStatus;
 
         /// <summary>
         /// Gets and sets the property BackloggedStorageBytes. 
@@ -132,6 +133,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetTotalStorageBytes()
         {
             return this._totalStorageBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeStatus. 
+        /// <para>
+        /// The status of the volume.
+        /// </para>
+        /// </summary>
+        public VolumeStatus VolumeStatus
+        {
+            get { return this._volumeStatus; }
+            set { this._volumeStatus = value; }
+        }
+
+        // Check to see if VolumeStatus property is set
+        internal bool IsSetVolumeStatus()
+        {
+            return this._volumeStatus != null;
         }
 
     }
