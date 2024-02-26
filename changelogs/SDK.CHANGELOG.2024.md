@@ -1,3 +1,13 @@
+### 3.7.756.0 (2024-02-26 19:20 UTC)
+* APIGateway (3.7.300.53)
+	* Documentation updates for Amazon API Gateway.
+* Drs (3.7.303.0)
+	* Added volume status to DescribeSourceServer replicated volumes.
+* KafkaConnect (3.7.301.0)
+	* Adds support for tagging, with new TagResource, UntagResource and ListTagsForResource APIs to manage tags and updates to existing APIs to allow tag on create. This release also adds support for the new DeleteWorkerConfiguration API.
+* RDS (3.7.308.0)
+	* This release adds support for gp3 data volumes for Multi-AZ DB Clusters.
+
 ### 3.7.755.0 (2024-02-23 19:20 UTC)
 * AppSync (3.7.304.5)
 	* Documentation only updates for AppSync
