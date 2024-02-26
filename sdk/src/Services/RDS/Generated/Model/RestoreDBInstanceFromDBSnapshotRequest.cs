@@ -302,7 +302,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
-        /// The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+        /// The identifier for the Multi-AZ DB cluster snapshot to restore from.
         /// </para>
         ///  
         /// <para>
@@ -333,10 +333,6 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// Can't be the identifier of an Aurora DB cluster snapshot.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
         /// </para>
         ///  </li> </ul>
         /// </summary>
