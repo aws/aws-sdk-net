@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -474,13 +475,16 @@ namespace Amazon.Runtime.Internal
                 requestContext.Metrics.AddProperty(Metric.ProxyPort, requestContext.ClientConfig.ProxyPort);
                 _request.Proxy = proxy;
             }
-            else if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
+            else if(!NoProxyFilter.Instance.Match(_request.RequestUri))
             {
-                _request.Proxy = requestContext.ClientConfig.GetHttpProxy();
-            }
-            else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
-            {
-                _request.Proxy = requestContext.ClientConfig.GetHttpsProxy();
+                if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
+                {
+                    _request.Proxy = requestContext.ClientConfig.GetHttpProxy();
+                }
+                else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
+                {
+                    _request.Proxy = requestContext.ClientConfig.GetHttpsProxy();
+                }
             }
 
             // Set service point properties.
