@@ -21,6 +21,8 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
 using Amazon.SecurityToken.SAML;
+using Amazon.Util.Internal;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -47,7 +49,7 @@ namespace Amazon.SecurityToken
             try
             {
                 var proxy = Config.GetWebProxy();
-                if (proxy == null)
+                if (proxy == null && !NoProxyFilter.Instance.Match(new Uri(endpoint)))
                 {
                     if (endpoint.StartsWith(httpPrefix))
                     {
