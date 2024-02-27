@@ -1,5 +1,5 @@
 ﻿<!--
-This is a convenience .csproj file.  It is meant to be used in conjunction with AWSSDK.CoreAndCustomUnitTests.Net45.sln to 
+This is a convenience .csproj file.  It is meant to be used in conjunction with AWSSDK.CoreAndCustomUnitTests.NetStandard.sln to 
 facilitate developing changes to AWSSDK.Core and AWSSDK.UnitTests.Custom without needing to load all Services projects.
 
 This project file should not be used as part of a release pipeline.
