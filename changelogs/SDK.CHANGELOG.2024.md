@@ -1,3 +1,10 @@
+### 3.7.757.0 (2024-02-27 19:13 UTC)
+* AmplifyUIBuilder (3.7.301.0)
+	* We have added the ability to tag resources after they are created
+* Core 3.7.302.14
+	* Add support for no_proxy environment variable for .NET Framework targets.
+	* All services packages updated to require new Core
+
 ### 3.7.756.0 (2024-02-26 19:20 UTC)
 * APIGateway (3.7.300.53)
 	* Documentation updates for Amazon API Gateway.
