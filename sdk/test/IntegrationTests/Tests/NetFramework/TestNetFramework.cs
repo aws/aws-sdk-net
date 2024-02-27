@@ -17,7 +17,7 @@ using System.Xml;
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
-    public class Tests462
+    public class TestsNetFramework
     {
         [TestMethod]
         [TestCategory("General")]
