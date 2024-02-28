@@ -85,9 +85,12 @@ namespace Amazon.Runtime
                 Amazon.Util.Internal.JsonSerializerContext,
 #endif
                 new()
+            where T : SecurityBase
         {
             string json = GetContents(uri, proxy, headers);
-            return JsonSerializerHelper.Deserialize<T>(json, new TC());
+            var result = JsonSerializerHelper.Deserialize<T>(json, new TC());
+            ValidateResponse(result);
+            return result;
         }
 
         protected static void ValidateResponse(SecurityBase response)
