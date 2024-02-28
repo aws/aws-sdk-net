@@ -546,6 +546,53 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetApproximateUsageRecords
+
+
+        /// <summary>
+        /// Retrieves estimated usage records for hourly granularity or resource-level data at
+        /// daily granularity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetApproximateUsageRecords service method.</param>
+        /// 
+        /// <returns>The response from the GetApproximateUsageRecords service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords">REST API Reference for GetApproximateUsageRecords Operation</seealso>
+        GetApproximateUsageRecordsResponse GetApproximateUsageRecords(GetApproximateUsageRecordsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApproximateUsageRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApproximateUsageRecords operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApproximateUsageRecords
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords">REST API Reference for GetApproximateUsageRecords Operation</seealso>
+        IAsyncResult BeginGetApproximateUsageRecords(GetApproximateUsageRecordsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetApproximateUsageRecords operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApproximateUsageRecords.</param>
+        /// 
+        /// <returns>Returns a  GetApproximateUsageRecordsResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords">REST API Reference for GetApproximateUsageRecords Operation</seealso>
+        GetApproximateUsageRecordsResponse EndGetApproximateUsageRecords(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCostAndUsage
 
 
