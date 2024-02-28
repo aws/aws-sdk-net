@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.AppConfigTests.Net45</AssemblyName>
-    <PackageId>AWSSDK.AppConfigTests.Net45</PackageId>
+    <AssemblyName>AWSSDK.EnvFallBackTests.NetFramework</AssemblyName>
+    <PackageId>AWSSDK.EnvFallBackTests.NetFramework</PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -21,11 +21,14 @@
 
   <ItemGroup>
     <Compile Remove="**\**" />
+    <Compile Remove="FallBackConfigTests\**" />
+    <EmbeddedResource Remove="FallBackConfigTests\**" />
     <None Remove="**\**" />
+    <None Remove="FallBackConfigTests\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="AWSConfigTests\UnitTests.cs" />
+    <Compile Include="EnvTests\UnitTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,8 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
-    <ProjectReference Include="..\..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.Net45.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\Core\AWSSDK.Core.NetFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,10 +50,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
 
 </Project>

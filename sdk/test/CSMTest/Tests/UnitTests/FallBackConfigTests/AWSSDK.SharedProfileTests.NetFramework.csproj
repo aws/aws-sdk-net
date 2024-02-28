@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.EnvFallBackTests.Net45</AssemblyName>
-    <PackageId>AWSSDK.EnvFallBackTests.Net45</PackageId>
+    <AssemblyName>AWSSDK.SharedProfileFallBackTests.NetFramework</AssemblyName>
+    <PackageId>AWSSDK.SharedProfileFallBackTests.NetFramework</PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -21,14 +21,11 @@
 
   <ItemGroup>
     <Compile Remove="**\**" />
-    <Compile Remove="FallBackConfigTests\**" />
-    <EmbeddedResource Remove="FallBackConfigTests\**" />
     <None Remove="**\**" />
-    <None Remove="FallBackConfigTests\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="EnvTests\UnitTests.cs" />
+    <Compile Include="SharedProfileTests\UnitTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\Core\AWSSDK.Core.NetFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
