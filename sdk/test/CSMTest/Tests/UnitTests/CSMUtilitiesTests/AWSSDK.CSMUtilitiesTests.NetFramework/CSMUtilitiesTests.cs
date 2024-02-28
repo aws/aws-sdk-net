@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace AWSSDK.CSMUtilitiesTests.Net45
+namespace AWSSDK.CSMUtilitiesTests.NetFramework
 {
     public class CSMUtilitiesTests
     {

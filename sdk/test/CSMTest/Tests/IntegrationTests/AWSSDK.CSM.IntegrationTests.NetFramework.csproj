@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
-    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
+    <TargetFramework>net462</TargetFramework>
     <DebugType>portable</DebugType>
+    <DefineConstants>DEBUG;TRACE;;BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE</DefineConstants>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>AWSSDK.SharedProfileFallBackTests.Net45</AssemblyName>
-    <PackageId>AWSSDK.SharedProfileFallBackTests.Net45</PackageId>
+    <AssemblyName>AWSSDK.CSM.IntegrationTests.NetFramework</AssemblyName>
+    <PackageId>AWSSDK.CSM.IntegrationTests.NetFramework</PackageId>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
@@ -20,15 +20,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**\**" />
-    <None Remove="**\**" />
+    <Compile Remove="**/_bcl35/**" />
+    <Compile Remove="**/obj/**" />
+    <Compile Remove="obj/**" />
+    <None Remove="obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="SharedProfileTests\UnitTests.cs" />
+    <None Include="App.config" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="xunit" Version="2.0.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2" />
@@ -38,15 +41,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\src\Core\AWSSDK.Core.Net45.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+    <ProjectReference Include="../../Utilities/AWSSDK.CSM.Utilities.NetFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="System.Configuration" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 
 </Project>
