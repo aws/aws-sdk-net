@@ -36,8 +36,10 @@ namespace Amazon.Batch.Model
         private List<EksContainer> _containers = new List<EksContainer>();
         private string _dnsPolicy;
         private bool? _hostNetwork;
+        private List<EksContainer> _initContainers = new List<EksContainer>();
         private EksMetadata _metadata;
         private string _serviceAccountName;
+        private bool? _shareProcessNamespace;
         private List<EksVolume> _volumes = new List<EksVolume>();
 
         /// <summary>
@@ -110,6 +112,33 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InitContainers. 
+        /// <para>
+        /// These containers run before application containers, always runs to completion, and
+        /// must complete successfully before the next container starts. These containers are
+        /// registered with the Amazon EKS Connector agent and persists the registration information
+        /// in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
+        /// Containers</a> in the <i>Kubernetes documentation</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This object is limited to 10 elements
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<EksContainer> InitContainers
+        {
+            get { return this._initContainers; }
+            set { this._initContainers = value; }
+        }
+
+        // Check to see if InitContainers property is set
+        internal bool IsSetInitContainers()
+        {
+            return this._initContainers != null && this._initContainers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
         /// Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
@@ -149,6 +178,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetServiceAccountName()
         {
             return this._serviceAccountName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareProcessNamespace. 
+        /// <para>
+        /// Indicates if the processes in a container are shared, or visible, to other containers
+        /// in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share
+        /// Process Namespace between Containers in a Pod</a>.
+        /// </para>
+        /// </summary>
+        public bool ShareProcessNamespace
+        {
+            get { return this._shareProcessNamespace.GetValueOrDefault(); }
+            set { this._shareProcessNamespace = value; }
+        }
+
+        // Check to see if ShareProcessNamespace property is set
+        internal bool IsSetShareProcessNamespace()
+        {
+            return this._shareProcessNamespace.HasValue; 
         }
 
         /// <summary>

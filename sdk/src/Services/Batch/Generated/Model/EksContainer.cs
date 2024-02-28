@@ -62,8 +62,8 @@ namespace Amazon.Batch.Model
         /// environment variable doesn't exist, the command string will remain "<c>$(NAME1)</c>."
         /// <c>$$</c> is replaced with <c>$</c>, and the resulting string isn't expanded. For
         /// example, <c>$$(VAR_NAME)</c> is passed as <c>$(VAR_NAME)</c> whether or not the <c>VAR_NAME</c>
-        /// environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a>
-        /// in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
+        /// environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+        /// reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
         /// a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>

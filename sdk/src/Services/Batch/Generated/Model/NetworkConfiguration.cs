@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// The network configuration for jobs that are running on Fargate resources. Jobs that
-    /// are running on EC2 resources must not specify this parameter.
+    /// are running on Amazon EC2 resources must not specify this parameter.
     /// </summary>
     public partial class NetworkConfiguration
     {

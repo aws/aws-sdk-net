@@ -61,6 +61,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInitContainers())
+            {
+                context.Writer.WritePropertyName("initContainers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInitContainersListValue in requestObject.InitContainers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksContainerOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInitContainersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");

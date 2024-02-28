@@ -180,9 +180,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Ec2Configuration. 
         /// <para>
-        /// Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances
-        /// in the compute environment. If <c>Ec2Configuration</c> isn't specified, the default
-        /// is <c>ECS_AL2</c>.
+        /// Provides information that's used to select Amazon Machine Images (AMIs) for Amazon
+        /// EC2 instances in the compute environment. If <c>Ec2Configuration</c> isn't specified,
+        /// the default is <c>ECS_AL2</c>.
         /// </para>
         ///  
         /// <para>
@@ -342,10 +342,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
         /// The launch template to use for your compute resources. Any other compute resource
-        /// parameters that you specify in a <a>CreateComputeEnvironment</a> API operation override
-        /// the same parameters in the launch template. You must specify either the launch template
-        /// ID or launch template name in the request, but not both. For more information, see
-        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
+        /// parameters that you specify in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a>
+        /// API operation override the same parameters in the launch template. You must specify
+        /// either the launch template ID or launch template name in the request, but not both.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
@@ -549,11 +549,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pair tags to be applied to EC2 resources that are launched in the compute
-        /// environment. For Batch, these take the form of <c>"String1": "String2"</c>, where
-        /// <c>String1</c> is the tag key and <c>String2</c> is the tag value-for example, <c>{
-        /// "Name": "Batch Instance - C4OnDemand" }</c>. This is helpful for recognizing your
-        /// Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure
+        /// Key-value pair tags to be applied to Amazon EC2 resources that are launched in the
+        /// compute environment. For Batch, these take the form of <c>"String1": "String2"</c>,
+        /// where <c>String1</c> is the tag key and <c>String2</c> is the tag value-for example,
+        /// <c>{ "Name": "Batch Instance - C4OnDemand" }</c>. This is helpful for recognizing
+        /// your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure
         /// update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
         /// compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when
         /// using the Batch <c>ListTagsForResource</c> API operation.

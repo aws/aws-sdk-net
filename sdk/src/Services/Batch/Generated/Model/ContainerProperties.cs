@@ -158,7 +158,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property FargatePlatformConfiguration. 
         /// <para>
         /// The platform configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public FargatePlatformConfiguration FargatePlatformConfiguration
@@ -317,7 +317,8 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// Batch currently supports a subset of the logging drivers available to the Docker daemon
-        /// (shown in the <a>LogConfiguration</a> data type).
+        /// (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+        /// data type).
         /// </para>
         ///  </note> 
         /// <para>
@@ -354,11 +355,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <c>resourceRequirements</c> to specify the memory
         /// requirements for the job definition. It's not supported for jobs running on Fargate
-        /// resources. For jobs that run on EC2 resources, it specifies the memory hard limit
-        /// (in MiB) for a container. If your container attempts to exceed the specified number,
-        /// it's terminated. You must specify at least 4 MiB of memory for a job using this parameter.
-        /// The memory hard limit can be specified in several places. It must be specified for
-        /// each node at least once.
+        /// resources. For jobs that run on Amazon EC2 resources, it specifies the memory hard
+        /// limit (in MiB) for a container. If your container attempts to exceed the specified
+        /// number, it's terminated. You must specify at least 4 MiB of memory for a job using
+        /// this parameter. The memory hard limit can be specified in several places. It must
+        /// be specified for each node at least once.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use resourceRequirements instead.")]
@@ -400,7 +401,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -594,8 +595,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <c>resourceRequirements</c> to specify the vCPU
         /// requirements for the job definition. It's not supported for jobs running on Fargate
-        /// resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved
-        /// for the job.
+        /// resources. For jobs running on Amazon EC2 resources, it specifies the number of vCPUs
+        /// reserved for the job.
         /// </para>
         ///  
         /// <para>

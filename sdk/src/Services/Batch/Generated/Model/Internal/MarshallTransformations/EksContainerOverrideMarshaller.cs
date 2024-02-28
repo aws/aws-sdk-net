@@ -89,6 +89,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Image);
             }
 
+            if(requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
+            }
+
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("resources");

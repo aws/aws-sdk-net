@@ -110,8 +110,8 @@ namespace Amazon.Batch.Model
         /// the same compute environment. Priority is determined in descending order. For example,
         /// a job queue with a priority value of <c>10</c> is given scheduling preference over
         /// a job queue with a priority value of <c>1</c>. All of the compute environments must
-        /// be either EC2 (<c>EC2</c> or <c>SPOT</c>) or Fargate (<c>FARGATE</c> or <c>FARGATE_SPOT</c>).
-        /// EC2 and Fargate compute environments can't be mixed.
+        /// be either Amazon EC2 (<c>EC2</c> or <c>SPOT</c>) or Fargate (<c>FARGATE</c> or <c>FARGATE_SPOT</c>).
+        /// Amazon EC2 and Fargate compute environments can't be mixed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -167,7 +167,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The exit code to return upon completion.
+        /// The exit code returned upon completion.
         /// </para>
         /// </summary>
         public int ExitCode
@@ -186,7 +186,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property FargatePlatformConfiguration. 
         /// <para>
         /// The platform configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public FargatePlatformConfiguration FargatePlatformConfiguration
@@ -301,8 +301,9 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// Batch currently supports a subset of the logging drivers available to the Docker daemon
-        /// (shown in the <a>LogConfiguration</a> data type). Additional log drivers might be
-        /// available in future releases of the Amazon ECS container agent.
+        /// (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+        /// data type). Additional log drivers might be available in future releases of the Amazon
+        /// ECS container agent.
         /// </para>
         ///  </note> 
         /// <para>
@@ -357,9 +358,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// For jobs running on EC2 resources that didn't specify memory requirements using <c>resourceRequirements</c>,
-        /// the number of MiB of memory reserved for the job. For other jobs, including all run
-        /// on Fargate resources, see <c>resourceRequirements</c>.
+        /// For jobs running on Amazon EC2 resources that didn't specify memory requirements using
+        /// <c>resourceRequirements</c>, the number of MiB of memory reserved for the job. For
+        /// other jobs, including all run on Fargate resources, see <c>resourceRequirements</c>.
         /// </para>
         /// </summary>
         public int Memory
@@ -396,7 +397,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources must not specify this parameter.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -641,7 +642,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of vCPUs reserved for the container. For jobs that run on EC2 resources,
+        /// The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources,
         /// you can specify the vCPU requirement for the job using <c>resourceRequirements</c>,
         /// but you can't specify the vCPU requirements in both the <c>vcpus</c> and <c>resourceRequirements</c>
         /// object. This parameter maps to <c>CpuShares</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create

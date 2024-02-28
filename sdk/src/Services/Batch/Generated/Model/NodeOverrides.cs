@@ -30,7 +30,8 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// An object that represents any node overrides to a job definition that's used in a
-    /// <a>SubmitJob</a> API operation.
+    /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+    /// API operation.
     /// 
     ///  <note> 
     /// <para>

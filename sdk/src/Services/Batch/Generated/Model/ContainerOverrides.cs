@@ -125,13 +125,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <c>resourceRequirements</c> to override the memory
         /// requirements specified in the job definition. It's not supported for jobs running
-        /// on Fargate resources. For jobs that run on EC2 resources, it overrides the <c>memory</c>
-        /// parameter set in the job definition, but doesn't override any memory requirement that's
-        /// specified in the <c>resourceRequirements</c> structure in the job definition. To override
-        /// memory requirements that are specified in the <c>resourceRequirements</c> structure
-        /// in the job definition, <c>resourceRequirements</c> must be specified in the <c>SubmitJob</c>
-        /// request, with <c>type</c> set to <c>MEMORY</c> and <c>value</c> set to the new value.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
+        /// on Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the
+        /// <c>memory</c> parameter set in the job definition, but doesn't override any memory
+        /// requirement that's specified in the <c>resourceRequirements</c> structure in the job
+        /// definition. To override memory requirements that are specified in the <c>resourceRequirements</c>
+        /// structure in the job definition, <c>resourceRequirements</c> must be specified in
+        /// the <c>SubmitJob</c> request, with <c>type</c> set to <c>MEMORY</c> and <c>value</c>
+        /// set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
         /// override job definition resource requirements</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <c>resourceRequirements</c> to override the <c>vcpus</c>
         /// parameter that's set in the job definition. It's not supported for jobs running on
-        /// Fargate resources. For jobs that run on EC2 resources, it overrides the <c>vcpus</c>
+        /// Fargate resources. For jobs that run on Amazon EC2 resources, it overrides the <c>vcpus</c>
         /// parameter set in the job definition, but doesn't override any vCPU requirement specified
         /// in the <c>resourceRequirements</c> structure in the job definition. To override vCPU
         /// requirements that are specified in the <c>resourceRequirements</c> structure in the

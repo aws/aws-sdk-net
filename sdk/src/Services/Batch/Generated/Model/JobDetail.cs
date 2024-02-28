@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private ContainerDetail _container;
         private long? _createdAt;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private EcsPropertiesDetail _ecsProperties;
         private List<EksAttemptDetail> _eksAttempts = new List<EksAttemptDetail>();
         private EksPropertiesDetail _eksProperties;
         private bool? _isCancelled;
@@ -102,7 +103,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Container. 
         /// <para>
         /// An object that represents the details for the container that's associated with the
-        /// job.
+        /// job. If the details are for a multiple-container job, this object will be empty. 
         /// </para>
         /// </summary>
         public ContainerDetail Container
@@ -122,8 +123,9 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
         /// and parent array jobs, this is when the job entered the <c>SUBMITTED</c> state. This
-        /// is specifically at the time <a>SubmitJob</a> was called. For array child jobs, this
-        /// is when the child job was spawned by its parent and entered the <c>PENDING</c> state.
+        /// is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+        /// was called. For array child jobs, this is when the child job was spawned by its parent
+        /// and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -157,6 +159,24 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EcsProperties. 
+        /// <para>
+        /// An object with properties that are specific to Amazon ECS-based jobs. 
+        /// </para>
+        /// </summary>
+        public EcsPropertiesDetail EcsProperties
+        {
+            get { return this._ecsProperties; }
+            set { this._ecsProperties = value; }
+        }
+
+        // Check to see if EcsProperties property is set
+        internal bool IsSetEcsProperties()
+        {
+            return this._ecsProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EksAttempts. 
         /// <para>
         /// A list of job attempts that are associated with this job.
@@ -177,8 +197,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property EksProperties. 
         /// <para>
-        /// An object with various properties that are specific to Amazon EKS based jobs. Only
-        /// one of <c>container</c>, <c>eksProperties</c>, or <c>nodeDetails</c> is specified.
+        /// An object with various properties that are specific to Amazon EKS based jobs. 
         /// </para>
         /// </summary>
         public EksPropertiesDetail EksProperties

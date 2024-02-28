@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     public partial class EksAttemptDetail
     {
         private List<EksAttemptContainerDetail> _containers = new List<EksAttemptContainerDetail>();
+        private List<EksAttemptContainerDetail> _initContainers = new List<EksAttemptContainerDetail>();
         private string _nodeName;
         private string _podName;
         private long? _startedAt;
@@ -57,6 +58,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainers()
         {
             return this._containers != null && this._containers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitContainers. 
+        /// <para>
+        /// The details for the init containers.
+        /// </para>
+        /// </summary>
+        public List<EksAttemptContainerDetail> InitContainers
+        {
+            get { return this._initContainers; }
+            set { this._initContainers = value; }
+        }
+
+        // Check to see if InitContainers property is set
+        internal bool IsSetInitContainers()
+        {
+            return this._initContainers != null && this._initContainers.Count > 0; 
         }
 
         /// <summary>
