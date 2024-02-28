@@ -64,6 +64,19 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
+        /// <summary>
+        /// Pagination token corresponding to the item where the search operation stopped,
+        /// inclusive of the previous result set. Use this value to start a new
+        /// operation to resume search from the next item.
+        /// </summary>
+        public virtual string PaginationToken
+        {
+            get
+            {
+                return DocumentSearch.PaginationToken;
+            }
+        }
+
         #endregion
     }
 }
