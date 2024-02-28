@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Content.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RetrievalResultContent Content
         {
             get { return this._content; }
@@ -56,6 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Location.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RetrievalResultLocation Location
         {
             get { return this._location; }

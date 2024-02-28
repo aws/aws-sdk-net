@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ModelArn);
             }
 
+            if(requestObject.IsSetRetrievalConfiguration())
+            {
+                context.Writer.WritePropertyName("retrievalConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KnowledgeBaseRetrievalConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetrievalConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

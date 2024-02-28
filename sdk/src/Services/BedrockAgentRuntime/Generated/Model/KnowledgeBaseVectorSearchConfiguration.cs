@@ -34,6 +34,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
         private int? _numberOfResults;
+        private SearchType _overrideSearchType;
 
         /// <summary>
         /// Gets and sets the property NumberOfResults. 
@@ -41,7 +42,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Top-K results to retrieve from knowledge base.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=25)]
         public int NumberOfResults
         {
             get { return this._numberOfResults.GetValueOrDefault(); }
@@ -52,6 +53,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetNumberOfResults()
         {
             return this._numberOfResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideSearchType. 
+        /// <para>
+        /// Override the type of query to be performed on data store
+        /// </para>
+        /// </summary>
+        public SearchType OverrideSearchType
+        {
+            get { return this._overrideSearchType; }
+            set { this._overrideSearchType = value; }
+        }
+
+        // Check to see if OverrideSearchType property is set
+        internal bool IsSetOverrideSearchType()
+        {
+            return this._overrideSearchType != null;
         }
 
     }

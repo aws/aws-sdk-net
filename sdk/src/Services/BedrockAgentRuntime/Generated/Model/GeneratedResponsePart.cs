@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property TextResponsePart.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public TextResponsePart TextResponsePart
         {
             get { return this._textResponsePart; }

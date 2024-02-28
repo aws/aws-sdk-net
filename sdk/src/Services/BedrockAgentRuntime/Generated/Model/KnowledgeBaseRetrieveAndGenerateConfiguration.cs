@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _knowledgeBaseId;
         private string _modelArn;
+        private KnowledgeBaseRetrievalConfiguration _retrievalConfiguration;
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId.
@@ -66,6 +67,21 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetModelArn()
         {
             return this._modelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrievalConfiguration.
+        /// </summary>
+        public KnowledgeBaseRetrievalConfiguration RetrievalConfiguration
+        {
+            get { return this._retrievalConfiguration; }
+            set { this._retrievalConfiguration = value; }
+        }
+
+        // Check to see if RetrievalConfiguration property is set
+        internal bool IsSetRetrievalConfiguration()
+        {
+            return this._retrievalConfiguration != null;
         }
 
     }
