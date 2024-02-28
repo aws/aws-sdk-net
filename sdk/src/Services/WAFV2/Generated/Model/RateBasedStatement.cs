@@ -168,6 +168,7 @@ namespace Amazon.WAFV2.Model
     {
         private RateBasedStatementAggregateKeyType _aggregateKeyType;
         private List<RateBasedStatementCustomKey> _customKeys = new List<RateBasedStatementCustomKey>();
+        private long? _evaluationWindowSec;
         private ForwardedIPConfig _forwardedIPConfig;
         private long? _limit;
         private Statement _scopeDownStatement;
@@ -265,6 +266,36 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCustomKeys()
         {
             return this._customKeys != null && this._customKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationWindowSec. 
+        /// <para>
+        /// The amount of time, in seconds, that WAF should include in its request counts, looking
+        /// back from the current time. For example, for a setting of 120, when WAF checks the
+        /// rate, it counts the requests for the 2 minutes immediately preceding the current time.
+        /// Valid settings are 60, 120, 300, and 600. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't determine how often WAF checks the rate, but how far back it
+        /// looks each time it checks. WAF checks the rate about every 10 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>300</c> (5 minutes)
+        /// </para>
+        /// </summary>
+        public long EvaluationWindowSec
+        {
+            get { return this._evaluationWindowSec.GetValueOrDefault(); }
+            set { this._evaluationWindowSec = value; }
+        }
+
+        // Check to see if EvaluationWindowSec property is set
+        internal bool IsSetEvaluationWindowSec()
+        {
+            return this._evaluationWindowSec.HasValue; 
         }
 
         /// <summary>
