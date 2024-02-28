@@ -2583,7 +2583,6 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.SearchIndexRequest.MaxResults</property>
     <min>1</min>
-    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.SearchIndexRequest.QueryString</property>
