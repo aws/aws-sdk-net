@@ -1,3 +1,19 @@
+### 3.7.758.0 (2024-02-28 19:18 UTC)
+* Batch (3.7.302.0)
+	* This release adds Batch support for configuration of multicontainer jobs in ECS, Fargate, and EKS. This support is available for all types of jobs, including both array jobs and multi-node parallel jobs.
+* BedrockAgentRuntime (3.7.301.0)
+	* This release adds support to override search strategy performed by the Retrieve and RetrieveAndGenerate APIs for Amazon Bedrock Agents
+* CostExplorer (3.7.301.0)
+	* This release introduces the new API 'GetApproximateUsageRecords', which retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+* DynamoDBv2 (3.7.301.16)
+	* Expose PaginationToken property in AsyncSearch.
+* EC2 (3.7.315.0)
+	* This release increases the range of MaxResults for GetNetworkInsightsAccessScopeAnalysisFindings to 1,000.
+* IoT (3.7.307.0)
+	* This release reduces the maximum results returned per query invocation from 500 to 100 for the SearchIndex API. This change has no implications as long as the API is invoked until the nextToken is NULL.
+* WAFV2 (3.7.302.0)
+	* AWS WAF now supports configurable time windows for request aggregation with rate-based rules. Customers can now select time windows of 1 minute, 2 minutes or 10 minutes, in addition to the previously supported 5 minutes.
+
 ### 3.7.757.0 (2024-02-27 19:13 UTC)
 * AmplifyUIBuilder (3.7.301.0)
 	* We have added the ability to tag resources after they are created
