@@ -49,6 +49,7 @@ namespace Amazon.LexModelsV2.Model
         private string _localeId;
         private List<OutputContext> _outputContexts = new List<OutputContext>();
         private string _parentIntentSignature;
+        private QnAIntentConfiguration _qnaIntentConfiguration;
         private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
 
         /// <summary>
@@ -345,6 +346,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetParentIntentSignature()
         {
             return this._parentIntentSignature != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QnAIntentConfiguration. 
+        /// <para>
+        /// Details about the the configuration of the built-in <c>Amazon.QnAIntent</c>.
+        /// </para>
+        /// </summary>
+        public QnAIntentConfiguration QnAIntentConfiguration
+        {
+            get { return this._qnaIntentConfiguration; }
+            set { this._qnaIntentConfiguration = value; }
+        }
+
+        // Check to see if QnAIntentConfiguration property is set
+        internal bool IsSetQnAIntentConfiguration()
+        {
+            return this._qnaIntentConfiguration != null;
         }
 
         /// <summary>

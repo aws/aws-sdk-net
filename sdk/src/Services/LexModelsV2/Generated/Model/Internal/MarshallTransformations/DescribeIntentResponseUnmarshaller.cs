@@ -153,6 +153,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.ParentIntentSignature = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("qnAIntentConfiguration", targetDepth))
+                {
+                    var unmarshaller = QnAIntentConfigurationUnmarshaller.Instance;
+                    response.QnAIntentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sampleUtterances", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SampleUtterance, SampleUtteranceUnmarshaller>(SampleUtteranceUnmarshaller.Instance);
