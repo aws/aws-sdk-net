@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Bias. 
         /// <para>
-        /// Metrics that measure bais in a model.
+        /// Metrics that measure bias in a model.
         /// </para>
         /// </summary>
         public Bias Bias

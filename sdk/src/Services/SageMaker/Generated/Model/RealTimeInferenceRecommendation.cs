@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// Inference.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }

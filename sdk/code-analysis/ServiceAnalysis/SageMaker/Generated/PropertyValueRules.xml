@@ -795,6 +795,12 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateModelPackageRequest.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -2934,6 +2940,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.ModelPackageVersion</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageGroupRequest.ModelPackageGroupName</property>
@@ -6035,6 +6047,12 @@
     <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateModelPackageRequest.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -9077,6 +9095,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackage.ModelPackageVersion</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelPackage.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageContainerDefinition.ContainerHostname</property>

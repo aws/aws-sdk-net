@@ -211,6 +211,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSourceUri())
+                {
+                    context.Writer.WritePropertyName("SourceUri");
+                    context.Writer.Write(publicRequest.SourceUri);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

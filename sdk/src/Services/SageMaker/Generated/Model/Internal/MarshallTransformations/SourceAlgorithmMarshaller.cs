@@ -51,6 +51,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AlgorithmName);
             }
 
+            if(requestObject.IsSetModelDataSource())
+            {
+                context.Writer.WritePropertyName("ModelDataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelDataSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetModelDataUrl())
             {
                 context.Writer.WritePropertyName("ModelDataUrl");

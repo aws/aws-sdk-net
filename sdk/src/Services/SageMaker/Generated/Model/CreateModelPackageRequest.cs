@@ -74,6 +74,7 @@ namespace Amazon.SageMaker.Model
         private string _samplePayloadUrl;
         private SkipModelValidation _skipModelValidation;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
+        private string _sourceUri;
         private List<Tag> _tags = new List<Tag>();
         private string _task;
         private ModelPackageValidationSpecification _validationSpecification;
@@ -204,8 +205,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InferenceSpecification. 
         /// <para>
-        /// Specifies details about inference jobs that can be run with models based on this model
-        /// package, including the following:
+        /// Specifies details about inference jobs that you can run with models based on this
+        /// model package, including the following information:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -421,6 +422,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSourceAlgorithmSpecification()
         {
             return this._sourceAlgorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceUri. 
+        /// <para>
+        /// The URI of the source for the model package. If you want to clone a model package,
+        /// set it to the model package Amazon Resource Name (ARN). If you want to register a
+        /// model, set it to the model ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string SourceUri
+        {
+            get { return this._sourceUri; }
+            set { this._sourceUri = value; }
+        }
+
+        // Check to see if SourceUri property is set
+        internal bool IsSetSourceUri()
+        {
+            return this._sourceUri != null;
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The configuration for the file system and kernels in a SageMaker image running as
-    /// a JupyterLab app.
+    /// a JupyterLab app. The <c>FileSystemConfig</c> object is not supported.
     /// </summary>
     public partial class JupyterLabAppImageConfig
     {

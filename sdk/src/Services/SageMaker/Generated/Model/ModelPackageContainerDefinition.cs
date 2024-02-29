@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _frameworkVersion;
         private string _image;
         private string _imageDigest;
+        private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
         private ModelInput _modelInput;
         private string _nearestModelName;
@@ -91,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// up to 16 entries in the map.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -185,6 +186,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImageDigest()
         {
             return this._imageDigest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDataSource. 
+        /// <para>
+        /// Specifies the location of ML model data to deploy during endpoint creation.
+        /// </para>
+        /// </summary>
+        public ModelDataSource ModelDataSource
+        {
+            get { return this._modelDataSource; }
+            set { this._modelDataSource = value; }
+        }
+
+        // Check to see if ModelDataSource property is set
+        internal bool IsSetModelDataSource()
+        {
+            return this._modelDataSource != null;
         }
 
         /// <summary>

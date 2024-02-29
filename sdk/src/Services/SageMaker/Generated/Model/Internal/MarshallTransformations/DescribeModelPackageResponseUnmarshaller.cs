@@ -195,6 +195,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.SourceAlgorithmSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceUri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Task", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
