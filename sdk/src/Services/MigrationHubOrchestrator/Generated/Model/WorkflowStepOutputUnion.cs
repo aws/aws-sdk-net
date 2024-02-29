@@ -79,7 +79,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The string value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=2048)]
         public string StringValue
         {
             get { return this._stringValue; }

@@ -30,10 +30,10 @@ namespace Amazon.MigrationHubOrchestrator
     /// <para>Interface for accessing MigrationHubOrchestrator</para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
-    /// the actions and data types for AWS Migration Hub Orchestrator. he topic for each action
-    /// shows the API request parameters and the response. Alternatively, you can use one
-    /// of the AWS SDKs to access an API that is tailored to the programming language or platform
-    /// that you're using.
+    /// the actions and data types for AWS Migration Hub Orchestrator. The topic for each
+    /// action shows the API request parameters and responses. Alternatively, you can use
+    /// one of the AWS SDKs to access an API that is tailored to the programming language
+    /// or platform that you're using.
     /// </summary>
     public partial interface IAmazonMigrationHubOrchestrator : IAmazonService, IDisposable
     {
@@ -47,6 +47,62 @@ namespace Amazon.MigrationHubOrchestrator
 #endif
 
 
+        
+        #region  CreateTemplate
+
+
+        /// <summary>
+        /// Creates a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ConflictException">
+        /// This exception is thrown when an attempt to update or delete a resource would cause
+        /// an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        CreateTemplateResponse CreateTemplate(CreateTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate operation on AmazonMigrationHubOrchestratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        IAsyncResult BeginCreateTemplate(CreateTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateTemplateResult from MigrationHubOrchestrator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        CreateTemplateResponse EndCreateTemplate(IAsyncResult asyncResult);
+
+        #endregion
         
         #region  CreateWorkflow
 
@@ -201,6 +257,61 @@ namespace Amazon.MigrationHubOrchestrator
         /// <returns>Returns a  CreateWorkflowStepGroupResult from MigrationHubOrchestrator.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflowStepGroup">REST API Reference for CreateWorkflowStepGroup Operation</seealso>
         CreateWorkflowStepGroupResponse EndCreateWorkflowStepGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTemplate
+
+
+        /// <summary>
+        /// Deletes a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate operation on AmazonMigrationHubOrchestratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        IAsyncResult BeginDeleteTemplate(DeleteTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteTemplateResult from MigrationHubOrchestrator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        DeleteTemplateResponse EndDeleteTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1358,6 +1469,61 @@ namespace Amazon.MigrationHubOrchestrator
         /// <returns>Returns a  UntagResourceResult from MigrationHubOrchestrator.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTemplate
+
+
+        /// <summary>
+        /// Updates a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate operation on AmazonMigrationHubOrchestratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        IAsyncResult BeginUpdateTemplate(UpdateTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateTemplateResult from MigrationHubOrchestrator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        UpdateTemplateResponse EndUpdateTemplate(IAsyncResult asyncResult);
 
         #endregion
         

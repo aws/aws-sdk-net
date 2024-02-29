@@ -39,10 +39,10 @@ namespace Amazon.MigrationHubOrchestrator
     /// <para>Implementation for accessing MigrationHubOrchestrator</para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
-    /// the actions and data types for AWS Migration Hub Orchestrator. he topic for each action
-    /// shows the API request parameters and the response. Alternatively, you can use one
-    /// of the AWS SDKs to access an API that is tailored to the programming language or platform
-    /// that you're using.
+    /// the actions and data types for AWS Migration Hub Orchestrator. The topic for each
+    /// action shows the API request parameters and responses. Alternatively, you can use
+    /// one of the AWS SDKs to access an API that is tailored to the programming language
+    /// or platform that you're using.
     /// </summary>
     public partial class AmazonMigrationHubOrchestratorClient : AmazonServiceClient, IAmazonMigrationHubOrchestrator
     {
@@ -267,6 +267,79 @@ namespace Amazon.MigrationHubOrchestrator
         #endregion
 
 
+        #region  CreateTemplate
+
+
+        /// <summary>
+        /// Creates a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ConflictException">
+        /// This exception is thrown when an attempt to update or delete a resource would cause
+        /// an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        public virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ConflictException">
+        /// This exception is thrown when an attempt to update or delete a resource would cause
+        /// an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
+        public virtual Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkflow
 
 
@@ -458,6 +531,77 @@ namespace Amazon.MigrationHubOrchestrator
             options.ResponseUnmarshaller = CreateWorkflowStepGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateWorkflowStepGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTemplate
+
+
+        /// <summary>
+        /// Deletes a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        public virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
+        public virtual Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1914,6 +2058,77 @@ namespace Amazon.MigrationHubOrchestrator
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTemplate
+
+
+        /// <summary>
+        /// Updates a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        public virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a migration workflow template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTemplate service method, as returned by MigrationHubOrchestrator.</returns>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubOrchestrator.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
+        public virtual Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -29,60 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetWorkflowStep operation.
-    /// Get a step in the migration workflow.
+    /// The migration workflow template used as the source for the new template.
     /// </summary>
-    public partial class GetWorkflowStepRequest : AmazonMigrationHubOrchestratorRequest
+    public partial class TemplateSource
     {
-        private string _id;
-        private string _stepGroupId;
         private string _workflowId;
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The ID of the step.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StepGroupId. 
-        /// <para>
-        /// The ID of the step group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string StepGroupId
-        {
-            get { return this._stepGroupId; }
-            set { this._stepGroupId = value; }
-        }
-
-        // Check to see if StepGroupId property is set
-        internal bool IsSetStepGroupId()
-        {
-            return this._stepGroupId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The ID of the migration workflow.
+        /// The ID of the workflow from the source migration workflow template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public string WorkflowId
         {
             get { return this._workflowId; }

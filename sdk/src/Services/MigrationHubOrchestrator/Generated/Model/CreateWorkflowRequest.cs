@@ -48,7 +48,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The configuration ID of the application configured in Application Discovery Service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string ApplicationConfigurationId
         {
             get { return this._applicationConfigurationId; }

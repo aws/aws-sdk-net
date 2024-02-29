@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTemplate operation
+    /// Response Unmarshaller for CreateTemplate operation
     /// </summary>  
-    public class GetTemplateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateTemplateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,60 +45,12 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetTemplateResponse response = new GetTemplateResponse();
+            CreateTemplateResponse response = new CreateTemplateResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TemplateInput, TemplateInputUnmarshaller>(TemplateInputUnmarshaller.Instance);
-                    response.Inputs = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("owner", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Owner = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
@@ -111,16 +63,10 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                     response.TemplateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("templateClass", targetDepth))
+                if (context.TestExpression("templateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TemplateClass = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tools", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tool, ToolUnmarshaller>(ToolUnmarshaller.Instance);
-                    response.Tools = unmarshaller.Unmarshall(context);
+                    response.TemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -150,25 +96,29 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonMigrationHubOrchestratorException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetTemplateResponseUnmarshaller _instance = new GetTemplateResponseUnmarshaller();        
+        private static CreateTemplateResponseUnmarshaller _instance = new CreateTemplateResponseUnmarshaller();        
 
-        internal static GetTemplateResponseUnmarshaller GetInstance()
+        internal static CreateTemplateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -176,7 +126,7 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTemplateResponseUnmarshaller Instance
+        public static CreateTemplateResponseUnmarshaller Instance
         {
             get
             {

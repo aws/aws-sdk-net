@@ -29,19 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetWorkflowStep operation.
-    /// Get a step in the migration workflow.
+    /// Container for the parameters to the DeleteTemplate operation.
+    /// Deletes a migration workflow template.
     /// </summary>
-    public partial class GetWorkflowStepRequest : AmazonMigrationHubOrchestratorRequest
+    public partial class DeleteTemplateRequest : AmazonMigrationHubOrchestratorRequest
     {
         private string _id;
-        private string _stepGroupId;
-        private string _workflowId;
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the step.
+        /// The ID of the request to delete a migration workflow template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -55,44 +53,6 @@ namespace Amazon.MigrationHubOrchestrator.Model
         internal bool IsSetId()
         {
             return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StepGroupId. 
-        /// <para>
-        /// The ID of the step group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string StepGroupId
-        {
-            get { return this._stepGroupId; }
-            set { this._stepGroupId = value; }
-        }
-
-        // Check to see if StepGroupId property is set
-        internal bool IsSetStepGroupId()
-        {
-            return this._stepGroupId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkflowId. 
-        /// <para>
-        /// The ID of the migration workflow.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string WorkflowId
-        {
-            get { return this._workflowId; }
-            set { this._workflowId = value; }
-        }
-
-        // Check to see if WorkflowId property is set
-        internal bool IsSetWorkflowId()
-        {
-            return this._workflowId != null;
         }
 
     }

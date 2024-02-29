@@ -485,6 +485,10 @@ namespace Amazon.MigrationHubOrchestrator
         /// </summary>
         public static readonly StepStatus READY = new StepStatus("READY");
         /// <summary>
+        /// Constant SKIPPED for StepStatus
+        /// </summary>
+        public static readonly StepStatus SKIPPED = new StepStatus("SKIPPED");
+        /// <summary>
         /// Constant USER_ATTENTION_REQUIRED for StepStatus
         /// </summary>
         public static readonly StepStatus USER_ATTENTION_REQUIRED = new StepStatus("USER_ATTENTION_REQUIRED");
@@ -588,6 +592,22 @@ namespace Amazon.MigrationHubOrchestrator
         /// Constant CREATED for TemplateStatus
         /// </summary>
         public static readonly TemplateStatus CREATED = new TemplateStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for TemplateStatus
+        /// </summary>
+        public static readonly TemplateStatus CREATING = new TemplateStatus("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for TemplateStatus
+        /// </summary>
+        public static readonly TemplateStatus CREATION_FAILED = new TemplateStatus("CREATION_FAILED");
+        /// <summary>
+        /// Constant PENDING_CREATION for TemplateStatus
+        /// </summary>
+        public static readonly TemplateStatus PENDING_CREATION = new TemplateStatus("PENDING_CREATION");
+        /// <summary>
+        /// Constant READY for TemplateStatus
+        /// </summary>
+        public static readonly TemplateStatus READY = new TemplateStatus("READY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
