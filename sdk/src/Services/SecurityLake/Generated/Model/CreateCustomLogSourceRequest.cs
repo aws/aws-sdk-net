@@ -51,6 +51,7 @@ namespace Amazon.SecurityLake.Model
         /// The configuration for the third-party custom source.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CustomLogSourceConfiguration Configuration
         {
             get { return this._configuration; }

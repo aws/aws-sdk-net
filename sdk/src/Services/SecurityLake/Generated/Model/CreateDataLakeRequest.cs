@@ -62,7 +62,7 @@ namespace Amazon.SecurityLake.Model
         /// Specify the Region or Regions that will contribute data to the rollup region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public List<DataLakeConfiguration> Configurations
         {
             get { return this._configurations; }

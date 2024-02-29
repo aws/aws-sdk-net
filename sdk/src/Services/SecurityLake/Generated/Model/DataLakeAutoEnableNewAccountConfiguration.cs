@@ -62,7 +62,7 @@ namespace Amazon.SecurityLake.Model
         /// The Amazon Web Services sources that are automatically enabled in Security Lake.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public List<AwsLogSourceResource> Sources
         {
             get { return this._sources; }

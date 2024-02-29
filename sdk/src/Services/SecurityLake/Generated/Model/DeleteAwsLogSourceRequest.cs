@@ -53,7 +53,7 @@ namespace Amazon.SecurityLake.Model
         /// Security Lake.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<AwsLogSourceConfiguration> Sources
         {
             get { return this._sources; }

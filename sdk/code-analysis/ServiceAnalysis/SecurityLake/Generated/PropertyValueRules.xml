@@ -13,7 +13,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateDataLakeRequest.MetaStoreManagerRoleArn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateDataLakeExceptionSubscriptionRequest.ExceptionTimeToLive</property>
@@ -164,6 +164,10 @@
     <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityLake.Model.UpdateDataLakeRequest.MetaStoreManagerRoleArn</property>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateDataLakeExceptionSubscriptionRequest.ExceptionTimeToLive</property>
     <min>1</min>
   </property-value-rule>
@@ -235,7 +239,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CustomLogSourceCrawlerConfiguration.RoleArn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CustomLogSourceProvider.Location</property>
@@ -245,7 +249,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CustomLogSourceProvider.RoleArn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CustomLogSourceResource.SourceName</property>
@@ -288,7 +292,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.DataLakeReplicationConfiguration.RoleArn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.DataLakeResource.DataLakeArn</property>
@@ -306,7 +310,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.HttpsNotificationConfiguration.TargetRoleArn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.LogSource.Account</property>
@@ -324,7 +328,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.RoleArn</property>
-    <pattern>^arn:.*$</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberArn</property>

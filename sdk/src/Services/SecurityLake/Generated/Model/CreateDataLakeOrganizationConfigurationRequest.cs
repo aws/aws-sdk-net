@@ -45,7 +45,7 @@ namespace Amazon.SecurityLake.Model
         /// security data for new accounts in your organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Min=1)]
         public List<DataLakeAutoEnableNewAccountConfiguration> AutoEnableNewAccount
         {
             get { return this._autoEnableNewAccount; }
