@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// to set default formatting for a column to be used throughout an analysis. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Max=2000)]
         public List<ColumnConfiguration> ColumnConfigurations
         {
             get { return this._columnConfigurations; }

@@ -73,6 +73,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Label);
             }
 
+            if(requestObject.IsSetTooltipTarget())
+            {
+                context.Writer.WritePropertyName("TooltipTarget");
+                context.Writer.Write(requestObject.TooltipTarget);
+            }
+
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
