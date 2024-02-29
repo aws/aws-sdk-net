@@ -30,7 +30,7 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds metadata tags to a Elastic DocumentDB resource
+    /// Adds metadata tags to an elastic cluster resource
     /// </summary>
     public partial class TagResourceRequest : AmazonDocDBElasticRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB resource.
+        /// The ARN identifier of the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -59,7 +59,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the Elastic DocumentDB resource.
+        /// The tags that are assigned to the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

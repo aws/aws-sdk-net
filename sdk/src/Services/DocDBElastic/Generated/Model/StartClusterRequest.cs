@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// Container for the parameters to the StartCluster operation.
+    /// Restarts the stopped elastic cluster that is specified by <c>clusterARN</c>.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class StartClusterRequest : AmazonDocDBElasticRequest
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private string _clusterArn;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The list of tags for the specified elastic cluster resource.
+        /// The ARN identifier of the elastic cluster.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> Tags
+        [AWSProperty(Required=true)]
+        public string ClusterArn
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._clusterArn != null;
         }
 
     }

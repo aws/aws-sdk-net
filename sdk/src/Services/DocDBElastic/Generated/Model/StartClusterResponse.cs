@@ -29,28 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// This is the response object from the StartCluster operation.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class StartClusterResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Cluster _cluster;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The list of tags for the specified elastic cluster resource.
-        /// </para>
+        /// Gets and sets the property Cluster.
         /// </summary>
-        public Dictionary<string, string> Tags
+        [AWSProperty(Required=true)]
+        public Cluster Cluster
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._cluster; }
+            set { this._cluster = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._cluster != null;
         }
 
     }

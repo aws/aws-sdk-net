@@ -38,7 +38,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Snapshot. 
         /// <para>
-        /// Returns information about a specific Elastic DocumentDB snapshot.
+        /// Returns information about a specific elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

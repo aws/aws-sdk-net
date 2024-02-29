@@ -29,56 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// A list of Amazon DocumentDB elastic clusters.
+    /// The name of the shard.
     /// </summary>
-    public partial class ClusterInList
+    public partial class Shard
     {
-        private string _clusterArn;
-        private string _clusterName;
+        private string _createTime;
+        private string _shardId;
         private Status _status;
 
         /// <summary>
-        /// Gets and sets the property ClusterArn. 
+        /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The ARN identifier of the elastic cluster.
+        /// The time when the shard was created in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ClusterArn
+        public string CreateTime
         {
-            get { return this._clusterArn; }
-            set { this._clusterArn = value; }
+            get { return this._createTime; }
+            set { this._createTime = value; }
         }
 
-        // Check to see if ClusterArn property is set
-        internal bool IsSetClusterArn()
+        // Check to see if CreateTime property is set
+        internal bool IsSetCreateTime()
         {
-            return this._clusterArn != null;
+            return this._createTime != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ClusterName. 
+        /// Gets and sets the property ShardId. 
         /// <para>
-        /// The name of the elastic cluster.
+        /// The ID of the shard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ClusterName
+        public string ShardId
         {
-            get { return this._clusterName; }
-            set { this._clusterName = value; }
+            get { return this._shardId; }
+            set { this._shardId = value; }
         }
 
-        // Check to see if ClusterName property is set
-        internal bool IsSetClusterName()
+        // Check to see if ShardId property is set
+        internal bool IsSetShardId()
         {
-            return this._clusterName != null;
+            return this._shardId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the elastic cluster.
+        /// The current status of the shard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

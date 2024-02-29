@@ -29,28 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// This is the response object from the CopyClusterSnapshot operation.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class CopyClusterSnapshotResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private ClusterSnapshot _snapshot;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The list of tags for the specified elastic cluster resource.
-        /// </para>
+        /// Gets and sets the property Snapshot.
         /// </summary>
-        public Dictionary<string, string> Tags
+        [AWSProperty(Required=true)]
+        public ClusterSnapshot Snapshot
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._snapshot; }
+            set { this._snapshot = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if Snapshot property is set
+        internal bool IsSetSnapshot()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._snapshot != null;
         }
 
     }

@@ -38,7 +38,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// Returns information about a the restored Elastic DocumentDB cluster.
+        /// Returns information about a the restored elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

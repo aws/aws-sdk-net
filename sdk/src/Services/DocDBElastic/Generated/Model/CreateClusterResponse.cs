@@ -38,7 +38,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The new Elastic DocumentDB cluster that has been created.
+        /// The new elastic cluster that has been created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

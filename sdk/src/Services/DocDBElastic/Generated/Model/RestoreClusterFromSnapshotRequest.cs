@@ -30,12 +30,14 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreClusterFromSnapshot operation.
-    /// Restores a Elastic DocumentDB cluster from a snapshot.
+    /// Restores an elastic cluster from a snapshot.
     /// </summary>
     public partial class RestoreClusterFromSnapshotRequest : AmazonDocDBElasticRequest
     {
         private string _clusterName;
         private string _kmsKeyId;
+        private int? _shardCapacity;
+        private int? _shardInstanceCount;
         private string _snapshotArn;
         private List<string> _subnetIds = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -44,7 +46,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The name of the Elastic DocumentDB cluster.
+        /// The name of the elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +65,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.
+        /// The KMS key identifier to use to encrypt the new Amazon DocumentDB elastic clusters
+        /// cluster.
         /// </para>
         ///  
         /// <para>
@@ -73,7 +76,7 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key is not specified here, Elastic DocumentDB uses the default encryption
+        /// If an encryption key is not specified here, Amazon DocumentDB uses the default encryption
         /// key that KMS creates for your account. Your account has a different default encryption
         /// key for each Amazon Region.
         /// </para>
@@ -91,9 +94,47 @@ namespace Amazon.DocDBElastic.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShardCapacity. 
+        /// <para>
+        /// The capacity of each shard in the new restored elastic cluster.
+        /// </para>
+        /// </summary>
+        public int ShardCapacity
+        {
+            get { return this._shardCapacity.GetValueOrDefault(); }
+            set { this._shardCapacity = value; }
+        }
+
+        // Check to see if ShardCapacity property is set
+        internal bool IsSetShardCapacity()
+        {
+            return this._shardCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShardInstanceCount. 
+        /// <para>
+        /// The number of replica instances applying to all shards in the elastic cluster. A <c>shardInstanceCount</c>
+        /// value of 1 means there is one writer instance, and any additional instances are replicas
+        /// that can be used for reads and to improve availability.
+        /// </para>
+        /// </summary>
+        public int ShardInstanceCount
+        {
+            get { return this._shardInstanceCount.GetValueOrDefault(); }
+            set { this._shardInstanceCount = value; }
+        }
+
+        // Check to see if ShardInstanceCount property is set
+        internal bool IsSetShardInstanceCount()
+        {
+            return this._shardInstanceCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB snapshot.
+        /// The ARN identifier of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +153,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.
+        /// The Amazon EC2 subnet IDs for the elastic cluster.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -130,8 +171,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of the tag names to be assigned to the restored DB cluster, in the form of
-        /// an array of key-value pairs in which the key is the tag name and the value is the
+        /// A list of the tag names to be assigned to the restored elastic cluster, in the form
+        /// of an array of key-value pairs in which the key is the tag name and the value is the
         /// key value.
         /// </para>
         /// </summary>
@@ -150,7 +191,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.
+        /// A list of EC2 VPC security groups to associate with the elastic cluster.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

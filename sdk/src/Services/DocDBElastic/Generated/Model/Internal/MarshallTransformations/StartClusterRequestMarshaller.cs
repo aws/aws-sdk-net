@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListClusterSnapshots Request Marshaller
+    /// StartCluster Request Marshaller
     /// </summary>       
-    public class ListClusterSnapshotsRequestMarshaller : IMarshaller<IRequest, ListClusterSnapshotsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartClusterRequestMarshaller : IMarshaller<IRequest, StartClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListClusterSnapshotsRequest)input);
+            return this.Marshall((StartClusterRequest)input);
         }
 
         /// <summary>
@@ -52,32 +52,22 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListClusterSnapshotsRequest publicRequest)
+        public IRequest Marshall(StartClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DocDBElastic");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
-            
-            if (publicRequest.IsSetClusterArn())
-                request.Parameters.Add("clusterArn", StringUtils.FromString(publicRequest.ClusterArn));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetSnapshotType())
-                request.Parameters.Add("snapshotType", StringUtils.FromString(publicRequest.SnapshotType));
-            request.ResourcePath = "/cluster-snapshots";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetClusterArn())
+                throw new AmazonDocDBElasticException("Request object does not have required field ClusterArn set");
+            request.AddPathResource("{clusterArn}", StringUtils.FromString(publicRequest.ClusterArn));
+            request.ResourcePath = "/cluster/{clusterArn}/start";
 
             return request;
         }
-        private static ListClusterSnapshotsRequestMarshaller _instance = new ListClusterSnapshotsRequestMarshaller();        
+        private static StartClusterRequestMarshaller _instance = new StartClusterRequestMarshaller();        
 
-        internal static ListClusterSnapshotsRequestMarshaller GetInstance()
+        internal static StartClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -85,7 +75,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListClusterSnapshotsRequestMarshaller Instance
+        public static StartClusterRequestMarshaller Instance
         {
             get
             {

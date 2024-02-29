@@ -30,7 +30,7 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
-    /// Delete a Elastic DocumentDB cluster.
+    /// Delete an elastic cluster.
     /// </summary>
     public partial class DeleteClusterRequest : AmazonDocDBElasticRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB cluster that is to be deleted.
+        /// The ARN identifier of the elastic cluster that is to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes metadata tags to a Elastic DocumentDB resource
+    /// Removes metadata tags from an elastic cluster resource
     /// </summary>
     public partial class UntagResourceRequest : AmazonDocDBElasticRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB resource.
+        /// The ARN identifier of the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -59,7 +59,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys to be removed from the Elastic DocumentDB resource.
+        /// The tag keys to be removed from the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

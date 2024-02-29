@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RestoreClusterFromSnapshot Request Marshaller
+    /// CopyClusterSnapshot Request Marshaller
     /// </summary>       
-    public class RestoreClusterFromSnapshotRequestMarshaller : IMarshaller<IRequest, RestoreClusterFromSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CopyClusterSnapshotRequestMarshaller : IMarshaller<IRequest, CopyClusterSnapshotRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RestoreClusterFromSnapshotRequest)input);
+            return this.Marshall((CopyClusterSnapshotRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RestoreClusterFromSnapshotRequest publicRequest)
+        public IRequest Marshall(CopyClusterSnapshotRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DocDBElastic");
             request.Headers["Content-Type"] = "application/json";
@@ -62,45 +62,22 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSnapshotArn())
                 throw new AmazonDocDBElasticException("Request object does not have required field SnapshotArn set");
             request.AddPathResource("{snapshotArn}", StringUtils.FromString(publicRequest.SnapshotArn));
-            request.ResourcePath = "/cluster-snapshot/{snapshotArn}/restore";
+            request.ResourcePath = "/cluster-snapshot/{snapshotArn}/copy";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterName())
+                if(publicRequest.IsSetCopyTags())
                 {
-                    context.Writer.WritePropertyName("clusterName");
-                    context.Writer.Write(publicRequest.ClusterName);
+                    context.Writer.WritePropertyName("copyTags");
+                    context.Writer.Write(publicRequest.CopyTags);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("kmsKeyId");
                     context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetShardCapacity())
-                {
-                    context.Writer.WritePropertyName("shardCapacity");
-                    context.Writer.Write(publicRequest.ShardCapacity);
-                }
-
-                if(publicRequest.IsSetShardInstanceCount())
-                {
-                    context.Writer.WritePropertyName("shardInstanceCount");
-                    context.Writer.Write(publicRequest.ShardInstanceCount);
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("subnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                    {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTags())
@@ -117,15 +94,10 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVpcSecurityGroupIds())
+                if(publicRequest.IsSetTargetSnapshotName())
                 {
-                    context.Writer.WritePropertyName("vpcSecurityGroupIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestVpcSecurityGroupIdsListValue in publicRequest.VpcSecurityGroupIds)
-                    {
-                            context.Writer.Write(publicRequestVpcSecurityGroupIdsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("targetSnapshotName");
+                    context.Writer.Write(publicRequest.TargetSnapshotName);
                 }
 
                 writer.WriteObjectEnd();
@@ -136,9 +108,9 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RestoreClusterFromSnapshotRequestMarshaller _instance = new RestoreClusterFromSnapshotRequestMarshaller();        
+        private static CopyClusterSnapshotRequestMarshaller _instance = new CopyClusterSnapshotRequestMarshaller();        
 
-        internal static RestoreClusterFromSnapshotRequestMarshaller GetInstance()
+        internal static CopyClusterSnapshotRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +118,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RestoreClusterFromSnapshotRequestMarshaller Instance
+        public static CopyClusterSnapshotRequestMarshaller Instance
         {
             get
             {

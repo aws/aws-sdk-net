@@ -105,6 +105,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("snapshotType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

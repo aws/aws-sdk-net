@@ -75,6 +75,56 @@ namespace Amazon.DocDBElastic
 
 
     /// <summary>
+    /// Constants used for properties of type SnapshotType.
+    /// </summary>
+    public class SnapshotType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATED for SnapshotType
+        /// </summary>
+        public static readonly SnapshotType AUTOMATED = new SnapshotType("AUTOMATED");
+        /// <summary>
+        /// Constant MANUAL for SnapshotType
+        /// </summary>
+        public static readonly SnapshotType MANUAL = new SnapshotType("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotType FindValue(string value)
+        {
+            return FindValue<SnapshotType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -84,6 +134,10 @@ namespace Amazon.DocDBElastic
         /// Constant ACTIVE for Status
         /// </summary>
         public static readonly Status ACTIVE = new Status("ACTIVE");
+        /// <summary>
+        /// Constant COPYING for Status
+        /// </summary>
+        public static readonly Status COPYING = new Status("COPYING");
         /// <summary>
         /// Constant CREATING for Status
         /// </summary>
@@ -97,6 +151,18 @@ namespace Amazon.DocDBElastic
         /// </summary>
         public static readonly Status INACCESSIBLE_ENCRYPTION_CREDS = new Status("INACCESSIBLE_ENCRYPTION_CREDS");
         /// <summary>
+        /// Constant INACCESSIBLE_SECRET_ARN for Status
+        /// </summary>
+        public static readonly Status INACCESSIBLE_SECRET_ARN = new Status("INACCESSIBLE_SECRET_ARN");
+        /// <summary>
+        /// Constant INACCESSIBLE_VPC_ENDPOINT for Status
+        /// </summary>
+        public static readonly Status INACCESSIBLE_VPC_ENDPOINT = new Status("INACCESSIBLE_VPC_ENDPOINT");
+        /// <summary>
+        /// Constant INCOMPATIBLE_NETWORK for Status
+        /// </summary>
+        public static readonly Status INCOMPATIBLE_NETWORK = new Status("INCOMPATIBLE_NETWORK");
+        /// <summary>
         /// Constant INVALID_SECURITY_GROUP_ID for Status
         /// </summary>
         public static readonly Status INVALID_SECURITY_GROUP_ID = new Status("INVALID_SECURITY_GROUP_ID");
@@ -108,6 +174,30 @@ namespace Amazon.DocDBElastic
         /// Constant IP_ADDRESS_LIMIT_EXCEEDED for Status
         /// </summary>
         public static readonly Status IP_ADDRESS_LIMIT_EXCEEDED = new Status("IP_ADDRESS_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant MERGING for Status
+        /// </summary>
+        public static readonly Status MERGING = new Status("MERGING");
+        /// <summary>
+        /// Constant MODIFYING for Status
+        /// </summary>
+        public static readonly Status MODIFYING = new Status("MODIFYING");
+        /// <summary>
+        /// Constant SPLITTING for Status
+        /// </summary>
+        public static readonly Status SPLITTING = new Status("SPLITTING");
+        /// <summary>
+        /// Constant STARTING for Status
+        /// </summary>
+        public static readonly Status STARTING = new Status("STARTING");
+        /// <summary>
+        /// Constant STOPPED for Status
+        /// </summary>
+        public static readonly Status STOPPED = new Status("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for Status
+        /// </summary>
+        public static readonly Status STOPPING = new Status("STOPPING");
         /// <summary>
         /// Constant UPDATING for Status
         /// </summary>

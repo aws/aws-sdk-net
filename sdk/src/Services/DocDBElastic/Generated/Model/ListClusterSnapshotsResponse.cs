@@ -39,11 +39,13 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The response will provide a nextToken if there is more data beyond the maxResults.
+        /// A pagination token provided by a previous request. If this parameter is specified,
+        /// the response includes only records beyond this token, up to the value specified by
+        /// <c>max-results</c>.
         /// </para>
         ///  
         /// <para>
-        /// If there is no more data in the responce, the nextToken will not be returned.
+        /// If there is no more data in the responce, the <c>nextToken</c> will not be returned.
         /// </para>
         /// </summary>
         public string NextToken
@@ -61,7 +63,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Snapshots. 
         /// <para>
-        /// A list of Elastic DocumentDB snapshots for a specified cluster.
+        /// A list of snapshots for a specified elastic cluster.
         /// </para>
         /// </summary>
         public List<ClusterSnapshotInList> Snapshots
