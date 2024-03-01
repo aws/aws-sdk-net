@@ -38,7 +38,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A list of actions for the access permissions.
+        /// A list of actions for the access permissions. Any strings that can be used as an action
+        /// in an IAM policy can be used in the list of actions to check.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

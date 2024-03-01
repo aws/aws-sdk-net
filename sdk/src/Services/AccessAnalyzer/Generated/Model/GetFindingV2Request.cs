@@ -30,7 +30,10 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingV2 operation.
-    /// Retrieves information about the specified finding.
+    /// Retrieves information about the specified finding. GetFinding and GetFindingV2 both
+    /// use <c>access-analyzer:GetFinding</c> in the <c>Action</c> element of an IAM policy
+    /// statement. You must have permission to perform the <c>access-analyzer:GetFinding</c>
+    /// action.
     /// </summary>
     public partial class GetFindingV2Request : AmazonAccessAnalyzerRequest
     {
