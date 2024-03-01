@@ -13904,8 +13904,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
-        /// purchase a specific instance type for a period of time.
+        /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
+        /// Region that you're currently using. With Capacity Blocks, you purchase a specific
+        /// instance type for a period of time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
         /// 
@@ -13922,8 +13923,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
-        /// purchase a specific instance type for a period of time.
+        /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
+        /// Region that you're currently using. With Capacity Blocks, you purchase a specific
+        /// instance type for a period of time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -15027,9 +15029,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the running instances for the specified EC2 Fleet.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+        /// Currently, <c>DescribeFleetInstances</c> does not support fleets of type <c>instant</c>.
+        /// Instead, use <c>DescribeFleets</c>, specifying the <c>instant</c> fleet ID in the
+        /// request.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
         /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -15050,9 +15058,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the running instances for the specified EC2 Fleet.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+        /// Currently, <c>DescribeFleetInstances</c> does not support fleets of type <c>instant</c>.
+        /// Instead, use <c>DescribeFleets</c>, specifying the <c>instant</c> fleet ID in the
+        /// request.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
         /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -15078,11 +15092,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified EC2 Fleets or all of your EC2 Fleets.
+        /// Describes the specified EC2 Fleet or all of your EC2 Fleets.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+        /// If a fleet is of type <c>instant</c>, you must specify the fleet ID in the request,
+        /// otherwise the fleet does not appear in the response.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
         /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -15101,11 +15120,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the specified EC2 Fleets or all of your EC2 Fleets.
+        /// Describes the specified EC2 Fleet or all of your EC2 Fleets.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+        /// If a fleet is of type <c>instant</c>, you must specify the fleet ID in the request,
+        /// otherwise the fleet does not appear in the response.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
         /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -16243,6 +16267,12 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
@@ -16282,6 +16312,12 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// 
@@ -16326,6 +16362,12 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16367,6 +16409,12 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// <param name="cancellationToken">
@@ -16418,7 +16466,12 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
@@ -16458,7 +16511,12 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
         /// 
@@ -16503,7 +16561,12 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16545,7 +16608,12 @@ namespace Amazon.EC2
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
         /// <param name="cancellationToken">
@@ -18626,6 +18694,12 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
@@ -18644,6 +18718,12 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// 
@@ -18667,6 +18747,12 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -18687,6 +18773,12 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// <param name="cancellationToken">
@@ -18738,6 +18830,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
@@ -18777,6 +18875,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings service method.</param>
         /// 
@@ -18821,6 +18925,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -18862,6 +18972,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings service method.</param>
         /// <param name="cancellationToken">
@@ -18895,6 +19011,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
@@ -18916,6 +19038,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// 
@@ -18942,6 +19070,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -18965,6 +19099,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// <param name="cancellationToken">
@@ -19004,6 +19144,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
@@ -19031,6 +19177,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
         /// 
@@ -19063,6 +19215,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -19092,6 +19250,12 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -30205,7 +30369,7 @@ namespace Amazon.EC2
         /// <para>
         /// Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Host</a>. When affinity is set to <c>host</c> and the instance is not associated with
-        /// a specific Dedicated Host, the next time the instance is launched, it is automatically
+        /// a specific Dedicated Host, the next time the instance is started, it is automatically
         /// associated with the host on which it lands. If the instance is restarted or rebooted,
         /// this relationship persists.
         /// </para>
@@ -30254,7 +30418,7 @@ namespace Amazon.EC2
         /// <para>
         /// Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
         /// Host</a>. When affinity is set to <c>host</c> and the instance is not associated with
-        /// a specific Dedicated Host, the next time the instance is launched, it is automatically
+        /// a specific Dedicated Host, the next time the instance is started, it is automatically
         /// associated with the host on which it lands. If the instance is restarted or rebooted,
         /// this relationship persists.
         /// </para>

@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NetworkNodes. 
         /// <para>
         /// The network nodes. The nodes are hashed based on your account. Instances from different
-        /// accounts running under the same droplet will return a different hashed list of strings.
+        /// accounts running under the same server will return a different hashed list of strings.
         /// </para>
         /// </summary>
         public List<string> NetworkNodes

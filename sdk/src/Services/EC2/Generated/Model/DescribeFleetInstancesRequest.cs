@@ -32,9 +32,15 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeFleetInstances operation.
     /// Describes the running instances for the specified EC2 Fleet.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+    /// Currently, <c>DescribeFleetInstances</c> does not support fleets of type <c>instant</c>.
+    /// Instead, use <c>DescribeFleets</c>, specifying the <c>instant</c> fleet ID in the
+    /// request.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
     /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
