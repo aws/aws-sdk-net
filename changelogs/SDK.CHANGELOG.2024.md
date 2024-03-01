@@ -1,3 +1,11 @@
+### 3.7.759.1 (2024-03-01 19:13 UTC)
+* AccessAnalyzer (3.7.302.44)
+	* Fixed a typo in description field.
+* AutoScaling (3.7.302.13)
+	* With this release, Amazon EC2 Auto Scaling groups, EC2 Fleet, and Spot Fleet improve the default price protection behavior of attribute-based instance type selection of Spot Instances, to consistently select from a wide range of instance types.
+* EC2 (3.7.315.2)
+	* With this release, Amazon EC2 Auto Scaling groups, EC2 Fleet, and Spot Fleet improve the default price protection behavior of attribute-based instance type selection of Spot Instances, to consistently select from a wide range of instance types.
+
 ### 3.7.759.0 (2024-02-29 19:18 UTC)
 * DocDBElastic (3.7.301.0)
 	* Launched Elastic Clusters Readable Secondaries, Start/Stop, Configurable Shard Instance count, Automatic Backups and Snapshot Copying
