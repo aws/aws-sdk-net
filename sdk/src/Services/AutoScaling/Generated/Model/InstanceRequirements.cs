@@ -564,11 +564,6 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// To indicate no price protection threshold, specify a high value, such as <c>999999</c>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
         /// If you set <c>DesiredCapacityType</c> to <c>vcpu</c> or <c>memory-mib</c>, the price
         /// protection threshold is based on the per-vCPU or per-memory price instead of the per
         /// instance price. 
@@ -576,8 +571,11 @@ namespace Amazon.AutoScaling.Model
         ///  <note> 
         /// <para>
         /// Only one of <c>SpotMaxPricePercentageOverLowestPrice</c> or <c>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</c>
-        /// can be specified. If you don't specify either, then <c>SpotMaxPricePercentageOverLowestPrice</c>
-        /// is used and the value for that parameter defaults to <c>100</c>.
+        /// can be specified. If you don't specify either, Amazon EC2 Auto Scaling will automatically
+        /// apply optimal price protection to consistently select from a wide range of instance
+        /// types. To indicate no price protection threshold for Spot Instances, meaning you want
+        /// to consider all instance types that match your attributes, include one of these parameters
+        /// and specify a high value, such as <c>999999</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -761,10 +759,7 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.
-        /// </para>
-        ///  
-        /// <para>
-        /// To turn off price protection, specify a high value, such as <c>999999</c>. 
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -775,12 +770,13 @@ namespace Amazon.AutoScaling.Model
         ///  <note> 
         /// <para>
         /// Only one of <c>SpotMaxPricePercentageOverLowestPrice</c> or <c>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</c>
-        /// can be specified.
+        /// can be specified. If you don't specify either, Amazon EC2 Auto Scaling will automatically
+        /// apply optimal price protection to consistently select from a wide range of instance
+        /// types. To indicate no price protection threshold for Spot Instances, meaning you want
+        /// to consider all instance types that match your attributes, include one of these parameters
+        /// and specify a high value, such as <c>999999</c>. 
         /// </para>
-        ///  </note> 
-        /// <para>
-        /// Default: <c>100</c> 
-        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int SpotMaxPricePercentageOverLowestPrice
