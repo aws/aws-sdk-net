@@ -66,7 +66,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier (ID) associated with this OU.
+        /// The unique identifier (ID) associated with this OU. The ID is unique to the organization
+        /// only.
         /// </para>
         ///  
         /// <para>

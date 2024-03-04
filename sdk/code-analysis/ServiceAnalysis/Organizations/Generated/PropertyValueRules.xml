@@ -73,7 +73,6 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreatePolicyRequest.Content</property>
     <min>1</min>
-    <max>1000000</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -522,7 +521,6 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.UpdatePolicyRequest.Content</property>
     <min>1</min>
-    <max>1000000</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -618,7 +616,6 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.EffectivePolicy.PolicyContent</property>
     <min>1</min>
-    <max>1000000</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -698,7 +695,6 @@
   <property-value-rule>
     <property>Amazon.Organizations.Model.Policy.Content</property>
     <min>1</min>
-    <max>1000000</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
