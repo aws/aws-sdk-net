@@ -97,9 +97,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set to <c>false</c> (default) if you want to only see the snapshots in your Amazon
-        /// Web Services account. Set to <c>true</c> if you want to see the snapshots in your
-        /// account and the ones shared with you from another account.
+        /// Set to <c>false</c> (default) if you want to only see the snapshots owned by your
+        /// Amazon Web Services account. Set to <c>true</c> if you want to see the snapshots in
+        /// your account and the ones shared with you from another account.
         /// </para>
         /// </summary>
         public bool IncludeShared

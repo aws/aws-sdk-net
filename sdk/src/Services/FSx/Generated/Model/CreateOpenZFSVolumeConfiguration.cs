@@ -267,7 +267,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property UserAndGroupQuotas. 
         /// <para>
-        /// An object specifying how much storage users or groups can use on the volume.
+        /// Configures how much storage users and groups can use on the volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

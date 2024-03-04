@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Used to specify the configuration options for a volume's storage aggregate or aggregates.
+    /// Used to specify the configuration options for an FSx for ONTAP volume's storage aggregate
+    /// or aggregates.
     /// </summary>
     public partial class CreateAggregateConfiguration
     {

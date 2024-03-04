@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration that Amazon FSx uses to join the ONTAP storage virtual machine (SVM)
-    /// to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.
+    /// to your self-managed (including on-premises) Microsoft Active Directory directory.
     /// </summary>
     public partial class CreateSvmActiveDirectoryConfiguration
     {

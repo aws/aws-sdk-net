@@ -234,7 +234,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
-        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 6).
+        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 12).
         /// </para>
         ///  </li> <li> 
         /// <para>
