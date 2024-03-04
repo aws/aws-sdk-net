@@ -1426,6 +1426,7 @@ namespace ServiceClientGenerator
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
         }
+
         public static void RemoveOrphanedShapes(HashSet<string> generatedFiles, string srcFolder)
         {
             // Remove orphaned shapes. Most likely due to taking in a model that was still under development.
@@ -1450,6 +1451,52 @@ namespace ServiceClientGenerator
                 if (!codeGeneratedServiceList.Contains(new DirectoryInfo(directoryName).Name))
                 {
                     Directory.Delete(directoryName, true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Removes project files (*.csproj) and folders that are not needed in the next version of the SDK:
+        /// </summary>
+        public static void RemoveLegacyFiles(string sdkRootFolder)
+        {
+            // TODO: Remove this method once net35 and net45 are removed from the SDK.
+            var legacyProjectSuffixes = new HashSet<string>
+            {
+                "Net35.csproj",
+                "Net45.csproj"
+            };
+
+            var legacyFolderNames = new HashSet<string>
+            {
+                "_bcl35",
+                Utils.PathCombineAlt("Config", "35"),
+                Utils.PathCombineAlt("Config", "45")
+            };
+
+            var allProjectFiles = Directory.GetFiles(sdkRootFolder, "*.csproj", SearchOption.AllDirectories).OrderBy(f => f);
+            foreach (var file in allProjectFiles)
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
+                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.EndsWith(x));
+
+                if (shouldDelete)
+                {
+                    Console.Error.WriteLine("**** Warning: Removing obsolete csproj file " + Path.GetFileName(file));
+                    File.Delete(file);
+                }
+            }
+
+            var allFolders = Directory.EnumerateDirectories(sdkRootFolder, "*", SearchOption.AllDirectories).OrderBy(d => d);
+            foreach (var folder in allFolders)
+            {
+                var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(folder));
+                var shouldDelete = legacyFolderNames.Any(x => fullPath.Contains(x));
+
+                if (shouldDelete)
+                {
+                    Console.Error.WriteLine("**** Warning: Removing obsolete folder " + fullPath);
+                    Directory.Delete(folder, recursive: true);
                 }
             }
         }
