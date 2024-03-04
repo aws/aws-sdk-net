@@ -90,7 +90,8 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template that's
         /// located in an Amazon S3 bucket or a Systems Manager document. For more information,
         /// go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// Anatomy</a> in the <i>CloudFormation User Guide</i>.
+        /// Anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3
+        /// bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

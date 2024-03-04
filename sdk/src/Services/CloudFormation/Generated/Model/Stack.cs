@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTime;
         private DateTime? _deletionTime;
         private string _description;
+        private DetailedStatus _detailedStatus;
         private bool? _disableRollback;
         private StackDriftInformation _driftInformation;
         private bool? _enableTerminationProtection;
@@ -148,6 +149,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailedStatus. 
+        /// <para>
+        /// The detailed status of the resource or stack. If <c>CONFIGURATION_COMPLETE</c> is
+        /// present, the resource or resource configuration phase has completed and the stabilization
+        /// of the resources is in progress. The stack sets <c>CONFIGURATION_COMPLETE</c> when
+        /// all of the resources in the stack have reached that event. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack deployment</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DetailedStatus DetailedStatus
+        {
+            get { return this._detailedStatus; }
+            set { this._detailedStatus = value; }
+        }
+
+        // Check to see if DetailedStatus property is set
+        internal bool IsSetDetailedStatus()
+        {
+            return this._detailedStatus != null;
         }
 
         /// <summary>

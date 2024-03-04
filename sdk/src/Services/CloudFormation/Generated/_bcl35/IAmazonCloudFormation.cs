@@ -129,9 +129,9 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Once you have activated a public third-party extension in your account and Region,
-        /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-        /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
+        /// <c>SetTypeConfiguration</c> </a> to specify configuration properties for the extension.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -1049,7 +1049,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// To view the deprecation status of an extension or extension version, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// To view the deprecation status of an extension or extension version, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+        /// <c>DescribeType</c> </a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterType service method.</param>
@@ -1338,8 +1339,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
-        /// 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+        /// <c>RegisterPublisher</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3442,7 +3443,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// To publish an extension, you must be registered as a publisher with CloudFormation.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+        /// <c>RegisterPublisher</c> </a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishType service method.</param>
@@ -3621,8 +3623,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// You can have a maximum of 50 resource extension versions registered at a time. This
-        /// maximum is per account and per Region. Use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-        /// to deregister specific extension versions if necessary.
+        /// maximum is per account and per Region. Use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">
+        /// <c>DeregisterType</c> </a> to deregister specific extension versions if necessary.
         /// </para>
         ///  
         /// <para>
@@ -3631,9 +3633,9 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-        /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
+        /// <c>SetTypeConfiguration</c> </a> to specify configuration properties for the extension.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -3802,8 +3804,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
-        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+        /// <c>DescribeType</c> </a>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <important> 
@@ -4090,13 +4092,15 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// To perform testing, CloudFormation assumes the execution role specified when the type
-        /// was registered. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// was registered. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
+        /// <c>RegisterType</c> </a>.
         /// </para>
         ///  
         /// <para>
         /// Once you've initiated testing on an extension using <c>TestType</c>, you can pass
-        /// the returned <c>TypeVersionArn</c> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
-        /// to monitor the current test status and test status description for the extension.
+        /// the returned <c>TypeVersionArn</c> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+        /// <c>DescribeType</c> </a> to monitor the current test status and test status description
+        /// for the extension.
         /// </para>
         ///  
         /// <para>
@@ -4276,7 +4280,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// You can only update stack instances in Amazon Web Services Regions and accounts where
-        /// they already exist; to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+        /// they already exist; to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">
+        /// <c>CreateStackInstances</c> </a>.
         /// </para>
         ///  
         /// <para>
@@ -4286,13 +4291,13 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// You can only update the parameter <i>values</i> that are specified in the stack set;
-        /// to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-        /// to update the stack set template. If you add a parameter to a template, before you
-        /// can override the parameter value specified in the stack set you must first use <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-        /// to update all stack instances with the updated template and parameter value specified
-        /// in the stack set. Once a stack instance has been updated with the new parameter, you
-        /// can then override the parameter value using <c>UpdateStackInstances</c>.
+        /// to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+        /// <c>UpdateStackSet</c> </a> to update the stack set template. If you add a parameter
+        /// to a template, before you can override the parameter value specified in the stack
+        /// set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+        /// <c>UpdateStackSet</c> </a> to update all stack instances with the updated template
+        /// and parameter value specified in the stack set. Once a stack instance has been updated
+        /// with the new parameter, you can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances service method.</param>

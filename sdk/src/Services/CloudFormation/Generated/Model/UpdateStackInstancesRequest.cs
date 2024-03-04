@@ -37,7 +37,8 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// You can only update stack instances in Amazon Web Services Regions and accounts where
-    /// they already exist; to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.
+    /// they already exist; to create additional stack instances, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">
+    /// <c>CreateStackInstances</c> </a>.
     /// </para>
     ///  
     /// <para>
@@ -47,13 +48,13 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// You can only update the parameter <i>values</i> that are specified in the stack set;
-    /// to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-    /// to update the stack set template. If you add a parameter to a template, before you
-    /// can override the parameter value specified in the stack set you must first use <a
-    /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-    /// to update all stack instances with the updated template and parameter value specified
-    /// in the stack set. Once a stack instance has been updated with the new parameter, you
-    /// can then override the parameter value using <c>UpdateStackInstances</c>.
+    /// to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+    /// <c>UpdateStackSet</c> </a> to update the stack set template. If you add a parameter
+    /// to a template, before you can override the parameter value specified in the stack
+    /// set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+    /// <c>UpdateStackSet</c> </a> to update all stack instances with the updated template
+    /// and parameter value specified in the stack set. Once a stack instance has been updated
+    /// with the new parameter, you can then override the parameter value using <c>UpdateStackInstances</c>.
     /// </para>
     /// </summary>
     public partial class UpdateStackInstancesRequest : AmazonCloudFormationRequest
@@ -250,10 +251,10 @@ namespace Amazon.CloudFormation.Model
         /// You can only override the parameter <i>values</i> that are specified in the stack
         /// set; to add or delete a parameter itself, use <c>UpdateStackSet</c> to update the
         /// stack set template. If you add a parameter to a template, before you can override
-        /// the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-        /// to update all stack instances with the updated template and parameter value specified
-        /// in the stack set. Once a stack instance has been updated with the new parameter, you
-        /// can then override the parameter value using <c>UpdateStackInstances</c>.
+        /// the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+        /// <c>UpdateStackSet</c> </a> to update all stack instances with the updated template
+        /// and parameter value specified in the stack set. Once a stack instance has been updated
+        /// with the new parameter, you can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
         /// </summary>
         public List<Parameter> ParameterOverrides

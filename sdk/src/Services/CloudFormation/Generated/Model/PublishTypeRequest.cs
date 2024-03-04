@@ -39,7 +39,8 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// To publish an extension, you must be registered as a publisher with CloudFormation.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+    /// <c>RegisterPublisher</c> </a>.
     /// </para>
     /// </summary>
     public partial class PublishTypeRequest : AmazonCloudFormationRequest

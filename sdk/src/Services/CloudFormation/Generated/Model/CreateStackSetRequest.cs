@@ -186,37 +186,37 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-        /// AWS::IAM::AccessKey</a> 
+        /// <c>AWS::IAM::AccessKey</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-        /// AWS::IAM::Group</a> 
+        /// <c>AWS::IAM::Group</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-        /// 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+        /// <c>AWS::IAM::InstanceProfile</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-        /// AWS::IAM::Policy</a> 
+        /// <c>AWS::IAM::Policy</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-        /// AWS::IAM::Role</a> 
+        /// <c>AWS::IAM::Role</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-        /// AWS::IAM::User</a> 
+        /// <c>AWS::IAM::User</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-        /// 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+        /// <c>AWS::IAM::UserToGroupAddition</c> </a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -238,11 +238,11 @@ namespace Amazon.CloudFormation.Model
         ///  <important> 
         /// <para>
         /// Stack sets with service-managed permissions don't currently support the use of macros
-        /// in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-        /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
-        /// for a stack set with service-managed permissions, if you reference a macro in your
-        /// template the stack set operation will fail.
+        /// in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+        /// <c>AWS::Include</c> </a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+        /// <c>AWS::Serverless</c> </a> transforms, which are macros hosted by CloudFormation.)
+        /// Even if you specify this capability for a stack set with service-managed permissions,
+        /// if you reference a macro in your template the stack set operation will fail.
         /// </para>
         ///  </important> </li> </ul>
         /// </summary>

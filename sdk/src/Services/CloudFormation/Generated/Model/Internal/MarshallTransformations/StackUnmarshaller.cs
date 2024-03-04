@@ -85,6 +85,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DetailedStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DetailedStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DisableRollback", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

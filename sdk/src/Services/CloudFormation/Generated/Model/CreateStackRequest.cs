@@ -98,37 +98,37 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-        /// AWS::IAM::AccessKey</a> 
+        /// <c>AWS::IAM::AccessKey</c> AWS::IAM::AccessKey</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-        /// AWS::IAM::Group</a> 
+        /// <c>AWS::IAM::Group</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-        /// 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+        /// <c>AWS::IAM::InstanceProfile</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-        /// AWS::IAM::Policy</a> 
+        /// <c>AWS::IAM::Policy</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-        /// AWS::IAM::Role</a> 
+        /// <c>AWS::IAM::Role</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-        /// AWS::IAM::User</a> 
+        /// <c>AWS::IAM::User</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-        /// 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+        /// <c>AWS::IAM::UserToGroupAddition</c> </a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -148,9 +148,9 @@ namespace Amazon.CloudFormation.Model
         /// the macros before actually creating the stack. If your stack template contains one
         /// or more macros, and you choose to create a stack directly from the processed template,
         /// without first reviewing the resulting changes in a change set, you must acknowledge
-        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-        /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-        /// transforms, which are macros hosted by CloudFormation.
+        /// this capability. This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+        /// <c>AWS::Include</c> </a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+        /// <c>AWS::Serverless</c> </a> transforms, which are macros hosted by CloudFormation.
         /// </para>
         ///  
         /// <para>
@@ -328,8 +328,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of <c>Parameter</c> structures that specify input parameters for the stack.
-        /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-        /// data type.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
+        /// <c>Parameter</c> </a> data type.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -505,9 +505,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackPolicyURL. 
         /// <para>
         /// Location of a file containing the stack policy. The URL must point to a policy (maximum
-        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
-        /// either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not
-        /// both.
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. The location
+        /// for an Amazon S3 bucket must start with <c>https://</c>. You can specify either the
+        /// <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]
@@ -575,7 +575,8 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// anatomy</a> in the <i>CloudFormation User Guide</i>.
+        /// anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3
+        /// bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

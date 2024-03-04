@@ -153,7 +153,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property OrganizationalUnitId. 
         /// <para>
         /// [Service-managed permissions] The organization root ID or organizational unit (OU)
-        /// IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.
+        /// IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+        /// <c>DeploymentTargets</c> </a>.
         /// </para>
         /// </summary>
         public string OrganizationalUnitId
@@ -271,7 +272,11 @@ namespace Amazon.CloudFormation.Model
         /// stack in an unstable state. Stacks in this state are excluded from further <c>UpdateStackSet</c>
         /// operations. You might need to perform a <c>DeleteStackInstances</c> operation, with
         /// <c>RetainStacks</c> set to <c>true</c>, to delete the stack instance, and then delete
-        /// the stack manually.
+        /// the stack manually. <c>INOPERABLE</c> can be returned here when the cause is a failed
+        /// import. If it's due to a failed import, the operation can be retried once the failures
+        /// are fixed. To see if this is due to a failed import, look at the <c>DetailedStatus</c>
+        /// member in the <c>StackInstanceSummary</c> member that is a peer to this <c>Status</c>
+        /// member.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -83,8 +83,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of the resource, such as <c>AWS::DynamoDB::Table</c>. For the list of supported
-        /// resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
-        /// generator supported resource types</a> In the <i>CloudFormation User Guide</i> 
+        /// resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support</a> In the <i>CloudFormation User Guide</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
