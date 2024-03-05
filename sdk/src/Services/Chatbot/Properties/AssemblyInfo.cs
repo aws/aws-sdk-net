@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Chatbot")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Chatbot. This release adds support for AWS Chatbot. You can now monitor, operate, and troubleshoot your AWS resources with interactive ChatOps using the AWS SDK.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
