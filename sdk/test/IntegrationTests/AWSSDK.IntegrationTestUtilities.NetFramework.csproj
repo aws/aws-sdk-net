@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
-    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;AWS_APM_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;AWS_APM_API;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTestUtilities.NetFramework</AssemblyName>
