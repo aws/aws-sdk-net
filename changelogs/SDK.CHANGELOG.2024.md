@@ -1,3 +1,13 @@
+### 3.7.761.0 (2024-03-05 19:17 UTC)
+* APIGateway (3.7.300.56)
+	* Documentation updates for Amazon API Gateway
+* Chatbot (3.7.300.3)
+	* Minor update to documentation.
+* Organizations (3.7.302.0)
+	* This release contains an endpoint addition
+* SimpleEmailV2 (3.7.301.0)
+	* Adds support for providing custom headers within SendEmail and SendBulkEmail for SESv2.
+
 ### 3.7.760.0 (2024-03-04 19:15 UTC)
 * CloudFormation (3.7.304.0)
 	* Add DetailedStatus field to DescribeStackEvents and DescribeStacks APIs
