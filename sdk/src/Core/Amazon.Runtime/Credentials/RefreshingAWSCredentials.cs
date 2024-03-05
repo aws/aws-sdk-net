@@ -73,21 +73,13 @@ namespace Amazon.Runtime
 
         private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(0);
         private bool _disposed;
-#if BCL35
-        /// <summary>
-        /// Semaphore to control thread access to GetCredentialsAsync method.
-        /// The semaphore will allow only one thread to generate new credentials and
-        /// update the current state.
-        /// </summary>
-        private readonly Semaphore _updateGeneratedCredentialsSemaphore = new Semaphore(1, 1);
-#else
+
         /// <summary>
         /// Semaphore to control thread access to GetCredentialsAsync method.
         /// The semaphore will allow only one thread to generate new credentials and
         /// update the current state.
         /// </summary>
         private readonly SemaphoreSlim _updateGeneratedCredentialsSemaphore = new SemaphoreSlim(1, 1);
-#endif
 
         #endregion
 

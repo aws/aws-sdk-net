@@ -50,9 +50,7 @@ namespace Amazon.Runtime
         {
             Func<IAWSTokenProvider> chainBuilder = () => 
                 new AWSTokenProviderChain(
-#if !BCL35 // ProfileTokenProvider doesn't support 3.5
                     new ProfileTokenProvider(ProfileName)
-#endif
                 );
 
             _chain = new Lazy<IAWSTokenProvider>(chainBuilder);
@@ -76,39 +74,6 @@ namespace Amazon.Runtime
         public async Task<TryResponse<AWSToken>> TryResolveTokenAsync(CancellationToken cancellationToken = default)
         {
             return await _chain.Value.TryResolveTokenAsync(cancellationToken).ConfigureAwait(false);
-        }
-#endif
-
-#if BCL35
-        private class Lazy<T> where T : class
-        {
-            private readonly Func<T> _builder;
-            private object _lock = new object();
-
-            public Lazy(Func<T> builder)
-            {
-                _builder = builder;
-            }
-
-            private volatile T _value;
-            public T Value
-            {
-                get
-                {
-                    if (null != _value)
-                        return _value;
-
-                    lock (_lock)
-                    {
-                        if (null != _value)
-                            return _value;
-
-                        _value = _builder();
-
-                        return _value;
-                    }
-                }
-            }
         }
 #endif
     }

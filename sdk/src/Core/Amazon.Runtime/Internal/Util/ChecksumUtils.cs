@@ -235,23 +235,12 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             CoreChecksumAlgorithm selectedCoreChecksumAlgorithm;
-#if BCL35
-            try
-            {
-                selectedCoreChecksumAlgorithm = (CoreChecksumAlgorithm)Enum.Parse(typeof(CoreChecksumAlgorithm), selectedServiceChecksum, true);
-            }
-            catch (Exception ex)
-            {
-                // Service checksum options should always be a subset of the core, but in case not
-                throw new AmazonClientException($"Attempted to sign a request with an unknown checksum algorithm {selectedServiceChecksum}", ex);
-            }
-#else
             if (!Enum.TryParse(selectedServiceChecksum, true, out selectedCoreChecksumAlgorithm))
             {
                 // Service checksum options should always be a subset of the core, but in case not
                 throw new AmazonClientException($"Attempted to sign a request with an unknown checksum algorithm {selectedServiceChecksum}");
             }
-#endif
+
             return selectedCoreChecksumAlgorithm;
         }
 

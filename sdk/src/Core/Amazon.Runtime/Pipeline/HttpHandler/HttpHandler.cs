@@ -110,11 +110,7 @@ namespace Amazon.Runtime.Internal
                 {
                     if (webException.Response != null)
                     {
-#if BCL35
-                        webException.Response.Close();
-#else
                         webException.Response.Dispose();
-#endif
                     }
                 }
                 catch (HttpErrorResponseException httpErrorResponse)
@@ -161,7 +157,7 @@ namespace Amazon.Runtime.Internal
                             // In .NET Framework, there needs to be a cancellation token in this method since GetRequestStreamAsync
                             // does not accept a cancellation token. A workaround is used. This isn't necessary in .NET Standard
                             // where the stream is a property of the request.
-#if BCL45
+#if BCL
                             var requestContent = await httpRequest.GetRequestContentAsync(executionContext.RequestContext.CancellationToken).ConfigureAwait(false);
                             await WriteContentToRequestBodyAsync(requestContent, httpRequest, executionContext.RequestContext).ConfigureAwait(false);
 #else
@@ -413,7 +409,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if BCL45
+#if BCL
         /// <summary>
         /// Determines the content for request body and uses the HTTP request
         /// to write the content to the HTTP request body.

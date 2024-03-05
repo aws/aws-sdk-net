@@ -82,12 +82,12 @@ namespace ServiceClientGenerator
         private readonly HashSet<string> _processedUnmarshallers = new HashSet<string>();
         private readonly HashSet<string> _processedMarshallers = new HashSet<string>();
 
-        private const string Bcl45SubFolder = "_bcl45";
+        private const string BclSubFolder = "_bcl";
         private const string NetStandardSubFolder = "_netstandard";
-        private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.AltDirectorySeparatorChar);
+        private string PaginatorsSubFolder = string.Format("Model{0}_bcl+netstandard", Path.AltDirectorySeparatorChar);
         private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.AltDirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.AltDirectorySeparatorChar);
-        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.AltDirectorySeparatorChar);
+        private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl+netstandard{0}Paginators", Path.AltDirectorySeparatorChar);
 
         public const string SourceSubFoldername = "src";
         public const string TestsSubFoldername = "test";
@@ -154,8 +154,8 @@ namespace ServiceClientGenerator
             }
 
             // .NET Framework version
-            ExecuteGenerator(new ServiceClientsNetFramework(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);
-            ExecuteGenerator(new ServiceInterfaceNetFramework(), "IAmazon" + Configuration.ClassName + ".cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceClientsNetFramework(), "Amazon" + Configuration.ClassName + "Client.cs", BclSubFolder);
+            ExecuteGenerator(new ServiceInterfaceNetFramework(), "IAmazon" + Configuration.ClassName + ".cs", BclSubFolder);
 
             // .NET Standard version
             ExecuteGenerator(new ServiceClientsNetStandard(), "Amazon" + Configuration.ClassName + "Client.cs", NetStandardSubFolder);
@@ -207,7 +207,7 @@ namespace ServiceClientGenerator
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-#if !BCL35
+          
             // Any paginators for the service
             if (Configuration.ServiceModel.HasPaginators)
             {
@@ -223,7 +223,7 @@ namespace ServiceClientGenerator
                 if (Configuration.IsTestService)
                     GeneratePaginatorTests();
             }
-#endif
+      
             // Do not generate base exception if this is a child model.
             // We use the base exceptions generated for the parent model.
             if (!this.Configuration.IsChildConfig)
@@ -1155,7 +1155,7 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Runs the generator and saves the content into _bcl35 directory under the generated files root.
+        /// Runs the generator and saves the content into the generated files root.
         /// </summary>
         /// <param name="generator">The generator to use for outputting the text of the cs file</param>
         /// <param name="fileName">The name of the cs file</param>
