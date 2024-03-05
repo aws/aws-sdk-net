@@ -130,7 +130,7 @@ namespace Amazon.Runtime
                     }
                 }
             }
-#if !BCL35
+          
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             if (!string.IsNullOrEmpty(profileFolder))
             {
@@ -141,22 +141,6 @@ namespace Amazon.Runtime
                     return credentialFile;
                 }
             }
-#else
-            var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            if (!string.IsNullOrEmpty(profileFolder))
-            {
-                var parent = Directory.GetParent(profileFolder);
-                if (parent != null)
-                {
-                    credentialFile = TestSharedCredentialFileExists(Path.Combine(parent.FullName, DefaultSharedCredentialLocation));
-                    if (!string.IsNullOrEmpty(credentialFile))
-                    {
-                        logger.InfoFormat("Credentials file found in user profile location: {0}", credentialFile);
-                        return credentialFile;
-                    }
-                }
-            }
-#endif
 
             logger.InfoFormat("No credentials file found using location probing.");
             return null;

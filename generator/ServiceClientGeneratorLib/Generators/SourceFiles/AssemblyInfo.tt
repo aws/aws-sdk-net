@@ -10,10 +10,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("<#=this.Config.AssemblyTitle#>")]
-#if BCL35
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "3.5") #>")]
-#elif BCL45
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "4.5") #>")]
+#if BCL
+[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "4.6.2") #>")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0") #>")]
 #elif NETCOREAPP3_1

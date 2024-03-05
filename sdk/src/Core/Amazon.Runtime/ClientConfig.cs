@@ -752,13 +752,8 @@ namespace Amazon.Runtime
         protected virtual void Initialize()
         {
         }
-        
-#if BCL35
-        /// <summary>
-        /// Overrides the default request timeout value.
-        /// This field does not impact Begin*/End* calls. A manual timeout must be implemented.
-        /// </summary>
-#elif BCL45
+
+#if BCL
         /// <summary>
         /// Overrides the default request timeout value.
         /// This field does not impact *Async calls. A manual timeout (for instance, using CancellationToken) must be implemented.

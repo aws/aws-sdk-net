@@ -158,23 +158,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 }
             }
 
-#if BCL45
+#if BCL
             public override System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
             {
                 if (IsRetry || !IsRewindable)
                     return base.GetResponseAsync(cancellationToken);
-                else
-                {
-                    base.Abort();
-                    throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
-                }
-            }
-
-#elif BCL && !BCL45
-            public override IWebResponseData EndGetResponse(IAsyncResult asyncResult)
-            {
-                if (IsRetry || !IsRewindable)
-                    return base.EndGetResponse(asyncResult);
                 else
                 {
                     base.Abort();

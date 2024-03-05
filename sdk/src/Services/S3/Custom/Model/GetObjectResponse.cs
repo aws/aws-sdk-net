@@ -865,7 +865,7 @@ namespace Amazon.S3.Model
             }
         }
 
-#if BCL45 || NETSTANDARD
+#if BCL || NETSTANDARD
         /// <summary>
         /// Writes the content of the ResponseStream a file indicated by the filePath argument.
         /// </summary>

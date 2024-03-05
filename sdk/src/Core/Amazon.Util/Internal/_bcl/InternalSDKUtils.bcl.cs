@@ -33,11 +33,8 @@ namespace Amazon.Util.Internal
     {
         private const string MobileServicesFolderName = "AWS Mobile Services";
 
-#if BCL45
-        static string _userAgentBaseName = "aws-sdk-dotnet-45";
-#else
-        static string _userAgentBaseName = "aws-sdk-dotnet-35";
-#endif
+        static string _userAgentBaseName = "aws-sdk-dotnet-framework";
+
         public static string DetermineFramework()
         {
             try

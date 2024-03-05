@@ -116,7 +116,6 @@ namespace Amazon.Runtime.CredentialManagement
                     // for SharedCredentials
                     { "CredentialProcess" , SettingsConstants.CredentialProcess },
                     { "WebIdentityTokenFile", SettingsConstants.WebIdentityTokenFile },
-#if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
                     // Not implemented for NetSDKCredentials. Applicable only
@@ -125,7 +124,6 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession}
-#endif
                 }
             );
 
@@ -213,24 +211,12 @@ namespace Amazon.Runtime.CredentialManagement
                     StsRegionalEndpointsValue? stsRegionalEndpoints = null;
                     if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
                     {
-#if BCL35
-                        try
-                        {
-                            stsRegionalEndpoints = (StsRegionalEndpointsValue)Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalEndpointsString, true);
-                        }
-                        catch (Exception)
-                        {
-                            profile = null;
-                            return false;
-                        }
-#else
                         if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var tempStsRegionalEndpoints))
                         {
                             profile = null;
                             return false;
                         }
                         stsRegionalEndpoints = tempStsRegionalEndpoints;
-#endif
                     }
 
                     string s3UseArnRegionString;
@@ -277,47 +263,23 @@ namespace Amazon.Runtime.CredentialManagement
                     S3UsEast1RegionalEndpointValue? s3RegionalEndpoint = null;
                     if (reservedProperties.TryGetValue(S3RegionalEndpointField, out var s3RegionalEndpointString))
                     {
-#if BCL35
-                        try
-                        {
-                            s3RegionalEndpoint = (S3UsEast1RegionalEndpointValue)Enum.Parse(typeof(S3UsEast1RegionalEndpointValue), s3RegionalEndpointString, true);
-                        }
-                        catch (Exception)
-                        {
-                            profile = null;
-                            return false;
-                        }
-#else
                         if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalEndpointString, true, out var tempS3RegionalEndpoint))
                         {
                             profile = null;
                             return false;
                         }
                         s3RegionalEndpoint = tempS3RegionalEndpoint;
-#endif
                     }
 
                     RequestRetryMode? requestRetryMode = null;
                     if (reservedProperties.TryGetValue(RetryModeField, out var retryModeString))
                     {
-#if BCL35
-                        try
-                        {
-                            requestRetryMode = (RequestRetryMode)Enum.Parse(typeof(RequestRetryMode), retryModeString, true);
-                        }
-                        catch (Exception)
-                        {
-                            profile = null;
-                            return false;
-                        }
-#else
                         if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var tempRetryMode))
                         {
                             profile = null;
                             return false;
                         }
                         requestRetryMode = tempRetryMode;
-#endif
                     }
 
                     int? maxAttempts = null;

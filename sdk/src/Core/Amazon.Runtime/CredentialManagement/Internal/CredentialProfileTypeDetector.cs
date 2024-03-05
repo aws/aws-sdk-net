@@ -40,9 +40,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         AssumeRoleExternalSessionName,
         AssumeRoleExternalMFASessionName,
         AssumeRoleMFASessionName,
-#if !BCL35
         SSO,
-#endif
         AssumeRoleWithServices,
         AssumeRoleWithGlobalEndpoint,
         AssumeRoleWithServicesAndGlobalEndpoint,
@@ -126,7 +124,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string CredentialProcess = "CredentialProcess";
         private const string EndpointUrl = "EndpointUrl";
 
-#if !BCL35
         private const string SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId);
         private const string SsoRegion = nameof(CredentialProfileOptions.SsoRegion);
         private const string SsoRegistrationScopes = nameof(CredentialProfileOptions.SsoRegistrationScopes);
@@ -137,7 +134,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private static HashSet<string> SsoProperties = new HashSet<string>(
             new string[] {SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession},
             StringComparer.OrdinalIgnoreCase);
-#endif
 
         private static Dictionary<CredentialProfileType, HashSet<string>> TypePropertyDictionary =
             new Dictionary<CredentialProfileType, HashSet<string>>()
@@ -727,7 +723,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         EndpointUrl
                     }
                 },
-#if !BCL35
                 {
                     CredentialProfileType.SSO, new HashSet<string>()
                     {
@@ -739,7 +734,6 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         SsoSession
                     }
                 },
-#endif
             };
 
         private static Dictionary<CredentialProfileType, string> CredentialTypeDictionary =
@@ -785,13 +779,11 @@ namespace Amazon.Runtime.CredentialManagement.Internal
 
             HashSet<string> propertyNames = GetPropertyNames(profileOptions);
 
-#if !BCL35
             // Spec: If one or more of the SSO properties is present, the profile MUST be resolved by the SSO credential provider.
             if (propertyNames.Any(propertyName => SsoProperties.Contains(propertyName)))
             {
                 return CredentialProfileType.SSO;
             }
-#endif
 
             // brute force algorithm - but it's a very small set
             foreach (var pair in TypePropertyDictionary)

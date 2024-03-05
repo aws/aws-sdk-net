@@ -115,7 +115,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
 
         System.Threading.Tasks.Task<TRequestContent> GetRequestContentAsync();
-#if BCL45
+#if BCL
         System.Threading.Tasks.Task<TRequestContent> GetRequestContentAsync(System.Threading.CancellationToken cancellationToken);
 #endif
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Runtime
         /// <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         /// <returns></returns>
         System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken);
-#if BCL45
+#if BCL
         System.Threading.Tasks.Task WriteToRequestBodyAsync(TRequestContent requestContent, Stream contentStream, IDictionary<string, string> contentHeaders, IRequestContext requestContext);
 
         System.Threading.Tasks.Task WriteToRequestBodyAsync(TRequestContent requestContent, byte[] requestData, IDictionary<string, string> headers, System.Threading.CancellationToken cancellationToken);

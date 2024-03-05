@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+    #line 1 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreAssemblyInfo : BaseGenerator
     {
@@ -29,46 +29,40 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\nusing System.Runtime.CompilerServices;\r\n\r\n// General Information about an assem" +
                     "bly is controlled through the following \r\n// set of attributes. Change these att" +
                     "ribute values to modify the information\r\n// associated with an assembly.\r\n[assem" +
-                    "bly: AssemblyTitle(\"AWSSDK.Core\")]\r\n#if BCL35\r\n[assembly: AssemblyDescription(\"T" +
-                    "he Amazon Web Services SDK for .NET (3.5) - Core Runtime\")]\r\n#elif BCL45\r\n[assem" +
-                    "bly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (4.5) - Core Runt" +
-                    "ime\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"The Amazon Web Serv" +
-                    "ices SDK for .NET (NetStandard 2.0) - Core Runtime\")]\r\n#elif NETCOREAPP3_1\r\n[ass" +
-                    "embly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (.NET Core 3.1)" +
-                    " - Core Runtime\")]\r\n#elif NET8_0\r\n[assembly: AssemblyDescription(\"The Amazon Web" +
-                    " Services SDK for .NET (.NET 8.0) - Core Runtime\")]\r\n#else\r\n#error Unknown platf" +
-                    "orm constant - unable to set correct AssemblyDescription\r\n#endif\r\n[assembly: Int" +
-                    "ernalsVisibleTo(\"AWSSDK.UnitTests.Net45, PublicKey=00240000048000009400000006020" +
-                    "00000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9d" +
-                    "f0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09" +
-                    "d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf12" +
-                    "52ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: InternalsVisi" +
-                    "bleTo(\"AWSSDK.UnitTests.Net35, PublicKey=002400000480000094000000060200000024000" +
-                    "0525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe" +
-                    "7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84ee" +
-                    "cd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a241" +
-                    "3f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n\r\n[assembly: AssemblyConfiguration" +
-                    "(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]\r\n[assembl" +
-                    "y: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright " +
-                    "Amazon.com, Inc. or its affiliates. All Rights Reserved.\")]\r\n[assembly: Assembly" +
-                    "Trademark(\"\")]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisible to fals" +
-                    "e makes the types in this assembly not visible \r\n// to COM components.  If you n" +
-                    "eed to access a type in this assembly from \r\n// COM, set the ComVisible attribut" +
-                    "e to true on that type.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version information" +
-                    " for an assembly consists of the following four values:\r\n//\r\n//      Major Versi" +
-                    "on\r\n//      Minor Version \r\n//      Build Number\r\n//      Revision\r\n//\r\n// You c" +
-                    "an specify all the values or you can default the Build and Revision Numbers \r\n//" +
-                    " by using the \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[ass" +
-                    "embly: AssemblyVersion(\"");
+                    "bly: AssemblyTitle(\"AWSSDK.Core\")]\r\n#if BCL\r\n[assembly: AssemblyDescription(\"The" +
+                    " Amazon Web Services SDK for .NET (4.6.2) - Core Runtime\")]\r\n#elif NETSTANDARD20" +
+                    "\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (NetStand" +
+                    "ard 2.0) - Core Runtime\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(" +
+                    "\"The Amazon Web Services SDK for .NET (.NET Core 3.1) - Core Runtime\")]\r\n#elif N" +
+                    "ET8_0\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (.NE" +
+                    "T 8.0) - Core Runtime\")]\r\n#else\r\n#error Unknown platform constant - unable to se" +
+                    "t correct AssemblyDescription\r\n#endif\r\n[assembly: InternalsVisibleTo(\"AWSSDK.Uni" +
+                    "tTests.NetFramework, PublicKey=0024000004800000940000000602000000240000525341310" +
+                    "004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7" +
+                    "274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2" +
+                    "b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a" +
+                    "0752a81203f03ccb7f684db373518b4\")]\r\n\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[as" +
+                    "sembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]\r\n[assembly: Assembl" +
+                    "yCompany(\"Amazon.com, Inc\")]\r\n[assembly: AssemblyCopyright(\"Copyright Amazon.com" +
+                    ", Inc. or its affiliates. All Rights Reserved.\")]\r\n[assembly: AssemblyTrademark(" +
+                    "\"\")]\r\n[assembly: AssemblyCulture(\"\")]\r\n\r\n// Setting ComVisible to false makes th" +
+                    "e types in this assembly not visible \r\n// to COM components.  If you need to acc" +
+                    "ess a type in this assembly from \r\n// COM, set the ComVisible attribute to true " +
+                    "on that type.\r\n[assembly: ComVisible(false)]\r\n\r\n// Version information for an as" +
+                    "sembly consists of the following four values:\r\n//\r\n//      Major Version\r\n//    " +
+                    "  Minor Version \r\n//      Build Number\r\n//      Revision\r\n//\r\n// You can specify" +
+                    " all the values or you can default the Build and Revision Numbers \r\n// by using " +
+                    "the \'*\' as shown below:\r\n// [assembly: AssemblyVersion(\"1.0.*\")]\r\n[assembly: Ass" +
+                    "emblyVersion(\"");
             
-            #line 51 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 48 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["Version"]));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 52 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
+            #line 49 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\CoreAssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
@@ -79,11 +73,9 @@ namespace ServiceClientGenerator.Generators.SourceFiles
 
 #if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]
-#endif
 
-#if BCL45
 // Setting SecurityRules to level 1 to match .NET 2.0 rules and allow the
-// Amazon.Util.Settings.UserCrypto methods to work in .NET 4.5
+// Amazon.Util.Settings.UserCrypto methods to work in the .NET Framework
 [assembly: System.Security.SecurityRules(System.Security.SecurityRuleSet.Level1)]
 #endif");
             return this.GenerationEnvironment.ToString();

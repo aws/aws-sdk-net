@@ -258,7 +258,7 @@ namespace Amazon.S3
         protected override void Initialize()
         {
             this.AllowAutoRedirect = false;
-#if BCL45 || NETSTANDARD
+#if BCL || NETSTANDARD
             // Set Timeout and ReadWriteTimeout for S3 to max timeout as per-request
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;
@@ -362,22 +362,11 @@ namespace Amazon.S3
             string s3RegionalFlag = Environment.GetEnvironmentVariable(AwsS3UsEast1RegionalEndpointsEnvironmentVariable);
             if (!string.IsNullOrEmpty(s3RegionalFlag))
             {
-#if BCL35
-                 S3UsEast1RegionalEndpointValue? s3RegionalFlagValue = null;
-                 try
-                 {
-                     s3RegionalFlagValue = (S3UsEast1RegionalEndpointValue)Enum.Parse(typeof(S3UsEast1RegionalEndpointValue), s3RegionalFlag, true);
-                 }
-                 catch (Exception)
-                 {
-                     throw new InvalidOperationException("Invalid value for AWS_S3_US_EAST_1_REGIONAL_ENDPOINT environment variable. A string regional/legacy is expected.");
-                 }
-#else
                 if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalFlag, true, out var s3RegionalFlagValue))
                 {
                     throw new InvalidOperationException("Invalid value for AWS_S3_US_EAST_1_REGIONAL_ENDPOINT variable. A string regional/legacy is expected.");
                 }
-#endif
+
                 return s3RegionalFlagValue;
             }
             return null;

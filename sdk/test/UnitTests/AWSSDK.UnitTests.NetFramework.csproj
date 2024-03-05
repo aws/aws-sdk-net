@@ -2,7 +2,7 @@
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFramework>net462</TargetFramework>
-    <DefineConstants>$(DefineConstants);TRACE;BCL;BCL45;ASYNC_AWAIT;DEBUG</DefineConstants>
+    <DefineConstants>$(DefineConstants);TRACE;BCL;ASYNC_AWAIT;DEBUG</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.NetFramework</AssemblyName>
@@ -23,7 +23,7 @@
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
-        <AssemblyOriginatorKeyFile>../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
       </PropertyGroup>
     </When>
     <Otherwise>

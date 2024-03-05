@@ -20,9 +20,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-#if !BCL35
 using Amazon.Runtime.Credentials.Internal;
-#endif
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util.Internal;
 
@@ -38,9 +36,7 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.SAMLRoleUserIdentity,
                 CredentialProfileType.AssumeRoleExternalMFA,
                 CredentialProfileType.AssumeRoleMFA,
-#if !BCL35
                 CredentialProfileType.SSO,
-#endif
             };
 
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
@@ -149,12 +145,10 @@ namespace Amazon.Runtime.CredentialManagement
             RegionEndpoint stsRegion, 
             bool nonCallbackOnly)
         {
-#if !BCL35
             var ssoTokenFileCache = new SSOTokenFileCache(
                 CryptoUtilFactory.CryptoInstance,
                 new FileRetriever(),
                 new DirectoryRetriever());
-#endif
 
             var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
             if (nonCallbackOnly && profileType.HasValue && IsCallbackRequired(profileType.Value))
@@ -170,7 +164,6 @@ namespace Amazon.Runtime.CredentialManagement
                             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", profileName);
                     throw new InvalidOperationException(mfaMessage);
                 }
-#if !BCL35
                 else if (profileType == CredentialProfileType.SSO && !ssoTokenFileCache.Exists(options))
                 {
                     var ssoMessage = profileName == null
@@ -181,7 +174,6 @@ namespace Amazon.Runtime.CredentialManagement
                             "Please use a different type of profile.", profileName);
                     throw new InvalidOperationException(ssoMessage);
                 }
-#endif
                 else if (profileType == CredentialProfileType.SAMLRoleUserIdentity)
                 {
                     var samlMessage = profileName == null
@@ -324,7 +316,7 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint:
                         return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
-#if !BCL35
+                    
                     case CredentialProfileType.SSO:
                     {
                         var ssoCredentialsOptions = new SSOAWSCredentialsOptions 
@@ -339,7 +331,7 @@ namespace Amazon.Runtime.CredentialManagement
                             ssoCredentialsOptions
                         );
                     }
-#endif
+      
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleWithServices:
                     case CredentialProfileType.SAMLRoleWithGlobalEndpoint:

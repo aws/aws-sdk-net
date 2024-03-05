@@ -3,9 +3,9 @@
         {
             "name": "NetFramework",
             "targetFrameworks": [ "net462" ],
-            "defineConstants": [ "BCL", "BCL45", "AWS_ASYNC_API", "CODE_ANALYSIS" ],
+            "defineConstants": [ "BCL", "AWS_ASYNC_API", "CODE_ANALYSIS" ],
             "template": "VS2017ProjectFile",
-            "excludeFolders": [ "_bcl35", "_netstandard", "obj"],
+            "excludeFolders": [ "_netstandard", "obj"],
             "nugetTargetPlatform": "net462",
             "frameworkReferences" : [
                 {"name": "System.Configuration"}
@@ -32,7 +32,7 @@
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",
             "configurations" : [],
-            "excludeFolders": ["_bcl35", "_bcl45", "_bcl", "obj"],
+            "excludeFolders": ["_bcl", "obj"],
             "packageReferences": [
               {
                 "include": "Microsoft.CodeAnalysis.FxCopAnalyzers",
@@ -53,7 +53,7 @@
         {
             "name": "NetFramework",
             "targetFrameworks": [ "net462" ],
-            "defineConstants": [ "TRACE", "BCL", "BCL45", "ASYNC_AWAIT" ],
+            "defineConstants": [ "TRACE", "BCL", "ASYNC_AWAIT" ],
             "excludeFolders": ["obj"],
             "visualStudioServices" : ["{82a7f48d-3b50-4b1e-b82e-3ada8210c358}"],
             "embeddedResources" : [

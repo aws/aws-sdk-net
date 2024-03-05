@@ -54,7 +54,7 @@ namespace Amazon.Runtime.Internal
             }                      
         }
 
-#if BCL45
+#if BCL
 
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
