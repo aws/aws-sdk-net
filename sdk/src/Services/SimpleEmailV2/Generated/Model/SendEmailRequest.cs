@@ -88,8 +88,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// An object that contains the body of the message. You can send either a Simple message
-        /// Raw message or a template Message.
+        /// An object that contains the body of the message. You can send either a Simple message,
+        /// Raw message, or a Templated message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Template Marshaller
+    /// MessageHeader Marshaller
     /// </summary>
-    public class TemplateMarshaller : IRequestMarshaller<Template, JsonMarshallerContext> 
+    public class MessageHeaderMarshaller : IRequestMarshaller<MessageHeader, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Template requestObject, JsonMarshallerContext context)
+        public void Marshall(MessageHeader requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetHeaders())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Headers");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectHeadersListValue in requestObject.Headers)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MessageHeaderMarshaller.Instance;
-                    marshaller.Marshall(requestObjectHeadersListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetTemplateArn())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("TemplateArn");
-                context.Writer.Write(requestObject.TemplateArn);
-            }
-
-            if(requestObject.IsSetTemplateData())
-            {
-                context.Writer.WritePropertyName("TemplateData");
-                context.Writer.Write(requestObject.TemplateData);
-            }
-
-            if(requestObject.IsSetTemplateName())
-            {
-                context.Writer.WritePropertyName("TemplateName");
-                context.Writer.Write(requestObject.TemplateName);
+                context.Writer.WritePropertyName("Value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TemplateMarshaller Instance = new TemplateMarshaller();
+        public readonly static MessageHeaderMarshaller Instance = new MessageHeaderMarshaller();
 
     }
 }

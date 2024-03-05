@@ -124,10 +124,7 @@ namespace Amazon.SimpleEmailV2.Model
         ///  
         /// <para>
         /// If the value is <c>false</c>, then your account is in the <i>sandbox</i>. When your
-        /// account is in the sandbox, you can only send email to verified identities. Additionally,
-        /// the maximum number of emails you can send in a 24-hour period (your sending quota)
-        /// is 200, and the maximum number of emails you can send per second (your maximum sending
-        /// rate) is 1.
+        /// account is in the sandbox, you can only send email to verified identities. 
         /// </para>
         ///  
         /// <para>

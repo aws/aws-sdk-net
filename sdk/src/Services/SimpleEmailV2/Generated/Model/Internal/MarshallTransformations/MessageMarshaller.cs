@@ -56,6 +56,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("Headers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHeadersListValue in requestObject.Headers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSubject())
             {
                 context.Writer.WritePropertyName("Subject");
