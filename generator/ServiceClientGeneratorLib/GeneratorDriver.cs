@@ -1481,7 +1481,7 @@ namespace ServiceClientGenerator
             foreach (var file in allProjectFiles)
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
-                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.Contains(x));
+                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.EndsWith(x));
 
                 if (shouldDelete)
                 {
@@ -1494,7 +1494,7 @@ namespace ServiceClientGenerator
             foreach (var folder in allFolders)
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(folder));
-                var shouldDelete = legacyFolderNames.Any(x => fullPath.EndsWith(x));
+                var shouldDelete = legacyFolderNames.Any(x => fullPath.Contains(x));
 
                 if (shouldDelete)
                 {
