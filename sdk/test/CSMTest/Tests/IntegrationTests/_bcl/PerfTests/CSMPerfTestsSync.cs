@@ -28,7 +28,7 @@ namespace AWSSDK.CSM.IntegrationTests
 
         [Fact(Skip = "Running performance tests as part of a regular build is expensive.")]
         [Trait("Category", "CSM")]
-        [Trait("Category", "bcl45")]
+        [Trait("Category", "bcl")]
         [Trait("Category", "Sync")]
         [Trait("Category", "perfTests")]
         public void MultipleSuccessfulRequestsTest()
@@ -108,7 +108,7 @@ namespace AWSSDK.CSM.IntegrationTests
             }
             return stash;
         }
-#if BCL45
+#if BCL
         class MockDDBClient : AmazonDynamoDBClient
         {
             public Mock<IHttpRequestFactory<Stream>> MockFactory { get; private set; }

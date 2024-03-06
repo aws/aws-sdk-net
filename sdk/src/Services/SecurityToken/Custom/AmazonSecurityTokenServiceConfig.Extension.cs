@@ -84,27 +84,6 @@ namespace Amazon.SecurityToken
         private static object _triedToResolveProfileLock = new object();
         private static bool _triedToResolveProfile = false;
 
-#if BCL35
-        private static readonly HashSet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
-         {
-             RegionEndpoint.USEast1,
-             RegionEndpoint.USEast2,
-             RegionEndpoint.USWest1,
-             RegionEndpoint.USWest2,
-             RegionEndpoint.SAEast1,
-             RegionEndpoint.EUWest1,
-             RegionEndpoint.EUWest2,
-             RegionEndpoint.EUWest3,
-             RegionEndpoint.EUNorth1,
-             RegionEndpoint.EUCentral1,
-             RegionEndpoint.CACentral1,
-             RegionEndpoint.APSoutheast1,
-             RegionEndpoint.APSoutheast2,
-             RegionEndpoint.APSouth1,
-             RegionEndpoint.APNortheast1
-         };
-        private static readonly HashSet<string> legacyGlobalRegionSystemNames = new HashSet<string>();
-#else
         private static readonly ISet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
          {
              RegionEndpoint.USEast1,
@@ -124,7 +103,6 @@ namespace Amazon.SecurityToken
              RegionEndpoint.APNortheast1
          };
         private static readonly ISet<string> legacyGlobalRegionSystemNames = new HashSet<string>();
-#endif
 
         static AmazonSecurityTokenServiceConfig()
         {
@@ -182,22 +160,11 @@ namespace Amazon.SecurityToken
             string stsRegionalFlag = Environment.GetEnvironmentVariable(AwsStsRegionalEndpointsEnvironmentVariable);
             if (!string.IsNullOrEmpty(stsRegionalFlag))
             {
-#if BCL35
-                StsRegionalEndpointsValue? stsRegionalFlagValue = null;
-                try
-                {
-                    stsRegionalFlagValue = (StsRegionalEndpointsValue)Enum.Parse(typeof(StsRegionalEndpointsValue), stsRegionalFlag, true);
-                }
-                catch (Exception)
-                {
-                    throw new InvalidOperationException("Invalid value for AWS_STS_REGIONAL_ENDPOINTS environment variable. A string regional/legacy is expected.");
-                }
-#else
                 if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalFlag, true, out var stsRegionalFlagValue))
                 {
                     throw new InvalidOperationException("Invalid value for AWS_STS_REGIONAL_ENDPOINTS environment variable. A string regional/legacy is expected.");
                 }
-#endif
+
                 return stsRegionalFlagValue;
             }
             return null;

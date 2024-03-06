@@ -73,7 +73,7 @@ namespace AWSSDK.UnitTests
 #if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestSuccessfulAsyncCall()
         {
             var factory = new MockHttpRequestFactory();
@@ -96,7 +96,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task TestErrorAsyncCall()
         {
             var factory = new MockHttpRequestFactory

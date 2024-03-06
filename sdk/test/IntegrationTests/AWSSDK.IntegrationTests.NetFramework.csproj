@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
-    <DefineConstants>$(DefineConstants);DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTests.NetFramework</AssemblyName>
@@ -19,10 +19,6 @@
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="**/35/**" />
-    <None Remove="**/35/**" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />

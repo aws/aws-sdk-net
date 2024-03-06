@@ -1470,6 +1470,9 @@ namespace ServiceClientGenerator
             var legacyFolderNames = new HashSet<string>
             {
                 "_bcl35",
+                Utils.PathCombineAlt("Generated", "_bcl45"),
+                Utils.PathCombineAlt("Generated", "_bcl45+netstandard"),
+                Utils.PathCombineAlt("Generated", "Model", "_bcl45+netstandard"),
                 Utils.PathCombineAlt("Config", "35"),
                 Utils.PathCombineAlt("Config", "45")
             };

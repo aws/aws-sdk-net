@@ -27,7 +27,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL45
+#if BCL
 
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 

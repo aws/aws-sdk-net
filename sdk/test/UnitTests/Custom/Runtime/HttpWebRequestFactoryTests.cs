@@ -95,7 +95,7 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
-#if BCL45
+#if BCL
         public async System.Threading.Tasks.Task TestHttpRequest(CancellationToken cancellationToken)
 #else
         public void TestHttpRequest(CancellationToken cancellationToken)
@@ -107,7 +107,7 @@ namespace AWSSDK.UnitTests
 
             var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
             var destinationStream = new MemoryStream();
-#if BCL45
+#if BCL
             await request.WriteToRequestBodyAsync(destinationStream, sourceStream, null, requestContext);
 #else
             request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
@@ -115,7 +115,7 @@ namespace AWSSDK.UnitTests
 
             var sourceContent = Encoding.UTF8.GetBytes(testContent);
             destinationStream = new MemoryStream();
-#if BCL45
+#if BCL
             await request.WriteToRequestBodyAsync(destinationStream, sourceContent, null, cancellationToken);
 #else
             request.WriteToRequestBody(destinationStream, sourceContent, null);

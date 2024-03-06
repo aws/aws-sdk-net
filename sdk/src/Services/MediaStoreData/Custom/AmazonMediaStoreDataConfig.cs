@@ -32,7 +32,7 @@ namespace Amazon.MediaStoreData
         protected override void Initialize()
         {
             this.AllowAutoRedirect = false;
-#if BCL45||NETSTANDARD
+#if BCL || NETSTANDARD
             // Set Timeout and ReadWriteTimeout for Amazon MediaStoreData service to max timeout as per-request
             // timeouts are not supported.
             this.Timeout = ClientConfig.MaxTimeout;

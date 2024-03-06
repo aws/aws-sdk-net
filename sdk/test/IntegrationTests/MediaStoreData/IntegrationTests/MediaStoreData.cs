@@ -73,47 +73,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
         }
 
-#if !BCL35
-        /// <summary>
-        /// Compresses a payload of type stream of a request using compression while calling <see cref="AmazonMediaStoreDataClient.PutObject"/>.
-        /// </summary>
-        [Ignore("This test is currently turned off because at the time it was written, the models for this service" +
-            " did not have compression traits required to compress the payload of the request. We added those traits manually" +
-            " in the model and ran those tests to make sure that request compression feature works for streams.")]
-        [TestMethod]
-        [TestCategory("MediaStoreData")]
-        public async Task PutObjectTestAsync()
-        {
-            await UtilityMethods.WaitUntilAsync(async () =>
-            {
-                // Get endpoint Url of the created container
-                var endpoint = GetEndpointUrl(ContainerName);
-
-                var config = new AmazonMediaStoreDataConfig
-                {
-                    ServiceURL = endpoint,
-                    DisableRequestCompression = false // Make sure that this flag is false in order to compress the stream
-                };
-
-                using (var client = new AmazonMediaStoreDataClient(config))
-                {
-                    var putObjectRequest = new PutObjectRequest
-                    {
-                        Path = ObjectPath,
-                        Body = new MemoryStream(Encoding.UTF8.GetBytes("Testing 123")), // We are passing a stream to the payload
-                        ContentType = "application/octet-stream"
-                    };
-
-                    // Upload the file to AWS MediaStore Data
-                    var response = await client.PutObjectAsync(putObjectRequest);
-
-                    Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
-
-                    WaitForObjectToBeListed(client);
-                }
-            }, TimeSpan.FromSeconds(TestTimeout)); 
-        }
-#else
         /// <summary>
         /// Compresses a payload of type stream of a request using compression while calling <see cref="AmazonMediaStoreDataClient.PutObject"/>.
         /// </summary>
@@ -153,7 +112,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             }, 5, TestTimeout);
         }
-#endif
 
         /// <summary>
         /// Creates a container with name <paramref name="containerName"/> if it doesn't already exist.

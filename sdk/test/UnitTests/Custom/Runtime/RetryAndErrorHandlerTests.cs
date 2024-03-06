@@ -97,10 +97,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
-#if BCL45
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForIOExceptionAsync()
         {
             Tester.Reset();
@@ -120,7 +120,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForWebExceptionAsync()
         {
             Tester.Reset();

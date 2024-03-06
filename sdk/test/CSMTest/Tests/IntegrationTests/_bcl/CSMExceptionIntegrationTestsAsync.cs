@@ -26,7 +26,7 @@ namespace AWSSDK.CSM.IntegrationTests
 
         [Fact]
         [Trait("Category", "CSM")]
-        [Trait("Category", "bcl45")]
+        [Trait("Category", "bcl")]
         [Trait("Category", "Async")]
         [Trait("Category", "EndtoEndTests")]
         public async Task IoExceptionRetryableRequestsTestAsync()
@@ -70,7 +70,7 @@ namespace AWSSDK.CSM.IntegrationTests
 
         [Fact]
         [Trait("Category", "CSM")]
-        [Trait("Category", "bcl45")]
+        [Trait("Category", "bcl")]
         [Trait("Category", "Async")]
         [Trait("Category", "EndtoEndTests")]
         public async Task WebExceptionRetryableRequestsWithHttpStatusCodeTestAsync()
@@ -118,7 +118,7 @@ namespace AWSSDK.CSM.IntegrationTests
 
         [Fact]
         [Trait("Category", "CSM")]
-        [Trait("Category", "bcl45")]
+        [Trait("Category", "bcl")]
         [Trait("Category", "Async")]
         [Trait("Category", "EndtoEndTests")]
         public async Task WebExceptionNonRetryableRequestsTestAsync()

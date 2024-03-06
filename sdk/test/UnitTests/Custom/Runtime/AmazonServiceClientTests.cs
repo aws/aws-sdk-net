@@ -41,21 +41,12 @@ namespace AWSSDK.UnitTests
             var presets = _client.ListPresets();
         }
 
-#if BCL45
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public async Task TestSuccessfulCallAsync()
         {
             var presets = await _client.ListPresetsAsync(new ListPresetsRequest());
-        }
-#elif !BCL45 && BCL
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestSuccessfulCallAsync()
-        {
-            var asyncResult = _client.BeginListPresets(new ListPresetsRequest(),null,null);
-            asyncResult.AsyncWaitHandle.WaitOne();
-            var presets = _client.EndListPresets(asyncResult);
         }
 #endif
     }

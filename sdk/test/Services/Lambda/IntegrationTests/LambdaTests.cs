@@ -17,9 +17,8 @@ using System.Net;
 using Amazon.Lambda.Model.Internal.MarshallTransformations;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Remoting.Messaging;
-using System.ComponentModel.Composition;
 
-#if BCL45
+#if BCL
 using System.IO.Compression;
 using System.Text;
 using AWSSDK_DotNet.IntegrationTests.Utils;
@@ -117,7 +116,7 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
         }
 
         // This test depends on functionality that is only in 4.5
-#if BCL45
+#if BCL
         [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Lambda")]

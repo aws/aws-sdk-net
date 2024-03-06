@@ -32,7 +32,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL45
+#if BCL
         /// <summary>
         /// Override to do extra exception handling if thrown in the pipeline.
         /// </summary>

@@ -191,7 +191,7 @@ namespace AWSSDK.UnitTests
                 Validate(this.CallCount);
         }
 
-#if BCL45
+#if BCL
         public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             await Task.Delay(100);
@@ -208,47 +208,6 @@ namespace AWSSDK.UnitTests
 
             return new T();
         }
-#elif !BCL45 && BCL
-
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            if (executionContext.ResponseContext.AsyncResult == null)
-            {
-                var asyncResult = new RuntimeAsyncResult(null, null);
-                executionContext.ResponseContext.AsyncResult = asyncResult;
-            }
-
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                this.AsyncCallback(executionContext);
-            });
-
-            return executionContext.ResponseContext.AsyncResult;
-        }
-
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            this.CallCount++;
-
-            try
-            {
-                if (this.Action != null)
-                    Action(this.CallCount);
-
-                if (this.Action2 != null)
-                    Action2(this.CallCount, 
-                        Amazon.Runtime.Internal.ExecutionContext.CreateFromAsyncContext(executionContext));
-
-                if (this.Validate != null)
-                    Validate(this.CallCount);
-            }
-            catch (Exception exception)
-            {
-                executionContext.ResponseContext.AsyncResult.Exception = exception;
-            }
-            base.InvokeAsyncCallback(executionContext);
-        }
-
 #endif
 
     }
@@ -258,33 +217,5 @@ namespace AWSSDK.UnitTests
         public override void InvokeSync(IExecutionContext executionContext)
         {
         }
-
-#if BCL45
-        //public override Task<T> InvokeAsync<T>(IExecutionContext executionContext)
-        //{
-        //    return Task.FromResult(new AmazonWebServiceResponse());
-        //}
-        public override Task<T> InvokeAsync<T>(IExecutionContext executionContext)
-        {
-            return Task.FromResult<T>(new T());
-        }
-#elif !BCL45 && BCL
-
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            if (executionContext.ResponseContext.AsyncResult == null)
-            {
-                var asyncResult = new RuntimeAsyncResult(null, null);
-                executionContext.ResponseContext.AsyncResult = asyncResult;
-            }
-
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                this.AsyncCallback(executionContext);
-            });
-
-            return executionContext.ResponseContext.AsyncResult;
-        }
-#endif
     }
 }

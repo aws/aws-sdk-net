@@ -209,7 +209,7 @@ namespace AWSSDK.UnitTests
                 AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/nospecialcharacters", true, null));
         }
 
-#if BCL45
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async45")]
@@ -222,24 +222,6 @@ namespace AWSSDK.UnitTests
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
-
-            Assert.IsTrue(context.RequestContext.IsSigned);
-            Assert.AreEqual(1, signer.SignCount);
-        }
-#elif !BCL45 && BCL
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void TestSignerWithBasicCredentialsAsync()
-        {
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
-
-            var signer = new MockSigner();
-            var context = CreateAsyncTestContext(signer);
-            var asyncResult = pipeline.InvokeAsync(context);
-            asyncResult.AsyncWaitHandle.WaitOne();
 
             Assert.IsTrue(context.RequestContext.IsSigned);
             Assert.AreEqual(1, signer.SignCount);
