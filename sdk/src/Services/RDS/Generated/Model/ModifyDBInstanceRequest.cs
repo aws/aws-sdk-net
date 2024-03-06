@@ -2200,8 +2200,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify Provisioned IOPS (<c>io1</c>), you must also include a value for the
-        /// <c>Iops</c> parameter.
+        /// If you specify <c>io1</c>), <c>io2</c>, or <c>gp3</c> you must also include a value
+        /// for the <c>Iops</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -2219,7 +2219,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | io2 | standard</c> 
         /// </para>
         ///  
         /// <para>

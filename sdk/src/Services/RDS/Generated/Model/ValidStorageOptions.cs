@@ -138,7 +138,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The valid storage types for your DB instance. For example: gp2, gp3, io1.
+        /// The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
         /// </para>
         /// </summary>
         public string StorageType

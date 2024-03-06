@@ -124,7 +124,7 @@ namespace Amazon.RDS.Model
         /// Instantiates CreateDBInstanceRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">The identifier for this DB instance. This parameter is stored as a lowercase string. Constraints: <ul> <li> Must contain from 1 to 63 letters, numbers, or hyphens. </li> <li> First character must be a letter. </li> <li> Can't end with a hyphen or contain two consecutive hyphens. </li> </ul> Example: <c>mydbinstance</c> </param>
-        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. <dl> <dt>Amazon RDS Custom</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 64000. </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul> </dd> </dl></param>
+        /// <param name="allocatedStorage">The amount of storage in gibibytes (GiB) to allocate for the DB instance. This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume. <dl> <dt>Amazon RDS Custom</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server. </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 10 to 3072. </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536. </li> <li> Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536. </li> <li> Magnetic storage (standard): Must be an integer from 5 to 3072. </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> Constraints to the amount of storage for each storage type are the following: <ul> <li> General Purpose (SSD) storage (gp2, gp3): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 16384. </li> <li> Web and Express editions: Must be an integer from 20 to 16384. </li> </ul> </li> <li> Provisioned IOPS storage (io1, io2): <ul> <li> Enterprise and Standard editions: Must be an integer from 100 to 16384. </li> <li> Web and Express editions: Must be an integer from 100 to 16384. </li> </ul> </li> <li> Magnetic storage (standard): <ul> <li> Enterprise and Standard editions: Must be an integer from 20 to 1024. </li> <li> Web and Express editions: Must be an integer from 20 to 1024. </li> </ul> </li> </ul> </dd> </dl></param>
         /// <param name="dbInstanceClass">The compute and memory capacity of the DB instance, for example <c>db.m5.large</c>. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</param>
         /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <c>aurora-mysql</c> (for Aurora MySQL DB instances) </li> <li>  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances) </li> <li>  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user. This setting doesn't apply to Amazon Aurora DB instances. The name for the master user is managed by the DB cluster. This setting is required for RDS DB instances. Constraints: <ul> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
@@ -161,7 +161,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom
+        /// Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom
         /// for Oracle, 16384 for RDS Custom for SQL Server.
         /// </para>
         ///  </li> </ul> </dd> <dt>RDS for Db2</dt> <dd> 
@@ -170,11 +170,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
+        /// General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.
+        /// Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.
         /// </para>
         ///  </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> 
         /// <para>
@@ -186,7 +186,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -202,7 +202,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -218,7 +218,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -234,7 +234,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.
+        /// Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -258,7 +258,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Provisioned IOPS storage (io1):
+        /// Provisioned IOPS storage (io1, io2):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2576,8 +2576,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
-        /// parameter.
+        /// If you specify <c>io1</c>, <c>io2</c>, or <c>gp3</c>, you must also include a value
+        /// for the <c>Iops</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -2586,7 +2586,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | io2 | standard</c> 
         /// </para>
         ///  
         /// <para>

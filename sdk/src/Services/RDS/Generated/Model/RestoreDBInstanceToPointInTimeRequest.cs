@@ -1263,7 +1263,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | io2 | standard</c> 
         /// </para>
         ///  
         /// <para>
@@ -1275,8 +1275,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
-        /// parameter.
+        /// If you specify <c>io1</c>, <c>io2</c>, or <c>gp3</c>, you must also include a value
+        /// for the <c>Iops</c> parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>

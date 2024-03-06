@@ -61,6 +61,7 @@ namespace Amazon.RDS.Model
         private List<string> _availabilityZones = new List<string>();
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _databaseName;
@@ -255,6 +256,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The CA certificate identifier to use for the DB cluster's server certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Multi-AZ DB clusters
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>

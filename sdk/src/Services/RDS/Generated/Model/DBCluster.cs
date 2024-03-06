@@ -74,6 +74,7 @@ namespace Amazon.RDS.Model
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
         private int? _capacity;
+        private CertificateDetails _certificateDetails;
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
@@ -413,6 +414,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetCapacity()
         {
             return this._capacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateDetails.
+        /// </summary>
+        public CertificateDetails CertificateDetails
+        {
+            get { return this._certificateDetails; }
+            set { this._certificateDetails = value; }
+        }
+
+        // Check to see if CertificateDetails property is set
+        internal bool IsSetCertificateDetails()
+        {
+            return this._certificateDetails != null;
         }
 
         /// <summary>
