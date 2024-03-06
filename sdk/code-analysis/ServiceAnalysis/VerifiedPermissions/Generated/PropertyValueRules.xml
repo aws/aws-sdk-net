@@ -539,6 +539,30 @@
     <pattern>arn:[a-zA-Z0-9-]+:cognito-idp:(([a-zA-Z0-9-]+:\d{12}:userpool/[\w-]+_[0-9a-zA-Z]+))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CognitoUserPoolConfigurationDetail.Issuer</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CognitoUserPoolConfigurationDetail.UserPoolArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:[a-zA-Z0-9-]+:cognito-idp:(([a-zA-Z0-9-]+:\d{12}:userpool/[\w-]+_[0-9a-zA-Z]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CognitoUserPoolConfigurationItem.Issuer</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CognitoUserPoolConfigurationItem.UserPoolArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:[a-zA-Z0-9-]+:cognito-idp:(([a-zA-Z0-9-]+:\d{12}:userpool/[\w-]+_[0-9a-zA-Z]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.DeterminingPolicyItem.PolicyId</property>
     <min>1</min>
     <max>200</max>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdentitySourceItem Object
+    /// Response Unmarshaller for CognitoUserPoolConfigurationItem Object
     /// </summary>  
-    public class IdentitySourceItemUnmarshaller : IUnmarshaller<IdentitySourceItem, XmlUnmarshallerContext>, IUnmarshaller<IdentitySourceItem, JsonUnmarshallerContext>
+    public class CognitoUserPoolConfigurationItemUnmarshaller : IUnmarshaller<CognitoUserPoolConfigurationItem, XmlUnmarshallerContext>, IUnmarshaller<CognitoUserPoolConfigurationItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        IdentitySourceItem IUnmarshaller<IdentitySourceItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CognitoUserPoolConfigurationItem IUnmarshaller<CognitoUserPoolConfigurationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdentitySourceItem Unmarshall(JsonUnmarshallerContext context)
+        public CognitoUserPoolConfigurationItem Unmarshall(JsonUnmarshallerContext context)
         {
-            IdentitySourceItem unmarshalledObject = new IdentitySourceItem();
+            CognitoUserPoolConfigurationItem unmarshalledObject = new CognitoUserPoolConfigurationItem();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,46 +63,22 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("clientIds", targetDepth))
                 {
-                    var unmarshaller = ConfigurationItemUnmarshaller.Instance;
-                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ClientIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("details", targetDepth))
-                {
-                    var unmarshaller = IdentitySourceItemDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Details = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("identitySourceId", targetDepth))
+                if (context.TestExpression("issuer", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentitySourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Issuer = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("policyStoreId", targetDepth))
+                if (context.TestExpression("userPoolArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyStoreId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("principalEntityType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalEntityType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserPoolArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -110,12 +86,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
 
 
-        private static IdentitySourceItemUnmarshaller _instance = new IdentitySourceItemUnmarshaller();        
+        private static CognitoUserPoolConfigurationItemUnmarshaller _instance = new CognitoUserPoolConfigurationItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdentitySourceItemUnmarshaller Instance
+        public static CognitoUserPoolConfigurationItemUnmarshaller Instance
         {
             get
             {
