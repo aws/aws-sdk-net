@@ -82,7 +82,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         ///  <c>ALL</c> - All of the table attributes are projected into the index.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// When using the DynamoDB console, <c>ALL</c> is selected by default.
+        /// </para>
         /// </summary>
         public ProjectionType ProjectionType
         {

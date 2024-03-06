@@ -360,7 +360,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression">Filter
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>

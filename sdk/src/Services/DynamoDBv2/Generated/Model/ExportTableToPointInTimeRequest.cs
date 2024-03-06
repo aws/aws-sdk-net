@@ -181,6 +181,11 @@ namespace Amazon.DynamoDBv2.Model
         /// The ID of the Amazon Web Services account that owns the bucket the export will be
         /// stored in.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string S3BucketOwner
         {
