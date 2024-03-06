@@ -36,10 +36,12 @@ namespace Amazon.Imagebuilder.Model
     {
         private string _accountId;
         private LifecycleExecutionResourceAction _action;
+        private DateTime? _endTime;
         private List<string> _imageUris = new List<string>();
         private string _region;
         private string _resourceId;
         private List<LifecycleExecutionSnapshotResource> _snapshots = new List<LifecycleExecutionSnapshotResource>();
+        private DateTime? _startTime;
         private LifecycleExecutionResourceState _state;
 
         /// <summary>
@@ -77,6 +79,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The ending timestamp from the lifecycle action that was applied to the resource.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
@@ -166,6 +186,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetSnapshots()
         {
             return this._snapshots != null && this._snapshots.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The starting timestamp from the lifecycle action that was applied to the resource.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
         /// <summary>

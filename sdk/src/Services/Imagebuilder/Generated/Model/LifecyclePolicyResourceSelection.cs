@@ -59,8 +59,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TagMap. 
         /// <para>
-        /// A list of tags that are used as selection criteria for the resources that the lifecycle
-        /// policy applies to.
+        /// A list of tags that are used as selection criteria for the Image Builder image resources
+        /// that the lifecycle policy applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -58,8 +58,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TagMap. 
         /// <para>
-        /// Contains a list of tags that Image Builder uses to skip lifecycle actions for resources
-        /// that have them.
+        /// Contains a list of tags that Image Builder uses to skip lifecycle actions for Image
+        /// Builder image resources that have them.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
