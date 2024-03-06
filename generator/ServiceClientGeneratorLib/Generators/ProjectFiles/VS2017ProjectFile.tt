@@ -122,7 +122,7 @@
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
 <#
-    if(this.Project.AssemblyName == "AWSSDK.UnitTests.Net35" || this.Project.AssemblyName == "AWSSDK.UnitTests.Net45")
+    if (this.Project.AssemblyName == "AWSSDK.UnitTests.NetFramework")
     {
 #>
         <AssemblyOriginatorKeyFile>../../awssdk.dll.snk</AssemblyOriginatorKeyFile>

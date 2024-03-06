@@ -291,7 +291,7 @@ namespace ServiceClientGenerator.Generators.ProjectFiles
             
             #line 124 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\ProjectFiles\VS2017ProjectFile.tt"
 
-    if(this.Project.AssemblyName == "AWSSDK.UnitTests.Net35" || this.Project.AssemblyName == "AWSSDK.UnitTests.Net45")
+    if (this.Project.AssemblyName == "AWSSDK.UnitTests.NetFramework")
     {
 
             
