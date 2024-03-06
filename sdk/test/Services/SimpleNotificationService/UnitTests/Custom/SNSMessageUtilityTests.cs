@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.SimpleNotificationService.Util;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     // Temporarily disabling failing test, need to make less brittle and move to integ tests.
     [TestClass]

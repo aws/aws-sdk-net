@@ -2,7 +2,7 @@
 using System.Reflection;
 using Amazon;
 	 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     public static class DateFaker
     {

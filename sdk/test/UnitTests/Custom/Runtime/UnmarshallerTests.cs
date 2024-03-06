@@ -20,7 +20,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.Runtime.Internal.Util;
 using System.Threading;
 using System.Net;
@@ -32,7 +32,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
 using Amazon.ElasticMapReduce.Model;
 

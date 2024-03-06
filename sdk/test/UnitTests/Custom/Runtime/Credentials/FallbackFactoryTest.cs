@@ -830,8 +830,7 @@ namespace AWSSDK.UnitTests
             Assert.ThrowsException<ArgumentNullException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, null, "validRoleSessionName"));
         }
 
-        /// Further FallbackFactory tests involving retries live in AWSSDK.UnitTests.SecurityToken.NET45.Custom.FallbackCredentialsFactorySTSTests.
-
+        // Further FallbackFactory tests involving retries live in AWSSDK.UnitTests.SecurityToken.Custom.FallbackCredentialsFactorySTSTests.
         public class AssumeRoleWithWebIdentityTestCredentials : AssumeRoleWithWebIdentityCredentials
         {
             public ICoreAmazonSTS_WebIdentity Client { get; set; }

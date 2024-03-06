@@ -5,7 +5,7 @@ using Amazon.CloudFront;
 using Json.LitJson;
 using System.IO;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class CloudFrontTests

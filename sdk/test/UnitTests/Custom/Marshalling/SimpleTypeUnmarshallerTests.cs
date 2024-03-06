@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

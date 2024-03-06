@@ -16,7 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;

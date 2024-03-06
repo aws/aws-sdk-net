@@ -1483,7 +1483,7 @@ namespace ServiceClientGenerator
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
                 var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.EndsWith(x));
 
-                if (shouldDelete)
+                if (shouldDelete && File.Exists(file))
                 {
                     Console.Error.WriteLine("**** Warning: Removing obsolete csproj file " + Path.GetFileName(file));
                     File.Delete(file);
@@ -1496,7 +1496,7 @@ namespace ServiceClientGenerator
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(folder));
                 var shouldDelete = legacyFolderNames.Any(x => fullPath.Contains(x));
 
-                if (shouldDelete)
+                if (shouldDelete && Directory.Exists(folder))
                 {
                     Console.Error.WriteLine("**** Warning: Removing obsolete folder " + fullPath);
                     Directory.Delete(folder, recursive: true);

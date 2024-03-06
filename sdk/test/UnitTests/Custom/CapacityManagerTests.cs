@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class CapacityManagerTests

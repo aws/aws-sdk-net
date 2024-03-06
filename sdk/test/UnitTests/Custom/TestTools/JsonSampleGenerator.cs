@@ -11,7 +11,7 @@ using Amazon.Runtime.Documents;
 using Amazon.Runtime.Documents.Internal.Transform;
 using Amazon.Util;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     public class JsonSampleGenerator
     {

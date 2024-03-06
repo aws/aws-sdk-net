@@ -6,7 +6,7 @@ using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceClientGenerator;
 
-namespace AWSSDK_DotNet35.UnitTests.Generated.Customizations.ConstantClasses
+namespace AWSSDK_DotNet.UnitTests.Generated.Customizations.ConstantClasses
 {
     public class ConstantClassTestBase
     {

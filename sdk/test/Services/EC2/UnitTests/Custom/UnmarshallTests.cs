@@ -4,10 +4,10 @@ using Amazon.EC2;
 using Amazon.EC2.Model;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests.EC2
+namespace AWSSDK_DotNet.UnitTests.EC2
 {
     [TestClass]
     public class UnmarshallTests

@@ -9,7 +9,7 @@ using ServiceClientGenerator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Reflection;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     public static class Utils
     {
