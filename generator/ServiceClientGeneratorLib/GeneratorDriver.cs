@@ -1469,7 +1469,8 @@ namespace ServiceClientGenerator
 
             var legacyFolderNames = new HashSet<string>
             {
-                "_bcl35",
+                Utils.PathCombineAlt("Generated", "_bcl35"),
+                Utils.PathCombineAlt("Generated", "_bcl45"),
                 Utils.PathCombineAlt("Config", "35"),
                 Utils.PathCombineAlt("Config", "45")
             };
@@ -1491,7 +1492,7 @@ namespace ServiceClientGenerator
             foreach (var folder in allFolders)
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(folder));
-                var shouldDelete = legacyFolderNames.Any(x => fullPath.Contains(x));
+                var shouldDelete = legacyFolderNames.Any(x => fullPath.EndsWith(x));
 
                 if (shouldDelete)
                 {
