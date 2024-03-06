@@ -11,7 +11,7 @@ using System.Net;
 using Amazon.Runtime.Documents;
 using ServiceClientGenerator;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     /// <summary>
     /// This class instantiates an object of the passed in type. It will also set values for all the properties 

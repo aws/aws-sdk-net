@@ -25,11 +25,11 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using ServiceClientGenerator;
 
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon;
 using AWSSDK.UnitTests;
 
-namespace AWSSDK_DotNet35.UnitTests.Marshalling
+namespace AWSSDK_DotNet.UnitTests.Marshalling
 {    
     public partial class LambdaMarshallingTests
     {

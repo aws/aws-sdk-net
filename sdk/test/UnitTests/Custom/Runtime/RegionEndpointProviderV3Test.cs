@@ -14,7 +14,7 @@
  */
 using Amazon;
 using Amazon.Runtime;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Amazon.Internal;

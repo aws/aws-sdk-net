@@ -17,7 +17,7 @@ using ThirdParty.Json.LitJson;
 using Moq;
 using Amazon;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class DynamoDBEntryTests

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using AWSSDK_DotNet.UnitTests;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Util;

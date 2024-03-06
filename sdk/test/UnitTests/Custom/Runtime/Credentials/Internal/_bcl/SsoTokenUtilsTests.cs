@@ -15,7 +15,7 @@
 using System;
 using System.Xml;
 using Amazon.Runtime.Credentials.Internal;
-using AWSSDK_DotNet35.UnitTests.TestTools;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests

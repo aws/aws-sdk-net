@@ -1,7 +1,7 @@
 ﻿using Amazon.AutoScaling;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests
+namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
     public class ServiceSpecificDefaultConfigurationTest

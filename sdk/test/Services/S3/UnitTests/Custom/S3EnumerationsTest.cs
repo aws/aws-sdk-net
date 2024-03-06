@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Amazon.S3;
-using AWSSDK_DotNet35.UnitTests.Generated.Customizations.ConstantClasses;
+using AWSSDK_DotNet.UnitTests.Generated.Customizations.ConstantClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AWSSDK_DotNet35.UnitTests.ConstantClasses.S3
+namespace AWSSDK_DotNet.UnitTests.ConstantClasses.S3
 {
     [TestClass]
     public class S3EnumerationsTest : ConstantClassTestBase

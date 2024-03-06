@@ -2,7 +2,7 @@
 using Amazon.Runtime;
 using System;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     /// <summary>
     /// Simple way to switch between two states with a using block.

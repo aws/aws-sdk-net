@@ -17,7 +17,7 @@ using Amazon.S3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace AWSSDK.UnitTests.S3.Net45.Custom
+namespace AWSSDK.UnitTests.S3.Custom
 {
     [TestClass]
     public class S3EndpointFlagTests
