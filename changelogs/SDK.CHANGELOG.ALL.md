@@ -1,3 +1,17 @@
+### 3.7.762.0 (2024-03-06 19:53 UTC)
+* DynamoDBv2 (3.7.301.18)
+	* Doc only updates for DynamoDB documentation
+* Imagebuilder (3.7.303.0)
+	* Add PENDING status to Lifecycle Execution resource status. Add StartTime and EndTime to ListLifecycleExecutionResource API response.
+* MWAA (3.7.303.13)
+	* Amazon MWAA adds support for Apache Airflow v2.8.1.
+* RDS (3.7.309.0)
+	* Updated the input of CreateDBCluster and ModifyDBCluster to support setting CA certificates. Updated the output of DescribeDBCluster to show current CA certificate setting value.
+* Redshift (3.7.304.8)
+	* Update for documentation only. Covers port ranges, definition updates for data sharing, and definition updates to cluster-snapshot documentation.
+* VerifiedPermissions (3.7.303.0)
+	* Deprecating details in favor of configuration for GetIdentitySource and ListIdentitySources APIs.
+
 ### 3.7.761.0 (2024-03-05 19:17 UTC)
 * APIGateway (3.7.300.56)
 	* Documentation updates for Amazon API Gateway
