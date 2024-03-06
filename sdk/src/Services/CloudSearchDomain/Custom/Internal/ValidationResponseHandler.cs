@@ -28,8 +28,7 @@ namespace Amazon.CloudSearchDomain.Internal
         }
 #endif
 
-#if BCL45
-
+#if BCL
         /// <summary>
         /// Calls the and post invoke logic after calling the next handler 
         /// in the pipeline.

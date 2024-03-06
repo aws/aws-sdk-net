@@ -1471,6 +1471,7 @@ namespace ServiceClientGenerator
             {
                 Utils.PathCombineAlt("Generated", "_bcl35"),
                 Utils.PathCombineAlt("Generated", "_bcl45"),
+                Utils.PathCombineAlt("Generated", "Model", "_bcl45+netstandard"),
                 Utils.PathCombineAlt("Config", "35"),
                 Utils.PathCombineAlt("Config", "45")
             };
