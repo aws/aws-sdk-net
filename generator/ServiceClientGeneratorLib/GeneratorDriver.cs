@@ -1469,8 +1469,9 @@ namespace ServiceClientGenerator
 
             var legacyFolderNames = new HashSet<string>
             {
-                Utils.PathCombineAlt("Generated", "_bcl35"),
+                "_bcl35",
                 Utils.PathCombineAlt("Generated", "_bcl45"),
+                Utils.PathCombineAlt("Generated", "_bcl45+netstandard"),
                 Utils.PathCombineAlt("Generated", "Model", "_bcl45+netstandard"),
                 Utils.PathCombineAlt("Config", "35"),
                 Utils.PathCombineAlt("Config", "45")
@@ -1480,7 +1481,7 @@ namespace ServiceClientGenerator
             foreach (var file in allProjectFiles)
             {
                 var fullPath = Utils.ConvertPathAlt(Path.GetFullPath(file));
-                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.EndsWith(x));
+                var shouldDelete = legacyProjectSuffixes.Any(x => fullPath.Contains(x));
 
                 if (shouldDelete)
                 {
