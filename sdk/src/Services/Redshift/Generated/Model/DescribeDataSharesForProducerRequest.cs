@@ -88,7 +88,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ProducerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+        /// The Amazon Resource Name (ARN) of the producer namespace that returns in the list
+        /// of datashares.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

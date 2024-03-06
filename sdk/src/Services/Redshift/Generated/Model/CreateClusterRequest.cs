@@ -999,8 +999,19 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>1150-65535</c> 
+        /// Valid Values: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For clusters with ra3 nodes - Select a port within the ranges <c>5431-5455</c> or
+        /// <c>8191-8215</c>. (If you have an existing cluster with ra3 nodes, it isn't required
+        /// that you change the port to these ranges.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For clusters with ds2 or dc2 nodes - Select a port within the range <c>1150-65535</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int Port
         {

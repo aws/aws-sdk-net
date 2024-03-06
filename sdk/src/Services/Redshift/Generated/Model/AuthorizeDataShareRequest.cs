@@ -81,8 +81,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing
-        /// for.
+        /// The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize
+        /// sharing for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

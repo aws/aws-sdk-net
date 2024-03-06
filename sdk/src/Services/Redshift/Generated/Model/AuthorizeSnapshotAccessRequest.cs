@@ -91,10 +91,20 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
-        /// The identifier of the cluster the snapshot was created from. This parameter is required
-        /// if your IAM user has a policy containing a snapshot resource element that specifies
-        /// anything other than * for the cluster name.
+        /// The identifier of the cluster the snapshot was created from.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't
+        /// allow access to all (*) snapshots</i> - This parameter is required. Otherwise, permissions
+        /// aren't available to check if the snapshot exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift
+        /// can retrieve the cluster identifier and use it to validate snapshot authorization.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=2147483647)]
         public string SnapshotClusterIdentifier
