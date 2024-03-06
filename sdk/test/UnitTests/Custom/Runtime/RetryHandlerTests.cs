@@ -287,11 +287,10 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES, executionContext.RequestContext.Retries);
         }
 
-#if BCL45
-
+#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForIOExceptionAsync()
         {
             Tester.Reset();
@@ -311,7 +310,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForWebExceptionAsync()
         {
             Tester.Reset();
@@ -331,7 +330,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForHttpStatus500Async()
         {
             Tester.Reset();
@@ -353,7 +352,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
+        [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForHttpStatus421Async()
         {
             Tester.Reset();
@@ -371,87 +370,7 @@ namespace AWSSDK.UnitTests
             typeof(AmazonServiceException));
             Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
         }
-#elif !BCL45 && BCL
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForIOExceptionAsync()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new IOException();
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is IOException);
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForWebExceptionAsync()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new AmazonServiceException(new WebException("WebException", WebExceptionStatus.ConnectFailure));
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForHttpStatus500Async()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new AmazonServiceException("Internal Server Error",
-                    new WebException(), HttpStatusCode.InternalServerError);
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
-            Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-        }
-
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async35")]
-        public void RetryForHttpStatus421Async()
-        {
-            Tester.Reset();
-            Tester.Action = (int callCount) =>
-            {
-                throw new AmazonServiceException("Invalid Endpoint Exception",
-                    new WebException(), (HttpStatusCode)421);
-            };
-
-            var request = CreateAsyncTestContext();
-            var asyncResult = RuntimePipeline.InvokeAsync(request);
-            asyncResult.AsyncWaitHandle.WaitOne();
-
-            Assert.IsTrue(((RuntimeAsyncResult)asyncResult).Exception is AmazonServiceException);
-            Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
-        }
-
-#endif                
+#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -26,7 +26,7 @@ namespace AWSSDK.CSM.IntegrationTests
         [Fact]
         [Trait("Category", "CSM")]
         [Trait("Category", "Sync")]
-        [Trait("Category", "bcl35")]
+        [Trait("Category", "bcl")]
         public void SingleSuccessfulRequest()
         {
             ThreadPool.QueueUserWorkItem(UDPListener);

@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
             Assert.IsTrue(string.IsNullOrEmpty(credentialsRefreshState.Credentials.Token));
         }
-#if BCL45
+#if BCL
         [TestMethod]
         public async Task ValidBasicProcessCredentialInputAsync()
         {

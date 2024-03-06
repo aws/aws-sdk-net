@@ -27,7 +27,6 @@ namespace AWSSDK.UnitTests
             SecretKey = nameof(CredentialProfileOptions.SecretKey),
         };
 
-#if !BCL35
         private static readonly CredentialProfileOptions SsoProfileOptions = new CredentialProfileOptions()
         {
             SsoAccountId = nameof(CredentialProfileOptions.SsoAccountId),
@@ -50,7 +49,6 @@ namespace AWSSDK.UnitTests
             AccessKey = nameof(CredentialProfileOptions.AccessKey),
             SecretKey = nameof(CredentialProfileOptions.SecretKey),
         };
-#endif
 
         [TestMethod]
         public void DetectProfileTypeBasic()
@@ -59,7 +57,6 @@ namespace AWSSDK.UnitTests
                 CredentialProfileTypeDetector.DetectProfileType(BasicProfileOptions));
         }
 
-#if !BCL35
         [TestMethod]
         public void DetectProfileTypeSso()
         {
@@ -80,6 +77,5 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(CredentialProfileType.SSO,
                 CredentialProfileTypeDetector.DetectProfileType(SsoWithOtherPropertiesProfileOptions));
         }
-#endif
     }
 }

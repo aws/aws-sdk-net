@@ -206,7 +206,7 @@ namespace AWSSDK_DotNet.IntegrationTests
                 return CreateResponse();
             }
 
-#if BCL45
+#if BCL
             public System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
             {
                 return new System.Threading.Tasks.Task<IWebResponseData>(CreateResponse);
@@ -261,12 +261,6 @@ namespace AWSSDK_DotNet.IntegrationTests
                 {
                     await requestContent.WriteAsync(content, 0, content.Length, cancellationToken);
                 }
-            }
-
-#elif BCL && !BCL45
-            public IWebResponseData EndGetResponse(IAsyncResult asyncResult)
-            {
-                return CreateResponse();
             }
 #endif
 
