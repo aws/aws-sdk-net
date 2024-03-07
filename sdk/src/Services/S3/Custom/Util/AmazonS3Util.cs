@@ -69,6 +69,7 @@ namespace Amazon.S3.Util
             { ".cs", "text/plain" },
             { ".csh", "application/x-csh" },
             { ".css", "text/css" },
+            { ".csv", "text/csv" },
             { ".dcr", "application/x-director" },
             { ".dir", "application/x-director" },
             { ".dms", "application/octet-stream" },
