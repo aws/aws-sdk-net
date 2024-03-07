@@ -2200,7 +2200,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <c>io1</c>), <c>io2</c>, or <c>gp3</c> you must also include a value
+        /// If you specify <c>io1</c>, <c>io2</c>, or <c>gp3</c> you must also include a value
         /// for the <c>Iops</c> parameter.
         /// </para>
         ///  

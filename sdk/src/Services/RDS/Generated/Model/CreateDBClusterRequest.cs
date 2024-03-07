@@ -265,6 +265,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid for Cluster Type: Multi-AZ DB clusters
         /// </para>
         /// </summary>
@@ -1900,7 +1905,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multi-AZ DB clusters - <c>io1</c> 
+        /// Multi-AZ DB clusters - <c>io1 | io2 | gp3</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
