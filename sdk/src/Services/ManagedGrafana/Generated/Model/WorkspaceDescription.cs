@@ -42,6 +42,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _endpoint;
         private bool? _freeTrialConsumed;
         private DateTime? _freeTrialExpiration;
+        private string _grafanaToken;
         private string _grafanaVersion;
         private string _id;
         private DateTime? _licenseExpiration;
@@ -189,6 +190,11 @@ namespace Amazon.ManagedGrafana.Model
         /// Specifies whether this workspace has already fully used its free trial for Grafana
         /// Enterprise.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool FreeTrialConsumed
         {
@@ -208,6 +214,11 @@ namespace Amazon.ManagedGrafana.Model
         /// If this workspace is currently in the free trial period for Grafana Enterprise, this
         /// value specifies when that free trial ends.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime FreeTrialExpiration
         {
@@ -219,6 +230,27 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetFreeTrialExpiration()
         {
             return this._freeTrialExpiration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrafanaToken. 
+        /// <para>
+        /// The token that ties this workspace to a Grafana Labs account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+        /// with Grafana Labs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string GrafanaToken
+        {
+            get { return this._grafanaToken; }
+            set { this._grafanaToken = value; }
+        }
+
+        // Check to see if GrafanaToken property is set
+        internal bool IsSetGrafanaToken()
+        {
+            return this._grafanaToken != null;
         }
 
         /// <summary>
@@ -262,8 +294,10 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property LicenseExpiration. 
         /// <para>
-        /// If this workspace has a full Grafana Enterprise license, this specifies when the license
-        /// ends and will need to be renewed.
+        /// If this workspace has a full Grafana Enterprise license purchased through Amazon Web
+        /// Services Marketplace, this specifies when the license ends and will need to be renewed.
+        /// Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have
+        /// an expiration. It is valid until the license is removed.
         /// </para>
         /// </summary>
         public DateTime LicenseExpiration
@@ -281,9 +315,13 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
-        /// Specifies whether this workspace has a full Grafana Enterprise license or a free trial
-        /// license.
+        /// Specifies whether this workspace has a full Grafana Enterprise license.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LicenseType LicenseType
         {
