@@ -10146,6 +10146,11 @@ namespace Amazon.EC2
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
@@ -10170,6 +10175,11 @@ namespace Amazon.EC2
         /// no longer in the list, you can still register an AMI from it. Just use <c>RegisterImage</c>
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
         /// </para>
         ///  </note>
         /// </summary>
@@ -11587,6 +11597,13 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the specified attribute of the specified AMI. You can specify only one attribute
         /// at a time.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -11639,6 +11656,12 @@ namespace Amazon.EC2
         /// terminated, specifying the ID of the image will eventually return an error indicating
         /// that the AMI ID cannot be found.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -11670,6 +11693,12 @@ namespace Amazon.EC2
         /// terminated, specifying the ID of the image will eventually return an error indicating
         /// that the AMI ID cannot be found.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// <param name="cancellationToken">
@@ -24728,8 +24757,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
-        /// before you can launch an instance from the AMI. For more information about creating
+        /// Registers an AMI. When you're creating an instance-store backed AMI, registering the
+        /// AMI is the final step in the creation process. For more information about creating
         /// AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create
         /// your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 

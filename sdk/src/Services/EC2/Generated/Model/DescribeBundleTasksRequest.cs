@@ -39,6 +39,11 @@ namespace Amazon.EC2.Model
     /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
     /// task.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class DescribeBundleTasksRequest : AmazonEC2Request

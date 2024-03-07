@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterImage operation.
-    /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
-    /// before you can launch an instance from the AMI. For more information about creating
+    /// Registers an AMI. When you're creating an instance-store backed AMI, registering the
+    /// AMI is the final step in the creation process. For more information about creating
     /// AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create
     /// your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
@@ -121,6 +121,7 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private string _sriovNetSupport;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private TpmSupportValues _tpmSupport;
         private string _uefiData;
         private string _virtualizationType;
@@ -447,6 +448,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetSriovNetSupport()
         {
             return this._sriovNetSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag the AMI, the value for <c>ResourceType</c> must be <c>image</c>. If you specify
+        /// another value for <c>ResourceType</c>, the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

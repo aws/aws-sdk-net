@@ -71,6 +71,7 @@ namespace Amazon.EC2.Model
         private string _name;
         private string _sourceImageId;
         private string _sourceRegion;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -305,6 +306,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetSourceRegion()
         {
             return this._sourceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots,
+        /// or both.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To tag the new AMI, the value for <c>ResourceType</c> must be <c>image</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To tag the new snapshots, the value for <c>ResourceType</c> must be <c>snapshot</c>.
+        /// The same tag is applied to all the new snapshots.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify other values for <c>ResourceType</c>, the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }
