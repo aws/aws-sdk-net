@@ -98,7 +98,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property DukptIso9797Algorithm3. 
         /// <para>
         /// Parameters that are required for MAC generation or verification using DUKPT ISO 9797
-        /// algorithm2.
+        /// algorithm3.
         /// </para>
         /// </summary>
         public MacAlgorithmDukpt DukptIso9797Algorithm3

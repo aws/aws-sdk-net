@@ -572,6 +572,30 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvEncryptionAttributes.InitializationVector</property>
+    <min>16</min>
+    <max>32</max>
+    <pattern>^(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{32})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvEncryptionAttributes.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>^[0-9a-fA-F]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvEncryptionAttributes.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.EmvEncryptionAttributes.SessionDerivationData</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>^[0-9a-fA-F]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.Ibm3624NaturalPin.DecimalizationTable</property>
     <min>16</min>
     <max>16</max>

@@ -35,6 +35,7 @@ namespace Amazon.PaymentCryptographyData.Model
     {
         private AsymmetricEncryptionAttributes _asymmetric;
         private DukptEncryptionAttributes _dukpt;
+        private EmvEncryptionAttributes _emv;
         private SymmetricEncryptionAttributes _symmetric;
 
         /// <summary>
@@ -65,6 +66,24 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetDukpt()
         {
             return this._dukpt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Emv. 
+        /// <para>
+        /// Parameters for plaintext encryption using EMV keys.
+        /// </para>
+        /// </summary>
+        public EmvEncryptionAttributes Emv
+        {
+            get { return this._emv; }
+            set { this._emv = value; }
+        }
+
+        // Check to see if Emv property is set
+        internal bool IsSetEmv()
+        {
+            return this._emv != null;
         }
 
         /// <summary>
