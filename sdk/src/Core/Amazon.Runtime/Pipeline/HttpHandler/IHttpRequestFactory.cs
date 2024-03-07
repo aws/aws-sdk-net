@@ -108,12 +108,10 @@ namespace Amazon.Runtime
         void Abort();
 
 #if AWS_ASYNC_API
-
         /// <summary>
         /// Gets a handle to the request content.
         /// </summary>
         /// <returns></returns>
-
         System.Threading.Tasks.Task<TRequestContent> GetRequestContentAsync();
 #if BCL
         System.Threading.Tasks.Task<TRequestContent> GetRequestContentAsync(System.Threading.CancellationToken cancellationToken);
@@ -129,37 +127,6 @@ namespace Amazon.Runtime
 
         System.Threading.Tasks.Task WriteToRequestBodyAsync(TRequestContent requestContent, byte[] requestData, IDictionary<string, string> headers, System.Threading.CancellationToken cancellationToken);
 #endif
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Initiates the operation to gets a handle to the request content.
-        /// </summary>
-        /// <param name="callback">The async callback invoked when the operation completes.</param>
-        /// <param name="state">The state object to be passed to the async callback.</param>
-        /// <returns>IAsyncResult that represents an async operation.</returns>
-        IAsyncResult BeginGetRequestContent(AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Ends the operation to gets a handle to the request content.
-        /// </summary>
-        /// <param name="asyncResult">IAsyncResult that represents an async operation.</param>
-        /// <returns>The request content.</returns>
-        TRequestContent EndGetRequestContent(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// Initiates the operation to Returns the HTTP response.
-        /// </summary>
-        /// <param name="callback">The async callback invoked when the operation completes.</param>
-        /// <param name="state">The state object to be passed to the async callback.</param>
-        /// <returns>IAsyncResult that represents an async operation.</returns>
-        IAsyncResult BeginGetResponse(AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Ends the operation to Returns the HTTP response.
-        /// </summary>
-        /// <param name="asyncResult">IAsyncResult that represents an async operation.</param>
-        /// <returns>The HTTP response.</returns>
-        IWebResponseData EndGetResponse(IAsyncResult asyncResult);
 
 #endif
 

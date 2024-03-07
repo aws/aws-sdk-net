@@ -42,7 +42,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API 
-
         /// <summary>
         /// Processes HTTP redirects and reissues the call to the
         /// redirected location.
@@ -60,34 +59,8 @@ namespace Amazon.Runtime.Internal
             } while (HandleRedirect(executionContext));
             return result;
         }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Processes HTTP redirects and reissues the call to the
-        /// redirected location.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            // Check for redirect if an exception hasn't occured
-            if (executionContext.ResponseContext.AsyncResult.Exception == null)
-            {
-                // Check if a redirect is required
-                if (HandleRedirect(ExecutionContext.CreateFromAsyncContext(executionContext)))
-                {
-                    // Call InvokeAsync to redirect to new location.
-                    base.InvokeAsync(executionContext);
-                    return;
-                }
-            }
-
-            // Not a redirect, call outer callbacks to continue processing response.
-            base.InvokeAsyncCallback(executionContext);
-        }
-
 #endif
+
         /// <summary>
         /// Checks if an HTTP 307 (temporary redirect) has occured and changes the 
         /// request endpoint to the redirected location.

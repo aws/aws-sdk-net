@@ -40,7 +40,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API
-	 
 	    /// <summary>
 	    /// Calls pre invoke logic before calling the next handler 
 	    /// in the pipeline.
@@ -54,22 +53,6 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
 	    }
-	 
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="asyncExecutionContext">The execution context which contains both the
-        /// request and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext asyncExecutionContext)
-        {
-            var executionContext = ExecutionContext.CreateFromAsyncContext(asyncExecutionContext);
-            PreInvoke(executionContext);
-            return base.InvokeAsync(asyncExecutionContext);
-        }
 #endif
 
         /// <summary>

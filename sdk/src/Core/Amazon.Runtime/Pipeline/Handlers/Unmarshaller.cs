@@ -55,7 +55,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if BCL
-
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
         /// </summary>
@@ -70,9 +69,7 @@ namespace Amazon.Runtime.Internal
             Unmarshall(executionContext);
             return (T)executionContext.ResponseContext.Response;
         }
-
 #elif NETSTANDARD
-
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
         /// </summary>
@@ -86,23 +83,6 @@ namespace Amazon.Runtime.Internal
             // Unmarshall the response
             await UnmarshallAsync(executionContext).ConfigureAwait(false);
             return (T)executionContext.ResponseContext.Response;
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Unmarshalls the response returned by the HttpHandler.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            // Unmarshall the response if an exception hasn't occured
-            if (executionContext.ResponseContext.AsyncResult.Exception == null)
-            {
-                Unmarshall(ExecutionContext.CreateFromAsyncContext(executionContext));
-            }            
-            base.InvokeAsyncCallback(executionContext);
         }
 #endif
 

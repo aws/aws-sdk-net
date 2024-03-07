@@ -47,7 +47,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API 
-
         /// <summary>
         /// Captures the overall execution time and logs final metrics.
         /// </summary>
@@ -71,34 +70,6 @@ namespace Amazon.Runtime.Internal
                 this.LogMetrics(executionContext);
             }            
         }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Captures the overall execution time.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            executionContext.RequestContext.Metrics.AddProperty(Metric.AsyncCall, true);
-            executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
-            return base.InvokeAsync(executionContext);
-        }
-
-        /// <summary>
-        /// Captures the overall execution time and logs final metrics.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            executionContext.RequestContext.Metrics.StopEvent(Metric.ClientExecuteTime);
-            this.LogMetrics(ExecutionContext.CreateFromAsyncContext(executionContext));
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
-
     }
 }

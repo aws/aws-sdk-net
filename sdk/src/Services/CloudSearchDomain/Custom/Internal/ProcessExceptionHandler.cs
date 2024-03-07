@@ -51,22 +51,6 @@ namespace Amazon.CloudSearchDomain.Internal
                 throw;
             }
         }
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Override to do extra exception handling if thrown in the pipeline.
-        /// </summary>
-        /// <param name="executionContext"></param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var exception = executionContext.ResponseContext.AsyncResult.Exception;
-            if (executionContext.ResponseContext.AsyncResult.Exception != null)
-            {
-                HandleException(ExecutionContext.CreateFromAsyncContext(executionContext), exception);
-            }
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
 
 #if BCL

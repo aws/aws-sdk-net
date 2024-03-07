@@ -64,7 +64,6 @@ namespace Amazon.S3.Encryption.Internal
         }
 
 #if AWS_ASYNC_API
-
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -92,29 +91,6 @@ namespace Amazon.S3.Encryption.Internal
 
             PreInvokeSynchronous(executionContext, instructions);
         }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
-        /// in the pipeline.
-        /// </summary>
-        /// <param name="executionContext">The execution context which contains both the
-        /// requests and response context.</param>
-        /// <returns>IAsyncResult which represent an async operation.</returns>
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            IExecutionContext syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
-
-            if (NeedToGenerateKMSInstructions(syncExecutionContext))
-                throw new NotSupportedException("The AWS SDK for .NET Framework 3.5 version of " +
-                    typeof(AmazonS3EncryptionClient).Name + " does not support KMS key wrapping via the async programming model.  " +
-                    "Please use the synchronous version instead.");
-
-            PreInvokeSynchronous(syncExecutionContext, null);
-            return base.InvokeAsync(executionContext);
-        }
-
 #endif
 
         private bool NeedToGenerateKMSInstructions(IExecutionContext executionContext)
