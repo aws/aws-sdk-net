@@ -1,3 +1,23 @@
+### 3.7.763.0 (2024-03-07 19:29 UTC)
+* AppConfig (3.7.301.0)
+	* AWS AppConfig now supports dynamic parameters, which enhance the functionality of AppConfig Extensions by allowing you to provide parameter values to your Extensions at the time you deploy your configuration.
+* EC2 (3.7.316.0)
+	* This release adds an optional parameter to RegisterImage and CopyImage APIs to support tagging AMIs at the time of creation.
+* Lambda (3.7.304.3)
+	* Documentation updates for AWS Lambda
+* ManagedGrafana (3.7.301.0)
+	* Adds support for the new GrafanaToken as part of the Amazon Managed Grafana Enterprise plugins upgrade to associate your AWS account with a Grafana Labs account.
+* PaymentCryptographyData (3.7.301.0)
+	* AWS Payment Cryptography EMV Decrypt Feature  Release
+* RDS (3.7.309.1)
+	* Updates Amazon RDS documentation for io2 storage for Multi-AZ DB clusters
+* Snowball (3.7.300.55)
+	* Doc-only update for change to EKS-Anywhere ordering.
+* WAFV2 (3.7.303.0)
+	* You can increase the max request body inspection size for some regional resources. The size setting is in the web ACL association config. Also, the AWSManagedRulesBotControlRuleSet EnableMachineLearning setting now takes a Boolean instead of a primitive boolean type, for languages like Java.
+* WorkSpaces (3.7.302.8)
+	* Added note for user decoupling
+
 ### 3.7.762.0 (2024-03-06 19:53 UTC)
 * DynamoDBv2 (3.7.301.18)
 	* Doc only updates for DynamoDB documentation
