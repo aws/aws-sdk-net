@@ -1487,6 +1487,10 @@ namespace Amazon.WorkSpaces
         /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
         /// is the default protocol for those bundles.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.
+        /// </para>
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
@@ -1526,6 +1530,10 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
         /// is the default protocol for those bundles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -4900,7 +4908,9 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c> or <c>UNHEALTHY</c>.
+        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c>, <c>UNHEALTHY</c>,
+        /// or <c>REBOOTING</c>. Reboot a WorkSpace in the <c>REBOOTING</c> state only if your
+        /// WorkSpace has been stuck in the <c>REBOOTING</c> state for over 20 minutes.
         /// </para>
         ///  
         /// <para>
@@ -4929,7 +4939,9 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c> or <c>UNHEALTHY</c>.
+        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c>, <c>UNHEALTHY</c>,
+        /// or <c>REBOOTING</c>. Reboot a WorkSpace in the <c>REBOOTING</c> state only if your
+        /// WorkSpace has been stuck in the <c>REBOOTING</c> state for over 20 minutes.
         /// </para>
         ///  
         /// <para>
