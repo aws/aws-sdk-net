@@ -31,8 +31,8 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Container for the parameters to the ListExtensionAssociations operation.
     /// Lists all AppConfig extension associations in the account. For more information about
-    /// extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class ListExtensionAssociationsRequest : AmazonAppConfigRequest
     {

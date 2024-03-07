@@ -80,7 +80,7 @@ namespace Amazon.AppConfig.Model
         /// One or more parameters for the actions called by the extension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Parameters
         {
             get { return this._parameters; }

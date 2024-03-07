@@ -69,6 +69,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Dynamic", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Dynamic = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Required", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

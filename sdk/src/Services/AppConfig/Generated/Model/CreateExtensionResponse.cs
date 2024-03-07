@@ -144,7 +144,7 @@ namespace Amazon.AppConfig.Model
         /// request object.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, Parameter> Parameters
         {
             get { return this._parameters; }

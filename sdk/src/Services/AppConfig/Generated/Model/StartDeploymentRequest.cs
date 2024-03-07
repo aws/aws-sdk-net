@@ -39,6 +39,7 @@ namespace Amazon.AppConfig.Model
         private string _configurationVersion;
         private string _deploymentStrategyId;
         private string _description;
+        private Dictionary<string, string> _dynamicExtensionParameters = new Dictionary<string, string>();
         private string _environmentId;
         private string _kmsKeyIdentifier;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -138,6 +139,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamicExtensionParameters. 
+        /// <para>
+        /// A map of dynamic extension parameter names to values to pass to associated extensions
+        /// with <c>PRE_START_DEPLOYMENT</c> actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, string> DynamicExtensionParameters
+        {
+            get { return this._dynamicExtensionParameters; }
+            set { this._dynamicExtensionParameters = value; }
+        }
+
+        // Check to see if DynamicExtensionParameters property is set
+        internal bool IsSetDynamicExtensionParameters()
+        {
+            return this._dynamicExtensionParameters != null && this._dynamicExtensionParameters.Count > 0; 
         }
 
         /// <summary>

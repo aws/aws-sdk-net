@@ -30,8 +30,8 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateExtension operation.
-    /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class UpdateExtensionRequest : AmazonAppConfigRequest
     {
@@ -104,7 +104,7 @@ namespace Amazon.AppConfig.Model
         /// One or more parameters for the actions called by the extension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, Parameter> Parameters
         {
             get { return this._parameters; }

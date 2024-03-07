@@ -38,8 +38,8 @@ namespace Amazon.AppConfig.Model
     /// Defining which extension to associate with an AppConfig resource is called an <i>extension
     /// association</i>. An extension association is a specified relationship between an extension
     /// and an AppConfig resource, such as an application or a configuration profile. For
-    /// more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class CreateExtensionAssociationRequest : AmazonAppConfigRequest
     {
@@ -94,7 +94,7 @@ namespace Amazon.AppConfig.Model
         /// <c>Required</c> must be entered for this field.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Parameters
         {
             get { return this._parameters; }

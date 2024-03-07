@@ -60,8 +60,8 @@ namespace Amazon.AppConfig.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateExtensionRequest : AmazonAppConfigRequest
@@ -160,7 +160,7 @@ namespace Amazon.AppConfig.Model
         /// request object.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, Parameter> Parameters
         {
             get { return this._parameters; }
