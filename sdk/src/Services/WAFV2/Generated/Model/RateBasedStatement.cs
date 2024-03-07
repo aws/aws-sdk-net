@@ -34,7 +34,13 @@ namespace Amazon.WAFV2.Model
     /// criteria, collects them into aggregation instances, and counts and rate limits the
     /// requests for each instance. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// If you change any of these settings in a rule that's currently in use, the change
+    /// resets the rule's rate limiting counts. This can pause the rule's rate limiting activities
+    /// for up to a minute. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// You can specify individual aggregation keys, like IP address or HTTP method. You can
     /// also specify aggregation key combinations, like IP address and HTTP method, or HTTP
@@ -255,7 +261,7 @@ namespace Amazon.WAFV2.Model
         /// Specifies the aggregate keys to use in a rate-base rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Max=5)]
         public List<RateBasedStatementCustomKey> CustomKeys
         {
             get { return this._customKeys; }

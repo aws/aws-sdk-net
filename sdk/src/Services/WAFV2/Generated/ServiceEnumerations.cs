@@ -97,9 +97,25 @@ namespace Amazon.WAFV2
     {
 
         /// <summary>
+        /// Constant API_GATEWAY for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType API_GATEWAY = new AssociatedResourceType("API_GATEWAY");
+        /// <summary>
+        /// Constant APP_RUNNER_SERVICE for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType APP_RUNNER_SERVICE = new AssociatedResourceType("APP_RUNNER_SERVICE");
+        /// <summary>
         /// Constant CLOUDFRONT for AssociatedResourceType
         /// </summary>
         public static readonly AssociatedResourceType CLOUDFRONT = new AssociatedResourceType("CLOUDFRONT");
+        /// <summary>
+        /// Constant COGNITO_USER_POOL for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType COGNITO_USER_POOL = new AssociatedResourceType("COGNITO_USER_POOL");
+        /// <summary>
+        /// Constant VERIFIED_ACCESS_INSTANCE for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType VERIFIED_ACCESS_INSTANCE = new AssociatedResourceType("VERIFIED_ACCESS_INSTANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

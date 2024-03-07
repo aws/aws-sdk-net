@@ -164,7 +164,7 @@ namespace Amazon.WAFV2.Model
         /// all actions, to modify how the rule group manages your web traffic.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<RuleActionOverride> RuleActionOverrides
         {
             get { return this._ruleActionOverrides; }
