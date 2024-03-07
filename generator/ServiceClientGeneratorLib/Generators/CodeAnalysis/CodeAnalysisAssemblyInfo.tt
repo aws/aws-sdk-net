@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("<#=this.Config.AssemblyTitle#>")]
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "3.5") #>")]
+[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription() #>")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
