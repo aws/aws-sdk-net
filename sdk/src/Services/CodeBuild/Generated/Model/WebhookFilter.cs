@@ -93,25 +93,37 @@ namespace Amazon.CodeBuild.Model
         ///  The type of webhook filter. There are six webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
         /// <c>HEAD_REF</c>, <c>BASE_REF</c>, <c>FILE_PATH</c>, and <c>COMMIT_MESSAGE</c>. 
         /// </para>
-        ///  <dl> <dt> EVENT </dt> <dd> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  EVENT 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  A webhook event triggers a build when the provided <c>pattern</c> matches one of
-        /// five event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
-        /// <c>PULL_REQUEST_REOPENED</c>, and <c>PULL_REQUEST_MERGED</c>. The <c>EVENT</c> patterns
-        /// are specified as a comma-separated string. For example, <c>PUSH, PULL_REQUEST_CREATED,
-        /// PULL_REQUEST_UPDATED</c> filters all push, pull request created, and pull request
-        /// updated events. 
+        /// six event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
+        /// <c>PULL_REQUEST_CLOSED</c>, <c>PULL_REQUEST_REOPENED</c>, and <c>PULL_REQUEST_MERGED</c>.
+        /// The <c>EVENT</c> patterns are specified as a comma-separated string. For example,
+        /// <c>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</c> filters all push, pull request
+        /// created, and pull request updated events. 
         /// </para>
         ///  <note> 
         /// <para>
         ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. 
         /// </para>
-        ///  </note> </dd> <dt> ACTOR_ACCOUNT_ID </dt> <dd> 
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// ACTOR_ACCOUNT_ID
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  A webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket account
         /// ID matches the regular expression <c>pattern</c>. 
         /// </para>
-        ///  </dd> <dt> HEAD_REF </dt> <dd> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// HEAD_REF
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  A webhook event triggers a build when the head reference matches the regular expression
         /// <c>pattern</c>. For example, <c>refs/heads/branch-name</c> and <c>refs/tags/tag-name</c>.
@@ -122,7 +134,11 @@ namespace Amazon.CodeBuild.Model
         ///  Works with GitHub and GitHub Enterprise push, GitHub and GitHub Enterprise pull request,
         /// Bitbucket push, and Bitbucket pull request events. 
         /// </para>
-        ///  </dd> <dt> BASE_REF </dt> <dd> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// BASE_REF
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  A webhook event triggers a build when the base reference matches the regular expression
         /// <c>pattern</c>. For example, <c>refs/heads/branch-name</c>. 
@@ -131,7 +147,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  Works with pull request events only. 
         /// </para>
-        ///  </note> </dd> <dt> FILE_PATH </dt> <dd> 
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// FILE_PATH
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  A webhook triggers a build when the path of a changed file matches the regular expression
         /// <c>pattern</c>. 
@@ -142,7 +162,11 @@ namespace Amazon.CodeBuild.Model
         /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
         /// request events. 
         /// </para>
-        ///  </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> 
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// COMMIT_MESSAGE
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// A webhook triggers a build when the head commit message matches the regular expression
         /// <c>pattern</c>.
@@ -153,7 +177,7 @@ namespace Amazon.CodeBuild.Model
         /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
         /// request events. 
         /// </para>
-        ///  </note> </dd> </dl>
+        ///  </note> </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public WebhookFilterType Type
