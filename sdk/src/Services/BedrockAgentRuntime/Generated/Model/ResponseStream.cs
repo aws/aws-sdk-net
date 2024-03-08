@@ -33,7 +33,7 @@ using Amazon.Runtime.EventStreams.Utils;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Response body of is a stream
+    /// The response from invoking the agent and associated citations and trace information.
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ResponseStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]

@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Request Body Content Map
+    /// The parameters in the request body for the Lambda input event.
     /// </summary>
     public partial class RequestBody
     {
         private Dictionary<string, List<Parameter>> _content = new Dictionary<string, List<Parameter>>();
 
         /// <summary>
-        /// Gets and sets the property Content.
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The content in the request body.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<Parameter>> Content
         {

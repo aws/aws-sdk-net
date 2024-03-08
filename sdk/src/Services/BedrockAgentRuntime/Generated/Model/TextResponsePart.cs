@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Text response part
+    /// Contains the part of the generated text that contains a citation, alongside where
+    /// it begins and ends.
     /// </summary>
     public partial class TextResponsePart
     {
@@ -37,7 +38,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Span.
+        /// Gets and sets the property Span. 
+        /// <para>
+        /// Contains information about where the text with a citation begins and ends in the generated
+        /// output.
+        /// </para>
         /// </summary>
         public Span Span
         {
@@ -54,7 +59,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Response part in text
+        /// The part of the generated text that contains a citation.
         /// </para>
         /// </summary>
         public string Text

@@ -29,7 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Session state provided
+    /// Contains parameters that specify various attributes that persist across a session
+    /// or prompt. You can define session state attributes as key-value pairs when writing
+    /// a <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-lambda.html">Lambda
+    /// function</a> for an action group or pass them when making an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+    /// request. Use session state attributes to control and provide conversational context
+    /// for your agent and to help customize your agent's behavior. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessionstate.html">Session
+    /// context</a>.
     /// </summary>
     public partial class SessionState
     {
@@ -39,7 +46,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property PromptSessionAttributes. 
         /// <para>
-        /// Prompt Session Attributes
+        /// Contains attributes that persist across a prompt and the values of those attributes.
+        /// These attributes replace the $prompt_session_attributes$ placeholder variable in the
+        /// orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
+        /// template placeholder variables</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> PromptSessionAttributes
@@ -57,7 +67,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionAttributes. 
         /// <para>
-        /// Session Attributes
+        /// Contains attributes that persist across a session and the values of those attributes.
         /// </para>
         /// </summary>
         public Dictionary<string, string> SessionAttributes

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when the number of requests exceeds the limit
+    /// The number of requests exceeds the limit. Resubmit your request later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -38,7 +38,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _sessionId;
 
         /// <summary>
-        /// Gets and sets the property Citations.
+        /// Gets and sets the property Citations. 
+        /// <para>
+        /// A list of segments of the generated response that are based on sources in the knowledge
+        /// base, alongside information about the sources.
+        /// </para>
         /// </summary>
         public List<Citation> Citations
         {
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Output.
+        /// Gets and sets the property Output. 
+        /// <para>
+        /// Contains the response generated from querying the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public RetrieveAndGenerateOutput Output
@@ -69,7 +76,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionId.
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique identifier of the session. Reuse the same value to continue the same session
+        /// with the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
         public string SessionId

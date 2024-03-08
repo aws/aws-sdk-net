@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown if there was an unexpected error during processing of request
+    /// An internal server error occurred. Retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

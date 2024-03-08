@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains information if preprocessing was successful
+    /// Details about the response from the Lambda parsing of the output from the post-processing
+    /// step.
     /// </summary>
     public partial class PostProcessingParsedResponse
     {
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The text returned by the parser.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text

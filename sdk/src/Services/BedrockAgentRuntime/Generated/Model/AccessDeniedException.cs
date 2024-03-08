@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when a request is denied per access permissions
+    /// The request is denied because of missing access permissions. Check your permissions
+    /// and retry your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

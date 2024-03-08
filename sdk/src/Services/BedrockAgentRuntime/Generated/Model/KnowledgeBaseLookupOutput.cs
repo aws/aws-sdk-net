@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Input to lambda used in action group
+    /// Contains details about the results from looking up the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseLookupOutput
     {
         private List<RetrievedReference> _retrievedReferences = new List<RetrievedReference>();
 
         /// <summary>
-        /// Gets and sets the property RetrievedReferences.
+        /// Gets and sets the property RetrievedReferences. 
+        /// <para>
+        /// Contains metadata about the sources cited for the generated response.
+        /// </para>
         /// </summary>
         public List<RetrievedReference> RetrievedReferences
         {

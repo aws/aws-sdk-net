@@ -37,7 +37,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         private List<KnowledgeBaseRetrievalResult> _retrievalResults = new List<KnowledgeBaseRetrievalResult>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If there are more results than can fit in the response, the response returns a <c>nextToken</c>.
+        /// Use this token in the <c>nextToken</c> field of another request to retrieve the next
+        /// batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken
@@ -53,7 +58,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetrievalResults.
+        /// Gets and sets the property RetrievalResults. 
+        /// <para>
+        /// A list of results from querying the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public List<KnowledgeBaseRetrievalResult> RetrievalResults

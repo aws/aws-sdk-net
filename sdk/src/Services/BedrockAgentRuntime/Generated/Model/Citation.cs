@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Citation associated with the agent response
+    /// An object containing a segment of the generated response that is based on a source
+    /// in the knowledge base, alongside information about the source.
     /// </summary>
     public partial class Citation
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private List<RetrievedReference> _retrievedReferences = new List<RetrievedReference>();
 
         /// <summary>
-        /// Gets and sets the property GeneratedResponsePart.
+        /// Gets and sets the property GeneratedResponsePart. 
+        /// <para>
+        /// Contains the generated response and metadata 
+        /// </para>
         /// </summary>
         public GeneratedResponsePart GeneratedResponsePart
         {
@@ -52,7 +56,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetrievedReferences.
+        /// Gets and sets the property RetrievedReferences. 
+        /// <para>
+        /// Contains metadata about the sources cited for the generated response.
+        /// </para>
         /// </summary>
         public List<RetrievedReference> RetrievedReferences
         {

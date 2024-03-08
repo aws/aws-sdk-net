@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Service response of the turn
+    /// Contains the response generated from querying the knowledge base.
     /// </summary>
     public partial class RetrieveAndGenerateOutput
     {
@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Service response of the turn in text
+        /// The response generated from querying the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

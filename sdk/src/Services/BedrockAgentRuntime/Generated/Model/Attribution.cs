@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Citations associated with final agent response
+    /// Contains citations for a part of an agent response.
     /// </summary>
     public partial class Attribution
     {
         private List<Citation> _citations = new List<Citation>();
 
         /// <summary>
-        /// Gets and sets the property Citations.
+        /// Gets and sets the property Citations. 
+        /// <para>
+        /// A list of citations and related information for a part of an agent response.
+        /// </para>
         /// </summary>
         public List<Citation> Citations
         {

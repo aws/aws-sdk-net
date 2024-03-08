@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The S3 location of a retrieval result.
+    /// Contains the S3 location of the data source.
     /// </summary>
     public partial class RetrievalResultS3Location
     {
@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// URI of S3 location
+        /// The S3 URI of the data source.
         /// </para>
         /// </summary>
         public string Uri

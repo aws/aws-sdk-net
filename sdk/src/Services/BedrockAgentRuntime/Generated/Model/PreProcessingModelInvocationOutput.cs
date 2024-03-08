@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains information related to preprocessing
+    /// The foundation model output from the pre-processing step.
     /// </summary>
     public partial class PreProcessingModelInvocationOutput
     {
@@ -37,7 +37,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property ParsedResponse.
+        /// Gets and sets the property ParsedResponse. 
+        /// <para>
+        /// Details about the response from the Lambda parsing of the output of the pre-processing
+        /// step.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PreProcessingParsedResponse ParsedResponse
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId
