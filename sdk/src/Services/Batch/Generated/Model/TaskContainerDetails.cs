@@ -133,7 +133,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// All tasks must have at least one essential container. If you have an application that's
+        /// All jobs must have at least one essential container. If you have an application that's
         /// composed of multiple containers, group containers that are used for a common purpose
         /// into components, and separate the different components into multiple task definitions.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application

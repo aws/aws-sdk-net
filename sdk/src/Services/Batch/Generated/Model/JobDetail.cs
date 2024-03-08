@@ -553,6 +553,27 @@ namespace Amazon.Batch.Model
         /// A short, human-readable string to provide more details for the current status of the
         /// job.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</c> - All compute environments have insufficient
+        /// capacity to service the job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</c> - All compute environments
+        /// have a <c>maxVcpu</c> setting that is smaller than the job requirements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</c> - All compute environments have
+        /// no connected instances that meet the job requirements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</c> - All compute environments have
+        /// problems with the service role permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StatusReason
         {

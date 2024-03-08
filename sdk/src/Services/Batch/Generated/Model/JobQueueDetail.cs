@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private List<ComputeEnvironmentOrder> _computeEnvironmentOrder = new List<ComputeEnvironmentOrder>();
         private string _jobQueueArn;
         private string _jobQueueName;
+        private List<JobStateTimeLimitAction> _jobStateTimeLimitActions = new List<JobStateTimeLimitAction>();
         private int? _priority;
         private string _schedulingPolicyArn;
         private JQState _state;
@@ -100,6 +101,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobQueueName()
         {
             return this._jobQueueName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobStateTimeLimitActions. 
+        /// <para>
+        /// The set of actions that Batch perform on jobs that remain at the head of the job queue
+        /// in the specified state longer than specified times. Batch will perform each action
+        /// after <c>maxTimeSeconds</c> has passed.
+        /// </para>
+        /// </summary>
+        public List<JobStateTimeLimitAction> JobStateTimeLimitActions
+        {
+            get { return this._jobStateTimeLimitActions; }
+            set { this._jobStateTimeLimitActions = value; }
+        }
+
+        // Check to see if JobStateTimeLimitActions property is set
+        internal bool IsSetJobStateTimeLimitActions()
+        {
+            return this._jobStateTimeLimitActions != null && this._jobStateTimeLimitActions.Count > 0; 
         }
 
         /// <summary>
