@@ -2275,6 +2275,14 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly UsageFeature LAMBDA_NETWORK_LOGS = new UsageFeature("LAMBDA_NETWORK_LOGS");
         /// <summary>
+        /// Constant RDS_DBI_PROTECTION_PROVISIONED for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DBI_PROTECTION_PROVISIONED = new UsageFeature("RDS_DBI_PROTECTION_PROVISIONED");
+        /// <summary>
+        /// Constant RDS_DBI_PROTECTION_SERVERLESS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DBI_PROTECTION_SERVERLESS = new UsageFeature("RDS_DBI_PROTECTION_SERVERLESS");
+        /// <summary>
         /// Constant RDS_LOGIN_EVENTS for UsageFeature
         /// </summary>
         public static readonly UsageFeature RDS_LOGIN_EVENTS = new UsageFeature("RDS_LOGIN_EVENTS");

@@ -30,6 +30,15 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Contains information about a GuardDuty feature.
+    /// 
+    ///  
+    /// <para>
+    /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+    /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+    /// these two features because Runtime Monitoring already includes the threat detection
+    /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+    /// Monitoring</a>.
+    /// </para>
     /// </summary>
     public partial class DetectorFeatureConfigurationResult
     {

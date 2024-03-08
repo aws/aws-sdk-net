@@ -470,11 +470,30 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
-        /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-        /// Region where you enable the service. You can have only one detector per account per
-        /// Region. All data sources are enabled in a new detector by default.
+        /// Creates a single GuardDuty detector. A detector is a resource that represents the
+        /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region
+        /// where you enable the service. You can have only one detector per account per Region.
+        /// All data sources are enabled in a new detector by default.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// When you don't specify any <c>features</c>, with an exception to <c>RUNTIME_MONITORING</c>,
+        /// all the optional features are enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you specify some of the <c>features</c>, any feature that is not specified in
+        /// the API call gets enabled by default, with an exception to <c>RUNTIME_MONITORING</c>.
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -504,11 +523,30 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
-        /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-        /// Region where you enable the service. You can have only one detector per account per
-        /// Region. All data sources are enabled in a new detector by default.
+        /// Creates a single GuardDuty detector. A detector is a resource that represents the
+        /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region
+        /// where you enable the service. You can have only one detector per account per Region.
+        /// All data sources are enabled in a new detector by default.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// When you don't specify any <c>features</c>, with an exception to <c>RUNTIME_MONITORING</c>,
+        /// all the optional features are enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you specify some of the <c>features</c>, any feature that is not specified in
+        /// the API call gets enabled by default, with an exception to <c>RUNTIME_MONITORING</c>.
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -2687,14 +2725,13 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves how many active member accounts in your Amazon Web Services organization
-        /// have each feature enabled within GuardDuty. Only a delegated GuardDuty administrator
-        /// of an organization can run this API.
+        /// Retrieves how many active member accounts have each feature enabled within GuardDuty.
+        /// Only a delegated GuardDuty administrator of an organization can run this API.
         /// 
         ///  
         /// <para>
-        /// When you create a new Amazon Web Services organization, it might take up to 24 hours
-        /// to generate the statistics for the entire organization.
+        /// When you create a new organization, it might take up to 24 hours to generate the statistics
+        /// for the entire organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationStatistics service method.</param>
@@ -2718,14 +2755,13 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves how many active member accounts in your Amazon Web Services organization
-        /// have each feature enabled within GuardDuty. Only a delegated GuardDuty administrator
-        /// of an organization can run this API.
+        /// Retrieves how many active member accounts have each feature enabled within GuardDuty.
+        /// Only a delegated GuardDuty administrator of an organization can run this API.
         /// 
         ///  
         /// <para>
-        /// When you create a new Amazon Web Services organization, it might take up to 24 hours
-        /// to generate the statistics for the entire organization.
+        /// When you create a new organization, it might take up to 24 hours to generate the statistics
+        /// for the entire organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationStatistics service method.</param>
@@ -3666,7 +3702,13 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
-        /// role </a> in the corresponding account.
+        /// role</a> in the corresponding account.
+        /// 
+        ///  
+        /// <para>
+        /// When the malware scan starts, you can use the associated scan ID to track the status
+        /// of the scan. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html">DescribeMalwareScans</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>
         /// 
@@ -3693,7 +3735,13 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
-        /// role </a> in the corresponding account.
+        /// role</a> in the corresponding account.
+        /// 
+        ///  
+        /// <para>
+        /// When the malware scan starts, you can use the associated scan ID to track the status
+        /// of the scan. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html">DescribeMalwareScans</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>
         /// <param name="cancellationToken">
@@ -4023,8 +4071,16 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates the GuardDuty detector specified by the detectorId.
+        /// Updates the GuardDuty detector specified by the detector ID.
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -4054,8 +4110,16 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates the GuardDuty detector specified by the detectorId.
+        /// Updates the GuardDuty detector specified by the detector ID.
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -4324,6 +4388,14 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// There might be regional differences because some data sources might not be available
         /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
         /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
@@ -4353,6 +4425,14 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Contains information on member accounts to be updated.
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
@@ -4395,6 +4475,14 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// There might be regional differences because some data sources might not be available
         /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
         /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
@@ -4426,6 +4514,14 @@ namespace Amazon.GuardDuty
         /// provide a value for either <c>autoEnableOrganizationMembers</c> or <c>autoEnable</c>,
         /// but not both. 
         /// 
+        ///  
+        /// <para>
+        /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+        /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+        /// these two features because Runtime Monitoring already includes the threat detection
+        /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+        /// Monitoring</a>.
+        /// </para>
         ///  
         /// <para>
         /// There might be regional differences because some data sources might not be available
