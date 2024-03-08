@@ -94,8 +94,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"".
-        /// Quotation marks within the filter string must be escaped using the backslash (\) character.
-        /// For example, "<c>family_name</c> = \"Reddy\"".
+        /// Quotation marks within the filter string must be escaped using the backslash (<c>\</c>)
+        /// character. For example, <c>"family_name = \"Reddy\""</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -104,9 +104,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Filter-Type</i>: For an exact match, use =, for example, "<c>given_name</c> =
-        /// \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<c>given_name</c>
-        /// ^= \"Jon\"". 
+        ///  <i>Filter-Type</i>: For an exact match, use <c>=</c>, for example, "<c>given_name
+        /// = \"Jon\"</c>". For a prefix ("starts with") match, use <c>^=</c>, for example, "<c>given_name
+        /// ^= \"Jon\"</c>". 
         /// </para>
         ///  </li> <li> 
         /// <para>
