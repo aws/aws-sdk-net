@@ -1,3 +1,22 @@
+### 3.7.764.0 (2024-03-08 19:19 UTC)
+* Batch (3.7.303.0)
+	* This release adds JobStateTimeLimitActions setting to the Job Queue API. It allows you to configure an action Batch can take for a blocking job in front of the queue after the defined period of time. The new parameter applies for ECS, EKS, and FARGATE Job Queues.
+* BedrockAgentRuntime (3.7.301.2)
+	* Documentation update for Bedrock Runtime Agent
+* CloudTrail (3.7.304.0)
+	* Added exceptions to CreateTrail, DescribeTrails, and ListImportFailures APIs.
+* CodeBuild (3.7.302.16)
+	* This release adds support for a new webhook event: PULL_REQUEST_CLOSED.
+* CognitoIdentityProvider (3.7.303.0)
+	* Add ConcurrentModificationException to SetUserPoolMfaConfig
+* GuardDuty (3.7.304.0)
+	* Add RDS Provisioned and Serverless Usage types
+* Transfer (3.7.303.0)
+	* Added DES_EDE3_CBC to the list of supported encryption algorithms for messages sent with an AS2 connector.
+* Core 3.7.302.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.763.0 (2024-03-07 19:29 UTC)
 * AppConfig (3.7.301.0)
 	* AWS AppConfig now supports dynamic parameters, which enhance the functionality of AppConfig Extensions by allowing you to provide parameter values to your Extensions at the time you deploy your configuration.
