@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Paths Object
     /// </summary>  
-    public class PathsUnmarshaller : IUnmarshaller<Paths, XmlUnmarshallerContext>
+    public class PathsUnmarshaller : IUnmarshaller<Paths, XmlUnmarshallerContext>, IUnmarshaller<Paths, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public Paths Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static PathsUnmarshaller _instance = new PathsUnmarshaller();        

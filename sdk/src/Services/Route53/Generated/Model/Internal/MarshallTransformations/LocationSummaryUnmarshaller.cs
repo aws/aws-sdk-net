@@ -35,7 +35,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LocationSummary Object
     /// </summary>  
-    public class LocationSummaryUnmarshaller : IUnmarshaller<LocationSummary, XmlUnmarshallerContext>
+    public class LocationSummaryUnmarshaller : IUnmarshaller<LocationSummary, XmlUnmarshallerContext>, IUnmarshaller<LocationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public LocationSummary Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static LocationSummaryUnmarshaller _instance = new LocationSummaryUnmarshaller();        

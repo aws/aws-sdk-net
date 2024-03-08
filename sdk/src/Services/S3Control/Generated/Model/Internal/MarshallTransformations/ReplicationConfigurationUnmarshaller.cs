@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationConfiguration Object
     /// </summary>  
-    public class ReplicationConfigurationUnmarshaller : IUnmarshaller<ReplicationConfiguration, XmlUnmarshallerContext>
+    public class ReplicationConfigurationUnmarshaller : IUnmarshaller<ReplicationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ReplicationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ReplicationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ReplicationConfigurationUnmarshaller _instance = new ReplicationConfigurationUnmarshaller();        

@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomErrorResponses Object
     /// </summary>  
-    public class CustomErrorResponsesUnmarshaller : IUnmarshaller<CustomErrorResponses, XmlUnmarshallerContext>
+    public class CustomErrorResponsesUnmarshaller : IUnmarshaller<CustomErrorResponses, XmlUnmarshallerContext>, IUnmarshaller<CustomErrorResponses, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CustomErrorResponses Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static CustomErrorResponsesUnmarshaller _instance = new CustomErrorResponsesUnmarshaller();        

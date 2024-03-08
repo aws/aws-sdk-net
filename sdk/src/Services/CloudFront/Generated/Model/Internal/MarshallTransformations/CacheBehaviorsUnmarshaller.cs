@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheBehaviors Object
     /// </summary>  
-    public class CacheBehaviorsUnmarshaller : IUnmarshaller<CacheBehaviors, XmlUnmarshallerContext>
+    public class CacheBehaviorsUnmarshaller : IUnmarshaller<CacheBehaviors, XmlUnmarshallerContext>, IUnmarshaller<CacheBehaviors, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CacheBehaviors Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static CacheBehaviorsUnmarshaller _instance = new CacheBehaviorsUnmarshaller();        

@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CloudFrontOriginAccessIdentityConfig Object
     /// </summary>  
-    public class CloudFrontOriginAccessIdentityConfigUnmarshaller : IUnmarshaller<CloudFrontOriginAccessIdentityConfig, XmlUnmarshallerContext>
+    public class CloudFrontOriginAccessIdentityConfigUnmarshaller : IUnmarshaller<CloudFrontOriginAccessIdentityConfig, XmlUnmarshallerContext>, IUnmarshaller<CloudFrontOriginAccessIdentityConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CloudFrontOriginAccessIdentityConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static CloudFrontOriginAccessIdentityConfigUnmarshaller _instance = new CloudFrontOriginAccessIdentityConfigUnmarshaller();        

@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EncryptionEntity Object
     /// </summary>  
-    public class EncryptionEntityUnmarshaller : IUnmarshaller<EncryptionEntity, XmlUnmarshallerContext>
+    public class EncryptionEntityUnmarshaller : IUnmarshaller<EncryptionEntity, XmlUnmarshallerContext>, IUnmarshaller<EncryptionEntity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public EncryptionEntity Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static EncryptionEntityUnmarshaller _instance = new EncryptionEntityUnmarshaller();        

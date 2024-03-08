@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccountLevel Object
     /// </summary>  
-    public class AccountLevelUnmarshaller : IUnmarshaller<AccountLevel, XmlUnmarshallerContext>
+    public class AccountLevelUnmarshaller : IUnmarshaller<AccountLevel, XmlUnmarshallerContext>, IUnmarshaller<AccountLevel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,6 +98,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public AccountLevel Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static AccountLevelUnmarshaller _instance = new AccountLevelUnmarshaller();        

@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AsyncOperation Object
     /// </summary>  
-    public class AsyncOperationUnmarshaller : IUnmarshaller<AsyncOperation, XmlUnmarshallerContext>
+    public class AsyncOperationUnmarshaller : IUnmarshaller<AsyncOperation, XmlUnmarshallerContext>, IUnmarshaller<AsyncOperation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,6 +98,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public AsyncOperation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static AsyncOperationUnmarshaller _instance = new AsyncOperationUnmarshaller();        

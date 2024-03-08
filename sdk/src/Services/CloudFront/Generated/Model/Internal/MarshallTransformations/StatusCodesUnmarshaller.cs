@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StatusCodes Object
     /// </summary>  
-    public class StatusCodesUnmarshaller : IUnmarshaller<StatusCodes, XmlUnmarshallerContext>
+    public class StatusCodesUnmarshaller : IUnmarshaller<StatusCodes, XmlUnmarshallerContext>, IUnmarshaller<StatusCodes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StatusCodes Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StatusCodesUnmarshaller _instance = new StatusCodesUnmarshaller();        

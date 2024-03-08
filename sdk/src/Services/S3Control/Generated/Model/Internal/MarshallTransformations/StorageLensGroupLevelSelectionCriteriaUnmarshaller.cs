@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensGroupLevelSelectionCriteria Object
     /// </summary>  
-    public class StorageLensGroupLevelSelectionCriteriaUnmarshaller : IUnmarshaller<StorageLensGroupLevelSelectionCriteria, XmlUnmarshallerContext>
+    public class StorageLensGroupLevelSelectionCriteriaUnmarshaller : IUnmarshaller<StorageLensGroupLevelSelectionCriteria, XmlUnmarshallerContext>, IUnmarshaller<StorageLensGroupLevelSelectionCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StorageLensGroupLevelSelectionCriteria Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StorageLensGroupLevelSelectionCriteriaUnmarshaller _instance = new StorageLensGroupLevelSelectionCriteriaUnmarshaller();        

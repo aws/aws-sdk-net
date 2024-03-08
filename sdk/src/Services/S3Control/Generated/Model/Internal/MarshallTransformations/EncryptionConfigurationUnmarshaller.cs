@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EncryptionConfiguration Object
     /// </summary>  
-    public class EncryptionConfigurationUnmarshaller : IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>
+    public class EncryptionConfigurationUnmarshaller : IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public EncryptionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static EncryptionConfigurationUnmarshaller _instance = new EncryptionConfigurationUnmarshaller();        

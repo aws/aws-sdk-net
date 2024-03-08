@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GeneratedManifestEncryption Object
     /// </summary>  
-    public class GeneratedManifestEncryptionUnmarshaller : IUnmarshaller<GeneratedManifestEncryption, XmlUnmarshallerContext>
+    public class GeneratedManifestEncryptionUnmarshaller : IUnmarshaller<GeneratedManifestEncryption, XmlUnmarshallerContext>, IUnmarshaller<GeneratedManifestEncryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public GeneratedManifestEncryption Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static GeneratedManifestEncryptionUnmarshaller _instance = new GeneratedManifestEncryptionUnmarshaller();        

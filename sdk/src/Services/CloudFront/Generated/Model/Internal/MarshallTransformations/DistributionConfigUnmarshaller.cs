@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DistributionConfig Object
     /// </summary>  
-    public class DistributionConfigUnmarshaller : IUnmarshaller<DistributionConfig, XmlUnmarshallerContext>
+    public class DistributionConfigUnmarshaller : IUnmarshaller<DistributionConfig, XmlUnmarshallerContext>, IUnmarshaller<DistributionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -176,6 +176,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DistributionConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DistributionConfigUnmarshaller _instance = new DistributionConfigUnmarshaller();        

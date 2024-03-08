@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryStringNames Object
     /// </summary>  
-    public class QueryStringNamesUnmarshaller : IUnmarshaller<QueryStringNames, XmlUnmarshallerContext>
+    public class QueryStringNamesUnmarshaller : IUnmarshaller<QueryStringNames, XmlUnmarshallerContext>, IUnmarshaller<QueryStringNames, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public QueryStringNames Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static QueryStringNamesUnmarshaller _instance = new QueryStringNamesUnmarshaller();        

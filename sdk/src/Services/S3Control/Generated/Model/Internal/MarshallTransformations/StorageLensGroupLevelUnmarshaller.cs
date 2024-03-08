@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensGroupLevel Object
     /// </summary>  
-    public class StorageLensGroupLevelUnmarshaller : IUnmarshaller<StorageLensGroupLevel, XmlUnmarshallerContext>
+    public class StorageLensGroupLevelUnmarshaller : IUnmarshaller<StorageLensGroupLevel, XmlUnmarshallerContext>, IUnmarshaller<StorageLensGroupLevel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StorageLensGroupLevel Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StorageLensGroupLevelUnmarshaller _instance = new StorageLensGroupLevelUnmarshaller();        

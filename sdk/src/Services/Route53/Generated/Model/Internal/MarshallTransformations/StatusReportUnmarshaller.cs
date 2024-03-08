@@ -35,7 +35,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StatusReport Object
     /// </summary>  
-    public class StatusReportUnmarshaller : IUnmarshaller<StatusReport, XmlUnmarshallerContext>
+    public class StatusReportUnmarshaller : IUnmarshaller<StatusReport, XmlUnmarshallerContext>, IUnmarshaller<StatusReport, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StatusReport Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StatusReportUnmarshaller _instance = new StatusReportUnmarshaller();        

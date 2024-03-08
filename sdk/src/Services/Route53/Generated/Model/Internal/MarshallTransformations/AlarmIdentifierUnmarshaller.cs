@@ -35,7 +35,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AlarmIdentifier Object
     /// </summary>  
-    public class AlarmIdentifierUnmarshaller : IUnmarshaller<AlarmIdentifier, XmlUnmarshallerContext>
+    public class AlarmIdentifierUnmarshaller : IUnmarshaller<AlarmIdentifier, XmlUnmarshallerContext>, IUnmarshaller<AlarmIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public AlarmIdentifier Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static AlarmIdentifierUnmarshaller _instance = new AlarmIdentifierUnmarshaller();        

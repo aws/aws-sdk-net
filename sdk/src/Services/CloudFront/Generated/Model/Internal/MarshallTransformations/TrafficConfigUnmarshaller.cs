@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficConfig Object
     /// </summary>  
-    public class TrafficConfigUnmarshaller : IUnmarshaller<TrafficConfig, XmlUnmarshallerContext>
+    public class TrafficConfigUnmarshaller : IUnmarshaller<TrafficConfig, XmlUnmarshallerContext>, IUnmarshaller<TrafficConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public TrafficConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static TrafficConfigUnmarshaller _instance = new TrafficConfigUnmarshaller();        

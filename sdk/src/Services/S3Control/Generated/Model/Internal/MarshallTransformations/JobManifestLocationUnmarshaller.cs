@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobManifestLocation Object
     /// </summary>  
-    public class JobManifestLocationUnmarshaller : IUnmarshaller<JobManifestLocation, XmlUnmarshallerContext>
+    public class JobManifestLocationUnmarshaller : IUnmarshaller<JobManifestLocation, XmlUnmarshallerContext>, IUnmarshaller<JobManifestLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public JobManifestLocation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static JobManifestLocationUnmarshaller _instance = new JobManifestLocationUnmarshaller();        

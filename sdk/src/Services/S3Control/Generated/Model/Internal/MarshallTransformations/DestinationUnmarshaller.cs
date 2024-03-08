@@ -35,7 +35,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Destination Object
     /// </summary>  
-    public class DestinationUnmarshaller : IUnmarshaller<Destination, XmlUnmarshallerContext>
+    public class DestinationUnmarshaller : IUnmarshaller<Destination, XmlUnmarshallerContext>, IUnmarshaller<Destination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,6 +104,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public Destination Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DestinationUnmarshaller _instance = new DestinationUnmarshaller();        
