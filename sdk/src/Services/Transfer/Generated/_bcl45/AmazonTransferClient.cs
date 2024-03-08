@@ -471,7 +471,7 @@ namespace Amazon.Transfer
         /// or SFTP protocol. For AS2, the connector is required for sending files to an externally
         /// hosted AS2 server. For SFTP, the connector is required when sending files to an SFTP
         /// server or receiving files from an SFTP server. For more details about connectors,
-        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-as2-connector.html">Configure
         /// AS2 connectors</a> and <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
         /// SFTP connectors</a>.
         /// 
@@ -522,7 +522,7 @@ namespace Amazon.Transfer
         /// or SFTP protocol. For AS2, the connector is required for sending files to an externally
         /// hosted AS2 server. For SFTP, the connector is required when sending files to an SFTP
         /// server or receiving files from an SFTP server. For more details about connectors,
-        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-as2-connector.html">Configure
         /// AS2 connectors</a> and <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
         /// SFTP connectors</a>.
         /// 
@@ -5135,6 +5135,26 @@ namespace Amazon.Transfer
         /// <para>
         /// The response returns the <c>ServerId</c> and the <c>UserName</c> for the updated user.
         /// </para>
+        ///  
+        /// <para>
+        /// In the console, you can select <i>Restricted</i> when you create or update a user.
+        /// This ensures that the user can't access anything outside of their home directory.
+        /// The programmatic way to configure this behavior is to update the user. Set their <c>HomeDirectoryType</c>
+        /// to <c>LOGICAL</c>, and specify <c>HomeDirectoryMappings</c> with <c>Entry</c> as root
+        /// (<c>/</c>) and <c>Target</c> as their home directory.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the user's home directory is <c>/test/admin-user</c>, the following
+        /// command updates the user so that their configuration in the console shows the <i>Restricted</i>
+        /// flag as selected.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> aws transfer update-user --server-id &lt;server-id&gt; --user-name admin-user
+        /// --home-directory-type LOGICAL --home-directory-mappings "[{\"Entry\":\"/\", \"Target\":\"/test/admin-user\"}]"</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 
@@ -5175,6 +5195,26 @@ namespace Amazon.Transfer
         ///  
         /// <para>
         /// The response returns the <c>ServerId</c> and the <c>UserName</c> for the updated user.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the console, you can select <i>Restricted</i> when you create or update a user.
+        /// This ensures that the user can't access anything outside of their home directory.
+        /// The programmatic way to configure this behavior is to update the user. Set their <c>HomeDirectoryType</c>
+        /// to <c>LOGICAL</c>, and specify <c>HomeDirectoryMappings</c> with <c>Entry</c> as root
+        /// (<c>/</c>) and <c>Target</c> as their home directory.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the user's home directory is <c>/test/admin-user</c>, the following
+        /// command updates the user so that their configuration in the console shows the <i>Restricted</i>
+        /// flag as selected.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> aws transfer update-user --server-id &lt;server-id&gt; --user-name admin-user
+        /// --home-directory-type LOGICAL --home-directory-mappings "[{\"Entry\":\"/\", \"Target\":\"/test/admin-user\"}]"</c>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
