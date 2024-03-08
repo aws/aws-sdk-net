@@ -84,7 +84,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API
-
         /// <summary>
         /// Handles and processes any exception thrown from underlying handlers.
         /// </summary>
@@ -118,43 +117,6 @@ namespace Amazon.Runtime.Internal
             }
 
             return null;
-        }        
-
-#elif AWS_APM_API
-
-        /// <summary>
-        ///  Handles and processes any exception thrown from underlying handlers.
-        /// </summary>
-        /// <param name="executionContext">The execution context, it contains the
-        /// request and response context.</param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
-            var exception = responseContext.AsyncResult.Exception;
-            if (exception != null)
-            {
-                try
-                {
-                    DisposeReponse(executionContext.ResponseContext);
-
-                    bool rethrow = ProcessException(
-                        ExecutionContext.CreateFromAsyncContext(executionContext),
-                        exception);
-
-                    // Suppress exception
-                    if (!rethrow)
-                        responseContext.AsyncResult.Exception = null;
-                }
-                catch (Exception processedException)
-                {
-                    // Catch any new exception thrown by ProcessException()
-                    responseContext.AsyncResult.Exception = processedException;
-                }
-            }
-
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
         }
 #endif
 

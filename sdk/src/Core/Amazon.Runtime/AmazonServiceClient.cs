@@ -250,10 +250,8 @@ namespace Amazon.Runtime
         {
             ThrowIfDisposed();
 
-#if AWS_ASYNC_API
             if (cancellationToken == default(CancellationToken))
                 cancellationToken = _config.BuildDefaultCancellationToken();
-#endif
 
             var executionContext = new ExecutionContext(
                 new RequestContext(this.Config.LogMetrics, Signer)
@@ -271,72 +269,6 @@ namespace Amazon.Runtime
             );
             SetupCSMHandler(executionContext.RequestContext);
             return this.RuntimePipeline.InvokeAsync<TResponse>(executionContext);
-        }
-
-#elif AWS_APM_API
-        [Obsolete("BeginInvoke taking marshallers is obsolete. Use BeginInvoke taking InvokeOptionsBase instead.")]
-        protected IAsyncResult BeginInvoke<TRequest>(TRequest request,
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, ResponseUnmarshaller unmarshaller,
-            AsyncCallback callback, object state)
-            where TRequest : AmazonWebServiceRequest
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = marshaller;
-            options.ResponseUnmarshaller = unmarshaller;
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        protected IAsyncResult BeginInvoke(AmazonWebServiceRequest request,
-            InvokeOptionsBase options, AsyncCallback callback, object state)
-        {
-            ThrowIfDisposed();
-
-            var executionContext = new AsyncExecutionContext(
-                new AsyncRequestContext(this.Config.LogMetrics, Signer)
-                {
-                    ClientConfig = this.Config,
-                    Marshaller = options.RequestMarshaller,
-                    OriginalRequest = request,
-                    Unmarshaller = options.ResponseUnmarshaller,
-                    Callback = callback,
-                    State = state,
-                    IsAsync = true,
-                    ServiceMetaData = this.ServiceMetadata,
-                    Options = options
-                },
-                new AsyncResponseContext()
-            );
-            SetupCSMHandler(executionContext.RequestContext);
-            var asyncResult = this.RuntimePipeline.InvokeAsync(executionContext);
-            return asyncResult;
-        }
-
-        protected static TResponse EndInvoke<TResponse>(IAsyncResult result)
-            where TResponse : AmazonWebServiceResponse
-        {
-            if (result == null)
-                throw new ArgumentNullException("result", "Parameter result cannot be null.");
-
-            var asyncResult = result as RuntimeAsyncResult;
-
-            if (asyncResult == null)
-                throw new ArgumentOutOfRangeException("result", "Parameter result is not of type RuntimeAsyncResult.");
-
-            using (asyncResult)
-            {
-                if (!asyncResult.IsCompleted)
-                {
-                    asyncResult.AsyncWaitHandle.WaitOne();
-                }
-
-                if (asyncResult.Exception != null)
-                {
-                    AWSSDKUtils.PreserveStackTrace(asyncResult.Exception);
-                    throw asyncResult.Exception;
-                }
-
-                return (TResponse)asyncResult.Response;
-            }
         }
 #endif
 

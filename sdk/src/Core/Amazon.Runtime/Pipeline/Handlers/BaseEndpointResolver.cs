@@ -39,12 +39,6 @@ namespace Amazon.Runtime.Internal
             PreInvoke(executionContext);
             return base.InvokeAsync<T>(executionContext);
         }
-#elif AWS_APM_API
-        public override IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            PreInvoke(ExecutionContext.CreateFromAsyncContext(executionContext));
-            return base.InvokeAsync(executionContext);
-        }
 #endif
 
         protected virtual void PreInvoke(IExecutionContext executionContext)

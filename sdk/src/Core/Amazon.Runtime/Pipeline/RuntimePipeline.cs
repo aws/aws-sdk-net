@@ -137,7 +137,6 @@ namespace Amazon.Runtime.Internal
         }
 
 #if AWS_ASYNC_API
-
         /// <summary>
         /// Invokes the pipeline asynchronously.
         /// </summary>
@@ -149,20 +148,6 @@ namespace Amazon.Runtime.Internal
             ThrowIfDisposed();
 
             return _handler.InvokeAsync<T>(executionContext);
-        }
-
-#elif AWS_APM_API
-
-        /// <summary>
-        /// Invokes the pipeline asynchronously.
-        /// </summary>
-        /// <param name="executionContext">Request context</param>
-        /// <returns>IAsyncResult which represents the in progress asynchronous operation.</returns>
-        public IAsyncResult InvokeAsync(IAsyncExecutionContext executionContext)
-        {
-            ThrowIfDisposed();
-
-            return _handler.InvokeAsync(executionContext);
         }
 #endif
 

@@ -64,21 +64,6 @@ namespace Amazon.S3Control.Internal
                 throw;
             }
         }
-#elif AWS_APM_API
-        /// <summary>
-        /// Extracts the X-Amz-Id-2 header from WebExceptions and adds it to the AmazonS3ControlException and metrics
-        /// </summary>
-        /// <param name="executionContext"></param>
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var exception = executionContext.ResponseContext.AsyncResult.Exception;
-            if (executionContext.ResponseContext.AsyncResult.Exception != null)
-            {
-                ExtractAmazonIdHeader(ExecutionContext.CreateFromAsyncContext(executionContext), exception);
-            }
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
 
         private static void ExtractAmazonIdHeader(IExecutionContext executionContext, Exception exception)

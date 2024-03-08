@@ -58,17 +58,6 @@ namespace Amazon.Runtime.Internal
                 throw;
             }
         }
-#elif AWS_APM_API
-        protected override void InvokeAsyncCallback(IAsyncExecutionContext executionContext)
-        {
-            var exception = executionContext.ResponseContext.AsyncResult.Exception;
-            if (executionContext.ResponseContext.AsyncResult.Exception != null)
-            {
-                HandleException(ExecutionContext.CreateFromAsyncContext(executionContext), exception);
-            }
-            // Call outer handler
-            base.InvokeAsyncCallback(executionContext);
-        }
 #endif
 
         /// <summary>
