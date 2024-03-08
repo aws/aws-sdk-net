@@ -534,8 +534,14 @@ namespace ServiceClientGenerator
             generator.Operation = operation;
 
             this.ExecuteGenerator(generator, operation.Name + "RequestMarshaller.cs", "Model.Internal.MarshallTransformations");
-            if (hasRequest)
+            // Mark the shape as processed if it's being referred only as operation's
+            // input shape and not being referred directly by any other shape or via an
+            // operation modifier generating an artifical structure not in the service model.
+            if (hasRequest && !IsShapeReferred(operation.RequestStructure.Name, this.Configuration.ServiceModel)
+                && !operation.WrapsResultShape(operation.RequestStructure.Name))
+            {
                 this._processedMarshallers.Add(operation.RequestStructure.Name);
+            }
 
             if (normalizeMarshallers && hasRequest)
             {

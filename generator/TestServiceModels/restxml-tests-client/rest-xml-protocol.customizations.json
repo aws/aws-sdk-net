@@ -1,0 +1,22 @@
+{    
+    "operationModifiers": {        
+        "RecursiveShapes": {
+            "exclude": true
+        },
+		"XmlUnions": {
+            "exclude": true
+        }
+    },
+	"shapeModifiers": {       
+        "FooEnum": {
+            "modify": [
+                {
+                    "0": { "emitPropertyName": "Num_0" }
+                },
+                {
+                    "1": { "emitPropertyName": "Num_1" }
+                }
+            ]
+        }
+    }
+}

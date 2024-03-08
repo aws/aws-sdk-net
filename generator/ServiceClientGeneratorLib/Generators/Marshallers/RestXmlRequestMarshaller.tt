@@ -204,6 +204,22 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		}
 	}
 
+	void ProcessStructure(int level, string variableName, Shape shape, string xmlNamespace)
+	{
+			// Use shape's ListMarshallName if the structure is a list.
+			var marshallName = shape.IsList ? shape.ListMarshallName ?? "member" : shape.MarshallName;
+#>				
+<#=new string(' ', level * 4)#>				if (<#=variableName#> != null) 
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("<#=marshallName#>", "<#=xmlNamespace#>");			
+<#+			
+			ProcessMembers(level + 1, variableName, shape.Members, xmlNamespace);			
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>				}
+<#+		
+	}
+
 	void ProcessStructure(int level, string variableName, Member member, string xmlNamespace)
 	{
 			var shape = member.Shape.IsList ?  member.Shape.ListShape : member.Shape ;
@@ -277,7 +293,54 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#=new string(' ', level * 4)#>					{
 <#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("entry", "<#=xmlNamespace#>");
 <#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("key", "<#=xmlNamespace#>", kvp.Key);
-<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp.Value);
+<#+
+		if(member.Shape.ValueShape.IsMap)
+		{
+			ProcessSubMap(level + 1, member.Shape.ValueShape, "kvp", xmlNamespace);
+		}
+		else if(member.Shape.ValueShape.IsStructure)
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("value", "<#=xmlNamespace#>");
+<#+
+			ProcessStructure(level + 2, "kvp.Value", member.Shape.ValueShape, xmlNamespace);
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#+
+		}
+		else
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp.Value<#=member.Shape.ValueShape.IsString ? "" : ".ToString()"#>);
+<#+
+		}
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
+<#=new string(' ', level * 4)#>					}			
+<#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();				
+<#+				
+	}
+
+	void ProcessSubMap(int level, Shape shape, string parentVariableName, string xmlNamespace)
+	{				
+#>
+<#=new string(' ', level * 4)#>					xmlWriter.WriteStartElement("value", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>					foreach (var kvp<#=level#> in <#=parentVariableName#>.Value) 
+<#=new string(' ', level * 4)#>					{
+<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("entry", "<#=xmlNamespace#>");
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("key", "<#=xmlNamespace#>", kvp<#=level#>.Key);
+<#+
+		if(shape.ValueShape.IsMap)
+		{
+			ProcessSubMap(level + 1, shape.ValueShape, $"kvp{level}", xmlNamespace);
+		}
+		else
+		{
+#>
+<#=new string(' ', level * 4)#>						xmlWriter.WriteElementString("value", "<#=xmlNamespace#>", kvp<#=level#>.Value);
+<#+
+		}
+#>
 <#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
 <#=new string(' ', level * 4)#>					}			
 <#=new string(' ', level * 4)#>					xmlWriter.WriteEndElement();				

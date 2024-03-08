@@ -24,7 +24,7 @@ using System.Linq;
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
-    /// Utilities for converting objects to strings. Used by the marshaller classes.
+    /// Utilities for converting objects to strings or strings to objects. Used by the marshaller classes.
     /// </summary>
     public static class StringUtils
     {
@@ -126,7 +126,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Combines a list of enums into a comma-separated string to be marshalled as a header
+        /// Combines an enumerable of enums into a comma-separated string to be marshalled as a header.
         /// </summary>
         /// <param name="values">List of enums</param>
         /// <returns>Header value representing the list of enums</returns>
@@ -136,7 +136,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Combines a list of enums into a comma-separated string to be marshalled as a header
+        /// Combines a list of enums into a comma-separated string to be marshalled as a header.
         /// </summary>
         /// <param name="values">List of enums</param>
         /// <returns>Header value representing the list of enums</returns>
@@ -161,6 +161,26 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="values">List of enums</param>
         /// <returns>Header value representing the list of enums</returns>
         public static string FromList<T>(List<T> values) where T : ConstantClass
+        {
+            return FromList(values?.Select(x => x.ToString()));
+        }
+
+        /// <summary>
+        /// Combines an enumerable of T into a comma-separated string to be marshalled as a header.
+        /// </summary>
+        /// <param name="values">List of T</param>
+        /// <returns>Header value representing the list of T.</returns>
+        public static string FromValueTypeList<T>(IEnumerable<T> values) where T : struct
+        {
+            return FromList(values?.Select(x => x.ToString()));
+        }
+
+        /// <summary>
+        /// Combines a List of T into a comma-separated string to be marshalled as a header.
+        /// </summary>
+        /// <param name="values">List of T</param>
+        /// <returns>Header value representing the list of T</returns>
+        public static string FromValueTypeList<T>(List<T> values)  where T : struct
         {
             return FromList(values?.Select(x => x.ToString()));
         }

@@ -55,7 +55,13 @@ using Amazon.Runtime.Internal.Util;
             {
                 if (member.IsList)
                 {
-                    if (member.ModelShape.ModelListShape.IsString || member.ModelShape.ModelListShape.IsEnum)
+                    if(member.Shape.ListShape.IsMap || member.Shape.ListShape.IsList)
+                    {
+						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
+							"Marshalling list of {0} as header param is not implemented.",
+							member.Shape.ListShape.Type));
+					}
+                    else if (member.ModelShape.ModelListShape.IsString || member.ModelShape.ModelListShape.IsEnum)
                     {
 #>
                         request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromList(<#=variableName#>.<#=member.PropertyName#>);
@@ -63,7 +69,9 @@ using Amazon.Runtime.Internal.Util;
                     }
                     else
                     {
-                        throw new InvalidDataException("[{member.ModelName}]: Marshalling lists as header values is only support for lists of strings or list of enums.");
+#>
+                        request.Headers["<#=member.MarshallLocationName#>"] = StringUtils.FromValueTypeList(<#=variableName#>.<#=member.PropertyName#>);
+<#+
                     }
                 }
                 else if (member.IsMap)

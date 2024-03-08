@@ -288,7 +288,9 @@ namespace ServiceClientGenerator
                     var payload = this.RequestStructure.PayloadMemberName;
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.RequestStructure.Members.Single(m => m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
+                        return this.RequestStructure.Members.Single(m => 
+                            (m.HasModifier && m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase))
+                            || (!m.HasModifier && m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase)));
                     }
                 }
 
@@ -308,7 +310,7 @@ namespace ServiceClientGenerator
                     var payload = this.ResponseStructure.PayloadMemberName;
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.ResponseStructure.Members.Single(m => m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
+                        return this.ResponseStructure.Members.Single(m => m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
                     }
                 }
 

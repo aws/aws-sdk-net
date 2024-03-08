@@ -733,7 +733,10 @@ namespace ServiceClientGenerator
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey]);
                     var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey]);
 
-                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json || this.model.Type == ServiceType.Rest_Xml)
+                    if (this.model.Type == ServiceType.Json 
+                        || this.model.Type == ServiceType.Rest_Json 
+                        || this.model.Type == ServiceType.Rest_Xml
+                        || (this.model.Type == ServiceType.Query && this.model.IsEC2Protocol))
                         return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else
@@ -747,6 +750,8 @@ namespace ServiceClientGenerator
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new ListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
+                    else if ((this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml) && $"{listTypeUnmarshaller}.Instance" != listTypeUnmarshallerInstantiate)
+                        return $"new {listTypeUnmarshaller}({listTypeUnmarshallerInstantiate})";
                     else
                         return listTypeUnmarshallerInstantiate;
 
