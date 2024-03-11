@@ -108,7 +108,7 @@ namespace Amazon.MediaPackageV2.Model
         /// The total duration (in seconds) of the manifest's content.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=30, Max=900)]
+        [AWSProperty(Min=30)]
         public int ManifestWindowSeconds
         {
             get { return this._manifestWindowSeconds.GetValueOrDefault(); }

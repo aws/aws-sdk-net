@@ -39,6 +39,7 @@ namespace Amazon.MediaPackageV2.Model
         private ContainerType _containerType;
         private DateTime? _createdAt;
         private string _description;
+        private string _eTag;
         private List<GetHlsManifestConfiguration> _hlsManifests = new List<GetHlsManifestConfiguration>();
         private List<GetLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = new List<GetLowLatencyHlsManifestConfiguration>();
         private DateTime? _modifiedAt;
@@ -161,6 +162,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current Entity Tag (ETag) associated with this resource. The entity tag can be
+        /// used to safely make concurrent updates to the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
         }
 
         /// <summary>

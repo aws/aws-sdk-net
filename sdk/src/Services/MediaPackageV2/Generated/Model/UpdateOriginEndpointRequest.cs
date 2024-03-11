@@ -44,6 +44,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelName;
         private ContainerType _containerType;
         private string _description;
+        private string _eTag;
         private List<CreateHlsManifestConfiguration> _hlsManifests = new List<CreateHlsManifestConfiguration>();
         private List<CreateLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = new List<CreateLowLatencyHlsManifestConfiguration>();
         private string _originEndpointName;
@@ -129,6 +130,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The expected current Entity Tag (ETag) for the resource. If the specified ETag does
+        /// not match the resource's current entity tag, the update request will be rejected.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
         }
 
         /// <summary>

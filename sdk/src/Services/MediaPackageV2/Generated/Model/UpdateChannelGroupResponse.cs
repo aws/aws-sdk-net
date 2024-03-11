@@ -38,6 +38,7 @@ namespace Amazon.MediaPackageV2.Model
         private DateTime? _createdAt;
         private string _description;
         private string _egressDomain;
+        private string _eTag;
         private DateTime? _modifiedAt;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -136,6 +137,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetEgressDomain()
         {
             return this._egressDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current Entity Tag (ETag) associated with this resource. The entity tag can be
+        /// used to safely make concurrent updates to the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
         }
 
         /// <summary>

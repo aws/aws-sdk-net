@@ -82,6 +82,11 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+        
+            if (publicRequest.IsSetETag()) 
+            {
+                request.Headers["x-amzn-update-if-match"] = publicRequest.ETag;
+            }
 
             return request;
         }
