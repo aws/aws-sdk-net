@@ -40,9 +40,9 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
-    /// one of the clusters is a read/write primary and the others are read-only replicas.
-    /// Writes to the primary are asynchronously propagated to the replicas.
+    /// A Redis (cluster mode disabled) replication group is a collection of nodes, where
+    /// one of the nodes is a read/write primary and the others are read-only replicas. Writes
+    /// to the primary are asynchronously propagated to the replicas.
     /// </para>
     ///  
     /// <para>
@@ -891,13 +891,6 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
-        /// <para>
-        /// Specifies the weekly time range during which maintenance on the cluster is performed.
-        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
-        /// The minimum maintenance window is a 60 minute period. Valid values for <c>ddd</c>
-        /// are:
-        /// </para>
-        ///  
         /// <para>
         /// Specifies the weekly time range during which maintenance on the cluster is performed.
         /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).

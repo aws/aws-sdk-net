@@ -322,9 +322,10 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2
-        /// default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are
-        /// given then ElastiCache will select 3 default subnets across AZs in your default VPC.
+        /// If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select
+        /// 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs
+        /// are given then ElastiCache will select 3 default subnets across AZs in your default
+        /// VPC.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

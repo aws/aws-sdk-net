@@ -101,7 +101,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReaderEndpoint. 
         /// <para>
-        /// The endpoint of the replica nodes in this node group (shard).
+        /// The endpoint of the replica nodes in this node group (shard). This value is read-only.
         /// </para>
         /// </summary>
         public Endpoint ReaderEndpoint
