@@ -1,3 +1,11 @@
+### 3.7.765.0 (2024-03-11 18:46 UTC)
+* CodeStarconnections (3.7.305.0)
+	* Added a sync configuration enum to disable publishing of deployment status to source providers (PublishDeploymentStatus). Added a sync configuration enum (TriggerStackUpdateOn) to only trigger changes.
+* ElastiCache (3.7.301.46)
+	* Revisions to API text that are now to be carried over to SDK text, changing usages of "SFO" in code examples to "us-west-1", and some other typos.
+* MediaPackageV2 (3.7.301.0)
+	* This release enables customers to safely update their MediaPackage v2 channel groups, channels and origin endpoints using entity tags.
+
 ### 3.7.764.0 (2024-03-08 19:19 UTC)
 * Batch (3.7.303.0)
 	* This release adds JobStateTimeLimitActions setting to the Job Queue API. It allows you to configure an action Batch can take for a blocking job in front of the queue after the defined period of time. The new parameter applies for ECS, EKS, and FARGATE Job Queues.
