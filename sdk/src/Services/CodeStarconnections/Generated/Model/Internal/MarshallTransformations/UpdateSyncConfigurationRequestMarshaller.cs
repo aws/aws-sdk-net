@@ -79,6 +79,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConfigFile);
                 }
 
+                if(publicRequest.IsSetPublishDeploymentStatus())
+                {
+                    context.Writer.WritePropertyName("PublishDeploymentStatus");
+                    context.Writer.Write(publicRequest.PublishDeploymentStatus);
+                }
+
                 if(publicRequest.IsSetRepositoryLinkId())
                 {
                     context.Writer.WritePropertyName("RepositoryLinkId");
@@ -101,6 +107,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SyncType");
                     context.Writer.Write(publicRequest.SyncType);
+                }
+
+                if(publicRequest.IsSetTriggerResourceUpdateOn())
+                {
+                    context.Writer.WritePropertyName("TriggerResourceUpdateOn");
+                    context.Writer.Write(publicRequest.TriggerResourceUpdateOn);
                 }
 
                 writer.WriteObjectEnd();
