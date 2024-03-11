@@ -1108,7 +1108,7 @@ if (operation.RequestHeaderMembers.Count(m => m.Shape.IsMap) > 0)
                     }
                     else
                     {
-                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt (2).");
+                        throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt - exception case.");
                     }
                 }
             }

@@ -13,6 +13,8 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     public static class MultiValueHeaderParser
     {
+        private static char Delimiter = ',';
+
         /// <summary>
         /// Reads a header string which is optionally comma-delimited and converts it to a list of 
         /// strings.
@@ -101,7 +103,7 @@ namespace Amazon.Runtime.Internal.Util
             if (format == "ISO8601")
             {
                 //"2019-12-16T23:48:18Z, 2019-12-16T23:48:18Z"
-                return value.Split(',').Select(item => DateTime.Parse(item.Trim(), CultureInfo.InvariantCulture)).ToList();
+                return value.Split(Delimiter).Select(item => DateTime.Parse(item.Trim(), CultureInfo.InvariantCulture)).ToList();
             }
             else if (format == "RFC822")
             {
@@ -110,13 +112,13 @@ namespace Amazon.Runtime.Internal.Util
                 var startIndex = 0;
                 while (startIndex < value.Length)
                 {
-                    var index = value.IndexOf(',', startIndex);
+                    var index = value.IndexOf(Delimiter, startIndex);
                     if(index == -1 || index + 1 == value.Length)
                     {
                         throw new ArgumentException($"Invalid RFC822 format {value} at starting index {startIndex}.");
                     }
 
-                    index = value.IndexOf(",", index + 1);
+                    index = value.IndexOf(Delimiter, index + 1);
                     if (index == -1)
                     {
                         index = value.Length;    
@@ -132,7 +134,7 @@ namespace Amazon.Runtime.Internal.Util
             else if (format == "UnixTimestamp")
             {
                 //"1576540098, 1576540098"
-                return value.Split(',').Select(item => AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(item.Trim(), CultureInfo.InvariantCulture))).ToList();
+                return value.Split(Delimiter).Select(item => AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(item.Trim(), CultureInfo.InvariantCulture))).ToList();
             }
             else
             {
@@ -179,7 +181,7 @@ namespace Amazon.Runtime.Internal.Util
                 return new List<T>();
             };
 
-            var list = value.Split(',').ToList();
+            var list = value.Split(Delimiter).ToList();
             return list.ConvertAll(item => (T)Convert.ChangeType(item.Trim(), typeof(T))).ToList();
         }
 
@@ -205,7 +207,7 @@ namespace Amazon.Runtime.Internal.Util
 
         private static Tuple<string, int> ReadUnquotedValue(byte[] input, int startIndex)
         {
-            int nextDelim = Array.IndexOf(input, (byte)',', startIndex);
+            int nextDelim = Array.IndexOf(input, (byte)Delimiter, startIndex);
             int length = nextDelim != -1 ? nextDelim - startIndex : input.Length - startIndex;
             string firstStr = System.Text.Encoding.UTF8.GetString(input, startIndex, length).Trim();
             var remainingIndex = AdvanceIndexIfComma(input, startIndex + length);
@@ -237,13 +239,13 @@ namespace Amazon.Runtime.Internal.Util
             {
                 return index;
             }
-            else if (input[index] == (byte)',')
+            else if (input[index] == (byte)Delimiter)
             {
                 return index + 1;
             }
             else
             {
-                throw new ArgumentException($"Expected delimiter `,` in input data at index {index}.");
+                throw new ArgumentException($"Expected delimiter `{Delimiter}` in input data at index {index}.");
             }
         }
     }
