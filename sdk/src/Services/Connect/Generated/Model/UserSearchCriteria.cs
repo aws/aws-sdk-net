@@ -108,9 +108,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// The currently supported values for <c>FieldName</c> are <c>username</c>, <c>firstname</c>,
-        /// <c>lastname</c>, <c>resourceId</c>, <c>routingProfileId</c>, <c>securityProfileId</c>,
-        /// <c>agentGroupId</c>, and <c>agentGroupPathIds</c>.
+        /// The currently supported values for <c>FieldName</c> are <c>Username</c>, <c>FirstName</c>,
+        /// <c>LastName</c>, <c>RoutingProfileId</c>, <c>SecurityProfileId</c>, <c>ResourceId</c>.
         /// </para>
         /// </summary>
         public StringCondition StringCondition

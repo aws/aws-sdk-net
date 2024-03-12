@@ -30,6 +30,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Contains information about the identity of a user.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For Amazon Connect instances that are created with the <c>EXISTING_DIRECTORY</c> identity
+    /// management type, <c>FirstName</c>, <c>LastName</c>, and <c>Email</c> cannot be updated
+    /// from within Amazon Connect because they are managed by the directory.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UserIdentityInfo
     {

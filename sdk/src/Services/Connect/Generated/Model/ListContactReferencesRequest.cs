@@ -35,7 +35,8 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// For the specified <c>referenceTypes</c>, returns a list of references associated with
-    /// the contact. 
+    /// the contact. <i>References</i> are links to documents that are related to a contact,
+    /// such as emails, attachments, or URLs.
     /// </para>
     /// </summary>
     public partial class ListContactReferencesRequest : AmazonConnectRequest
