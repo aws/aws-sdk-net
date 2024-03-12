@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The type of resource to import into your stack, such as <c>AWS::S3::Bucket</c>. For
         /// a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
-        /// that support import operations</a> in the CloudFormation User Guide.
+        /// that support import operations</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

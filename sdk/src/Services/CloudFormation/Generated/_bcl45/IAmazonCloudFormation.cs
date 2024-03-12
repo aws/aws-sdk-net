@@ -1551,8 +1551,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
-        /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-        /// in the <i>CloudFormation User Guide</i>.
+        /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1571,8 +1571,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
-        /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-        /// in the <i>CloudFormation User Guide</i>.
+        /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1835,7 +1835,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1851,7 +1853,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1868,7 +1872,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1888,7 +1894,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
