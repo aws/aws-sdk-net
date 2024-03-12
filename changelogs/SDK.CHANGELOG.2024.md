@@ -1,3 +1,15 @@
+### 3.7.766.0 (2024-03-12 18:17 UTC)
+* CloudFormation (3.7.304.2)
+	* CloudFormation documentation update for March, 2024
+* Connect (3.7.313.0)
+	* This release increases MaxResults limit to 500 in request for SearchUsers, SearchQueues and SearchRoutingProfiles APIs of Amazon Connect.
+* EC2 (3.7.316.2)
+	* Documentation updates for Amazon EC2.
+* Kafka (3.7.302.0)
+	* Added support for specifying the starting position of topic replication in MSK-Replicator.
+* SimpleSystemsManagement (3.7.303.4)
+	* March 2024 doc-only updates for Systems Manager.
+
 ### 3.7.765.0 (2024-03-11 18:46 UTC)
 * CodeStarconnections (3.7.305.0)
 	* Added a sync configuration enum to disable publishing of deployment status to source providers (PublishDeploymentStatus). Added a sync configuration enum (TriggerStackUpdateOn) to only trigger changes.
