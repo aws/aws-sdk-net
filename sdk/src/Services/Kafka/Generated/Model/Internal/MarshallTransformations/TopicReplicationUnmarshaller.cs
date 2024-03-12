@@ -81,6 +81,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.DetectAndCopyNewTopics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("startingPosition", targetDepth))
+                {
+                    var unmarshaller = ReplicationStartingPositionUnmarshaller.Instance;
+                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("topicsToExclude", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

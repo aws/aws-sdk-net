@@ -36,6 +36,7 @@ namespace Amazon.Kafka.Model
         private bool? _copyAccessControlListsForTopics;
         private bool? _copyTopicConfigurations;
         private bool? _detectAndCopyNewTopics;
+        private ReplicationStartingPosition _startingPosition;
         private List<string> _topicsToExclude = new List<string>();
         private List<string> _topicsToReplicate = new List<string>();
 
@@ -93,6 +94,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetDetectAndCopyNewTopics()
         {
             return this._detectAndCopyNewTopics.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPosition. 
+        /// <para>
+        /// Configuration for specifying the position in the topics to start replicating from.
+        /// </para>
+        /// </summary>
+        public ReplicationStartingPosition StartingPosition
+        {
+            get { return this._startingPosition; }
+            set { this._startingPosition = value; }
+        }
+
+        // Check to see if StartingPosition property is set
+        internal bool IsSetStartingPosition()
+        {
+            return this._startingPosition != null;
         }
 
         /// <summary>
