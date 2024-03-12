@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add mime code mapping for .csv file extension."
+      ]
+    }
+  ]
+}
