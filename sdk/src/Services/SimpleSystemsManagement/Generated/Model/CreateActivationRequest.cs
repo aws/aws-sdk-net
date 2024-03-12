@@ -36,8 +36,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Systems Manager capabilities. You use the activation code and ID when installing SSM
     /// Agent on machines in your hybrid environment. For more information about requirements
     /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-    /// up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon
-    /// Web Services Systems Manager User Guide</i>. 
+    /// up Amazon Web Services Systems Manager for hybrid and multicloud environments</a>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
     /// 
     ///  <note> 
     /// <para>
@@ -135,8 +135,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to the managed node. This IAM role must provide AssumeRole permissions for the Amazon
         /// Web Services Systems Manager service principal <c>ssm.amazonaws.com</c>. For more
         /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-        /// an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems
-        /// Manager User Guide</i>.
+        /// an IAM service role for a hybrid and multicloud environment</a> in the <i>Amazon Web
+        /// Services Systems Manager User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

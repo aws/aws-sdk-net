@@ -128,7 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// For more information about how to send commands that target managed nodes using <c>Key,Value</c>
     /// parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
-    /// multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// multiple managed nodes</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Target

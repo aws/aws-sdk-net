@@ -101,7 +101,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     /// InstalledTime: The time the association, patch, or custom compliance item was applied
-    /// to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+    /// to the resource. Specify the time by using the following format: <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -140,7 +141,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A summary of the call execution that includes an execution ID, the type of execution
         /// (for example, <c>Command</c>), and the date/time of the execution using a datetime
-        /// object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+        /// object that is saved in the following format: <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

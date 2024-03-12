@@ -46,8 +46,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// alarm or event details, alarm history, and an alarm timeline graph. For the Amazon
     /// Web Services resource, OpsCenter aggregates information from Config, CloudTrail logs,
     /// and EventBridge, so you don't have to navigate across multiple console pages during
-    /// your investigation. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
-    /// in the <i>Amazon Web Services Systems Manager User Guide</i>. 
+    /// your investigation. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+    /// Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager
+    /// User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class OpsItem

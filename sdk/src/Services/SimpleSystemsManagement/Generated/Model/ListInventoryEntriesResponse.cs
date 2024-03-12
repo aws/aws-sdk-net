@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CaptureTime. 
         /// <para>
-        /// The time that inventory information was collected for the managed node(s).
+        /// The time that inventory information was collected for the managed nodes.
         /// </para>
         /// </summary>
         public string CaptureTime
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of inventory items on the managed node(s).
+        /// A list of inventory items on the managed nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
@@ -117,7 +117,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// The inventory schema version used by the managed node(s).
+        /// The inventory schema version used by the managed nodes.
         /// </para>
         /// </summary>
         public string SchemaVersion

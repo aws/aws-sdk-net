@@ -253,11 +253,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>BLOCK</c> </b>: Packages in the <c>RejectedPatches</c> list, and packages
-        /// that include them as dependencies, aren't installed under any circumstances. If a
-        /// package was installed before it was added to the <c>Rejected</c> patches list, it
-        /// is considered non-compliant with the patch baseline, and its status is reported as
-        /// <c>InstalledRejected</c>.
+        ///  <b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include
+        /// them as dependencies, aren't installed by Patch Manager under any circumstances. If
+        /// a package was installed before it was added to the <b>Rejected patches</b> list, or
+        /// is installed outside of Patch Manager afterward, it's considered noncompliant with
+        /// the patch baseline and its status is reported as <i>InstalledRejected</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The document doesn't support the platform type of the given managed node ID(s). For
+    /// The document doesn't support the platform type of the given managed node IDs. For
     /// example, you sent an document for a Windows managed node to a Linux node.
     /// </summary>
     #if !NETSTANDARD

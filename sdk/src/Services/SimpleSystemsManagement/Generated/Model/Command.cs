@@ -275,8 +275,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of managed nodes that are allowed to run the command at the same
         /// time. You can specify a number of managed nodes, such as 10, or a percentage of nodes,
         /// such as 10%. The default value is 50. For more information about how to use <c>MaxConcurrency</c>,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-        /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+        /// Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
         /// </summary>
@@ -299,8 +299,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
         /// or errors, such as 10%. The default value is <c>0</c>. For more information about
-        /// how to use <c>MaxErrors</c>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-        /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
+        /// how to use <c>MaxErrors</c>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+        /// Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
         /// </summary>

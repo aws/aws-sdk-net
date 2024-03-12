@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEffectiveInstanceAssociations operation.
-    /// All associations for the managed node(s).
+    /// All associations for the managed nodes.
     /// </summary>
     public partial class DescribeEffectiveInstanceAssociationsRequest : AmazonSimpleSystemsManagementRequest
     {

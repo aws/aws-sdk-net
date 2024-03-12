@@ -199,7 +199,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The document version you want to associate with the target(s). Can be a specific version
+        /// The document version you want to associate with the targets. Can be a specific version
         /// or the default version.
         /// </para>
         ///  <important> 
@@ -445,7 +445,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression when the association will be applied to the target(s).
+        /// A cron expression when the association will be applied to the targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -596,9 +596,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Web Services resource groups, all managed nodes in an Amazon Web Services account,
         /// or individual managed node IDs. You can target all managed nodes in an Amazon Web
         /// Services account by specifying the <c>InstanceIds</c> key with a value of <c>*</c>.
-        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-        /// targets and rate controls with State Manager associations</a> in the <i>Amazon Web
-        /// Services Systems Manager User Guide</i>.
+        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+        /// targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

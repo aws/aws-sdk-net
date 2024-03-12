@@ -349,21 +349,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following topics in the in the <i>Amazon Web Services
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+        /// service-linked roles for Systems Manager</a> in the in the <i>Amazon Web Services
         /// Systems Manager User Guide</i>:
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-        /// service-linked roles for Systems Manager</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-        /// I use a service-linked role or a custom service role to run maintenance window tasks?
-        /// </a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string ServiceRoleArn
         {
