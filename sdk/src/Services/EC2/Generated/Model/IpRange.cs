@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an IPv4 range.
+    /// Describes an IPv4 address range.
     /// </summary>
     public partial class IpRange
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrIp. 
         /// <para>
-        /// The IPv4 CIDR range. You can either specify a CIDR range or a source security group,
+        /// The IPv4 address range. You can either specify a CIDR block or a source security group,
         /// not both. To specify a single IPv4 address, use the /32 prefix length.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a set of permissions for a security group rule.
+    /// Describes the permissions for a security group rule.
     /// </summary>
     public partial class IpPermission
     {
@@ -45,8 +45,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FromPort. 
         /// <para>
         /// If the protocol is TCP or UDP, this is the start of the port range. If the protocol
-        /// is ICMP or ICMPv6, this is the type number. A value of -1 indicates all ICMP/ICMPv6
-        /// types. If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.
+        /// is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).
         /// </para>
         /// </summary>
         public int FromPort
@@ -93,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Ranges. 
         /// <para>
-        /// The IPv4 ranges.
+        /// The IPv4 address ranges.
         /// </para>
         /// </summary>
         public List<IpRange> Ipv4Ranges
@@ -111,7 +110,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Ranges. 
         /// <para>
-        /// The IPv6 ranges.
+        /// The IPv6 address ranges.
         /// </para>
         /// </summary>
         public List<Ipv6Range> Ipv6Ranges
@@ -148,8 +147,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// If the protocol is TCP or UDP, this is the end of the port range. If the protocol
-        /// is ICMP or ICMPv6, this is the code. A value of -1 indicates all ICMP/ICMPv6 codes.
-        /// If you specify all ICMP/ICMPv6 types, you must specify all ICMP/ICMPv6 codes.
+        /// is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port
+        /// is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).
         /// </para>
         /// </summary>
         public int ToPort

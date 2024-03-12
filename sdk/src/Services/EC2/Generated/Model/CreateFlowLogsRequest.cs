@@ -110,13 +110,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeliverLogsPermissionArn. 
         /// <para>
-        /// The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch
-        /// Logs log group in your account.
+        /// The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the log destination.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if the destination type is <c>cloud-watch-logs</c> and
-        /// unsupported otherwise.
+        /// This parameter is required if the destination type is <c>cloud-watch-logs</c>, or
+        /// if the destination type is <c>kinesis-data-firehose</c> and the delivery stream and
+        /// the resources to monitor are in different accounts.
         /// </para>
         /// </summary>
         public string DeliverLogsPermissionArn

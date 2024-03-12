@@ -42,9 +42,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// You can also use CloudWatch Events to check the status of a modification to an EBS
     /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-    /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
-    /// the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>.
+    /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+    /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVolumesModificationsRequest : AmazonEC2Request

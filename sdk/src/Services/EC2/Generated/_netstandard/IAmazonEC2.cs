@@ -33,41 +33,10 @@ namespace Amazon.EC2
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>
-    /// Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing
-    /// capacity in the Amazon Web Services Cloud. Using Amazon EC2 eliminates the need to
-    /// invest in hardware up front, so you can develop and deploy applications faster. Amazon
-    /// Virtual Private Cloud (Amazon VPC) enables you to provision a logically isolated section
-    /// of the Amazon Web Services Cloud where you can launch Amazon Web Services resources
-    /// in a virtual network that you've defined. Amazon Elastic Block Store (Amazon EBS)
-    /// provides block level storage volumes for use with EC2 instances. EBS volumes are highly
-    /// available and reliable storage volumes that can be attached to any running instance
-    /// and used like a hard drive.
+    /// You can access the features of Amazon Elastic Compute Cloud (Amazon EC2) programmatically.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon
+    /// EC2 Developer Guide</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// To learn more, see the following resources:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Amazon EC2: <a href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a href="https://docs.aws.amazon.com/ec2/index.html">Amazon
-    /// EC2 documentation</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a href="https://docs.aws.amazon.com/ebs/index.html">Amazon
-    /// EBS documentation</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a href="https://docs.aws.amazon.com/vpc/index.html">Amazon
-    /// VPC documentation</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// VPN: <a href="http://aws.amazon.com/vpn">VPN product page</a>, <a href="https://docs.aws.amazon.com/vpn/index.html">VPN
-    /// documentation</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonEC2 : IAmazonService, IDisposable
     {
@@ -1092,13 +1061,13 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// After you attach an EBS volume, you must make it available. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html">Make
         /// an EBS volume available for use</a>.
         /// </para>
         ///  
@@ -1125,9 +1094,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach
-        /// an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-attaching-volume.html">Attach
+        /// an Amazon EBS volume to an instance</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
@@ -1193,40 +1161,39 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Adds the specified outbound (egress) rules to a security group for use with a VPC.
+        /// Adds the specified outbound (egress) rules to a security group.
         /// 
         ///  
         /// <para>
-        /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
-        /// address ranges, or to the instances that are associated with the specified source
-        /// security groups. When specifying an outbound rule for your security group in a VPC,
-        /// the <c>IpPermissions</c> must include a destination for the traffic.
+        /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address
+        /// ranges, the IP address ranges specified by a prefix list, or the instances that are
+        /// associated with a source security group. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+        /// group rules</a>.
         /// </para>
         ///  
         /// <para>
-        /// You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols,
-        /// you must also specify the destination port or port range. For the ICMP protocol, you
-        /// must also specify the ICMP type and code. You can use -1 for the type or code to mean
-        /// all types or all codes.
+        /// You must specify exactly one of the following destinations: an IPv4 or IPv6 address
+        /// range, a prefix list, or a security group. You must specify a protocol for each rule
+        /// (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or
+        /// port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP type
+        /// and code.
         /// </para>
         ///  
         /// <para>
-        /// Rule changes are propagated to affected instances as quickly as possible. However,
-        /// a small delay might occur.
+        /// Rule changes are propagated to instances associated with the security group as quickly
+        /// as possible. However, a small delay might occur.
         /// </para>
         ///  
         /// <para>
-        /// For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-        /// VPC quotas</a>.
+        /// For examples of rules that you can add to security groups for specific access scenarios,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security
+        /// group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If you want to reference a security group across VPCs attached to a transit gateway
-        /// using the <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
-        /// group referencing feature</a>, note that you can only reference security groups for
-        /// ingress rules. You cannot reference a security group for egress rules.
+        /// For information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC quotas</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service method.</param>
         /// <param name="cancellationToken">
@@ -1249,25 +1216,34 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
-        /// CIDR address range, or from the instances that are associated with the specified destination
-        /// security groups. When specifying an inbound rule for your security group in a VPC,
-        /// the <c>IpPermissions</c> must include a source for the traffic.
+        /// address range, the IP address ranges that are specified by a prefix list, or the instances
+        /// that are associated with a destination security group. For more information, see <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+        /// group rules</a>.
         /// </para>
         ///  
         /// <para>
-        /// You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must
-        /// also specify the destination port or port range. For ICMP/ICMPv6, you must also specify
-        /// the ICMP/ICMPv6 type and code. You can use -1 to mean all types or all codes.
+        /// You must specify exactly one of the following sources: an IPv4 or IPv6 address range,
+        /// a prefix list, or a security group. You must specify a protocol for each rule (for
+        /// example, TCP). If the protocol is TCP or UDP, you must also specify a port or port
+        /// range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6 type
+        /// and code.
         /// </para>
         ///  
         /// <para>
-        /// Rule changes are propagated to instances within the security group as quickly as possible.
-        /// However, a small delay might occur.
+        /// Rule changes are propagated to instances associated with the security group as quickly
+        /// as possible. However, a small delay might occur.
         /// </para>
         ///  
         /// <para>
-        /// For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-        /// VPC quotas</a>.
+        /// For examples of rules that you can add to security groups for specific access scenarios,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security
+        /// group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+        /// VPC quotas</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
@@ -1621,8 +1597,8 @@ namespace Amazon.EC2
         /// Backing snapshots copied to an Outpost are encrypted by default using the default
         /// encryption key for the Region, or a different key that you specify in the request
         /// using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more information,
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1669,9 +1645,8 @@ namespace Amazon.EC2
         /// <para>
         /// Snapshots copied to an Outpost are encrypted by default using the default encryption
         /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-        /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+        /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1680,8 +1655,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
-        /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
+        /// an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
@@ -1948,36 +1923,42 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a set of DHCP options for your VPC. After creating the set, you must associate
-        /// it with the VPC, causing all existing and new instances that you launch in the VPC
-        /// to use this set of DHCP options. The following are the individual DHCP options you
-        /// can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-        /// 2132</a>.
+        /// Creates a custom set of DHCP options. After you create a DHCP option set, you associate
+        /// it with a VPC. After you associate a DHCP option set with a VPC, all existing and
+        /// newly launched instances in the VPC use this set of DHCP options.
         /// 
+        ///  
+        /// <para>
+        /// The following are the individual DHCP options you can specify. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>domain-name-servers</c> - The IP addresses of up to four domain name servers,
-        /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
-        /// specifying more than one domain name server, specify the IP addresses in a single
-        /// parameter, separated by commas. To have your instance receive a custom DNS hostname
-        /// as specified in <c>domain-name</c>, you must set <c>domain-name-servers</c> to a custom
-        /// DNS server.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>domain-name</c> - If you're using AmazonProvidedDNS in <c>us-east-1</c>, specify
-        /// <c>ec2.internal</c>. If you're using AmazonProvidedDNS in another Region, specify
-        /// <c>region.compute.internal</c> (for example, <c>ap-northeast-1.compute.internal</c>).
-        /// Otherwise, specify a domain name (for example, <c>ExampleCompany.com</c>). This value
-        /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating
-        /// systems accept multiple domain names separated by spaces. However, Windows and other
-        /// Linux operating systems treat the value as a single domain, which results in unexpected
-        /// behavior. If your DHCP options set is associated with a VPC that has instances with
-        /// multiple operating systems, specify only one domain name.
+        /// <c>ec2.internal</c>. If you're using AmazonProvidedDNS in any other Region, specify
+        /// <c>region.compute.internal</c>. Otherwise, specify a custom domain name. This value
+        /// is used to complete unqualified DNS hostnames.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some Linux operating systems accept multiple domain names separated by spaces. However,
+        /// Windows and other Linux operating systems treat the value as a single domain, which
+        /// results in unexpected behavior. If your DHCP option set is associated with a VPC that
+        /// has instances running operating systems that treat the value as a single domain, specify
+        /// only one domain name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ntp-servers</c> - The IP addresses of up to four Network Time Protocol (NTP) servers.
+        ///  <c>domain-name-servers</c> - The IP addresses of up to four DNS servers, or AmazonProvidedDNS.
+        /// To specify multiple domain name servers in a single parameter, separate the IP addresses
+        /// using commas. To have your instances receive custom DNS hostnames as specified in
+        /// <c>domain-name</c>, you must specify a custom DNS server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ntp-servers</c> - The IP addresses of up to eight Network Time Protocol (NTP)
+        /// servers (four IPv4 addresses and four IPv6 addresses).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1986,18 +1967,20 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that
-        /// you specify 2 (broadcast and multicast are not currently supported). For more information
-        /// about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+        /// you specify 2. Broadcast and multicast are not supported. For more information about
+        /// NetBIOS node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
         /// <para>
-        /// Your VPC automatically starts out with a set of DHCP options that includes only a
-        /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
-        /// if your VPC has an internet gateway, make sure to set the <c>domain-name-servers</c>
-        /// option either to <c>AmazonProvidedDNS</c> or to a domain name server of your choice.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-        /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+        ///  <c>ipv6-preferred-lease-time</c> - A value (in seconds, minutes, hours, or years)
+        /// for how frequently a running instance with an IPv6 assigned to it goes through DHCPv6
+        /// lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately
+        /// 68 years). If no value is entered, the default lease time is 140 seconds. If you use
+        /// long-term addressing for EC2 instances, you can increase the lease time and avoid
+        /// frequent lease renewal requests. Lease renewal typically occurs when half of the lease
+        /// time has elapsed.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method.</param>
         /// <param name="cancellationToken">
@@ -3190,9 +3173,9 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
-        /// Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
+        /// Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -3898,8 +3881,8 @@ namespace Amazon.EC2
         /// <para>
         /// You can create encrypted volumes. Encrypted volumes must be attached to instances
         /// that support Amazon EBS encryption. Volumes that are created from encrypted snapshots
-        /// are also automatically encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// are also automatically encrypted. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3908,8 +3891,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
-        /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html">Create
+        /// an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
@@ -5078,8 +5061,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete
-        /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-snapshot.html">Delete
+        /// an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
@@ -5554,8 +5537,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete
-        /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-volume.html">Delete
+        /// an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
@@ -5981,7 +5964,12 @@ namespace Amazon.EC2
         ///  <c>vpc-max-security-groups-per-interface</c>: The maximum number of security groups
         /// that you can assign to a network interface.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6026,7 +6014,12 @@ namespace Amazon.EC2
         ///  <c>vpc-max-security-groups-per-interface</c>: The maximum number of security groups
         /// that you can assign to a network interface.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -6170,6 +6163,12 @@ namespace Amazon.EC2
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
         /// and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6192,6 +6191,12 @@ namespace Amazon.EC2
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
         /// and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
         /// <param name="cancellationToken">
@@ -8444,6 +8449,12 @@ namespace Amazon.EC2
         /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
         /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8468,6 +8479,12 @@ namespace Amazon.EC2
         /// For information about enabling and disabling Regions for your account, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
         /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>
         /// <param name="cancellationToken">
@@ -8889,9 +8906,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the VPCs on the other side of a VPC peering connection or the VPCs attached
-        /// to a transit gateway that are referencing the security groups you've specified in
-        /// this request.
+        /// Describes the VPCs on the other side of a VPC peering connection that are referencing
+        /// the security groups you've specified in this request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// <param name="cancellationToken">
@@ -8962,8 +8978,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-        /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
+        /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service method.</param>
@@ -9048,8 +9064,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-        /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
+        /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -9130,8 +9146,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-        /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
+        /// EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
@@ -9395,12 +9411,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the stale security group rules for security groups in a specified VPC. Rules
-        /// are stale when they reference a deleted security group in the same VPC, peered VPC,
-        /// or in separate VPCs attached to a transit gateway (with <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
-        /// group referencing support</a> enabled). Rules can also be stale if they reference
-        /// a security group in a peer VPC for which the VPC peering connection has been deleted
-        /// or if they reference a security group in a VPC that has been detached from a transit
-        /// gateway.
+        /// are stale when they reference a deleted security group in the same VPC or peered VPC.
+        /// Rules can also be stale if they reference a security group in a peer VPC for which
+        /// the VPC peering connection has been deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// <param name="cancellationToken">
@@ -9509,6 +9522,12 @@ namespace Amazon.EC2
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
         /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9528,6 +9547,12 @@ namespace Amazon.EC2
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
         /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// <param name="cancellationToken">
@@ -9898,8 +9923,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-        /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
+        /// EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute service method.</param>
@@ -9926,9 +9951,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-        /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
+        /// EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9950,9 +9981,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-        /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
+        /// EBS volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
         /// <param name="cancellationToken">
@@ -9982,9 +10019,8 @@ namespace Amazon.EC2
         /// <para>
         /// You can also use CloudWatch Events to check the status of a modification to an EBS
         /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
-        /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
-        /// the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+        /// the progress of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
@@ -10022,8 +10058,8 @@ namespace Amazon.EC2
         /// pass, the overall status of the volume is <c>ok</c>. If the check fails, the overall
         /// status is <c>impaired</c>. If the status is <c>insufficient-data</c>, then the checks
         /// might still be taking place on your volume at the time. We recommend that you retry
-        /// the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
-        /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-status.html">Monitor
+        /// the status of your volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -10047,6 +10083,12 @@ namespace Amazon.EC2
         /// state. Therefore, volume status does not indicate volumes in the <c>error</c> state
         /// (for example, when a volume is incapable of accepting I/O.)
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -10079,8 +10121,8 @@ namespace Amazon.EC2
         /// pass, the overall status of the volume is <c>ok</c>. If the check fails, the overall
         /// status is <c>impaired</c>. If the status is <c>insufficient-data</c>, then the checks
         /// might still be taking place on your volume at the time. We recommend that you retry
-        /// the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
-        /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-status.html">Monitor
+        /// the status of your volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -10104,6 +10146,12 @@ namespace Amazon.EC2
         /// state. Therefore, volume status does not indicate volumes in the <c>error</c> state
         /// (for example, when a volume is incapable of accepting I/O.)
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method.</param>
         /// <param name="cancellationToken">
@@ -10567,8 +10615,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
-        /// an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-detaching-volume.html">Detach
+        /// an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
@@ -10665,8 +10713,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault service method.</param>
@@ -10886,9 +10934,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
-        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i> .
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i> .
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableSnapshotBlockPublicAccess service method.</param>
@@ -11397,8 +11444,8 @@ namespace Amazon.EC2
         /// <para>
         /// After you enable encryption by default, the EBS volumes that you create are always
         /// encrypted, either using the default KMS key or the KMS key that you specified when
-        /// you created each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// you created each volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -11413,7 +11460,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// After you enable encryption by default, you can no longer launch instances using instance
-        /// types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+        /// types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
         /// instance types</a>.
         /// </para>
         /// </summary>
@@ -11474,8 +11521,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
-        /// EBS fast snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-fast-snapshot-restore.html">Amazon
+        /// EBS fast snapshot restore</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableFastSnapshotRestores service method.</param>
@@ -11665,9 +11712,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
-        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSnapshotBlockPublicAccess service method.</param>
@@ -12082,8 +12128,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId service method.</param>
@@ -12107,8 +12153,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault service method.</param>
@@ -12671,9 +12717,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
-        /// Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
+        /// Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSnapshotBlockPublicAccessState service method.</param>
@@ -13406,8 +13451,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId service method.</param>
@@ -14164,8 +14209,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
-        /// a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share
+        /// a snapshot</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
@@ -14187,8 +14232,8 @@ namespace Amazon.EC2
         /// Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a
         /// full snapshot that includes all of the blocks of data that were written to the volume
         /// at the time the snapshot was created, and moved from the standard tier to the archive
-        /// tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive
-        /// Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// tier. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-archive.html">Archive
+        /// Amazon EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotTier service method.</param>
         /// <param name="cancellationToken">
@@ -14570,17 +14615,15 @@ namespace Amazon.EC2
         /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
         /// EC2 instance type, you might be able to apply these changes without stopping the instance
         /// or detaching the volume from it. For more information about modifying EBS volumes,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-        /// EBS Elastic Volumes</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-        /// EBS Elastic Volumes</a> (Windows instances).
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html">Amazon
+        /// EBS Elastic Volumes</a> in the <i>Amazon EBS User Guide</i>.
         /// 
         ///  
         /// <para>
         /// When you complete a resize operation on your volume, you need to extend the volume's
         /// file-system size to take advantage of the new storage capacity. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
-        /// a Linux file system</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
-        /// a Windows file system</a>.
+        /// see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend
+        /// the file system</a>.
         /// </para>
         ///  
         /// <para>
@@ -14588,7 +14631,7 @@ namespace Amazon.EC2
         /// For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
         /// CloudWatch Events User Guide</a>. You can also track the status of a modification
         /// using <a>DescribeVolumesModifications</a>. For information about tracking status changes
-        /// using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+        /// using either method, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
         /// the progress of volume modifications</a>.
         /// </para>
         ///  
@@ -16024,8 +16067,8 @@ namespace Amazon.EC2
         /// <para>
         /// After resetting the default KMS key to the Amazon Web Services managed KMS key, you
         /// can continue to encrypt by a customer managed KMS key by specifying it when you create
-        /// the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// the volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId service method.</param>
@@ -16132,8 +16175,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
-        /// a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share
+        /// a snapshot</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method.</param>
@@ -16218,8 +16261,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
-        /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+        /// snapshots from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotFromRecycleBin service method.</param>
         /// <param name="cancellationToken">
@@ -16243,10 +16286,10 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
-        /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
+        /// For more information see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#restore-archived-snapshot">
+        /// Restore an archived snapshot</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#modify-temp-restore-period">
         /// modify the restore period or restore type for a temporarily restored snapshot</a>
-        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreSnapshotTier service method.</param>

@@ -135,9 +135,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
         /// Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// EBS User Guide</i>.
         /// </para>
         /// </summary>
         public string OutpostArn

@@ -62,7 +62,12 @@ namespace Amazon.EC2.Model
     ///  <c>vpc-max-security-groups-per-interface</c>: The maximum number of security groups
     /// that you can assign to a network interface.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonEC2Request
     {
