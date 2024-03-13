@@ -206,7 +206,7 @@ this.Write("\");\r\n");
         
         #line 50 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureMarshaller.tt"
 
-			string memberProperty = variableName + "." + member.PropertyName + (member.UseNullable ? ".Value" : string.Empty);
+			string memberProperty = variableName + "." + member.PropertyName + (member.IsNullable ? ".Value" : string.Empty);
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
 				this.ProcessStructure(level, variableName + "." + member.PropertyName, member.Shape);

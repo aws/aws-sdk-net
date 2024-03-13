@@ -48,7 +48,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>            {
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
 <#+
-			string memberProperty = variableName + "." + member.PropertyName + (member.UseNullable ? ".Value" : string.Empty);
+			string memberProperty = variableName + "." + member.PropertyName + (member.IsNullable ? ".Value" : string.Empty);
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
 				this.ProcessStructure(level, variableName + "." + member.PropertyName, member.Shape);

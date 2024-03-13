@@ -337,7 +337,7 @@ if (this.Operation.Paginators.MoreResults != null)
             
             #line default
             #line hidden
-            this.Write(");\r\n");
+            this.Write(".GetValueOrDefault());\r\n");
             
             #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
@@ -535,7 +535,7 @@ if (this.Operation.Paginators.MoreResults != null)
             
             #line default
             #line hidden
-            this.Write(");\r\n");
+            this.Write(".GetValueOrDefault());\r\n");
             
             #line 156 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 

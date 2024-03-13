@@ -2,77 +2,72 @@
   "noArgOverloads": [
 	"DescribeLogGroups"
   ],
-  "useNullableType" : {
-    "LogGroup" : [
-	  "retentionInDays"
-	]
-  },
   "dataTypeSwap" : {
     "InputLogEvent" : {
 	  "timestamp" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }
 	},
     "OutputLogEvent" : {
 	  "timestamp" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "ingestionTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }	
 	},
     "GetLogEventsRequest" : {
 	  "startTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "endTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }
 	},
     "LogGroup" : {
 	  "creationTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }
 	},
     "LogStream" : {
 	  "creationTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "firstEventTimestamp" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "lastEventTimestamp" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "lastIngestionTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }	  
 	},
     "MetricFilter" : {
 	  "creationTime" : {
-	    "Type" : "DateTime",
+	    "Type" : "DateTime?",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
-		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
+		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
     }
   }

@@ -2,9 +2,9 @@
     "dataTypeSwap" : {
         "Spend" : {
             "Amount" : {
-                "Type" : "decimal",
+                "Type" : "decimal?",
                 "Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDecimal",
-                "Unmarshaller" : "Amazon.Runtime.Internal.Transform.DecimalUnmarshaller"
+                "Unmarshaller" : "Amazon.Runtime.Internal.Transform.NullableDecimalUnmarshaller"
             }
         }
     }

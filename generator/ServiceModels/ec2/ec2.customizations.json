@@ -117,17 +117,17 @@
 	"dataTypeSwap" : {
         "SpotFleetRequestConfigData": {
             "ValidFrom": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
             },
             "ValidUntil": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
             }
         },
         "DescribeSpotFleetRequestHistoryRequest": {
             "StartTime": {
-                "Type": "DateTime",
+                "Type": "DateTime?",
                 "Marshaller": "Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc"
             }
         }

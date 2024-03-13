@@ -456,7 +456,7 @@ namespace ServiceClientGenerator
         /// <param name="extendedData">The json data from the parent shape model</param>
         /// <param name="treatEnumsAsString">If true all any found enum type will be returned as a string</param>
         /// <returns></returns>
-        private string DetermineType(JsonData extendedData, bool treatEnumsAsString)
+        private string DetermineType(JsonData extendedData, bool treatEnumsAsString, bool useNullable = true)
         {
             JsonData typeNode = null;
             // Check to see if customizations is overriding - first by simple type remap
@@ -533,25 +533,25 @@ namespace ServiceClientGenerator
                         return "Stream";
                     return "MemoryStream";
                 case "boolean":
-                    return "bool";
+                    return "bool" + (useNullable ? "?" : "");
                 case "double":
-                    return "double";
+                    return "double" + (useNullable ? "?" : "");
                 case "float":
-                    return "float";
+                    return "float" + (useNullable ? "?" : "");
                 case "integer":
-                    return "int";
+                    return "int" + (useNullable ? "?" : "");
                 case "long":
-                    return "long";
+                    return "long" + (useNullable ? "?" : "");
                 case "timestamp":
-                    return "DateTime";
+                    return "DateTime" + (useNullable ? "?" : "");
                 case "structure":
                     return emitAsShapeName ?? renameShape ?? extendsNode.ToString();
                 case "map":
-                    var keyType = DetermineType(memberShape["key"], true);
-                    var valueType = DetermineType(memberShape["value"], true);
+                    var keyType = DetermineType(memberShape["key"], true, false);
+                    var valueType = DetermineType(memberShape["value"], true, false);
                     return string.Format("Dictionary<{0}, {1}>", keyType, valueType);
                 case "list":
-                    var listType = DetermineType(memberShape["member"], true);
+                    var listType = DetermineType(memberShape["member"], true, false);
                     return string.Format("List<{0}>", listType);
 
                 case "decimal":
@@ -584,7 +584,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="extendedData">The data for the member defined in the shape</param>
         /// <returns></returns>
-        string GetTypeUnmarshallerName(JsonData extendedData)
+        string GetTypeUnmarshallerName(JsonData extendedData, bool useNullable = true)
         {
             // Check to see if customizations is overriding.
             var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
@@ -612,17 +612,17 @@ namespace ServiceClientGenerator
                 case "blob":
                     return "MemoryStreamUnmarshaller";
                 case "boolean":
-                    return "BoolUnmarshaller";
+                    return (useNullable ? "Nullable" : "") + "BoolUnmarshaller";
                 case "double":
-                    return "DoubleUnmarshaller";
+                    return (useNullable ? "Nullable" : "") + "DoubleUnmarshaller";
                 case "float":
-                    return "FloatUnmarshaller";
+                    return (useNullable ? "Nullable" : "") + "FloatUnmarshaller";
                 case "integer":
-                    return "IntUnmarshaller";
+                    return (useNullable ? "Nullable" : "") + "IntUnmarshaller";
                 case "long":
-                    return "LongUnmarshaller";
+                    return (useNullable ? "Nullable" : "") + "LongUnmarshaller";
                 case "timestamp":
-                    return "DateTimeUnmarshaller";
+                    return (useNullable ? "Nullable" : "") + "DateTimeUnmarshaller";
                 case "structure":
                     var shapeName = extendsNode.ToString();
                     var renamedShape = this.model.Customizations.GetOverrideShapeName(shapeName);
@@ -637,16 +637,16 @@ namespace ServiceClientGenerator
                     }
                     return shapeName + "Unmarshaller";
                 case "map":
-                    var keyType = DetermineType(memberShape[Shape.KeyKey], true);
-                    var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);
-                    var valueType = DetermineType(memberShape[Shape.ValueKey], true);
-                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey]);
+                    var keyType = DetermineType(memberShape[Shape.KeyKey], true, useNullable);
+                    var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey], useNullable);
+                    var valueType = DetermineType(memberShape[Shape.ValueKey], true, useNullable);
+                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], useNullable);
 
                     return string.Format("DictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
                         keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
                 case "list":
-                    var listType = DetermineType(memberShape[Member.MemberKey], true);
-                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey]);
+                    var listType = DetermineType(memberShape[Member.MemberKey], true, useNullable);
+                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], useNullable);
 
                     return string.Format("ListUnmarshaller<{0}, {1}>",
                         listType, listTypeUnmarshaller);
@@ -674,7 +674,7 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="extendedData"></param>
         /// <returns></returns>
-        public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData)
+        public string DetermineTypeUnmarshallerInstantiate(JsonData extendedData, bool useNullable = true)
         {
             // Check to see if customizations is overriding.
             var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
@@ -707,21 +707,17 @@ namespace ServiceClientGenerator
                 case "blob":
                     return "MemoryStreamUnmarshaller.Instance";
                 case "boolean":
-                    return "BoolUnmarshaller.Instance";
+                    return (useNullable ? "Nullable" : "") + "BoolUnmarshaller.Instance";
                 case "double":
-                    return "DoubleUnmarshaller.Instance";
+                    return (useNullable ? "Nullable" : "") + "DoubleUnmarshaller.Instance";
                 case "float":
-                    return "FloatUnmarshaller.Instance";
+                    return (useNullable ? "Nullable" : "") + "FloatUnmarshaller.Instance";
                 case "integer":
-                    if (this.UseNullable)
-                        return "NullableIntUnmarshaller.Instance";
-                    return "IntUnmarshaller.Instance";
+                    return (useNullable ? "Nullable" : "") + "IntUnmarshaller.Instance";
                 case "long":
-                    return "LongUnmarshaller.Instance";
+                    return (useNullable ? "Nullable" : "") + "LongUnmarshaller.Instance";
                 case "timestamp":
-                    if (this.UseNullable)
-                        return "NullableDateTimeUnmarshaller.Instance";
-                    return "DateTimeUnmarshaller.Instance";
+                    return (useNullable ? "Nullable" : "") + "DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
                 case "map":
@@ -729,9 +725,9 @@ namespace ServiceClientGenerator
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);
                     var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey]);
 
-                    var valueType = DetermineType(memberShape[Shape.ValueKey], true);
-                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey]);
-                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey]);
+                    var valueType = DetermineType(memberShape[Shape.ValueKey], true, false);
+                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], false);
+                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], false);
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json || this.model.Type == ServiceType.Rest_Xml)
                         return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
@@ -740,9 +736,9 @@ namespace ServiceClientGenerator
                         return string.Format("new KeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                 case "list":
-                    var listType = DetermineType(memberShape[Shape.MemberKey], true);
-                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey]);
-                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey]);
+                    var listType = DetermineType(memberShape[Shape.MemberKey], true, false);
+                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey], false);
+                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], false);
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new ListUnmarshaller<{0}, {1}>({2})",
@@ -1056,7 +1052,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                return this.DetermineType().Equals("DateTime", StringComparison.InvariantCulture);
+                return this.DetermineType().Equals("DateTime?", StringComparison.InvariantCulture);
             }
         }
 

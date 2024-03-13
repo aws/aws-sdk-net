@@ -152,7 +152,7 @@ namespace <#=this.Config.Namespace#>.Model
                     if (member.IsExcluded)
                         continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.VariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#> <#=member.VariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
 <#
                 }
 #>
@@ -217,20 +217,7 @@ namespace <#=this.Config.Namespace#>.Model
 #>
         <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.PropertyName#>
         {
-<#
-                    if(member.IsNullable && !member.UseNullable)
-                    {
-#>
-            get { return this.<#=member.VariableName#>.GetValueOrDefault(); }
-<#
-                    }
-                    else
-                    {
-#>
             get { return this.<#=member.VariableName#>; }
-<#
-                    }
-#>
             set { <#=member.IsBackwardsCompatibleDateTimeProperty ? "this." + member.BackwardCompatibilityVariableName + " = " : ""#>this.<#=member.VariableName#> = value; }
         }
 
@@ -402,7 +389,7 @@ namespace <#=this.Config.Namespace#>.Model
                         if (member.IsExcluded || !member.IsBackwardsCompatibleDateTimeProperty)
                             continue;
 #>
-        private <#=member.DetermineType()#><#= member.IsNullable ? "?" : "" #> <#=member.BackwardCompatibilityVariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
+        private <#=member.DetermineType()#> <#=member.BackwardCompatibilityVariableName#><#= member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"#>
 <#
                     }
 #>
@@ -430,7 +417,14 @@ namespace <#=this.Config.Namespace#>.Model
             set
             {
                 this.<#=member.BackwardCompatibilityVariableName#> = value;
-                this.<#=member.VariableName#> = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this.<#=member.VariableName#> = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this.<#=member.VariableName#> = null;
+                }
             }
         }
 <#

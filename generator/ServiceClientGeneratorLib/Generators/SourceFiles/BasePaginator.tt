@@ -91,7 +91,7 @@ for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 if (this.Operation.Paginators.MoreResults != null)
 {
 #>
-            while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>);
+            while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>.GetValueOrDefault());
 <#
 } 
 else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
@@ -152,7 +152,7 @@ for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 if (this.Operation.Paginators.MoreResults != null)
 {
 #>
-            while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>);
+            while (response.<#=this.Operation.Paginators.MoreResults.PropertyName#>.GetValueOrDefault());
 <#
 } 
 else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
