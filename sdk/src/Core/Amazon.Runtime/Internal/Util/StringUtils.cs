@@ -68,9 +68,22 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromLong(long? value)
+        {
+            if (value != null)
+                return value.Value.ToString(CultureInfo.InvariantCulture);
+
+            return null;
+        }
+
         public static string FromFloat(float value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromBool(bool? value)
+        {
+            return FromBool(value.GetValueOrDefault());
         }
 
         public static string FromBool(bool value)
@@ -91,6 +104,20 @@ namespace Amazon.Runtime.Internal.Util
         {
             return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// Converts a DateTime to ISO8601 formatted string.
+        /// </summary>
+        public static string FromDateTimeToISO8601(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+        }
+
         /// <summary>
         /// Converts a DateTime to ISO8601 formatted string.
         /// </summary>
@@ -120,9 +147,27 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromDouble(double? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static string FromDecimal(decimal value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromDecimal(decimal? value)
+        {
+            if (value != null)
+                return value.Value.ToString(CultureInfo.InvariantCulture);
+
+            return null;
         }
 
         /// <summary>
