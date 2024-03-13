@@ -537,7 +537,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             SourceTable.AddRequestHandler(scanReq, isAsync: false);
 
                             var scanResult = SourceTable.DDBClient.Scan(scanReq);
-                            count = Matches.Count + scanResult.Count;
+                            count = Matches.Count + scanResult.Count.GetValueOrDefault();
                             return count;
                         case SearchType.Query:
                             QueryRequest queryReq = new QueryRequest
@@ -562,7 +562,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             SourceTable.AddRequestHandler(queryReq, isAsync: false);
 
                             var queryResult = SourceTable.DDBClient.Query(queryReq);
-                            count = Matches.Count + queryResult.Count;
+                            count = Matches.Count + queryResult.Count.GetValueOrDefault();
                             return count;
                         default:
                             throw new InvalidOperationException("Unknown Search Method");
