@@ -1,0 +1,9 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Update endpoint resolver to handle scenarios where both SigV4 and SigV4A authentication schemes are defined for the same service"
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}
