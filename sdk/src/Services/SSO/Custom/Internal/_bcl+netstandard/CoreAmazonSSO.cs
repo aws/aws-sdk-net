@@ -42,7 +42,7 @@ namespace Amazon.SSO.Internal
             var response = client.GetRoleCredentials(request);
 
             DateTime credentialsExpiration =
-                AWSSDKUtils.ConvertFromUnixEpochMilliseconds(response.RoleCredentials.Expiration);
+                AWSSDKUtils.ConvertFromUnixEpochMilliseconds(response.RoleCredentials.Expiration.GetValueOrDefault());
 
             return new SSOImmutableCredentials(
                 response.RoleCredentials.AccessKeyId,
@@ -73,7 +73,7 @@ namespace Amazon.SSO.Internal
             var response = await client.GetRoleCredentialsAsync(request).ConfigureAwait(false);
 
             DateTime credentialsExpiration =
-                AWSSDKUtils.ConvertFromUnixEpochMilliseconds(response.RoleCredentials.Expiration);
+                AWSSDKUtils.ConvertFromUnixEpochMilliseconds(response.RoleCredentials.Expiration.GetValueOrDefault());
 
             return new SSOImmutableCredentials(
                 response.RoleCredentials.AccessKeyId,
