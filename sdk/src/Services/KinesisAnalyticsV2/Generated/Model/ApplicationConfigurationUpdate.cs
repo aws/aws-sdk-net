@@ -62,7 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfigurationUpdate. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public ApplicationSnapshotConfigurationUpdate ApplicationSnapshotConfigurationUpdate
@@ -80,7 +80,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property EnvironmentPropertyUpdates. 
         /// <para>
-        /// Describes updates to the environment properties for a Flink-based Kinesis Data Analytics
+        /// Describes updates to the environment properties for a Managed Service for Apache Flink
         /// application.
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkApplicationConfigurationUpdate. 
         /// <para>
-        /// Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+        /// Describes updates to a Managed Service for Apache Flink application's configuration.
         /// </para>
         /// </summary>
         public FlinkApplicationConfigurationUpdate FlinkApplicationConfigurationUpdate
@@ -153,7 +153,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ZeppelinApplicationConfigurationUpdate. 
         /// <para>
-        /// Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+        /// Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         public ZeppelinApplicationConfigurationUpdate ZeppelinApplicationConfigurationUpdate

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to the configuration parameters for a Flink-based Kinesis Data Analytics
-    /// application.
+    /// Describes updates to the configuration parameters for a Managed Service for Apache
+    /// Flink application.
     /// </summary>
     public partial class FlinkApplicationConfigurationUpdate
     {

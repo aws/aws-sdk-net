@@ -45,7 +45,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CheckpointingEnabled. 
         /// <para>
-        /// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics
+        /// Describes whether checkpointing is enabled for a Managed Service for Apache Flink
         /// application.
         /// </para>
         ///  <note> 
@@ -97,7 +97,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// Describes whether the application uses Kinesis Data Analytics' default checkpointing
+        /// Describes whether the application uses Managed Service for Apache Flink' default checkpointing
         /// behavior. You must set this property to <c>CUSTOM</c> in order to set the <c>CheckpointingEnabled</c>,
         /// <c>CheckpointInterval</c>, or <c>MinPauseBetweenCheckpoints</c> parameters.
         /// </para>

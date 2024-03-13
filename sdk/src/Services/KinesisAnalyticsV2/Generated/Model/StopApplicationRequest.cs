@@ -40,8 +40,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Kinesis Data Analytics takes a snapshot when the application is stopped, unless <c>Force</c>
-    /// is set to <c>true</c>.
+    /// Managed Service for Apache Flink takes a snapshot when the application is stopped,
+    /// unless <c>Force</c> is set to <c>true</c>.
     /// </para>
     /// </summary>
     public partial class StopApplicationRequest : AmazonKinesisAnalyticsV2Request
@@ -72,7 +72,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property Force. 
         /// <para>
         /// Set to <c>true</c> to force the application to stop. If you set <c>Force</c> to <c>true</c>,
-        /// Kinesis Data Analytics stops the application without taking a snapshot. 
+        /// Managed Service for Apache Flink stops the application without taking a snapshot.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -82,7 +83,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can only force stop a Flink-based Kinesis Data Analytics application. You can't
+        /// You can only force stop a Managed Service for Apache Flink application. You can't
         /// force stop a SQL-based Kinesis Data Analytics application.
         /// </para>
         ///  

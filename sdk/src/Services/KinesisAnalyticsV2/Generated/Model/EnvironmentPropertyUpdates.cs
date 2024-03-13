@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to the execution property groups for a Flink-based Kinesis Data
-    /// Analytics application or a Studio notebook.
+    /// Describes updates to the execution property groups for a Managed Service for Apache
+    /// Flink application or a Studio notebook.
     /// </summary>
     public partial class EnvironmentPropertyUpdates
     {

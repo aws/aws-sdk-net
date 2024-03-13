@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Specifies the creation parameters for a Kinesis Data Analytics application.
+    /// Specifies the creation parameters for a Managed Service for Apache Flink application.
     /// </summary>
     public partial class ApplicationConfiguration
     {
@@ -44,7 +44,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationCodeConfiguration. 
         /// <para>
-        /// The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+        /// The code location and type parameters for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public ApplicationCodeConfiguration ApplicationCodeConfiguration
@@ -62,7 +62,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfiguration. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public ApplicationSnapshotConfiguration ApplicationSnapshotConfiguration
@@ -80,7 +80,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property EnvironmentProperties. 
         /// <para>
-        /// Describes execution properties for a Flink-based Kinesis Data Analytics application.
+        /// Describes execution properties for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public EnvironmentProperties EnvironmentProperties
@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkApplicationConfiguration. 
         /// <para>
-        /// The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+        /// The creation and update parameters for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public FlinkApplicationConfiguration FlinkApplicationConfiguration
@@ -152,7 +152,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ZeppelinApplicationConfiguration. 
         /// <para>
-        /// The configuration parameters for a Kinesis Data Analytics Studio notebook.
+        /// The configuration parameters for a Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         public ZeppelinApplicationConfiguration ZeppelinApplicationConfiguration

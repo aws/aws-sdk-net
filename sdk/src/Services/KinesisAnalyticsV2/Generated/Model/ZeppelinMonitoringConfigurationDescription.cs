@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio
-    /// notebook.
+    /// The monitoring configuration for Apache Zeppelin within a Managed Service for Apache
+    /// Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinMonitoringConfigurationDescription
     {

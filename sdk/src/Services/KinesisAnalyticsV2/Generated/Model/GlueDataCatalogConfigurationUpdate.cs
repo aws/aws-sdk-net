@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Updates to the configuration of the Glue Data Catalog that you use for SQL queries
-    /// that you write in a Kinesis Data Analytics Studio notebook.
+    /// that you write in a Managed Service for Apache Flink Studio notebook.
     /// </summary>
     public partial class GlueDataCatalogConfigurationUpdate
     {

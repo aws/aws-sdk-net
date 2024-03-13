@@ -59,9 +59,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-        /// updates the <c>ApplicationVersionId</c> each time you change the CloudWatch logging
-        /// options. 
+        /// The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data
+        /// Analytics updates the <c>ApplicationVersionId</c> each time you change the CloudWatch
+        /// logging options. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]
@@ -80,8 +80,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptionDescriptions. 
         /// <para>
-        /// The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics
-        /// application.
+        /// The descriptions of the current CloudWatch logging options for the SQL-based Kinesis
+        /// Data Analytics application.
         /// </para>
         /// </summary>
         public List<CloudWatchLoggingOptionDescription> CloudWatchLoggingOptionDescriptions

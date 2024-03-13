@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the updates to the starting parameters for a Kinesis Data Analytics application.
+    /// Describes the updates to the starting parameters for a Managed Service for Apache
+    /// Flink application.
     /// </summary>
     public partial class RunConfigurationUpdate
     {
@@ -57,7 +58,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkRunConfiguration. 
         /// <para>
-        /// Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
+        /// Describes the starting parameters for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public FlinkRunConfiguration FlinkRunConfiguration

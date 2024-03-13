@@ -69,6 +69,12 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RuntimeEnvironment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeEnvironment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotCreationTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

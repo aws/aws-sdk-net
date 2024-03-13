@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The configuration of a Kinesis Data Analytics Studio notebook.
+    /// The configuration of a Managed Service for Apache Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinApplicationConfigurationDescription
     {
@@ -41,8 +41,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CatalogConfigurationDescription. 
         /// <para>
-        /// The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio
-        /// notebook.
+        /// The Amazon Glue Data Catalog that is associated with the Managed Service for Apache
+        /// Flink Studio notebook.
         /// </para>
         /// </summary>
         public CatalogConfigurationDescription CatalogConfigurationDescription
@@ -79,8 +79,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property DeployAsApplicationConfigurationDescription. 
         /// <para>
-        /// The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application
-        /// with durable state.
+        /// The parameters required to deploy a Managed Service for Apache Flink Studio notebook
+        /// as an application with durable state.
         /// </para>
         /// </summary>
         public DeployAsApplicationConfigurationDescription DeployAsApplicationConfigurationDescription
@@ -98,7 +98,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property MonitoringConfigurationDescription. 
         /// <para>
-        /// The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+        /// The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

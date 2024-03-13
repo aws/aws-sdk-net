@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data
-    /// Analytics Studio notebook.
+    /// Updates to the monitoring configuration for Apache Zeppelin within a Managed Service
+    /// for Apache Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinMonitoringConfigurationUpdate
     {
@@ -39,8 +39,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property LogLevelUpdate. 
         /// <para>
-        /// Updates to the logging level for Apache Zeppelin within a Kinesis Data Analytics Studio
-        /// notebook.
+        /// Updates to the logging level for Apache Zeppelin within a Managed Service for Apache
+        /// Flink Studio notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
