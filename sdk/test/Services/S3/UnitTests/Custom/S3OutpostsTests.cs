@@ -352,12 +352,14 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         [DataTestMethod]
         [DataRow(
-            "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true, "20210827/us-west-2/s3-outposts/aws4_request",
-            "a944fbe2bfbae429f922746546d1c6f890649c88ba7826bd1d258ac13f327e09")]
+            "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true,
+            "*,us-west-2",
+            "66d74ad19ade14c8714c2dc973af61d787bca4e94409ef4aeac83f19bc74a26c")]
         [DataRow(
-            "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true, "20210827/us-east-1/s3-outposts/aws4_request",
-            "7f93df0b81f80e590d95442d579bd6cf749a35ff4bbdc6373fa669b89c7fce4e")]
-        public void PreSignedUrlTestAdvanced(string bucketFieldInput, string keyFieldInput, string clientRegion, bool useArnRegion, string aws4Request, string signature)
+            "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true, 
+            "*,us-east-1",
+            "08a4b92976443ec82f292103242a00bca42bdc3c009b7a39e9bcee09c4f01bd8")]
+        public void PreSignedUrlTestAdvanced(string bucketFieldInput, string keyFieldInput, string clientRegion, bool useArnRegion, string allowedRegions, string signature)
         {
             // All tests assume a datetime of 08-27-2021
             var signedDate = new DateTime(2021, 08, 27, 0, 0, 0, DateTimeKind.Utc);
@@ -385,10 +387,18 @@ namespace AWSSDK.UnitTests
 
             Assert.IsNotNull(url);
 
-            Console.WriteLine(url);
-            
-            Assert.IsTrue(url.Contains($"X-Amz-Credential={AWSSDKUtils.UrlEncode("ACCESS_KEY_ID/" + aws4Request, false)}&"), "aws4Request Credential did not match");
-            Assert.IsTrue(url.Contains($"&X-Amz-Signature={signature}"), "signature did not match");
+            // S3 on Outposts supports both SigV4 and SigV4A, and since this test project references the CRT directly it'll use SigV4A by default.
+            // We'll check the region used in the pre-signed URL matches one of the expected values (the region for SigV4A may be "*", but if the CRT is
+            // not available the ARN region should be used instead).
+            bool isRegionValid = false;
+            foreach (var expectedRegion in allowedRegions.Split(','))
+            {
+                var expectedEncodedValue = $"X-Amz-Credential={AWSSDKUtils.UrlEncode($"ACCESS_KEY_ID/20210827/{expectedRegion}/s3-outposts/aws4_request", false)}&";
+                isRegionValid = isRegionValid || url.Contains(expectedEncodedValue);
+            }
+
+            Assert.IsTrue(isRegionValid);
+            Assert.IsTrue(url.Contains($"&X-Amz-Signature={signature}"));
         }
 
         [TestMethod]
