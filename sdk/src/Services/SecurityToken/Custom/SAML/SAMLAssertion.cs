@@ -117,7 +117,7 @@ namespace Amazon.SecurityToken.SAML
 #endif
 
             return new SAMLImmutableCredentials(response.Credentials.GetCredentials(), 
-                                                response.Credentials.Expiration.ToUniversalTime(),
+                                                response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
                                                 response.Subject);
         }
 

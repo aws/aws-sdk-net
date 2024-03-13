@@ -61,7 +61,7 @@ namespace Amazon.SecurityToken
             Credentials credentials = GetServiceCredentials();
             return new CredentialsRefreshState
             {
-                Expiration = credentials.Expiration,
+                Expiration = credentials.Expiration.GetValueOrDefault(),
                 Credentials = credentials.GetCredentials()
             };
         }
