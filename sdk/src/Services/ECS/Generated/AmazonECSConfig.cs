@@ -32,7 +32,7 @@ namespace Amazon.ECS
     public partial class AmazonECSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ECS", "3.7.305.17");
+            InternalSDKUtils.BuildUserAgentString("ECS", "3.7.305.18");
 
         private string _userAgent = UserAgentString;
         ///<summary>

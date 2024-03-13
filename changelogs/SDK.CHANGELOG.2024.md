@@ -1,3 +1,15 @@
+### 3.7.767.0 (2024-03-13 18:17 UTC)
+* IVSRealTime (3.7.302.0)
+	* adds support for multiple new composition layout configuration options (grid, pip)
+* KinesisAnalyticsV2 (3.7.301.0)
+	* Support new RuntimeEnvironmentUpdate parameter within UpdateApplication API allowing callers to change the Flink version upon which their application runs.
+* S3 (3.7.306.0)
+	* This release makes the default option for S3 on Outposts request signing to use the SigV4A algorithm when using AWS Common Runtime (CRT).
+	* Add mime code mapping for .csv file extension.
+* Core 3.7.302.17
+	* Update endpoint resolver to handle scenarios where both SigV4 and SigV4A authentication schemes are defined for the same service
+	* All services packages updated to require new Core
+
 ### 3.7.766.0 (2024-03-12 18:17 UTC)
 * CloudFormation (3.7.304.2)
 	* CloudFormation documentation update for March, 2024

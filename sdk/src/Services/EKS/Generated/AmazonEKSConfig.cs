@@ -32,7 +32,7 @@ namespace Amazon.EKS
     public partial class AmazonEKSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EKS", "3.7.304.1");
+            InternalSDKUtils.BuildUserAgentString("EKS", "3.7.304.2");
 
         private string _userAgent = UserAgentString;
         ///<summary>
