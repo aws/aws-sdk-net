@@ -56,6 +56,17 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPip())
+            {
+                context.Writer.WritePropertyName("pip");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PipConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Pip, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

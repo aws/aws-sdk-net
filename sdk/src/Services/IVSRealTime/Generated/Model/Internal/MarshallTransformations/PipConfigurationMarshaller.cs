@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GridConfiguration Marshaller
+    /// PipConfiguration Marshaller
     /// </summary>
-    public class GridConfigurationMarshaller : IRequestMarshaller<GridConfiguration, JsonMarshallerContext> 
+    public class PipConfigurationMarshaller : IRequestMarshaller<PipConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GridConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PipConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetFeaturedParticipantAttribute())
             {
@@ -63,10 +63,40 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.OmitStoppedVideo);
             }
 
-            if(requestObject.IsSetVideoAspectRatio())
+            if(requestObject.IsSetPipBehavior())
             {
-                context.Writer.WritePropertyName("videoAspectRatio");
-                context.Writer.Write(requestObject.VideoAspectRatio);
+                context.Writer.WritePropertyName("pipBehavior");
+                context.Writer.Write(requestObject.PipBehavior);
+            }
+
+            if(requestObject.IsSetPipHeight())
+            {
+                context.Writer.WritePropertyName("pipHeight");
+                context.Writer.Write(requestObject.PipHeight);
+            }
+
+            if(requestObject.IsSetPipOffset())
+            {
+                context.Writer.WritePropertyName("pipOffset");
+                context.Writer.Write(requestObject.PipOffset);
+            }
+
+            if(requestObject.IsSetPipParticipantAttribute())
+            {
+                context.Writer.WritePropertyName("pipParticipantAttribute");
+                context.Writer.Write(requestObject.PipParticipantAttribute);
+            }
+
+            if(requestObject.IsSetPipPosition())
+            {
+                context.Writer.WritePropertyName("pipPosition");
+                context.Writer.Write(requestObject.PipPosition);
+            }
+
+            if(requestObject.IsSetPipWidth())
+            {
+                context.Writer.WritePropertyName("pipWidth");
+                context.Writer.Write(requestObject.PipWidth);
             }
 
             if(requestObject.IsSetVideoFillMode())
@@ -80,7 +110,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GridConfigurationMarshaller Instance = new GridConfigurationMarshaller();
+        public readonly static PipConfigurationMarshaller Instance = new PipConfigurationMarshaller();
 
     }
 }

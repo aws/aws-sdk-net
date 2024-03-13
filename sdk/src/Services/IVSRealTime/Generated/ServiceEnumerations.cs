@@ -385,6 +385,114 @@ namespace Amazon.IVSRealTime
 
 
     /// <summary>
+    /// Constants used for properties of type PipBehavior.
+    /// </summary>
+    public class PipBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for PipBehavior
+        /// </summary>
+        public static readonly PipBehavior DYNAMIC = new PipBehavior("DYNAMIC");
+        /// <summary>
+        /// Constant STATIC for PipBehavior
+        /// </summary>
+        public static readonly PipBehavior STATIC = new PipBehavior("STATIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipBehavior FindValue(string value)
+        {
+            return FindValue<PipBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PipPosition.
+    /// </summary>
+    public class PipPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOTTOM_LEFT for PipPosition
+        /// </summary>
+        public static readonly PipPosition BOTTOM_LEFT = new PipPosition("BOTTOM_LEFT");
+        /// <summary>
+        /// Constant BOTTOM_RIGHT for PipPosition
+        /// </summary>
+        public static readonly PipPosition BOTTOM_RIGHT = new PipPosition("BOTTOM_RIGHT");
+        /// <summary>
+        /// Constant TOP_LEFT for PipPosition
+        /// </summary>
+        public static readonly PipPosition TOP_LEFT = new PipPosition("TOP_LEFT");
+        /// <summary>
+        /// Constant TOP_RIGHT for PipPosition
+        /// </summary>
+        public static readonly PipPosition TOP_RIGHT = new PipPosition("TOP_RIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PipPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PipPosition FindValue(string value)
+        {
+            return FindValue<PipPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PipPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecordingConfigurationFormat.
     /// </summary>
     public class RecordingConfigurationFormat : ConstantClass
@@ -424,6 +532,118 @@ namespace Amazon.IVSRealTime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecordingConfigurationFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoAspectRatio.
+    /// </summary>
+    public class VideoAspectRatio : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for VideoAspectRatio
+        /// </summary>
+        public static readonly VideoAspectRatio AUTO = new VideoAspectRatio("AUTO");
+        /// <summary>
+        /// Constant PORTRAIT for VideoAspectRatio
+        /// </summary>
+        public static readonly VideoAspectRatio PORTRAIT = new VideoAspectRatio("PORTRAIT");
+        /// <summary>
+        /// Constant SQUARE for VideoAspectRatio
+        /// </summary>
+        public static readonly VideoAspectRatio SQUARE = new VideoAspectRatio("SQUARE");
+        /// <summary>
+        /// Constant VIDEO for VideoAspectRatio
+        /// </summary>
+        public static readonly VideoAspectRatio VIDEO = new VideoAspectRatio("VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoAspectRatio(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoAspectRatio FindValue(string value)
+        {
+            return FindValue<VideoAspectRatio>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoAspectRatio(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoFillMode.
+    /// </summary>
+    public class VideoFillMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAIN for VideoFillMode
+        /// </summary>
+        public static readonly VideoFillMode CONTAIN = new VideoFillMode("CONTAIN");
+        /// <summary>
+        /// Constant COVER for VideoFillMode
+        /// </summary>
+        public static readonly VideoFillMode COVER = new VideoFillMode("COVER");
+        /// <summary>
+        /// Constant FILL for VideoFillMode
+        /// </summary>
+        public static readonly VideoFillMode FILL = new VideoFillMode("FILL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoFillMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoFillMode FindValue(string value)
+        {
+            return FindValue<VideoFillMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoFillMode(string value)
         {
             return FindValue(value);
         }

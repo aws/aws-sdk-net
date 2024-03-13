@@ -69,6 +69,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Grid = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pip", targetDepth))
+                {
+                    var unmarshaller = PipConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Pip = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

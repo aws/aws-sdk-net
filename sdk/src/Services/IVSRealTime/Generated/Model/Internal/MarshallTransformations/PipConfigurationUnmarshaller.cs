@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GridConfiguration Object
+    /// Response Unmarshaller for PipConfiguration Object
     /// </summary>  
-    public class GridConfigurationUnmarshaller : IUnmarshaller<GridConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GridConfiguration, JsonUnmarshallerContext>
+    public class PipConfigurationUnmarshaller : IUnmarshaller<PipConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PipConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GridConfiguration IUnmarshaller<GridConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PipConfiguration IUnmarshaller<PipConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GridConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PipConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            GridConfiguration unmarshalledObject = new GridConfiguration();
+            PipConfiguration unmarshalledObject = new PipConfiguration();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -81,10 +81,40 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("videoAspectRatio", targetDepth))
+                if (context.TestExpression("pipBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VideoAspectRatio = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipHeight", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PipHeight = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipOffset", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PipOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipParticipantAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipParticipantAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipPosition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PipPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipWidth", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PipWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("videoFillMode", targetDepth))
@@ -98,12 +128,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GridConfigurationUnmarshaller _instance = new GridConfigurationUnmarshaller();        
+        private static PipConfigurationUnmarshaller _instance = new PipConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GridConfigurationUnmarshaller Instance
+        public static PipConfigurationUnmarshaller Instance
         {
             get
             {
