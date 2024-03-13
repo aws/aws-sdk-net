@@ -230,15 +230,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private void TestRotation(string keyId)
         {
-            var rotationEnabled = Client.GetKeyRotationStatus(keyId).KeyRotationEnabled;
+            var rotationEnabled = Client.GetKeyRotationStatus(keyId).KeyRotationEnabled.Value;
             Assert.IsFalse(rotationEnabled);
 
             Client.EnableKeyRotation(keyId);
-            rotationEnabled = Client.GetKeyRotationStatus(keyId).KeyRotationEnabled;
+            rotationEnabled = Client.GetKeyRotationStatus(keyId).KeyRotationEnabled.Value;
             Assert.IsTrue(rotationEnabled);
 
             Client.DisableKeyRotation(keyId);
-            rotationEnabled = Client.GetKeyRotationStatus(keyId).KeyRotationEnabled;
+            rotationEnabled = Client.GetKeyRotationStatus(keyId).KeyRotationEnabled.Value;
             Assert.IsFalse(rotationEnabled);
         }
 

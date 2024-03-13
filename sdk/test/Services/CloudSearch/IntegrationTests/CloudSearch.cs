@@ -74,18 +74,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Client.DefineIndexField(new DefineIndexFieldRequest { DomainName = domainName, IndexField = indexField });
 
                 var status = Client.DescribeDomains(new DescribeDomainsRequest { DomainNames = { domainName } }).DomainStatusList[0].RequiresIndexDocuments;
-                Assert.IsTrue(status);
+                Assert.IsTrue(status.Value);
 
                 Client.IndexDocuments(new IndexDocumentsRequest { DomainName = domainName });
 
                 var req = new DescribeDomainsRequest { DomainNames = { domainName } };
 
-                Assert.IsTrue(Client.DescribeDomains(req).DomainStatusList[0].Processing);
-
+                Assert.IsTrue(Client.DescribeDomains(req).DomainStatusList[0].Processing.Value);
             }
             finally
             {
-
                 Client.DeleteDomain(new DeleteDomainRequest { DomainName = domainName });
             }
         }

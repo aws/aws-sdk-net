@@ -164,7 +164,7 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
 
             foreach (var acl in describeResponse.NetworkAcls)
             {
-                if (!acl.IsDefault)
+                if (!acl.IsDefault.GetValueOrDefault())
                 {
                     await _ec2Client.DeleteNetworkAclAsync(new DeleteNetworkAclRequest { NetworkAclId = acl.NetworkAclId });
                 }
@@ -214,7 +214,7 @@ namespace Amazon.DNXCore.IntegrationTests.IntegrationTests.EC2
             bool isMain = false;
             foreach (var association in table.Associations)
             {
-                if (!association.Main)
+                if (!association.Main.GetValueOrDefault())
                 {
                    await _ec2Client.DisassociateRouteTableAsync(new DisassociateRouteTableRequest { AssociationId = association.RouteTableAssociationId });
                 }

@@ -42,7 +42,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             };
 
             CheckDNSAvailabilityResponse response = Client.CheckDNSAvailability(request);
-            Assert.IsTrue(response.Available);
+            Assert.IsTrue(response.Available.Value);
             Assert.IsNotNull(response.FullyQualifiedCNAME);
         }
 

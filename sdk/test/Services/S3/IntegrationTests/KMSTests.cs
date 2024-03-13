@@ -515,7 +515,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = bucketName,
                     Key = srcKey
                 });
-                srcTimeStamp = gomr.LastModified;
+                srcTimeStamp = gomr.LastModified.Value;
                 srcVersionID = gomr.VersionId;
                 srcETag = gomr.ETag;
 

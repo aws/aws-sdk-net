@@ -113,7 +113,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = bucketName,
                 });
             }
-            else if (TestBucket.CreationDate.AddHours(TemporaryRedirectMaxExpirationHours) < DateTime.Now)
+            else if (TestBucket.CreationDate.Value.AddHours(TemporaryRedirectMaxExpirationHours) < DateTime.Now)
             {
                 BucketRegionDetector.BucketRegionCache.Clear();
                 TestBucketIsReady = true;

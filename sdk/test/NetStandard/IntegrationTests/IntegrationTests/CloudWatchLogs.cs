@@ -120,10 +120,10 @@ namespace Amazon.DNXCore.IntegrationTests
 
                     Assert.Equal(2, getResponse.Events.Count);
                     Assert.Equal("First Data", getResponse.Events[0].Message);
-                    Assert.Equal(DateTime.UtcNow.Date, getResponse.Events[0].Timestamp.Date);
+                    Assert.Equal(DateTime.UtcNow.Date, getResponse.Events[0].Timestamp.Value.Date);
 
                     Assert.Equal("Second Data", getResponse.Events[1].Message);
-                    Assert.Equal(DateTime.UtcNow.Date, getResponse.Events[1].Timestamp.Date);
+                    Assert.Equal(DateTime.UtcNow.Date, getResponse.Events[1].Timestamp.Value.Date);
 
                     Assert.True(getResponse.Events[0].Timestamp < getResponse.Events[1].Timestamp);
                 }

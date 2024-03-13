@@ -135,7 +135,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static void GetBucketInventoryAndValidate(InventoryConfiguration getInventoryConfiguration, InventoryConfiguration putInventoryConfiguration)
         {
             Assert.AreEqual(getInventoryConfiguration.InventoryId, putInventoryConfiguration.InventoryId);
-            Assert.IsTrue(getInventoryConfiguration.IsEnabled);
+            Assert.IsTrue(getInventoryConfiguration.IsEnabled.Value);
             Assert.AreEqual(getInventoryConfiguration.Schedule.Frequency, putInventoryConfiguration.Schedule.Frequency);
             Assert.AreEqual(((InventoryPrefixPredicate)getInventoryConfiguration.InventoryFilter.InventoryFilterPredicate).Prefix, "string");
             Assert.AreEqual(getInventoryConfiguration.IncludedObjectVersions, putInventoryConfiguration.IncludedObjectVersions);

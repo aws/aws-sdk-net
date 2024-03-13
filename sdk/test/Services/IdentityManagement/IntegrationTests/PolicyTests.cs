@@ -829,7 +829,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                     yield return p;
 
                 request.Marker = response.Marker;
-            } while (response.IsTruncated);
+            } while (response.IsTruncated.Value);
         }
 
         [Ignore("Excluding tests that need IAM Write/Permissions management.")]

@@ -366,7 +366,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var getResponse = Client.GetObject(new GetObjectRequest { BucketName = bucketName, Key = key }))
             {
-                Assert.IsTrue(expires.ApproximatelyEqual(getResponse.Expires));
+                Assert.IsTrue(expires.ApproximatelyEqual(getResponse.Expires.Value));
             }
         }
 

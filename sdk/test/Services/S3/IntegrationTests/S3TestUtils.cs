@@ -295,7 +295,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
             }
             // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated);
+            while (listVersionsResponse.IsTruncated.GetValueOrDefault());
         }
 
         public static T WaitForConsistency<T>(Func<T> loadFunction)

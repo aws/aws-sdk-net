@@ -284,7 +284,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Id = createdZoneId
             });
             Assert.IsNotNull(hostedZoneInfo.VPCs);
-            Assert.IsFalse(hostedZoneInfo.HostedZone.Config.PrivateZone);
+            Assert.IsFalse(hostedZoneInfo.HostedZone.Config.PrivateZone.Value);
             Assert.AreEqual(delegationSet.Id, hostedZoneInfo.DelegationSet.Id);
 
             var hostedZones = Client.ListHostedZones(new ListHostedZonesRequest
@@ -360,7 +360,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 });
                 Assert.IsNotNull(hostedZoneInfo.VPCs);
                 Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
-                Assert.IsTrue(hostedZoneInfo.HostedZone.Config.PrivateZone);
+                Assert.IsTrue(hostedZoneInfo.HostedZone.Config.PrivateZone.Value);
 
                 var changeInfo = Client.AssociateVPCWithHostedZone(new AssociateVPCWithHostedZoneRequest
                 {

@@ -189,7 +189,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     AlarmNames = new List<string> { alarmName }
                 });
                 alarm = describeResponse.MetricAlarms[0];
-                Assert.IsTrue(alarm.ActionsEnabled);
+                Assert.IsTrue(alarm.ActionsEnabled.Value);
 
                 Client.DisableAlarmActions(new DisableAlarmActionsRequest()
                 {
@@ -201,7 +201,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     AlarmNames = new List<string> { alarmName }
                 });
                 alarm = describeResponse.MetricAlarms[0];
-                Assert.IsFalse(alarm.ActionsEnabled);
+                Assert.IsFalse(alarm.ActionsEnabled.Value);
 
                 var describeMetricResponse = Client.DescribeAlarmsForMetric(new DescribeAlarmsForMetricRequest()
                 {
@@ -409,7 +409,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             foreach (MetricAlarm alarm in describeResult.MetricAlarms)
             {
                 Assert.IsTrue(rq1.AlarmName.Equals(alarm.AlarmName) || rq2.AlarmName.Equals(alarm.AlarmName));
-                Assert.IsFalse(alarm.ActionsEnabled);
+                Assert.IsFalse(alarm.ActionsEnabled.Value);
             }
 
             /*
@@ -433,7 +433,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Assert.IsTrue(rq1.AlarmName.Equals(alarm.AlarmName)
                         || rq2.AlarmName.Equals(alarm.AlarmName));
-                Assert.IsTrue(alarm.ActionsEnabled);
+                Assert.IsTrue(alarm.ActionsEnabled.Value);
             }
         }
 
@@ -465,7 +465,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             foreach (MetricAlarm alarm in describeResult.MetricAlarms)
             {
                 Assert.IsTrue(rq1.AlarmName.Equals(alarm.AlarmName) || rq2.AlarmName.Equals(alarm.AlarmName));
-                Assert.IsTrue(alarm.ActionsEnabled);
+                Assert.IsTrue(alarm.ActionsEnabled.Value);
             }
         }
 

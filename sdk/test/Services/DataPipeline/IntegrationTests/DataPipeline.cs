@@ -66,7 +66,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         PipelineId = createdPipelineId,
                         PipelineObjects = new List<PipelineObject> { pipelineObject }
                     });
-                Assert.IsFalse(putPipelineDefinitionResult.Errored);
+                Assert.IsFalse(putPipelineDefinitionResult.Errored.Value);
 
                 var tags = new List<Tag>
                 {

@@ -90,7 +90,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 StartAfter = keys[0],
                 FetchOwner = true
             });
-            Assert.IsFalse(response.IsTruncated);
+            Assert.IsFalse(response.IsTruncated.Value);
             Assert.AreEqual(keys.Count - 1, response.KeyCount);
             Assert.AreEqual(keys.Count - 1, response.S3Objects.Count);
             Assert.IsNull(response.ContinuationToken);
@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 StartAfter = keys[0],
                 FetchOwner = true
             });
-            Assert.IsTrue(response.IsTruncated);
+            Assert.IsTrue(response.IsTruncated.Value);
             Assert.AreEqual(1, response.KeyCount);
             Assert.AreEqual(1, response.MaxKeys);
             Assert.AreEqual(1, response.S3Objects.Count);
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 FetchOwner = true,
                 ContinuationToken = response.NextContinuationToken
             });
-            Assert.IsTrue(response.IsTruncated);
+            Assert.IsTrue(response.IsTruncated.Value);
             Assert.AreEqual(1, response.KeyCount);
             Assert.AreEqual(1, response.MaxKeys);
             Assert.IsNotNull(response.ContinuationToken);
@@ -136,7 +136,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 MaxKeys = 1,
             });
-            Assert.IsTrue(response.IsTruncated);
+            Assert.IsTrue(response.IsTruncated.Value);
             Assert.AreEqual(1, response.KeyCount);
             Assert.AreEqual(1, response.MaxKeys);
             Assert.AreEqual(1, response.S3Objects.Count);
@@ -151,7 +151,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 MaxKeys = 1,
                 ContinuationToken = response.NextContinuationToken
             });
-            Assert.IsTrue(response.IsTruncated);
+            Assert.IsTrue(response.IsTruncated.Value);
             Assert.AreEqual(1, response.KeyCount);
             Assert.AreEqual(1, response.MaxKeys);
             Assert.IsNotNull(response.ContinuationToken);
