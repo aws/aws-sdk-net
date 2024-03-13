@@ -37,13 +37,21 @@ namespace Amazon.S3.Model
         private bool? expiredObjectDeleteMarker;
 
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this.date ?? default(DateTime); }
+            get { return this.date; }
             set
             {
                 this.date = value;
-                this.dateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+
+                if (value.HasValue)
+                {
+                    this.dateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this.dateUtc = null;
+                }
             }
         }
 
@@ -51,9 +59,9 @@ namespace Amazon.S3.Model
         /// Indicates at what date the object is to be moved or deleted. The date value must conform
         /// to the ISO 8601 format. The time is always midnight UTC.
         /// </summary>
-        public DateTime DateUtc
+        public DateTime? DateUtc
         {
-            get { return this.dateUtc ?? default(DateTime); }
+            get { return this.dateUtc; }
             set { this.dateUtc = this.date = value; }
         }
 
@@ -67,9 +75,9 @@ namespace Amazon.S3.Model
         /// Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.
         ///  
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this.days ?? default(int); }
+            get { return this.days; }
             set { this.days = value; }
         }
 
@@ -84,9 +92,9 @@ namespace Amazon.S3.Model
         /// Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.
         ///  
         /// </summary>
-        public bool ExpiredObjectDeleteMarker
+        public bool? ExpiredObjectDeleteMarker
         {
-            get { return this.expiredObjectDeleteMarker.GetValueOrDefault(); }
+            get { return this.expiredObjectDeleteMarker; }
             set { this.expiredObjectDeleteMarker = value; }
         }
 

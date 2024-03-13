@@ -21,10 +21,8 @@
  */
 
 using System;
-using System.Xml.Serialization;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
@@ -145,9 +143,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The expiry date and time for the pre-signed url.
         /// </summary>
-        public DateTime Expires
+        public DateTime? Expires
         {
-            get { return this.expires.GetValueOrDefault(); }
+            get { return this.expires; }
             set { this.expires = value; }
         }
 
@@ -250,9 +248,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The part number for the multipart upload for which a pre-signed url should be created.
         /// </summary>
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this.partNumber ?? default(int); }
+            get { return this.partNumber; }
             set { this.partNumber = value; }
         }
 

@@ -90,7 +90,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             if(copyPartRequest.IsSetFirstByte() && copyPartRequest.IsSetLastByte())
-            	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
+            	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte.Value, copyPartRequest.LastByte.Value));
 
             if (copyPartRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedBucketOwner));
@@ -110,7 +110,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}",
                                                  S3Transforms.ToStringValue(destinationKey));
 
-            request.AddSubResource("partNumber", S3Transforms.ToStringValue(copyPartRequest.PartNumber));
+            request.AddSubResource("partNumber", S3Transforms.ToStringValue(copyPartRequest.PartNumber.Value));
             request.AddSubResource("uploadId", S3Transforms.ToStringValue(copyPartRequest.UploadId));
 
             request.UseQueryString = true;

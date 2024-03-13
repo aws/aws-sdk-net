@@ -40,8 +40,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "DELETE";
 
-			if (deleteObjectRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectRequest.BypassGovernanceRetention));
+            if (deleteObjectRequest.IsSetBypassGovernanceRetention())
+                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectRequest.BypassGovernanceRetention.Value));
             if (deleteObjectRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectRequest.MfaCodes.FormattedMfaCodes);
 

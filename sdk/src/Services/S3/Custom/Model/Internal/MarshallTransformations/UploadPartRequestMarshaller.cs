@@ -85,7 +85,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                                  S3Transforms.ToStringValue(uploadPartRequest.Key));
 
             if (uploadPartRequest.IsSetPartNumber())
-                request.AddSubResource("partNumber", S3Transforms.ToStringValue(uploadPartRequest.PartNumber));
+                request.AddSubResource("partNumber", S3Transforms.ToStringValue(uploadPartRequest.PartNumber.Value));
             if (uploadPartRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(uploadPartRequest.UploadId));
 

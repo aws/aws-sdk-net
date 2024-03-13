@@ -142,9 +142,9 @@ namespace Amazon.S3.Model
         /// Maximum number of multipart uploads that could have been included in the response.
         ///  
         /// </summary>
-        public int MaxUploads
+        public int? MaxUploads
         {
-            get { return this.maxUploads ?? default(int); }
+            get { return this.maxUploads; }
             set { this.maxUploads = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.S3.Model
         /// be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.
         ///  
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 

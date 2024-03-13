@@ -105,9 +105,9 @@ namespace Amazon.S3.Model
         /// The time in seconds that your browser is to cache the preflight response for the specified resource.
         ///  
         /// </summary>
-        public int MaxAgeSeconds
+        public int? MaxAgeSeconds
         {
-            get { return this.maxAgeSeconds ?? default(int); }
+            get { return this.maxAgeSeconds; }
             set { this.maxAgeSeconds = value; }
         }
 

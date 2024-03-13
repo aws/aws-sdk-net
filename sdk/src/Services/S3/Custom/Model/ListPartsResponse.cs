@@ -115,9 +115,9 @@ namespace Amazon.S3.Model
         /// Part number after which listing begins.
         ///  
         /// </summary>
-        public int PartNumberMarker
+        public int? PartNumberMarker
         {
-            get { return this.partNumberMarker ?? default(int); }
+            get { return this.partNumberMarker; }
             set { this.partNumberMarker = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// </summary>
-        public int NextPartNumberMarker
+        public int? NextPartNumberMarker
         {
-            get { return this.nextPartNumberMarker ?? default(int); }
+            get { return this.nextPartNumberMarker; }
             set { this.nextPartNumberMarker = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.S3.Model
         /// Maximum number of parts that were allowed in the response.
         ///  
         /// </summary>
-        public int MaxParts
+        public int? MaxParts
         {
-            get { return this.maxParts ?? default(int); }
+            get { return this.maxParts; }
             set { this.maxParts = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.S3.Model
         /// Indicates whether the returned list of parts is truncated.
         ///  
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime AbortDate
+        public DateTime? AbortDate
         {
-            get { return this.abortDate.GetValueOrDefault(); }
+            get { return this.abortDate; }
             set { this.abortDate = value; }
         }
 

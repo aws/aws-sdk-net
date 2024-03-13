@@ -271,9 +271,9 @@ namespace Amazon.S3.Model
         /// Sets the maximum number of parts to return.
         /// </para>
         /// </summary>
-        public int MaxParts
+        public int? MaxParts
         {
-            get { return this.maxParts ?? default(int); }
+            get { return this.maxParts; }
             set { this.maxParts = value; }
         }
 

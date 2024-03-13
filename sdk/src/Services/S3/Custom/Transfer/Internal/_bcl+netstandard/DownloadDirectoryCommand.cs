@@ -131,7 +131,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     if (ShouldDownload(s3o))
                     {
-                        this._totalBytes += s3o.Size;
+                        this._totalBytes += s3o.Size.GetValueOrDefault();
                         objs.Add(s3o);
                     }
                 }
@@ -151,7 +151,7 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     if (ShouldDownload(s3o))
                     {
-                        this._totalBytes += s3o.Size;
+                        this._totalBytes += s3o.Size.GetValueOrDefault();
                         objs.Add(s3o);
                     }
                 }

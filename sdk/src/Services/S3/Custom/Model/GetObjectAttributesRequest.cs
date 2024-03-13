@@ -335,9 +335,9 @@ namespace Amazon.S3.Model
         /// Sets the maximum number of parts to return.
         /// </para>
         /// </summary>
-        public int MaxParts
+        public int? MaxParts
         {
-            get { return this._maxParts.GetValueOrDefault(); }
+            get { return this._maxParts; }
             set { this._maxParts = value; }
         }
 
@@ -373,9 +373,9 @@ namespace Amazon.S3.Model
         /// will be listed.
         /// </para>
         /// </summary>
-        public int PartNumberMarker
+        public int? PartNumberMarker
         {
-            get { return this._partNumberMarker.GetValueOrDefault(); }
+            get { return this._partNumberMarker; }
             set { this._partNumberMarker = value; }
         }
 

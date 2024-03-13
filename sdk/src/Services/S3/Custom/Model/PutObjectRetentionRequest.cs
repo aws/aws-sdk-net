@@ -94,9 +94,9 @@ namespace Amazon.S3.Model
         /// Indicates whether this action should bypass Governance-mode restrictions.
         /// </para>
         /// </summary>
-        public bool BypassGovernanceRetention
+        public bool? BypassGovernanceRetention
         {
-            get { return this._bypassGovernanceRetention.GetValueOrDefault(); }
+            get { return this._bypassGovernanceRetention; }
             set { this._bypassGovernanceRetention = value; }
         }
 

@@ -56,7 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(listPartsRequest.UploadId));
 
             if (listPartsRequest.IsSetMaxParts())
-                request.Parameters.Add("max-parts", S3Transforms.ToStringValue(listPartsRequest.MaxParts));
+                request.Parameters.Add("max-parts", S3Transforms.ToStringValue(listPartsRequest.MaxParts.Value));
             if (listPartsRequest.IsSetPartNumberMarker())
                 request.Parameters.Add("part-number-marker", S3Transforms.ToStringValue(listPartsRequest.PartNumberMarker));
             if (listPartsRequest.IsSetEncoding())

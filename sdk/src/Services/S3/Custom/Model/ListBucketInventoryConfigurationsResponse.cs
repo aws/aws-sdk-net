@@ -64,9 +64,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Indicates whether the returned list of inventory configurations is truncated in this response. A value of true indicates that the list is truncated.
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 

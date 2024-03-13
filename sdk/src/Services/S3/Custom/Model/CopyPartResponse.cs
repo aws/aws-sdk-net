@@ -34,7 +34,7 @@ namespace Amazon.S3.Model
         private DateTime? lastModified;
         private string eTag;
         private string copySourceVersionId;
-        private int partNumber;
+        private int? partNumber;
         private ServerSideEncryptionMethod serverSideEncryption;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private bool? bucketKeyEnabled;
@@ -147,9 +147,9 @@ namespace Amazon.S3.Model
         /// Date and time at which the object was uploaded.
         ///  
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this.lastModified ?? default(DateTime); }
+            get { return this.lastModified; }
             set { this.lastModified = value; }
         }
 
@@ -182,7 +182,7 @@ namespace Amazon.S3.Model
         /// This is the part number in it's multi-part upload that will uniquely identify the part 
         /// and determine the relative ordering within the destination object.
         /// </summary>
-        public int PartNumber
+        public int? PartNumber
         {
             get { return this.partNumber; }
             set { this.partNumber = value; }

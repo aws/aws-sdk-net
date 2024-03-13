@@ -201,7 +201,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteStartElement("EventThreshold");
                                         if (rule.Destination.Metrics.EventThreshold.IsSetMinutes())
                                         {
-                                            xmlWriter.WriteElementString("Minutes", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.EventThreshold.Minutes));
+                                            xmlWriter.WriteElementString("Minutes", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.EventThreshold.Minutes.Value));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
@@ -219,7 +219,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteStartElement("Time");
                                         if (rule.Destination.ReplicationTime.Time.IsSetMinutes())
                                         {
-                                            xmlWriter.WriteElementString("Minutes", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Time.Minutes));
+                                            xmlWriter.WriteElementString("Minutes", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Time.Minutes.Value));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }

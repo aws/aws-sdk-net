@@ -55,9 +55,9 @@ namespace Amazon.S3.Model
         /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html\">Bucket key</a> in 
         /// the <i>Amazon Simple Storage Service Developer Guide</i>.</para>",
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 

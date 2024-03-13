@@ -131,7 +131,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue.IsSetMaxAgeSeconds())
                                 {
-                                    xmlWriter.WriteElementString("MaxAgeSeconds", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.MaxAgeSeconds));
+                                    xmlWriter.WriteElementString("MaxAgeSeconds", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.MaxAgeSeconds.Value));
                                 }
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue.IsSetId())

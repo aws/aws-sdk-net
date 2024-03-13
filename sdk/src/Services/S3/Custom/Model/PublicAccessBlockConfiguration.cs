@@ -112,9 +112,9 @@ namespace Amazon.S3.Model
         /// Note that enabling this setting doesn't affect existing policies or ACLs.
         /// </para>
         /// </summary>
-        public bool BlockPublicAcls
+        public bool? BlockPublicAcls
         {
-            get { return this.blockPublicAcls ?? default(bool); }
+            get { return this.blockPublicAcls; }
             set { this.blockPublicAcls = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.S3.Model
         /// and doesn't prevent new public ACLs from being set.
         /// </para>
         /// </summary>
-        public bool IgnorePublicAcls
+        public bool? IgnorePublicAcls
         {
-            get { return this.ignorePublicAcls ?? default(bool); }
+            get { return this.ignorePublicAcls; }
             set { this.ignorePublicAcls = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.S3.Model
         /// Note that enabling this setting doesn't affect existing bucket policies.
         /// </para>
         /// </summary>
-        public bool BlockPublicPolicy
+        public bool? BlockPublicPolicy
         {
-            get { return this.blockPublicPolicy ?? default(bool); }
+            get { return this.blockPublicPolicy; }
             set { this.blockPublicPolicy = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.S3.Model
         /// delegation to specific accounts, is blocked.
         /// </para>
         /// </summary>
-        public bool RestrictPublicBuckets
+        public bool? RestrictPublicBuckets
         {
-            get { return this.restrictPublicBuckets ?? default(bool); }
+            get { return this.restrictPublicBuckets; }
             set { this.restrictPublicBuckets = value; }
         }
 

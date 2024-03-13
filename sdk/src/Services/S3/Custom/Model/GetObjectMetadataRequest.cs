@@ -303,13 +303,21 @@ namespace Amazon.S3.Model
             "ModifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
             "reflected in the value of both. ModifiedSinceDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ModifiedSinceDate
+        public DateTime? ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate.GetValueOrDefault(); }
+            get { return this.modifiedSinceDate; }
             set
             {
-                this.modifiedSinceDate = value;
-                this.modifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value == null)
+                {
+                    this.modifiedSinceDate = null;
+                    this.modifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.modifiedSinceDate = value;
+                    this.modifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
             }
         }
 
@@ -317,13 +325,21 @@ namespace Amazon.S3.Model
         /// Returns the object only if it has been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
-        public DateTime ModifiedSinceDateUtc
+        public DateTime? ModifiedSinceDateUtc
         {
-            get { return this.modifiedSinceDateUtc.GetValueOrDefault(); }
+            get { return this.modifiedSinceDateUtc ?? default(DateTime); }
             set
             {
-                this.modifiedSinceDateUtc = value;
-                this.modifiedSinceDate = value;
+                if (value == null)
+                {
+                    this.modifiedSinceDate = null;
+                    this.modifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.modifiedSinceDateUtc = value;
+                    this.modifiedSinceDate = value;
+                }
             }
         }
 
@@ -366,13 +382,21 @@ namespace Amazon.S3.Model
             "UnmodifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
             "reflected in the value of both. UnmodifiedSinceDate is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime UnmodifiedSinceDate
+        public DateTime? UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate.GetValueOrDefault(); }
+            get { return this.unmodifiedSinceDate ?? default(DateTime); }
             set
             {
-                this.unmodifiedSinceDate = value;
-                this.unmodifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value == null)
+                {
+                    this.unmodifiedSinceDate = null;
+                    this.unmodifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.unmodifiedSinceDate = value;
+                    this.unmodifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
             }
         }
 
@@ -380,13 +404,21 @@ namespace Amazon.S3.Model
         /// Returns the object only if it has not been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
-        public DateTime UnmodifiedSinceDateUtc
+        public DateTime? UnmodifiedSinceDateUtc
         {
             get { return this.unmodifiedSinceDateUtc ?? default(DateTime); }
             set
             {
-                this.unmodifiedSinceDateUtc = value;
-                this.unmodifiedSinceDate = value;
+                if (value == null)
+                {
+                    this.unmodifiedSinceDate = null;
+                    this.unmodifiedSinceDateUtc = null;
+                }
+                else
+                {
+                    this.unmodifiedSinceDateUtc = value;
+                    this.unmodifiedSinceDate = value;
+                }
             }
         }
 

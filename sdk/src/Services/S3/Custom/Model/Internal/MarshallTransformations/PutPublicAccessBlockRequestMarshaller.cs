@@ -66,19 +66,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration", S3Constants.S3RequestXmlNamespace);                    
                     if (publicAccessBlockConfiguration.IsSetBlockPublicAcls())
                     {
-                        xmlWriter.WriteElementString("BlockPublicAcls", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.BlockPublicAcls));
+                        xmlWriter.WriteElementString("BlockPublicAcls", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.BlockPublicAcls.Value));
                     }
                     if (publicAccessBlockConfiguration.IsSetIgnorePublicAcls())
                     {
-                        xmlWriter.WriteElementString("IgnorePublicAcls", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.IgnorePublicAcls));
+                        xmlWriter.WriteElementString("IgnorePublicAcls", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.IgnorePublicAcls.Value));
                     }
                     if (publicAccessBlockConfiguration.IsSetBlockPublicPolicy())
                     {
-                        xmlWriter.WriteElementString("BlockPublicPolicy", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.BlockPublicPolicy));
+                        xmlWriter.WriteElementString("BlockPublicPolicy", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.BlockPublicPolicy.Value));
                     }
                     if (publicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
                     {
-                        xmlWriter.WriteElementString("RestrictPublicBuckets", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.RestrictPublicBuckets));
+                        xmlWriter.WriteElementString("RestrictPublicBuckets", S3Transforms.ToXmlStringValue(publicAccessBlockConfiguration.RestrictPublicBuckets.Value));
                     }
                     xmlWriter.WriteEndElement();
                 }

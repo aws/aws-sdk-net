@@ -400,9 +400,9 @@ namespace Amazon.S3.Model
         /// <para>The Days element is required for regular restores, and must not be provided for 
         /// select requests.</para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this.days ?? default(int); }
+            get { return this.days; }
             set { this.days = value; }
         }
 
@@ -567,7 +567,7 @@ namespace Amazon.S3.Model
                 }
 
                 if (IsSetDays())
-                    xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(Days));
+                    xmlWriter.WriteElementString("Days", S3Transforms.ToXmlStringValue(Days.Value));
                 if (IsSetType())
                     xmlWriter.WriteElementString("Type", S3Transforms.ToXmlStringValue(RestoreRequestType.Value));
                 if (IsSetDescription())

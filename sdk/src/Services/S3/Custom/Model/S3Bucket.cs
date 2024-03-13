@@ -33,9 +33,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this.creationDate ?? default(DateTime); }
+            get { return this.creationDate; }
             set { this.creationDate = value; }
         }
 

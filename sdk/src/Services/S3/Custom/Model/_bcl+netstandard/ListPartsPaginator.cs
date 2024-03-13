@@ -65,7 +65,7 @@ namespace Amazon.S3.Model
                 partNumberMarker = response.NextPartNumberMarker.ToString();
                 yield return response;
             }
-            while (response.IsTruncated);
+            while (response.IsTruncated.GetValueOrDefault());
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -86,7 +86,7 @@ namespace Amazon.S3.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (response.IsTruncated);
+            while (response.IsTruncated.GetValueOrDefault());
         }
 #endif
     }

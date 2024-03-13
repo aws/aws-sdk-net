@@ -32,9 +32,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property NewerNoncurrentVersions.
         /// </summary>
-        public int NewerNoncurrentVersions
+        public int? NewerNoncurrentVersions
         {
-            get { return this._newerNoncurrentVersions.GetValueOrDefault(); }
+            get { return this._newerNoncurrentVersions; }
             set { this._newerNoncurrentVersions = value; }
         }
 
@@ -50,9 +50,9 @@ namespace Amazon.S3.Model
         /// <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How Amazon S3 Calculates When an Object Became Noncurrent</a> 
         /// in the Amazon Simple Storage Service Developer Guide.
         /// </summary>
-        public int NoncurrentDays
+        public int? NoncurrentDays
         {
-            get { return this.noncurrentDays ?? default(int); }
+            get { return this.noncurrentDays; }
             set { this.noncurrentDays = value; }
         }
 

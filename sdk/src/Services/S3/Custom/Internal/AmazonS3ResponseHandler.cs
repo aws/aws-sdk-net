@@ -129,7 +129,7 @@ namespace Amazon.S3.Internal
             var listObjectsResponse = response as ListObjectsResponse;
             if (listObjectsResponse != null)
             {
-                if (listObjectsResponse.IsTruncated &&
+                if (listObjectsResponse.IsTruncated.GetValueOrDefault() &&
                     string.IsNullOrEmpty(listObjectsResponse.NextMarker) &&
                     listObjectsResponse.S3Objects.Count > 0)
                 {

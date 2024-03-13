@@ -81,7 +81,7 @@ namespace Amazon.S3.Transfer.Internal
                         }
                     }
                 }
-                while (listResponse.IsTruncated);
+                while (listResponse.IsTruncated.GetValueOrDefault());
 
                 await WhenAllOrFirstExceptionAsync(pendingTasks,cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);

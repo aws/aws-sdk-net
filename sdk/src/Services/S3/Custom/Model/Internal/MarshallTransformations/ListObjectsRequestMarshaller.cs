@@ -57,7 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listObjectsRequest.IsSetMarker())
                 request.Parameters.Add("marker", S3Transforms.ToStringValue(listObjectsRequest.Marker));
             if (listObjectsRequest.IsSetMaxKeys())
-                request.Parameters.Add("max-keys", S3Transforms.ToStringValue(listObjectsRequest.MaxKeys));
+                request.Parameters.Add("max-keys", S3Transforms.ToStringValue(listObjectsRequest.MaxKeys.Value));
             if (listObjectsRequest.IsSetPrefix())
                 request.Parameters.Add("prefix", S3Transforms.ToStringValue(listObjectsRequest.Prefix));
             if (listObjectsRequest.IsSetEncoding())

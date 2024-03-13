@@ -223,9 +223,9 @@ namespace Amazon.S3.Model
         /// more. 
         /// </para>
         /// </summary>
-        public int MaxKeys
+        public int? MaxKeys
         {
-            get { return this.maxKeys ?? default(int); }
+            get { return this.maxKeys; }
             set { this.maxKeys = value; }
         }
 

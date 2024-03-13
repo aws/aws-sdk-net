@@ -253,7 +253,7 @@ namespace Amazon.S3
             if (getPreSignedUrlRequest.IsSetUploadId())
                 request.AddSubResource("uploadId", S3Transforms.ToStringValue(getPreSignedUrlRequest.UploadId));
             if (getPreSignedUrlRequest.IsSetPartNumber())
-                request.AddSubResource("partNumber", S3Transforms.ToStringValue(getPreSignedUrlRequest.PartNumber));
+                request.AddSubResource("partNumber", S3Transforms.ToStringValue(getPreSignedUrlRequest.PartNumber.Value));
 
             var responseHeaderOverrides = getPreSignedUrlRequest.ResponseHeaderOverrides;
             if (!string.IsNullOrEmpty(responseHeaderOverrides.CacheControl))
@@ -433,7 +433,7 @@ namespace Amazon.S3
             {
                 baselineTime = config.CorrectedUtcNow;
             }
-            return Convert.ToInt64((request.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
+            return Convert.ToInt64((request.Expires.GetValueOrDefault().ToUniversalTime() - baselineTime).TotalSeconds);
         }
         internal static void CleanupRequest(AmazonWebServiceRequest request)
         {

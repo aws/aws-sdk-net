@@ -118,9 +118,9 @@ namespace Amazon.S3.Model
         /// Part number identifying the part. This is a positive integer between 1 and 10,000.
         /// </para>
         /// </summary>
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this._partNumber.GetValueOrDefault(); }
+            get { return this._partNumber; }
             set { this._partNumber = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.S3.Model
         /// The size of the uploaded part in bytes.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

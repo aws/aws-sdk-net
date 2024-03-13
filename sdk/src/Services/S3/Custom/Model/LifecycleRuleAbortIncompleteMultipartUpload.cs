@@ -32,9 +32,9 @@ namespace Amazon.S3.Model
         /// Indicates the number of days that must pass since initiation for Lifecycle
         /// to abort an Incomplete Multipart Upload.
         /// </summary>
-        public int DaysAfterInitiation
+        public int? DaysAfterInitiation
         {
-            get { return this.daysAfterInitiation ?? default(int); }
+            get { return this.daysAfterInitiation; }
             set { this.daysAfterInitiation = value; }
         }
 

@@ -313,9 +313,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 
@@ -509,9 +509,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this.objectLockRetainUntilDate; }
             set { this.objectLockRetainUntilDate = value; }
         }
 

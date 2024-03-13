@@ -52,9 +52,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The size of the uploaded part data.
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this.size.GetValueOrDefault(); }
+            get { return this.size; }
             set { this.size = value; }
         }
 

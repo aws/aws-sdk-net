@@ -41,7 +41,7 @@ namespace Amazon.S3.Internal.S3Express
             {
                 SessionCredentials = sessionCredentials;
                 CreatedAt = AWSSDKUtils.CorrectedUtcNow;
-                ExpirationDate = sessionCredentials.Expiration.ToUniversalTime();
+                ExpirationDate = sessionCredentials.Expiration.GetValueOrDefault().ToUniversalTime();
                 if (AWSConfigs.ManualClockCorrection.HasValue)
                     ExpirationDate = ExpirationDate + AWSConfigs.ManualClockCorrection.Value;
 
@@ -264,7 +264,7 @@ namespace Amazon.S3.Internal.S3Express
                     var credentialsLruItem = new SessionCredentialsLruItem(credentials.Credentials);
                     if (resetTime == DateTime.MinValue)
                     {
-                        resetTime = credentials.Credentials.Expiration.ToUniversalTime();
+                        resetTime = credentials.Credentials.Expiration.GetValueOrDefault().ToUniversalTime();
                     }
 
                     _cacheLock.Wait();

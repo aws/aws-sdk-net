@@ -64,9 +64,9 @@ namespace Amazon.S3.Model
         /// A value of true indicates that the list is not complete and the 
         /// NextContinuationToken will be provided for a subsequent request.</para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 

@@ -30,14 +30,14 @@ namespace Amazon.S3.Model
 
         private bool? isLatest;
         private string versionId;
-        private bool isDeleteMarker;
+        private bool? isDeleteMarker;
         private RestoreStatus _restoreStatus;
         /// <summary>
         /// Specifies whether the object is (true) or is not (false) the latest version of an object.
         /// </summary>
-        public bool IsLatest
+        public bool? IsLatest
         {
-            get { return this.isLatest ?? default(bool); }
+            get { return this.isLatest; }
             set { this.isLatest = value; }
         }
 
@@ -53,7 +53,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// If true, the object is a delete marker for a deleted object.
         /// </summary>
-        public bool IsDeleteMarker
+        public bool? IsDeleteMarker
         {
             get { return this.isDeleteMarker; }
             set { this.isDeleteMarker = value; }

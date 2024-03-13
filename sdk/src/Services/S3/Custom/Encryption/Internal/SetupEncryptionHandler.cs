@@ -222,7 +222,7 @@ namespace Amazon.S3.Encryption.Internal
                     throw new AmazonClientException("Upload Parts must in correct sequence");
 
                 request.InputStream = EncryptionUtils.EncryptUploadPartRequestUsingInstructions(request.InputStream, instructions);
-                contextForEncryption.PartNumber = request.PartNumber;
+                contextForEncryption.PartNumber = request.PartNumber.GetValueOrDefault();
             }
             else
             {

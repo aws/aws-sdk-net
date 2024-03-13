@@ -45,9 +45,9 @@ namespace Amazon.S3.Model
         /// the limit returned in the <code>MaxParts</code> element.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.S3.Model
         /// The maximum number of parts allowed in the response.
         /// </para>
         /// </summary>
-        public int MaxParts
+        public int? MaxParts
         {
-            get { return this._maxParts.GetValueOrDefault(); }
+            get { return this._maxParts; }
             set { this._maxParts = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.S3.Model
         /// as the value to use for the part-number-marker request parameter in a subsequent request.
         /// </para>
         /// </summary>
-        public int NextPartNumberMarker
+        public int? NextPartNumberMarker
         {
-            get { return this._nextPartNumberMarker.GetValueOrDefault(); }
+            get { return this._nextPartNumberMarker; }
             set { this._nextPartNumberMarker = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.S3.Model
         /// The marker for the current part.
         /// </para>
         /// </summary>
-        public int PartNumberMarker
+        public int? PartNumberMarker
         {
-            get { return this._partNumberMarker.GetValueOrDefault(); }
+            get { return this._partNumberMarker; }
             set { this._partNumberMarker = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.S3.Model
         /// The total number of parts.
         /// </para>
         /// </summary>
-        public int TotalPartsCount
+        public int? TotalPartsCount
         {
-            get { return this._totalPartsCount.GetValueOrDefault(); }
+            get { return this._totalPartsCount; }
             set { this._totalPartsCount = value; }
         }
 
@@ -162,6 +162,5 @@ namespace Amazon.S3.Model
         {
             return this._totalPartsCount.HasValue;
         }
-
     }
 }

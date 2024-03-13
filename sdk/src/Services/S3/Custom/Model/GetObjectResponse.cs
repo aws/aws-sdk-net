@@ -38,7 +38,7 @@ namespace Amazon.S3.Model
         private string contentRange;
         private Expiration expiration;
         private DateTime? restoreExpiration;
-        private bool restoreInProgress;
+        private bool? restoreInProgress;
         private DateTime? lastModified;
         private string eTag;
         private int? missingMeta;
@@ -214,7 +214,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool RestoreInProgress
+        public bool? RestoreInProgress
         {
             get { return this.restoreInProgress; }
             set { this.restoreInProgress = value; }
@@ -226,9 +226,9 @@ namespace Amazon.S3.Model
         /// Date and time when the object was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this.lastModified ?? default(DateTime); }
+            get { return this.lastModified; }
             set { this.lastModified = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MissingMeta
+        public int? MissingMeta
         {
-            get { return this.missingMeta ?? default(int); }
+            get { return this.missingMeta; }
             set { this.missingMeta = value; }
         }
 
@@ -307,17 +307,24 @@ namespace Amazon.S3.Model
         /// The date and time at which the object is no longer cacheable.
         ///  
         /// </summary>
-        public DateTime Expires
+        public DateTime? Expires
         {
             get
             {
                 if (this.isExpiresUnmarshalled)
                 {
-                    return this.expires.Value;
+                    return this.expires;
                 }
                 else
                 {
-                    this.expires = AmazonS3Util.ParseExpiresHeader(this.RawExpires, this.ResponseMetadata.RequestId);
+                    if (!string.IsNullOrEmpty(this.RawExpires))
+                    {
+                        this.expires = AmazonS3Util.ParseExpiresHeader(this.RawExpires, this.ResponseMetadata.RequestId);
+                    }
+                    else
+                    {
+                        this.expires = null;
+                    }
                     this.isExpiresUnmarshalled = true;
                     return this.expires.Value;
                 }
@@ -389,9 +396,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this.objectLockRetainUntilDate; }
             set { this.objectLockRetainUntilDate = value; }
         }
 
@@ -630,9 +637,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 

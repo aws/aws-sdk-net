@@ -187,9 +187,9 @@ namespace Amazon.S3.Model
         /// results might not be returned.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.S3.Model
         /// result will include 50 keys or fewer.
         /// </para>
         /// </summary>
-        public int KeyCount
+        public int? KeyCount
         {
-            get { return this.keyCount ?? default(int); }
+            get { return this.keyCount; }
             set { this.keyCount = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.S3.Model
         /// more.
         /// </para>
         /// </summary>
-        public int MaxKeys
+        public int? MaxKeys
         {
-            get { return this.maxKeys ?? default(int); }
+            get { return this.maxKeys; }
             set { this.maxKeys = value; }
         }
 

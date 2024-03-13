@@ -62,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddSubResource("retention");
         
             if (publicRequest.IsSetBypassGovernanceRetention())
-                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(publicRequest.BypassGovernanceRetention));
+                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(publicRequest.BypassGovernanceRetention.Value));
             if (publicRequest.IsSetChecksumAlgorithm())
                 request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(publicRequest.ChecksumAlgorithm));
             if (publicRequest.IsSetContentMD5())
@@ -88,10 +88,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("Retention", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.Retention.IsSetMode())
-                        xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));                    
+                        xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));
     
                     if(publicRequest.Retention.IsSetRetainUntilDate())
-                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate));                    
+                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate.Value));
     
     
                     xmlWriter.WriteEndElement();

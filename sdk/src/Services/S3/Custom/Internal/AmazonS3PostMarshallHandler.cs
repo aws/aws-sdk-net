@@ -121,7 +121,7 @@ namespace Amazon.S3.Internal
             if (uploadPartRequest.InputStream != null)
             {
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
-                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
+                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault());
                 if (partialStream.Length > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))

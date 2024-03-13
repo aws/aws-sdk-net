@@ -403,9 +403,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker.</para>
         /// </summary>
-        public bool DeleteMarker
+        public bool? DeleteMarker
         {
-            get { return this.deleteMarker.GetValueOrDefault(); }
+            get { return this.deleteMarker; }
             set { this.deleteMarker = value; }
         }
 
@@ -431,9 +431,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>The date and time at which the object is no longer cacheable.</para>
         /// </summary>
-        public DateTime Expires
+        public DateTime? Expires
         {
-            get { return this.expires.GetValueOrDefault(); }
+            get { return this.expires; }
             set { this.expires = value; }
         }
 
@@ -459,9 +459,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>Date and time the object was last modified.</para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this.lastModified.GetValueOrDefault(); }
+            get { return this.lastModified; }
             set { this.lastModified = value; }
         }
 
@@ -528,9 +528,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>Date and time when Object Lock is configured to expire.</para>
         /// </summary>
-        public DateTime ObjectLockRetainUntilDate
+        public DateTime? ObjectLockRetainUntilDate
         {
-            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            get { return this.objectLockRetainUntilDate; }
             set { this.objectLockRetainUntilDate = value; }
         }
 
@@ -708,9 +708,9 @@ namespace Amazon.S3.Model
         /// encryption with Amazon Web Services KMS (SSE-KMS).
         /// </para>
         /// </summary>
-        public bool BucketKeyEnabled
+        public bool? BucketKeyEnabled
         {
-            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            get { return this.bucketKeyEnabled; }
             set { this.bucketKeyEnabled = value; }
         }
 

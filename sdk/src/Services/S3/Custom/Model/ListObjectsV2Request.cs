@@ -279,9 +279,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool FetchOwner
+        public bool? FetchOwner
         {
-            get { return this.fetchOwner.GetValueOrDefault(); }
+            get { return this.fetchOwner; }
             set { this.fetchOwner = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.S3.Model
         /// more.
         /// </para>
         /// </summary>
-        public int MaxKeys
+        public int? MaxKeys
         {
-            get { return this.maxKeys ?? default(int); }
+            get { return this.maxKeys; }
             set { this.maxKeys = value; }
         }
         

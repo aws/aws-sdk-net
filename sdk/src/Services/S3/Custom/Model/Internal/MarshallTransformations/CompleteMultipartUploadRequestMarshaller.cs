@@ -101,7 +101,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (multipartUploadMultipartUploadpartsListValue.IsSetPartNumber())
                         {
                             xmlWriter.WriteElementString("PartNumber", 
-                                                         S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber));
+                                                         S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber.Value));
                         }
                         if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32())
                         {

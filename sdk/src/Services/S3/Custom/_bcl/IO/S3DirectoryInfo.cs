@@ -281,7 +281,7 @@ namespace Amazon.S3.IO
                                     .FirstOrDefault();
                         if (lastWrittenObject != null)
                         {
-                            ret = lastWrittenObject.LastModified;
+                            ret = lastWrittenObject.LastModified.GetValueOrDefault();
                         }
                     }
                 }
@@ -501,7 +501,7 @@ namespace Amazon.S3.IO
                         listRequest.Marker = s3o.Key;
                     }
                     
-                } while (listResponse.IsTruncated);
+                } while (listResponse.IsTruncated.GetValueOrDefault());
 
                 if (deleteRequest.Objects.Count > 0)
                 {

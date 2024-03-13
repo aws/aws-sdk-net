@@ -88,7 +88,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(putObjectRequest.ObjectLockMode));
 
             if (putObjectRequest.IsSetObjectLockRetainUntilDate())
-                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(putObjectRequest.ObjectLockRetainUntilDate, AWSSDKUtils.ISO8601DateFormat));
+                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(putObjectRequest.ObjectLockRetainUntilDate.Value, AWSSDKUtils.ISO8601DateFormat));
 
             if (putObjectRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(putObjectRequest.RequestPayer.ToString()));
@@ -100,7 +100,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putObjectRequest.ExpectedBucketOwner));
 
             if (putObjectRequest.IsSetBucketKeyEnabled())
-                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(putObjectRequest.BucketKeyEnabled));
+                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(putObjectRequest.BucketKeyEnabled.Value));
 
             if (putObjectRequest.IsSetChecksumAlgorithm())
                 request.Headers.Add(S3Constants.AmzHeaderSdkChecksumAlgorithm, S3Transforms.ToStringValue(putObjectRequest.ChecksumAlgorithm));

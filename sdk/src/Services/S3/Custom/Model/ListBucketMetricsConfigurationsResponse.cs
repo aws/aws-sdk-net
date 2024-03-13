@@ -72,9 +72,9 @@ namespace Amazon.S3.Model
         /// a subsequent request.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this.isTruncated ?? default(bool); }
+            get { return this.isTruncated; }
             set { this.isTruncated = value; }
         }
 

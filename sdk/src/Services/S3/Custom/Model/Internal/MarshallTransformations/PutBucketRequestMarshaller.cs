@@ -51,7 +51,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 ConvertPutWithACLRequest(putBucketRequest, request);
 
             if(putBucketRequest.IsSetObjectLockEnabledForBucket())
-                request.Headers.Add("x-amz-bucket-object-lock-enabled", S3Transforms.ToStringValue(putBucketRequest.ObjectLockEnabledForBucket));
+                request.Headers.Add("x-amz-bucket-object-lock-enabled", S3Transforms.ToStringValue(putBucketRequest.ObjectLockEnabledForBucket.Value));
 
             if (putBucketRequest.IsSetObjectOwnership())
                 request.Headers["x-amz-object-ownership"] = putBucketRequest.ObjectOwnership;

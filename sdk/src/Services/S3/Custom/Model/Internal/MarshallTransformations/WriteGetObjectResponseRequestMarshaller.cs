@@ -94,19 +94,19 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-fwd-header-Content-Type"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ContentType);
 
             if (writeGetObjectResponseRequest.IsSetDeleteMarker())
-                request.Headers["x-amz-fwd-header-x-amz-delete-marker"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.DeleteMarker);
+                request.Headers["x-amz-fwd-header-x-amz-delete-marker"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.DeleteMarker.Value);
 
             if (writeGetObjectResponseRequest.IsSetETag())
                 request.Headers["x-amz-fwd-header-ETag"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ETag);
 
             if (writeGetObjectResponseRequest.IsSetExpires())
-                request.Headers["x-amz-fwd-header-Expires"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.Expires);
+                request.Headers["x-amz-fwd-header-Expires"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.Expires.Value);
 
             if (writeGetObjectResponseRequest.IsSetExpiration())
                 request.Headers["x-amz-fwd-header-x-amz-expiration"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.Expiration);
 
             if (writeGetObjectResponseRequest.IsSetLastModified())
-                request.Headers["x-amz-fwd-header-Last-Modified"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.LastModified);
+                request.Headers["x-amz-fwd-header-Last-Modified"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.LastModified.Value);
 
             if (writeGetObjectResponseRequest.IsSetMissingMeta())
                 request.Headers["x-amz-fwd-header-x-amz-missing-meta"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.MissingMeta.Value);
@@ -120,7 +120,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-fwd-header-x-amz-object-lock-legal-hold"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ObjectLockLegalHoldStatus);
 
             if (writeGetObjectResponseRequest.IsSetObjectLockRetainUntilDate())
-                request.Headers["x-amz-fwd-header-x-amz-object-lock-retain-until-date"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ObjectLockRetainUntilDate);
+                request.Headers["x-amz-fwd-header-x-amz-object-lock-retain-until-date"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.ObjectLockRetainUntilDate.Value);
 
             if (writeGetObjectResponseRequest.IsSetPartsCount())
                 request.Headers["x-amz-fwd-header-x-amz-mp-parts-count"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.PartsCount.Value);
@@ -156,7 +156,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-fwd-header-x-amz-version-id"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.VersionId);
 
             if (writeGetObjectResponseRequest.IsSetBucketKeyEnabled())
-                request.Headers["x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.BucketKeyEnabled);
+                request.Headers["x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.BucketKeyEnabled.Value);
 
             var stream = writeGetObjectResponseRequest.Body ?? new MemoryStream();
             request.ContentStream = stream;

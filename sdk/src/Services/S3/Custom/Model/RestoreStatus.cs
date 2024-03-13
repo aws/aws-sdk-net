@@ -49,9 +49,9 @@ namespace Amazon.S3.Model
         /// If the object hasn't been restored, there is no header response.
         /// </para>
         /// </summary>
-        public bool IsRestoreInProgress
+        public bool? IsRestoreInProgress
         {
-            get { return this._isRestoreInProgress.GetValueOrDefault(); }
+            get { return this._isRestoreInProgress; }
             set { this._isRestoreInProgress = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.S3.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime RestoreExpiryDate
+        public DateTime? RestoreExpiryDate
         {
-            get { return this._restoreExpiryDate.GetValueOrDefault(); }
+            get { return this._restoreExpiryDate; }
             set { this._restoreExpiryDate = value; }
         }
 
