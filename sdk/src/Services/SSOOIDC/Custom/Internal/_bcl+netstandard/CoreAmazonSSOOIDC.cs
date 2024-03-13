@@ -78,7 +78,7 @@ namespace Amazon.SSOOIDC.Internal
 
             // Spec: The expiration time must be calculated by adding the number of seconds 
             // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
-            DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
+            DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn.GetValueOrDefault());
 
             request.SsoVerificationCallback(new SsoVerificationArguments
             {
@@ -99,7 +99,7 @@ namespace Amazon.SSOOIDC.Internal
 
             var ssoToken = PollForSsoToken(client,
                 createTokenRequest,
-                startDeviceAuthorizationResponse.Interval,
+                startDeviceAuthorizationResponse.Interval.GetValueOrDefault(),
                 deviceCodeExpiration,
                 context);
             var clientSecretExpiresAtString = XmlConvert.ToString(AWSSDKUtils.ConvertFromUnixEpochSeconds((int)registerClientResponse.ClientSecretExpiresAt), XmlDateTimeSerializationMode.Utc);
@@ -111,7 +111,7 @@ namespace Amazon.SSOOIDC.Internal
                 ClientSecret = registerClientResponse.ClientSecret,
                 RegistrationExpiresAt = clientSecretExpiresAtString,
                 RefreshToken = ssoToken.RefreshToken,
-                ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
+                ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn.GetValueOrDefault()),
                 StartUrl = request.StartUrl
             };
         }
@@ -162,7 +162,7 @@ namespace Amazon.SSOOIDC.Internal
 
             // Spec: The expiration time must be calculated by adding the number of seconds 
             // returned by StartDeviceAuthorization (ExpiresIn) to the current time.
-            DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn);
+            DateTime deviceCodeExpiration = DateTime.UtcNow.AddSeconds(startDeviceAuthorizationResponse.ExpiresIn.GetValueOrDefault());
 
             request.SsoVerificationCallback(new SsoVerificationArguments
             {
@@ -183,7 +183,7 @@ namespace Amazon.SSOOIDC.Internal
             var ssoToken = await PollForSsoTokenAsync(
                 client,
                 createTokenRequest,
-                startDeviceAuthorizationResponse.Interval,
+                startDeviceAuthorizationResponse.Interval.GetValueOrDefault(),
                 deviceCodeExpiration,
                 context,
                 cancellationToken
@@ -198,7 +198,7 @@ namespace Amazon.SSOOIDC.Internal
                 ClientSecret = registerClientResponse.ClientSecret,
                 RegistrationExpiresAt = clientSecretExpiresAtString,
                 RefreshToken = ssoToken.RefreshToken,
-                ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn),
+                ExpiresAt = DateTime.UtcNow.AddSeconds(ssoToken.ExpiresIn.GetValueOrDefault()),
                 StartUrl = request.StartUrl
             };
         }
@@ -219,7 +219,7 @@ namespace Amazon.SSOOIDC.Internal
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
-                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn),
+                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn.GetValueOrDefault()),
                 RefreshToken = ssoToken.RefreshToken,
                 Region = previousResponse.Region,
                 RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,
@@ -245,7 +245,7 @@ namespace Amazon.SSOOIDC.Internal
             return new GetSsoTokenResponse
             {
                 AccessToken = ssoToken.AccessToken,
-                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn),
+                ExpiresAt = AWSSDKUtils.CorrectedUtcNow.AddSeconds(ssoToken.ExpiresIn.GetValueOrDefault()),
                 RefreshToken = ssoToken.RefreshToken,
                 Region = previousResponse.Region,
                 RegistrationExpiresAt = previousResponse.RegistrationExpiresAt,
