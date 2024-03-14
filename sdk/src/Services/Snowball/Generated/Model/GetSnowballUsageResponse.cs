@@ -43,9 +43,9 @@ namespace Amazon.Snowball.Model
         /// service limit is 1 (one).
         /// </para>
         /// </summary>
-        public int SnowballLimit
+        public int? SnowballLimit
         {
-            get { return this._snowballLimit.GetValueOrDefault(); }
+            get { return this._snowballLimit; }
             set { this._snowballLimit = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Snowball.Model
         /// The number of Snow devices that this account is currently using.
         /// </para>
         /// </summary>
-        public int SnowballsInUse
+        public int? SnowballsInUse
         {
-            get { return this._snowballsInUse.GetValueOrDefault(); }
+            get { return this._snowballsInUse; }
             set { this._snowballsInUse = value; }
         }
 

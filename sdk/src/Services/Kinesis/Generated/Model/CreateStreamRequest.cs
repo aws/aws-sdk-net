@@ -106,9 +106,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ShardCount
+        public int? ShardCount
         {
-            get { return this._shardCount.GetValueOrDefault(); }
+            get { return this._shardCount; }
             set { this._shardCount = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastMessageTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastMessageTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

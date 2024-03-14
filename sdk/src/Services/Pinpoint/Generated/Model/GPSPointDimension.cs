@@ -61,9 +61,9 @@ namespace Amazon.Pinpoint.Model
         /// The range, in kilometers, from the GPS coordinates.
         /// </para>
         /// </summary>
-        public double RangeInKilometers
+        public double? RangeInKilometers
         {
-            get { return this._rangeInKilometers.GetValueOrDefault(); }
+            get { return this._rangeInKilometers; }
             set { this._rangeInKilometers = value; }
         }
 

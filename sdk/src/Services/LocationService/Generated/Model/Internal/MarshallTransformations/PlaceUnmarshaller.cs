@@ -89,7 +89,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Interpolated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Interpolated = unmarshaller.Unmarshall(context);
                     continue;
                 }

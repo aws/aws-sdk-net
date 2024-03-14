@@ -108,9 +108,9 @@ namespace Amazon.ECR.Model
         /// cause.
         /// </para>
         /// </summary>
-        public bool IsValid
+        public bool? IsValid
         {
-            get { return this._isValid.GetValueOrDefault(); }
+            get { return this._isValid; }
             set { this._isValid = value; }
         }
 

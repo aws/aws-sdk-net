@@ -71,7 +71,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,31 +89,31 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FailedRecordCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FailedRecordCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ImportedDataSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ImportedDataSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ImportedRecordCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ImportedRecordCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestUpdateAttemptAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestUpdateAttemptAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SkippedRecordCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SkippedRecordCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

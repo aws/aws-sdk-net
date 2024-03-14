@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds);
+                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetInstruction())

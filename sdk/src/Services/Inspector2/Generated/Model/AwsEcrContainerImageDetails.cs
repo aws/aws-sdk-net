@@ -141,9 +141,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time the Amazon ECR container image was pushed.
         /// </para>
         /// </summary>
-        public DateTime PushedAt
+        public DateTime? PushedAt
         {
-            get { return this._pushedAt.GetValueOrDefault(); }
+            get { return this._pushedAt; }
             set { this._pushedAt = value; }
         }
 

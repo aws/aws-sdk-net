@@ -58,9 +58,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Seed
+        public long? Seed
         {
-            get { return this._seed.GetValueOrDefault(); }
+            get { return this._seed; }
             set { this._seed = value; }
         }
 

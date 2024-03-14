@@ -103,9 +103,9 @@ namespace Amazon.Connect.Model
         /// on the requested metric filter. 
         /// </para>
         /// </summary>
-        public bool Negate
+        public bool? Negate
         {
-            get { return this._negate.GetValueOrDefault(); }
+            get { return this._negate; }
             set { this._negate = value; }
         }
 

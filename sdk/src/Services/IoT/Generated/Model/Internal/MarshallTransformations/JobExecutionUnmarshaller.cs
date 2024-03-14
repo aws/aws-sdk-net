@@ -65,19 +65,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("approximateSecondsBeforeTimedOut", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApproximateSecondsBeforeTimedOut = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("executionNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExecutionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("forceCanceled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceCanceled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queuedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.QueuedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("versionNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -83,13 +83,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("imageScanCompletedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ImageScanCompletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vulnerabilitySourceUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.VulnerabilitySourceUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

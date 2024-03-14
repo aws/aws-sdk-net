@@ -48,9 +48,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastBackupTime
+        public DateTime? LastBackupTime
         {
-            get { return this._lastBackupTime.GetValueOrDefault(); }
+            get { return this._lastBackupTime; }
             set { this._lastBackupTime = value; }
         }
 

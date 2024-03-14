@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Enables or disables media metrics logging.
         /// </para>
         /// </summary>
-        public bool EnableMediaMetricLogs
+        public bool? EnableMediaMetricLogs
         {
-            get { return this._enableMediaMetricLogs.GetValueOrDefault(); }
+            get { return this._enableMediaMetricLogs; }
             set { this._enableMediaMetricLogs = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Boolean that enables sending SIP message logs to Amazon CloudWatch.
         /// </para>
         /// </summary>
-        public bool EnableSIPLogs
+        public bool? EnableSIPLogs
         {
-            get { return this._enableSIPLogs.GetValueOrDefault(); }
+            get { return this._enableSIPLogs; }
             set { this._enableSIPLogs = value; }
         }
 

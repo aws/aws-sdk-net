@@ -166,9 +166,9 @@ namespace Amazon.SageMaker.Model
         /// The last heartbeat received from the device.
         /// </para>
         /// </summary>
-        public DateTime LatestHeartbeat
+        public DateTime? LatestHeartbeat
         {
-            get { return this._latestHeartbeat.GetValueOrDefault(); }
+            get { return this._latestHeartbeat; }
             set { this._latestHeartbeat = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of models.
         /// </para>
         /// </summary>
-        public int MaxModels
+        public int? MaxModels
         {
-            get { return this._maxModels.GetValueOrDefault(); }
+            get { return this._maxModels; }
             set { this._maxModels = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RegistrationTime
+        public DateTime? RegistrationTime
         {
-            get { return this._registrationTime.GetValueOrDefault(); }
+            get { return this._registrationTime; }
             set { this._registrationTime = value; }
         }
 

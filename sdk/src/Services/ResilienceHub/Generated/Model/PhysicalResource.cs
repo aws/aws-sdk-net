@@ -105,9 +105,9 @@ namespace Amazon.ResilienceHub.Model
         /// Indicates if a resource is included or excluded from the assessment.
         /// </para>
         /// </summary>
-        public bool Excluded
+        public bool? Excluded
         {
-            get { return this._excluded.GetValueOrDefault(); }
+            get { return this._excluded; }
             set { this._excluded = value; }
         }
 

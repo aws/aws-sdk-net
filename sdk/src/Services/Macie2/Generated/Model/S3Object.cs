@@ -127,9 +127,9 @@ namespace Amazon.Macie2.Model
         /// The date and time, in UTC and extended ISO 8601 format, when the object was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Macie2.Model
         /// settings that apply to the object.
         /// </para>
         /// </summary>
-        public bool PublicAccess
+        public bool? PublicAccess
         {
-            get { return this._publicAccess.GetValueOrDefault(); }
+            get { return this._publicAccess; }
             set { this._publicAccess = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.Macie2.Model
         /// The total storage size, in bytes, of the object.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

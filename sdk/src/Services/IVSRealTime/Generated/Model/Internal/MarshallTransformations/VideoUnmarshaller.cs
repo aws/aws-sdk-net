@@ -65,25 +65,25 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("framerate", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Framerate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("height", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("width", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Width = unmarshaller.Unmarshall(context);
                     continue;
                 }

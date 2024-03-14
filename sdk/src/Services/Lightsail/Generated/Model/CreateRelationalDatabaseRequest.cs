@@ -395,9 +395,9 @@ namespace Amazon.Lightsail.Model
         /// resources in the same region as your database.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

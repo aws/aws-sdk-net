@@ -53,7 +53,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("includeMemberAccounts", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeMemberAccounts = unmarshaller.Unmarshall(context);
                     continue;
                 }

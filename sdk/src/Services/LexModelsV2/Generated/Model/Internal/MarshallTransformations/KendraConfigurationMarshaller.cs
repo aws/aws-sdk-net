@@ -60,7 +60,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryFilterStringEnabled())
             {
                 context.Writer.WritePropertyName("queryFilterStringEnabled");
-                context.Writer.Write(requestObject.QueryFilterStringEnabled);
+                context.Writer.Write(requestObject.QueryFilterStringEnabled.Value);
             }
 
         }

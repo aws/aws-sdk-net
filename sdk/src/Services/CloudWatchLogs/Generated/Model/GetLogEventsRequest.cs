@@ -91,16 +91,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
         // Check to see if EndTime property is set
         internal bool IsSetEndTime()
         {
-            return this._endTime.HasValue; 
+            return this._endTime != null;
         }
 
         /// <summary>
@@ -111,9 +111,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// in this operation, you must specify <c>true</c> for <c>startFromHead</c>.
         /// </para>
         /// </summary>
-        public bool StartFromHead
+        public bool? StartFromHead
         {
-            get { return this._startFromHead.GetValueOrDefault(); }
+            get { return this._startFromHead; }
             set { this._startFromHead = value; }
         }
 
@@ -247,16 +247,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
         // Check to see if StartTime property is set
         internal bool IsSetStartTime()
         {
-            return this._startTime.HasValue; 
+            return this._startTime != null;
         }
 
         /// <summary>
@@ -271,9 +271,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// the <c>logs:Unmask</c> permission.
         /// </para>
         /// </summary>
-        public bool Unmask
+        public bool? Unmask
         {
-            get { return this._unmask.GetValueOrDefault(); }
+            get { return this._unmask; }
             set { this._unmask = value; }
         }
 

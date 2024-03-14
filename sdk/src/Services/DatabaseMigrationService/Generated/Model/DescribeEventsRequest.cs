@@ -52,9 +52,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The duration of the events to be listed.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The end time for the events to be listed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The start time for the events to be listed.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

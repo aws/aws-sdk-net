@@ -65,31 +65,31 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValueInArchive", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValueInArchive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValueInIA", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValueInIA = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValueInStandard", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ValueInStandard = unmarshaller.Unmarshall(context);
                     continue;
                 }

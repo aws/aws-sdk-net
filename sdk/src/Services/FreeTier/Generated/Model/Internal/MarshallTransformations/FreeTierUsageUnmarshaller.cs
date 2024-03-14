@@ -65,7 +65,7 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("actualUsageAmount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ActualUsageAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("forecastedUsageAmount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ForecastedUsageAmount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("limit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
                     continue;
                 }

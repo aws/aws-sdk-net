@@ -68,7 +68,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceUnsubscribeAll())
                 {
                     context.Writer.WritePropertyName("ForceUnsubscribeAll");
-                    context.Writer.Write(publicRequest.ForceUnsubscribeAll);
+                    context.Writer.Write(publicRequest.ForceUnsubscribeAll.Value);
                 }
 
                 if(publicRequest.IsSetTargetAddress())

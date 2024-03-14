@@ -46,9 +46,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// of this variation.
         /// </para>
         /// </summary>
-        public bool BoolValue
+        public bool? BoolValue
         {
-            get { return this._boolValue.GetValueOrDefault(); }
+            get { return this._boolValue; }
             set { this._boolValue = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// integer value of this variation.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-9007199254740991, Max=9007199254740991)]
-        public long LongValue
+        public long? LongValue
         {
-            get { return this._longValue.GetValueOrDefault(); }
+            get { return this._longValue; }
             set { this._longValue = value; }
         }
 

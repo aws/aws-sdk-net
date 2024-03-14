@@ -70,9 +70,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public double ProvisionedThroughputInMibps
+        public double? ProvisionedThroughputInMibps
         {
-            get { return this._provisionedThroughputInMibps.GetValueOrDefault(); }
+            get { return this._provisionedThroughputInMibps; }
             set { this._provisionedThroughputInMibps = value; }
         }
 

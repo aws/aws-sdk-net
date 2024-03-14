@@ -63,9 +63,9 @@ namespace Amazon.Connect.Model
         /// existing chat.
         /// </para>
         /// </summary>
-        public bool NewChatCreated
+        public bool? NewChatCreated
         {
-            get { return this._newChatCreated.GetValueOrDefault(); }
+            get { return this._newChatCreated; }
             set { this._newChatCreated = value; }
         }
 

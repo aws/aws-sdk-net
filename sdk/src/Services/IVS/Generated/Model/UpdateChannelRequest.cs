@@ -71,9 +71,9 @@ namespace Amazon.IVS.Model
         /// Whether the channel is private (enabled for playback authorization).
         /// </para>
         /// </summary>
-        public bool Authorized
+        public bool? Authorized
         {
-            get { return this._authorized.GetValueOrDefault(); }
+            get { return this._authorized; }
             set { this._authorized = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.IVS.Model
         /// Whether the channel allows insecure RTMP ingest. Default: <c>false</c>.
         /// </para>
         /// </summary>
-        public bool InsecureIngest
+        public bool? InsecureIngest
         {
-            get { return this._insecureIngest.GetValueOrDefault(); }
+            get { return this._insecureIngest; }
             set { this._insecureIngest = value; }
         }
 

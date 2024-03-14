@@ -139,9 +139,9 @@ namespace Amazon.SsmSap.Model
         /// The time at which the application was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

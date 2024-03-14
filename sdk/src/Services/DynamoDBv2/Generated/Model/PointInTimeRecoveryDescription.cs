@@ -44,9 +44,9 @@ namespace Amazon.DynamoDBv2.Model
         /// your table to any point in time during the last 35 days. 
         /// </para>
         /// </summary>
-        public DateTime EarliestRestorableDateTime
+        public DateTime? EarliestRestorableDateTime
         {
-            get { return this._earliestRestorableDateTime.GetValueOrDefault(); }
+            get { return this._earliestRestorableDateTime; }
             set { this._earliestRestorableDateTime = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.DynamoDBv2.Model
         ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. 
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableDateTime
+        public DateTime? LatestRestorableDateTime
         {
-            get { return this._latestRestorableDateTime.GetValueOrDefault(); }
+            get { return this._latestRestorableDateTime; }
             set { this._latestRestorableDateTime = value; }
         }
 

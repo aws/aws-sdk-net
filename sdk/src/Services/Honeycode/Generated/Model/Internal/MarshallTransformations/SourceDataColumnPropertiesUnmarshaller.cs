@@ -65,7 +65,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("columnIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ColumnIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

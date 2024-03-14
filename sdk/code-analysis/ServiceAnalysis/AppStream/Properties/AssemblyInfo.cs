@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppStream")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon AppStream. Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

@@ -95,9 +95,9 @@ namespace Amazon.WorkSpaces.Model
         /// Configure a VPC for Amazon WorkSpaces</a>.
         /// </para>
         /// </summary>
-        public bool EnableInternetAccess
+        public bool? EnableInternetAccess
         {
-            get { return this._enableInternetAccess.GetValueOrDefault(); }
+            get { return this._enableInternetAccess; }
             set { this._enableInternetAccess = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.WorkSpaces.Model
         /// Maintenance</a>.
         /// </para>
         /// </summary>
-        public bool EnableMaintenanceMode
+        public bool? EnableMaintenanceMode
         {
-            get { return this._enableMaintenanceMode.GetValueOrDefault(); }
+            get { return this._enableMaintenanceMode; }
             set { this._enableMaintenanceMode = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.WorkSpaces.Model
         /// Specifies whether the directory is enabled for Amazon WorkDocs.
         /// </para>
         /// </summary>
-        public bool EnableWorkDocs
+        public bool? EnableWorkDocs
         {
-            get { return this._enableWorkDocs.GetValueOrDefault(); }
+            get { return this._enableWorkDocs; }
             set { this._enableWorkDocs = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.WorkSpaces.Model
         /// Specifies whether WorkSpace users are local administrators on their WorkSpaces.
         /// </para>
         /// </summary>
-        public bool UserEnabledAsLocalAdministrator
+        public bool? UserEnabledAsLocalAdministrator
         {
-            get { return this._userEnabledAsLocalAdministrator.GetValueOrDefault(); }
+            get { return this._userEnabledAsLocalAdministrator; }
             set { this._userEnabledAsLocalAdministrator = value; }
         }
 

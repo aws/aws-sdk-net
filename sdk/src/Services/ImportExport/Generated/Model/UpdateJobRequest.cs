@@ -110,9 +110,9 @@ namespace Amazon.ImportExport.Model
         /// Gets and sets the property ValidateOnly.
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ValidateOnly
+        public bool? ValidateOnly
         {
-            get { return this._validateOnly.GetValueOrDefault(); }
+            get { return this._validateOnly; }
             set { this._validateOnly = value; }
         }
 

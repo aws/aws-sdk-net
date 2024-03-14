@@ -92,7 +92,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExplainPredictor())
                 {
                     context.Writer.WritePropertyName("ExplainPredictor");
-                    context.Writer.Write(publicRequest.ExplainPredictor);
+                    context.Writer.Write(publicRequest.ExplainPredictor.Value);
                 }
 
                 if(publicRequest.IsSetForecastDimensions())
@@ -115,7 +115,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForecastHorizon())
                 {
                     context.Writer.WritePropertyName("ForecastHorizon");
-                    context.Writer.Write(publicRequest.ForecastHorizon);
+                    context.Writer.Write(publicRequest.ForecastHorizon.Value);
                 }
 
                 if(publicRequest.IsSetForecastTypes())

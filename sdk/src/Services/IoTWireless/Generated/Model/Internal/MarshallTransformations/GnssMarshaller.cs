@@ -48,7 +48,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssistAltitude())
             {
                 context.Writer.WritePropertyName("AssistAltitude");
-                context.Writer.Write(requestObject.AssistAltitude);
+                context.Writer.Write(requestObject.AssistAltitude.Value);
             }
 
             if(requestObject.IsSetAssistPosition())
@@ -65,13 +65,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureTime())
             {
                 context.Writer.WritePropertyName("CaptureTime");
-                context.Writer.Write(requestObject.CaptureTime);
+                context.Writer.Write(requestObject.CaptureTime.Value);
             }
 
             if(requestObject.IsSetCaptureTimeAccuracy())
             {
                 context.Writer.WritePropertyName("CaptureTimeAccuracy");
-                context.Writer.Write(requestObject.CaptureTimeAccuracy);
+                context.Writer.Write(requestObject.CaptureTimeAccuracy.Value);
             }
 
             if(requestObject.IsSetPayload())
@@ -83,7 +83,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUse2DSolver())
             {
                 context.Writer.WritePropertyName("Use2DSolver");
-                context.Writer.Write(requestObject.Use2DSolver);
+                context.Writer.Write(requestObject.Use2DSolver.Value);
             }
 
         }

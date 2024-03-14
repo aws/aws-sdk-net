@@ -47,9 +47,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// value can be null.
         /// </para>
         /// </summary>
-        public double DefaultValue
+        public double? DefaultValue
         {
-            get { return this._defaultValue.GetValueOrDefault(); }
+            get { return this._defaultValue; }
             set { this._defaultValue = value; }
         }
 

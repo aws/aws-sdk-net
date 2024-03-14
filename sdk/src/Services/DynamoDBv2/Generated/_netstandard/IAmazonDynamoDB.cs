@@ -2841,7 +2841,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool? consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -3210,7 +3210,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
@@ -3227,7 +3227,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        Task<ListTablesResponse> ListTablesAsync(int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<ListTablesResponse> ListTablesAsync(int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>

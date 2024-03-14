@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.PersonalizeEvents")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Personalize Events. Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Personalize Events. Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Personalize Events. Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Personalize Events. Introducing Amazon Personalize  - a machine learning service that makes it easy for developers to create individualized recommendations for customers using their applications.")]
 #elif NETCOREAPP3_1

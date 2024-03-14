@@ -60,9 +60,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of status codes that can cause a failover.
         /// </para>
         /// </summary>
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

@@ -92,9 +92,9 @@ namespace Amazon.Polly.Model
         /// specify <c>no</c>.
         /// </para>
         /// </summary>
-        public bool IncludeAdditionalLanguageCodes
+        public bool? IncludeAdditionalLanguageCodes
         {
-            get { return this._includeAdditionalLanguageCodes.GetValueOrDefault(); }
+            get { return this._includeAdditionalLanguageCodes; }
             set { this._includeAdditionalLanguageCodes = value; }
         }
 

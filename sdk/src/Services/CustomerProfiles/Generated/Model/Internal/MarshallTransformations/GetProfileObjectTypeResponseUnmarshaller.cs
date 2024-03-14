@@ -53,13 +53,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowProfileCreation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowProfileCreation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpirationDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ExpirationDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

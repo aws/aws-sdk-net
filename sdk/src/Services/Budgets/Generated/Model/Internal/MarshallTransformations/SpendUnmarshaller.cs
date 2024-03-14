@@ -65,7 +65,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Amount", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DecimalUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDecimalUnmarshaller.Instance;
                     unmarshalledObject.Amount = unmarshaller.Unmarshall(context);
                     continue;
                 }

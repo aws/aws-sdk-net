@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("acceptanceRequired", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AcceptanceRequired = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("managesVpcEndpoints", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ManagesVpcEndpoints = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -146,7 +146,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("vpcEndpointPolicySupported", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.VpcEndpointPolicySupported = unmarshaller.Unmarshall(context);
                         continue;
                     }

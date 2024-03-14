@@ -79,9 +79,9 @@ namespace Amazon.RDS.Model
         /// The date and time when the proxy was first created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.RDS.Model
         /// to safeguard any sensitive information that appears in the logs.
         /// </para>
         /// </summary>
-        public bool DebugLogging
+        public bool? DebugLogging
         {
-            get { return this._debugLogging.GetValueOrDefault(); }
+            get { return this._debugLogging; }
             set { this._debugLogging = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.RDS.Model
         /// Constraints: 1 to 28,800
         /// </para>
         /// </summary>
-        public int IdleClientTimeout
+        public int? IdleClientTimeout
         {
-            get { return this._idleClientTimeout.GetValueOrDefault(); }
+            get { return this._idleClientTimeout; }
             set { this._idleClientTimeout = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.RDS.Model
         /// to the proxy.
         /// </para>
         /// </summary>
-        public bool RequireTLS
+        public bool? RequireTLS
         {
-            get { return this._requireTLS.GetValueOrDefault(); }
+            get { return this._requireTLS; }
             set { this._requireTLS = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.RDS.Model
         /// The date and time when the proxy was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedDate
+        public DateTime? UpdatedDate
         {
-            get { return this._updatedDate.GetValueOrDefault(); }
+            get { return this._updatedDate; }
             set { this._updatedDate = value; }
         }
 

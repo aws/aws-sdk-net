@@ -65,19 +65,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DynamicScalingInSuspended", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DynamicScalingInSuspended = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DynamicScalingOutSuspended", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DynamicScalingOutSuspended = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScheduledScalingSuspended", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ScheduledScalingSuspended = unmarshaller.Unmarshall(context);
                     continue;
                 }

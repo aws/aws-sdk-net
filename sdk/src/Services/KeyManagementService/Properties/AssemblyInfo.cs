@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.KeyManagementService")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Key Management Service. AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Key Management Service. AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Key Management Service. AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Key Management Service. AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.")]
 #elif NETCOREAPP3_1

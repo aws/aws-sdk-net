@@ -94,7 +94,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRateLimit())
                 {
                     context.Writer.WritePropertyName("RateLimit");
-                    context.Writer.Write(publicRequest.RateLimit);
+                    context.Writer.Write(publicRequest.RateLimit.Value);
                 }
 
                 if(publicRequest.IsSetTags())

@@ -65,19 +65,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("amis", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Amis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("containers", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("snapshots", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Snapshots = unmarshaller.Unmarshall(context);
                     continue;
                 }

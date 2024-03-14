@@ -91,9 +91,9 @@ namespace Amazon.EKS.Model
         /// add-on, it isn't removed.
         /// </para>
         /// </summary>
-        public bool Preserve
+        public bool? Preserve
         {
-            get { return this._preserve.GetValueOrDefault(); }
+            get { return this._preserve; }
             set { this._preserve = value; }
         }
 

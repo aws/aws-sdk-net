@@ -71,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BidPriceAsPercentageOfOnDemandPrice", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BidPriceAsPercentageOfOnDemandPrice = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EbsOptimized", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WeightedCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }

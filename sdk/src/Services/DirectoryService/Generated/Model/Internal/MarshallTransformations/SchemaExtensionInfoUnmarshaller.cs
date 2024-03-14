@@ -77,7 +77,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

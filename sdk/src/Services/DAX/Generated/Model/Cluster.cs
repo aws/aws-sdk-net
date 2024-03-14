@@ -58,9 +58,9 @@ namespace Amazon.DAX.Model
         /// The number of nodes in the cluster that are active (i.e., capable of serving requests).
         /// </para>
         /// </summary>
-        public int ActiveNodes
+        public int? ActiveNodes
         {
-            get { return this._activeNodes.GetValueOrDefault(); }
+            get { return this._activeNodes; }
             set { this._activeNodes = value; }
         }
 
@@ -379,9 +379,9 @@ namespace Amazon.DAX.Model
         /// The total number of nodes in the cluster.
         /// </para>
         /// </summary>
-        public int TotalNodes
+        public int? TotalNodes
         {
-            get { return this._totalNodes.GetValueOrDefault(); }
+            get { return this._totalNodes; }
             set { this._totalNodes = value; }
         }
 

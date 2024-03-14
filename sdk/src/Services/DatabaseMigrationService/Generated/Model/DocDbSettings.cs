@@ -76,9 +76,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Must be a positive value greater than <c>0</c>. Default value is <c>1000</c>.
         /// </para>
         /// </summary>
-        public int DocsToInvestigate
+        public int? DocsToInvestigate
         {
-            get { return this._docsToInvestigate.GetValueOrDefault(); }
+            get { return this._docsToInvestigate; }
             set { this._docsToInvestigate = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Default value is <c>"false"</c>. 
         /// </para>
         /// </summary>
-        public bool ExtractDocId
+        public bool? ExtractDocId
         {
-            get { return this._extractDocId.GetValueOrDefault(); }
+            get { return this._extractDocId; }
             set { this._extractDocId = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  The port value for the DocumentDB source endpoint. 
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ReplicateShardCollections
+        public bool? ReplicateShardCollections
         {
-            get { return this._replicateShardCollections.GetValueOrDefault(); }
+            get { return this._replicateShardCollections; }
             set { this._replicateShardCollections = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <c>false</c>.
         /// </para>
         /// </summary>
-        public bool UseUpdateLookUp
+        public bool? UseUpdateLookUp
         {
-            get { return this._useUpdateLookUp.GetValueOrDefault(); }
+            get { return this._useUpdateLookUp; }
             set { this._useUpdateLookUp = value; }
         }
 

@@ -70,7 +70,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletionProtectionEnabled())
                 {
                     context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                    context.Writer.Write(publicRequest.DeletionProtectionEnabled);
+                    context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetOptOutListName())
@@ -88,7 +88,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSelfManagedOptOutsEnabled())
                 {
                     context.Writer.WritePropertyName("SelfManagedOptOutsEnabled");
-                    context.Writer.Write(publicRequest.SelfManagedOptOutsEnabled);
+                    context.Writer.Write(publicRequest.SelfManagedOptOutsEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTwoWayChannelArn())
@@ -106,7 +106,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTwoWayEnabled())
                 {
                     context.Writer.WritePropertyName("TwoWayEnabled");
-                    context.Writer.Write(publicRequest.TwoWayEnabled);
+                    context.Writer.Write(publicRequest.TwoWayEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

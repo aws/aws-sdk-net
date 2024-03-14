@@ -113,9 +113,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// namespace.
         /// </para>
         /// </summary>
-        public long NamespaceVersion
+        public long? NamespaceVersion
         {
-            get { return this._namespaceVersion.GetValueOrDefault(); }
+            get { return this._namespaceVersion; }
             set { this._namespaceVersion = value; }
         }
 

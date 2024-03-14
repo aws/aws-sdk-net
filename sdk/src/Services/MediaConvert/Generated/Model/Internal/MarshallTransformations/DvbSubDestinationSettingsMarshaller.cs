@@ -66,7 +66,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundOpacity())
             {
                 context.Writer.WritePropertyName("backgroundOpacity");
-                context.Writer.Write(requestObject.BackgroundOpacity);
+                context.Writer.Write(requestObject.BackgroundOpacity.Value);
             }
 
             if(requestObject.IsSetDdsHandling())
@@ -78,13 +78,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDdsXCoordinate())
             {
                 context.Writer.WritePropertyName("ddsXCoordinate");
-                context.Writer.Write(requestObject.DdsXCoordinate);
+                context.Writer.Write(requestObject.DdsXCoordinate.Value);
             }
 
             if(requestObject.IsSetDdsYCoordinate())
             {
                 context.Writer.WritePropertyName("ddsYCoordinate");
-                context.Writer.Write(requestObject.DdsYCoordinate);
+                context.Writer.Write(requestObject.DdsYCoordinate.Value);
             }
 
             if(requestObject.IsSetFallbackFont())
@@ -102,13 +102,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFontOpacity())
             {
                 context.Writer.WritePropertyName("fontOpacity");
-                context.Writer.Write(requestObject.FontOpacity);
+                context.Writer.Write(requestObject.FontOpacity.Value);
             }
 
             if(requestObject.IsSetFontResolution())
             {
                 context.Writer.WritePropertyName("fontResolution");
-                context.Writer.Write(requestObject.FontResolution);
+                context.Writer.Write(requestObject.FontResolution.Value);
             }
 
             if(requestObject.IsSetFontScript())
@@ -120,13 +120,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFontSize())
             {
                 context.Writer.WritePropertyName("fontSize");
-                context.Writer.Write(requestObject.FontSize);
+                context.Writer.Write(requestObject.FontSize.Value);
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetHexFontColor())
@@ -144,7 +144,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutlineSize())
             {
                 context.Writer.WritePropertyName("outlineSize");
-                context.Writer.Write(requestObject.OutlineSize);
+                context.Writer.Write(requestObject.OutlineSize.Value);
             }
 
             if(requestObject.IsSetShadowColor())
@@ -156,19 +156,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShadowOpacity())
             {
                 context.Writer.WritePropertyName("shadowOpacity");
-                context.Writer.Write(requestObject.ShadowOpacity);
+                context.Writer.Write(requestObject.ShadowOpacity.Value);
             }
 
             if(requestObject.IsSetShadowXOffset())
             {
                 context.Writer.WritePropertyName("shadowXOffset");
-                context.Writer.Write(requestObject.ShadowXOffset);
+                context.Writer.Write(requestObject.ShadowXOffset.Value);
             }
 
             if(requestObject.IsSetShadowYOffset())
             {
                 context.Writer.WritePropertyName("shadowYOffset");
-                context.Writer.Write(requestObject.ShadowYOffset);
+                context.Writer.Write(requestObject.ShadowYOffset.Value);
             }
 
             if(requestObject.IsSetStylePassthrough())
@@ -192,19 +192,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
             if(requestObject.IsSetXPosition())
             {
                 context.Writer.WritePropertyName("xPosition");
-                context.Writer.Write(requestObject.XPosition);
+                context.Writer.Write(requestObject.XPosition.Value);
             }
 
             if(requestObject.IsSetYPosition())
             {
                 context.Writer.WritePropertyName("yPosition");
-                context.Writer.Write(requestObject.YPosition);
+                context.Writer.Write(requestObject.YPosition.Value);
             }
 
         }

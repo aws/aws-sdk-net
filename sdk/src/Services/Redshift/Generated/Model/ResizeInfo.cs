@@ -42,9 +42,9 @@ namespace Amazon.Redshift.Model
         /// A boolean value indicating if the resize operation can be cancelled.
         /// </para>
         /// </summary>
-        public bool AllowCancelResize
+        public bool? AllowCancelResize
         {
-            get { return this._allowCancelResize.GetValueOrDefault(); }
+            get { return this._allowCancelResize; }
             set { this._allowCancelResize = value; }
         }
 

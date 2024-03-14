@@ -90,7 +90,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.IsTruncated = unmarshaller.Unmarshall(context);
                         continue;
                     }

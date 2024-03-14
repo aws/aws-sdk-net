@@ -54,13 +54,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableDynamicFieldUpdate())
             {
                 context.Writer.WritePropertyName("enableDynamicFieldUpdate");
-                context.Writer.Write(requestObject.EnableDynamicFieldUpdate);
+                context.Writer.Write(requestObject.EnableDynamicFieldUpdate.Value);
             }
 
             if(requestObject.IsSetIncludeDeletedRecords())
             {
                 context.Writer.WritePropertyName("includeDeletedRecords");
-                context.Writer.Write(requestObject.IncludeDeletedRecords);
+                context.Writer.Write(requestObject.IncludeDeletedRecords.Value);
             }
 
             if(requestObject.IsSetObject())

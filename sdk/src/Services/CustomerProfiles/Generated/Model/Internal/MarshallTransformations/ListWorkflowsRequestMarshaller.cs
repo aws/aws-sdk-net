@@ -77,13 +77,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueryEndDate())
                 {
                     context.Writer.WritePropertyName("QueryEndDate");
-                    context.Writer.Write(publicRequest.QueryEndDate);
+                    context.Writer.Write(publicRequest.QueryEndDate.Value);
                 }
 
                 if(publicRequest.IsSetQueryStartDate())
                 {
                     context.Writer.WritePropertyName("QueryStartDate");
-                    context.Writer.Write(publicRequest.QueryStartDate);
+                    context.Writer.Write(publicRequest.QueryStartDate.Value);
                 }
 
                 if(publicRequest.IsSetStatus())

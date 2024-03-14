@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BillableTimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BillableTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,19 +113,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableManagedSpotTraining", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableManagedSpotTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNetworkIsolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,7 +173,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -245,7 +245,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrainingEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TrainingEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -269,13 +269,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrainingStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TrainingStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingTimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TrainingTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

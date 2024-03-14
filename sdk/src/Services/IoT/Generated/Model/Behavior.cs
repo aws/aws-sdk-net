@@ -70,9 +70,9 @@ namespace Amazon.IoT.Model
         /// Value indicates exporting metrics related to the behavior when it is true.
         /// </para>
         /// </summary>
-        public bool ExportMetric
+        public bool? ExportMetric
         {
-            get { return this._exportMetric.GetValueOrDefault(); }
+            get { return this._exportMetric; }
             set { this._exportMetric = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.IoT.Model
         ///  Suppresses alerts. 
         /// </para>
         /// </summary>
-        public bool SuppressAlerts
+        public bool? SuppressAlerts
         {
-            get { return this._suppressAlerts.GetValueOrDefault(); }
+            get { return this._suppressAlerts; }
             set { this._suppressAlerts = value; }
         }
 

@@ -62,13 +62,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("hiveCompatiblePartitions", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HiveCompatiblePartitions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("perHourPartition", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PerHourPartition = unmarshaller.Unmarshall(context);
                         continue;
                     }

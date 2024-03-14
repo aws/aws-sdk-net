@@ -53,13 +53,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("disconnectAfterInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DisconnectAfterInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isAuthenticated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsAuthenticated = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("refreshAfterInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RefreshAfterInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

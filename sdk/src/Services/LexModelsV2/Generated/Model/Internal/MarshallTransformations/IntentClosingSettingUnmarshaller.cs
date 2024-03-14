@@ -65,7 +65,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("active", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context);
                     continue;
                 }

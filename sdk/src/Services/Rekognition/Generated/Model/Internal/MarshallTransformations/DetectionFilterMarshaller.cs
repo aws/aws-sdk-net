@@ -48,19 +48,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinBoundingBoxHeight())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxHeight");
-                context.Writer.Write(requestObject.MinBoundingBoxHeight);
+                context.Writer.Write(requestObject.MinBoundingBoxHeight.Value);
             }
 
             if(requestObject.IsSetMinBoundingBoxWidth())
             {
                 context.Writer.WritePropertyName("MinBoundingBoxWidth");
-                context.Writer.Write(requestObject.MinBoundingBoxWidth);
+                context.Writer.Write(requestObject.MinBoundingBoxWidth.Value);
             }
 
             if(requestObject.IsSetMinConfidence())
             {
                 context.Writer.WritePropertyName("MinConfidence");
-                context.Writer.Write(requestObject.MinConfidence);
+                context.Writer.Write(requestObject.MinConfidence.Value);
             }
 
         }

@@ -67,9 +67,9 @@ namespace Amazon.SimSpaceWeaver.Model
         /// in UTC since the Unix epoch (0:0:0.000, January 1, 1970).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

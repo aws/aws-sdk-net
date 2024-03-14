@@ -83,9 +83,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies timestamp at which Auto-Tune maintenance schedule start. 
         /// </para>
         /// </summary>
-        public DateTime StartAt
+        public DateTime? StartAt
         {
-            get { return this._startAt.GetValueOrDefault(); }
+            get { return this._startAt; }
             set { this._startAt = value; }
         }
 

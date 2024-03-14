@@ -44,9 +44,9 @@ namespace Amazon.Macie2.Model
         /// by the UsageByAccount.type field in the response.
         /// </para>
         /// </summary>
-        public bool IsServiceLimited
+        public bool? IsServiceLimited
         {
-            get { return this._isServiceLimited.GetValueOrDefault(); }
+            get { return this._isServiceLimited; }
             set { this._isServiceLimited = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Macie2.Model
         /// The value for the metric specified by the UsageByAccount.type field in the response.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

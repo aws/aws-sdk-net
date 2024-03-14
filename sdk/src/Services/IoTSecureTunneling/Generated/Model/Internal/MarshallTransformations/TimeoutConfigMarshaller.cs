@@ -48,7 +48,7 @@ namespace Amazon.IoTSecureTunneling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxLifetimeTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("maxLifetimeTimeoutMinutes");
-                context.Writer.Write(requestObject.MaxLifetimeTimeoutMinutes);
+                context.Writer.Write(requestObject.MaxLifetimeTimeoutMinutes.Value);
             }
 
         }

@@ -71,7 +71,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Registered", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Registered = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// otherwise, it is not enabled for hibernation.
         /// </para>
         /// </summary>
-        public bool Configured
+        public bool? Configured
         {
-            get { return this._configured.GetValueOrDefault(); }
+            get { return this._configured; }
             set { this._configured = value; }
         }
 

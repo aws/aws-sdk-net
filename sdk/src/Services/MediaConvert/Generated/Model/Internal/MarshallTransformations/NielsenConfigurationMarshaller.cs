@@ -48,7 +48,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBreakoutCode())
             {
                 context.Writer.WritePropertyName("breakoutCode");
-                context.Writer.Write(requestObject.BreakoutCode);
+                context.Writer.Write(requestObject.BreakoutCode.Value);
             }
 
             if(requestObject.IsSetDistributorId())

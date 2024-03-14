@@ -83,19 +83,19 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemorySize())
             {
                 context.Writer.WritePropertyName("MemorySize");
-                context.Writer.Write(requestObject.MemorySize);
+                context.Writer.Write(requestObject.MemorySize.Value);
             }
 
             if(requestObject.IsSetPinned())
             {
                 context.Writer.WritePropertyName("Pinned");
-                context.Writer.Write(requestObject.Pinned);
+                context.Writer.Write(requestObject.Pinned.Value);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout);
+                context.Writer.Write(requestObject.Timeout.Value);
             }
 
         }

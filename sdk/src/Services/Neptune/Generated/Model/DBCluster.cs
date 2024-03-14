@@ -91,9 +91,9 @@ namespace Amazon.Neptune.Model
         /// is not fixed, but instead automatically adjusts as needed.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Neptune.Model
         /// Time at which the DB cluster will be automatically restarted.
         /// </para>
         /// </summary>
-        public DateTime AutomaticRestartTime
+        public DateTime? AutomaticRestartTime
         {
-            get { return this._automaticRestartTime.GetValueOrDefault(); }
+            get { return this._automaticRestartTime; }
             set { this._automaticRestartTime = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the number of days for which automatic DB snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Neptune.Model
         /// (UTC).
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.Neptune.Model
         /// is created.</i> 
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.Neptune.Model
         /// If set to <c>true</c>, the DB cluster can be cloned across accounts.
         /// </para>
         /// </summary>
-        public bool CrossAccountClone
+        public bool? CrossAccountClone
         {
-            get { return this._crossAccountClone.GetValueOrDefault(); }
+            get { return this._crossAccountClone; }
             set { this._crossAccountClone = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.Neptune.Model
         /// can't be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -446,9 +446,9 @@ namespace Amazon.Neptune.Model
         /// restore.
         /// </para>
         /// </summary>
-        public DateTime EarliestRestorableTime
+        public DateTime? EarliestRestorableTime
         {
-            get { return this._earliestRestorableTime.GetValueOrDefault(); }
+            get { return this._earliestRestorableTime; }
             set { this._earliestRestorableTime = value; }
         }
 
@@ -578,9 +578,9 @@ namespace Amazon.Neptune.Model
         /// accounts is enabled, and otherwise false.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -596,9 +596,9 @@ namespace Amazon.Neptune.Model
         /// The next time you can modify the DB cluster to use the <c>iopt1</c> storage type.
         /// </para>
         /// </summary>
-        public DateTime IOOptimizedNextAllowedModificationTime
+        public DateTime? IOOptimizedNextAllowedModificationTime
         {
-            get { return this._ioOptimizedNextAllowedModificationTime.GetValueOrDefault(); }
+            get { return this._ioOptimizedNextAllowedModificationTime; }
             set { this._ioOptimizedNextAllowedModificationTime = value; }
         }
 
@@ -633,9 +633,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the latest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -669,9 +669,9 @@ namespace Amazon.Neptune.Model
         /// Specifies whether the DB cluster has instances in multiple Availability Zones.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -724,9 +724,9 @@ namespace Amazon.Neptune.Model
         /// Specifies the port that the database engine is listening on.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -886,9 +886,9 @@ namespace Amazon.Neptune.Model
         /// Specifies whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

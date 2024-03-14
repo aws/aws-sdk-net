@@ -85,13 +85,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaximumEventAgeInSeconds())
                 {
                     context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
-                    context.Writer.Write(publicRequest.MaximumEventAgeInSeconds);
+                    context.Writer.Write(publicRequest.MaximumEventAgeInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetMaximumRetryAttempts())
                 {
                     context.Writer.WritePropertyName("MaximumRetryAttempts");
-                    context.Writer.Write(publicRequest.MaximumRetryAttempts);
+                    context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
                 }
 
                 writer.WriteObjectEnd();

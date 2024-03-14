@@ -60,7 +60,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");
-                context.Writer.Write(requestObject.ExpirationTime);
+                context.Writer.Write(requestObject.ExpirationTime.Value);
             }
 
             if(requestObject.IsSetOpenIDAuthTTL())

@@ -53,9 +53,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ForceDetach
+        public bool? ForceDetach
         {
-            get { return this._forceDetach.GetValueOrDefault(); }
+            get { return this._forceDetach; }
             set { this._forceDetach = value; }
         }
 

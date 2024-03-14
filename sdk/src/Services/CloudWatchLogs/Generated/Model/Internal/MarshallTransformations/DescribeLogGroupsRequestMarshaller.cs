@@ -81,13 +81,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeLinkedAccounts())
                 {
                     context.Writer.WritePropertyName("includeLinkedAccounts");
-                    context.Writer.Write(publicRequest.IncludeLinkedAccounts);
+                    context.Writer.Write(publicRequest.IncludeLinkedAccounts.Value);
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetLogGroupClass())

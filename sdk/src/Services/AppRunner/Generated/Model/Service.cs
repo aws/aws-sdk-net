@@ -88,9 +88,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.AppRunner.Model
         /// The time when the App Runner service was deleted. It's in the Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -351,9 +351,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

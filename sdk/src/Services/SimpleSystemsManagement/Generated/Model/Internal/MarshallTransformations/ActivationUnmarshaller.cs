@@ -71,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpirationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Expired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Expired = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,13 +107,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RegistrationLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RegistrationLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegistrationsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RegistrationsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -49,9 +49,9 @@ namespace Amazon.Appflow.Model
         /// the flow run. 
         /// </para>
         /// </summary>
-        public DateTime DataPullEndTime
+        public DateTime? DataPullEndTime
         {
-            get { return this._dataPullEndTime.GetValueOrDefault(); }
+            get { return this._dataPullEndTime; }
             set { this._dataPullEndTime = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Appflow.Model
         /// the flow run. 
         /// </para>
         /// </summary>
-        public DateTime DataPullStartTime
+        public DateTime? DataPullStartTime
         {
-            get { return this._dataPullStartTime.GetValueOrDefault(); }
+            get { return this._dataPullStartTime; }
             set { this._dataPullStartTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies the time of the most recent update. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies the start time of the flow run. 
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

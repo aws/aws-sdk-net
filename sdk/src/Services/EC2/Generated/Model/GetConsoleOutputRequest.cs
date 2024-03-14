@@ -102,9 +102,9 @@ namespace Amazon.EC2.Model
         /// Default: disabled (<c>false</c>)
         /// </para>
         /// </summary>
-        public bool Latest
+        public bool? Latest
         {
-            get { return this._latest.GetValueOrDefault(); }
+            get { return this._latest; }
             set { this._latest = value; }
         }
 

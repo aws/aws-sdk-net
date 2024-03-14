@@ -113,9 +113,9 @@ namespace Amazon.Backup.Model
         /// Returns only recovery points that were created after the specified timestamp.
         /// </para>
         /// </summary>
-        public DateTime ByCreatedAfter
+        public DateTime? ByCreatedAfter
         {
-            get { return this._byCreatedAfter.GetValueOrDefault(); }
+            get { return this._byCreatedAfter; }
             set { this._byCreatedAfter = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.Backup.Model
         /// Returns only recovery points that were created before the specified timestamp.
         /// </para>
         /// </summary>
-        public DateTime ByCreatedBefore
+        public DateTime? ByCreatedBefore
         {
-            get { return this._byCreatedBefore.GetValueOrDefault(); }
+            get { return this._byCreatedBefore; }
             set { this._byCreatedBefore = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

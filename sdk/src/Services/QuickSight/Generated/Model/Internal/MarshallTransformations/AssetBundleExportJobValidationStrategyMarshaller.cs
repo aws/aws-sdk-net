@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStrictModeForAllResources())
             {
                 context.Writer.WritePropertyName("StrictModeForAllResources");
-                context.Writer.Write(requestObject.StrictModeForAllResources);
+                context.Writer.Write(requestObject.StrictModeForAllResources.Value);
             }
 
         }

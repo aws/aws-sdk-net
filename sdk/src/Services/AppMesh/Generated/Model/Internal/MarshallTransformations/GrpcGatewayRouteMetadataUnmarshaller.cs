@@ -65,7 +65,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("invert", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Invert = unmarshaller.Unmarshall(context);
                     continue;
                 }

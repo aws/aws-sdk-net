@@ -77,10 +77,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetAccessGrantsLocationId())
-                    xmlWriter.WriteElementString("AccessGrantsLocationId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.AccessGrantsLocationId));                    
+                    xmlWriter.WriteElementString("AccessGrantsLocationId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.AccessGrantsLocationId));
 
                 if(publicRequest.IsSetApplicationArn())
-                    xmlWriter.WriteElementString("ApplicationArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ApplicationArn));                    
+                    xmlWriter.WriteElementString("ApplicationArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ApplicationArn));
 
                 
                 if (publicRequest.Grantee != null) 
@@ -95,10 +95,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPermission())
-                    xmlWriter.WriteElementString("Permission", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Permission));                    
+                    xmlWriter.WriteElementString("Permission", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Permission));
 
                 if(publicRequest.IsSetS3PrefixType())
-                    xmlWriter.WriteElementString("S3PrefixType", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.S3PrefixType));                    
+                    xmlWriter.WriteElementString("S3PrefixType", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.S3PrefixType));
 
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && publicRequestTags.Count > 0) 

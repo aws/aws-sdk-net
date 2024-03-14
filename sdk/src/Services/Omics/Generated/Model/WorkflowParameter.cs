@@ -61,9 +61,9 @@ namespace Amazon.Omics.Model
         /// Whether the parameter is optional.
         /// </para>
         /// </summary>
-        public bool Optional
+        public bool? Optional
         {
-            get { return this._optional.GetValueOrDefault(); }
+            get { return this._optional; }
             set { this._optional = value; }
         }
 

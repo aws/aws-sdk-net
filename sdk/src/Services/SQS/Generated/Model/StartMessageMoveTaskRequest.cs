@@ -93,9 +93,9 @@ namespace Amazon.SQS.Model
         /// the message movement task.
         /// </para>
         /// </summary>
-        public int MaxNumberOfMessagesPerSecond
+        public int? MaxNumberOfMessagesPerSecond
         {
-            get { return this._maxNumberOfMessagesPerSecond.GetValueOrDefault(); }
+            get { return this._maxNumberOfMessagesPerSecond; }
             set { this._maxNumberOfMessagesPerSecond = value; }
         }
 

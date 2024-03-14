@@ -65,13 +65,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("durationInNanoSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationInNanoSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("expired", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Expired = unmarshaller.Unmarshall(context);
                     continue;
                 }

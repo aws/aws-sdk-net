@@ -89,9 +89,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// If <c>true</c>, DMS loads metadata for the specified objects from the source database.
         /// </para>
         /// </summary>
-        public bool Refresh
+        public bool? Refresh
         {
-            get { return this._refresh.GetValueOrDefault(); }
+            get { return this._refresh; }
             set { this._refresh = value; }
         }
 

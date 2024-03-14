@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThickness())
             {
                 context.Writer.WritePropertyName("Thickness");
-                context.Writer.Write(requestObject.Thickness);
+                context.Writer.Write(requestObject.Thickness.Value);
             }
 
         }

@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AutoUpgrade", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AutoUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IsMajorVersionUpgrade", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IsMajorVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -93,31 +93,31 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportsBabelfish", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsBabelfish = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIntegrations", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsIntegrations = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsLocalWriteForwarding", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsLocalWriteForwarding = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsParallelQuery", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsParallelQuery = unmarshaller.Unmarshall(context);
                         continue;
                     }

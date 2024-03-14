@@ -48,13 +48,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetPreferredMfa())
             {
                 context.Writer.WritePropertyName("PreferredMfa");
-                context.Writer.Write(requestObject.PreferredMfa);
+                context.Writer.Write(requestObject.PreferredMfa.Value);
             }
 
         }

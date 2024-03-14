@@ -48,9 +48,9 @@ namespace Amazon.CodeDeploy.Model
         /// was deregistered.
         /// </para>
         /// </summary>
-        public DateTime DeregisterTime
+        public DateTime? DeregisterTime
         {
-            get { return this._deregisterTime.GetValueOrDefault(); }
+            get { return this._deregisterTime; }
             set { this._deregisterTime = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.CodeDeploy.Model
         /// The time at which the on-premises instance was registered.
         /// </para>
         /// </summary>
-        public DateTime RegisterTime
+        public DateTime? RegisterTime
         {
-            get { return this._registerTime.GetValueOrDefault(); }
+            get { return this._registerTime; }
             set { this._registerTime = value; }
         }
 

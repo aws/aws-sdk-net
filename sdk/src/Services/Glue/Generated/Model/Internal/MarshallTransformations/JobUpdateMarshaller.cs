@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedCapacity())
             {
                 context.Writer.WritePropertyName("AllocatedCapacity");
-                context.Writer.Write(requestObject.AllocatedCapacity);
+                context.Writer.Write(requestObject.AllocatedCapacity.Value);
             }
 
             if(requestObject.IsSetCodeGenConfigurationNodes())
@@ -144,13 +144,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity);
+                context.Writer.Write(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetMaxRetries())
             {
                 context.Writer.WritePropertyName("MaxRetries");
-                context.Writer.Write(requestObject.MaxRetries);
+                context.Writer.Write(requestObject.MaxRetries.Value);
             }
 
             if(requestObject.IsSetNonOverridableArguments())
@@ -181,7 +181,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfWorkers())
             {
                 context.Writer.WritePropertyName("NumberOfWorkers");
-                context.Writer.Write(requestObject.NumberOfWorkers);
+                context.Writer.Write(requestObject.NumberOfWorkers.Value);
             }
 
             if(requestObject.IsSetRole())
@@ -210,7 +210,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout);
+                context.Writer.Write(requestObject.Timeout.Value);
             }
 
             if(requestObject.IsSetWorkerType())

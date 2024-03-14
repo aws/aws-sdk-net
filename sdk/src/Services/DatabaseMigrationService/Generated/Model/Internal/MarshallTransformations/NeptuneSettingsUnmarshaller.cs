@@ -65,25 +65,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ErrorRetryDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorRetryDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IamAuthEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IamAuthEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFileSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxRetryCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRetryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

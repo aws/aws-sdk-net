@@ -48,31 +48,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEarfcn())
             {
                 context.Writer.WritePropertyName("Earfcn");
-                context.Writer.Write(requestObject.Earfcn);
+                context.Writer.Write(requestObject.Earfcn.Value);
             }
 
             if(requestObject.IsSetEutranCid())
             {
                 context.Writer.WritePropertyName("EutranCid");
-                context.Writer.Write(requestObject.EutranCid);
+                context.Writer.Write(requestObject.EutranCid.Value);
             }
 
             if(requestObject.IsSetPci())
             {
                 context.Writer.WritePropertyName("Pci");
-                context.Writer.Write(requestObject.Pci);
+                context.Writer.Write(requestObject.Pci.Value);
             }
 
             if(requestObject.IsSetRsrp())
             {
                 context.Writer.WritePropertyName("Rsrp");
-                context.Writer.Write(requestObject.Rsrp);
+                context.Writer.Write(requestObject.Rsrp.Value);
             }
 
             if(requestObject.IsSetRsrq())
             {
                 context.Writer.WritePropertyName("Rsrq");
-                context.Writer.Write(requestObject.Rsrq);
+                context.Writer.Write(requestObject.Rsrq.Value);
             }
 
         }

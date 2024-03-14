@@ -42,9 +42,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RedriveDate
+        public DateTime? RedriveDate
         {
-            get { return this._redriveDate.GetValueOrDefault(); }
+            get { return this._redriveDate; }
             set { this._redriveDate = value; }
         }
 

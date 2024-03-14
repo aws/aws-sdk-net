@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// status.
         /// </para>
         /// </summary>
-        public long InProgressTimeoutInMinutes
+        public long? InProgressTimeoutInMinutes
         {
-            get { return this._inProgressTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._inProgressTimeoutInMinutes; }
             set { this._inProgressTimeoutInMinutes = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProvisionedThroughputInMibps())
                 {
                     context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
-                    context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                    context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
                 }
 
                 if(publicRequest.IsSetThroughputMode())

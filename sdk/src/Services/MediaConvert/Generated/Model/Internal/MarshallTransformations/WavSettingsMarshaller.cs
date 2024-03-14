@@ -48,13 +48,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("bitDepth");
-                context.Writer.Write(requestObject.BitDepth);
+                context.Writer.Write(requestObject.BitDepth.Value);
             }
 
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("channels");
-                context.Writer.Write(requestObject.Channels);
+                context.Writer.Write(requestObject.Channels.Value);
             }
 
             if(requestObject.IsSetFormat())
@@ -66,7 +66,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                context.Writer.Write(requestObject.SampleRate.Value);
             }
 
         }

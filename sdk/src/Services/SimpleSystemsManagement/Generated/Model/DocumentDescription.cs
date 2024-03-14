@@ -163,9 +163,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when the document was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

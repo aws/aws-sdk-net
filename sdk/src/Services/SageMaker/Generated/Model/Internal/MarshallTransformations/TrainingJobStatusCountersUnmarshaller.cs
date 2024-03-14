@@ -65,31 +65,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Completed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Completed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InProgress", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonRetryableError", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonRetryableError = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RetryableError", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryableError = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Stopped", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }

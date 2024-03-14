@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("active", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("firstSeen", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FirstSeen = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,13 +101,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isPatternLevelSuppression", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPatternLevelSuppression = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastSeen", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastSeen = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -161,19 +161,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("suppressed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Suppressed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("suppressedDate", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SuppressedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("suppressedUntil", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SuppressedUntil = unmarshaller.Unmarshall(context);
                     continue;
                 }

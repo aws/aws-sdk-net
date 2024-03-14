@@ -48,9 +48,9 @@ namespace Amazon.FraudDetector.Model
         /// 
         /// </para>
         /// </summary>
-        public float Adr
+        public float? Adr
         {
-            get { return this._adr.GetValueOrDefault(); }
+            get { return this._adr; }
             set { this._adr = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.FraudDetector.Model
         /// takeover event is present in the ingested dataset. 
         /// </para>
         /// </summary>
-        public float Atodr
+        public float? Atodr
         {
-            get { return this._atodr.GetValueOrDefault(); }
+            get { return this._atodr; }
             set { this._atodr = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.FraudDetector.Model
         /// investigations. 
         /// </para>
         /// </summary>
-        public float Cr
+        public float? Cr
         {
-            get { return this._cr.GetValueOrDefault(); }
+            get { return this._cr; }
             set { this._cr = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.FraudDetector.Model
         /// a threshold of 500 means any model score 500 or above is labeled as fraud. 
         /// </para>
         /// </summary>
-        public float Threshold
+        public float? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

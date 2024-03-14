@@ -98,9 +98,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LatencyMs. The Link device's buffer size (latency) in milliseconds
         /// (ms).
         /// </summary>
-        public int LatencyMs
+        public int? LatencyMs
         {
-            get { return this._latencyMs.GetValueOrDefault(); }
+            get { return this._latencyMs; }
             set { this._latencyMs = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaxBitrate. The maximum bitrate in bits per second. Set
         /// a value here to throttle the bitrate of the source video.
         /// </summary>
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 

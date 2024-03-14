@@ -48,13 +48,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnable())
             {
                 context.Writer.WritePropertyName("enable");
-                context.Writer.Write(requestObject.Enable);
+                context.Writer.Write(requestObject.Enable.Value);
             }
 
             if(requestObject.IsSetRollback())
             {
                 context.Writer.WritePropertyName("rollback");
-                context.Writer.Write(requestObject.Rollback);
+                context.Writer.Write(requestObject.Rollback.Value);
             }
 
         }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodePipeline")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

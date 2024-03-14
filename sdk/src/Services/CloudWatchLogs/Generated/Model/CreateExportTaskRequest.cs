@@ -124,9 +124,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long From
+        public long? From
         {
-            get { return this._from.GetValueOrDefault(); }
+            get { return this._from; }
             set { this._from = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long To
+        public long? To
         {
-            get { return this._to.GetValueOrDefault(); }
+            get { return this._to; }
             set { this._to = value; }
         }
 

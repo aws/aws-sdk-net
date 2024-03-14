@@ -65,19 +65,19 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Decrypt", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Decrypt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KeyAgreement", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.KeyAgreement = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sign", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Sign = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -50,9 +50,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.ElastiCache.Model
         /// is the number of replica nodes in each of the replication group's node groups.
         /// </para>
         /// </summary>
-        public int NewReplicaCount
+        public int? NewReplicaCount
         {
-            get { return this._newReplicaCount.GetValueOrDefault(); }
+            get { return this._newReplicaCount; }
             set { this._newReplicaCount = value; }
         }
 

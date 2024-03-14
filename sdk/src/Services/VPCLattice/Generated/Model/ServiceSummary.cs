@@ -67,9 +67,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the service was created, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the service was last updated. The format is ISO-8601.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

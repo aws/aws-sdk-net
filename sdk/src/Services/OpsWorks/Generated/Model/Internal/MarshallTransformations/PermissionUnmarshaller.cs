@@ -65,13 +65,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowSsh", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowSsh = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AllowSudo", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowSudo = unmarshaller.Unmarshall(context);
                     continue;
                 }

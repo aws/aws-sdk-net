@@ -114,9 +114,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1800)]
-        public int TimeoutSeconds
+        public int? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 

@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpPutResponseHopLimit())
             {
                 context.Writer.WritePropertyName("HttpPutResponseHopLimit");
-                context.Writer.Write(requestObject.HttpPutResponseHopLimit);
+                context.Writer.Write(requestObject.HttpPutResponseHopLimit.Value);
             }
 
             if(requestObject.IsSetHttpTokens())

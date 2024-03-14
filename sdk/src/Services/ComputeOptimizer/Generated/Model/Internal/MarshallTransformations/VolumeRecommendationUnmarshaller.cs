@@ -95,13 +95,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lookBackPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

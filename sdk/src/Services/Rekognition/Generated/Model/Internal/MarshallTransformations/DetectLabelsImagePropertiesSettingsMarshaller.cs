@@ -48,7 +48,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDominantColors())
             {
                 context.Writer.WritePropertyName("MaxDominantColors");
-                context.Writer.Write(requestObject.MaxDominantColors);
+                context.Writer.Write(requestObject.MaxDominantColors.Value);
             }
 
         }

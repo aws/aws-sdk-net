@@ -138,9 +138,9 @@ namespace Amazon.DirectConnect.Model
         /// to be operational.
         /// </para>
         /// </summary>
-        public int MinimumLinks
+        public int? MinimumLinks
         {
-            get { return this._minimumLinks.GetValueOrDefault(); }
+            get { return this._minimumLinks; }
             set { this._minimumLinks = value; }
         }
 

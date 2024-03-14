@@ -65,25 +65,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("all", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.All = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("critical", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Critical = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("high", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.High = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("medium", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Medium = unmarshaller.Unmarshall(context);
                     continue;
                 }

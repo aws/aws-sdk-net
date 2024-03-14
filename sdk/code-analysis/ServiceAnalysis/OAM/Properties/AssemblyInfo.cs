@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.OAM")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - CloudWatch Observability Access Manager. Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - CloudWatch Observability Access Manager. Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

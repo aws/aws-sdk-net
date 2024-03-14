@@ -57,19 +57,19 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Date", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Date = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Days", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ExpiredObjectDeleteMarker", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ExpiredObjectDeleteMarker = unmarshaller.Unmarshall(context);
                         continue;
                     }

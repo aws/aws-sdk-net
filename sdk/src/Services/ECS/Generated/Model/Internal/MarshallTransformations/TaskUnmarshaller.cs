@@ -101,7 +101,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("connectivityAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectivityAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableExecuteCommand", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,7 +149,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("executionStoppedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExecutionStoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -209,19 +209,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pullStartedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PullStartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pullStoppedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PullStoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -239,7 +239,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stoppedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -251,7 +251,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stoppingAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StoppingAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -275,7 +275,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("version", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }

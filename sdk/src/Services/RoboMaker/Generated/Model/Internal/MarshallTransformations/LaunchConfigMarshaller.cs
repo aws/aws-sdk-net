@@ -96,7 +96,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStreamUI())
             {
                 context.Writer.WritePropertyName("streamUI");
-                context.Writer.Write(requestObject.StreamUI);
+                context.Writer.Write(requestObject.StreamUI.Value);
             }
 
         }

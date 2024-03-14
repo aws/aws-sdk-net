@@ -71,7 +71,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

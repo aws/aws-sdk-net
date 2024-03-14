@@ -65,13 +65,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("achievableRpoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AchievableRpoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("achievableRtoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AchievableRtoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("currentRpoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentRpoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("currentRtoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentRtoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }

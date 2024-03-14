@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// IP addresses</a> in the <i>Wavelength Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool AssociateCarrierIpAddress
+        public bool? AssociateCarrierIpAddress
         {
-            get { return this._associateCarrierIpAddress.GetValueOrDefault(); }
+            get { return this._associateCarrierIpAddress; }
             set { this._associateCarrierIpAddress = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.EC2.Model
         /// <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
         /// </para>
         /// </summary>
-        public bool AssociatePublicIpAddress
+        public bool? AssociatePublicIpAddress
         {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            get { return this._associatePublicIpAddress; }
             set { this._associatePublicIpAddress = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the network interface is deleted when the instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.EC2.Model
         /// The device index for the network interface attachment.
         /// </para>
         /// </summary>
-        public int DeviceIndex
+        public int? DeviceIndex
         {
-            get { return this._deviceIndex.GetValueOrDefault(); }
+            get { return this._deviceIndex; }
             set { this._deviceIndex = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.EC2.Model
         /// You cannot use this option if you use the <c>Ipv4Prefix</c> option.
         /// </para>
         /// </summary>
-        public int Ipv4PrefixCount
+        public int? Ipv4PrefixCount
         {
-            get { return this._ipv4PrefixCount.GetValueOrDefault(); }
+            get { return this._ipv4PrefixCount; }
             set { this._ipv4PrefixCount = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.EC2.Model
         /// specific IPv6 addresses.
         /// </para>
         /// </summary>
-        public int Ipv6AddressCount
+        public int? Ipv6AddressCount
         {
-            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            get { return this._ipv6AddressCount; }
             set { this._ipv6AddressCount = value; }
         }
 
@@ -329,9 +329,9 @@ namespace Amazon.EC2.Model
         /// You cannot use this option if you use the <c>Ipv6Prefix</c> option.
         /// </para>
         /// </summary>
-        public int Ipv6PrefixCount
+        public int? Ipv6PrefixCount
         {
-            get { return this._ipv6PrefixCount.GetValueOrDefault(); }
+            get { return this._ipv6PrefixCount; }
             set { this._ipv6PrefixCount = value; }
         }
 
@@ -368,9 +368,9 @@ namespace Amazon.EC2.Model
         /// is network card index 0.
         /// </para>
         /// </summary>
-        public int NetworkCardIndex
+        public int? NetworkCardIndex
         {
-            get { return this._networkCardIndex.GetValueOrDefault(); }
+            get { return this._networkCardIndex; }
             set { this._networkCardIndex = value; }
         }
 
@@ -407,9 +407,9 @@ namespace Amazon.EC2.Model
         /// about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.
         /// </para>
         /// </summary>
-        public bool PrimaryIpv6
+        public bool? PrimaryIpv6
         {
-            get { return this._primaryIpv6.GetValueOrDefault(); }
+            get { return this._primaryIpv6; }
             set { this._primaryIpv6 = value; }
         }
 
@@ -461,9 +461,9 @@ namespace Amazon.EC2.Model
         /// The number of secondary private IPv4 addresses to assign to a network interface.
         /// </para>
         /// </summary>
-        public int SecondaryPrivateIpAddressCount
+        public int? SecondaryPrivateIpAddressCount
         {
-            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            get { return this._secondaryPrivateIpAddressCount; }
             set { this._secondaryPrivateIpAddressCount = value; }
         }
 

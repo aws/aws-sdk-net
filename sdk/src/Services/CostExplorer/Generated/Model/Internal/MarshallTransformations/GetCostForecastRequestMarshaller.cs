@@ -93,7 +93,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPredictionIntervalLevel())
                 {
                     context.Writer.WritePropertyName("PredictionIntervalLevel");
-                    context.Writer.Write(publicRequest.PredictionIntervalLevel);
+                    context.Writer.Write(publicRequest.PredictionIntervalLevel.Value);
                 }
 
                 if(publicRequest.IsSetTimePeriod())

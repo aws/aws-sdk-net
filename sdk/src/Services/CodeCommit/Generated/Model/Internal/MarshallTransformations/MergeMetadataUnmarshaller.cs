@@ -65,7 +65,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isMerged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsMerged = unmarshaller.Unmarshall(context);
                     continue;
                 }

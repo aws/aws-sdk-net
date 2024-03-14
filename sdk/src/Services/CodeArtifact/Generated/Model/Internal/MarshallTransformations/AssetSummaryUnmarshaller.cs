@@ -77,7 +77,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("size", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

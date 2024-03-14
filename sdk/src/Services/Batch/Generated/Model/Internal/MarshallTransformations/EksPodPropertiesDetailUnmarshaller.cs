@@ -77,7 +77,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("hostNetwork", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
                     continue;
                 }

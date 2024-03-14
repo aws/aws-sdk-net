@@ -97,9 +97,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int MaxCapacityBuffer
+        public int? MaxCapacityBuffer
         {
-            get { return this._maxCapacityBuffer.GetValueOrDefault(); }
+            get { return this._maxCapacityBuffer; }
             set { this._maxCapacityBuffer = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int SchedulingBufferTime
+        public int? SchedulingBufferTime
         {
-            get { return this._schedulingBufferTime.GetValueOrDefault(); }
+            get { return this._schedulingBufferTime; }
             set { this._schedulingBufferTime = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ProactiveInsights
+        public int? ProactiveInsights
         {
-            get { return this._proactiveInsights.GetValueOrDefault(); }
+            get { return this._proactiveInsights; }
             set { this._proactiveInsights = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ReactiveInsights
+        public int? ReactiveInsights
         {
-            get { return this._reactiveInsights.GetValueOrDefault(); }
+            get { return this._reactiveInsights; }
             set { this._reactiveInsights = value; }
         }
 

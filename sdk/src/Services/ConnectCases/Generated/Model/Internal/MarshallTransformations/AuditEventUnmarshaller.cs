@@ -83,7 +83,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("performedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PerformedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

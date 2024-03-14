@@ -115,9 +115,9 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=43200)]
-        public long DurationSeconds
+        public long? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

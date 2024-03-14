@@ -83,7 +83,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InstanceMemory", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.InstanceMemory = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,19 +95,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InstanceVcpu", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.InstanceVcpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageIops", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageIops = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

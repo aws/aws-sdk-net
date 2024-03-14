@@ -42,9 +42,9 @@ namespace Amazon.GuardDuty.Model
         /// The port number of the remote connection.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

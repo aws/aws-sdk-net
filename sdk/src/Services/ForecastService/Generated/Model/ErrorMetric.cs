@@ -65,9 +65,9 @@ namespace Amazon.ForecastService.Model
         /// The Mean Absolute Percentage Error (MAPE)
         /// </para>
         /// </summary>
-        public double MAPE
+        public double? MAPE
         {
-            get { return this._mape.GetValueOrDefault(); }
+            get { return this._mape; }
             set { this._mape = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.ForecastService.Model
         /// The Mean Absolute Scaled Error (MASE)
         /// </para>
         /// </summary>
-        public double MASE
+        public double? MASE
         {
-            get { return this._mase.GetValueOrDefault(); }
+            get { return this._mase; }
             set { this._mase = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.ForecastService.Model
         ///  The root-mean-square error (RMSE). 
         /// </para>
         /// </summary>
-        public double RMSE
+        public double? RMSE
         {
-            get { return this._rmse.GetValueOrDefault(); }
+            get { return this._rmse; }
             set { this._rmse = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.ForecastService.Model
         ///  The weighted absolute percentage error (WAPE). 
         /// </para>
         /// </summary>
-        public double WAPE
+        public double? WAPE
         {
-            get { return this._wape.GetValueOrDefault(); }
+            get { return this._wape; }
             set { this._wape = value; }
         }
 

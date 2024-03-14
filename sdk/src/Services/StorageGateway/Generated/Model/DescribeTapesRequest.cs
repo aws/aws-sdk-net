@@ -79,9 +79,9 @@ namespace Amazon.StorageGateway.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

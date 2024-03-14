@@ -70,9 +70,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SageMaker.Model
         /// container.
         /// </para>
         /// </summary>
-        public bool EnableNetworkIsolation
+        public bool? EnableNetworkIsolation
         {
-            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            get { return this._enableNetworkIsolation; }
             set { this._enableNetworkIsolation = value; }
         }
 

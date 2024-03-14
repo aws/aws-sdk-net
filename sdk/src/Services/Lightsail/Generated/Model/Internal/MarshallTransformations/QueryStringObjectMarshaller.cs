@@ -48,7 +48,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOption())
             {
                 context.Writer.WritePropertyName("option");
-                context.Writer.Write(requestObject.Option);
+                context.Writer.Write(requestObject.Option.Value);
             }
 
             if(requestObject.IsSetQueryStringsAllowList())

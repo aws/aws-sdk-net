@@ -71,7 +71,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Cpu", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Memory", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MemoryReservation", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryReservation = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -74,7 +74,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisableAllLogs())
                 {
                     context.Writer.WritePropertyName("disableAllLogs");
-                    context.Writer.Write(publicRequest.DisableAllLogs);
+                    context.Writer.Write(publicRequest.DisableAllLogs.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

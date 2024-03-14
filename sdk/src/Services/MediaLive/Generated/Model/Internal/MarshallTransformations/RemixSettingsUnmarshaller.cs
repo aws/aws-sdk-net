@@ -71,13 +71,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("channelsIn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ChannelsIn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("channelsOut", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ChannelsOut = unmarshaller.Unmarshall(context);
                     continue;
                 }

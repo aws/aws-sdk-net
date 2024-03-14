@@ -41,9 +41,9 @@ namespace Amazon.RestJsonTest.Model
         ///  Timeout in seconds 
         /// </para>
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

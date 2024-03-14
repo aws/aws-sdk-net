@@ -65,7 +65,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("evaluated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Evaluated = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("matched", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Matched = unmarshaller.Unmarshall(context);
                     continue;
                 }

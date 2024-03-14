@@ -50,9 +50,9 @@ namespace Amazon.SageMaker.Model
         /// you can't specify the <c>StringValue</c> parameter.
         /// </para>
         /// </summary>
-        public double NumberValue
+        public double? NumberValue
         {
-            get { return this._numberValue.GetValueOrDefault(); }
+            get { return this._numberValue; }
             set { this._numberValue = value; }
         }
 

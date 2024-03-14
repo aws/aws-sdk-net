@@ -48,13 +48,13 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfNotifiedThings())
             {
                 context.Writer.WritePropertyName("numberOfNotifiedThings");
-                context.Writer.Write(requestObject.NumberOfNotifiedThings);
+                context.Writer.Write(requestObject.NumberOfNotifiedThings.Value);
             }
 
             if(requestObject.IsSetNumberOfSucceededThings())
             {
                 context.Writer.WritePropertyName("numberOfSucceededThings");
-                context.Writer.Write(requestObject.NumberOfSucceededThings);
+                context.Writer.Write(requestObject.NumberOfSucceededThings.Value);
             }
 
         }

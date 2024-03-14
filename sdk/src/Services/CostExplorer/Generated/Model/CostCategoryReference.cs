@@ -145,9 +145,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumberOfRules
+        public int? NumberOfRules
         {
-            get { return this._numberOfRules.GetValueOrDefault(); }
+            get { return this._numberOfRules; }
             set { this._numberOfRules = value; }
         }
 

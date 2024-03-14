@@ -60,7 +60,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.Write(requestObject.EncryptionDisabled);
+                context.Writer.Write(requestObject.EncryptionDisabled.Value);
             }
 
             if(requestObject.IsSetLocation())
@@ -84,7 +84,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverrideArtifactName())
             {
                 context.Writer.WritePropertyName("overrideArtifactName");
-                context.Writer.Write(requestObject.OverrideArtifactName);
+                context.Writer.Write(requestObject.OverrideArtifactName.Value);
             }
 
             if(requestObject.IsSetPackaging())

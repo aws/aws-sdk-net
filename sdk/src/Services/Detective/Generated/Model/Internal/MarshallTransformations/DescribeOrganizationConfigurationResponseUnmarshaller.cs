@@ -53,7 +53,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoEnable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoEnable = unmarshaller.Unmarshall(context);
                     continue;
                 }

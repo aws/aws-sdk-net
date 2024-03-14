@@ -48,7 +48,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableRegexInPath())
             {
                 context.Writer.WritePropertyName("EnableRegexInPath");
-                context.Writer.Write(requestObject.EnableRegexInPath);
+                context.Writer.Write(requestObject.EnableRegexInPath.Value);
             }
 
             if(requestObject.IsSetLoginPath())

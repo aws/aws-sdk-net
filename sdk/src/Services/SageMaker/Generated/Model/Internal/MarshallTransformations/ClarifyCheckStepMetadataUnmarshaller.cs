@@ -95,13 +95,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RegisterNewBaseline", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RegisterNewBaseline = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SkipCheck", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SkipCheck = unmarshaller.Unmarshall(context);
                     continue;
                 }

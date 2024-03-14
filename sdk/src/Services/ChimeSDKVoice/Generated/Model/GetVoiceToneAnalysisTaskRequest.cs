@@ -46,9 +46,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsCaller
+        public bool? IsCaller
         {
-            get { return this._isCaller.GetValueOrDefault(); }
+            get { return this._isCaller; }
             set { this._isCaller = value; }
         }
 

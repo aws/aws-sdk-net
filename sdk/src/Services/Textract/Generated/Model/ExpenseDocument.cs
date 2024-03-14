@@ -65,9 +65,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ExpenseIndex
+        public int? ExpenseIndex
         {
-            get { return this._expenseIndex.GetValueOrDefault(); }
+            get { return this._expenseIndex; }
             set { this._expenseIndex = value; }
         }
 

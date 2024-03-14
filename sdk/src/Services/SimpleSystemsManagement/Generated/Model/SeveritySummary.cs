@@ -49,9 +49,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// items.
         /// </para>
         /// </summary>
-        public int CriticalCount
+        public int? CriticalCount
         {
-            get { return this._criticalCount.GetValueOrDefault(); }
+            get { return this._criticalCount; }
             set { this._criticalCount = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// High severity is determined by the organization that published the compliance items.
         /// </para>
         /// </summary>
-        public int HighCount
+        public int? HighCount
         {
-            get { return this._highCount.GetValueOrDefault(); }
+            get { return this._highCount; }
             set { this._highCount = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// items.
         /// </para>
         /// </summary>
-        public int InformationalCount
+        public int? InformationalCount
         {
-            get { return this._informationalCount.GetValueOrDefault(); }
+            get { return this._informationalCount; }
             set { this._informationalCount = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Low severity is determined by the organization that published the compliance items.
         /// </para>
         /// </summary>
-        public int LowCount
+        public int? LowCount
         {
-            get { return this._lowCount.GetValueOrDefault(); }
+            get { return this._lowCount; }
             set { this._lowCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Medium severity is determined by the organization that published the compliance items.
         /// </para>
         /// </summary>
-        public int MediumCount
+        public int? MediumCount
         {
-            get { return this._mediumCount.GetValueOrDefault(); }
+            get { return this._mediumCount; }
             set { this._mediumCount = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// items.
         /// </para>
         /// </summary>
-        public int UnspecifiedCount
+        public int? UnspecifiedCount
         {
-            get { return this._unspecifiedCount.GetValueOrDefault(); }
+            get { return this._unspecifiedCount; }
             set { this._unspecifiedCount = value; }
         }
 

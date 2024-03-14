@@ -170,9 +170,9 @@ namespace Amazon.Synthetics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
-        public int FailureRetentionPeriodInDays
+        public int? FailureRetentionPeriodInDays
         {
-            get { return this._failureRetentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._failureRetentionPeriodInDays; }
             set { this._failureRetentionPeriodInDays = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.Synthetics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
-        public int SuccessRetentionPeriodInDays
+        public int? SuccessRetentionPeriodInDays
         {
-            get { return this._successRetentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._successRetentionPeriodInDays; }
             set { this._successRetentionPeriodInDays = value; }
         }
 

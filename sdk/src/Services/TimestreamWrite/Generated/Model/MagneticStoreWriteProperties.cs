@@ -43,9 +43,9 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableMagneticStoreWrites
+        public bool? EnableMagneticStoreWrites
         {
-            get { return this._enableMagneticStoreWrites.GetValueOrDefault(); }
+            get { return this._enableMagneticStoreWrites; }
             set { this._enableMagneticStoreWrites = value; }
         }
 

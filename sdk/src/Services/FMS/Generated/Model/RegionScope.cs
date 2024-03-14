@@ -44,9 +44,9 @@ namespace Amazon.FMS.Model
         /// Regions.
         /// </para>
         /// </summary>
-        public bool AllRegionsEnabled
+        public bool? AllRegionsEnabled
         {
-            get { return this._allRegionsEnabled.GetValueOrDefault(); }
+            get { return this._allRegionsEnabled; }
             set { this._allRegionsEnabled = value; }
         }
 

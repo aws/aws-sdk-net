@@ -43,9 +43,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// TRUE if multiple test suites run in parallel.
         /// </para>
         /// </summary>
-        public bool ParallelRun
+        public bool? ParallelRun
         {
-            get { return this._parallelRun.GetValueOrDefault(); }
+            get { return this._parallelRun; }
             set { this._parallelRun = value; }
         }
 

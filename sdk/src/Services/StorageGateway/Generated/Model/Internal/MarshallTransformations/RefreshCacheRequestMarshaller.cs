@@ -87,7 +87,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRecursive())
                 {
                     context.Writer.WritePropertyName("Recursive");
-                    context.Writer.Write(publicRequest.Recursive);
+                    context.Writer.Write(publicRequest.Recursive.Value);
                 }
 
                 writer.WriteObjectEnd();

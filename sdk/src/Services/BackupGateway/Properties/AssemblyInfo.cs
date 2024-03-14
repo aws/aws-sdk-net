@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.BackupGateway")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Backup Gateway. Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Backup Gateway. Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Backup Gateway. Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Backup Gateway. Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.")]
 #elif NETCOREAPP3_1

@@ -65,7 +65,7 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("OriginalTextCharacters", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OriginalTextCharacters = unmarshaller.Unmarshall(context);
                     continue;
                 }

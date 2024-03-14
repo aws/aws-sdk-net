@@ -113,13 +113,13 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("shardCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShardCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("shardCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShardCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

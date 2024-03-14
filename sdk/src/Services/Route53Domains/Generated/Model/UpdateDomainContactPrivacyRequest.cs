@@ -83,9 +83,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AdminPrivacy
+        public bool? AdminPrivacy
         {
-            get { return this._adminPrivacy.GetValueOrDefault(); }
+            get { return this._adminPrivacy; }
             set { this._adminPrivacy = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BillingPrivacy
+        public bool? BillingPrivacy
         {
-            get { return this._billingPrivacy.GetValueOrDefault(); }
+            get { return this._billingPrivacy; }
             set { this._billingPrivacy = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool RegistrantPrivacy
+        public bool? RegistrantPrivacy
         {
-            get { return this._registrantPrivacy.GetValueOrDefault(); }
+            get { return this._registrantPrivacy; }
             set { this._registrantPrivacy = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool TechPrivacy
+        public bool? TechPrivacy
         {
-            get { return this._techPrivacy.GetValueOrDefault(); }
+            get { return this._techPrivacy; }
             set { this._techPrivacy = value; }
         }
 

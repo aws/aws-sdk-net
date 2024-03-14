@@ -124,9 +124,9 @@ namespace Amazon.IVS.Model
         /// The expected ingest bitrate (bits per second). This is configured in the encoder.
         /// </para>
         /// </summary>
-        public long TargetBitrate
+        public long? TargetBitrate
         {
-            get { return this._targetBitrate.GetValueOrDefault(); }
+            get { return this._targetBitrate; }
             set { this._targetBitrate = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.IVS.Model
         /// The expected ingest framerate. This is configured in the encoder.
         /// </para>
         /// </summary>
-        public long TargetFramerate
+        public long? TargetFramerate
         {
-            get { return this._targetFramerate.GetValueOrDefault(); }
+            get { return this._targetFramerate; }
             set { this._targetFramerate = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.IVS.Model
         /// Video-resolution height in pixels.
         /// </para>
         /// </summary>
-        public long VideoHeight
+        public long? VideoHeight
         {
-            get { return this._videoHeight.GetValueOrDefault(); }
+            get { return this._videoHeight; }
             set { this._videoHeight = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.IVS.Model
         /// Video-resolution width in pixels.
         /// </para>
         /// </summary>
-        public long VideoWidth
+        public long? VideoWidth
         {
-            get { return this._videoWidth.GetValueOrDefault(); }
+            get { return this._videoWidth; }
             set { this._videoWidth = value; }
         }
 

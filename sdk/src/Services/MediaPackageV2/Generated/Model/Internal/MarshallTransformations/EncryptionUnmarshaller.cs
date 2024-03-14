@@ -77,7 +77,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("KeyRotationIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KeyRotationIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

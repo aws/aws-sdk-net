@@ -65,13 +65,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowCookies", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowCookies = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableXRay", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableXRay = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SessionSampleRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SessionSampleRate = unmarshaller.Unmarshall(context);
                     continue;
                 }

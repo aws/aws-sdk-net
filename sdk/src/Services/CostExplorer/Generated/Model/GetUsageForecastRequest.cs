@@ -221,9 +221,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=51, Max=99)]
-        public int PredictionIntervalLevel
+        public int? PredictionIntervalLevel
         {
-            get { return this._predictionIntervalLevel.GetValueOrDefault(); }
+            get { return this._predictionIntervalLevel; }
             set { this._predictionIntervalLevel = value; }
         }
 

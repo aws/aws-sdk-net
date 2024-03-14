@@ -46,9 +46,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// is a management account of an organization.
         /// </para>
         /// </summary>
-        public bool MemberAccountsEnrolled
+        public bool? MemberAccountsEnrolled
         {
-            get { return this._memberAccountsEnrolled.GetValueOrDefault(); }
+            get { return this._memberAccountsEnrolled; }
             set { this._memberAccountsEnrolled = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// account is an organization management account.
         /// </para>
         /// </summary>
-        public int NumberOfMemberAccountsOptedIn
+        public int? NumberOfMemberAccountsOptedIn
         {
-            get { return this._numberOfMemberAccountsOptedIn.GetValueOrDefault(); }
+            get { return this._numberOfMemberAccountsOptedIn; }
             set { this._numberOfMemberAccountsOptedIn = value; }
         }
 

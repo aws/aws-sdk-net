@@ -194,9 +194,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=200, Max=599)]
-        public int ResponseCodeSent
+        public int? ResponseCodeSent
         {
-            get { return this._responseCodeSent.GetValueOrDefault(); }
+            get { return this._responseCodeSent; }
             set { this._responseCodeSent = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.WAFV2.Model
         /// in Unix time format (in seconds).
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Weight
+        public long? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

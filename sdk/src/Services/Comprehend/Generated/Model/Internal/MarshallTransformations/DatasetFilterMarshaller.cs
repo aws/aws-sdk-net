@@ -48,13 +48,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationTimeAfter())
             {
                 context.Writer.WritePropertyName("CreationTimeAfter");
-                context.Writer.Write(requestObject.CreationTimeAfter);
+                context.Writer.Write(requestObject.CreationTimeAfter.Value);
             }
 
             if(requestObject.IsSetCreationTimeBefore())
             {
                 context.Writer.WritePropertyName("CreationTimeBefore");
-                context.Writer.Write(requestObject.CreationTimeBefore);
+                context.Writer.Write(requestObject.CreationTimeBefore.Value);
             }
 
             if(requestObject.IsSetDatasetType())

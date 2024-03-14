@@ -87,9 +87,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ConfigRuleInvokedTime
+        public DateTime? ConfigRuleInvokedTime
         {
-            get { return this._configRuleInvokedTime.GetValueOrDefault(); }
+            get { return this._configRuleInvokedTime; }
             set { this._configRuleInvokedTime = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ResultRecordedTime
+        public DateTime? ResultRecordedTime
         {
-            get { return this._resultRecordedTime.GetValueOrDefault(); }
+            get { return this._resultRecordedTime; }
             set { this._resultRecordedTime = value; }
         }
 

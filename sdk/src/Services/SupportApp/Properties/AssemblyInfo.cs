@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SupportApp")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Support App. This is the initial SDK release for the AWS Support App in Slack.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Support App. This is the initial SDK release for the AWS Support App in Slack.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Support App. This is the initial SDK release for the AWS Support App in Slack.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Support App. This is the initial SDK release for the AWS Support App in Slack.")]
 #elif NETCOREAPP3_1

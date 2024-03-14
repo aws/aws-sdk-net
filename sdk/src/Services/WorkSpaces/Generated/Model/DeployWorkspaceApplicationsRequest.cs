@@ -44,9 +44,9 @@ namespace Amazon.WorkSpaces.Model
         /// force flag is enabled, it allows previously failed deployments to be retried.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

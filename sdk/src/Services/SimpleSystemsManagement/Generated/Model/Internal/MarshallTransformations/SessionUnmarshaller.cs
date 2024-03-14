@@ -77,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// Enable metrics for your data quality results.
         /// </para>
         /// </summary>
-        public bool CloudWatchMetricsEnabled
+        public bool? CloudWatchMetricsEnabled
         {
-            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchMetricsEnabled; }
             set { this._cloudWatchMetricsEnabled = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Glue.Model
         /// Enable publishing for your data quality results.
         /// </para>
         /// </summary>
-        public bool ResultsPublishingEnabled
+        public bool? ResultsPublishingEnabled
         {
-            get { return this._resultsPublishingEnabled.GetValueOrDefault(); }
+            get { return this._resultsPublishingEnabled; }
             set { this._resultsPublishingEnabled = value; }
         }
 

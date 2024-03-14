@@ -158,7 +158,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeoutInMillis())
                 {
                     context.Writer.WritePropertyName("timeoutInMillis");
-                    context.Writer.Write(publicRequest.TimeoutInMillis);
+                    context.Writer.Write(publicRequest.TimeoutInMillis.Value);
                 }
 
                 if(publicRequest.IsSetTlsConfig())

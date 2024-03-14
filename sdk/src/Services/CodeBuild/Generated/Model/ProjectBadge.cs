@@ -42,9 +42,9 @@ namespace Amazon.CodeBuild.Model
         /// Set this to true to generate a publicly accessible URL for your project's build badge.
         /// </para>
         /// </summary>
-        public bool BadgeEnabled
+        public bool? BadgeEnabled
         {
-            get { return this._badgeEnabled.GetValueOrDefault(); }
+            get { return this._badgeEnabled; }
             set { this._badgeEnabled = value; }
         }
 

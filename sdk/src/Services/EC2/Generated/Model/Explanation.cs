@@ -503,9 +503,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int LoadBalancerListenerPort
+        public int? LoadBalancerListenerPort
         {
-            get { return this._loadBalancerListenerPort.GetValueOrDefault(); }
+            get { return this._loadBalancerListenerPort; }
             set { this._loadBalancerListenerPort = value; }
         }
 
@@ -576,9 +576,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int LoadBalancerTargetPort
+        public int? LoadBalancerTargetPort
         {
-            get { return this._loadBalancerTargetPort.GetValueOrDefault(); }
+            get { return this._loadBalancerTargetPort; }
             set { this._loadBalancerTargetPort = value; }
         }
 
@@ -667,9 +667,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

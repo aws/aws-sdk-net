@@ -65,19 +65,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("creationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("credentialDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CredentialDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastModifiedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

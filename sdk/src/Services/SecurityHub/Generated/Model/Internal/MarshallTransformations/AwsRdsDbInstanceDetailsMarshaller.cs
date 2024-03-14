@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage);
+                context.Writer.Write(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetAssociatedRoles())
@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoMinorVersionUpgrade())
             {
                 context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                context.Writer.Write(requestObject.AutoMinorVersionUpgrade);
+                context.Writer.Write(requestObject.AutoMinorVersionUpgrade.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
@@ -82,7 +82,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackupRetentionPeriod())
             {
                 context.Writer.WritePropertyName("BackupRetentionPeriod");
-                context.Writer.Write(requestObject.BackupRetentionPeriod);
+                context.Writer.Write(requestObject.BackupRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetCACertificateIdentifier())
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTagsToSnapshot())
             {
                 context.Writer.WritePropertyName("CopyTagsToSnapshot");
-                context.Writer.Write(requestObject.CopyTagsToSnapshot);
+                context.Writer.Write(requestObject.CopyTagsToSnapshot.Value);
             }
 
             if(requestObject.IsSetDBClusterIdentifier())
@@ -124,7 +124,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDbInstancePort())
             {
                 context.Writer.WritePropertyName("DbInstancePort");
-                context.Writer.Write(requestObject.DbInstancePort);
+                context.Writer.Write(requestObject.DbInstancePort.Value);
             }
 
             if(requestObject.IsSetDbInstanceStatus())
@@ -186,7 +186,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeletionProtection())
             {
                 context.Writer.WritePropertyName("DeletionProtection");
-                context.Writer.Write(requestObject.DeletionProtection);
+                context.Writer.Write(requestObject.DeletionProtection.Value);
             }
 
             if(requestObject.IsSetDomainMemberships())
@@ -248,7 +248,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIAMDatabaseAuthenticationEnabled())
             {
                 context.Writer.WritePropertyName("IAMDatabaseAuthenticationEnabled");
-                context.Writer.Write(requestObject.IAMDatabaseAuthenticationEnabled);
+                context.Writer.Write(requestObject.IAMDatabaseAuthenticationEnabled.Value);
             }
 
             if(requestObject.IsSetInstanceCreateTime())
@@ -260,7 +260,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -301,13 +301,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAllocatedStorage())
             {
                 context.Writer.WritePropertyName("MaxAllocatedStorage");
-                context.Writer.Write(requestObject.MaxAllocatedStorage);
+                context.Writer.Write(requestObject.MaxAllocatedStorage.Value);
             }
 
             if(requestObject.IsSetMonitoringInterval())
             {
                 context.Writer.WritePropertyName("MonitoringInterval");
-                context.Writer.Write(requestObject.MonitoringInterval);
+                context.Writer.Write(requestObject.MonitoringInterval.Value);
             }
 
             if(requestObject.IsSetMonitoringRoleArn())
@@ -319,7 +319,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMultiAz())
             {
                 context.Writer.WritePropertyName("MultiAz");
-                context.Writer.Write(requestObject.MultiAz);
+                context.Writer.Write(requestObject.MultiAz.Value);
             }
 
             if(requestObject.IsSetOptionGroupMemberships())
@@ -352,7 +352,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerformanceInsightsEnabled())
             {
                 context.Writer.WritePropertyName("PerformanceInsightsEnabled");
-                context.Writer.Write(requestObject.PerformanceInsightsEnabled);
+                context.Writer.Write(requestObject.PerformanceInsightsEnabled.Value);
             }
 
             if(requestObject.IsSetPerformanceInsightsKmsKeyId())
@@ -364,7 +364,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerformanceInsightsRetentionPeriod())
             {
                 context.Writer.WritePropertyName("PerformanceInsightsRetentionPeriod");
-                context.Writer.Write(requestObject.PerformanceInsightsRetentionPeriod);
+                context.Writer.Write(requestObject.PerformanceInsightsRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetPreferredBackupWindow())
@@ -398,13 +398,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPromotionTier())
             {
                 context.Writer.WritePropertyName("PromotionTier");
-                context.Writer.Write(requestObject.PromotionTier);
+                context.Writer.Write(requestObject.PromotionTier.Value);
             }
 
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible);
+                context.Writer.Write(requestObject.PubliclyAccessible.Value);
             }
 
             if(requestObject.IsSetReadReplicaDBClusterIdentifiers())
@@ -460,7 +460,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageEncrypted())
             {
                 context.Writer.WritePropertyName("StorageEncrypted");
-                context.Writer.Write(requestObject.StorageEncrypted);
+                context.Writer.Write(requestObject.StorageEncrypted.Value);
             }
 
             if(requestObject.IsSetStorageType())

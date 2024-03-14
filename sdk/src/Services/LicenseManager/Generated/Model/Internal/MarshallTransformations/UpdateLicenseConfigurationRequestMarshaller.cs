@@ -76,7 +76,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisassociateWhenNotFound())
                 {
                     context.Writer.WritePropertyName("DisassociateWhenNotFound");
-                    context.Writer.Write(publicRequest.DisassociateWhenNotFound);
+                    context.Writer.Write(publicRequest.DisassociateWhenNotFound.Value);
                 }
 
                 if(publicRequest.IsSetLicenseConfigurationArn())
@@ -94,13 +94,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLicenseCount())
                 {
                     context.Writer.WritePropertyName("LicenseCount");
-                    context.Writer.Write(publicRequest.LicenseCount);
+                    context.Writer.Write(publicRequest.LicenseCount.Value);
                 }
 
                 if(publicRequest.IsSetLicenseCountHardLimit())
                 {
                     context.Writer.WritePropertyName("LicenseCountHardLimit");
-                    context.Writer.Write(publicRequest.LicenseCountHardLimit);
+                    context.Writer.Write(publicRequest.LicenseCountHardLimit.Value);
                 }
 
                 if(publicRequest.IsSetLicenseRules())

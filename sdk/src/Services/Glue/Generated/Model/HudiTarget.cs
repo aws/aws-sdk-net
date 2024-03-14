@@ -85,9 +85,9 @@ namespace Amazon.Glue.Model
         /// Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.
         /// </para>
         /// </summary>
-        public int MaximumTraversalDepth
+        public int? MaximumTraversalDepth
         {
-            get { return this._maximumTraversalDepth.GetValueOrDefault(); }
+            get { return this._maximumTraversalDepth; }
             set { this._maximumTraversalDepth = value; }
         }
 

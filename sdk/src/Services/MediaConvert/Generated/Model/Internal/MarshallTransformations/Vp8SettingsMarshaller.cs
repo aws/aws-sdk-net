@@ -48,7 +48,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                context.Writer.Write(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetFramerateControl())
@@ -66,31 +66,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-                context.Writer.Write(requestObject.GopSize);
+                context.Writer.Write(requestObject.GopSize.Value);
             }
 
             if(requestObject.IsSetHrdBufferSize())
             {
                 context.Writer.WritePropertyName("hrdBufferSize");
-                context.Writer.Write(requestObject.HrdBufferSize);
+                context.Writer.Write(requestObject.HrdBufferSize.Value);
             }
 
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetParControl())
@@ -102,13 +102,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParDenominator())
             {
                 context.Writer.WritePropertyName("parDenominator");
-                context.Writer.Write(requestObject.ParDenominator);
+                context.Writer.Write(requestObject.ParDenominator.Value);
             }
 
             if(requestObject.IsSetParNumerator())
             {
                 context.Writer.WritePropertyName("parNumerator");
-                context.Writer.Write(requestObject.ParNumerator);
+                context.Writer.Write(requestObject.ParNumerator.Value);
             }
 
             if(requestObject.IsSetQualityTuningLevel())

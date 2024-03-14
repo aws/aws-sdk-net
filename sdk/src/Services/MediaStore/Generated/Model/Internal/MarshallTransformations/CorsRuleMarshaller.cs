@@ -92,7 +92,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAgeSeconds())
             {
                 context.Writer.WritePropertyName("MaxAgeSeconds");
-                context.Writer.Write(requestObject.MaxAgeSeconds);
+                context.Writer.Write(requestObject.MaxAgeSeconds.Value);
             }
 
         }

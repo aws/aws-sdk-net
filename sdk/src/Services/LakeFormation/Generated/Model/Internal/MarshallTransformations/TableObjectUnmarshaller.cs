@@ -71,7 +71,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

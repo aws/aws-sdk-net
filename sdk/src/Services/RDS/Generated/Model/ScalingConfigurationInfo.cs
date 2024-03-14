@@ -59,9 +59,9 @@ namespace Amazon.RDS.Model
         /// automatically resumes.
         /// </para>
         /// </summary>
-        public bool AutoPause
+        public bool? AutoPause
         {
-            get { return this._autoPause.GetValueOrDefault(); }
+            get { return this._autoPause; }
             set { this._autoPause = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.RDS.Model
         /// The maximum capacity for an Aurora DB cluster in <c>serverless</c> DB engine mode.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.RDS.Model
         /// The minimum capacity for an Aurora DB cluster in <c>serverless</c> DB engine mode.
         /// </para>
         /// </summary>
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.RDS.Model
         /// action times out is determined by the <c>TimeoutAction</c> setting.
         /// </para>
         /// </summary>
-        public int SecondsBeforeTimeout
+        public int? SecondsBeforeTimeout
         {
-            get { return this._secondsBeforeTimeout.GetValueOrDefault(); }
+            get { return this._secondsBeforeTimeout; }
             set { this._secondsBeforeTimeout = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.RDS.Model
         /// mode is paused. A DB cluster can be paused only when it's idle (it has no connections).
         /// </para>
         /// </summary>
-        public int SecondsUntilAutoPause
+        public int? SecondsUntilAutoPause
         {
-            get { return this._secondsUntilAutoPause.GetValueOrDefault(); }
+            get { return this._secondsUntilAutoPause; }
             set { this._secondsUntilAutoPause = value; }
         }
 

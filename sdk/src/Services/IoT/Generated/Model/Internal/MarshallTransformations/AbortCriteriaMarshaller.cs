@@ -60,13 +60,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinNumberOfExecutedThings())
             {
                 context.Writer.WritePropertyName("minNumberOfExecutedThings");
-                context.Writer.Write(requestObject.MinNumberOfExecutedThings);
+                context.Writer.Write(requestObject.MinNumberOfExecutedThings.Value);
             }
 
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("thresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage);
+                context.Writer.Write(requestObject.ThresholdPercentage.Value);
             }
 
         }

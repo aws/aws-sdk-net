@@ -50,9 +50,9 @@ namespace Amazon.IoT.Model
         /// Sets a fleet provision template version as the default version.
         /// </para>
         /// </summary>
-        public bool SetAsDefault
+        public bool? SetAsDefault
         {
-            get { return this._setAsDefault.GetValueOrDefault(); }
+            get { return this._setAsDefault; }
             set { this._setAsDefault = value; }
         }
 

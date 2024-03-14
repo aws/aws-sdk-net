@@ -68,13 +68,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ExpiryTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ExpiryTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

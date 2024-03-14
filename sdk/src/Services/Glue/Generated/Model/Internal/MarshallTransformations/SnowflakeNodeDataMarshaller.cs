@@ -68,7 +68,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoPushdown())
             {
                 context.Writer.WritePropertyName("AutoPushdown");
-                context.Writer.Write(requestObject.AutoPushdown);
+                context.Writer.Write(requestObject.AutoPushdown.Value);
             }
 
             if(requestObject.IsSetConnection())
@@ -206,7 +206,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpsert())
             {
                 context.Writer.WritePropertyName("Upsert");
-                context.Writer.Write(requestObject.Upsert);
+                context.Writer.Write(requestObject.Upsert.Value);
             }
 
         }

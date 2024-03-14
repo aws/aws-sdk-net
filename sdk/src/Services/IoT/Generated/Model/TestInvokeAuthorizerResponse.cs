@@ -45,9 +45,9 @@ namespace Amazon.IoT.Model
         /// The number of seconds after which the connection is terminated.
         /// </para>
         /// </summary>
-        public int DisconnectAfterInSeconds
+        public int? DisconnectAfterInSeconds
         {
-            get { return this._disconnectAfterInSeconds.GetValueOrDefault(); }
+            get { return this._disconnectAfterInSeconds; }
             set { this._disconnectAfterInSeconds = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoT.Model
         /// True if the token is authenticated, otherwise false.
         /// </para>
         /// </summary>
-        public bool IsAuthenticated
+        public bool? IsAuthenticated
         {
-            get { return this._isAuthenticated.GetValueOrDefault(); }
+            get { return this._isAuthenticated; }
             set { this._isAuthenticated = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.IoT.Model
         /// The number of seconds after which the temporary credentials are refreshed.
         /// </para>
         /// </summary>
-        public int RefreshAfterInSeconds
+        public int? RefreshAfterInSeconds
         {
-            get { return this._refreshAfterInSeconds.GetValueOrDefault(); }
+            get { return this._refreshAfterInSeconds; }
             set { this._refreshAfterInSeconds = value; }
         }
 

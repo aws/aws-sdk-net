@@ -48,7 +48,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNodeCount())
             {
                 context.Writer.WritePropertyName("nodeCount");
-                context.Writer.Write(requestObject.NodeCount);
+                context.Writer.Write(requestObject.NodeCount.Value);
             }
 
             if(requestObject.IsSetNodeType())

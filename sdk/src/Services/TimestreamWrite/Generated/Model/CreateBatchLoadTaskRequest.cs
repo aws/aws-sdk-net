@@ -103,9 +103,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property RecordVersion.
         /// </summary>
-        public long RecordVersion
+        public long? RecordVersion
         {
-            get { return this._recordVersion.GetValueOrDefault(); }
+            get { return this._recordVersion; }
             set { this._recordVersion = value; }
         }
 

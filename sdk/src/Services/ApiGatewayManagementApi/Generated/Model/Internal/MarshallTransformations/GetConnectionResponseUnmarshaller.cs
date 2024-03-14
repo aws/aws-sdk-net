@@ -53,7 +53,7 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("connectedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ConnectedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastActiveAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastActiveAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -120,9 +120,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp that the comment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 

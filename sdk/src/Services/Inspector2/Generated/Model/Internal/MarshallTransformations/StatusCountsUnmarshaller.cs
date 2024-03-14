@@ -65,19 +65,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("failed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("passed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Passed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("skipped", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Skipped = unmarshaller.Unmarshall(context);
                     continue;
                 }

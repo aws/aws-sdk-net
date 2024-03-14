@@ -60,9 +60,9 @@ namespace Amazon.MediaLive.Model
         /// is defined as audio loss or audio quieter than -50 dBFS.
         /// </summary>
         [AWSProperty(Min=1000)]
-        public int AudioSilenceThresholdMsec
+        public int? AudioSilenceThresholdMsec
         {
-            get { return this._audioSilenceThresholdMsec.GetValueOrDefault(); }
+            get { return this._audioSilenceThresholdMsec; }
             set { this._audioSilenceThresholdMsec = value; }
         }
 

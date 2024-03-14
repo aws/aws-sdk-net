@@ -66,9 +66,9 @@ namespace Amazon.SecretsManager.Model
         /// the secret has never been retrieved in the Region.
         /// </para>
         /// </summary>
-        public DateTime LastAccessedDate
+        public DateTime? LastAccessedDate
         {
-            get { return this._lastAccessedDate.GetValueOrDefault(); }
+            get { return this._lastAccessedDate; }
             set { this._lastAccessedDate = value; }
         }
 

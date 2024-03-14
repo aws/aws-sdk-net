@@ -91,9 +91,9 @@ namespace Amazon.Redshift.Model
         /// that the subscription is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.Redshift.Model
         /// The date and time the Amazon Redshift event notification subscription was created.
         /// </para>
         /// </summary>
-        public DateTime SubscriptionCreationTime
+        public DateTime? SubscriptionCreationTime
         {
-            get { return this._subscriptionCreationTime.GetValueOrDefault(); }
+            get { return this._subscriptionCreationTime; }
             set { this._subscriptionCreationTime = value; }
         }
 

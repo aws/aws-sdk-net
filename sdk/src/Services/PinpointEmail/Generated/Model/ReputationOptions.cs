@@ -45,9 +45,9 @@ namespace Amazon.PinpointEmail.Model
         /// starting from the date of the fresh start.
         /// </para>
         /// </summary>
-        public DateTime LastFreshStart
+        public DateTime? LastFreshStart
         {
-            get { return this._lastFreshStart.GetValueOrDefault(); }
+            get { return this._lastFreshStart; }
             set { this._lastFreshStart = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.PinpointEmail.Model
         /// set.
         /// </para>
         /// </summary>
-        public bool ReputationMetricsEnabled
+        public bool? ReputationMetricsEnabled
         {
-            get { return this._reputationMetricsEnabled.GetValueOrDefault(); }
+            get { return this._reputationMetricsEnabled; }
             set { this._reputationMetricsEnabled = value; }
         }
 

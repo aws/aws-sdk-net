@@ -57,9 +57,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// IAM role in the current IAM session are returned. The default is true. 
         /// </para>
         /// </summary>
-        public bool RoleLevel
+        public bool? RoleLevel
         {
-            get { return this._roleLevel.GetValueOrDefault(); }
+            get { return this._roleLevel; }
             set { this._roleLevel = value; }
         }
 

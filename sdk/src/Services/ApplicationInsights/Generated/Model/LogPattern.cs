@@ -115,9 +115,9 @@ namespace Amazon.ApplicationInsights.Model
         /// for AWS-provided patterns. 
         /// </para>
         /// </summary>
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

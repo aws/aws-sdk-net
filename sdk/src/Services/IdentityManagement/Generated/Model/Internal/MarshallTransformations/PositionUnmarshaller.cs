@@ -56,13 +56,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Column", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Column = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Line", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Line = unmarshaller.Unmarshall(context);
                         continue;
                     }

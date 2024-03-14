@@ -58,9 +58,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double AreaUnderPRCurve
+        public double? AreaUnderPRCurve
         {
-            get { return this._areaUnderPRCurve.GetValueOrDefault(); }
+            get { return this._areaUnderPRCurve; }
             set { this._areaUnderPRCurve = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double F1
+        public double? F1
         {
-            get { return this._f1.GetValueOrDefault(); }
+            get { return this._f1; }
             set { this._f1 = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Precision
+        public double? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Recall
+        public double? Recall
         {
-            get { return this._recall.GetValueOrDefault(); }
+            get { return this._recall; }
             set { this._recall = value; }
         }
 

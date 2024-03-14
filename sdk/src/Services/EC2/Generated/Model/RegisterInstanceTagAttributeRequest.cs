@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// to register all tag keys.
         /// </para>
         /// </summary>
-        public bool IncludeAllTagsOfInstance
+        public bool? IncludeAllTagsOfInstance
         {
-            get { return this._includeAllTagsOfInstance.GetValueOrDefault(); }
+            get { return this._includeAllTagsOfInstance; }
             set { this._includeAllTagsOfInstance = value; }
         }
 

@@ -53,7 +53,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("KeyRotationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.KeyRotationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

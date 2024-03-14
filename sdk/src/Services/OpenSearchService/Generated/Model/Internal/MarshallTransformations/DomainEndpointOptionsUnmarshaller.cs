@@ -77,13 +77,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CustomEndpointEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CustomEndpointEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnforceHTTPS", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnforceHTTPS = unmarshaller.Unmarshall(context);
                     continue;
                 }

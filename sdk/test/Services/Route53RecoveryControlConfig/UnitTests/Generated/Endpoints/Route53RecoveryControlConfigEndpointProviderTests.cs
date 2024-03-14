@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Route53RecoveryControlConfig.Endpoints;
 using Amazon.Route53RecoveryControlConfig.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class Route53RecoveryControlConfigEndpointsTests

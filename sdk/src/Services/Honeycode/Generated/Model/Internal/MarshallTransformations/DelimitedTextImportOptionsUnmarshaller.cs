@@ -77,13 +77,13 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("hasHeaderRow", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasHeaderRow = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ignoreEmptyRows", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnoreEmptyRows = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -89,13 +89,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowOverwrite())
                 {
                     context.Writer.WritePropertyName("allowOverwrite");
-                    context.Writer.Write(publicRequest.AllowOverwrite);
+                    context.Writer.Write(publicRequest.AllowOverwrite.Value);
                 }
 
                 if(publicRequest.IsSetIncludeFromUpstream())
                 {
                     context.Writer.WritePropertyName("includeFromUpstream");
-                    context.Writer.Write(publicRequest.IncludeFromUpstream);
+                    context.Writer.Write(publicRequest.IncludeFromUpstream.Value);
                 }
 
                 if(publicRequest.IsSetVersionRevisions())

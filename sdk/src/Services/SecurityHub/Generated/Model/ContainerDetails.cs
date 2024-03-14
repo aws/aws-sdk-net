@@ -144,9 +144,9 @@ namespace Amazon.SecurityHub.Model
         /// the host container instance (similar to the root user). 
         /// </para>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 

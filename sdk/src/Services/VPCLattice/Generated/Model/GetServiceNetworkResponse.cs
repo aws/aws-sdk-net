@@ -85,9 +85,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the service network was created, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time of the last update, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.VPCLattice.Model
         /// The number of services associated with the service network.
         /// </para>
         /// </summary>
-        public long NumberOfAssociatedServices
+        public long? NumberOfAssociatedServices
         {
-            get { return this._numberOfAssociatedServices.GetValueOrDefault(); }
+            get { return this._numberOfAssociatedServices; }
             set { this._numberOfAssociatedServices = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.VPCLattice.Model
         /// The number of VPCs associated with the service network.
         /// </para>
         /// </summary>
-        public long NumberOfAssociatedVPCs
+        public long? NumberOfAssociatedVPCs
         {
-            get { return this._numberOfAssociatedVPCs.GetValueOrDefault(); }
+            get { return this._numberOfAssociatedVPCs; }
             set { this._numberOfAssociatedVPCs = value; }
         }
 

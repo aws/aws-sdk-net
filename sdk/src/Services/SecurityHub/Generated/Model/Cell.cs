@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
         /// a value of 1 for Column corresponds to the A column in the workbook.
         /// </para>
         /// </summary>
-        public long Column
+        public long? Column
         {
-            get { return this._column.GetValueOrDefault(); }
+            get { return this._column; }
             set { this._column = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.SecurityHub.Model
         /// The row number of the row that contains the data.
         /// </para>
         /// </summary>
-        public long Row
+        public long? Row
         {
-            get { return this._row.GetValueOrDefault(); }
+            get { return this._row; }
             set { this._row = value; }
         }
 

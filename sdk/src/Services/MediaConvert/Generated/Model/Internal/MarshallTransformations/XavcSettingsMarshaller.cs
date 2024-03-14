@@ -72,13 +72,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetProfile())
@@ -96,7 +96,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSoftness())
             {
                 context.Writer.WritePropertyName("softness");
-                context.Writer.Write(requestObject.Softness);
+                context.Writer.Write(requestObject.Softness.Value);
             }
 
             if(requestObject.IsSetSpatialAdaptiveQuantization())

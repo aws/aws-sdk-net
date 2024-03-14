@@ -43,9 +43,9 @@ namespace Amazon.SecurityLake.Model
         /// The expiration period and time-to-live (TTL).
         /// </para>
         /// </summary>
-        public long ExceptionTimeToLive
+        public long? ExceptionTimeToLive
         {
-            get { return this._exceptionTimeToLive.GetValueOrDefault(); }
+            get { return this._exceptionTimeToLive; }
             set { this._exceptionTimeToLive = value; }
         }
 

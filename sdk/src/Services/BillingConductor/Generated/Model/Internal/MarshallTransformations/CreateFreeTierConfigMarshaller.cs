@@ -48,7 +48,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActivated())
             {
                 context.Writer.WritePropertyName("Activated");
-                context.Writer.Write(requestObject.Activated);
+                context.Writer.Write(requestObject.Activated.Value);
             }
 
         }

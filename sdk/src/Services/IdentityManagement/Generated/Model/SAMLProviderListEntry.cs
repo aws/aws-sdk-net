@@ -62,9 +62,9 @@ namespace Amazon.IdentityManagement.Model
         /// The date and time when the SAML provider was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.IdentityManagement.Model
         /// The expiration date and time for the SAML provider.
         /// </para>
         /// </summary>
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
-            get { return this._validUntil.GetValueOrDefault(); }
+            get { return this._validUntil; }
             set { this._validUntil = value; }
         }
 

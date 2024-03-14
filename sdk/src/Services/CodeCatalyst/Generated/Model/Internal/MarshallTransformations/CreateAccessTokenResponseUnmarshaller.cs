@@ -59,7 +59,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiresTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiresTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

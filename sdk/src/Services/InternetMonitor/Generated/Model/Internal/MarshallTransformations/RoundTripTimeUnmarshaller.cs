@@ -65,19 +65,19 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("P50", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.P50 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("P90", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.P90 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("P95", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.P95 = unmarshaller.Unmarshall(context);
                     continue;
                 }

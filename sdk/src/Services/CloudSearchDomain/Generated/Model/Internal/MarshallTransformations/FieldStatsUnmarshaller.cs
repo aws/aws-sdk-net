@@ -65,7 +65,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,25 +89,25 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("missing", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Missing = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stddev", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Stddev = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sum", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sumOfSquares", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SumOfSquares = unmarshaller.Unmarshall(context);
                     continue;
                 }

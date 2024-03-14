@@ -191,9 +191,9 @@ namespace Amazon.MediaConvert.Model
         /// other output types.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FragmentLength
+        public int? FragmentLength
         {
-            get { return this._fragmentLength.GetValueOrDefault(); }
+            get { return this._fragmentLength; }
             set { this._fragmentLength = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.MediaConvert.Model
         /// that is needed to ensure smooth playout.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MinBufferTime
+        public int? MinBufferTime
         {
-            get { return this._minBufferTime.GetValueOrDefault(); }
+            get { return this._minBufferTime; }
             set { this._minBufferTime = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.MediaConvert.Model
         /// length; when you set the minimum final segment length to 1, your final segment is
         /// 3.5 seconds.
         /// </summary>
-        public double MinFinalSegmentLength
+        public double? MinFinalSegmentLength
         {
-            get { return this._minFinalSegmentLength.GetValueOrDefault(); }
+            get { return this._minFinalSegmentLength; }
             set { this._minFinalSegmentLength = value; }
         }
 
@@ -384,9 +384,9 @@ namespace Amazon.MediaConvert.Model
         /// segment files or one content file that has metadata to mark the segment boundaries.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int SegmentLength
+        public int? SegmentLength
         {
-            get { return this._segmentLength.GetValueOrDefault(); }
+            get { return this._segmentLength; }
             set { this._segmentLength = value; }
         }
 

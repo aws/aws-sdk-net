@@ -85,9 +85,9 @@ namespace Amazon.Glue.Model
         /// to sample the records. If no value is specified, the value defaults to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool ScanAll
+        public bool? ScanAll
         {
-            get { return this._scanAll.GetValueOrDefault(); }
+            get { return this._scanAll; }
             set { this._scanAll = value; }
         }
 

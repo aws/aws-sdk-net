@@ -48,7 +48,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPinVerificationKeyIndex())
             {
                 context.Writer.WritePropertyName("PinVerificationKeyIndex");
-                context.Writer.Write(requestObject.PinVerificationKeyIndex);
+                context.Writer.Write(requestObject.PinVerificationKeyIndex.Value);
             }
 
             if(requestObject.IsSetVerificationValue())

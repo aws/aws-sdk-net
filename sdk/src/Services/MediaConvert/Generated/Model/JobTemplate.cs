@@ -100,9 +100,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CreatedAt. The timestamp in epoch seconds for Job template
         /// creation.
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property LastUpdated. The timestamp in epoch seconds when the Job
         /// template was last updated.
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Priority. Relative priority on the job.
         /// </summary>
         [AWSProperty(Min=-50, Max=50)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

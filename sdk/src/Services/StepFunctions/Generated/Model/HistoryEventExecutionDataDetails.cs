@@ -42,9 +42,9 @@ namespace Amazon.StepFunctions.Model
         /// for API calls.
         /// </para>
         /// </summary>
-        public bool Truncated
+        public bool? Truncated
         {
-            get { return this._truncated.GetValueOrDefault(); }
+            get { return this._truncated; }
             set { this._truncated = value; }
         }
 

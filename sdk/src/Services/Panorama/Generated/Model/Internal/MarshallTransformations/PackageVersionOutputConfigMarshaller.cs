@@ -48,7 +48,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarkLatest())
             {
                 context.Writer.WritePropertyName("MarkLatest");
-                context.Writer.Write(requestObject.MarkLatest);
+                context.Writer.Write(requestObject.MarkLatest.Value);
             }
 
             if(requestObject.IsSetPackageName())

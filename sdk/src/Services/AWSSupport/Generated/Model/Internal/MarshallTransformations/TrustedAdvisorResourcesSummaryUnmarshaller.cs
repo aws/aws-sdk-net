@@ -65,25 +65,25 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("resourcesFlagged", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ResourcesFlagged = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourcesIgnored", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ResourcesIgnored = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourcesProcessed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ResourcesProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourcesSuppressed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ResourcesSuppressed = unmarshaller.Unmarshall(context);
                     continue;
                 }

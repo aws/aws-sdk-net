@@ -83,7 +83,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AllowPubliclyAccessibleConsumers", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AllowPubliclyAccessibleConsumers = unmarshaller.Unmarshall(context);
                         continue;
                     }

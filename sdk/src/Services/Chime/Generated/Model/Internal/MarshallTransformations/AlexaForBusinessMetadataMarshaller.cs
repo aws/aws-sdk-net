@@ -54,7 +54,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsAlexaForBusinessEnabled())
             {
                 context.Writer.WritePropertyName("IsAlexaForBusinessEnabled");
-                context.Writer.Write(requestObject.IsAlexaForBusinessEnabled);
+                context.Writer.Write(requestObject.IsAlexaForBusinessEnabled.Value);
             }
 
         }

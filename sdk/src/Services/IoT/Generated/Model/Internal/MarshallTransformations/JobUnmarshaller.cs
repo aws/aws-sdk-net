@@ -77,13 +77,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("completedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,13 +107,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("forceCanceled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ForceCanceled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isConcurrent", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsConcurrent = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,7 +155,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

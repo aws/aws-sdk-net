@@ -117,9 +117,9 @@ namespace Amazon.AppConfig.Model
         /// The date and time the event occurred.
         /// </para>
         /// </summary>
-        public DateTime OccurredAt
+        public DateTime? OccurredAt
         {
-            get { return this._occurredAt.GetValueOrDefault(); }
+            get { return this._occurredAt; }
             set { this._occurredAt = value; }
         }
 

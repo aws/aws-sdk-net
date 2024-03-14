@@ -71,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("nullValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NullValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

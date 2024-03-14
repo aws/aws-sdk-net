@@ -53,9 +53,9 @@ namespace Amazon.DocDB.Model
         /// can't be deleted when deletion protection is enabled. 
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 

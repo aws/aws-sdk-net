@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchService.Model
         /// The unique identifier of the billing subscription.
         /// </para>
         /// </summary>
-        public long BillingSubscriptionId
+        public long? BillingSubscriptionId
         {
-            get { return this._billingSubscriptionId.GetValueOrDefault(); }
+            get { return this._billingSubscriptionId; }
             set { this._billingSubscriptionId = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.OpenSearchService.Model
         /// The duration, in seconds, for which the OpenSearch instance is reserved.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.OpenSearchService.Model
         /// offering.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.OpenSearchService.Model
         /// The number of OpenSearch instances that have been reserved.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.OpenSearchService.Model
         /// The date and time when the reservation was purchased.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -292,9 +292,9 @@ namespace Amazon.OpenSearchService.Model
         /// The hourly rate at which you're charged for the domain using this Reserved Instance.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

@@ -80,13 +80,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfOnCalls())
             {
                 context.Writer.WritePropertyName("NumberOfOnCalls");
-                context.Writer.Write(requestObject.NumberOfOnCalls);
+                context.Writer.Write(requestObject.NumberOfOnCalls.Value);
             }
 
             if(requestObject.IsSetRecurrenceMultiplier())
             {
                 context.Writer.WritePropertyName("RecurrenceMultiplier");
-                context.Writer.Write(requestObject.RecurrenceMultiplier);
+                context.Writer.Write(requestObject.RecurrenceMultiplier.Value);
             }
 
             if(requestObject.IsSetShiftCoverages())

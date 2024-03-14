@@ -45,9 +45,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time of when you associated your directory with the Amazon SNS topic.
         /// </para>
         /// </summary>
-        public DateTime CreatedDateTime
+        public DateTime? CreatedDateTime
         {
-            get { return this._createdDateTime.GetValueOrDefault(); }
+            get { return this._createdDateTime; }
             set { this._createdDateTime = value; }
         }
 

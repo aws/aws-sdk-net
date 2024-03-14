@@ -70,7 +70,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiresInSeconds())
                 {
                     context.Writer.WritePropertyName("expiresInSeconds");
-                    context.Writer.Write(publicRequest.ExpiresInSeconds);
+                    context.Writer.Write(publicRequest.ExpiresInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetProjectArn())

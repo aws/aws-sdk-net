@@ -63,9 +63,9 @@ namespace Amazon.QuickSight.Model
         /// the filter excludes them.
         /// </para>
         /// </summary>
-        public bool Inclusive
+        public bool? Inclusive
         {
-            get { return this._inclusive.GetValueOrDefault(); }
+            get { return this._inclusive; }
             set { this._inclusive = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("commitTimestamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CommitTimestampInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isLastOp", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLastOp = unmarshaller.Unmarshall(context);
                     continue;
                 }

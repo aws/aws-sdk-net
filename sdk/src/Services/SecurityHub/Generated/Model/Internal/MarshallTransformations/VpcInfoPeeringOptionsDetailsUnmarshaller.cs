@@ -65,19 +65,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowDnsResolutionFromRemoteVpc", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDnsResolutionFromRemoteVpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AllowEgressFromLocalClassicLinkToRemoteVpc", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowEgressFromLocalClassicLinkToRemoteVpc = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AllowEgressFromLocalVpcToRemoteClassicLink", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowEgressFromLocalVpcToRemoteClassicLink = unmarshaller.Unmarshall(context);
                     continue;
                 }

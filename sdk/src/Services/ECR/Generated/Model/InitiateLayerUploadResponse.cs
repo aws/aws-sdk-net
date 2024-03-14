@@ -43,9 +43,9 @@ namespace Amazon.ECR.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long PartSize
+        public long? PartSize
         {
-            get { return this._partSize.GetValueOrDefault(); }
+            get { return this._partSize; }
             set { this._partSize = value; }
         }
 

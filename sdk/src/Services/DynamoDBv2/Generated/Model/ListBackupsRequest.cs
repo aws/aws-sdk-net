@@ -127,9 +127,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Only backups created after this time are listed. <c>TimeRangeLowerBound</c> is inclusive.
         /// </para>
         /// </summary>
-        public DateTime TimeRangeLowerBound
+        public DateTime? TimeRangeLowerBound
         {
-            get { return this._timeRangeLowerBound.GetValueOrDefault(); }
+            get { return this._timeRangeLowerBound; }
             set { this._timeRangeLowerBound = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.DynamoDBv2.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime TimeRangeUpperBound
+        public DateTime? TimeRangeUpperBound
         {
-            get { return this._timeRangeUpperBound.GetValueOrDefault(); }
+            get { return this._timeRangeUpperBound; }
             set { this._timeRangeUpperBound = value; }
         }
 

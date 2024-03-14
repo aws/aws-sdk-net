@@ -51,9 +51,9 @@ namespace Amazon.EC2.Model
         /// The number of network interfaces analyzed.
         /// </para>
         /// </summary>
-        public int AnalyzedEniCount
+        public int? AnalyzedEniCount
         {
-            get { return this._analyzedEniCount.GetValueOrDefault(); }
+            get { return this._analyzedEniCount; }
             set { this._analyzedEniCount = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// The analysis end date.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.EC2.Model
         /// The analysis start date.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

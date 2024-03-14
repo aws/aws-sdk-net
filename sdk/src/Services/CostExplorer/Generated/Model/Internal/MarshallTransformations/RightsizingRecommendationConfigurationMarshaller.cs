@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBenefitsConsidered())
             {
                 context.Writer.WritePropertyName("BenefitsConsidered");
-                context.Writer.Write(requestObject.BenefitsConsidered);
+                context.Writer.Write(requestObject.BenefitsConsidered.Value);
             }
 
             if(requestObject.IsSetRecommendationTarget())

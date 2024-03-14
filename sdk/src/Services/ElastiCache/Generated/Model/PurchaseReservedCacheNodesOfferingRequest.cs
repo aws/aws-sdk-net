@@ -52,9 +52,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>1</c> 
         /// </para>
         /// </summary>
-        public int CacheNodeCount
+        public int? CacheNodeCount
         {
-            get { return this._cacheNodeCount.GetValueOrDefault(); }
+            get { return this._cacheNodeCount; }
             set { this._cacheNodeCount = value; }
         }
 

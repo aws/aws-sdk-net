@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IsDefault", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
                         continue;
                     }

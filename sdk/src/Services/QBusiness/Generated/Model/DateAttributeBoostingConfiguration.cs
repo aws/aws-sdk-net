@@ -51,9 +51,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
-        public long BoostingDurationInSeconds
+        public long? BoostingDurationInSeconds
         {
-            get { return this._boostingDurationInSeconds.GetValueOrDefault(); }
+            get { return this._boostingDurationInSeconds; }
             set { this._boostingDurationInSeconds = value; }
         }
 

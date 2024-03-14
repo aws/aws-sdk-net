@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStaticRoutesOnly())
             {
                 context.Writer.WritePropertyName("StaticRoutesOnly");
-                context.Writer.Write(requestObject.StaticRoutesOnly);
+                context.Writer.Write(requestObject.StaticRoutesOnly.Value);
             }
 
             if(requestObject.IsSetTunnelOptions())

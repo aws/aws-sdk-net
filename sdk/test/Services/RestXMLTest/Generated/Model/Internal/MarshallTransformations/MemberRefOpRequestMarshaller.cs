@@ -63,7 +63,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("MemberRefOpRequest", "");    
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", "", StringUtils.FromString(publicRequest.Name));
 
 
                 xmlWriter.WriteEndElement();

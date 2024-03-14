@@ -142,9 +142,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

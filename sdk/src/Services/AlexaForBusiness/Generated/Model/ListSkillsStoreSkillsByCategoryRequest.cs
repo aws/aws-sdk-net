@@ -45,9 +45,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long CategoryId
+        public long? CategoryId
         {
-            get { return this._categoryId.GetValueOrDefault(); }
+            get { return this._categoryId; }
             set { this._categoryId = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

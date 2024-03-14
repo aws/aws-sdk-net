@@ -91,9 +91,9 @@ namespace Amazon.BackupStorage.Model
         /// Gets and sets the property Index. Chunk index
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Index
+        public long? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.BackupStorage.Model
         /// Gets and sets the property Length. Chunk length
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Length
+        public long? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 

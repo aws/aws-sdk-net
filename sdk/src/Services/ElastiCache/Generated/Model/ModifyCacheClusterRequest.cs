@@ -97,9 +97,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.ElastiCache.Model
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -641,9 +641,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int NumCacheNodes
+        public int? NumCacheNodes
         {
-            get { return this._numCacheNodes.GetValueOrDefault(); }
+            get { return this._numCacheNodes; }
             set { this._numCacheNodes = value; }
         }
 
@@ -746,9 +746,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 

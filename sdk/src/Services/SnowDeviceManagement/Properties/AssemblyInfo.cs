@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SnowDeviceManagement")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Snow Device Management. AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Snow Device Management. AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Snow Device Management. AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Snow Device Management. AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.")]
 #elif NETCOREAPP3_1

@@ -82,7 +82,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimalKeyLength())
             {
                 context.Writer.WritePropertyName("MinimalKeyLength");
-                context.Writer.Write(requestObject.MinimalKeyLength);
+                context.Writer.Write(requestObject.MinimalKeyLength.Value);
             }
 
         }

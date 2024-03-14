@@ -57,9 +57,9 @@ namespace Amazon.ForecastService.Model
         /// When the dataset import job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.ForecastService.Model
         /// The size of the dataset in gigabytes (GB) after the import job has finished.
         /// </para>
         /// </summary>
-        public double DataSize
+        public double? DataSize
         {
-            get { return this._dataSize.GetValueOrDefault(); }
+            get { return this._dataSize; }
             set { this._dataSize = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.ForecastService.Model
         /// The estimated time remaining in minutes for the dataset import job to complete.
         /// </para>
         /// </summary>
-        public long EstimatedTimeRemainingInMinutes
+        public long? EstimatedTimeRemainingInMinutes
         {
-            get { return this._estimatedTimeRemainingInMinutes.GetValueOrDefault(); }
+            get { return this._estimatedTimeRemainingInMinutes; }
             set { this._estimatedTimeRemainingInMinutes = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 
@@ -419,9 +419,9 @@ namespace Amazon.ForecastService.Model
         /// Whether <c>TimeZone</c> is automatically derived from the geolocation attribute.
         /// </para>
         /// </summary>
-        public bool UseGeolocationForTimeZone
+        public bool? UseGeolocationForTimeZone
         {
-            get { return this._useGeolocationForTimeZone.GetValueOrDefault(); }
+            get { return this._useGeolocationForTimeZone; }
             set { this._useGeolocationForTimeZone = value; }
         }
 

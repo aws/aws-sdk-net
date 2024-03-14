@@ -41,9 +41,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaximumBitrate. Maximum statmux bitrate.
         /// </summary>
         [AWSProperty(Min=100000, Max=100000000)]
-        public int MaximumBitrate
+        public int? MaximumBitrate
         {
-            get { return this._maximumBitrate.GetValueOrDefault(); }
+            get { return this._maximumBitrate; }
             set { this._maximumBitrate = value; }
         }
 
@@ -57,9 +57,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MinimumBitrate. Minimum statmux bitrate.
         /// </summary>
         [AWSProperty(Min=100000, Max=100000000)]
-        public int MinimumBitrate
+        public int? MinimumBitrate
         {
-            get { return this._minimumBitrate.GetValueOrDefault(); }
+            get { return this._minimumBitrate; }
             set { this._minimumBitrate = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.MediaLive.Model
         /// quality of\nother channels in the multiplex with lower priority.
         /// </summary>
         [AWSProperty(Min=-5, Max=5)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

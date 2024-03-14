@@ -83,7 +83,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("requiresConfiguration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }

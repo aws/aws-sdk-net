@@ -65,13 +65,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("firstSeen", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstSeen = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastSeen", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSeen = unmarshaller.Unmarshall(context);
                     continue;
                 }

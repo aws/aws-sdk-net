@@ -65,13 +65,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Confidence", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Criticality", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Criticality = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -202,7 +202,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMemorySize())
                 {
                     context.Writer.WritePropertyName("MemorySize");
-                    context.Writer.Write(publicRequest.MemorySize);
+                    context.Writer.Write(publicRequest.MemorySize.Value);
                 }
 
                 if(publicRequest.IsSetPackageType())
@@ -214,7 +214,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublish())
                 {
                     context.Writer.WritePropertyName("Publish");
-                    context.Writer.Write(publicRequest.Publish);
+                    context.Writer.Write(publicRequest.Publish.Value);
                 }
 
                 if(publicRequest.IsSetRole())
@@ -257,7 +257,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 if(publicRequest.IsSetTracingConfig())

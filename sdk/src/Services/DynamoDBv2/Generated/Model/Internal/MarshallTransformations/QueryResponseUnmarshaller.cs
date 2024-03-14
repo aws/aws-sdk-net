@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Count", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScannedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ScannedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

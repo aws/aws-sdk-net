@@ -102,9 +102,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.ElastiCache.Model
         /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AutomaticFailoverEnabled
+        public bool? AutomaticFailoverEnabled
         {
-            get { return this._automaticFailoverEnabled.GetValueOrDefault(); }
+            get { return this._automaticFailoverEnabled; }
             set { this._automaticFailoverEnabled = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.ElastiCache.Model
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -384,9 +384,9 @@ namespace Amazon.ElastiCache.Model
         /// A flag to indicate MultiAZ is enabled.
         /// </para>
         /// </summary>
-        public bool MultiAZEnabled
+        public bool? MultiAZEnabled
         {
-            get { return this._multiAZEnabled.GetValueOrDefault(); }
+            get { return this._multiAZEnabled; }
             set { this._multiAZEnabled = value; }
         }
 
@@ -544,9 +544,9 @@ namespace Amazon.ElastiCache.Model
         /// Removes the user group associated with this replication group.
         /// </para>
         /// </summary>
-        public bool RemoveUserGroups
+        public bool? RemoveUserGroups
         {
-            get { return this._removeUserGroups.GetValueOrDefault(); }
+            get { return this._removeUserGroups; }
             set { this._removeUserGroups = value; }
         }
 
@@ -630,9 +630,9 @@ namespace Amazon.ElastiCache.Model
         /// are turned off.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -697,9 +697,9 @@ namespace Amazon.ElastiCache.Model
         /// to <c>preferred</c>.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowInterrupt())
             {
                 context.Writer.WritePropertyName("allowInterrupt");
-                context.Writer.Write(requestObject.AllowInterrupt);
+                context.Writer.Write(requestObject.AllowInterrupt.Value);
             }
 
             if(requestObject.IsSetAudioAndDTMFInputSpecification())

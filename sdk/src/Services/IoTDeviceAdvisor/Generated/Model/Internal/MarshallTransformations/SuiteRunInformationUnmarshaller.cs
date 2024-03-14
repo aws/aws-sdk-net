@@ -65,31 +65,31 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("endAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("failed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("passed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Passed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

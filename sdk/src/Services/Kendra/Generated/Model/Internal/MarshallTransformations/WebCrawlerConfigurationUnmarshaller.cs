@@ -71,25 +71,25 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CrawlDepth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CrawlDepth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxContentSizePerPageInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MaxContentSizePerPageInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxLinksPerPage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLinksPerPage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxUrlsPerMinuteCrawlRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUrlsPerMinuteCrawlRate = unmarshaller.Unmarshall(context);
                     continue;
                 }

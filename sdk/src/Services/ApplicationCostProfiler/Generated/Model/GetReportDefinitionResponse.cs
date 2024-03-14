@@ -48,9 +48,9 @@ namespace Amazon.ApplicationCostProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ApplicationCostProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

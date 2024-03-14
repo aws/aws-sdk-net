@@ -50,9 +50,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

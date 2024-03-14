@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRenewalCount())
             {
                 context.Writer.WritePropertyName("renewalCount");
-                context.Writer.Write(requestObject.RenewalCount);
+                context.Writer.Write(requestObject.RenewalCount.Value);
             }
 
         }

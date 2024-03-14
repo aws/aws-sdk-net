@@ -87,7 +87,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEventEndTime())
                 {
                     context.Writer.WritePropertyName("EventEndTime");
-                    context.Writer.Write(publicRequest.EventEndTime);
+                    context.Writer.Write(publicRequest.EventEndTime.Value);
                 }
 
                 if(publicRequest.IsSetEventSourceArn())
@@ -99,7 +99,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEventStartTime())
                 {
                     context.Writer.WritePropertyName("EventStartTime");
-                    context.Writer.Write(publicRequest.EventStartTime);
+                    context.Writer.Write(publicRequest.EventStartTime.Value);
                 }
 
                 if(publicRequest.IsSetReplayName())

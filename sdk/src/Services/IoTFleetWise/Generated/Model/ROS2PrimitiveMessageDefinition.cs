@@ -45,9 +45,9 @@ namespace Amazon.IoTFleetWise.Model
         /// is <c>value = raw_value * scaling + offset</c>.
         /// </para>
         /// </summary>
-        public double Offset
+        public double? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoTFleetWise.Model
         /// A multiplier used to decode the message.
         /// </para>
         /// </summary>
-        public double Scaling
+        public double? Scaling
         {
-            get { return this._scaling.GetValueOrDefault(); }
+            get { return this._scaling; }
             set { this._scaling = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
-        public long UpperBound
+        public long? UpperBound
         {
-            get { return this._upperBound.GetValueOrDefault(); }
+            get { return this._upperBound; }
             set { this._upperBound = value; }
         }
 

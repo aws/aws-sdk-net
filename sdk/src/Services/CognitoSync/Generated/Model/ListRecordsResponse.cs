@@ -46,9 +46,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property Count. Total number of records.
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property DatasetDeletedAfterRequestedSyncCount. A boolean value
         /// specifying whether to delete the dataset locally.
         /// </summary>
-        public bool DatasetDeletedAfterRequestedSyncCount
+        public bool? DatasetDeletedAfterRequestedSyncCount
         {
-            get { return this._datasetDeletedAfterRequestedSyncCount.GetValueOrDefault(); }
+            get { return this._datasetDeletedAfterRequestedSyncCount; }
             set { this._datasetDeletedAfterRequestedSyncCount = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property DatasetExists. Indicates whether the dataset exists.
         /// </summary>
-        public bool DatasetExists
+        public bool? DatasetExists
         {
-            get { return this._datasetExists.GetValueOrDefault(); }
+            get { return this._datasetExists; }
             set { this._datasetExists = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property DatasetSyncCount. Server sync count for this dataset.
         /// </summary>
-        public long DatasetSyncCount
+        public long? DatasetSyncCount
         {
-            get { return this._datasetSyncCount.GetValueOrDefault(); }
+            get { return this._datasetSyncCount; }
             set { this._datasetSyncCount = value; }
         }
 

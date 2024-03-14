@@ -86,9 +86,9 @@ namespace Amazon.DirectConnect.Model
         /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
         /// </para>
         /// </summary>
-        public int Asn
+        public int? Asn
         {
-            get { return this._asn.GetValueOrDefault(); }
+            get { return this._asn; }
             set { this._asn = value; }
         }
 

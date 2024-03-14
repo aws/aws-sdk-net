@@ -112,9 +112,9 @@ namespace Amazon.OpsWorks.Model
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
-        public bool AutoAssignElasticIps
+        public bool? AutoAssignElasticIps
         {
-            get { return this._autoAssignElasticIps.GetValueOrDefault(); }
+            get { return this._autoAssignElasticIps; }
             set { this._autoAssignElasticIps = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.OpsWorks.Model
         /// to Edit a Layer</a>.
         /// </para>
         /// </summary>
-        public bool AutoAssignPublicIps
+        public bool? AutoAssignPublicIps
         {
-            get { return this._autoAssignPublicIps.GetValueOrDefault(); }
+            get { return this._autoAssignPublicIps; }
             set { this._autoAssignPublicIps = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether auto healing is disabled for the layer.
         /// </para>
         /// </summary>
-        public bool EnableAutoHealing
+        public bool? EnableAutoHealing
         {
-            get { return this._enableAutoHealing.GetValueOrDefault(); }
+            get { return this._enableAutoHealing; }
             set { this._enableAutoHealing = value; }
         }
 
@@ -337,9 +337,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool InstallUpdatesOnBoot
+        public bool? InstallUpdatesOnBoot
         {
-            get { return this._installUpdatesOnBoot.GetValueOrDefault(); }
+            get { return this._installUpdatesOnBoot; }
             set { this._installUpdatesOnBoot = value; }
         }
 
@@ -481,9 +481,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether the layer uses Amazon EBS-optimized instances.
         /// </para>
         /// </summary>
-        public bool UseEbsOptimizedInstances
+        public bool? UseEbsOptimizedInstances
         {
-            get { return this._useEbsOptimizedInstances.GetValueOrDefault(); }
+            get { return this._useEbsOptimizedInstances; }
             set { this._useEbsOptimizedInstances = value; }
         }
 

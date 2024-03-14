@@ -48,13 +48,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConcurrentExecutionRatePercentage())
             {
                 context.Writer.WritePropertyName("ConcurrentExecutionRatePercentage");
-                context.Writer.Write(requestObject.ConcurrentExecutionRatePercentage);
+                context.Writer.Write(requestObject.ConcurrentExecutionRatePercentage.Value);
             }
 
             if(requestObject.IsSetErrorPercentage())
             {
                 context.Writer.WritePropertyName("ErrorPercentage");
-                context.Writer.Write(requestObject.ErrorPercentage);
+                context.Writer.Write(requestObject.ErrorPercentage.Value);
             }
 
         }

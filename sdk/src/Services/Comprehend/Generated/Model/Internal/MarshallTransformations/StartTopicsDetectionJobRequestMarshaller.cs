@@ -104,7 +104,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfTopics())
                 {
                     context.Writer.WritePropertyName("NumberOfTopics");
-                    context.Writer.Write(publicRequest.NumberOfTopics);
+                    context.Writer.Write(publicRequest.NumberOfTopics.Value);
                 }
 
                 if(publicRequest.IsSetOutputDataConfig())

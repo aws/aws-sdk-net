@@ -54,7 +54,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentComplete())
             {
                 context.Writer.WritePropertyName("percentComplete");
-                context.Writer.Write(requestObject.PercentComplete);
+                context.Writer.Write(requestObject.PercentComplete.Value);
             }
 
             if(requestObject.IsSetSummary())

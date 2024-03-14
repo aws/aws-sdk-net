@@ -42,9 +42,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property DatasetCount. Number of datasets for the identity.
         /// </summary>
-        public int DatasetCount
+        public int? DatasetCount
         {
-            get { return this._datasetCount.GetValueOrDefault(); }
+            get { return this._datasetCount; }
             set { this._datasetCount = value; }
         }
 
@@ -57,9 +57,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property DataStorage. Total data storage for this identity.
         /// </summary>
-        public long DataStorage
+        public long? DataStorage
         {
-            get { return this._dataStorage.GetValueOrDefault(); }
+            get { return this._dataStorage; }
             set { this._dataStorage = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. Date on which the identity was last modified.
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

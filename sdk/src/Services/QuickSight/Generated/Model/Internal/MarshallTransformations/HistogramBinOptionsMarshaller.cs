@@ -76,7 +76,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-                context.Writer.Write(requestObject.StartValue);
+                context.Writer.Write(requestObject.StartValue.Value);
             }
 
         }

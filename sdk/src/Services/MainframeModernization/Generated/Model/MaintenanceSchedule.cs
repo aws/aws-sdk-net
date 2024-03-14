@@ -42,9 +42,9 @@ namespace Amazon.MainframeModernization.Model
         /// The time the scheduled maintenance is to end.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MainframeModernization.Model
         /// The time the scheduled maintenance is to start.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

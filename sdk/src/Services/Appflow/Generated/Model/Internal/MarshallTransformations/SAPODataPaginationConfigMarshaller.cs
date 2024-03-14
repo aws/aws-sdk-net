@@ -48,7 +48,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPageSize())
             {
                 context.Writer.WritePropertyName("maxPageSize");
-                context.Writer.Write(requestObject.MaxPageSize);
+                context.Writer.Write(requestObject.MaxPageSize.Value);
             }
 
         }

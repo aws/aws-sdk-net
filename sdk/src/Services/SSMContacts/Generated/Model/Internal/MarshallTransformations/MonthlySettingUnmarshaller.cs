@@ -65,7 +65,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DayOfMonth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DayOfMonth = unmarshaller.Unmarshall(context);
                     continue;
                 }

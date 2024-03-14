@@ -102,9 +102,9 @@ namespace Amazon.Snowball.Model
         /// requirement specified with <c>OnDeviceServiceConfiguration</c>.
         /// </para>
         /// </summary>
-        public bool ForceCreateJobs
+        public bool? ForceCreateJobs
         {
-            get { return this._forceCreateJobs.GetValueOrDefault(); }
+            get { return this._forceCreateJobs; }
             set { this._forceCreateJobs = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Snowball.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
-        public int InitialClusterSize
+        public int? InitialClusterSize
         {
-            get { return this._initialClusterSize.GetValueOrDefault(); }
+            get { return this._initialClusterSize; }
             set { this._initialClusterSize = value; }
         }
 

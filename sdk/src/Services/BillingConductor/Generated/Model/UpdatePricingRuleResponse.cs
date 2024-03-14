@@ -72,9 +72,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long AssociatedPricingPlanCount
+        public long? AssociatedPricingPlanCount
         {
-            get { return this._associatedPricingPlanCount.GetValueOrDefault(); }
+            get { return this._associatedPricingPlanCount; }
             set { this._associatedPricingPlanCount = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.BillingConductor.Model
         ///  The most recent time the pricing rule was modified. 
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double ModifierPercentage
+        public double? ModifierPercentage
         {
-            get { return this._modifierPercentage.GetValueOrDefault(); }
+            get { return this._modifierPercentage; }
             set { this._modifierPercentage = value; }
         }
 

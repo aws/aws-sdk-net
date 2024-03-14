@@ -90,9 +90,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long Capacity
+        public long? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.WAFV2.Model
         /// designator, Z. For example, "2016-09-27T14:50Z". 
         /// </para>
         /// </summary>
-        public DateTime ExpiryTimestamp
+        public DateTime? ExpiryTimestamp
         {
-            get { return this._expiryTimestamp.GetValueOrDefault(); }
+            get { return this._expiryTimestamp; }
             set { this._expiryTimestamp = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ForecastedLifetime
+        public int? ForecastedLifetime
         {
-            get { return this._forecastedLifetime.GetValueOrDefault(); }
+            get { return this._forecastedLifetime; }
             set { this._forecastedLifetime = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.WAFV2.Model
         /// designator, Z. For example, "2016-09-27T14:50Z". 
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.WAFV2.Model
         /// designator, Z. For example, "2016-09-27T14:50Z". 
         /// </para>
         /// </summary>
-        public DateTime PublishTimestamp
+        public DateTime? PublishTimestamp
         {
-            get { return this._publishTimestamp.GetValueOrDefault(); }
+            get { return this._publishTimestamp; }
             set { this._publishTimestamp = value; }
         }
 

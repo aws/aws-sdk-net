@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Concurrency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Concurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }

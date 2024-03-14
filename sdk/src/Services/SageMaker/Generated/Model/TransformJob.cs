@@ -102,9 +102,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the transform Job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxConcurrentTransforms
+        public int? MaxConcurrentTransforms
         {
-            get { return this._maxConcurrentTransforms.GetValueOrDefault(); }
+            get { return this._maxConcurrentTransforms; }
             set { this._maxConcurrentTransforms = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxPayloadInMB
+        public int? MaxPayloadInMB
         {
-            get { return this._maxPayloadInMB.GetValueOrDefault(); }
+            get { return this._maxPayloadInMB; }
             set { this._maxPayloadInMB = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.SageMaker.Model
         /// are billed for the time interval between this time and the value of <c>TransformStartTime</c>.
         /// </para>
         /// </summary>
-        public DateTime TransformEndTime
+        public DateTime? TransformEndTime
         {
-            get { return this._transformEndTime.GetValueOrDefault(); }
+            get { return this._transformEndTime; }
             set { this._transformEndTime = value; }
         }
 
@@ -474,9 +474,9 @@ namespace Amazon.SageMaker.Model
         /// interval between this time and the value of <c>TransformEndTime</c>.
         /// </para>
         /// </summary>
-        public DateTime TransformStartTime
+        public DateTime? TransformStartTime
         {
-            get { return this._transformStartTime.GetValueOrDefault(); }
+            get { return this._transformStartTime; }
             set { this._transformStartTime = value; }
         }
 

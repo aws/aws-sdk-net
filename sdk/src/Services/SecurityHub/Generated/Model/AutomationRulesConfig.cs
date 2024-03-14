@@ -77,9 +77,9 @@ namespace Amazon.SecurityHub.Model
         /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.SecurityHub.Model
         /// evaluate other rules for the finding. By default, a rule isn't terminal. 
         /// </para>
         /// </summary>
-        public bool IsTerminal
+        public bool? IsTerminal
         {
-            get { return this._isTerminal.GetValueOrDefault(); }
+            get { return this._isTerminal; }
             set { this._isTerminal = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int RuleOrder
+        public int? RuleOrder
         {
-            get { return this._ruleOrder.GetValueOrDefault(); }
+            get { return this._ruleOrder; }
             set { this._ruleOrder = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.SecurityHub.Model
         /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// The actual value of the data quality metric.
         /// </para>
         /// </summary>
-        public double ActualValue
+        public double? ActualValue
         {
-            get { return this._actualValue.GetValueOrDefault(); }
+            get { return this._actualValue; }
             set { this._actualValue = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// data.
         /// </para>
         /// </summary>
-        public double ExpectedValue
+        public double? ExpectedValue
         {
-            get { return this._expectedValue.GetValueOrDefault(); }
+            get { return this._expectedValue; }
             set { this._expectedValue = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Glue.Model
         /// data.
         /// </para>
         /// </summary>
-        public double LowerLimit
+        public double? LowerLimit
         {
-            get { return this._lowerLimit.GetValueOrDefault(); }
+            get { return this._lowerLimit; }
             set { this._lowerLimit = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// data.
         /// </para>
         /// </summary>
-        public double UpperLimit
+        public double? UpperLimit
         {
-            get { return this._upperLimit.GetValueOrDefault(); }
+            get { return this._upperLimit; }
             set { this._upperLimit = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool CheckpointingEnabled
+        public bool? CheckpointingEnabled
         {
-            get { return this._checkpointingEnabled.GetValueOrDefault(); }
+            get { return this._checkpointingEnabled; }
             set { this._checkpointingEnabled = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long CheckpointInterval
+        public long? CheckpointInterval
         {
-            get { return this._checkpointInterval.GetValueOrDefault(); }
+            get { return this._checkpointInterval; }
             set { this._checkpointInterval = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MinPauseBetweenCheckpoints
+        public long? MinPauseBetweenCheckpoints
         {
-            get { return this._minPauseBetweenCheckpoints.GetValueOrDefault(); }
+            get { return this._minPauseBetweenCheckpoints; }
             set { this._minPauseBetweenCheckpoints = value; }
         }
 

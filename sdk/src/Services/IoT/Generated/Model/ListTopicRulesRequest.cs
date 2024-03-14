@@ -71,9 +71,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether the rule is disabled.
         /// </para>
         /// </summary>
-        public bool RuleDisabled
+        public bool? RuleDisabled
         {
-            get { return this._ruleDisabled.GetValueOrDefault(); }
+            get { return this._ruleDisabled; }
             set { this._ruleDisabled = value; }
         }
 

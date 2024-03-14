@@ -42,9 +42,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the contact was added to the queue.
         /// </para>
         /// </summary>
-        public DateTime EnqueueTimestamp
+        public DateTime? EnqueueTimestamp
         {
-            get { return this._enqueueTimestamp.GetValueOrDefault(); }
+            get { return this._enqueueTimestamp; }
             set { this._enqueueTimestamp = value; }
         }
 

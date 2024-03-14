@@ -77,19 +77,19 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("contentSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ContentSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deleteDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeleteDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("storageLimit", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("userCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UserCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

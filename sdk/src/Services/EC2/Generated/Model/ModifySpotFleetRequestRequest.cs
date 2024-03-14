@@ -147,9 +147,9 @@ namespace Amazon.EC2.Model
         /// The number of On-Demand Instances in the fleet.
         /// </para>
         /// </summary>
-        public int OnDemandTargetCapacity
+        public int? OnDemandTargetCapacity
         {
-            get { return this._onDemandTargetCapacity.GetValueOrDefault(); }
+            get { return this._onDemandTargetCapacity; }
             set { this._onDemandTargetCapacity = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.EC2.Model
         /// The size of the fleet.
         /// </para>
         /// </summary>
-        public int TargetCapacity
+        public int? TargetCapacity
         {
-            get { return this._targetCapacity.GetValueOrDefault(); }
+            get { return this._targetCapacity; }
             set { this._targetCapacity = value; }
         }
 

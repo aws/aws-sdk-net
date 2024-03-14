@@ -74,9 +74,9 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
-        public long MaxItems
+        public long? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

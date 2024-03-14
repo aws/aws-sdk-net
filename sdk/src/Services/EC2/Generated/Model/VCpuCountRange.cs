@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// limit.
         /// </para>
         /// </summary>
-        public int Max
+        public int? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The minimum number of vCPUs. If the value is <c>0</c>, there is no minimum limit.
         /// </para>
         /// </summary>
-        public int Min
+        public int? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

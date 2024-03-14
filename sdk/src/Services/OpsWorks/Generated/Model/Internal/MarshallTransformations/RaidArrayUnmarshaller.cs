@@ -89,7 +89,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Iops", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfDisks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDisks = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,13 +119,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RaidLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RaidLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

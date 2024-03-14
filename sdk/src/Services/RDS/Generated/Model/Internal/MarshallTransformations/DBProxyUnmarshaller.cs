@@ -63,7 +63,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreatedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DebugLogging", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DebugLogging = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,13 +99,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IdleClientTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.IdleClientTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequireTLS", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequireTLS = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -123,7 +123,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("UpdatedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.UpdatedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

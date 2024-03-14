@@ -179,9 +179,9 @@ namespace Amazon.IoT.Model
         /// The time the violation event occurred.
         /// </para>
         /// </summary>
-        public DateTime ViolationEventTime
+        public DateTime? ViolationEventTime
         {
-            get { return this._violationEventTime.GetValueOrDefault(); }
+            get { return this._violationEventTime; }
             set { this._violationEventTime = value; }
         }
 

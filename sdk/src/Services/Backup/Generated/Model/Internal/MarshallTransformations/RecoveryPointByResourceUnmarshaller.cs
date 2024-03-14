@@ -65,7 +65,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BackupSizeBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BackupSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsParent", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsParent = unmarshaller.Unmarshall(context);
                     continue;
                 }

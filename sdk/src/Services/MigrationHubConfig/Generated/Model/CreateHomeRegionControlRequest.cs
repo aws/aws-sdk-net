@@ -45,9 +45,9 @@ namespace Amazon.MigrationHubConfig.Model
         /// the caller has permission to make the call.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

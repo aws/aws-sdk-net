@@ -73,9 +73,9 @@ namespace Amazon.RDS.Model
         /// The creation time of the DB engine version.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -537,9 +537,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the engine version supports Babelfish for Aurora PostgreSQL.
         /// </para>
         /// </summary>
-        public bool SupportsBabelfish
+        public bool? SupportsBabelfish
         {
-            get { return this._supportsBabelfish.GetValueOrDefault(); }
+            get { return this._supportsBabelfish; }
             set { this._supportsBabelfish = value; }
         }
 
@@ -556,9 +556,9 @@ namespace Amazon.RDS.Model
         /// rebooting the DB instance.
         /// </para>
         /// </summary>
-        public bool SupportsCertificateRotationWithoutRestart
+        public bool? SupportsCertificateRotationWithoutRestart
         {
-            get { return this._supportsCertificateRotationWithoutRestart.GetValueOrDefault(); }
+            get { return this._supportsCertificateRotationWithoutRestart; }
             set { this._supportsCertificateRotationWithoutRestart = value; }
         }
 
@@ -574,9 +574,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether you can use Aurora global databases with a specific DB engine version.
         /// </para>
         /// </summary>
-        public bool SupportsGlobalDatabases
+        public bool? SupportsGlobalDatabases
         {
-            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            get { return this._supportsGlobalDatabases; }
             set { this._supportsGlobalDatabases = value; }
         }
 
@@ -593,9 +593,9 @@ namespace Amazon.RDS.Model
         /// Redshift.
         /// </para>
         /// </summary>
-        public bool SupportsIntegrations
+        public bool? SupportsIntegrations
         {
-            get { return this._supportsIntegrations.GetValueOrDefault(); }
+            get { return this._supportsIntegrations; }
             set { this._supportsIntegrations = value; }
         }
 
@@ -617,9 +617,9 @@ namespace Amazon.RDS.Model
         /// Valid for: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool SupportsLocalWriteForwarding
+        public bool? SupportsLocalWriteForwarding
         {
-            get { return this._supportsLocalWriteForwarding.GetValueOrDefault(); }
+            get { return this._supportsLocalWriteForwarding; }
             set { this._supportsLocalWriteForwarding = value; }
         }
 
@@ -636,9 +636,9 @@ namespace Amazon.RDS.Model
         /// ExportableLogTypes to CloudWatch Logs.
         /// </para>
         /// </summary>
-        public bool SupportsLogExportsToCloudwatchLogs
+        public bool? SupportsLogExportsToCloudwatchLogs
         {
-            get { return this._supportsLogExportsToCloudwatchLogs.GetValueOrDefault(); }
+            get { return this._supportsLogExportsToCloudwatchLogs; }
             set { this._supportsLogExportsToCloudwatchLogs = value; }
         }
 
@@ -654,9 +654,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether you can use Aurora parallel query with a specific DB engine version.
         /// </para>
         /// </summary>
-        public bool SupportsParallelQuery
+        public bool? SupportsParallelQuery
         {
-            get { return this._supportsParallelQuery.GetValueOrDefault(); }
+            get { return this._supportsParallelQuery; }
             set { this._supportsParallelQuery = value; }
         }
 
@@ -672,9 +672,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the database engine version supports read replicas.
         /// </para>
         /// </summary>
-        public bool SupportsReadReplica
+        public bool? SupportsReadReplica
         {
-            get { return this._supportsReadReplica.GetValueOrDefault(); }
+            get { return this._supportsReadReplica; }
             set { this._supportsReadReplica = value; }
         }
 

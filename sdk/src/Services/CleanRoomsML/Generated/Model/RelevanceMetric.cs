@@ -58,9 +58,9 @@ namespace Amazon.CleanRoomsML.Model
         /// The relevance score of the generated audience.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PowerKva", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.PowerKva = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WeightLbs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WeightLbs = unmarshaller.Unmarshall(context);
                     continue;
                 }

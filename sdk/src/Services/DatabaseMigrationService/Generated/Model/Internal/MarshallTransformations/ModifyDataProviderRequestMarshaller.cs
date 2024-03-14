@@ -94,7 +94,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExactSettings())
                 {
                     context.Writer.WritePropertyName("ExactSettings");
-                    context.Writer.Write(publicRequest.ExactSettings);
+                    context.Writer.Write(publicRequest.ExactSettings.Value);
                 }
 
                 if(publicRequest.IsSetSettings())

@@ -45,9 +45,9 @@ namespace Amazon.Athena.Model
         /// The number of bytes read to execute the query.
         /// </para>
         /// </summary>
-        public long InputBytes
+        public long? InputBytes
         {
-            get { return this._inputBytes.GetValueOrDefault(); }
+            get { return this._inputBytes; }
             set { this._inputBytes = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Athena.Model
         /// The number of rows read to execute the query.
         /// </para>
         /// </summary>
-        public long InputRows
+        public long? InputRows
         {
-            get { return this._inputRows.GetValueOrDefault(); }
+            get { return this._inputRows; }
             set { this._inputRows = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Athena.Model
         /// The number of bytes returned by the query.
         /// </para>
         /// </summary>
-        public long OutputBytes
+        public long? OutputBytes
         {
-            get { return this._outputBytes.GetValueOrDefault(); }
+            get { return this._outputBytes; }
             set { this._outputBytes = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Athena.Model
         /// The number of rows returned by the query.
         /// </para>
         /// </summary>
-        public long OutputRows
+        public long? OutputRows
         {
-            get { return this._outputRows.GetValueOrDefault(); }
+            get { return this._outputRows; }
             set { this._outputRows = value; }
         }
 

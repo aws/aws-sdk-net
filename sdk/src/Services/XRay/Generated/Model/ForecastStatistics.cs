@@ -43,9 +43,9 @@ namespace Amazon.XRay.Model
         /// The upper limit of fault counts for a service.
         /// </para>
         /// </summary>
-        public long FaultCountHigh
+        public long? FaultCountHigh
         {
-            get { return this._faultCountHigh.GetValueOrDefault(); }
+            get { return this._faultCountHigh; }
             set { this._faultCountHigh = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.XRay.Model
         /// The lower limit of fault counts for a service.
         /// </para>
         /// </summary>
-        public long FaultCountLow
+        public long? FaultCountLow
         {
-            get { return this._faultCountLow.GetValueOrDefault(); }
+            get { return this._faultCountLow; }
             set { this._faultCountLow = value; }
         }
 

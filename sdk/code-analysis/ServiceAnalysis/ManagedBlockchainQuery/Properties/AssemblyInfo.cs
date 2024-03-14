@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ManagedBlockchainQuery")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Managed Blockchain Query. Amazon Managed Blockchain (AMB) Query provides serverless access to standardized, multi-blockchain datasets with developer-friendly APIs.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Managed Blockchain Query. Amazon Managed Blockchain (AMB) Query provides serverless access to standardized, multi-blockchain datasets with developer-friendly APIs.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

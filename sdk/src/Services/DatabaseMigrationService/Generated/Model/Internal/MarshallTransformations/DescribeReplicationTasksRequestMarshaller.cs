@@ -92,13 +92,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxRecords())
                 {
                     context.Writer.WritePropertyName("MaxRecords");
-                    context.Writer.Write(publicRequest.MaxRecords);
+                    context.Writer.Write(publicRequest.MaxRecords.Value);
                 }
 
                 if(publicRequest.IsSetWithoutSettings())
                 {
                     context.Writer.WritePropertyName("WithoutSettings");
-                    context.Writer.Write(publicRequest.WithoutSettings);
+                    context.Writer.Write(publicRequest.WithoutSettings.Value);
                 }
 
                 writer.WriteObjectEnd();

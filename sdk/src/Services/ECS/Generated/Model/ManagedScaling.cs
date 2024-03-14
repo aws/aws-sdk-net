@@ -61,9 +61,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int InstanceWarmupPeriod
+        public int? InstanceWarmupPeriod
         {
-            get { return this._instanceWarmupPeriod.GetValueOrDefault(); }
+            get { return this._instanceWarmupPeriod; }
             set { this._instanceWarmupPeriod = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MaximumScalingStepSize
+        public int? MaximumScalingStepSize
         {
-            get { return this._maximumScalingStepSize.GetValueOrDefault(); }
+            get { return this._maximumScalingStepSize; }
             set { this._maximumScalingStepSize = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MinimumScalingStepSize
+        public int? MinimumScalingStepSize
         {
-            get { return this._minimumScalingStepSize.GetValueOrDefault(); }
+            get { return this._minimumScalingStepSize; }
             set { this._minimumScalingStepSize = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int TargetCapacity
+        public int? TargetCapacity
         {
-            get { return this._targetCapacity.GetValueOrDefault(); }
+            get { return this._targetCapacity; }
             set { this._targetCapacity = value; }
         }
 

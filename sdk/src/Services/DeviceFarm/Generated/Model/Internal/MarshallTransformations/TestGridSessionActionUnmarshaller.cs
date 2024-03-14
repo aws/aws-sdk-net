@@ -71,7 +71,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("duration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("started", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Started = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model
         /// Indicates whether the targeted port is blocked.
         /// </para>
         /// </summary>
-        public bool Blocked
+        public bool? Blocked
         {
-            get { return this._blocked.GetValueOrDefault(); }
+            get { return this._blocked; }
             set { this._blocked = value; }
         }
 

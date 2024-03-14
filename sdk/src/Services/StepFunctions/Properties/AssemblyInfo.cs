@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.StepFunctions")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Step Functions. AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.")]
 #elif NETCOREAPP3_1

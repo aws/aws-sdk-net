@@ -77,13 +77,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("computedDesiredCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ComputedDesiredCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pendingCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PendingCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("runningCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,7 +167,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stabilityStatusAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StabilityStatusAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -203,7 +203,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

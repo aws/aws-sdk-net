@@ -65,13 +65,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MinValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

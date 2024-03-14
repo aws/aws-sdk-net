@@ -68,7 +68,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreateDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxSessionDuration", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxSessionDuration = unmarshaller.Unmarshall(context);
                         continue;
                     }

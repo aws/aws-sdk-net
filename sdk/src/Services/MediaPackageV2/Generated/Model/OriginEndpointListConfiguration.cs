@@ -130,9 +130,9 @@ namespace Amazon.MediaPackageV2.Model
         /// The date and time the origin endpoint was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.MediaPackageV2.Model
         /// The date and time the origin endpoint was modified.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

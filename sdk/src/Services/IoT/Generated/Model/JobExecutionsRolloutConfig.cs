@@ -63,9 +63,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaximumPerMinute
+        public int? MaximumPerMinute
         {
-            get { return this._maximumPerMinute.GetValueOrDefault(); }
+            get { return this._maximumPerMinute; }
             set { this._maximumPerMinute = value; }
         }
 

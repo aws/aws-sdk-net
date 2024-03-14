@@ -53,7 +53,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ApproximateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TracesProcessedCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TracesProcessedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

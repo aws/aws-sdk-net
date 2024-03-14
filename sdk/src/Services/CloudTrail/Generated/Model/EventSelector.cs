@@ -125,9 +125,9 @@ namespace Amazon.CloudTrail.Model
         /// Pricing</a>.
         /// </para>
         /// </summary>
-        public bool IncludeManagementEvents
+        public bool? IncludeManagementEvents
         {
-            get { return this._includeManagementEvents.GetValueOrDefault(); }
+            get { return this._includeManagementEvents; }
             set { this._includeManagementEvents = value; }
         }
 

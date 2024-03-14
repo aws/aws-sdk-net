@@ -71,7 +71,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Cooldown", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cooldown = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MinAdjustmentMagnitude", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinAdjustmentMagnitude = unmarshaller.Unmarshall(context);
                     continue;
                 }

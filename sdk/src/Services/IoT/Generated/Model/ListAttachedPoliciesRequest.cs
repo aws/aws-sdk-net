@@ -71,9 +71,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.IoT.Model
         /// When true, recursively list attached policies.
         /// </para>
         /// </summary>
-        public bool Recursive
+        public bool? Recursive
         {
-            get { return this._recursive.GetValueOrDefault(); }
+            get { return this._recursive; }
             set { this._recursive = value; }
         }
 

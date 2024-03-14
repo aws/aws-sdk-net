@@ -71,13 +71,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnablePartialResultsStabilization())
             {
                 context.Writer.WritePropertyName("EnablePartialResultsStabilization");
-                context.Writer.Write(requestObject.EnablePartialResultsStabilization);
+                context.Writer.Write(requestObject.EnablePartialResultsStabilization.Value);
             }
 
             if(requestObject.IsSetFilterPartialResults())
             {
                 context.Writer.WritePropertyName("FilterPartialResults");
-                context.Writer.Write(requestObject.FilterPartialResults);
+                context.Writer.Write(requestObject.FilterPartialResults.Value);
             }
 
             if(requestObject.IsSetLanguageCode())

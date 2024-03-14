@@ -54,7 +54,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeValue())
             {
                 context.Writer.WritePropertyName("timeValue");
-                context.Writer.Write(requestObject.TimeValue);
+                context.Writer.Write(requestObject.TimeValue.Value);
             }
 
         }

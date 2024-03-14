@@ -65,7 +65,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxAttempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }

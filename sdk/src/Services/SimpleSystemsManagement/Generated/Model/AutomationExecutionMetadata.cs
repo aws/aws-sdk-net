@@ -293,9 +293,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// progress.
         /// </para>
         /// </summary>
-        public DateTime ExecutionEndTime
+        public DateTime? ExecutionEndTime
         {
-            get { return this._executionEndTime.GetValueOrDefault(); }
+            get { return this._executionEndTime; }
             set { this._executionEndTime = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the execution started.
         /// </para>
         /// </summary>
-        public DateTime ExecutionStartTime
+        public DateTime? ExecutionStartTime
         {
-            get { return this._executionStartTime.GetValueOrDefault(); }
+            get { return this._executionStartTime; }
             set { this._executionStartTime = value; }
         }
 
@@ -521,9 +521,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time the Automation operation is scheduled to start.
         /// </para>
         /// </summary>
-        public DateTime ScheduledTime
+        public DateTime? ScheduledTime
         {
-            get { return this._scheduledTime.GetValueOrDefault(); }
+            get { return this._scheduledTime; }
             set { this._scheduledTime = value; }
         }
 

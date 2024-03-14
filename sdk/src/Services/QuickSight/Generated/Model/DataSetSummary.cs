@@ -67,9 +67,9 @@ namespace Amazon.QuickSight.Model
         /// A value that indicates if the dataset has column level permission configured.
         /// </para>
         /// </summary>
-        public bool ColumnLevelPermissionRulesApplied
+        public bool? ColumnLevelPermissionRulesApplied
         {
-            get { return this._columnLevelPermissionRulesApplied.GetValueOrDefault(); }
+            get { return this._columnLevelPermissionRulesApplied; }
             set { this._columnLevelPermissionRulesApplied = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.QuickSight.Model
         /// The time that this dataset was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.QuickSight.Model
         /// The last time that this dataset was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.QuickSight.Model
         /// Whether or not the row level permission tags are applied.
         /// </para>
         /// </summary>
-        public bool RowLevelPermissionTagConfigurationApplied
+        public bool? RowLevelPermissionTagConfigurationApplied
         {
-            get { return this._rowLevelPermissionTagConfigurationApplied.GetValueOrDefault(); }
+            get { return this._rowLevelPermissionTagConfigurationApplied; }
             set { this._rowLevelPermissionTagConfigurationApplied = value; }
         }
 

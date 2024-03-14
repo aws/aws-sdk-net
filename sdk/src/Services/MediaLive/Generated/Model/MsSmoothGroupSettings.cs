@@ -110,9 +110,9 @@ namespace Amazon.MediaLive.Model
         /// is re-established.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ConnectionRetryInterval
+        public int? ConnectionRetryInterval
         {
-            get { return this._connectionRetryInterval.GetValueOrDefault(); }
+            get { return this._connectionRetryInterval; }
             set { this._connectionRetryInterval = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.MediaLive.Model
         /// outputs.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FilecacheDuration
+        public int? FilecacheDuration
         {
-            get { return this._filecacheDuration.GetValueOrDefault(); }
+            get { return this._filecacheDuration; }
             set { this._filecacheDuration = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.MediaLive.Model
         /// seconds). Fragment length must be compatible with GOP size and framerate.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int FragmentLength
+        public int? FragmentLength
         {
-            get { return this._fragmentLength.GetValueOrDefault(); }
+            get { return this._fragmentLength; }
             set { this._fragmentLength = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NumRetries. Number of retry attempts.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumRetries
+        public int? NumRetries
         {
-            get { return this._numRetries.GetValueOrDefault(); }
+            get { return this._numRetries; }
             set { this._numRetries = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.MediaLive.Model
         /// filecacheDuration.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RestartDelay
+        public int? RestartDelay
         {
-            get { return this._restartDelay.GetValueOrDefault(); }
+            get { return this._restartDelay; }
             set { this._restartDelay = value; }
         }
 
@@ -296,9 +296,9 @@ namespace Amazon.MediaLive.Model
         /// from the second pipeline.
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int SendDelayMs
+        public int? SendDelayMs
         {
-            get { return this._sendDelayMs.GetValueOrDefault(); }
+            get { return this._sendDelayMs; }
             set { this._sendDelayMs = value; }
         }
 

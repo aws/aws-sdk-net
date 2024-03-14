@@ -65,9 +65,9 @@ namespace Amazon.ConfigService.Model
         /// which event triggered the evaluation.
         /// </para>
         /// </summary>
-        public DateTime OrderingTimestamp
+        public DateTime? OrderingTimestamp
         {
-            get { return this._orderingTimestamp.GetValueOrDefault(); }
+            get { return this._orderingTimestamp; }
             set { this._orderingTimestamp = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isAlias", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAlias = unmarshaller.Unmarshall(context);
                     continue;
                 }

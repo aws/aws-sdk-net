@@ -95,25 +95,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalStepCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalStepCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalStepsFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalStepsFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalStepsSkipped", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalStepsSkipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalStepsSucceeded", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalStepsSucceeded = unmarshaller.Unmarshall(context);
                     continue;
                 }

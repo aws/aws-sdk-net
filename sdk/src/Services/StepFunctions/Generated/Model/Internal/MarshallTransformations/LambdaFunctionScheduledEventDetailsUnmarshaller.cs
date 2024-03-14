@@ -89,7 +89,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

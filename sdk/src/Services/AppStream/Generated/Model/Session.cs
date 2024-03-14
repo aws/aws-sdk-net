@@ -151,9 +151,9 @@ namespace Amazon.AppStream.Model
         /// session ends.
         /// </para>
         /// </summary>
-        public DateTime MaxExpirationTime
+        public DateTime? MaxExpirationTime
         {
-            get { return this._maxExpirationTime.GetValueOrDefault(); }
+            get { return this._maxExpirationTime; }
             set { this._maxExpirationTime = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.AppStream.Model
         /// The time when a streaming instance is dedicated for the user.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

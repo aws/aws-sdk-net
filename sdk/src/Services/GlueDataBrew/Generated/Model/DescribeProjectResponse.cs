@@ -54,9 +54,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time that the project was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time that the project was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time when the project was opened. 
         /// </para>
         /// </summary>
-        public DateTime OpenDate
+        public DateTime? OpenDate
         {
-            get { return this._openDate.GetValueOrDefault(); }
+            get { return this._openDate; }
             set { this._openDate = value; }
         }
 

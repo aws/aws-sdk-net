@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("bytesConverted", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.BytesConverted = unmarshaller.Unmarshall(context);
                         continue;
                     }

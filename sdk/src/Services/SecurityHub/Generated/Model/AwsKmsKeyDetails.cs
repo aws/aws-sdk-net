@@ -72,9 +72,9 @@ namespace Amazon.SecurityHub.Model
         /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
-        public double CreationDate
+        public double? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the key has key rotation enabled.
         /// </para>
         /// </summary>
-        public bool KeyRotationStatus
+        public bool? KeyRotationStatus
         {
-            get { return this._keyRotationStatus.GetValueOrDefault(); }
+            get { return this._keyRotationStatus; }
             set { this._keyRotationStatus = value; }
         }
 

@@ -94,7 +94,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetValidTo())
                 {
                     context.Writer.WritePropertyName("ValidTo");
-                    context.Writer.Write(publicRequest.ValidTo);
+                    context.Writer.Write(publicRequest.ValidTo.Value);
                 }
 
                 writer.WriteObjectEnd();

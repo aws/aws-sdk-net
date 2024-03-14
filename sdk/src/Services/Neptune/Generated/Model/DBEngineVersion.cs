@@ -218,9 +218,9 @@ namespace Amazon.Neptune.Model
         /// DB engine version.
         /// </para>
         /// </summary>
-        public bool SupportsGlobalDatabases
+        public bool? SupportsGlobalDatabases
         {
-            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            get { return this._supportsGlobalDatabases; }
             set { this._supportsGlobalDatabases = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.Neptune.Model
         /// specified by ExportableLogTypes to CloudWatch Logs.
         /// </para>
         /// </summary>
-        public bool SupportsLogExportsToCloudwatchLogs
+        public bool? SupportsLogExportsToCloudwatchLogs
         {
-            get { return this._supportsLogExportsToCloudwatchLogs.GetValueOrDefault(); }
+            get { return this._supportsLogExportsToCloudwatchLogs; }
             set { this._supportsLogExportsToCloudwatchLogs = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.Neptune.Model
         /// Indicates whether the database engine version supports read replicas.
         /// </para>
         /// </summary>
-        public bool SupportsReadReplica
+        public bool? SupportsReadReplica
         {
-            get { return this._supportsReadReplica.GetValueOrDefault(); }
+            get { return this._supportsReadReplica; }
             set { this._supportsReadReplica = value; }
         }
 

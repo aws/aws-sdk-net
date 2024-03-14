@@ -82,9 +82,9 @@ namespace Amazon.Budgets.Model
         /// The last time that your budget was auto-adjusted.
         /// </para>
         /// </summary>
-        public DateTime LastAutoAdjustTime
+        public DateTime? LastAutoAdjustTime
         {
-            get { return this._lastAutoAdjustTime.GetValueOrDefault(); }
+            get { return this._lastAutoAdjustTime; }
             set { this._lastAutoAdjustTime = value; }
         }
 

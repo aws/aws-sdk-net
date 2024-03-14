@@ -71,13 +71,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CoolDown", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CoolDown = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScalingAdjustment", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context);
                     continue;
                 }

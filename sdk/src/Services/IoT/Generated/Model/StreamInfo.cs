@@ -48,9 +48,9 @@ namespace Amazon.IoT.Model
         /// The date when the stream was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.IoT.Model
         /// The date when the stream was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int StreamVersion
+        public int? StreamVersion
         {
-            get { return this._streamVersion.GetValueOrDefault(); }
+            get { return this._streamVersion; }
             set { this._streamVersion = value; }
         }
 

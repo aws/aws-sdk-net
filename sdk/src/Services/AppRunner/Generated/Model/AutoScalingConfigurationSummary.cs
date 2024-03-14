@@ -97,9 +97,9 @@ namespace Amazon.AppRunner.Model
         /// configurations (<c>"Status": "ACTIVE"</c>) with the same <c>AutoScalingConfigurationName</c>.
         /// </para>
         /// </summary>
-        public int AutoScalingConfigurationRevision
+        public int? AutoScalingConfigurationRevision
         {
-            get { return this._autoScalingConfigurationRevision.GetValueOrDefault(); }
+            get { return this._autoScalingConfigurationRevision; }
             set { this._autoScalingConfigurationRevision = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.AppRunner.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.AppRunner.Model
         /// of <c>false</c> indicates no services are associated.
         /// </para>
         /// </summary>
-        public bool HasAssociatedService
+        public bool? HasAssociatedService
         {
-            get { return this._hasAssociatedService.GetValueOrDefault(); }
+            get { return this._hasAssociatedService; }
             set { this._hasAssociatedService = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.AppRunner.Model
         /// the same <c>AutoScalingConfigurationName</c>.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

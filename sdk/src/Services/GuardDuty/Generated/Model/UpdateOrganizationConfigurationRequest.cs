@@ -63,9 +63,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use AutoEnableOrganizationMembers instead")]
-        public bool AutoEnable
+        public bool? AutoEnable
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
+            get { return this._autoEnable; }
             set { this._autoEnable = value; }
         }
 

@@ -53,7 +53,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("namespaceVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NamespaceVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Max", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Max = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Used", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Used = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -53,31 +53,31 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("estimatedMinutesRemaining", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.EstimatedMinutesRemaining = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isReservedMinutesCustomer", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsReservedMinutesCustomer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalReservedMinuteAllocation", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalReservedMinuteAllocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalScheduledMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalScheduledMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("upcomingMinutesScheduled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.UpcomingMinutesScheduled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("osByol", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OsByol = unmarshaller.Unmarshall(context);
                     continue;
                 }

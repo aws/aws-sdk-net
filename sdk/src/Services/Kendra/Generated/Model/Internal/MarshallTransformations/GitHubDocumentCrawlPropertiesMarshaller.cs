@@ -48,43 +48,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlIssue())
             {
                 context.Writer.WritePropertyName("CrawlIssue");
-                context.Writer.Write(requestObject.CrawlIssue);
+                context.Writer.Write(requestObject.CrawlIssue.Value);
             }
 
             if(requestObject.IsSetCrawlIssueComment())
             {
                 context.Writer.WritePropertyName("CrawlIssueComment");
-                context.Writer.Write(requestObject.CrawlIssueComment);
+                context.Writer.Write(requestObject.CrawlIssueComment.Value);
             }
 
             if(requestObject.IsSetCrawlIssueCommentAttachment())
             {
                 context.Writer.WritePropertyName("CrawlIssueCommentAttachment");
-                context.Writer.Write(requestObject.CrawlIssueCommentAttachment);
+                context.Writer.Write(requestObject.CrawlIssueCommentAttachment.Value);
             }
 
             if(requestObject.IsSetCrawlPullRequest())
             {
                 context.Writer.WritePropertyName("CrawlPullRequest");
-                context.Writer.Write(requestObject.CrawlPullRequest);
+                context.Writer.Write(requestObject.CrawlPullRequest.Value);
             }
 
             if(requestObject.IsSetCrawlPullRequestComment())
             {
                 context.Writer.WritePropertyName("CrawlPullRequestComment");
-                context.Writer.Write(requestObject.CrawlPullRequestComment);
+                context.Writer.Write(requestObject.CrawlPullRequestComment.Value);
             }
 
             if(requestObject.IsSetCrawlPullRequestCommentAttachment())
             {
                 context.Writer.WritePropertyName("CrawlPullRequestCommentAttachment");
-                context.Writer.Write(requestObject.CrawlPullRequestCommentAttachment);
+                context.Writer.Write(requestObject.CrawlPullRequestCommentAttachment.Value);
             }
 
             if(requestObject.IsSetCrawlRepositoryDocuments())
             {
                 context.Writer.WritePropertyName("CrawlRepositoryDocuments");
-                context.Writer.Write(requestObject.CrawlRepositoryDocuments);
+                context.Writer.Write(requestObject.CrawlRepositoryDocuments.Value);
             }
 
         }

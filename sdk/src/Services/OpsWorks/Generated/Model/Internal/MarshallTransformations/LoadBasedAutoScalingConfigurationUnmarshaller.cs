@@ -71,7 +71,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Enable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enable = unmarshaller.Unmarshall(context);
                     continue;
                 }

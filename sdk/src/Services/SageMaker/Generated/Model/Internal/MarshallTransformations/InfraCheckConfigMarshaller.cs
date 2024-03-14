@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableInfraCheck())
             {
                 context.Writer.WritePropertyName("EnableInfraCheck");
-                context.Writer.Write(requestObject.EnableInfraCheck);
+                context.Writer.Write(requestObject.EnableInfraCheck.Value);
             }
 
         }

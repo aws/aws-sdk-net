@@ -101,9 +101,9 @@ namespace Amazon.GlueDataBrew.Model
         /// job will not validate it during a job run. Default value is false.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

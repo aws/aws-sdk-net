@@ -65,19 +65,19 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("F1Score", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.F1Score = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Precision", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Recall", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Recall = unmarshaller.Unmarshall(context);
                     continue;
                 }

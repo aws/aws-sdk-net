@@ -45,9 +45,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=100000000, Max=1000000000)]
-        public int DownlinkFrequency
+        public int? DownlinkFrequency
         {
-            get { return this._downlinkFrequency.GetValueOrDefault(); }
+            get { return this._downlinkFrequency; }
             set { this._downlinkFrequency = value; }
         }
 

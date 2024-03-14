@@ -42,9 +42,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The time when the estimate of the size of the resource was made.
         /// </para>
         /// </summary>
-        public DateTime EstimatedOn
+        public DateTime? EstimatedOn
         {
-            get { return this._estimatedOn.GetValueOrDefault(); }
+            get { return this._estimatedOn; }
             set { this._estimatedOn = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.IoTAnalytics.Model
         /// The estimated size of the resource, in bytes.
         /// </para>
         /// </summary>
-        public double EstimatedSizeInBytes
+        public double? EstimatedSizeInBytes
         {
-            get { return this._estimatedSizeInBytes.GetValueOrDefault(); }
+            get { return this._estimatedSizeInBytes; }
             set { this._estimatedSizeInBytes = value; }
         }
 

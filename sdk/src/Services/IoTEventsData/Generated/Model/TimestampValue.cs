@@ -42,9 +42,9 @@ namespace Amazon.IoTEventsData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9223372036854775807)]
-        public long TimeInMillis
+        public long? TimeInMillis
         {
-            get { return this._timeInMillis.GetValueOrDefault(); }
+            get { return this._timeInMillis; }
             set { this._timeInMillis = value; }
         }
 

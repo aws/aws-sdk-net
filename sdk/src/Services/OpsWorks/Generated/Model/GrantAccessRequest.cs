@@ -73,9 +73,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=1440)]
-        public int ValidForInMinutes
+        public int? ValidForInMinutes
         {
-            get { return this._validForInMinutes.GetValueOrDefault(); }
+            get { return this._validForInMinutes; }
             set { this._validForInMinutes = value; }
         }
 

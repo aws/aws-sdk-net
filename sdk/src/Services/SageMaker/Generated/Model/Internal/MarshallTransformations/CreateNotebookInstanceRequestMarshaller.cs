@@ -190,7 +190,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVolumeSizeInGB())
                 {
                     context.Writer.WritePropertyName("VolumeSizeInGB");
-                    context.Writer.Write(publicRequest.VolumeSizeInGB);
+                    context.Writer.Write(publicRequest.VolumeSizeInGB.Value);
                 }
 
                 writer.WriteObjectEnd();

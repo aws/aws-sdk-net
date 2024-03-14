@@ -80,7 +80,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetMetricNames())
@@ -97,7 +97,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPeriod())
                 {
                     context.Writer.WritePropertyName("period");
-                    context.Writer.Write(publicRequest.Period);
+                    context.Writer.Write(publicRequest.Period.Value);
                 }
 
                 if(publicRequest.IsSetReportNames())
@@ -125,7 +125,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 if(publicRequest.IsSetTreatmentNames())

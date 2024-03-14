@@ -83,7 +83,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("progressPercentage", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

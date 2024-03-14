@@ -46,9 +46,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int MaxIndexingCapacityInOCU
+        public int? MaxIndexingCapacityInOCU
         {
-            get { return this._maxIndexingCapacityInOCU.GetValueOrDefault(); }
+            get { return this._maxIndexingCapacityInOCU; }
             set { this._maxIndexingCapacityInOCU = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int MaxSearchCapacityInOCU
+        public int? MaxSearchCapacityInOCU
         {
-            get { return this._maxSearchCapacityInOCU.GetValueOrDefault(); }
+            get { return this._maxSearchCapacityInOCU; }
             set { this._maxSearchCapacityInOCU = value; }
         }
 

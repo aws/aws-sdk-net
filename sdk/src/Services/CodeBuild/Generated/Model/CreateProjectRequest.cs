@@ -81,9 +81,9 @@ namespace Amazon.CodeBuild.Model
         /// Set this to true to generate a publicly accessible URL for your project's build badge.
         /// </para>
         /// </summary>
-        public bool BadgeEnabled
+        public bool? BadgeEnabled
         {
-            get { return this._badgeEnabled.GetValueOrDefault(); }
+            get { return this._badgeEnabled; }
             set { this._badgeEnabled = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.CodeBuild.Model
         /// and are not run.
         /// </para>
         /// </summary>
-        public int ConcurrentBuildLimit
+        public int? ConcurrentBuildLimit
         {
-            get { return this._concurrentBuildLimit.GetValueOrDefault(); }
+            get { return this._concurrentBuildLimit; }
             set { this._concurrentBuildLimit = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=480)]
-        public int QueuedTimeoutInMinutes
+        public int? QueuedTimeoutInMinutes
         {
-            get { return this._queuedTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._queuedTimeoutInMinutes; }
             set { this._queuedTimeoutInMinutes = value; }
         }
 
@@ -482,9 +482,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=480)]
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

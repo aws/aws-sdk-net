@@ -54,7 +54,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSeconds())
             {
                 context.Writer.WritePropertyName("seconds");
-                context.Writer.Write(requestObject.Seconds);
+                context.Writer.Write(requestObject.Seconds.Value);
             }
 
             if(requestObject.IsSetTimerName())

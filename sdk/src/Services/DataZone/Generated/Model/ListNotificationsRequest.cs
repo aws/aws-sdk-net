@@ -49,9 +49,9 @@ namespace Amazon.DataZone.Model
         /// The time after which you want to list notifications.
         /// </para>
         /// </summary>
-        public DateTime AfterTimestamp
+        public DateTime? AfterTimestamp
         {
-            get { return this._afterTimestamp.GetValueOrDefault(); }
+            get { return this._afterTimestamp; }
             set { this._afterTimestamp = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.DataZone.Model
         /// The time before which you want to list notifications.
         /// </para>
         /// </summary>
-        public DateTime BeforeTimestamp
+        public DateTime? BeforeTimestamp
         {
-            get { return this._beforeTimestamp.GetValueOrDefault(); }
+            get { return this._beforeTimestamp; }
             set { this._beforeTimestamp = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.DataZone.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

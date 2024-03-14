@@ -47,9 +47,9 @@ namespace Amazon.Lightsail.Model
         /// start date up to, but not including, <c>2017-05-01</c>.
         /// </para>
         /// </summary>
-        public DateTime End
+        public DateTime? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Lightsail.Model
         /// than the current date to avoid a validation error.
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

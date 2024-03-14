@@ -182,9 +182,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TimeSeriesCreationDate
+        public DateTime? TimeSeriesCreationDate
         {
-            get { return this._timeSeriesCreationDate.GetValueOrDefault(); }
+            get { return this._timeSeriesCreationDate; }
             set { this._timeSeriesCreationDate = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TimeSeriesLastUpdateDate
+        public DateTime? TimeSeriesLastUpdateDate
         {
-            get { return this._timeSeriesLastUpdateDate.GetValueOrDefault(); }
+            get { return this._timeSeriesLastUpdateDate; }
             set { this._timeSeriesLastUpdateDate = value; }
         }
 

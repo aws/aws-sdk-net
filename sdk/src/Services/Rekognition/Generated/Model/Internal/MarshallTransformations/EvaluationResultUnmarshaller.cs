@@ -65,7 +65,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("F1Score", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.F1Score = unmarshaller.Unmarshall(context);
                     continue;
                 }

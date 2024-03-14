@@ -41,9 +41,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property MaxVideoBitsPerSecond. The maximum video bitrate (bps)
         /// to include in output.
         /// </summary>
-        public int MaxVideoBitsPerSecond
+        public int? MaxVideoBitsPerSecond
         {
-            get { return this._maxVideoBitsPerSecond.GetValueOrDefault(); }
+            get { return this._maxVideoBitsPerSecond; }
             set { this._maxVideoBitsPerSecond = value; }
         }
 
@@ -57,9 +57,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property MinVideoBitsPerSecond. The minimum video bitrate (bps)
         /// to include in output.
         /// </summary>
-        public int MinVideoBitsPerSecond
+        public int? MinVideoBitsPerSecond
         {
-            get { return this._minVideoBitsPerSecond.GetValueOrDefault(); }
+            get { return this._minVideoBitsPerSecond; }
             set { this._minVideoBitsPerSecond = value; }
         }
 

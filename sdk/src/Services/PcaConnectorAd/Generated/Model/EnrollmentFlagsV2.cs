@@ -45,9 +45,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Allow renewal using the same key.
         /// </para>
         /// </summary>
-        public bool EnableKeyReuseOnNtTokenKeysetStorageFull
+        public bool? EnableKeyReuseOnNtTokenKeysetStorageFull
         {
-            get { return this._enableKeyReuseOnNtTokenKeysetStorageFull.GetValueOrDefault(); }
+            get { return this._enableKeyReuseOnNtTokenKeysetStorageFull; }
             set { this._enableKeyReuseOnNtTokenKeysetStorageFull = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include symmetric algorithms allowed by the subject.
         /// </para>
         /// </summary>
-        public bool IncludeSymmetricAlgorithms
+        public bool? IncludeSymmetricAlgorithms
         {
-            get { return this._includeSymmetricAlgorithms.GetValueOrDefault(); }
+            get { return this._includeSymmetricAlgorithms; }
             set { this._includeSymmetricAlgorithms = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// vulnerability.
         /// </para>
         /// </summary>
-        public bool NoSecurityExtension
+        public bool? NoSecurityExtension
         {
-            get { return this._noSecurityExtension.GetValueOrDefault(); }
+            get { return this._noSecurityExtension; }
             set { this._noSecurityExtension = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Delete expired or revoked certificates instead of archiving them.
         /// </para>
         /// </summary>
-        public bool RemoveInvalidCertificateFromPersonalStore
+        public bool? RemoveInvalidCertificateFromPersonalStore
         {
-            get { return this._removeInvalidCertificateFromPersonalStore.GetValueOrDefault(); }
+            get { return this._removeInvalidCertificateFromPersonalStore; }
             set { this._removeInvalidCertificateFromPersonalStore = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// with the certificate is used.
         /// </para>
         /// </summary>
-        public bool UserInteractionRequired
+        public bool? UserInteractionRequired
         {
-            get { return this._userInteractionRequired.GetValueOrDefault(); }
+            get { return this._userInteractionRequired; }
             set { this._userInteractionRequired = value; }
         }
 

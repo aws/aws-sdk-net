@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// The total size of the disks, in GB.
         /// </para>
         /// </summary>
-        public long TotalSizeInGB
+        public long? TotalSizeInGB
         {
-            get { return this._totalSizeInGB.GetValueOrDefault(); }
+            get { return this._totalSizeInGB; }
             set { this._totalSizeInGB = value; }
         }
 

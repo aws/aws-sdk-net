@@ -53,7 +53,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isSuccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsSuccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

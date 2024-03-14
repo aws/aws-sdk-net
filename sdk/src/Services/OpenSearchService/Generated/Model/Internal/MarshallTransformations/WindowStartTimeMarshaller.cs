@@ -48,13 +48,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHours())
             {
                 context.Writer.WritePropertyName("Hours");
-                context.Writer.Write(requestObject.Hours);
+                context.Writer.Write(requestObject.Hours.Value);
             }
 
             if(requestObject.IsSetMinutes())
             {
                 context.Writer.WritePropertyName("Minutes");
-                context.Writer.Write(requestObject.Minutes);
+                context.Writer.Write(requestObject.Minutes.Value);
             }
 
         }

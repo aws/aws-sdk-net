@@ -49,9 +49,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int AuthorizerResultTtlInSeconds
+        public int? AuthorizerResultTtlInSeconds
         {
-            get { return this._authorizerResultTtlInSeconds.GetValueOrDefault(); }
+            get { return this._authorizerResultTtlInSeconds; }
             set { this._authorizerResultTtlInSeconds = value; }
         }
 

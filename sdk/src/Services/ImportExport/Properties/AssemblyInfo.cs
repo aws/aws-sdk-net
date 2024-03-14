@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ImportExport")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 #elif NETCOREAPP3_1

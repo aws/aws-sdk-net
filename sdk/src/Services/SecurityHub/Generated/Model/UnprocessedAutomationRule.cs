@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         ///  The error code associated with the unprocessed automation rule. 
         /// </para>
         /// </summary>
-        public int ErrorCode
+        public int? ErrorCode
         {
-            get { return this._errorCode.GetValueOrDefault(); }
+            get { return this._errorCode; }
             set { this._errorCode = value; }
         }
 

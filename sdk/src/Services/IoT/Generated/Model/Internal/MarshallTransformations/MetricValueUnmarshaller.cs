@@ -71,13 +71,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("number", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Number = unmarshaller.Unmarshall(context);
                     continue;
                 }

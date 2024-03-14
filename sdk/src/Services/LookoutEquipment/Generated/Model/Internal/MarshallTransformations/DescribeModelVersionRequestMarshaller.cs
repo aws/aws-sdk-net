@@ -76,7 +76,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModelVersion())
                 {
                     context.Writer.WritePropertyName("ModelVersion");
-                    context.Writer.Write(publicRequest.ModelVersion);
+                    context.Writer.Write(publicRequest.ModelVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -77,7 +77,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
                 {
                     context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
-                    context.Writer.Write(publicRequest.AuthorizerResultTtlInSeconds);
+                    context.Writer.Write(publicRequest.AuthorizerResultTtlInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetAuthorizerUri())

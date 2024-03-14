@@ -59,13 +59,13 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableScaleIn())
             {
                 context.Writer.WritePropertyName("DisableScaleIn");
-                context.Writer.Write(requestObject.DisableScaleIn);
+                context.Writer.Write(requestObject.DisableScaleIn.Value);
             }
 
             if(requestObject.IsSetEstimatedInstanceWarmup())
             {
                 context.Writer.WritePropertyName("EstimatedInstanceWarmup");
-                context.Writer.Write(requestObject.EstimatedInstanceWarmup);
+                context.Writer.Write(requestObject.EstimatedInstanceWarmup.Value);
             }
 
             if(requestObject.IsSetPredefinedScalingMetricSpecification())
@@ -82,19 +82,19 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaleInCooldown())
             {
                 context.Writer.WritePropertyName("ScaleInCooldown");
-                context.Writer.Write(requestObject.ScaleInCooldown);
+                context.Writer.Write(requestObject.ScaleInCooldown.Value);
             }
 
             if(requestObject.IsSetScaleOutCooldown())
             {
                 context.Writer.WritePropertyName("ScaleOutCooldown");
-                context.Writer.Write(requestObject.ScaleOutCooldown);
+                context.Writer.Write(requestObject.ScaleOutCooldown.Value);
             }
 
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                context.Writer.Write(requestObject.TargetValue.Value);
             }
 
         }

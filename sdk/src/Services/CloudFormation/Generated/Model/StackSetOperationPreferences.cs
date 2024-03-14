@@ -106,9 +106,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FailureToleranceCount
+        public int? FailureToleranceCount
         {
-            get { return this._failureToleranceCount.GetValueOrDefault(); }
+            get { return this._failureToleranceCount; }
             set { this._failureToleranceCount = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int FailureTolerancePercentage
+        public int? FailureTolerancePercentage
         {
-            get { return this._failureTolerancePercentage.GetValueOrDefault(); }
+            get { return this._failureTolerancePercentage; }
             set { this._failureTolerancePercentage = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxConcurrentCount
+        public int? MaxConcurrentCount
         {
-            get { return this._maxConcurrentCount.GetValueOrDefault(); }
+            get { return this._maxConcurrentCount; }
             set { this._maxConcurrentCount = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxConcurrentPercentage
+        public int? MaxConcurrentPercentage
         {
-            get { return this._maxConcurrentPercentage.GetValueOrDefault(); }
+            get { return this._maxConcurrentPercentage; }
             set { this._maxConcurrentPercentage = value; }
         }
 

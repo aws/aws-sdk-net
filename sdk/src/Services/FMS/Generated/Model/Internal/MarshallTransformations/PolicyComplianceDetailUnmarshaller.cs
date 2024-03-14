@@ -65,13 +65,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EvaluationLimitExceeded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EvaluationLimitExceeded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExpiredAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpiredAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

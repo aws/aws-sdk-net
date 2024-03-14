@@ -156,9 +156,9 @@ namespace Amazon.QuickSight.Model
         /// customizations that are configured at different levels. 
         /// </para>
         /// </summary>
-        public bool Resolved
+        public bool? Resolved
         {
-            get { return this._resolved.GetValueOrDefault(); }
+            get { return this._resolved; }
             set { this._resolved = value; }
         }
 

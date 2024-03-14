@@ -43,9 +43,9 @@ namespace Amazon.GuardDuty.Model
         /// Number of files scanned.
         /// </para>
         /// </summary>
-        public int Files
+        public int? Files
         {
-            get { return this._files.GetValueOrDefault(); }
+            get { return this._files; }
             set { this._files = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.GuardDuty.Model
         /// Total GB of files scanned for malware.
         /// </para>
         /// </summary>
-        public int TotalGb
+        public int? TotalGb
         {
-            get { return this._totalGb.GetValueOrDefault(); }
+            get { return this._totalGb; }
             set { this._totalGb = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of scanned volumes.
         /// </para>
         /// </summary>
-        public int Volumes
+        public int? Volumes
         {
-            get { return this._volumes.GetValueOrDefault(); }
+            get { return this._volumes; }
             set { this._volumes = value; }
         }
 

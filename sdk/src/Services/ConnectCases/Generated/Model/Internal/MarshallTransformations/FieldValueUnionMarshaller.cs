@@ -48,13 +48,13 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
+                context.Writer.Write(requestObject.DoubleValue.Value);
             }
 
             if(requestObject.IsSetEmptyValue())

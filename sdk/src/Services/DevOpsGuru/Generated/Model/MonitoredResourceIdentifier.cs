@@ -47,9 +47,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The time at which DevOps Guru last updated this resource. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 

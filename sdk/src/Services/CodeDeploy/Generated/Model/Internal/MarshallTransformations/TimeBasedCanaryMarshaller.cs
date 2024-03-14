@@ -48,13 +48,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanaryInterval())
             {
                 context.Writer.WritePropertyName("canaryInterval");
-                context.Writer.Write(requestObject.CanaryInterval);
+                context.Writer.Write(requestObject.CanaryInterval.Value);
             }
 
             if(requestObject.IsSetCanaryPercentage())
             {
                 context.Writer.WritePropertyName("canaryPercentage");
-                context.Writer.Write(requestObject.CanaryPercentage);
+                context.Writer.Write(requestObject.CanaryPercentage.Value);
             }
 
         }

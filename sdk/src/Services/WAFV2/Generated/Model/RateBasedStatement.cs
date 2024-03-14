@@ -321,9 +321,9 @@ namespace Amazon.WAFV2.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=2000000000)]
-        public long Limit
+        public long? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

@@ -71,13 +71,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastCheckedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastCheckedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

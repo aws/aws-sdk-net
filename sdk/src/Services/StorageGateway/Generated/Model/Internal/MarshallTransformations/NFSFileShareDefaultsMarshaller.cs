@@ -60,13 +60,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupId())
             {
                 context.Writer.WritePropertyName("GroupId");
-                context.Writer.Write(requestObject.GroupId);
+                context.Writer.Write(requestObject.GroupId.Value);
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.Write(requestObject.OwnerId.Value);
             }
 
         }

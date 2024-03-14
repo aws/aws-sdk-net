@@ -85,7 +85,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiryMinutes())
                 {
                     context.Writer.WritePropertyName("ExpiryMinutes");
-                    context.Writer.Write(publicRequest.ExpiryMinutes);
+                    context.Writer.Write(publicRequest.ExpiryMinutes.Value);
                 }
 
                 writer.WriteObjectEnd();

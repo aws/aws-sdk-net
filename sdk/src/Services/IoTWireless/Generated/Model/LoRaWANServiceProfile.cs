@@ -45,9 +45,9 @@ namespace Amazon.IoTWireless.Model
         /// The AddGWMetaData value.
         /// </para>
         /// </summary>
-        public bool AddGwMetadata
+        public bool? AddGwMetadata
         {
-            get { return this._addGwMetadata.GetValueOrDefault(); }
+            get { return this._addGwMetadata; }
             set { this._addGwMetadata = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int DrMax
+        public int? DrMax
         {
-            get { return this._drMax.GetValueOrDefault(); }
+            get { return this._drMax; }
             set { this._drMax = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int DrMin
+        public int? DrMin
         {
-            get { return this._drMin.GetValueOrDefault(); }
+            get { return this._drMin; }
             set { this._drMin = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.IoTWireless.Model
         /// The PRAllowed value that describes whether passive roaming is allowed.
         /// </para>
         /// </summary>
-        public bool PrAllowed
+        public bool? PrAllowed
         {
-            get { return this._prAllowed.GetValueOrDefault(); }
+            get { return this._prAllowed; }
             set { this._prAllowed = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.IoTWireless.Model
         /// The RAAllowed value that describes whether roaming activation is allowed.
         /// </para>
         /// </summary>
-        public bool RaAllowed
+        public bool? RaAllowed
         {
-            get { return this._raAllowed.GetValueOrDefault(); }
+            get { return this._raAllowed; }
             set { this._raAllowed = value; }
         }
 

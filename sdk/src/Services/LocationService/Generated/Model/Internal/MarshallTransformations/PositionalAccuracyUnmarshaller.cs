@@ -65,7 +65,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Horizontal", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Horizontal = unmarshaller.Unmarshall(context);
                     continue;
                 }

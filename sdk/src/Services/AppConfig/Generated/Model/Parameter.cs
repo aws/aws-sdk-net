@@ -64,9 +64,9 @@ namespace Amazon.AppConfig.Model
         /// A parameter value must be specified in the extension association.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

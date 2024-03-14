@@ -93,9 +93,9 @@ namespace Amazon.PersonalizeEvents.Model
         /// schema.
         /// </para>
         /// </summary>
-        public float EventValue
+        public float? EventValue
         {
-            get { return this._eventValue.GetValueOrDefault(); }
+            get { return this._eventValue; }
             set { this._eventValue = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.PersonalizeEvents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SentAt
+        public DateTime? SentAt
         {
-            get { return this._sentAt.GetValueOrDefault(); }
+            get { return this._sentAt; }
             set { this._sentAt = value; }
         }
 

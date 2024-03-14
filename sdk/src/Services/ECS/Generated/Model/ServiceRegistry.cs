@@ -86,9 +86,9 @@ namespace Amazon.ECS.Model
         /// combination or a <c>port</c> value. However, you can't specify both.
         /// </para>
         /// </summary>
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ECS.Model
         /// field might be used if both the <c>awsvpc</c> network mode and SRV records are used.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

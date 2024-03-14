@@ -54,7 +54,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnsureNoBackupInProcess())
             {
                 context.Writer.WritePropertyName("EnsureNoBackupInProcess");
-                context.Writer.Write(requestObject.EnsureNoBackupInProcess);
+                context.Writer.Write(requestObject.EnsureNoBackupInProcess.Value);
             }
 
         }

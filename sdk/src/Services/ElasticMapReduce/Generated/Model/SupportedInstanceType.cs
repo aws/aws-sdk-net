@@ -69,9 +69,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Indicates whether the <c>SupportedInstanceType</c> supports Amazon EBS optimization.
         /// </para>
         /// </summary>
-        public bool EbsOptimizedAvailable
+        public bool? EbsOptimizedAvailable
         {
-            get { return this._ebsOptimizedAvailable.GetValueOrDefault(); }
+            get { return this._ebsOptimizedAvailable; }
             set { this._ebsOptimizedAvailable = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// default.
         /// </para>
         /// </summary>
-        public bool EbsOptimizedByDefault
+        public bool? EbsOptimizedByDefault
         {
-            get { return this._ebsOptimizedByDefault.GetValueOrDefault(); }
+            get { return this._ebsOptimizedByDefault; }
             set { this._ebsOptimizedByDefault = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Indicates whether the <c>SupportedInstanceType</c> only supports Amazon EBS.
         /// </para>
         /// </summary>
-        public bool EbsStorageOnly
+        public bool? EbsStorageOnly
         {
-            get { return this._ebsStorageOnly.GetValueOrDefault(); }
+            get { return this._ebsStorageOnly; }
             set { this._ebsStorageOnly = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Indicates whether the <c>SupportedInstanceType</c> only supports 64-bit architecture.
         /// </para>
         /// </summary>
-        public bool Is64BitsOnly
+        public bool? Is64BitsOnly
         {
-            get { return this._is64BitsOnly.GetValueOrDefault(); }
+            get { return this._is64BitsOnly; }
             set { this._is64BitsOnly = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// than the overall memory for the instance type.
         /// </para>
         /// </summary>
-        public float MemoryGB
+        public float? MemoryGB
         {
-            get { return this._memoryGB.GetValueOrDefault(); }
+            get { return this._memoryGB; }
             set { this._memoryGB = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// EBS-only instance types.
         /// </para>
         /// </summary>
-        public int NumberOfDisks
+        public int? NumberOfDisks
         {
-            get { return this._numberOfDisks.GetValueOrDefault(); }
+            get { return this._numberOfDisks; }
             set { this._numberOfDisks = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// This value is <c>0</c> for Amazon EBS-only instance types.
         /// </para>
         /// </summary>
-        public int StorageGB
+        public int? StorageGB
         {
-            get { return this._storageGB.GetValueOrDefault(); }
+            get { return this._storageGB; }
             set { this._storageGB = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The number of vCPUs available for the <c>SupportedInstanceType</c>.
         /// </para>
         /// </summary>
-        public int VCPU
+        public int? VCPU
         {
-            get { return this._vcpu.GetValueOrDefault(); }
+            get { return this._vcpu; }
             set { this._vcpu = value; }
         }
 

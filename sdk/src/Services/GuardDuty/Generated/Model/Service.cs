@@ -91,9 +91,9 @@ namespace Amazon.GuardDuty.Model
         /// Indicates whether this finding is archived.
         /// </para>
         /// </summary>
-        public bool Archived
+        public bool? Archived
         {
-            get { return this._archived.GetValueOrDefault(); }
+            get { return this._archived; }
             set { this._archived = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.GuardDuty.Model
         /// The total count of the occurrences of this finding type.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

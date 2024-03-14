@@ -71,7 +71,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UnlockDelayValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnlockDelayValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

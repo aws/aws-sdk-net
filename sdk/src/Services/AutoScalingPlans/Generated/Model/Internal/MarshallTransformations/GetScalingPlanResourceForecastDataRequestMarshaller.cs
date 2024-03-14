@@ -70,7 +70,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetForecastDataType())
@@ -100,7 +100,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScalingPlanVersion())
                 {
                     context.Writer.WritePropertyName("ScalingPlanVersion");
-                    context.Writer.Write(publicRequest.ScalingPlanVersion);
+                    context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
                 }
 
                 if(publicRequest.IsSetServiceNamespace())
@@ -112,7 +112,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 writer.WriteObjectEnd();

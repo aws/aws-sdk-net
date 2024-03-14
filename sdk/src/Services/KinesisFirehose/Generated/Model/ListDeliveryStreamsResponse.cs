@@ -62,9 +62,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasMoreDeliveryStreams
+        public bool? HasMoreDeliveryStreams
         {
-            get { return this._hasMoreDeliveryStreams.GetValueOrDefault(); }
+            get { return this._hasMoreDeliveryStreams; }
             set { this._hasMoreDeliveryStreams = value; }
         }
 

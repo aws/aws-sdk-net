@@ -171,9 +171,9 @@ namespace Amazon.EC2.Model
         /// Defines if the scope is the default scope or not.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.EC2.Model
         /// The number of pools in the scope.
         /// </para>
         /// </summary>
-        public int PoolCount
+        public int? PoolCount
         {
-            get { return this._poolCount.GetValueOrDefault(); }
+            get { return this._poolCount; }
             set { this._poolCount = value; }
         }
 

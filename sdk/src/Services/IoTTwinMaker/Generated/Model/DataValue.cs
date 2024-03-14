@@ -49,9 +49,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value.
         /// </para>
         /// </summary>
-        public bool BooleanValue
+        public bool? BooleanValue
         {
-            get { return this._booleanValue.GetValueOrDefault(); }
+            get { return this._booleanValue; }
             set { this._booleanValue = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A double value.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// An integer value.
         /// </para>
         /// </summary>
-        public int IntegerValue
+        public int? IntegerValue
         {
-            get { return this._integerValue.GetValueOrDefault(); }
+            get { return this._integerValue; }
             set { this._integerValue = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A long value.
         /// </para>
         /// </summary>
-        public long LongValue
+        public long? LongValue
         {
-            get { return this._longValue.GetValueOrDefault(); }
+            get { return this._longValue; }
             set { this._longValue = value; }
         }
 

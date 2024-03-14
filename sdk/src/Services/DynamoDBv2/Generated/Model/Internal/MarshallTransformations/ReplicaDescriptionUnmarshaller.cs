@@ -89,7 +89,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReplicaInaccessibleDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReplicaInaccessibleDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

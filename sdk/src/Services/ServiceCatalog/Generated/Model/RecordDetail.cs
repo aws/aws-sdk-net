@@ -54,9 +54,9 @@ namespace Amazon.ServiceCatalog.Model
         /// The UTC time stamp of the creation time.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.ServiceCatalog.Model
         /// The time when the record was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTime
+        public DateTime? UpdatedTime
         {
-            get { return this._updatedTime.GetValueOrDefault(); }
+            get { return this._updatedTime; }
             set { this._updatedTime = value; }
         }
 

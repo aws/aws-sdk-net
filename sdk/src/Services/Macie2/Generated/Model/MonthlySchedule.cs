@@ -49,9 +49,9 @@ namespace Amazon.Macie2.Model
         /// job that month. To run the job every month, specify a value that's less than 29.
         /// </para>
         /// </summary>
-        public int DayOfMonth
+        public int? DayOfMonth
         {
-            get { return this._dayOfMonth.GetValueOrDefault(); }
+            get { return this._dayOfMonth; }
             set { this._dayOfMonth = value; }
         }
 

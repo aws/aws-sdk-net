@@ -122,9 +122,9 @@ namespace Amazon.GuardDuty.Model
         /// date string format <c>(2023-03-22T19:37:20.168Z)</c>.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.MediaConvert.Model
         /// that corresponds to the brightest pixel in the entire stream. Measured in nits.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int MaxCll
+        public int? MaxCll
         {
-            get { return this._maxCll.GetValueOrDefault(); }
+            get { return this._maxCll; }
             set { this._maxCll = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MediaConvert.Model
         /// Measured in nits.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int MaxFall
+        public int? MaxFall
         {
-            get { return this._maxFall.GetValueOrDefault(); }
+            get { return this._maxFall; }
             set { this._maxFall = value; }
         }
 

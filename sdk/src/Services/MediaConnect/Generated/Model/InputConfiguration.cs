@@ -59,9 +59,9 @@ namespace Amazon.MediaConnect.Model
         /// media stream.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InputPort
+        public int? InputPort
         {
-            get { return this._inputPort.GetValueOrDefault(); }
+            get { return this._inputPort; }
             set { this._inputPort = value; }
         }
 

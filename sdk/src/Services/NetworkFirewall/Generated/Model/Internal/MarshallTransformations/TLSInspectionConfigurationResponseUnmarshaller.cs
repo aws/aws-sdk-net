@@ -89,13 +89,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfAssociations", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -302,7 +302,7 @@ namespace Amazon.TimestreamWrite
                 var endpoints = new List<DiscoveryEndpointBase>();
                 foreach(var endpoint in response.Endpoints)
                 {
-                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes));
+                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes.GetValueOrDefault()));
                 }
             
                 return endpoints;

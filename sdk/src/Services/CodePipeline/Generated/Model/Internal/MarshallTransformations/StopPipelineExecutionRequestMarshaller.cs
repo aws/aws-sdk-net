@@ -70,7 +70,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAbandon())
                 {
                     context.Writer.WritePropertyName("abandon");
-                    context.Writer.Write(publicRequest.Abandon);
+                    context.Writer.Write(publicRequest.Abandon.Value);
                 }
 
                 if(publicRequest.IsSetPipelineExecutionId())

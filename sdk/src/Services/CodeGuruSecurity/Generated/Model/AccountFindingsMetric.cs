@@ -63,9 +63,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The date from which the finding metrics were retrieved.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 

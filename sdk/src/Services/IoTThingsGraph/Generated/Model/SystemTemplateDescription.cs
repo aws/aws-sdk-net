@@ -80,9 +80,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// system instance.
         /// </para>
         /// </summary>
-        public long ValidatedNamespaceVersion
+        public long? ValidatedNamespaceVersion
         {
-            get { return this._validatedNamespaceVersion.GetValueOrDefault(); }
+            get { return this._validatedNamespaceVersion; }
             set { this._validatedNamespaceVersion = value; }
         }
 

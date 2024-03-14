@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long PageNumber
+        public long? PageNumber
         {
-            get { return this._pageNumber.GetValueOrDefault(); }
+            get { return this._pageNumber; }
             set { this._pageNumber = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long PageSize
+        public long? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

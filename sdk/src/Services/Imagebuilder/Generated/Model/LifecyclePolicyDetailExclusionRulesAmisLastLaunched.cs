@@ -65,9 +65,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=365)]
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

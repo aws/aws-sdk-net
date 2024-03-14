@@ -43,9 +43,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long IndexedTextBytes
+        public long? IndexedTextBytes
         {
-            get { return this._indexedTextBytes.GetValueOrDefault(); }
+            get { return this._indexedTextBytes; }
             set { this._indexedTextBytes = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int IndexedTextDocumentsCount
+        public int? IndexedTextDocumentsCount
         {
-            get { return this._indexedTextDocumentsCount.GetValueOrDefault(); }
+            get { return this._indexedTextDocumentsCount; }
             set { this._indexedTextDocumentsCount = value; }
         }
 

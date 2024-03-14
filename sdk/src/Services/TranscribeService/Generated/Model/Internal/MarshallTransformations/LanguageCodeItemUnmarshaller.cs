@@ -65,7 +65,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.DurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// The number of listed Reserved Instances in the state specified by the <c>state</c>.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

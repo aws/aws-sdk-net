@@ -83,7 +83,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pipelineVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PipelineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

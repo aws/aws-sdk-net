@@ -217,9 +217,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ProtectedFromScaleIn
+        public bool? ProtectedFromScaleIn
         {
-            get { return this._protectedFromScaleIn.GetValueOrDefault(); }
+            get { return this._protectedFromScaleIn; }
             set { this._protectedFromScaleIn = value; }
         }
 

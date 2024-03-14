@@ -65,13 +65,13 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("TrainingDataCollectionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataCollectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserAuthorizationRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserAuthorizationRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

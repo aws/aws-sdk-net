@@ -106,9 +106,9 @@ namespace Amazon.CodeStar.Model
         /// access project resources, for example Amazon EC2 instances.
         /// </para>
         /// </summary>
-        public bool RemoteAccessAllowed
+        public bool? RemoteAccessAllowed
         {
-            get { return this._remoteAccessAllowed.GetValueOrDefault(); }
+            get { return this._remoteAccessAllowed; }
             set { this._remoteAccessAllowed = value; }
         }
 

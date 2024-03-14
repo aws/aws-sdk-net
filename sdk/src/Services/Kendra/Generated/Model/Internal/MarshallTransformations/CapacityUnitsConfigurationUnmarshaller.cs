@@ -65,13 +65,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("QueryCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -53,7 +53,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("HasMoreTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreTags = unmarshaller.Unmarshall(context);
                     continue;
                 }

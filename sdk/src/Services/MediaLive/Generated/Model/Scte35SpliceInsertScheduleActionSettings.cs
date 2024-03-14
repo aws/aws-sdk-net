@@ -45,9 +45,9 @@ namespace Amazon.MediaLive.Model
         /// to end the splice_insert at the appropriate time.
         /// </summary>
         [AWSProperty(Min=0, Max=8589934591)]
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.MediaLive.Model
         /// as defined in SCTE-35.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long SpliceEventId
+        public long? SpliceEventId
         {
-            get { return this._spliceEventId.GetValueOrDefault(); }
+            get { return this._spliceEventId; }
             set { this._spliceEventId = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the work team was created (timestamp).
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the work team was last updated (timestamp).
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 

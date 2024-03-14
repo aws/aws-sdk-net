@@ -80,9 +80,9 @@ namespace Amazon.LookoutMetrics.Model
         /// The number of anomalous metrics for the measure.
         /// </para>
         /// </summary>
-        public int NumTimeSeries
+        public int? NumTimeSeries
         {
-            get { return this._numTimeSeries.GetValueOrDefault(); }
+            get { return this._numTimeSeries; }
             set { this._numTimeSeries = value; }
         }
 

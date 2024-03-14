@@ -80,7 +80,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IsGlobal", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IsGlobal = unmarshaller.Unmarshall(context);
                         continue;
                     }

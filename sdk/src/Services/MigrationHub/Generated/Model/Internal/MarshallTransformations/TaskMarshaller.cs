@@ -48,7 +48,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgressPercent())
             {
                 context.Writer.WritePropertyName("ProgressPercent");
-                context.Writer.Write(requestObject.ProgressPercent);
+                context.Writer.Write(requestObject.ProgressPercent.Value);
             }
 
             if(requestObject.IsSetStatus())

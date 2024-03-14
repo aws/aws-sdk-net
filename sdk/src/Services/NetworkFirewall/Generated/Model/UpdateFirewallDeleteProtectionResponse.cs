@@ -47,9 +47,9 @@ namespace Amazon.NetworkFirewall.Model
         /// the operation initializes this flag to <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool DeleteProtection
+        public bool? DeleteProtection
         {
-            get { return this._deleteProtection.GetValueOrDefault(); }
+            get { return this._deleteProtection; }
             set { this._deleteProtection = value; }
         }
 

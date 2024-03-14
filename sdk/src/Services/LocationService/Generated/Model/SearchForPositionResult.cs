@@ -51,9 +51,9 @@ namespace Amazon.LocationService.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double Distance
+        public double? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time when the status of the client authentication type was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 

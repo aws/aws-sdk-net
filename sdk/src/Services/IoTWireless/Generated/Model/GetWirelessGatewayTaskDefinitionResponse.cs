@@ -64,9 +64,9 @@ namespace Amazon.IoTWireless.Model
         /// <c>CreateWirelessGatewayTask</c>.
         /// </para>
         /// </summary>
-        public bool AutoCreateTasks
+        public bool? AutoCreateTasks
         {
-            get { return this._autoCreateTasks.GetValueOrDefault(); }
+            get { return this._autoCreateTasks; }
             set { this._autoCreateTasks = value; }
         }
 

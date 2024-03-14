@@ -54,9 +54,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=67108864)]
-        public int BlockSizeBytes
+        public int? BlockSizeBytes
         {
-            get { return this._blockSizeBytes.GetValueOrDefault(); }
+            get { return this._blockSizeBytes; }
             set { this._blockSizeBytes = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double BloomFilterFalsePositiveProbability
+        public double? BloomFilterFalsePositiveProbability
         {
-            get { return this._bloomFilterFalsePositiveProbability.GetValueOrDefault(); }
+            get { return this._bloomFilterFalsePositiveProbability; }
             set { this._bloomFilterFalsePositiveProbability = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double DictionaryKeyThreshold
+        public double? DictionaryKeyThreshold
         {
-            get { return this._dictionaryKeyThreshold.GetValueOrDefault(); }
+            get { return this._dictionaryKeyThreshold; }
             set { this._dictionaryKeyThreshold = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.KinesisFirehose.Model
         /// HDFS before querying. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnablePadding
+        public bool? EnablePadding
         {
-            get { return this._enablePadding.GetValueOrDefault(); }
+            get { return this._enablePadding; }
             set { this._enablePadding = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double PaddingTolerance
+        public double? PaddingTolerance
         {
-            get { return this._paddingTolerance.GetValueOrDefault(); }
+            get { return this._paddingTolerance; }
             set { this._paddingTolerance = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1000)]
-        public int RowIndexStride
+        public int? RowIndexStride
         {
-            get { return this._rowIndexStride.GetValueOrDefault(); }
+            get { return this._rowIndexStride; }
             set { this._rowIndexStride = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=8388608)]
-        public int StripeSizeBytes
+        public int? StripeSizeBytes
         {
-            get { return this._stripeSizeBytes.GetValueOrDefault(); }
+            get { return this._stripeSizeBytes; }
             set { this._stripeSizeBytes = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("autoLaunch", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoLaunch = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DayOfMonth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DayOfMonth = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Hour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Hour = unmarshaller.Unmarshall(context);
                     continue;
                 }

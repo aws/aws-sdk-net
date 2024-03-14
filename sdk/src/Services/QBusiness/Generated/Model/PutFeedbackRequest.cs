@@ -85,9 +85,9 @@ namespace Amazon.QBusiness.Model
         /// The timestamp for when the feedback was recorded.
         /// </para>
         /// </summary>
-        public DateTime MessageCopiedAt
+        public DateTime? MessageCopiedAt
         {
-            get { return this._messageCopiedAt.GetValueOrDefault(); }
+            get { return this._messageCopiedAt; }
             set { this._messageCopiedAt = value; }
         }
 

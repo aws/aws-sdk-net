@@ -83,9 +83,9 @@ namespace Amazon.Pipes.Model
         /// 
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableECSManagedTags.GetValueOrDefault(); }
+            get { return this._enableECSManagedTags; }
             set { this._enableECSManagedTags = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Pipes.Model
         /// task.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TaskCount
+        public int? TaskCount
         {
-            get { return this._taskCount.GetValueOrDefault(); }
+            get { return this._taskCount; }
             set { this._taskCount = value; }
         }
 

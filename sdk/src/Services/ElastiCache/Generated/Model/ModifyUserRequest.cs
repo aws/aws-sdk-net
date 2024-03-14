@@ -101,9 +101,9 @@ namespace Amazon.ElastiCache.Model
         /// Indicates no password is required for the user.
         /// </para>
         /// </summary>
-        public bool NoPasswordRequired
+        public bool? NoPasswordRequired
         {
-            get { return this._noPasswordRequired.GetValueOrDefault(); }
+            get { return this._noPasswordRequired; }
             set { this._noPasswordRequired = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoEnableControls())
                 {
                     context.Writer.WritePropertyName("AutoEnableControls");
-                    context.Writer.Write(publicRequest.AutoEnableControls);
+                    context.Writer.Write(publicRequest.AutoEnableControls.Value);
                 }
 
                 if(publicRequest.IsSetControlFindingGenerator())

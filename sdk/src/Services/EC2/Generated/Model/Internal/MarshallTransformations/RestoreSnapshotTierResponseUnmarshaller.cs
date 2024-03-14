@@ -57,19 +57,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("isPermanentRestore", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.IsPermanentRestore = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("restoreDuration", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.RestoreDuration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("restoreStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.RestoreStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

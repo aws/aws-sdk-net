@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("acceptedRouteCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AcceptedRouteCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("lastStatusChange", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastStatusChange = unmarshaller.Unmarshall(context);
                         continue;
                     }

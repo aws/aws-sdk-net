@@ -63,9 +63,9 @@ namespace Amazon.Bedrock.Model
         /// Set to include embeddings data in the log delivery.
         /// </para>
         /// </summary>
-        public bool EmbeddingDataDeliveryEnabled
+        public bool? EmbeddingDataDeliveryEnabled
         {
-            get { return this._embeddingDataDeliveryEnabled.GetValueOrDefault(); }
+            get { return this._embeddingDataDeliveryEnabled; }
             set { this._embeddingDataDeliveryEnabled = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Bedrock.Model
         /// Set to include image data in the log delivery.
         /// </para>
         /// </summary>
-        public bool ImageDataDeliveryEnabled
+        public bool? ImageDataDeliveryEnabled
         {
-            get { return this._imageDataDeliveryEnabled.GetValueOrDefault(); }
+            get { return this._imageDataDeliveryEnabled; }
             set { this._imageDataDeliveryEnabled = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.Bedrock.Model
         /// Set to include text data in the log delivery.
         /// </para>
         /// </summary>
-        public bool TextDataDeliveryEnabled
+        public bool? TextDataDeliveryEnabled
         {
-            get { return this._textDataDeliveryEnabled.GetValueOrDefault(); }
+            get { return this._textDataDeliveryEnabled; }
             set { this._textDataDeliveryEnabled = value; }
         }
 

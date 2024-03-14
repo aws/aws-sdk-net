@@ -82,9 +82,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=1800)]
-        public int TimePeriod
+        public int? TimePeriod
         {
-            get { return this._timePeriod.GetValueOrDefault(); }
+            get { return this._timePeriod; }
             set { this._timePeriod = value; }
         }
 

@@ -71,19 +71,19 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isCaseSensitive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCaseSensitive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isCurrency", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isSigned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSigned = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("length", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Length = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,19 +107,19 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("nullable", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Nullable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("precision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scale", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Scale = unmarshaller.Unmarshall(context);
                     continue;
                 }

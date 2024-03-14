@@ -53,7 +53,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModificationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModificationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -83,7 +83,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,7 +173,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TableSizeBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TableSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

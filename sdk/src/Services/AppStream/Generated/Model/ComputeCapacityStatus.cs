@@ -49,9 +49,9 @@ namespace Amazon.AppStream.Model
         /// applies to multi-session fleets.
         /// </para>
         /// </summary>
-        public int ActiveUserSessions
+        public int? ActiveUserSessions
         {
-            get { return this._activeUserSessions.GetValueOrDefault(); }
+            get { return this._activeUserSessions; }
             set { this._activeUserSessions = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.AppStream.Model
         /// This only applies to multi-session fleets.
         /// </para>
         /// </summary>
-        public int ActualUserSessions
+        public int? ActualUserSessions
         {
-            get { return this._actualUserSessions.GetValueOrDefault(); }
+            get { return this._actualUserSessions; }
             set { this._actualUserSessions = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.AppStream.Model
         /// The number of currently available instances that can be used to stream sessions.
         /// </para>
         /// </summary>
-        public int Available
+        public int? Available
         {
-            get { return this._available.GetValueOrDefault(); }
+            get { return this._available; }
             set { this._available = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.AppStream.Model
         /// This only applies to multi-session fleets.
         /// </para>
         /// </summary>
-        public int AvailableUserSessions
+        public int? AvailableUserSessions
         {
-            get { return this._availableUserSessions.GetValueOrDefault(); }
+            get { return this._availableUserSessions; }
             set { this._availableUserSessions = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.AppStream.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Desired
+        public int? Desired
         {
-            get { return this._desired.GetValueOrDefault(); }
+            get { return this._desired; }
             set { this._desired = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.AppStream.Model
         /// This only applies to multi-session fleets.
         /// </para>
         /// </summary>
-        public int DesiredUserSessions
+        public int? DesiredUserSessions
         {
-            get { return this._desiredUserSessions.GetValueOrDefault(); }
+            get { return this._desiredUserSessions; }
             set { this._desiredUserSessions = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.AppStream.Model
         /// The number of instances in use for streaming.
         /// </para>
         /// </summary>
-        public int InUse
+        public int? InUse
         {
-            get { return this._inUse.GetValueOrDefault(); }
+            get { return this._inUse; }
             set { this._inUse = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.AppStream.Model
         /// The total number of simultaneous streaming instances that are running.
         /// </para>
         /// </summary>
-        public int Running
+        public int? Running
         {
-            get { return this._running.GetValueOrDefault(); }
+            get { return this._running; }
             set { this._running = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.Shield.Model
         /// The start time, in Unix time in seconds. 
         /// </para>
         /// </summary>
-        public DateTime FromInclusive
+        public DateTime? FromInclusive
         {
-            get { return this._fromInclusive.GetValueOrDefault(); }
+            get { return this._fromInclusive; }
             set { this._fromInclusive = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.Shield.Model
         /// The end time, in Unix time in seconds. 
         /// </para>
         /// </summary>
-        public DateTime ToExclusive
+        public DateTime? ToExclusive
         {
-            get { return this._toExclusive.GetValueOrDefault(); }
+            get { return this._toExclusive; }
             set { this._toExclusive = value; }
         }
 

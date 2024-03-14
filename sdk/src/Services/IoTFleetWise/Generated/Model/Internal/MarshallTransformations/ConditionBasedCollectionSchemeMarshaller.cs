@@ -48,7 +48,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionLanguageVersion())
             {
                 context.Writer.WritePropertyName("conditionLanguageVersion");
-                context.Writer.Write(requestObject.ConditionLanguageVersion);
+                context.Writer.Write(requestObject.ConditionLanguageVersion.Value);
             }
 
             if(requestObject.IsSetExpression())
@@ -60,7 +60,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumTriggerIntervalMs())
             {
                 context.Writer.WritePropertyName("minimumTriggerIntervalMs");
-                context.Writer.Write(requestObject.MinimumTriggerIntervalMs);
+                context.Writer.Write(requestObject.MinimumTriggerIntervalMs.Value);
             }
 
             if(requestObject.IsSetTriggerMode())

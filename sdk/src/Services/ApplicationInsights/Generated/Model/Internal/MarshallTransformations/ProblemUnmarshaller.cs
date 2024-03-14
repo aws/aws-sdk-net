@@ -77,7 +77,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,13 +101,13 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastRecurrenceTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRecurrenceTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecurringCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecurringCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

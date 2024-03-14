@@ -89,7 +89,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RoomUtilizationMetricsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RoomUtilizationMetricsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackupSizeInBytes())
             {
                 context.Writer.WritePropertyName("BackupSizeInBytes");
-                context.Writer.Write(requestObject.BackupSizeInBytes);
+                context.Writer.Write(requestObject.BackupSizeInBytes.Value);
             }
 
             if(requestObject.IsSetBackupVaultArn())
@@ -112,7 +112,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsEncrypted())
             {
                 context.Writer.WritePropertyName("IsEncrypted");
-                context.Writer.Write(requestObject.IsEncrypted);
+                context.Writer.Write(requestObject.IsEncrypted.Value);
             }
 
             if(requestObject.IsSetLastRestoreTime())

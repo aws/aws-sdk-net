@@ -87,7 +87,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxSuggestionsCount())
                 {
                     context.Writer.WritePropertyName("MaxSuggestionsCount");
-                    context.Writer.Write(publicRequest.MaxSuggestionsCount);
+                    context.Writer.Write(publicRequest.MaxSuggestionsCount.Value);
                 }
 
                 if(publicRequest.IsSetQueryText())

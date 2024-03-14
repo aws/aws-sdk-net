@@ -65,13 +65,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActualEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ActualEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ActualStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ActualStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,19 +143,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PlannedEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PlannedEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PlannedStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PlannedStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Priority", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
                     continue;
                 }

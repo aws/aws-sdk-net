@@ -42,9 +42,9 @@ namespace Amazon.Panorama.Model
         /// Whether to apply the update if it is a major version change.
         /// </para>
         /// </summary>
-        public bool AllowMajorVersionUpdate
+        public bool? AllowMajorVersionUpdate
         {
-            get { return this._allowMajorVersionUpdate.GetValueOrDefault(); }
+            get { return this._allowMajorVersionUpdate; }
             set { this._allowMajorVersionUpdate = value; }
         }
 

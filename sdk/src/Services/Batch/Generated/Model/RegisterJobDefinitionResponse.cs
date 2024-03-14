@@ -82,9 +82,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

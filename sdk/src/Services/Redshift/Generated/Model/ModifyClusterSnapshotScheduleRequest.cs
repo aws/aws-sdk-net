@@ -64,9 +64,9 @@ namespace Amazon.Redshift.Model
         /// schedule.
         /// </para>
         /// </summary>
-        public bool DisassociateSchedule
+        public bool? DisassociateSchedule
         {
-            get { return this._disassociateSchedule.GetValueOrDefault(); }
+            get { return this._disassociateSchedule; }
             set { this._disassociateSchedule = value; }
         }
 

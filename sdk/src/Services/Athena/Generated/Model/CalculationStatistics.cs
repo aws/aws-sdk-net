@@ -42,9 +42,9 @@ namespace Amazon.Athena.Model
         /// The data processing unit execution time in milliseconds for the calculation.
         /// </para>
         /// </summary>
-        public long DpuExecutionInMillis
+        public long? DpuExecutionInMillis
         {
-            get { return this._dpuExecutionInMillis.GetValueOrDefault(); }
+            get { return this._dpuExecutionInMillis; }
             set { this._dpuExecutionInMillis = value; }
         }
 

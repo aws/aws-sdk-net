@@ -73,9 +73,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the database snapshot was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -255,9 +255,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk in GB (for example, <c>32</c>) for the database snapshot.
         /// </para>
         /// </summary>
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

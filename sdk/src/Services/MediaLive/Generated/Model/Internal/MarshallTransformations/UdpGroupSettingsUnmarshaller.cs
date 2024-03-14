@@ -77,7 +77,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timedMetadataId3Period", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataId3Period = unmarshaller.Unmarshall(context);
                     continue;
                 }

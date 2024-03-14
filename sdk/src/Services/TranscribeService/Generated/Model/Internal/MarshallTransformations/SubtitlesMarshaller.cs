@@ -59,7 +59,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutputStartIndex())
             {
                 context.Writer.WritePropertyName("OutputStartIndex");
-                context.Writer.Write(requestObject.OutputStartIndex);
+                context.Writer.Write(requestObject.OutputStartIndex.Value);
             }
 
         }

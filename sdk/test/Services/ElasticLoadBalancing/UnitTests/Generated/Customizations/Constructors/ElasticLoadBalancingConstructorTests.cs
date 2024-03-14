@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.ElasticLoadBalancing;
 using Amazon.ElasticLoadBalancing.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class ElasticLoadBalancingConstructorCustomizationsTests
@@ -145,7 +145,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("ElasticLoadBalancing")]
         public void SetLoadBalancerListenerSSLCertificateRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateRequest), new System.Type[] { typeof(string), typeof(int), typeof(string), });
+            EnsureConstructorExists(typeof(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateRequest), new System.Type[] { typeof(string), typeof(int?), typeof(string), });
         }
 
         [TestMethod]
@@ -153,7 +153,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("ElasticLoadBalancing")]
         public void SetLoadBalancerPoliciesOfListenerRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerRequest), new System.Type[] { typeof(string), typeof(int), typeof(List<string>), });
+            EnsureConstructorExists(typeof(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerRequest), new System.Type[] { typeof(string), typeof(int?), typeof(List<string>), });
         }
 
         void EnsureConstructorExists(System.Type type, System.Type[] constructorParams)

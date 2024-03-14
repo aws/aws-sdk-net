@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyCount())
             {
                 context.Writer.WritePropertyName("CopyCount");
-                context.Writer.Write(requestObject.CopyCount);
+                context.Writer.Write(requestObject.CopyCount.Value);
             }
 
         }

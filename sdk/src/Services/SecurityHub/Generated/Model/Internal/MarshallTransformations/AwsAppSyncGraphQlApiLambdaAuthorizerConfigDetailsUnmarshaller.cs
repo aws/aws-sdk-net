@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AuthorizerResultTtlInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AuthorizerResultTtlInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

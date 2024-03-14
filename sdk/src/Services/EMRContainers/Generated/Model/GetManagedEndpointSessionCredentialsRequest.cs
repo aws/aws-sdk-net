@@ -88,9 +88,9 @@ namespace Amazon.EMRContainers.Model
         /// 15 minutes and the maximum is 12 hours.
         /// </para>
         /// </summary>
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

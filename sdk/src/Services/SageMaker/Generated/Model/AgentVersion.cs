@@ -43,9 +43,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long AgentCount
+        public long? AgentCount
         {
-            get { return this._agentCount.GetValueOrDefault(); }
+            get { return this._agentCount; }
             set { this._agentCount = value; }
         }
 

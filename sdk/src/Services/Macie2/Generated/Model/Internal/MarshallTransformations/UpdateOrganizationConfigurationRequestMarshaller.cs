@@ -68,7 +68,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoEnable())
                 {
                     context.Writer.WritePropertyName("autoEnable");
-                    context.Writer.Write(publicRequest.AutoEnable);
+                    context.Writer.Write(publicRequest.AutoEnable.Value);
                 }
 
                 writer.WriteObjectEnd();

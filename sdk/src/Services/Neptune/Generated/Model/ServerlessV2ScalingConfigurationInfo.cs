@@ -50,9 +50,9 @@ namespace Amazon.Neptune.Model
         /// 40.5, 41, and so on.
         /// </para>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Neptune.Model
         /// 8.5, 9, and so on.
         /// </para>
         /// </summary>
-        public double MinCapacity
+        public double? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 

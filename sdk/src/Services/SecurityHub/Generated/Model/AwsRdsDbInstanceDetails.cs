@@ -97,9 +97,9 @@ namespace Amazon.SecurityHub.Model
         /// The amount of storage (in gigabytes) to initially allocate for the DB instance.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether minor version patches are applied automatically.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of days for which to retain automated backups.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to copy resource tags to snapshots of the DB instance.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.SecurityHub.Model
         /// a DB cluster, this can be a different port than the DB cluster port.
         /// </para>
         /// </summary>
-        public int DbInstancePort
+        public int? DbInstancePort
         {
-            get { return this._dbInstancePort.GetValueOrDefault(); }
+            get { return this._dbInstancePort; }
             set { this._dbInstancePort = value; }
         }
 
@@ -449,9 +449,9 @@ namespace Amazon.SecurityHub.Model
         /// When deletion protection is enabled, the database cannot be deleted.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -593,9 +593,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -635,9 +635,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies the provisioned IOPS (I/O operations per second) for this DB instance.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -747,9 +747,9 @@ namespace Amazon.SecurityHub.Model
         /// instance.
         /// </para>
         /// </summary>
-        public int MaxAllocatedStorage
+        public int? MaxAllocatedStorage
         {
-            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            get { return this._maxAllocatedStorage; }
             set { this._maxAllocatedStorage = value; }
         }
 
@@ -766,9 +766,9 @@ namespace Amazon.SecurityHub.Model
         /// for the DB instance.
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -803,9 +803,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the DB instance is a multiple Availability Zone deployment.
         /// </para>
         /// </summary>
-        public bool MultiAz
+        public bool? MultiAz
         {
-            get { return this._multiAz.GetValueOrDefault(); }
+            get { return this._multiAz; }
             set { this._multiAz = value; }
         }
 
@@ -857,9 +857,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether Performance Insights is enabled for the DB instance.
         /// </para>
         /// </summary>
-        public bool PerformanceInsightsEnabled
+        public bool? PerformanceInsightsEnabled
         {
-            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            get { return this._performanceInsightsEnabled; }
             set { this._performanceInsightsEnabled = value; }
         }
 
@@ -893,9 +893,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of days to retain Performance Insights data.
         /// </para>
         /// </summary>
-        public int PerformanceInsightsRetentionPeriod
+        public int? PerformanceInsightsRetentionPeriod
         {
-            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            get { return this._performanceInsightsRetentionPeriod; }
             set { this._performanceInsightsRetentionPeriod = value; }
         }
 
@@ -985,9 +985,9 @@ namespace Amazon.SecurityHub.Model
         /// of the existing primary instance.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 
@@ -1013,9 +1013,9 @@ namespace Amazon.SecurityHub.Model
         /// private IP address. 
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -1123,9 +1123,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies whether the DB instance is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

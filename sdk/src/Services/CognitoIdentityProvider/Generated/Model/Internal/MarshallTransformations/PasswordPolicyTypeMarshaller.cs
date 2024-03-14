@@ -48,37 +48,37 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumLength())
             {
                 context.Writer.WritePropertyName("MinimumLength");
-                context.Writer.Write(requestObject.MinimumLength);
+                context.Writer.Write(requestObject.MinimumLength.Value);
             }
 
             if(requestObject.IsSetRequireLowercase())
             {
                 context.Writer.WritePropertyName("RequireLowercase");
-                context.Writer.Write(requestObject.RequireLowercase);
+                context.Writer.Write(requestObject.RequireLowercase.Value);
             }
 
             if(requestObject.IsSetRequireNumbers())
             {
                 context.Writer.WritePropertyName("RequireNumbers");
-                context.Writer.Write(requestObject.RequireNumbers);
+                context.Writer.Write(requestObject.RequireNumbers.Value);
             }
 
             if(requestObject.IsSetRequireSymbols())
             {
                 context.Writer.WritePropertyName("RequireSymbols");
-                context.Writer.Write(requestObject.RequireSymbols);
+                context.Writer.Write(requestObject.RequireSymbols.Value);
             }
 
             if(requestObject.IsSetRequireUppercase())
             {
                 context.Writer.WritePropertyName("RequireUppercase");
-                context.Writer.Write(requestObject.RequireUppercase);
+                context.Writer.Write(requestObject.RequireUppercase.Value);
             }
 
             if(requestObject.IsSetTemporaryPasswordValidityDays())
             {
                 context.Writer.WritePropertyName("TemporaryPasswordValidityDays");
-                context.Writer.Write(requestObject.TemporaryPasswordValidityDays);
+                context.Writer.Write(requestObject.TemporaryPasswordValidityDays.Value);
             }
 
         }

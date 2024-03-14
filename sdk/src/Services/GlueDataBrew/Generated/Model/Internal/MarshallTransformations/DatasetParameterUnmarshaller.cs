@@ -65,7 +65,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreateColumn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CreateColumn = unmarshaller.Unmarshall(context);
                     continue;
                 }

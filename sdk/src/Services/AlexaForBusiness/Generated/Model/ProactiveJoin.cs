@@ -38,9 +38,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// <summary>
         /// Gets and sets the property EnabledByMotion.
         /// </summary>
-        public bool EnabledByMotion
+        public bool? EnabledByMotion
         {
-            get { return this._enabledByMotion.GetValueOrDefault(); }
+            get { return this._enabledByMotion; }
             set { this._enabledByMotion = value; }
         }
 

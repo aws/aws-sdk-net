@@ -80,7 +80,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMessageCopiedAt())
                 {
                     context.Writer.WritePropertyName("messageCopiedAt");
-                    context.Writer.Write(publicRequest.MessageCopiedAt);
+                    context.Writer.Write(publicRequest.MessageCopiedAt.Value);
                 }
 
                 if(publicRequest.IsSetMessageUsefulness())

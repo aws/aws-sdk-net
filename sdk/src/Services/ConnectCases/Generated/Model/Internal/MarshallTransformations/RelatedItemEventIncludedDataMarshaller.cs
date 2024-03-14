@@ -48,7 +48,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeContent())
             {
                 context.Writer.WritePropertyName("includeContent");
-                context.Writer.Write(requestObject.IncludeContent);
+                context.Writer.Write(requestObject.IncludeContent.Value);
             }
 
         }

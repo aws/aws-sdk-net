@@ -113,9 +113,9 @@ namespace Amazon.Chime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.Chime.Model
         /// The final or ending time stamp for your requested messages.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Chime.Model
         /// The initial or starting time stamp for your requested messages.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("adAvailOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AdAvailOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

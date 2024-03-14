@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.IoTJobsDataPlane")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS IoT Jobs Data Plane. This release adds support for new the service called Iot Jobs. This client is built for the device SDK to use Iot Jobs Device specific APIs.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS IoT Jobs Data Plane. This release adds support for new the service called Iot Jobs. This client is built for the device SDK to use Iot Jobs Device specific APIs.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

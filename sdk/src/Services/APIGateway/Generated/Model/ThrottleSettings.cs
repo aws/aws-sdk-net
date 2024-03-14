@@ -43,9 +43,9 @@ namespace Amazon.APIGateway.Model
         /// of time than the target rate limit.
         /// </para>
         /// </summary>
-        public int BurstLimit
+        public int? BurstLimit
         {
-            get { return this._burstLimit.GetValueOrDefault(); }
+            get { return this._burstLimit; }
             set { this._burstLimit = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.APIGateway.Model
         /// The API target request rate limit.
         /// </para>
         /// </summary>
-        public double RateLimit
+        public double? RateLimit
         {
-            get { return this._rateLimit.GetValueOrDefault(); }
+            get { return this._rateLimit; }
             set { this._rateLimit = value; }
         }
 

@@ -85,9 +85,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool KMSEncrypted
+        public bool? KMSEncrypted
         {
-            get { return this._kmsEncrypted.GetValueOrDefault(); }
+            get { return this._kmsEncrypted; }
             set { this._kmsEncrypted = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.StorageGateway.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TapeSizeInBytes
+        public long? TapeSizeInBytes
         {
-            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            get { return this._tapeSizeInBytes; }
             set { this._tapeSizeInBytes = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.StorageGateway.Model
         /// (WORM) tape.
         /// </para>
         /// </summary>
-        public bool Worm
+        public bool? Worm
         {
-            get { return this._worm.GetValueOrDefault(); }
+            get { return this._worm; }
             set { this._worm = value; }
         }
 

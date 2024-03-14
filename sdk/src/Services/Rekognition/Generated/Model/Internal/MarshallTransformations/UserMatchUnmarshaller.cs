@@ -65,7 +65,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Similarity", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Similarity = unmarshaller.Unmarshall(context);
                     continue;
                 }

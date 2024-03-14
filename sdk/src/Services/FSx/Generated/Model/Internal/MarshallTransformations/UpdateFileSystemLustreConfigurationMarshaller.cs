@@ -54,7 +54,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays);
+                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
@@ -83,7 +83,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerUnitStorageThroughput())
             {
                 context.Writer.WritePropertyName("PerUnitStorageThroughput");
-                context.Writer.Write(requestObject.PerUnitStorageThroughput);
+                context.Writer.Write(requestObject.PerUnitStorageThroughput.Value);
             }
 
             if(requestObject.IsSetRootSquashConfiguration())

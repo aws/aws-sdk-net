@@ -64,7 +64,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseScore())
             {
                 context.Writer.WritePropertyName("BaseScore");
-                context.Writer.Write(requestObject.BaseScore);
+                context.Writer.Write(requestObject.BaseScore.Value);
             }
 
             if(requestObject.IsSetBaseVector())

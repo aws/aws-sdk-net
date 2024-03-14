@@ -65,7 +65,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ChargeValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ChargeValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

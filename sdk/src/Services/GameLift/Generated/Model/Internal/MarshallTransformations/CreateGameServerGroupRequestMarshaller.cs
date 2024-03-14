@@ -126,13 +126,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxSize())
                 {
                     context.Writer.WritePropertyName("MaxSize");
-                    context.Writer.Write(publicRequest.MaxSize);
+                    context.Writer.Write(publicRequest.MaxSize.Value);
                 }
 
                 if(publicRequest.IsSetMinSize())
                 {
                     context.Writer.WritePropertyName("MinSize");
-                    context.Writer.Write(publicRequest.MinSize);
+                    context.Writer.Write(publicRequest.MinSize.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

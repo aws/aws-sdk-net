@@ -46,9 +46,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// If not specified, the latest job execution is returned.
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool IncludeJobDocument
+        public bool? IncludeJobDocument
         {
-            get { return this._includeJobDocument.GetValueOrDefault(); }
+            get { return this._includeJobDocument; }
             set { this._includeJobDocument = value; }
         }
 

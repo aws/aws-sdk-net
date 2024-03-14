@@ -61,9 +61,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Indicates whether all the events in this log stream were searched.
         /// </para>
         /// </summary>
-        public bool SearchedCompletely
+        public bool? SearchedCompletely
         {
-            get { return this._searchedCompletely.GetValueOrDefault(); }
+            get { return this._searchedCompletely; }
             set { this._searchedCompletely = value; }
         }
 

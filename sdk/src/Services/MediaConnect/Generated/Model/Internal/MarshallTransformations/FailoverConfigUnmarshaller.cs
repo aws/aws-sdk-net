@@ -71,7 +71,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recoveryWindow", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecoveryWindow = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,19 +65,19 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("instanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("predicateCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PredicateCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("signatureCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SignatureCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

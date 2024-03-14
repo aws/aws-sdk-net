@@ -49,9 +49,9 @@ namespace Amazon.MediaConvert.Model
         /// that you specify.
         /// </summary>
         [AWSProperty(Min=100000, Max=100000000)]
-        public int MaxAbrBitrate
+        public int? MaxAbrBitrate
         {
-            get { return this._maxAbrBitrate.GetValueOrDefault(); }
+            get { return this._maxAbrBitrate; }
             set { this._maxAbrBitrate = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.MediaConvert.Model
         /// it from your JSON job specification, MediaConvert defaults to a limit of 15.
         /// </summary>
         [AWSProperty(Min=3, Max=15)]
-        public int MaxRenditions
+        public int? MaxRenditions
         {
-            get { return this._maxRenditions.GetValueOrDefault(); }
+            get { return this._maxRenditions; }
             set { this._maxRenditions = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.MediaConvert.Model
         /// the value that you specify.
         /// </summary>
         [AWSProperty(Min=100000, Max=100000000)]
-        public int MinAbrBitrate
+        public int? MinAbrBitrate
         {
-            get { return this._minAbrBitrate.GetValueOrDefault(); }
+            get { return this._minAbrBitrate; }
             set { this._minAbrBitrate = value; }
         }
 

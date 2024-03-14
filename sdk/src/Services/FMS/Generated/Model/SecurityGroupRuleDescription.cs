@@ -48,9 +48,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public long FromPort
+        public long? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public long ToPort
+        public long? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

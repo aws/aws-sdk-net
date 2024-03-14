@@ -48,31 +48,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellParams())
             {
                 context.Writer.WritePropertyName("CellParams");
-                context.Writer.Write(requestObject.CellParams);
+                context.Writer.Write(requestObject.CellParams.Value);
             }
 
             if(requestObject.IsSetPathLoss())
             {
                 context.Writer.WritePropertyName("PathLoss");
-                context.Writer.Write(requestObject.PathLoss);
+                context.Writer.Write(requestObject.PathLoss.Value);
             }
 
             if(requestObject.IsSetRscp())
             {
                 context.Writer.WritePropertyName("Rscp");
-                context.Writer.Write(requestObject.Rscp);
+                context.Writer.Write(requestObject.Rscp.Value);
             }
 
             if(requestObject.IsSetUarfcn())
             {
                 context.Writer.WritePropertyName("Uarfcn");
-                context.Writer.Write(requestObject.Uarfcn);
+                context.Writer.Write(requestObject.Uarfcn.Value);
             }
 
             if(requestObject.IsSetUtranCid())
             {
                 context.Writer.WritePropertyName("UtranCid");
-                context.Writer.Write(requestObject.UtranCid);
+                context.Writer.Write(requestObject.UtranCid.Value);
             }
 
         }

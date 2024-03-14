@@ -83,7 +83,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("cacheLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CacheLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("restartDelay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RestartDelay = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxRequests", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }

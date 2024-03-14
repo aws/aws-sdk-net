@@ -65,19 +65,19 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BatchCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BatchCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BufferDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BufferDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Honeycode")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
 #elif NETCOREAPP3_1

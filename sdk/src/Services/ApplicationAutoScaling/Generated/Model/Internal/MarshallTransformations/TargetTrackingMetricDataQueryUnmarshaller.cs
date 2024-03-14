@@ -89,7 +89,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReturnData", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReturnData = unmarshaller.Unmarshall(context);
                     continue;
                 }

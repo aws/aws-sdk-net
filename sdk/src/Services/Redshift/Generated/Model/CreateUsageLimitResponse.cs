@@ -49,9 +49,9 @@ namespace Amazon.Redshift.Model
         /// is in terabytes (TB).
         /// </para>
         /// </summary>
-        public long Amount
+        public long? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

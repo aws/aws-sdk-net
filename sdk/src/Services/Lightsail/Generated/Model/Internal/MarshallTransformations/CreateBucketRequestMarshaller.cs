@@ -82,7 +82,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableObjectVersioning())
                 {
                     context.Writer.WritePropertyName("enableObjectVersioning");
-                    context.Writer.Write(publicRequest.EnableObjectVersioning);
+                    context.Writer.Write(publicRequest.EnableObjectVersioning.Value);
                 }
 
                 if(publicRequest.IsSetTags())

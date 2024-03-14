@@ -65,7 +65,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableUpdateCatalog", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableUpdateCatalog = unmarshaller.Unmarshall(context);
                     continue;
                 }

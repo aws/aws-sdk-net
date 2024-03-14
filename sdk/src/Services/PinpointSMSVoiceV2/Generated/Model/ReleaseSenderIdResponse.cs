@@ -106,9 +106,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Registered
+        public bool? Registered
         {
-            get { return this._registered.GetValueOrDefault(); }
+            get { return this._registered; }
             set { this._registered = value; }
         }
 

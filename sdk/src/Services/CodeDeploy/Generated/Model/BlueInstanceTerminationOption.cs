@@ -84,9 +84,9 @@ namespace Amazon.CodeDeploy.Model
         ///  The maximum setting is 2880 minutes (2 days). 
         /// </para>
         /// </summary>
-        public int TerminationWaitTimeInMinutes
+        public int? TerminationWaitTimeInMinutes
         {
-            get { return this._terminationWaitTimeInMinutes.GetValueOrDefault(); }
+            get { return this._terminationWaitTimeInMinutes; }
             set { this._terminationWaitTimeInMinutes = value; }
         }
 

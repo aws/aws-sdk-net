@@ -52,9 +52,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeleteProtection
+        public bool? DeleteProtection
         {
-            get { return this._deleteProtection.GetValueOrDefault(); }
+            get { return this._deleteProtection; }
             set { this._deleteProtection = value; }
         }
 

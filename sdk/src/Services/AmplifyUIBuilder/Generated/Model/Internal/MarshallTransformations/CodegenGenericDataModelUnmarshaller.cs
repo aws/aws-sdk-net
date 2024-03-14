@@ -71,7 +71,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isJoinTable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsJoinTable = unmarshaller.Unmarshall(context);
                     continue;
                 }

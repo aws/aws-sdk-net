@@ -46,9 +46,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float LowerBound
+        public float? LowerBound
         {
-            get { return this._lowerBound.GetValueOrDefault(); }
+            get { return this._lowerBound; }
             set { this._lowerBound = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float UpperBound
+        public float? UpperBound
         {
-            get { return this._upperBound.GetValueOrDefault(); }
+            get { return this._upperBound; }
             set { this._upperBound = value; }
         }
 

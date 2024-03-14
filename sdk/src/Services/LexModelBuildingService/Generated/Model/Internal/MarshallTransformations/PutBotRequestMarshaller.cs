@@ -88,7 +88,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetChildDirected())
                 {
                     context.Writer.WritePropertyName("childDirected");
-                    context.Writer.Write(publicRequest.ChildDirected);
+                    context.Writer.Write(publicRequest.ChildDirected.Value);
                 }
 
                 if(publicRequest.IsSetClarificationPrompt())
@@ -105,7 +105,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreateVersion())
                 {
                     context.Writer.WritePropertyName("createVersion");
-                    context.Writer.Write(publicRequest.CreateVersion);
+                    context.Writer.Write(publicRequest.CreateVersion.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -117,19 +117,19 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDetectSentiment())
                 {
                     context.Writer.WritePropertyName("detectSentiment");
-                    context.Writer.Write(publicRequest.DetectSentiment);
+                    context.Writer.Write(publicRequest.DetectSentiment.Value);
                 }
 
                 if(publicRequest.IsSetEnableModelImprovements())
                 {
                     context.Writer.WritePropertyName("enableModelImprovements");
-                    context.Writer.Write(publicRequest.EnableModelImprovements);
+                    context.Writer.Write(publicRequest.EnableModelImprovements.Value);
                 }
 
                 if(publicRequest.IsSetIdleSessionTTLInSeconds())
                 {
                     context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds);
+                    context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetIntents())
@@ -157,7 +157,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNluIntentConfidenceThreshold())
                 {
                     context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
-                    context.Writer.Write(publicRequest.NluIntentConfidenceThreshold);
+                    context.Writer.Write(publicRequest.NluIntentConfidenceThreshold.Value);
                 }
 
                 if(publicRequest.IsSetProcessBehavior())

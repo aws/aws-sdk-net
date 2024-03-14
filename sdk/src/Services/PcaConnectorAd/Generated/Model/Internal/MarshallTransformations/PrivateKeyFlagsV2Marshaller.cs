@@ -54,13 +54,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportableKey())
             {
                 context.Writer.WritePropertyName("ExportableKey");
-                context.Writer.Write(requestObject.ExportableKey);
+                context.Writer.Write(requestObject.ExportableKey.Value);
             }
 
             if(requestObject.IsSetStrongKeyProtectionRequired())
             {
                 context.Writer.WritePropertyName("StrongKeyProtectionRequired");
-                context.Writer.Write(requestObject.StrongKeyProtectionRequired);
+                context.Writer.Write(requestObject.StrongKeyProtectionRequired.Value);
             }
 
         }

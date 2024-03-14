@@ -83,7 +83,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MatchConfidence", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MatchConfidence = unmarshaller.Unmarshall(context);
                     continue;
                 }

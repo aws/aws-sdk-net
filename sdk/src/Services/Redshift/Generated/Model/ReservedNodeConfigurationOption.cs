@@ -59,9 +59,9 @@ namespace Amazon.Redshift.Model
         /// The target reserved-node count.
         /// </para>
         /// </summary>
-        public int TargetReservedNodeCount
+        public int? TargetReservedNodeCount
         {
-            get { return this._targetReservedNodeCount.GetValueOrDefault(); }
+            get { return this._targetReservedNodeCount; }
             set { this._targetReservedNodeCount = value; }
         }
 

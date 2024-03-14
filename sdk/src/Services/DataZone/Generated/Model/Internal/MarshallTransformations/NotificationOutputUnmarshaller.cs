@@ -71,7 +71,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

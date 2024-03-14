@@ -83,7 +83,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxEirp", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context);
                     continue;
                 }

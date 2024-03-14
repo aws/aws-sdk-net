@@ -49,9 +49,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// is returned.
         /// </para>
         /// </summary>
-        public bool IncludeDescription
+        public bool? IncludeDescription
         {
-            get { return this._includeDescription.GetValueOrDefault(); }
+            get { return this._includeDescription; }
             set { this._includeDescription = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

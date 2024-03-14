@@ -73,9 +73,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime AccessPolicyCreationDate
+        public DateTime? AccessPolicyCreationDate
         {
-            get { return this._accessPolicyCreationDate.GetValueOrDefault(); }
+            get { return this._accessPolicyCreationDate; }
             set { this._accessPolicyCreationDate = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime AccessPolicyLastUpdateDate
+        public DateTime? AccessPolicyLastUpdateDate
         {
-            get { return this._accessPolicyLastUpdateDate.GetValueOrDefault(); }
+            get { return this._accessPolicyLastUpdateDate; }
             set { this._accessPolicyLastUpdateDate = value; }
         }
 

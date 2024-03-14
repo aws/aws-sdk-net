@@ -54,7 +54,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetManifestName())
@@ -66,13 +66,13 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("programDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds);
+                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetRepeatExtXKey())
             {
                 context.Writer.WritePropertyName("repeatExtXKey");
-                context.Writer.Write(requestObject.RepeatExtXKey);
+                context.Writer.Write(requestObject.RepeatExtXKey.Value);
             }
 
             if(requestObject.IsSetStreamSelection())

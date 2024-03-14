@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("controlsCountByNoncompliantEvidence", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ControlsCountByNoncompliantEvidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalControlsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalControlsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

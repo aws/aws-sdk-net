@@ -65,31 +65,31 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             {
                 if (context.TestExpression("completionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("failed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inProgress", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("servers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Servers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 }
                 if (context.TestExpression("success", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Success = unmarshaller.Unmarshall(context);
                     continue;
                 }

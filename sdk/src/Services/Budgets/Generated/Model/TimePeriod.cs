@@ -52,9 +52,9 @@ namespace Amazon.Budgets.Model
         /// operation.
         /// </para>
         /// </summary>
-        public DateTime End
+        public DateTime? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Budgets.Model
         /// You can change your start date with the <c>UpdateBudget</c> operation.
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InvitationsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InvitationsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

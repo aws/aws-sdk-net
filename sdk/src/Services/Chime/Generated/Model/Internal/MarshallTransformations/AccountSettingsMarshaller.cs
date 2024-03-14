@@ -48,13 +48,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableRemoteControl())
             {
                 context.Writer.WritePropertyName("DisableRemoteControl");
-                context.Writer.Write(requestObject.DisableRemoteControl);
+                context.Writer.Write(requestObject.DisableRemoteControl.Value);
             }
 
             if(requestObject.IsSetEnableDialOut())
             {
                 context.Writer.WritePropertyName("EnableDialOut");
-                context.Writer.Write(requestObject.EnableDialOut);
+                context.Writer.Write(requestObject.EnableDialOut.Value);
             }
 
         }

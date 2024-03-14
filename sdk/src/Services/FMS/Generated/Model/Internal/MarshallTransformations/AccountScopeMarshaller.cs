@@ -59,13 +59,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllAccountsEnabled())
             {
                 context.Writer.WritePropertyName("AllAccountsEnabled");
-                context.Writer.Write(requestObject.AllAccountsEnabled);
+                context.Writer.Write(requestObject.AllAccountsEnabled.Value);
             }
 
             if(requestObject.IsSetExcludeSpecifiedAccounts())
             {
                 context.Writer.WritePropertyName("ExcludeSpecifiedAccounts");
-                context.Writer.Write(requestObject.ExcludeSpecifiedAccounts);
+                context.Writer.Write(requestObject.ExcludeSpecifiedAccounts.Value);
             }
 
         }

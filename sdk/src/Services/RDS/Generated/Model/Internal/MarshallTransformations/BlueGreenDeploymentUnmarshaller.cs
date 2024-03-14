@@ -68,13 +68,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DeleteTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DeleteTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

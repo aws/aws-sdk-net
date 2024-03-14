@@ -112,9 +112,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// but not both. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MaxDepth
+        public int? MaxDepth
         {
-            get { return this._maxDepth.GetValueOrDefault(); }
+            get { return this._maxDepth; }
             set { this._maxDepth = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;,
         /// but not both. &lt;/p&gt; </c></pre>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

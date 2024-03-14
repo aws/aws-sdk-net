@@ -48,13 +48,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLinearInterval())
             {
                 context.Writer.WritePropertyName("linearInterval");
-                context.Writer.Write(requestObject.LinearInterval);
+                context.Writer.Write(requestObject.LinearInterval.Value);
             }
 
             if(requestObject.IsSetLinearPercentage())
             {
                 context.Writer.WritePropertyName("linearPercentage");
-                context.Writer.Write(requestObject.LinearPercentage);
+                context.Writer.Write(requestObject.LinearPercentage.Value);
             }
 
         }

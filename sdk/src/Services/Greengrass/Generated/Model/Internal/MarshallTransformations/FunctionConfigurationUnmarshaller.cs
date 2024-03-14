@@ -95,19 +95,19 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MemorySize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Pinned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Pinned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

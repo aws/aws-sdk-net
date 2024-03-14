@@ -115,9 +115,9 @@ namespace Amazon.EC2.Model
         /// Default: Your user-defined AMI tags are not copied.
         /// </para>
         /// </summary>
-        public bool CopyImageTags
+        public bool? CopyImageTags
         {
-            get { return this._copyImageTags.GetValueOrDefault(); }
+            get { return this._copyImageTags; }
             set { this._copyImageTags = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.EC2.Model
         /// EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 

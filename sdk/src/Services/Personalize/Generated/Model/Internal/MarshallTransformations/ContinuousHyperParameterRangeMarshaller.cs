@@ -48,13 +48,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                context.Writer.Write(requestObject.MaxValue.Value);
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("minValue");
-                context.Writer.Write(requestObject.MinValue);
+                context.Writer.Write(requestObject.MinValue.Value);
             }
 
             if(requestObject.IsSetName())

@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Classic", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Classic = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NumberOfNodes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the container has read-only access to the volume.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 

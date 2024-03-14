@@ -95,13 +95,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deleted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

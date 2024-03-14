@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("Boolean");
-                context.Writer.Write(requestObject.Boolean);
+                context.Writer.Write(requestObject.Boolean.Value);
             }
 
             if(requestObject.IsSetDouble())
             {
                 context.Writer.WritePropertyName("Double");
-                context.Writer.Write(requestObject.Double);
+                context.Writer.Write(requestObject.Double.Value);
             }
 
             if(requestObject.IsSetEnum())
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInteger())
             {
                 context.Writer.WritePropertyName("Integer");
-                context.Writer.Write(requestObject.Integer);
+                context.Writer.Write(requestObject.Integer.Value);
             }
 
             if(requestObject.IsSetIntegerList())

@@ -57,9 +57,9 @@ namespace Amazon.IoT.Model
         /// to obtain the job execution status data.)
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoT.Model
         /// to recover to a valid state.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

@@ -133,9 +133,9 @@ namespace Amazon.LexModelsV2.Model
         /// The date and time that the locale was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.LexModelsV2.Model
         /// The number of intents defined for the locale.
         /// </para>
         /// </summary>
-        public int IntentsCount
+        public int? IntentsCount
         {
-            get { return this._intentsCount.GetValueOrDefault(); }
+            get { return this._intentsCount; }
             set { this._intentsCount = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.LexModelsV2.Model
         /// The date and time that the locale was last submitted for building.
         /// </para>
         /// </summary>
-        public DateTime LastBuildSubmittedDateTime
+        public DateTime? LastBuildSubmittedDateTime
         {
-            get { return this._lastBuildSubmittedDateTime.GetValueOrDefault(); }
+            get { return this._lastBuildSubmittedDateTime; }
             set { this._lastBuildSubmittedDateTime = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.LexModelsV2.Model
         /// The date and time that the locale was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double NluIntentConfidenceThreshold
+        public double? NluIntentConfidenceThreshold
         {
-            get { return this._nluIntentConfidenceThreshold.GetValueOrDefault(); }
+            get { return this._nluIntentConfidenceThreshold; }
             set { this._nluIntentConfidenceThreshold = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.LexModelsV2.Model
         /// The number of slot types defined for the locale.
         /// </para>
         /// </summary>
-        public int SlotTypesCount
+        public int? SlotTypesCount
         {
-            get { return this._slotTypesCount.GetValueOrDefault(); }
+            get { return this._slotTypesCount; }
             set { this._slotTypesCount = value; }
         }
 

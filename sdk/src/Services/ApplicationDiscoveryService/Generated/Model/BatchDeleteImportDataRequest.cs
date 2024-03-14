@@ -55,9 +55,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// 
         /// </para>
         /// </summary>
-        public bool DeleteHistory
+        public bool? DeleteHistory
         {
-            get { return this._deleteHistory.GetValueOrDefault(); }
+            get { return this._deleteHistory; }
             set { this._deleteHistory = value; }
         }
 

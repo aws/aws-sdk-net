@@ -105,9 +105,9 @@ namespace Amazon.Pinpoint.Model
         /// true.
         /// </para>
         /// </summary>
-        public bool IsLocalTime
+        public bool? IsLocalTime
         {
-            get { return this._isLocalTime.GetValueOrDefault(); }
+            get { return this._isLocalTime; }
             set { this._isLocalTime = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.ACMPCA.Model
         /// Specifies the critical flag of the X.509 extension.
         /// </para>
         /// </summary>
-        public bool Critical
+        public bool? Critical
         {
-            get { return this._critical.GetValueOrDefault(); }
+            get { return this._critical; }
             set { this._critical = value; }
         }
 

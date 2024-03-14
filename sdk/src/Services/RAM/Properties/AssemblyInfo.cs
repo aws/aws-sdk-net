@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.RAM")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resource Access Manager. AWS Resource Access Manager (AWS RAM) enables you to share your resources with any AWS account or through AWS Organizations.")]
 #elif NETCOREAPP3_1

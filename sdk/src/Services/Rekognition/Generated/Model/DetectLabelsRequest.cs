@@ -264,9 +264,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxLabels
+        public int? MaxLabels
         {
-            get { return this._maxLabels.GetValueOrDefault(); }
+            get { return this._maxLabels; }
             set { this._maxLabels = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float MinConfidence
+        public float? MinConfidence
         {
-            get { return this._minConfidence.GetValueOrDefault(); }
+            get { return this._minConfidence; }
             set { this._minConfidence = value; }
         }
 

@@ -54,19 +54,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeAllVersions())
             {
                 context.Writer.WritePropertyName("includeAllVersions");
-                context.Writer.Write(requestObject.IncludeAllVersions);
+                context.Writer.Write(requestObject.IncludeAllVersions.Value);
             }
 
             if(requestObject.IsSetIncludeRenditions())
             {
                 context.Writer.WritePropertyName("includeRenditions");
-                context.Writer.Write(requestObject.IncludeRenditions);
+                context.Writer.Write(requestObject.IncludeRenditions.Value);
             }
 
             if(requestObject.IsSetIncludeSourceFiles())
             {
                 context.Writer.WritePropertyName("includeSourceFiles");
-                context.Writer.Write(requestObject.IncludeSourceFiles);
+                context.Writer.Write(requestObject.IncludeSourceFiles.Value);
             }
 
             if(requestObject.IsSetObject())

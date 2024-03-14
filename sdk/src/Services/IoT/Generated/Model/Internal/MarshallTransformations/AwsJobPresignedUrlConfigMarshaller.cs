@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpiresInSec())
             {
                 context.Writer.WritePropertyName("expiresInSec");
-                context.Writer.Write(requestObject.ExpiresInSec);
+                context.Writer.Write(requestObject.ExpiresInSec.Value);
             }
 
         }

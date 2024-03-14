@@ -115,9 +115,9 @@ namespace Amazon.Appflow.Model
         /// has no affect.
         /// </para>
         /// </summary>
-        public bool DisableSSO
+        public bool? DisableSSO
         {
-            get { return this._disablesso.GetValueOrDefault(); }
+            get { return this._disablesso; }
             set { this._disablesso = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int PortNumber
+        public int? PortNumber
         {
-            get { return this._portNumber.GetValueOrDefault(); }
+            get { return this._portNumber; }
             set { this._portNumber = value; }
         }
 

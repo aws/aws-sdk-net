@@ -45,9 +45,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Value
+        public DateTime? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

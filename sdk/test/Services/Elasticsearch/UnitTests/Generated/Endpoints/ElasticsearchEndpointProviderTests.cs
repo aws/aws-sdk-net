@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Elasticsearch.Endpoints;
 using Amazon.Elasticsearch.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class ElasticsearchEndpointsTests

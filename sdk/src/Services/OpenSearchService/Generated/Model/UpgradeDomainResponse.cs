@@ -101,9 +101,9 @@ namespace Amazon.OpenSearchService.Model
         /// When true, indicates that an upgrade eligibility check was performed.
         /// </para>
         /// </summary>
-        public bool PerformCheckOnly
+        public bool? PerformCheckOnly
         {
-            get { return this._performCheckOnly.GetValueOrDefault(); }
+            get { return this._performCheckOnly; }
             set { this._performCheckOnly = value; }
         }
 

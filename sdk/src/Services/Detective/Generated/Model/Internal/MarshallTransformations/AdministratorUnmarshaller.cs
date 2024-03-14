@@ -71,7 +71,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DelegationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DelegationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

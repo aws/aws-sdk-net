@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int NumberOfSamples
+        public int? NumberOfSamples
         {
-            get { return this._numberOfSamples.GetValueOrDefault(); }
+            get { return this._numberOfSamples; }
             set { this._numberOfSamples = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.SageMaker.Model
         /// Provide a value for this parameter to obtain a deterministic SHAP result.
         /// </para>
         /// </summary>
-        public int Seed
+        public int? Seed
         {
-            get { return this._seed.GetValueOrDefault(); }
+            get { return this._seed; }
             set { this._seed = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.SageMaker.Model
         /// units (false) for model predictions. Defaults to false.
         /// </para>
         /// </summary>
-        public bool UseLogit
+        public bool? UseLogit
         {
-            get { return this._useLogit.GetValueOrDefault(); }
+            get { return this._useLogit; }
             set { this._useLogit = value; }
         }
 

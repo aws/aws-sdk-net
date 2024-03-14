@@ -72,13 +72,13 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("agentsTruncated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AgentsTruncated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("canRetry", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CanRetry = unmarshaller.Unmarshall(context);
                     continue;
                 }

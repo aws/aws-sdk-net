@@ -117,9 +117,9 @@ namespace Amazon.ECS.Model
         /// draining according to the settings on the load balancer or target group.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

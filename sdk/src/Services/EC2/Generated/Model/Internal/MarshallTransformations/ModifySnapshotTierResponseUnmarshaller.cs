@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("tieringStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.TieringStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

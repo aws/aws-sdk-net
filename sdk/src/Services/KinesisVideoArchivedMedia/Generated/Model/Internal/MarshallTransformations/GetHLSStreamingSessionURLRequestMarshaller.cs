@@ -86,7 +86,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetExpires())
                 {
                     context.Writer.WritePropertyName("Expires");
-                    context.Writer.Write(publicRequest.Expires);
+                    context.Writer.Write(publicRequest.Expires.Value);
                 }
 
                 if(publicRequest.IsSetHLSFragmentSelector())
@@ -103,7 +103,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
                 if(publicRequest.IsSetMaxMediaPlaylistFragmentResults())
                 {
                     context.Writer.WritePropertyName("MaxMediaPlaylistFragmentResults");
-                    context.Writer.Write(publicRequest.MaxMediaPlaylistFragmentResults);
+                    context.Writer.Write(publicRequest.MaxMediaPlaylistFragmentResults.Value);
                 }
 
                 if(publicRequest.IsSetPlaybackMode())

@@ -66,9 +66,9 @@ namespace Amazon.ConfigService.Model
         /// The time when the remediation exception will be deleted.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

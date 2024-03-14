@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AcceptEula", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AcceptEula = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,13 +48,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChallengeRequiredOnNewDevice())
             {
                 context.Writer.WritePropertyName("ChallengeRequiredOnNewDevice");
-                context.Writer.Write(requestObject.ChallengeRequiredOnNewDevice);
+                context.Writer.Write(requestObject.ChallengeRequiredOnNewDevice.Value);
             }
 
             if(requestObject.IsSetDeviceOnlyRememberedOnUserPrompt())
             {
                 context.Writer.WritePropertyName("DeviceOnlyRememberedOnUserPrompt");
-                context.Writer.Write(requestObject.DeviceOnlyRememberedOnUserPrompt);
+                context.Writer.Write(requestObject.DeviceOnlyRememberedOnUserPrompt.Value);
             }
 
         }

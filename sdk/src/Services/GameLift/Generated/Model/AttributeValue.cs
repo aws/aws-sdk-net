@@ -46,9 +46,9 @@ namespace Amazon.GameLift.Model
         /// For number values, expressed as double.
         /// </para>
         /// </summary>
-        public double N
+        public double? N
         {
-            get { return this._n.GetValueOrDefault(); }
+            get { return this._n; }
             set { this._n = value; }
         }
 

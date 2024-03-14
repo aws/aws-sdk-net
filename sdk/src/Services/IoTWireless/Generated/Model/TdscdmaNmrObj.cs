@@ -46,9 +46,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=127)]
-        public int CellParams
+        public int? CellParams
         {
-            get { return this._cellParams.GetValueOrDefault(); }
+            get { return this._cellParams; }
             set { this._cellParams = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=46, Max=158)]
-        public int PathLoss
+        public int? PathLoss
         {
-            get { return this._pathLoss.GetValueOrDefault(); }
+            get { return this._pathLoss; }
             set { this._pathLoss = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-120, Max=-25)]
-        public int Rscp
+        public int? Rscp
         {
-            get { return this._rscp.GetValueOrDefault(); }
+            get { return this._rscp; }
             set { this._rscp = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=16383)]
-        public int Uarfcn
+        public int? Uarfcn
         {
-            get { return this._uarfcn.GetValueOrDefault(); }
+            get { return this._uarfcn; }
             set { this._uarfcn = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=268435455)]
-        public int UtranCid
+        public int? UtranCid
         {
-            get { return this._utranCid.GetValueOrDefault(); }
+            get { return this._utranCid; }
             set { this._utranCid = value; }
         }
 

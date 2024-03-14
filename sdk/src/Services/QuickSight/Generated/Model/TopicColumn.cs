@@ -244,9 +244,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates whether the column shows in the autocomplete functionality.
         /// </para>
         /// </summary>
-        public bool DisableIndexing
+        public bool? DisableIndexing
         {
-            get { return this._disableIndexing.GetValueOrDefault(); }
+            get { return this._disableIndexing; }
             set { this._disableIndexing = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates whether the column is included in the query results.
         /// </para>
         /// </summary>
-        public bool IsIncludedInTopic
+        public bool? IsIncludedInTopic
         {
-            get { return this._isIncludedInTopic.GetValueOrDefault(); }
+            get { return this._isIncludedInTopic; }
             set { this._isIncludedInTopic = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.QuickSight.Model
         /// in a filter context.
         /// </para>
         /// </summary>
-        public bool NeverAggregateInFilter
+        public bool? NeverAggregateInFilter
         {
-            get { return this._neverAggregateInFilter.GetValueOrDefault(); }
+            get { return this._neverAggregateInFilter; }
             set { this._neverAggregateInFilter = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.QuickSight.Model
         /// The non additive value for the column.
         /// </para>
         /// </summary>
-        public bool NonAdditive
+        public bool? NonAdditive
         {
-            get { return this._nonAdditive.GetValueOrDefault(); }
+            get { return this._nonAdditive; }
             set { this._nonAdditive = value; }
         }
 

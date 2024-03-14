@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// Center</a>.
         /// </para>
         /// </summary>
-        public DateTime ProvisionTime
+        public DateTime? ProvisionTime
         {
-            get { return this._provisionTime.GetValueOrDefault(); }
+            get { return this._provisionTime; }
             set { this._provisionTime = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.EC2.Model
         /// Center</a>.
         /// </para>
         /// </summary>
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 

@@ -79,9 +79,9 @@ namespace Amazon.Kendra.Model
         /// type field. Only applies to <c>DATE</c> fields.
         /// </para>
         /// </summary>
-        public bool Freshness
+        public bool? Freshness
         {
-            get { return this._freshness.GetValueOrDefault(); }
+            get { return this._freshness; }
             set { this._freshness = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int Importance
+        public int? Importance
         {
-            get { return this._importance.GetValueOrDefault(); }
+            get { return this._importance; }
             set { this._importance = value; }
         }
 

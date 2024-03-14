@@ -48,7 +48,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHorizontal())
             {
                 context.Writer.WritePropertyName("Horizontal");
-                context.Writer.Write(requestObject.Horizontal);
+                context.Writer.Write(requestObject.Horizontal.Value);
             }
 
         }

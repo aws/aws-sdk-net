@@ -85,9 +85,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <c>ip</c>, or <c>alb</c>, health checks are always enabled and cannot be disabled.
         /// </para>
         /// </summary>
-        public bool HealthCheckEnabled
+        public bool? HealthCheckEnabled
         {
-            get { return this._healthCheckEnabled.GetValueOrDefault(); }
+            get { return this._healthCheckEnabled; }
             set { this._healthCheckEnabled = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
-        public int HealthCheckIntervalSeconds
+        public int? HealthCheckIntervalSeconds
         {
-            get { return this._healthCheckIntervalSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckIntervalSeconds; }
             set { this._healthCheckIntervalSeconds = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=120)]
-        public int HealthCheckTimeoutSeconds
+        public int? HealthCheckTimeoutSeconds
         {
-            get { return this._healthCheckTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckTimeoutSeconds; }
             set { this._healthCheckTimeoutSeconds = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
-        public int HealthyThresholdCount
+        public int? HealthyThresholdCount
         {
-            get { return this._healthyThresholdCount.GetValueOrDefault(); }
+            get { return this._healthyThresholdCount; }
             set { this._healthyThresholdCount = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -433,9 +433,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
-        public int UnhealthyThresholdCount
+        public int? UnhealthyThresholdCount
         {
-            get { return this._unhealthyThresholdCount.GetValueOrDefault(); }
+            get { return this._unhealthyThresholdCount; }
             set { this._unhealthyThresholdCount = value; }
         }
 

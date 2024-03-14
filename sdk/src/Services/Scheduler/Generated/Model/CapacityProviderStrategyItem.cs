@@ -46,9 +46,9 @@ namespace Amazon.Scheduler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
-        public int Base
+        public int? Base
         {
-            get { return this._base.GetValueOrDefault(); }
+            get { return this._base; }
             set { this._base = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Scheduler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

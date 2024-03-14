@@ -124,9 +124,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999)]
-        public int MaxOutputFiles
+        public int? MaxOutputFiles
         {
-            get { return this._maxOutputFiles.GetValueOrDefault(); }
+            get { return this._maxOutputFiles; }
             set { this._maxOutputFiles = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.GlueDataBrew.Model
         /// overwritten with new output.
         /// </para>
         /// </summary>
-        public bool Overwrite
+        public bool? Overwrite
         {
-            get { return this._overwrite.GetValueOrDefault(); }
+            get { return this._overwrite; }
             set { this._overwrite = value; }
         }
 

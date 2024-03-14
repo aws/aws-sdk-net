@@ -65,7 +65,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("completedOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startedOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }

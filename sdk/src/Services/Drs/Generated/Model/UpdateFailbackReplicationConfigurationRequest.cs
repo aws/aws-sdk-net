@@ -48,9 +48,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BandwidthThrottling
+        public long? BandwidthThrottling
         {
-            get { return this._bandwidthThrottling.GetValueOrDefault(); }
+            get { return this._bandwidthThrottling; }
             set { this._bandwidthThrottling = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Drs.Model
         /// Whether to use Private IP for the failback replication of the Recovery Instance.
         /// </para>
         /// </summary>
-        public bool UsePrivateIP
+        public bool? UsePrivateIP
         {
-            get { return this._usePrivateIP.GetValueOrDefault(); }
+            get { return this._usePrivateIP; }
             set { this._usePrivateIP = value; }
         }
 

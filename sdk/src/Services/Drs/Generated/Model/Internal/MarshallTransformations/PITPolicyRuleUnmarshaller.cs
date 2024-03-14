@@ -65,25 +65,25 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("interval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("retentionDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ruleID", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RuleID = unmarshaller.Unmarshall(context);
                     continue;
                 }

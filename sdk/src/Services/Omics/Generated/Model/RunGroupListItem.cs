@@ -67,9 +67,9 @@ namespace Amazon.Omics.Model
         /// When the group was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public int MaxCpus
+        public int? MaxCpus
         {
-            get { return this._maxCpus.GetValueOrDefault(); }
+            get { return this._maxCpus; }
             set { this._maxCpus = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public int MaxDuration
+        public int? MaxDuration
         {
-            get { return this._maxDuration.GetValueOrDefault(); }
+            get { return this._maxDuration; }
             set { this._maxDuration = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public int MaxGpus
+        public int? MaxGpus
         {
-            get { return this._maxGpus.GetValueOrDefault(); }
+            get { return this._maxGpus; }
             set { this._maxGpus = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public int MaxRuns
+        public int? MaxRuns
         {
-            get { return this._maxRuns.GetValueOrDefault(); }
+            get { return this._maxRuns; }
             set { this._maxRuns = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,13 +113,13 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastConnectedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastConnectedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastPostureAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastPostureAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -185,7 +185,7 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

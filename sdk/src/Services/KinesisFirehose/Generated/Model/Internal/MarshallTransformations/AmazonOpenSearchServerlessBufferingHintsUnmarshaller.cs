@@ -65,13 +65,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IntervalInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntervalInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SizeInMBs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeInMBs = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Schemas")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Schemas. This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.")]
 #elif NETCOREAPP3_1

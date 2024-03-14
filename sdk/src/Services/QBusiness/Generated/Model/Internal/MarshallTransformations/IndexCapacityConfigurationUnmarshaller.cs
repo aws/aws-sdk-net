@@ -65,7 +65,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("units", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Units = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -70,7 +70,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceMove())
                 {
                     context.Writer.WritePropertyName("ForceMove");
-                    context.Writer.Write(publicRequest.ForceMove);
+                    context.Writer.Write(publicRequest.ForceMove.Value);
                 }
 
                 writer.WriteObjectEnd();

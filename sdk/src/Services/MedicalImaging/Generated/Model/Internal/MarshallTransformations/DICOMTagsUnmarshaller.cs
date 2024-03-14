@@ -71,13 +71,13 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DICOMNumberOfStudyRelatedInstances", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DICOMNumberOfStudyRelatedInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DICOMNumberOfStudyRelatedSeries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DICOMNumberOfStudyRelatedSeries = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,9 +84,9 @@ namespace Amazon.MemoryDB.Model
         /// after launch.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MemoryDB.Model
         /// tiering</a>.
         /// </para>
         /// </summary>
-        public bool DataTiering
+        public bool? DataTiering
         {
-            get { return this._dataTiering.GetValueOrDefault(); }
+            get { return this._dataTiering; }
             set { this._dataTiering = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.MemoryDB.Model
         /// is 5. 
         /// </para>
         /// </summary>
-        public int NumReplicasPerShard
+        public int? NumReplicasPerShard
         {
-            get { return this._numReplicasPerShard.GetValueOrDefault(); }
+            get { return this._numReplicasPerShard; }
             set { this._numReplicasPerShard = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of shards the cluster will contain. The default value is 1. 
         /// </para>
         /// </summary>
-        public int NumShards
+        public int? NumShards
         {
-            get { return this._numShards.GetValueOrDefault(); }
+            get { return this._numShards; }
             set { this._numShards = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.MemoryDB.Model
         /// The port number on which each of the nodes accepts connections.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.MemoryDB.Model
         /// today is retained for 5 days before being deleted.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -508,9 +508,9 @@ namespace Amazon.MemoryDB.Model
         /// A flag to enable in-transit encryption on the cluster.
         /// </para>
         /// </summary>
-        public bool TLSEnabled
+        public bool? TLSEnabled
         {
-            get { return this._tlsEnabled.GetValueOrDefault(); }
+            get { return this._tlsEnabled; }
             set { this._tlsEnabled = value; }
         }
 

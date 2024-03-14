@@ -74,13 +74,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IsDefaultConfiguration", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IsDefaultConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastUpdated", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                         continue;
                     }

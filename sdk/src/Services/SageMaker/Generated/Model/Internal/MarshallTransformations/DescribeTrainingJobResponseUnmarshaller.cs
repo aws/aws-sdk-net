@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BillableTimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.BillableTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,19 +101,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableManagedSpotTraining", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableManagedSpotTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableNetworkIsolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,7 +167,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -257,7 +257,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrainingEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrainingEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -281,13 +281,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrainingStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrainingStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingTimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TrainingTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

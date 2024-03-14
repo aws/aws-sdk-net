@@ -63,9 +63,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The memory size of the resource.
         /// </para>
         /// </summary>
-        public int MemorySizeInMB
+        public int? MemorySizeInMB
         {
-            get { return this._memorySizeInMB.GetValueOrDefault(); }
+            get { return this._memorySizeInMB; }
             set { this._memorySizeInMB = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The number of vCPU cores in the resource.
         /// </para>
         /// </summary>
-        public double VCpu
+        public double? VCpu
         {
-            get { return this._vCpu.GetValueOrDefault(); }
+            get { return this._vCpu; }
             set { this._vCpu = value; }
         }
 

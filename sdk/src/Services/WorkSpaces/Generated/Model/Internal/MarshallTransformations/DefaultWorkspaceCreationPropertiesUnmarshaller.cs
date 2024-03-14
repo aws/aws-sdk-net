@@ -77,25 +77,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableInternetAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableInternetAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableMaintenanceMode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMaintenanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableWorkDocs", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableWorkDocs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserEnabledAsLocalAdministrator", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserEnabledAsLocalAdministrator = unmarshaller.Unmarshall(context);
                     continue;
                 }

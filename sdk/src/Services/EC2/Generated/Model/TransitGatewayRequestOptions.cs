@@ -51,9 +51,9 @@ namespace Amazon.EC2.Model
         /// The default is <c>64512</c>.
         /// </para>
         /// </summary>
-        public long AmazonSideAsn
+        public long? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileId())
             {
                 context.Writer.WritePropertyName("fileId");
-                context.Writer.Write(requestObject.FileId);
+                context.Writer.Write(requestObject.FileId.Value);
             }
 
             if(requestObject.IsSetS3Location())

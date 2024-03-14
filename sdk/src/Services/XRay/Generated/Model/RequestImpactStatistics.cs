@@ -43,9 +43,9 @@ namespace Amazon.XRay.Model
         /// The number of requests that have resulted in a fault,
         /// </para>
         /// </summary>
-        public long FaultCount
+        public long? FaultCount
         {
-            get { return this._faultCount.GetValueOrDefault(); }
+            get { return this._faultCount; }
             set { this._faultCount = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.XRay.Model
         /// The number of successful requests.
         /// </para>
         /// </summary>
-        public long OkCount
+        public long? OkCount
         {
-            get { return this._okCount.GetValueOrDefault(); }
+            get { return this._okCount; }
             set { this._okCount = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.XRay.Model
         /// The total number of requests to the service.
         /// </para>
         /// </summary>
-        public long TotalCount
+        public long? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ManagedbyFirewallManager", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManagedbyFirewallManager = unmarshaller.Unmarshall(context);
                     continue;
                 }

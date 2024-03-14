@@ -59,7 +59,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityScoreThreshold())
             {
                 context.Writer.WritePropertyName("AvailabilityScoreThreshold");
-                context.Writer.Write(requestObject.AvailabilityScoreThreshold);
+                context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
             }
 
             if(requestObject.IsSetPerformanceLocalHealthEventsConfig())
@@ -76,7 +76,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerformanceScoreThreshold())
             {
                 context.Writer.WritePropertyName("PerformanceScoreThreshold");
-                context.Writer.Write(requestObject.PerformanceScoreThreshold);
+                context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
             }
 
         }

@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int FailedCount
+        public int? FailedCount
         {
-            get { return this._failedCount.GetValueOrDefault(); }
+            get { return this._failedCount; }
             set { this._failedCount = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SuccessCount
+        public int? SuccessCount
         {
-            get { return this._successCount.GetValueOrDefault(); }
+            get { return this._successCount; }
             set { this._successCount = value; }
         }
 

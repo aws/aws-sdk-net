@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CompliantCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

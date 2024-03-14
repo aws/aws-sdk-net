@@ -65,19 +65,19 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InvalidInputRecords", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InvalidInputRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordsProcessed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RetryAttempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }

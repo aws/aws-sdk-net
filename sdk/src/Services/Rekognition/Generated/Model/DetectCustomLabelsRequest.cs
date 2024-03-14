@@ -126,9 +126,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float MinConfidence
+        public float? MinConfidence
         {
-            get { return this._minConfidence.GetValueOrDefault(); }
+            get { return this._minConfidence; }
             set { this._minConfidence = value; }
         }
 

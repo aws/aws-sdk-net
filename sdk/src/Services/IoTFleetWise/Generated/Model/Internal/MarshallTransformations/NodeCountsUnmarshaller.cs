@@ -65,43 +65,43 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("totalActuators", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalActuators = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalAttributes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalBranches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalBranches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalNodes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalProperties", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalSensors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalSensors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalStructs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalStructs = unmarshaller.Unmarshall(context);
                     continue;
                 }

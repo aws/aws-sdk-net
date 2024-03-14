@@ -65,19 +65,19 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("gpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Gpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("memory", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

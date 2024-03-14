@@ -70,31 +70,31 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreatedAtEndTime())
                 {
                     context.Writer.WritePropertyName("CreatedAtEndTime");
-                    context.Writer.Write(publicRequest.CreatedAtEndTime);
+                    context.Writer.Write(publicRequest.CreatedAtEndTime.Value);
                 }
 
                 if(publicRequest.IsSetCreatedAtStartTime())
                 {
                     context.Writer.WritePropertyName("CreatedAtStartTime");
-                    context.Writer.Write(publicRequest.CreatedAtStartTime);
+                    context.Writer.Write(publicRequest.CreatedAtStartTime.Value);
                 }
 
                 if(publicRequest.IsSetMaxModelVersion())
                 {
                     context.Writer.WritePropertyName("MaxModelVersion");
-                    context.Writer.Write(publicRequest.MaxModelVersion);
+                    context.Writer.Write(publicRequest.MaxModelVersion.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetMinModelVersion())
                 {
                     context.Writer.WritePropertyName("MinModelVersion");
-                    context.Writer.Write(publicRequest.MinModelVersion);
+                    context.Writer.Write(publicRequest.MinModelVersion.Value);
                 }
 
                 if(publicRequest.IsSetModelName())

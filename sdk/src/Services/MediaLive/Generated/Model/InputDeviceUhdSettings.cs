@@ -130,9 +130,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Framerate. The frame rate of the video source.
         /// </summary>
-        public double Framerate
+        public double? Framerate
         {
-            get { return this._framerate.GetValueOrDefault(); }
+            get { return this._framerate; }
             set { this._framerate = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Height. The height of the video source, in pixels.
         /// </summary>
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LatencyMs. The Link device's buffer size (latency) in milliseconds
         /// (ms). You can specify this value.
         /// </summary>
-        public int LatencyMs
+        public int? LatencyMs
         {
-            get { return this._latencyMs.GetValueOrDefault(); }
+            get { return this._latencyMs; }
             set { this._latencyMs = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaxBitrate. The current maximum bitrate for ingesting this
         /// source, in bits per second. You can specify this maximum.
         /// </summary>
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Width. The width of the video source, in pixels.
         /// </summary>
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

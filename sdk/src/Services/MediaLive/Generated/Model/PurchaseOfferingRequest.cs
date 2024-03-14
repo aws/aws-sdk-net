@@ -46,9 +46,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Count. Number of resources
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

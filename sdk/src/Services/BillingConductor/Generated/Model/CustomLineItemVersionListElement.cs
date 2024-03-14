@@ -92,9 +92,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long AssociationSize
+        public long? AssociationSize
         {
-            get { return this._associationSize.GetValueOrDefault(); }
+            get { return this._associationSize; }
             set { this._associationSize = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.BillingConductor.Model
         /// The time when the custom line item version was created.
         /// </para>
         /// </summary>
-        public long CreationTime
+        public long? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.BillingConductor.Model
         /// The most recent time that the custom line item version was modified.
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.BillingConductor.Model
         ///  The inclusive start time. 
         /// </para>
         /// </summary>
-        public long StartTime
+        public long? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

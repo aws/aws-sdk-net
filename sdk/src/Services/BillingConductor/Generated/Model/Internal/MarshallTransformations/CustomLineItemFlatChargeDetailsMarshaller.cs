@@ -48,7 +48,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChargeValue())
             {
                 context.Writer.WritePropertyName("ChargeValue");
-                context.Writer.Write(requestObject.ChargeValue);
+                context.Writer.Write(requestObject.ChargeValue.Value);
             }
 
         }

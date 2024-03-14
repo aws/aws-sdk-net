@@ -95,7 +95,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isActive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsActive = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

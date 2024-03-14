@@ -77,19 +77,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfDecreasesToday", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDecreasesToday = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReadCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WriteCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

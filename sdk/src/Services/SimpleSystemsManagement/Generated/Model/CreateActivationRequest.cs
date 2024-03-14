@@ -116,9 +116,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// don't provide an expiration date, the activation code expires in 24 hours.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int RegistrationLimit
+        public int? RegistrationLimit
         {
-            get { return this._registrationLimit.GetValueOrDefault(); }
+            get { return this._registrationLimit; }
             set { this._registrationLimit = value; }
         }
 

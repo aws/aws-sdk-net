@@ -84,9 +84,9 @@ namespace Amazon.ResilienceHub.Model
         /// their last assessment times.
         /// </para>
         /// </summary>
-        public DateTime FromLastAssessmentTime
+        public DateTime? FromLastAssessmentTime
         {
-            get { return this._fromLastAssessmentTime.GetValueOrDefault(); }
+            get { return this._fromLastAssessmentTime; }
             set { this._fromLastAssessmentTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.ResilienceHub.Model
         /// list in descending order, set this field to <c>True</c>.
         /// </para>
         /// </summary>
-        public bool ReverseOrder
+        public bool? ReverseOrder
         {
-            get { return this._reverseOrder.GetValueOrDefault(); }
+            get { return this._reverseOrder; }
             set { this._reverseOrder = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.ResilienceHub.Model
         /// on their last assessment times.
         /// </para>
         /// </summary>
-        public DateTime ToLastAssessmentTime
+        public DateTime? ToLastAssessmentTime
         {
-            get { return this._toLastAssessmentTime.GetValueOrDefault(); }
+            get { return this._toLastAssessmentTime; }
             set { this._toLastAssessmentTime = value; }
         }
 

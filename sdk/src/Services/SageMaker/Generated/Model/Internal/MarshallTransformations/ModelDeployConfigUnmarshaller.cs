@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoGenerateEndpointName", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoGenerateEndpointName = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -53,7 +53,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("expires", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Expires = unmarshaller.Unmarshall(context);
                     continue;
                 }

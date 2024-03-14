@@ -66,9 +66,9 @@ namespace Amazon.RDS.Model
         /// loss is allowed, then the operation is a global failover. Otherwise, it's a switchover.
         /// </para>
         /// </summary>
-        public bool IsDataLossAllowed
+        public bool? IsDataLossAllowed
         {
-            get { return this._isDataLossAllowed.GetValueOrDefault(); }
+            get { return this._isDataLossAllowed; }
             set { this._isDataLossAllowed = value; }
         }
 

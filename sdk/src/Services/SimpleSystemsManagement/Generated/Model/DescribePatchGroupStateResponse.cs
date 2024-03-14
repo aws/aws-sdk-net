@@ -52,9 +52,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of managed nodes in the patch group.
         /// </para>
         /// </summary>
-        public int Instances
+        public int? Instances
         {
-            get { return this._instances.GetValueOrDefault(); }
+            get { return this._instances; }
             set { this._instances = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// required managed node reboot. The status of these managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int InstancesWithCriticalNonCompliantPatches
+        public int? InstancesWithCriticalNonCompliantPatches
         {
-            get { return this._instancesWithCriticalNonCompliantPatches.GetValueOrDefault(); }
+            get { return this._instancesWithCriticalNonCompliantPatches; }
             set { this._instancesWithCriticalNonCompliantPatches = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of managed nodes with patches from the patch baseline that failed to install.
         /// </para>
         /// </summary>
-        public int InstancesWithFailedPatches
+        public int? InstancesWithFailedPatches
         {
-            get { return this._instancesWithFailedPatches.GetValueOrDefault(); }
+            get { return this._instancesWithFailedPatches; }
             set { this._instancesWithFailedPatches = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// baseline.
         /// </para>
         /// </summary>
-        public int InstancesWithInstalledOtherPatches
+        public int? InstancesWithInstalledOtherPatches
         {
-            get { return this._instancesWithInstalledOtherPatches.GetValueOrDefault(); }
+            get { return this._instancesWithInstalledOtherPatches; }
             set { this._instancesWithInstalledOtherPatches = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of managed nodes with installed patches.
         /// </para>
         /// </summary>
-        public int InstancesWithInstalledPatches
+        public int? InstancesWithInstalledPatches
         {
-            get { return this._instancesWithInstalledPatches.GetValueOrDefault(); }
+            get { return this._instancesWithInstalledPatches; }
             set { this._instancesWithInstalledPatches = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// rebooted after the patch installation. The status of these managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int InstancesWithInstalledPendingRebootPatches
+        public int? InstancesWithInstalledPendingRebootPatches
         {
-            get { return this._instancesWithInstalledPendingRebootPatches.GetValueOrDefault(); }
+            get { return this._instancesWithInstalledPendingRebootPatches; }
             set { this._instancesWithInstalledPendingRebootPatches = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int InstancesWithInstalledRejectedPatches
+        public int? InstancesWithInstalledRejectedPatches
         {
-            get { return this._instancesWithInstalledRejectedPatches.GetValueOrDefault(); }
+            get { return this._instancesWithInstalledRejectedPatches; }
             set { this._instancesWithInstalledRejectedPatches = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of managed nodes with missing patches from the patch baseline.
         /// </para>
         /// </summary>
-        public int InstancesWithMissingPatches
+        public int? InstancesWithMissingPatches
         {
-            get { return this._instancesWithMissingPatches.GetValueOrDefault(); }
+            get { return this._instancesWithMissingPatches; }
             set { this._instancesWithMissingPatches = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of managed nodes with patches that aren't applicable.
         /// </para>
         /// </summary>
-        public int InstancesWithNotApplicablePatches
+        public int? InstancesWithNotApplicablePatches
         {
-            get { return this._instancesWithNotApplicablePatches.GetValueOrDefault(); }
+            get { return this._instancesWithNotApplicablePatches; }
             set { this._instancesWithNotApplicablePatches = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// status of these managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int InstancesWithOtherNonCompliantPatches
+        public int? InstancesWithOtherNonCompliantPatches
         {
-            get { return this._instancesWithOtherNonCompliantPatches.GetValueOrDefault(); }
+            get { return this._instancesWithOtherNonCompliantPatches; }
             set { this._instancesWithOtherNonCompliantPatches = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// status of these managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
-        public int InstancesWithSecurityNonCompliantPatches
+        public int? InstancesWithSecurityNonCompliantPatches
         {
-            get { return this._instancesWithSecurityNonCompliantPatches.GetValueOrDefault(); }
+            get { return this._instancesWithSecurityNonCompliantPatches; }
             set { this._instancesWithSecurityNonCompliantPatches = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Web Services Systems Manager.
         /// </para>
         /// </summary>
-        public int InstancesWithUnreportedNotApplicablePatches
+        public int? InstancesWithUnreportedNotApplicablePatches
         {
-            get { return this._instancesWithUnreportedNotApplicablePatches.GetValueOrDefault(); }
+            get { return this._instancesWithUnreportedNotApplicablePatches; }
             set { this._instancesWithUnreportedNotApplicablePatches = value; }
         }
 

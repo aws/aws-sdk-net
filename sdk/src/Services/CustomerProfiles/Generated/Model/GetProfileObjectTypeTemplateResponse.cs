@@ -51,9 +51,9 @@ namespace Amazon.CustomerProfiles.Model
         /// is found, then the service creates a new standard profile.
         /// </para>
         /// </summary>
-        public bool AllowProfileCreation
+        public bool? AllowProfileCreation
         {
-            get { return this._allowProfileCreation.GetValueOrDefault(); }
+            get { return this._allowProfileCreation; }
             set { this._allowProfileCreation = value; }
         }
 

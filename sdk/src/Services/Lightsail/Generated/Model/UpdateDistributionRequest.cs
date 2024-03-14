@@ -136,9 +136,9 @@ namespace Amazon.Lightsail.Model
         /// Indicates whether to enable the distribution.
         /// </para>
         /// </summary>
-        public bool IsEnabled
+        public bool? IsEnabled
         {
-            get { return this._isEnabled.GetValueOrDefault(); }
+            get { return this._isEnabled; }
             set { this._isEnabled = value; }
         }
 

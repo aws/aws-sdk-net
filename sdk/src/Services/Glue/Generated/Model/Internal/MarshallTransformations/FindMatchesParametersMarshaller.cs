@@ -48,19 +48,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccuracyCostTradeoff())
             {
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");
-                context.Writer.Write(requestObject.AccuracyCostTradeoff);
+                context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
             }
 
             if(requestObject.IsSetEnforceProvidedLabels())
             {
                 context.Writer.WritePropertyName("EnforceProvidedLabels");
-                context.Writer.Write(requestObject.EnforceProvidedLabels);
+                context.Writer.Write(requestObject.EnforceProvidedLabels.Value);
             }
 
             if(requestObject.IsSetPrecisionRecallTradeoff())
             {
                 context.Writer.WritePropertyName("PrecisionRecallTradeoff");
-                context.Writer.Write(requestObject.PrecisionRecallTradeoff);
+                context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
             }
 
             if(requestObject.IsSetPrimaryKeyColumnName())

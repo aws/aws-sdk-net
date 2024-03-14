@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// <param name="userName">The user with whom the MFA device is associated.</param>
         /// <param name="serialNumber">The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</param>
         /// <param name="enableDate">The date when the MFA device was enabled for the user.</param>
-        public MFADevice(string userName, string serialNumber, DateTime enableDate)
+        public MFADevice(string userName, string serialNumber, DateTime? enableDate)
         {
             _userName = userName;
             _serialNumber = serialNumber;
@@ -67,9 +67,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EnableDate
+        public DateTime? EnableDate
         {
-            get { return this._enableDate.GetValueOrDefault(); }
+            get { return this._enableDate; }
             set { this._enableDate = value; }
         }
 

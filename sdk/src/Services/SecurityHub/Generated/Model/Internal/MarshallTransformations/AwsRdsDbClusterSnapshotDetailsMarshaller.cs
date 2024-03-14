@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage);
+                context.Writer.Write(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetAvailabilityZones())
@@ -111,7 +111,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIamDatabaseAuthenticationEnabled())
             {
                 context.Writer.WritePropertyName("IamDatabaseAuthenticationEnabled");
-                context.Writer.Write(requestObject.IamDatabaseAuthenticationEnabled);
+                context.Writer.Write(requestObject.IamDatabaseAuthenticationEnabled.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -135,13 +135,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentProgress())
             {
                 context.Writer.WritePropertyName("PercentProgress");
-                context.Writer.Write(requestObject.PercentProgress);
+                context.Writer.Write(requestObject.PercentProgress.Value);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSnapshotCreateTime())
@@ -165,7 +165,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageEncrypted())
             {
                 context.Writer.WritePropertyName("StorageEncrypted");
-                context.Writer.Write(requestObject.StorageEncrypted);
+                context.Writer.Write(requestObject.StorageEncrypted.Value);
             }
 
             if(requestObject.IsSetVpcId())

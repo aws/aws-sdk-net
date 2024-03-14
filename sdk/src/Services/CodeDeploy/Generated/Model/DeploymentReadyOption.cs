@@ -77,9 +77,9 @@ namespace Amazon.CodeDeploy.Model
         /// option for <c>actionOnTimeout</c>.
         /// </para>
         /// </summary>
-        public int WaitTimeInMinutes
+        public int? WaitTimeInMinutes
         {
-            get { return this._waitTimeInMinutes.GetValueOrDefault(); }
+            get { return this._waitTimeInMinutes; }
             set { this._waitTimeInMinutes = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MetricIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MetricIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

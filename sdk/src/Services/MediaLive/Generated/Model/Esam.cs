@@ -63,9 +63,9 @@ namespace Amazon.MediaLive.Model
         /// messages and does not apply to OOB messages.
         /// </summary>
         [AWSProperty(Min=-1000, Max=1000)]
-        public int AdAvailOffset
+        public int? AdAvailOffset
         {
-            get { return this._adAvailOffset.GetValueOrDefault(); }
+            get { return this._adAvailOffset; }
             set { this._adAvailOffset = value; }
         }
 

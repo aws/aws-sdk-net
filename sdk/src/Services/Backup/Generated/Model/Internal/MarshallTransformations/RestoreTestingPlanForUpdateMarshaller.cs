@@ -71,7 +71,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartWindowHours())
             {
                 context.Writer.WritePropertyName("StartWindowHours");
-                context.Writer.Write(requestObject.StartWindowHours);
+                context.Writer.Write(requestObject.StartWindowHours.Value);
             }
 
         }

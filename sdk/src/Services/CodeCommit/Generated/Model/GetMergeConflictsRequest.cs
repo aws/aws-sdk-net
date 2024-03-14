@@ -111,9 +111,9 @@ namespace Amazon.CodeCommit.Model
         /// The maximum number of files to include in the output.
         /// </para>
         /// </summary>
-        public int MaxConflictFiles
+        public int? MaxConflictFiles
         {
-            get { return this._maxConflictFiles.GetValueOrDefault(); }
+            get { return this._maxConflictFiles; }
             set { this._maxConflictFiles = value; }
         }
 

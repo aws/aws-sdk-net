@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// IAM role credentials.
         /// </para>
         /// </summary>
-        public bool UseLakeFormationCredentials
+        public bool? UseLakeFormationCredentials
         {
-            get { return this._useLakeFormationCredentials.GetValueOrDefault(); }
+            get { return this._useLakeFormationCredentials; }
             set { this._useLakeFormationCredentials = value; }
         }
 

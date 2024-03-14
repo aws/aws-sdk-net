@@ -83,7 +83,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Total", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

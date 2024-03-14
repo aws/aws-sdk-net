@@ -71,7 +71,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("analyzedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AnalyzedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isPublic", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPublic = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

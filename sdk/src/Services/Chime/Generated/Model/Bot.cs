@@ -105,9 +105,9 @@ namespace Amazon.Chime.Model
         /// The bot creation timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Chime.Model
         /// When true, the bot is stopped from running in your account.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.Chime.Model
         /// The updated bot timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

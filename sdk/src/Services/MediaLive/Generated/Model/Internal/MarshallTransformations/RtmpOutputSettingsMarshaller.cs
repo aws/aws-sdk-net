@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionRetryInterval())
             {
                 context.Writer.WritePropertyName("connectionRetryInterval");
-                context.Writer.Write(requestObject.ConnectionRetryInterval);
+                context.Writer.Write(requestObject.ConnectionRetryInterval.Value);
             }
 
             if(requestObject.IsSetDestination())
@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("numRetries");
-                context.Writer.Write(requestObject.NumRetries);
+                context.Writer.Write(requestObject.NumRetries.Value);
             }
 
         }

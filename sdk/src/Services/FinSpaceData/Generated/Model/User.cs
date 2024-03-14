@@ -103,9 +103,9 @@ namespace Amazon.FinSpaceData.Model
         /// epoch time in milliseconds. 
         /// </para>
         /// </summary>
-        public long CreateTime
+        public long? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.FinSpaceData.Model
         /// time in milliseconds.
         /// </para>
         /// </summary>
-        public long LastDisabledTime
+        public long? LastDisabledTime
         {
-            get { return this._lastDisabledTime.GetValueOrDefault(); }
+            get { return this._lastDisabledTime; }
             set { this._lastDisabledTime = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.FinSpaceData.Model
         /// time in milliseconds. 
         /// </para>
         /// </summary>
-        public long LastEnabledTime
+        public long? LastEnabledTime
         {
-            get { return this._lastEnabledTime.GetValueOrDefault(); }
+            get { return this._lastEnabledTime; }
             set { this._lastEnabledTime = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.FinSpaceData.Model
         /// as epoch time in milliseconds. 
         /// </para>
         /// </summary>
-        public long LastLoginTime
+        public long? LastLoginTime
         {
-            get { return this._lastLoginTime.GetValueOrDefault(); }
+            get { return this._lastLoginTime; }
             set { this._lastLoginTime = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.FinSpaceData.Model
         /// in milliseconds. 
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

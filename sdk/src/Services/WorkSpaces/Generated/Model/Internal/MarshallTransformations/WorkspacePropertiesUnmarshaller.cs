@@ -83,7 +83,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RootVolumeSizeGib", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RootVolumeSizeGib = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RunningModeAutoStopTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningModeAutoStopTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserVolumeSizeGib", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UserVolumeSizeGib = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodeGuruSecurity")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon CodeGuru Security. Initial release of Amazon CodeGuru Security APIs")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon CodeGuru Security. Initial release of Amazon CodeGuru Security APIs")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

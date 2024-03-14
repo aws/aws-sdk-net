@@ -83,9 +83,9 @@ namespace Amazon.Panorama.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DeviceReportedTime
+        public DateTime? DeviceReportedTime
         {
-            get { return this._deviceReportedTime.GetValueOrDefault(); }
+            get { return this._deviceReportedTime; }
             set { this._deviceReportedTime = value; }
         }
 

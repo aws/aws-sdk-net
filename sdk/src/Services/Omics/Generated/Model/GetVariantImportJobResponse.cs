@@ -69,9 +69,9 @@ namespace Amazon.Omics.Model
         /// When the job completed.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RunLeftNormalization
+        public bool? RunLeftNormalization
         {
-            get { return this._runLeftNormalization.GetValueOrDefault(); }
+            get { return this._runLeftNormalization; }
             set { this._runLeftNormalization = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

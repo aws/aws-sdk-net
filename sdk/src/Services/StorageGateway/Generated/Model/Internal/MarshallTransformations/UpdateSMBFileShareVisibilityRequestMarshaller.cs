@@ -70,7 +70,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFileSharesVisible())
                 {
                     context.Writer.WritePropertyName("FileSharesVisible");
-                    context.Writer.Write(publicRequest.FileSharesVisible);
+                    context.Writer.Write(publicRequest.FileSharesVisible.Value);
                 }
 
                 if(publicRequest.IsSetGatewayARN())

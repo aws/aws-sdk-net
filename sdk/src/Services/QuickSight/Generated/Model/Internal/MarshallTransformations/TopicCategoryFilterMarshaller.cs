@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInverse())
             {
                 context.Writer.WritePropertyName("Inverse");
-                context.Writer.Write(requestObject.Inverse);
+                context.Writer.Write(requestObject.Inverse.Value);
             }
 
         }

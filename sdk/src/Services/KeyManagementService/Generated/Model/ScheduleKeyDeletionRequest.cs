@@ -177,9 +177,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=365)]
-        public int PendingWindowInDays
+        public int? PendingWindowInDays
         {
-            get { return this._pendingWindowInDays.GetValueOrDefault(); }
+            get { return this._pendingWindowInDays; }
             set { this._pendingWindowInDays = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("KmsDataKeyReusePeriodSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KmsDataKeyReusePeriodSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

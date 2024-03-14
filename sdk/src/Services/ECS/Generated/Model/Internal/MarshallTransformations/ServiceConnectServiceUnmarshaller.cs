@@ -77,7 +77,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ingressPortOverride", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IngressPortOverride = unmarshaller.Unmarshall(context);
                     continue;
                 }

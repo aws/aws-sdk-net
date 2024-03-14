@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Normal", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Normal = unmarshaller.Unmarshall(context);
                         continue;
                     }

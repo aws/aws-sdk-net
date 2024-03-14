@@ -89,9 +89,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ScopeEndTime
+        public DateTime? ScopeEndTime
         {
-            get { return this._scopeEndTime.GetValueOrDefault(); }
+            get { return this._scopeEndTime; }
             set { this._scopeEndTime = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ScopeStartTime
+        public DateTime? ScopeStartTime
         {
-            get { return this._scopeStartTime.GetValueOrDefault(); }
+            get { return this._scopeStartTime; }
             set { this._scopeStartTime = value; }
         }
 

@@ -225,9 +225,9 @@ namespace Amazon.Neptunedata.Model
         /// based on the data size.
         /// </para>
         /// </summary>
-        public int ProcessingInstanceVolumeSizeInGB
+        public int? ProcessingInstanceVolumeSizeInGB
         {
-            get { return this._processingInstanceVolumeSizeInGB.GetValueOrDefault(); }
+            get { return this._processingInstanceVolumeSizeInGB; }
             set { this._processingInstanceVolumeSizeInGB = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.Neptunedata.Model
         /// Timeout in seconds for the data processing job. The default is 86,400 (1 day).
         /// </para>
         /// </summary>
-        public int ProcessingTimeOutInSeconds
+        public int? ProcessingTimeOutInSeconds
         {
-            get { return this._processingTimeOutInSeconds.GetValueOrDefault(); }
+            get { return this._processingTimeOutInSeconds; }
             set { this._processingTimeOutInSeconds = value; }
         }
 

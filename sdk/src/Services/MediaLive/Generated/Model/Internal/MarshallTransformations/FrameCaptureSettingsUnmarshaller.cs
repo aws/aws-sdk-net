@@ -65,7 +65,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("captureInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CaptureInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }

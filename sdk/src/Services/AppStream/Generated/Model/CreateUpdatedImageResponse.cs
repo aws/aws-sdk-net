@@ -42,9 +42,9 @@ namespace Amazon.AppStream.Model
         /// Indicates whether a new image can be created.
         /// </para>
         /// </summary>
-        public bool CanUpdateImage
+        public bool? CanUpdateImage
         {
-            get { return this._canUpdateImage.GetValueOrDefault(); }
+            get { return this._canUpdateImage; }
             set { this._canUpdateImage = value; }
         }
 

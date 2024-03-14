@@ -97,7 +97,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinMatchingSeedSize())
                 {
                     context.Writer.WritePropertyName("minMatchingSeedSize");
-                    context.Writer.Write(publicRequest.MinMatchingSeedSize);
+                    context.Writer.Write(publicRequest.MinMatchingSeedSize.Value);
                 }
 
                 if(publicRequest.IsSetName())

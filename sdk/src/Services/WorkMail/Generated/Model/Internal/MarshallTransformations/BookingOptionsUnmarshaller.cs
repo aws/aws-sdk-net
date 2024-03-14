@@ -65,19 +65,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoAcceptRequests", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAcceptRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoDeclineConflictingRequests", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeclineConflictingRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoDeclineRecurringRequests", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeclineRecurringRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }

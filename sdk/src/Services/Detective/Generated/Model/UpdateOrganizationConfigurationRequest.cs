@@ -45,9 +45,9 @@ namespace Amazon.Detective.Model
         /// in the organization behavior graph.
         /// </para>
         /// </summary>
-        public bool AutoEnable
+        public bool? AutoEnable
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
+            get { return this._autoEnable; }
             set { this._autoEnable = value; }
         }
 

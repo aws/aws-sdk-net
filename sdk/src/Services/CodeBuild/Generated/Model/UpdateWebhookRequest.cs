@@ -137,9 +137,9 @@ namespace Amazon.CodeBuild.Model
         /// is ignored. 
         /// </para>
         /// </summary>
-        public bool RotateSecret
+        public bool? RotateSecret
         {
-            get { return this._rotateSecret.GetValueOrDefault(); }
+            get { return this._rotateSecret; }
             set { this._rotateSecret = value; }
         }
 

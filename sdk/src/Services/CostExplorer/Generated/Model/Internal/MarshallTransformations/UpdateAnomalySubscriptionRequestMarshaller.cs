@@ -115,7 +115,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("Threshold");
-                    context.Writer.Write(publicRequest.Threshold);
+                    context.Writer.Write(publicRequest.Threshold.Value);
                 }
 
                 if(publicRequest.IsSetThresholdExpression())

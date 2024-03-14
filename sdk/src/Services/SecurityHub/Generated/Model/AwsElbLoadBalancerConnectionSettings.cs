@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// before it is closed by the load balancer.
         /// </para>
         /// </summary>
-        public int IdleTimeout
+        public int? IdleTimeout
         {
-            get { return this._idleTimeout.GetValueOrDefault(); }
+            get { return this._idleTimeout; }
             set { this._idleTimeout = value; }
         }
 

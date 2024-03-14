@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// The record index, starting from 0, for the record that contains the data.
         /// </para>
         /// </summary>
-        public long RecordIndex
+        public long? RecordIndex
         {
-            get { return this._recordIndex.GetValueOrDefault(); }
+            get { return this._recordIndex; }
             set { this._recordIndex = value; }
         }
 

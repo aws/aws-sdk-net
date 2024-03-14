@@ -66,9 +66,9 @@ namespace Amazon.Rekognition.Model
         /// The Unix timestamp for the date and time that the project was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 

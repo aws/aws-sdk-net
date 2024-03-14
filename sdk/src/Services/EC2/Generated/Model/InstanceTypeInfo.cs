@@ -67,9 +67,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Amazon CloudWatch action based recovery is supported.
         /// </para>
         /// </summary>
-        public bool AutoRecoverySupported
+        public bool? AutoRecoverySupported
         {
-            get { return this._autoRecoverySupported.GetValueOrDefault(); }
+            get { return this._autoRecoverySupported; }
             set { this._autoRecoverySupported = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the instance is a bare metal instance type.
         /// </para>
         /// </summary>
-        public bool BareMetal
+        public bool? BareMetal
         {
-            get { return this._bareMetal.GetValueOrDefault(); }
+            get { return this._bareMetal; }
             set { this._bareMetal = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// performance instances</a>.
         /// </para>
         /// </summary>
-        public bool BurstablePerformanceSupported
+        public bool? BurstablePerformanceSupported
         {
-            get { return this._burstablePerformanceSupported.GetValueOrDefault(); }
+            get { return this._burstablePerformanceSupported; }
             set { this._burstablePerformanceSupported = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the instance type is current generation.
         /// </para>
         /// </summary>
-        public bool CurrentGeneration
+        public bool? CurrentGeneration
         {
-            get { return this._currentGeneration.GetValueOrDefault(); }
+            get { return this._currentGeneration; }
             set { this._currentGeneration = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Dedicated Hosts are supported on the instance type.
         /// </para>
         /// </summary>
-        public bool DedicatedHostsSupported
+        public bool? DedicatedHostsSupported
         {
-            get { return this._dedicatedHostsSupported.GetValueOrDefault(); }
+            get { return this._dedicatedHostsSupported; }
             set { this._dedicatedHostsSupported = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the instance type is eligible for the free tier.
         /// </para>
         /// </summary>
-        public bool FreeTierEligible
+        public bool? FreeTierEligible
         {
-            get { return this._freeTierEligible.GetValueOrDefault(); }
+            get { return this._freeTierEligible; }
             set { this._freeTierEligible = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether On-Demand hibernation is supported.
         /// </para>
         /// </summary>
-        public bool HibernationSupported
+        public bool? HibernationSupported
         {
-            get { return this._hibernationSupported.GetValueOrDefault(); }
+            get { return this._hibernationSupported; }
             set { this._hibernationSupported = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether instance storage is supported.
         /// </para>
         /// </summary>
-        public bool InstanceStorageSupported
+        public bool? InstanceStorageSupported
         {
-            get { return this._instanceStorageSupported.GetValueOrDefault(); }
+            get { return this._instanceStorageSupported; }
             set { this._instanceStorageSupported = value; }
         }
 

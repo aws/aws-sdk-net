@@ -53,9 +53,9 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int PercentEnabled
+        public int? PercentEnabled
         {
-            get { return this._percentEnabled.GetValueOrDefault(); }
+            get { return this._percentEnabled; }
             set { this._percentEnabled = value; }
         }
 

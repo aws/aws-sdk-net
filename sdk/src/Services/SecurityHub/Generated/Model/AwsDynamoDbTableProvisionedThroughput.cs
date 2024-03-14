@@ -95,9 +95,9 @@ namespace Amazon.SecurityHub.Model
         /// was decreased.
         /// </para>
         /// </summary>
-        public int NumberOfDecreasesToday
+        public int? NumberOfDecreasesToday
         {
-            get { return this._numberOfDecreasesToday.GetValueOrDefault(); }
+            get { return this._numberOfDecreasesToday; }
             set { this._numberOfDecreasesToday = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.SecurityHub.Model
         /// returns a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
-        public int ReadCapacityUnits
+        public int? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.SecurityHub.Model
         /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
-        public int WriteCapacityUnits
+        public int? WriteCapacityUnits
         {
-            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            get { return this._writeCapacityUnits; }
             set { this._writeCapacityUnits = value; }
         }
 

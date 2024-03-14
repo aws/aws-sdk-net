@@ -102,9 +102,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> </ol>
         /// </summary>
-        public long TotalDiscoveredResources
+        public long? TotalDiscoveredResources
         {
-            get { return this._totalDiscoveredResources.GetValueOrDefault(); }
+            get { return this._totalDiscoveredResources; }
             set { this._totalDiscoveredResources = value; }
         }
 

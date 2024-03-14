@@ -52,9 +52,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The lower bound values for the projected utilization metrics. 
         /// </para>
         /// </summary>
-        public double LowerBoundValue
+        public double? LowerBoundValue
         {
-            get { return this._lowerBoundValue.GetValueOrDefault(); }
+            get { return this._lowerBoundValue; }
             set { this._lowerBoundValue = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The upper bound values for the projected utilization metrics. 
         /// </para>
         /// </summary>
-        public double UpperBoundValue
+        public double? UpperBoundValue
         {
-            get { return this._upperBoundValue.GetValueOrDefault(); }
+            get { return this._upperBoundValue; }
             set { this._upperBoundValue = value; }
         }
 

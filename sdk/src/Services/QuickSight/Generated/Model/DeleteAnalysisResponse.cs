@@ -82,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// The date and time that the analysis is scheduled to be deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletionTime
+        public DateTime? DeletionTime
         {
-            get { return this._deletionTime.GetValueOrDefault(); }
+            get { return this._deletionTime; }
             set { this._deletionTime = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.QuickSight.Model
         /// The HTTP status of the request.
         /// </para>
         /// </summary>
-        public int Status
+        public int? Status
         {
-            get { return this._status.GetValueOrDefault(); }
+            get { return this._status; }
             set { this._status = value; }
         }
 

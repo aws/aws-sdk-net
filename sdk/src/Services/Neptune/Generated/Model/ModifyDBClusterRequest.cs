@@ -67,9 +67,9 @@ namespace Amazon.Neptune.Model
         /// parameter that uses a different major version than the DB cluster's current version.
         /// </para>
         /// </summary>
-        public bool AllowMajorVersionUpgrade
+        public bool? AllowMajorVersionUpgrade
         {
-            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowMajorVersionUpgrade; }
             set { this._allowMajorVersionUpgrade = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Neptune.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.Neptune.Model
         /// is created.</i> 
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.Neptune.Model
         /// protection is disabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -302,9 +302,9 @@ namespace Amazon.Neptune.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -428,9 +428,9 @@ namespace Amazon.Neptune.Model
         /// Default: The same port as the original DB cluster.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

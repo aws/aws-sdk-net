@@ -86,9 +86,9 @@ namespace Amazon.ElastiCache.Model
         /// results can be retrieved. 
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.ElastiCache.Model
         /// Returns the list of members that comprise the Global datastore.
         /// </para>
         /// </summary>
-        public bool ShowMemberInfo
+        public bool? ShowMemberInfo
         {
-            get { return this._showMemberInfo.GetValueOrDefault(); }
+            get { return this._showMemberInfo; }
             set { this._showMemberInfo = value; }
         }
 

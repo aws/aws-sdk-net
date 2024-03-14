@@ -47,9 +47,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total number of nodes in a vehicle network that represent actuators.
         /// </para>
         /// </summary>
-        public int TotalActuators
+        public int? TotalActuators
         {
-            get { return this._totalActuators.GetValueOrDefault(); }
+            get { return this._totalActuators; }
             set { this._totalActuators = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total number of nodes in a vehicle network that represent attributes.
         /// </para>
         /// </summary>
-        public int TotalAttributes
+        public int? TotalAttributes
         {
-            get { return this._totalAttributes.GetValueOrDefault(); }
+            get { return this._totalAttributes; }
             set { this._totalAttributes = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total number of nodes in a vehicle network that represent branches.
         /// </para>
         /// </summary>
-        public int TotalBranches
+        public int? TotalBranches
         {
-            get { return this._totalBranches.GetValueOrDefault(); }
+            get { return this._totalBranches; }
             set { this._totalBranches = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total number of nodes in a vehicle network.
         /// </para>
         /// </summary>
-        public int TotalNodes
+        public int? TotalNodes
         {
-            get { return this._totalNodes.GetValueOrDefault(); }
+            get { return this._totalNodes; }
             set { this._totalNodes = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total properties for the node.
         /// </para>
         /// </summary>
-        public int TotalProperties
+        public int? TotalProperties
         {
-            get { return this._totalProperties.GetValueOrDefault(); }
+            get { return this._totalProperties; }
             set { this._totalProperties = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total number of nodes in a vehicle network that represent sensors.
         /// </para>
         /// </summary>
-        public int TotalSensors
+        public int? TotalSensors
         {
-            get { return this._totalSensors.GetValueOrDefault(); }
+            get { return this._totalSensors; }
             set { this._totalSensors = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The total structure for the node.
         /// </para>
         /// </summary>
-        public int TotalStructs
+        public int? TotalStructs
         {
-            get { return this._totalStructs.GetValueOrDefault(); }
+            get { return this._totalStructs; }
             set { this._totalStructs = value; }
         }
 

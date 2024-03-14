@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Mgn")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Application Migration Service. Add new service - Application Migration Service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Application Migration Service. Add new service - Application Migration Service.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

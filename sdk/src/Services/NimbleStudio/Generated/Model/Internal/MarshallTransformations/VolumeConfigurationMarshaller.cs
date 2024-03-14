@@ -48,19 +48,19 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("size");
-                context.Writer.Write(requestObject.Size);
+                context.Writer.Write(requestObject.Size.Value);
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("throughput");
-                context.Writer.Write(requestObject.Throughput);
+                context.Writer.Write(requestObject.Throughput.Value);
             }
 
         }

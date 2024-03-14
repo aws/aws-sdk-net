@@ -71,13 +71,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableECSManagedTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableECSManagedTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableExecuteCommand", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TaskCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TaskCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

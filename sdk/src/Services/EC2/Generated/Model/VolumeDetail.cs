@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

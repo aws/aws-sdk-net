@@ -120,9 +120,9 @@ namespace Amazon.SecurityHub.Model
         /// if the build project is used to build Docker images.
         /// </para>
         /// </summary>
-        public bool PrivilegedMode
+        public bool? PrivilegedMode
         {
-            get { return this._privilegedMode.GetValueOrDefault(); }
+            get { return this._privilegedMode; }
             set { this._privilegedMode = value; }
         }
 

@@ -54,13 +54,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeToLiveInSeconds())
             {
                 context.Writer.WritePropertyName("timeToLiveInSeconds");
-                context.Writer.Write(requestObject.TimeToLiveInSeconds);
+                context.Writer.Write(requestObject.TimeToLiveInSeconds.Value);
             }
 
             if(requestObject.IsSetTurnsToLive())
             {
                 context.Writer.WritePropertyName("turnsToLive");
-                context.Writer.Write(requestObject.TurnsToLive);
+                context.Writer.Write(requestObject.TurnsToLive.Value);
             }
 
         }

@@ -48,7 +48,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatencyInMilliseconds())
             {
                 context.Writer.WritePropertyName("LatencyInMilliseconds");
-                context.Writer.Write(requestObject.LatencyInMilliseconds);
+                context.Writer.Write(requestObject.LatencyInMilliseconds.Value);
             }
 
             if(requestObject.IsSetPlayerId())

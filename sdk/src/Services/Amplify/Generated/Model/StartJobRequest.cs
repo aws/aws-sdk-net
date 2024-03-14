@@ -125,9 +125,9 @@ namespace Amazon.Amplify.Model
         ///  The commit date and time for the job. 
         /// </para>
         /// </summary>
-        public DateTime CommitTime
+        public DateTime? CommitTime
         {
-            get { return this._commitTime.GetValueOrDefault(); }
+            get { return this._commitTime; }
             set { this._commitTime = value; }
         }
 

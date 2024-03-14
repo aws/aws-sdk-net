@@ -123,9 +123,9 @@ namespace Amazon.TimestreamWrite.Model
         /// Specifies to trim leading and trailing white space.
         /// </para>
         /// </summary>
-        public bool TrimWhiteSpace
+        public bool? TrimWhiteSpace
         {
-            get { return this._trimWhiteSpace.GetValueOrDefault(); }
+            get { return this._trimWhiteSpace; }
             set { this._trimWhiteSpace = value; }
         }
 

@@ -82,9 +82,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 

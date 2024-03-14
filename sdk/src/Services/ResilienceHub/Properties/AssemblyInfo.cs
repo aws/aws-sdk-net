@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ResilienceHub")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resilience Hub. Initial release of AWS Resilience Hub, a managed service that enables you to define, validate, and track the resilience of your applications on AWS")]
 #elif NETCOREAPP3_1

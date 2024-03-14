@@ -48,7 +48,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("ReadCapacityUnits");
-                context.Writer.Write(requestObject.ReadCapacityUnits);
+                context.Writer.Write(requestObject.ReadCapacityUnits.Value);
             }
 
         }

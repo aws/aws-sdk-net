@@ -62,9 +62,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Price
+        public double? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 

@@ -60,7 +60,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputMasteringLuminance())
             {
                 context.Writer.WritePropertyName("inputMasteringLuminance");
-                context.Writer.Write(requestObject.InputMasteringLuminance);
+                context.Writer.Write(requestObject.InputMasteringLuminance.Value);
             }
 
             if(requestObject.IsSetOutputColorSpace())
@@ -72,7 +72,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutputMasteringLuminance())
             {
                 context.Writer.WritePropertyName("outputMasteringLuminance");
-                context.Writer.Write(requestObject.OutputMasteringLuminance);
+                context.Writer.Write(requestObject.OutputMasteringLuminance.Value);
             }
 
         }

@@ -67,9 +67,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InvitedOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvitedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RegisteredOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RegisteredOn = unmarshaller.Unmarshall(context);
                     continue;
                 }

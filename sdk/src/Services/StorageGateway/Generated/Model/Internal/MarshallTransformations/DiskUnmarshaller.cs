@@ -101,7 +101,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DiskSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DiskSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

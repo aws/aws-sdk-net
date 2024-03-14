@@ -74,9 +74,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The date when the user import job was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletionDate
+        public DateTime? CompletionDate
         {
-            get { return this._completionDate.GetValueOrDefault(); }
+            get { return this._completionDate; }
             set { this._completionDate = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The number of users that couldn't be imported.
         /// </para>
         /// </summary>
-        public long FailedUsers
+        public long? FailedUsers
         {
-            get { return this._failedUsers.GetValueOrDefault(); }
+            get { return this._failedUsers; }
             set { this._failedUsers = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The number of users that were successfully imported.
         /// </para>
         /// </summary>
-        public long ImportedUsers
+        public long? ImportedUsers
         {
-            get { return this._importedUsers.GetValueOrDefault(); }
+            get { return this._importedUsers; }
             set { this._importedUsers = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The number of users that were skipped.
         /// </para>
         /// </summary>
-        public long SkippedUsers
+        public long? SkippedUsers
         {
-            get { return this._skippedUsers.GetValueOrDefault(); }
+            get { return this._skippedUsers; }
             set { this._skippedUsers = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The date when the user import job was started.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

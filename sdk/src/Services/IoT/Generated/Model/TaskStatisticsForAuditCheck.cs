@@ -46,9 +46,9 @@ namespace Amazon.IoT.Model
         /// The number of findings to which the mitigation action task was canceled when applied.
         /// </para>
         /// </summary>
-        public long CanceledFindingsCount
+        public long? CanceledFindingsCount
         {
-            get { return this._canceledFindingsCount.GetValueOrDefault(); }
+            get { return this._canceledFindingsCount; }
             set { this._canceledFindingsCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoT.Model
         /// The number of findings for which at least one of the actions failed when applied.
         /// </para>
         /// </summary>
-        public long FailedFindingsCount
+        public long? FailedFindingsCount
         {
-            get { return this._failedFindingsCount.GetValueOrDefault(); }
+            get { return this._failedFindingsCount; }
             set { this._failedFindingsCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoT.Model
         /// to the command.
         /// </para>
         /// </summary>
-        public long SkippedFindingsCount
+        public long? SkippedFindingsCount
         {
-            get { return this._skippedFindingsCount.GetValueOrDefault(); }
+            get { return this._skippedFindingsCount; }
             set { this._skippedFindingsCount = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.IoT.Model
         /// The number of findings for which all mitigation actions succeeded when applied.
         /// </para>
         /// </summary>
-        public long SucceededFindingsCount
+        public long? SucceededFindingsCount
         {
-            get { return this._succeededFindingsCount.GetValueOrDefault(); }
+            get { return this._succeededFindingsCount; }
             set { this._succeededFindingsCount = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.IoT.Model
         /// The total number of findings to which a task is being applied.
         /// </para>
         /// </summary>
-        public long TotalFindingsCount
+        public long? TotalFindingsCount
         {
-            get { return this._totalFindingsCount.GetValueOrDefault(); }
+            get { return this._totalFindingsCount; }
             set { this._totalFindingsCount = value; }
         }
 

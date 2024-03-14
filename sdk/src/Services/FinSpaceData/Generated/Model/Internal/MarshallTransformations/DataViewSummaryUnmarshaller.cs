@@ -65,19 +65,19 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("asOfTimestamp", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AsOfTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("autoUpdate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoUpdate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

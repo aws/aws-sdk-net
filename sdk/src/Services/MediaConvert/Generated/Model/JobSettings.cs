@@ -53,9 +53,9 @@ namespace Amazon.MediaConvert.Model
         /// is added to the input Ad Avail PTS time.
         /// </summary>
         [AWSProperty(Min=-1000, Max=1000)]
-        public int AdAvailOffset
+        public int? AdAvailOffset
         {
-            get { return this._adAvailOffset.GetValueOrDefault(); }
+            get { return this._adAvailOffset; }
             set { this._adAvailOffset = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.MediaConvert.Model
         /// inputs.
         /// </summary>
         [AWSProperty(Min=1, Max=150)]
-        public int FollowSource
+        public int? FollowSource
         {
-            get { return this._followSource.GetValueOrDefault(); }
+            get { return this._followSource; }
             set { this._followSource = value; }
         }
 

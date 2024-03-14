@@ -63,9 +63,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>1</c> 
         /// </para>
         /// </summary>
-        public int DBInstanceCount
+        public int? DBInstanceCount
         {
-            get { return this._dbInstanceCount.GetValueOrDefault(); }
+            get { return this._dbInstanceCount; }
             set { this._dbInstanceCount = value; }
         }
 

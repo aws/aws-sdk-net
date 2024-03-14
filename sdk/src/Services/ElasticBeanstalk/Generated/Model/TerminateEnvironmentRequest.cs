@@ -100,9 +100,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// dependent on it.
         /// </para>
         /// </summary>
-        public bool ForceTerminate
+        public bool? ForceTerminate
         {
-            get { return this._forceTerminate.GetValueOrDefault(); }
+            get { return this._forceTerminate; }
             set { this._forceTerminate = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool TerminateResources
+        public bool? TerminateResources
         {
-            get { return this._terminateResources.GetValueOrDefault(); }
+            get { return this._terminateResources; }
             set { this._terminateResources = value; }
         }
 

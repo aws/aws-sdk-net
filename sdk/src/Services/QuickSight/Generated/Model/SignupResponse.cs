@@ -82,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// method.
         /// </para>
         /// </summary>
-        public bool IAMUser
+        public bool? IAMUser
         {
-            get { return this._iamUser.GetValueOrDefault(); }
+            get { return this._iamUser; }
             set { this._iamUser = value; }
         }
 

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudTrailData")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

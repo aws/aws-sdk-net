@@ -89,13 +89,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("includeDvbSubtitles", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeDvbSubtitles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("includeIframeOnlyStream", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeIframeOnlyStream = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,19 +107,19 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("playlistWindowSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PlaylistWindowSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("programDateTimeIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useAudioRenditionGroup", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseAudioRenditionGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }

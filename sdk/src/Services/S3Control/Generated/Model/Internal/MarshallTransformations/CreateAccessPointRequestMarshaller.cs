@@ -71,26 +71,26 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 if(publicRequest.IsSetBucket())
-                    xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Bucket));                    
+                    xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Bucket));
 
                 if(publicRequest.IsSetBucketAccountId())
-                    xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.BucketAccountId));                    
+                    xmlWriter.WriteElementString("BucketAccountId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.BucketAccountId));
 
                 
                 if (publicRequest.PublicAccessBlockConfiguration != null) 
                 {
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
-                        xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls));                 
+                        xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls.Value));                 
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicPolicy())
-                        xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy));                 
+                        xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy.Value));                 
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetIgnorePublicAcls())
-                        xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls));                 
+                        xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls.Value));                 
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
-                        xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets));                 
+                        xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));                 
 
                     xmlWriter.WriteEndElement();
                 }

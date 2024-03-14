@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PrivateZone", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PrivateZone = unmarshaller.Unmarshall(context);
                         continue;
                     }

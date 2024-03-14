@@ -76,7 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApprovedPatchesEnableNonSecurity())
             {
                 context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
-                context.Writer.Write(requestObject.ApprovedPatchesEnableNonSecurity);
+                context.Writer.Write(requestObject.ApprovedPatchesEnableNonSecurity.Value);
             }
 
             if(requestObject.IsSetGlobalFilters())

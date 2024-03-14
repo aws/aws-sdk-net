@@ -53,13 +53,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DateCreated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DateCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DateModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DateModified = unmarshaller.Unmarshall(context);
                     continue;
                 }

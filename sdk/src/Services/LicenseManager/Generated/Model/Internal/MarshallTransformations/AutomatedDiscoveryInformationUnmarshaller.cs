@@ -65,7 +65,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastRunTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRunTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

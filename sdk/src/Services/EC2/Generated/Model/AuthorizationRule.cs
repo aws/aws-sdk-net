@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the authorization rule grants access to all clients.
         /// </para>
         /// </summary>
-        public bool AccessAll
+        public bool? AccessAll
         {
-            get { return this._accessAll.GetValueOrDefault(); }
+            get { return this._accessAll; }
             set { this._accessAll = value; }
         }
 

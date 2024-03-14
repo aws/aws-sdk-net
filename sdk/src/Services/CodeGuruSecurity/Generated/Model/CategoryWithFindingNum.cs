@@ -61,9 +61,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The number of open findings in the category.
         /// </para>
         /// </summary>
-        public int FindingNumber
+        public int? FindingNumber
         {
-            get { return this._findingNumber.GetValueOrDefault(); }
+            get { return this._findingNumber; }
             set { this._findingNumber = value; }
         }
 

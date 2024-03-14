@@ -68,7 +68,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
                 if(publicRequest.IsSetAllowUpdate())
                 {
                     context.Writer.WritePropertyName("AllowUpdate");
-                    context.Writer.Write(publicRequest.AllowUpdate);
+                    context.Writer.Write(publicRequest.AllowUpdate.Value);
                 }
 
                 if(publicRequest.IsSetLinuxSubscriptionsDiscovery())

@@ -59,13 +59,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FaceCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FaceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UserCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.UserCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

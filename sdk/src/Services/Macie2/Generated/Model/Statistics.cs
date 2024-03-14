@@ -43,9 +43,9 @@ namespace Amazon.Macie2.Model
         /// run.
         /// </para>
         /// </summary>
-        public double ApproximateNumberOfObjectsToProcess
+        public double? ApproximateNumberOfObjectsToProcess
         {
-            get { return this._approximateNumberOfObjectsToProcess.GetValueOrDefault(); }
+            get { return this._approximateNumberOfObjectsToProcess; }
             set { this._approximateNumberOfObjectsToProcess = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Macie2.Model
         /// The number of times that the job has run.
         /// </para>
         /// </summary>
-        public double NumberOfRuns
+        public double? NumberOfRuns
         {
-            get { return this._numberOfRuns.GetValueOrDefault(); }
+            get { return this._numberOfRuns; }
             set { this._numberOfRuns = value; }
         }
 

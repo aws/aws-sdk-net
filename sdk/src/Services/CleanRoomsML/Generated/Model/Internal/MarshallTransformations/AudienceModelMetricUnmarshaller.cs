@@ -65,7 +65,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("forTopKItemPredictions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ForTopKItemPredictions = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

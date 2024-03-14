@@ -70,7 +70,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteAuditHistory())
                 {
                     context.Writer.WritePropertyName("deleteAuditHistory");
-                    context.Writer.Write(publicRequest.DeleteAuditHistory);
+                    context.Writer.Write(publicRequest.DeleteAuditHistory.Value);
                 }
 
                 if(publicRequest.IsSetEventId())

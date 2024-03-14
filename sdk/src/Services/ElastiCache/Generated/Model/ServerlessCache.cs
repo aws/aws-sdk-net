@@ -93,9 +93,9 @@ namespace Amazon.ElastiCache.Model
         /// When the serverless cache was created. 
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.ElastiCache.Model
         /// Available for Redis only.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 

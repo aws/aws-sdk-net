@@ -65,13 +65,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnforcedLimit", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EnforcedLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxLimit", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Overridden", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Overridden = unmarshaller.Unmarshall(context);
                     continue;
                 }

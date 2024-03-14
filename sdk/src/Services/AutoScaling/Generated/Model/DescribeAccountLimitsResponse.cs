@@ -45,9 +45,9 @@ namespace Amazon.AutoScaling.Model
         /// Region.
         /// </para>
         /// </summary>
-        public int MaxNumberOfAutoScalingGroups
+        public int? MaxNumberOfAutoScalingGroups
         {
-            get { return this._maxNumberOfAutoScalingGroups.GetValueOrDefault(); }
+            get { return this._maxNumberOfAutoScalingGroups; }
             set { this._maxNumberOfAutoScalingGroups = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.AutoScaling.Model
         /// is 200 launch configurations per Region.
         /// </para>
         /// </summary>
-        public int MaxNumberOfLaunchConfigurations
+        public int? MaxNumberOfLaunchConfigurations
         {
-            get { return this._maxNumberOfLaunchConfigurations.GetValueOrDefault(); }
+            get { return this._maxNumberOfLaunchConfigurations; }
             set { this._maxNumberOfLaunchConfigurations = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.AutoScaling.Model
         /// The current number of groups for your account.
         /// </para>
         /// </summary>
-        public int NumberOfAutoScalingGroups
+        public int? NumberOfAutoScalingGroups
         {
-            get { return this._numberOfAutoScalingGroups.GetValueOrDefault(); }
+            get { return this._numberOfAutoScalingGroups; }
             set { this._numberOfAutoScalingGroups = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.AutoScaling.Model
         /// The current number of launch configurations for your account.
         /// </para>
         /// </summary>
-        public int NumberOfLaunchConfigurations
+        public int? NumberOfLaunchConfigurations
         {
-            get { return this._numberOfLaunchConfigurations.GetValueOrDefault(); }
+            get { return this._numberOfLaunchConfigurations; }
             set { this._numberOfLaunchConfigurations = value; }
         }
 

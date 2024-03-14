@@ -83,9 +83,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int VersionNumber
+        public int? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

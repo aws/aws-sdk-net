@@ -78,9 +78,9 @@ namespace Amazon.InternetMonitor.Model
         /// CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
-        public double ExperienceScore
+        public double? ExperienceScore
         {
-            get { return this._experienceScore.GetValueOrDefault(); }
+            get { return this._experienceScore; }
             set { this._experienceScore = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.InternetMonitor.Model
         /// CloudWatch User Guide.
         /// </para>
         /// </summary>
-        public double PercentOfClientLocationImpacted
+        public double? PercentOfClientLocationImpacted
         {
-            get { return this._percentOfClientLocationImpacted.GetValueOrDefault(); }
+            get { return this._percentOfClientLocationImpacted; }
             set { this._percentOfClientLocationImpacted = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.InternetMonitor.Model
         /// Amazon CloudWatch User Guide.
         /// </para>
         /// </summary>
-        public double PercentOfTotalTrafficImpacted
+        public double? PercentOfTotalTrafficImpacted
         {
-            get { return this._percentOfTotalTrafficImpacted.GetValueOrDefault(); }
+            get { return this._percentOfTotalTrafficImpacted; }
             set { this._percentOfTotalTrafficImpacted = value; }
         }
 

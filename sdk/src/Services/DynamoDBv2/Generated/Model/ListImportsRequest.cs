@@ -66,9 +66,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

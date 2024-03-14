@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("ReadOnly");
-                context.Writer.Write(requestObject.ReadOnly);
+                context.Writer.Write(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetSourceContainer())

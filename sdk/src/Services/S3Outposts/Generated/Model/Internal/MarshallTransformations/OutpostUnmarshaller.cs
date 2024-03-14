@@ -65,7 +65,7 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CapacityInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CapacityInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

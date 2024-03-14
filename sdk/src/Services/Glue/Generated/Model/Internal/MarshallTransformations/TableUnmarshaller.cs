@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,19 +101,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRegisteredWithLakeFormation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastAccessTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAccessTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastAnalyzedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAnalyzedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Retention", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Retention = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,7 +167,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UpdateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

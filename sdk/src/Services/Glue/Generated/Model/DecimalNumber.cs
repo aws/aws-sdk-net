@@ -43,9 +43,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Scale
+        public int? Scale
         {
-            get { return this._scale.GetValueOrDefault(); }
+            get { return this._scale; }
             set { this._scale = value; }
         }
 

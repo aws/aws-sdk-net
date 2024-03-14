@@ -83,9 +83,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// When set to true, running environments will be terminated before deleting the application.
         /// </para>
         /// </summary>
-        public bool TerminateEnvByForce
+        public bool? TerminateEnvByForce
         {
-            get { return this._terminateEnvByForce.GetValueOrDefault(); }
+            get { return this._terminateEnvByForce; }
             set { this._terminateEnvByForce = value; }
         }
 

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.ConnectContactLens.Endpoints;
 using Amazon.ConnectContactLens.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class ConnectContactLensEndpointsTests

@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// Values include <c>true</c> or <c>false</c> <i>(default)</i>.
         /// </para>
         /// </summary>
-        public bool BatchMode
+        public bool? BatchMode
         {
-            get { return this._batchMode.GetValueOrDefault(); }
+            get { return this._batchMode; }
             set { this._batchMode = value; }
         }
 

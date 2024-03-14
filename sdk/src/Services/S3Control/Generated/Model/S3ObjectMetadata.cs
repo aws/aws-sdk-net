@@ -116,9 +116,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ContentLength
+        public long? ContentLength
         {
-            get { return this._contentLength.GetValueOrDefault(); }
+            get { return this._contentLength; }
             set { this._contentLength = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property HttpExpiresDate.
         /// </summary>
-        public DateTime HttpExpiresDate
+        public DateTime? HttpExpiresDate
         {
-            get { return this._httpExpiresDate.GetValueOrDefault(); }
+            get { return this._httpExpiresDate; }
             set { this._httpExpiresDate = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.S3Control.Model
         ///  <i>This member has been deprecated.</i> 
         /// </para>
         /// </summary>
-        public bool RequesterCharged
+        public bool? RequesterCharged
         {
-            get { return this._requesterCharged.GetValueOrDefault(); }
+            get { return this._requesterCharged; }
             set { this._requesterCharged = value; }
         }
 

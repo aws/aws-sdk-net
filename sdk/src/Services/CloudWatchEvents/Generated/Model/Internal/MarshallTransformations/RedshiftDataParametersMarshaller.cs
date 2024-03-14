@@ -78,7 +78,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWithEvent())
             {
                 context.Writer.WritePropertyName("WithEvent");
-                context.Writer.Write(requestObject.WithEvent);
+                context.Writer.Write(requestObject.WithEvent.Value);
             }
 
         }

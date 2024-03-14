@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInclusive())
             {
                 context.Writer.WritePropertyName("Inclusive");
-                context.Writer.Write(requestObject.Inclusive);
+                context.Writer.Write(requestObject.Inclusive.Value);
             }
 
         }

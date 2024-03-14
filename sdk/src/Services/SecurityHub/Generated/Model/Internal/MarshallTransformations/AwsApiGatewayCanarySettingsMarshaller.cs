@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("PercentTraffic");
-                context.Writer.Write(requestObject.PercentTraffic);
+                context.Writer.Write(requestObject.PercentTraffic.Value);
             }
 
             if(requestObject.IsSetStageVariableOverrides())
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseStageCache())
             {
                 context.Writer.WritePropertyName("UseStageCache");
-                context.Writer.Write(requestObject.UseStageCache);
+                context.Writer.Write(requestObject.UseStageCache.Value);
             }
 
         }

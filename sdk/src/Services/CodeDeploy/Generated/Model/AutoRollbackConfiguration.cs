@@ -43,9 +43,9 @@ namespace Amazon.CodeDeploy.Model
         /// Indicates whether a defined automatic rollback configuration is currently enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

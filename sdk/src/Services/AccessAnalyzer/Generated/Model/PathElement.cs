@@ -44,9 +44,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// Refers to an index in a JSON array.
         /// </para>
         /// </summary>
-        public int Index
+        public int? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 

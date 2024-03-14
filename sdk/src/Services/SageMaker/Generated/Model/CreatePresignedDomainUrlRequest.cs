@@ -93,9 +93,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
-        public int ExpiresInSeconds
+        public int? ExpiresInSeconds
         {
-            get { return this._expiresInSeconds.GetValueOrDefault(); }
+            get { return this._expiresInSeconds; }
             set { this._expiresInSeconds = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1800, Max=43200)]
-        public int SessionExpirationDurationInSeconds
+        public int? SessionExpirationDurationInSeconds
         {
-            get { return this._sessionExpirationDurationInSeconds.GetValueOrDefault(); }
+            get { return this._sessionExpirationDurationInSeconds; }
             set { this._sessionExpirationDurationInSeconds = value; }
         }
 

@@ -82,7 +82,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 writer.WriteObjectEnd();

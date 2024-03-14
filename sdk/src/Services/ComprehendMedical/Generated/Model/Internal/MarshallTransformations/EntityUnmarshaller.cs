@@ -71,7 +71,7 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BeginOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,19 +83,19 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Score", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Score = unmarshaller.Unmarshall(context);
                     continue;
                 }

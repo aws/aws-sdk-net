@@ -64,9 +64,9 @@ namespace Amazon.FSx.Model
         /// taking the final backup. If you want to skip this backup, use this flag to do so.
         /// </para>
         /// </summary>
-        public bool SkipFinalBackup
+        public bool? SkipFinalBackup
         {
-            get { return this._skipFinalBackup.GetValueOrDefault(); }
+            get { return this._skipFinalBackup; }
             set { this._skipFinalBackup = value; }
         }
 

@@ -115,9 +115,9 @@ namespace Amazon.Pinpoint.Model
         /// from the campaign.
         /// </para>
         /// </summary>
-        public int HoldoutPercent
+        public int? HoldoutPercent
         {
-            get { return this._holdoutPercent.GetValueOrDefault(); }
+            get { return this._holdoutPercent; }
             set { this._holdoutPercent = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Pinpoint.Model
         /// resume it by changing this value to false.
         /// </para>
         /// </summary>
-        public bool IsPaused
+        public bool? IsPaused
         {
-            get { return this._isPaused.GetValueOrDefault(); }
+            get { return this._isPaused; }
             set { this._isPaused = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.Pinpoint.Model
         /// to user if there are multiple messages scheduled to be displayed at the same moment.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.Pinpoint.Model
         /// The version of the segment to associate with the campaign.
         /// </para>
         /// </summary>
-        public int SegmentVersion
+        public int? SegmentVersion
         {
-            get { return this._segmentVersion.GetValueOrDefault(); }
+            get { return this._segmentVersion; }
             set { this._segmentVersion = value; }
         }
 

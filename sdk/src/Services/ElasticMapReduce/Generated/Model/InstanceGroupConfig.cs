@@ -55,7 +55,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="instanceRole">The role of the instance group in the cluster.</param>
         /// <param name="instanceType">The Amazon EC2 instance type for all instances in the instance group.</param>
         /// <param name="instanceCount">Target number of instances for the instance group.</param>
-        public InstanceGroupConfig(InstanceRoleType instanceRole, string instanceType, int instanceCount)
+        public InstanceGroupConfig(InstanceRoleType instanceRole, string instanceType, int? instanceCount)
         {
             _instanceRole = instanceRole;
             _instanceType = instanceType;
@@ -172,9 +172,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

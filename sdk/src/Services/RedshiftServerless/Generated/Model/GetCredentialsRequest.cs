@@ -123,9 +123,9 @@ namespace Amazon.RedshiftServerless.Model
         /// 900 seconds, and the maximum is 3600 seconds.
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.Macie2.Model
         /// expire and be cancelled if you don't resume it first.
         /// </para>
         /// </summary>
-        public DateTime JobExpiresAt
+        public DateTime? JobExpiresAt
         {
-            get { return this._jobExpiresAt.GetValueOrDefault(); }
+            get { return this._jobExpiresAt; }
             set { this._jobExpiresAt = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Macie2.Model
         /// The date and time, in UTC and extended ISO 8601 format, when you paused the job.
         /// </para>
         /// </summary>
-        public DateTime JobPausedAt
+        public DateTime? JobPausedAt
         {
-            get { return this._jobPausedAt.GetValueOrDefault(); }
+            get { return this._jobPausedAt; }
             set { this._jobPausedAt = value; }
         }
 

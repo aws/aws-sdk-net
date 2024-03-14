@@ -48,7 +48,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpv6AllowedForDualStack())
             {
                 context.Writer.WritePropertyName("Ipv6AllowedForDualStack");
-                context.Writer.Write(requestObject.Ipv6AllowedForDualStack);
+                context.Writer.Write(requestObject.Ipv6AllowedForDualStack.Value);
             }
 
             if(requestObject.IsSetSecurityGroupIds())

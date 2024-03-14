@@ -51,9 +51,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=600, Max=28800)]
-        public int MaximumExecutionTimeoutInSeconds
+        public int? MaximumExecutionTimeoutInSeconds
         {
-            get { return this._maximumExecutionTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._maximumExecutionTimeoutInSeconds; }
             set { this._maximumExecutionTimeoutInSeconds = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int TerminationWaitInSeconds
+        public int? TerminationWaitInSeconds
         {
-            get { return this._terminationWaitInSeconds.GetValueOrDefault(); }
+            get { return this._terminationWaitInSeconds; }
             set { this._terminationWaitInSeconds = value; }
         }
 

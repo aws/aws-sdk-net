@@ -140,9 +140,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int BidPercentage
+        public int? BidPercentage
         {
-            get { return this._bidPercentage.GetValueOrDefault(); }
+            get { return this._bidPercentage; }
             set { this._bidPercentage = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int DesiredvCpus
+        public int? DesiredvCpus
         {
-            get { return this._desiredvCpus.GetValueOrDefault(); }
+            get { return this._desiredvCpus; }
             set { this._desiredvCpus = value; }
         }
 
@@ -383,9 +383,9 @@ namespace Amazon.Batch.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxvCpus
+        public int? MaxvCpus
         {
-            get { return this._maxvCpus.GetValueOrDefault(); }
+            get { return this._maxvCpus; }
             set { this._maxvCpus = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MinvCpus
+        public int? MinvCpus
         {
-            get { return this._minvCpus.GetValueOrDefault(); }
+            get { return this._minvCpus; }
             set { this._minvCpus = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The amount of memory in the container. 
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The limit of memory reserve for the container. 
         /// </para>
         /// </summary>
-        public int MemoryReservation
+        public int? MemoryReservation
         {
-            get { return this._memoryReservation.GetValueOrDefault(); }
+            get { return this._memoryReservation; }
             set { this._memoryReservation = value; }
         }
 

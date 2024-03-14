@@ -155,9 +155,9 @@ namespace Amazon.EC2.Model
         /// protection</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        public bool DisableApiStop
+        public bool? DisableApiStop
         {
-            get { return this._disableApiStop.GetValueOrDefault(); }
+            get { return this._disableApiStop; }
             set { this._disableApiStop = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.EC2.Model
         /// you can terminate the instance by running the shutdown command from the instance.
         /// </para>
         /// </summary>
-        public bool DisableApiTermination
+        public bool? DisableApiTermination
         {
-            get { return this._disableApiTermination.GetValueOrDefault(); }
+            get { return this._disableApiTermination; }
             set { this._disableApiTermination = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.EC2.Model
         /// all instance types. Additional usage charges apply when using an EBS-optimized instance.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredInstanceCount
+        public int? DesiredInstanceCount
         {
-            get { return this._desiredInstanceCount.GetValueOrDefault(); }
+            get { return this._desiredInstanceCount; }
             set { this._desiredInstanceCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float DesiredWeight
+        public float? DesiredWeight
         {
-            get { return this._desiredWeight.GetValueOrDefault(); }
+            get { return this._desiredWeight; }
             set { this._desiredWeight = value; }
         }
 

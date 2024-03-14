@@ -98,7 +98,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSilentPush())
             {
                 context.Writer.WritePropertyName("SilentPush");
-                context.Writer.Write(requestObject.SilentPush);
+                context.Writer.Write(requestObject.SilentPush.Value);
             }
 
             if(requestObject.IsSetSmallImageIconUrl())
@@ -135,7 +135,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeToLive())
             {
                 context.Writer.WritePropertyName("TimeToLive");
-                context.Writer.Write(requestObject.TimeToLive);
+                context.Writer.Write(requestObject.TimeToLive.Value);
             }
 
             if(requestObject.IsSetTitle())

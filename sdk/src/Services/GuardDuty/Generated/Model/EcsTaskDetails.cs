@@ -122,9 +122,9 @@ namespace Amazon.GuardDuty.Model
         /// The Unix timestamp for the time when the task started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.GuardDuty.Model
         /// The Unix timestamp for the time when the task was created.
         /// </para>
         /// </summary>
-        public DateTime TaskCreatedAt
+        public DateTime? TaskCreatedAt
         {
-            get { return this._taskCreatedAt.GetValueOrDefault(); }
+            get { return this._taskCreatedAt; }
             set { this._taskCreatedAt = value; }
         }
 

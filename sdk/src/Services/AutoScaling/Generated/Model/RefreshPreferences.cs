@@ -94,9 +94,9 @@ namespace Amazon.AutoScaling.Model
         /// changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool AutoRollback
+        public bool? AutoRollback
         {
-            get { return this._autoRollback.GetValueOrDefault(); }
+            get { return this._autoRollback; }
             set { this._autoRollback = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=172800)]
-        public int CheckpointDelay
+        public int? CheckpointDelay
         {
-            get { return this._checkpointDelay.GetValueOrDefault(); }
+            get { return this._checkpointDelay; }
             set { this._checkpointDelay = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InstanceWarmup
+        public int? InstanceWarmup
         {
-            get { return this._instanceWarmup.GetValueOrDefault(); }
+            get { return this._instanceWarmup; }
             set { this._instanceWarmup = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=200)]
-        public int MaxHealthyPercentage
+        public int? MaxHealthyPercentage
         {
-            get { return this._maxHealthyPercentage.GetValueOrDefault(); }
+            get { return this._maxHealthyPercentage; }
             set { this._maxHealthyPercentage = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int MinHealthyPercentage
+        public int? MinHealthyPercentage
         {
-            get { return this._minHealthyPercentage.GetValueOrDefault(); }
+            get { return this._minHealthyPercentage; }
             set { this._minHealthyPercentage = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.AutoScaling.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool SkipMatching
+        public bool? SkipMatching
         {
-            get { return this._skipMatching.GetValueOrDefault(); }
+            get { return this._skipMatching; }
             set { this._skipMatching = value; }
         }
 

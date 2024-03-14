@@ -61,9 +61,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AutoPause
+        public bool? AutoPause
         {
-            get { return this._autoPause.GetValueOrDefault(); }
+            get { return this._autoPause; }
             set { this._autoPause = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.RDS.Model
         /// The maximum capacity must be greater than or equal to the minimum capacity.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.RDS.Model
         /// The minimum capacity must be less than or equal to the maximum capacity.
         /// </para>
         /// </summary>
-        public int MinCapacity
+        public int? MinCapacity
         {
-            get { return this._minCapacity.GetValueOrDefault(); }
+            get { return this._minCapacity; }
             set { this._minCapacity = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.RDS.Model
         /// Specify a value between 60 and 600 seconds.
         /// </para>
         /// </summary>
-        public int SecondsBeforeTimeout
+        public int? SecondsBeforeTimeout
         {
-            get { return this._secondsBeforeTimeout.GetValueOrDefault(); }
+            get { return this._secondsBeforeTimeout; }
             set { this._secondsBeforeTimeout = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.RDS.Model
         /// Specify a value between 300 and 86,400 seconds.
         /// </para>
         /// </summary>
-        public int SecondsUntilAutoPause
+        public int? SecondsUntilAutoPause
         {
-            get { return this._secondsUntilAutoPause.GetValueOrDefault(); }
+            get { return this._secondsUntilAutoPause; }
             set { this._secondsUntilAutoPause = value; }
         }
 

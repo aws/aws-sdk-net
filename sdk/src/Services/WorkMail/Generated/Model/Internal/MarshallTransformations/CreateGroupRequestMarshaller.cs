@@ -70,7 +70,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHiddenFromGlobalAddressList())
                 {
                     context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
-                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
+                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList.Value);
                 }
 
                 if(publicRequest.IsSetName())

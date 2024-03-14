@@ -76,7 +76,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetStatus())
@@ -88,7 +88,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateDateTime())
                 {
                     context.Writer.WritePropertyName("UpdateDateTime");
-                    context.Writer.Write(publicRequest.UpdateDateTime);
+                    context.Writer.Write(publicRequest.UpdateDateTime.Value);
                 }
 
                 writer.WriteObjectEnd();

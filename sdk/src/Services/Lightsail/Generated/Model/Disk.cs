@@ -161,9 +161,9 @@ namespace Amazon.Lightsail.Model
         /// The date when the disk was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.Lightsail.Model
         ///  </note>
         /// </summary>
         [Obsolete("In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.")]
-        public int GbInUse
+        public int? GbInUse
         {
-            get { return this._gbInUse.GetValueOrDefault(); }
+            get { return this._gbInUse; }
             set { this._gbInUse = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.Lightsail.Model
         /// The input/output operations per second (IOPS) of the disk.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the disk is attached.
         /// </para>
         /// </summary>
-        public bool IsAttached
+        public bool? IsAttached
         {
-            get { return this._isAttached.GetValueOrDefault(); }
+            get { return this._isAttached; }
             set { this._isAttached = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.Lightsail.Model
         /// loaded on it).
         /// </para>
         /// </summary>
-        public bool IsSystemDisk
+        public bool? IsSystemDisk
         {
-            get { return this._isSystemDisk.GetValueOrDefault(); }
+            get { return this._isSystemDisk; }
             set { this._isSystemDisk = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk in GB.
         /// </para>
         /// </summary>
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

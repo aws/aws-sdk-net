@@ -43,9 +43,9 @@ namespace Amazon.StepFunctions.Model
         /// failed to start or are pending to be redriven.
         /// </para>
         /// </summary>
-        public int RedriveCount
+        public int? RedriveCount
         {
-            get { return this._redriveCount.GetValueOrDefault(); }
+            get { return this._redriveCount; }
             set { this._redriveCount = value; }
         }
 

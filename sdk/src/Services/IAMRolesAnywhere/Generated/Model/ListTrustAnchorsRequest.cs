@@ -69,9 +69,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The number of resources in the paginated list. 
         /// </para>
         /// </summary>
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

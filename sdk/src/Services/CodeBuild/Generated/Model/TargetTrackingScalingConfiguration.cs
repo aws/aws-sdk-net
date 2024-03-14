@@ -60,9 +60,9 @@ namespace Amazon.CodeBuild.Model
         /// The value of <c>metricType</c> when to start scaling.
         /// </para>
         /// </summary>
-        public double TargetValue
+        public double? TargetValue
         {
-            get { return this._targetValue.GetValueOrDefault(); }
+            get { return this._targetValue; }
             set { this._targetValue = value; }
         }
 

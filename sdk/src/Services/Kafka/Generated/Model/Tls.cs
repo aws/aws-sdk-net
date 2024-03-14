@@ -60,9 +60,9 @@ namespace Amazon.Kafka.Model
         /// Specifies whether you want to turn on or turn off TLS authentication.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

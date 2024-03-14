@@ -90,9 +90,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Asn
+        public int? Asn
         {
-            get { return this._asn.GetValueOrDefault(); }
+            get { return this._asn; }
             set { this._asn = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Vlan
+        public int? Vlan
         {
-            get { return this._vlan.GetValueOrDefault(); }
+            get { return this._vlan; }
             set { this._vlan = value; }
         }
 

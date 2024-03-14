@@ -123,9 +123,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ReceivedTime
+        public DateTime? ReceivedTime
         {
-            get { return this._receivedTime.GetValueOrDefault(); }
+            get { return this._receivedTime; }
             set { this._receivedTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SampleTime
+        public DateTime? SampleTime
         {
-            get { return this._sampleTime.GetValueOrDefault(); }
+            get { return this._sampleTime; }
             set { this._sampleTime = value; }
         }
 

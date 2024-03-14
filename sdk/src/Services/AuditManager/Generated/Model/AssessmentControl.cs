@@ -50,9 +50,9 @@ namespace Amazon.AuditManager.Model
         ///  The amount of evidence in the assessment report. 
         /// </para>
         /// </summary>
-        public int AssessmentReportEvidenceCount
+        public int? AssessmentReportEvidenceCount
         {
-            get { return this._assessmentReportEvidenceCount.GetValueOrDefault(); }
+            get { return this._assessmentReportEvidenceCount; }
             set { this._assessmentReportEvidenceCount = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.AuditManager.Model
         ///  The amount of evidence that's collected for the control. 
         /// </para>
         /// </summary>
-        public int EvidenceCount
+        public int? EvidenceCount
         {
-            get { return this._evidenceCount.GetValueOrDefault(); }
+            get { return this._evidenceCount; }
             set { this._evidenceCount = value; }
         }
 

@@ -80,9 +80,9 @@ namespace Amazon.Redshift.Model
         /// The expiration date for the certificate.
         /// </para>
         /// </summary>
-        public DateTime CustomDomainCertificateExpiryDate
+        public DateTime? CustomDomainCertificateExpiryDate
         {
-            get { return this._customDomainCertificateExpiryDate.GetValueOrDefault(); }
+            get { return this._customDomainCertificateExpiryDate; }
             set { this._customDomainCertificateExpiryDate = value; }
         }
 

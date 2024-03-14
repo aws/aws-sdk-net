@@ -208,9 +208,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether to create an Amazon EBS-optimized instance.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool InstallUpdatesOnBoot
+        public bool? InstallUpdatesOnBoot
         {
-            get { return this._installUpdatesOnBoot.GetValueOrDefault(); }
+            get { return this._installUpdatesOnBoot; }
             set { this._installUpdatesOnBoot = value; }
         }
 

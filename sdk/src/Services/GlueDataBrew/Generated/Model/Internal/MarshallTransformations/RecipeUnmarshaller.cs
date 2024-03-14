@@ -65,7 +65,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreateDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PublishedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PublishedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

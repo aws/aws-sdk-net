@@ -106,9 +106,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// selection. For more information on scoring logic, see <a>how-scores-work</a>.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

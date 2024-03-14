@@ -65,7 +65,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("acceptedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AcceptedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

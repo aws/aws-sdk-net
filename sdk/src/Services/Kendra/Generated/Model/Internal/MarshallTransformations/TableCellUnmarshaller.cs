@@ -65,19 +65,19 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Header", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Header = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Highlighted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Highlighted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TopAnswer", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TopAnswer = unmarshaller.Unmarshall(context);
                     continue;
                 }

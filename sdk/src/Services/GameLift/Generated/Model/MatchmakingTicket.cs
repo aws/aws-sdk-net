@@ -96,9 +96,9 @@ namespace Amazon.GameLift.Model
         /// time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int EstimatedWaitTime
+        public int? EstimatedWaitTime
         {
-            get { return this._estimatedWaitTime.GetValueOrDefault(); }
+            get { return this._estimatedWaitTime; }
             set { this._estimatedWaitTime = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.GameLift.Model
         /// expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

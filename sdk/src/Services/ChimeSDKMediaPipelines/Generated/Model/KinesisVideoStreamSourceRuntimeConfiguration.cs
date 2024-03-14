@@ -75,9 +75,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8000, Max=48000)]
-        public int MediaSampleRate
+        public int? MediaSampleRate
         {
-            get { return this._mediaSampleRate.GetValueOrDefault(); }
+            get { return this._mediaSampleRate; }
             set { this._mediaSampleRate = value; }
         }
 

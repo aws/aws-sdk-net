@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// mode.
         /// </para>
         /// </summary>
-        public bool StrictModeForAllResources
+        public bool? StrictModeForAllResources
         {
-            get { return this._strictModeForAllResources.GetValueOrDefault(); }
+            get { return this._strictModeForAllResources; }
             set { this._strictModeForAllResources = value; }
         }
 

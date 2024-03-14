@@ -43,9 +43,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property BytesMetered.
         /// </summary>
-        public long BytesMetered
+        public long? BytesMetered
         {
-            get { return this._bytesMetered.GetValueOrDefault(); }
+            get { return this._bytesMetered; }
             set { this._bytesMetered = value; }
         }
 
@@ -58,9 +58,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property FileFailures.
         /// </summary>
-        public long FileFailures
+        public long? FileFailures
         {
-            get { return this._fileFailures.GetValueOrDefault(); }
+            get { return this._fileFailures; }
             set { this._fileFailures = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property ParseFailures.
         /// </summary>
-        public long ParseFailures
+        public long? ParseFailures
         {
-            get { return this._parseFailures.GetValueOrDefault(); }
+            get { return this._parseFailures; }
             set { this._parseFailures = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property RecordIngestionFailures.
         /// </summary>
-        public long RecordIngestionFailures
+        public long? RecordIngestionFailures
         {
-            get { return this._recordIngestionFailures.GetValueOrDefault(); }
+            get { return this._recordIngestionFailures; }
             set { this._recordIngestionFailures = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property RecordsIngested.
         /// </summary>
-        public long RecordsIngested
+        public long? RecordsIngested
         {
-            get { return this._recordsIngested.GetValueOrDefault(); }
+            get { return this._recordsIngested; }
             set { this._recordsIngested = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property RecordsProcessed.
         /// </summary>
-        public long RecordsProcessed
+        public long? RecordsProcessed
         {
-            get { return this._recordsProcessed.GetValueOrDefault(); }
+            get { return this._recordsProcessed; }
             set { this._recordsProcessed = value; }
         }
 

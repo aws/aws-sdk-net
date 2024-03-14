@@ -65,7 +65,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ModelVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

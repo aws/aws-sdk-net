@@ -76,7 +76,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPermanentDeletionTimeInDays())
                 {
                     context.Writer.WritePropertyName("PermanentDeletionTimeInDays");
-                    context.Writer.Write(publicRequest.PermanentDeletionTimeInDays);
+                    context.Writer.Write(publicRequest.PermanentDeletionTimeInDays.Value);
                 }
 
                 writer.WriteObjectEnd();

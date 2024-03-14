@@ -44,9 +44,9 @@ namespace Amazon.DevOpsGuru.Model
         /// service. 
         /// </para>
         /// </summary>
-        public long AnalyzedResourceCount
+        public long? AnalyzedResourceCount
         {
-            get { return this._analyzedResourceCount.GetValueOrDefault(); }
+            get { return this._analyzedResourceCount; }
             set { this._analyzedResourceCount = value; }
         }
 

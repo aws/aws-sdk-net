@@ -48,7 +48,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("boolean");
-                context.Writer.Write(requestObject.Boolean);
+                context.Writer.Write(requestObject.Boolean.Value);
             }
 
             if(requestObject.IsSetEntityIdentifier())
@@ -65,7 +65,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLong())
             {
                 context.Writer.WritePropertyName("long");
-                context.Writer.Write(requestObject.Long);
+                context.Writer.Write(requestObject.Long.Value);
             }
 
             if(requestObject.IsSetRecord())

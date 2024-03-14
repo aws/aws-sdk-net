@@ -54,7 +54,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpand())
             {
                 context.Writer.WritePropertyName("Expand");
-                context.Writer.Write(requestObject.Expand);
+                context.Writer.Write(requestObject.Expand.Value);
             }
 
             if(requestObject.IsSetExpandConfiguration())

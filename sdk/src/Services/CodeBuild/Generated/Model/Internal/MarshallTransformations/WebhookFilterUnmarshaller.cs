@@ -65,7 +65,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("excludeMatchedPattern", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeMatchedPattern = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -64,9 +64,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DeploymentNumber
+        public int? DeploymentNumber
         {
-            get { return this._deploymentNumber.GetValueOrDefault(); }
+            get { return this._deploymentNumber; }
             set { this._deploymentNumber = value; }
         }
 

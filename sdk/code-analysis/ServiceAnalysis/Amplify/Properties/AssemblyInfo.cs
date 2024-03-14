@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Amplify")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

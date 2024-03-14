@@ -82,9 +82,9 @@ namespace Amazon.Detective.Model
         /// used.
         /// </para>
         /// </summary>
-        public int HourlyTimeDelta
+        public int? HourlyTimeDelta
         {
-            get { return this._hourlyTimeDelta.GetValueOrDefault(); }
+            get { return this._hourlyTimeDelta; }
             set { this._hourlyTimeDelta = value; }
         }
 

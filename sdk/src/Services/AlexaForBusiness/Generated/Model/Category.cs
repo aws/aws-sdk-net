@@ -44,9 +44,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long CategoryId
+        public long? CategoryId
         {
-            get { return this._categoryId.GetValueOrDefault(); }
+            get { return this._categoryId; }
             set { this._categoryId = value; }
         }
 

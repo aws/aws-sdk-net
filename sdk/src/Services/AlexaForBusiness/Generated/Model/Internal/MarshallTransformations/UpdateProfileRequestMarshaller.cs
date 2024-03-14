@@ -76,7 +76,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDataRetentionOptIn())
                 {
                     context.Writer.WritePropertyName("DataRetentionOptIn");
-                    context.Writer.Write(publicRequest.DataRetentionOptIn);
+                    context.Writer.Write(publicRequest.DataRetentionOptIn.Value);
                 }
 
                 if(publicRequest.IsSetDistanceUnit())
@@ -88,7 +88,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsDefault())
                 {
                     context.Writer.WritePropertyName("IsDefault");
-                    context.Writer.Write(publicRequest.IsDefault);
+                    context.Writer.Write(publicRequest.IsDefault.Value);
                 }
 
                 if(publicRequest.IsSetLocale())
@@ -100,7 +100,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxVolumeLimit())
                 {
                     context.Writer.WritePropertyName("MaxVolumeLimit");
-                    context.Writer.Write(publicRequest.MaxVolumeLimit);
+                    context.Writer.Write(publicRequest.MaxVolumeLimit.Value);
                 }
 
                 if(publicRequest.IsSetMeetingRoomConfiguration())
@@ -129,13 +129,13 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPSTNEnabled())
                 {
                     context.Writer.WritePropertyName("PSTNEnabled");
-                    context.Writer.Write(publicRequest.PSTNEnabled);
+                    context.Writer.Write(publicRequest.PSTNEnabled.Value);
                 }
 
                 if(publicRequest.IsSetSetupModeDisabled())
                 {
                     context.Writer.WritePropertyName("SetupModeDisabled");
-                    context.Writer.Write(publicRequest.SetupModeDisabled);
+                    context.Writer.Write(publicRequest.SetupModeDisabled.Value);
                 }
 
                 if(publicRequest.IsSetTemperatureUnit())

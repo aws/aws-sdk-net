@@ -62,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMerge())
             {
                 context.Writer.WritePropertyName("merge");
-                context.Writer.Write(requestObject.Merge);
+                context.Writer.Write(requestObject.Merge.Value);
             }
 
         }

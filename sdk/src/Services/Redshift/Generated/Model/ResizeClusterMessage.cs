@@ -50,9 +50,9 @@ namespace Amazon.Redshift.Model
         /// resize type is elastic. 
         /// </para>
         /// </summary>
-        public bool Classic
+        public bool? Classic
         {
-            get { return this._classic.GetValueOrDefault(); }
+            get { return this._classic; }
             set { this._classic = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Redshift.Model
         /// of nodes is used.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 

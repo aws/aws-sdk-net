@@ -44,9 +44,9 @@ namespace Amazon.XRay.Model
         /// The start time of this page of results.
         /// </para>
         /// </summary>
-        public DateTime ApproximateTime
+        public DateTime? ApproximateTime
         {
-            get { return this._approximateTime.GetValueOrDefault(); }
+            get { return this._approximateTime; }
             set { this._approximateTime = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.XRay.Model
         /// filter expression.
         /// </para>
         /// </summary>
-        public long TracesProcessedCount
+        public long? TracesProcessedCount
         {
-            get { return this._tracesProcessedCount.GetValueOrDefault(); }
+            get { return this._tracesProcessedCount; }
             set { this._tracesProcessedCount = value; }
         }
 

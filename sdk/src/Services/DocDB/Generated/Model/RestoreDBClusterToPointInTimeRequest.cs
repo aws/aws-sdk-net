@@ -122,9 +122,9 @@ namespace Amazon.DocDB.Model
         /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.DocDB.Model
         /// Default: The default port for the engine.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.DocDB.Model
         /// Example: <c>2015-03-07T23:45:00Z</c> 
         /// </para>
         /// </summary>
-        public DateTime RestoreToTime
+        public DateTime? RestoreToTime
         {
-            get { return this._restoreToTime.GetValueOrDefault(); }
+            get { return this._restoreToTime; }
             set { this._restoreToTime = value; }
         }
 
@@ -405,9 +405,9 @@ namespace Amazon.DocDB.Model
         /// Constraints: Cannot be specified if the <c>RestoreToTime</c> parameter is provided.
         /// </para>
         /// </summary>
-        public bool UseLatestRestorableTime
+        public bool? UseLatestRestorableTime
         {
-            get { return this._useLatestRestorableTime.GetValueOrDefault(); }
+            get { return this._useLatestRestorableTime; }
             set { this._useLatestRestorableTime = value; }
         }
 

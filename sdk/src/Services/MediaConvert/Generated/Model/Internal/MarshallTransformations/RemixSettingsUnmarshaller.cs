@@ -65,13 +65,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("audioDescriptionAudioChannel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AudioDescriptionAudioChannel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("audioDescriptionDataChannel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AudioDescriptionDataChannel = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("channelsIn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ChannelsIn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("channelsOut", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ChannelsOut = unmarshaller.Unmarshall(context);
                     continue;
                 }

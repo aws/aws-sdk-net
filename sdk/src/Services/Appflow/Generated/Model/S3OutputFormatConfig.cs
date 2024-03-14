@@ -112,9 +112,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool PreserveSourceDataTyping
+        public bool? PreserveSourceDataTyping
         {
-            get { return this._preserveSourceDataTyping.GetValueOrDefault(); }
+            get { return this._preserveSourceDataTyping; }
             set { this._preserveSourceDataTyping = value; }
         }
 

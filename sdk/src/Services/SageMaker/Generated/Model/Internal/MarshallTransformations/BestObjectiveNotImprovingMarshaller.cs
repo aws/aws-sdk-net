@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxNumberOfTrainingJobsNotImproving())
             {
                 context.Writer.WritePropertyName("MaxNumberOfTrainingJobsNotImproving");
-                context.Writer.Write(requestObject.MaxNumberOfTrainingJobsNotImproving);
+                context.Writer.Write(requestObject.MaxNumberOfTrainingJobsNotImproving.Value);
             }
 
         }

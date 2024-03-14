@@ -46,9 +46,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CloudSearch.Model
         /// Indicates that the option will be deleted once processing is complete.
         /// </para>
         /// </summary>
-        public bool PendingDeletion
+        public bool? PendingDeletion
         {
-            get { return this._pendingDeletion.GetValueOrDefault(); }
+            get { return this._pendingDeletion; }
             set { this._pendingDeletion = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateDate
+        public DateTime? UpdateDate
         {
-            get { return this._updateDate.GetValueOrDefault(); }
+            get { return this._updateDate; }
             set { this._updateDate = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int UpdateVersion
+        public int? UpdateVersion
         {
-            get { return this._updateVersion.GetValueOrDefault(); }
+            get { return this._updateVersion; }
             set { this._updateVersion = value; }
         }
 

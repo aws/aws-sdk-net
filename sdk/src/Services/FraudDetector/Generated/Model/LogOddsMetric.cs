@@ -45,9 +45,9 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float VariableImportance
+        public float? VariableImportance
         {
-            get { return this._variableImportance.GetValueOrDefault(); }
+            get { return this._variableImportance; }
             set { this._variableImportance = value; }
         }
 

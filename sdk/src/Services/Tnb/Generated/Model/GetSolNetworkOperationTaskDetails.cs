@@ -70,9 +70,9 @@ namespace Amazon.Tnb.Model
         /// Task end time.
         /// </para>
         /// </summary>
-        public DateTime TaskEndTime
+        public DateTime? TaskEndTime
         {
-            get { return this._taskEndTime.GetValueOrDefault(); }
+            get { return this._taskEndTime; }
             set { this._taskEndTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Tnb.Model
         /// Task start time.
         /// </para>
         /// </summary>
-        public DateTime TaskStartTime
+        public DateTime? TaskStartTime
         {
-            get { return this._taskStartTime.GetValueOrDefault(); }
+            get { return this._taskStartTime; }
             set { this._taskStartTime = value; }
         }
 

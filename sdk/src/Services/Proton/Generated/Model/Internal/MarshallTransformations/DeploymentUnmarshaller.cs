@@ -71,7 +71,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("completedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,7 +155,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetResourceCreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TargetResourceCreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

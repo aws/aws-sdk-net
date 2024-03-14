@@ -56,61 +56,61 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllowUsersToChangePassword", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AllowUsersToChangePassword = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ExpirePasswords", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ExpirePasswords = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HardExpiry", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HardExpiry = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxPasswordAge", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxPasswordAge = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinimumPasswordLength", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinimumPasswordLength = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PasswordReusePrevention", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PasswordReusePrevention = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequireLowercaseCharacters", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequireLowercaseCharacters = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequireNumbers", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequireNumbers = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequireSymbols", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequireSymbols = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequireUppercaseCharacters", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequireUppercaseCharacters = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -69,9 +69,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -317,9 +317,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime TerminationTime
+        public DateTime? TerminationTime
         {
-            get { return this._terminationTime.GetValueOrDefault(); }
+            get { return this._terminationTime; }
             set { this._terminationTime = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SkipSnapshot
+        public bool? SkipSnapshot
         {
-            get { return this._skipSnapshot.GetValueOrDefault(); }
+            get { return this._skipSnapshot; }
             set { this._skipSnapshot = value; }
         }
 

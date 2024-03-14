@@ -70,7 +70,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowSelfManagement())
                 {
                     context.Writer.WritePropertyName("AllowSelfManagement");
-                    context.Writer.Write(publicRequest.AllowSelfManagement);
+                    context.Writer.Write(publicRequest.AllowSelfManagement.Value);
                 }
 
                 if(publicRequest.IsSetIamUserArn())

@@ -56,7 +56,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ApproximateAggregateValue", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.ApproximateAggregateValue = unmarshaller.Unmarshall(context);
                         continue;
                     }

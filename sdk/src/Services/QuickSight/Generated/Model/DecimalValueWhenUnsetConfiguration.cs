@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public double CustomValue
+        public double? CustomValue
         {
-            get { return this._customValue.GetValueOrDefault(); }
+            get { return this._customValue; }
             set { this._customValue = value; }
         }
 

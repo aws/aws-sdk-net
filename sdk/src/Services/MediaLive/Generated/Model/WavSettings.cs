@@ -40,9 +40,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property BitDepth. Bits per sample.
         /// </summary>
-        public double BitDepth
+        public double? BitDepth
         {
-            get { return this._bitDepth.GetValueOrDefault(); }
+            get { return this._bitDepth; }
             set { this._bitDepth = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property SampleRate. Sample rate in Hz.
         /// </summary>
-        public double SampleRate
+        public double? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

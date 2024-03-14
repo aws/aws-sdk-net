@@ -47,9 +47,9 @@ namespace Amazon.Lightsail.Model
         /// The average.
         /// </para>
         /// </summary>
-        public double Average
+        public double? Average
         {
-            get { return this._average.GetValueOrDefault(); }
+            get { return this._average; }
             set { this._average = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Lightsail.Model
         /// The maximum.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Lightsail.Model
         /// The minimum.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Lightsail.Model
         /// The sample count.
         /// </para>
         /// </summary>
-        public double SampleCount
+        public double? SampleCount
         {
-            get { return this._sampleCount.GetValueOrDefault(); }
+            get { return this._sampleCount; }
             set { this._sampleCount = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Lightsail.Model
         /// The sum.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp (<c>1479816991.349</c>).
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

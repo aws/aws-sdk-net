@@ -148,9 +148,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500000)]
-        public int MaxCityNetworksToMonitor
+        public int? MaxCityNetworksToMonitor
         {
-            get { return this._maxCityNetworksToMonitor.GetValueOrDefault(); }
+            get { return this._maxCityNetworksToMonitor; }
             set { this._maxCityNetworksToMonitor = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int TrafficPercentageToMonitor
+        public int? TrafficPercentageToMonitor
         {
-            get { return this._trafficPercentageToMonitor.GetValueOrDefault(); }
+            get { return this._trafficPercentageToMonitor; }
             set { this._trafficPercentageToMonitor = value; }
         }
 

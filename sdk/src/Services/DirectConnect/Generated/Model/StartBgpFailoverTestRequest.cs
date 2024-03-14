@@ -86,9 +86,9 @@ namespace Amazon.DirectConnect.Model
         /// Default: 180 minutes (3 hours).
         /// </para>
         /// </summary>
-        public int TestDurationInMinutes
+        public int? TestDurationInMinutes
         {
-            get { return this._testDurationInMinutes.GetValueOrDefault(); }
+            get { return this._testDurationInMinutes; }
             set { this._testDurationInMinutes = value; }
         }
 

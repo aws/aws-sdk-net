@@ -65,13 +65,13 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("amazonSideAsn", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AmazonSideAsn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("asn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Asn = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.JumboFrameCapable = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("mtu", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Mtu = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -161,7 +161,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("siteLinkEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.SiteLinkEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -203,7 +203,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("vlan", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Vlan = unmarshaller.Unmarshall(context);
                     continue;
                 }

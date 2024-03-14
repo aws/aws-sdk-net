@@ -63,10 +63,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateReusableDelegationSetRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));
 
                 if(publicRequest.IsSetHostedZoneId())
-                    xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneId));                    
+                    xmlWriter.WriteElementString("HostedZoneId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneId));
 
 
                 xmlWriter.WriteEndElement();

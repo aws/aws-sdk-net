@@ -71,9 +71,9 @@ namespace Amazon.ElastiCache.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NewReplicaCount
+        public int? NewReplicaCount
         {
-            get { return this._newReplicaCount.GetValueOrDefault(); }
+            get { return this._newReplicaCount; }
             set { this._newReplicaCount = value; }
         }
 

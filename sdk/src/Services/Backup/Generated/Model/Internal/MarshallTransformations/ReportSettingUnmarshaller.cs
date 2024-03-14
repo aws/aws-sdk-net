@@ -77,7 +77,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfFrameworks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfFrameworks = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -61,9 +61,9 @@ namespace Amazon.RoboMaker.Model
         /// The total number of failures.
         /// </para>
         /// </summary>
-        public int TotalFailureCount
+        public int? TotalFailureCount
         {
-            get { return this._totalFailureCount.GetValueOrDefault(); }
+            get { return this._totalFailureCount; }
             set { this._totalFailureCount = value; }
         }
 

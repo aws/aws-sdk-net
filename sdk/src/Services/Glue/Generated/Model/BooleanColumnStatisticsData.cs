@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfFalses
+        public long? NumberOfFalses
         {
-            get { return this._numberOfFalses.GetValueOrDefault(); }
+            get { return this._numberOfFalses; }
             set { this._numberOfFalses = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfNulls
+        public long? NumberOfNulls
         {
-            get { return this._numberOfNulls.GetValueOrDefault(); }
+            get { return this._numberOfNulls; }
             set { this._numberOfNulls = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfTrues
+        public long? NumberOfTrues
         {
-            get { return this._numberOfTrues.GetValueOrDefault(); }
+            get { return this._numberOfTrues; }
             set { this._numberOfTrues = value; }
         }
 

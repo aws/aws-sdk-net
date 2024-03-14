@@ -82,7 +82,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeReturnPath())
                 {
                     context.Writer.WritePropertyName("IncludeReturnPath");
-                    context.Writer.Write(publicRequest.IncludeReturnPath);
+                    context.Writer.Write(publicRequest.IncludeReturnPath.Value);
                 }
 
                 if(publicRequest.IsSetSource())
@@ -99,7 +99,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseMiddleboxes())
                 {
                     context.Writer.WritePropertyName("UseMiddleboxes");
-                    context.Writer.Write(publicRequest.UseMiddleboxes);
+                    context.Writer.Write(publicRequest.UseMiddleboxes.Value);
                 }
 
                 writer.WriteObjectEnd();

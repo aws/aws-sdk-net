@@ -48,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockPublicSecurityGroupRules())
             {
                 context.Writer.WritePropertyName("BlockPublicSecurityGroupRules");
-                context.Writer.Write(requestObject.BlockPublicSecurityGroupRules);
+                context.Writer.Write(requestObject.BlockPublicSecurityGroupRules.Value);
             }
 
             if(requestObject.IsSetPermittedPublicSecurityGroupRuleRanges())

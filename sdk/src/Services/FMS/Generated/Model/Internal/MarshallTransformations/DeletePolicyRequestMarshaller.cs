@@ -70,7 +70,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteAllPolicyResources())
                 {
                     context.Writer.WritePropertyName("DeleteAllPolicyResources");
-                    context.Writer.Write(publicRequest.DeleteAllPolicyResources);
+                    context.Writer.Write(publicRequest.DeleteAllPolicyResources.Value);
                 }
 
                 if(publicRequest.IsSetPolicyId())

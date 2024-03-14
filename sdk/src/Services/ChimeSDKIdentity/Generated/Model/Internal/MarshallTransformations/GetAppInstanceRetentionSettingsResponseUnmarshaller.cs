@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InitiateDeletionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.InitiateDeletionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

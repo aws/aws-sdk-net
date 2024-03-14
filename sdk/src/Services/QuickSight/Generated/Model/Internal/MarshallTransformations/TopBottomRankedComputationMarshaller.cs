@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResultSize())
             {
                 context.Writer.WritePropertyName("ResultSize");
-                context.Writer.Write(requestObject.ResultSize);
+                context.Writer.Write(requestObject.ResultSize.Value);
             }
 
             if(requestObject.IsSetType())

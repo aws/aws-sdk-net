@@ -71,7 +71,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

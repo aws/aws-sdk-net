@@ -77,9 +77,9 @@ namespace Amazon.SecretsManager.Model
         /// The date the secret was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SecretsManager.Model
         /// secret, use <a>RestoreSecret</a>.
         /// </para>
         /// </summary>
-        public DateTime DeletedDate
+        public DateTime? DeletedDate
         {
-            get { return this._deletedDate.GetValueOrDefault(); }
+            get { return this._deletedDate; }
             set { this._deletedDate = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.SecretsManager.Model
         /// the secret has never been retrieved in the Region.
         /// </para>
         /// </summary>
-        public DateTime LastAccessedDate
+        public DateTime? LastAccessedDate
         {
-            get { return this._lastAccessedDate.GetValueOrDefault(); }
+            get { return this._lastAccessedDate; }
             set { this._lastAccessedDate = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.SecretsManager.Model
         /// The last date and time that this secret was modified in any way.
         /// </para>
         /// </summary>
-        public DateTime LastChangedDate
+        public DateTime? LastChangedDate
         {
-            get { return this._lastChangedDate.GetValueOrDefault(); }
+            get { return this._lastChangedDate; }
             set { this._lastChangedDate = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.SecretsManager.Model
         /// configured for rotation or rotation has been disabled, Secrets Manager returns null.
         /// </para>
         /// </summary>
-        public DateTime LastRotatedDate
+        public DateTime? LastRotatedDate
         {
-            get { return this._lastRotatedDate.GetValueOrDefault(); }
+            get { return this._lastRotatedDate; }
             set { this._lastRotatedDate = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.SecretsManager.Model
         /// If rotation is unsuccessful, this date may be in the past.
         /// </para>
         /// </summary>
-        public DateTime NextRotationDate
+        public DateTime? NextRotationDate
         {
-            get { return this._nextRotationDate.GetValueOrDefault(); }
+            get { return this._nextRotationDate; }
             set { this._nextRotationDate = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.SecretsManager.Model
         /// To turn on rotation, use <a>RotateSecret</a>. To turn off rotation, use <a>CancelRotateSecret</a>.
         /// </para>
         /// </summary>
-        public bool RotationEnabled
+        public bool? RotationEnabled
         {
-            get { return this._rotationEnabled.GetValueOrDefault(); }
+            get { return this._rotationEnabled; }
             set { this._rotationEnabled = value; }
         }
 

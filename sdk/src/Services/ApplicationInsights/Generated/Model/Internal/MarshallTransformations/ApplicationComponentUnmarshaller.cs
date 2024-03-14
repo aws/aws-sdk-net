@@ -83,7 +83,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Monitor", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Monitor = unmarshaller.Unmarshall(context);
                     continue;
                 }

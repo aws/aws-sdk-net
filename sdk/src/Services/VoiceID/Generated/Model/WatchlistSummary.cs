@@ -47,9 +47,9 @@ namespace Amazon.VoiceID.Model
         /// The timestamp of when the watchlist was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.VoiceID.Model
         /// Whether the specified watchlist is the default watchlist of a domain.
         /// </para>
         /// </summary>
-        public bool DefaultWatchlist
+        public bool? DefaultWatchlist
         {
-            get { return this._defaultWatchlist.GetValueOrDefault(); }
+            get { return this._defaultWatchlist; }
             set { this._defaultWatchlist = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.VoiceID.Model
         /// The timestamp of when the watchlist was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

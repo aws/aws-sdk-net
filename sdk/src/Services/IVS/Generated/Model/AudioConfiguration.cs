@@ -46,9 +46,9 @@ namespace Amazon.IVS.Model
         /// Number of audio channels.
         /// </para>
         /// </summary>
-        public long Channels
+        public long? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.IVS.Model
         /// Number of audio samples recorded per second.
         /// </para>
         /// </summary>
-        public long SampleRate
+        public long? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.IVS.Model
         /// The expected ingest bitrate (bits per second). This is configured in the encoder.
         /// </para>
         /// </summary>
-        public long TargetBitrate
+        public long? TargetBitrate
         {
-            get { return this._targetBitrate.GetValueOrDefault(); }
+            get { return this._targetBitrate; }
             set { this._targetBitrate = value; }
         }
 

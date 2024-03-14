@@ -79,9 +79,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The value of the recommendation summary.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

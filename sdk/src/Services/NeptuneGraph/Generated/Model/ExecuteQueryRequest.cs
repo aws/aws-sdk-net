@@ -193,9 +193,9 @@ namespace Amazon.NeptuneGraph.Model
         /// Specifies the query timeout duration, in milliseconds. (optional)
         /// </para>
         /// </summary>
-        public int QueryTimeoutMilliseconds
+        public int? QueryTimeoutMilliseconds
         {
-            get { return this._queryTimeoutMilliseconds.GetValueOrDefault(); }
+            get { return this._queryTimeoutMilliseconds; }
             set { this._queryTimeoutMilliseconds = value; }
         }
 

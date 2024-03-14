@@ -69,9 +69,9 @@ namespace Amazon.RDS.Model
         /// The time when the integration was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 

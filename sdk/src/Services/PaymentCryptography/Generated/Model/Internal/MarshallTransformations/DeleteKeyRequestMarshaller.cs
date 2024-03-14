@@ -70,7 +70,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteKeyInDays())
                 {
                     context.Writer.WritePropertyName("DeleteKeyInDays");
-                    context.Writer.Write(publicRequest.DeleteKeyInDays);
+                    context.Writer.Write(publicRequest.DeleteKeyInDays.Value);
                 }
 
                 if(publicRequest.IsSetKeyIdentifier())

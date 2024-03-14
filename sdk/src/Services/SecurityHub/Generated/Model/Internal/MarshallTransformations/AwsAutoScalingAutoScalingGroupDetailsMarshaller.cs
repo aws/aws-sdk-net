@@ -64,7 +64,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacityRebalance())
             {
                 context.Writer.WritePropertyName("CapacityRebalance");
-                context.Writer.Write(requestObject.CapacityRebalance);
+                context.Writer.Write(requestObject.CapacityRebalance.Value);
             }
 
             if(requestObject.IsSetCreatedTime())
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthCheckGracePeriod())
             {
                 context.Writer.WritePropertyName("HealthCheckGracePeriod");
-                context.Writer.Write(requestObject.HealthCheckGracePeriod);
+                context.Writer.Write(requestObject.HealthCheckGracePeriod.Value);
             }
 
             if(requestObject.IsSetHealthCheckType())

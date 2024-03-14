@@ -61,9 +61,9 @@ namespace Amazon.LookoutMetrics.Model
         /// The number of times that the measure appears.
         /// </para>
         /// </summary>
-        public int OccurrenceCount
+        public int? OccurrenceCount
         {
-            get { return this._occurrenceCount.GetValueOrDefault(); }
+            get { return this._occurrenceCount; }
             set { this._occurrenceCount = value; }
         }
 

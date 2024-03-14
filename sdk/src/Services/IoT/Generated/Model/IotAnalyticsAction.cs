@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// have more than 100 messages.
         /// </para>
         /// </summary>
-        public bool BatchMode
+        public bool? BatchMode
         {
-            get { return this._batchMode.GetValueOrDefault(); }
+            get { return this._batchMode; }
             set { this._batchMode = value; }
         }
 

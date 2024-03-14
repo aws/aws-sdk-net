@@ -43,9 +43,9 @@ namespace Amazon.Lightsail.Model
         /// The number of vCPUs the instance has.
         /// </para>
         /// </summary>
-        public int CpuCount
+        public int? CpuCount
         {
-            get { return this._cpuCount.GetValueOrDefault(); }
+            get { return this._cpuCount; }
             set { this._cpuCount = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.Lightsail.Model
         /// The amount of RAM in GB on the instance (<c>1.0</c>).
         /// </para>
         /// </summary>
-        public float RamSizeInGb
+        public float? RamSizeInGb
         {
-            get { return this._ramSizeInGb.GetValueOrDefault(); }
+            get { return this._ramSizeInGb; }
             set { this._ramSizeInGb = value; }
         }
 

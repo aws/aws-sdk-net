@@ -83,7 +83,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,13 +107,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isCancelled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCancelled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isTerminated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsTerminated = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,7 +173,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("propagateTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -185,7 +185,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("schedulingPriority", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SchedulingPriority = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -197,7 +197,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -215,7 +215,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stoppedAt", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

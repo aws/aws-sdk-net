@@ -65,25 +65,25 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("healthCheckIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("healthCheckTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("healthyThresholdCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthyThresholdCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("port", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("unhealthyThresholdCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnhealthyThresholdCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

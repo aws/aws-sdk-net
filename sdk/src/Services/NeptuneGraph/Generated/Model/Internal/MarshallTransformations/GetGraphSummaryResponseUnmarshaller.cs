@@ -59,7 +59,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastStatisticsComputationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastStatisticsComputationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

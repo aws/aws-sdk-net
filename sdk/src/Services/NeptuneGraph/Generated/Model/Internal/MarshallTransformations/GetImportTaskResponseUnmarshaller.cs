@@ -53,7 +53,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("attemptNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AttemptNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -42,9 +42,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The port that is used by the Listener.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

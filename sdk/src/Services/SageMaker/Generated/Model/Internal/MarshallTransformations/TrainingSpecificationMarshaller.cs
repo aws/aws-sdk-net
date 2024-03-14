@@ -118,7 +118,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSupportsDistributedTraining())
             {
                 context.Writer.WritePropertyName("SupportsDistributedTraining");
-                context.Writer.Write(requestObject.SupportsDistributedTraining);
+                context.Writer.Write(requestObject.SupportsDistributedTraining.Value);
             }
 
             if(requestObject.IsSetTrainingChannels())

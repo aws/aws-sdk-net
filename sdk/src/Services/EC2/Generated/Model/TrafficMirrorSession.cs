@@ -108,9 +108,9 @@ namespace Amazon.EC2.Model
         /// entire packet
         /// </para>
         /// </summary>
-        public int PacketLength
+        public int? PacketLength
         {
-            get { return this._packetLength.GetValueOrDefault(); }
+            get { return this._packetLength; }
             set { this._packetLength = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.EC2.Model
         /// Valid values are 1-32766.
         /// </para>
         /// </summary>
-        public int SessionNumber
+        public int? SessionNumber
         {
-            get { return this._sessionNumber.GetValueOrDefault(); }
+            get { return this._sessionNumber; }
             set { this._sessionNumber = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.EC2.Model
         /// The virtual network ID associated with the Traffic Mirror session.
         /// </para>
         /// </summary>
-        public int VirtualNetworkId
+        public int? VirtualNetworkId
         {
-            get { return this._virtualNetworkId.GetValueOrDefault(); }
+            get { return this._virtualNetworkId; }
             set { this._virtualNetworkId = value; }
         }
 

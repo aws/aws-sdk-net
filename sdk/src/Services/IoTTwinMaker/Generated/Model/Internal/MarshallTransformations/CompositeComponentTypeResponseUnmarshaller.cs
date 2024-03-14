@@ -71,7 +71,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isInherited", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsInherited = unmarshaller.Unmarshall(context);
                     continue;
                 }

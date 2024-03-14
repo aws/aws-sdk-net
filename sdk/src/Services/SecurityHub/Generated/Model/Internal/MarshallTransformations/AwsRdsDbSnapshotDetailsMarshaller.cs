@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage);
+                context.Writer.Write(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetEngine())
@@ -96,7 +96,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIamDatabaseAuthenticationEnabled())
             {
                 context.Writer.WritePropertyName("IamDatabaseAuthenticationEnabled");
-                context.Writer.Write(requestObject.IamDatabaseAuthenticationEnabled);
+                context.Writer.Write(requestObject.IamDatabaseAuthenticationEnabled.Value);
             }
 
             if(requestObject.IsSetInstanceCreateTime())
@@ -108,7 +108,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -138,13 +138,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentProgress())
             {
                 context.Writer.WritePropertyName("PercentProgress");
-                context.Writer.Write(requestObject.PercentProgress);
+                context.Writer.Write(requestObject.PercentProgress.Value);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProcessorFeatures())

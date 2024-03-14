@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.GameLift")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon GameLift. Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.")]
 #elif NETCOREAPP3_1

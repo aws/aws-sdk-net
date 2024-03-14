@@ -66,7 +66,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold);
+                context.Writer.Write(requestObject.Threshold.Value);
             }
 
             if(requestObject.IsSetThresholdType())

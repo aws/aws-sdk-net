@@ -104,9 +104,9 @@ namespace Amazon.IdentityManagement.Model
         /// Specifies whether the user is required to set a new password on next sign-in.
         /// </para>
         /// </summary>
-        public bool PasswordResetRequired
+        public bool? PasswordResetRequired
         {
-            get { return this._passwordResetRequired.GetValueOrDefault(); }
+            get { return this._passwordResetRequired; }
             set { this._passwordResetRequired = value; }
         }
 

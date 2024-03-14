@@ -65,9 +65,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// When the status of the execution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// When the execution began.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

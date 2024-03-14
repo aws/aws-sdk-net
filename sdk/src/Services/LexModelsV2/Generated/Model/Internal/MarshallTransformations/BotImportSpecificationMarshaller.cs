@@ -79,7 +79,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleSessionTTLInSeconds())
             {
                 context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                context.Writer.Write(requestObject.IdleSessionTTLInSeconds);
+                context.Writer.Write(requestObject.IdleSessionTTLInSeconds.Value);
             }
 
             if(requestObject.IsSetRoleArn())

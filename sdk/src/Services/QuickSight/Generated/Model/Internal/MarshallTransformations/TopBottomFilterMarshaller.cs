@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit);
+                context.Writer.Write(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetParameterName())

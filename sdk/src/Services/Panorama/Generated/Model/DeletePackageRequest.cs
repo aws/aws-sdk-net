@@ -51,9 +51,9 @@ namespace Amazon.Panorama.Model
         /// package's artifacts from Amazon S3.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

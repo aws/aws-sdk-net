@@ -46,9 +46,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InstancesToUpdateOnRollback
+        public int? InstancesToUpdateOnRollback
         {
-            get { return this._instancesToUpdateOnRollback.GetValueOrDefault(); }
+            get { return this._instancesToUpdateOnRollback; }
             set { this._instancesToUpdateOnRollback = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int PercentageCompleteOnRollback
+        public int? PercentageCompleteOnRollback
         {
-            get { return this._percentageCompleteOnRollback.GetValueOrDefault(); }
+            get { return this._percentageCompleteOnRollback; }
             set { this._percentageCompleteOnRollback = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.AutoScaling.Model
         /// The date and time at which the rollback began.
         /// </para>
         /// </summary>
-        public DateTime RollbackStartTime
+        public DateTime? RollbackStartTime
         {
-            get { return this._rollbackStartTime.GetValueOrDefault(); }
+            get { return this._rollbackStartTime; }
             set { this._rollbackStartTime = value; }
         }
 

@@ -89,7 +89,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FractionDigits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FractionDigits = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,13 +125,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseBlankCellFormat", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseBlankCellFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseGrouping", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseGrouping = unmarshaller.Unmarshall(context);
                     continue;
                 }

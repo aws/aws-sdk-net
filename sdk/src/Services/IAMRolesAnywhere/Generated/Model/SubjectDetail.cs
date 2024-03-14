@@ -49,9 +49,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the subject was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The enabled status of the subject.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
         /// </para>
         /// </summary>
-        public DateTime LastSeenAt
+        public DateTime? LastSeenAt
         {
-            get { return this._lastSeenAt.GetValueOrDefault(); }
+            get { return this._lastSeenAt; }
             set { this._lastSeenAt = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the subject was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

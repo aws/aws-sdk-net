@@ -84,9 +84,9 @@ namespace Amazon.Kafka.Model
         /// The default value is true.
         /// </para>
         /// </summary>
-        public bool InCluster
+        public bool? InCluster
         {
-            get { return this._inCluster.GetValueOrDefault(); }
+            get { return this._inCluster; }
             set { this._inCluster = value; }
         }
 

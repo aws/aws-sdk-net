@@ -61,9 +61,9 @@ namespace Amazon.Connect.Model
         /// The threshold value to compare.
         /// </para>
         /// </summary>
-        public double ThresholdValue
+        public double? ThresholdValue
         {
-            get { return this._thresholdValue.GetValueOrDefault(); }
+            get { return this._thresholdValue; }
             set { this._thresholdValue = value; }
         }
 

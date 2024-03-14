@@ -117,13 +117,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("resourceDiscoveryAssociationCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ResourceDiscoveryAssociationCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("scopeCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ScopeCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

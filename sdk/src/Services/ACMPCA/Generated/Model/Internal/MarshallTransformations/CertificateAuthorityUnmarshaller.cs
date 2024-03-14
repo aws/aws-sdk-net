@@ -77,7 +77,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,19 +95,19 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastStateChangeAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastStateChangeAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotAfter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NotAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotBefore", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RestorableUntil", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RestorableUntil = unmarshaller.Unmarshall(context);
                     continue;
                 }

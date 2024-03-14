@@ -83,13 +83,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableCapture", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableCapture = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InitialSamplingPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InitialSamplingPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

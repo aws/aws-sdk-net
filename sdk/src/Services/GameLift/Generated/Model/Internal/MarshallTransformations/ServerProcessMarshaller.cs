@@ -48,7 +48,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConcurrentExecutions())
             {
                 context.Writer.WritePropertyName("ConcurrentExecutions");
-                context.Writer.Write(requestObject.ConcurrentExecutions);
+                context.Writer.Write(requestObject.ConcurrentExecutions.Value);
             }
 
             if(requestObject.IsSetLaunchPath())

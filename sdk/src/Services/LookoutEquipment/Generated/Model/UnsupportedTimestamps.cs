@@ -42,9 +42,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalNumberOfUnsupportedTimestamps
+        public int? TotalNumberOfUnsupportedTimestamps
         {
-            get { return this._totalNumberOfUnsupportedTimestamps.GetValueOrDefault(); }
+            get { return this._totalNumberOfUnsupportedTimestamps; }
             set { this._totalNumberOfUnsupportedTimestamps = value; }
         }
 

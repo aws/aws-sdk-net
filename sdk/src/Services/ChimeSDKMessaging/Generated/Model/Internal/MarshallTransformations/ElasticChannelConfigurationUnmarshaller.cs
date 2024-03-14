@@ -65,19 +65,19 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaximumSubChannels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumSubChannels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumMembershipPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumMembershipPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetMembershipsPerSubChannel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetMembershipsPerSubChannel = unmarshaller.Unmarshall(context);
                     continue;
                 }

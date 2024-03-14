@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// The port on which the EC2 instance is listening.
         /// </para>
         /// </summary>
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 

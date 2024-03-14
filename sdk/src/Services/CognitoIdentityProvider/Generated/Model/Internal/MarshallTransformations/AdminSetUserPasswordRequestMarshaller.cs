@@ -76,7 +76,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPermanent())
                 {
                     context.Writer.WritePropertyName("Permanent");
-                    context.Writer.Write(publicRequest.Permanent);
+                    context.Writer.Write(publicRequest.Permanent.Value);
                 }
 
                 if(publicRequest.IsSetUsername())

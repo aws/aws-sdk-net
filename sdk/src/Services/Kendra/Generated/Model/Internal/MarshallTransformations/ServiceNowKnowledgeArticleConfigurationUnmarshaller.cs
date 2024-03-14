@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CrawlAttachments", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlAttachments = unmarshaller.Unmarshall(context);
                     continue;
                 }

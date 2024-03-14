@@ -65,25 +65,25 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EndDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IdleSinceDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.IdleSinceDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

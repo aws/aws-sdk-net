@@ -54,7 +54,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPrice())
             {
                 context.Writer.WritePropertyName("MaxPrice");
-                context.Writer.Write(requestObject.MaxPrice);
+                context.Writer.Write(requestObject.MaxPrice.Value);
             }
 
         }

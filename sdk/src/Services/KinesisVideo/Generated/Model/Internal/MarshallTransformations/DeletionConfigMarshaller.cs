@@ -48,13 +48,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteAfterUpload())
             {
                 context.Writer.WritePropertyName("DeleteAfterUpload");
-                context.Writer.Write(requestObject.DeleteAfterUpload);
+                context.Writer.Write(requestObject.DeleteAfterUpload.Value);
             }
 
             if(requestObject.IsSetEdgeRetentionInHours())
             {
                 context.Writer.WritePropertyName("EdgeRetentionInHours");
-                context.Writer.Write(requestObject.EdgeRetentionInHours);
+                context.Writer.Write(requestObject.EdgeRetentionInHours.Value);
             }
 
             if(requestObject.IsSetLocalSizeConfig())

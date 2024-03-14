@@ -107,9 +107,9 @@ namespace Amazon.NetworkManager.Model
         /// forward path analysis does not succeed.
         /// </para>
         /// </summary>
-        public bool IncludeReturnPath
+        public bool? IncludeReturnPath
         {
-            get { return this._includeReturnPath.GetValueOrDefault(); }
+            get { return this._includeReturnPath; }
             set { this._includeReturnPath = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.NetworkManager.Model
         /// The time that the analysis started.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.NetworkManager.Model
         /// Indicates whether to include the location of middlebox appliances in the route analysis.
         /// </para>
         /// </summary>
-        public bool UseMiddleboxes
+        public bool? UseMiddleboxes
         {
-            get { return this._useMiddleboxes.GetValueOrDefault(); }
+            get { return this._useMiddleboxes; }
             set { this._useMiddleboxes = value; }
         }
 

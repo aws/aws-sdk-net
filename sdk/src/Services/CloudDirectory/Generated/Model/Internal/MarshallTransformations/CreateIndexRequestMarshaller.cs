@@ -68,7 +68,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsUnique())
                 {
                     context.Writer.WritePropertyName("IsUnique");
-                    context.Writer.Write(publicRequest.IsUnique);
+                    context.Writer.Write(publicRequest.IsUnique.Value);
                 }
 
                 if(publicRequest.IsSetLinkName())

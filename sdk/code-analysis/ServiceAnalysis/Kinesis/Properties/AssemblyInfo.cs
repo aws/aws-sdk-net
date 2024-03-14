@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Kinesis")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Kinesis. Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

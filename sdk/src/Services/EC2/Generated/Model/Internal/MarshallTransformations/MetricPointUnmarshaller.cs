@@ -56,13 +56,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("endDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("startDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("value", targetDepth))
                     {
-                        var unmarshaller = FloatUnmarshaller.Instance;
+                        var unmarshaller = NullableFloatUnmarshaller.Instance;
                         unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }

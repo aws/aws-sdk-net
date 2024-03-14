@@ -77,13 +77,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalBaseCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalBaseCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalReadCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalReadCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -64,9 +64,9 @@ namespace Amazon.MediaTailor.Model
         /// value is 1.
         /// </para>
         /// </summary>
-        public int SegmentationEventId
+        public int? SegmentationEventId
         {
-            get { return this._segmentationEventId.GetValueOrDefault(); }
+            get { return this._segmentationEventId; }
             set { this._segmentationEventId = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.MediaTailor.Model
         /// must be between 0 and 256, inclusive. The default value is 48.
         /// </para>
         /// </summary>
-        public int SegmentationTypeId
+        public int? SegmentationTypeId
         {
-            get { return this._segmentationTypeId.GetValueOrDefault(); }
+            get { return this._segmentationTypeId; }
             set { this._segmentationTypeId = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MediaTailor.Model
         /// must be between 0 and 256, inclusive. The default value is 14.
         /// </para>
         /// </summary>
-        public int SegmentationUpidType
+        public int? SegmentationUpidType
         {
-            get { return this._segmentationUpidType.GetValueOrDefault(); }
+            get { return this._segmentationUpidType; }
             set { this._segmentationUpidType = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.MediaTailor.Model
         /// 0 and 256, inclusive. The default value is 0.
         /// </para>
         /// </summary>
-        public int SegmentNum
+        public int? SegmentNum
         {
-            get { return this._segmentNum.GetValueOrDefault(); }
+            get { return this._segmentNum; }
             set { this._segmentNum = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.MediaTailor.Model
         /// be between 0 and 256, inclusive. The default value is 0.
         /// </para>
         /// </summary>
-        public int SegmentsExpected
+        public int? SegmentsExpected
         {
-            get { return this._segmentsExpected.GetValueOrDefault(); }
+            get { return this._segmentsExpected; }
             set { this._segmentsExpected = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.MediaTailor.Model
         /// must be between 0 and 256, inclusive. The defualt value is null.
         /// </para>
         /// </summary>
-        public int SubSegmentNum
+        public int? SubSegmentNum
         {
-            get { return this._subSegmentNum.GetValueOrDefault(); }
+            get { return this._subSegmentNum; }
             set { this._subSegmentNum = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.MediaTailor.Model
         /// must be between 0 and 256, inclusive. The default value is null.
         /// </para>
         /// </summary>
-        public int SubSegmentsExpected
+        public int? SubSegmentsExpected
         {
-            get { return this._subSegmentsExpected.GetValueOrDefault(); }
+            get { return this._subSegmentsExpected; }
             set { this._subSegmentsExpected = value; }
         }
 

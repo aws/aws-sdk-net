@@ -61,9 +61,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The queued position.
         /// </para>
         /// </summary>
-        public int QueuedPosition
+        public int? QueuedPosition
         {
-            get { return this._queuedPosition.GetValueOrDefault(); }
+            get { return this._queuedPosition; }
             set { this._queuedPosition = value; }
         }
 

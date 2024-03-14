@@ -103,9 +103,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=500)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 

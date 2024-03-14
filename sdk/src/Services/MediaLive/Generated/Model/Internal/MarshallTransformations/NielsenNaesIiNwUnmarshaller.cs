@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sid", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Sid = unmarshaller.Unmarshall(context);
                     continue;
                 }

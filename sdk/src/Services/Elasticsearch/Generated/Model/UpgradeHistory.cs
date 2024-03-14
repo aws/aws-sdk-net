@@ -44,9 +44,9 @@ namespace Amazon.Elasticsearch.Model
         /// UTC Timestamp at which the Upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Ep2s3hostlabel")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Endpoints 2.0 s3 host-label. Endpoints 2.0 isValidHostLabel tests")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Endpoints 2.0 s3 host-label. Endpoints 2.0 isValidHostLabel tests")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Endpoints 2.0 s3 host-label. Endpoints 2.0 isValidHostLabel tests")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Endpoints 2.0 s3 host-label. Endpoints 2.0 isValidHostLabel tests")]
 #elif NETCOREAPP3_1

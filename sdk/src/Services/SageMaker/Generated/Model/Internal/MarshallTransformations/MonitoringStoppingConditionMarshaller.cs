@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("MaxRuntimeInSeconds");
-                context.Writer.Write(requestObject.MaxRuntimeInSeconds);
+                context.Writer.Write(requestObject.MaxRuntimeInSeconds.Value);
             }
 
         }

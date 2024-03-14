@@ -108,9 +108,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which the <c>AppInstanceUser</c> created the channel.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which a member sent the last message in the channel.
         /// </para>
         /// </summary>
-        public DateTime LastMessageTimestamp
+        public DateTime? LastMessageTimestamp
         {
-            get { return this._lastMessageTimestamp.GetValueOrDefault(); }
+            get { return this._lastMessageTimestamp; }
             set { this._lastMessageTimestamp = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which a channel was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

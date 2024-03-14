@@ -141,9 +141,9 @@ namespace Amazon.RedshiftServerless.Model
         /// Region.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionPeriod
+        public int? SnapshotRetentionPeriod
         {
-            get { return this._snapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._snapshotRetentionPeriod; }
             set { this._snapshotRetentionPeriod = value; }
         }
 

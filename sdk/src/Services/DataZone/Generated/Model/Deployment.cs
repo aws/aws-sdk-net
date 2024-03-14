@@ -118,9 +118,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether the last deployment of the environment is complete.
         /// </para>
         /// </summary>
-        public bool IsDeploymentComplete
+        public bool? IsDeploymentComplete
         {
-            get { return this._isDeploymentComplete.GetValueOrDefault(); }
+            get { return this._isDeploymentComplete; }
             set { this._isDeploymentComplete = value; }
         }
 

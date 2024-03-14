@@ -49,9 +49,9 @@ namespace Amazon.Private5G.Model
         /// The creation time of this device identifier.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

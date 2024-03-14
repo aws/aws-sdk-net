@@ -71,7 +71,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CopyTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Encrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }

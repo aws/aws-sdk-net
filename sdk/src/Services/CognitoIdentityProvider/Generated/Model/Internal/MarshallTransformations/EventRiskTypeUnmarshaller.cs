@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CompromisedCredentialsDetected", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CompromisedCredentialsDetected = unmarshaller.Unmarshall(context);
                     continue;
                 }

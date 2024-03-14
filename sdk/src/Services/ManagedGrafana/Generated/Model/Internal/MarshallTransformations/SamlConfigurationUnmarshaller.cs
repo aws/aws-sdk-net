@@ -83,7 +83,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("loginValidityDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LoginValidityDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

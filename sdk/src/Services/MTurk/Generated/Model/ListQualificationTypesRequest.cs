@@ -48,9 +48,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.MTurk.Model
         /// If false, the operation returns all Qualification types. 
         /// </para>
         /// </summary>
-        public bool MustBeOwnedByCaller
+        public bool? MustBeOwnedByCaller
         {
-            get { return this._mustBeOwnedByCaller.GetValueOrDefault(); }
+            get { return this._mustBeOwnedByCaller; }
             set { this._mustBeOwnedByCaller = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool MustBeRequestable
+        public bool? MustBeRequestable
         {
-            get { return this._mustBeRequestable.GetValueOrDefault(); }
+            get { return this._mustBeRequestable; }
             set { this._mustBeRequestable = value; }
         }
 

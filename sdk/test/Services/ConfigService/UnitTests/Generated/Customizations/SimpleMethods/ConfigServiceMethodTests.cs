@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.ConfigService.Model;
 using Amazon.ConfigService;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class ConfigServiceMethodCustomizationsTests

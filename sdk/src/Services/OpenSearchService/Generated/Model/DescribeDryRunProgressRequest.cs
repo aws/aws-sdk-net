@@ -85,9 +85,9 @@ namespace Amazon.OpenSearchService.Model
         /// specifies the updates that you're planning to make on the domain.
         /// </para>
         /// </summary>
-        public bool LoadDryRunConfig
+        public bool? LoadDryRunConfig
         {
-            get { return this._loadDryRunConfig.GetValueOrDefault(); }
+            get { return this._loadDryRunConfig; }
             set { this._loadDryRunConfig = value; }
         }
 

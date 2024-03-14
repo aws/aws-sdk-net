@@ -63,9 +63,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The time when the blacklisting event occurred.
         /// </para>
         /// </summary>
-        public DateTime ListingTime
+        public DateTime? ListingTime
         {
-            get { return this._listingTime.GetValueOrDefault(); }
+            get { return this._listingTime; }
             set { this._listingTime = value; }
         }
 

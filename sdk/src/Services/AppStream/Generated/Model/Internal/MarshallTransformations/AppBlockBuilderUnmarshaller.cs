@@ -83,7 +83,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableDefaultInternetAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableDefaultInternetAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

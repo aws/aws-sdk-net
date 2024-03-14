@@ -65,7 +65,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableMagneticStoreWrites", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMagneticStoreWrites = unmarshaller.Unmarshall(context);
                     continue;
                 }

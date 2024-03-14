@@ -65,7 +65,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PercentageValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentageValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

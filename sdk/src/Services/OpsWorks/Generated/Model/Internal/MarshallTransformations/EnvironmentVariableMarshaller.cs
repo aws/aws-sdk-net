@@ -54,7 +54,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSecure())
             {
                 context.Writer.WritePropertyName("Secure");
-                context.Writer.Write(requestObject.Secure);
+                context.Writer.Write(requestObject.Secure.Value);
             }
 
             if(requestObject.IsSetValue())

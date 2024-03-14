@@ -70,13 +70,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActualEndTime())
                 {
                     context.Writer.WritePropertyName("ActualEndTime");
-                    context.Writer.Write(publicRequest.ActualEndTime);
+                    context.Writer.Write(publicRequest.ActualEndTime.Value);
                 }
 
                 if(publicRequest.IsSetActualStartTime())
                 {
                     context.Writer.WritePropertyName("ActualStartTime");
-                    context.Writer.Write(publicRequest.ActualStartTime);
+                    context.Writer.Write(publicRequest.ActualStartTime.Value);
                 }
 
                 if(publicRequest.IsSetCategory())
@@ -152,19 +152,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPlannedEndTime())
                 {
                     context.Writer.WritePropertyName("PlannedEndTime");
-                    context.Writer.Write(publicRequest.PlannedEndTime);
+                    context.Writer.Write(publicRequest.PlannedEndTime.Value);
                 }
 
                 if(publicRequest.IsSetPlannedStartTime())
                 {
                     context.Writer.WritePropertyName("PlannedStartTime");
-                    context.Writer.Write(publicRequest.PlannedStartTime);
+                    context.Writer.Write(publicRequest.PlannedStartTime.Value);
                 }
 
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("Priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetRelatedOpsItems())

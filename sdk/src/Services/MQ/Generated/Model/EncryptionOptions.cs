@@ -64,9 +64,9 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool UseAwsOwnedKey
+        public bool? UseAwsOwnedKey
         {
-            get { return this._useAwsOwnedKey.GetValueOrDefault(); }
+            get { return this._useAwsOwnedKey; }
             set { this._useAwsOwnedKey = value; }
         }
 

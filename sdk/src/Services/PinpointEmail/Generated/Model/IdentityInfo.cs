@@ -98,9 +98,9 @@ namespace Amazon.PinpointEmail.Model
         /// own the identity, and that you authorize Amazon Pinpoint to send email from that identity.
         /// </para>
         /// </summary>
-        public bool SendingEnabled
+        public bool? SendingEnabled
         {
-            get { return this._sendingEnabled.GetValueOrDefault(); }
+            get { return this._sendingEnabled; }
             set { this._sendingEnabled = value; }
         }
 

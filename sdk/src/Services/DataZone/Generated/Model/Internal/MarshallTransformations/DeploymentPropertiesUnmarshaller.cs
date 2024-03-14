@@ -65,13 +65,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("endTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

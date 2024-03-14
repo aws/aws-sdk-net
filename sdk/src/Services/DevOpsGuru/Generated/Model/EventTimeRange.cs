@@ -45,9 +45,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FromTime
+        public DateTime? FromTime
         {
-            get { return this._fromTime.GetValueOrDefault(); }
+            get { return this._fromTime; }
             set { this._fromTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ToTime
+        public DateTime? ToTime
         {
-            get { return this._toTime.GetValueOrDefault(); }
+            get { return this._toTime; }
             set { this._toTime = value; }
         }
 

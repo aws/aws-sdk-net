@@ -62,9 +62,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NewGameSessionsPerCreator
+        public int? NewGameSessionsPerCreator
         {
-            get { return this._newGameSessionsPerCreator.GetValueOrDefault(); }
+            get { return this._newGameSessionsPerCreator; }
             set { this._newGameSessionsPerCreator = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PolicyPeriodInMinutes
+        public int? PolicyPeriodInMinutes
         {
-            get { return this._policyPeriodInMinutes.GetValueOrDefault(); }
+            get { return this._policyPeriodInMinutes; }
             set { this._policyPeriodInMinutes = value; }
         }
 

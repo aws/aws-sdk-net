@@ -80,9 +80,9 @@ namespace Amazon.Connect.Model
         /// The start timestamp of the agent's status.
         /// </para>
         /// </summary>
-        public DateTime StatusStartTimestamp
+        public DateTime? StatusStartTimestamp
         {
-            get { return this._statusStartTimestamp.GetValueOrDefault(); }
+            get { return this._statusStartTimestamp; }
             set { this._statusStartTimestamp = value; }
         }
 

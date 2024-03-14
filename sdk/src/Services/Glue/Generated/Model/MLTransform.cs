@@ -59,9 +59,9 @@ namespace Amazon.Glue.Model
         /// A timestamp. The time and date that this machine learning transform was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Glue.Model
         /// labeling file.
         /// </para>
         /// </summary>
-        public int LabelCount
+        public int? LabelCount
         {
-            get { return this._labelCount.GetValueOrDefault(); }
+            get { return this._labelCount; }
             set { this._labelCount = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.Glue.Model
         /// A timestamp. The last point in time when this machine learning transform was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.Glue.Model
         /// <c>MaxCapacity</c> field is set automatically and becomes read-only.
         /// </para>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.Glue.Model
         /// transform fails.
         /// </para>
         /// </summary>
-        public int MaxRetries
+        public int? MaxRetries
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
+            get { return this._maxRetries; }
             set { this._maxRetries = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.Glue.Model
         /// If <c>WorkerType</c> is set, then <c>NumberOfWorkers</c> is required (and vice versa).
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -400,9 +400,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

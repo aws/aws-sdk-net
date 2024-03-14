@@ -71,7 +71,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("itemCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("redriveCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RedriveCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("redriveDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RedriveDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

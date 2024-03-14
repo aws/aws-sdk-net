@@ -47,9 +47,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid values depend
         /// on rate control mode and profile.
         /// </summary>
-        public double Bitrate
+        public double? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SampleRate. Sample rate in Hz. Valid values depend on rate
         /// control mode and profile.
         /// </summary>
-        public double SampleRate
+        public double? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

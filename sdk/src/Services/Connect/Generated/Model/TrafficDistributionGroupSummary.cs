@@ -105,9 +105,9 @@ namespace Amazon.Connect.Model
         /// deleting a replica.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

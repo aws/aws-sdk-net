@@ -95,9 +95,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// continuous, because the file uploader uploads a chunk at a time.
         /// </para>
         /// </summary>
-        public bool IsResumable
+        public bool? IsResumable
         {
-            get { return this._isResumable.GetValueOrDefault(); }
+            get { return this._isResumable; }
             set { this._isResumable = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// value is an unlimited number of files.
         /// </para>
         /// </summary>
-        public int MaxFileCount
+        public int? MaxFileCount
         {
-            get { return this._maxFileCount.GetValueOrDefault(); }
+            get { return this._maxFileCount; }
             set { this._maxFileCount = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// is an unlimited file size.
         /// </para>
         /// </summary>
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// upload. The default value is <c>true</c> to display the image preview.
         /// </para>
         /// </summary>
-        public bool ShowThumbnails
+        public bool? ShowThumbnails
         {
-            get { return this._showThumbnails.GetValueOrDefault(); }
+            get { return this._showThumbnails; }
             set { this._showThumbnails = value; }
         }
 

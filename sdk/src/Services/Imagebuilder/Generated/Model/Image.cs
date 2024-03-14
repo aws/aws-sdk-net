@@ -178,9 +178,9 @@ namespace Amazon.Imagebuilder.Model
         /// date.
         /// </para>
         /// </summary>
-        public DateTime DeprecationTime
+        public DateTime? DeprecationTime
         {
-            get { return this._deprecationTime.GetValueOrDefault(); }
+            get { return this._deprecationTime; }
             set { this._deprecationTime = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.Imagebuilder.Model
         /// as the operating system (OS) version and package list.
         /// </para>
         /// </summary>
-        public bool EnhancedImageMetadataEnabled
+        public bool? EnhancedImageMetadataEnabled
         {
-            get { return this._enhancedImageMetadataEnabled.GetValueOrDefault(); }
+            get { return this._enhancedImageMetadataEnabled; }
             set { this._enhancedImageMetadataEnabled = value; }
         }
 

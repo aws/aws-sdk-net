@@ -65,7 +65,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("length", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Length = unmarshaller.Unmarshall(context);
                     continue;
                 }

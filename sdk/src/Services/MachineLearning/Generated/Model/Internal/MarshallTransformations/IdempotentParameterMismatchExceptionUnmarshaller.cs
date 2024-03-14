@@ -66,7 +66,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("code", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }

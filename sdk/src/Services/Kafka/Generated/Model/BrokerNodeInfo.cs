@@ -64,9 +64,9 @@ namespace Amazon.Kafka.Model
         /// The ID of the broker.
         /// </para>
         /// </summary>
-        public double BrokerId
+        public double? BrokerId
         {
-            get { return this._brokerId.GetValueOrDefault(); }
+            get { return this._brokerId; }
             set { this._brokerId = value; }
         }
 

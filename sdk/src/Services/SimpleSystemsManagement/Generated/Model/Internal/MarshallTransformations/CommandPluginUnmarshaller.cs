@@ -95,19 +95,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ResponseCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResponseFinishDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ResponseFinishDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResponseStartDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ResponseStartDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

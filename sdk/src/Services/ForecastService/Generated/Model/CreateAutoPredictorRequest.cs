@@ -145,9 +145,9 @@ namespace Amazon.ForecastService.Model
         /// Create an Explainability resource for the predictor.
         /// </para>
         /// </summary>
-        public bool ExplainPredictor
+        public bool? ExplainPredictor
         {
-            get { return this._explainPredictor.GetValueOrDefault(); }
+            get { return this._explainPredictor; }
             set { this._explainPredictor = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.ForecastService.Model
         /// providing longer time-series in the dataset.
         /// </para>
         /// </summary>
-        public int ForecastHorizon
+        public int? ForecastHorizon
         {
-            get { return this._forecastHorizon.GetValueOrDefault(); }
+            get { return this._forecastHorizon; }
             set { this._forecastHorizon = value; }
         }
 

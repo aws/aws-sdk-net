@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int LoadBalancerPort
+        public int? LoadBalancerPort
         {
-            get { return this._loadBalancerPort.GetValueOrDefault(); }
+            get { return this._loadBalancerPort; }
             set { this._loadBalancerPort = value; }
         }
 

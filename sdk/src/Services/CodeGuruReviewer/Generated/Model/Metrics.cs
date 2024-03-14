@@ -43,9 +43,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Total number of recommendations found in the code review.
         /// </para>
         /// </summary>
-        public long FindingsCount
+        public long? FindingsCount
         {
-            get { return this._findingsCount.GetValueOrDefault(); }
+            get { return this._findingsCount; }
             set { this._findingsCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// blank lines.
         /// </para>
         /// </summary>
-        public long MeteredLinesOfCodeCount
+        public long? MeteredLinesOfCodeCount
         {
-            get { return this._meteredLinesOfCodeCount.GetValueOrDefault(); }
+            get { return this._meteredLinesOfCodeCount; }
             set { this._meteredLinesOfCodeCount = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// 
         /// </para>
         /// </summary>
-        public long SuppressedLinesOfCodeCount
+        public long? SuppressedLinesOfCodeCount
         {
-            get { return this._suppressedLinesOfCodeCount.GetValueOrDefault(); }
+            get { return this._suppressedLinesOfCodeCount; }
             set { this._suppressedLinesOfCodeCount = value; }
         }
 

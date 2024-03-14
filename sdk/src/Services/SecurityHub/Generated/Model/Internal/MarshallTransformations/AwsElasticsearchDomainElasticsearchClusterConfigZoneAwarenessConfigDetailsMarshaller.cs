@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZoneCount())
             {
                 context.Writer.WritePropertyName("AvailabilityZoneCount");
-                context.Writer.Write(requestObject.AvailabilityZoneCount);
+                context.Writer.Write(requestObject.AvailabilityZoneCount.Value);
             }
 
         }

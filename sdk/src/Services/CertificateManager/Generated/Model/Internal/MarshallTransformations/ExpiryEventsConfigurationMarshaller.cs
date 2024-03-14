@@ -48,7 +48,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDaysBeforeExpiry())
             {
                 context.Writer.WritePropertyName("DaysBeforeExpiry");
-                context.Writer.Write(requestObject.DaysBeforeExpiry);
+                context.Writer.Write(requestObject.DaysBeforeExpiry.Value);
             }
 
         }

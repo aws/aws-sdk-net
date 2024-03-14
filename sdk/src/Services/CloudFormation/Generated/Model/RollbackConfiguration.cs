@@ -73,9 +73,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=180)]
-        public int MonitoringTimeInMinutes
+        public int? MonitoringTimeInMinutes
         {
-            get { return this._monitoringTimeInMinutes.GetValueOrDefault(); }
+            get { return this._monitoringTimeInMinutes; }
             set { this._monitoringTimeInMinutes = value; }
         }
 

@@ -65,49 +65,49 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ErroredActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErroredActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailedActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RunningActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StoppedActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StoppedActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SucceededActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SucceededActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeoutActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WaitingActions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WaitingActions = unmarshaller.Unmarshall(context);
                     continue;
                 }

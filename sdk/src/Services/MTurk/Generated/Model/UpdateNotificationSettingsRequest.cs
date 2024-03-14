@@ -54,9 +54,9 @@ namespace Amazon.MTurk.Model
         /// or the Active parameter for the call to UpdateNotificationSettings to succeed. 
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 

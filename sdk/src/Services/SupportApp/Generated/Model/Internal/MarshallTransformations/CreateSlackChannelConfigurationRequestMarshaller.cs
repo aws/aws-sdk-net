@@ -86,7 +86,7 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNotifyOnAddCorrespondenceToCase())
                 {
                     context.Writer.WritePropertyName("notifyOnAddCorrespondenceToCase");
-                    context.Writer.Write(publicRequest.NotifyOnAddCorrespondenceToCase);
+                    context.Writer.Write(publicRequest.NotifyOnAddCorrespondenceToCase.Value);
                 }
 
                 if(publicRequest.IsSetNotifyOnCaseSeverity())
@@ -98,13 +98,13 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNotifyOnCreateOrReopenCase())
                 {
                     context.Writer.WritePropertyName("notifyOnCreateOrReopenCase");
-                    context.Writer.Write(publicRequest.NotifyOnCreateOrReopenCase);
+                    context.Writer.Write(publicRequest.NotifyOnCreateOrReopenCase.Value);
                 }
 
                 if(publicRequest.IsSetNotifyOnResolveCase())
                 {
                     context.Writer.WritePropertyName("notifyOnResolveCase");
-                    context.Writer.Write(publicRequest.NotifyOnResolveCase);
+                    context.Writer.Write(publicRequest.NotifyOnResolveCase.Value);
                 }
 
                 if(publicRequest.IsSetTeamId())

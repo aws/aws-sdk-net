@@ -46,9 +46,9 @@ namespace Amazon.CodeBuild.Model
         /// build. 
         /// </para>
         /// </summary>
-        public bool ExcludeMatchedPattern
+        public bool? ExcludeMatchedPattern
         {
-            get { return this._excludeMatchedPattern.GetValueOrDefault(); }
+            get { return this._excludeMatchedPattern; }
             set { this._excludeMatchedPattern = value; }
         }
 

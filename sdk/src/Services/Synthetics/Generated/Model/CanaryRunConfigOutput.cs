@@ -43,9 +43,9 @@ namespace Amazon.Synthetics.Model
         /// Displays whether this canary run used active X-Ray tracing. 
         /// </para>
         /// </summary>
-        public bool ActiveTracing
+        public bool? ActiveTracing
         {
-            get { return this._activeTracing.GetValueOrDefault(); }
+            get { return this._activeTracing; }
             set { this._activeTracing = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Synthetics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=960, Max=3008)]
-        public int MemoryInMB
+        public int? MemoryInMB
         {
-            get { return this._memoryInMB.GetValueOrDefault(); }
+            get { return this._memoryInMB; }
             set { this._memoryInMB = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Synthetics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=840)]
-        public int TimeoutInSeconds
+        public int? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

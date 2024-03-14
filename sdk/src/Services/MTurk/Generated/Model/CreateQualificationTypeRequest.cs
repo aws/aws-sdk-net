@@ -84,9 +84,9 @@ namespace Amazon.MTurk.Model
         /// Constraints: If the Test parameter is specified, this parameter cannot be true.
         /// </para>
         /// </summary>
-        public bool AutoGranted
+        public bool? AutoGranted
         {
-            get { return this._autoGranted.GetValueOrDefault(); }
+            get { return this._autoGranted; }
             set { this._autoGranted = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.MTurk.Model
         /// is used only if the AutoGranted parameter is true.
         /// </para>
         /// </summary>
-        public int AutoGrantedValue
+        public int? AutoGrantedValue
         {
-            get { return this._autoGrantedValue.GetValueOrDefault(); }
+            get { return this._autoGrantedValue; }
             set { this._autoGrantedValue = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.MTurk.Model
         /// type with retries disabled.
         /// </para>
         /// </summary>
-        public long RetryDelayInSeconds
+        public long? RetryDelayInSeconds
         {
-            get { return this._retryDelayInSeconds.GetValueOrDefault(); }
+            get { return this._retryDelayInSeconds; }
             set { this._retryDelayInSeconds = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.MTurk.Model
         /// from the time the Worker requests the Qualification.
         /// </para>
         /// </summary>
-        public long TestDurationInSeconds
+        public long? TestDurationInSeconds
         {
-            get { return this._testDurationInSeconds.GetValueOrDefault(); }
+            get { return this._testDurationInSeconds; }
             set { this._testDurationInSeconds = value; }
         }
 

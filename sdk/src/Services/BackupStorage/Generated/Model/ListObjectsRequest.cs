@@ -45,9 +45,9 @@ namespace Amazon.BackupStorage.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. (Optional) Created after filter
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.BackupStorage.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. (Optional) Created before filter
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.BackupStorage.Model
         /// Gets and sets the property MaxResults. Maximum objects count
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

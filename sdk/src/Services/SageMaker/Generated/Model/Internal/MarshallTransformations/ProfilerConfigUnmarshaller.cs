@@ -65,13 +65,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DisableProfiler", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableProfiler = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProfilingIntervalInMilliseconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProfilingIntervalInMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

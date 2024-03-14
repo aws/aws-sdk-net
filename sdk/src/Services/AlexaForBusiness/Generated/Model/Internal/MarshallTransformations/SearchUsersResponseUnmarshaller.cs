@@ -59,7 +59,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,19 +65,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RecordsProcessed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StepsCompleted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StepsCompleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalSteps", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalSteps = unmarshaller.Unmarshall(context);
                     continue;
                 }

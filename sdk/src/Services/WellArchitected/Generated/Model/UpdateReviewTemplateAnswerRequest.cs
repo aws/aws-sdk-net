@@ -64,9 +64,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property IsApplicable.
         /// </summary>
-        public bool IsApplicable
+        public bool? IsApplicable
         {
-            get { return this._isApplicable.GetValueOrDefault(); }
+            get { return this._isApplicable; }
             set { this._isApplicable = value; }
         }
 

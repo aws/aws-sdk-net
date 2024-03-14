@@ -76,9 +76,9 @@ namespace Amazon.LocationService.Model
         /// must be set.
         /// </para>
         /// </summary>
-        public DateTime ExpireTime
+        public DateTime? ExpireTime
         {
-            get { return this._expireTime.GetValueOrDefault(); }
+            get { return this._expireTime; }
             set { this._expireTime = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.LocationService.Model
         /// or <c>ExpireTime</c> must be set.
         /// </para>
         /// </summary>
-        public bool NoExpiry
+        public bool? NoExpiry
         {
-            get { return this._noExpiry.GetValueOrDefault(); }
+            get { return this._noExpiry; }
             set { this._noExpiry = value; }
         }
 

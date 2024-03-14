@@ -48,7 +48,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("DayOfMonth");
-                context.Writer.Write(requestObject.DayOfMonth);
+                context.Writer.Write(requestObject.DayOfMonth.Value);
             }
 
             if(requestObject.IsSetHandOffTime())

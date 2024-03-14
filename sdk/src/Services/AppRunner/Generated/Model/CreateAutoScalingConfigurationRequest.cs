@@ -130,9 +130,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int MaxConcurrency
+        public int? MaxConcurrency
         {
-            get { return this._maxConcurrency.GetValueOrDefault(); }
+            get { return this._maxConcurrency; }
             set { this._maxConcurrency = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

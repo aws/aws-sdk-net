@@ -59,9 +59,9 @@ namespace Amazon.CloudWatch.Model
         /// Indicates whether actions should be executed during any changes to the alarm state.
         /// </para>
         /// </summary>
-        public bool ActionsEnabled
+        public bool? ActionsEnabled
         {
-            get { return this._actionsEnabled.GetValueOrDefault(); }
+            get { return this._actionsEnabled; }
             set { this._actionsEnabled = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int ActionsSuppressorExtensionPeriod
+        public int? ActionsSuppressorExtensionPeriod
         {
-            get { return this._actionsSuppressorExtensionPeriod.GetValueOrDefault(); }
+            get { return this._actionsSuppressorExtensionPeriod; }
             set { this._actionsSuppressorExtensionPeriod = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int ActionsSuppressorWaitPeriod
+        public int? ActionsSuppressorWaitPeriod
         {
-            get { return this._actionsSuppressorWaitPeriod.GetValueOrDefault(); }
+            get { return this._actionsSuppressorWaitPeriod; }
             set { this._actionsSuppressorWaitPeriod = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.CloudWatch.Model
         /// The time stamp of the last update to the alarm configuration.
         /// </para>
         /// </summary>
-        public DateTime AlarmConfigurationUpdatedTimestamp
+        public DateTime? AlarmConfigurationUpdatedTimestamp
         {
-            get { return this._alarmConfigurationUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._alarmConfigurationUpdatedTimestamp; }
             set { this._alarmConfigurationUpdatedTimestamp = value; }
         }
 
@@ -386,9 +386,9 @@ namespace Amazon.CloudWatch.Model
         ///  The timestamp of the last change to the alarm's <c>StateValue</c>. 
         /// </para>
         /// </summary>
-        public DateTime StateTransitionedTimestamp
+        public DateTime? StateTransitionedTimestamp
         {
-            get { return this._stateTransitionedTimestamp.GetValueOrDefault(); }
+            get { return this._stateTransitionedTimestamp; }
             set { this._stateTransitionedTimestamp = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.CloudWatch.Model
         /// Tracks the timestamp of any state update, even if <c>StateValue</c> doesn't change.
         /// </para>
         /// </summary>
-        public DateTime StateUpdatedTimestamp
+        public DateTime? StateUpdatedTimestamp
         {
-            get { return this._stateUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._stateUpdatedTimestamp; }
             set { this._stateUpdatedTimestamp = value; }
         }
 

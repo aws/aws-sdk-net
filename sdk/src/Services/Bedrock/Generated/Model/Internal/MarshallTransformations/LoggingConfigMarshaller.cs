@@ -59,13 +59,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmbeddingDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("embeddingDataDeliveryEnabled");
-                context.Writer.Write(requestObject.EmbeddingDataDeliveryEnabled);
+                context.Writer.Write(requestObject.EmbeddingDataDeliveryEnabled.Value);
             }
 
             if(requestObject.IsSetImageDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("imageDataDeliveryEnabled");
-                context.Writer.Write(requestObject.ImageDataDeliveryEnabled);
+                context.Writer.Write(requestObject.ImageDataDeliveryEnabled.Value);
             }
 
             if(requestObject.IsSetS3Config())
@@ -82,7 +82,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTextDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("textDataDeliveryEnabled");
-                context.Writer.Write(requestObject.TextDataDeliveryEnabled);
+                context.Writer.Write(requestObject.TextDataDeliveryEnabled.Value);
             }
 
         }

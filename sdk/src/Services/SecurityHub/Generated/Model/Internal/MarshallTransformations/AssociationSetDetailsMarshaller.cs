@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMain())
             {
                 context.Writer.WritePropertyName("Main");
-                context.Writer.Write(requestObject.Main);
+                context.Writer.Write(requestObject.Main.Value);
             }
 
             if(requestObject.IsSetRouteTableAssociationId())

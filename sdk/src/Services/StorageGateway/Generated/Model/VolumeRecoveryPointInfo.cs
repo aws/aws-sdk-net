@@ -81,9 +81,9 @@ namespace Amazon.StorageGateway.Model
         /// The size of the volume in bytes.
         /// </para>
         /// </summary>
-        public long VolumeSizeInBytes
+        public long? VolumeSizeInBytes
         {
-            get { return this._volumeSizeInBytes.GetValueOrDefault(); }
+            get { return this._volumeSizeInBytes; }
             set { this._volumeSizeInBytes = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long VolumeUsageInBytes
+        public long? VolumeUsageInBytes
         {
-            get { return this._volumeUsageInBytes.GetValueOrDefault(); }
+            get { return this._volumeUsageInBytes; }
             set { this._volumeUsageInBytes = value; }
         }
 

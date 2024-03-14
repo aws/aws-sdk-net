@@ -43,9 +43,9 @@ namespace Amazon.IoT.Model
         /// The default version of the provisioning template.
         /// </para>
         /// </summary>
-        public int DefaultVersionId
+        public int? DefaultVersionId
         {
-            get { return this._defaultVersionId.GetValueOrDefault(); }
+            get { return this._defaultVersionId; }
             set { this._defaultVersionId = value; }
         }
 

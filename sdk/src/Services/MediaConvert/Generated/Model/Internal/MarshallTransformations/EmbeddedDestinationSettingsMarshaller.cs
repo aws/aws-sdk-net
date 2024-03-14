@@ -48,13 +48,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination608ChannelNumber())
             {
                 context.Writer.WritePropertyName("destination608ChannelNumber");
-                context.Writer.Write(requestObject.Destination608ChannelNumber);
+                context.Writer.Write(requestObject.Destination608ChannelNumber.Value);
             }
 
             if(requestObject.IsSetDestination708ServiceNumber())
             {
                 context.Writer.WritePropertyName("destination708ServiceNumber");
-                context.Writer.Write(requestObject.Destination708ServiceNumber);
+                context.Writer.Write(requestObject.Destination708ServiceNumber.Value);
             }
 
         }

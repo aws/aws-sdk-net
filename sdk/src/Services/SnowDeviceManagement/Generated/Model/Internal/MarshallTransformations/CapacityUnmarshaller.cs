@@ -65,7 +65,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("available", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Available = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("used", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Used = unmarshaller.Unmarshall(context);
                     continue;
                 }

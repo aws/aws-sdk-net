@@ -45,9 +45,9 @@ namespace Amazon.MachineLearning.Model
         /// was received. The time is expressed in epoch time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.MachineLearning.Model
         /// in incoming requests per second.
         /// </para>
         /// </summary>
-        public int PeakRequestsPerSecond
+        public int? PeakRequestsPerSecond
         {
-            get { return this._peakRequestsPerSecond.GetValueOrDefault(); }
+            get { return this._peakRequestsPerSecond; }
             set { this._peakRequestsPerSecond = value; }
         }
 

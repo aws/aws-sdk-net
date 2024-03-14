@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudSearchDomain")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon CloudSearch Domain. Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon CloudSearch Domain. Amazon CloudSearch Domain encapsulates a collection of data you want to search, the search instances that process your search requests, and a configuration that controls how your data is indexed and searched.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

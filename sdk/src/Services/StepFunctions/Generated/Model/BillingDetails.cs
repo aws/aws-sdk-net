@@ -43,9 +43,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BilledDurationInMilliseconds
+        public long? BilledDurationInMilliseconds
         {
-            get { return this._billedDurationInMilliseconds.GetValueOrDefault(); }
+            get { return this._billedDurationInMilliseconds; }
             set { this._billedDurationInMilliseconds = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BilledMemoryUsedInMB
+        public long? BilledMemoryUsedInMB
         {
-            get { return this._billedMemoryUsedInMB.GetValueOrDefault(); }
+            get { return this._billedMemoryUsedInMB; }
             set { this._billedMemoryUsedInMB = value; }
         }
 

@@ -92,9 +92,9 @@ namespace Amazon.TranscribeService.Model
         /// to flag speech that contains interruptions.
         /// </para>
         /// </summary>
-        public bool Negate
+        public bool? Negate
         {
-            get { return this._negate.GetValueOrDefault(); }
+            get { return this._negate; }
             set { this._negate = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
-        public long Threshold
+        public long? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

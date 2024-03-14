@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UsePreviousValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UsePreviousValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

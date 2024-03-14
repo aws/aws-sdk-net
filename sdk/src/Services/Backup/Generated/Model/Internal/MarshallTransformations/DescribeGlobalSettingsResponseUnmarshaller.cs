@@ -59,7 +59,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

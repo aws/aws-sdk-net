@@ -48,19 +48,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsEmpty())
             {
                 context.Writer.WritePropertyName("IsEmpty");
-                context.Writer.Write(requestObject.IsEmpty);
+                context.Writer.Write(requestObject.IsEmpty.Value);
             }
 
             if(requestObject.IsSetIsNegOne())
             {
                 context.Writer.WritePropertyName("IsNegOne");
-                context.Writer.Write(requestObject.IsNegOne);
+                context.Writer.Write(requestObject.IsNegOne.Value);
             }
 
             if(requestObject.IsSetIsNullString())
             {
                 context.Writer.WritePropertyName("IsNullString");
-                context.Writer.Write(requestObject.IsNullString);
+                context.Writer.Write(requestObject.IsNullString.Value);
             }
 
         }

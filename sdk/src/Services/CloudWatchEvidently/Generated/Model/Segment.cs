@@ -71,9 +71,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// experiments, not just those that are currently running.
         /// </para>
         /// </summary>
-        public long ExperimentCount
+        public long? ExperimentCount
         {
-            get { return this._experimentCount.GetValueOrDefault(); }
+            get { return this._experimentCount; }
             set { this._experimentCount = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// launches, not just those that are currently running.
         /// </para>
         /// </summary>
-        public long LaunchCount
+        public long? LaunchCount
         {
-            get { return this._launchCount.GetValueOrDefault(); }
+            get { return this._launchCount; }
             set { this._launchCount = value; }
         }
 

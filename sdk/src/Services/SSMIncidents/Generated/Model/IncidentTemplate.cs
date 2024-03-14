@@ -108,9 +108,9 @@ namespace Amazon.SSMIncidents.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
-        public int Impact
+        public int? Impact
         {
-            get { return this._impact.GetValueOrDefault(); }
+            get { return this._impact; }
             set { this._impact = value; }
         }
 

@@ -57,9 +57,9 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property NumberOfDevicesInGroup.
         /// </summary>
-        public int NumberOfDevicesInGroup
+        public int? NumberOfDevicesInGroup
         {
-            get { return this._numberOfDevicesInGroup.GetValueOrDefault(); }
+            get { return this._numberOfDevicesInGroup; }
             set { this._numberOfDevicesInGroup = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property NumberOfDevicesRequested.
         /// </summary>
-        public int NumberOfDevicesRequested
+        public int? NumberOfDevicesRequested
         {
-            get { return this._numberOfDevicesRequested.GetValueOrDefault(); }
+            get { return this._numberOfDevicesRequested; }
             set { this._numberOfDevicesRequested = value; }
         }
 

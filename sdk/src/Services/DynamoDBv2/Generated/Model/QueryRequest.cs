@@ -185,9 +185,9 @@ namespace Amazon.DynamoDBv2.Model
         /// a <c>ValidationException</c>.
         /// </para>
         /// </summary>
-        public bool ConsistentRead
+        public bool? ConsistentRead
         {
-            get { return this._consistentRead.GetValueOrDefault(); }
+            get { return this._consistentRead; }
             set { this._consistentRead = value; }
         }
 
@@ -562,9 +562,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -683,9 +683,9 @@ namespace Amazon.DynamoDBv2.Model
         /// then returns the results to the client.
         /// </para>
         /// </summary>
-        public bool ScanIndexForward
+        public bool? ScanIndexForward
         {
-            get { return this._scanIndexForward.GetValueOrDefault(); }
+            get { return this._scanIndexForward; }
             set { this._scanIndexForward = value; }
         }
 

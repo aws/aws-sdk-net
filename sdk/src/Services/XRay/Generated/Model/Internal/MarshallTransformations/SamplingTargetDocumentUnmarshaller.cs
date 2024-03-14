@@ -65,25 +65,25 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FixedRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.FixedRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Interval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReservoirQuota", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReservoirQuota = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReservoirQuotaTTL = unmarshaller.Unmarshall(context);
                     continue;
                 }

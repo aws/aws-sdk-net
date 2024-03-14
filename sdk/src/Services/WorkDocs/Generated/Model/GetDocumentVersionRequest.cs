@@ -105,9 +105,9 @@ namespace Amazon.WorkDocs.Model
         /// Set this to TRUE to include custom metadata in the response.
         /// </para>
         /// </summary>
-        public bool IncludeCustomMetadata
+        public bool? IncludeCustomMetadata
         {
-            get { return this._includeCustomMetadata.GetValueOrDefault(); }
+            get { return this._includeCustomMetadata; }
             set { this._includeCustomMetadata = value; }
         }
 

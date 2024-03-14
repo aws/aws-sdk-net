@@ -69,9 +69,9 @@ namespace Amazon.IoTEvents.Model
         /// </summary>
         [Obsolete("seconds is deprecated. You can use durationExpression for SetTimerAction. The value of seconds can be used as a string expression for durationExpression.")]
         [AWSProperty(Min=1, Max=31622400)]
-        public int Seconds
+        public int? Seconds
         {
-            get { return this._seconds.GetValueOrDefault(); }
+            get { return this._seconds; }
             set { this._seconds = value; }
         }
 

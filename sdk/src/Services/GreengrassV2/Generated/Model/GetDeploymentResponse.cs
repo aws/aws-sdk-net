@@ -73,9 +73,9 @@ namespace Amazon.GreengrassV2.Model
         /// The time at which the deployment was created, expressed in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.GreengrassV2.Model
         /// Whether or not the deployment is the latest revision for its target.
         /// </para>
         /// </summary>
-        public bool IsLatestForTarget
+        public bool? IsLatestForTarget
         {
-            get { return this._isLatestForTarget.GetValueOrDefault(); }
+            get { return this._isLatestForTarget; }
             set { this._isLatestForTarget = value; }
         }
 

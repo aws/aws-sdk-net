@@ -65,13 +65,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DataTraceEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataTraceEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DetailedMetricsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetailedMetricsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ThrottlingBurstLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThrottlingBurstLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThrottlingRateLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

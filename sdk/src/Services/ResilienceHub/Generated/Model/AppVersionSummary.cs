@@ -63,9 +63,9 @@ namespace Amazon.ResilienceHub.Model
         /// Creation time of the application version.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.ResilienceHub.Model
         /// Identifier of the application version.
         /// </para>
         /// </summary>
-        public long Identifier
+        public long? Identifier
         {
-            get { return this._identifier.GetValueOrDefault(); }
+            get { return this._identifier; }
             set { this._identifier = value; }
         }
 

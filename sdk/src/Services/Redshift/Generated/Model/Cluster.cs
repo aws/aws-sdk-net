@@ -101,9 +101,9 @@ namespace Amazon.Redshift.Model
         /// applied automatically to the cluster during the maintenance window. 
         /// </para>
         /// </summary>
-        public bool AllowVersionUpgrade
+        public bool? AllowVersionUpgrade
         {
-            get { return this._allowVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowVersionUpgrade; }
             set { this._allowVersionUpgrade = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Redshift.Model
         /// The number of days that automatic cluster snapshots are retained.
         /// </para>
         /// </summary>
-        public int AutomatedSnapshotRetentionPeriod
+        public int? AutomatedSnapshotRetentionPeriod
         {
-            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._automatedSnapshotRetentionPeriod; }
             set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.Redshift.Model
         /// The date and time that the cluster was created.
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -570,9 +570,9 @@ namespace Amazon.Redshift.Model
         /// The expiration date for the certificate associated with the custom domain name.
         /// </para>
         /// </summary>
-        public DateTime CustomDomainCertificateExpiryDate
+        public DateTime? CustomDomainCertificateExpiryDate
         {
-            get { return this._customDomainCertificateExpiryDate.GetValueOrDefault(); }
+            get { return this._customDomainCertificateExpiryDate; }
             set { this._customDomainCertificateExpiryDate = value; }
         }
 
@@ -719,9 +719,9 @@ namespace Amazon.Redshift.Model
         /// at rest.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -766,9 +766,9 @@ namespace Amazon.Redshift.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -785,9 +785,9 @@ namespace Amazon.Redshift.Model
         /// a valid snapshot schedule and backups enabled. 
         /// </para>
         /// </summary>
-        public DateTime ExpectedNextSnapshotScheduleTime
+        public DateTime? ExpectedNextSnapshotScheduleTime
         {
-            get { return this._expectedNextSnapshotScheduleTime.GetValueOrDefault(); }
+            get { return this._expectedNextSnapshotScheduleTime; }
             set { this._expectedNextSnapshotScheduleTime = value; }
         }
 
@@ -938,9 +938,9 @@ namespace Amazon.Redshift.Model
         /// The value must be either -1 or an integer between 1 and 3,653.
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 
@@ -1072,9 +1072,9 @@ namespace Amazon.Redshift.Model
         /// The date and time in UTC when system maintenance can begin.
         /// </para>
         /// </summary>
-        public DateTime NextMaintenanceWindowStartTime
+        public DateTime? NextMaintenanceWindowStartTime
         {
-            get { return this._nextMaintenanceWindowStartTime.GetValueOrDefault(); }
+            get { return this._nextMaintenanceWindowStartTime; }
             set { this._nextMaintenanceWindowStartTime = value; }
         }
 
@@ -1109,9 +1109,9 @@ namespace Amazon.Redshift.Model
         /// The number of compute nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -1185,9 +1185,9 @@ namespace Amazon.Redshift.Model
         /// a public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -1323,9 +1323,9 @@ namespace Amazon.Redshift.Model
         /// The total storage capacity of the cluster in megabytes. 
         /// </para>
         /// </summary>
-        public long TotalStorageCapacityInMegaBytes
+        public long? TotalStorageCapacityInMegaBytes
         {
-            get { return this._totalStorageCapacityInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalStorageCapacityInMegaBytes; }
             set { this._totalStorageCapacityInMegaBytes = value; }
         }
 

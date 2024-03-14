@@ -71,13 +71,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("manifestWindowSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

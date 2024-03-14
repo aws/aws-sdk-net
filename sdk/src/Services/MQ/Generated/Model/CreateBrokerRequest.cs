@@ -154,9 +154,9 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -435,9 +435,9 @@ namespace Amazon.MQ.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

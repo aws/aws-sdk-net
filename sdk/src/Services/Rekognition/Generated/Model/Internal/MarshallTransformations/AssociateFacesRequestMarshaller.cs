@@ -104,7 +104,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUserMatchThreshold())
                 {
                     context.Writer.WritePropertyName("UserMatchThreshold");
-                    context.Writer.Write(publicRequest.UserMatchThreshold);
+                    context.Writer.Write(publicRequest.UserMatchThreshold.Value);
                 }
 
                 writer.WriteObjectEnd();

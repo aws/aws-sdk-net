@@ -113,7 +113,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMediaSampleRateHertz())
                 {
                     context.Writer.WritePropertyName("MediaSampleRateHertz");
-                    context.Writer.Write(publicRequest.MediaSampleRateHertz);
+                    context.Writer.Write(publicRequest.MediaSampleRateHertz.Value);
                 }
 
                 if(publicRequest.IsSetMedicalTranscriptionJobName())

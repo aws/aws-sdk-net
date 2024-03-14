@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ebsOptimized", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -168,7 +168,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("weightedCapacity", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.WeightedCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }

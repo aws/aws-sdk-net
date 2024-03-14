@@ -68,9 +68,9 @@ namespace Amazon.MediaPackageV2.Model
         /// fast forward and rewind.
         /// </para>
         /// </summary>
-        public bool IncludeIframeOnlyStreams
+        public bool? IncludeIframeOnlyStreams
         {
-            get { return this._includeIframeOnlyStreams.GetValueOrDefault(); }
+            get { return this._includeIframeOnlyStreams; }
             set { this._includeIframeOnlyStreams = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.MediaPackageV2.Model
         /// the output. When selected, MediaPackage passes through DVB subtitles into the output.
         /// </para>
         /// </summary>
-        public bool TsIncludeDvbSubtitles
+        public bool? TsIncludeDvbSubtitles
         {
-            get { return this._tsIncludeDvbSubtitles.GetValueOrDefault(); }
+            get { return this._tsIncludeDvbSubtitles; }
             set { this._tsIncludeDvbSubtitles = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.MediaPackageV2.Model
         /// tracks in the stream can be used with any audio rendition from the group.
         /// </para>
         /// </summary>
-        public bool TsUseAudioRenditionGroup
+        public bool? TsUseAudioRenditionGroup
         {
-            get { return this._tsUseAudioRenditionGroup.GetValueOrDefault(); }
+            get { return this._tsUseAudioRenditionGroup; }
             set { this._tsUseAudioRenditionGroup = value; }
         }
 

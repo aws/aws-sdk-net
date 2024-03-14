@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int ContainerStartupHealthCheckTimeoutInSeconds
+        public int? ContainerStartupHealthCheckTimeoutInSeconds
         {
-            get { return this._containerStartupHealthCheckTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._containerStartupHealthCheckTimeoutInSeconds; }
             set { this._containerStartupHealthCheckTimeoutInSeconds = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int ModelDataDownloadTimeoutInSeconds
+        public int? ModelDataDownloadTimeoutInSeconds
         {
-            get { return this._modelDataDownloadTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._modelDataDownloadTimeoutInSeconds; }
             set { this._modelDataDownloadTimeoutInSeconds = value; }
         }
 

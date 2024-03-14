@@ -106,9 +106,9 @@ namespace Amazon.QLDB.Model
         /// This parameter is undefined if the KMS key is accessible.
         /// </para>
         /// </summary>
-        public DateTime InaccessibleKmsKeyDateTime
+        public DateTime? InaccessibleKmsKeyDateTime
         {
-            get { return this._inaccessibleKmsKeyDateTime.GetValueOrDefault(); }
+            get { return this._inaccessibleKmsKeyDateTime; }
             set { this._inaccessibleKmsKeyDateTime = value; }
         }
 

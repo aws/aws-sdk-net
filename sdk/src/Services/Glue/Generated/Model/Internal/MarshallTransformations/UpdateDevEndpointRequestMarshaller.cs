@@ -140,7 +140,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateEtlLibraries())
                 {
                     context.Writer.WritePropertyName("UpdateEtlLibraries");
-                    context.Writer.Write(publicRequest.UpdateEtlLibraries);
+                    context.Writer.Write(publicRequest.UpdateEtlLibraries.Value);
                 }
 
                 writer.WriteObjectEnd();

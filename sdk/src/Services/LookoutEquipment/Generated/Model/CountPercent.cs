@@ -43,9 +43,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float Percentage
+        public float? Percentage
         {
-            get { return this._percentage.GetValueOrDefault(); }
+            get { return this._percentage; }
             set { this._percentage = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApprovalDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApprovalDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -62,9 +62,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

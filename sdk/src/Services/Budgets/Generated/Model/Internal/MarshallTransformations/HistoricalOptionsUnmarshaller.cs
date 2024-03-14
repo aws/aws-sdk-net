@@ -65,13 +65,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BudgetAdjustmentPeriod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BudgetAdjustmentPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LookBackAvailablePeriods", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LookBackAvailablePeriods = unmarshaller.Unmarshall(context);
                     continue;
                 }

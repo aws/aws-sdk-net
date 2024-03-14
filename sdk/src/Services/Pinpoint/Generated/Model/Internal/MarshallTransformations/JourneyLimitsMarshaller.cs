@@ -48,13 +48,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDailyCap())
             {
                 context.Writer.WritePropertyName("DailyCap");
-                context.Writer.Write(requestObject.DailyCap);
+                context.Writer.Write(requestObject.DailyCap.Value);
             }
 
             if(requestObject.IsSetEndpointReentryCap())
             {
                 context.Writer.WritePropertyName("EndpointReentryCap");
-                context.Writer.Write(requestObject.EndpointReentryCap);
+                context.Writer.Write(requestObject.EndpointReentryCap.Value);
             }
 
             if(requestObject.IsSetEndpointReentryInterval())
@@ -66,7 +66,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMessagesPerSecond())
             {
                 context.Writer.WritePropertyName("MessagesPerSecond");
-                context.Writer.Write(requestObject.MessagesPerSecond);
+                context.Writer.Write(requestObject.MessagesPerSecond.Value);
             }
 
             if(requestObject.IsSetTimeframeCap())
@@ -83,7 +83,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTotalCap())
             {
                 context.Writer.WritePropertyName("TotalCap");
-                context.Writer.Write(requestObject.TotalCap);
+                context.Writer.Write(requestObject.TotalCap.Value);
             }
 
         }

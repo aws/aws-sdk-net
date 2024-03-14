@@ -51,9 +51,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int AcceleratorPort
+        public int? AcceleratorPort
         {
-            get { return this._acceleratorPort.GetValueOrDefault(); }
+            get { return this._acceleratorPort; }
             set { this._acceleratorPort = value; }
         }
 

@@ -87,7 +87,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuleDisabled())
             {
                 context.Writer.WritePropertyName("ruleDisabled");
-                context.Writer.Write(requestObject.RuleDisabled);
+                context.Writer.Write(requestObject.RuleDisabled.Value);
             }
 
             if(requestObject.IsSetSql())

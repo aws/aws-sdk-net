@@ -85,13 +85,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerBound())
             {
                 context.Writer.WritePropertyName("LowerBound");
-                context.Writer.Write(requestObject.LowerBound);
+                context.Writer.Write(requestObject.LowerBound.Value);
             }
 
             if(requestObject.IsSetNumPartitions())
             {
                 context.Writer.WritePropertyName("NumPartitions");
-                context.Writer.Write(requestObject.NumPartitions);
+                context.Writer.Write(requestObject.NumPartitions.Value);
             }
 
             if(requestObject.IsSetPartitionColumn())
@@ -103,7 +103,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("UpperBound");
-                context.Writer.Write(requestObject.UpperBound);
+                context.Writer.Write(requestObject.UpperBound.Value);
             }
 
         }

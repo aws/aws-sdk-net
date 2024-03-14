@@ -54,7 +54,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("targetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                context.Writer.Write(requestObject.TargetValue.Value);
             }
 
         }

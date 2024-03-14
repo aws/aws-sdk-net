@@ -71,13 +71,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BisectBatchOnFunctionError", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BisectBatchOnFunctionError = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,25 +131,25 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumRecordAgeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRecordAgeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumRetryAttempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ParallelizationFactor", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ParallelizationFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -191,7 +191,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartingPositionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartingPositionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -215,7 +215,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TumblingWindowInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TumblingWindowInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

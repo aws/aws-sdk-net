@@ -62,9 +62,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp this version of Match Result generated.
         /// </para>
         /// </summary>
-        public DateTime MatchGenerationDate
+        public DateTime? MatchGenerationDate
         {
-            get { return this._matchGenerationDate.GetValueOrDefault(); }
+            get { return this._matchGenerationDate; }
             set { this._matchGenerationDate = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PotentialMatches
+        public int? PotentialMatches
         {
-            get { return this._potentialMatches.GetValueOrDefault(); }
+            get { return this._potentialMatches; }
             set { this._potentialMatches = value; }
         }
 

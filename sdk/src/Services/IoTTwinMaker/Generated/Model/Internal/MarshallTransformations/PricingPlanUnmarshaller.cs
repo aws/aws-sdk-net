@@ -65,7 +65,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("billableEntityCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BillableEntityCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("effectiveDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EffectiveDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

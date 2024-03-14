@@ -54,9 +54,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The total number of application records in the import file that failed to be imported.
         /// </para>
         /// </summary>
-        public int ApplicationImportFailure
+        public int? ApplicationImportFailure
         {
-            get { return this._applicationImportFailure.GetValueOrDefault(); }
+            get { return this._applicationImportFailure; }
             set { this._applicationImportFailure = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// imported.
         /// </para>
         /// </summary>
-        public int ApplicationImportSuccess
+        public int? ApplicationImportSuccess
         {
-            get { return this._applicationImportSuccess.GetValueOrDefault(); }
+            get { return this._applicationImportSuccess; }
             set { this._applicationImportSuccess = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The time that the import task request finished, presented in the Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime ImportCompletionTime
+        public DateTime? ImportCompletionTime
         {
-            get { return this._importCompletionTime.GetValueOrDefault(); }
+            get { return this._importCompletionTime; }
             set { this._importCompletionTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime ImportDeletedTime
+        public DateTime? ImportDeletedTime
         {
-            get { return this._importDeletedTime.GetValueOrDefault(); }
+            get { return this._importDeletedTime; }
             set { this._importDeletedTime = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The time that the import task request was made, presented in the Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime ImportRequestTime
+        public DateTime? ImportRequestTime
         {
-            get { return this._importRequestTime.GetValueOrDefault(); }
+            get { return this._importRequestTime; }
             set { this._importRequestTime = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The total number of server records in the import file that failed to be imported.
         /// </para>
         /// </summary>
-        public int ServerImportFailure
+        public int? ServerImportFailure
         {
-            get { return this._serverImportFailure.GetValueOrDefault(); }
+            get { return this._serverImportFailure; }
             set { this._serverImportFailure = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The total number of server records in the import file that were successfully imported.
         /// </para>
         /// </summary>
-        public int ServerImportSuccess
+        public int? ServerImportSuccess
         {
-            get { return this._serverImportSuccess.GetValueOrDefault(); }
+            get { return this._serverImportSuccess; }
             set { this._serverImportSuccess = value; }
         }
 

@@ -155,13 +155,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("queryDepthLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryDepthLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resolverCountLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResolverCountLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -197,7 +197,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("xrayEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.XrayEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

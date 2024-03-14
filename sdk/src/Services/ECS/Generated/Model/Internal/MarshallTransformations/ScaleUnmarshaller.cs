@@ -71,7 +71,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

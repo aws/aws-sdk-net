@@ -48,7 +48,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceLastModifiedDate())
             {
                 context.Writer.WritePropertyName("DeviceLastModifiedDate");
-                context.Writer.Write(requestObject.DeviceLastModifiedDate);
+                context.Writer.Write(requestObject.DeviceLastModifiedDate.Value);
             }
 
             if(requestObject.IsSetKey())
@@ -66,7 +66,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSyncCount())
             {
                 context.Writer.WritePropertyName("SyncCount");
-                context.Writer.Write(requestObject.SyncCount);
+                context.Writer.Write(requestObject.SyncCount.Value);
             }
 
             if(requestObject.IsSetValue())

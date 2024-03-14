@@ -42,9 +42,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// The time stamp for the data point in UTC format.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// The value of the data point.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

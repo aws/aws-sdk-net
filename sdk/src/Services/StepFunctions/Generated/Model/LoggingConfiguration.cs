@@ -63,9 +63,9 @@ namespace Amazon.StepFunctions.Model
         /// data is excluded.
         /// </para>
         /// </summary>
-        public bool IncludeExecutionData
+        public bool? IncludeExecutionData
         {
-            get { return this._includeExecutionData.GetValueOrDefault(); }
+            get { return this._includeExecutionData; }
             set { this._includeExecutionData = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.KafkaConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int CpuUtilizationPercentage
+        public int? CpuUtilizationPercentage
         {
-            get { return this._cpuUtilizationPercentage.GetValueOrDefault(); }
+            get { return this._cpuUtilizationPercentage; }
             set { this._cpuUtilizationPercentage = value; }
         }
 

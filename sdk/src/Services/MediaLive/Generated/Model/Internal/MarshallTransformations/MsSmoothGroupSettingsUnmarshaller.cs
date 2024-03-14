@@ -83,7 +83,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("connectionRetryInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConnectionRetryInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,13 +113,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("filecacheDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FilecacheDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fragmentLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,13 +131,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numRetries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumRetries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("restartDelay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RestartDelay = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,7 +149,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sendDelayMs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SendDelayMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

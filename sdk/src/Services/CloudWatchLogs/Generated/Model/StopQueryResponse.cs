@@ -41,9 +41,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// This is true if the query was stopped by the <c>StopQuery</c> operation.
         /// </para>
         /// </summary>
-        public bool Success
+        public bool? Success
         {
-            get { return this._success.GetValueOrDefault(); }
+            get { return this._success; }
             set { this._success = value; }
         }
 

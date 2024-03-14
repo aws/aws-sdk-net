@@ -108,9 +108,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.OpenSearchService.Model
         /// An optional parameter that specifies the Availability Zones for the domain.
         /// </para>
         /// </summary>
-        public bool RetrieveAZs
+        public bool? RetrieveAZs
         {
-            get { return this._retrieveAZs.GetValueOrDefault(); }
+            get { return this._retrieveAZs; }
             set { this._retrieveAZs = value; }
         }
 

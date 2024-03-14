@@ -53,9 +53,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the content of the document was originally created.
         /// </para>
         /// </summary>
-        public DateTime ContentCreatedTimestamp
+        public DateTime? ContentCreatedTimestamp
         {
-            get { return this._contentCreatedTimestamp.GetValueOrDefault(); }
+            get { return this._contentCreatedTimestamp; }
             set { this._contentCreatedTimestamp = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the content of the document was modified.
         /// </para>
         /// </summary>
-        public DateTime ContentModifiedTimestamp
+        public DateTime? ContentModifiedTimestamp
         {
-            get { return this._contentModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._contentModifiedTimestamp; }
             set { this._contentModifiedTimestamp = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the document was first uploaded.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the document was last uploaded.
         /// </para>
         /// </summary>
-        public DateTime ModifiedTimestamp
+        public DateTime? ModifiedTimestamp
         {
-            get { return this._modifiedTimestamp.GetValueOrDefault(); }
+            get { return this._modifiedTimestamp; }
             set { this._modifiedTimestamp = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.WorkDocs.Model
         /// The size of the document, in bytes.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

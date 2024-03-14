@@ -71,7 +71,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastReplicatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastReplicatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -53,7 +53,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("elapsed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Elapsed = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("waited", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Waited = unmarshaller.Unmarshall(context);
                     continue;
                 }

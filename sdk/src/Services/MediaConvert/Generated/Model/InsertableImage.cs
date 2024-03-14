@@ -52,9 +52,9 @@ namespace Amazon.MediaConvert.Model
         /// time.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.MediaConvert.Model
         /// at the overlay start time.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int FadeIn
+        public int? FadeIn
         {
-            get { return this._fadeIn.GetValueOrDefault(); }
+            get { return this._fadeIn; }
             set { this._fadeIn = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.MediaConvert.Model
         /// Fade-out, the image will disappear abruptly at the end of the inserted image duration.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int FadeOut
+        public int? FadeOut
         {
-            get { return this._fadeOut.GetValueOrDefault(); }
+            get { return this._fadeOut; }
             set { this._fadeOut = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.MediaConvert.Model
         /// this setting blank.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.MediaConvert.Model
         /// specify.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int ImageX
+        public int? ImageX
         {
-            get { return this._imageX.GetValueOrDefault(); }
+            get { return this._imageX; }
             set { this._imageX = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.MediaConvert.Model
         /// specify.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int ImageY
+        public int? ImageY
         {
-            get { return this._imageY.GetValueOrDefault(); }
+            get { return this._imageY; }
             set { this._imageY = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.MediaConvert.Model
         /// Layer.
         /// </summary>
         [AWSProperty(Min=0, Max=99)]
-        public int Layer
+        public int? Layer
         {
-            get { return this._layer.GetValueOrDefault(); }
+            get { return this._layer; }
             set { this._layer = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.MediaConvert.Model
         /// Default is 50.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Opacity
+        public int? Opacity
         {
-            get { return this._opacity.GetValueOrDefault(); }
+            get { return this._opacity; }
             set { this._opacity = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.MediaConvert.Model
         /// setting blank.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

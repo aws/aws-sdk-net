@@ -70,7 +70,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAccessTokenValidity())
                 {
                     context.Writer.WritePropertyName("AccessTokenValidity");
-                    context.Writer.Write(publicRequest.AccessTokenValidity);
+                    context.Writer.Write(publicRequest.AccessTokenValidity.Value);
                 }
 
                 if(publicRequest.IsSetAllowedOAuthFlows())
@@ -87,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowedOAuthFlowsUserPoolClient())
                 {
                     context.Writer.WritePropertyName("AllowedOAuthFlowsUserPoolClient");
-                    context.Writer.Write(publicRequest.AllowedOAuthFlowsUserPoolClient);
+                    context.Writer.Write(publicRequest.AllowedOAuthFlowsUserPoolClient.Value);
                 }
 
                 if(publicRequest.IsSetAllowedOAuthScopes())
@@ -115,7 +115,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAuthSessionValidity())
                 {
                     context.Writer.WritePropertyName("AuthSessionValidity");
-                    context.Writer.Write(publicRequest.AuthSessionValidity);
+                    context.Writer.Write(publicRequest.AuthSessionValidity.Value);
                 }
 
                 if(publicRequest.IsSetCallbackURLs())
@@ -144,13 +144,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnablePropagateAdditionalUserContextData())
                 {
                     context.Writer.WritePropertyName("EnablePropagateAdditionalUserContextData");
-                    context.Writer.Write(publicRequest.EnablePropagateAdditionalUserContextData);
+                    context.Writer.Write(publicRequest.EnablePropagateAdditionalUserContextData.Value);
                 }
 
                 if(publicRequest.IsSetEnableTokenRevocation())
                 {
                     context.Writer.WritePropertyName("EnableTokenRevocation");
-                    context.Writer.Write(publicRequest.EnableTokenRevocation);
+                    context.Writer.Write(publicRequest.EnableTokenRevocation.Value);
                 }
 
                 if(publicRequest.IsSetExplicitAuthFlows())
@@ -167,13 +167,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGenerateSecret())
                 {
                     context.Writer.WritePropertyName("GenerateSecret");
-                    context.Writer.Write(publicRequest.GenerateSecret);
+                    context.Writer.Write(publicRequest.GenerateSecret.Value);
                 }
 
                 if(publicRequest.IsSetIdTokenValidity())
                 {
                     context.Writer.WritePropertyName("IdTokenValidity");
-                    context.Writer.Write(publicRequest.IdTokenValidity);
+                    context.Writer.Write(publicRequest.IdTokenValidity.Value);
                 }
 
                 if(publicRequest.IsSetLogoutURLs())
@@ -207,7 +207,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRefreshTokenValidity())
                 {
                     context.Writer.WritePropertyName("RefreshTokenValidity");
-                    context.Writer.Write(publicRequest.RefreshTokenValidity);
+                    context.Writer.Write(publicRequest.RefreshTokenValidity.Value);
                 }
 
                 if(publicRequest.IsSetSupportedIdentityProviders())

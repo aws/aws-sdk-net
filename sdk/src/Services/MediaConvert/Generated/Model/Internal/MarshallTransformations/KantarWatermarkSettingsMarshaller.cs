@@ -66,13 +66,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileOffset())
             {
                 context.Writer.WritePropertyName("fileOffset");
-                context.Writer.Write(requestObject.FileOffset);
+                context.Writer.Write(requestObject.FileOffset.Value);
             }
 
             if(requestObject.IsSetKantarLicenseId())
             {
                 context.Writer.WritePropertyName("kantarLicenseId");
-                context.Writer.Write(requestObject.KantarLicenseId);
+                context.Writer.Write(requestObject.KantarLicenseId.Value);
             }
 
             if(requestObject.IsSetKantarServerUrl())

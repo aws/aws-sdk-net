@@ -65,7 +65,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("retainAtLeast", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetainAtLeast = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

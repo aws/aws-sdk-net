@@ -48,25 +48,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumRGBTolerance())
             {
                 context.Writer.WritePropertyName("maximumRGBTolerance");
-                context.Writer.Write(requestObject.MaximumRGBTolerance);
+                context.Writer.Write(requestObject.MaximumRGBTolerance.Value);
             }
 
             if(requestObject.IsSetMaximumYUV())
             {
                 context.Writer.WritePropertyName("maximumYUV");
-                context.Writer.Write(requestObject.MaximumYUV);
+                context.Writer.Write(requestObject.MaximumYUV.Value);
             }
 
             if(requestObject.IsSetMinimumRGBTolerance())
             {
                 context.Writer.WritePropertyName("minimumRGBTolerance");
-                context.Writer.Write(requestObject.MinimumRGBTolerance);
+                context.Writer.Write(requestObject.MinimumRGBTolerance.Value);
             }
 
             if(requestObject.IsSetMinimumYUV())
             {
                 context.Writer.WritePropertyName("minimumYUV");
-                context.Writer.Write(requestObject.MinimumYUV);
+                context.Writer.Write(requestObject.MinimumYUV.Value);
             }
 
         }

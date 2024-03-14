@@ -44,9 +44,9 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxTimeDelaySeconds
+        public int? MaxTimeDelaySeconds
         {
-            get { return this._maxTimeDelaySeconds.GetValueOrDefault(); }
+            get { return this._maxTimeDelaySeconds; }
             set { this._maxTimeDelaySeconds = value; }
         }
 

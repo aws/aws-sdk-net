@@ -62,13 +62,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("dpdTimeoutSeconds", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DpdTimeoutSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enableTunnelLifecycleControl", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableTunnelLifecycleControl = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("phase1LifetimeSeconds", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Phase1LifetimeSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("phase2LifetimeSeconds", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Phase2LifetimeSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -153,19 +153,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("rekeyFuzzPercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RekeyFuzzPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("rekeyMarginTimeSeconds", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RekeyMarginTimeSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("replayWindowSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ReplayWindowSize = unmarshaller.Unmarshall(context);
                         continue;
                     }

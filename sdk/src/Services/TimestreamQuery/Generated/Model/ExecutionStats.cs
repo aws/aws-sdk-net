@@ -45,9 +45,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Bytes metered for a single scheduled query run.
         /// </para>
         /// </summary>
-        public long BytesMetered
+        public long? BytesMetered
         {
-            get { return this._bytesMetered.GetValueOrDefault(); }
+            get { return this._bytesMetered; }
             set { this._bytesMetered = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Data writes metered for records ingested in a single scheduled query run.
         /// </para>
         /// </summary>
-        public long DataWrites
+        public long? DataWrites
         {
-            get { return this._dataWrites.GetValueOrDefault(); }
+            get { return this._dataWrites; }
             set { this._dataWrites = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.TimestreamQuery.Model
         /// to complete.
         /// </para>
         /// </summary>
-        public long ExecutionTimeInMillis
+        public long? ExecutionTimeInMillis
         {
-            get { return this._executionTimeInMillis.GetValueOrDefault(); }
+            get { return this._executionTimeInMillis; }
             set { this._executionTimeInMillis = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.TimestreamQuery.Model
         /// data source.
         /// </para>
         /// </summary>
-        public long QueryResultRows
+        public long? QueryResultRows
         {
-            get { return this._queryResultRows.GetValueOrDefault(); }
+            get { return this._queryResultRows; }
             set { this._queryResultRows = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.TimestreamQuery.Model
         /// The number of records ingested for a single scheduled query run. 
         /// </para>
         /// </summary>
-        public long RecordsIngested
+        public long? RecordsIngested
         {
-            get { return this._recordsIngested.GetValueOrDefault(); }
+            get { return this._recordsIngested; }
             set { this._recordsIngested = value; }
         }
 

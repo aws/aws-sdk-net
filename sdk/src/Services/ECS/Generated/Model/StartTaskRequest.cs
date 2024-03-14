@@ -120,9 +120,9 @@ namespace Amazon.ECS.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            get { return this._enableecsManagedTags; }
             set { this._enableecsManagedTags = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ECS.Model
         /// this turns on the execute command functionality on all containers in the task.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 

@@ -77,9 +77,9 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property SyncShadow. If true, the device's local shadow will be
         /// automatically synced with the cloud.
         /// </summary>
-        public bool SyncShadow
+        public bool? SyncShadow
         {
-            get { return this._syncShadow.GetValueOrDefault(); }
+            get { return this._syncShadow; }
             set { this._syncShadow = value; }
         }
 

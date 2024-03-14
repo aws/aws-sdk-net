@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.KafkaConnect")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

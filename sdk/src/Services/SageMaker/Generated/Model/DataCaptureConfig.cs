@@ -104,9 +104,9 @@ namespace Amazon.SageMaker.Model
         /// Whether data capture should be enabled or disabled (defaults to enabled).
         /// </para>
         /// </summary>
-        public bool EnableCapture
+        public bool? EnableCapture
         {
-            get { return this._enableCapture.GetValueOrDefault(); }
+            get { return this._enableCapture; }
             set { this._enableCapture = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int InitialSamplingPercentage
+        public int? InitialSamplingPercentage
         {
-            get { return this._initialSamplingPercentage.GetValueOrDefault(); }
+            get { return this._initialSamplingPercentage; }
             set { this._initialSamplingPercentage = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// The hard limit for the ulimit type.
         /// </para>
         /// </summary>
-        public int HardLimit
+        public int? HardLimit
         {
-            get { return this._hardLimit.GetValueOrDefault(); }
+            get { return this._hardLimit; }
             set { this._hardLimit = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.SecurityHub.Model
         /// The soft limit for the ulimit type.
         /// </para>
         /// </summary>
-        public int SoftLimit
+        public int? SoftLimit
         {
-            get { return this._softLimit.GetValueOrDefault(); }
+            get { return this._softLimit; }
             set { this._softLimit = value; }
         }
 

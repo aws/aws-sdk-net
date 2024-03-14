@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// version of the model card is exported.
         /// </para>
         /// </summary>
-        public int ModelCardVersion
+        public int? ModelCardVersion
         {
-            get { return this._modelCardVersion.GetValueOrDefault(); }
+            get { return this._modelCardVersion; }
             set { this._modelCardVersion = value; }
         }
 

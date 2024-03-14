@@ -50,9 +50,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-90, Max=90)]
-        public float BaseLat
+        public float? BaseLat
         {
-            get { return this._baseLat.GetValueOrDefault(); }
+            get { return this._baseLat; }
             set { this._baseLat = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-180, Max=180)]
-        public float BaseLng
+        public float? BaseLng
         {
-            get { return this._baseLng.GetValueOrDefault(); }
+            get { return this._baseLng; }
             set { this._baseLng = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
-        public int BaseStationId
+        public int? BaseStationId
         {
-            get { return this._baseStationId.GetValueOrDefault(); }
+            get { return this._baseStationId; }
             set { this._baseStationId = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
-        public int NetworkId
+        public int? NetworkId
         {
-            get { return this._networkId.GetValueOrDefault(); }
+            get { return this._networkId; }
             set { this._networkId = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-142, Max=-49)]
-        public int PilotPower
+        public int? PilotPower
         {
-            get { return this._pilotPower.GetValueOrDefault(); }
+            get { return this._pilotPower; }
             set { this._pilotPower = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4095)]
-        public int RegistrationZone
+        public int? RegistrationZone
         {
-            get { return this._registrationZone.GetValueOrDefault(); }
+            get { return this._registrationZone; }
             set { this._registrationZone = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32767)]
-        public int SystemId
+        public int? SystemId
         {
-            get { return this._systemId.GetValueOrDefault(); }
+            get { return this._systemId; }
             set { this._systemId = value; }
         }
 

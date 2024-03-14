@@ -77,7 +77,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReturnData())
             {
                 context.Writer.WritePropertyName("ReturnData");
-                context.Writer.Write(requestObject.ReturnData);
+                context.Writer.Write(requestObject.ReturnData.Value);
             }
 
         }

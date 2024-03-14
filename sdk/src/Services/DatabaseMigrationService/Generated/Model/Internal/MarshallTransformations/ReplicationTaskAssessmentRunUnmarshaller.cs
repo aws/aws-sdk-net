@@ -95,7 +95,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReplicationTaskAssessmentRunCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReplicationTaskAssessmentRunCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

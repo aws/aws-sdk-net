@@ -48,16 +48,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
         // Check to see if CreationTime property is set
         internal bool IsSetCreationTime()
         {
-            return this._creationTime.HasValue; 
+            return this._creationTime != null;
         }
 
         /// <summary>

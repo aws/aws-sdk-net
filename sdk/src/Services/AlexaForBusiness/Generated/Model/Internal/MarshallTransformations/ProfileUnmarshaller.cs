@@ -77,7 +77,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DataRetentionOptIn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataRetentionOptIn = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsDefault", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxVolumeLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxVolumeLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,13 +125,13 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PSTNEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PSTNEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SetupModeDisabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SetupModeDisabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

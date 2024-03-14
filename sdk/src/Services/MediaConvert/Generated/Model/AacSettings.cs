@@ -80,9 +80,9 @@ namespace Amazon.MediaConvert.Model
         /// on Bitrate control mode and Profile.
         /// </summary>
         [AWSProperty(Min=6000, Max=1024000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.MediaConvert.Model
         /// 22050, 24000, 32000, 44100, 48000.
         /// </summary>
         [AWSProperty(Min=8000, Max=96000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

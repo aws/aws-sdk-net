@@ -71,13 +71,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseCallerCredentials())
             {
                 context.Writer.WritePropertyName("useCallerCredentials");
-                context.Writer.Write(requestObject.UseCallerCredentials);
+                context.Writer.Write(requestObject.UseCallerCredentials.Value);
             }
 
             if(requestObject.IsSetVersioned())
             {
                 context.Writer.WritePropertyName("versioned");
-                context.Writer.Write(requestObject.Versioned);
+                context.Writer.Write(requestObject.Versioned.Value);
             }
 
         }

@@ -160,9 +160,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// an instance profile with a private IP address. The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

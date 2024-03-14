@@ -68,9 +68,9 @@ namespace Amazon.FMS.Model
         /// This option is not available for Shield Advanced or WAF Classic policies.
         /// </para>
         /// </summary>
-        public bool DeleteUnusedFMManagedResources
+        public bool? DeleteUnusedFMManagedResources
         {
-            get { return this._deleteUnusedFMManagedResources.GetValueOrDefault(); }
+            get { return this._deleteUnusedFMManagedResources; }
             set { this._deleteUnusedFMManagedResources = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ExcludeResourceTags
+        public bool? ExcludeResourceTags
         {
-            get { return this._excludeResourceTags.GetValueOrDefault(); }
+            get { return this._excludeResourceTags; }
             set { this._excludeResourceTags = value; }
         }
 
@@ -316,9 +316,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RemediationEnabled
+        public bool? RemediationEnabled
         {
-            get { return this._remediationEnabled.GetValueOrDefault(); }
+            get { return this._remediationEnabled; }
             set { this._remediationEnabled = value; }
         }
 

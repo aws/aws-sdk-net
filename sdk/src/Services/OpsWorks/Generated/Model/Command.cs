@@ -140,9 +140,9 @@ namespace Amazon.OpsWorks.Model
         /// The command exit code.
         /// </para>
         /// </summary>
-        public int ExitCode
+        public int? ExitCode
         {
-            get { return this._exitCode.GetValueOrDefault(); }
+            get { return this._exitCode; }
             set { this._exitCode = value; }
         }
 

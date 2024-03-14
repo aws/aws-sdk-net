@@ -62,13 +62,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("groupMember", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.GroupMember = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupSource", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.GroupSource = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -64,9 +64,9 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=86400)]
-        public int Ttl
+        public int? Ttl
         {
-            get { return this._ttl.GetValueOrDefault(); }
+            get { return this._ttl; }
             set { this._ttl = value; }
         }
 

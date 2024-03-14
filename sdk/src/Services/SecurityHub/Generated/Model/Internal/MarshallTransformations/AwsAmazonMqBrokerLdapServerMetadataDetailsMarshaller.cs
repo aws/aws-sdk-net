@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRoleSearchSubtree())
             {
                 context.Writer.WritePropertyName("RoleSearchSubtree");
-                context.Writer.Write(requestObject.RoleSearchSubtree);
+                context.Writer.Write(requestObject.RoleSearchSubtree.Value);
             }
 
             if(requestObject.IsSetServiceAccountUsername())
@@ -107,7 +107,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUserSearchSubtree())
             {
                 context.Writer.WritePropertyName("UserSearchSubtree");
-                context.Writer.Write(requestObject.UserSearchSubtree);
+                context.Writer.Write(requestObject.UserSearchSubtree.Value);
             }
 
         }

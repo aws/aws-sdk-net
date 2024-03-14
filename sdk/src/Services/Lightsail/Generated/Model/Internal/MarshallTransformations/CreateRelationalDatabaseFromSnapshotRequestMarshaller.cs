@@ -76,7 +76,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                 }
 
                 if(publicRequest.IsSetRelationalDatabaseBundleId())
@@ -100,7 +100,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRestoreTime())
                 {
                     context.Writer.WritePropertyName("restoreTime");
-                    context.Writer.Write(publicRequest.RestoreTime);
+                    context.Writer.Write(publicRequest.RestoreTime.Value);
                 }
 
                 if(publicRequest.IsSetSourceRelationalDatabaseName())
@@ -128,7 +128,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseLatestRestorableTime())
                 {
                     context.Writer.WritePropertyName("useLatestRestorableTime");
-                    context.Writer.Write(publicRequest.UseLatestRestorableTime);
+                    context.Writer.Write(publicRequest.UseLatestRestorableTime.Value);
                 }
 
                 writer.WriteObjectEnd();

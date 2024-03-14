@@ -48,7 +48,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetValue())
             {
                 context.Writer.WritePropertyName("TargetValue");
-                context.Writer.Write(requestObject.TargetValue);
+                context.Writer.Write(requestObject.TargetValue.Value);
             }
 
         }

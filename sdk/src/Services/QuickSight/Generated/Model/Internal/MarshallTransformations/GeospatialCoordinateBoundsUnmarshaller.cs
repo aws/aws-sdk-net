@@ -65,25 +65,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("East", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.East = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("North", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.North = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("South", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.South = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("West", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.West = unmarshaller.Unmarshall(context);
                     continue;
                 }

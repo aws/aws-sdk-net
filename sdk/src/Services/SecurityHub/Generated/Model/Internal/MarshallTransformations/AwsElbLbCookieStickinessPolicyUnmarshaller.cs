@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CookieExpirationPeriod", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CookieExpirationPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }

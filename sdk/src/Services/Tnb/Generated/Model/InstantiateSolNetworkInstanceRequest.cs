@@ -77,9 +77,9 @@ namespace Amazon.Tnb.Model
         /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

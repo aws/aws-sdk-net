@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActiveDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ActiveDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InactiveDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InactiveDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

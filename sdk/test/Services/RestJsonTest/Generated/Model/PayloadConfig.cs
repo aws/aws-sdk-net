@@ -41,9 +41,9 @@ namespace Amazon.RestJsonTest.Model
         ///  Numerical data 
         /// </para>
         /// </summary>
-        public int Data
+        public int? Data
         {
-            get { return this._data.GetValueOrDefault(); }
+            get { return this._data; }
             set { this._data = value; }
         }
 

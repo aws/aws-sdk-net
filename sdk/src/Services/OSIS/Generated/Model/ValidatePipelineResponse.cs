@@ -60,9 +60,9 @@ namespace Amazon.OSIS.Model
         /// A boolean indicating whether or not the pipeline configuration is valid.
         /// </para>
         /// </summary>
-        public bool IsValid
+        public bool? IsValid
         {
-            get { return this._isValid.GetValueOrDefault(); }
+            get { return this._isValid; }
             set { this._isValid = value; }
         }
 

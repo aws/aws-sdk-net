@@ -110,9 +110,9 @@ namespace Amazon.ECR.Model
         /// The date and time that the finding was first observed.
         /// </para>
         /// </summary>
-        public DateTime FirstObservedAt
+        public DateTime? FirstObservedAt
         {
-            get { return this._firstObservedAt.GetValueOrDefault(); }
+            get { return this._firstObservedAt; }
             set { this._firstObservedAt = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.ECR.Model
         /// The date and time that the finding was last observed.
         /// </para>
         /// </summary>
-        public DateTime LastObservedAt
+        public DateTime? LastObservedAt
         {
-            get { return this._lastObservedAt.GetValueOrDefault(); }
+            get { return this._lastObservedAt; }
             set { this._lastObservedAt = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.ECR.Model
         /// The Amazon Inspector score given to the finding.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.ECR.Model
         /// The date and time the finding was last updated at.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

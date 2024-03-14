@@ -48,13 +48,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMasteringMonitorNits())
             {
                 context.Writer.WritePropertyName("masteringMonitorNits");
-                context.Writer.Write(requestObject.MasteringMonitorNits);
+                context.Writer.Write(requestObject.MasteringMonitorNits.Value);
             }
 
             if(requestObject.IsSetTargetMonitorNits())
             {
                 context.Writer.WritePropertyName("targetMonitorNits");
-                context.Writer.Write(requestObject.TargetMonitorNits);
+                context.Writer.Write(requestObject.TargetMonitorNits.Value);
             }
 
         }

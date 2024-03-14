@@ -71,13 +71,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("containerPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("port", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -510,9 +510,9 @@ namespace Amazon.Kendra.Model
         /// Kendra to use the change log than to scan all of your documents in GitHub.
         /// </para>
         /// </summary>
-        public bool UseChangeLog
+        public bool? UseChangeLog
         {
-            get { return this._useChangeLog.GetValueOrDefault(); }
+            get { return this._useChangeLog; }
             set { this._useChangeLog = value; }
         }
 

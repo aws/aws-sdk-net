@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLat())
             {
                 context.Writer.WritePropertyName("Lat");
-                context.Writer.Write(requestObject.Lat);
+                context.Writer.Write(requestObject.Lat.Value);
             }
 
             if(requestObject.IsSetLon())
             {
                 context.Writer.WritePropertyName("Lon");
-                context.Writer.Write(requestObject.Lon);
+                context.Writer.Write(requestObject.Lon.Value);
             }
 
         }

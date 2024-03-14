@@ -44,9 +44,9 @@ namespace Amazon.IoTSecureTunneling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=720)]
-        public int MaxLifetimeTimeoutMinutes
+        public int? MaxLifetimeTimeoutMinutes
         {
-            get { return this._maxLifetimeTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._maxLifetimeTimeoutMinutes; }
             set { this._maxLifetimeTimeoutMinutes = value; }
         }
 

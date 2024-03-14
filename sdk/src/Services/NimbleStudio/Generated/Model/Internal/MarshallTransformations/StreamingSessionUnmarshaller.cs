@@ -83,7 +83,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxBackupsToRetain", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxBackupsToRetain = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,13 +167,13 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stoppedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -197,13 +197,13 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("terminateAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TerminateAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

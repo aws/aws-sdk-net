@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]
-        public long MaxDurationInSeconds
+        public long? MaxDurationInSeconds
         {
-            get { return this._maxDurationInSeconds.GetValueOrDefault(); }
+            get { return this._maxDurationInSeconds; }
             set { this._maxDurationInSeconds = value; }
         }
 

@@ -76,9 +76,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastDeploymentAttemptedAt
+        public DateTime? LastDeploymentAttemptedAt
         {
-            get { return this._lastDeploymentAttemptedAt.GetValueOrDefault(); }
+            get { return this._lastDeploymentAttemptedAt; }
             set { this._lastDeploymentAttemptedAt = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastDeploymentSucceededAt
+        public DateTime? LastDeploymentSucceededAt
         {
-            get { return this._lastDeploymentSucceededAt.GetValueOrDefault(); }
+            get { return this._lastDeploymentSucceededAt; }
             set { this._lastDeploymentSucceededAt = value; }
         }
 

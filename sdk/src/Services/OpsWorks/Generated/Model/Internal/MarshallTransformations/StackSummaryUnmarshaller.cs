@@ -65,7 +65,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AppsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AppsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LayersCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LayersCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

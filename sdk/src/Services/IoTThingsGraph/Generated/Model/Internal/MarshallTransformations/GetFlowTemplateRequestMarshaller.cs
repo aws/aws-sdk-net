@@ -76,7 +76,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRevisionNumber())
                 {
                     context.Writer.WritePropertyName("revisionNumber");
-                    context.Writer.Write(publicRequest.RevisionNumber);
+                    context.Writer.Write(publicRequest.RevisionNumber.Value);
                 }
 
                 writer.WriteObjectEnd();

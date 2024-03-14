@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSyncThreshold())
             {
                 context.Writer.WritePropertyName("syncThreshold");
-                context.Writer.Write(requestObject.SyncThreshold);
+                context.Writer.Write(requestObject.SyncThreshold.Value);
             }
 
         }

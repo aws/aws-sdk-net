@@ -71,7 +71,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LeaseExpirationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LeaseExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

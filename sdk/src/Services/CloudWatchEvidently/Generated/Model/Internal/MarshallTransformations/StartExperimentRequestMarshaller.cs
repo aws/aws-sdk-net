@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAnalysisCompleteTime())
                 {
                     context.Writer.WritePropertyName("analysisCompleteTime");
-                    context.Writer.Write(publicRequest.AnalysisCompleteTime);
+                    context.Writer.Write(publicRequest.AnalysisCompleteTime.Value);
                 }
 
                 writer.WriteObjectEnd();

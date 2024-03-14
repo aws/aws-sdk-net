@@ -48,13 +48,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize);
+                context.Writer.Write(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetBatchWindow())
             {
                 context.Writer.WritePropertyName("BatchWindow");
-                context.Writer.Write(requestObject.BatchWindow);
+                context.Writer.Write(requestObject.BatchWindow.Value);
             }
 
         }

@@ -48,7 +48,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientIPPreservationEnabled())
             {
                 context.Writer.WritePropertyName("ClientIPPreservationEnabled");
-                context.Writer.Write(requestObject.ClientIPPreservationEnabled);
+                context.Writer.Write(requestObject.ClientIPPreservationEnabled.Value);
             }
 
             if(requestObject.IsSetEndpointId())

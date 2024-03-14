@@ -49,9 +49,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// The timestamp when the VPC link was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

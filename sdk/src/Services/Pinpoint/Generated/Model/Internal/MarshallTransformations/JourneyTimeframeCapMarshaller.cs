@@ -48,13 +48,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCap())
             {
                 context.Writer.WritePropertyName("Cap");
-                context.Writer.Write(requestObject.Cap);
+                context.Writer.Write(requestObject.Cap.Value);
             }
 
             if(requestObject.IsSetDays())
             {
                 context.Writer.WritePropertyName("Days");
-                context.Writer.Write(requestObject.Days);
+                context.Writer.Write(requestObject.Days.Value);
             }
 
         }

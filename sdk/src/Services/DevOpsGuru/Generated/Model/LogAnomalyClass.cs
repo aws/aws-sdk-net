@@ -123,9 +123,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The time of the first occurrence of the anomalous log event. 
         /// </para>
         /// </summary>
-        public DateTime LogEventTimestamp
+        public DateTime? LogEventTimestamp
         {
-            get { return this._logEventTimestamp.GetValueOrDefault(); }
+            get { return this._logEventTimestamp; }
             set { this._logEventTimestamp = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The number of log lines where this anomalous log event occurs. 
         /// </para>
         /// </summary>
-        public int NumberOfLogLinesOccurrences
+        public int? NumberOfLogLinesOccurrences
         {
-            get { return this._numberOfLogLinesOccurrences.GetValueOrDefault(); }
+            get { return this._numberOfLogLinesOccurrences; }
             set { this._numberOfLogLinesOccurrences = value; }
         }
 

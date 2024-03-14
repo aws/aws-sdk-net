@@ -49,9 +49,9 @@ namespace Amazon.RedshiftServerless.Model
         /// Specifies whether to enable the scheduled action.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The end time in UTC of the scheduled action to update.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The start time in UTC of the scheduled action to update to.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

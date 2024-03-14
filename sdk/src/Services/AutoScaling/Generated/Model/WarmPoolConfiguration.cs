@@ -65,9 +65,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1)]
-        public int MaxGroupPreparedCapacity
+        public int? MaxGroupPreparedCapacity
         {
-            get { return this._maxGroupPreparedCapacity.GetValueOrDefault(); }
+            get { return this._maxGroupPreparedCapacity; }
             set { this._maxGroupPreparedCapacity = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

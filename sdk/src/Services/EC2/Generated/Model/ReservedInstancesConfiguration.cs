@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

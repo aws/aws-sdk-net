@@ -1262,7 +1262,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        public virtual Task<GetPipelineResponse> GetPipelineAsync(string name, int version, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetPipelineResponse> GetPipelineAsync(string name, int? version, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetPipelineRequest();
             request.Name = name;

@@ -47,9 +47,9 @@ namespace Amazon.Glue.Model
         /// A timestamp. The time and date that this data quality ruleset was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Glue.Model
         /// A timestamp. The last point in time when this data quality ruleset was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 

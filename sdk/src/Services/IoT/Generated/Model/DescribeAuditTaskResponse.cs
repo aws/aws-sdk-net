@@ -83,9 +83,9 @@ namespace Amazon.IoT.Model
         /// The time the audit started.
         /// </para>
         /// </summary>
-        public DateTime TaskStartTime
+        public DateTime? TaskStartTime
         {
-            get { return this._taskStartTime.GetValueOrDefault(); }
+            get { return this._taskStartTime; }
             set { this._taskStartTime = value; }
         }
 

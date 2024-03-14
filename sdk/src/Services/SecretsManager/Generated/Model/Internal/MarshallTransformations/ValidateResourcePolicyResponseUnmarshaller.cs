@@ -53,7 +53,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PolicyValidationPassed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PolicyValidationPassed = unmarshaller.Unmarshall(context);
                     continue;
                 }

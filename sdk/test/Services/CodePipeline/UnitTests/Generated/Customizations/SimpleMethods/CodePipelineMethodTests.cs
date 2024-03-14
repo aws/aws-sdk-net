@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.CodePipeline.Model;
 using Amazon.CodePipeline;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class CodePipelineMethodCustomizationsTests
@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "CreatePipeline", new Type[] { typeof(PipelineDeclaration), });
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "DeletePipeline", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "GetJobDetails", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "GetPipeline", new Type[] { typeof(string), typeof(int), });
+            EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "GetPipeline", new Type[] { typeof(string), typeof(int?), });
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "GetPipeline", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "GetPipelineState", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.CodePipeline.AmazonCodePipelineClient), "GetThirdPartyJobDetails", new Type[] { typeof(string), typeof(string), });

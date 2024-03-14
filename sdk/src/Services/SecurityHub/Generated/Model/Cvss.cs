@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// The base CVSS score.
         /// </para>
         /// </summary>
-        public double BaseScore
+        public double? BaseScore
         {
-            get { return this._baseScore.GetValueOrDefault(); }
+            get { return this._baseScore; }
             set { this._baseScore = value; }
         }
 

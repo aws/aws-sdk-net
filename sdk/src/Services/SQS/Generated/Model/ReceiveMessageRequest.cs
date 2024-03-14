@@ -209,9 +209,9 @@ namespace Amazon.SQS.Model
         /// 1.
         /// </para>
         /// </summary>
-        public int MaxNumberOfMessages
+        public int? MaxNumberOfMessages
         {
-            get { return this._maxNumberOfMessages.GetValueOrDefault(); }
+            get { return this._maxNumberOfMessages; }
             set { this._maxNumberOfMessages = value; }
         }
 
@@ -389,9 +389,9 @@ namespace Amazon.SQS.Model
         /// requests after being retrieved by a <c>ReceiveMessage</c> request.
         /// </para>
         /// </summary>
-        public int VisibilityTimeout
+        public int? VisibilityTimeout
         {
-            get { return this._visibilityTimeout.GetValueOrDefault(); }
+            get { return this._visibilityTimeout; }
             set { this._visibilityTimeout = value; }
         }
 
@@ -419,9 +419,9 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int WaitTimeSeconds
+        public int? WaitTimeSeconds
         {
-            get { return this._waitTimeSeconds.GetValueOrDefault(); }
+            get { return this._waitTimeSeconds; }
             set { this._waitTimeSeconds = value; }
         }
 

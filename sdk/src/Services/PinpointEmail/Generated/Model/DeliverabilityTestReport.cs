@@ -47,9 +47,9 @@ namespace Amazon.PinpointEmail.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 

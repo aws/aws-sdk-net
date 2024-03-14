@@ -95,25 +95,25 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 }
                 if (context.TestExpression("maxLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
                 }
                 if (context.TestExpression("noEcho", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoEcho = unmarshaller.Unmarshall(context);
                     continue;
                 }

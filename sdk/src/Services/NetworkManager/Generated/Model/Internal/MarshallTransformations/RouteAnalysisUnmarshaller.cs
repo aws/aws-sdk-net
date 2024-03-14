@@ -83,7 +83,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeReturnPath", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeReturnPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseMiddleboxes", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseMiddleboxes = unmarshaller.Unmarshall(context);
                     continue;
                 }

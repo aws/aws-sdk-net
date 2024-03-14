@@ -50,9 +50,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the document was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// An identifier for the default version of the document.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 

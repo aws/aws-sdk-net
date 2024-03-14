@@ -83,7 +83,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("progressInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("requestTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,7 +149,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalDataInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalDataInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

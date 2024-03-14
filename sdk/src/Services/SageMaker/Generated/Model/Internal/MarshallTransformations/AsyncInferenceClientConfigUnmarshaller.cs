@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxConcurrentInvocationsPerInstance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentInvocationsPerInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }

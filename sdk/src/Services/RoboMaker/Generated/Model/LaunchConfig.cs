@@ -148,9 +148,9 @@ namespace Amazon.RoboMaker.Model
         /// the component. It must have a graphical user interface. 
         /// </para>
         /// </summary>
-        public bool StreamUI
+        public bool? StreamUI
         {
-            get { return this._streamui.GetValueOrDefault(); }
+            get { return this._streamui; }
             set { this._streamui = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Dropped", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Dropped = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -83,9 +83,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this._partNumber.GetValueOrDefault(); }
+            get { return this._partNumber; }
             set { this._partNumber = value; }
         }
 

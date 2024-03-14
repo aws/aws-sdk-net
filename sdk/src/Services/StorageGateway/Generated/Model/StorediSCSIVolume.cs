@@ -56,9 +56,9 @@ namespace Amazon.StorageGateway.Model
         /// this timestamp.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool PreservedExistingData
+        public bool? PreservedExistingData
         {
-            get { return this._preservedExistingData.GetValueOrDefault(); }
+            get { return this._preservedExistingData; }
             set { this._preservedExistingData = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.StorageGateway.Model
         /// if the stored volume is not restoring or bootstrapping.
         /// </para>
         /// </summary>
-        public double VolumeProgress
+        public double? VolumeProgress
         {
-            get { return this._volumeProgress.GetValueOrDefault(); }
+            get { return this._volumeProgress; }
             set { this._volumeProgress = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.StorageGateway.Model
         /// The size of the volume in bytes.
         /// </para>
         /// </summary>
-        public long VolumeSizeInBytes
+        public long? VolumeSizeInBytes
         {
-            get { return this._volumeSizeInBytes.GetValueOrDefault(); }
+            get { return this._volumeSizeInBytes; }
             set { this._volumeSizeInBytes = value; }
         }
 
@@ -343,9 +343,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long VolumeUsedInBytes
+        public long? VolumeUsedInBytes
         {
-            get { return this._volumeUsedInBytes.GetValueOrDefault(); }
+            get { return this._volumeUsedInBytes; }
             set { this._volumeUsedInBytes = value; }
         }
 

@@ -233,9 +233,9 @@ namespace Amazon.Budgets.Model
         /// The last time that you updated this budget.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

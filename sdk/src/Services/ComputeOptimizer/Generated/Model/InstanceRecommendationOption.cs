@@ -129,9 +129,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
-        public double PerformanceRisk
+        public double? PerformanceRisk
         {
-            get { return this._performanceRisk.GetValueOrDefault(); }
+            get { return this._performanceRisk; }
             set { this._performanceRisk = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The top recommendation option is ranked as <c>1</c>.
         /// </para>
         /// </summary>
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

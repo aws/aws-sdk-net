@@ -115,13 +115,13 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetShardCapacity())
                 {
                     context.Writer.WritePropertyName("shardCapacity");
-                    context.Writer.Write(publicRequest.ShardCapacity);
+                    context.Writer.Write(publicRequest.ShardCapacity.Value);
                 }
 
                 if(publicRequest.IsSetShardCount())
                 {
                     context.Writer.WritePropertyName("shardCount");
-                    context.Writer.Write(publicRequest.ShardCount);
+                    context.Writer.Write(publicRequest.ShardCount.Value);
                 }
 
                 if(publicRequest.IsSetSubnetIds())

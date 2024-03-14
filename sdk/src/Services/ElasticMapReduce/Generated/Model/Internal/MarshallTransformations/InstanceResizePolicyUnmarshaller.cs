@@ -77,7 +77,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InstanceTerminationTimeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceTerminationTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

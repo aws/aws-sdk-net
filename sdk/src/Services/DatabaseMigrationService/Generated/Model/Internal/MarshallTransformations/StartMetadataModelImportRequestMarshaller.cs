@@ -82,7 +82,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRefresh())
                 {
                     context.Writer.WritePropertyName("Refresh");
-                    context.Writer.Write(publicRequest.Refresh);
+                    context.Writer.Write(publicRequest.Refresh.Value);
                 }
 
                 if(publicRequest.IsSetSelectionRules())

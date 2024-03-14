@@ -83,13 +83,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -191,7 +191,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TableSizeBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TableSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

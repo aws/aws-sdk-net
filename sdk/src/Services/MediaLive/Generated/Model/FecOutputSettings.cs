@@ -43,9 +43,9 @@ namespace Amazon.MediaLive.Model
         /// correction packet. Must be between 4 and 20, inclusive.
         /// </summary>
         [AWSProperty(Min=4, Max=20)]
-        public int ColumnDepth
+        public int? ColumnDepth
         {
-            get { return this._columnDepth.GetValueOrDefault(); }
+            get { return this._columnDepth; }
             set { this._columnDepth = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.MediaLive.Model
         /// is column, this value must be 1 to 20, inclusive.
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int RowLength
+        public int? RowLength
         {
-            get { return this._rowLength.GetValueOrDefault(); }
+            get { return this._rowLength; }
             set { this._rowLength = value; }
         }
 

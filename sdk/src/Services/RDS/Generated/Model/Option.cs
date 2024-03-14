@@ -140,9 +140,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether this option is permanent.
         /// </para>
         /// </summary>
-        public bool Permanent
+        public bool? Permanent
         {
-            get { return this._permanent.GetValueOrDefault(); }
+            get { return this._permanent; }
             set { this._permanent = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether this option is persistent.
         /// </para>
         /// </summary>
-        public bool Persistent
+        public bool? Persistent
         {
-            get { return this._persistent.GetValueOrDefault(); }
+            get { return this._persistent; }
             set { this._persistent = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.RDS.Model
         /// If required, the port configured for this option to use.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.NeptuneGraph.Model
         /// can't be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=24576)]
-        public int ProvisionedMemory
+        public int? ProvisionedMemory
         {
-            get { return this._provisionedMemory.GetValueOrDefault(); }
+            get { return this._provisionedMemory; }
             set { this._provisionedMemory = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.NeptuneGraph.Model
         /// to graphs is IAM authenticated. (<c>true</c> to enable, or <c>false</c> to disable.
         /// </para>
         /// </summary>
-        public bool PublicConnectivity
+        public bool? PublicConnectivity
         {
-            get { return this._publicConnectivity.GetValueOrDefault(); }
+            get { return this._publicConnectivity; }
             set { this._publicConnectivity = value; }
         }
 

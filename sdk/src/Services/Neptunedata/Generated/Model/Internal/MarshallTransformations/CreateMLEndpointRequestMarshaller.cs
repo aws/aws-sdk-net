@@ -74,7 +74,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInstanceCount())
                 {
                     context.Writer.WritePropertyName("instanceCount");
-                    context.Writer.Write(publicRequest.InstanceCount);
+                    context.Writer.Write(publicRequest.InstanceCount.Value);
                 }
 
                 if(publicRequest.IsSetInstanceType())
@@ -110,7 +110,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdate())
                 {
                     context.Writer.WritePropertyName("update");
-                    context.Writer.Write(publicRequest.Update);
+                    context.Writer.Write(publicRequest.Update.Value);
                 }
 
                 if(publicRequest.IsSetVolumeEncryptionKMSKey())

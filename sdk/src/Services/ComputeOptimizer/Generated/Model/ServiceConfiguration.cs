@@ -105,9 +105,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The number of CPU units used by the tasks in the Amazon ECS service. 
         /// </para>
         /// </summary>
-        public int Cpu
+        public int? Cpu
         {
-            get { return this._cpu.GetValueOrDefault(); }
+            get { return this._cpu; }
             set { this._cpu = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The amount of memory used by the tasks in the Amazon ECS service. 
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 

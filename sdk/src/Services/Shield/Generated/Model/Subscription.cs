@@ -74,9 +74,9 @@ namespace Amazon.Shield.Model
         /// The date and time your subscription will end.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.Shield.Model
         /// The start time of the subscription, in Unix time in seconds. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.Shield.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TimeCommitmentInSeconds
+        public long? TimeCommitmentInSeconds
         {
-            get { return this._timeCommitmentInSeconds.GetValueOrDefault(); }
+            get { return this._timeCommitmentInSeconds; }
             set { this._timeCommitmentInSeconds = value; }
         }
 

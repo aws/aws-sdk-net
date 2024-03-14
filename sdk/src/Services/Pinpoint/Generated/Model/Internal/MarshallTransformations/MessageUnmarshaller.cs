@@ -113,13 +113,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SilentPush", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SilentPush = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeToLive", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeToLive = unmarshaller.Unmarshall(context);
                     continue;
                 }

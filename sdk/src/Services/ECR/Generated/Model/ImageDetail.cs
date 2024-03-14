@@ -106,9 +106,9 @@ namespace Amazon.ECR.Model
         /// image was pushed to the repository. 
         /// </para>
         /// </summary>
-        public DateTime ImagePushedAt
+        public DateTime? ImagePushedAt
         {
-            get { return this._imagePushedAt.GetValueOrDefault(); }
+            get { return this._imagePushedAt; }
             set { this._imagePushedAt = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long ImageSizeInBytes
+        public long? ImageSizeInBytes
         {
-            get { return this._imageSizeInBytes.GetValueOrDefault(); }
+            get { return this._imageSizeInBytes; }
             set { this._imageSizeInBytes = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public DateTime LastRecordedPullTime
+        public DateTime? LastRecordedPullTime
         {
-            get { return this._lastRecordedPullTime.GetValueOrDefault(); }
+            get { return this._lastRecordedPullTime; }
             set { this._lastRecordedPullTime = value; }
         }
 

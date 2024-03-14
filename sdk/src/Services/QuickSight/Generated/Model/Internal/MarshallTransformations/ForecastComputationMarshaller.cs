@@ -54,13 +54,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomSeasonalityValue())
             {
                 context.Writer.WritePropertyName("CustomSeasonalityValue");
-                context.Writer.Write(requestObject.CustomSeasonalityValue);
+                context.Writer.Write(requestObject.CustomSeasonalityValue.Value);
             }
 
             if(requestObject.IsSetLowerBoundary())
             {
                 context.Writer.WritePropertyName("LowerBoundary");
-                context.Writer.Write(requestObject.LowerBoundary);
+                context.Writer.Write(requestObject.LowerBoundary.Value);
             }
 
             if(requestObject.IsSetName())
@@ -72,19 +72,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriodsBackward())
             {
                 context.Writer.WritePropertyName("PeriodsBackward");
-                context.Writer.Write(requestObject.PeriodsBackward);
+                context.Writer.Write(requestObject.PeriodsBackward.Value);
             }
 
             if(requestObject.IsSetPeriodsForward())
             {
                 context.Writer.WritePropertyName("PeriodsForward");
-                context.Writer.Write(requestObject.PeriodsForward);
+                context.Writer.Write(requestObject.PeriodsForward.Value);
             }
 
             if(requestObject.IsSetPredictionInterval())
             {
                 context.Writer.WritePropertyName("PredictionInterval");
-                context.Writer.Write(requestObject.PredictionInterval);
+                context.Writer.Write(requestObject.PredictionInterval.Value);
             }
 
             if(requestObject.IsSetSeasonality())
@@ -107,7 +107,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpperBoundary())
             {
                 context.Writer.WritePropertyName("UpperBoundary");
-                context.Writer.Write(requestObject.UpperBoundary);
+                context.Writer.Write(requestObject.UpperBoundary.Value);
             }
 
             if(requestObject.IsSetValue())

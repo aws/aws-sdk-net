@@ -47,9 +47,9 @@ namespace Amazon.Comprehend.Model
         /// is 0 to 1, where 1 is the best score. 
         /// </para>
         /// </summary>
-        public double F1Score
+        public double? F1Score
         {
-            get { return this._f1Score.GetValueOrDefault(); }
+            get { return this._f1Score; }
             set { this._f1Score = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Comprehend.Model
         /// ones. 
         /// </para>
         /// </summary>
-        public double Precision
+        public double? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Comprehend.Model
         /// means that the recognizer returned most of the relevant results.
         /// </para>
         /// </summary>
-        public double Recall
+        public double? Recall
         {
-            get { return this._recall.GetValueOrDefault(); }
+            get { return this._recall; }
             set { this._recall = value; }
         }
 

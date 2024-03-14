@@ -45,9 +45,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasMoreStreams
+        public bool? HasMoreStreams
         {
-            get { return this._hasMoreStreams.GetValueOrDefault(); }
+            get { return this._hasMoreStreams; }
             set { this._hasMoreStreams = value; }
         }
 

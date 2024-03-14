@@ -100,9 +100,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The size of an attachment in bytes.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

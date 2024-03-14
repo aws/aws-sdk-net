@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// If <c>nextToken</c> indicates that there are more items, this value is not present.
         /// </para>
         /// </summary>
-        public DateTime LastEvaluatedTime
+        public DateTime? LastEvaluatedTime
         {
-            get { return this._lastEvaluatedTime.GetValueOrDefault(); }
+            get { return this._lastEvaluatedTime; }
             set { this._lastEvaluatedTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.EC2.Model
         /// The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RetentionDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

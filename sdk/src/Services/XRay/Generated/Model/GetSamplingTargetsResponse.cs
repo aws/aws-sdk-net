@@ -46,9 +46,9 @@ namespace Amazon.XRay.Model
         /// to get the latest version.
         /// </para>
         /// </summary>
-        public DateTime LastRuleModification
+        public DateTime? LastRuleModification
         {
-            get { return this._lastRuleModification.GetValueOrDefault(); }
+            get { return this._lastRuleModification; }
             set { this._lastRuleModification = value; }
         }
 

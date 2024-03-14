@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period);
+                context.Writer.Write(requestObject.TimedMetadataId3Period.Value);
             }
 
         }

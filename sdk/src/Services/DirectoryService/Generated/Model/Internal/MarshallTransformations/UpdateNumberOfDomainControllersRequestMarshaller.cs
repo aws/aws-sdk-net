@@ -70,7 +70,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredNumber())
                 {
                     context.Writer.WritePropertyName("DesiredNumber");
-                    context.Writer.Write(publicRequest.DesiredNumber);
+                    context.Writer.Write(publicRequest.DesiredNumber.Value);
                 }
 
                 if(publicRequest.IsSetDirectoryId())

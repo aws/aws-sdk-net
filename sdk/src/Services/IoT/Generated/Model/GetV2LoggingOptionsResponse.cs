@@ -61,9 +61,9 @@ namespace Amazon.IoT.Model
         /// Disables all logs.
         /// </para>
         /// </summary>
-        public bool DisableAllLogs
+        public bool? DisableAllLogs
         {
-            get { return this._disableAllLogs.GetValueOrDefault(); }
+            get { return this._disableAllLogs; }
             set { this._disableAllLogs = value; }
         }
 

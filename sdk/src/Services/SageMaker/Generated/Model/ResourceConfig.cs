@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int KeepAlivePeriodInSeconds
+        public int? KeepAlivePeriodInSeconds
         {
-            get { return this._keepAlivePeriodInSeconds.GetValueOrDefault(); }
+            get { return this._keepAlivePeriodInSeconds; }
             set { this._keepAlivePeriodInSeconds = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

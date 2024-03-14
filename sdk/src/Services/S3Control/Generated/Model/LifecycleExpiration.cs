@@ -43,9 +43,9 @@ namespace Amazon.S3Control.Model
         /// Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.S3Control.Model
         /// value must be a non-zero positive integer.
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.S3Control.Model
         /// no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.
         /// </para>
         /// </summary>
-        public bool ExpiredObjectDeleteMarker
+        public bool? ExpiredObjectDeleteMarker
         {
-            get { return this._expiredObjectDeleteMarker.GetValueOrDefault(); }
+            get { return this._expiredObjectDeleteMarker; }
             set { this._expiredObjectDeleteMarker = value; }
         }
 

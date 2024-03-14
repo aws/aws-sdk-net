@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstituentsPerAggregate())
             {
                 context.Writer.WritePropertyName("ConstituentsPerAggregate");
-                context.Writer.Write(requestObject.ConstituentsPerAggregate);
+                context.Writer.Write(requestObject.ConstituentsPerAggregate.Value);
             }
 
         }

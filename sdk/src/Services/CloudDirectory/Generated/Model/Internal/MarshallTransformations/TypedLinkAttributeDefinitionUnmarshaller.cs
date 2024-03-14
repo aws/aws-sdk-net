@@ -71,7 +71,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsImmutable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsImmutable = unmarshaller.Unmarshall(context);
                     continue;
                 }

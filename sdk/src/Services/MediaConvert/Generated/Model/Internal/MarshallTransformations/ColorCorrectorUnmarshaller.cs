@@ -65,7 +65,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("brightness", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Brightness = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("contrast", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Contrast = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,13 +101,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("hue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Hue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxLuminance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLuminance = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,13 +119,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("saturation", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Saturation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sdrReferenceWhiteLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SdrReferenceWhiteLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

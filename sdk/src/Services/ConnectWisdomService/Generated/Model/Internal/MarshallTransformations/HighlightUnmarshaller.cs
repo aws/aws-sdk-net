@@ -65,13 +65,13 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("beginOffsetInclusive", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffsetInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("endOffsetExclusive", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetExclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }

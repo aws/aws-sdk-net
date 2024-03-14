@@ -89,19 +89,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisableApiStop", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableApiStop = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DisableApiTermination", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableApiTermination = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EbsOptimized", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EbsOptimized = unmarshaller.Unmarshall(context);
                     continue;
                 }

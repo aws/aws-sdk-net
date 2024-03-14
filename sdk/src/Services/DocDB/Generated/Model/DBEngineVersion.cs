@@ -184,9 +184,9 @@ namespace Amazon.DocDB.Model
         /// rebooting the DB instance.
         /// </para>
         /// </summary>
-        public bool SupportsCertificateRotationWithoutRestart
+        public bool? SupportsCertificateRotationWithoutRestart
         {
-            get { return this._supportsCertificateRotationWithoutRestart.GetValueOrDefault(); }
+            get { return this._supportsCertificateRotationWithoutRestart; }
             set { this._supportsCertificateRotationWithoutRestart = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.DocDB.Model
         /// specified by <c>ExportableLogTypes</c> to CloudWatch Logs.
         /// </para>
         /// </summary>
-        public bool SupportsLogExportsToCloudwatchLogs
+        public bool? SupportsLogExportsToCloudwatchLogs
         {
-            get { return this._supportsLogExportsToCloudwatchLogs.GetValueOrDefault(); }
+            get { return this._supportsLogExportsToCloudwatchLogs; }
             set { this._supportsLogExportsToCloudwatchLogs = value; }
         }
 

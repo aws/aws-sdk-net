@@ -41,9 +41,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The number of retention lifecycle policies in the current account.
         /// </para>
         /// </summary>
-        public long RetentionPolicyCount
+        public long? RetentionPolicyCount
         {
-            get { return this._retentionPolicyCount.GetValueOrDefault(); }
+            get { return this._retentionPolicyCount; }
             set { this._retentionPolicyCount = value; }
         }
 

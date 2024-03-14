@@ -67,9 +67,9 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long WorkUnitId
+        public long? WorkUnitId
         {
-            get { return this._workUnitId.GetValueOrDefault(); }
+            get { return this._workUnitId; }
             set { this._workUnitId = value; }
         }
 

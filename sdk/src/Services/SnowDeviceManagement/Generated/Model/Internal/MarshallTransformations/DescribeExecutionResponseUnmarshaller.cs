@@ -59,7 +59,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,7 +71,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

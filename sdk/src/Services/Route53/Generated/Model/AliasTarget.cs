@@ -472,9 +472,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EvaluateTargetHealth
+        public bool? EvaluateTargetHealth
         {
-            get { return this._evaluateTargetHealth.GetValueOrDefault(); }
+            get { return this._evaluateTargetHealth; }
             set { this._evaluateTargetHealth = value; }
         }
 

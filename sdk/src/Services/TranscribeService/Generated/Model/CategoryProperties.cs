@@ -71,9 +71,9 @@ namespace Amazon.TranscribeService.Model
         /// <c>2022-05-04T12:32:58.761000-07:00</c> represents 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.TranscribeService.Model
         /// <c>2022-05-05T12:45:32.691000-07:00</c> represents 12:45 PM UTC-7 on May 5, 2022.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

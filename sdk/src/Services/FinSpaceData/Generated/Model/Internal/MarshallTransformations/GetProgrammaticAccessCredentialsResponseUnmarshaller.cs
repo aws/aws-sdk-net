@@ -59,7 +59,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("durationInMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.DurationInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

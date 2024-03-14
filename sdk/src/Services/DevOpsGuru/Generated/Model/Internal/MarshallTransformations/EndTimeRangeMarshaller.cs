@@ -48,13 +48,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromTime())
             {
                 context.Writer.WritePropertyName("FromTime");
-                context.Writer.Write(requestObject.FromTime);
+                context.Writer.Write(requestObject.FromTime.Value);
             }
 
             if(requestObject.IsSetToTime())
             {
                 context.Writer.WritePropertyName("ToTime");
-                context.Writer.Write(requestObject.ToTime);
+                context.Writer.Write(requestObject.ToTime.Value);
             }
 
         }

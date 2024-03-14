@@ -123,9 +123,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property PipelinesRunningCount. The number of currently healthy
         /// pipelines.
         /// </summary>
-        public int PipelinesRunningCount
+        public int? PipelinesRunningCount
         {
-            get { return this._pipelinesRunningCount.GetValueOrDefault(); }
+            get { return this._pipelinesRunningCount; }
             set { this._pipelinesRunningCount = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ProgramCount. The number of programs in the multiplex.
         /// </summary>
-        public int ProgramCount
+        public int? ProgramCount
         {
-            get { return this._programCount.GetValueOrDefault(); }
+            get { return this._programCount; }
             set { this._programCount = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.
         /// </para>
         /// </summary>
-        public DateTime Expires
+        public DateTime? Expires
         {
-            get { return this._expires.GetValueOrDefault(); }
+            get { return this._expires; }
             set { this._expires = value; }
         }
 

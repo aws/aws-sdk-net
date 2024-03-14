@@ -42,9 +42,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property CaptionChannel. Caption channel.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int CaptionChannel
+        public int? CaptionChannel
         {
-            get { return this._captionChannel.GetValueOrDefault(); }
+            get { return this._captionChannel; }
             set { this._captionChannel = value; }
         }
 

@@ -82,9 +82,9 @@ namespace Amazon.LexModelsV2.Model
         /// recommendation.
         /// </para>
         /// </summary>
-        public int SampleUtterancesCount
+        public int? SampleUtterancesCount
         {
-            get { return this._sampleUtterancesCount.GetValueOrDefault(); }
+            get { return this._sampleUtterancesCount; }
             set { this._sampleUtterancesCount = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long RevocationId
+        public long? RevocationId
         {
-            get { return this._revocationId.GetValueOrDefault(); }
+            get { return this._revocationId; }
             set { this._revocationId = value; }
         }
 

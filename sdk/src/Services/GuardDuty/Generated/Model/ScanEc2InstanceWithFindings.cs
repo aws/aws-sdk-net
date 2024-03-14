@@ -42,9 +42,9 @@ namespace Amazon.GuardDuty.Model
         /// Describes the configuration for scanning EBS volumes as data source.
         /// </para>
         /// </summary>
-        public bool EbsVolumes
+        public bool? EbsVolumes
         {
-            get { return this._ebsVolumes.GetValueOrDefault(); }
+            get { return this._ebsVolumes; }
             set { this._ebsVolumes = value; }
         }
 

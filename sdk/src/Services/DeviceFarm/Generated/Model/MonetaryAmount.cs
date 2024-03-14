@@ -42,9 +42,9 @@ namespace Amazon.DeviceFarm.Model
         /// The numerical amount of an offering or transaction.
         /// </para>
         /// </summary>
-        public double Amount
+        public double? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

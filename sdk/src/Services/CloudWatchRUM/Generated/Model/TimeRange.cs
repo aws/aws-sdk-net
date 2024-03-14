@@ -43,9 +43,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long After
+        public long? After
         {
-            get { return this._after.GetValueOrDefault(); }
+            get { return this._after; }
             set { this._after = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// time range extends to the time that this operation is performed.
         /// </para>
         /// </summary>
-        public long Before
+        public long? Before
         {
-            get { return this._before.GetValueOrDefault(); }
+            get { return this._before; }
             set { this._before = value; }
         }
 

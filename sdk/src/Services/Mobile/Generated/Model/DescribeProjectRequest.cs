@@ -63,9 +63,9 @@ namespace Amazon.Mobile.Model
         /// e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. 
         /// </para>
         /// </summary>
-        public bool SyncFromResources
+        public bool? SyncFromResources
         {
-            get { return this._syncFromResources.GetValueOrDefault(); }
+            get { return this._syncFromResources; }
             set { this._syncFromResources = value; }
         }
 

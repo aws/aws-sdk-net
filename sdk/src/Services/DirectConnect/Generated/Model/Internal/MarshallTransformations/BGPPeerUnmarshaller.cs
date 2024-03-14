@@ -77,7 +77,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("asn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Asn = unmarshaller.Unmarshall(context);
                     continue;
                 }

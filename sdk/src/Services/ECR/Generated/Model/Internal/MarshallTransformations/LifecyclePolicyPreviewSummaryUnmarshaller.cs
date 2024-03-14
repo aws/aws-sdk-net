@@ -65,7 +65,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("expiringImageTotalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpiringImageTotalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

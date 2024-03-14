@@ -65,7 +65,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("pcrPid", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PcrPid = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("programNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("programPid", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramPid = unmarshaller.Unmarshall(context);
                     continue;
                 }

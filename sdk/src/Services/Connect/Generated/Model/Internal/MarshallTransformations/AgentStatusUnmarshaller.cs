@@ -83,7 +83,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisplayOrder", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DisplayOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

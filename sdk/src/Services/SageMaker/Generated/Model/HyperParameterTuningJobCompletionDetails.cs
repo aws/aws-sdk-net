@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// range of diverse benchmarking tests.
         /// </para>
         /// </summary>
-        public DateTime ConvergenceDetectedTime
+        public DateTime? ConvergenceDetectedTime
         {
-            get { return this._convergenceDetectedTime.GetValueOrDefault(); }
+            get { return this._convergenceDetectedTime; }
             set { this._convergenceDetectedTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// less) as measured by model performance evaluated against an objective function.
         /// </para>
         /// </summary>
-        public int NumberOfTrainingJobsObjectiveNotImproving
+        public int? NumberOfTrainingJobsObjectiveNotImproving
         {
-            get { return this._numberOfTrainingJobsObjectiveNotImproving.GetValueOrDefault(); }
+            get { return this._numberOfTrainingJobsObjectiveNotImproving; }
             set { this._numberOfTrainingJobsObjectiveNotImproving = value; }
         }
 

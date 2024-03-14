@@ -85,9 +85,9 @@ namespace Amazon.DAX.Model
         /// The date and time (in UNIX epoch format) when the node was launched.
         /// </para>
         /// </summary>
-        public DateTime NodeCreateTime
+        public DateTime? NodeCreateTime
         {
-            get { return this._nodeCreateTime.GetValueOrDefault(); }
+            get { return this._nodeCreateTime; }
             set { this._nodeCreateTime = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObservabilityEnabled())
             {
                 context.Writer.WritePropertyName("ObservabilityEnabled");
-                context.Writer.Write(requestObject.ObservabilityEnabled);
+                context.Writer.Write(requestObject.ObservabilityEnabled.Value);
             }
 
         }

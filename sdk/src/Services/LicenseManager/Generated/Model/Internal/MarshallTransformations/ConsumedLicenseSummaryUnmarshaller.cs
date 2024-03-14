@@ -65,7 +65,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ConsumedLicenses", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConsumedLicenses = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -284,9 +284,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -307,9 +307,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

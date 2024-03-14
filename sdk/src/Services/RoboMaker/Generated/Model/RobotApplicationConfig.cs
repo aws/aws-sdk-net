@@ -149,9 +149,9 @@ namespace Amazon.RoboMaker.Model
         ///  </important>
         /// </summary>
         [Obsolete("AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
-        public bool UseDefaultTools
+        public bool? UseDefaultTools
         {
-            get { return this._useDefaultTools.GetValueOrDefault(); }
+            get { return this._useDefaultTools; }
             set { this._useDefaultTools = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.RoboMaker.Model
         ///  </important>
         /// </summary>
         [Obsolete("AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
-        public bool UseDefaultUploadConfigurations
+        public bool? UseDefaultUploadConfigurations
         {
-            get { return this._useDefaultUploadConfigurations.GetValueOrDefault(); }
+            get { return this._useDefaultUploadConfigurations; }
             set { this._useDefaultUploadConfigurations = value; }
         }
 

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.ElasticMapReduce.Endpoints;
 using Amazon.ElasticMapReduce.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class ElasticMapReduceEndpointsTests

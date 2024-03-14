@@ -204,9 +204,9 @@ namespace Amazon.Braket.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Shots
+        public long? Shots
         {
-            get { return this._shots.GetValueOrDefault(); }
+            get { return this._shots; }
             set { this._shots = value; }
         }
 

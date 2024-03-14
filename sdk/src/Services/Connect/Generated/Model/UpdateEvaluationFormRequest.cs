@@ -80,9 +80,9 @@ namespace Amazon.Connect.Model
         /// A flag indicating whether the operation must create a new version.
         /// </para>
         /// </summary>
-        public bool CreateNewVersion
+        public bool? CreateNewVersion
         {
-            get { return this._createNewVersion.GetValueOrDefault(); }
+            get { return this._createNewVersion; }
             set { this._createNewVersion = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int EvaluationFormVersion
+        public int? EvaluationFormVersion
         {
-            get { return this._evaluationFormVersion.GetValueOrDefault(); }
+            get { return this._evaluationFormVersion; }
             set { this._evaluationFormVersion = value; }
         }
 

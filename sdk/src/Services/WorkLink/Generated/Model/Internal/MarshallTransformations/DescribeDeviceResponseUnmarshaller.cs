@@ -53,13 +53,13 @@ namespace Amazon.WorkLink.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FirstAccessedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.FirstAccessedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastAccessedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastAccessedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -45,9 +45,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2)]
-        public int MaximumSubChannels
+        public int? MaximumSubChannels
         {
-            get { return this._maximumSubChannels.GetValueOrDefault(); }
+            get { return this._maximumSubChannels; }
             set { this._maximumSubChannels = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=40)]
-        public int MinimumMembershipPercentage
+        public int? MinimumMembershipPercentage
         {
-            get { return this._minimumMembershipPercentage.GetValueOrDefault(); }
+            get { return this._minimumMembershipPercentage; }
             set { this._minimumMembershipPercentage = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2)]
-        public int TargetMembershipsPerSubChannel
+        public int? TargetMembershipsPerSubChannel
         {
-            get { return this._targetMembershipsPerSubChannel.GetValueOrDefault(); }
+            get { return this._targetMembershipsPerSubChannel; }
             set { this._targetMembershipsPerSubChannel = value; }
         }
 

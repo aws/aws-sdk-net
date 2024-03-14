@@ -45,9 +45,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int BaseStationId
+        public int? BaseStationId
         {
-            get { return this._baseStationId.GetValueOrDefault(); }
+            get { return this._baseStationId; }
             set { this._baseStationId = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4095)]
-        public int CdmaChannel
+        public int? CdmaChannel
         {
-            get { return this._cdmaChannel.GetValueOrDefault(); }
+            get { return this._cdmaChannel; }
             set { this._cdmaChannel = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-142, Max=-49)]
-        public int PilotPower
+        public int? PilotPower
         {
-            get { return this._pilotPower.GetValueOrDefault(); }
+            get { return this._pilotPower; }
             set { this._pilotPower = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=511)]
-        public int PnOffset
+        public int? PnOffset
         {
-            get { return this._pnOffset.GetValueOrDefault(); }
+            get { return this._pnOffset; }
             set { this._pnOffset = value; }
         }
 

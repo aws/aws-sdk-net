@@ -47,9 +47,9 @@ namespace Amazon.StepFunctions.Model
         /// The maximum allowed duration between two heartbeats for the task.
         /// </para>
         /// </summary>
-        public long HeartbeatInSeconds
+        public long? HeartbeatInSeconds
         {
-            get { return this._heartbeatInSeconds.GetValueOrDefault(); }
+            get { return this._heartbeatInSeconds; }
             set { this._heartbeatInSeconds = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.StepFunctions.Model
         /// The maximum allowed duration of the task.
         /// </para>
         /// </summary>
-        public long TimeoutInSeconds
+        public long? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

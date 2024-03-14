@@ -71,31 +71,31 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxNodeCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxNodeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("metricTarget", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minNodeCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinNodeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scaleInCooldownSeconds", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ScaleInCooldownSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scaleOutCooldownSeconds", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutCooldownSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

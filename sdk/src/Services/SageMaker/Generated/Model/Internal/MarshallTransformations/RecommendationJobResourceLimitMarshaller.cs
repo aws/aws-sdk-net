@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxNumberOfTests())
             {
                 context.Writer.WritePropertyName("MaxNumberOfTests");
-                context.Writer.Write(requestObject.MaxNumberOfTests);
+                context.Writer.Write(requestObject.MaxNumberOfTests.Value);
             }
 
             if(requestObject.IsSetMaxParallelOfTests())
             {
                 context.Writer.WritePropertyName("MaxParallelOfTests");
-                context.Writer.Write(requestObject.MaxParallelOfTests);
+                context.Writer.Write(requestObject.MaxParallelOfTests.Value);
             }
 
         }

@@ -77,7 +77,7 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MembershipExists", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MembershipExists = unmarshaller.Unmarshall(context);
                     continue;
                 }

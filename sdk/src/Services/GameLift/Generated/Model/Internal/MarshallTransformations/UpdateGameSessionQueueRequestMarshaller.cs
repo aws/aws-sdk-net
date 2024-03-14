@@ -142,7 +142,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeoutInSeconds())
                 {
                     context.Writer.WritePropertyName("TimeoutInSeconds");
-                    context.Writer.Write(publicRequest.TimeoutInSeconds);
+                    context.Writer.Write(publicRequest.TimeoutInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -106,7 +106,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueryTimeoutMilliseconds())
                 {
                     context.Writer.WritePropertyName("queryTimeoutMilliseconds");
-                    context.Writer.Write(publicRequest.QueryTimeoutMilliseconds);
+                    context.Writer.Write(publicRequest.QueryTimeoutMilliseconds.Value);
                 }
 
                 writer.WriteObjectEnd();

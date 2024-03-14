@@ -46,9 +46,9 @@ namespace Amazon.ResilienceHub.Model
         /// Specifies if the recommendation has already been implemented.
         /// </para>
         /// </summary>
-        public bool AlreadyImplemented
+        public bool? AlreadyImplemented
         {
-            get { return this._alreadyImplemented.GetValueOrDefault(); }
+            get { return this._alreadyImplemented; }
             set { this._alreadyImplemented = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ResilienceHub.Model
         /// Indicates if an operational recommendation item is excluded.
         /// </para>
         /// </summary>
-        public bool Excluded
+        public bool? Excluded
         {
-            get { return this._excluded.GetValueOrDefault(); }
+            get { return this._excluded; }
             set { this._excluded = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AccessBasedEnumeration", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AccessBasedEnumeration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("GuessMIMETypeEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GuessMIMETypeEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,7 +155,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("KMSEncrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.KMSEncrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -185,7 +185,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OplocksEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OplocksEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -197,13 +197,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReadOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequesterPays", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequesterPays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -215,7 +215,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SMBACLEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SMBACLEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

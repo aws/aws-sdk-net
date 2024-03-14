@@ -65,19 +65,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumEventAgeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaximumEventAgeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumRetryAttempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }

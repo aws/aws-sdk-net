@@ -45,9 +45,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the OpsMetadata objects was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the OpsMetadata object was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

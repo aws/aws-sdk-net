@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodePipeline")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CodePipeline. AWS CodePipeline is a continuous delivery service for fast and reliable application updates.")]
 #elif NETCOREAPP3_1

@@ -56,9 +56,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]
-        public int CredentialDurationSeconds
+        public int? CredentialDurationSeconds
         {
-            get { return this._credentialDurationSeconds.GetValueOrDefault(); }
+            get { return this._credentialDurationSeconds; }
             set { this._credentialDurationSeconds = value; }
         }
 

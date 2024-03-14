@@ -65,19 +65,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("column", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("line", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Line = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("span", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Span = unmarshaller.Unmarshall(context);
                     continue;
                 }

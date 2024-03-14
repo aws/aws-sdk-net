@@ -69,9 +69,9 @@ namespace Amazon.StorageGateway.Model
         /// The date that the tape enters a custom tape pool.
         /// </para>
         /// </summary>
-        public DateTime PoolEntryDate
+        public DateTime? PoolEntryDate
         {
-            get { return this._poolEntryDate.GetValueOrDefault(); }
+            get { return this._poolEntryDate; }
             set { this._poolEntryDate = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.StorageGateway.Model
         /// Range: 0 (not started) to 100 (complete).
         /// </para>
         /// </summary>
-        public double Progress
+        public double? Progress
         {
-            get { return this._progress.GetValueOrDefault(); }
+            get { return this._progress; }
             set { this._progress = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.StorageGateway.Model
         /// The date that the tape is first archived with tape retention lock enabled.
         /// </para>
         /// </summary>
-        public DateTime RetentionStartDate
+        public DateTime? RetentionStartDate
         {
-            get { return this._retentionStartDate.GetValueOrDefault(); }
+            get { return this._retentionStartDate; }
             set { this._retentionStartDate = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.StorageGateway.Model
         /// The date the virtual tape was created.
         /// </para>
         /// </summary>
-        public DateTime TapeCreatedDate
+        public DateTime? TapeCreatedDate
         {
-            get { return this._tapeCreatedDate.GetValueOrDefault(); }
+            get { return this._tapeCreatedDate; }
             set { this._tapeCreatedDate = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.StorageGateway.Model
         /// The size, in bytes, of the virtual tape capacity.
         /// </para>
         /// </summary>
-        public long TapeSizeInBytes
+        public long? TapeSizeInBytes
         {
-            get { return this._tapeSizeInBytes.GetValueOrDefault(); }
+            get { return this._tapeSizeInBytes; }
             set { this._tapeSizeInBytes = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long TapeUsedInBytes
+        public long? TapeUsedInBytes
         {
-            get { return this._tapeUsedInBytes.GetValueOrDefault(); }
+            get { return this._tapeUsedInBytes; }
             set { this._tapeUsedInBytes = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.StorageGateway.Model
         /// If the tape is archived as write-once-read-many (WORM), this value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool Worm
+        public bool? Worm
         {
-            get { return this._worm.GetValueOrDefault(); }
+            get { return this._worm; }
             set { this._worm = value; }
         }
 

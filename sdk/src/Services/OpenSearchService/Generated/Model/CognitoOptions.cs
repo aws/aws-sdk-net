@@ -46,9 +46,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

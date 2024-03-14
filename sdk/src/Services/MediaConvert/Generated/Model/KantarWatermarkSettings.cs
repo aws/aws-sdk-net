@@ -110,9 +110,9 @@ namespace Amazon.MediaConvert.Model
         /// from the start of your output and the beginning of the watermarking. When you don't
         /// specify an offset, Kantar defaults to zero.
         /// </summary>
-        public double FileOffset
+        public double? FileOffset
         {
-            get { return this._fileOffset.GetValueOrDefault(); }
+            get { return this._fileOffset; }
             set { this._fileOffset = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.MediaConvert.Model
         /// You should get this number from Kantar.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int KantarLicenseId
+        public int? KantarLicenseId
         {
-            get { return this._kantarLicenseId.GetValueOrDefault(); }
+            get { return this._kantarLicenseId; }
             set { this._kantarLicenseId = value; }
         }
 

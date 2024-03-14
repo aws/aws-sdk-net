@@ -108,9 +108,9 @@ namespace Amazon.PI.Model
         /// The end time of the insight. For example, <c>2018-10-30T00:00:00Z</c>.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.PI.Model
         /// The start time of the insight. For example, <c>2018-10-30T00:00:00Z</c>.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

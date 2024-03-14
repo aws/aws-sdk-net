@@ -52,9 +52,9 @@ namespace Amazon.ElastiCache.Model
         /// Constraints are a maximum of 50.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

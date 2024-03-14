@@ -108,9 +108,9 @@ namespace Amazon.CodeCommit.Model
         /// The date and time the pull request was originally created, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.CodeCommit.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime LastActivityDate
+        public DateTime? LastActivityDate
         {
-            get { return this._lastActivityDate.GetValueOrDefault(); }
+            get { return this._lastActivityDate; }
             set { this._lastActivityDate = value; }
         }
 

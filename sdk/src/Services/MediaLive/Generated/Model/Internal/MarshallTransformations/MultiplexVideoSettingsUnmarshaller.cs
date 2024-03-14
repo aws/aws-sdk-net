@@ -65,7 +65,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("constantBitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConstantBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }

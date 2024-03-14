@@ -51,9 +51,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// includes all log events that matched your request during this time.
         /// </para>
         /// </summary>
-        public bool Sampled
+        public bool? Sampled
         {
-            get { return this._sampled.GetValueOrDefault(); }
+            get { return this._sampled; }
             set { this._sampled = value; }
         }
 

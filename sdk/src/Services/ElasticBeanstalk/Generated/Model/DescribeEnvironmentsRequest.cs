@@ -113,9 +113,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// deleted after this date are displayed. 
         /// </para>
         /// </summary>
-        public DateTime IncludedDeletedBackToUtc
+        public DateTime? IncludedDeletedBackToUtc
         {
-            get { return this._includedDeletedBackToUtc.GetValueOrDefault(); }
+            get { return this._includedDeletedBackToUtc; }
             set { this._includedDeletedBackTo = this._includedDeletedBackToUtc = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  <c>false</c>: Do not include deleted environments.
         /// </para>
         /// </summary>
-        public bool IncludeDeleted
+        public bool? IncludeDeleted
         {
-            get { return this._includeDeleted.GetValueOrDefault(); }
+            get { return this._includeDeleted; }
             set { this._includeDeleted = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -246,13 +246,20 @@ namespace Amazon.ElasticBeanstalk.Model
             "IncludedDeletedBackToUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. IncludedDeletedBackTo is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime IncludedDeletedBackTo
+        public DateTime? IncludedDeletedBackTo
         {
             get { return this._includedDeletedBackTo.GetValueOrDefault(); }
             set
             {
                 this._includedDeletedBackTo = value;
-                this._includedDeletedBackToUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._includedDeletedBackToUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._includedDeletedBackToUtc = null;
+                }
             }
         }
 #endregion

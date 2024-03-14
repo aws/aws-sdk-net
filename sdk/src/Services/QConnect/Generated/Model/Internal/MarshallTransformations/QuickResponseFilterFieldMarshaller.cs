@@ -48,7 +48,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeNoExistence())
             {
                 context.Writer.WritePropertyName("includeNoExistence");
-                context.Writer.Write(requestObject.IncludeNoExistence);
+                context.Writer.Write(requestObject.IncludeNoExistence.Value);
             }
 
             if(requestObject.IsSetName())

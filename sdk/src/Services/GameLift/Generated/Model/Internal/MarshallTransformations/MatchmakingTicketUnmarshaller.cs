@@ -77,13 +77,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EstimatedWaitTime", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EstimatedWaitTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

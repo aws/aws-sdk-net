@@ -64,9 +64,9 @@ namespace Amazon.MQ.Model
         /// Required. The date and time of the configuration.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 

@@ -120,9 +120,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether room utilization metrics are enabled or not.
         /// </para>
         /// </summary>
-        public bool RoomUtilizationMetricsEnabled
+        public bool? RoomUtilizationMetricsEnabled
         {
-            get { return this._roomUtilizationMetricsEnabled.GetValueOrDefault(); }
+            get { return this._roomUtilizationMetricsEnabled; }
             set { this._roomUtilizationMetricsEnabled = value; }
         }
 

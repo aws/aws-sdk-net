@@ -71,13 +71,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("bidPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BidPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("desiredvCpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredvCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,13 +119,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxvCpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxvCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minvCpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinvCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }

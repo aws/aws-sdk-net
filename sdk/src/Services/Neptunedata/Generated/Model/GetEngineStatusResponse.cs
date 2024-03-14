@@ -189,9 +189,9 @@ namespace Amazon.Neptunedata.Model
         /// transactions. If there are none, the field doesn't appear at all.
         /// </para>
         /// </summary>
-        public int RollingBackTrxCount
+        public int? RollingBackTrxCount
         {
-            get { return this._rollingBackTrxCount.GetValueOrDefault(); }
+            get { return this._rollingBackTrxCount; }
             set { this._rollingBackTrxCount = value; }
         }
 

@@ -134,9 +134,9 @@ namespace Amazon.AppStream.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
-        public bool DeleteVpcConfig
+        public bool? DeleteVpcConfig
         {
-            get { return this._deleteVpcConfig.GetValueOrDefault(); }
+            get { return this._deleteVpcConfig; }
             set { this._deleteVpcConfig = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.AppStream.Model
         /// Specify a value between 60 and 360000.
         /// </para>
         /// </summary>
-        public int DisconnectTimeoutInSeconds
+        public int? DisconnectTimeoutInSeconds
         {
-            get { return this._disconnectTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._disconnectTimeoutInSeconds; }
             set { this._disconnectTimeoutInSeconds = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.AppStream.Model
         /// Enables or disables default internet access for the fleet.
         /// </para>
         /// </summary>
-        public bool EnableDefaultInternetAccess
+        public bool? EnableDefaultInternetAccess
         {
-            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            get { return this._enableDefaultInternetAccess; }
             set { this._enableDefaultInternetAccess = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int IdleDisconnectTimeoutInSeconds
+        public int? IdleDisconnectTimeoutInSeconds
         {
-            get { return this._idleDisconnectTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._idleDisconnectTimeoutInSeconds; }
             set { this._idleDisconnectTimeoutInSeconds = value; }
         }
 
@@ -544,9 +544,9 @@ namespace Amazon.AppStream.Model
         /// The maximum number of concurrent sessions for a fleet.
         /// </para>
         /// </summary>
-        public int MaxConcurrentSessions
+        public int? MaxConcurrentSessions
         {
-            get { return this._maxConcurrentSessions.GetValueOrDefault(); }
+            get { return this._maxConcurrentSessions; }
             set { this._maxConcurrentSessions = value; }
         }
 
@@ -563,9 +563,9 @@ namespace Amazon.AppStream.Model
         /// fleets.
         /// </para>
         /// </summary>
-        public int MaxSessionsPerInstance
+        public int? MaxSessionsPerInstance
         {
-            get { return this._maxSessionsPerInstance.GetValueOrDefault(); }
+            get { return this._maxSessionsPerInstance; }
             set { this._maxSessionsPerInstance = value; }
         }
 
@@ -588,9 +588,9 @@ namespace Amazon.AppStream.Model
         /// Specify a value between 600 and 432000.
         /// </para>
         /// </summary>
-        public int MaxUserDurationInSeconds
+        public int? MaxUserDurationInSeconds
         {
-            get { return this._maxUserDurationInSeconds.GetValueOrDefault(); }
+            get { return this._maxUserDurationInSeconds; }
             set { this._maxUserDurationInSeconds = value; }
         }
 

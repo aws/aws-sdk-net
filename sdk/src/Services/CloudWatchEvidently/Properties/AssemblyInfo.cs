@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudWatchEvidently")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon CloudWatch Evidently. Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.")]
 #elif NETCOREAPP3_1

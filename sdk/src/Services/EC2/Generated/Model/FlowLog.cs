@@ -56,9 +56,9 @@ namespace Amazon.EC2.Model
         /// The date and time the flow log was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.EC2.Model
         /// Valid Values: <c>60</c> | <c>600</c> 
         /// </para>
         /// </summary>
-        public int MaxAggregationInterval
+        public int? MaxAggregationInterval
         {
-            get { return this._maxAggregationInterval.GetValueOrDefault(); }
+            get { return this._maxAggregationInterval; }
             set { this._maxAggregationInterval = value; }
         }
 

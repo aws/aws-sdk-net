@@ -81,7 +81,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("HealthCheckVersion", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.HealthCheckVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }

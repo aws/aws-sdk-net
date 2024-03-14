@@ -129,16 +129,16 @@ namespace Amazon.Glacier.Model
         /// parts never exceeds the limit.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
         // Check to see if Limit property is set
         internal bool IsSetLimit()
         {
-            return this._limit.HasValue; 
+            return this._limit != null;
         }
 
         /// <summary>

@@ -66,9 +66,9 @@ namespace Amazon.Elasticsearch.Model
         /// The duration, in seconds, for which the offering will reserve the Elasticsearch instance.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Elasticsearch.Model
         /// instance offering. 
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.Elasticsearch.Model
         /// The rate you are charged for each hour the domain that is using the offering is running.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

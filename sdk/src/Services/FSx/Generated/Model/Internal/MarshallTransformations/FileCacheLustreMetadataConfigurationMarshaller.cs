@@ -48,7 +48,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageCapacity())
             {
                 context.Writer.WritePropertyName("StorageCapacity");
-                context.Writer.Write(requestObject.StorageCapacity);
+                context.Writer.Write(requestObject.StorageCapacity.Value);
             }
 
         }

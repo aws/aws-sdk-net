@@ -51,9 +51,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the edge deployment plan was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.SageMaker.Model
         /// The number of edge devices that failed the deployment.
         /// </para>
         /// </summary>
-        public int EdgeDeploymentFailed
+        public int? EdgeDeploymentFailed
         {
-            get { return this._edgeDeploymentFailed.GetValueOrDefault(); }
+            get { return this._edgeDeploymentFailed; }
             set { this._edgeDeploymentFailed = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SageMaker.Model
         /// The number of edge devices yet to pick up deployment, or in progress.
         /// </para>
         /// </summary>
-        public int EdgeDeploymentPending
+        public int? EdgeDeploymentPending
         {
-            get { return this._edgeDeploymentPending.GetValueOrDefault(); }
+            get { return this._edgeDeploymentPending; }
             set { this._edgeDeploymentPending = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.SageMaker.Model
         /// The number of edge devices with the successful deployment.
         /// </para>
         /// </summary>
-        public int EdgeDeploymentSuccess
+        public int? EdgeDeploymentSuccess
         {
-            get { return this._edgeDeploymentSuccess.GetValueOrDefault(); }
+            get { return this._edgeDeploymentSuccess; }
             set { this._edgeDeploymentSuccess = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the edge deployment plan was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

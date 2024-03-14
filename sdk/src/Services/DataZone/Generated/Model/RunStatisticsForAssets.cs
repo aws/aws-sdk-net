@@ -45,9 +45,9 @@ namespace Amazon.DataZone.Model
         /// The <c>added</c> statistic for the data source run.
         /// </para>
         /// </summary>
-        public int Added
+        public int? Added
         {
-            get { return this._added.GetValueOrDefault(); }
+            get { return this._added; }
             set { this._added = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.DataZone.Model
         /// The <c>failed</c> statistic for the data source run.
         /// </para>
         /// </summary>
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.DataZone.Model
         /// The <c>skipped</c> statistic for the data source run.
         /// </para>
         /// </summary>
-        public int Skipped
+        public int? Skipped
         {
-            get { return this._skipped.GetValueOrDefault(); }
+            get { return this._skipped; }
             set { this._skipped = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.DataZone.Model
         /// The <c>unchanged</c> statistic for the data source run.
         /// </para>
         /// </summary>
-        public int Unchanged
+        public int? Unchanged
         {
-            get { return this._unchanged.GetValueOrDefault(); }
+            get { return this._unchanged; }
             set { this._unchanged = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.DataZone.Model
         /// The <c>updated</c> statistic for the data source run.
         /// </para>
         /// </summary>
-        public int Updated
+        public int? Updated
         {
-            get { return this._updated.GetValueOrDefault(); }
+            get { return this._updated; }
             set { this._updated = value; }
         }
 

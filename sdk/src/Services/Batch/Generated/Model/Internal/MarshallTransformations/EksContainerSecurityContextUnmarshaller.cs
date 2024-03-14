@@ -65,31 +65,31 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("privileged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Privileged = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("readOnlyRootFilesystem", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadOnlyRootFilesystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runAsGroup", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RunAsGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runAsNonRoot", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RunAsNonRoot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runAsUser", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RunAsUser = unmarshaller.Unmarshall(context);
                     continue;
                 }

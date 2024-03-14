@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("blackhole", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Blackhole = unmarshaller.Unmarshall(context);
                         continue;
                     }

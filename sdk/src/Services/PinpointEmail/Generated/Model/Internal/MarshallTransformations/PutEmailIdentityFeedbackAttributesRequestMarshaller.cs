@@ -71,7 +71,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEmailForwardingEnabled())
                 {
                     context.Writer.WritePropertyName("EmailForwardingEnabled");
-                    context.Writer.Write(publicRequest.EmailForwardingEnabled);
+                    context.Writer.Write(publicRequest.EmailForwardingEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

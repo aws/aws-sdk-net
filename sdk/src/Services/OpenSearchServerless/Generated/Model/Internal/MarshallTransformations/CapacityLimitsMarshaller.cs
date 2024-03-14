@@ -48,13 +48,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxIndexingCapacityInOCU())
             {
                 context.Writer.WritePropertyName("maxIndexingCapacityInOCU");
-                context.Writer.Write(requestObject.MaxIndexingCapacityInOCU);
+                context.Writer.Write(requestObject.MaxIndexingCapacityInOCU.Value);
             }
 
             if(requestObject.IsSetMaxSearchCapacityInOCU())
             {
                 context.Writer.WritePropertyName("maxSearchCapacityInOCU");
-                context.Writer.Write(requestObject.MaxSearchCapacityInOCU);
+                context.Writer.Write(requestObject.MaxSearchCapacityInOCU.Value);
             }
 
         }

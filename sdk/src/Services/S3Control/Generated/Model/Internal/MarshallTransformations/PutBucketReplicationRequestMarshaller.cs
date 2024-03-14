@@ -73,7 +73,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("ReplicationConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.ReplicationConfiguration.IsSetRole())
-                        xmlWriter.WriteElementString("Role", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ReplicationConfiguration.Role));                    
+                        xmlWriter.WriteElementString("Role", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ReplicationConfiguration.Role));
 
                     var publicRequestReplicationConfigurationRules = publicRequest.ReplicationConfiguration.Rules;
                     if (publicRequestReplicationConfigurationRules != null && publicRequestReplicationConfigurationRules.Count > 0) 
@@ -134,7 +134,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     {
                                         xmlWriter.WriteStartElement("EventThreshold", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                         if(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.EventThreshold.IsSetMinutes())
-                                            xmlWriter.WriteElementString("Minutes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.EventThreshold.Minutes));                 
+                                            xmlWriter.WriteElementString("Minutes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Destination.Metrics.EventThreshold.Minutes.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -155,7 +155,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     {
                                         xmlWriter.WriteStartElement("Time", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                         if(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Time.IsSetMinutes())
-                                            xmlWriter.WriteElementString("Minutes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Time.Minutes));                 
+                                            xmlWriter.WriteElementString("Minutes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Destination.ReplicationTime.Time.Minutes.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -233,7 +233,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestReplicationConfigurationRulesValue.Prefix));                 
 
                             if(publicRequestReplicationConfigurationRulesValue.IsSetPriority())
-                                xmlWriter.WriteElementString("Priority", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Priority));                 
+                                xmlWriter.WriteElementString("Priority", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestReplicationConfigurationRulesValue.Priority.Value));                 
 
                 
                             if (publicRequestReplicationConfigurationRulesValue.SourceSelectionCriteria != null) 

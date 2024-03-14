@@ -69,25 +69,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("createTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("encrypted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("fastRestored", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.FastRestored = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("iops", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("multiAttachEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MultiAttachEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("size", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("throughput", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
                         continue;
                     }

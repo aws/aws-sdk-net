@@ -145,9 +145,9 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// data set type.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FromDate
+        public DateTime? FromDate
         {
-            get { return this._fromDate.GetValueOrDefault(); }
+            get { return this._fromDate; }
             set { this._fromDate = value; }
         }
 

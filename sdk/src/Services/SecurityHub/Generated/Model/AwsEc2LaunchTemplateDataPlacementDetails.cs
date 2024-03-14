@@ -139,9 +139,9 @@ namespace Amazon.SecurityHub.Model
         ///  The number of the partition the instance should launch in. 
         /// </para>
         /// </summary>
-        public int PartitionNumber
+        public int? PartitionNumber
         {
-            get { return this._partitionNumber.GetValueOrDefault(); }
+            get { return this._partitionNumber; }
             set { this._partitionNumber = value; }
         }
 

@@ -108,9 +108,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date that the association between the bot and the channel was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

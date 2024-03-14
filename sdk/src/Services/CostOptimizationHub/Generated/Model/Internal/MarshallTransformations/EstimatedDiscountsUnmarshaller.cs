@@ -65,19 +65,19 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("otherDiscount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.OtherDiscount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("reservedInstancesDiscount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ReservedInstancesDiscount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("savingsPlansDiscount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansDiscount = unmarshaller.Unmarshall(context);
                     continue;
                 }

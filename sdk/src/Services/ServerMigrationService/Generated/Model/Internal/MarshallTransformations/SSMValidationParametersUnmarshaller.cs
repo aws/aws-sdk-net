@@ -71,7 +71,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("executionTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

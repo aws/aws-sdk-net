@@ -65,7 +65,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("aggressiveMode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AggressiveMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("speed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Speed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("strength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Strength = unmarshaller.Unmarshall(context);
                     continue;
                 }

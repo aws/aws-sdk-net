@@ -50,9 +50,9 @@ namespace Amazon.Redshift.Model
         /// A date and time that indicate when the reserved-node exchange was requested.
         /// </para>
         /// </summary>
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Redshift.Model
         /// The source reserved-node count in the cluster.
         /// </para>
         /// </summary>
-        public int SourceReservedNodeCount
+        public int? SourceReservedNodeCount
         {
-            get { return this._sourceReservedNodeCount.GetValueOrDefault(); }
+            get { return this._sourceReservedNodeCount; }
             set { this._sourceReservedNodeCount = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Redshift.Model
         /// The count of target reserved nodes in the cluster.
         /// </para>
         /// </summary>
-        public int TargetReservedNodeCount
+        public int? TargetReservedNodeCount
         {
-            get { return this._targetReservedNodeCount.GetValueOrDefault(); }
+            get { return this._targetReservedNodeCount; }
             set { this._targetReservedNodeCount = value; }
         }
 

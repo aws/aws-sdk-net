@@ -217,9 +217,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// service to process Systems Manager requests.
         /// </para>
         /// </summary>
-        public bool IsLatestVersion
+        public bool? IsLatestVersion
         {
-            get { return this._isLatestVersion.GetValueOrDefault(); }
+            get { return this._isLatestVersion; }
             set { this._isLatestVersion = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the association was last run.
         /// </para>
         /// </summary>
-        public DateTime LastAssociationExecutionDate
+        public DateTime? LastAssociationExecutionDate
         {
-            get { return this._lastAssociationExecutionDate.GetValueOrDefault(); }
+            get { return this._lastAssociationExecutionDate; }
             set { this._lastAssociationExecutionDate = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time when the agent last pinged the Systems Manager service. 
         /// </para>
         /// </summary>
-        public DateTime LastPingDateTime
+        public DateTime? LastPingDateTime
         {
-            get { return this._lastPingDateTime.GetValueOrDefault(); }
+            get { return this._lastPingDateTime; }
             set { this._lastPingDateTime = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The last date the association was successfully run.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulAssociationExecutionDate
+        public DateTime? LastSuccessfulAssociationExecutionDate
         {
-            get { return this._lastSuccessfulAssociationExecutionDate.GetValueOrDefault(); }
+            get { return this._lastSuccessfulAssociationExecutionDate; }
             set { this._lastSuccessfulAssociationExecutionDate = value; }
         }
 
@@ -394,9 +394,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the server or VM was registered with Amazon Web Services as a managed node.
         /// </para>
         /// </summary>
-        public DateTime RegistrationDate
+        public DateTime? RegistrationDate
         {
-            get { return this._registrationDate.GetValueOrDefault(); }
+            get { return this._registrationDate; }
             set { this._registrationDate = value; }
         }
 

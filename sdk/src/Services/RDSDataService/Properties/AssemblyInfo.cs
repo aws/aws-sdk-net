@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.RDSDataService")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS RDS DataService. Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS RDS DataService. Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS RDS DataService. Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS RDS DataService. Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.")]
 #elif NETCOREAPP3_1

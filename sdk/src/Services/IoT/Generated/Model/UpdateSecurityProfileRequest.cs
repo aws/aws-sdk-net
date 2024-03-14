@@ -144,9 +144,9 @@ namespace Amazon.IoT.Model
         /// exception occurs.
         /// </para>
         /// </summary>
-        public bool DeleteAdditionalMetricsToRetain
+        public bool? DeleteAdditionalMetricsToRetain
         {
-            get { return this._deleteAdditionalMetricsToRetain.GetValueOrDefault(); }
+            get { return this._deleteAdditionalMetricsToRetain; }
             set { this._deleteAdditionalMetricsToRetain = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.IoT.Model
         /// <c>alertTargets</c> are defined in the current invocation, an exception occurs.
         /// </para>
         /// </summary>
-        public bool DeleteAlertTargets
+        public bool? DeleteAlertTargets
         {
-            get { return this._deleteAlertTargets.GetValueOrDefault(); }
+            get { return this._deleteAlertTargets; }
             set { this._deleteAlertTargets = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.IoT.Model
         /// are defined in the current invocation, an exception occurs.
         /// </para>
         /// </summary>
-        public bool DeleteBehaviors
+        public bool? DeleteBehaviors
         {
-            get { return this._deleteBehaviors.GetValueOrDefault(); }
+            get { return this._deleteBehaviors; }
             set { this._deleteBehaviors = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.IoT.Model
         /// Set the value as true to delete metrics export related configurations.
         /// </para>
         /// </summary>
-        public bool DeleteMetricsExportConfig
+        public bool? DeleteMetricsExportConfig
         {
-            get { return this._deleteMetricsExportConfig.GetValueOrDefault(); }
+            get { return this._deleteMetricsExportConfig; }
             set { this._deleteMetricsExportConfig = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.IoT.Model
         /// actual version, a <c>VersionConflictException</c> is thrown.
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 

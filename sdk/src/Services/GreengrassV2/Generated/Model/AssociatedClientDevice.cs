@@ -43,9 +43,9 @@ namespace Amazon.GreengrassV2.Model
         /// The time that the client device was associated, expressed in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime AssociationTimestamp
+        public DateTime? AssociationTimestamp
         {
-            get { return this._associationTimestamp.GetValueOrDefault(); }
+            get { return this._associationTimestamp; }
             set { this._associationTimestamp = value; }
         }
 

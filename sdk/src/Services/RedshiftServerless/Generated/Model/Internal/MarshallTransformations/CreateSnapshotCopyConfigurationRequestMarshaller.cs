@@ -88,7 +88,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSnapshotRetentionPeriod())
                 {
                     context.Writer.WritePropertyName("snapshotRetentionPeriod");
-                    context.Writer.Write(publicRequest.SnapshotRetentionPeriod);
+                    context.Writer.Write(publicRequest.SnapshotRetentionPeriod.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -121,9 +121,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date of the last execution.
         /// </para>
         /// </summary>
-        public DateTime LastExecutionDate
+        public DateTime? LastExecutionDate
         {
-            get { return this._lastExecutionDate.GetValueOrDefault(); }
+            get { return this._lastExecutionDate; }
             set { this._lastExecutionDate = value; }
         }
 

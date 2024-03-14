@@ -59,7 +59,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

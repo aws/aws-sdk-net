@@ -65,7 +65,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("TotalNumberOfDuplicateTimestamps", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfDuplicateTimestamps = unmarshaller.Unmarshall(context);
                     continue;
                 }

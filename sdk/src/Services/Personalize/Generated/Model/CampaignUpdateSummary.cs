@@ -64,9 +64,9 @@ namespace Amazon.Personalize.Model
         /// The date and time (in Unix time) that the campaign update was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Personalize.Model
         /// The date and time (in Unix time) that the campaign update was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinProvisionedTPS
+        public int? MinProvisionedTPS
         {
-            get { return this._minProvisionedTPS.GetValueOrDefault(); }
+            get { return this._minProvisionedTPS; }
             set { this._minProvisionedTPS = value; }
         }
 

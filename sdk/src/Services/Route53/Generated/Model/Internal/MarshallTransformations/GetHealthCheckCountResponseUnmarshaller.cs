@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HealthCheckCount", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         response.HealthCheckCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

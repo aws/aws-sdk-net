@@ -83,9 +83,9 @@ namespace Amazon.AppStream.Model
         /// The value can be between 1 and 20,971,520 (20 MB).
         /// </para>
         /// </summary>
-        public int MaximumLength
+        public int? MaximumLength
         {
-            get { return this._maximumLength.GetValueOrDefault(); }
+            get { return this._maximumLength; }
             set { this._maximumLength = value; }
         }
 

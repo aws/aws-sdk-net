@@ -83,7 +83,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("ComputeRedundancy", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.ComputeRedundancy = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -113,13 +113,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxACU", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.MaxACU = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PubliclyAccessible", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Lex")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
 #elif NETCOREAPP3_1

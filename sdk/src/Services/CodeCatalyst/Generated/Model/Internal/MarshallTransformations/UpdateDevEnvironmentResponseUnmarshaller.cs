@@ -77,7 +77,7 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("inactivityTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InactivityTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

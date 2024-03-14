@@ -47,9 +47,9 @@ namespace Amazon.WorkMail.Model
         /// The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
         /// </para>
         /// </summary>
-        public DateTime DisabledDate
+        public DateTime? DisabledDate
         {
-            get { return this._disabledDate.GetValueOrDefault(); }
+            get { return this._disabledDate; }
             set { this._disabledDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.WorkMail.Model
         /// The date and time when a user was registered to WorkMail, in UNIX epoch time format.
         /// </para>
         /// </summary>
-        public DateTime EnabledDate
+        public DateTime? EnabledDate
         {
-            get { return this._enabledDate.GetValueOrDefault(); }
+            get { return this._enabledDate; }
             set { this._enabledDate = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.WorkMail.Model
         /// If the value is set to <i>true</i>, the group is hidden from the address book.
         /// </para>
         /// </summary>
-        public bool HiddenFromGlobalAddressList
+        public bool? HiddenFromGlobalAddressList
         {
-            get { return this._hiddenFromGlobalAddressList.GetValueOrDefault(); }
+            get { return this._hiddenFromGlobalAddressList; }
             set { this._hiddenFromGlobalAddressList = value; }
         }
 

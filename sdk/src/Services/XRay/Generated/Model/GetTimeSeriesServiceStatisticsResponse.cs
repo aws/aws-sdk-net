@@ -45,9 +45,9 @@ namespace Amazon.XRay.Model
         /// filter expression.
         /// </para>
         /// </summary>
-        public bool ContainsOldGroupVersions
+        public bool? ContainsOldGroupVersions
         {
-            get { return this._containsOldGroupVersions.GetValueOrDefault(); }
+            get { return this._containsOldGroupVersions; }
             set { this._containsOldGroupVersions = value; }
         }
 

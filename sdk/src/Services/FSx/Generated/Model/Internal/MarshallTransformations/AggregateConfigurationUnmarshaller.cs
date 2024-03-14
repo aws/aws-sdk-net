@@ -71,7 +71,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalConstituents", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalConstituents = unmarshaller.Unmarshall(context);
                     continue;
                 }

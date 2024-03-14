@@ -50,9 +50,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double BaseScore
+        public double? BaseScore
         {
-            get { return this._baseScore.GetValueOrDefault(); }
+            get { return this._baseScore; }
             set { this._baseScore = value; }
         }
 

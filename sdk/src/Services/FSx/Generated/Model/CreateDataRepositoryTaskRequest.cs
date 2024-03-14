@@ -75,9 +75,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public long CapacityToRelease
+        public long? CapacityToRelease
         {
-            get { return this._capacityToRelease.GetValueOrDefault(); }
+            get { return this._capacityToRelease; }
             set { this._capacityToRelease = value; }
         }
 

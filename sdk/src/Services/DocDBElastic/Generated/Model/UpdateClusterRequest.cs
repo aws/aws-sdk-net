@@ -167,9 +167,9 @@ namespace Amazon.DocDBElastic.Model
         /// The capacity of each shard in the Elastic DocumentDB cluster.
         /// </para>
         /// </summary>
-        public int ShardCapacity
+        public int? ShardCapacity
         {
-            get { return this._shardCapacity.GetValueOrDefault(); }
+            get { return this._shardCapacity; }
             set { this._shardCapacity = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.DocDBElastic.Model
         /// The number of shards to create in the Elastic DocumentDB cluster.
         /// </para>
         /// </summary>
-        public int ShardCount
+        public int? ShardCount
         {
-            get { return this._shardCount.GetValueOrDefault(); }
+            get { return this._shardCount; }
             set { this._shardCount = value; }
         }
 

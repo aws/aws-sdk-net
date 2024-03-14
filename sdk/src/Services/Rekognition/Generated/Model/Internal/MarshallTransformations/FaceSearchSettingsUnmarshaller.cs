@@ -71,7 +71,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FaceMatchThreshold", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.FaceMatchThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

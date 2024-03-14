@@ -59,7 +59,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMtu())
             {
                 context.Writer.WritePropertyName("mtu");
-                context.Writer.Write(requestObject.Mtu);
+                context.Writer.Write(requestObject.Mtu.Value);
             }
 
             if(requestObject.IsSetName())

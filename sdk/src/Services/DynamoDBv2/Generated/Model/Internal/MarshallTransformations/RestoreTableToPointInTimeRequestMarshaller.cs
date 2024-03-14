@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRestoreDateTime())
                 {
                     context.Writer.WritePropertyName("RestoreDateTime");
-                    context.Writer.Write(publicRequest.RestoreDateTime);
+                    context.Writer.Write(publicRequest.RestoreDateTime.Value);
                 }
 
                 if(publicRequest.IsSetSourceTableArn())
@@ -154,7 +154,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseLatestRestorableTime())
                 {
                     context.Writer.WritePropertyName("UseLatestRestorableTime");
-                    context.Writer.Write(publicRequest.UseLatestRestorableTime);
+                    context.Writer.Write(publicRequest.UseLatestRestorableTime.Value);
                 }
 
                 writer.WriteObjectEnd();

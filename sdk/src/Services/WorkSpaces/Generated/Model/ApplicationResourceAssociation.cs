@@ -102,9 +102,9 @@ namespace Amazon.WorkSpaces.Model
         /// The time the association was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.WorkSpaces.Model
         /// The time the association status was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

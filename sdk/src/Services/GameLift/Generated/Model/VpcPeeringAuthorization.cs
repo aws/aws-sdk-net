@@ -59,9 +59,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.GameLift.Model
         /// is a number expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

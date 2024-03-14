@@ -43,9 +43,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long CreatedCount
+        public long? CreatedCount
         {
-            get { return this._createdCount.GetValueOrDefault(); }
+            get { return this._createdCount; }
             set { this._createdCount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ModifiedCount
+        public long? ModifiedCount
         {
-            get { return this._modifiedCount.GetValueOrDefault(); }
+            get { return this._modifiedCount; }
             set { this._modifiedCount = value; }
         }
 

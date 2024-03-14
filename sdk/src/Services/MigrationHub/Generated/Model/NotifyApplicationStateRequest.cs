@@ -68,9 +68,9 @@ namespace Amazon.MigrationHub.Model
         /// if the caller has permission to make the call.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.MigrationHub.Model
         /// The timestamp when the application state changed.
         /// </para>
         /// </summary>
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

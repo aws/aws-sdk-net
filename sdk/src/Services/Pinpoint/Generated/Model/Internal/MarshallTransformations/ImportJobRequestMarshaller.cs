@@ -48,7 +48,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefineSegment())
             {
                 context.Writer.WritePropertyName("DefineSegment");
-                context.Writer.Write(requestObject.DefineSegment);
+                context.Writer.Write(requestObject.DefineSegment.Value);
             }
 
             if(requestObject.IsSetExternalId())
@@ -66,7 +66,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegisterEndpoints())
             {
                 context.Writer.WritePropertyName("RegisterEndpoints");
-                context.Writer.Write(requestObject.RegisterEndpoints);
+                context.Writer.Write(requestObject.RegisterEndpoints.Value);
             }
 
             if(requestObject.IsSetRoleArn())

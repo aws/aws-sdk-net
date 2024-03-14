@@ -48,13 +48,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCookies())
             {
                 context.Writer.WritePropertyName("AllowCookies");
-                context.Writer.Write(requestObject.AllowCookies);
+                context.Writer.Write(requestObject.AllowCookies.Value);
             }
 
             if(requestObject.IsSetEnableXRay())
             {
                 context.Writer.WritePropertyName("EnableXRay");
-                context.Writer.Write(requestObject.EnableXRay);
+                context.Writer.Write(requestObject.EnableXRay.Value);
             }
 
             if(requestObject.IsSetExcludedPages())
@@ -105,7 +105,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionSampleRate())
             {
                 context.Writer.WritePropertyName("SessionSampleRate");
-                context.Writer.Write(requestObject.SessionSampleRate);
+                context.Writer.Write(requestObject.SessionSampleRate.Value);
             }
 
             if(requestObject.IsSetTelemetries())

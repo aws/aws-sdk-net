@@ -53,7 +53,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bucketCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BucketCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,37 +89,37 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("classifiableObjectCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ClassifiableObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("classifiableSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ClassifiableSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("objectCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sizeInBytesCompressed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SizeInBytesCompressed = unmarshaller.Unmarshall(context);
                     continue;
                 }

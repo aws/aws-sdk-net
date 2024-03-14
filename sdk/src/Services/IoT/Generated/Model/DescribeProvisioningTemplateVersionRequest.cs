@@ -69,9 +69,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int VersionId
+        public int? VersionId
         {
-            get { return this._versionId.GetValueOrDefault(); }
+            get { return this._versionId; }
             set { this._versionId = value; }
         }
 

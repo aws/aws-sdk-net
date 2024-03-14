@@ -85,9 +85,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double BidPriceAsPercentageOfOnDemandPrice
+        public double? BidPriceAsPercentageOfOnDemandPrice
         {
-            get { return this._bidPriceAsPercentageOfOnDemandPrice.GetValueOrDefault(); }
+            get { return this._bidPriceAsPercentageOfOnDemandPrice; }
             set { this._bidPriceAsPercentageOfOnDemandPrice = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int WeightedCapacity
+        public int? WeightedCapacity
         {
-            get { return this._weightedCapacity.GetValueOrDefault(); }
+            get { return this._weightedCapacity; }
             set { this._weightedCapacity = value; }
         }
 

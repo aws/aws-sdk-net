@@ -78,31 +78,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-                context.Writer.Write(requestObject.GopSize);
+                context.Writer.Write(requestObject.GopSize.Value);
             }
 
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetNumberBFramesBetweenReferenceFrames())
             {
                 context.Writer.WritePropertyName("numberBFramesBetweenReferenceFrames");
-                context.Writer.Write(requestObject.NumberBFramesBetweenReferenceFrames);
+                context.Writer.Write(requestObject.NumberBFramesBetweenReferenceFrames.Value);
             }
 
             if(requestObject.IsSetQvbrSettings())
@@ -125,7 +125,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSlices())
             {
                 context.Writer.WritePropertyName("slices");
-                context.Writer.Write(requestObject.Slices);
+                context.Writer.Write(requestObject.Slices.Value);
             }
 
             if(requestObject.IsSetSpatialAdaptiveQuantization())

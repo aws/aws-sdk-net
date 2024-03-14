@@ -65,19 +65,19 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("compliantEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inconclusiveEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InconclusiveEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("noncompliantEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoncompliantEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

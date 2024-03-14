@@ -119,9 +119,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether the rule is disabled.
         /// </para>
         /// </summary>
-        public bool RuleDisabled
+        public bool? RuleDisabled
         {
-            get { return this._ruleDisabled.GetValueOrDefault(); }
+            get { return this._ruleDisabled; }
             set { this._ruleDisabled = value; }
         }
 

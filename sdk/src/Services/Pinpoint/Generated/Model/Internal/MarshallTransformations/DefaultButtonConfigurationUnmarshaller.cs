@@ -71,7 +71,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BorderRadius", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BorderRadius = unmarshaller.Unmarshall(context);
                     continue;
                 }

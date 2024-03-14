@@ -59,19 +59,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfMatchesInSample", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfMatchesInSample = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfProfilesInSample", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfProfilesInSample = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfProfilesWillBeMerged", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfProfilesWillBeMerged = unmarshaller.Unmarshall(context);
                     continue;
                 }

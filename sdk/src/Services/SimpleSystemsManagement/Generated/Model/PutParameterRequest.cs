@@ -267,9 +267,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Overwrite an existing parameter. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Overwrite
+        public bool? Overwrite
         {
-            get { return this._overwrite.GetValueOrDefault(); }
+            get { return this._overwrite; }
             set { this._overwrite = value; }
         }
 

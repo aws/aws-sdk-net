@@ -53,7 +53,7 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("sessionExpirationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SessionExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("tokenExpirationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TokenExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

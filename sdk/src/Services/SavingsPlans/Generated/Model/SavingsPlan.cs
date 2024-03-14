@@ -346,9 +346,9 @@ namespace Amazon.SavingsPlans.Model
         /// The duration of the term, in seconds.
         /// </para>
         /// </summary>
-        public long TermDurationInSeconds
+        public long? TermDurationInSeconds
         {
-            get { return this._termDurationInSeconds.GetValueOrDefault(); }
+            get { return this._termDurationInSeconds; }
             set { this._termDurationInSeconds = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowExternalPrincipals())
                 {
                     context.Writer.WritePropertyName("allowExternalPrincipals");
-                    context.Writer.Write(publicRequest.AllowExternalPrincipals);
+                    context.Writer.Write(publicRequest.AllowExternalPrincipals.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// The date and time at which the Capacity Reservation was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.EC2.Model
         /// types.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.EC2.Model
         /// Total target capacity</a> in the Amazon EC2 User Guide.
         /// </para>
         /// </summary>
-        public double FulfilledCapacity
+        public double? FulfilledCapacity
         {
-            get { return this._fulfilledCapacity.GetValueOrDefault(); }
+            get { return this._fulfilledCapacity; }
             set { this._fulfilledCapacity = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.EC2.Model
         /// The total number of instances for which the Capacity Reservation reserves capacity.
         /// </para>
         /// </summary>
-        public int TotalInstanceCount
+        public int? TotalInstanceCount
         {
-            get { return this._totalInstanceCount.GetValueOrDefault(); }
+            get { return this._totalInstanceCount; }
             set { this._totalInstanceCount = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.EC2.Model
         /// Instance type weight</a> in the Amazon EC2 User Guide.
         /// </para>
         /// </summary>
-        public double Weight
+        public double? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

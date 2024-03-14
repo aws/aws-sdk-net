@@ -45,9 +45,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int LicenseCostReduction
+        public int? LicenseCostReduction
         {
-            get { return this._licenseCostReduction.GetValueOrDefault(); }
+            get { return this._licenseCostReduction; }
             set { this._licenseCostReduction = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int ModernizeInfrastructureWithCloudNativeTechnologies
+        public int? ModernizeInfrastructureWithCloudNativeTechnologies
         {
-            get { return this._modernizeInfrastructureWithCloudNativeTechnologies.GetValueOrDefault(); }
+            get { return this._modernizeInfrastructureWithCloudNativeTechnologies; }
             set { this._modernizeInfrastructureWithCloudNativeTechnologies = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int ReduceOperationalOverheadWithManagedServices
+        public int? ReduceOperationalOverheadWithManagedServices
         {
-            get { return this._reduceOperationalOverheadWithManagedServices.GetValueOrDefault(); }
+            get { return this._reduceOperationalOverheadWithManagedServices; }
             set { this._reduceOperationalOverheadWithManagedServices = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int SpeedOfMigration
+        public int? SpeedOfMigration
         {
-            get { return this._speedOfMigration.GetValueOrDefault(); }
+            get { return this._speedOfMigration; }
             set { this._speedOfMigration = value; }
         }
 

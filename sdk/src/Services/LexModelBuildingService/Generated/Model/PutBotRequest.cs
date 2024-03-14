@@ -171,9 +171,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ChildDirected
+        public bool? ChildDirected
         {
-            get { return this._childDirected.GetValueOrDefault(); }
+            get { return this._childDirected; }
             set { this._childDirected = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// the default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool CreateVersion
+        public bool? CreateVersion
         {
-            get { return this._createVersion.GetValueOrDefault(); }
+            get { return this._createVersion; }
             set { this._createVersion = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// analysis. If you don't specify <c>detectSentiment</c>, the default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool DetectSentiment
+        public bool? DetectSentiment
         {
-            get { return this._detectSentiment.GetValueOrDefault(); }
+            get { return this._detectSentiment; }
             set { this._detectSentiment = value; }
         }
 
@@ -348,9 +348,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// exception.
         /// </para>
         /// </summary>
-        public bool EnableModelImprovements
+        public bool? EnableModelImprovements
         {
-            get { return this._enableModelImprovements.GetValueOrDefault(); }
+            get { return this._enableModelImprovements; }
             set { this._enableModelImprovements = value; }
         }
 
@@ -390,9 +390,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=86400)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 
@@ -527,9 +527,9 @@ namespace Amazon.LexModelBuildingService.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double NluIntentConfidenceThreshold
+        public double? NluIntentConfidenceThreshold
         {
-            get { return this._nluIntentConfidenceThreshold.GetValueOrDefault(); }
+            get { return this._nluIntentConfidenceThreshold; }
             set { this._nluIntentConfidenceThreshold = value; }
         }
 

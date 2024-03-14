@@ -83,7 +83,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProvisionedReadCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedReadCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProvisionedWriteCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedWriteCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

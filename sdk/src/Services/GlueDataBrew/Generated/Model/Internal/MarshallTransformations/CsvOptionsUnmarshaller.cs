@@ -71,7 +71,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HeaderRow", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HeaderRow = unmarshaller.Unmarshall(context);
                     continue;
                 }

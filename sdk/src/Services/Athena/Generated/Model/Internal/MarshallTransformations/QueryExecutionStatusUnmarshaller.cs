@@ -71,7 +71,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CompletionDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletionDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SubmissionDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SubmissionDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

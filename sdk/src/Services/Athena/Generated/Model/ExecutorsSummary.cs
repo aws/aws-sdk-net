@@ -66,9 +66,9 @@ namespace Amazon.Athena.Model
         /// in data processing unit (DPU) values, a relative measure of processing power.
         /// </para>
         /// </summary>
-        public long ExecutorSize
+        public long? ExecutorSize
         {
-            get { return this._executorSize.GetValueOrDefault(); }
+            get { return this._executorSize; }
             set { this._executorSize = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Athena.Model
         /// The date and time that the executor started.
         /// </para>
         /// </summary>
-        public long StartDateTime
+        public long? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.Athena.Model
         /// The date and time that the executor was terminated.
         /// </para>
         /// </summary>
-        public long TerminationDateTime
+        public long? TerminationDateTime
         {
-            get { return this._terminationDateTime.GetValueOrDefault(); }
+            get { return this._terminationDateTime; }
             set { this._terminationDateTime = value; }
         }
 

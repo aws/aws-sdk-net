@@ -64,9 +64,9 @@ namespace Amazon.Lightsail.Model
         /// distribution.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Lightsail.Model
         /// The monthly price, in US dollars, of the bundle.
         /// </para>
         /// </summary>
-        public float Price
+        public float? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Lightsail.Model
         /// The monthly network transfer quota of the bundle.
         /// </para>
         /// </summary>
-        public int TransferPerMonthInGb
+        public int? TransferPerMonthInGb
         {
-            get { return this._transferPerMonthInGb.GetValueOrDefault(); }
+            get { return this._transferPerMonthInGb; }
             set { this._transferPerMonthInGb = value; }
         }
 

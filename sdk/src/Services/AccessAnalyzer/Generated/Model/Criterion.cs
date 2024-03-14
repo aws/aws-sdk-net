@@ -84,9 +84,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// An "exists" operator to match for the filter used to create the rule. 
         /// </para>
         /// </summary>
-        public bool Exists
+        public bool? Exists
         {
-            get { return this._exists.GetValueOrDefault(); }
+            get { return this._exists; }
             set { this._exists = value; }
         }
 

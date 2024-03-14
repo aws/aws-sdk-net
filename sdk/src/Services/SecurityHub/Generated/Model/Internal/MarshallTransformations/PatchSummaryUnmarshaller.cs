@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FailedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,31 +77,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InstalledCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledOtherCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledOtherCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledPendingReboot", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledPendingReboot = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstalledRejectedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstalledRejectedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MissingCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MissingCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

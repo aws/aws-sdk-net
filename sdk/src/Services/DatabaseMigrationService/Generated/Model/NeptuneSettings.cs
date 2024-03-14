@@ -48,9 +48,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// data to the Neptune target database before raising an error. The default is 250.
         /// </para>
         /// </summary>
-        public int ErrorRetryDuration
+        public int? ErrorRetryDuration
         {
-            get { return this._errorRetryDuration.GetValueOrDefault(); }
+            get { return this._errorRetryDuration; }
             set { this._errorRetryDuration = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to your service role specified by <c>ServiceAccessRoleArn</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IamAuthEnabled
+        public bool? IamAuthEnabled
         {
-            get { return this._iamAuthEnabled.GetValueOrDefault(); }
+            get { return this._iamAuthEnabled; }
             set { this._iamAuthEnabled = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// of migrated graph data.
         /// </para>
         /// </summary>
-        public int MaxFileSize
+        public int? MaxFileSize
         {
-            get { return this._maxFileSize.GetValueOrDefault(); }
+            get { return this._maxFileSize; }
             set { this._maxFileSize = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// target database before raising an error. The default is 5.
         /// </para>
         /// </summary>
-        public int MaxRetryCount
+        public int? MaxRetryCount
         {
-            get { return this._maxRetryCount.GetValueOrDefault(); }
+            get { return this._maxRetryCount; }
             set { this._maxRetryCount = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

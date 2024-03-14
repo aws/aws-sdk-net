@@ -71,7 +71,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastStatusUpdateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastStatusUpdateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -77,7 +77,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReceiptTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReceiptTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

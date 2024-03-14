@@ -49,9 +49,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// set.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// result set.
         /// </para>
         /// </summary>
-        public long Missing
+        public long? Missing
         {
-            get { return this._missing.GetValueOrDefault(); }
+            get { return this._missing; }
             set { this._missing = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The standard deviation of the values in the specified field in the result set.
         /// </para>
         /// </summary>
-        public double Stddev
+        public double? Stddev
         {
-            get { return this._stddev.GetValueOrDefault(); }
+            get { return this._stddev; }
             set { this._stddev = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// date fields.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The sum of all field values in the result set squared.
         /// </para>
         /// </summary>
-        public double SumOfSquares
+        public double? SumOfSquares
         {
-            get { return this._sumOfSquares.GetValueOrDefault(); }
+            get { return this._sumOfSquares; }
             set { this._sumOfSquares = value; }
         }
 

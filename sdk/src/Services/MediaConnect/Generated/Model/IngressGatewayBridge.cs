@@ -57,9 +57,9 @@ namespace Amazon.MediaConnect.Model
         /// ingress bridge.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.MediaConnect.Model
         /// bridge.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxOutputs
+        public int? MaxOutputs
         {
-            get { return this._maxOutputs.GetValueOrDefault(); }
+            get { return this._maxOutputs; }
             set { this._maxOutputs = value; }
         }
 

@@ -62,9 +62,9 @@ namespace Amazon.AmplifyBackend.Model
         /// Cleans up the Amplify Console app if this value is set to true.
         /// </para>
         /// </summary>
-        public bool CleanAmplifyApp
+        public bool? CleanAmplifyApp
         {
-            get { return this._cleanAmplifyApp.GetValueOrDefault(); }
+            get { return this._cleanAmplifyApp; }
             set { this._cleanAmplifyApp = value; }
         }
 

@@ -62,13 +62,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxGroupPreparedCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxGroupPreparedCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                         continue;
                     }

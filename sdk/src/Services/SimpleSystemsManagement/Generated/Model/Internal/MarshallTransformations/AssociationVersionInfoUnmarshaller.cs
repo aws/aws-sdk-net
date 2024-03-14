@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApplyOnlyAtCronInterval", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplyOnlyAtCronInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Duration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,7 +155,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScheduleOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScheduleOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReplicationInstanceTaskLogSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReplicationInstanceTaskLogSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

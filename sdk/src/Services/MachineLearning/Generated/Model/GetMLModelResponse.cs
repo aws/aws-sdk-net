@@ -64,9 +64,9 @@ namespace Amazon.MachineLearning.Model
         /// is only available if the <c>MLModel</c> is in the <c>COMPLETED</c> state.
         /// </para>
         /// </summary>
-        public long ComputeTime
+        public long? ComputeTime
         {
-            get { return this._computeTime.GetValueOrDefault(); }
+            get { return this._computeTime; }
             set { this._computeTime = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.MachineLearning.Model
         /// The time that the <c>MLModel</c> was created. The time is expressed in epoch time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.MachineLearning.Model
         /// the <c>COMPLETED</c> or <c>FAILED</c> state.
         /// </para>
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.MachineLearning.Model
         /// time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -361,9 +361,9 @@ namespace Amazon.MachineLearning.Model
         /// negative response from the MLModel, such as <c>false</c>.
         /// </para>
         /// </summary>
-        public float ScoreThreshold
+        public float? ScoreThreshold
         {
-            get { return this._scoreThreshold.GetValueOrDefault(); }
+            get { return this._scoreThreshold; }
             set { this._scoreThreshold = value; }
         }
 
@@ -380,9 +380,9 @@ namespace Amazon.MachineLearning.Model
         /// in epoch time.
         /// </para>
         /// </summary>
-        public DateTime ScoreThresholdLastUpdatedAt
+        public DateTime? ScoreThresholdLastUpdatedAt
         {
-            get { return this._scoreThresholdLastUpdatedAt.GetValueOrDefault(); }
+            get { return this._scoreThresholdLastUpdatedAt; }
             set { this._scoreThresholdLastUpdatedAt = value; }
         }
 
@@ -395,9 +395,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property SizeInBytes.
         /// </summary>
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 
@@ -414,9 +414,9 @@ namespace Amazon.MachineLearning.Model
         /// <c>StartedAt</c> isn't available if the <c>MLModel</c> is in the <c>PENDING</c> state.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

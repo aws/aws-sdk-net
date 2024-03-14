@@ -66,9 +66,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// will receive a new certificate issued using that template.
         /// </para>
         /// </summary>
-        public bool ReenrollAllCertificateHolders
+        public bool? ReenrollAllCertificateHolders
         {
-            get { return this._reenrollAllCertificateHolders.GetValueOrDefault(); }
+            get { return this._reenrollAllCertificateHolders; }
             set { this._reenrollAllCertificateHolders = value; }
         }
 

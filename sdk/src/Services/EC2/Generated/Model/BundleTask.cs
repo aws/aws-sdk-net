@@ -120,9 +120,9 @@ namespace Amazon.EC2.Model
         /// The time this task started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.EC2.Model
         /// The time of the most recent update for the task.
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

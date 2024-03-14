@@ -48,13 +48,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxTokens())
             {
                 context.Writer.WritePropertyName("maxTokens");
-                context.Writer.Write(requestObject.MaxTokens);
+                context.Writer.Write(requestObject.MaxTokens.Value);
             }
 
             if(requestObject.IsSetOverlapPercentage())
             {
                 context.Writer.WritePropertyName("overlapPercentage");
-                context.Writer.Write(requestObject.OverlapPercentage);
+                context.Writer.Write(requestObject.OverlapPercentage.Value);
             }
 
         }

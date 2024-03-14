@@ -69,9 +69,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpiryTimestamp
+        public DateTime? ExpiryTimestamp
         {
-            get { return this._expiryTimestamp.GetValueOrDefault(); }
+            get { return this._expiryTimestamp; }
             set { this._expiryTimestamp = value; }
         }
 

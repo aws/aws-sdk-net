@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The time at which an <c>AppInstanceUser</c> last marked a channel as read.
         /// </para>
         /// </summary>
-        public DateTime ReadMarkerTimestamp
+        public DateTime? ReadMarkerTimestamp
         {
-            get { return this._readMarkerTimestamp.GetValueOrDefault(); }
+            get { return this._readMarkerTimestamp; }
             set { this._readMarkerTimestamp = value; }
         }
 

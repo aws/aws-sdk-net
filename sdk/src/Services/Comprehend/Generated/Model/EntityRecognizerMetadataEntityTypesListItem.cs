@@ -63,9 +63,9 @@ namespace Amazon.Comprehend.Model
         /// 
         /// </para>
         /// </summary>
-        public int NumberOfTrainMentions
+        public int? NumberOfTrainMentions
         {
-            get { return this._numberOfTrainMentions.GetValueOrDefault(); }
+            get { return this._numberOfTrainMentions; }
             set { this._numberOfTrainMentions = value; }
         }
 

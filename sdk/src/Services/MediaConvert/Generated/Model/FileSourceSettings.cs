@@ -131,9 +131,9 @@ namespace Amazon.MediaConvert.Model
         /// for time delta, MediaConvert delays your captions by 1000 ms.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int TimeDelta
+        public int? TimeDelta
         {
-            get { return this._timeDelta.GetValueOrDefault(); }
+            get { return this._timeDelta; }
             set { this._timeDelta = value; }
         }
 

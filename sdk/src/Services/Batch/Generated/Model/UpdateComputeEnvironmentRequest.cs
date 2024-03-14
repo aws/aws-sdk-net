@@ -180,9 +180,9 @@ namespace Amazon.Batch.Model
         /// If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.
         /// </para>
         /// </summary>
-        public int UnmanagedvCpus
+        public int? UnmanagedvCpus
         {
-            get { return this._unmanagedvCpus.GetValueOrDefault(); }
+            get { return this._unmanagedvCpus; }
             set { this._unmanagedvCpus = value; }
         }
 

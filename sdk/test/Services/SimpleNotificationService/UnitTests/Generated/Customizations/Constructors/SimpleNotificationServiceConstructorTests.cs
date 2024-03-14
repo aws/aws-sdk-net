@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class SimpleNotificationServiceConstructorCustomizationsTests

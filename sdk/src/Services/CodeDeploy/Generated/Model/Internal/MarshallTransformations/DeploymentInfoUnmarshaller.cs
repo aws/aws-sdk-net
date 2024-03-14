@@ -89,7 +89,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("completeTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,13 +173,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ignoreApplicationStopFailures", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnoreApplicationStopFailures = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("instanceTerminationWaitTimeStarted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InstanceTerminationWaitTimeStarted = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -221,7 +221,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -239,7 +239,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateOutdatedInstancesOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UpdateOutdatedInstancesOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }

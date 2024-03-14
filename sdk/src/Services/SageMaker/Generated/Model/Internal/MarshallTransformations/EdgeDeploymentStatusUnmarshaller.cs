@@ -65,19 +65,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EdgeDeploymentFailedInStage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentFailedInStage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EdgeDeploymentPendingInStage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentPendingInStage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EdgeDeploymentStageStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentStageStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EdgeDeploymentSuccessInStage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentSuccessInStage = unmarshaller.Unmarshall(context);
                     continue;
                 }

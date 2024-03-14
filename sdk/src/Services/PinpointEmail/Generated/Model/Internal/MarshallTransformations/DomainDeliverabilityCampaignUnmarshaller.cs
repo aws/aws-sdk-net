@@ -71,7 +71,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeleteRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DeleteRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FirstSeenDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstSeenDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,31 +101,31 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InboxCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InboxCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastSeenDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSeenDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProjectedVolume", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProjectedVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReadDeleteRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ReadDeleteRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReadRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ReadRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SpamCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SpamCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

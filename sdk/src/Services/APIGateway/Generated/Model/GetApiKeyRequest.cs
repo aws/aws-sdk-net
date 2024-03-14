@@ -63,9 +63,9 @@ namespace Amazon.APIGateway.Model
         /// the key value.
         /// </para>
         /// </summary>
-        public bool IncludeValue
+        public bool? IncludeValue
         {
-            get { return this._includeValue.GetValueOrDefault(); }
+            get { return this._includeValue; }
             set { this._includeValue = value; }
         }
 

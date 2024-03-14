@@ -111,7 +111,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIgnoreApplicationStopFailures())
                 {
                     context.Writer.WritePropertyName("ignoreApplicationStopFailures");
-                    context.Writer.Write(publicRequest.IgnoreApplicationStopFailures);
+                    context.Writer.Write(publicRequest.IgnoreApplicationStopFailures.Value);
                 }
 
                 if(publicRequest.IsSetOverrideAlarmConfiguration())
@@ -150,7 +150,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
                 {
                     context.Writer.WritePropertyName("updateOutdatedInstancesOnly");
-                    context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly);
+                    context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly.Value);
                 }
 
                 writer.WriteObjectEnd();

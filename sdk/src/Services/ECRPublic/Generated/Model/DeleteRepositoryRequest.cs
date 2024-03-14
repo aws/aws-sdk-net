@@ -47,9 +47,9 @@ namespace Amazon.ECRPublic.Model
         /// force option is not used, the repository must be empty prior to deletion.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

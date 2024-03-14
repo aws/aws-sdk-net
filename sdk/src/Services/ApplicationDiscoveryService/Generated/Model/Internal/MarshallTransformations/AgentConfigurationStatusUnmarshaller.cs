@@ -77,7 +77,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("operationSucceeded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OperationSucceeded = unmarshaller.Unmarshall(context);
                     continue;
                 }

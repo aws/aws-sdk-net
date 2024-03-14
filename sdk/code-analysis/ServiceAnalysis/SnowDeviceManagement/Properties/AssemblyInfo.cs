@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SnowDeviceManagement")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Snow Device Management. AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Snow Device Management. AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

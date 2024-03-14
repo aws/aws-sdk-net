@@ -71,7 +71,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("clockRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ClockRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("fmt", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Fmt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("mediaStreamId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MediaStreamId = unmarshaller.Unmarshall(context);
                     continue;
                 }

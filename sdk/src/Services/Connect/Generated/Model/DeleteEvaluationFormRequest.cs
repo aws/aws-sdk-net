@@ -75,9 +75,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int EvaluationFormVersion
+        public int? EvaluationFormVersion
         {
-            get { return this._evaluationFormVersion.GetValueOrDefault(); }
+            get { return this._evaluationFormVersion; }
             set { this._evaluationFormVersion = value; }
         }
 

@@ -66,16 +66,16 @@ namespace Amazon.Glacier.Model
         /// The UTC time at which the multipart upload was initiated.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this._creationDate.HasValue; 
+            return this._creationDate != null;
         }
 
         /// <summary>
@@ -142,9 +142,9 @@ namespace Amazon.Glacier.Model
         /// Multipart Upload request.
         /// </para>
         /// </summary>
-        public long PartSizeInBytes
+        public long? PartSizeInBytes
         {
-            get { return this._partSizeInBytes.GetValueOrDefault(); }
+            get { return this._partSizeInBytes; }
             set { this._partSizeInBytes = value; }
         }
 

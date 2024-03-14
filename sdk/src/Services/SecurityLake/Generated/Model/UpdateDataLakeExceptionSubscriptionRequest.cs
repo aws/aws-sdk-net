@@ -46,9 +46,9 @@ namespace Amazon.SecurityLake.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ExceptionTimeToLive
+        public long? ExceptionTimeToLive
         {
-            get { return this._exceptionTimeToLive.GetValueOrDefault(); }
+            get { return this._exceptionTimeToLive; }
             set { this._exceptionTimeToLive = value; }
         }
 

@@ -54,9 +54,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long CifsShareCount
+        public long? CifsShareCount
         {
-            get { return this._cifsShareCount.GetValueOrDefault(); }
+            get { return this._cifsShareCount; }
             set { this._cifsShareCount = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ClusterBlockStorageLogicalUsed
+        public long? ClusterBlockStorageLogicalUsed
         {
-            get { return this._clusterBlockStorageLogicalUsed.GetValueOrDefault(); }
+            get { return this._clusterBlockStorageLogicalUsed; }
             set { this._clusterBlockStorageLogicalUsed = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ClusterBlockStorageSize
+        public long? ClusterBlockStorageSize
         {
-            get { return this._clusterBlockStorageSize.GetValueOrDefault(); }
+            get { return this._clusterBlockStorageSize; }
             set { this._clusterBlockStorageSize = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ClusterBlockStorageUsed
+        public long? ClusterBlockStorageUsed
         {
-            get { return this._clusterBlockStorageUsed.GetValueOrDefault(); }
+            get { return this._clusterBlockStorageUsed; }
             set { this._clusterBlockStorageUsed = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ClusterCloudStorageUsed
+        public long? ClusterCloudStorageUsed
         {
-            get { return this._clusterCloudStorageUsed.GetValueOrDefault(); }
+            get { return this._clusterCloudStorageUsed; }
             set { this._clusterCloudStorageUsed = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LunCount
+        public long? LunCount
         {
-            get { return this._lunCount.GetValueOrDefault(); }
+            get { return this._lunCount; }
             set { this._lunCount = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long NfsExportedVolumes
+        public long? NfsExportedVolumes
         {
-            get { return this._nfsExportedVolumes.GetValueOrDefault(); }
+            get { return this._nfsExportedVolumes; }
             set { this._nfsExportedVolumes = value; }
         }
 

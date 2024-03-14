@@ -85,9 +85,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// this command the next time it polls for a new command. 
         /// </para>
         /// </summary>
-        public bool OperationSucceeded
+        public bool? OperationSucceeded
         {
-            get { return this._operationSucceeded.GetValueOrDefault(); }
+            get { return this._operationSucceeded; }
             set { this._operationSucceeded = value; }
         }
 

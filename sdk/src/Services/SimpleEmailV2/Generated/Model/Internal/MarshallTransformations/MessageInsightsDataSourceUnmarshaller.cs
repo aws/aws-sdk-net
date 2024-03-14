@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EndDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeBootVolume())
             {
                 context.Writer.WritePropertyName("ExcludeBootVolume");
-                context.Writer.Write(requestObject.ExcludeBootVolume);
+                context.Writer.Write(requestObject.ExcludeBootVolume.Value);
             }
 
             if(requestObject.IsSetExcludeDataVolumeTags())
@@ -70,7 +70,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNoReboot())
             {
                 context.Writer.WritePropertyName("NoReboot");
-                context.Writer.Write(requestObject.NoReboot);
+                context.Writer.Write(requestObject.NoReboot.Value);
             }
 
         }

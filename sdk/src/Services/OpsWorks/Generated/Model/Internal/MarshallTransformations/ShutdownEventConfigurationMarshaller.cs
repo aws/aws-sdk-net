@@ -48,13 +48,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelayUntilElbConnectionsDrained())
             {
                 context.Writer.WritePropertyName("DelayUntilElbConnectionsDrained");
-                context.Writer.Write(requestObject.DelayUntilElbConnectionsDrained);
+                context.Writer.Write(requestObject.DelayUntilElbConnectionsDrained.Value);
             }
 
             if(requestObject.IsSetExecutionTimeout())
             {
                 context.Writer.WritePropertyName("ExecutionTimeout");
-                context.Writer.Write(requestObject.ExecutionTimeout);
+                context.Writer.Write(requestObject.ExecutionTimeout.Value);
             }
 
         }

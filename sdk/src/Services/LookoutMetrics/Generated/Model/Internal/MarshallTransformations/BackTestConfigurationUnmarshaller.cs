@@ -65,7 +65,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RunBackTestMode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RunBackTestMode = unmarshaller.Unmarshall(context);
                     continue;
                 }

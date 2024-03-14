@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The modification completion or failure time.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.EC2.Model
         /// The original IOPS rate of the volume.
         /// </para>
         /// </summary>
-        public int OriginalIops
+        public int? OriginalIops
         {
-            get { return this._originalIops.GetValueOrDefault(); }
+            get { return this._originalIops; }
             set { this._originalIops = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.EC2.Model
         /// The original setting for Amazon EBS Multi-Attach.
         /// </para>
         /// </summary>
-        public bool OriginalMultiAttachEnabled
+        public bool? OriginalMultiAttachEnabled
         {
-            get { return this._originalMultiAttachEnabled.GetValueOrDefault(); }
+            get { return this._originalMultiAttachEnabled; }
             set { this._originalMultiAttachEnabled = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.EC2.Model
         /// The original size of the volume, in GiB.
         /// </para>
         /// </summary>
-        public int OriginalSize
+        public int? OriginalSize
         {
-            get { return this._originalSize.GetValueOrDefault(); }
+            get { return this._originalSize; }
             set { this._originalSize = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.EC2.Model
         /// The original throughput of the volume, in MiB/s.
         /// </para>
         /// </summary>
-        public int OriginalThroughput
+        public int? OriginalThroughput
         {
-            get { return this._originalThroughput.GetValueOrDefault(); }
+            get { return this._originalThroughput; }
             set { this._originalThroughput = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.EC2.Model
         /// The modification progress, from 0 to 100 percent complete.
         /// </para>
         /// </summary>
-        public long Progress
+        public long? Progress
         {
-            get { return this._progress.GetValueOrDefault(); }
+            get { return this._progress; }
             set { this._progress = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.EC2.Model
         /// The modification start time.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.EC2.Model
         /// The target IOPS rate of the volume.
         /// </para>
         /// </summary>
-        public int TargetIops
+        public int? TargetIops
         {
-            get { return this._targetIops.GetValueOrDefault(); }
+            get { return this._targetIops; }
             set { this._targetIops = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.EC2.Model
         /// The target setting for Amazon EBS Multi-Attach.
         /// </para>
         /// </summary>
-        public bool TargetMultiAttachEnabled
+        public bool? TargetMultiAttachEnabled
         {
-            get { return this._targetMultiAttachEnabled.GetValueOrDefault(); }
+            get { return this._targetMultiAttachEnabled; }
             set { this._targetMultiAttachEnabled = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.EC2.Model
         /// The target size of the volume, in GiB.
         /// </para>
         /// </summary>
-        public int TargetSize
+        public int? TargetSize
         {
-            get { return this._targetSize.GetValueOrDefault(); }
+            get { return this._targetSize; }
             set { this._targetSize = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.EC2.Model
         /// The target throughput of the volume, in MiB/s.
         /// </para>
         /// </summary>
-        public int TargetThroughput
+        public int? TargetThroughput
         {
-            get { return this._targetThroughput.GetValueOrDefault(); }
+            get { return this._targetThroughput; }
             set { this._targetThroughput = value; }
         }
 

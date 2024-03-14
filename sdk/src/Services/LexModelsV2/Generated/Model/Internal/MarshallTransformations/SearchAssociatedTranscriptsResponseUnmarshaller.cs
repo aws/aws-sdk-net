@@ -83,13 +83,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("nextIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NextIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalResults = unmarshaller.Unmarshall(context);
                     continue;
                 }

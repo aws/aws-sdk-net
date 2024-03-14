@@ -171,9 +171,9 @@ namespace Amazon.StepFunctions.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Publish
+        public bool? Publish
         {
-            get { return this._publish.GetValueOrDefault(); }
+            get { return this._publish; }
             set { this._publish = value; }
         }
 

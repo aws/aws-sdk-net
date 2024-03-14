@@ -65,9 +65,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int Qos
+        public int? Qos
         {
-            get { return this._qos.GetValueOrDefault(); }
+            get { return this._qos; }
             set { this._qos = value; }
         }
 

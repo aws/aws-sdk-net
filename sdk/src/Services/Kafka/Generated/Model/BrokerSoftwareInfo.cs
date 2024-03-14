@@ -63,9 +63,9 @@ namespace Amazon.Kafka.Model
         /// release.
         /// </para>
         /// </summary>
-        public long ConfigurationRevision
+        public long? ConfigurationRevision
         {
-            get { return this._configurationRevision.GetValueOrDefault(); }
+            get { return this._configurationRevision; }
             set { this._configurationRevision = value; }
         }
 

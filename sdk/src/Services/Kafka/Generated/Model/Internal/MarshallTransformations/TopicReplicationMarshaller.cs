@@ -48,19 +48,19 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyAccessControlListsForTopics())
             {
                 context.Writer.WritePropertyName("copyAccessControlListsForTopics");
-                context.Writer.Write(requestObject.CopyAccessControlListsForTopics);
+                context.Writer.Write(requestObject.CopyAccessControlListsForTopics.Value);
             }
 
             if(requestObject.IsSetCopyTopicConfigurations())
             {
                 context.Writer.WritePropertyName("copyTopicConfigurations");
-                context.Writer.Write(requestObject.CopyTopicConfigurations);
+                context.Writer.Write(requestObject.CopyTopicConfigurations.Value);
             }
 
             if(requestObject.IsSetDetectAndCopyNewTopics())
             {
                 context.Writer.WritePropertyName("detectAndCopyNewTopics");
-                context.Writer.Write(requestObject.DetectAndCopyNewTopics);
+                context.Writer.Write(requestObject.DetectAndCopyNewTopics.Value);
             }
 
             if(requestObject.IsSetTopicsToExclude())

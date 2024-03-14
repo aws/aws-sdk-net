@@ -69,7 +69,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("BoxUsage", targetDepth))
                     {
-                        response.BoxUsage = FloatUnmarshaller.Instance.Unmarshall(context);
+                        response.BoxUsage = NullableFloatUnmarshaller.Instance.Unmarshall(context);
                     }
                 }
             }

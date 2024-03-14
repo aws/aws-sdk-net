@@ -65,13 +65,13 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Completed", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Completed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Started", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Started = unmarshaller.Unmarshall(context);
                     continue;
                 }

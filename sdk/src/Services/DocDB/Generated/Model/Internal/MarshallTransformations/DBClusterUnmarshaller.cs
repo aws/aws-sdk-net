@@ -70,7 +70,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("BackupRetentionPeriod", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -82,7 +82,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ClusterCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -125,13 +125,13 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EarliestRestorableTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.EarliestRestorableTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -174,7 +174,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LatestRestorableTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LatestRestorableTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -186,7 +186,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MultiAZ", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -198,7 +198,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -241,7 +241,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StorageEncrypted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -87,9 +87,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// source code and/or database credentials are updated and an analysis is initiated.
         /// </para>
         /// </summary>
-        public bool ConfigureOnly
+        public bool? ConfigureOnly
         {
-            get { return this._configureOnly.GetValueOrDefault(); }
+            get { return this._configureOnly; }
             set { this._configureOnly = value; }
         }
 

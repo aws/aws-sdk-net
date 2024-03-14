@@ -42,9 +42,9 @@ namespace Amazon.Comprehend.Model
         /// Number of characters extracted from each page.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.Comprehend.Model
         /// Page number.
         /// </para>
         /// </summary>
-        public int Page
+        public int? Page
         {
-            get { return this._page.GetValueOrDefault(); }
+            get { return this._page; }
             set { this._page = value; }
         }
 

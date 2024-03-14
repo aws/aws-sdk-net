@@ -42,9 +42,9 @@ namespace Amazon.ConnectCampaignService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableAnswerMachineDetection
+        public bool? EnableAnswerMachineDetection
         {
-            get { return this._enableAnswerMachineDetection.GetValueOrDefault(); }
+            get { return this._enableAnswerMachineDetection; }
             set { this._enableAnswerMachineDetection = value; }
         }
 

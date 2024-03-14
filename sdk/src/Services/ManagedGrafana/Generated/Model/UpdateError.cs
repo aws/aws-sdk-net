@@ -65,9 +65,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=999)]
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 

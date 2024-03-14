@@ -96,9 +96,9 @@ namespace Amazon.EC2.Model
         /// is given a value larger than 1,000, only 1,000 results are returned.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -114,7 +114,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PercentProgress", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.PercentProgress = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -132,7 +132,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SnapshotTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.SnapshotTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -156,19 +156,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TaskEndTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.TaskEndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TaskStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.TaskStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TotalExtractedDataInGB", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.TotalExtractedDataInGB = unmarshaller.Unmarshall(context);
                         continue;
                     }

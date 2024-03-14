@@ -102,9 +102,9 @@ namespace Amazon.ECS.Model
         /// for this value.
         /// </para>
         /// </summary>
-        public bool Interactive
+        public bool? Interactive
         {
-            get { return this._interactive.GetValueOrDefault(); }
+            get { return this._interactive; }
             set { this._interactive = value; }
         }
 

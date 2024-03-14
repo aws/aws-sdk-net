@@ -117,9 +117,9 @@ namespace Amazon.Chime.Model
         /// The room membership update timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

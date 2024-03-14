@@ -83,9 +83,9 @@ namespace Amazon.SSOOIDC.Model
         /// Indicates the time at which the <c>clientId</c> and <c>clientSecret</c> were issued.
         /// </para>
         /// </summary>
-        public long ClientIdIssuedAt
+        public long? ClientIdIssuedAt
         {
-            get { return this._clientIdIssuedAt.GetValueOrDefault(); }
+            get { return this._clientIdIssuedAt; }
             set { this._clientIdIssuedAt = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SSOOIDC.Model
         /// invalid.
         /// </para>
         /// </summary>
-        public long ClientSecretExpiresAt
+        public long? ClientSecretExpiresAt
         {
-            get { return this._clientSecretExpiresAt.GetValueOrDefault(); }
+            get { return this._clientSecretExpiresAt; }
             set { this._clientSecretExpiresAt = value; }
         }
 

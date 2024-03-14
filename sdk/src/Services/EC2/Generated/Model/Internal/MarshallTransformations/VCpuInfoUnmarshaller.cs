@@ -56,19 +56,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("defaultCores", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultCores = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("defaultThreadsPerCore", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultThreadsPerCore = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("defaultVCpus", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DefaultVCpus = unmarshaller.Unmarshall(context);
                         continue;
                     }

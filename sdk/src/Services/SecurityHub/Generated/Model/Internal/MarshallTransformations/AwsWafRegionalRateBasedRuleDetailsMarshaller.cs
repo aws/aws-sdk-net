@@ -82,7 +82,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("RateLimit");
-                context.Writer.Write(requestObject.RateLimit);
+                context.Writer.Write(requestObject.RateLimit.Value);
             }
 
             if(requestObject.IsSetRuleId())

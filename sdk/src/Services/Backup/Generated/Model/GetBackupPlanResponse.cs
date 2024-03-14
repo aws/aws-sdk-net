@@ -126,9 +126,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime DeletionDate
+        public DateTime? DeletionDate
         {
-            get { return this._deletionDate.GetValueOrDefault(); }
+            get { return this._deletionDate; }
             set { this._deletionDate = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.Backup.Model
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastExecutionDate
+        public DateTime? LastExecutionDate
         {
-            get { return this._lastExecutionDate.GetValueOrDefault(); }
+            get { return this._lastExecutionDate; }
             set { this._lastExecutionDate = value; }
         }
 

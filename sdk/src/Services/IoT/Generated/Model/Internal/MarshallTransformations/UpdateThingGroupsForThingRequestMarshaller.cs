@@ -68,7 +68,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOverrideDynamicGroups())
                 {
                     context.Writer.WritePropertyName("overrideDynamicGroups");
-                    context.Writer.Write(publicRequest.OverrideDynamicGroups);
+                    context.Writer.Write(publicRequest.OverrideDynamicGroups.Value);
                 }
 
                 if(publicRequest.IsSetThingGroupsToAdd())

@@ -100,13 +100,13 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveNetworkAccessConfiguration())
                 {
                     context.Writer.WritePropertyName("removeNetworkAccessConfiguration");
-                    context.Writer.Write(publicRequest.RemoveNetworkAccessConfiguration);
+                    context.Writer.Write(publicRequest.RemoveNetworkAccessConfiguration.Value);
                 }
 
                 if(publicRequest.IsSetRemoveVpcConfiguration())
                 {
                     context.Writer.WritePropertyName("removeVpcConfiguration");
-                    context.Writer.Write(publicRequest.RemoveVpcConfiguration);
+                    context.Writer.Write(publicRequest.RemoveVpcConfiguration.Value);
                 }
 
                 if(publicRequest.IsSetStackSetName())

@@ -71,7 +71,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("reactionsFromDeletedUsersCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReactionsFromDeletedUsersCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

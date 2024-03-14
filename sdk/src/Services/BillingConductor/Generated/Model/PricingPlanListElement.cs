@@ -65,9 +65,9 @@ namespace Amazon.BillingConductor.Model
         /// The time when the pricing plan was created.
         /// </para>
         /// </summary>
-        public long CreationTime
+        public long? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.BillingConductor.Model
         /// The most recent time when the pricing plan was modified.
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

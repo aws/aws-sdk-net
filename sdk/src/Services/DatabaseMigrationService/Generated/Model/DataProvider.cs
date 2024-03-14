@@ -64,9 +64,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time the data provider was created.
         /// </para>
         /// </summary>
-        public DateTime DataProviderCreationTime
+        public DateTime? DataProviderCreationTime
         {
-            get { return this._dataProviderCreationTime.GetValueOrDefault(); }
+            get { return this._dataProviderCreationTime; }
             set { this._dataProviderCreationTime = value; }
         }
 

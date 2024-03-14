@@ -52,9 +52,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// When set to true the pool can't be deleted.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// also responsible for tracking and honoring opt-out requests.
         /// </para>
         /// </summary>
-        public bool SelfManagedOptOutsEnabled
+        public bool? SelfManagedOptOutsEnabled
         {
-            get { return this._selfManagedOptOutsEnabled.GetValueOrDefault(); }
+            get { return this._selfManagedOptOutsEnabled; }
             set { this._selfManagedOptOutsEnabled = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Indicates whether shared routes are enabled for the pool.
         /// </para>
         /// </summary>
-        public bool SharedRoutesEnabled
+        public bool? SharedRoutesEnabled
         {
-            get { return this._sharedRoutesEnabled.GetValueOrDefault(); }
+            get { return this._sharedRoutesEnabled; }
             set { this._sharedRoutesEnabled = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// from your end recipients.
         /// </para>
         /// </summary>
-        public bool TwoWayEnabled
+        public bool? TwoWayEnabled
         {
-            get { return this._twoWayEnabled.GetValueOrDefault(); }
+            get { return this._twoWayEnabled; }
             set { this._twoWayEnabled = value; }
         }
 

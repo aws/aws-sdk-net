@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// The equal-to condition to be applied to a single field when querying for findings.
         /// </para>
         /// </summary>
-        public double Eq
+        public double? Eq
         {
-            get { return this._eq.GetValueOrDefault(); }
+            get { return this._eq; }
             set { this._eq = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public double Gt
+        public double? Gt
         {
-            get { return this._gt.GetValueOrDefault(); }
+            get { return this._gt; }
             set { this._gt = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         /// findings. 
         /// </para>
         /// </summary>
-        public double Gte
+        public double? Gte
         {
-            get { return this._gte.GetValueOrDefault(); }
+            get { return this._gte; }
             set { this._gte = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public double Lt
+        public double? Lt
         {
-            get { return this._lt.GetValueOrDefault(); }
+            get { return this._lt; }
             set { this._lt = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public double Lte
+        public double? Lte
         {
-            get { return this._lte.GetValueOrDefault(); }
+            get { return this._lte; }
             set { this._lte = value; }
         }
 

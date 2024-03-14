@@ -71,7 +71,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

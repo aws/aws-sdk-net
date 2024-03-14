@@ -98,7 +98,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentLength())
             {
                 context.Writer.WritePropertyName("fragmentLength");
-                context.Writer.Write(requestObject.FragmentLength);
+                context.Writer.Write(requestObject.FragmentLength.Value);
             }
 
             if(requestObject.IsSetFragmentLengthControl())

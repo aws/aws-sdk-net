@@ -68,13 +68,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConfidence())
                 {
                     context.Writer.WritePropertyName("Confidence");
-                    context.Writer.Write(publicRequest.Confidence);
+                    context.Writer.Write(publicRequest.Confidence.Value);
                 }
 
                 if(publicRequest.IsSetCriticality())
                 {
                     context.Writer.WritePropertyName("Criticality");
-                    context.Writer.Write(publicRequest.Criticality);
+                    context.Writer.Write(publicRequest.Criticality.Value);
                 }
 
                 if(publicRequest.IsSetFindingIdentifiers())

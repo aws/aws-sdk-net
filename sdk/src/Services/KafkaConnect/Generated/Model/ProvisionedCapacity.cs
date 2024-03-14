@@ -44,9 +44,9 @@ namespace Amazon.KafkaConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8)]
-        public int McuCount
+        public int? McuCount
         {
-            get { return this._mcuCount.GetValueOrDefault(); }
+            get { return this._mcuCount; }
             set { this._mcuCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.KafkaConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int WorkerCount
+        public int? WorkerCount
         {
-            get { return this._workerCount.GetValueOrDefault(); }
+            get { return this._workerCount; }
             set { this._workerCount = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInCluster())
             {
                 context.Writer.WritePropertyName("InCluster");
-                context.Writer.Write(requestObject.InCluster);
+                context.Writer.Write(requestObject.InCluster.Value);
             }
 
         }

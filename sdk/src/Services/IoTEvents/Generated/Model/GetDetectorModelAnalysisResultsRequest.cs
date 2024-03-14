@@ -70,9 +70,9 @@ namespace Amazon.IoTEvents.Model
         /// The maximum number of results to be returned per request.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

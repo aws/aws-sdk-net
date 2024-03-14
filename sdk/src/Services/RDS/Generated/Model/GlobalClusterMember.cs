@@ -83,9 +83,9 @@ namespace Amazon.RDS.Model
         /// capability) for the global cluster with which it is associated.
         /// </para>
         /// </summary>
-        public bool IsWriter
+        public bool? IsWriter
         {
-            get { return this._isWriter.GetValueOrDefault(); }
+            get { return this._isWriter; }
             set { this._isWriter = value; }
         }
 

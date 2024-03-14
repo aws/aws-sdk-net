@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Height", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }

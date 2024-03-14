@@ -127,9 +127,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsExternalId
+        public bool? IsExternalId
         {
-            get { return this._isExternalId.GetValueOrDefault(); }
+            get { return this._isExternalId; }
             set { this._isExternalId = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsFinal
+        public bool? IsFinal
         {
-            get { return this._isFinal.GetValueOrDefault(); }
+            get { return this._isFinal; }
             set { this._isFinal = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsImported
+        public bool? IsImported
         {
-            get { return this._isImported.GetValueOrDefault(); }
+            get { return this._isImported; }
             set { this._isImported = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsInherited
+        public bool? IsInherited
         {
-            get { return this._isInherited.GetValueOrDefault(); }
+            get { return this._isInherited; }
             set { this._isInherited = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsRequiredInEntity
+        public bool? IsRequiredInEntity
         {
-            get { return this._isRequiredInEntity.GetValueOrDefault(); }
+            get { return this._isRequiredInEntity; }
             set { this._isRequiredInEntity = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsStoredExternally
+        public bool? IsStoredExternally
         {
-            get { return this._isStoredExternally.GetValueOrDefault(); }
+            get { return this._isStoredExternally; }
             set { this._isStoredExternally = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsTimeSeries
+        public bool? IsTimeSeries
         {
-            get { return this._isTimeSeries.GetValueOrDefault(); }
+            get { return this._isTimeSeries; }
             set { this._isTimeSeries = value; }
         }
 

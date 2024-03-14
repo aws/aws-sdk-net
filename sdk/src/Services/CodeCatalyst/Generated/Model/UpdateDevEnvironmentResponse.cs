@@ -130,9 +130,9 @@ namespace Amazon.CodeCatalyst.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1200)]
-        public int InactivityTimeoutMinutes
+        public int? InactivityTimeoutMinutes
         {
-            get { return this._inactivityTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._inactivityTimeoutMinutes; }
             set { this._inactivityTimeoutMinutes = value; }
         }
 

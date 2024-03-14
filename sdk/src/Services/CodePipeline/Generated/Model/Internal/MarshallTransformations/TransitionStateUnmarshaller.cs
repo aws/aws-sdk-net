@@ -71,13 +71,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastChangedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastChangedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

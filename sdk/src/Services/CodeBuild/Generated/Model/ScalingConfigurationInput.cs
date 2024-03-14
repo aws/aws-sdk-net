@@ -44,9 +44,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 

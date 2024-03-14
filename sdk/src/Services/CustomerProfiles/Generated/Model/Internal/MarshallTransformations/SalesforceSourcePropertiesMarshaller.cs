@@ -48,13 +48,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableDynamicFieldUpdate())
             {
                 context.Writer.WritePropertyName("EnableDynamicFieldUpdate");
-                context.Writer.Write(requestObject.EnableDynamicFieldUpdate);
+                context.Writer.Write(requestObject.EnableDynamicFieldUpdate.Value);
             }
 
             if(requestObject.IsSetIncludeDeletedRecords())
             {
                 context.Writer.WritePropertyName("IncludeDeletedRecords");
-                context.Writer.Write(requestObject.IncludeDeletedRecords);
+                context.Writer.Write(requestObject.IncludeDeletedRecords.Value);
             }
 
             if(requestObject.IsSetObject())

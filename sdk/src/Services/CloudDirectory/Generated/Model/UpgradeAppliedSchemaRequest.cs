@@ -70,9 +70,9 @@ namespace Amazon.CloudDirectory.Model
         /// but no changes will be saved. This parameter is optional.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

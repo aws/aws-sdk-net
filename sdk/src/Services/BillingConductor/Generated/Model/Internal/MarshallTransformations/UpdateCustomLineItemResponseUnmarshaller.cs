@@ -59,7 +59,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AssociationSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AssociationSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

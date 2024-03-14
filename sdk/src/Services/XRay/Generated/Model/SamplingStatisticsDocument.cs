@@ -49,9 +49,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BorrowCount
+        public int? BorrowCount
         {
-            get { return this._borrowCount.GetValueOrDefault(); }
+            get { return this._borrowCount; }
             set { this._borrowCount = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int RequestCount
+        public int? RequestCount
         {
-            get { return this._requestCount.GetValueOrDefault(); }
+            get { return this._requestCount; }
             set { this._requestCount = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int SampledCount
+        public int? SampledCount
         {
-            get { return this._sampledCount.GetValueOrDefault(); }
+            get { return this._sampledCount; }
             set { this._sampledCount = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

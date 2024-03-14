@@ -46,9 +46,9 @@ namespace Amazon.Drs.Model
         /// Whether this rule is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int RetentionDuration
+        public int? RetentionDuration
         {
-            get { return this._retentionDuration.GetValueOrDefault(); }
+            get { return this._retentionDuration; }
             set { this._retentionDuration = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RuleID
+        public long? RuleID
         {
-            get { return this._ruleid.GetValueOrDefault(); }
+            get { return this._ruleid; }
             set { this._ruleid = value; }
         }
 

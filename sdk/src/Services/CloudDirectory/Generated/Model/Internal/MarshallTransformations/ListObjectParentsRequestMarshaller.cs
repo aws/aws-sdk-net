@@ -68,13 +68,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeAllLinksToEachParent())
                 {
                     context.Writer.WritePropertyName("IncludeAllLinksToEachParent");
-                    context.Writer.Write(publicRequest.IncludeAllLinksToEachParent);
+                    context.Writer.Write(publicRequest.IncludeAllLinksToEachParent.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

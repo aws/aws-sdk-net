@@ -55,9 +55,9 @@ namespace Amazon.DirectConnect.Model
         /// Indicates whether to enable or disable SiteLink.
         /// </para>
         /// </summary>
-        public bool EnableSiteLink
+        public bool? EnableSiteLink
         {
-            get { return this._enableSiteLink.GetValueOrDefault(); }
+            get { return this._enableSiteLink; }
             set { this._enableSiteLink = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.DirectConnect.Model
         /// The default value is 1500.
         /// </para>
         /// </summary>
-        public int Mtu
+        public int? Mtu
         {
-            get { return this._mtu.GetValueOrDefault(); }
+            get { return this._mtu; }
             set { this._mtu = value; }
         }
 

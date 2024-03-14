@@ -48,7 +48,7 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetElevation())
             {
                 context.Writer.WritePropertyName("elevation");
-                context.Writer.Write(requestObject.Elevation);
+                context.Writer.Write(requestObject.Elevation.Value);
             }
 
             if(requestObject.IsSetElevationReference())
@@ -66,13 +66,13 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("latitude");
-                context.Writer.Write(requestObject.Latitude);
+                context.Writer.Write(requestObject.Latitude.Value);
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("longitude");
-                context.Writer.Write(requestObject.Longitude);
+                context.Writer.Write(requestObject.Longitude.Value);
             }
 
         }

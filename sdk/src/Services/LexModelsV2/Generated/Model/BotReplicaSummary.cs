@@ -63,9 +63,9 @@ namespace Amazon.LexModelsV2.Model
         /// The creation time and date for the replicated bots.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 

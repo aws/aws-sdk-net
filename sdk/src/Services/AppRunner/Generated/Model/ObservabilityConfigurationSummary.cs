@@ -93,9 +93,9 @@ namespace Amazon.AppRunner.Model
         /// configurations (<c>"Status": "ACTIVE"</c>) that share the same <c>ObservabilityConfigurationName</c>.
         /// </para>
         /// </summary>
-        public int ObservabilityConfigurationRevision
+        public int? ObservabilityConfigurationRevision
         {
-            get { return this._observabilityConfigurationRevision.GetValueOrDefault(); }
+            get { return this._observabilityConfigurationRevision; }
             set { this._observabilityConfigurationRevision = value; }
         }
 

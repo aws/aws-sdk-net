@@ -71,7 +71,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }

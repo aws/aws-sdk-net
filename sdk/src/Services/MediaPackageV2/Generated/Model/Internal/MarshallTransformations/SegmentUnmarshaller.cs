@@ -71,7 +71,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeIframeOnlyStreams", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeIframeOnlyStreams = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SegmentDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TsIncludeDvbSubtitles", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TsIncludeDvbSubtitles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TsUseAudioRenditionGroup", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TsUseAudioRenditionGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }

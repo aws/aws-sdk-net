@@ -101,9 +101,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
-        public int ValidationResult
+        public int? ValidationResult
         {
-            get { return this._validationResult.GetValueOrDefault(); }
+            get { return this._validationResult; }
             set { this._validationResult = value; }
         }
 

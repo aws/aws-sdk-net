@@ -54,13 +54,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnDemandBaseCapacity())
             {
                 context.Writer.WritePropertyName("OnDemandBaseCapacity");
-                context.Writer.Write(requestObject.OnDemandBaseCapacity);
+                context.Writer.Write(requestObject.OnDemandBaseCapacity.Value);
             }
 
             if(requestObject.IsSetOnDemandPercentageAboveBaseCapacity())
             {
                 context.Writer.WritePropertyName("OnDemandPercentageAboveBaseCapacity");
-                context.Writer.Write(requestObject.OnDemandPercentageAboveBaseCapacity);
+                context.Writer.Write(requestObject.OnDemandPercentageAboveBaseCapacity.Value);
             }
 
             if(requestObject.IsSetSpotAllocationStrategy())
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpotInstancePools())
             {
                 context.Writer.WritePropertyName("SpotInstancePools");
-                context.Writer.Write(requestObject.SpotInstancePools);
+                context.Writer.Write(requestObject.SpotInstancePools.Value);
             }
 
             if(requestObject.IsSetSpotMaxPrice())

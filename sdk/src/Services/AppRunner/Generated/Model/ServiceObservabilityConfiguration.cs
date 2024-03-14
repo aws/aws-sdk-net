@@ -77,9 +77,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ObservabilityEnabled
+        public bool? ObservabilityEnabled
         {
-            get { return this._observabilityEnabled.GetValueOrDefault(); }
+            get { return this._observabilityEnabled; }
             set { this._observabilityEnabled = value; }
         }
 

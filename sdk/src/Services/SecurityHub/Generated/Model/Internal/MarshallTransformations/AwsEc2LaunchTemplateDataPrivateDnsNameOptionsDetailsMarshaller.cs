@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableResourceNameDnsAAAARecord())
             {
                 context.Writer.WritePropertyName("EnableResourceNameDnsAAAARecord");
-                context.Writer.Write(requestObject.EnableResourceNameDnsAAAARecord);
+                context.Writer.Write(requestObject.EnableResourceNameDnsAAAARecord.Value);
             }
 
             if(requestObject.IsSetEnableResourceNameDnsARecord())
             {
                 context.Writer.WritePropertyName("EnableResourceNameDnsARecord");
-                context.Writer.Write(requestObject.EnableResourceNameDnsARecord);
+                context.Writer.Write(requestObject.EnableResourceNameDnsARecord.Value);
             }
 
             if(requestObject.IsSetHostnameType())

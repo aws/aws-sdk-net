@@ -264,9 +264,9 @@ namespace Amazon.FraudDetector.Model
         /// The number of records processed by the batch prediction job.
         /// </para>
         /// </summary>
-        public int ProcessedRecordsCount
+        public int? ProcessedRecordsCount
         {
-            get { return this._processedRecordsCount.GetValueOrDefault(); }
+            get { return this._processedRecordsCount; }
             set { this._processedRecordsCount = value; }
         }
 
@@ -319,9 +319,9 @@ namespace Amazon.FraudDetector.Model
         /// The total number of records in the batch prediction job.
         /// </para>
         /// </summary>
-        public int TotalRecordsCount
+        public int? TotalRecordsCount
         {
-            get { return this._totalRecordsCount.GetValueOrDefault(); }
+            get { return this._totalRecordsCount; }
             set { this._totalRecordsCount = value; }
         }
 

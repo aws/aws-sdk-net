@@ -65,7 +65,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("trackNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TrackNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

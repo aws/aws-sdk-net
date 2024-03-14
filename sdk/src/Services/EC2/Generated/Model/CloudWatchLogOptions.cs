@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// Valid values: <c>True</c> | <c>False</c> 
         /// </para>
         /// </summary>
-        public bool LogEnabled
+        public bool? LogEnabled
         {
-            get { return this._logEnabled.GetValueOrDefault(); }
+            get { return this._logEnabled; }
             set { this._logEnabled = value; }
         }
 

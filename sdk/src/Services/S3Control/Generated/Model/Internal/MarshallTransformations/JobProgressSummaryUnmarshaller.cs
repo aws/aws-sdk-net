@@ -57,13 +57,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("NumberOfTasksFailed", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.NumberOfTasksFailed = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NumberOfTasksSucceeded", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.NumberOfTasksSucceeded = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -75,7 +75,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TotalNumberOfTasks", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.TotalNumberOfTasks = unmarshaller.Unmarshall(context);
                         continue;
                     }

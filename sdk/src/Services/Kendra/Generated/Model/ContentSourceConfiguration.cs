@@ -64,9 +64,9 @@ namespace Amazon.Kendra.Model
         /// API.
         /// </para>
         /// </summary>
-        public bool DirectPutContent
+        public bool? DirectPutContent
         {
-            get { return this._directPutContent.GetValueOrDefault(); }
+            get { return this._directPutContent; }
             set { this._directPutContent = value; }
         }
 

@@ -53,7 +53,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

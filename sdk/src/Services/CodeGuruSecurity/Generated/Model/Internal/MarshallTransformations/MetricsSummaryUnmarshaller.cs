@@ -71,7 +71,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("date", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context);
                     continue;
                 }

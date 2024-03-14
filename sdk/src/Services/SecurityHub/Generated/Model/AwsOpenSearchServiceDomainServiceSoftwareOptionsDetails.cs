@@ -68,9 +68,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether a request to update the domain can be canceled.
         /// </para>
         /// </summary>
-        public bool Cancellable
+        public bool? Cancellable
         {
-            get { return this._cancellable.GetValueOrDefault(); }
+            get { return this._cancellable; }
             set { this._cancellable = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the service software update is optional.
         /// </para>
         /// </summary>
-        public bool OptionalDeployment
+        public bool? OptionalDeployment
         {
-            get { return this._optionalDeployment.GetValueOrDefault(); }
+            get { return this._optionalDeployment; }
             set { this._optionalDeployment = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether a service software update is available for the domain.
         /// </para>
         /// </summary>
-        public bool UpdateAvailable
+        public bool? UpdateAvailable
         {
-            get { return this._updateAvailable.GetValueOrDefault(); }
+            get { return this._updateAvailable; }
             set { this._updateAvailable = value; }
         }
 

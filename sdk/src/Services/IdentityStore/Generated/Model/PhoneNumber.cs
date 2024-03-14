@@ -45,9 +45,9 @@ namespace Amazon.IdentityStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public bool Primary
+        public bool? Primary
         {
-            get { return this._primary.GetValueOrDefault(); }
+            get { return this._primary; }
             set { this._primary = value; }
         }
 

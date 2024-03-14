@@ -83,7 +83,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("completedJobs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompletedJobs = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,13 +125,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EventCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.JobTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -197,19 +197,19 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("seed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Seed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("skipAppResign", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SkipAppResign = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("started", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Started = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -221,7 +221,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopped", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -233,7 +233,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalJobs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalJobs = unmarshaller.Unmarshall(context);
                     continue;
                 }

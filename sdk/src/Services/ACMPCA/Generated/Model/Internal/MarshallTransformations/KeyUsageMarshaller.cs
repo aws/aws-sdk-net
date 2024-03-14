@@ -48,55 +48,55 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCRLSign())
             {
                 context.Writer.WritePropertyName("CRLSign");
-                context.Writer.Write(requestObject.CRLSign);
+                context.Writer.Write(requestObject.CRLSign.Value);
             }
 
             if(requestObject.IsSetDataEncipherment())
             {
                 context.Writer.WritePropertyName("DataEncipherment");
-                context.Writer.Write(requestObject.DataEncipherment);
+                context.Writer.Write(requestObject.DataEncipherment.Value);
             }
 
             if(requestObject.IsSetDecipherOnly())
             {
                 context.Writer.WritePropertyName("DecipherOnly");
-                context.Writer.Write(requestObject.DecipherOnly);
+                context.Writer.Write(requestObject.DecipherOnly.Value);
             }
 
             if(requestObject.IsSetDigitalSignature())
             {
                 context.Writer.WritePropertyName("DigitalSignature");
-                context.Writer.Write(requestObject.DigitalSignature);
+                context.Writer.Write(requestObject.DigitalSignature.Value);
             }
 
             if(requestObject.IsSetEncipherOnly())
             {
                 context.Writer.WritePropertyName("EncipherOnly");
-                context.Writer.Write(requestObject.EncipherOnly);
+                context.Writer.Write(requestObject.EncipherOnly.Value);
             }
 
             if(requestObject.IsSetKeyAgreement())
             {
                 context.Writer.WritePropertyName("KeyAgreement");
-                context.Writer.Write(requestObject.KeyAgreement);
+                context.Writer.Write(requestObject.KeyAgreement.Value);
             }
 
             if(requestObject.IsSetKeyCertSign())
             {
                 context.Writer.WritePropertyName("KeyCertSign");
-                context.Writer.Write(requestObject.KeyCertSign);
+                context.Writer.Write(requestObject.KeyCertSign.Value);
             }
 
             if(requestObject.IsSetKeyEncipherment())
             {
                 context.Writer.WritePropertyName("KeyEncipherment");
-                context.Writer.Write(requestObject.KeyEncipherment);
+                context.Writer.Write(requestObject.KeyEncipherment.Value);
             }
 
             if(requestObject.IsSetNonRepudiation())
             {
                 context.Writer.WritePropertyName("NonRepudiation");
-                context.Writer.Write(requestObject.NonRepudiation);
+                context.Writer.Write(requestObject.NonRepudiation.Value);
             }
 
         }

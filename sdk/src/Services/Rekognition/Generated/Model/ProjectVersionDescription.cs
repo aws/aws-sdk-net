@@ -79,9 +79,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BillableTrainingTimeInSeconds
+        public long? BillableTrainingTimeInSeconds
         {
-            get { return this._billableTrainingTimeInSeconds.GetValueOrDefault(); }
+            get { return this._billableTrainingTimeInSeconds; }
             set { this._billableTrainingTimeInSeconds = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.Rekognition.Model
         /// The Unix datetime for the date and time that training started.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxInferenceUnits
+        public int? MaxInferenceUnits
         {
-            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            get { return this._maxInferenceUnits; }
             set { this._maxInferenceUnits = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinInferenceUnits
+        public int? MinInferenceUnits
         {
-            get { return this._minInferenceUnits.GetValueOrDefault(); }
+            get { return this._minInferenceUnits; }
             set { this._minInferenceUnits = value; }
         }
 
@@ -377,9 +377,9 @@ namespace Amazon.Rekognition.Model
         /// The Unix date and time that training of the model ended.
         /// </para>
         /// </summary>
-        public DateTime TrainingEndTimestamp
+        public DateTime? TrainingEndTimestamp
         {
-            get { return this._trainingEndTimestamp.GetValueOrDefault(); }
+            get { return this._trainingEndTimestamp; }
             set { this._trainingEndTimestamp = value; }
         }
 

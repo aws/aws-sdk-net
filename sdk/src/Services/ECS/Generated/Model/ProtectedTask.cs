@@ -45,9 +45,9 @@ namespace Amazon.ECS.Model
         /// The epoch time when protection for the task will expire.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ECS.Model
         /// is <c>true</c>. Otherwise, it is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ProtectionEnabled
+        public bool? ProtectionEnabled
         {
-            get { return this._protectionEnabled.GetValueOrDefault(); }
+            get { return this._protectionEnabled; }
             set { this._protectionEnabled = value; }
         }
 

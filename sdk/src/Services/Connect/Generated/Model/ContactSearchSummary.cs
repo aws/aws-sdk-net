@@ -105,9 +105,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the customer endpoint disconnected from Amazon Connect.
         /// </para>
         /// </summary>
-        public DateTime DisconnectTimestamp
+        public DateTime? DisconnectTimestamp
         {
-            get { return this._disconnectTimestamp.GetValueOrDefault(); }
+            get { return this._disconnectTimestamp; }
             set { this._disconnectTimestamp = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Connect.Model
         /// started listening to a contact.
         /// </para>
         /// </summary>
-        public DateTime InitiationTimestamp
+        public DateTime? InitiationTimestamp
         {
-            get { return this._initiationTimestamp.GetValueOrDefault(); }
+            get { return this._initiationTimestamp; }
             set { this._initiationTimestamp = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.Connect.Model
         /// The timestamp, in Unix epoch time format, at which to start running the inbound flow.
         /// </para>
         /// </summary>
-        public DateTime ScheduledTimestamp
+        public DateTime? ScheduledTimestamp
         {
-            get { return this._scheduledTimestamp.GetValueOrDefault(); }
+            get { return this._scheduledTimestamp; }
             set { this._scheduledTimestamp = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time the pipeline was created, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.CodePipeline.Model
         /// Guide.
         /// </para>
         /// </summary>
-        public DateTime PollingDisabledAt
+        public DateTime? PollingDisabledAt
         {
-            get { return this._pollingDisabledAt.GetValueOrDefault(); }
+            get { return this._pollingDisabledAt; }
             set { this._pollingDisabledAt = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time the pipeline was last updated, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime Updated
+        public DateTime? Updated
         {
-            get { return this._updated.GetValueOrDefault(); }
+            get { return this._updated; }
             set { this._updated = value; }
         }
 

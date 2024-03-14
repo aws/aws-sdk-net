@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("TrafficPolicyInstanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.TrafficPolicyInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

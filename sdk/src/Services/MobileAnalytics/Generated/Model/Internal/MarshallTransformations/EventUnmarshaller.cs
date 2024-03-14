@@ -89,7 +89,7 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timestamp", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimestampUtc = unmarshaller.Unmarshall(context);
                     continue;
                 }

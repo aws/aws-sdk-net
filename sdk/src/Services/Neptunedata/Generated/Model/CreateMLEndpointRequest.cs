@@ -80,9 +80,9 @@ namespace Amazon.Neptunedata.Model
         /// The default is 1
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.Neptunedata.Model
         /// the <c>mlModelTransformJobId</c>.
         /// </para>
         /// </summary>
-        public bool Update
+        public bool? Update
         {
-            get { return this._update.GetValueOrDefault(); }
+            get { return this._update; }
             set { this._update = value; }
         }
 

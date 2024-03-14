@@ -91,9 +91,9 @@ namespace Amazon.PI.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.PI.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.PI.Model
         /// for you, with a goal of returning roughly 100-200 data points in the response. 
         /// </para>
         /// </summary>
-        public int PeriodInSeconds
+        public int? PeriodInSeconds
         {
-            get { return this._periodInSeconds.GetValueOrDefault(); }
+            get { return this._periodInSeconds; }
             set { this._periodInSeconds = value; }
         }
 
@@ -371,9 +371,9 @@ namespace Amazon.PI.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

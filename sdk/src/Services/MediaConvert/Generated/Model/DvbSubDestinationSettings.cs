@@ -131,9 +131,9 @@ namespace Amazon.MediaConvert.Model
         /// be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int BackgroundOpacity
+        public int? BackgroundOpacity
         {
-            get { return this._backgroundOpacity.GetValueOrDefault(); }
+            get { return this._backgroundOpacity; }
             set { this._backgroundOpacity = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.MediaConvert.Model
         /// segment. All burn-in and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int DdsXCoordinate
+        public int? DdsXCoordinate
         {
-            get { return this._ddsXCoordinate.GetValueOrDefault(); }
+            get { return this._ddsXCoordinate; }
             set { this._ddsXCoordinate = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.MediaConvert.Model
         /// segment (PCS). All burn-in and DVB-Sub font settings must match.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int DdsYCoordinate
+        public int? DdsYCoordinate
         {
-            get { return this._ddsYCoordinate.GetValueOrDefault(); }
+            get { return this._ddsYCoordinate; }
             set { this._ddsYCoordinate = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.MediaConvert.Model
         /// must be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int FontOpacity
+        public int? FontOpacity
         {
-            get { return this._fontOpacity.GetValueOrDefault(); }
+            get { return this._fontOpacity; }
             set { this._fontOpacity = value; }
         }
 
@@ -275,9 +275,9 @@ namespace Amazon.MediaConvert.Model
         /// per inch).Within your job settings, all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=96, Max=600)]
-        public int FontResolution
+        public int? FontResolution
         {
-            get { return this._fontResolution.GetValueOrDefault(); }
+            get { return this._fontResolution; }
             set { this._fontResolution = value; }
         }
 
@@ -312,9 +312,9 @@ namespace Amazon.MediaConvert.Model
         /// all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=96)]
-        public int FontSize
+        public int? FontSize
         {
-            get { return this._fontSize.GetValueOrDefault(); }
+            get { return this._fontSize; }
             set { this._fontSize = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.MediaConvert.Model
         /// settings must match.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -388,9 +388,9 @@ namespace Amazon.MediaConvert.Model
         /// all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int OutlineSize
+        public int? OutlineSize
         {
-            get { return this._outlineSize.GetValueOrDefault(); }
+            get { return this._outlineSize; }
             set { this._outlineSize = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.MediaConvert.Model
         /// Within your job settings, all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int ShadowOpacity
+        public int? ShadowOpacity
         {
-            get { return this._shadowOpacity.GetValueOrDefault(); }
+            get { return this._shadowOpacity; }
             set { this._shadowOpacity = value; }
         }
 
@@ -446,9 +446,9 @@ namespace Amazon.MediaConvert.Model
         /// be identical.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int ShadowXOffset
+        public int? ShadowXOffset
         {
-            get { return this._shadowXOffset.GetValueOrDefault(); }
+            get { return this._shadowXOffset; }
             set { this._shadowXOffset = value; }
         }
 
@@ -466,9 +466,9 @@ namespace Amazon.MediaConvert.Model
         /// your job settings, all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int ShadowYOffset
+        public int? ShadowYOffset
         {
-            get { return this._shadowYOffset.GetValueOrDefault(); }
+            get { return this._shadowYOffset; }
             set { this._shadowYOffset = value; }
         }
 
@@ -543,9 +543,9 @@ namespace Amazon.MediaConvert.Model
         /// settings must match.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 
@@ -563,9 +563,9 @@ namespace Amazon.MediaConvert.Model
         /// Within your job settings, all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int XPosition
+        public int? XPosition
         {
-            get { return this._xPosition.GetValueOrDefault(); }
+            get { return this._xPosition; }
             set { this._xPosition = value; }
         }
 
@@ -583,9 +583,9 @@ namespace Amazon.MediaConvert.Model
         /// all of your DVB-Sub settings must be identical.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int YPosition
+        public int? YPosition
         {
-            get { return this._yPosition.GetValueOrDefault(); }
+            get { return this._yPosition; }
             set { this._yPosition = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetentionPeriodValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

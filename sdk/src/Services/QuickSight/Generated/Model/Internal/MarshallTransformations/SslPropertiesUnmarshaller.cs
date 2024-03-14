@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DisableSsl", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableSsl = unmarshaller.Unmarshall(context);
                     continue;
                 }

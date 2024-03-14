@@ -65,7 +65,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CrossAccount", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrossAccount = unmarshaller.Unmarshall(context);
                     continue;
                 }

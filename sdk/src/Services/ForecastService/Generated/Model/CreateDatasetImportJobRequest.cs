@@ -359,9 +359,9 @@ namespace Amazon.ForecastService.Model
         /// are expressed in local time.
         /// </para>
         /// </summary>
-        public bool UseGeolocationForTimeZone
+        public bool? UseGeolocationForTimeZone
         {
-            get { return this._useGeolocationForTimeZone.GetValueOrDefault(); }
+            get { return this._useGeolocationForTimeZone; }
             set { this._useGeolocationForTimeZone = value; }
         }
 

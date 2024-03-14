@@ -71,7 +71,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("bootstrapClusterCreatorAdminPermissions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BootstrapClusterCreatorAdminPermissions = unmarshaller.Unmarshall(context);
                     continue;
                 }

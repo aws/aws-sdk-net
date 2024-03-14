@@ -137,9 +137,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public long BacktrackWindow
+        public long? BacktrackWindow
         {
-            get { return this._backtrackWindow.GetValueOrDefault(); }
+            get { return this._backtrackWindow; }
             set { this._backtrackWindow = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.RDS.Model
         /// restored DB cluster. The default is not to copy them.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -340,9 +340,9 @@ namespace Amazon.RDS.Model
         /// enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -440,9 +440,9 @@ namespace Amazon.RDS.Model
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -567,9 +567,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ManageMasterUserPassword
+        public bool? ManageMasterUserPassword
         {
-            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            get { return this._manageMasterUserPassword; }
             set { this._manageMasterUserPassword = value; }
         }
 
@@ -764,9 +764,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>3306</c> 
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -992,9 +992,9 @@ namespace Amazon.RDS.Model
         /// Specifies whether the restored DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

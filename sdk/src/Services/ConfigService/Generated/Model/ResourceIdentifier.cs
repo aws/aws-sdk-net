@@ -45,9 +45,9 @@ namespace Amazon.ConfigService.Model
         /// The time that the resource was deleted.
         /// </para>
         /// </summary>
-        public DateTime ResourceDeletionTime
+        public DateTime? ResourceDeletionTime
         {
-            get { return this._resourceDeletionTime.GetValueOrDefault(); }
+            get { return this._resourceDeletionTime; }
             set { this._resourceDeletionTime = value; }
         }
 

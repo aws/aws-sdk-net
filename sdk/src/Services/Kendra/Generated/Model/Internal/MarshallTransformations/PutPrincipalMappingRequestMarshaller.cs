@@ -99,7 +99,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOrderingId())
                 {
                     context.Writer.WritePropertyName("OrderingId");
-                    context.Writer.Write(publicRequest.OrderingId);
+                    context.Writer.Write(publicRequest.OrderingId.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

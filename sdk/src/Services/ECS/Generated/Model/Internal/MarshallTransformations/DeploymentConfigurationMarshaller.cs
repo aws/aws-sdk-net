@@ -70,13 +70,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumPercent())
             {
                 context.Writer.WritePropertyName("maximumPercent");
-                context.Writer.Write(requestObject.MaximumPercent);
+                context.Writer.Write(requestObject.MaximumPercent.Value);
             }
 
             if(requestObject.IsSetMinimumHealthyPercent())
             {
                 context.Writer.WritePropertyName("minimumHealthyPercent");
-                context.Writer.Write(requestObject.MinimumHealthyPercent);
+                context.Writer.Write(requestObject.MinimumHealthyPercent.Value);
             }
 
         }

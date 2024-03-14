@@ -281,9 +281,9 @@ namespace Amazon.MemoryDB.Model
         /// today is retained for 5 days before being deleted.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeletionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeletionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

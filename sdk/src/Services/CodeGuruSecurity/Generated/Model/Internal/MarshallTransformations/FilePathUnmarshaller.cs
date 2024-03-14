@@ -71,7 +71,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("endLine", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndLine = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startLine", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartLine = unmarshaller.Unmarshall(context);
                     continue;
                 }

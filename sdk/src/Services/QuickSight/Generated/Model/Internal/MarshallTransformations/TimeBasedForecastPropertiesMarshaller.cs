@@ -48,37 +48,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerBoundary())
             {
                 context.Writer.WritePropertyName("LowerBoundary");
-                context.Writer.Write(requestObject.LowerBoundary);
+                context.Writer.Write(requestObject.LowerBoundary.Value);
             }
 
             if(requestObject.IsSetPeriodsBackward())
             {
                 context.Writer.WritePropertyName("PeriodsBackward");
-                context.Writer.Write(requestObject.PeriodsBackward);
+                context.Writer.Write(requestObject.PeriodsBackward.Value);
             }
 
             if(requestObject.IsSetPeriodsForward())
             {
                 context.Writer.WritePropertyName("PeriodsForward");
-                context.Writer.Write(requestObject.PeriodsForward);
+                context.Writer.Write(requestObject.PeriodsForward.Value);
             }
 
             if(requestObject.IsSetPredictionInterval())
             {
                 context.Writer.WritePropertyName("PredictionInterval");
-                context.Writer.Write(requestObject.PredictionInterval);
+                context.Writer.Write(requestObject.PredictionInterval.Value);
             }
 
             if(requestObject.IsSetSeasonality())
             {
                 context.Writer.WritePropertyName("Seasonality");
-                context.Writer.Write(requestObject.Seasonality);
+                context.Writer.Write(requestObject.Seasonality.Value);
             }
 
             if(requestObject.IsSetUpperBoundary())
             {
                 context.Writer.WritePropertyName("UpperBoundary");
-                context.Writer.Write(requestObject.UpperBoundary);
+                context.Writer.Write(requestObject.UpperBoundary.Value);
             }
 
         }

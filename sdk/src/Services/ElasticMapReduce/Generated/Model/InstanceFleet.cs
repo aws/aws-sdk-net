@@ -156,9 +156,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ProvisionedOnDemandCapacity
+        public int? ProvisionedOnDemandCapacity
         {
-            get { return this._provisionedOnDemandCapacity.GetValueOrDefault(); }
+            get { return this._provisionedOnDemandCapacity; }
             set { this._provisionedOnDemandCapacity = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ProvisionedSpotCapacity
+        public int? ProvisionedSpotCapacity
         {
-            get { return this._provisionedSpotCapacity.GetValueOrDefault(); }
+            get { return this._provisionedSpotCapacity; }
             set { this._provisionedSpotCapacity = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TargetOnDemandCapacity
+        public int? TargetOnDemandCapacity
         {
-            get { return this._targetOnDemandCapacity.GetValueOrDefault(); }
+            get { return this._targetOnDemandCapacity; }
             set { this._targetOnDemandCapacity = value; }
         }
 
@@ -288,9 +288,9 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TargetSpotCapacity
+        public int? TargetSpotCapacity
         {
-            get { return this._targetSpotCapacity.GetValueOrDefault(); }
+            get { return this._targetSpotCapacity; }
             set { this._targetSpotCapacity = value; }
         }
 

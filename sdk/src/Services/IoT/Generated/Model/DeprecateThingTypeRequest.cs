@@ -69,9 +69,9 @@ namespace Amazon.IoT.Model
         /// not be deprecated anymore and you can associate it with things.
         /// </para>
         /// </summary>
-        public bool UndoDeprecate
+        public bool? UndoDeprecate
         {
-            get { return this._undoDeprecate.GetValueOrDefault(); }
+            get { return this._undoDeprecate; }
             set { this._undoDeprecate = value; }
         }
 

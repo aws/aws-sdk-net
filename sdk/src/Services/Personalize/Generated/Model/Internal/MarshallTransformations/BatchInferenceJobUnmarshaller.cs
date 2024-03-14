@@ -83,7 +83,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,13 +119,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumResults = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -77,13 +77,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableCachingForHttp())
                 {
                     context.Writer.WritePropertyName("enableCachingForHttp");
-                    context.Writer.Write(publicRequest.EnableCachingForHttp);
+                    context.Writer.Write(publicRequest.EnableCachingForHttp.Value);
                 }
 
                 if(publicRequest.IsSetSigningDisabled())
                 {
                     context.Writer.WritePropertyName("signingDisabled");
-                    context.Writer.Write(publicRequest.SigningDisabled);
+                    context.Writer.Write(publicRequest.SigningDisabled.Value);
                 }
 
                 if(publicRequest.IsSetStatus())

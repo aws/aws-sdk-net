@@ -74,13 +74,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEventBridgeEnabled())
                 {
                     context.Writer.WritePropertyName("EventBridgeEnabled");
-                    context.Writer.Write(publicRequest.EventBridgeEnabled);
+                    context.Writer.Write(publicRequest.EventBridgeEnabled.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyEnableGeospatialQueries())
                 {
                     context.Writer.WritePropertyName("KmsKeyEnableGeospatialQueries");
-                    context.Writer.Write(publicRequest.KmsKeyEnableGeospatialQueries);
+                    context.Writer.Write(publicRequest.KmsKeyEnableGeospatialQueries.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())

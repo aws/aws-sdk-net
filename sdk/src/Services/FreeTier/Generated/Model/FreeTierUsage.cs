@@ -51,9 +51,9 @@ namespace Amazon.FreeTier.Model
         /// Describes the actual usage accrued month-to-day (MTD) that you've used so far.
         /// </para>
         /// </summary>
-        public double ActualUsageAmount
+        public double? ActualUsageAmount
         {
-            get { return this._actualUsageAmount.GetValueOrDefault(); }
+            get { return this._actualUsageAmount; }
             set { this._actualUsageAmount = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.FreeTier.Model
         /// Describes the forecasted usage by the month that you're expected to use.
         /// </para>
         /// </summary>
-        public double ForecastedUsageAmount
+        public double? ForecastedUsageAmount
         {
-            get { return this._forecastedUsageAmount.GetValueOrDefault(); }
+            get { return this._forecastedUsageAmount; }
             set { this._forecastedUsageAmount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.FreeTier.Model
         /// Describes the maximum usage allowed in Free Tier.
         /// </para>
         /// </summary>
-        public double Limit
+        public double? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

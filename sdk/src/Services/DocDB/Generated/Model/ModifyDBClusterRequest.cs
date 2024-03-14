@@ -64,9 +64,9 @@ namespace Amazon.DocDB.Model
         /// current version.
         /// </para>
         /// </summary>
-        public bool AllowMajorVersionUpgrade
+        public bool? AllowMajorVersionUpgrade
         {
-            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowMajorVersionUpgrade; }
             set { this._allowMajorVersionUpgrade = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.DocDB.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.DocDB.Model
         /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.DocDB.Model
         /// Default: The same port as the original cluster.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

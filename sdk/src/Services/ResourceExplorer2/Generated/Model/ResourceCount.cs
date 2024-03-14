@@ -61,9 +61,9 @@ namespace Amazon.ResourceExplorer2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool Complete
+        public bool? Complete
         {
-            get { return this._complete.GetValueOrDefault(); }
+            get { return this._complete; }
             set { this._complete = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.ResourceExplorer2.Model
         /// to return a smaller number of results.
         /// </para>
         /// </summary>
-        public long TotalResources
+        public long? TotalResources
         {
-            get { return this._totalResources.GetValueOrDefault(); }
+            get { return this._totalResources; }
             set { this._totalResources = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DisableUseAsDirectQuerySource", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableUseAsDirectQuerySource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DisableUseAsImportedSource", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableUseAsImportedSource = unmarshaller.Unmarshall(context);
                     continue;
                 }

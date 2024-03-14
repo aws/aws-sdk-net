@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the snapshot is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.EC2.Model
         /// The time stamp when the snapshot was initiated.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.EC2.Model
         /// The size of the volume, in GiB.
         /// </para>
         /// </summary>
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

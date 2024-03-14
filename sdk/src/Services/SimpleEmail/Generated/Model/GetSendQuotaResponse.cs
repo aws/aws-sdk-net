@@ -45,9 +45,9 @@ namespace Amazon.SimpleEmail.Model
         /// value of -1 signifies an unlimited quota.
         /// </para>
         /// </summary>
-        public double Max24HourSend
+        public double? Max24HourSend
         {
-            get { return this._max24HourSend.GetValueOrDefault(); }
+            get { return this._max24HourSend; }
             set { this._max24HourSend = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public double MaxSendRate
+        public double? MaxSendRate
         {
-            get { return this._maxSendRate.GetValueOrDefault(); }
+            get { return this._maxSendRate; }
             set { this._maxSendRate = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.SimpleEmail.Model
         /// The number of emails sent during the previous 24 hours.
         /// </para>
         /// </summary>
-        public double SentLast24Hours
+        public double? SentLast24Hours
         {
-            get { return this._sentLast24Hours.GetValueOrDefault(); }
+            get { return this._sentLast24Hours; }
             set { this._sentLast24Hours = value; }
         }
 

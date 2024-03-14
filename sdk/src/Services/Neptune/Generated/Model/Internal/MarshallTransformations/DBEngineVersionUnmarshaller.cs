@@ -113,19 +113,19 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsLogExportsToCloudwatchLogs", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsLogExportsToCloudwatchLogs = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsReadReplica", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsReadReplica = unmarshaller.Unmarshall(context);
                         continue;
                     }

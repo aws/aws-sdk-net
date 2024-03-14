@@ -53,19 +53,19 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MeanTimeToRecoverInMilliseconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.MeanTimeToRecoverInMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProactiveInsights", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ProactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReactiveInsights", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ReactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }

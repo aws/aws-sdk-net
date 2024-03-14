@@ -45,9 +45,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1023)]
-        public int Bcch
+        public int? Bcch
         {
-            get { return this._bcch.GetValueOrDefault(); }
+            get { return this._bcch; }
             set { this._bcch = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=63)]
-        public int Bsic
+        public int? Bsic
         {
-            get { return this._bsic.GetValueOrDefault(); }
+            get { return this._bsic; }
             set { this._bsic = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-110, Max=-25)]
-        public int RxLevel
+        public int? RxLevel
         {
-            get { return this._rxLevel.GetValueOrDefault(); }
+            get { return this._rxLevel; }
             set { this._rxLevel = value; }
         }
 

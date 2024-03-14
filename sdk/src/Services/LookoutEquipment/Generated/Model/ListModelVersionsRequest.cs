@@ -52,9 +52,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Filter results to return all the model versions created before this time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAtEndTime
+        public DateTime? CreatedAtEndTime
         {
-            get { return this._createdAtEndTime.GetValueOrDefault(); }
+            get { return this._createdAtEndTime; }
             set { this._createdAtEndTime = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Filter results to return all the model versions created after this time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAtStartTime
+        public DateTime? CreatedAtStartTime
         {
-            get { return this._createdAtStartTime.GetValueOrDefault(); }
+            get { return this._createdAtStartTime; }
             set { this._createdAtStartTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long MaxModelVersion
+        public long? MaxModelVersion
         {
-            get { return this._maxModelVersion.GetValueOrDefault(); }
+            get { return this._maxModelVersion; }
             set { this._maxModelVersion = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long MinModelVersion
+        public long? MinModelVersion
         {
-            get { return this._minModelVersion.GetValueOrDefault(); }
+            get { return this._minModelVersion; }
             set { this._minModelVersion = value; }
         }
 

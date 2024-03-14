@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SSOOIDC")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

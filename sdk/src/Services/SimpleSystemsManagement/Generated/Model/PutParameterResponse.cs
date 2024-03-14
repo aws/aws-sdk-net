@@ -64,9 +64,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the latest parameter value when a parameter is called.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

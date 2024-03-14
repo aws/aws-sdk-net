@@ -44,9 +44,9 @@ namespace Amazon.Route53Domains.Model
         ///  Algorithm which was used to generate the digest from the public key. 
         /// </para>
         /// </summary>
-        public int Algorithm
+        public int? Algorithm
         {
-            get { return this._algorithm.GetValueOrDefault(); }
+            get { return this._algorithm; }
             set { this._algorithm = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Route53Domains.Model
         /// If you have ZSK keys only – use ZSK to create a DS record.
         /// </para>
         /// </summary>
-        public int Flags
+        public int? Flags
         {
-            get { return this._flags.GetValueOrDefault(); }
+            get { return this._flags; }
             set { this._flags = value; }
         }
 

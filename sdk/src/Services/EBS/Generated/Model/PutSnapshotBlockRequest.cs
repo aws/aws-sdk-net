@@ -98,9 +98,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int BlockIndex
+        public int? BlockIndex
         {
-            get { return this._blockIndex.GetValueOrDefault(); }
+            get { return this._blockIndex; }
             set { this._blockIndex = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DataLength
+        public int? DataLength
         {
-            get { return this._dataLength.GetValueOrDefault(); }
+            get { return this._dataLength; }
             set { this._dataLength = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Progress
+        public int? Progress
         {
-            get { return this._progress.GetValueOrDefault(); }
+            get { return this._progress; }
             set { this._progress = value; }
         }
 

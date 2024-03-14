@@ -60,25 +60,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableInternetAccess())
             {
                 context.Writer.WritePropertyName("EnableInternetAccess");
-                context.Writer.Write(requestObject.EnableInternetAccess);
+                context.Writer.Write(requestObject.EnableInternetAccess.Value);
             }
 
             if(requestObject.IsSetEnableMaintenanceMode())
             {
                 context.Writer.WritePropertyName("EnableMaintenanceMode");
-                context.Writer.Write(requestObject.EnableMaintenanceMode);
+                context.Writer.Write(requestObject.EnableMaintenanceMode.Value);
             }
 
             if(requestObject.IsSetEnableWorkDocs())
             {
                 context.Writer.WritePropertyName("EnableWorkDocs");
-                context.Writer.Write(requestObject.EnableWorkDocs);
+                context.Writer.Write(requestObject.EnableWorkDocs.Value);
             }
 
             if(requestObject.IsSetUserEnabledAsLocalAdministrator())
             {
                 context.Writer.WritePropertyName("UserEnabledAsLocalAdministrator");
-                context.Writer.Write(requestObject.UserEnabledAsLocalAdministrator);
+                context.Writer.Write(requestObject.UserEnabledAsLocalAdministrator.Value);
             }
 
         }

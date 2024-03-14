@@ -65,25 +65,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Mixed", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Mixed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Negative", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Negative = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Neutral", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Neutral = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Positive", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Positive = unmarshaller.Unmarshall(context);
                     continue;
                 }

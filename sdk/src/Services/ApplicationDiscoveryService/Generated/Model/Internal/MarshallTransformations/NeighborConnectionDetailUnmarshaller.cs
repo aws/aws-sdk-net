@@ -65,13 +65,13 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             {
                 if (context.TestExpression("connectionsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConnectionsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("destinationPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

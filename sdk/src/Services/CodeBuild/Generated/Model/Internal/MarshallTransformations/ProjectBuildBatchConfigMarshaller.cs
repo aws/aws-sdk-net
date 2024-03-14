@@ -54,7 +54,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCombineArtifacts())
             {
                 context.Writer.WritePropertyName("combineArtifacts");
-                context.Writer.Write(requestObject.CombineArtifacts);
+                context.Writer.Write(requestObject.CombineArtifacts.Value);
             }
 
             if(requestObject.IsSetRestrictions())
@@ -77,7 +77,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutInMins())
             {
                 context.Writer.WritePropertyName("timeoutInMins");
-                context.Writer.Write(requestObject.TimeoutInMins);
+                context.Writer.Write(requestObject.TimeoutInMins.Value);
             }
 
         }

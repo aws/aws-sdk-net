@@ -74,9 +74,9 @@ namespace Amazon.ECS.Model
         /// returns up to 100 results and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -203,9 +203,9 @@ namespace Amazon.ElastiCache.Model
         /// Security Updates for Compliance</a>.
         /// </para>
         /// </summary>
-        public DateTime ServiceUpdateRecommendedApplyByDate
+        public DateTime? ServiceUpdateRecommendedApplyByDate
         {
-            get { return this._serviceUpdateRecommendedApplyByDate.GetValueOrDefault(); }
+            get { return this._serviceUpdateRecommendedApplyByDate; }
             set { this._serviceUpdateRecommendedApplyByDate = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.ElastiCache.Model
         /// The date the update is first available
         /// </para>
         /// </summary>
-        public DateTime ServiceUpdateReleaseDate
+        public DateTime? ServiceUpdateReleaseDate
         {
-            get { return this._serviceUpdateReleaseDate.GetValueOrDefault(); }
+            get { return this._serviceUpdateReleaseDate; }
             set { this._serviceUpdateReleaseDate = value; }
         }
 
@@ -314,9 +314,9 @@ namespace Amazon.ElastiCache.Model
         /// The date that the service update is available to a replication group
         /// </para>
         /// </summary>
-        public DateTime UpdateActionAvailableDate
+        public DateTime? UpdateActionAvailableDate
         {
-            get { return this._updateActionAvailableDate.GetValueOrDefault(); }
+            get { return this._updateActionAvailableDate; }
             set { this._updateActionAvailableDate = value; }
         }
 
@@ -350,9 +350,9 @@ namespace Amazon.ElastiCache.Model
         /// The date when the UpdateActionStatus was last modified
         /// </para>
         /// </summary>
-        public DateTime UpdateActionStatusModifiedDate
+        public DateTime? UpdateActionStatusModifiedDate
         {
-            get { return this._updateActionStatusModifiedDate.GetValueOrDefault(); }
+            get { return this._updateActionStatusModifiedDate; }
             set { this._updateActionStatusModifiedDate = value; }
         }
 

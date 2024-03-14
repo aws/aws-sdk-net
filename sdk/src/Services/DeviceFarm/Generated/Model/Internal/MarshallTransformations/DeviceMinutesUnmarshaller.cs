@@ -65,19 +65,19 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("metered", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Metered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unmetered", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Unmetered = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -81,7 +81,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ContentLength", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ContentLength = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,13 +99,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("HttpExpiresDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.HttpExpiresDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RequesterCharged", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RequesterCharged = unmarshaller.Unmarshall(context);
                         continue;
                     }

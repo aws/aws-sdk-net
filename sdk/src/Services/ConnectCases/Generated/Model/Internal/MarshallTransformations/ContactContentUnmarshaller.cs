@@ -71,7 +71,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("connectedToSystemTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectedToSystemTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

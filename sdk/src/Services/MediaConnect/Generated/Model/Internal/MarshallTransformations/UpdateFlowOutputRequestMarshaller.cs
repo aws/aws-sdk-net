@@ -108,7 +108,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxLatency())
                 {
                     context.Writer.WritePropertyName("maxLatency");
-                    context.Writer.Write(publicRequest.MaxLatency);
+                    context.Writer.Write(publicRequest.MaxLatency.Value);
                 }
 
                 if(publicRequest.IsSetMediaStreamOutputConfigurations())
@@ -130,13 +130,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinLatency())
                 {
                     context.Writer.WritePropertyName("minLatency");
-                    context.Writer.Write(publicRequest.MinLatency);
+                    context.Writer.Write(publicRequest.MinLatency.Value);
                 }
 
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("port");
-                    context.Writer.Write(publicRequest.Port);
+                    context.Writer.Write(publicRequest.Port.Value);
                 }
 
                 if(publicRequest.IsSetProtocol())
@@ -154,7 +154,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSenderControlPort())
                 {
                     context.Writer.WritePropertyName("senderControlPort");
-                    context.Writer.Write(publicRequest.SenderControlPort);
+                    context.Writer.Write(publicRequest.SenderControlPort.Value);
                 }
 
                 if(publicRequest.IsSetSenderIpAddress())
@@ -166,7 +166,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSmoothingLatency())
                 {
                     context.Writer.WritePropertyName("smoothingLatency");
-                    context.Writer.Write(publicRequest.SmoothingLatency);
+                    context.Writer.Write(publicRequest.SmoothingLatency.Value);
                 }
 
                 if(publicRequest.IsSetStreamId())

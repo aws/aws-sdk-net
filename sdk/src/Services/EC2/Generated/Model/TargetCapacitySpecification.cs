@@ -79,9 +79,9 @@ namespace Amazon.EC2.Model
         /// units, you cannot specify a target capacity for On-Demand units.
         /// </para>
         /// </summary>
-        public int OnDemandTargetCapacity
+        public int? OnDemandTargetCapacity
         {
-            get { return this._onDemandTargetCapacity.GetValueOrDefault(); }
+            get { return this._onDemandTargetCapacity; }
             set { this._onDemandTargetCapacity = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// units, you cannot specify a target capacity for Spot units.
         /// </para>
         /// </summary>
-        public int SpotTargetCapacity
+        public int? SpotTargetCapacity
         {
-            get { return this._spotTargetCapacity.GetValueOrDefault(); }
+            get { return this._spotTargetCapacity; }
             set { this._spotTargetCapacity = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.EC2.Model
         /// The number of units to request, filled the default target capacity type.
         /// </para>
         /// </summary>
-        public int TotalTargetCapacity
+        public int? TotalTargetCapacity
         {
-            get { return this._totalTargetCapacity.GetValueOrDefault(); }
+            get { return this._totalTargetCapacity; }
             set { this._totalTargetCapacity = value; }
         }
 

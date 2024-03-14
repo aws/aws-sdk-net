@@ -57,9 +57,9 @@ namespace Amazon.CloudTrail.Model
         /// Whether the CloudTrail trail is currently logging Amazon Web Services API calls.
         /// </para>
         /// </summary>
-        public bool IsLogging
+        public bool? IsLogging
         {
-            get { return this._isLogging.GetValueOrDefault(); }
+            get { return this._isLogging; }
             set { this._isLogging = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.CloudTrail.Model
         /// Logs.
         /// </para>
         /// </summary>
-        public DateTime LatestCloudWatchLogsDeliveryTime
+        public DateTime? LatestCloudWatchLogsDeliveryTime
         {
-            get { return this._latestCloudWatchLogsDeliveryTime.GetValueOrDefault(); }
+            get { return this._latestCloudWatchLogsDeliveryTime; }
             set { this._latestCloudWatchLogsDeliveryTime = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.CloudTrail.Model
         /// Amazon S3 bucket.
         /// </para>
         /// </summary>
-        public DateTime LatestDeliveryTime
+        public DateTime? LatestDeliveryTime
         {
-            get { return this._latestDeliveryTime.GetValueOrDefault(); }
+            get { return this._latestDeliveryTime; }
             set { this._latestDeliveryTime = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.CloudTrail.Model
         /// Amazon S3 bucket.
         /// </para>
         /// </summary>
-        public DateTime LatestDigestDeliveryTime
+        public DateTime? LatestDigestDeliveryTime
         {
-            get { return this._latestDigestDeliveryTime.GetValueOrDefault(); }
+            get { return this._latestDigestDeliveryTime; }
             set { this._latestDigestDeliveryTime = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.CloudTrail.Model
         /// has written a new log file to an account's Amazon S3 bucket.
         /// </para>
         /// </summary>
-        public DateTime LatestNotificationTime
+        public DateTime? LatestNotificationTime
         {
-            get { return this._latestNotificationTime.GetValueOrDefault(); }
+            get { return this._latestNotificationTime; }
             set { this._latestNotificationTime = value; }
         }
 
@@ -319,9 +319,9 @@ namespace Amazon.CloudTrail.Model
         /// for an Amazon Web Services account.
         /// </para>
         /// </summary>
-        public DateTime StartLoggingTime
+        public DateTime? StartLoggingTime
         {
-            get { return this._startLoggingTime.GetValueOrDefault(); }
+            get { return this._startLoggingTime; }
             set { this._startLoggingTime = value; }
         }
 
@@ -338,9 +338,9 @@ namespace Amazon.CloudTrail.Model
         /// for an Amazon Web Services account.
         /// </para>
         /// </summary>
-        public DateTime StopLoggingTime
+        public DateTime? StopLoggingTime
         {
-            get { return this._stopLoggingTime.GetValueOrDefault(); }
+            get { return this._stopLoggingTime; }
             set { this._stopLoggingTime = value; }
         }
 

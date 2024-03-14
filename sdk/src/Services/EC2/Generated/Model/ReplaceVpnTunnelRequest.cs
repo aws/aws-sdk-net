@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// Trigger pending tunnel endpoint maintenance.
         /// </para>
         /// </summary>
-        public bool ApplyPendingMaintenance
+        public bool? ApplyPendingMaintenance
         {
-            get { return this._applyPendingMaintenance.GetValueOrDefault(); }
+            get { return this._applyPendingMaintenance; }
             set { this._applyPendingMaintenance = value; }
         }
 

@@ -83,9 +83,9 @@ namespace Amazon.Honeycode.Model
         /// names.
         /// </para>
         /// </summary>
-        public bool HasHeaderRow
+        public bool? HasHeaderRow
         {
-            get { return this._hasHeaderRow.GetValueOrDefault(); }
+            get { return this._hasHeaderRow; }
             set { this._hasHeaderRow = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Honeycode.Model
         /// import.
         /// </para>
         /// </summary>
-        public bool IgnoreEmptyRows
+        public bool? IgnoreEmptyRows
         {
-            get { return this._ignoreEmptyRows.GetValueOrDefault(); }
+            get { return this._ignoreEmptyRows; }
             set { this._ignoreEmptyRows = value; }
         }
 

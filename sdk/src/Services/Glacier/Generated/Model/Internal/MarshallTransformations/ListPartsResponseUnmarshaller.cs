@@ -59,7 +59,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PartSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PartSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,13 +65,13 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AssociatePublicIpAddress", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BackupRetentionCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BackupRetentionCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisableAutomatedBackup", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableAutomatedBackup = unmarshaller.Unmarshall(context);
                     continue;
                 }

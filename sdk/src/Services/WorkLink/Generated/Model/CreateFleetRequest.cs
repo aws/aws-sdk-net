@@ -86,9 +86,9 @@ namespace Amazon.WorkLink.Model
         /// AWS Region to users, which may be outside of your home Region.
         /// </para>
         /// </summary>
-        public bool OptimizeForEndUserLocation
+        public bool? OptimizeForEndUserLocation
         {
-            get { return this._optimizeForEndUserLocation.GetValueOrDefault(); }
+            get { return this._optimizeForEndUserLocation; }
             set { this._optimizeForEndUserLocation = value; }
         }
 

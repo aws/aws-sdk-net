@@ -43,9 +43,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// account can use.
         /// </para>
         /// </summary>
-        public int Maximum
+        public int? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 

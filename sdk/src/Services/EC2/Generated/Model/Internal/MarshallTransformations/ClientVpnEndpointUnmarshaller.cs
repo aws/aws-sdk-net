@@ -150,13 +150,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("sessionTimeoutHours", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SessionTimeoutHours = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("splitTunnel", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SplitTunnel = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -187,7 +187,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("vpnPort", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.VpnPort = unmarshaller.Unmarshall(context);
                         continue;
                     }

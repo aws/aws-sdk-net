@@ -83,9 +83,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=99999)]
-        public int NoradSatelliteID
+        public int? NoradSatelliteID
         {
-            get { return this._noradSatelliteID.GetValueOrDefault(); }
+            get { return this._noradSatelliteID; }
             set { this._noradSatelliteID = value; }
         }
 

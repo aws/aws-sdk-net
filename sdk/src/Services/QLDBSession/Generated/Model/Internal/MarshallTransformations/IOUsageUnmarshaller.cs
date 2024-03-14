@@ -65,13 +65,13 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReadIOs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReadIOs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WriteIOs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WriteIOs = unmarshaller.Unmarshall(context);
                     continue;
                 }

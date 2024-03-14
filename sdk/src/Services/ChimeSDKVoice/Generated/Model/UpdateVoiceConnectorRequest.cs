@@ -64,9 +64,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RequireEncryption
+        public bool? RequireEncryption
         {
-            get { return this._requireEncryption.GetValueOrDefault(); }
+            get { return this._requireEncryption; }
             set { this._requireEncryption = value; }
         }
 

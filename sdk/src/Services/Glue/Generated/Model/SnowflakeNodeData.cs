@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// server, it is pushed down. This improves performance of some queries.
         /// </para>
         /// </summary>
-        public bool AutoPushdown
+        public bool? AutoPushdown
         {
-            get { return this._autoPushdown.GetValueOrDefault(); }
+            get { return this._autoPushdown; }
             set { this._autoPushdown = value; }
         }
 
@@ -435,9 +435,9 @@ namespace Amazon.Glue.Model
         /// exists. If true, preexisting rows will be updated. If false, those rows will be inserted.
         /// </para>
         /// </summary>
-        public bool Upsert
+        public bool? Upsert
         {
-            get { return this._upsert.GetValueOrDefault(); }
+            get { return this._upsert; }
             set { this._upsert = value; }
         }
 

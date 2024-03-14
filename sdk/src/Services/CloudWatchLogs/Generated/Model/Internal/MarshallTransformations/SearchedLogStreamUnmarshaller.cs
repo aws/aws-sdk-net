@@ -71,7 +71,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("searchedCompletely", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SearchedCompletely = unmarshaller.Unmarshall(context);
                     continue;
                 }

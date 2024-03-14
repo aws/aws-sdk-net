@@ -59,7 +59,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetExcludedInstanceTypes())

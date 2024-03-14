@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdAvailOffset())
             {
                 context.Writer.WritePropertyName("adAvailOffset");
-                context.Writer.Write(requestObject.AdAvailOffset);
+                context.Writer.Write(requestObject.AdAvailOffset.Value);
             }
 
             if(requestObject.IsSetPasswordParam())

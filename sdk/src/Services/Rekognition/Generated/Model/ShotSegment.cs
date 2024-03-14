@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=100)]
-        public float Confidence
+        public float? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Index
+        public long? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 

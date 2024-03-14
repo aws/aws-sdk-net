@@ -71,7 +71,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recordNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -60,9 +60,9 @@ namespace Amazon.ElastiCache.Model
         /// The port of the node endpoint
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

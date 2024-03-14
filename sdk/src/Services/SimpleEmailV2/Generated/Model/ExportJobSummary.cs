@@ -45,9 +45,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The timestamp of when the export job was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedTimestamp
+        public DateTime? CompletedTimestamp
         {
-            get { return this._completedTimestamp.GetValueOrDefault(); }
+            get { return this._completedTimestamp; }
             set { this._completedTimestamp = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The timestamp of when the export job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 

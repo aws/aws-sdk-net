@@ -50,9 +50,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp when image set properties were created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp when the image set properties were deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.MedicalImaging.Model
         /// The timestamp when image set properties were updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.OSIS.Model
         /// The date and time when the pipeline was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.OSIS.Model
         /// The date and time when the pipeline was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.OSIS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxUnits
+        public int? MaxUnits
         {
-            get { return this._maxUnits.GetValueOrDefault(); }
+            get { return this._maxUnits; }
             set { this._maxUnits = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.OSIS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinUnits
+        public int? MinUnits
         {
-            get { return this._minUnits.GetValueOrDefault(); }
+            get { return this._minUnits; }
             set { this._minUnits = value; }
         }
 

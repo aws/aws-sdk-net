@@ -59,7 +59,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasMoreApplications", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreApplications = unmarshaller.Unmarshall(context);
                     continue;
                 }

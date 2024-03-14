@@ -65,13 +65,13 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("booleanValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BooleanValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("doubleValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

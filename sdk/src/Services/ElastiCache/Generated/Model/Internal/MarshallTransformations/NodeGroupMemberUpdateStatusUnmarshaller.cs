@@ -68,13 +68,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NodeDeletionDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NodeDeletionDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeUpdateEndDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NodeUpdateEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,13 +86,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NodeUpdateInitiatedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NodeUpdateInitiatedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NodeUpdateStartDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NodeUpdateStartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -104,7 +104,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NodeUpdateStatusModifiedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NodeUpdateStatusModifiedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

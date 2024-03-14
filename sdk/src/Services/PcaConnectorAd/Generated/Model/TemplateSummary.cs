@@ -89,9 +89,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// The date and time that the template was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// configuration options change based on the template schema version.
         /// </para>
         /// </summary>
-        public int PolicySchema
+        public int? PolicySchema
         {
-            get { return this._policySchema.GetValueOrDefault(); }
+            get { return this._policySchema; }
             set { this._policySchema = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// The date and time that the template was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

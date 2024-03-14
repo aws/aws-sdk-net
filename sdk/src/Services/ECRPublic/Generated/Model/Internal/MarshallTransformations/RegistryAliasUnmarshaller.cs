@@ -65,7 +65,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("defaultRegistryAlias", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultRegistryAlias = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("primaryRegistryAlias", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PrimaryRegistryAlias = unmarshaller.Unmarshall(context);
                     continue;
                 }

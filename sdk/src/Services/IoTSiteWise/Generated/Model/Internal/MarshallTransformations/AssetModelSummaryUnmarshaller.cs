@@ -77,7 +77,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdateDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sdrReferenceWhiteLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SdrReferenceWhiteLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,19 +71,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CurrentCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }

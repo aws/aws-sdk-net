@@ -75,7 +75,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds);
+                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentPrefix())

@@ -143,7 +143,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("urlExpiry", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UrlExpiry = unmarshaller.Unmarshall(context);
                     continue;
                 }

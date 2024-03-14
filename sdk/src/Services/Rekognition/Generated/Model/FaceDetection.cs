@@ -63,9 +63,9 @@ namespace Amazon.Rekognition.Model
         /// the face first appears.
         /// </para>
         /// </summary>
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

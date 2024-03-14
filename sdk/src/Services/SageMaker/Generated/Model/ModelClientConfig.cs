@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
-        public int InvocationsMaxRetries
+        public int? InvocationsMaxRetries
         {
-            get { return this._invocationsMaxRetries.GetValueOrDefault(); }
+            get { return this._invocationsMaxRetries; }
             set { this._invocationsMaxRetries = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
-        public int InvocationsTimeoutInSeconds
+        public int? InvocationsTimeoutInSeconds
         {
-            get { return this._invocationsTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._invocationsTimeoutInSeconds; }
             set { this._invocationsTimeoutInSeconds = value; }
         }
 

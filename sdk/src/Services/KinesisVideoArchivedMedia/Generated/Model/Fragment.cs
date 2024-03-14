@@ -45,9 +45,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The playback duration or other time value associated with the fragment.
         /// </para>
         /// </summary>
-        public long FragmentLengthInMilliseconds
+        public long? FragmentLengthInMilliseconds
         {
-            get { return this._fragmentLengthInMilliseconds.GetValueOrDefault(); }
+            get { return this._fragmentLengthInMilliseconds; }
             set { this._fragmentLengthInMilliseconds = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// data.
         /// </para>
         /// </summary>
-        public long FragmentSizeInBytes
+        public long? FragmentSizeInBytes
         {
-            get { return this._fragmentSizeInBytes.GetValueOrDefault(); }
+            get { return this._fragmentSizeInBytes; }
             set { this._fragmentSizeInBytes = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The timestamp from the producer corresponding to the fragment.
         /// </para>
         /// </summary>
-        public DateTime ProducerTimestamp
+        public DateTime? ProducerTimestamp
         {
-            get { return this._producerTimestamp.GetValueOrDefault(); }
+            get { return this._producerTimestamp; }
             set { this._producerTimestamp = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// The timestamp from the Amazon Web Services server corresponding to the fragment.
         /// </para>
         /// </summary>
-        public DateTime ServerTimestamp
+        public DateTime? ServerTimestamp
         {
-            get { return this._serverTimestamp.GetValueOrDefault(); }
+            get { return this._serverTimestamp; }
             set { this._serverTimestamp = value; }
         }
 

@@ -65,25 +65,25 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("excludedCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExcludedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("outstandingCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutstandingCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("possibleScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PossibleScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("score", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Score = unmarshaller.Unmarshall(context);
                     continue;
                 }

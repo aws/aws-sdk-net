@@ -48,13 +48,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfDays())
             {
                 context.Writer.WritePropertyName("numberOfDays");
-                context.Writer.Write(requestObject.NumberOfDays);
+                context.Writer.Write(requestObject.NumberOfDays.Value);
             }
 
             if(requestObject.IsSetUnlimited())
             {
                 context.Writer.WritePropertyName("unlimited");
-                context.Writer.Write(requestObject.Unlimited);
+                context.Writer.Write(requestObject.Unlimited.Value);
             }
 
         }

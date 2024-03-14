@@ -65,9 +65,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double HealthScoreThreshold
+        public double? HealthScoreThreshold
         {
-            get { return this._healthScoreThreshold.GetValueOrDefault(); }
+            get { return this._healthScoreThreshold; }
             set { this._healthScoreThreshold = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double MinTrafficImpact
+        public double? MinTrafficImpact
         {
-            get { return this._minTrafficImpact.GetValueOrDefault(); }
+            get { return this._minTrafficImpact; }
             set { this._minTrafficImpact = value; }
         }
 

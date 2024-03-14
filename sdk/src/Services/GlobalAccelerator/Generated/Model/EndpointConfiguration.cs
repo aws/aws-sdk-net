@@ -86,9 +86,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool ClientIPPreservationEnabled
+        public bool? ClientIPPreservationEnabled
         {
-            get { return this._clientIPPreservationEnabled.GetValueOrDefault(); }
+            get { return this._clientIPPreservationEnabled; }
             set { this._clientIPPreservationEnabled = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

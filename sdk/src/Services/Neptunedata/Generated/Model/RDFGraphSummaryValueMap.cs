@@ -62,9 +62,9 @@ namespace Amazon.Neptunedata.Model
         /// The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.
         /// </para>
         /// </summary>
-        public DateTime LastStatisticsComputationTime
+        public DateTime? LastStatisticsComputationTime
         {
-            get { return this._lastStatisticsComputationTime.GetValueOrDefault(); }
+            get { return this._lastStatisticsComputationTime; }
             set { this._lastStatisticsComputationTime = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataRate())
             {
                 context.Writer.WritePropertyName("DataRate");
-                context.Writer.Write(requestObject.DataRate);
+                context.Writer.Write(requestObject.DataRate.Value);
             }
 
             if(requestObject.IsSetFrequencies())

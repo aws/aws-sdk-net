@@ -47,9 +47,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The date the policy was created.
         /// </para>
         /// </summary>
-        public long CreatedDate
+        public long? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The timestamp of when the policy was last modified.
         /// </para>
         /// </summary>
-        public long LastModifiedDate
+        public long? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

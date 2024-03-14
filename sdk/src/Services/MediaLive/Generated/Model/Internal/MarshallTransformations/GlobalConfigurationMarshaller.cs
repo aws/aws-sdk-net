@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitialAudioGain())
             {
                 context.Writer.WritePropertyName("initialAudioGain");
-                context.Writer.Write(requestObject.InitialAudioGain);
+                context.Writer.Write(requestObject.InitialAudioGain.Value);
             }
 
             if(requestObject.IsSetInputEndAction())

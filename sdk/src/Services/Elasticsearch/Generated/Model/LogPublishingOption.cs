@@ -60,9 +60,9 @@ namespace Amazon.Elasticsearch.Model
         ///  Specifies whether given log publishing option is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

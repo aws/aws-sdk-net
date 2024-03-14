@@ -54,7 +54,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReplicationJobTerminated())
             {
                 context.Writer.WritePropertyName("replicationJobTerminated");
-                context.Writer.Write(requestObject.ReplicationJobTerminated);
+                context.Writer.Write(requestObject.ReplicationJobTerminated.Value);
             }
 
             if(requestObject.IsSetServerId())

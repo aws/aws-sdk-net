@@ -65,7 +65,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             {
                 if (context.TestExpression("completionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,19 +95,19 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
                 }
                 if (context.TestExpression("numberOfRecordsFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRecordsFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfRecordsSuccess", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRecordsSuccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

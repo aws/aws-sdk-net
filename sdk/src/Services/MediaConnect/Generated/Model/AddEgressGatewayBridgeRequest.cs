@@ -39,9 +39,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property MaxBitrate. The maximum expected bitrate (in bps).
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 

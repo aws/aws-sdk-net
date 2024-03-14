@@ -82,9 +82,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=730)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 

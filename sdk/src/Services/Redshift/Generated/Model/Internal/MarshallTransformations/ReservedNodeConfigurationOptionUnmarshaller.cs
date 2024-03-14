@@ -62,7 +62,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TargetReservedNodeCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TargetReservedNodeCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

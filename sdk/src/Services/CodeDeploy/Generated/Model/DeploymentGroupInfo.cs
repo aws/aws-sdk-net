@@ -478,9 +478,9 @@ namespace Amazon.CodeDeploy.Model
         /// Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
-        public bool TerminationHookEnabled
+        public bool? TerminationHookEnabled
         {
-            get { return this._terminationHookEnabled.GetValueOrDefault(); }
+            get { return this._terminationHookEnabled; }
             set { this._terminationHookEnabled = value; }
         }
 

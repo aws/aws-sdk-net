@@ -76,7 +76,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxItems())
                 {
                     context.Writer.WritePropertyName("MaxItems");
-                    context.Writer.Write(publicRequest.MaxItems);
+                    context.Writer.Write(publicRequest.MaxItems.Value);
                 }
 
                 if(publicRequest.IsSetSortBy())
@@ -105,7 +105,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSubmittedSince())
                 {
                     context.Writer.WritePropertyName("SubmittedSince");
-                    context.Writer.Write(publicRequest.SubmittedSince);
+                    context.Writer.Write(publicRequest.SubmittedSince.Value);
                 }
 
                 if(publicRequest.IsSetType())

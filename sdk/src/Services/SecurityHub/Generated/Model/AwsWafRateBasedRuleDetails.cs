@@ -124,9 +124,9 @@ namespace Amazon.SecurityHub.Model
         /// triggers the action for the rule.
         /// </para>
         /// </summary>
-        public long RateLimit
+        public long? RateLimit
         {
-            get { return this._rateLimit.GetValueOrDefault(); }
+            get { return this._rateLimit; }
             set { this._rateLimit = value; }
         }
 

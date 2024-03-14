@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// The time that the disk upload ends.
         /// </para>
         /// </summary>
-        public DateTime UploadEndUtc
+        public DateTime? UploadEndUtc
         {
-            get { return this._uploadEndUtc.GetValueOrDefault(); }
+            get { return this._uploadEndUtc; }
             set { this._uploadEnd = this._uploadEndUtc = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.EC2.Model
         /// The size of the uploaded disk image, in GiB.
         /// </para>
         /// </summary>
-        public double UploadSize
+        public double? UploadSize
         {
-            get { return this._uploadSize.GetValueOrDefault(); }
+            get { return this._uploadSize; }
             set { this._uploadSize = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// The time that the disk upload starts.
         /// </para>
         /// </summary>
-        public DateTime UploadStartUtc
+        public DateTime? UploadStartUtc
         {
-            get { return this._uploadStartUtc.GetValueOrDefault(); }
+            get { return this._uploadStartUtc; }
             set { this._uploadStart = this._uploadStartUtc = value; }
         }
 
@@ -134,13 +134,20 @@ namespace Amazon.EC2.Model
             "UploadEndUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. UploadEnd is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime UploadEnd
+        public DateTime? UploadEnd
         {
             get { return this._uploadEnd.GetValueOrDefault(); }
             set
             {
                 this._uploadEnd = value;
-                this._uploadEndUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._uploadEndUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._uploadEndUtc = null;
+                }
             }
         }
         /// <summary>
@@ -163,13 +170,20 @@ namespace Amazon.EC2.Model
             "UploadStartUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. UploadStart is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime UploadStart
+        public DateTime? UploadStart
         {
             get { return this._uploadStart.GetValueOrDefault(); }
             set
             {
                 this._uploadStart = value;
-                this._uploadStartUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._uploadStartUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._uploadStartUtc = null;
+                }
             }
         }
 #endregion

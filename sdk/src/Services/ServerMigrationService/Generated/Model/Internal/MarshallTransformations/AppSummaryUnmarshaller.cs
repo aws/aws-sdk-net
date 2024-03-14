@@ -71,7 +71,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("latestReplicationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestReplicationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,13 +167,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalServerGroups", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalServerGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalServers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalServers = unmarshaller.Unmarshall(context);
                     continue;
                 }

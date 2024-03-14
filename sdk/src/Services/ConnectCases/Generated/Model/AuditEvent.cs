@@ -103,9 +103,9 @@ namespace Amazon.ConnectCases.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime PerformedTime
+        public DateTime? PerformedTime
         {
-            get { return this._performedTime.GetValueOrDefault(); }
+            get { return this._performedTime; }
             set { this._performedTime = value; }
         }
 

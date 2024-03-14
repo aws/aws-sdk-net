@@ -81,9 +81,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property PublicAccessBlockEnabled.
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PublicAccessBlockEnabled
+        public bool? PublicAccessBlockEnabled
         {
-            get { return this._publicAccessBlockEnabled.GetValueOrDefault(); }
+            get { return this._publicAccessBlockEnabled; }
             set { this._publicAccessBlockEnabled = value; }
         }
 

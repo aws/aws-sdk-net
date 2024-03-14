@@ -65,25 +65,25 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("estimatedMonthlyAmortizedReservationCost", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlyAmortizedReservationCost = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("estimatedOnDemandCost", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedOnDemandCost = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("monthlyReservationEligibleCost", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MonthlyReservationEligibleCost = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("savingsPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SavingsPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -58,9 +58,9 @@ namespace Amazon.CloudFront.Model
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
-        public bool ModeBlock
+        public bool? ModeBlock
         {
-            get { return this._modeBlock.GetValueOrDefault(); }
+            get { return this._modeBlock; }
             set { this._modeBlock = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Override
+        public bool? Override
         {
-            get { return this._override.GetValueOrDefault(); }
+            get { return this._override; }
             set { this._override = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Protection
+        public bool? Protection
         {
-            get { return this._protection.GetValueOrDefault(); }
+            get { return this._protection; }
             set { this._protection = value; }
         }
 

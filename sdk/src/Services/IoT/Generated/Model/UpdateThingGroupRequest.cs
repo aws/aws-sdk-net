@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// thing group being updated, the update will fail.
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// rather than deleting it.
         /// </para>
         /// </summary>
-        public bool CdcInsertsAndUpdates
+        public bool? CdcInsertsAndUpdates
         {
-            get { return this._cdcInsertsAndUpdates.GetValueOrDefault(); }
+            get { return this._cdcInsertsAndUpdates; }
             set { this._cdcInsertsAndUpdates = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Timestream Developer Guide</a>.
         /// </para>
         /// </summary>
-        public bool EnableMagneticStoreWrites
+        public bool? EnableMagneticStoreWrites
         {
-            get { return this._enableMagneticStoreWrites.GetValueOrDefault(); }
+            get { return this._enableMagneticStoreWrites; }
             set { this._enableMagneticStoreWrites = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MagneticDuration
+        public int? MagneticDuration
         {
-            get { return this._magneticDuration.GetValueOrDefault(); }
+            get { return this._magneticDuration; }
             set { this._magneticDuration = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MemoryDuration
+        public int? MemoryDuration
         {
-            get { return this._memoryDuration.GetValueOrDefault(); }
+            get { return this._memoryDuration; }
             set { this._memoryDuration = value; }
         }
 

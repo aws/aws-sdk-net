@@ -49,9 +49,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// by another workflow execution.
         /// </para>
         /// </summary>
-        public long ExternalInitiatedEventId
+        public long? ExternalInitiatedEventId
         {
-            get { return this._externalInitiatedEventId.GetValueOrDefault(); }
+            get { return this._externalInitiatedEventId; }
             set { this._externalInitiatedEventId = value; }
         }
 

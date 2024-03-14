@@ -51,9 +51,9 @@ namespace Amazon.CognitoIdentity.Model
         /// the ListIdentities API will include disabled identities in the response.
         /// </para>
         /// </summary>
-        public bool HideDisabled
+        public bool? HideDisabled
         {
-            get { return this._hideDisabled.GetValueOrDefault(); }
+            get { return this._hideDisabled; }
             set { this._hideDisabled = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.CognitoIdentity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

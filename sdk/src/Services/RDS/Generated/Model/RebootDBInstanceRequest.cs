@@ -111,9 +111,9 @@ namespace Amazon.RDS.Model
         /// Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.
         /// </para>
         /// </summary>
-        public bool ForceFailover
+        public bool? ForceFailover
         {
-            get { return this._forceFailover.GetValueOrDefault(); }
+            get { return this._forceFailover; }
             set { this._forceFailover = value; }
         }
 

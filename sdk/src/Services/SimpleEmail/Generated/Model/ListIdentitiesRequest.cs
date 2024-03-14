@@ -81,9 +81,9 @@ namespace Amazon.SimpleEmail.Model
         /// The maximum number of identities per page. Possible values are 1-1000 inclusive.
         /// </para>
         /// </summary>
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

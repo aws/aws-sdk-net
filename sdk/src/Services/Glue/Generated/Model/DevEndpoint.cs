@@ -117,9 +117,9 @@ namespace Amazon.Glue.Model
         /// The point in time at which this DevEndpoint was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.Glue.Model
         /// The point in time at which this <c>DevEndpoint</c> was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimestamp
+        public DateTime? LastModifiedTimestamp
         {
-            get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimestamp; }
             set { this._lastModifiedTimestamp = value; }
         }
 
@@ -296,9 +296,9 @@ namespace Amazon.Glue.Model
         /// The number of Glue Data Processing Units (DPUs) allocated to this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -320,9 +320,9 @@ namespace Amazon.Glue.Model
         /// <c>G.2X</c>. 
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -595,9 +595,9 @@ namespace Amazon.Glue.Model
         /// The Apache Zeppelin port for the remote Apache Spark interpreter.
         /// </para>
         /// </summary>
-        public int ZeppelinRemoteSparkInterpreterPort
+        public int? ZeppelinRemoteSparkInterpreterPort
         {
-            get { return this._zeppelinRemoteSparkInterpreterPort.GetValueOrDefault(); }
+            get { return this._zeppelinRemoteSparkInterpreterPort; }
             set { this._zeppelinRemoteSparkInterpreterPort = value; }
         }
 

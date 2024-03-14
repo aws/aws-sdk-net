@@ -46,9 +46,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int NumberOfRuleGroupsAlreadyAssociated
+        public int? NumberOfRuleGroupsAlreadyAssociated
         {
-            get { return this._numberOfRuleGroupsAlreadyAssociated.GetValueOrDefault(); }
+            get { return this._numberOfRuleGroupsAlreadyAssociated; }
             set { this._numberOfRuleGroupsAlreadyAssociated = value; }
         }
 

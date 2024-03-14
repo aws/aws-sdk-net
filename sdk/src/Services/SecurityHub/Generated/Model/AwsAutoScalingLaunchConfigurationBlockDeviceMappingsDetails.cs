@@ -87,9 +87,9 @@ namespace Amazon.SecurityHub.Model
         /// If <c>NoDevice</c> is <c>true</c>, then you cannot specify <c>Ebs</c>.&gt;
         /// </para>
         /// </summary>
-        public bool NoDevice
+        public bool? NoDevice
         {
-            get { return this._noDevice.GetValueOrDefault(); }
+            get { return this._noDevice; }
             set { this._noDevice = value; }
         }
 

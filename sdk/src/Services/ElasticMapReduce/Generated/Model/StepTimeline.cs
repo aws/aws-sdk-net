@@ -43,9 +43,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date and time when the cluster step was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date and time when the cluster step execution completed or failed.
         /// </para>
         /// </summary>
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The date and time when the cluster step execution started.
         /// </para>
         /// </summary>
-        public DateTime StartDateTime
+        public DateTime? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 

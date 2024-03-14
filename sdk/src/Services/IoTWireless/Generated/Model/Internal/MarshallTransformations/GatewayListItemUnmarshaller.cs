@@ -65,7 +65,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DownlinkFrequency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DownlinkFrequency = unmarshaller.Unmarshall(context);
                     continue;
                 }

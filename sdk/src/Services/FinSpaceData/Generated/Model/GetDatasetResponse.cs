@@ -71,9 +71,9 @@ namespace Amazon.FinSpaceData.Model
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public long CreateTime
+        public long? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.FinSpaceData.Model
         /// is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

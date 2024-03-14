@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUniqueKey())
             {
                 context.Writer.WritePropertyName("UniqueKey");
-                context.Writer.Write(requestObject.UniqueKey);
+                context.Writer.Write(requestObject.UniqueKey.Value);
             }
 
         }

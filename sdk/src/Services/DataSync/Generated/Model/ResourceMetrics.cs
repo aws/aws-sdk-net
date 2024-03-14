@@ -119,9 +119,9 @@ namespace Amazon.DataSync.Model
         /// The time when DataSync Discovery collected this information from the resource.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

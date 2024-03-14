@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowUnassociatedTargets())
                 {
                     context.Writer.WritePropertyName("AllowUnassociatedTargets");
-                    context.Writer.Write(publicRequest.AllowUnassociatedTargets);
+                    context.Writer.Write(publicRequest.AllowUnassociatedTargets.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())
@@ -87,7 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCutoff())
                 {
                     context.Writer.WritePropertyName("Cutoff");
-                    context.Writer.Write(publicRequest.Cutoff);
+                    context.Writer.Write(publicRequest.Cutoff.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -99,7 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDuration())
                 {
                     context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    context.Writer.Write(publicRequest.Duration.Value);
                 }
 
                 if(publicRequest.IsSetEndDate())
@@ -123,7 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScheduleOffset())
                 {
                     context.Writer.WritePropertyName("ScheduleOffset");
-                    context.Writer.Write(publicRequest.ScheduleOffset);
+                    context.Writer.Write(publicRequest.ScheduleOffset.Value);
                 }
 
                 if(publicRequest.IsSetScheduleTimezone())

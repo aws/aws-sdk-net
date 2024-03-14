@@ -47,9 +47,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int AllMatchesCount
+        public int? AllMatchesCount
         {
-            get { return this._allMatchesCount.GetValueOrDefault(); }
+            get { return this._allMatchesCount; }
             set { this._allMatchesCount = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double AllMatchesSum
+        public double? AllMatchesSum
         {
-            get { return this._allMatchesSum.GetValueOrDefault(); }
+            get { return this._allMatchesSum; }
             set { this._allMatchesSum = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

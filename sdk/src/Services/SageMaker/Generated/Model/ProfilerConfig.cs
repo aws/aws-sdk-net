@@ -46,9 +46,9 @@ namespace Amazon.SageMaker.Model
         /// functionality. To turn it off, set to <c>True</c>.
         /// </para>
         /// </summary>
-        public bool DisableProfiler
+        public bool? DisableProfiler
         {
-            get { return this._disableProfiler.GetValueOrDefault(); }
+            get { return this._disableProfiler; }
             set { this._disableProfiler = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// The default value is 500 milliseconds.
         /// </para>
         /// </summary>
-        public long ProfilingIntervalInMilliseconds
+        public long? ProfilingIntervalInMilliseconds
         {
-            get { return this._profilingIntervalInMilliseconds.GetValueOrDefault(); }
+            get { return this._profilingIntervalInMilliseconds; }
             set { this._profilingIntervalInMilliseconds = value; }
         }
 

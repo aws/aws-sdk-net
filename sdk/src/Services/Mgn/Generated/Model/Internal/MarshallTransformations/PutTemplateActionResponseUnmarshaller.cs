@@ -65,7 +65,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("active", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Active = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("mustSucceedForCutover", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MustSucceedForCutover = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("order", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Order = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TrafficPolicyInstanceCount
+        public int? TrafficPolicyInstanceCount
         {
-            get { return this._trafficPolicyInstanceCount.GetValueOrDefault(); }
+            get { return this._trafficPolicyInstanceCount; }
             set { this._trafficPolicyInstanceCount = value; }
         }
 

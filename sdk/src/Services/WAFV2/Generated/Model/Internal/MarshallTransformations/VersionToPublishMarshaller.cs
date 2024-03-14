@@ -54,7 +54,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForecastedLifetime())
             {
                 context.Writer.WritePropertyName("ForecastedLifetime");
-                context.Writer.Write(requestObject.ForecastedLifetime);
+                context.Writer.Write(requestObject.ForecastedLifetime.Value);
             }
 
         }

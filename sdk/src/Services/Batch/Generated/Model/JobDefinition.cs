@@ -225,9 +225,9 @@ namespace Amazon.Batch.Model
         /// state.
         /// </para>
         /// </summary>
-        public bool PropagateTags
+        public bool? PropagateTags
         {
-            get { return this._propagateTags.GetValueOrDefault(); }
+            get { return this._propagateTags; }
             set { this._propagateTags = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.Batch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.Batch.Model
         /// jobs with a lower scheduling priority.
         /// </para>
         /// </summary>
-        public int SchedulingPriority
+        public int? SchedulingPriority
         {
-            get { return this._schedulingPriority.GetValueOrDefault(); }
+            get { return this._schedulingPriority; }
             set { this._schedulingPriority = value; }
         }
 

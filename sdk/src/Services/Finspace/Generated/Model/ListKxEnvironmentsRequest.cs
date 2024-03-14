@@ -43,9 +43,9 @@ namespace Amazon.Finspace.Model
         /// The maximum number of results to return in this request.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ProgressPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }

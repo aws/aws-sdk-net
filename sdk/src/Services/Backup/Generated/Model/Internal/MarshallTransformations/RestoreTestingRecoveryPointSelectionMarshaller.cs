@@ -87,7 +87,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSelectionWindowDays())
             {
                 context.Writer.WritePropertyName("SelectionWindowDays");
-                context.Writer.Write(requestObject.SelectionWindowDays);
+                context.Writer.Write(requestObject.SelectionWindowDays.Value);
             }
 
         }

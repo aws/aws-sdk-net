@@ -43,9 +43,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property MaximumLength.
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]
-        public int MaximumLength
+        public int? MaximumLength
         {
-            get { return this._maximumLength.GetValueOrDefault(); }
+            get { return this._maximumLength; }
             set { this._maximumLength = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property Temperature.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float Temperature
+        public float? Temperature
         {
-            get { return this._temperature.GetValueOrDefault(); }
+            get { return this._temperature; }
             set { this._temperature = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property TopK.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int TopK
+        public int? TopK
         {
-            get { return this._topk.GetValueOrDefault(); }
+            get { return this._topk; }
             set { this._topk = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property TopP.
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float TopP
+        public float? TopP
         {
-            get { return this._topp.GetValueOrDefault(); }
+            get { return this._topp; }
             set { this._topp = value; }
         }
 

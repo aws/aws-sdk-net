@@ -49,9 +49,9 @@ namespace Amazon.IdentityManagement.Model
         /// of the identity-based policy.
         /// </para>
         /// </summary>
-        public bool AllowedByPermissionsBoundary
+        public bool? AllowedByPermissionsBoundary
         {
-            get { return this._allowedByPermissionsBoundary.GetValueOrDefault(); }
+            get { return this._allowedByPermissionsBoundary; }
             set { this._allowedByPermissionsBoundary = value; }
         }
 

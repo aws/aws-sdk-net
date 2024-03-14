@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDate())
             {
                 context.Writer.WritePropertyName("Date");
-                context.Writer.Write(requestObject.Date);
+                context.Writer.Write(requestObject.Date.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.Write(requestObject.Value.Value);
             }
 
         }

@@ -42,9 +42,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// failed.
         /// </para>
         /// </summary>
-        public bool Success
+        public bool? Success
         {
-            get { return this._success.GetValueOrDefault(); }
+            get { return this._success; }
             set { this._success = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BasedOnSpiceSchedule", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BasedOnSpiceSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartingAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartingAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

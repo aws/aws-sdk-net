@@ -298,9 +298,9 @@ namespace Amazon.ECS.Model
         /// If <c>schedulingStrategy</c> is <c>DAEMON</c> then this isn't required.
         /// </para>
         /// </summary>
-        public int DesiredCount
+        public int? DesiredCount
         {
-            get { return this._desiredCount.GetValueOrDefault(); }
+            get { return this._desiredCount; }
             set { this._desiredCount = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.ECS.Model
         /// parameter.
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            get { return this._enableecsManagedTags; }
             set { this._enableecsManagedTags = value; }
         }
 
@@ -344,9 +344,9 @@ namespace Amazon.ECS.Model
         /// service tasks.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -380,9 +380,9 @@ namespace Amazon.ECS.Model
         /// tasks as unhealthy and stopping them before they have time to come up.
         /// </para>
         /// </summary>
-        public int HealthCheckGracePeriodSeconds
+        public int? HealthCheckGracePeriodSeconds
         {
-            get { return this._healthCheckGracePeriodSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckGracePeriodSeconds; }
             set { this._healthCheckGracePeriodSeconds = value; }
         }
 

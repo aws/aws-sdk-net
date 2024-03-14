@@ -87,19 +87,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeEdges())
                 {
                     context.Writer.WritePropertyName("IncludeEdges");
-                    context.Writer.Write(publicRequest.IncludeEdges);
+                    context.Writer.Write(publicRequest.IncludeEdges.Value);
                 }
 
                 if(publicRequest.IsSetMaxDepth())
                 {
                     context.Writer.WritePropertyName("MaxDepth");
-                    context.Writer.Write(publicRequest.MaxDepth);
+                    context.Writer.Write(publicRequest.MaxDepth.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

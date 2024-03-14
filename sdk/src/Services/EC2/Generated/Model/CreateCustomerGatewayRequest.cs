@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <param name="type">The type of VPN connection that this customer gateway supports (<c>ipsec.1</c>).</param>
         /// <param name="publicIp"> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</param>
         /// <param name="bgpAsn">For devices that support BGP, the customer gateway's BGP ASN. Default: 65000</param>
-        public CreateCustomerGatewayRequest(GatewayType type, string publicIp, int bgpAsn)
+        public CreateCustomerGatewayRequest(GatewayType type, string publicIp, int? bgpAsn)
         {
             _type = type;
             _publicIp = publicIp;
@@ -91,9 +91,9 @@ namespace Amazon.EC2.Model
         /// Default: 65000
         /// </para>
         /// </summary>
-        public int BgpAsn
+        public int? BgpAsn
         {
-            get { return this._bgpAsn.GetValueOrDefault(); }
+            get { return this._bgpAsn; }
             set { this._bgpAsn = value; }
         }
 

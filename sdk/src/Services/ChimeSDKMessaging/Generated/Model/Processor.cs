@@ -66,9 +66,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
-        public int ExecutionOrder
+        public int? ExecutionOrder
         {
-            get { return this._executionOrder.GetValueOrDefault(); }
+            get { return this._executionOrder; }
             set { this._executionOrder = value; }
         }
 

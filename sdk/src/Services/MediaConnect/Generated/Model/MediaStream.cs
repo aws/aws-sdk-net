@@ -64,9 +64,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property ClockRate. The sample rate for the stream. This value is
         /// measured in Hz.
         /// </summary>
-        public int ClockRate
+        public int? ClockRate
         {
-            get { return this._clockRate.GetValueOrDefault(); }
+            get { return this._clockRate; }
             set { this._clockRate = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.MediaConnect.Model
         /// For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Fmt
+        public int? Fmt
         {
-            get { return this._fmt.GetValueOrDefault(); }
+            get { return this._fmt; }
             set { this._fmt = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property MediaStreamId. A unique identifier for the media stream.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MediaStreamId
+        public int? MediaStreamId
         {
-            get { return this._mediaStreamId.GetValueOrDefault(); }
+            get { return this._mediaStreamId; }
             set { this._mediaStreamId = value; }
         }
 

@@ -60,9 +60,9 @@ namespace Amazon.ServiceQuotas.Model
         /// The value associated with the reported <c>PeriodUnit</c>.
         /// </para>
         /// </summary>
-        public int PeriodValue
+        public int? PeriodValue
         {
-            get { return this._periodValue.GetValueOrDefault(); }
+            get { return this._periodValue; }
             set { this._periodValue = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8500000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60)]
-        public float Framerate
+        public float? Framerate
         {
-            get { return this._framerate.GetValueOrDefault(); }
+            get { return this._framerate; }
             set { this._framerate = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1920)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.IVSRealTime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1920)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

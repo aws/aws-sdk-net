@@ -94,7 +94,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDiskSize())
                 {
                     context.Writer.WritePropertyName("diskSize");
-                    context.Writer.Write(publicRequest.DiskSize);
+                    context.Writer.Write(publicRequest.DiskSize.Value);
                 }
 
                 if(publicRequest.IsSetInstanceTypes())

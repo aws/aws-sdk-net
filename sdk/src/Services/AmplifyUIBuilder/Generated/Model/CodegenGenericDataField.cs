@@ -85,9 +85,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsArray
+        public bool? IsArray
         {
-            get { return this._isArray.GetValueOrDefault(); }
+            get { return this._isArray; }
             set { this._isArray = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

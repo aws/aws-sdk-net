@@ -80,7 +80,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActive())
                 {
                     context.Writer.WritePropertyName("active");
-                    context.Writer.Write(publicRequest.Active);
+                    context.Writer.Write(publicRequest.Active.Value);
                 }
 
                 if(publicRequest.IsSetCategory())
@@ -135,7 +135,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMustSucceedForCutover())
                 {
                     context.Writer.WritePropertyName("mustSucceedForCutover");
-                    context.Writer.Write(publicRequest.MustSucceedForCutover);
+                    context.Writer.Write(publicRequest.MustSucceedForCutover.Value);
                 }
 
                 if(publicRequest.IsSetOperatingSystem())
@@ -147,7 +147,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOrder())
                 {
                     context.Writer.WritePropertyName("order");
-                    context.Writer.Write(publicRequest.Order);
+                    context.Writer.Write(publicRequest.Order.Value);
                 }
 
                 if(publicRequest.IsSetParameters())
@@ -177,7 +177,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeoutSeconds())
                 {
                     context.Writer.WritePropertyName("timeoutSeconds");
-                    context.Writer.Write(publicRequest.TimeoutSeconds);
+                    context.Writer.Write(publicRequest.TimeoutSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

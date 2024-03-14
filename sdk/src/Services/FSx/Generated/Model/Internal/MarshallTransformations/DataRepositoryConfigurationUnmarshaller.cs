@@ -83,7 +83,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ImportedFileChunkSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ImportedFileChunkSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

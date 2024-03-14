@@ -66,9 +66,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public int RecurrenceInHours
+        public int? RecurrenceInHours
         {
-            get { return this._recurrenceInHours.GetValueOrDefault(); }
+            get { return this._recurrenceInHours; }
             set { this._recurrenceInHours = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int StartAt
+        public int? StartAt
         {
-            get { return this._startAt.GetValueOrDefault(); }
+            get { return this._startAt; }
             set { this._startAt = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.ECS.Model
         /// <c>RunTask</c> or <c>StartTask</c> APIs.
         /// </para>
         /// </summary>
-        public bool ConfiguredAtLaunch
+        public bool? ConfiguredAtLaunch
         {
-            get { return this._configuredAtLaunch.GetValueOrDefault(); }
+            get { return this._configuredAtLaunch; }
             set { this._configuredAtLaunch = value; }
         }
 

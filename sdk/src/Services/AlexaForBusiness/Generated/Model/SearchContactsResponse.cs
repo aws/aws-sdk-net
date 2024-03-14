@@ -80,9 +80,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The total number of contacts returned.
         /// </para>
         /// </summary>
-        public int TotalCount
+        public int? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

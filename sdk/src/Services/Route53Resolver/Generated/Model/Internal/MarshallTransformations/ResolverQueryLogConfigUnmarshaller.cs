@@ -71,7 +71,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AssociationCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AssociationCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

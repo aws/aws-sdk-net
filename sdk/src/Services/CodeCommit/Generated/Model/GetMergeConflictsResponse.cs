@@ -105,9 +105,9 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Mergeable
+        public bool? Mergeable
         {
-            get { return this._mergeable.GetValueOrDefault(); }
+            get { return this._mergeable; }
             set { this._mergeable = value; }
         }
 

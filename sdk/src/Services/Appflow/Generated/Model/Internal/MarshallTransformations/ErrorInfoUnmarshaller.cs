@@ -71,7 +71,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("putFailuresCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PutFailuresCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

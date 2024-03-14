@@ -42,9 +42,9 @@ namespace Amazon.Inspector2.Model
         /// The CVSS v2 base score for the vulnerability.
         /// </para>
         /// </summary>
-        public double BaseScore
+        public double? BaseScore
         {
-            get { return this._baseScore.GetValueOrDefault(); }
+            get { return this._baseScore; }
             set { this._baseScore = value; }
         }
 

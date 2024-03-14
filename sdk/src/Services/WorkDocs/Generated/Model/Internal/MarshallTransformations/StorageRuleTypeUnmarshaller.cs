@@ -65,7 +65,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("StorageAllocatedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StorageAllocatedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

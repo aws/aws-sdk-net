@@ -67,9 +67,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time of the last change to the pipeline execution, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time when the pipeline execution began, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

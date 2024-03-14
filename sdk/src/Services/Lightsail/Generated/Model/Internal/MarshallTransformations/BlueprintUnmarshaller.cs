@@ -89,7 +89,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isActive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsActive = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minPower", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinPower = unmarshaller.Unmarshall(context);
                     continue;
                 }

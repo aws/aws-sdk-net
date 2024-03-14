@@ -48,13 +48,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffsetInNanos())
             {
                 context.Writer.WritePropertyName("offsetInNanos");
-                context.Writer.Write(requestObject.OffsetInNanos);
+                context.Writer.Write(requestObject.OffsetInNanos.Value);
             }
 
             if(requestObject.IsSetTimeInSeconds())
             {
                 context.Writer.WritePropertyName("timeInSeconds");
-                context.Writer.Write(requestObject.TimeInSeconds);
+                context.Writer.Write(requestObject.TimeInSeconds.Value);
             }
 
         }

@@ -66,7 +66,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionRetryInterval())
             {
                 context.Writer.WritePropertyName("connectionRetryInterval");
-                context.Writer.Write(requestObject.ConnectionRetryInterval);
+                context.Writer.Write(requestObject.ConnectionRetryInterval.Value);
             }
 
             if(requestObject.IsSetDestination())
@@ -101,13 +101,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilecacheDuration())
             {
                 context.Writer.WritePropertyName("filecacheDuration");
-                context.Writer.Write(requestObject.FilecacheDuration);
+                context.Writer.Write(requestObject.FilecacheDuration.Value);
             }
 
             if(requestObject.IsSetFragmentLength())
             {
                 context.Writer.WritePropertyName("fragmentLength");
-                context.Writer.Write(requestObject.FragmentLength);
+                context.Writer.Write(requestObject.FragmentLength.Value);
             }
 
             if(requestObject.IsSetInputLossAction())
@@ -119,13 +119,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("numRetries");
-                context.Writer.Write(requestObject.NumRetries);
+                context.Writer.Write(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetRestartDelay())
             {
                 context.Writer.WritePropertyName("restartDelay");
-                context.Writer.Write(requestObject.RestartDelay);
+                context.Writer.Write(requestObject.RestartDelay.Value);
             }
 
             if(requestObject.IsSetSegmentationMode())
@@ -137,7 +137,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSendDelayMs())
             {
                 context.Writer.WritePropertyName("sendDelayMs");
-                context.Writer.Write(requestObject.SendDelayMs);
+                context.Writer.Write(requestObject.SendDelayMs.Value);
             }
 
             if(requestObject.IsSetSparseTrackType())

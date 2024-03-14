@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ChimeSDKMessaging")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Chime SDK Messaging. The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Chime SDK Messaging. The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

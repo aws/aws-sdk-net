@@ -53,7 +53,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AssignmentRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AssignmentRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

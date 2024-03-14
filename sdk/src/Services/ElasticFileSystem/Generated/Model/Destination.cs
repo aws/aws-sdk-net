@@ -66,9 +66,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// occurred after this time might not be fully replicated.
         /// </para>
         /// </summary>
-        public DateTime LastReplicatedTimestamp
+        public DateTime? LastReplicatedTimestamp
         {
-            get { return this._lastReplicatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastReplicatedTimestamp; }
             set { this._lastReplicatedTimestamp = value; }
         }
 

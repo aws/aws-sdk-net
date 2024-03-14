@@ -48,9 +48,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ActiveDeviceCount
+        public long? ActiveDeviceCount
         {
-            get { return this._activeDeviceCount.GetValueOrDefault(); }
+            get { return this._activeDeviceCount; }
             set { this._activeDeviceCount = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ConnectedDeviceCount
+        public long? ConnectedDeviceCount
         {
-            get { return this._connectedDeviceCount.GetValueOrDefault(); }
+            get { return this._connectedDeviceCount; }
             set { this._connectedDeviceCount = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long OfflineDeviceCount
+        public long? OfflineDeviceCount
         {
-            get { return this._offlineDeviceCount.GetValueOrDefault(); }
+            get { return this._offlineDeviceCount; }
             set { this._offlineDeviceCount = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long SamplingDeviceCount
+        public long? SamplingDeviceCount
         {
-            get { return this._samplingDeviceCount.GetValueOrDefault(); }
+            get { return this._samplingDeviceCount; }
             set { this._samplingDeviceCount = value; }
         }
 

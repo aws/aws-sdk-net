@@ -92,7 +92,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHealthCheckIntervalSeconds())
                 {
                     context.Writer.WritePropertyName("HealthCheckIntervalSeconds");
-                    context.Writer.Write(publicRequest.HealthCheckIntervalSeconds);
+                    context.Writer.Write(publicRequest.HealthCheckIntervalSeconds.Value);
                 }
 
                 if(publicRequest.IsSetHealthCheckPath())
@@ -104,7 +104,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHealthCheckPort())
                 {
                     context.Writer.WritePropertyName("HealthCheckPort");
-                    context.Writer.Write(publicRequest.HealthCheckPort);
+                    context.Writer.Write(publicRequest.HealthCheckPort.Value);
                 }
 
                 if(publicRequest.IsSetHealthCheckProtocol())
@@ -132,13 +132,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThresholdCount())
                 {
                     context.Writer.WritePropertyName("ThresholdCount");
-                    context.Writer.Write(publicRequest.ThresholdCount);
+                    context.Writer.Write(publicRequest.ThresholdCount.Value);
                 }
 
                 if(publicRequest.IsSetTrafficDialPercentage())
                 {
                     context.Writer.WritePropertyName("TrafficDialPercentage");
-                    context.Writer.Write(publicRequest.TrafficDialPercentage);
+                    context.Writer.Write(publicRequest.TrafficDialPercentage.Value);
                 }
 
                 writer.WriteObjectEnd();

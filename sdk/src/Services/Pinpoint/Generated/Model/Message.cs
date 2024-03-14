@@ -219,9 +219,9 @@ namespace Amazon.Pinpoint.Model
         /// in an in-app message center, or supporting phone home functionality.
         /// </para>
         /// </summary>
-        public bool SilentPush
+        public bool? SilentPush
         {
-            get { return this._silentPush.GetValueOrDefault(); }
+            get { return this._silentPush; }
             set { this._silentPush = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.Pinpoint.Model
         /// (ADM) service.
         /// </para>
         /// </summary>
-        public int TimeToLive
+        public int? TimeToLive
         {
-            get { return this._timeToLive.GetValueOrDefault(); }
+            get { return this._timeToLive; }
             set { this._timeToLive = value; }
         }
 

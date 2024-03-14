@@ -66,9 +66,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 

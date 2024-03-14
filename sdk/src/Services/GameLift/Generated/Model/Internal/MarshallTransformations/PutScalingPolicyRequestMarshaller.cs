@@ -76,7 +76,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluationPeriods())
                 {
                     context.Writer.WritePropertyName("EvaluationPeriods");
-                    context.Writer.Write(publicRequest.EvaluationPeriods);
+                    context.Writer.Write(publicRequest.EvaluationPeriods.Value);
                 }
 
                 if(publicRequest.IsSetFleetId())
@@ -106,7 +106,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScalingAdjustment())
                 {
                     context.Writer.WritePropertyName("ScalingAdjustment");
-                    context.Writer.Write(publicRequest.ScalingAdjustment);
+                    context.Writer.Write(publicRequest.ScalingAdjustment.Value);
                 }
 
                 if(publicRequest.IsSetScalingAdjustmentType())
@@ -129,7 +129,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     context.Writer.WritePropertyName("Threshold");
-                    context.Writer.Write(publicRequest.Threshold);
+                    context.Writer.Write(publicRequest.Threshold.Value);
                 }
 
                 writer.WriteObjectEnd();

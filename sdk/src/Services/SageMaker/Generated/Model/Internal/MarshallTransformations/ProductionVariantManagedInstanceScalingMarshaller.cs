@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInstanceCount())
             {
                 context.Writer.WritePropertyName("MaxInstanceCount");
-                context.Writer.Write(requestObject.MaxInstanceCount);
+                context.Writer.Write(requestObject.MaxInstanceCount.Value);
             }
 
             if(requestObject.IsSetMinInstanceCount())
             {
                 context.Writer.WritePropertyName("MinInstanceCount");
-                context.Writer.Write(requestObject.MinInstanceCount);
+                context.Writer.Write(requestObject.MinInstanceCount.Value);
             }
 
             if(requestObject.IsSetStatus())

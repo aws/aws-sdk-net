@@ -71,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("assetCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AssetCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("assetLastUpdateDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AssetLastUpdateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

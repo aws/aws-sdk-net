@@ -61,9 +61,9 @@ namespace Amazon.Neptunedata.Model
         /// The endpoint creation time, in milliseconds.
         /// </para>
         /// </summary>
-        public long CreationTimeInMillis
+        public long? CreationTimeInMillis
         {
-            get { return this._creationTimeInMillis.GetValueOrDefault(); }
+            get { return this._creationTimeInMillis; }
             set { this._creationTimeInMillis = value; }
         }
 

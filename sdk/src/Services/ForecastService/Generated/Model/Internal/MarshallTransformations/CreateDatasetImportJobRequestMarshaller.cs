@@ -139,7 +139,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseGeolocationForTimeZone())
                 {
                     context.Writer.WritePropertyName("UseGeolocationForTimeZone");
-                    context.Writer.Write(publicRequest.UseGeolocationForTimeZone);
+                    context.Writer.Write(publicRequest.UseGeolocationForTimeZone.Value);
                 }
 
                 writer.WriteObjectEnd();

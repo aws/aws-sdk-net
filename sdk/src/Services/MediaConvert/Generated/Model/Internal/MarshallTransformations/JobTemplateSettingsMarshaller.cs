@@ -48,7 +48,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdAvailOffset())
             {
                 context.Writer.WritePropertyName("adAvailOffset");
-                context.Writer.Write(requestObject.AdAvailOffset);
+                context.Writer.Write(requestObject.AdAvailOffset.Value);
             }
 
             if(requestObject.IsSetAvailBlanking())
@@ -103,7 +103,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFollowSource())
             {
                 context.Writer.WritePropertyName("followSource");
-                context.Writer.Write(requestObject.FollowSource);
+                context.Writer.Write(requestObject.FollowSource.Value);
             }
 
             if(requestObject.IsSetInputs())

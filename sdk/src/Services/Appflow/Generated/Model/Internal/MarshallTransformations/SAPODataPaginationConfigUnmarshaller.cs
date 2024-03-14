@@ -65,7 +65,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxPageSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPageSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -76,9 +76,9 @@ namespace Amazon.Scheduler.Model
         /// Your Amazon ECS Resources</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableECSManagedTags.GetValueOrDefault(); }
+            get { return this._enableECSManagedTags; }
             set { this._enableECSManagedTags = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.Scheduler.Model
         /// task.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -297,9 +297,9 @@ namespace Amazon.Scheduler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int TaskCount
+        public int? TaskCount
         {
-            get { return this._taskCount.GetValueOrDefault(); }
+            get { return this._taskCount; }
             set { this._taskCount = value; }
         }
 

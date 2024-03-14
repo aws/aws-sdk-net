@@ -55,9 +55,9 @@ namespace Amazon.SimpleEmail.Model
         /// the value of this attribute is <c>null</c>.
         /// </para>
         /// </summary>
-        public DateTime LastFreshStart
+        public DateTime? LastFreshStart
         {
-            get { return this._lastFreshStart.GetValueOrDefault(); }
+            get { return this._lastFreshStart; }
             set { this._lastFreshStart = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.SimpleEmail.Model
         /// reputation metrics are not published. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ReputationMetricsEnabled
+        public bool? ReputationMetricsEnabled
         {
-            get { return this._reputationMetricsEnabled.GetValueOrDefault(); }
+            get { return this._reputationMetricsEnabled; }
             set { this._reputationMetricsEnabled = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.SimpleEmail.Model
         /// set. The default value is <c>true</c>. You can change this setting using <a>UpdateConfigurationSetSendingEnabled</a>.
         /// </para>
         /// </summary>
-        public bool SendingEnabled
+        public bool? SendingEnabled
         {
-            get { return this._sendingEnabled.GetValueOrDefault(); }
+            get { return this._sendingEnabled; }
             set { this._sendingEnabled = value; }
         }
 

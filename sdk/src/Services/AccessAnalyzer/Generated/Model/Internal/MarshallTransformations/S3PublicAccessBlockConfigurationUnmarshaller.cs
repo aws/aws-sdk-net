@@ -65,13 +65,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ignorePublicAcls", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnorePublicAcls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("restrictPublicBuckets", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RestrictPublicBuckets = unmarshaller.Unmarshall(context);
                     continue;
                 }

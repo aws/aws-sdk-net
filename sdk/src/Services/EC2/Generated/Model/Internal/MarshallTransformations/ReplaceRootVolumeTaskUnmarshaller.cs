@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("deleteReplacedRootVolume", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DeleteReplacedRootVolume = unmarshaller.Unmarshall(context);
                         continue;
                     }

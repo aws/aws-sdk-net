@@ -62,9 +62,9 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60)]
-        public long DurationInMinutes
+        public long? DurationInMinutes
         {
-            get { return this._durationInMinutes.GetValueOrDefault(); }
+            get { return this._durationInMinutes; }
             set { this._durationInMinutes = value; }
         }
 

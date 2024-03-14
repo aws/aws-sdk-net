@@ -65,67 +65,67 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IopsOther", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.IopsOther = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IopsRead", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.IopsRead = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IopsTotal", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.IopsTotal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IopsWrite", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.IopsWrite = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatencyOther", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LatencyOther = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatencyRead", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LatencyRead = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatencyWrite", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LatencyWrite = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThroughputOther", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThroughputOther = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThroughputRead", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThroughputRead = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThroughputTotal", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThroughputTotal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThroughputWrite", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThroughputWrite = unmarshaller.Unmarshall(context);
                     continue;
                 }

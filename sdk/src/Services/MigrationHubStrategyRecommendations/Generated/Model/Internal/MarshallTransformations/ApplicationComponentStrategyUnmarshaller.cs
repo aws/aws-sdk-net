@@ -65,7 +65,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             {
                 if (context.TestExpression("isPreferred", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPreferred = unmarshaller.Unmarshall(context);
                     continue;
                 }

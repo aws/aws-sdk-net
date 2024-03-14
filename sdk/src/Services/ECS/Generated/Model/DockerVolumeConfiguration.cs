@@ -52,9 +52,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Autoprovision
+        public bool? Autoprovision
         {
-            get { return this._autoprovision.GetValueOrDefault(); }
+            get { return this._autoprovision; }
             set { this._autoprovision = value; }
         }
 

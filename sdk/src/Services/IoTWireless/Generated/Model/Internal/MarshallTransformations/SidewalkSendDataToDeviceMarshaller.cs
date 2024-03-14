@@ -48,7 +48,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAckModeRetryDurationSecs())
             {
                 context.Writer.WritePropertyName("AckModeRetryDurationSecs");
-                context.Writer.Write(requestObject.AckModeRetryDurationSecs);
+                context.Writer.Write(requestObject.AckModeRetryDurationSecs.Value);
             }
 
             if(requestObject.IsSetMessageType())
@@ -60,7 +60,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSeq())
             {
                 context.Writer.WritePropertyName("Seq");
-                context.Writer.Write(requestObject.Seq);
+                context.Writer.Write(requestObject.Seq.Value);
             }
 
         }

@@ -70,13 +70,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAggregator())
                 {
                     context.Writer.WritePropertyName("Aggregator");
-                    context.Writer.Write(publicRequest.Aggregator);
+                    context.Writer.Write(publicRequest.Aggregator.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -88,7 +88,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSubType())
                 {
                     context.Writer.WritePropertyName("SubType");
-                    context.Writer.Write(publicRequest.SubType);
+                    context.Writer.Write(publicRequest.SubType.Value);
                 }
 
                 if(publicRequest.IsSetTypeName())

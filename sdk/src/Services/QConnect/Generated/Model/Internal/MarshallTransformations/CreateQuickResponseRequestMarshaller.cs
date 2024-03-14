@@ -127,7 +127,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsActive())
                 {
                     context.Writer.WritePropertyName("isActive");
-                    context.Writer.Write(publicRequest.IsActive);
+                    context.Writer.Write(publicRequest.IsActive.Value);
                 }
 
                 if(publicRequest.IsSetLanguage())

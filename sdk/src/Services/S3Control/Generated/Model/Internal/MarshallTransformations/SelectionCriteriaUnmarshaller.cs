@@ -63,13 +63,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxDepth", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxDepth = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinStorageBytesPercentage", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MinStorageBytesPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }

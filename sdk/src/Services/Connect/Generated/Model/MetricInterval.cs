@@ -47,9 +47,9 @@ namespace Amazon.Connect.Model
         /// and <c>EndTime</c> differing by 30 minutes. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Connect.Model
         /// selected. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

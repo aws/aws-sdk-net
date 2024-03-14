@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DataSync")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS DataSync. AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.")]
 #elif NETCOREAPP3_1

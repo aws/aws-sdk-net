@@ -95,7 +95,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

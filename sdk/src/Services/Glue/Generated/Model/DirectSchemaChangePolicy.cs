@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// Whether to use the specified update behavior when the crawler finds a changed schema.
         /// </para>
         /// </summary>
-        public bool EnableUpdateCatalog
+        public bool? EnableUpdateCatalog
         {
-            get { return this._enableUpdateCatalog.GetValueOrDefault(); }
+            get { return this._enableUpdateCatalog; }
             set { this._enableUpdateCatalog = value; }
         }
 

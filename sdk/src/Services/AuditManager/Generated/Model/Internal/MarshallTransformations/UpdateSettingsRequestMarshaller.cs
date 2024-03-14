@@ -117,7 +117,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvidenceFinderEnabled())
                 {
                     context.Writer.WritePropertyName("evidenceFinderEnabled");
-                    context.Writer.Write(publicRequest.EvidenceFinderEnabled);
+                    context.Writer.Write(publicRequest.EvidenceFinderEnabled.Value);
                 }
 
                 if(publicRequest.IsSetKmsKey())

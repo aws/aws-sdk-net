@@ -102,7 +102,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAlertSensitivityThreshold())
                 {
                     context.Writer.WritePropertyName("AlertSensitivityThreshold");
-                    context.Writer.Write(publicRequest.AlertSensitivityThreshold);
+                    context.Writer.Write(publicRequest.AlertSensitivityThreshold.Value);
                 }
 
                 if(publicRequest.IsSetAnomalyDetectorArn())

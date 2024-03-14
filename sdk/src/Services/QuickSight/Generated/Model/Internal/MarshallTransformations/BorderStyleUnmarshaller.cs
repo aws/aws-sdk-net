@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Show", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Show = unmarshaller.Unmarshall(context);
                     continue;
                 }

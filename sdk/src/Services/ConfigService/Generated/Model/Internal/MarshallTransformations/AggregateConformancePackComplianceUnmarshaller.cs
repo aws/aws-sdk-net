@@ -71,19 +71,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CompliantRuleCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantRuleCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantRuleCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantRuleCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalRuleCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalRuleCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

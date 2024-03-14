@@ -71,13 +71,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CustomSeasonalityValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CustomSeasonalityValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LowerBoundary", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LowerBoundary = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PeriodsBackward", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeriodsBackward = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PeriodsForward", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeriodsForward = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PredictionInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PredictionInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UpperBoundary", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.UpperBoundary = unmarshaller.Unmarshall(context);
                     continue;
                 }

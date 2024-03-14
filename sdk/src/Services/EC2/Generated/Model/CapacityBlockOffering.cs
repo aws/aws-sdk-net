@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// The amount of time of the Capacity Block reservation in hours.
         /// </para>
         /// </summary>
-        public int CapacityBlockDurationHours
+        public int? CapacityBlockDurationHours
         {
-            get { return this._capacityBlockDurationHours.GetValueOrDefault(); }
+            get { return this._capacityBlockDurationHours; }
             set { this._capacityBlockDurationHours = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.EC2.Model
         /// The end date of the Capacity Block offering.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.EC2.Model
         /// The number of instances in the Capacity Block offering.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.EC2.Model
         /// The start date of the Capacity Block offering.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

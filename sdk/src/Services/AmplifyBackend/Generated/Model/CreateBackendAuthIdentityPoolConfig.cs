@@ -64,9 +64,9 @@ namespace Amazon.AmplifyBackend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool UnauthenticatedLogin
+        public bool? UnauthenticatedLogin
         {
-            get { return this._unauthenticatedLogin.GetValueOrDefault(); }
+            get { return this._unauthenticatedLogin; }
             set { this._unauthenticatedLogin = value; }
         }
 

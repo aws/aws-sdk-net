@@ -77,7 +77,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastStatusChangeTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastStatusChangeTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastStopTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastStopTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recording", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Recording = unmarshaller.Unmarshall(context);
                     continue;
                 }

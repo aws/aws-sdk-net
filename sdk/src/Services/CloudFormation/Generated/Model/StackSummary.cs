@@ -52,9 +52,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.CloudFormation.Model
         /// The time the stack was deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletionTime
+        public DateTime? DeletionTime
         {
-            get { return this._deletionTime.GetValueOrDefault(); }
+            get { return this._deletionTime; }
             set { this._deletionTime = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.CloudFormation.Model
         /// has been updated at least once.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

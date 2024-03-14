@@ -42,9 +42,9 @@ namespace Amazon.ResilienceHub.Model
         ///  This indicates if there are more errors not listed in the resourceErrors list. 
         /// </para>
         /// </summary>
-        public bool HasMoreErrors
+        public bool? HasMoreErrors
         {
-            get { return this._hasMoreErrors.GetValueOrDefault(); }
+            get { return this._hasMoreErrors; }
             set { this._hasMoreErrors = value; }
         }
 

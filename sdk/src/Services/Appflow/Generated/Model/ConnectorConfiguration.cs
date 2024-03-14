@@ -86,9 +86,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies whether the connector can be used as a destination. 
         /// </para>
         /// </summary>
-        public bool CanUseAsDestination
+        public bool? CanUseAsDestination
         {
-            get { return this._canUseAsDestination.GetValueOrDefault(); }
+            get { return this._canUseAsDestination; }
             set { this._canUseAsDestination = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies whether the connector can be used as a source. 
         /// </para>
         /// </summary>
-        public bool CanUseAsSource
+        public bool? CanUseAsSource
         {
-            get { return this._canUseAsSource.GetValueOrDefault(); }
+            get { return this._canUseAsSource; }
             set { this._canUseAsSource = value; }
         }
 
@@ -345,9 +345,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies if PrivateLink is enabled for that connector. 
         /// </para>
         /// </summary>
-        public bool IsPrivateLinkEnabled
+        public bool? IsPrivateLinkEnabled
         {
-            get { return this._isPrivateLinkEnabled.GetValueOrDefault(); }
+            get { return this._isPrivateLinkEnabled; }
             set { this._isPrivateLinkEnabled = value; }
         }
 
@@ -363,9 +363,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies if a PrivateLink endpoint URL is required. 
         /// </para>
         /// </summary>
-        public bool IsPrivateLinkEndpointUrlRequired
+        public bool? IsPrivateLinkEndpointUrlRequired
         {
-            get { return this._isPrivateLinkEndpointUrlRequired.GetValueOrDefault(); }
+            get { return this._isPrivateLinkEndpointUrlRequired; }
             set { this._isPrivateLinkEndpointUrlRequired = value; }
         }
 
@@ -400,9 +400,9 @@ namespace Amazon.Appflow.Model
         /// The date on which the connector was registered.
         /// </para>
         /// </summary>
-        public DateTime RegisteredAt
+        public DateTime? RegisteredAt
         {
-            get { return this._registeredAt.GetValueOrDefault(); }
+            get { return this._registeredAt; }
             set { this._registeredAt = value; }
         }
 

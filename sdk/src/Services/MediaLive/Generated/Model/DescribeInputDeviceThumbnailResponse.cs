@@ -58,9 +58,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property ContentLength. The length of the content.
         /// </summary>
-        public long ContentLength
+        public long? ContentLength
         {
-            get { return this._contentLength.GetValueOrDefault(); }
+            get { return this._contentLength; }
             set { this._contentLength = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property LastModified. The date and time the thumbnail was last
         /// updated at the device.
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

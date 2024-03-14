@@ -68,7 +68,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFilterByPublished())
                 {
                     context.Writer.WritePropertyName("filterByPublished");
-                    context.Writer.Write(publicRequest.FilterByPublished);
+                    context.Writer.Write(publicRequest.FilterByPublished.Value);
                 }
 
                 if(publicRequest.IsSetFilterByState())
@@ -86,7 +86,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

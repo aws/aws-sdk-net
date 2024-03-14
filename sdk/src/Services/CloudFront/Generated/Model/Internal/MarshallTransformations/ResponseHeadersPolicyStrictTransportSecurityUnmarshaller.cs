@@ -57,25 +57,25 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AccessControlMaxAgeSec", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AccessControlMaxAgeSec = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IncludeSubdomains", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IncludeSubdomains = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Override", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Override = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Preload", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Preload = unmarshaller.Unmarshall(context);
                         continue;
                     }

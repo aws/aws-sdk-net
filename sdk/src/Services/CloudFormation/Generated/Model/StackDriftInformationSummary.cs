@@ -46,9 +46,9 @@ namespace Amazon.CloudFormation.Model
         /// of its individual resources that support drift detection.
         /// </para>
         /// </summary>
-        public DateTime LastCheckTimestamp
+        public DateTime? LastCheckTimestamp
         {
-            get { return this._lastCheckTimestamp.GetValueOrDefault(); }
+            get { return this._lastCheckTimestamp; }
             set { this._lastCheckTimestamp = value; }
         }
 

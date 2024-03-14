@@ -54,9 +54,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Specifies the time the dataset was created in Lookout for Equipment. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.LookoutEquipment.Model
         /// during the most recent ingestion of this particular dataset. 
         /// </para>
         /// </summary>
-        public DateTime DataEndTime
+        public DateTime? DataEndTime
         {
-            get { return this._dataEndTime.GetValueOrDefault(); }
+            get { return this._dataEndTime; }
             set { this._dataEndTime = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.LookoutEquipment.Model
         /// during the most recent ingestion of this particular dataset. 
         /// </para>
         /// </summary>
-        public DateTime DataStartTime
+        public DateTime? DataStartTime
         {
-            get { return this._dataStartTime.GetValueOrDefault(); }
+            get { return this._dataStartTime; }
             set { this._dataStartTime = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Specifies the time the dataset was last updated, if it was. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

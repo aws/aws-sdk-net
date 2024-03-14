@@ -56,7 +56,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ActionsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ActionsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -75,7 +75,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("AlarmConfigurationUpdatedTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.AlarmConfigurationUpdatedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,7 +99,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DatapointsToAlarm", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DatapointsToAlarm = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -118,7 +118,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EvaluationPeriods", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -169,7 +169,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Period", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Period = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -187,13 +187,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StateTransitionedTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.StateTransitionedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StateUpdatedTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.StateUpdatedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -211,7 +211,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Threshold", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                         continue;
                     }

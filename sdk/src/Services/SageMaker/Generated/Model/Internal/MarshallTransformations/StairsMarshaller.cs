@@ -48,19 +48,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInSeconds())
             {
                 context.Writer.WritePropertyName("DurationInSeconds");
-                context.Writer.Write(requestObject.DurationInSeconds);
+                context.Writer.Write(requestObject.DurationInSeconds.Value);
             }
 
             if(requestObject.IsSetNumberOfSteps())
             {
                 context.Writer.WritePropertyName("NumberOfSteps");
-                context.Writer.Write(requestObject.NumberOfSteps);
+                context.Writer.Write(requestObject.NumberOfSteps.Value);
             }
 
             if(requestObject.IsSetUsersPerStep())
             {
                 context.Writer.WritePropertyName("UsersPerStep");
-                context.Writer.Write(requestObject.UsersPerStep);
+                context.Writer.Write(requestObject.UsersPerStep.Value);
             }
 
         }

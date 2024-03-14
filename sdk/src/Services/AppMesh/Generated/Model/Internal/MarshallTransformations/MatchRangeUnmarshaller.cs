@@ -65,13 +65,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("end", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.End = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("start", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }

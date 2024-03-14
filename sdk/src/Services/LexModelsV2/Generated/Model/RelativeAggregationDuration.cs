@@ -102,9 +102,9 @@ namespace Amazon.LexModelsV2.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=24)]
-        public int TimeValue
+        public int? TimeValue
         {
-            get { return this._timeValue.GetValueOrDefault(); }
+            get { return this._timeValue; }
             set { this._timeValue = value; }
         }
 

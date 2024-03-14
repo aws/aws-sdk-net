@@ -81,9 +81,9 @@ namespace Amazon.Kafka.Model
         /// Size of the EBS volume to update.
         /// </para>
         /// </summary>
-        public int VolumeSizeGB
+        public int? VolumeSizeGB
         {
-            get { return this._volumeSizeGB.GetValueOrDefault(); }
+            get { return this._volumeSizeGB; }
             set { this._volumeSizeGB = value; }
         }
 

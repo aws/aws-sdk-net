@@ -50,9 +50,9 @@ namespace Amazon.Redshift.Model
         /// If false, the scheduled action is disabled. 
         /// </para>
         /// </summary>
-        public bool Enable
+        public bool? Enable
         {
-            get { return this._enable.GetValueOrDefault(); }
+            get { return this._enable; }
             set { this._enable = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Redshift.Model
         /// see <a>ScheduledAction</a>. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Redshift.Model
         /// see <a>ScheduledAction</a>. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

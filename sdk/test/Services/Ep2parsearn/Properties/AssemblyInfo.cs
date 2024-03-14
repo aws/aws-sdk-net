@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Ep2parsearn")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Endpoints 2.0 parse-arn. Endpoints 2.0 parse-arn tests")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Endpoints 2.0 parse-arn. Endpoints 2.0 parse-arn tests")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Endpoints 2.0 parse-arn. Endpoints 2.0 parse-arn tests")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Endpoints 2.0 parse-arn. Endpoints 2.0 parse-arn tests")]
 #elif NETCOREAPP3_1

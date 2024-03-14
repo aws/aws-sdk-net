@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("inProgressTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InProgressTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

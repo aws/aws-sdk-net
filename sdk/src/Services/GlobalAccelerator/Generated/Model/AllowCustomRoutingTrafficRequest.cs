@@ -75,9 +75,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// The default value is FALSE.
         /// </para>
         /// </summary>
-        public bool AllowAllTrafficToEndpoint
+        public bool? AllowAllTrafficToEndpoint
         {
-            get { return this._allowAllTrafficToEndpoint.GetValueOrDefault(); }
+            get { return this._allowAllTrafficToEndpoint; }
             set { this._allowAllTrafficToEndpoint = value; }
         }
 

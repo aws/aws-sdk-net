@@ -124,9 +124,9 @@ namespace Amazon.IoTEventsData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SnoozeDuration
+        public int? SnoozeDuration
         {
-            get { return this._snoozeDuration.GetValueOrDefault(); }
+            get { return this._snoozeDuration; }
             set { this._snoozeDuration = value; }
         }
 

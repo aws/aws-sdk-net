@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSampleSize())
                 {
                     context.Writer.WritePropertyName("SampleSize");
-                    context.Writer.Write(publicRequest.SampleSize);
+                    context.Writer.Write(publicRequest.SampleSize.Value);
                 }
 
                 if(publicRequest.IsSetSecurityConfiguration())

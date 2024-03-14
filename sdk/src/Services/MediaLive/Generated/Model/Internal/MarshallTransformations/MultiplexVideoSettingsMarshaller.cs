@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstantBitrate())
             {
                 context.Writer.WritePropertyName("constantBitrate");
-                context.Writer.Write(requestObject.ConstantBitrate);
+                context.Writer.Write(requestObject.ConstantBitrate.Value);
             }
 
             if(requestObject.IsSetStatmuxSettings())

@@ -195,9 +195,9 @@ namespace Amazon.Personalize.Model
         /// job to Amazon S3
         /// </para>
         /// </summary>
-        public bool PublishAttributionMetricsToS3
+        public bool? PublishAttributionMetricsToS3
         {
-            get { return this._publishAttributionMetricsToS3.GetValueOrDefault(); }
+            get { return this._publishAttributionMetricsToS3; }
             set { this._publishAttributionMetricsToS3 = value; }
         }
 

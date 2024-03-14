@@ -197,9 +197,9 @@ namespace Amazon.QuickSight.Model
         /// The input value.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

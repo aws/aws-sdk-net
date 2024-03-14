@@ -266,9 +266,9 @@ namespace Amazon.SecurityHub.Model
         /// The memory that is allocated to the function.
         /// </para>
         /// </summary>
-        public int MemorySize
+        public int? MemorySize
         {
-            get { return this._memorySize.GetValueOrDefault(); }
+            get { return this._memorySize; }
             set { this._memorySize = value; }
         }
 
@@ -358,9 +358,9 @@ namespace Amazon.SecurityHub.Model
         /// The amount of time that Lambda allows a function to run before stopping it.
         /// </para>
         /// </summary>
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

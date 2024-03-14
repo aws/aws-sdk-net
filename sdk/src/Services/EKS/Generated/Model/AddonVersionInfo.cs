@@ -98,9 +98,9 @@ namespace Amazon.EKS.Model
         /// Whether the add-on requires configuration.
         /// </para>
         /// </summary>
-        public bool RequiresConfiguration
+        public bool? RequiresConfiguration
         {
-            get { return this._requiresConfiguration.GetValueOrDefault(); }
+            get { return this._requiresConfiguration; }
             set { this._requiresConfiguration = value; }
         }
 

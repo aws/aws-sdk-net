@@ -48,9 +48,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaximumIndividualPlayerLatencyMilliseconds
+        public int? MaximumIndividualPlayerLatencyMilliseconds
         {
-            get { return this._maximumIndividualPlayerLatencyMilliseconds.GetValueOrDefault(); }
+            get { return this._maximumIndividualPlayerLatencyMilliseconds; }
             set { this._maximumIndividualPlayerLatencyMilliseconds = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PolicyDurationSeconds
+        public int? PolicyDurationSeconds
         {
-            get { return this._policyDurationSeconds.GetValueOrDefault(); }
+            get { return this._policyDurationSeconds; }
             set { this._policyDurationSeconds = value; }
         }
 

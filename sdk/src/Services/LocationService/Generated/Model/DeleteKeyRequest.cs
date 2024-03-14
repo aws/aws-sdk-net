@@ -60,9 +60,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

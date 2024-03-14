@@ -137,7 +137,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("unmanagedvCpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnmanagedvCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,7 +71,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUndoDeprecate())
                 {
                     context.Writer.WritePropertyName("undoDeprecate");
-                    context.Writer.Write(publicRequest.UndoDeprecate);
+                    context.Writer.Write(publicRequest.UndoDeprecate.Value);
                 }
 
                 writer.WriteObjectEnd();

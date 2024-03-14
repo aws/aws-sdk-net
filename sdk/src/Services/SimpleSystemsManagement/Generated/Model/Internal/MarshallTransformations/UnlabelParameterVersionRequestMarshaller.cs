@@ -87,7 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetParameterVersion())
                 {
                     context.Writer.WritePropertyName("ParameterVersion");
-                    context.Writer.Write(publicRequest.ParameterVersion);
+                    context.Writer.Write(publicRequest.ParameterVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

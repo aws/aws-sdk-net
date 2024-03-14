@@ -68,7 +68,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetByName())
                 {
                     context.Writer.WritePropertyName("byName");
-                    context.Writer.Write(publicRequest.ByName);
+                    context.Writer.Write(publicRequest.ByName.Value);
                 }
 
                 if(publicRequest.IsSetFilters())
@@ -90,7 +90,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

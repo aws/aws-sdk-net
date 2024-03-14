@@ -65,19 +65,19 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExperienceScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ExperienceScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PercentOfClientLocationImpacted", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentOfClientLocationImpacted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PercentOfTotalTrafficImpacted", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentOfTotalTrafficImpacted = unmarshaller.Unmarshall(context);
                     continue;
                 }

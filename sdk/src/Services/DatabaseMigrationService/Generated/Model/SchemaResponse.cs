@@ -49,9 +49,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of lines of code in a schema in a Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public long CodeLineCount
+        public long? CodeLineCount
         {
-            get { return this._codeLineCount.GetValueOrDefault(); }
+            get { return this._codeLineCount; }
             set { this._codeLineCount = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The size level of the code in a schema in a Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public long CodeSize
+        public long? CodeSize
         {
-            get { return this._codeSize.GetValueOrDefault(); }
+            get { return this._codeSize; }
             set { this._codeSize = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// similarity value indicates that a schema is likely to be a duplicate.
         /// </para>
         /// </summary>
-        public double Similarity
+        public double? Similarity
         {
-            get { return this._similarity.GetValueOrDefault(); }
+            get { return this._similarity; }
             set { this._similarity = value; }
         }
 

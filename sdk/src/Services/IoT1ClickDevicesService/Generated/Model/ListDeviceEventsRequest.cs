@@ -68,9 +68,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FromTimeStampUtc
+        public DateTime? FromTimeStampUtc
         {
-            get { return this._fromTimeStampUtc.GetValueOrDefault(); }
+            get { return this._fromTimeStampUtc; }
             set { this._fromTimeStamp = this._fromTimeStampUtc = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ToTimeStampUtc
+        public DateTime? ToTimeStampUtc
         {
-            get { return this._toTimeStampUtc.GetValueOrDefault(); }
+            get { return this._toTimeStampUtc; }
             set { this._toTimeStamp = this._toTimeStampUtc = value; }
         }
 
@@ -163,13 +163,20 @@ namespace Amazon.IoT1ClickDevicesService.Model
             "FromTimeStampUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. FromTimeStamp is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime FromTimeStamp
+        public DateTime? FromTimeStamp
         {
             get { return this._fromTimeStamp.GetValueOrDefault(); }
             set
             {
                 this._fromTimeStamp = value;
-                this._fromTimeStampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._fromTimeStampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._fromTimeStampUtc = null;
+                }
             }
         }
         /// <summary>
@@ -193,13 +200,20 @@ namespace Amazon.IoT1ClickDevicesService.Model
             "ToTimeStampUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ToTimeStamp is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ToTimeStamp
+        public DateTime? ToTimeStamp
         {
             get { return this._toTimeStamp.GetValueOrDefault(); }
             set
             {
                 this._toTimeStamp = value;
-                this._toTimeStampUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._toTimeStampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._toTimeStampUtc = null;
+                }
             }
         }
 #endregion

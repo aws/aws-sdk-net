@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetectSchema())
             {
                 context.Writer.WritePropertyName("DetectSchema");
-                context.Writer.Write(requestObject.DetectSchema);
+                context.Writer.Write(requestObject.DetectSchema.Value);
             }
 
             if(requestObject.IsSetName())
@@ -82,7 +82,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWindowSize())
             {
                 context.Writer.WritePropertyName("WindowSize");
-                context.Writer.Write(requestObject.WindowSize);
+                context.Writer.Write(requestObject.WindowSize.Value);
             }
 
         }

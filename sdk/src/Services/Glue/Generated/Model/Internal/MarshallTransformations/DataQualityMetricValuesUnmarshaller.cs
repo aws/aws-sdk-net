@@ -65,25 +65,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActualValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ActualValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExpectedValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ExpectedValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LowerLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LowerLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UpperLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.UpperLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

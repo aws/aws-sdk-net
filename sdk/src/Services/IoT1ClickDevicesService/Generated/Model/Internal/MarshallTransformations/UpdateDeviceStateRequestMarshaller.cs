@@ -71,7 +71,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 writer.WriteObjectEnd();

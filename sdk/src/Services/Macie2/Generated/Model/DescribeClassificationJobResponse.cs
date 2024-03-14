@@ -99,9 +99,9 @@ namespace Amazon.Macie2.Model
         /// The date and time, in UTC and extended ISO 8601 format, when the job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.Macie2.Model
         /// false for a one-time job.
         /// </para>
         /// </summary>
-        public bool InitialRun
+        public bool? InitialRun
         {
-            get { return this._initialRun.GetValueOrDefault(); }
+            get { return this._initialRun; }
             set { this._initialRun = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.Macie2.Model
         /// if the job hasn't run yet, when the job was created.
         /// </para>
         /// </summary>
-        public DateTime LastRunTime
+        public DateTime? LastRunTime
         {
-            get { return this._lastRunTime.GetValueOrDefault(); }
+            get { return this._lastRunTime; }
             set { this._lastRunTime = value; }
         }
 
@@ -455,9 +455,9 @@ namespace Amazon.Macie2.Model
         /// that the job analyzes.
         /// </para>
         /// </summary>
-        public int SamplingPercentage
+        public int? SamplingPercentage
         {
-            get { return this._samplingPercentage.GetValueOrDefault(); }
+            get { return this._samplingPercentage; }
             set { this._samplingPercentage = value; }
         }
 

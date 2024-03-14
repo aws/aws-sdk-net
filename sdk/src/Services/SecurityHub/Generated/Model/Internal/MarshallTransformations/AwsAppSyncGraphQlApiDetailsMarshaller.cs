@@ -144,7 +144,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetXrayEnabled())
             {
                 context.Writer.WritePropertyName("XrayEnabled");
-                context.Writer.Write(requestObject.XrayEnabled);
+                context.Writer.Write(requestObject.XrayEnabled.Value);
             }
 
         }

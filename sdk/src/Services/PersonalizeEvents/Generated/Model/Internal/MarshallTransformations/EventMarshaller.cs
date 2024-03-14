@@ -60,7 +60,7 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventValue())
             {
                 context.Writer.WritePropertyName("eventValue");
-                context.Writer.Write(requestObject.EventValue);
+                context.Writer.Write(requestObject.EventValue.Value);
             }
 
             if(requestObject.IsSetImpression())
@@ -106,7 +106,7 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSentAt())
             {
                 context.Writer.WritePropertyName("sentAt");
-                context.Writer.Write(requestObject.SentAt);
+                context.Writer.Write(requestObject.SentAt.Value);
             }
 
         }

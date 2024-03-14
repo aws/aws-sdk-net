@@ -803,7 +803,7 @@ namespace Amazon.CodePipeline
         /// The validation was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
-        Task<GetPipelineResponse> GetPipelineAsync(string name, int version, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetPipelineResponse> GetPipelineAsync(string name, int? version, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns the metadata, structure, stages, and actions of a pipeline. Can be used to

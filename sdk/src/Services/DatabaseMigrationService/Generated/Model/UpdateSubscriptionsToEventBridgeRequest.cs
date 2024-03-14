@@ -60,9 +60,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// or higher. 
         /// </para>
         /// </summary>
-        public bool ForceMove
+        public bool? ForceMove
         {
-            get { return this._forceMove.GetValueOrDefault(); }
+            get { return this._forceMove; }
             set { this._forceMove = value; }
         }
 

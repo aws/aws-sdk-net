@@ -65,7 +65,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Activated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Activated = unmarshaller.Unmarshall(context);
                     continue;
                 }

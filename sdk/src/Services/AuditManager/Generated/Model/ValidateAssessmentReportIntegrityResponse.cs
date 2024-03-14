@@ -103,9 +103,9 @@ namespace Amazon.AuditManager.Model
         ///  Specifies whether the signature key is valid. 
         /// </para>
         /// </summary>
-        public bool SignatureValid
+        public bool? SignatureValid
         {
-            get { return this._signatureValid.GetValueOrDefault(); }
+            get { return this._signatureValid; }
             set { this._signatureValid = value; }
         }
 

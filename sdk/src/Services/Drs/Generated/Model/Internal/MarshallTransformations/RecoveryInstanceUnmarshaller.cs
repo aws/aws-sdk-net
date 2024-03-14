@@ -101,7 +101,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isDrill", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDrill = unmarshaller.Unmarshall(context);
                     continue;
                 }

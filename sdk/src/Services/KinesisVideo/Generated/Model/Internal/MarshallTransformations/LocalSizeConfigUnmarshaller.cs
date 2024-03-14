@@ -65,7 +65,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxLocalMediaSizeInMB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLocalMediaSizeInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }

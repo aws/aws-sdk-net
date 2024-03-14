@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasCustomEventSelectors", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasCustomEventSelectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeGlobalServiceEvents = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsMultiRegionTrail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsMultiRegionTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsOrganizationTrail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsOrganizationTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LogFileValidationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LogFileValidationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

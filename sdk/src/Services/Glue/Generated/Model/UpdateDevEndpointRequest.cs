@@ -195,9 +195,9 @@ namespace Amazon.Glue.Model
         /// needs to be updated, or <c>False</c> if otherwise.
         /// </para>
         /// </summary>
-        public bool UpdateEtlLibraries
+        public bool? UpdateEtlLibraries
         {
-            get { return this._updateEtlLibraries.GetValueOrDefault(); }
+            get { return this._updateEtlLibraries; }
             set { this._updateEtlLibraries = value; }
         }
 

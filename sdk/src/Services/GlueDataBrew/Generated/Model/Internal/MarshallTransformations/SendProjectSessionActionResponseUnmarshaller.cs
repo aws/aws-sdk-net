@@ -53,7 +53,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActionId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ActionId = unmarshaller.Unmarshall(context);
                     continue;
                 }

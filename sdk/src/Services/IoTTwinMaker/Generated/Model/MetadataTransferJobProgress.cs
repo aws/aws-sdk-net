@@ -44,9 +44,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The failed count.
         /// </para>
         /// </summary>
-        public int FailedCount
+        public int? FailedCount
         {
-            get { return this._failedCount.GetValueOrDefault(); }
+            get { return this._failedCount; }
             set { this._failedCount = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The skipped count.
         /// </para>
         /// </summary>
-        public int SkippedCount
+        public int? SkippedCount
         {
-            get { return this._skippedCount.GetValueOrDefault(); }
+            get { return this._skippedCount; }
             set { this._skippedCount = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The succeeded count.
         /// </para>
         /// </summary>
-        public int SucceededCount
+        public int? SucceededCount
         {
-            get { return this._succeededCount.GetValueOrDefault(); }
+            get { return this._succeededCount; }
             set { this._succeededCount = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The total count. [of what]
         /// </para>
         /// </summary>
-        public int TotalCount
+        public int? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

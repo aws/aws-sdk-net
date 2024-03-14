@@ -53,7 +53,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsLogging", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsLogging = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestCloudWatchLogsDeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestCloudWatchLogsDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestDeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestDigestDeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestDigestDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,19 +125,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestNotificationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestNotificationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartLoggingTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartLoggingTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StopLoggingTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StopLoggingTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

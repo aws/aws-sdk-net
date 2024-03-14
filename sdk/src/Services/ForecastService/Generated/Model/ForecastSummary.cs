@@ -51,9 +51,9 @@ namespace Amazon.ForecastService.Model
         /// Whether the Forecast was created from an AutoPredictor.
         /// </para>
         /// </summary>
-        public bool CreatedUsingAutoPredictor
+        public bool? CreatedUsingAutoPredictor
         {
-            get { return this._createdUsingAutoPredictor.GetValueOrDefault(); }
+            get { return this._createdUsingAutoPredictor; }
             set { this._createdUsingAutoPredictor = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.ForecastService.Model
         /// When the forecast creation task was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoLaunch())
                 {
                     context.Writer.WritePropertyName("autoLaunch");
-                    context.Writer.Write(publicRequest.AutoLaunch);
+                    context.Writer.Write(publicRequest.AutoLaunch.Value);
                 }
 
                 if(publicRequest.IsSetRoleName())

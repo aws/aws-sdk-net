@@ -44,9 +44,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property DeviceLastModifiedDate. The last modified date of the client
         /// device.
         /// </summary>
-        public DateTime DeviceLastModifiedDate
+        public DateTime? DeviceLastModifiedDate
         {
-            get { return this._deviceLastModifiedDate.GetValueOrDefault(); }
+            get { return this._deviceLastModifiedDate; }
             set { this._deviceLastModifiedDate = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property LastModifiedDate. The date on which the record was last
         /// modified.
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property SyncCount. The server sync count for this record.
         /// </summary>
-        public long SyncCount
+        public long? SyncCount
         {
-            get { return this._syncCount.GetValueOrDefault(); }
+            get { return this._syncCount; }
             set { this._syncCount = value; }
         }
 

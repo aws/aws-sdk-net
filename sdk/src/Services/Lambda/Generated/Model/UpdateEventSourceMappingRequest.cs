@@ -205,9 +205,9 @@ namespace Amazon.Lambda.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int BatchSize
+        public int? BatchSize
         {
-            get { return this._batchSize.GetValueOrDefault(); }
+            get { return this._batchSize; }
             set { this._batchSize = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.Lambda.Model
         /// in two and retry.
         /// </para>
         /// </summary>
-        public bool BisectBatchOnFunctionError
+        public bool? BisectBatchOnFunctionError
         {
-            get { return this._bisectBatchOnFunctionError.GetValueOrDefault(); }
+            get { return this._bisectBatchOnFunctionError; }
             set { this._bisectBatchOnFunctionError = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.Lambda.Model
         /// Default: True
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
-        public int MaximumBatchingWindowInSeconds
+        public int? MaximumBatchingWindowInSeconds
         {
-            get { return this._maximumBatchingWindowInSeconds.GetValueOrDefault(); }
+            get { return this._maximumBatchingWindowInSeconds; }
             set { this._maximumBatchingWindowInSeconds = value; }
         }
 
@@ -424,9 +424,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
-        public int MaximumRecordAgeInSeconds
+        public int? MaximumRecordAgeInSeconds
         {
-            get { return this._maximumRecordAgeInSeconds.GetValueOrDefault(); }
+            get { return this._maximumRecordAgeInSeconds; }
             set { this._maximumRecordAgeInSeconds = value; }
         }
 
@@ -445,9 +445,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
-        public int MaximumRetryAttempts
+        public int? MaximumRetryAttempts
         {
-            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            get { return this._maximumRetryAttempts; }
             set { this._maximumRetryAttempts = value; }
         }
 
@@ -465,9 +465,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int ParallelizationFactor
+        public int? ParallelizationFactor
         {
-            get { return this._parallelizationFactor.GetValueOrDefault(); }
+            get { return this._parallelizationFactor; }
             set { this._parallelizationFactor = value; }
         }
 
@@ -526,9 +526,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]
-        public int TumblingWindowInSeconds
+        public int? TumblingWindowInSeconds
         {
-            get { return this._tumblingWindowInSeconds.GetValueOrDefault(); }
+            get { return this._tumblingWindowInSeconds; }
             set { this._tumblingWindowInSeconds = value; }
         }
 

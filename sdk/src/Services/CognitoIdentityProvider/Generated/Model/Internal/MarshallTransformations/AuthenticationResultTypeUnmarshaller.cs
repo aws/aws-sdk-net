@@ -71,7 +71,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpiresIn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpiresIn = unmarshaller.Unmarshall(context);
                     continue;
                 }

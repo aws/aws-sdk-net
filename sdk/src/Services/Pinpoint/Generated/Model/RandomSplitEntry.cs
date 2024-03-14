@@ -68,9 +68,9 @@ namespace Amazon.Pinpoint.Model
         /// the percentage that you specify.
         /// </para>
         /// </summary>
-        public int Percentage
+        public int? Percentage
         {
-            get { return this._percentage.GetValueOrDefault(); }
+            get { return this._percentage; }
             set { this._percentage = value; }
         }
 

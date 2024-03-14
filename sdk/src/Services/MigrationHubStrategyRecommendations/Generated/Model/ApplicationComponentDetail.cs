@@ -249,9 +249,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The timestamp of when the application component was assessed. 
         /// </para>
         /// </summary>
-        public DateTime LastAnalyzedTimestamp
+        public DateTime? LastAnalyzedTimestamp
         {
-            get { return this._lastAnalyzedTimestamp.GetValueOrDefault(); }
+            get { return this._lastAnalyzedTimestamp; }
             set { this._lastAnalyzedTimestamp = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  Set to true if the application component is running on multiple servers.
         /// </para>
         /// </summary>
-        public bool MoreServerAssociationExists
+        public bool? MoreServerAssociationExists
         {
-            get { return this._moreServerAssociationExists.GetValueOrDefault(); }
+            get { return this._moreServerAssociationExists; }
             set { this._moreServerAssociationExists = value; }
         }
 

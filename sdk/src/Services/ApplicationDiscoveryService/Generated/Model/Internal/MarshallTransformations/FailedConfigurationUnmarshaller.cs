@@ -77,7 +77,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("errorStatusCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorStatusCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

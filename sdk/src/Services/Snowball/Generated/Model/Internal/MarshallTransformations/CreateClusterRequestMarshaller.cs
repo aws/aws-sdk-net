@@ -82,7 +82,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceCreateJobs())
                 {
                     context.Writer.WritePropertyName("ForceCreateJobs");
-                    context.Writer.Write(publicRequest.ForceCreateJobs);
+                    context.Writer.Write(publicRequest.ForceCreateJobs.Value);
                 }
 
                 if(publicRequest.IsSetForwardingAddressId())
@@ -94,7 +94,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInitialClusterSize())
                 {
                     context.Writer.WritePropertyName("InitialClusterSize");
-                    context.Writer.Write(publicRequest.InitialClusterSize);
+                    context.Writer.Write(publicRequest.InitialClusterSize.Value);
                 }
 
                 if(publicRequest.IsSetJobType())

@@ -64,9 +64,9 @@ namespace Amazon.Rekognition.Model
         /// where the celebrity first appears.
         /// </para>
         /// </summary>
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

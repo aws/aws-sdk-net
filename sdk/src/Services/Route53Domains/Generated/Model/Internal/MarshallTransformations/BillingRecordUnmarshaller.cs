@@ -65,7 +65,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BillDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.BillDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Price", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Price = unmarshaller.Unmarshall(context);
                     continue;
                 }

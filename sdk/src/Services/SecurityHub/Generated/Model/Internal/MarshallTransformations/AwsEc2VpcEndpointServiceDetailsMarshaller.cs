@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptanceRequired())
             {
                 context.Writer.WritePropertyName("AcceptanceRequired");
-                context.Writer.Write(requestObject.AcceptanceRequired);
+                context.Writer.Write(requestObject.AcceptanceRequired.Value);
             }
 
             if(requestObject.IsSetAvailabilityZones())
@@ -87,7 +87,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManagesVpcEndpoints())
             {
                 context.Writer.WritePropertyName("ManagesVpcEndpoints");
-                context.Writer.Write(requestObject.ManagesVpcEndpoints);
+                context.Writer.Write(requestObject.ManagesVpcEndpoints.Value);
             }
 
             if(requestObject.IsSetNetworkLoadBalancerArns())

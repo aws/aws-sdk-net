@@ -71,13 +71,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DataValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DataValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("GradientOffset", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.GradientOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

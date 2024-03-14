@@ -88,9 +88,9 @@ namespace Amazon.SecurityHub.Model
         /// updated.
         /// </para>
         /// </summary>
-        public DateTime ControlStatusUpdatedAt
+        public DateTime? ControlStatusUpdatedAt
         {
-            get { return this._controlStatusUpdatedAt.GetValueOrDefault(); }
+            get { return this._controlStatusUpdatedAt; }
             set { this._controlStatusUpdatedAt = value; }
         }
 

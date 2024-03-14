@@ -55,9 +55,9 @@ namespace Amazon.CodeDeploy.Model
         /// shifts traffic to the new task set. 
         /// </para>
         /// </summary>
-        public long DesiredCount
+        public long? DesiredCount
         {
-            get { return this._desiredCount.GetValueOrDefault(); }
+            get { return this._desiredCount; }
             set { this._desiredCount = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.CodeDeploy.Model
         /// 
         /// </para>
         /// </summary>
-        public long PendingCount
+        public long? PendingCount
         {
-            get { return this._pendingCount.GetValueOrDefault(); }
+            get { return this._pendingCount; }
             set { this._pendingCount = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.CodeDeploy.Model
         /// for use. 
         /// </para>
         /// </summary>
-        public long RunningCount
+        public long? RunningCount
         {
-            get { return this._runningCount.GetValueOrDefault(); }
+            get { return this._runningCount; }
             set { this._runningCount = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.CodeDeploy.Model
         ///  The percentage of traffic served by this task set. 
         /// </para>
         /// </summary>
-        public double TrafficWeight
+        public double? TrafficWeight
         {
-            get { return this._trafficWeight.GetValueOrDefault(); }
+            get { return this._trafficWeight; }
             set { this._trafficWeight = value; }
         }
 

@@ -59,9 +59,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// operation returns up to 50 results and a <c>NextToken</c> value, if applicable.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

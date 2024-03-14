@@ -44,9 +44,9 @@ namespace Amazon.QLDB.Model
         /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 

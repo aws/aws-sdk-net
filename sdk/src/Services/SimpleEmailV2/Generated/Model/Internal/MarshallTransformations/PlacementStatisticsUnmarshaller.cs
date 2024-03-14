@@ -65,31 +65,31 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DkimPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DkimPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InboxPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.InboxPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MissingPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MissingPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SpamPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SpamPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SpfPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SpfPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

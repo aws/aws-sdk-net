@@ -66,9 +66,9 @@ namespace Amazon.CodeCommit.Model
         /// default is the same as the allowed maximum, 1,000.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

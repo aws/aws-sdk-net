@@ -48,9 +48,9 @@ namespace Amazon.SecurityHub.Model
         /// that can be included.
         /// </para>
         /// </summary>
-        public bool AdditionalOccurrences
+        public bool? AdditionalOccurrences
         {
-            get { return this._additionalOccurrences.GetValueOrDefault(); }
+            get { return this._additionalOccurrences; }
             set { this._additionalOccurrences = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.SecurityHub.Model
         /// The total size in bytes of the affected data.
         /// </para>
         /// </summary>
-        public long SizeClassified
+        public long? SizeClassified
         {
-            get { return this._sizeClassified.GetValueOrDefault(); }
+            get { return this._sizeClassified; }
             set { this._sizeClassified = value; }
         }
 

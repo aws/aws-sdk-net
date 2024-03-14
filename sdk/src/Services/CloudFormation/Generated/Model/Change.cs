@@ -46,9 +46,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int HookInvocationCount
+        public int? HookInvocationCount
         {
-            get { return this._hookInvocationCount.GetValueOrDefault(); }
+            get { return this._hookInvocationCount; }
             set { this._hookInvocationCount = value; }
         }
 

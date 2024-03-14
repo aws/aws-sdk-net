@@ -83,7 +83,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedSecret", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedSecret = unmarshaller.Unmarshall(context);
                     continue;
                 }

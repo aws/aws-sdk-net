@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// when queried from instances in a peer VPC. 
         /// </para>
         /// </summary>
-        public bool AllowDnsResolutionFromRemoteVpc
+        public bool? AllowDnsResolutionFromRemoteVpc
         {
-            get { return this._allowDnsResolutionFromRemoteVpc.GetValueOrDefault(); }
+            get { return this._allowDnsResolutionFromRemoteVpc; }
             set { this._allowDnsResolutionFromRemoteVpc = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SecurityHub.Model
         /// over the VPC peering connection. 
         /// </para>
         /// </summary>
-        public bool AllowEgressFromLocalClassicLinkToRemoteVpc
+        public bool? AllowEgressFromLocalClassicLinkToRemoteVpc
         {
-            get { return this._allowEgressFromLocalClassicLinkToRemoteVpc.GetValueOrDefault(); }
+            get { return this._allowEgressFromLocalClassicLinkToRemoteVpc; }
             set { this._allowEgressFromLocalClassicLinkToRemoteVpc = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         /// peer VPC over the VPC peering connection. 
         /// </para>
         /// </summary>
-        public bool AllowEgressFromLocalVpcToRemoteClassicLink
+        public bool? AllowEgressFromLocalVpcToRemoteClassicLink
         {
-            get { return this._allowEgressFromLocalVpcToRemoteClassicLink.GetValueOrDefault(); }
+            get { return this._allowEgressFromLocalVpcToRemoteClassicLink; }
             set { this._allowEgressFromLocalVpcToRemoteClassicLink = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.CloudFormation.Model
         /// The time that the resource scan was finished.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.CloudFormation.Model
         /// The percentage of the resource scan that has been completed.
         /// </para>
         /// </summary>
-        public double PercentageCompleted
+        public double? PercentageCompleted
         {
-            get { return this._percentageCompleted.GetValueOrDefault(); }
+            get { return this._percentageCompleted; }
             set { this._percentageCompleted = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int ResourcesRead
+        public int? ResourcesRead
         {
-            get { return this._resourcesRead.GetValueOrDefault(); }
+            get { return this._resourcesRead; }
             set { this._resourcesRead = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.CloudFormation.Model
         /// <c>Status</c> set to <c>COMPLETE</c>, <c>EXPIRED</c>, or <c>FAILED </c>.
         /// </para>
         /// </summary>
-        public int ResourcesScanned
+        public int? ResourcesScanned
         {
-            get { return this._resourcesScanned.GetValueOrDefault(); }
+            get { return this._resourcesScanned; }
             set { this._resourcesScanned = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.CloudFormation.Model
         /// The time that the resource scan was started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

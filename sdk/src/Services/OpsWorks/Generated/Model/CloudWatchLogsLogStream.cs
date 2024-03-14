@@ -54,9 +54,9 @@ namespace Amazon.OpsWorks.Model
         /// is 1000.
         /// </para>
         /// </summary>
-        public int BatchCount
+        public int? BatchCount
         {
-            get { return this._batchCount.GetValueOrDefault(); }
+            get { return this._batchCount; }
             set { this._batchCount = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.OpsWorks.Model
         /// messages in UTF-8, plus 26 bytes for each log event.
         /// </para>
         /// </summary>
-        public int BatchSize
+        public int? BatchSize
         {
-            get { return this._batchSize.GetValueOrDefault(); }
+            get { return this._batchSize; }
             set { this._batchSize = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.OpsWorks.Model
         /// and default value is 5000ms.
         /// </para>
         /// </summary>
-        public int BufferDuration
+        public int? BufferDuration
         {
-            get { return this._bufferDuration.GetValueOrDefault(); }
+            get { return this._bufferDuration; }
             set { this._bufferDuration = value; }
         }
 

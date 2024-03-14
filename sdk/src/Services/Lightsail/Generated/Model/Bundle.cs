@@ -72,9 +72,9 @@ namespace Amazon.Lightsail.Model
         /// The number of vCPUs included in the bundle (<c>2</c>).
         /// </para>
         /// </summary>
-        public int CpuCount
+        public int? CpuCount
         {
-            get { return this._cpuCount.GetValueOrDefault(); }
+            get { return this._cpuCount; }
             set { this._cpuCount = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the SSD (<c>30</c>).
         /// </para>
         /// </summary>
-        public int DiskSizeInGb
+        public int? DiskSizeInGb
         {
-            get { return this._diskSizeInGb.GetValueOrDefault(); }
+            get { return this._diskSizeInGb; }
             set { this._diskSizeInGb = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the bundle is active.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Lightsail.Model
         /// a minimum power value of 500.
         /// </para>
         /// </summary>
-        public int Power
+        public int? Power
         {
-            get { return this._power.GetValueOrDefault(); }
+            get { return this._power; }
             set { this._power = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Lightsail.Model
         /// The price in US dollars (<c>5.0</c>) of the bundle.
         /// </para>
         /// </summary>
-        public float Price
+        public float? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Lightsail.Model
         /// value is either 0 or 1.
         /// </para>
         /// </summary>
-        public int PublicIpv4AddressCount
+        public int? PublicIpv4AddressCount
         {
-            get { return this._publicIpv4AddressCount.GetValueOrDefault(); }
+            get { return this._publicIpv4AddressCount; }
             set { this._publicIpv4AddressCount = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Lightsail.Model
         /// The amount of RAM in GB (<c>2.0</c>).
         /// </para>
         /// </summary>
-        public float RamSizeInGb
+        public float? RamSizeInGb
         {
-            get { return this._ramSizeInGb.GetValueOrDefault(); }
+            get { return this._ramSizeInGb; }
             set { this._ramSizeInGb = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.Lightsail.Model
         /// The data transfer rate per month in GB (<c>2000</c>).
         /// </para>
         /// </summary>
-        public int TransferPerMonthInGb
+        public int? TransferPerMonthInGb
         {
-            get { return this._transferPerMonthInGb.GetValueOrDefault(); }
+            get { return this._transferPerMonthInGb; }
             set { this._transferPerMonthInGb = value; }
         }
 

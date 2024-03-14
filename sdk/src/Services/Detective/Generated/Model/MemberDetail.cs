@@ -213,9 +213,9 @@ namespace Amazon.Detective.Model
         /// account. The value is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime InvitedTime
+        public DateTime? InvitedTime
         {
-            get { return this._invitedTime.GetValueOrDefault(); }
+            get { return this._invitedTime; }
             set { this._invitedTime = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-        public double PercentOfGraphUtilization
+        public double? PercentOfGraphUtilization
         {
-            get { return this._percentOfGraphUtilization.GetValueOrDefault(); }
+            get { return this._percentOfGraphUtilization; }
             set { this._percentOfGraphUtilization = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-        public DateTime PercentOfGraphUtilizationUpdatedTime
+        public DateTime? PercentOfGraphUtilizationUpdatedTime
         {
-            get { return this._percentOfGraphUtilizationUpdatedTime.GetValueOrDefault(); }
+            get { return this._percentOfGraphUtilizationUpdatedTime; }
             set { this._percentOfGraphUtilizationUpdatedTime = value; }
         }
 
@@ -367,9 +367,9 @@ namespace Amazon.Detective.Model
         /// formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTime
+        public DateTime? UpdatedTime
         {
-            get { return this._updatedTime.GetValueOrDefault(); }
+            get { return this._updatedTime; }
             set { this._updatedTime = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-        public long VolumeUsageInBytes
+        public long? VolumeUsageInBytes
         {
-            get { return this._volumeUsageInBytes.GetValueOrDefault(); }
+            get { return this._volumeUsageInBytes; }
             set { this._volumeUsageInBytes = value; }
         }
 
@@ -424,9 +424,9 @@ namespace Amazon.Detective.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-        public DateTime VolumeUsageUpdatedTime
+        public DateTime? VolumeUsageUpdatedTime
         {
-            get { return this._volumeUsageUpdatedTime.GetValueOrDefault(); }
+            get { return this._volumeUsageUpdatedTime; }
             set { this._volumeUsageUpdatedTime = value; }
         }
 

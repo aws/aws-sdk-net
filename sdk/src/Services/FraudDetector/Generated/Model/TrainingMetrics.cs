@@ -44,9 +44,9 @@ namespace Amazon.FraudDetector.Model
         /// power has an AUC of 0.5, whereas a perfect model has a score of 1.0.
         /// </para>
         /// </summary>
-        public float Auc
+        public float? Auc
         {
-            get { return this._auc.GetValueOrDefault(); }
+            get { return this._auc; }
             set { this._auc = value; }
         }
 

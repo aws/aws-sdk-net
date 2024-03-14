@@ -71,19 +71,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("firstExecutionFrom", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstExecutionFrom = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("flowErrorDeactivationThreshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FlowErrorDeactivationThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scheduleEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduleEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scheduleOffset", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ScheduleOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scheduleStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduleStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

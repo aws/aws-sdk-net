@@ -100,9 +100,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalSourceServers
+        public long? TotalSourceServers
         {
-            get { return this._totalSourceServers.GetValueOrDefault(); }
+            get { return this._totalSourceServers; }
             set { this._totalSourceServers = value; }
         }
 

@@ -201,9 +201,9 @@ namespace Amazon.EC2.Model
         /// An IPv4 netmask length for the subnet.
         /// </para>
         /// </summary>
-        public int Ipv4NetmaskLength
+        public int? Ipv4NetmaskLength
         {
-            get { return this._ipv4NetmaskLength.GetValueOrDefault(); }
+            get { return this._ipv4NetmaskLength; }
             set { this._ipv4NetmaskLength = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to create an IPv6 only subnet.
         /// </para>
         /// </summary>
-        public bool Ipv6Native
+        public bool? Ipv6Native
         {
-            get { return this._ipv6Native.GetValueOrDefault(); }
+            get { return this._ipv6Native; }
             set { this._ipv6Native = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.EC2.Model
         /// An IPv6 netmask length for the subnet.
         /// </para>
         /// </summary>
-        public int Ipv6NetmaskLength
+        public int? Ipv6NetmaskLength
         {
-            get { return this._ipv6NetmaskLength.GetValueOrDefault(); }
+            get { return this._ipv6NetmaskLength; }
             set { this._ipv6NetmaskLength = value; }
         }
 

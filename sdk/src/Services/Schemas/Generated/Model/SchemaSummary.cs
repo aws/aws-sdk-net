@@ -45,9 +45,9 @@ namespace Amazon.Schemas.Model
         /// The date and time that schema was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.Schemas.Model
         /// The number of versions available for the schema.
         /// </para>
         /// </summary>
-        public long VersionCount
+        public long? VersionCount
         {
-            get { return this._versionCount.GetValueOrDefault(); }
+            get { return this._versionCount; }
             set { this._versionCount = value; }
         }
 

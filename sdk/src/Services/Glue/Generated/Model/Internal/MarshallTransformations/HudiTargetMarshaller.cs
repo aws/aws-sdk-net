@@ -65,7 +65,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumTraversalDepth())
             {
                 context.Writer.WritePropertyName("MaximumTraversalDepth");
-                context.Writer.Write(requestObject.MaximumTraversalDepth);
+                context.Writer.Write(requestObject.MaximumTraversalDepth.Value);
             }
 
             if(requestObject.IsSetPaths())

@@ -65,7 +65,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutomaticFail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutomaticFail = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Score", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Score = unmarshaller.Unmarshall(context);
                     continue;
                 }

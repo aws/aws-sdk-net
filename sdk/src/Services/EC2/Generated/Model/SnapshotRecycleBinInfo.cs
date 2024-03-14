@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// The date and time when the snaphsot entered the Recycle Bin.
         /// </para>
         /// </summary>
-        public DateTime RecycleBinEnterTime
+        public DateTime? RecycleBinEnterTime
         {
-            get { return this._recycleBinEnterTime.GetValueOrDefault(); }
+            get { return this._recycleBinEnterTime; }
             set { this._recycleBinEnterTime = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// Bin.
         /// </para>
         /// </summary>
-        public DateTime RecycleBinExitTime
+        public DateTime? RecycleBinExitTime
         {
-            get { return this._recycleBinExitTime.GetValueOrDefault(); }
+            get { return this._recycleBinExitTime; }
             set { this._recycleBinExitTime = value; }
         }
 

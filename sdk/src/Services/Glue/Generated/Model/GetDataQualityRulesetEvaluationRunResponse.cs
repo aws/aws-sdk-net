@@ -92,9 +92,9 @@ namespace Amazon.Glue.Model
         /// The date and time when this run was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.Glue.Model
         /// The amount of time (in seconds) that the run consumed resources.
         /// </para>
         /// </summary>
-        public int ExecutionTime
+        public int? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.Glue.Model
         /// was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.Glue.Model
         /// The number of <c>G.1X</c> workers to be used in the run. The default is 5.
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.Glue.Model
         /// The date and time when this run started.
         /// </para>
         /// </summary>
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

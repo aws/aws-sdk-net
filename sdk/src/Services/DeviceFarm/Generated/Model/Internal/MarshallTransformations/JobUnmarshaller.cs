@@ -77,7 +77,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("started", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Started = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopped", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("videoCapture", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.VideoCapture = unmarshaller.Unmarshall(context);
                     continue;
                 }

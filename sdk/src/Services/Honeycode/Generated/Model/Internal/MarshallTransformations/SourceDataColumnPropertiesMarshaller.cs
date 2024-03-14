@@ -48,7 +48,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnIndex())
             {
                 context.Writer.WritePropertyName("columnIndex");
-                context.Writer.Write(requestObject.ColumnIndex);
+                context.Writer.Write(requestObject.ColumnIndex.Value);
             }
 
         }

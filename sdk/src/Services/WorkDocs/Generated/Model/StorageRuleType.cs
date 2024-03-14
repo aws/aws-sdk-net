@@ -43,9 +43,9 @@ namespace Amazon.WorkDocs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long StorageAllocatedInBytes
+        public long? StorageAllocatedInBytes
         {
-            get { return this._storageAllocatedInBytes.GetValueOrDefault(); }
+            get { return this._storageAllocatedInBytes; }
             set { this._storageAllocatedInBytes = value; }
         }
 

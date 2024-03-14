@@ -105,9 +105,9 @@ namespace Amazon.Batch.Model
         /// networking</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
-        public bool HostNetwork
+        public bool? HostNetwork
         {
-            get { return this._hostNetwork.GetValueOrDefault(); }
+            get { return this._hostNetwork; }
             set { this._hostNetwork = value; }
         }
 

@@ -65,19 +65,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("containsDataFromDeletedResources", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ContainsDataFromDeletedResources = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("hitCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HitCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("missedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MissedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("utteranceFirstRecordedInAggregationDuration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UtteranceFirstRecordedInAggregationDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("utteranceLastRecordedInAggregationDuration", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UtteranceLastRecordedInAggregationDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

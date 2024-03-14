@@ -44,9 +44,9 @@ namespace Amazon.EMRServerless.Model
         /// idle. Defaults to true.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10080)]
-        public int IdleTimeoutMinutes
+        public int? IdleTimeoutMinutes
         {
-            get { return this._idleTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._idleTimeoutMinutes; }
             set { this._idleTimeoutMinutes = value; }
         }
 

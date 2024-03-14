@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastUpdateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

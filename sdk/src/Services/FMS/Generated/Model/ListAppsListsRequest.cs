@@ -44,9 +44,9 @@ namespace Amazon.FMS.Model
         /// Specifies whether the lists to retrieve are default lists owned by Firewall Manager.
         /// </para>
         /// </summary>
-        public bool DefaultLists
+        public bool? DefaultLists
         {
-            get { return this._defaultLists.GetValueOrDefault(); }
+            get { return this._defaultLists; }
             set { this._defaultLists = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

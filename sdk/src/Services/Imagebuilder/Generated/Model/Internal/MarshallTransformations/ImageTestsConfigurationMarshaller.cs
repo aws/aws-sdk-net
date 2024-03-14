@@ -48,13 +48,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageTestsEnabled())
             {
                 context.Writer.WritePropertyName("imageTestsEnabled");
-                context.Writer.Write(requestObject.ImageTestsEnabled);
+                context.Writer.Write(requestObject.ImageTestsEnabled.Value);
             }
 
             if(requestObject.IsSetTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("timeoutMinutes");
-                context.Writer.Write(requestObject.TimeoutMinutes);
+                context.Writer.Write(requestObject.TimeoutMinutes.Value);
             }
 
         }

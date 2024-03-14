@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.FSx")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 #elif NETCOREAPP3_1

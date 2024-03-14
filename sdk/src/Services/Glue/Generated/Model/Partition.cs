@@ -68,9 +68,9 @@ namespace Amazon.Glue.Model
         /// The time at which the partition was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Glue.Model
         /// The last time at which the partition was accessed.
         /// </para>
         /// </summary>
-        public DateTime LastAccessTime
+        public DateTime? LastAccessTime
         {
-            get { return this._lastAccessTime.GetValueOrDefault(); }
+            get { return this._lastAccessTime; }
             set { this._lastAccessTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Glue.Model
         /// The last time at which column statistics were computed for this partition.
         /// </para>
         /// </summary>
-        public DateTime LastAnalyzedTime
+        public DateTime? LastAnalyzedTime
         {
-            get { return this._lastAnalyzedTime.GetValueOrDefault(); }
+            get { return this._lastAnalyzedTime; }
             set { this._lastAnalyzedTime = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSensitivityScoreOverride())
                 {
                     context.Writer.WritePropertyName("sensitivityScoreOverride");
-                    context.Writer.Write(publicRequest.SensitivityScoreOverride);
+                    context.Writer.Write(publicRequest.SensitivityScoreOverride.Value);
                 }
 
                 writer.WriteObjectEnd();

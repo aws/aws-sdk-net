@@ -181,9 +181,9 @@ namespace Amazon.EventBridge.Model
         /// call is used.
         /// </para>
         /// </summary>
-        public DateTime Time
+        public DateTime? Time
         {
-            get { return this._time.GetValueOrDefault(); }
+            get { return this._time; }
             set { this._time = value; }
         }
 

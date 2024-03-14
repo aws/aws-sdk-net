@@ -48,7 +48,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("limit");
-                context.Writer.Write(requestObject.Limit);
+                context.Writer.Write(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetRollDisposition())

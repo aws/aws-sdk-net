@@ -90,9 +90,9 @@ namespace Amazon.AuditManager.Model
         ///  The number of controls that are associated with the framework. 
         /// </para>
         /// </summary>
-        public int ControlsCount
+        public int? ControlsCount
         {
-            get { return this._controlsCount.GetValueOrDefault(); }
+            get { return this._controlsCount; }
             set { this._controlsCount = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.AuditManager.Model
         ///  The number of control sets that are associated with the framework. 
         /// </para>
         /// </summary>
-        public int ControlSetsCount
+        public int? ControlSetsCount
         {
-            get { return this._controlSetsCount.GetValueOrDefault(); }
+            get { return this._controlSetsCount; }
             set { this._controlSetsCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the framework was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the framework was most recently updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

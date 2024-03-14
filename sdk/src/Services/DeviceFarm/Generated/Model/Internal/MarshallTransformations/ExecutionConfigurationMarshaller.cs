@@ -48,31 +48,31 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountsCleanup())
             {
                 context.Writer.WritePropertyName("accountsCleanup");
-                context.Writer.Write(requestObject.AccountsCleanup);
+                context.Writer.Write(requestObject.AccountsCleanup.Value);
             }
 
             if(requestObject.IsSetAppPackagesCleanup())
             {
                 context.Writer.WritePropertyName("appPackagesCleanup");
-                context.Writer.Write(requestObject.AppPackagesCleanup);
+                context.Writer.Write(requestObject.AppPackagesCleanup.Value);
             }
 
             if(requestObject.IsSetJobTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("jobTimeoutMinutes");
-                context.Writer.Write(requestObject.JobTimeoutMinutes);
+                context.Writer.Write(requestObject.JobTimeoutMinutes.Value);
             }
 
             if(requestObject.IsSetSkipAppResign())
             {
                 context.Writer.WritePropertyName("skipAppResign");
-                context.Writer.Write(requestObject.SkipAppResign);
+                context.Writer.Write(requestObject.SkipAppResign.Value);
             }
 
             if(requestObject.IsSetVideoCapture())
             {
                 context.Writer.WritePropertyName("videoCapture");
-                context.Writer.Write(requestObject.VideoCapture);
+                context.Writer.Write(requestObject.VideoCapture.Value);
             }
 
         }

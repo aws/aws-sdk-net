@@ -65,13 +65,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllOrganizationalUnitsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllOrganizationalUnitsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExcludeSpecifiedOrganizationalUnits", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExcludeSpecifiedOrganizationalUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

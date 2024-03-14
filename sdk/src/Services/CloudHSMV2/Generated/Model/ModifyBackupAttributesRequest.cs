@@ -66,9 +66,9 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool NeverExpires
+        public bool? NeverExpires
         {
-            get { return this._neverExpires.GetValueOrDefault(); }
+            get { return this._neverExpires; }
             set { this._neverExpires = value; }
         }
 

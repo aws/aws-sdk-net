@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetWarmupPercentage())
                 {
                     context.Writer.WritePropertyName("WarmupPercentage");
-                    context.Writer.Write(publicRequest.WarmupPercentage);
+                    context.Writer.Write(publicRequest.WarmupPercentage.Value);
                 }
 
                 writer.WriteObjectEnd();

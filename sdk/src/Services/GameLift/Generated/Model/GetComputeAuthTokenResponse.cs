@@ -105,9 +105,9 @@ namespace Amazon.GameLift.Model
         /// The amount of time until the authentication token is no longer valid.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTimestamp
+        public DateTime? ExpirationTimestamp
         {
-            get { return this._expirationTimestamp.GetValueOrDefault(); }
+            get { return this._expirationTimestamp; }
             set { this._expirationTimestamp = value; }
         }
 

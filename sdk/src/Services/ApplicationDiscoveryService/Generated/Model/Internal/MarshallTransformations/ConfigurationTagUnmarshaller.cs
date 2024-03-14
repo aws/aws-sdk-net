@@ -83,7 +83,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("timeOfCreation", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimeOfCreation = unmarshaller.Unmarshall(context);
                     continue;
                 }

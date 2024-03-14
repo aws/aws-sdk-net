@@ -53,7 +53,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,13 +71,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxCityNetworksToMonitor", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxCityNetworksToMonitor = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TrafficPercentageToMonitor", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TrafficPercentageToMonitor = unmarshaller.Unmarshall(context);
                     continue;
                 }

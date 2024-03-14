@@ -53,73 +53,73 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Instances", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Instances = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithCriticalNonCompliantPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithCriticalNonCompliantPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithFailedPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithFailedPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithInstalledOtherPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledOtherPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithInstalledPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithInstalledPendingRebootPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledPendingRebootPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithInstalledRejectedPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledRejectedPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithMissingPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithMissingPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithNotApplicablePatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithNotApplicablePatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithOtherNonCompliantPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithOtherNonCompliantPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithSecurityNonCompliantPatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithSecurityNonCompliantPatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstancesWithUnreportedNotApplicablePatches", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithUnreportedNotApplicablePatches = unmarshaller.Unmarshall(context);
                     continue;
                 }

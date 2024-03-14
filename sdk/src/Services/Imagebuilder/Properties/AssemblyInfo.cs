@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Imagebuilder")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 #elif NETCOREAPP3_1

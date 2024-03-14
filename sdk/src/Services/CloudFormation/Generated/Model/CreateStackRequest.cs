@@ -239,9 +239,9 @@ namespace Amazon.CloudFormation.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool DisableRollback
+        public bool? DisableRollback
         {
-            get { return this._disableRollback.GetValueOrDefault(); }
+            get { return this._disableRollback; }
             set { this._disableRollback = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.CloudFormation.Model
         /// on the nested stack.
         /// </para>
         /// </summary>
-        public bool EnableTerminationProtection
+        public bool? EnableTerminationProtection
         {
-            get { return this._enableTerminationProtection.GetValueOrDefault(); }
+            get { return this._enableTerminationProtection; }
             set { this._enableTerminationProtection = value; }
         }
 
@@ -392,9 +392,9 @@ namespace Amazon.CloudFormation.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool RetainExceptOnCreate
+        public bool? RetainExceptOnCreate
         {
-            get { return this._retainExceptOnCreate.GetValueOrDefault(); }
+            get { return this._retainExceptOnCreate; }
             set { this._retainExceptOnCreate = value; }
         }
 
@@ -605,9 +605,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

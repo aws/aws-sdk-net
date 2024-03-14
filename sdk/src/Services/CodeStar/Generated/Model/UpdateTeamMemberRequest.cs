@@ -88,9 +88,9 @@ namespace Amazon.CodeStar.Model
         /// must associate a public key with their profile before the user can access resources.
         /// </para>
         /// </summary>
-        public bool RemoteAccessAllowed
+        public bool? RemoteAccessAllowed
         {
-            get { return this._remoteAccessAllowed.GetValueOrDefault(); }
+            get { return this._remoteAccessAllowed; }
             set { this._remoteAccessAllowed = value; }
         }
 

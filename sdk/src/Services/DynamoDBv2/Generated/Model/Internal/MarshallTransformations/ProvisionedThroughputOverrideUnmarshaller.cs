@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReadCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

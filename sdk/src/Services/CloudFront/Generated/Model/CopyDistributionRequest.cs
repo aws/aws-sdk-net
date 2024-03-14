@@ -102,9 +102,9 @@ namespace Amazon.CloudFront.Model
         /// If you omit this field, the default value is <c>True</c>.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.CloudFront.Model
         /// valid value is <c>True</c>, indicating that you are copying to a staging distribution.
         /// </para>
         /// </summary>
-        public bool Staging
+        public bool? Staging
         {
-            get { return this._staging.GetValueOrDefault(); }
+            get { return this._staging; }
             set { this._staging = value; }
         }
 

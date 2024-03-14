@@ -62,9 +62,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The date when the workflow was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The revision number of the workflow.
         /// </para>
         /// </summary>
-        public long RevisionNumber
+        public long? RevisionNumber
         {
-            get { return this._revisionNumber.GetValueOrDefault(); }
+            get { return this._revisionNumber; }
             set { this._revisionNumber = value; }
         }
 

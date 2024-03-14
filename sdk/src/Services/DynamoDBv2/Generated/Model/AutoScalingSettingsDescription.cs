@@ -45,9 +45,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Disabled auto scaling for this global table or global secondary index.
         /// </para>
         /// </summary>
-        public bool AutoScalingDisabled
+        public bool? AutoScalingDisabled
         {
-            get { return this._autoScalingDisabled.GetValueOrDefault(); }
+            get { return this._autoScalingDisabled; }
             set { this._autoScalingDisabled = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long MaximumUnits
+        public long? MaximumUnits
         {
-            get { return this._maximumUnits.GetValueOrDefault(); }
+            get { return this._maximumUnits; }
             set { this._maximumUnits = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long MinimumUnits
+        public long? MinimumUnits
         {
-            get { return this._minimumUnits.GetValueOrDefault(); }
+            get { return this._minimumUnits; }
             set { this._minimumUnits = value; }
         }
 

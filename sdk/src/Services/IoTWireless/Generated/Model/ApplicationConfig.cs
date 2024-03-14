@@ -61,9 +61,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property FPort.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int FPort
+        public int? FPort
         {
-            get { return this._fPort.GetValueOrDefault(); }
+            get { return this._fPort; }
             set { this._fPort = value; }
         }
 

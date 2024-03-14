@@ -116,9 +116,9 @@ namespace Amazon.IoTFleetWise.Model
         /// UTC time). 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.IoTFleetWise.Model
         /// UTC time). Vehicle data won't be collected after the campaign expires.
         /// </para>
         /// </summary>
-        public DateTime ExpiryTime
+        public DateTime? ExpiryTime
         {
-            get { return this._expiryTime.GetValueOrDefault(); }
+            get { return this._expiryTime; }
             set { this._expiryTime = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.IoTFleetWise.Model
         /// The last time the campaign was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long PostTriggerCollectionDuration
+        public long? PostTriggerCollectionDuration
         {
-            get { return this._postTriggerCollectionDuration.GetValueOrDefault(); }
+            get { return this._postTriggerCollectionDuration; }
             set { this._postTriggerCollectionDuration = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -376,9 +376,9 @@ namespace Amazon.IoTFleetWise.Model
         ///  The time, in milliseconds, to deliver a campaign after it was approved.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

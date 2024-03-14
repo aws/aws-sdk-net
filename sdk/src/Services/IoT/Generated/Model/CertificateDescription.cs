@@ -167,9 +167,9 @@ namespace Amazon.IoT.Model
         /// The date and time the certificate was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int CustomerVersion
+        public int? CustomerVersion
         {
-            get { return this._customerVersion.GetValueOrDefault(); }
+            get { return this._customerVersion; }
             set { this._customerVersion = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.IoT.Model
         /// The date and time the certificate was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

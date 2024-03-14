@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ChimeSDKIdentity")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Chime SDK Identity. The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Chime SDK Identity. The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Chime SDK Identity. The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Chime SDK Identity. The Amazon Chime SDK Identity APIs allow software developers to create and manage unique instances of their messaging applications.")]
 #elif NETCOREAPP3_1

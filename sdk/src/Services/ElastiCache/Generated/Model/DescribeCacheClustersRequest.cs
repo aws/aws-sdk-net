@@ -131,9 +131,9 @@ namespace Amazon.ElastiCache.Model
         /// Constraints: minimum 20; maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.ElastiCache.Model
         /// practice, this mean Memcached and single node Redis clusters.
         /// </para>
         /// </summary>
-        public bool ShowCacheClustersNotInReplicationGroups
+        public bool? ShowCacheClustersNotInReplicationGroups
         {
-            get { return this._showCacheClustersNotInReplicationGroups.GetValueOrDefault(); }
+            get { return this._showCacheClustersNotInReplicationGroups; }
             set { this._showCacheClustersNotInReplicationGroups = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.ElastiCache.Model
         /// retrieve information about the individual cache nodes.
         /// </para>
         /// </summary>
-        public bool ShowCacheNodeInfo
+        public bool? ShowCacheNodeInfo
         {
-            get { return this._showCacheNodeInfo.GetValueOrDefault(); }
+            get { return this._showCacheNodeInfo; }
             set { this._showCacheNodeInfo = value; }
         }
 

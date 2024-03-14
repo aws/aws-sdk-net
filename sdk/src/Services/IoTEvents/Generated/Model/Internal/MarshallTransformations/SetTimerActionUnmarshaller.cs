@@ -71,7 +71,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("seconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Seconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

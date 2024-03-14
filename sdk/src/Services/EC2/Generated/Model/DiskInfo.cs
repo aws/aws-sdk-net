@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// The number of disks with this configuration.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The size of the disk in GB.
         /// </para>
         /// </summary>
-        public long SizeInGB
+        public long? SizeInGB
         {
-            get { return this._sizeInGB.GetValueOrDefault(); }
+            get { return this._sizeInGB; }
             set { this._sizeInGB = value; }
         }
 

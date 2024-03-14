@@ -54,7 +54,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBootstrapClusterCreatorAdminPermissions())
             {
                 context.Writer.WritePropertyName("bootstrapClusterCreatorAdminPermissions");
-                context.Writer.Write(requestObject.BootstrapClusterCreatorAdminPermissions);
+                context.Writer.Write(requestObject.BootstrapClusterCreatorAdminPermissions.Value);
             }
 
         }

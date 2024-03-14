@@ -80,9 +80,9 @@ namespace Amazon.AppStream.Model
         /// The time the error occurred.
         /// </para>
         /// </summary>
-        public DateTime ErrorTimestamp
+        public DateTime? ErrorTimestamp
         {
-            get { return this._errorTimestamp.GetValueOrDefault(); }
+            get { return this._errorTimestamp; }
             set { this._errorTimestamp = value; }
         }
 

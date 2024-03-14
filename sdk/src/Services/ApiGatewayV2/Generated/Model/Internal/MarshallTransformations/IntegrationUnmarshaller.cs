@@ -65,7 +65,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("apiGatewayManaged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApiGatewayManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,7 +173,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("timeoutInMillis", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

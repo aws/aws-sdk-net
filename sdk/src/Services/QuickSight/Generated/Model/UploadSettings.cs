@@ -45,9 +45,9 @@ namespace Amazon.QuickSight.Model
         /// Whether the file has a header row, or the files each have a header row.
         /// </para>
         /// </summary>
-        public bool ContainsHeader
+        public bool? ContainsHeader
         {
-            get { return this._containsHeader.GetValueOrDefault(); }
+            get { return this._containsHeader; }
             set { this._containsHeader = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int StartFromRow
+        public int? StartFromRow
         {
-            get { return this._startFromRow.GetValueOrDefault(); }
+            get { return this._startFromRow; }
             set { this._startFromRow = value; }
         }
 

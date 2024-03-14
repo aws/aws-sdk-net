@@ -65,13 +65,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FromInclusive", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FromInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ToExclusive", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ToExclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }

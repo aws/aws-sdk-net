@@ -88,9 +88,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long AssociationSize
+        public long? AssociationSize
         {
-            get { return this._associationSize.GetValueOrDefault(); }
+            get { return this._associationSize; }
             set { this._associationSize = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.BillingConductor.Model
         /// The time created.
         /// </para>
         /// </summary>
-        public long CreationTime
+        public long? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.BillingConductor.Model
         /// The most recent time when the custom line item was modified.
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

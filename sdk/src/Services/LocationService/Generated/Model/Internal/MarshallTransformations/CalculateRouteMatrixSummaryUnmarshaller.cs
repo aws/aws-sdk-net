@@ -77,13 +77,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ErrorCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RouteCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RouteCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -81,7 +81,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.DistributionConfig.Aliases.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.Aliases.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.Aliases.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -120,7 +120,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteEndElement();            
                                         }
                                         if(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Quantity));                 
+                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.CachedMethods.Quantity.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -137,7 +137,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.AllowedMethods.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -145,10 +145,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("CachePolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.CachePolicyId));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetCompress())
-                                    xmlWriter.WriteElementString("Compress", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.Compress));                 
+                                    xmlWriter.WriteElementString("Compress", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.Compress.Value));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetDefaultTTL())
-                                    xmlWriter.WriteElementString("DefaultTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCacheBehaviorsItemsValue.DefaultTTL));                 
+                                    xmlWriter.WriteElementString("DefaultTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCacheBehaviorsItemsValue.DefaultTTL.Value));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetFieldLevelEncryptionId())
                                     xmlWriter.WriteElementString("FieldLevelEncryptionId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.FieldLevelEncryptionId));                 
@@ -181,7 +181,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                                 xmlWriter.WriteEndElement();            
                                             }
                                             if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.IsSetQuantity())
-                                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Quantity));                 
+                                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Cookies.WhitelistedNames.Quantity.Value));                 
 
                                             xmlWriter.WriteEndElement();
                                         }
@@ -204,12 +204,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteEndElement();            
                                         }
                                         if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Quantity));                 
+                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.Headers.Quantity.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.IsSetQueryString())
-                                        xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryString));                 
+                                        xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryString.Value));                 
 
                 
                                     if (publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys != null) 
@@ -228,7 +228,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteEndElement();            
                                         }
                                         if(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Quantity));                 
+                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.ForwardedValues.QueryStringCacheKeys.Quantity.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -260,7 +260,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.FunctionAssociations.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -282,7 +282,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                                 xmlWriter.WriteElementString("EventType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.EventType));                 
 
                                             if(publicRequestDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetIncludeBody())
-                                                xmlWriter.WriteElementString("IncludeBody", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IncludeBody));                 
+                                                xmlWriter.WriteElementString("IncludeBody", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IncludeBody.Value));                 
 
                                             if(publicRequestDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.IsSetLambdaFunctionARN())
                                                 xmlWriter.WriteElementString("LambdaFunctionARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValueLambdaFunctionAssociationsItemsValue.LambdaFunctionARN));                 
@@ -293,15 +293,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.LambdaFunctionAssociations.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetMaxTTL())
-                                    xmlWriter.WriteElementString("MaxTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCacheBehaviorsItemsValue.MaxTTL));                 
+                                    xmlWriter.WriteElementString("MaxTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCacheBehaviorsItemsValue.MaxTTL.Value));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetMinTTL())
-                                    xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCacheBehaviorsItemsValue.MinTTL));                 
+                                    xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCacheBehaviorsItemsValue.MinTTL.Value));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetOriginRequestPolicyId())
                                     xmlWriter.WriteElementString("OriginRequestPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.OriginRequestPolicyId));                 
@@ -316,7 +316,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("ResponseHeadersPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.ResponseHeadersPolicyId));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetSmoothStreaming())
-                                    xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.SmoothStreaming));                 
+                                    xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.SmoothStreaming.Value));                 
 
                                 if(publicRequestDistributionConfigCacheBehaviorsItemsValue.IsSetTargetOriginId())
                                     xmlWriter.WriteElementString("TargetOriginId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCacheBehaviorsItemsValue.TargetOriginId));                 
@@ -326,7 +326,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("TrustedKeyGroups", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetEnabled())
-                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Enabled));                 
+                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Enabled.Value));                 
 
                                     var publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems = publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Items;
                                     if (publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems != null && publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedKeyGroupsItems.Count > 0) 
@@ -341,7 +341,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedKeyGroups.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -350,7 +350,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetEnabled())
-                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Enabled));                 
+                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Enabled.Value));                 
 
                                     var publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems = publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Items;
                                     if (publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems != null && publicRequestDistributionConfigCacheBehaviorsItemsValueTrustedSignersItems.Count > 0) 
@@ -365,7 +365,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCacheBehaviorsItemsValue.TrustedSigners.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -378,18 +378,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.DistributionConfig.CacheBehaviors.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.CacheBehaviors.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.CacheBehaviors.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.DistributionConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.CallerReference));
 
                     if(publicRequest.DistributionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.Comment));
 
                     if(publicRequest.DistributionConfig.IsSetContinuousDeploymentPolicyId())
-                        xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.ContinuousDeploymentPolicyId));                    
+                        xmlWriter.WriteElementString("ContinuousDeploymentPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.ContinuousDeploymentPolicyId));
 
                 
                     if (publicRequest.DistributionConfig.CustomErrorResponses != null) 
@@ -406,10 +406,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("CustomErrorResponse", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCachingMinTTL())
-                                    xmlWriter.WriteElementString("ErrorCachingMinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCustomErrorResponsesItemsValue.ErrorCachingMinTTL));                 
+                                    xmlWriter.WriteElementString("ErrorCachingMinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequestDistributionConfigCustomErrorResponsesItemsValue.ErrorCachingMinTTL.Value));                 
 
                                 if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetErrorCode())
-                                    xmlWriter.WriteElementString("ErrorCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCustomErrorResponsesItemsValue.ErrorCode));                 
+                                    xmlWriter.WriteElementString("ErrorCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigCustomErrorResponsesItemsValue.ErrorCode.Value));                 
 
                                 if(publicRequestDistributionConfigCustomErrorResponsesItemsValue.IsSetResponseCode())
                                     xmlWriter.WriteElementString("ResponseCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigCustomErrorResponsesItemsValue.ResponseCode));                 
@@ -423,7 +423,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.DistributionConfig.CustomErrorResponses.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.CustomErrorResponses.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.CustomErrorResponses.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -452,7 +452,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.CachedMethods.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.CachedMethods.Quantity));                 
+                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.CachedMethods.Quantity.Value));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -469,7 +469,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.AllowedMethods.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -477,10 +477,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("CachePolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.CachePolicyId));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetCompress())
-                            xmlWriter.WriteElementString("Compress", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.Compress));                 
+                            xmlWriter.WriteElementString("Compress", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.Compress.Value));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetDefaultTTL())
-                            xmlWriter.WriteElementString("DefaultTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.DistributionConfig.DefaultCacheBehavior.DefaultTTL));                 
+                            xmlWriter.WriteElementString("DefaultTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.DistributionConfig.DefaultCacheBehavior.DefaultTTL.Value));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetFieldLevelEncryptionId())
                             xmlWriter.WriteElementString("FieldLevelEncryptionId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.FieldLevelEncryptionId));                 
@@ -513,7 +513,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Cookies.WhitelistedNames.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -536,12 +536,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.Quantity));                 
+                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.Headers.Quantity.Value));                 
 
                                 xmlWriter.WriteEndElement();
                             }
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.IsSetQueryString())
-                                xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryString));                 
+                                xmlWriter.WriteElementString("QueryString", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryString.Value));                 
 
                 
                             if (publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys != null) 
@@ -560,7 +560,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys.Quantity));                 
+                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.ForwardedValues.QueryStringCacheKeys.Quantity.Value));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -592,7 +592,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.FunctionAssociations.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.FunctionAssociations.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.FunctionAssociations.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -614,7 +614,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("EventType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.EventType));                 
 
                                     if(publicRequestDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetIncludeBody())
-                                        xmlWriter.WriteElementString("IncludeBody", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IncludeBody));                 
+                                        xmlWriter.WriteElementString("IncludeBody", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IncludeBody.Value));                 
 
                                     if(publicRequestDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.IsSetLambdaFunctionARN())
                                         xmlWriter.WriteElementString("LambdaFunctionARN", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigDefaultCacheBehaviorLambdaFunctionAssociationsItemsValue.LambdaFunctionARN));                 
@@ -625,15 +625,15 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.LambdaFunctionAssociations.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetMaxTTL())
-                            xmlWriter.WriteElementString("MaxTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.DistributionConfig.DefaultCacheBehavior.MaxTTL));                 
+                            xmlWriter.WriteElementString("MaxTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.DistributionConfig.DefaultCacheBehavior.MaxTTL.Value));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetMinTTL())
-                            xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.DistributionConfig.DefaultCacheBehavior.MinTTL));                 
+                            xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.DistributionConfig.DefaultCacheBehavior.MinTTL.Value));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetOriginRequestPolicyId())
                             xmlWriter.WriteElementString("OriginRequestPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.OriginRequestPolicyId));                 
@@ -645,7 +645,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("ResponseHeadersPolicyId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.ResponseHeadersPolicyId));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetSmoothStreaming())
-                            xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.SmoothStreaming));                 
+                            xmlWriter.WriteElementString("SmoothStreaming", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.SmoothStreaming.Value));                 
 
                         if(publicRequest.DistributionConfig.DefaultCacheBehavior.IsSetTargetOriginId())
                             xmlWriter.WriteElementString("TargetOriginId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultCacheBehavior.TargetOriginId));                 
@@ -655,7 +655,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("TrustedKeyGroups", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.IsSetEnabled())
-                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Enabled));                 
+                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Enabled.Value));                 
 
                             var publicRequestDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems = publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Items;
                             if (publicRequestDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems != null && publicRequestDistributionConfigDefaultCacheBehaviorTrustedKeyGroupsItems.Count > 0) 
@@ -670,7 +670,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedKeyGroups.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -679,7 +679,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.IsSetEnabled())
-                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Enabled));                 
+                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Enabled.Value));                 
 
                             var publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems = publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Items;
                             if (publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems != null && publicRequestDistributionConfigDefaultCacheBehaviorTrustedSignersItems.Count > 0) 
@@ -694,7 +694,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.DefaultCacheBehavior.TrustedSigners.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -704,16 +704,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.DistributionConfig.IsSetDefaultRootObject())
-                        xmlWriter.WriteElementString("DefaultRootObject", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultRootObject));                    
+                        xmlWriter.WriteElementString("DefaultRootObject", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.DefaultRootObject));
 
                     if(publicRequest.DistributionConfig.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Enabled));                    
+                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Enabled.Value));
 
                     if(publicRequest.DistributionConfig.IsSetHttpVersion())
-                        xmlWriter.WriteElementString("HttpVersion", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.HttpVersion));                    
+                        xmlWriter.WriteElementString("HttpVersion", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.HttpVersion));
 
                     if(publicRequest.DistributionConfig.IsSetIsIPV6Enabled())
-                        xmlWriter.WriteElementString("IsIPV6Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.IsIPV6Enabled));                    
+                        xmlWriter.WriteElementString("IsIPV6Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.IsIPV6Enabled.Value));
 
                 
                     if (publicRequest.DistributionConfig.Logging != null) 
@@ -723,10 +723,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.Logging.Bucket));                 
 
                         if(publicRequest.DistributionConfig.Logging.IsSetEnabled())
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Logging.Enabled));                 
+                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Logging.Enabled.Value));                 
 
                         if(publicRequest.DistributionConfig.Logging.IsSetIncludeCookies())
-                            xmlWriter.WriteElementString("IncludeCookies", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Logging.IncludeCookies));                 
+                            xmlWriter.WriteElementString("IncludeCookies", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Logging.IncludeCookies.Value));                 
 
                         if(publicRequest.DistributionConfig.Logging.IsSetPrefix())
                             xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.Logging.Prefix));                 
@@ -768,7 +768,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteEndElement();            
                                         }
                                         if(publicRequestDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Quantity));                 
+                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginGroupsItemsValue.FailoverCriteria.StatusCodes.Quantity.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -800,7 +800,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigOriginGroupsItemsValue.Members.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginGroupsItemsValue.Members.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginGroupsItemsValue.Members.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -810,7 +810,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.DistributionConfig.OriginGroups.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.OriginGroups.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.OriginGroups.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -829,10 +829,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Origin", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                 if(publicRequestDistributionConfigOriginsItemsValue.IsSetConnectionAttempts())
-                                    xmlWriter.WriteElementString("ConnectionAttempts", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ConnectionAttempts));                 
+                                    xmlWriter.WriteElementString("ConnectionAttempts", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ConnectionAttempts.Value));                 
 
                                 if(publicRequestDistributionConfigOriginsItemsValue.IsSetConnectionTimeout())
-                                    xmlWriter.WriteElementString("ConnectionTimeout", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ConnectionTimeout));                 
+                                    xmlWriter.WriteElementString("ConnectionTimeout", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.ConnectionTimeout.Value));                 
 
                 
                                 if (publicRequestDistributionConfigOriginsItemsValue.CustomHeaders != null) 
@@ -860,7 +860,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomHeaders.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomHeaders.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomHeaders.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -869,19 +869,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("CustomOriginConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPPort())
-                                        xmlWriter.WriteElementString("HTTPPort", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort));                 
+                                        xmlWriter.WriteElementString("HTTPPort", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort.Value));                 
 
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPSPort())
-                                        xmlWriter.WriteElementString("HTTPSPort", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort));                 
+                                        xmlWriter.WriteElementString("HTTPSPort", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort.Value));                 
 
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
-                                        xmlWriter.WriteElementString("OriginKeepaliveTimeout", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout));                 
+                                        xmlWriter.WriteElementString("OriginKeepaliveTimeout", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout.Value));                 
 
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
                                         xmlWriter.WriteElementString("OriginProtocolPolicy", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginProtocolPolicy));                 
 
                                     if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginReadTimeout())
-                                        xmlWriter.WriteElementString("OriginReadTimeout", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginReadTimeout));                 
+                                        xmlWriter.WriteElementString("OriginReadTimeout", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginReadTimeout.Value));                 
 
                 
                                     if (publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols != null) 
@@ -900,7 +900,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteEndElement();            
                                         }
                                         if(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.IsSetQuantity())
-                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Quantity));                 
+                                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginSslProtocols.Quantity.Value));                 
 
                                         xmlWriter.WriteEndElement();
                                     }
@@ -923,7 +923,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("OriginShield", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                                     if(publicRequestDistributionConfigOriginsItemsValue.OriginShield.IsSetEnabled())
-                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigOriginsItemsValue.OriginShield.Enabled));                 
+                                        xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequestDistributionConfigOriginsItemsValue.OriginShield.Enabled.Value));                 
 
                                     if(publicRequestDistributionConfigOriginsItemsValue.OriginShield.IsSetOriginShieldRegion())
                                         xmlWriter.WriteElementString("OriginShieldRegion", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.OriginShield.OriginShieldRegion));                 
@@ -945,12 +945,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.DistributionConfig.Origins.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.Origins.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.Origins.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.DistributionConfig.IsSetPriceClass())
-                        xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.PriceClass));                    
+                        xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.PriceClass));
 
                 
                     if (publicRequest.DistributionConfig.Restrictions != null) 
@@ -973,7 +973,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.DistributionConfig.Restrictions.GeoRestriction.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.Restrictions.GeoRestriction.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.DistributionConfig.Restrictions.GeoRestriction.Quantity.Value));                 
 
                             if(publicRequest.DistributionConfig.Restrictions.GeoRestriction.IsSetRestrictionType())
                                 xmlWriter.WriteElementString("RestrictionType", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.Restrictions.GeoRestriction.RestrictionType));                 
@@ -983,7 +983,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.DistributionConfig.IsSetStaging())
-                        xmlWriter.WriteElementString("Staging", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Staging));                    
+                        xmlWriter.WriteElementString("Staging", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.Staging.Value));
 
                 
                     if (publicRequest.DistributionConfig.ViewerCertificate != null) 
@@ -999,7 +999,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("CertificateSource", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.ViewerCertificate.CertificateSource));                 
 
                         if(publicRequest.DistributionConfig.ViewerCertificate.IsSetCloudFrontDefaultCertificate())
-                            xmlWriter.WriteElementString("CloudFrontDefaultCertificate", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.ViewerCertificate.CloudFrontDefaultCertificate));                 
+                            xmlWriter.WriteElementString("CloudFrontDefaultCertificate", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.DistributionConfig.ViewerCertificate.CloudFrontDefaultCertificate.Value));                 
 
                         if(publicRequest.DistributionConfig.ViewerCertificate.IsSetIAMCertificateId())
                             xmlWriter.WriteElementString("IAMCertificateId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.ViewerCertificate.IAMCertificateId));                 
@@ -1013,7 +1013,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.DistributionConfig.IsSetWebACLId())
-                        xmlWriter.WriteElementString("WebACLId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.WebACLId));                    
+                        xmlWriter.WriteElementString("WebACLId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.DistributionConfig.WebACLId));
 
 
                     xmlWriter.WriteEndElement();

@@ -64,9 +64,9 @@ namespace Amazon.SSOOIDC.Model
         /// Indicates the number of seconds in which the verification code will become invalid.
         /// </para>
         /// </summary>
-        public int ExpiresIn
+        public int? ExpiresIn
         {
-            get { return this._expiresIn.GetValueOrDefault(); }
+            get { return this._expiresIn; }
             set { this._expiresIn = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SSOOIDC.Model
         /// for a session.
         /// </para>
         /// </summary>
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 

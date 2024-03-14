@@ -79,9 +79,9 @@ namespace Amazon.AuditManager.Model
         /// The number of active assessments in Audit Manager. 
         /// </para>
         /// </summary>
-        public int ActiveAssessmentsCount
+        public int? ActiveAssessmentsCount
         {
-            get { return this._activeAssessmentsCount.GetValueOrDefault(); }
+            get { return this._activeAssessmentsCount; }
             set { this._activeAssessmentsCount = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.AuditManager.Model
         /// date. 
         /// </para>
         /// </summary>
-        public int AssessmentControlsCountByNoncompliantEvidence
+        public int? AssessmentControlsCountByNoncompliantEvidence
         {
-            get { return this._assessmentControlsCountByNoncompliantEvidence.GetValueOrDefault(); }
+            get { return this._assessmentControlsCountByNoncompliantEvidence; }
             set { this._assessmentControlsCountByNoncompliantEvidence = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.AuditManager.Model
         /// 
         /// </para>
         /// </summary>
-        public int CompliantEvidenceCount
+        public int? CompliantEvidenceCount
         {
-            get { return this._compliantEvidenceCount.GetValueOrDefault(); }
+            get { return this._compliantEvidenceCount; }
             set { this._compliantEvidenceCount = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int InconclusiveEvidenceCount
+        public int? InconclusiveEvidenceCount
         {
-            get { return this._inconclusiveEvidenceCount.GetValueOrDefault(); }
+            get { return this._inconclusiveEvidenceCount; }
             set { this._inconclusiveEvidenceCount = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.AuditManager.Model
         /// The time when the cross-assessment insights were last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.AuditManager.Model
         /// ruling. 
         /// </para>
         /// </summary>
-        public int NoncompliantEvidenceCount
+        public int? NoncompliantEvidenceCount
         {
-            get { return this._noncompliantEvidenceCount.GetValueOrDefault(); }
+            get { return this._noncompliantEvidenceCount; }
             set { this._noncompliantEvidenceCount = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.AuditManager.Model
         /// The total number of controls across all active assessments. 
         /// </para>
         /// </summary>
-        public int TotalAssessmentControlsCount
+        public int? TotalAssessmentControlsCount
         {
-            get { return this._totalAssessmentControlsCount.GetValueOrDefault(); }
+            get { return this._totalAssessmentControlsCount; }
             set { this._totalAssessmentControlsCount = value; }
         }
 

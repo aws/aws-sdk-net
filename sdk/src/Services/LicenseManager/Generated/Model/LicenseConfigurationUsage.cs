@@ -46,9 +46,9 @@ namespace Amazon.LicenseManager.Model
         /// Time when the license configuration was initially associated with the resource.
         /// </para>
         /// </summary>
-        public DateTime AssociationTime
+        public DateTime? AssociationTime
         {
-            get { return this._associationTime.GetValueOrDefault(); }
+            get { return this._associationTime; }
             set { this._associationTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.LicenseManager.Model
         /// Number of licenses consumed by the resource.
         /// </para>
         /// </summary>
-        public long ConsumedLicenses
+        public long? ConsumedLicenses
         {
-            get { return this._consumedLicenses.GetValueOrDefault(); }
+            get { return this._consumedLicenses; }
             set { this._consumedLicenses = value; }
         }
 

@@ -69,9 +69,9 @@ namespace Amazon.MediaStoreData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ContentLength
+        public long? ContentLength
         {
-            get { return this._contentLength.GetValueOrDefault(); }
+            get { return this._contentLength; }
             set { this._contentLength = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.MediaStoreData.Model
         /// The date and time that the object was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

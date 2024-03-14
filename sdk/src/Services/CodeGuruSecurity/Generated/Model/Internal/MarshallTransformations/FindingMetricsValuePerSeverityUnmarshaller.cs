@@ -65,31 +65,31 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("critical", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Critical = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("high", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.High = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("info", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Info = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("low", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Low = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("medium", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Medium = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of requests per minute expected for the endpoint.
         /// </para>
         /// </summary>
-        public int MaxInvocations
+        public int? MaxInvocations
         {
-            get { return this._maxInvocations.GetValueOrDefault(); }
+            get { return this._maxInvocations; }
             set { this._maxInvocations = value; }
         }
 

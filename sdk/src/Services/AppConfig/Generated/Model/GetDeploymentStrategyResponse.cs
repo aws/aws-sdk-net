@@ -49,9 +49,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1440)]
-        public int DeploymentDurationInMinutes
+        public int? DeploymentDurationInMinutes
         {
-            get { return this._deploymentDurationInMinutes.GetValueOrDefault(); }
+            get { return this._deploymentDurationInMinutes; }
             set { this._deploymentDurationInMinutes = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1440)]
-        public int FinalBakeTimeInMinutes
+        public int? FinalBakeTimeInMinutes
         {
-            get { return this._finalBakeTimeInMinutes.GetValueOrDefault(); }
+            get { return this._finalBakeTimeInMinutes; }
             set { this._finalBakeTimeInMinutes = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public float GrowthFactor
+        public float? GrowthFactor
         {
-            get { return this._growthFactor.GetValueOrDefault(); }
+            get { return this._growthFactor; }
             set { this._growthFactor = value; }
         }
 

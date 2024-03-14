@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoggingEnabled())
             {
                 context.Writer.WritePropertyName("LoggingEnabled");
-                context.Writer.Write(requestObject.LoggingEnabled);
+                context.Writer.Write(requestObject.LoggingEnabled.Value);
             }
 
             if(requestObject.IsSetS3KeyPrefix())

@@ -58,9 +58,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the asset was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the first revision of the asset took place.
         /// </para>
         /// </summary>
-        public DateTime FirstRevisionCreatedAt
+        public DateTime? FirstRevisionCreatedAt
         {
-            get { return this._firstRevisionCreatedAt.GetValueOrDefault(); }
+            get { return this._firstRevisionCreatedAt; }
             set { this._firstRevisionCreatedAt = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("audioSilenceThresholdMsec", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AudioSilenceThresholdMsec = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -43,9 +43,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

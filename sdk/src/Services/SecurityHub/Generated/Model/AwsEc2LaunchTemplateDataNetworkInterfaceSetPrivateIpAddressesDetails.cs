@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// one IPv4 address can be designated as primary. 
         /// </para>
         /// </summary>
-        public bool Primary
+        public bool? Primary
         {
-            get { return this._primary.GetValueOrDefault(); }
+            get { return this._primary; }
             set { this._primary = value; }
         }
 

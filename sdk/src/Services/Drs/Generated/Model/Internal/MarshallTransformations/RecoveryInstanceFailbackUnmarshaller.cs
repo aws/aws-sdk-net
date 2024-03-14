@@ -107,7 +107,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("failbackToOriginalServer", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FailbackToOriginalServer = unmarshaller.Unmarshall(context);
                     continue;
                 }

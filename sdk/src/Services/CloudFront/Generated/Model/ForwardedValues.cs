@@ -193,9 +193,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool QueryString
+        public bool? QueryString
         {
-            get { return this._queryString.GetValueOrDefault(); }
+            get { return this._queryString; }
             set { this._queryString = value; }
         }
 

@@ -83,9 +83,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long SchemaVersionNumber
+        public long? SchemaVersionNumber
         {
-            get { return this._schemaVersionNumber.GetValueOrDefault(); }
+            get { return this._schemaVersionNumber; }
             set { this._schemaVersionNumber = value; }
         }
 

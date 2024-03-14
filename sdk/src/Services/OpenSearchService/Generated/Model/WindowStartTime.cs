@@ -45,9 +45,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=23)]
-        public long Hours
+        public long? Hours
         {
-            get { return this._hours.GetValueOrDefault(); }
+            get { return this._hours; }
             set { this._hours = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=59)]
-        public long Minutes
+        public long? Minutes
         {
-            get { return this._minutes.GetValueOrDefault(); }
+            get { return this._minutes; }
             set { this._minutes = value; }
         }
 

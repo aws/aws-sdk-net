@@ -135,9 +135,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
-        public int AutomaticBackupRetentionDays
+        public int? AutomaticBackupRetentionDays
         {
-            get { return this._automaticBackupRetentionDays.GetValueOrDefault(); }
+            get { return this._automaticBackupRetentionDays; }
             set { this._automaticBackupRetentionDays = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.FSx.Model
         /// Working with backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.
         /// </para>
         /// </summary>
-        public bool CopyTagsToBackups
+        public bool? CopyTagsToBackups
         {
-            get { return this._copyTagsToBackups.GetValueOrDefault(); }
+            get { return this._copyTagsToBackups; }
             set { this._copyTagsToBackups = value; }
         }
 
@@ -369,9 +369,9 @@ namespace Amazon.FSx.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=512000)]
-        public int ImportedFileChunkSize
+        public int? ImportedFileChunkSize
         {
-            get { return this._importedFileChunkSize.GetValueOrDefault(); }
+            get { return this._importedFileChunkSize; }
             set { this._importedFileChunkSize = value; }
         }
 
@@ -460,9 +460,9 @@ namespace Amazon.FSx.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=12, Max=1000)]
-        public int PerUnitStorageThroughput
+        public int? PerUnitStorageThroughput
         {
-            get { return this._perUnitStorageThroughput.GetValueOrDefault(); }
+            get { return this._perUnitStorageThroughput; }
             set { this._perUnitStorageThroughput = value; }
         }
 

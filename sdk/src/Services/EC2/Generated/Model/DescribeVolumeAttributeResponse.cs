@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// The state of <c>autoEnableIO</c> attribute.
         /// </para>
         /// </summary>
-        public bool AutoEnableIO
+        public bool? AutoEnableIO
         {
-            get { return this._autoEnableIO.GetValueOrDefault(); }
+            get { return this._autoEnableIO; }
             set { this._autoEnableIO = value; }
         }
 

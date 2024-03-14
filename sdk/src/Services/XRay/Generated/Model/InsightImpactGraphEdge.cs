@@ -41,9 +41,9 @@ namespace Amazon.XRay.Model
         /// Identifier of the edge. Unique within a service map.
         /// </para>
         /// </summary>
-        public int ReferenceId
+        public int? ReferenceId
         {
-            get { return this._referenceId.GetValueOrDefault(); }
+            get { return this._referenceId; }
             set { this._referenceId = value; }
         }
 

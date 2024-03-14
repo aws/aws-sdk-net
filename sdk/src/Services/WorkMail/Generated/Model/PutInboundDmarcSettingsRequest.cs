@@ -44,9 +44,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enforced
+        public bool? Enforced
         {
-            get { return this._enforced.GetValueOrDefault(); }
+            get { return this._enforced; }
             set { this._enforced = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </dd> </dl>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CaseSensitive
+        public bool? CaseSensitive
         {
-            get { return this._caseSensitive.GetValueOrDefault(); }
+            get { return this._caseSensitive; }
             set { this._caseSensitive = value; }
         }
 

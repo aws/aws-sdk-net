@@ -65,13 +65,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("HealthScoreThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.HealthScoreThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinTrafficImpact", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MinTrafficImpact = unmarshaller.Unmarshall(context);
                     continue;
                 }

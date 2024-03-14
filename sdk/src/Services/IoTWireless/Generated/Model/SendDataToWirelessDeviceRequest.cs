@@ -82,9 +82,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public int TransmitMode
+        public int? TransmitMode
         {
-            get { return this._transmitMode.GetValueOrDefault(); }
+            get { return this._transmitMode; }
             set { this._transmitMode = value; }
         }
 

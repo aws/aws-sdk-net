@@ -68,7 +68,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsDrill())
                 {
                     context.Writer.WritePropertyName("isDrill");
-                    context.Writer.Write(publicRequest.IsDrill);
+                    context.Writer.Write(publicRequest.IsDrill.Value);
                 }
 
                 if(publicRequest.IsSetSourceServers())

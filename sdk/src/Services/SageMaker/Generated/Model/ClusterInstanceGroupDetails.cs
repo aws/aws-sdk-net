@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentCount
+        public int? CurrentCount
         {
-            get { return this._currentCount.GetValueOrDefault(); }
+            get { return this._currentCount; }
             set { this._currentCount = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TargetCount
+        public int? TargetCount
         {
-            get { return this._targetCount.GetValueOrDefault(); }
+            get { return this._targetCount; }
             set { this._targetCount = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

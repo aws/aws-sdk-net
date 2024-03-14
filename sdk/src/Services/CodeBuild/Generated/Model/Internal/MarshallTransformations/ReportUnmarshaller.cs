@@ -77,7 +77,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expired", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Expired = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("truncated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Truncated = unmarshaller.Unmarshall(context);
                     continue;
                 }

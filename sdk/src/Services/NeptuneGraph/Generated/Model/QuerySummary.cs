@@ -45,9 +45,9 @@ namespace Amazon.NeptuneGraph.Model
         /// The running time of the query, in milliseconds.
         /// </para>
         /// </summary>
-        public int Elapsed
+        public int? Elapsed
         {
-            get { return this._elapsed.GetValueOrDefault(); }
+            get { return this._elapsed; }
             set { this._elapsed = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.NeptuneGraph.Model
         /// picked up by a worker thread.
         /// </para>
         /// </summary>
-        public int Waited
+        public int? Waited
         {
-            get { return this._waited.GetValueOrDefault(); }
+            get { return this._waited; }
             set { this._waited = value; }
         }
 

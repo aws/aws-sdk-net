@@ -65,19 +65,19 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("autoScalingDisabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maximumUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

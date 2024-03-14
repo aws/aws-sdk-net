@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBase())
             {
                 context.Writer.WritePropertyName("Base");
-                context.Writer.Write(requestObject.Base);
+                context.Writer.Write(requestObject.Base.Value);
             }
 
         }

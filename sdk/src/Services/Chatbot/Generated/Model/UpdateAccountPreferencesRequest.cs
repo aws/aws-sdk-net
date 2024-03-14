@@ -47,9 +47,9 @@ namespace Amazon.Chatbot.Model
         /// controls to prevent unauthorized access and misuse. AWS Chatbot does not store or
         /// use interactions in chat channels with Amazon Q for training AWS Chatbot’s AI technologies.
         /// </summary>
-        public bool TrainingDataCollectionEnabled
+        public bool? TrainingDataCollectionEnabled
         {
-            get { return this._trainingDataCollectionEnabled.GetValueOrDefault(); }
+            get { return this._trainingDataCollectionEnabled; }
             set { this._trainingDataCollectionEnabled = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Chatbot.Model
         /// Gets and sets the property UserAuthorizationRequired. Enables use of a user role requirement
         /// in your chat configuration.
         /// </summary>
-        public bool UserAuthorizationRequired
+        public bool? UserAuthorizationRequired
         {
-            get { return this._userAuthorizationRequired.GetValueOrDefault(); }
+            get { return this._userAuthorizationRequired; }
             set { this._userAuthorizationRequired = value; }
         }
 

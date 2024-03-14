@@ -121,9 +121,9 @@ namespace Amazon.SecurityHub.Model
         /// in the policy. 
         /// </para>
         /// </summary>
-        public bool ServiceEnabled
+        public bool? ServiceEnabled
         {
-            get { return this._serviceEnabled.GetValueOrDefault(); }
+            get { return this._serviceEnabled; }
             set { this._serviceEnabled = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.SecurityHub.Model
         /// last updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

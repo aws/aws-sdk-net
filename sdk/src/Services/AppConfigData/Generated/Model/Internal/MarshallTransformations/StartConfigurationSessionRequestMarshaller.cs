@@ -86,7 +86,7 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRequiredMinimumPollIntervalInSeconds())
                 {
                     context.Writer.WritePropertyName("RequiredMinimumPollIntervalInSeconds");
-                    context.Writer.Write(publicRequest.RequiredMinimumPollIntervalInSeconds);
+                    context.Writer.Write(publicRequest.RequiredMinimumPollIntervalInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

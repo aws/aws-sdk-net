@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.NetworkManager")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Network Manager. This is the initial SDK release for AWS Network Manager.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

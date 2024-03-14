@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Comprehend.Endpoints;
 using Amazon.Comprehend.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class ComprehendEndpointsTests

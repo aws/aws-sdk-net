@@ -48,13 +48,13 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetReleaseAfterMinutes())
             {
                 context.Writer.WritePropertyName("ReleaseAfterMinutes");
-                context.Writer.Write(requestObject.ReleaseAfterMinutes);
+                context.Writer.Write(requestObject.ReleaseAfterMinutes.Value);
             }
 
         }

@@ -76,7 +76,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForce())
                 {
                     context.Writer.WritePropertyName("Force");
-                    context.Writer.Write(publicRequest.Force);
+                    context.Writer.Write(publicRequest.Force.Value);
                 }
 
                 writer.WriteObjectEnd();

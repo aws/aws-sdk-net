@@ -166,9 +166,9 @@ namespace Amazon.EC2.Model
         /// Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        public bool ReplaceUnhealthyInstances
+        public bool? ReplaceUnhealthyInstances
         {
-            get { return this._replaceUnhealthyInstances.GetValueOrDefault(); }
+            get { return this._replaceUnhealthyInstances; }
             set { this._replaceUnhealthyInstances = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether running instances should be terminated when the EC2 Fleet expires.
         /// </para>
         /// </summary>
-        public bool TerminateInstancesWithExpiration
+        public bool? TerminateInstancesWithExpiration
         {
-            get { return this._terminateInstancesWithExpiration.GetValueOrDefault(); }
+            get { return this._terminateInstancesWithExpiration; }
             set { this._terminateInstancesWithExpiration = value; }
         }
 
@@ -312,9 +312,9 @@ namespace Amazon.EC2.Model
         /// The default is to start fulfilling the request immediately.
         /// </para>
         /// </summary>
-        public DateTime ValidFromUtc
+        public DateTime? ValidFromUtc
         {
-            get { return this._validFromUtc.GetValueOrDefault(); }
+            get { return this._validFromUtc; }
             set { this._validFrom = this._validFromUtc = value; }
         }
 
@@ -332,9 +332,9 @@ namespace Amazon.EC2.Model
         /// If no value is specified, the request remains until you cancel it.
         /// </para>
         /// </summary>
-        public DateTime ValidUntilUtc
+        public DateTime? ValidUntilUtc
         {
-            get { return this._validUntilUtc.GetValueOrDefault(); }
+            get { return this._validUntilUtc; }
             set { this._validUntil = this._validUntilUtc = value; }
         }
 
@@ -369,13 +369,20 @@ namespace Amazon.EC2.Model
             "ValidFromUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidFrom is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
             get { return this._validFrom.GetValueOrDefault(); }
             set
             {
                 this._validFrom = value;
-                this._validFromUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validFromUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validFromUtc = null;
+                }
             }
         }
         /// <summary>
@@ -400,13 +407,20 @@ namespace Amazon.EC2.Model
             "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
             get { return this._validUntil.GetValueOrDefault(); }
             set
             {
                 this._validUntil = value;
-                this._validUntilUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validUntilUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validUntilUtc = null;
+                }
             }
         }
 #endregion

@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentage())
             {
                 context.Writer.WritePropertyName("Percentage");
-                context.Writer.Write(requestObject.Percentage);
+                context.Writer.Write(requestObject.Percentage.Value);
             }
 
         }

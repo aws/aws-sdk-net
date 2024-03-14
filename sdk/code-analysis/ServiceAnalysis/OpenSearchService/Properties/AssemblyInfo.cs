@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.OpenSearchService")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon OpenSearch Service. Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

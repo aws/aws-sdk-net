@@ -85,9 +85,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether the relationship can unlink the associated model.
         /// </para>
         /// </summary>
-        public bool CanUnlinkAssociatedModel
+        public bool? CanUnlinkAssociatedModel
         {
-            get { return this._canUnlinkAssociatedModel.GetValueOrDefault(); }
+            get { return this._canUnlinkAssociatedModel; }
             set { this._canUnlinkAssociatedModel = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// relationship.
         /// </para>
         /// </summary>
-        public bool IsHasManyIndex
+        public bool? IsHasManyIndex
         {
-            get { return this._isHasManyIndex.GetValueOrDefault(); }
+            get { return this._isHasManyIndex; }
             set { this._isHasManyIndex = value; }
         }
 

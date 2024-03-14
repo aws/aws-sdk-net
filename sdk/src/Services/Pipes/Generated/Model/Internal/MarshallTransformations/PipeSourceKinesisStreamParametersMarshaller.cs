@@ -48,7 +48,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize);
+                context.Writer.Write(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetDeadLetterConfig())
@@ -65,19 +65,19 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumBatchingWindowInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                context.Writer.Write(requestObject.MaximumBatchingWindowInSeconds);
+                context.Writer.Write(requestObject.MaximumBatchingWindowInSeconds.Value);
             }
 
             if(requestObject.IsSetMaximumRecordAgeInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
-                context.Writer.Write(requestObject.MaximumRecordAgeInSeconds);
+                context.Writer.Write(requestObject.MaximumRecordAgeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaximumRetryAttempts())
             {
                 context.Writer.WritePropertyName("MaximumRetryAttempts");
-                context.Writer.Write(requestObject.MaximumRetryAttempts);
+                context.Writer.Write(requestObject.MaximumRetryAttempts.Value);
             }
 
             if(requestObject.IsSetOnPartialBatchItemFailure())
@@ -89,7 +89,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParallelizationFactor())
             {
                 context.Writer.WritePropertyName("ParallelizationFactor");
-                context.Writer.Write(requestObject.ParallelizationFactor);
+                context.Writer.Write(requestObject.ParallelizationFactor.Value);
             }
 
             if(requestObject.IsSetStartingPosition())
@@ -101,7 +101,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartingPositionTimestamp())
             {
                 context.Writer.WritePropertyName("StartingPositionTimestamp");
-                context.Writer.Write(requestObject.StartingPositionTimestamp);
+                context.Writer.Write(requestObject.StartingPositionTimestamp.Value);
             }
 
         }

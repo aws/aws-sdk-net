@@ -48,25 +48,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEast())
             {
                 context.Writer.WritePropertyName("East");
-                context.Writer.Write(requestObject.East);
+                context.Writer.Write(requestObject.East.Value);
             }
 
             if(requestObject.IsSetNorth())
             {
                 context.Writer.WritePropertyName("North");
-                context.Writer.Write(requestObject.North);
+                context.Writer.Write(requestObject.North.Value);
             }
 
             if(requestObject.IsSetSouth())
             {
                 context.Writer.WritePropertyName("South");
-                context.Writer.Write(requestObject.South);
+                context.Writer.Write(requestObject.South.Value);
             }
 
             if(requestObject.IsSetWest())
             {
                 context.Writer.WritePropertyName("West");
-                context.Writer.Write(requestObject.West);
+                context.Writer.Write(requestObject.West.Value);
             }
 
         }

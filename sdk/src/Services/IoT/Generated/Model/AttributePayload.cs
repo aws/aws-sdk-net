@@ -74,9 +74,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Merge
+        public bool? Merge
         {
-            get { return this._merge.GetValueOrDefault(); }
+            get { return this._merge; }
             set { this._merge = value; }
         }
 

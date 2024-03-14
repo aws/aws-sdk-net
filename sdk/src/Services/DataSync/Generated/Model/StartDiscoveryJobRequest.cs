@@ -74,9 +74,9 @@ namespace Amazon.DataSync.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=44640)]
-        public int CollectionDurationMinutes
+        public int? CollectionDurationMinutes
         {
-            get { return this._collectionDurationMinutes.GetValueOrDefault(); }
+            get { return this._collectionDurationMinutes; }
             set { this._collectionDurationMinutes = value; }
         }
 

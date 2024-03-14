@@ -65,7 +65,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CategoryId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CategoryId = unmarshaller.Unmarshall(context);
                     continue;
                 }

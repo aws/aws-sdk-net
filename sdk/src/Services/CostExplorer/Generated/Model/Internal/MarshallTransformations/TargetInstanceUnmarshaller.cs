@@ -71,7 +71,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DefaultTargetInstance", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultTargetInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -86,9 +86,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int EndTimeoutMs
+        public int? EndTimeoutMs
         {
-            get { return this._endTimeoutMs.GetValueOrDefault(); }
+            get { return this._endTimeoutMs; }
             set { this._endTimeoutMs = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
-        public int MaxLength
+        public int? MaxLength
         {
-            get { return this._maxLength.GetValueOrDefault(); }
+            get { return this._maxLength; }
             set { this._maxLength = value; }
         }
 

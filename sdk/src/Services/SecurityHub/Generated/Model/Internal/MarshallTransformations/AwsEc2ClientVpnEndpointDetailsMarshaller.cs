@@ -149,13 +149,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionTimeoutHours())
             {
                 context.Writer.WritePropertyName("SessionTimeoutHours");
-                context.Writer.Write(requestObject.SessionTimeoutHours);
+                context.Writer.Write(requestObject.SessionTimeoutHours.Value);
             }
 
             if(requestObject.IsSetSplitTunnel())
             {
                 context.Writer.WritePropertyName("SplitTunnel");
-                context.Writer.Write(requestObject.SplitTunnel);
+                context.Writer.Write(requestObject.SplitTunnel.Value);
             }
 
             if(requestObject.IsSetTransportProtocol())
@@ -173,7 +173,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVpnPort())
             {
                 context.Writer.WritePropertyName("VpnPort");
-                context.Writer.Write(requestObject.VpnPort);
+                context.Writer.Write(requestObject.VpnPort.Value);
             }
 
         }

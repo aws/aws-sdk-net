@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// in MiB.
         /// </para>
         /// </summary>
-        public int TotalInferenceMemoryInMiB
+        public int? TotalInferenceMemoryInMiB
         {
-            get { return this._totalInferenceMemoryInMiB.GetValueOrDefault(); }
+            get { return this._totalInferenceMemoryInMiB; }
             set { this._totalInferenceMemoryInMiB = value; }
         }
 

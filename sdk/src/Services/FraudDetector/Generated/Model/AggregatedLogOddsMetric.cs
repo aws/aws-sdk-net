@@ -53,9 +53,9 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float AggregatedVariablesImportance
+        public float? AggregatedVariablesImportance
         {
-            get { return this._aggregatedVariablesImportance.GetValueOrDefault(); }
+            get { return this._aggregatedVariablesImportance; }
             set { this._aggregatedVariablesImportance = value; }
         }
 

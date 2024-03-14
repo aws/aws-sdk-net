@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LineNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LineNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -206,9 +206,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool PropagateTags
+        public bool? PropagateTags
         {
-            get { return this._propagateTags.GetValueOrDefault(); }
+            get { return this._propagateTags; }
             set { this._propagateTags = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.Batch.Model
         /// The minimum supported value is 0 and the maximum supported value is 9999.
         /// </para>
         /// </summary>
-        public int SchedulingPriority
+        public int? SchedulingPriority
         {
-            get { return this._schedulingPriority.GetValueOrDefault(); }
+            get { return this._schedulingPriority; }
             set { this._schedulingPriority = value; }
         }
 

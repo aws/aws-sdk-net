@@ -65,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BlockSizeBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlockSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,19 +77,19 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableDictionaryCompression", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableDictionaryCompression = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxPaddingBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPaddingBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PageSizeBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PageSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

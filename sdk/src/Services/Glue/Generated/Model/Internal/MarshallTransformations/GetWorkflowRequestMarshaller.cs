@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeGraph())
                 {
                     context.Writer.WritePropertyName("IncludeGraph");
-                    context.Writer.Write(publicRequest.IncludeGraph);
+                    context.Writer.Write(publicRequest.IncludeGraph.Value);
                 }
 
                 if(publicRequest.IsSetName())

@@ -48,7 +48,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("dimension");
-                context.Writer.Write(requestObject.Dimension);
+                context.Writer.Write(requestObject.Dimension.Value);
             }
 
         }

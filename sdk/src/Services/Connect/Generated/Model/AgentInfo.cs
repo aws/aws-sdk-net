@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AgentPauseDurationInSeconds
+        public int? AgentPauseDurationInSeconds
         {
-            get { return this._agentPauseDurationInSeconds.GetValueOrDefault(); }
+            get { return this._agentPauseDurationInSeconds; }
             set { this._agentPauseDurationInSeconds = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when the contact was connected to the agent.
         /// </para>
         /// </summary>
-        public DateTime ConnectedToAgentTimestamp
+        public DateTime? ConnectedToAgentTimestamp
         {
-            get { return this._connectedToAgentTimestamp.GetValueOrDefault(); }
+            get { return this._connectedToAgentTimestamp; }
             set { this._connectedToAgentTimestamp = value; }
         }
 

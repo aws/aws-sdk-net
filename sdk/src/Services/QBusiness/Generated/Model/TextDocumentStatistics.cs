@@ -43,9 +43,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long IndexedTextBytes
+        public long? IndexedTextBytes
         {
-            get { return this._indexedTextBytes.GetValueOrDefault(); }
+            get { return this._indexedTextBytes; }
             set { this._indexedTextBytes = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int IndexedTextDocumentCount
+        public int? IndexedTextDocumentCount
         {
-            get { return this._indexedTextDocumentCount.GetValueOrDefault(); }
+            get { return this._indexedTextDocumentCount; }
             set { this._indexedTextDocumentCount = value; }
         }
 

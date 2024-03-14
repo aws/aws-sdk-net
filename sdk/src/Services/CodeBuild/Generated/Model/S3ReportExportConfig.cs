@@ -85,9 +85,9 @@ namespace Amazon.CodeBuild.Model
         ///  A boolean value that specifies if the results of a report are encrypted. 
         /// </para>
         /// </summary>
-        public bool EncryptionDisabled
+        public bool? EncryptionDisabled
         {
-            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            get { return this._encryptionDisabled; }
             set { this._encryptionDisabled = value; }
         }
 

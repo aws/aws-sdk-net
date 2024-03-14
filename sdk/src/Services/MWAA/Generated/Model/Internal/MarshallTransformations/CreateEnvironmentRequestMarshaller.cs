@@ -132,13 +132,13 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxWorkers())
                 {
                     context.Writer.WritePropertyName("MaxWorkers");
-                    context.Writer.Write(publicRequest.MaxWorkers);
+                    context.Writer.Write(publicRequest.MaxWorkers.Value);
                 }
 
                 if(publicRequest.IsSetMinWorkers())
                 {
                     context.Writer.WritePropertyName("MinWorkers");
-                    context.Writer.Write(publicRequest.MinWorkers);
+                    context.Writer.Write(publicRequest.MinWorkers.Value);
                 }
 
                 if(publicRequest.IsSetNetworkConfiguration())
@@ -179,7 +179,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSchedulers())
                 {
                     context.Writer.WritePropertyName("Schedulers");
-                    context.Writer.Write(publicRequest.Schedulers);
+                    context.Writer.Write(publicRequest.Schedulers.Value);
                 }
 
                 if(publicRequest.IsSetSourceBucketArn())

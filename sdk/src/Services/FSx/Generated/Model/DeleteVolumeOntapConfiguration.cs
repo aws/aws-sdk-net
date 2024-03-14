@@ -54,9 +54,9 @@ namespace Amazon.FSx.Model
         /// Deleting a SnapLock volume</a>. 
         /// </para>
         /// </summary>
-        public bool BypassSnaplockEnterpriseRetention
+        public bool? BypassSnaplockEnterpriseRetention
         {
-            get { return this._bypassSnaplockEnterpriseRetention.GetValueOrDefault(); }
+            get { return this._bypassSnaplockEnterpriseRetention; }
             set { this._bypassSnaplockEnterpriseRetention = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.FSx.Model
         /// Set to true if you want to skip taking a final backup of the volume you are deleting.
         /// </para>
         /// </summary>
-        public bool SkipFinalBackup
+        public bool? SkipFinalBackup
         {
-            get { return this._skipFinalBackup.GetValueOrDefault(); }
+            get { return this._skipFinalBackup; }
             set { this._skipFinalBackup = value; }
         }
 

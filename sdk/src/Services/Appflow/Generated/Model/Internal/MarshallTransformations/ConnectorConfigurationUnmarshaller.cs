@@ -71,13 +71,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("canUseAsDestination", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CanUseAsDestination = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("canUseAsSource", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CanUseAsSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,13 +155,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isPrivateLinkEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPrivateLinkEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isPrivateLinkEndpointUrlRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPrivateLinkEndpointUrlRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,7 +173,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("registeredAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

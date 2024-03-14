@@ -70,13 +70,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultLists())
                 {
                     context.Writer.WritePropertyName("DefaultLists");
-                    context.Writer.Write(publicRequest.DefaultLists);
+                    context.Writer.Write(publicRequest.DefaultLists.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

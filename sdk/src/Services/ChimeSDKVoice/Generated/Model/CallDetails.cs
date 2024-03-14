@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Identifies a person as the caller or the callee.
         /// </para>
         /// </summary>
-        public bool IsCaller
+        public bool? IsCaller
         {
-            get { return this._isCaller.GetValueOrDefault(); }
+            get { return this._isCaller; }
             set { this._isCaller = value; }
         }
 

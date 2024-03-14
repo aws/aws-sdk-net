@@ -57,9 +57,9 @@ namespace Amazon.SageMaker.Model
         /// The default value is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool EnableOnlineStore
+        public bool? EnableOnlineStore
         {
-            get { return this._enableOnlineStore.GetValueOrDefault(); }
+            get { return this._enableOnlineStore; }
             set { this._enableOnlineStore = value; }
         }
 

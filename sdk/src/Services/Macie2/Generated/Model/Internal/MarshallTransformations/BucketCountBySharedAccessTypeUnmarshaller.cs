@@ -65,25 +65,25 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("external", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.External = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("internal", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Internal = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("notShared", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NotShared = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unknown", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Unknown = unmarshaller.Unmarshall(context);
                     continue;
                 }

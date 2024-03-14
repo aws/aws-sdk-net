@@ -154,7 +154,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScheduledTime())
                 {
                     context.Writer.WritePropertyName("ScheduledTime");
-                    context.Writer.Write(publicRequest.ScheduledTime);
+                    context.Writer.Write(publicRequest.ScheduledTime.Value);
                 }
 
                 if(publicRequest.IsSetTaskTemplateId())

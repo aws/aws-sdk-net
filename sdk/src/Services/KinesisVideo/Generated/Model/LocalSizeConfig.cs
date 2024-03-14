@@ -46,9 +46,9 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=64, Max=2000000)]
-        public int MaxLocalMediaSizeInMB
+        public int? MaxLocalMediaSizeInMB
         {
-            get { return this._maxLocalMediaSizeInMB.GetValueOrDefault(); }
+            get { return this._maxLocalMediaSizeInMB; }
             set { this._maxLocalMediaSizeInMB = value; }
         }
 

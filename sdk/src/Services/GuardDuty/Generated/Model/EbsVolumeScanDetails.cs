@@ -47,9 +47,9 @@ namespace Amazon.GuardDuty.Model
         /// Returns the completion date and time of the malware scan.
         /// </para>
         /// </summary>
-        public DateTime ScanCompletedAt
+        public DateTime? ScanCompletedAt
         {
-            get { return this._scanCompletedAt.GetValueOrDefault(); }
+            get { return this._scanCompletedAt; }
             set { this._scanCompletedAt = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.GuardDuty.Model
         /// Returns the start date and time of the malware scan.
         /// </para>
         /// </summary>
-        public DateTime ScanStartedAt
+        public DateTime? ScanStartedAt
         {
-            get { return this._scanStartedAt.GetValueOrDefault(); }
+            get { return this._scanStartedAt; }
             set { this._scanStartedAt = value; }
         }
 

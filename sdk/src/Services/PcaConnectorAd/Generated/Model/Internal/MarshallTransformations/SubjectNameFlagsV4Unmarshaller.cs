@@ -65,61 +65,61 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RequireCommonName", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireCommonName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireDirectoryPath", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireDirectoryPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireDnsAsCn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireDnsAsCn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireEmail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireEmail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SanRequireDirectoryGuid", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SanRequireDirectoryGuid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SanRequireDns", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SanRequireDns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SanRequireDomainDns", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SanRequireDomainDns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SanRequireEmail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SanRequireEmail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SanRequireSpn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SanRequireSpn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SanRequireUpn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SanRequireUpn = unmarshaller.Unmarshall(context);
                     continue;
                 }

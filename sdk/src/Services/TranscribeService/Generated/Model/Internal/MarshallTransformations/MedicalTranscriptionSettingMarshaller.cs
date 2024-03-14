@@ -48,31 +48,31 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelIdentification())
             {
                 context.Writer.WritePropertyName("ChannelIdentification");
-                context.Writer.Write(requestObject.ChannelIdentification);
+                context.Writer.Write(requestObject.ChannelIdentification.Value);
             }
 
             if(requestObject.IsSetMaxAlternatives())
             {
                 context.Writer.WritePropertyName("MaxAlternatives");
-                context.Writer.Write(requestObject.MaxAlternatives);
+                context.Writer.Write(requestObject.MaxAlternatives.Value);
             }
 
             if(requestObject.IsSetMaxSpeakerLabels())
             {
                 context.Writer.WritePropertyName("MaxSpeakerLabels");
-                context.Writer.Write(requestObject.MaxSpeakerLabels);
+                context.Writer.Write(requestObject.MaxSpeakerLabels.Value);
             }
 
             if(requestObject.IsSetShowAlternatives())
             {
                 context.Writer.WritePropertyName("ShowAlternatives");
-                context.Writer.Write(requestObject.ShowAlternatives);
+                context.Writer.Write(requestObject.ShowAlternatives.Value);
             }
 
             if(requestObject.IsSetShowSpeakerLabels())
             {
                 context.Writer.WritePropertyName("ShowSpeakerLabels");
-                context.Writer.Write(requestObject.ShowSpeakerLabels);
+                context.Writer.Write(requestObject.ShowSpeakerLabels.Value);
             }
 
             if(requestObject.IsSetVocabularyName())

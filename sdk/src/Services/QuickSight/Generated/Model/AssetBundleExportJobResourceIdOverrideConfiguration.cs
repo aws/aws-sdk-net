@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// change the name of the asset.
         /// </para>
         /// </summary>
-        public bool PrefixForAllResources
+        public bool? PrefixForAllResources
         {
-            get { return this._prefixForAllResources.GetValueOrDefault(); }
+            get { return this._prefixForAllResources; }
             set { this._prefixForAllResources = value; }
         }
 

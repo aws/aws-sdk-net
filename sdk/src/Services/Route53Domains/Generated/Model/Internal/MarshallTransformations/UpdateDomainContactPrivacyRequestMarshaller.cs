@@ -70,13 +70,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAdminPrivacy())
                 {
                     context.Writer.WritePropertyName("AdminPrivacy");
-                    context.Writer.Write(publicRequest.AdminPrivacy);
+                    context.Writer.Write(publicRequest.AdminPrivacy.Value);
                 }
 
                 if(publicRequest.IsSetBillingPrivacy())
                 {
                     context.Writer.WritePropertyName("BillingPrivacy");
-                    context.Writer.Write(publicRequest.BillingPrivacy);
+                    context.Writer.Write(publicRequest.BillingPrivacy.Value);
                 }
 
                 if(publicRequest.IsSetDomainName())
@@ -88,13 +88,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRegistrantPrivacy())
                 {
                     context.Writer.WritePropertyName("RegistrantPrivacy");
-                    context.Writer.Write(publicRequest.RegistrantPrivacy);
+                    context.Writer.Write(publicRequest.RegistrantPrivacy.Value);
                 }
 
                 if(publicRequest.IsSetTechPrivacy())
                 {
                     context.Writer.WritePropertyName("TechPrivacy");
-                    context.Writer.Write(publicRequest.TechPrivacy);
+                    context.Writer.Write(publicRequest.TechPrivacy.Value);
                 }
 
                 writer.WriteObjectEnd();

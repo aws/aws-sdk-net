@@ -46,9 +46,9 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  A Boolean value; set to <b>true</b> to activate the subscription. 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

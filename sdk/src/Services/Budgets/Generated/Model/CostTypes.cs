@@ -61,9 +61,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeCredit
+        public bool? IncludeCredit
         {
-            get { return this._includeCredit.GetValueOrDefault(); }
+            get { return this._includeCredit; }
             set { this._includeCredit = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeDiscount
+        public bool? IncludeDiscount
         {
-            get { return this._includeDiscount.GetValueOrDefault(); }
+            get { return this._includeDiscount; }
             set { this._includeDiscount = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeOtherSubscription
+        public bool? IncludeOtherSubscription
         {
-            get { return this._includeOtherSubscription.GetValueOrDefault(); }
+            get { return this._includeOtherSubscription; }
             set { this._includeOtherSubscription = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeRecurring
+        public bool? IncludeRecurring
         {
-            get { return this._includeRecurring.GetValueOrDefault(); }
+            get { return this._includeRecurring; }
             set { this._includeRecurring = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeRefund
+        public bool? IncludeRefund
         {
-            get { return this._includeRefund.GetValueOrDefault(); }
+            get { return this._includeRefund; }
             set { this._includeRefund = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeSubscription
+        public bool? IncludeSubscription
         {
-            get { return this._includeSubscription.GetValueOrDefault(); }
+            get { return this._includeSubscription; }
             set { this._includeSubscription = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeSupport
+        public bool? IncludeSupport
         {
-            get { return this._includeSupport.GetValueOrDefault(); }
+            get { return this._includeSupport; }
             set { this._includeSupport = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeTax
+        public bool? IncludeTax
         {
-            get { return this._includeTax.GetValueOrDefault(); }
+            get { return this._includeTax; }
             set { this._includeTax = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeUpfront
+        public bool? IncludeUpfront
         {
-            get { return this._includeUpfront.GetValueOrDefault(); }
+            get { return this._includeUpfront; }
             set { this._includeUpfront = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool UseAmortized
+        public bool? UseAmortized
         {
-            get { return this._useAmortized.GetValueOrDefault(); }
+            get { return this._useAmortized; }
             set { this._useAmortized = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.Budgets.Model
         /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool UseBlended
+        public bool? UseBlended
         {
-            get { return this._useBlended.GetValueOrDefault(); }
+            get { return this._useBlended; }
             set { this._useBlended = value; }
         }
 

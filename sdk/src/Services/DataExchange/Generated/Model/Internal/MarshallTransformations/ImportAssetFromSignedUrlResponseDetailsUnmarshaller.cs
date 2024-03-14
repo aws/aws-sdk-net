@@ -95,7 +95,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SignedUrlExpiresAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SignedUrlExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

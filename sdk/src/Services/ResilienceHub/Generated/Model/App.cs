@@ -118,9 +118,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.ResilienceHub.Model
         /// Date and time the most recent compliance evaluation.
         /// </para>
         /// </summary>
-        public DateTime LastAppComplianceEvaluationTime
+        public DateTime? LastAppComplianceEvaluationTime
         {
-            get { return this._lastAppComplianceEvaluationTime.GetValueOrDefault(); }
+            get { return this._lastAppComplianceEvaluationTime; }
             set { this._lastAppComplianceEvaluationTime = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.ResilienceHub.Model
         /// Indicates the last time that a drift was evaluated.
         /// </para>
         /// </summary>
-        public DateTime LastDriftEvaluationTime
+        public DateTime? LastDriftEvaluationTime
         {
-            get { return this._lastDriftEvaluationTime.GetValueOrDefault(); }
+            get { return this._lastDriftEvaluationTime; }
             set { this._lastDriftEvaluationTime = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.ResilienceHub.Model
         /// Date and time the most recent resiliency score evaluation.
         /// </para>
         /// </summary>
-        public DateTime LastResiliencyScoreEvaluationTime
+        public DateTime? LastResiliencyScoreEvaluationTime
         {
-            get { return this._lastResiliencyScoreEvaluationTime.GetValueOrDefault(); }
+            get { return this._lastResiliencyScoreEvaluationTime; }
             set { this._lastResiliencyScoreEvaluationTime = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.ResilienceHub.Model
         /// Current resiliency score for the application.
         /// </para>
         /// </summary>
-        public double ResiliencyScore
+        public double? ResiliencyScore
         {
-            get { return this._resiliencyScore.GetValueOrDefault(); }
+            get { return this._resiliencyScore; }
             set { this._resiliencyScore = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.ResilienceHub.Model
         /// Recovery Point Objective (RPO) in seconds.
         /// </para>
         /// </summary>
-        public int RpoInSecs
+        public int? RpoInSecs
         {
-            get { return this._rpoInSecs.GetValueOrDefault(); }
+            get { return this._rpoInSecs; }
             set { this._rpoInSecs = value; }
         }
 
@@ -344,9 +344,9 @@ namespace Amazon.ResilienceHub.Model
         /// Recovery Time Objective (RTO) in seconds.
         /// </para>
         /// </summary>
-        public int RtoInSecs
+        public int? RtoInSecs
         {
-            get { return this._rtoInSecs.GetValueOrDefault(); }
+            get { return this._rtoInSecs; }
             set { this._rtoInSecs = value; }
         }
 

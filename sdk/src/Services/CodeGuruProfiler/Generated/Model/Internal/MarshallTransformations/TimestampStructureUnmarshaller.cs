@@ -65,7 +65,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

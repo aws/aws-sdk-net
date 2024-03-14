@@ -65,31 +65,31 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CodeSizeUnzipped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeSizeUnzipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CodeSizeZipped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeSizeZipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalCodeSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalCodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UnreservedConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnreservedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }

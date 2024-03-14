@@ -48,13 +48,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwaitAnswerMachinePrompt())
             {
                 context.Writer.WritePropertyName("AwaitAnswerMachinePrompt");
-                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt);
+                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt.Value);
             }
 
             if(requestObject.IsSetEnableAnswerMachineDetection())
             {
                 context.Writer.WritePropertyName("EnableAnswerMachineDetection");
-                context.Writer.Write(requestObject.EnableAnswerMachineDetection);
+                context.Writer.Write(requestObject.EnableAnswerMachineDetection.Value);
             }
 
         }

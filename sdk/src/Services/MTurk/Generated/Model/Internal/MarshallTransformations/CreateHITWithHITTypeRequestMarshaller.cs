@@ -120,13 +120,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLifetimeInSeconds())
                 {
                     context.Writer.WritePropertyName("LifetimeInSeconds");
-                    context.Writer.Write(publicRequest.LifetimeInSeconds);
+                    context.Writer.Write(publicRequest.LifetimeInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetMaxAssignments())
                 {
                     context.Writer.WritePropertyName("MaxAssignments");
-                    context.Writer.Write(publicRequest.MaxAssignments);
+                    context.Writer.Write(publicRequest.MaxAssignments.Value);
                 }
 
                 if(publicRequest.IsSetQuestion())

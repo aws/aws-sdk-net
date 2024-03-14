@@ -71,7 +71,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("score", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Score = unmarshaller.Unmarshall(context);
                     continue;
                 }

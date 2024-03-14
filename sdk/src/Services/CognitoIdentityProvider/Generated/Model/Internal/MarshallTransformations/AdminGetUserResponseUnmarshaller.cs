@@ -53,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UserCreateDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UserCreateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserLastModifiedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UserLastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

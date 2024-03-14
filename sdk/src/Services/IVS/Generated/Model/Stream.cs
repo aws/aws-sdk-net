@@ -103,9 +103,9 @@ namespace Amazon.IVS.Model
         /// as a string</i>.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.IVS.Model
         /// timed out; in this case, retry.
         /// </para>
         /// </summary>
-        public long ViewerCount
+        public long? ViewerCount
         {
-            get { return this._viewerCount.GetValueOrDefault(); }
+            get { return this._viewerCount; }
             set { this._viewerCount = value; }
         }
 

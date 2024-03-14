@@ -81,9 +81,9 @@ namespace Amazon.GroundStation.Model
         /// Whether or not uplink transmit is disabled.
         /// </para>
         /// </summary>
-        public bool TransmitDisabled
+        public bool? TransmitDisabled
         {
-            get { return this._transmitDisabled.GetValueOrDefault(); }
+            get { return this._transmitDisabled; }
             set { this._transmitDisabled = value; }
         }
 

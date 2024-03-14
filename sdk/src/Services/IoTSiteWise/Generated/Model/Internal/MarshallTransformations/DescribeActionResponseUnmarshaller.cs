@@ -71,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("executionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExecutionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -82,13 +82,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    context.Writer.Write(publicRequest.MaxCapacity.Value);
                 }
 
                 if(publicRequest.IsSetMaxRetries())
                 {
                     context.Writer.WritePropertyName("MaxRetries");
-                    context.Writer.Write(publicRequest.MaxRetries);
+                    context.Writer.Write(publicRequest.MaxRetries.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -100,7 +100,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfWorkers())
                 {
                     context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers);
+                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
                 }
 
                 if(publicRequest.IsSetParameters())
@@ -123,7 +123,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 if(publicRequest.IsSetTransformId())

@@ -62,7 +62,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DisableScaleIn", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,7 +74,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TargetValue", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context);
                         continue;
                     }

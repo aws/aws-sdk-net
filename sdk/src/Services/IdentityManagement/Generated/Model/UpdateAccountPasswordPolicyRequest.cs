@@ -73,9 +73,9 @@ namespace Amazon.IdentityManagement.Model
         /// have permissions to change their own password.
         /// </para>
         /// </summary>
-        public bool AllowUsersToChangePassword
+        public bool? AllowUsersToChangePassword
         {
-            get { return this._allowUsersToChangePassword.GetValueOrDefault(); }
+            get { return this._allowUsersToChangePassword; }
             set { this._allowUsersToChangePassword = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool HardExpiry
+        public bool? HardExpiry
         {
-            get { return this._hardExpiry.GetValueOrDefault(); }
+            get { return this._hardExpiry; }
             set { this._hardExpiry = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1095)]
-        public int MaxPasswordAge
+        public int? MaxPasswordAge
         {
-            get { return this._maxPasswordAge.GetValueOrDefault(); }
+            get { return this._maxPasswordAge; }
             set { this._maxPasswordAge = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=128)]
-        public int MinimumPasswordLength
+        public int? MinimumPasswordLength
         {
-            get { return this._minimumPasswordLength.GetValueOrDefault(); }
+            get { return this._minimumPasswordLength; }
             set { this._minimumPasswordLength = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public int PasswordReusePrevention
+        public int? PasswordReusePrevention
         {
-            get { return this._passwordReusePrevention.GetValueOrDefault(); }
+            get { return this._passwordReusePrevention; }
             set { this._passwordReusePrevention = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.IdentityManagement.Model
         /// character.
         /// </para>
         /// </summary>
-        public bool RequireLowercaseCharacters
+        public bool? RequireLowercaseCharacters
         {
-            get { return this._requireLowercaseCharacters.GetValueOrDefault(); }
+            get { return this._requireLowercaseCharacters; }
             set { this._requireLowercaseCharacters = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.IdentityManagement.Model
         /// character.
         /// </para>
         /// </summary>
-        public bool RequireNumbers
+        public bool? RequireNumbers
         {
-            get { return this._requireNumbers.GetValueOrDefault(); }
+            get { return this._requireNumbers; }
             set { this._requireNumbers = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.IdentityManagement.Model
         /// character.
         /// </para>
         /// </summary>
-        public bool RequireSymbols
+        public bool? RequireSymbols
         {
-            get { return this._requireSymbols.GetValueOrDefault(); }
+            get { return this._requireSymbols; }
             set { this._requireSymbols = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.IdentityManagement.Model
         /// character.
         /// </para>
         /// </summary>
-        public bool RequireUppercaseCharacters
+        public bool? RequireUppercaseCharacters
         {
-            get { return this._requireUppercaseCharacters.GetValueOrDefault(); }
+            get { return this._requireUppercaseCharacters; }
             set { this._requireUppercaseCharacters = value; }
         }
 

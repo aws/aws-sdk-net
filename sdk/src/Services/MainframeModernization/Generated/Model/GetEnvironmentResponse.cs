@@ -64,9 +64,9 @@ namespace Amazon.MainframeModernization.Model
         /// environment has a maximum of two instances. 
         /// </para>
         /// </summary>
-        public int ActualCapacity
+        public int? ActualCapacity
         {
-            get { return this._actualCapacity.GetValueOrDefault(); }
+            get { return this._actualCapacity; }
             set { this._actualCapacity = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.MainframeModernization.Model
         /// 
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

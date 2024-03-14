@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ConnectCampaignService")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AmazonConnectCampaignService. Added Amazon Connect high volume outbound communications SDK.")]
 #elif NETCOREAPP3_1

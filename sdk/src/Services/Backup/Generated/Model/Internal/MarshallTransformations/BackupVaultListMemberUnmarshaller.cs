@@ -77,7 +77,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,31 +95,31 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LockDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LockDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Locked", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Locked = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxRetentionDays", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxRetentionDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinRetentionDays", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinRetentionDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfRecoveryPoints", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRecoveryPoints = unmarshaller.Unmarshall(context);
                     continue;
                 }

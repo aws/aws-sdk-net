@@ -42,9 +42,9 @@ namespace Amazon.IoT.Model
         /// The number of documents that have the value counted for the particular bucket.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

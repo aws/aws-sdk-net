@@ -53,7 +53,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("newRevision", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.NewRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }

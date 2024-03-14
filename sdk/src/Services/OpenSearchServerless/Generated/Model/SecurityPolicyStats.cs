@@ -42,9 +42,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The number of encryption policies in the current account.
         /// </para>
         /// </summary>
-        public long EncryptionPolicyCount
+        public long? EncryptionPolicyCount
         {
-            get { return this._encryptionPolicyCount.GetValueOrDefault(); }
+            get { return this._encryptionPolicyCount; }
             set { this._encryptionPolicyCount = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The number of network policies in the current account.
         /// </para>
         /// </summary>
-        public long NetworkPolicyCount
+        public long? NetworkPolicyCount
         {
-            get { return this._networkPolicyCount.GetValueOrDefault(); }
+            get { return this._networkPolicyCount; }
             set { this._networkPolicyCount = value; }
         }
 

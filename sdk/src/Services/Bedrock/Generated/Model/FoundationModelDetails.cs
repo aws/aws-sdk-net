@@ -216,9 +216,9 @@ namespace Amazon.Bedrock.Model
         /// Indicates whether the model supports streaming.
         /// </para>
         /// </summary>
-        public bool ResponseStreamingSupported
+        public bool? ResponseStreamingSupported
         {
-            get { return this._responseStreamingSupported.GetValueOrDefault(); }
+            get { return this._responseStreamingSupported; }
             set { this._responseStreamingSupported = value; }
         }
 

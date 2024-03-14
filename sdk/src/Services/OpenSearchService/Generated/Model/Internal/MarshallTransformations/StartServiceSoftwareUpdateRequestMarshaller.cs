@@ -68,7 +68,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredStartTime())
                 {
                     context.Writer.WritePropertyName("DesiredStartTime");
-                    context.Writer.Write(publicRequest.DesiredStartTime);
+                    context.Writer.Write(publicRequest.DesiredStartTime.Value);
                 }
 
                 if(publicRequest.IsSetDomainName())

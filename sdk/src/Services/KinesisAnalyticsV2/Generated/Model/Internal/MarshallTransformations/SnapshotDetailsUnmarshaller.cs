@@ -65,13 +65,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApplicationVersionId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnapshotCreationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SnapshotCreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

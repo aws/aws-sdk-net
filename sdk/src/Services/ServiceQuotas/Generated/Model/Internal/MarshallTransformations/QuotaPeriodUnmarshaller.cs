@@ -71,7 +71,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PeriodValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeriodValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

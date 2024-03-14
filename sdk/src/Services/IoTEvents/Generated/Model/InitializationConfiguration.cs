@@ -44,9 +44,9 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DisabledOnInitialization
+        public bool? DisabledOnInitialization
         {
-            get { return this._disabledOnInitialization.GetValueOrDefault(); }
+            get { return this._disabledOnInitialization; }
             set { this._disabledOnInitialization = value; }
         }
 

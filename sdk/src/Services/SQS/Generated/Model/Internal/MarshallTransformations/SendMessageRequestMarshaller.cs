@@ -70,7 +70,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDelaySeconds())
                 {
                     context.Writer.WritePropertyName("DelaySeconds");
-                    context.Writer.Write(publicRequest.DelaySeconds);
+                    context.Writer.Write(publicRequest.DelaySeconds.Value);
                 }
 
                 if(publicRequest.IsSetMessageAttributes())

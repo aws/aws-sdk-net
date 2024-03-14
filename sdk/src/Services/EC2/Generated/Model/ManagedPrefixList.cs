@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of entries for the prefix list.
         /// </para>
         /// </summary>
-        public int MaxEntries
+        public int? MaxEntries
         {
-            get { return this._maxEntries.GetValueOrDefault(); }
+            get { return this._maxEntries; }
             set { this._maxEntries = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.EC2.Model
         /// The version of the prefix list.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

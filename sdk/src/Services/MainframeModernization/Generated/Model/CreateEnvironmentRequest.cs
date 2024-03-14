@@ -232,9 +232,9 @@ namespace Amazon.MainframeModernization.Model
         /// Specifies whether the runtime environment is publicly accessible.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

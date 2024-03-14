@@ -120,9 +120,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalApplications
+        public long? TotalApplications
         {
-            get { return this._totalApplications.GetValueOrDefault(); }
+            get { return this._totalApplications; }
             set { this._totalApplications = value; }
         }
 

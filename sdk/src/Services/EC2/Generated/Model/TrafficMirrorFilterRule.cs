@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// The protocol assigned to the Traffic Mirror rule.
         /// </para>
         /// </summary>
-        public int Protocol
+        public int? Protocol
         {
-            get { return this._protocol.GetValueOrDefault(); }
+            get { return this._protocol; }
             set { this._protocol = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.EC2.Model
         /// The rule number of the Traffic Mirror rule.
         /// </para>
         /// </summary>
-        public int RuleNumber
+        public int? RuleNumber
         {
-            get { return this._ruleNumber.GetValueOrDefault(); }
+            get { return this._ruleNumber; }
             set { this._ruleNumber = value; }
         }
 

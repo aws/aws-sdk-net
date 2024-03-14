@@ -71,7 +71,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("snoozeDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SnoozeDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

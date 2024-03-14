@@ -98,9 +98,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ComputeTime.
         /// </summary>
-        public long ComputeTime
+        public long? ComputeTime
         {
-            get { return this._computeTime.GetValueOrDefault(); }
+            get { return this._computeTime; }
             set { this._computeTime = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.MachineLearning.Model
         /// time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FinishedAt.
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property InvalidRecordCount.
         /// </summary>
-        public long InvalidRecordCount
+        public long? InvalidRecordCount
         {
-            get { return this._invalidRecordCount.GetValueOrDefault(); }
+            get { return this._invalidRecordCount; }
             set { this._invalidRecordCount = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.MachineLearning.Model
         /// in epoch time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property StartedAt.
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -357,9 +357,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property TotalRecordCount.
         /// </summary>
-        public long TotalRecordCount
+        public long? TotalRecordCount
         {
-            get { return this._totalRecordCount.GetValueOrDefault(); }
+            get { return this._totalRecordCount; }
             set { this._totalRecordCount = value; }
         }
 

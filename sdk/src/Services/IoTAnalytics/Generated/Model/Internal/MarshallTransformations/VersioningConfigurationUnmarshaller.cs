@@ -65,13 +65,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxVersions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unlimited", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Unlimited = unmarshaller.Unmarshall(context);
                     continue;
                 }

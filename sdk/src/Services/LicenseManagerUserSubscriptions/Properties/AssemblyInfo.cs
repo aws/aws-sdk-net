@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.LicenseManagerUserSubscriptions")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 #elif NETCOREAPP3_1

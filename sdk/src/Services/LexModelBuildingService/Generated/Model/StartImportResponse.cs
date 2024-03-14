@@ -47,9 +47,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// A timestamp for the date and time that the import job was requested.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

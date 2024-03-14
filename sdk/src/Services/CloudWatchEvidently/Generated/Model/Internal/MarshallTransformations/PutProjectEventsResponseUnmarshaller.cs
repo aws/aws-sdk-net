@@ -59,7 +59,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("failedEventCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FailedEventCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

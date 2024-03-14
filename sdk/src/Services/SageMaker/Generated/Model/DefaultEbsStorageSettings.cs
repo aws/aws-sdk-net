@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=16384)]
-        public int DefaultEbsVolumeSizeInGb
+        public int? DefaultEbsVolumeSizeInGb
         {
-            get { return this._defaultEbsVolumeSizeInGb.GetValueOrDefault(); }
+            get { return this._defaultEbsVolumeSizeInGb; }
             set { this._defaultEbsVolumeSizeInGb = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=16384)]
-        public int MaximumEbsVolumeSizeInGb
+        public int? MaximumEbsVolumeSizeInGb
         {
-            get { return this._maximumEbsVolumeSizeInGb.GetValueOrDefault(); }
+            get { return this._maximumEbsVolumeSizeInGb; }
             set { this._maximumEbsVolumeSizeInGb = value; }
         }
 

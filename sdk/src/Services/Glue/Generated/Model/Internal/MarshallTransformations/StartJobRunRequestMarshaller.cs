@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllocatedCapacity())
                 {
                     context.Writer.WritePropertyName("AllocatedCapacity");
-                    context.Writer.Write(publicRequest.AllocatedCapacity);
+                    context.Writer.Write(publicRequest.AllocatedCapacity.Value);
                 }
 
                 if(publicRequest.IsSetArguments())
@@ -108,7 +108,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity);
+                    context.Writer.Write(publicRequest.MaxCapacity.Value);
                 }
 
                 if(publicRequest.IsSetNotificationProperty())
@@ -125,7 +125,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfWorkers())
                 {
                     context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers);
+                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
                 }
 
                 if(publicRequest.IsSetSecurityConfiguration())
@@ -137,7 +137,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 if(publicRequest.IsSetWorkerType())

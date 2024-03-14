@@ -85,9 +85,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp that represents when workflow execution last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp that represents when workflow execution started.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

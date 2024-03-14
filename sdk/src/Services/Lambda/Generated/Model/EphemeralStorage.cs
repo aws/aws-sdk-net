@@ -45,9 +45,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=512, Max=10240)]
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

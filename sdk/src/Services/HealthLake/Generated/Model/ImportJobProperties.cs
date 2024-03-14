@@ -90,9 +90,9 @@ namespace Amazon.HealthLake.Model
         /// The time that the Import job was completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.HealthLake.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

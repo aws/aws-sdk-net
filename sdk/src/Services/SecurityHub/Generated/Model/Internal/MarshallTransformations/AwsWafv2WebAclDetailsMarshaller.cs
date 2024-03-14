@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("Capacity");
-                context.Writer.Write(requestObject.Capacity);
+                context.Writer.Write(requestObject.Capacity.Value);
             }
 
             if(requestObject.IsSetCaptchaConfig())
@@ -94,7 +94,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManagedbyFirewallManager())
             {
                 context.Writer.WritePropertyName("ManagedbyFirewallManager");
-                context.Writer.Write(requestObject.ManagedbyFirewallManager);
+                context.Writer.Write(requestObject.ManagedbyFirewallManager.Value);
             }
 
             if(requestObject.IsSetName())

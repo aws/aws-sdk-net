@@ -70,9 +70,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ExpiryMinutes
+        public int? ExpiryMinutes
         {
-            get { return this._expiryMinutes.GetValueOrDefault(); }
+            get { return this._expiryMinutes; }
             set { this._expiryMinutes = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllAwsRegions())
             {
                 context.Writer.WritePropertyName("AllAwsRegions");
-                context.Writer.Write(requestObject.AllAwsRegions);
+                context.Writer.Write(requestObject.AllAwsRegions.Value);
             }
 
             if(requestObject.IsSetAwsRegions())

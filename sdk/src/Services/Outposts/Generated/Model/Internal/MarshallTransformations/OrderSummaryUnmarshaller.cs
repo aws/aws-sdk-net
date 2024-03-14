@@ -71,7 +71,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OrderFulfilledDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OrderFulfilledDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OrderSubmissionDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OrderSubmissionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=180, Max=86400)]
-        public int MaxSeconds
+        public int? MaxSeconds
         {
-            get { return this._maxSeconds.GetValueOrDefault(); }
+            get { return this._maxSeconds; }
             set { this._maxSeconds = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=180, Max=86400)]
-        public int MinSeconds
+        public int? MinSeconds
         {
-            get { return this._minSeconds.GetValueOrDefault(); }
+            get { return this._minSeconds; }
             set { this._minSeconds = value; }
         }
 

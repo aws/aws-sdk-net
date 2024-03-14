@@ -107,9 +107,9 @@ namespace Amazon.RDS.Model
         /// specified for the <c>Parameters</c> parameter.
         /// </para>
         /// </summary>
-        public bool ResetAllParameters
+        public bool? ResetAllParameters
         {
-            get { return this._resetAllParameters.GetValueOrDefault(); }
+            get { return this._resetAllParameters; }
             set { this._resetAllParameters = value; }
         }
 

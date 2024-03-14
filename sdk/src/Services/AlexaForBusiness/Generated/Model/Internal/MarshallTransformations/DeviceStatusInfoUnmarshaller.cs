@@ -71,7 +71,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConnectionStatusUpdatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectionStatusUpdatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

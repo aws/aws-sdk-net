@@ -67,9 +67,9 @@ namespace Amazon.StorageGateway.Model
         /// FSx file system does not disassociate until all data is uploaded.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

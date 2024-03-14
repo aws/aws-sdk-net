@@ -125,9 +125,9 @@ namespace Amazon.EC2.Model
         /// The creation date and time of the EC2 Fleet.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.EC2.Model
         /// The number of units fulfilled by this request compared to the set target capacity.
         /// </para>
         /// </summary>
-        public double FulfilledCapacity
+        public double? FulfilledCapacity
         {
-            get { return this._fulfilledCapacity.GetValueOrDefault(); }
+            get { return this._fulfilledCapacity; }
             set { this._fulfilledCapacity = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.EC2.Model
         /// capacity.
         /// </para>
         /// </summary>
-        public double FulfilledOnDemandCapacity
+        public double? FulfilledOnDemandCapacity
         {
-            get { return this._fulfilledOnDemandCapacity.GetValueOrDefault(); }
+            get { return this._fulfilledOnDemandCapacity; }
             set { this._fulfilledOnDemandCapacity = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.EC2.Model
         /// Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        public bool ReplaceUnhealthyInstances
+        public bool? ReplaceUnhealthyInstances
         {
-            get { return this._replaceUnhealthyInstances.GetValueOrDefault(); }
+            get { return this._replaceUnhealthyInstances; }
             set { this._replaceUnhealthyInstances = value; }
         }
 
@@ -391,9 +391,9 @@ namespace Amazon.EC2.Model
         /// 
         /// </para>
         /// </summary>
-        public bool TerminateInstancesWithExpiration
+        public bool? TerminateInstancesWithExpiration
         {
-            get { return this._terminateInstancesWithExpiration.GetValueOrDefault(); }
+            get { return this._terminateInstancesWithExpiration; }
             set { this._terminateInstancesWithExpiration = value; }
         }
 
@@ -434,9 +434,9 @@ namespace Amazon.EC2.Model
         /// The default is to start fulfilling the request immediately. 
         /// </para>
         /// </summary>
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
-            get { return this._validFrom.GetValueOrDefault(); }
+            get { return this._validFrom; }
             set { this._validFrom = value; }
         }
 
@@ -454,9 +454,9 @@ namespace Amazon.EC2.Model
         /// The default end date is 7 days from the current date. 
         /// </para>
         /// </summary>
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
-            get { return this._validUntil.GetValueOrDefault(); }
+            get { return this._validUntil; }
             set { this._validUntil = value; }
         }
 

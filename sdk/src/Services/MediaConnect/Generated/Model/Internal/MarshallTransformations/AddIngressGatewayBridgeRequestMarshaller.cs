@@ -48,13 +48,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMaxOutputs())
             {
                 context.Writer.WritePropertyName("maxOutputs");
-                context.Writer.Write(requestObject.MaxOutputs);
+                context.Writer.Write(requestObject.MaxOutputs.Value);
             }
 
         }

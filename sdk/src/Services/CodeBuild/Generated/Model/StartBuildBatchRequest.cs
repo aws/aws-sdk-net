@@ -140,9 +140,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=480)]
-        public int BuildTimeoutInMinutesOverride
+        public int? BuildTimeoutInMinutesOverride
         {
-            get { return this._buildTimeoutInMinutesOverride.GetValueOrDefault(); }
+            get { return this._buildTimeoutInMinutesOverride; }
             set { this._buildTimeoutInMinutesOverride = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.CodeBuild.Model
         /// matrix batch builds.
         /// </para>
         /// </summary>
-        public bool DebugSessionEnabled
+        public bool? DebugSessionEnabled
         {
-            get { return this._debugSessionEnabled.GetValueOrDefault(); }
+            get { return this._debugSessionEnabled; }
             set { this._debugSessionEnabled = value; }
         }
 
@@ -305,9 +305,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GitCloneDepthOverride
+        public int? GitCloneDepthOverride
         {
-            get { return this._gitCloneDepthOverride.GetValueOrDefault(); }
+            get { return this._gitCloneDepthOverride; }
             set { this._gitCloneDepthOverride = value; }
         }
 
@@ -420,9 +420,9 @@ namespace Amazon.CodeBuild.Model
         /// source is GitHub Enterprise.
         /// </para>
         /// </summary>
-        public bool InsecureSslOverride
+        public bool? InsecureSslOverride
         {
-            get { return this._insecureSslOverride.GetValueOrDefault(); }
+            get { return this._insecureSslOverride; }
             set { this._insecureSslOverride = value; }
         }
 
@@ -457,9 +457,9 @@ namespace Amazon.CodeBuild.Model
         /// Enable this flag to override privileged mode in the batch build project.
         /// </para>
         /// </summary>
-        public bool PrivilegedModeOverride
+        public bool? PrivilegedModeOverride
         {
-            get { return this._privilegedModeOverride.GetValueOrDefault(); }
+            get { return this._privilegedModeOverride; }
             set { this._privilegedModeOverride = value; }
         }
 
@@ -495,9 +495,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=480)]
-        public int QueuedTimeoutInMinutesOverride
+        public int? QueuedTimeoutInMinutesOverride
         {
-            get { return this._queuedTimeoutInMinutesOverride.GetValueOrDefault(); }
+            get { return this._queuedTimeoutInMinutesOverride; }
             set { this._queuedTimeoutInMinutesOverride = value; }
         }
 
@@ -540,9 +540,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ReportBuildBatchStatusOverride
+        public bool? ReportBuildBatchStatusOverride
         {
-            get { return this._reportBuildBatchStatusOverride.GetValueOrDefault(); }
+            get { return this._reportBuildBatchStatusOverride; }
             set { this._reportBuildBatchStatusOverride = value; }
         }
 

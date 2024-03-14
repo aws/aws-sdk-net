@@ -65,13 +65,13 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DatasetCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DatasetCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataStorage", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DataStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

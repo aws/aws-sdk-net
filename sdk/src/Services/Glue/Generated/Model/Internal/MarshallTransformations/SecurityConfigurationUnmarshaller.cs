@@ -65,7 +65,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedTimeStamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

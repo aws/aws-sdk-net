@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowSingleColumn())
             {
                 context.Writer.WritePropertyName("AllowSingleColumn");
-                context.Writer.Write(requestObject.AllowSingleColumn);
+                context.Writer.Write(requestObject.AllowSingleColumn.Value);
             }
 
             if(requestObject.IsSetContainsHeader())
@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomDatatypeConfigured())
             {
                 context.Writer.WritePropertyName("CustomDatatypeConfigured");
-                context.Writer.Write(requestObject.CustomDatatypeConfigured);
+                context.Writer.Write(requestObject.CustomDatatypeConfigured.Value);
             }
 
             if(requestObject.IsSetCustomDatatypes())
@@ -83,7 +83,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableValueTrimming())
             {
                 context.Writer.WritePropertyName("DisableValueTrimming");
-                context.Writer.Write(requestObject.DisableValueTrimming);
+                context.Writer.Write(requestObject.DisableValueTrimming.Value);
             }
 
             if(requestObject.IsSetHeader())

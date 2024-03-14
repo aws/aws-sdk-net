@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// The option that determines the arc angle of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
-        public double ArcAngle
+        public double? ArcAngle
         {
-            get { return this._arcAngle.GetValueOrDefault(); }
+            get { return this._arcAngle; }
             set { this._arcAngle = value; }
         }
 

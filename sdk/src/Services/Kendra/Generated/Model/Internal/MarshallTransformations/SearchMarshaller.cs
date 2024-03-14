@@ -48,25 +48,25 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayable())
             {
                 context.Writer.WritePropertyName("Displayable");
-                context.Writer.Write(requestObject.Displayable);
+                context.Writer.Write(requestObject.Displayable.Value);
             }
 
             if(requestObject.IsSetFacetable())
             {
                 context.Writer.WritePropertyName("Facetable");
-                context.Writer.Write(requestObject.Facetable);
+                context.Writer.Write(requestObject.Facetable.Value);
             }
 
             if(requestObject.IsSetSearchable())
             {
                 context.Writer.WritePropertyName("Searchable");
-                context.Writer.Write(requestObject.Searchable);
+                context.Writer.Write(requestObject.Searchable.Value);
             }
 
             if(requestObject.IsSetSortable())
             {
                 context.Writer.WritePropertyName("Sortable");
-                context.Writer.Write(requestObject.Sortable);
+                context.Writer.Write(requestObject.Sortable.Value);
             }
 
         }

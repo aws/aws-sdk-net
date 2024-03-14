@@ -59,13 +59,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("commitmentExpirationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CommitmentExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("desiredModelUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DesiredModelUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("modelUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ModelUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

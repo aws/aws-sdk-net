@@ -53,7 +53,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("startedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

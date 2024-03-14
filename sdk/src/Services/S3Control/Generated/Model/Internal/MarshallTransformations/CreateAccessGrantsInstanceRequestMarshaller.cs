@@ -68,7 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateAccessGrantsInstanceRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 if(publicRequest.IsSetIdentityCenterArn())
-                    xmlWriter.WriteElementString("IdentityCenterArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.IdentityCenterArn));                    
+                    xmlWriter.WriteElementString("IdentityCenterArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.IdentityCenterArn));
 
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && publicRequestTags.Count > 0) 

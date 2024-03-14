@@ -41,9 +41,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// The date and time that the launch stopped.
         /// </para>
         /// </summary>
-        public DateTime EndedTime
+        public DateTime? EndedTime
         {
-            get { return this._endedTime.GetValueOrDefault(); }
+            get { return this._endedTime; }
             set { this._endedTime = value; }
         }
 

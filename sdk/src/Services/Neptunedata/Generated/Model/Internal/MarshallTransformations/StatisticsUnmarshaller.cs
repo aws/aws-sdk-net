@@ -65,19 +65,19 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("active", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("autoCompute", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoCompute = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("date", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -110,7 +110,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentLength())
             {
                 context.Writer.WritePropertyName("fragmentLength");
-                context.Writer.Write(requestObject.FragmentLength);
+                context.Writer.Write(requestObject.FragmentLength.Value);
             }
 
             if(requestObject.IsSetHbbtvCompliance())
@@ -139,13 +139,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinBufferTime())
             {
                 context.Writer.WritePropertyName("minBufferTime");
-                context.Writer.Write(requestObject.MinBufferTime);
+                context.Writer.Write(requestObject.MinBufferTime.Value);
             }
 
             if(requestObject.IsSetMinFinalSegmentLength())
             {
                 context.Writer.WritePropertyName("minFinalSegmentLength");
-                context.Writer.Write(requestObject.MinFinalSegmentLength);
+                context.Writer.Write(requestObject.MinFinalSegmentLength.Value);
             }
 
             if(requestObject.IsSetMpdManifestBandwidthType())
@@ -175,7 +175,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength);
+                context.Writer.Write(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentLengthControl())

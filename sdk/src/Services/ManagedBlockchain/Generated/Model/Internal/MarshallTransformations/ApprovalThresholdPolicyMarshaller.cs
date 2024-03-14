@@ -48,7 +48,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProposalDurationInHours())
             {
                 context.Writer.WritePropertyName("ProposalDurationInHours");
-                context.Writer.Write(requestObject.ProposalDurationInHours);
+                context.Writer.Write(requestObject.ProposalDurationInHours.Value);
             }
 
             if(requestObject.IsSetThresholdComparator())
@@ -60,7 +60,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdPercentage())
             {
                 context.Writer.WritePropertyName("ThresholdPercentage");
-                context.Writer.Write(requestObject.ThresholdPercentage);
+                context.Writer.Write(requestObject.ThresholdPercentage.Value);
             }
 
         }

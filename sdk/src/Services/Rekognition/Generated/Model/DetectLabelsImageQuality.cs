@@ -44,9 +44,9 @@ namespace Amazon.Rekognition.Model
         /// The brightness of an image provided for label detection.
         /// </para>
         /// </summary>
-        public float Brightness
+        public float? Brightness
         {
-            get { return this._brightness.GetValueOrDefault(); }
+            get { return this._brightness; }
             set { this._brightness = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Rekognition.Model
         /// The contrast of an image provided for label detection.
         /// </para>
         /// </summary>
-        public float Contrast
+        public float? Contrast
         {
-            get { return this._contrast.GetValueOrDefault(); }
+            get { return this._contrast; }
             set { this._contrast = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Rekognition.Model
         /// The sharpness of an image provided for label detection.
         /// </para>
         /// </summary>
-        public float Sharpness
+        public float? Sharpness
         {
-            get { return this._sharpness.GetValueOrDefault(); }
+            get { return this._sharpness; }
             set { this._sharpness = value; }
         }
 

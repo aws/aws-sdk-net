@@ -54,13 +54,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays);
+                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups);
+                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
@@ -96,7 +96,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImportedFileChunkSize())
             {
                 context.Writer.WritePropertyName("ImportedFileChunkSize");
-                context.Writer.Write(requestObject.ImportedFileChunkSize);
+                context.Writer.Write(requestObject.ImportedFileChunkSize.Value);
             }
 
             if(requestObject.IsSetImportPath())
@@ -119,7 +119,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerUnitStorageThroughput())
             {
                 context.Writer.WritePropertyName("PerUnitStorageThroughput");
-                context.Writer.Write(requestObject.PerUnitStorageThroughput);
+                context.Writer.Write(requestObject.PerUnitStorageThroughput.Value);
             }
 
             if(requestObject.IsSetRootSquashConfiguration())

@@ -214,9 +214,9 @@ namespace Amazon.StepFunctions.Model
         /// By default, <c>revealSecrets</c> is set to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool RevealSecrets
+        public bool? RevealSecrets
         {
-            get { return this._revealSecrets.GetValueOrDefault(); }
+            get { return this._revealSecrets; }
             set { this._revealSecrets = value; }
         }
 

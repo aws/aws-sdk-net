@@ -53,9 +53,9 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
-        public bool AvoidFerries
+        public bool? AvoidFerries
         {
-            get { return this._avoidFerries.GetValueOrDefault(); }
+            get { return this._avoidFerries; }
             set { this._avoidFerries = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
-        public bool AvoidTolls
+        public bool? AvoidTolls
         {
-            get { return this._avoidTolls.GetValueOrDefault(); }
+            get { return this._avoidTolls; }
             set { this._avoidTolls = value; }
         }
 

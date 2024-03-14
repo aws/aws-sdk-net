@@ -119,9 +119,9 @@ namespace Amazon.SecurityHub.Model
         /// to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableDefaultStandards
+        public bool? EnableDefaultStandards
         {
-            get { return this._enableDefaultStandards.GetValueOrDefault(); }
+            get { return this._enableDefaultStandards; }
             set { this._enableDefaultStandards = value; }
         }
 

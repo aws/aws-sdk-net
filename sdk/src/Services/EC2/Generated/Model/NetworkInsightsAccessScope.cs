@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// The creation date.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// The last updated date.
         /// </para>
         /// </summary>
-        public DateTime UpdatedDate
+        public DateTime? UpdatedDate
         {
-            get { return this._updatedDate.GetValueOrDefault(); }
+            get { return this._updatedDate; }
             set { this._updatedDate = value; }
         }
 

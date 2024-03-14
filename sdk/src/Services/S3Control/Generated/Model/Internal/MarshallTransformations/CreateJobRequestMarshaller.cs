@@ -68,15 +68,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateJobRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 if(publicRequest.IsSetClientRequestToken())
-                    xmlWriter.WriteElementString("ClientRequestToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientRequestToken));                    
+                    xmlWriter.WriteElementString("ClientRequestToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientRequestToken));
                 else                
                     xmlWriter.WriteElementString("ClientRequestToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", Guid.NewGuid().ToString());                
 
                 if(publicRequest.IsSetConfirmationRequired())
-                    xmlWriter.WriteElementString("ConfirmationRequired", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ConfirmationRequired));                    
+                    xmlWriter.WriteElementString("ConfirmationRequired", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ConfirmationRequired.Value));
 
                 if(publicRequest.IsSetDescription())
-                    xmlWriter.WriteElementString("Description", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Description));                    
+                    xmlWriter.WriteElementString("Description", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Description));
 
                 
                 if (publicRequest.Manifest != null) 
@@ -129,7 +129,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3JobManifestGenerator", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetEnableManifestOutput())
-                            xmlWriter.WriteElementString("EnableManifestOutput", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.EnableManifestOutput));                 
+                            xmlWriter.WriteElementString("EnableManifestOutput", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.EnableManifestOutput.Value));                 
 
                         if(publicRequest.ManifestGenerator.S3JobManifestGenerator.IsSetExpectedBucketOwner())
                             xmlWriter.WriteElementString("ExpectedBucketOwner", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ManifestGenerator.S3JobManifestGenerator.ExpectedBucketOwner));                 
@@ -139,13 +139,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("Filter", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedAfter())
-                                xmlWriter.WriteElementString("CreatedAfter", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter));                 
+                                xmlWriter.WriteElementString("CreatedAfter", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedAfter.Value));                 
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetCreatedBefore())
-                                xmlWriter.WriteElementString("CreatedBefore", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore));                 
+                                xmlWriter.WriteElementString("CreatedBefore", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.CreatedBefore.Value));                 
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetEligibleForReplication())
-                                xmlWriter.WriteElementString("EligibleForReplication", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication));                 
+                                xmlWriter.WriteElementString("EligibleForReplication", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.EligibleForReplication.Value));                 
 
                 
                             if (publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.KeyNameConstraint != null) 
@@ -214,10 +214,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectSizeGreaterThanBytes())
-                                xmlWriter.WriteElementString("ObjectSizeGreaterThanBytes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeGreaterThanBytes));                 
+                                xmlWriter.WriteElementString("ObjectSizeGreaterThanBytes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeGreaterThanBytes.Value));                 
 
                             if(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.IsSetObjectSizeLessThanBytes())
-                                xmlWriter.WriteElementString("ObjectSizeLessThanBytes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeLessThanBytes));                 
+                                xmlWriter.WriteElementString("ObjectSizeLessThanBytes", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.ObjectSizeLessThanBytes.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -303,7 +303,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3InitiateRestoreObject", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequest.Operation.S3InitiateRestoreObject.IsSetExpirationInDays())
-                            xmlWriter.WriteElementString("ExpirationInDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.Operation.S3InitiateRestoreObject.ExpirationInDays));                 
+                            xmlWriter.WriteElementString("ExpirationInDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.Operation.S3InitiateRestoreObject.ExpirationInDays.Value));                 
 
                         if(publicRequest.Operation.S3InitiateRestoreObject.IsSetGlacierJobTier())
                             xmlWriter.WriteElementString("GlacierJobTier", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3InitiateRestoreObject.GlacierJobTier));                 
@@ -414,7 +414,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetBucketKeyEnabled())
-                            xmlWriter.WriteElementString("BucketKeyEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.BucketKeyEnabled));                 
+                            xmlWriter.WriteElementString("BucketKeyEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.BucketKeyEnabled.Value));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetCannedAccessControlList())
                             xmlWriter.WriteElementString("CannedAccessControlList", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.CannedAccessControlList));                 
@@ -426,7 +426,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("MetadataDirective", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.MetadataDirective));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetModifiedSinceConstraint())
-                            xmlWriter.WriteElementString("ModifiedSinceConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.ModifiedSinceConstraint));                 
+                            xmlWriter.WriteElementString("ModifiedSinceConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.ModifiedSinceConstraint.Value));                 
 
                 
                         if (publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata != null) 
@@ -445,7 +445,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("ContentLanguage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLanguage));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentLength())
-                                xmlWriter.WriteElementString("ContentLength", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLength));                 
+                                xmlWriter.WriteElementString("ContentLength", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentLength.Value));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetContentMD5())
                                 xmlWriter.WriteElementString("ContentMD5", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentMD5));                 
@@ -454,10 +454,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("ContentType", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.ContentType));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetHttpExpiresDate())
-                                xmlWriter.WriteElementString("HttpExpiresDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.HttpExpiresDate));                 
+                                xmlWriter.WriteElementString("HttpExpiresDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.HttpExpiresDate.Value));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetRequesterCharged())
-                                xmlWriter.WriteElementString("RequesterCharged", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.RequesterCharged));                 
+                                xmlWriter.WriteElementString("RequesterCharged", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.RequesterCharged.Value));                 
 
                             if(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.IsSetSSEAlgorithm())
                                 xmlWriter.WriteElementString("SSEAlgorithm", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.NewObjectMetadata.SSEAlgorithm));                 
@@ -501,13 +501,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("ObjectLockMode", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockMode));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockRetainUntilDate())
-                            xmlWriter.WriteElementString("ObjectLockRetainUntilDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.ObjectLockRetainUntilDate));                 
+                            xmlWriter.WriteElementString("ObjectLockRetainUntilDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.ObjectLockRetainUntilDate.Value));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetRedirectLocation())
                             xmlWriter.WriteElementString("RedirectLocation", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.RedirectLocation));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetRequesterPays())
-                            xmlWriter.WriteElementString("RequesterPays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.RequesterPays));                 
+                            xmlWriter.WriteElementString("RequesterPays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.RequesterPays.Value));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetSSEAwsKmsKeyId())
                             xmlWriter.WriteElementString("SSEAwsKmsKeyId", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.SSEAwsKmsKeyId));                 
@@ -522,7 +522,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("TargetResource", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.TargetResource));                 
 
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetUnModifiedSinceConstraint())
-                            xmlWriter.WriteElementString("UnModifiedSinceConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.UnModifiedSinceConstraint));                 
+                            xmlWriter.WriteElementString("UnModifiedSinceConstraint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectCopy.UnModifiedSinceConstraint.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -546,7 +546,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("S3PutObjectRetention", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequest.Operation.S3PutObjectRetention.IsSetBypassGovernanceRetention())
-                            xmlWriter.WriteElementString("BypassGovernanceRetention", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectRetention.BypassGovernanceRetention));                 
+                            xmlWriter.WriteElementString("BypassGovernanceRetention", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Operation.S3PutObjectRetention.BypassGovernanceRetention.Value));                 
 
                 
                         if (publicRequest.Operation.S3PutObjectRetention.Retention != null) 
@@ -556,7 +556,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Mode", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.Mode));                 
 
                             if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetRetainUntilDate())
-                                xmlWriter.WriteElementString("RetainUntilDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate));                 
+                                xmlWriter.WriteElementString("RetainUntilDate", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequest.Operation.S3PutObjectRetention.Retention.RetainUntilDate.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -598,7 +598,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetPriority())
-                    xmlWriter.WriteElementString("Priority", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.Priority));                    
+                    xmlWriter.WriteElementString("Priority", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequest.Priority.Value));
 
                 
                 if (publicRequest.Report != null) 
@@ -608,7 +608,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Report.Bucket));                 
 
                     if(publicRequest.Report.IsSetEnabled())
-                        xmlWriter.WriteElementString("Enabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Report.Enabled));                 
+                        xmlWriter.WriteElementString("Enabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Report.Enabled.Value));                 
 
                     if(publicRequest.Report.IsSetFormat())
                         xmlWriter.WriteElementString("Format", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Report.Format));                 
@@ -622,7 +622,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetRoleArn())
-                    xmlWriter.WriteElementString("RoleArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.RoleArn));                    
+                    xmlWriter.WriteElementString("RoleArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.RoleArn));
 
                 var publicRequestTags = publicRequest.Tags;
                 if (publicRequestTags != null && publicRequestTags.Count > 0) 

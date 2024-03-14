@@ -48,9 +48,9 @@ namespace Amazon.MediaConvert.Model
         /// set Sample range conversion to Limited range clip.
         /// </summary>
         [AWSProperty(Min=90, Max=105)]
-        public int MaximumRGBTolerance
+        public int? MaximumRGBTolerance
         {
-            get { return this._maximumRGBTolerance.GetValueOrDefault(); }
+            get { return this._maximumRGBTolerance; }
             set { this._maximumRGBTolerance = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.MediaConvert.Model
         /// for Maximum YUV, you must set Sample range conversion to Limited range clip.
         /// </summary>
         [AWSProperty(Min=920, Max=1023)]
-        public int MaximumYUV
+        public int? MaximumYUV
         {
-            get { return this._maximumYUV.GetValueOrDefault(); }
+            get { return this._maximumYUV; }
             set { this._maximumYUV = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.MediaConvert.Model
         /// set Sample range conversion to Limited range clip.
         /// </summary>
         [AWSProperty(Min=-5, Max=10)]
-        public int MinimumRGBTolerance
+        public int? MinimumRGBTolerance
         {
-            get { return this._minimumRGBTolerance.GetValueOrDefault(); }
+            get { return this._minimumRGBTolerance; }
             set { this._minimumRGBTolerance = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.MediaConvert.Model
         /// YUV, you must set Sample range conversion to Limited range clip.
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int MinimumYUV
+        public int? MinimumYUV
         {
-            get { return this._minimumYUV.GetValueOrDefault(); }
+            get { return this._minimumYUV; }
             set { this._minimumYUV = value; }
         }
 

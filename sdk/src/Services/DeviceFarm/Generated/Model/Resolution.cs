@@ -42,9 +42,9 @@ namespace Amazon.DeviceFarm.Model
         /// The screen resolution's height, expressed in pixels.
         /// </para>
         /// </summary>
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.DeviceFarm.Model
         /// The screen resolution's width, expressed in pixels.
         /// </para>
         /// </summary>
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

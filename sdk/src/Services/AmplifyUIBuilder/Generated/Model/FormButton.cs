@@ -61,9 +61,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether the button is visible on the form.
         /// </para>
         /// </summary>
-        public bool Excluded
+        public bool? Excluded
         {
-            get { return this._excluded.GetValueOrDefault(); }
+            get { return this._excluded; }
             set { this._excluded = value; }
         }
 

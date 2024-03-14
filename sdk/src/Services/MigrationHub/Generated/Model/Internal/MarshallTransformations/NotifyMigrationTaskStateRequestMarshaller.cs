@@ -70,7 +70,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetMigrationTaskName())
@@ -82,7 +82,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNextUpdateSeconds())
                 {
                     context.Writer.WritePropertyName("NextUpdateSeconds");
-                    context.Writer.Write(publicRequest.NextUpdateSeconds);
+                    context.Writer.Write(publicRequest.NextUpdateSeconds.Value);
                 }
 
                 if(publicRequest.IsSetProgressUpdateStream())
@@ -105,7 +105,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateDateTime())
                 {
                     context.Writer.WritePropertyName("UpdateDateTime");
-                    context.Writer.Write(publicRequest.UpdateDateTime);
+                    context.Writer.Write(publicRequest.UpdateDateTime.Value);
                 }
 
                 writer.WriteObjectEnd();

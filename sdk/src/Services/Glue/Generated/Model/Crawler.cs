@@ -101,9 +101,9 @@ namespace Amazon.Glue.Model
         /// If the crawler is running, contains the total time elapsed since the last crawl began.
         /// </para>
         /// </summary>
-        public long CrawlElapsedTime
+        public long? CrawlElapsedTime
         {
-            get { return this._crawlElapsedTime.GetValueOrDefault(); }
+            get { return this._crawlElapsedTime; }
             set { this._crawlElapsedTime = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Glue.Model
         /// The time that the crawler was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.Glue.Model
         /// The time that the crawler was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -414,9 +414,9 @@ namespace Amazon.Glue.Model
         /// The version of the crawler.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

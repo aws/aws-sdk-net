@@ -67,9 +67,9 @@ namespace Amazon.Glue.Model
         /// to sample the records. If no value is specified, the value defaults to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool ScanAll
+        public bool? ScanAll
         {
-            get { return this._scanAll.GetValueOrDefault(); }
+            get { return this._scanAll; }
             set { this._scanAll = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.Glue.Model
         /// tables using on-demand mode).
         /// </para>
         /// </summary>
-        public double ScanRate
+        public double? ScanRate
         {
-            get { return this._scanRate.GetValueOrDefault(); }
+            get { return this._scanRate; }
             set { this._scanRate = value; }
         }
 

@@ -62,13 +62,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("onDemandTargetCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OnDemandTargetCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("spotTargetCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SpotTargetCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("totalTargetCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TotalTargetCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }

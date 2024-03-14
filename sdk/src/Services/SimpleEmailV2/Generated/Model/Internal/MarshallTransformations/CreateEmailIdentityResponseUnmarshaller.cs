@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -109,7 +109,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityUnits())
                 {
                     context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityUnits");
-                    context.Writer.Write(publicRequest.GlobalTableProvisionedWriteCapacityUnits);
+                    context.Writer.Write(publicRequest.GlobalTableProvisionedWriteCapacityUnits.Value);
                 }
 
                 if(publicRequest.IsSetReplicaSettingsUpdate())

@@ -62,9 +62,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int LineNumber
+        public int? LineNumber
         {
-            get { return this._lineNumber.GetValueOrDefault(); }
+            get { return this._lineNumber; }
             set { this._lineNumber = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("sizeInGiB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeInGiB = unmarshaller.Unmarshall(context);
                     continue;
                 }

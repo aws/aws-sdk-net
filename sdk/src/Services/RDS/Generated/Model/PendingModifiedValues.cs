@@ -68,9 +68,9 @@ namespace Amazon.RDS.Model
         /// The allocated storage size for the DB instance specified in gibibytes (GiB).
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.RDS.Model
         /// The number of days for which automated backups are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.&gt;
         /// </para>
         /// </summary>
-        public bool DedicatedLogVolume
+        public bool? DedicatedLogVolume
         {
-            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._dedicatedLogVolume; }
             set { this._dedicatedLogVolume = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.RDS.Model
         /// accounts to database accounts is enabled.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.RDS.Model
         /// The Provisioned IOPS value for the DB instance.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the Single-AZ DB instance will change to a Multi-AZ deployment.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.RDS.Model
         /// or the single-tenant configuration (FALSE). 
         /// </para>
         /// </summary>
-        public bool MultiTenant
+        public bool? MultiTenant
         {
-            get { return this._multiTenant.GetValueOrDefault(); }
+            get { return this._multiTenant; }
             set { this._multiTenant = value; }
         }
 
@@ -388,9 +388,9 @@ namespace Amazon.RDS.Model
         /// The port for the DB instance.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -426,9 +426,9 @@ namespace Amazon.RDS.Model
         /// resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.
         /// </para>
         /// </summary>
-        public DateTime ResumeFullAutomationModeTime
+        public DateTime? ResumeFullAutomationModeTime
         {
-            get { return this._resumeFullAutomationModeTime.GetValueOrDefault(); }
+            get { return this._resumeFullAutomationModeTime; }
             set { this._resumeFullAutomationModeTime = value; }
         }
 
@@ -444,9 +444,9 @@ namespace Amazon.RDS.Model
         /// The storage throughput of the DB instance.
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public int? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 

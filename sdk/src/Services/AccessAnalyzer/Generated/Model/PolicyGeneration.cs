@@ -45,9 +45,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// A timestamp of when the policy generation was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedOn
+        public DateTime? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartedOn
+        public DateTime? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 

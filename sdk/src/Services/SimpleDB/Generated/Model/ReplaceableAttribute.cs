@@ -48,7 +48,7 @@ namespace Amazon.SimpleDB.Model
         /// <param name="name">The name of the replaceable attribute.</param>
         /// <param name="value">The value of the replaceable attribute.</param>
         /// <param name="replace">A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <c>false</c>.</param>
-        public ReplaceableAttribute(string name, string value, bool replace)
+        public ReplaceableAttribute(string name, string value, bool? replace)
         {
             _name = name;
             _value = value;
@@ -76,9 +76,9 @@ namespace Amazon.SimpleDB.Model
         /// attribute/value pair or to add a new attribute/value pair. The default setting is
         /// <c>false</c>.
         /// </summary>
-        public bool Replace
+        public bool? Replace
         {
-            get { return this._replace.GetValueOrDefault(); }
+            get { return this._replace; }
             set { this._replace = value; }
         }
 

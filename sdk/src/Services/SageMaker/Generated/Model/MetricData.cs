@@ -62,9 +62,9 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the algorithm emitted the metric.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.SageMaker.Model
         /// The value of the metric.
         /// </para>
         /// </summary>
-        public float Value
+        public float? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

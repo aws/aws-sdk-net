@@ -65,13 +65,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("heightInPx", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HeightInPx = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("widthInPx", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WidthInPx = unmarshaller.Unmarshall(context);
                     continue;
                 }

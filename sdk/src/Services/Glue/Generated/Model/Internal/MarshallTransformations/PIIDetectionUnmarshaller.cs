@@ -101,13 +101,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SampleFraction", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SampleFraction = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThresholdFraction", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThresholdFraction = unmarshaller.Unmarshall(context);
                     continue;
                 }

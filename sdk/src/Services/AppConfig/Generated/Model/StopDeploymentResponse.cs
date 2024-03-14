@@ -100,9 +100,9 @@ namespace Amazon.AppConfig.Model
         /// The time the deployment completed. 
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1440)]
-        public int DeploymentDurationInMinutes
+        public int? DeploymentDurationInMinutes
         {
-            get { return this._deploymentDurationInMinutes.GetValueOrDefault(); }
+            get { return this._deploymentDurationInMinutes; }
             set { this._deploymentDurationInMinutes = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.AppConfig.Model
         /// The sequence number of the deployment.
         /// </para>
         /// </summary>
-        public int DeploymentNumber
+        public int? DeploymentNumber
         {
-            get { return this._deploymentNumber.GetValueOrDefault(); }
+            get { return this._deploymentNumber; }
             set { this._deploymentNumber = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1440)]
-        public int FinalBakeTimeInMinutes
+        public int? FinalBakeTimeInMinutes
         {
-            get { return this._finalBakeTimeInMinutes.GetValueOrDefault(); }
+            get { return this._finalBakeTimeInMinutes; }
             set { this._finalBakeTimeInMinutes = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public float GrowthFactor
+        public float? GrowthFactor
         {
-            get { return this._growthFactor.GetValueOrDefault(); }
+            get { return this._growthFactor; }
             set { this._growthFactor = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public float PercentageComplete
+        public float? PercentageComplete
         {
-            get { return this._percentageComplete.GetValueOrDefault(); }
+            get { return this._percentageComplete; }
             set { this._percentageComplete = value; }
         }
 
@@ -422,9 +422,9 @@ namespace Amazon.AppConfig.Model
         /// The time the deployment started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("assessmentReportEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AssessmentReportEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("evidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

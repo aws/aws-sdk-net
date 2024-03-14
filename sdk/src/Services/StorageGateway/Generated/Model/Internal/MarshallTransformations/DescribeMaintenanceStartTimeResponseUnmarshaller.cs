@@ -53,13 +53,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DayOfMonth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DayOfMonth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DayOfWeek", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DayOfWeek = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,13 +71,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HourOfDay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.HourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

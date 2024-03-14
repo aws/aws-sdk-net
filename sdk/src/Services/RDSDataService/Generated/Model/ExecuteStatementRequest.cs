@@ -71,9 +71,9 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ContinueAfterTimeout
+        public bool? ContinueAfterTimeout
         {
-            get { return this._continueAfterTimeout.GetValueOrDefault(); }
+            get { return this._continueAfterTimeout; }
             set { this._continueAfterTimeout = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether to include metadata in the results.
         /// </para>
         /// </summary>
-        public bool IncludeResultMetadata
+        public bool? IncludeResultMetadata
         {
-            get { return this._includeResultMetadata.GetValueOrDefault(); }
+            get { return this._includeResultMetadata; }
             set { this._includeResultMetadata = value; }
         }
 

@@ -103,9 +103,9 @@ namespace Amazon.QuickSight.Model
         /// The number of items to include in the top bottom filter results.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

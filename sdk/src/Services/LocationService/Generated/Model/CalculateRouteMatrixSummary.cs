@@ -102,9 +102,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=160000)]
-        public int ErrorCount
+        public int? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=160000)]
-        public int RouteCount
+        public int? RouteCount
         {
-            get { return this._routeCount.GetValueOrDefault(); }
+            get { return this._routeCount; }
             set { this._routeCount = value; }
         }
 

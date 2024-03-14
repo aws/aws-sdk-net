@@ -77,13 +77,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DecisionTaskCompletedEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("initiatedEventId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InitiatedEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,9 +51,9 @@ namespace Amazon.SecurityHub.Model
         /// or it is canceled by Backup. 
         /// </para>
         /// </summary>
-        public long CompletionWindowMinutes
+        public long? CompletionWindowMinutes
         {
-            get { return this._completionWindowMinutes.GetValueOrDefault(); }
+            get { return this._completionWindowMinutes; }
             set { this._completionWindowMinutes = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SecurityHub.Model
         /// (PITR). 
         /// </para>
         /// </summary>
-        public bool EnableContinuousBackup
+        public bool? EnableContinuousBackup
         {
-            get { return this._enableContinuousBackup.GetValueOrDefault(); }
+            get { return this._enableContinuousBackup; }
             set { this._enableContinuousBackup = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.SecurityHub.Model
         /// doesn't start successfully. 
         /// </para>
         /// </summary>
-        public long StartWindowMinutes
+        public long? StartWindowMinutes
         {
-            get { return this._startWindowMinutes.GetValueOrDefault(); }
+            get { return this._startWindowMinutes; }
             set { this._startWindowMinutes = value; }
         }
 

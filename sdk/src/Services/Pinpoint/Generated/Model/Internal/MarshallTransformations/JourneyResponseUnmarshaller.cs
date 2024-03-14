@@ -113,7 +113,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LocalTime", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LocalTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RefreshOnSegmentUpdate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RefreshOnSegmentUpdate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,7 +155,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SendingSchedule", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SendingSchedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -191,7 +191,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WaitForQuietTime", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WaitForQuietTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

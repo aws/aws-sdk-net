@@ -69,9 +69,9 @@ namespace Amazon.IotData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

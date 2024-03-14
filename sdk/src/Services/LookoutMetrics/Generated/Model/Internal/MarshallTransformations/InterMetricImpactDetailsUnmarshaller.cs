@@ -71,7 +71,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ContributionPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ContributionPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

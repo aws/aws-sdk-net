@@ -92,9 +92,9 @@ namespace Amazon.RDS.Model
         /// The duration of the offering in seconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.RDS.Model
         /// The fixed price charged for this offering.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the offering applies to Multi-AZ deployments.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.RDS.Model
         /// The hourly price charged for this offering.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

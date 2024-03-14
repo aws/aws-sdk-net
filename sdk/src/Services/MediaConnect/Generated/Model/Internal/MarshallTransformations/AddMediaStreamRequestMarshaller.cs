@@ -59,7 +59,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClockRate())
             {
                 context.Writer.WritePropertyName("clockRate");
-                context.Writer.Write(requestObject.ClockRate);
+                context.Writer.Write(requestObject.ClockRate.Value);
             }
 
             if(requestObject.IsSetDescription())
@@ -71,7 +71,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaStreamId())
             {
                 context.Writer.WritePropertyName("mediaStreamId");
-                context.Writer.Write(requestObject.MediaStreamId);
+                context.Writer.Write(requestObject.MediaStreamId.Value);
             }
 
             if(requestObject.IsSetMediaStreamName())

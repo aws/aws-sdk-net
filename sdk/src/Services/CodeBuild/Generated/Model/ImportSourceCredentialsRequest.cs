@@ -89,9 +89,9 @@ namespace Amazon.CodeBuild.Model
         /// <c>true</c>. 
         /// </para>
         /// </summary>
-        public bool ShouldOverwrite
+        public bool? ShouldOverwrite
         {
-            get { return this._shouldOverwrite.GetValueOrDefault(); }
+            get { return this._shouldOverwrite; }
             set { this._shouldOverwrite = value; }
         }
 

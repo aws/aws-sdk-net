@@ -50,9 +50,9 @@ namespace Amazon.LookoutEquipment.Model
         ///  The time at which the label was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.LookoutEquipment.Model
         ///  The end time of the requested label. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.LookoutEquipment.Model
         ///  The start time of the requested label. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

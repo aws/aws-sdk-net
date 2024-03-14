@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstancePort())
             {
                 context.Writer.WritePropertyName("InstancePort");
-                context.Writer.Write(requestObject.InstancePort);
+                context.Writer.Write(requestObject.InstancePort.Value);
             }
 
             if(requestObject.IsSetInstanceProtocol())
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoadBalancerPort())
             {
                 context.Writer.WritePropertyName("LoadBalancerPort");
-                context.Writer.Write(requestObject.LoadBalancerPort);
+                context.Writer.Write(requestObject.LoadBalancerPort.Value);
             }
 
             if(requestObject.IsSetProtocol())

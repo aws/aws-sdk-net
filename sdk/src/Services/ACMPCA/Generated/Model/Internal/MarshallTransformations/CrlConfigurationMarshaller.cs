@@ -65,13 +65,13 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetExpirationInDays())
             {
                 context.Writer.WritePropertyName("ExpirationInDays");
-                context.Writer.Write(requestObject.ExpirationInDays);
+                context.Writer.Write(requestObject.ExpirationInDays.Value);
             }
 
             if(requestObject.IsSetS3BucketName())

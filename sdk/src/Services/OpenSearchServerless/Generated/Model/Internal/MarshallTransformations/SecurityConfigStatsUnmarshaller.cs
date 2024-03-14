@@ -65,7 +65,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("SamlConfigCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SamlConfigCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

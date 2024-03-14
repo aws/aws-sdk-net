@@ -54,7 +54,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceAncillaryChannelNumber())
             {
                 context.Writer.WritePropertyName("sourceAncillaryChannelNumber");
-                context.Writer.Write(requestObject.SourceAncillaryChannelNumber);
+                context.Writer.Write(requestObject.SourceAncillaryChannelNumber.Value);
             }
 
             if(requestObject.IsSetTerminateCaptions())

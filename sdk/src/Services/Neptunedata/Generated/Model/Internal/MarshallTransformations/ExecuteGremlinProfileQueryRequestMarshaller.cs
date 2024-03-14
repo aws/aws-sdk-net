@@ -68,7 +68,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetChop())
                 {
                     context.Writer.WritePropertyName("profile.chop");
-                    context.Writer.Write(publicRequest.Chop);
+                    context.Writer.Write(publicRequest.Chop.Value);
                 }
 
                 if(publicRequest.IsSetGremlinQuery())
@@ -80,13 +80,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIndexOps())
                 {
                     context.Writer.WritePropertyName("profile.indexOps");
-                    context.Writer.Write(publicRequest.IndexOps);
+                    context.Writer.Write(publicRequest.IndexOps.Value);
                 }
 
                 if(publicRequest.IsSetResults())
                 {
                     context.Writer.WritePropertyName("profile.results");
-                    context.Writer.Write(publicRequest.Results);
+                    context.Writer.Write(publicRequest.Results.Value);
                 }
 
                 if(publicRequest.IsSetSerializer())

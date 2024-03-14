@@ -59,7 +59,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentageValue())
             {
                 context.Writer.WritePropertyName("PercentageValue");
-                context.Writer.Write(requestObject.PercentageValue);
+                context.Writer.Write(requestObject.PercentageValue.Value);
             }
 
         }

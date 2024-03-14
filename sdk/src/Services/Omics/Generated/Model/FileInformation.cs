@@ -44,9 +44,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5497558138880)]
-        public long ContentLength
+        public long? ContentLength
         {
-            get { return this._contentLength.GetValueOrDefault(); }
+            get { return this._contentLength; }
             set { this._contentLength = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5368709120)]
-        public long PartSize
+        public long? PartSize
         {
-            get { return this._partSize.GetValueOrDefault(); }
+            get { return this._partSize; }
             set { this._partSize = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int TotalParts
+        public int? TotalParts
         {
-            get { return this._totalParts.GetValueOrDefault(); }
+            get { return this._totalParts; }
             set { this._totalParts = value; }
         }
 

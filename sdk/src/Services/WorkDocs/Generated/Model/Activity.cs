@@ -89,9 +89,9 @@ namespace Amazon.WorkDocs.Model
         /// parent folder (the indirect activity).
         /// </para>
         /// </summary>
-        public bool IsIndirectActivity
+        public bool? IsIndirectActivity
         {
-            get { return this._isIndirectActivity.GetValueOrDefault(); }
+            get { return this._isIndirectActivity; }
             set { this._isIndirectActivity = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.WorkDocs.Model
         /// The timestamp when the action was performed.
         /// </para>
         /// </summary>
-        public DateTime TimeStamp
+        public DateTime? TimeStamp
         {
-            get { return this._timeStamp.GetValueOrDefault(); }
+            get { return this._timeStamp; }
             set { this._timeStamp = value; }
         }
 

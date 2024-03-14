@@ -67,9 +67,9 @@ namespace Amazon.OpsWorks.Model
         /// The default value for <c>Secure</c> is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool Secure
+        public bool? Secure
         {
-            get { return this._secure.GetValueOrDefault(); }
+            get { return this._secure; }
             set { this._secure = value; }
         }
 

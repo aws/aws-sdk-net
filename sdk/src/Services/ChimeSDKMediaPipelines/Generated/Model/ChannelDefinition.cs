@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public int ChannelId
+        public int? ChannelId
         {
-            get { return this._channelId.GetValueOrDefault(); }
+            get { return this._channelId; }
             set { this._channelId = value; }
         }
 

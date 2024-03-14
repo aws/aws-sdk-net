@@ -55,9 +55,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// route key.
         /// </para>
         /// </summary>
-        public bool ApiGatewayManaged
+        public bool? ApiGatewayManaged
         {
-            get { return this._apiGatewayManaged.GetValueOrDefault(); }
+            get { return this._apiGatewayManaged; }
             set { this._apiGatewayManaged = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// APIs.
         /// </para>
         /// </summary>
-        public bool ApiKeyRequired
+        public bool? ApiKeyRequired
         {
-            get { return this._apiKeyRequired.GetValueOrDefault(); }
+            get { return this._apiKeyRequired; }
             set { this._apiKeyRequired = value; }
         }
 

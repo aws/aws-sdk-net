@@ -70,7 +70,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHECAcknowledgmentTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("HECAcknowledgmentTimeoutInSeconds");
-                context.Writer.Write(requestObject.HECAcknowledgmentTimeoutInSeconds);
+                context.Writer.Write(requestObject.HECAcknowledgmentTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetHECEndpoint())

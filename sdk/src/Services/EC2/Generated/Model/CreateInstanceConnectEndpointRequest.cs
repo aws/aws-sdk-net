@@ -87,9 +87,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool PreserveClientIp
+        public bool? PreserveClientIp
         {
-            get { return this._preserveClientIp.GetValueOrDefault(); }
+            get { return this._preserveClientIp; }
             set { this._preserveClientIp = value; }
         }
 

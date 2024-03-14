@@ -71,7 +71,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CertificateCreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CertificateCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("KeyLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KeyLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,13 +113,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ValidFromDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ValidFromDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValidToDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ValidToDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

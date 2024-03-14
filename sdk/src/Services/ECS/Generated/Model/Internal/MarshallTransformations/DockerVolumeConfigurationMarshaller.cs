@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoprovision())
             {
                 context.Writer.WritePropertyName("autoprovision");
-                context.Writer.Write(requestObject.Autoprovision);
+                context.Writer.Write(requestObject.Autoprovision.Value);
             }
 
             if(requestObject.IsSetDriver())

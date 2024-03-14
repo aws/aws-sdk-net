@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateCreationDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApproximateCreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SizeBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

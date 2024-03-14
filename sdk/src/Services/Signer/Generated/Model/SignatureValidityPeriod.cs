@@ -60,9 +60,9 @@ namespace Amazon.Signer.Model
         /// The numerical value of the time unit for signature validity.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

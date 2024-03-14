@@ -59,19 +59,19 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays);
+                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups);
+                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetCopyTagsToVolumes())
             {
                 context.Writer.WritePropertyName("CopyTagsToVolumes");
-                context.Writer.Write(requestObject.CopyTagsToVolumes);
+                context.Writer.Write(requestObject.CopyTagsToVolumes.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
@@ -105,7 +105,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
-                context.Writer.Write(requestObject.ThroughputCapacity);
+                context.Writer.Write(requestObject.ThroughputCapacity.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())

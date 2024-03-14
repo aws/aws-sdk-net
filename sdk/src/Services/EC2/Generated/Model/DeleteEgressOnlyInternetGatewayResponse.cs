@@ -41,9 +41,9 @@ namespace Amazon.EC2.Model
         /// Returns <c>true</c> if the request succeeds; otherwise, it returns an error.
         /// </para>
         /// </summary>
-        public bool ReturnCode
+        public bool? ReturnCode
         {
-            get { return this._returnCode.GetValueOrDefault(); }
+            get { return this._returnCode; }
             set { this._returnCode = value; }
         }
 

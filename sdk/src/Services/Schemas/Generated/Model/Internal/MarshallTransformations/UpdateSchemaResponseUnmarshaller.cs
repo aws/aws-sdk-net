@@ -59,7 +59,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VersionCreatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.VersionCreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

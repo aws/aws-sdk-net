@@ -100,7 +100,7 @@ namespace Amazon.BedrockRuntime.Model
             : base(info, context)
         {
             this.OriginalMessage = (string)info.GetValue("OriginalMessage", typeof(string));
-            this.OriginalStatusCode = (int)info.GetValue("OriginalStatusCode", typeof(int));
+            this.OriginalStatusCode = (int?)info.GetValue("OriginalStatusCode", typeof(int?));
         }
 
         /// <summary>
@@ -109,11 +109,6 @@ namespace Amazon.BedrockRuntime.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -151,9 +146,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=599)]
-        public int OriginalStatusCode
+        public int? OriginalStatusCode
         {
-            get { return this._originalStatusCode.GetValueOrDefault(); }
+            get { return this._originalStatusCode; }
             set { this._originalStatusCode = value; }
         }
 

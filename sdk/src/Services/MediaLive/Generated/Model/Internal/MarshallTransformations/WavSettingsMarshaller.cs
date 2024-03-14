@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("bitDepth");
-                context.Writer.Write(requestObject.BitDepth);
+                context.Writer.Write(requestObject.BitDepth.Value);
             }
 
             if(requestObject.IsSetCodingMode())
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate);
+                context.Writer.Write(requestObject.SampleRate.Value);
             }
 
         }

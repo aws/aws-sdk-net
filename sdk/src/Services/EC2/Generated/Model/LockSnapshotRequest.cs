@@ -95,9 +95,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=72)]
-        public int CoolOffPeriod
+        public int? CoolOffPeriod
         {
-            get { return this._coolOffPeriod.GetValueOrDefault(); }
+            get { return this._coolOffPeriod; }
             set { this._coolOffPeriod = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.EC2.Model
         /// You must specify either this parameter or <b>LockDuration</b>, but not both.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36500)]
-        public int LockDuration
+        public int? LockDuration
         {
-            get { return this._lockDuration.GetValueOrDefault(); }
+            get { return this._lockDuration; }
             set { this._lockDuration = value; }
         }
 

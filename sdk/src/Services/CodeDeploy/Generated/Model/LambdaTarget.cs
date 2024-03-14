@@ -83,9 +83,9 @@ namespace Amazon.CodeDeploy.Model
         ///  The date and time when the target Lambda function was updated by a deployment. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

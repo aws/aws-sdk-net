@@ -145,9 +145,9 @@ namespace Amazon.Lightsail.Model
         /// This value is listed only for RDP certificates.
         /// </para>
         /// </summary>
-        public DateTime NotValidAfter
+        public DateTime? NotValidAfter
         {
-            get { return this._notValidAfter.GetValueOrDefault(); }
+            get { return this._notValidAfter; }
             set { this._notValidAfter = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.Lightsail.Model
         /// This value is listed only for RDP certificates.
         /// </para>
         /// </summary>
-        public DateTime NotValidBefore
+        public DateTime? NotValidBefore
         {
-            get { return this._notValidBefore.GetValueOrDefault(); }
+            get { return this._notValidBefore; }
             set { this._notValidBefore = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Lightsail.Model
         /// The time that the SSH host key or RDP certificate was recorded by Lightsail.
         /// </para>
         /// </summary>
-        public DateTime WitnessedAt
+        public DateTime? WitnessedAt
         {
-            get { return this._witnessedAt.GetValueOrDefault(); }
+            get { return this._witnessedAt; }
             set { this._witnessedAt = value; }
         }
 

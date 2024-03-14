@@ -132,9 +132,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ManageResourcePolicies
+        public bool? ManageResourcePolicies
         {
-            get { return this._manageResourcePolicies.GetValueOrDefault(); }
+            get { return this._manageResourcePolicies; }
             set { this._manageResourcePolicies = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

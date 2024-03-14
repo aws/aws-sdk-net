@@ -85,9 +85,9 @@ namespace Amazon.Honeycode.Model
         /// sequential. 
         /// </para>
         /// </summary>
-        public long WorkbookCursor
+        public long? WorkbookCursor
         {
-            get { return this._workbookCursor.GetValueOrDefault(); }
+            get { return this._workbookCursor; }
             set { this._workbookCursor = value; }
         }
 

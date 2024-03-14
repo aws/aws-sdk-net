@@ -116,9 +116,9 @@ namespace Amazon.Glue.Model
         /// The time that this task was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double DPUSeconds
+        public double? DPUSeconds
         {
-            get { return this._dpuSeconds.GetValueOrDefault(); }
+            get { return this._dpuSeconds; }
             set { this._dpuSeconds = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.Glue.Model
         /// The end time of the task.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.Glue.Model
         /// The last point in time when this task was modified.
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double SampleSize
+        public double? SampleSize
         {
-            get { return this._sampleSize.GetValueOrDefault(); }
+            get { return this._sampleSize; }
             set { this._sampleSize = value; }
         }
 
@@ -323,9 +323,9 @@ namespace Amazon.Glue.Model
         /// The start time of the task.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

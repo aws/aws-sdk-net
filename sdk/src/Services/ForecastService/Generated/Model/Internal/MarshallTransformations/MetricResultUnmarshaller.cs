@@ -71,7 +71,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MetricValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

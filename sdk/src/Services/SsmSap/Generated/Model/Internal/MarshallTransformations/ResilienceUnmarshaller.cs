@@ -71,7 +71,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnqueueReplication", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnqueueReplication = unmarshaller.Unmarshall(context);
                     continue;
                 }

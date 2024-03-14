@@ -145,9 +145,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The port value for the MongoDB data provider.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

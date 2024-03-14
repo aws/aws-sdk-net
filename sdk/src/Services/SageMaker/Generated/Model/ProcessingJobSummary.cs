@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates the last time the processing job was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.SageMaker.Model
         /// The time at which the processing job completed.
         /// </para>
         /// </summary>
-        public DateTime ProcessingEndTime
+        public DateTime? ProcessingEndTime
         {
-            get { return this._processingEndTime.GetValueOrDefault(); }
+            get { return this._processingEndTime; }
             set { this._processingEndTime = value; }
         }
 

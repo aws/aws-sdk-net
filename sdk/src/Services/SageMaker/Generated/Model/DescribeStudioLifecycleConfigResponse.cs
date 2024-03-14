@@ -46,9 +46,9 @@ namespace Amazon.SageMaker.Model
         /// The creation time of the Amazon SageMaker Studio Lifecycle Configuration.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SageMaker.Model
         /// Configurations are immutable.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

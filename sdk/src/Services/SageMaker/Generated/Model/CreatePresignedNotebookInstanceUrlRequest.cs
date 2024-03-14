@@ -90,9 +90,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1800, Max=43200)]
-        public int SessionExpirationDurationInSeconds
+        public int? SessionExpirationDurationInSeconds
         {
-            get { return this._sessionExpirationDurationInSeconds.GetValueOrDefault(); }
+            get { return this._sessionExpirationDurationInSeconds; }
             set { this._sessionExpirationDurationInSeconds = value; }
         }
 

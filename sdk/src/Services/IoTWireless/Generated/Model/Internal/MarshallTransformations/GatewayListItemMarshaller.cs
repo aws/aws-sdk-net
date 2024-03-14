@@ -48,7 +48,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDownlinkFrequency())
             {
                 context.Writer.WritePropertyName("DownlinkFrequency");
-                context.Writer.Write(requestObject.DownlinkFrequency);
+                context.Writer.Write(requestObject.DownlinkFrequency.Value);
             }
 
             if(requestObject.IsSetGatewayId())

@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         ///  The number of milliseconds that a token is valid after being authenticated. 
         /// </para>
         /// </summary>
-        public long AuthTtL
+        public long? AuthTtL
         {
-            get { return this._authTtL.GetValueOrDefault(); }
+            get { return this._authTtL; }
             set { this._authTtL = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.SecurityHub.Model
         ///  The number of milliseconds that a token is valid after it's issued to a user. 
         /// </para>
         /// </summary>
-        public long IatTtL
+        public long? IatTtL
         {
-            get { return this._iatTtL.GetValueOrDefault(); }
+            get { return this._iatTtL; }
             set { this._iatTtL = value; }
         }
 

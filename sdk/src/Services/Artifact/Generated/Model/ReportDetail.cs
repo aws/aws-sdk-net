@@ -135,9 +135,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating when the report resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating when the report resource was deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating when the report resource was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating the report resource effective end.
         /// </para>
         /// </summary>
-        public DateTime PeriodEnd
+        public DateTime? PeriodEnd
         {
-            get { return this._periodEnd.GetValueOrDefault(); }
+            get { return this._periodEnd; }
             set { this._periodEnd = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.Artifact.Model
         /// Timestamp indicating the report resource effective start.
         /// </para>
         /// </summary>
-        public DateTime PeriodStart
+        public DateTime? PeriodStart
         {
-            get { return this._periodStart.GetValueOrDefault(); }
+            get { return this._periodStart; }
             set { this._periodStart = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.Artifact.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long SequenceNumber
+        public long? SequenceNumber
         {
-            get { return this._sequenceNumber.GetValueOrDefault(); }
+            get { return this._sequenceNumber; }
             set { this._sequenceNumber = value; }
         }
 
@@ -412,9 +412,9 @@ namespace Amazon.Artifact.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

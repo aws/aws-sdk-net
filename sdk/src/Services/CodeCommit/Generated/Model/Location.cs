@@ -63,9 +63,9 @@ namespace Amazon.CodeCommit.Model
         /// The position of a change in a compared file, in line number format.
         /// </para>
         /// </summary>
-        public long FilePosition
+        public long? FilePosition
         {
-            get { return this._filePosition.GetValueOrDefault(); }
+            get { return this._filePosition; }
             set { this._filePosition = value; }
         }
 

@@ -131,9 +131,9 @@ namespace Amazon.AppStream.Model
         /// The time the image was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.AppStream.Model
         /// Indicates whether an image builder can be launched from this image.
         /// </para>
         /// </summary>
-        public bool ImageBuilderSupported
+        public bool? ImageBuilderSupported
         {
-            get { return this._imageBuilderSupported.GetValueOrDefault(); }
+            get { return this._imageBuilderSupported; }
             set { this._imageBuilderSupported = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.AppStream.Model
         /// date of the base image from which the image was created.
         /// </para>
         /// </summary>
-        public DateTime PublicBaseImageReleasedDate
+        public DateTime? PublicBaseImageReleasedDate
         {
-            get { return this._publicBaseImageReleasedDate.GetValueOrDefault(); }
+            get { return this._publicBaseImageReleasedDate; }
             set { this._publicBaseImageReleasedDate = value; }
         }
 

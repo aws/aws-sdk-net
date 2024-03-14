@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// the number, the further instance metadata requests can travel.
         /// </para>
         /// </summary>
-        public int HttpPutResponseHopLimit
+        public int? HttpPutResponseHopLimit
         {
-            get { return this._httpPutResponseHopLimit.GetValueOrDefault(); }
+            get { return this._httpPutResponseHopLimit; }
             set { this._httpPutResponseHopLimit = value; }
         }
 

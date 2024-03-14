@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("IgnoreClientCertificateExpiry", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IgnoreClientCertificateExpiry = unmarshaller.Unmarshall(context);
                         continue;
                     }

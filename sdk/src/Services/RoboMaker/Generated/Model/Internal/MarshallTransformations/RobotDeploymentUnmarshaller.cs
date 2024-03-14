@@ -71,13 +71,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("deploymentFinishTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeploymentFinishTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("deploymentStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeploymentStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

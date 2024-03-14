@@ -86,9 +86,9 @@ namespace Amazon.AWSSupport.Model
         /// Specifies whether the Trusted Advisor check has flagged resources.
         /// </para>
         /// </summary>
-        public bool HasFlaggedResources
+        public bool? HasFlaggedResources
         {
-            get { return this._hasFlaggedResources.GetValueOrDefault(); }
+            get { return this._hasFlaggedResources; }
             set { this._hasFlaggedResources = value; }
         }
 

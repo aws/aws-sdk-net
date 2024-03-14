@@ -104,9 +104,9 @@ namespace Amazon.RDS.Model
         /// is removed, the default certificate is the system default.
         /// </para>
         /// </summary>
-        public bool RemoveCustomerOverride
+        public bool? RemoveCustomerOverride
         {
-            get { return this._removeCustomerOverride.GetValueOrDefault(); }
+            get { return this._removeCustomerOverride; }
             set { this._removeCustomerOverride = value; }
         }
 

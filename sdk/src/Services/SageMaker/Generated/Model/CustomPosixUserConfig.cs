@@ -43,9 +43,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1001, Max=4000000)]
-        public long Gid
+        public long? Gid
         {
-            get { return this._gid.GetValueOrDefault(); }
+            get { return this._gid; }
             set { this._gid = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10000, Max=4000000)]
-        public long Uid
+        public long? Uid
         {
-            get { return this._uid.GetValueOrDefault(); }
+            get { return this._uid; }
             set { this._uid = value; }
         }
 

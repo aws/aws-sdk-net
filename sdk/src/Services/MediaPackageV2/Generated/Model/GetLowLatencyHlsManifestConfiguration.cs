@@ -108,9 +108,9 @@ namespace Amazon.MediaPackageV2.Model
         /// The total duration (in seconds) of the manifest's content.
         /// </para>
         /// </summary>
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.MediaPackageV2.Model
         /// passed through to the HLS output.
         /// </para>
         /// </summary>
-        public int ProgramDateTimeIntervalSeconds
+        public int? ProgramDateTimeIntervalSeconds
         {
-            get { return this._programDateTimeIntervalSeconds.GetValueOrDefault(); }
+            get { return this._programDateTimeIntervalSeconds; }
             set { this._programDateTimeIntervalSeconds = value; }
         }
 

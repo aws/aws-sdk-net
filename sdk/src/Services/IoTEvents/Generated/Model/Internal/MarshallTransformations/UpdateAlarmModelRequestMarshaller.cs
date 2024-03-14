@@ -127,7 +127,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSeverity())
                 {
                     context.Writer.WritePropertyName("severity");
-                    context.Writer.Write(publicRequest.Severity);
+                    context.Writer.Write(publicRequest.Severity.Value);
                 }
 
                 writer.WriteObjectEnd();

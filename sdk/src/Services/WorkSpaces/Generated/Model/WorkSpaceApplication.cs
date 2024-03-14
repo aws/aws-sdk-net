@@ -67,9 +67,9 @@ namespace Amazon.WorkSpaces.Model
         /// The time the application is created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 

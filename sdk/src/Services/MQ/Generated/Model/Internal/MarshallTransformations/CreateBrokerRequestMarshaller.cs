@@ -74,7 +74,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("autoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade);
+                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
                 }
 
                 if(publicRequest.IsSetBrokerName())
@@ -188,7 +188,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");
-                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                    context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                 }
 
                 if(publicRequest.IsSetSecurityGroups())

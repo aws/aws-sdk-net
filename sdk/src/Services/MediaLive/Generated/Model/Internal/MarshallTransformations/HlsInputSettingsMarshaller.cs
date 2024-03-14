@@ -48,25 +48,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidth())
             {
                 context.Writer.WritePropertyName("bandwidth");
-                context.Writer.Write(requestObject.Bandwidth);
+                context.Writer.Write(requestObject.Bandwidth.Value);
             }
 
             if(requestObject.IsSetBufferSegments())
             {
                 context.Writer.WritePropertyName("bufferSegments");
-                context.Writer.Write(requestObject.BufferSegments);
+                context.Writer.Write(requestObject.BufferSegments.Value);
             }
 
             if(requestObject.IsSetRetries())
             {
                 context.Writer.WritePropertyName("retries");
-                context.Writer.Write(requestObject.Retries);
+                context.Writer.Write(requestObject.Retries.Value);
             }
 
             if(requestObject.IsSetRetryInterval())
             {
                 context.Writer.WritePropertyName("retryInterval");
-                context.Writer.Write(requestObject.RetryInterval);
+                context.Writer.Write(requestObject.RetryInterval.Value);
             }
 
             if(requestObject.IsSetScte35Source())

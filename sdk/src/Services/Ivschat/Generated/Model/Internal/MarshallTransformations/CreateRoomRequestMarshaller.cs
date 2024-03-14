@@ -79,13 +79,13 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaximumMessageLength())
                 {
                     context.Writer.WritePropertyName("maximumMessageLength");
-                    context.Writer.Write(publicRequest.MaximumMessageLength);
+                    context.Writer.Write(publicRequest.MaximumMessageLength.Value);
                 }
 
                 if(publicRequest.IsSetMaximumMessageRatePerSecond())
                 {
                     context.Writer.WritePropertyName("maximumMessageRatePerSecond");
-                    context.Writer.Write(publicRequest.MaximumMessageRatePerSecond);
+                    context.Writer.Write(publicRequest.MaximumMessageRatePerSecond.Value);
                 }
 
                 if(publicRequest.IsSetMessageReviewHandler())

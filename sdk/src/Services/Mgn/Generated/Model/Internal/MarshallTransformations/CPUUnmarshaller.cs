@@ -65,7 +65,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cores", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Cores = unmarshaller.Unmarshall(context);
                     continue;
                 }

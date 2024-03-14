@@ -50,7 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroupId">Unique ID of the instance group to modify.</param>
         /// <param name="instanceCount">Target size for the instance group.</param>
-        public InstanceGroupModifyConfig(string instanceGroupId, int instanceCount)
+        public InstanceGroupModifyConfig(string instanceGroupId, int? instanceCount)
         {
             _instanceGroupId = instanceGroupId;
             _instanceCount = instanceCount;
@@ -99,9 +99,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Target size for the instance group.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

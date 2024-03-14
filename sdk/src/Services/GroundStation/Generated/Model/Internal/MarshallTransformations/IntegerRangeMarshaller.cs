@@ -48,13 +48,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("maximum");
-                context.Writer.Write(requestObject.Maximum);
+                context.Writer.Write(requestObject.Maximum.Value);
             }
 
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("minimum");
-                context.Writer.Write(requestObject.Minimum);
+                context.Writer.Write(requestObject.Minimum.Value);
             }
 
         }

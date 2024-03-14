@@ -65,7 +65,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DesiredNumberOfDomainControllers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredNumberOfDomainControllers = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LaunchTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StatusLastUpdatedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StatusLastUpdatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

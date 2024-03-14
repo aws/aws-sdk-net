@@ -53,9 +53,9 @@ namespace Amazon.CustomerProfiles.Model
         /// be used as an absolute measure of matching quality.
         /// </para>
         /// </summary>
-        public double ConfidenceScore
+        public double? ConfidenceScore
         {
-            get { return this._confidenceScore.GetValueOrDefault(); }
+            get { return this._confidenceScore; }
             set { this._confidenceScore = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
-        public int RuleLevel
+        public int? RuleLevel
         {
-            get { return this._ruleLevel.GetValueOrDefault(); }
+            get { return this._ruleLevel; }
             set { this._ruleLevel = value; }
         }
 

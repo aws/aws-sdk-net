@@ -48,25 +48,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetLeftOffset())
             {
                 context.Writer.WritePropertyName("leftOffset");
-                context.Writer.Write(requestObject.LeftOffset);
+                context.Writer.Write(requestObject.LeftOffset.Value);
             }
 
             if(requestObject.IsSetTopOffset())
             {
                 context.Writer.WritePropertyName("topOffset");
-                context.Writer.Write(requestObject.TopOffset);
+                context.Writer.Write(requestObject.TopOffset.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
         }

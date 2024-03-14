@@ -71,7 +71,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("suppressed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Suppressed = unmarshaller.Unmarshall(context);
                     continue;
                 }

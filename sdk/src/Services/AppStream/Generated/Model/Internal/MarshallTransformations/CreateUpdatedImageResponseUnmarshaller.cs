@@ -53,7 +53,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("canUpdateImage", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CanUpdateImage = unmarshaller.Unmarshall(context);
                     continue;
                 }

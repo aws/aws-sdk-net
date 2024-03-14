@@ -42,9 +42,9 @@ namespace Amazon.Imagebuilder.Model
         /// associated resources that are also impacted.
         /// </para>
         /// </summary>
-        public bool HasImpactedResources
+        public bool? HasImpactedResources
         {
-            get { return this._hasImpactedResources.GetValueOrDefault(); }
+            get { return this._hasImpactedResources; }
             set { this._hasImpactedResources = value; }
         }
 

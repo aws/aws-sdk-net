@@ -54,7 +54,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBidPriceAsPercentageOfOnDemandPrice())
             {
                 context.Writer.WritePropertyName("BidPriceAsPercentageOfOnDemandPrice");
-                context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice);
+                context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
             }
 
             if(requestObject.IsSetConfigurations())
@@ -99,7 +99,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeightedCapacity())
             {
                 context.Writer.WritePropertyName("WeightedCapacity");
-                context.Writer.Write(requestObject.WeightedCapacity);
+                context.Writer.Write(requestObject.WeightedCapacity.Value);
             }
 
         }

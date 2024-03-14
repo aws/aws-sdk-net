@@ -41,9 +41,9 @@ namespace Amazon.ElasticInference.Model
         ///  The size in mebibytes of the Elastic Inference Accelerator type. 
         /// </para>
         /// </summary>
-        public int SizeInMiB
+        public int? SizeInMiB
         {
-            get { return this._sizeInMiB.GetValueOrDefault(); }
+            get { return this._sizeInMiB; }
             set { this._sizeInMiB = value; }
         }
 

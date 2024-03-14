@@ -43,9 +43,9 @@ namespace Amazon.IoT.Model
         /// The date and time the policy was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether the policy version is the default.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.GuardDuty.Model
         /// Represents total number of nodes in the Amazon ECS cluster.
         /// </para>
         /// </summary>
-        public long CompatibleContainerInstances
+        public long? CompatibleContainerInstances
         {
-            get { return this._compatibleContainerInstances.GetValueOrDefault(); }
+            get { return this._compatibleContainerInstances; }
             set { this._compatibleContainerInstances = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.GuardDuty.Model
         /// status.
         /// </para>
         /// </summary>
-        public long CoveredContainerInstances
+        public long? CoveredContainerInstances
         {
-            get { return this._coveredContainerInstances.GetValueOrDefault(); }
+            get { return this._coveredContainerInstances; }
             set { this._coveredContainerInstances = value; }
         }
 

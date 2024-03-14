@@ -72,9 +72,9 @@ namespace Amazon.RAM.Model
         /// To see the list of available versions, use <a>ListPermissionVersions</a>.
         /// </para>
         /// </summary>
-        public int PermissionVersion
+        public int? PermissionVersion
         {
-            get { return this._permissionVersion.GetValueOrDefault(); }
+            get { return this._permissionVersion; }
             set { this._permissionVersion = value; }
         }
 

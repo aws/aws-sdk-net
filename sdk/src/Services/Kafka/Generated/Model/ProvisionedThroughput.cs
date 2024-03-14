@@ -43,9 +43,9 @@ namespace Amazon.Kafka.Model
         /// Provisioned throughput is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Kafka.Model
         /// MiB per second.
         /// </para>
         /// </summary>
-        public int VolumeThroughput
+        public int? VolumeThroughput
         {
-            get { return this._volumeThroughput.GetValueOrDefault(); }
+            get { return this._volumeThroughput; }
             set { this._volumeThroughput = value; }
         }
 

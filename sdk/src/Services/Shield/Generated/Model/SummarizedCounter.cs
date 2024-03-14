@@ -46,9 +46,9 @@ namespace Amazon.Shield.Model
         /// The average value of the counter for a specified time period.
         /// </para>
         /// </summary>
-        public double Average
+        public double? Average
         {
-            get { return this._average.GetValueOrDefault(); }
+            get { return this._average; }
             set { this._average = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Shield.Model
         /// The maximum value of the counter for a specified time period.
         /// </para>
         /// </summary>
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Shield.Model
         /// The number of counters for a specified time period.
         /// </para>
         /// </summary>
-        public int N
+        public int? N
         {
-            get { return this._n.GetValueOrDefault(); }
+            get { return this._n; }
             set { this._n = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Shield.Model
         /// The total of counter values for a specified time period.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInvert())
             {
                 context.Writer.WritePropertyName("invert");
-                context.Writer.Write(requestObject.Invert);
+                context.Writer.Write(requestObject.Invert.Value);
             }
 
             if(requestObject.IsSetMatch())

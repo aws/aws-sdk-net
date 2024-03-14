@@ -180,9 +180,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// accounts aren't included in the export.
         /// </para>
         /// </summary>
-        public bool IncludeMemberAccounts
+        public bool? IncludeMemberAccounts
         {
-            get { return this._includeMemberAccounts.GetValueOrDefault(); }
+            get { return this._includeMemberAccounts; }
             set { this._includeMemberAccounts = value; }
         }
 

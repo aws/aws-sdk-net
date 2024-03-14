@@ -77,7 +77,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DedicatedMaster", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DedicatedMaster = unmarshaller.Unmarshall(context);
                     continue;
                 }

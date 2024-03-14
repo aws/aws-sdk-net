@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                context.Writer.Write(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetBitstreamMode())
@@ -72,7 +72,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm);
+                context.Writer.Write(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDrcProfile())

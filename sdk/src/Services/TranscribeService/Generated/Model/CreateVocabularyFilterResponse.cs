@@ -66,9 +66,9 @@ namespace Amazon.TranscribeService.Model
         /// <c>2022-05-04T12:32:58.761000-07:00</c> represents 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

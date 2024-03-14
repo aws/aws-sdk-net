@@ -98,9 +98,9 @@ namespace Amazon.QuickSight.Model
         /// The options that determine the bin start value.
         /// </para>
         /// </summary>
-        public double StartValue
+        public double? StartValue
         {
-            get { return this._startValue.GetValueOrDefault(); }
+            get { return this._startValue; }
             set { this._startValue = value; }
         }
 

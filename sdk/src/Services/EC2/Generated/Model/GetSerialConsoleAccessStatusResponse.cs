@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// for your account.
         /// </para>
         /// </summary>
-        public bool SerialConsoleAccessEnabled
+        public bool? SerialConsoleAccessEnabled
         {
-            get { return this._serialConsoleAccessEnabled.GetValueOrDefault(); }
+            get { return this._serialConsoleAccessEnabled; }
             set { this._serialConsoleAccessEnabled = value; }
         }
 

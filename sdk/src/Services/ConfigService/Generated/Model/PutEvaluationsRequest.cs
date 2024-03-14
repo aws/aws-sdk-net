@@ -94,9 +94,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool TestMode
+        public bool? TestMode
         {
-            get { return this._testMode.GetValueOrDefault(); }
+            get { return this._testMode; }
             set { this._testMode = value; }
         }
 

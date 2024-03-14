@@ -65,9 +65,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// when converting objects to the target database.
         /// </para>
         /// </summary>
-        public bool OverwriteExtensionPack
+        public bool? OverwriteExtensionPack
         {
-            get { return this._overwriteExtensionPack.GetValueOrDefault(); }
+            get { return this._overwriteExtensionPack; }
             set { this._overwriteExtensionPack = value; }
         }
 

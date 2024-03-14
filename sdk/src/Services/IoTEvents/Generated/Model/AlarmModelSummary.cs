@@ -81,9 +81,9 @@ namespace Amazon.IoTEvents.Model
         /// The time the alarm model was created, in the Unix epoch format.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

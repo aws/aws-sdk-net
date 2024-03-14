@@ -101,7 +101,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Limit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UpdateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

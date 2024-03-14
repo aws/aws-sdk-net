@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether the policy version is the default.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 

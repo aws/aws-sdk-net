@@ -66,9 +66,9 @@ namespace Amazon.ElastiCache.Model
         /// The deletion date of the node
         /// </para>
         /// </summary>
-        public DateTime NodeDeletionDate
+        public DateTime? NodeDeletionDate
         {
-            get { return this._nodeDeletionDate.GetValueOrDefault(); }
+            get { return this._nodeDeletionDate; }
             set { this._nodeDeletionDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ElastiCache.Model
         /// The end date of the update for a node
         /// </para>
         /// </summary>
-        public DateTime NodeUpdateEndDate
+        public DateTime? NodeUpdateEndDate
         {
-            get { return this._nodeUpdateEndDate.GetValueOrDefault(); }
+            get { return this._nodeUpdateEndDate; }
             set { this._nodeUpdateEndDate = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.ElastiCache.Model
         /// The date when the update is triggered
         /// </para>
         /// </summary>
-        public DateTime NodeUpdateInitiatedDate
+        public DateTime? NodeUpdateInitiatedDate
         {
-            get { return this._nodeUpdateInitiatedDate.GetValueOrDefault(); }
+            get { return this._nodeUpdateInitiatedDate; }
             set { this._nodeUpdateInitiatedDate = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.ElastiCache.Model
         /// The start date of the update for a node
         /// </para>
         /// </summary>
-        public DateTime NodeUpdateStartDate
+        public DateTime? NodeUpdateStartDate
         {
-            get { return this._nodeUpdateStartDate.GetValueOrDefault(); }
+            get { return this._nodeUpdateStartDate; }
             set { this._nodeUpdateStartDate = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.ElastiCache.Model
         /// The date when the NodeUpdateStatus was last modified&gt;
         /// </para>
         /// </summary>
-        public DateTime NodeUpdateStatusModifiedDate
+        public DateTime? NodeUpdateStatusModifiedDate
         {
-            get { return this._nodeUpdateStatusModifiedDate.GetValueOrDefault(); }
+            get { return this._nodeUpdateStatusModifiedDate; }
             set { this._nodeUpdateStatusModifiedDate = value; }
         }
 

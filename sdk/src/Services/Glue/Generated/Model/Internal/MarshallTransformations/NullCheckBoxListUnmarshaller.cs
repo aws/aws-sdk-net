@@ -65,19 +65,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsEmpty", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsEmpty = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsNegOne", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNegOne = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsNullString", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNullString = unmarshaller.Unmarshall(context);
                     continue;
                 }

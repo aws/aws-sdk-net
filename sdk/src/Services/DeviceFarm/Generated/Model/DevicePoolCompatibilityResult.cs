@@ -43,9 +43,9 @@ namespace Amazon.DeviceFarm.Model
         /// Whether the result was compatible with the device pool.
         /// </para>
         /// </summary>
-        public bool Compatible
+        public bool? Compatible
         {
-            get { return this._compatible.GetValueOrDefault(); }
+            get { return this._compatible; }
             set { this._compatible = value; }
         }
 

@@ -72,9 +72,9 @@ namespace Amazon.Backup.Model
         /// The value as a number of jobs in a job summary.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.Backup.Model
         /// 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.Backup.Model
         /// 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

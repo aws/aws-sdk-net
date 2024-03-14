@@ -228,9 +228,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumResults
+        public int? NumResults
         {
-            get { return this._numResults.GetValueOrDefault(); }
+            get { return this._numResults; }
             set { this._numResults = value; }
         }
 

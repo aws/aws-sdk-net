@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Bitrate. Specify the average bitrate in bits per second.
         /// </summary>
         [AWSProperty(Min=16000, Max=320000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.MediaConvert.Model
         /// In the API, valid values are 1 and 2.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int Channels
+        public int? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SampleRate. Sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=22050, Max=48000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.MediaConvert.Model
         /// (lowest quality).
         /// </summary>
         [AWSProperty(Min=0, Max=9)]
-        public int VbrQuality
+        public int? VbrQuality
         {
-            get { return this._vbrQuality.GetValueOrDefault(); }
+            get { return this._vbrQuality; }
             set { this._vbrQuality = value; }
         }
 

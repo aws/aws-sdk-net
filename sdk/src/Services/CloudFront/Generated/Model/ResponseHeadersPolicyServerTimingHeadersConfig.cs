@@ -59,9 +59,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double SamplingRate
+        public double? SamplingRate
         {
-            get { return this._samplingRate.GetValueOrDefault(); }
+            get { return this._samplingRate; }
             set { this._samplingRate = value; }
         }
 

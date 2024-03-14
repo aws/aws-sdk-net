@@ -43,9 +43,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The time (in epoch) when the event occurred. 
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFetchSubmodules())
             {
                 context.Writer.WritePropertyName("fetchSubmodules");
-                context.Writer.Write(requestObject.FetchSubmodules);
+                context.Writer.Write(requestObject.FetchSubmodules.Value);
             }
 
         }

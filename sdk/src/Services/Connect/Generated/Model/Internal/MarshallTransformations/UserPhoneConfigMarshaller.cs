@@ -48,13 +48,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterContactWorkTimeLimit())
             {
                 context.Writer.WritePropertyName("AfterContactWorkTimeLimit");
-                context.Writer.Write(requestObject.AfterContactWorkTimeLimit);
+                context.Writer.Write(requestObject.AfterContactWorkTimeLimit.Value);
             }
 
             if(requestObject.IsSetAutoAccept())
             {
                 context.Writer.WritePropertyName("AutoAccept");
-                context.Writer.Write(requestObject.AutoAccept);
+                context.Writer.Write(requestObject.AutoAccept.Value);
             }
 
             if(requestObject.IsSetDeskPhoneNumber())

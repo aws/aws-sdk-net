@@ -48,13 +48,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");
-                context.Writer.Write(requestObject.DurationMillis);
+                context.Writer.Write(requestObject.DurationMillis.Value);
             }
 
             if(requestObject.IsSetFileSize())
             {
                 context.Writer.WritePropertyName("FileSize");
-                context.Writer.Write(requestObject.FileSize);
+                context.Writer.Write(requestObject.FileSize.Value);
             }
 
             if(requestObject.IsSetFrameRate())
@@ -66,13 +66,13 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
         }

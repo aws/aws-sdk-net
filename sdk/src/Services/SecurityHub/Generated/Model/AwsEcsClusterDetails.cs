@@ -52,9 +52,9 @@ namespace Amazon.SecurityHub.Model
         /// <c>ListServices</c> </a> API operation. 
         /// </para>
         /// </summary>
-        public int ActiveServicesCount
+        public int? ActiveServicesCount
         {
-            get { return this._activeServicesCount.GetValueOrDefault(); }
+            get { return this._activeServicesCount; }
             set { this._activeServicesCount = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.SecurityHub.Model
         /// instances in both <c>ACTIVE</c> and <c>DRAINING</c> status. 
         /// </para>
         /// </summary>
-        public int RegisteredContainerInstancesCount
+        public int? RegisteredContainerInstancesCount
         {
-            get { return this._registeredContainerInstancesCount.GetValueOrDefault(); }
+            get { return this._registeredContainerInstancesCount; }
             set { this._registeredContainerInstancesCount = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of tasks in the cluster that are in the <c>RUNNING</c> state. 
         /// </para>
         /// </summary>
-        public int RunningTasksCount
+        public int? RunningTasksCount
         {
-            get { return this._runningTasksCount.GetValueOrDefault(); }
+            get { return this._runningTasksCount; }
             set { this._runningTasksCount = value; }
         }
 

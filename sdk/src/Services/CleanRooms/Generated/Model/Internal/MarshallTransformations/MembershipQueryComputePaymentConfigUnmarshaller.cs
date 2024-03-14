@@ -65,7 +65,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isResponsible", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsResponsible = unmarshaller.Unmarshall(context);
                     continue;
                 }

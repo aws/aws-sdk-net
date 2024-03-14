@@ -71,7 +71,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseLakeFormationCredentials", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseLakeFormationCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }

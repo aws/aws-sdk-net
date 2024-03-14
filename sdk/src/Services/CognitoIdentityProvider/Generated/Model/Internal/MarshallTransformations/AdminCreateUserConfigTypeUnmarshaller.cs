@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowAdminCreateUserOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowAdminCreateUserOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UnusedAccountValidityDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnusedAccountValidityDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

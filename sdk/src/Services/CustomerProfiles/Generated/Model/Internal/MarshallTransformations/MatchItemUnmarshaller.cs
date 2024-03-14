@@ -65,7 +65,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ConfidenceScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ConfidenceScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

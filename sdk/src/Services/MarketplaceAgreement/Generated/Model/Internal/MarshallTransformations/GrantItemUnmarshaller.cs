@@ -71,7 +71,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxQuantity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxQuantity = unmarshaller.Unmarshall(context);
                     continue;
                 }

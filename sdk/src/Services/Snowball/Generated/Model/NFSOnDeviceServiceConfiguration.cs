@@ -44,9 +44,9 @@ namespace Amazon.Snowball.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int StorageLimit
+        public int? StorageLimit
         {
-            get { return this._storageLimit.GetValueOrDefault(); }
+            get { return this._storageLimit; }
             set { this._storageLimit = value; }
         }
 

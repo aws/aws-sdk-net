@@ -54,7 +54,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytesPerSecond())
             {
                 context.Writer.WritePropertyName("BytesPerSecond");
-                context.Writer.Write(requestObject.BytesPerSecond);
+                context.Writer.Write(requestObject.BytesPerSecond.Value);
             }
 
             if(requestObject.IsSetGid())

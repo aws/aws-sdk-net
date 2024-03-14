@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate);
+                context.Writer.Write(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetBitstreamMode())
@@ -78,7 +78,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm);
+                context.Writer.Write(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDrcLine())
@@ -108,25 +108,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoRoCenterMixLevel())
             {
                 context.Writer.WritePropertyName("loRoCenterMixLevel");
-                context.Writer.Write(requestObject.LoRoCenterMixLevel);
+                context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
             }
 
             if(requestObject.IsSetLoRoSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("loRoSurroundMixLevel");
-                context.Writer.Write(requestObject.LoRoSurroundMixLevel);
+                context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
             }
 
             if(requestObject.IsSetLtRtCenterMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtCenterMixLevel");
-                context.Writer.Write(requestObject.LtRtCenterMixLevel);
+                context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
             }
 
             if(requestObject.IsSetLtRtSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtSurroundMixLevel");
-                context.Writer.Write(requestObject.LtRtSurroundMixLevel);
+                context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
             }
 
             if(requestObject.IsSetMetadataControl())

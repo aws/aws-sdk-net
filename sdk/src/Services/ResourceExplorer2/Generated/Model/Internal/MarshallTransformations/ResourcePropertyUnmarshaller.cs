@@ -71,7 +71,7 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastReportedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastReportedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

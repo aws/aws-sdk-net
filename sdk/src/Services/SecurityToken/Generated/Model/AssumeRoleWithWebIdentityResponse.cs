@@ -119,9 +119,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PackedPolicySize
+        public int? PackedPolicySize
         {
-            get { return this._packedPolicySize.GetValueOrDefault(); }
+            get { return this._packedPolicySize; }
             set { this._packedPolicySize = value; }
         }
 

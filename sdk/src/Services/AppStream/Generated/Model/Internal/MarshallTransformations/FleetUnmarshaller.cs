@@ -77,7 +77,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DisconnectTimeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DisconnectTimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableDefaultInternetAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableDefaultInternetAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IdleDisconnectTimeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleDisconnectTimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,19 +155,19 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxConcurrentSessions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxSessionsPerInstance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSessionsPerInstance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxUserDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUserDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

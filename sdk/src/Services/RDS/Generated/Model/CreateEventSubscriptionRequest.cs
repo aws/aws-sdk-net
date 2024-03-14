@@ -82,9 +82,9 @@ namespace Amazon.RDS.Model
         /// isn't activated, the subscription is created but not active.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

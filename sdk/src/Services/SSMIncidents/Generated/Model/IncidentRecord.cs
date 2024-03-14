@@ -111,9 +111,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.SSMIncidents.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
-        public int Impact
+        public int? Impact
         {
-            get { return this._impact.GetValueOrDefault(); }
+            get { return this._impact; }
             set { this._impact = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.SSMIncidents.Model
         /// The timestamp for when the incident was resolved. This appears as a timeline event.
         /// </para>
         /// </summary>
-        public DateTime ResolvedTime
+        public DateTime? ResolvedTime
         {
-            get { return this._resolvedTime.GetValueOrDefault(); }
+            get { return this._resolvedTime; }
             set { this._resolvedTime = value; }
         }
 

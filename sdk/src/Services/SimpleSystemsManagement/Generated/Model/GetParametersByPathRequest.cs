@@ -59,9 +59,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool Recursive
+        public bool? Recursive
         {
-            get { return this._recursive.GetValueOrDefault(); }
+            get { return this._recursive; }
             set { this._recursive = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Retrieve all parameters in a hierarchy with their value decrypted.
         /// </para>
         /// </summary>
-        public bool WithDecryption
+        public bool? WithDecryption
         {
-            get { return this._withDecryption.GetValueOrDefault(); }
+            get { return this._withDecryption; }
             set { this._withDecryption = value; }
         }
 

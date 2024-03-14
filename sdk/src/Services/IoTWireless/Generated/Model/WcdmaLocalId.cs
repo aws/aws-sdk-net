@@ -43,9 +43,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=511)]
-        public int Psc
+        public int? Psc
         {
-            get { return this._psc.GetValueOrDefault(); }
+            get { return this._psc; }
             set { this._psc = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=16383)]
-        public int Uarfcndl
+        public int? Uarfcndl
         {
-            get { return this._uarfcndl.GetValueOrDefault(); }
+            get { return this._uarfcndl; }
             set { this._uarfcndl = value; }
         }
 

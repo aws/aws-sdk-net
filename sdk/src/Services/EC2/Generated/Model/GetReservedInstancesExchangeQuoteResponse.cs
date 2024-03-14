@@ -67,9 +67,9 @@ namespace Amazon.EC2.Model
         /// If <c>true</c>, the exchange is valid. If <c>false</c>, the exchange cannot be completed.
         /// </para>
         /// </summary>
-        public bool IsValidExchange
+        public bool? IsValidExchange
         {
-            get { return this._isValidExchange.GetValueOrDefault(); }
+            get { return this._isValidExchange; }
             set { this._isValidExchange = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// The new end date of the reservation term.
         /// </para>
         /// </summary>
-        public DateTime OutputReservedInstancesWillExpireAt
+        public DateTime? OutputReservedInstancesWillExpireAt
         {
-            get { return this._outputReservedInstancesWillExpireAt.GetValueOrDefault(); }
+            get { return this._outputReservedInstancesWillExpireAt; }
             set { this._outputReservedInstancesWillExpireAt = value; }
         }
 

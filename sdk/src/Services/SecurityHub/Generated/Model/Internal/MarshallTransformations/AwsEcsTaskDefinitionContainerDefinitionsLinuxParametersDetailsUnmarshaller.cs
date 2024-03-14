@@ -77,25 +77,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InitProcessEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxSwap", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSwap = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SharedMemorySize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Swappiness", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Swappiness = unmarshaller.Unmarshall(context);
                     continue;
                 }

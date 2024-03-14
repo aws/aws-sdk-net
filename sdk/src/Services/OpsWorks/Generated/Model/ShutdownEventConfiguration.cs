@@ -44,9 +44,9 @@ namespace Amazon.OpsWorks.Model
         /// Draining</a> 
         /// </para>
         /// </summary>
-        public bool DelayUntilElbConnectionsDrained
+        public bool? DelayUntilElbConnectionsDrained
         {
-            get { return this._delayUntilElbConnectionsDrained.GetValueOrDefault(); }
+            get { return this._delayUntilElbConnectionsDrained; }
             set { this._delayUntilElbConnectionsDrained = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.OpsWorks.Model
         /// event before shutting down an instance.
         /// </para>
         /// </summary>
-        public int ExecutionTimeout
+        public int? ExecutionTimeout
         {
-            get { return this._executionTimeout.GetValueOrDefault(); }
+            get { return this._executionTimeout; }
             set { this._executionTimeout = value; }
         }
 

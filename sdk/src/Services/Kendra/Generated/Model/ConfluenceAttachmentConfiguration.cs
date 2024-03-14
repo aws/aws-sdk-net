@@ -72,9 +72,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to index attachments of pages and blogs in Confluence.
         /// </para>
         /// </summary>
-        public bool CrawlAttachments
+        public bool? CrawlAttachments
         {
-            get { return this._crawlAttachments.GetValueOrDefault(); }
+            get { return this._crawlAttachments; }
             set { this._crawlAttachments = value; }
         }
 

@@ -65,25 +65,25 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EBSEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EBSEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Iops", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Throughput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VolumeSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

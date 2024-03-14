@@ -53,9 +53,9 @@ namespace Amazon.Macie2.Model
         /// The total amount of data, in bytes, that Amazon Macie has analyzed in the bucket.
         /// </para>
         /// </summary>
-        public long TotalBytesClassified
+        public long? TotalBytesClassified
         {
-            get { return this._totalBytesClassified.GetValueOrDefault(); }
+            get { return this._totalBytesClassified; }
             set { this._totalBytesClassified = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Macie2.Model
         /// scoring settings for the bucket (totalDetectionsSuppressed).
         /// </para>
         /// </summary>
-        public long TotalDetections
+        public long? TotalDetections
         {
-            get { return this._totalDetections.GetValueOrDefault(); }
+            get { return this._totalDetections; }
             set { this._totalDetections = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.Macie2.Model
         /// score.
         /// </para>
         /// </summary>
-        public long TotalDetectionsSuppressed
+        public long? TotalDetectionsSuppressed
         {
-            get { return this._totalDetectionsSuppressed.GetValueOrDefault(); }
+            get { return this._totalDetectionsSuppressed; }
             set { this._totalDetectionsSuppressed = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.Macie2.Model
         /// The total number of objects that Amazon Macie has analyzed in the bucket.
         /// </para>
         /// </summary>
-        public long TotalItemsClassified
+        public long? TotalItemsClassified
         {
-            get { return this._totalItemsClassified.GetValueOrDefault(); }
+            get { return this._totalItemsClassified; }
             set { this._totalItemsClassified = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.Macie2.Model
         /// in.
         /// </para>
         /// </summary>
-        public long TotalItemsSensitive
+        public long? TotalItemsSensitive
         {
-            get { return this._totalItemsSensitive.GetValueOrDefault(); }
+            get { return this._totalItemsSensitive; }
             set { this._totalItemsSensitive = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Macie2.Model
         /// by other statistics in the ResourceStatistics object.
         /// </para>
         /// </summary>
-        public long TotalItemsSkipped
+        public long? TotalItemsSkipped
         {
-            get { return this._totalItemsSkipped.GetValueOrDefault(); }
+            get { return this._totalItemsSkipped; }
             set { this._totalItemsSkipped = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.Macie2.Model
         /// use server-side encryption with customer-provided keys (SSE-C).
         /// </para>
         /// </summary>
-        public long TotalItemsSkippedInvalidEncryption
+        public long? TotalItemsSkippedInvalidEncryption
         {
-            get { return this._totalItemsSkippedInvalidEncryption.GetValueOrDefault(); }
+            get { return this._totalItemsSkippedInvalidEncryption; }
             set { this._totalItemsSkippedInvalidEncryption = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Macie2.Model
         /// for deletion, or were deleted.
         /// </para>
         /// </summary>
-        public long TotalItemsSkippedInvalidKms
+        public long? TotalItemsSkippedInvalidKms
         {
-            get { return this._totalItemsSkippedInvalidKms.GetValueOrDefault(); }
+            get { return this._totalItemsSkippedInvalidKms; }
             set { this._totalItemsSkippedInvalidKms = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.Macie2.Model
         /// keys that were used to encrypt the objects.
         /// </para>
         /// </summary>
-        public long TotalItemsSkippedPermissionDenied
+        public long? TotalItemsSkippedPermissionDenied
         {
-            get { return this._totalItemsSkippedPermissionDenied.GetValueOrDefault(); }
+            get { return this._totalItemsSkippedPermissionDenied; }
             set { this._totalItemsSkippedPermissionDenied = value; }
         }
 

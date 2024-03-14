@@ -85,9 +85,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

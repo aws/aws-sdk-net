@@ -51,9 +51,9 @@ namespace Amazon.S3Control.Model
         /// A container that indicates whether advanced data-protection metrics are enabled.
         /// </para>
         /// </summary>
-        public bool IsEnabled
+        public bool? IsEnabled
         {
-            get { return this._isEnabled.GetValueOrDefault(); }
+            get { return this._isEnabled; }
             set { this._isEnabled = value; }
         }
 

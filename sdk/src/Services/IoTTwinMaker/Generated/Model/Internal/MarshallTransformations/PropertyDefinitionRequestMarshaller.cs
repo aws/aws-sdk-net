@@ -90,25 +90,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsExternalId())
             {
                 context.Writer.WritePropertyName("isExternalId");
-                context.Writer.Write(requestObject.IsExternalId);
+                context.Writer.Write(requestObject.IsExternalId.Value);
             }
 
             if(requestObject.IsSetIsRequiredInEntity())
             {
                 context.Writer.WritePropertyName("isRequiredInEntity");
-                context.Writer.Write(requestObject.IsRequiredInEntity);
+                context.Writer.Write(requestObject.IsRequiredInEntity.Value);
             }
 
             if(requestObject.IsSetIsStoredExternally())
             {
                 context.Writer.WritePropertyName("isStoredExternally");
-                context.Writer.Write(requestObject.IsStoredExternally);
+                context.Writer.Write(requestObject.IsStoredExternally.Value);
             }
 
             if(requestObject.IsSetIsTimeSeries())
             {
                 context.Writer.WritePropertyName("isTimeSeries");
-                context.Writer.Write(requestObject.IsTimeSeries);
+                context.Writer.Write(requestObject.IsTimeSeries.Value);
             }
 
         }

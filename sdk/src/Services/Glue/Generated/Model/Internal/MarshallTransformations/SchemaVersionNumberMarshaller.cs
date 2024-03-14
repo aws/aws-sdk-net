@@ -48,13 +48,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatestVersion())
             {
                 context.Writer.WritePropertyName("LatestVersion");
-                context.Writer.Write(requestObject.LatestVersion);
+                context.Writer.Write(requestObject.LatestVersion.Value);
             }
 
             if(requestObject.IsSetVersionNumber())
             {
                 context.Writer.WritePropertyName("VersionNumber");
-                context.Writer.Write(requestObject.VersionNumber);
+                context.Writer.Write(requestObject.VersionNumber.Value);
             }
 
         }

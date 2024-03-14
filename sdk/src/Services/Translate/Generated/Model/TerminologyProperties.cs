@@ -73,9 +73,9 @@ namespace Amazon.Translate.Model
         /// The time at which the custom terminology was created, based on the timestamp.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.Translate.Model
         /// The time at which the custom terminology was last update, based on the timestamp.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.Translate.Model
         /// The size of the file used when importing a custom terminology.
         /// </para>
         /// </summary>
-        public int SizeBytes
+        public int? SizeBytes
         {
-            get { return this._sizeBytes.GetValueOrDefault(); }
+            get { return this._sizeBytes; }
             set { this._sizeBytes = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.Translate.Model
         /// or updated the terminology resource.
         /// </para>
         /// </summary>
-        public int SkippedTermCount
+        public int? SkippedTermCount
         {
-            get { return this._skippedTermCount.GetValueOrDefault(); }
+            get { return this._skippedTermCount; }
             set { this._skippedTermCount = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.Translate.Model
         /// The number of terms included in the custom terminology.
         /// </para>
         /// </summary>
-        public int TermCount
+        public int? TermCount
         {
-            get { return this._termCount.GetValueOrDefault(); }
+            get { return this._termCount; }
             set { this._termCount = value; }
         }
 

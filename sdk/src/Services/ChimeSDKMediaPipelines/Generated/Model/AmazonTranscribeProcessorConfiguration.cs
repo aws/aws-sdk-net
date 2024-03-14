@@ -131,9 +131,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// stabilization</a> in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnablePartialResultsStabilization
+        public bool? EnablePartialResultsStabilization
         {
-            get { return this._enablePartialResultsStabilization.GetValueOrDefault(); }
+            get { return this._enablePartialResultsStabilization; }
             set { this._enablePartialResultsStabilization = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// insights target.
         /// </para>
         /// </summary>
-        public bool FilterPartialResults
+        public bool? FilterPartialResults
         {
-            get { return this._filterPartialResults.GetValueOrDefault(); }
+            get { return this._filterPartialResults; }
             set { this._filterPartialResults = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Turns language identification on or off.
         /// </para>
         /// </summary>
-        public bool IdentifyLanguage
+        public bool? IdentifyLanguage
         {
-            get { return this._identifyLanguage.GetValueOrDefault(); }
+            get { return this._identifyLanguage; }
             set { this._identifyLanguage = value; }
         }
 
@@ -352,9 +352,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// speakers (diarization)</a> in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool ShowSpeakerLabel
+        public bool? ShowSpeakerLabel
         {
-            get { return this._showSpeakerLabel.GetValueOrDefault(); }
+            get { return this._showSpeakerLabel; }
             set { this._showSpeakerLabel = value; }
         }
 

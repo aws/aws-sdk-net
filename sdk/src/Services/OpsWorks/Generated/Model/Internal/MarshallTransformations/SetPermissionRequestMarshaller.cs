@@ -70,13 +70,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowSsh())
                 {
                     context.Writer.WritePropertyName("AllowSsh");
-                    context.Writer.Write(publicRequest.AllowSsh);
+                    context.Writer.Write(publicRequest.AllowSsh.Value);
                 }
 
                 if(publicRequest.IsSetAllowSudo())
                 {
                     context.Writer.WritePropertyName("AllowSudo");
-                    context.Writer.Write(publicRequest.AllowSudo);
+                    context.Writer.Write(publicRequest.AllowSudo.Value);
                 }
 
                 if(publicRequest.IsSetIamUserArn())

@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkId())
             {
                 context.Writer.WritePropertyName("networkId");
-                context.Writer.Write(requestObject.NetworkId);
+                context.Writer.Write(requestObject.NetworkId.Value);
             }
 
             if(requestObject.IsSetNetworkName())
@@ -60,7 +60,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRepInterval())
             {
                 context.Writer.WritePropertyName("repInterval");
-                context.Writer.Write(requestObject.RepInterval);
+                context.Writer.Write(requestObject.RepInterval.Value);
             }
 
         }

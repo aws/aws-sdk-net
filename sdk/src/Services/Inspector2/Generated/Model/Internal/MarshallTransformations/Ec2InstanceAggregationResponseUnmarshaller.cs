@@ -89,7 +89,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("networkFindings", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NetworkFindings = unmarshaller.Unmarshall(context);
                     continue;
                 }

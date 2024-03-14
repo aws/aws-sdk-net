@@ -96,9 +96,9 @@ namespace Amazon.TranscribeService.Model
         /// Set to <c>FALSE</c> to flag the sentiments that you specified in your request.
         /// </para>
         /// </summary>
-        public bool Negate
+        public bool? Negate
         {
-            get { return this._negate.GetValueOrDefault(); }
+            get { return this._negate; }
             set { this._negate = value; }
         }
 

@@ -70,7 +70,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIgnoreUnsupportedType())
                 {
                     context.Writer.WritePropertyName("IgnoreUnsupportedType");
-                    context.Writer.Write(publicRequest.IgnoreUnsupportedType);
+                    context.Writer.Write(publicRequest.IgnoreUnsupportedType.Value);
                 }
 
                 if(publicRequest.IsSetS3BucketName())

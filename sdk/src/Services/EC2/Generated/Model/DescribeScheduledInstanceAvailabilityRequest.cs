@@ -114,9 +114,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.EC2.Model
         /// and less than 1,720.
         /// </para>
         /// </summary>
-        public int MaxSlotDurationInHours
+        public int? MaxSlotDurationInHours
         {
-            get { return this._maxSlotDurationInHours.GetValueOrDefault(); }
+            get { return this._maxSlotDurationInHours; }
             set { this._maxSlotDurationInHours = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.EC2.Model
         /// is 24 hours, and the minimum monthly schedule is 100 hours.
         /// </para>
         /// </summary>
-        public int MinSlotDurationInHours
+        public int? MinSlotDurationInHours
         {
-            get { return this._minSlotDurationInHours.GetValueOrDefault(); }
+            get { return this._minSlotDurationInHours; }
             set { this._minSlotDurationInHours = value; }
         }
 

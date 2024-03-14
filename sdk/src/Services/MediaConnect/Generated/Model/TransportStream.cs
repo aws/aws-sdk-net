@@ -45,9 +45,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Channels. The number of channels in the audio stream.
         /// </summary>
-        public int Channels
+        public int? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.MediaConnect.Model
         /// Map Table.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SampleRate. The sample rate used by the audio stream.
         /// </summary>
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SampleSize. The sample bit size used by the audio stream.
         /// </summary>
-        public int SampleSize
+        public int? SampleSize
         {
-            get { return this._sampleSize.GetValueOrDefault(); }
+            get { return this._sampleSize; }
             set { this._sampleSize = value; }
         }
 

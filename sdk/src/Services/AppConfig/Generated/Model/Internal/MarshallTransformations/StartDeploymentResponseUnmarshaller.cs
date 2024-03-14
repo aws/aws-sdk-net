@@ -65,7 +65,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CompletedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CompletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeploymentDurationInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DeploymentDurationInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeploymentNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DeploymentNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,13 +131,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FinalBakeTimeInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FinalBakeTimeInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("GrowthFactor", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.GrowthFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -161,13 +161,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PercentageComplete", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.PercentageComplete = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

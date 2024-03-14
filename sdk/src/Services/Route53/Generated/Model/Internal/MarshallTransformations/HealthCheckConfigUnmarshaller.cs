@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -93,37 +93,37 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RequestInterval", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RequestInterval = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FailureThreshold", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.FailureThreshold = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MeasureLatency", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MeasureLatency = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Inverted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Inverted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Disabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Disabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HealthThreshold", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HealthThreshold = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -135,7 +135,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EnableSNI", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableSNI = unmarshaller.Unmarshall(context);
                         continue;
                     }

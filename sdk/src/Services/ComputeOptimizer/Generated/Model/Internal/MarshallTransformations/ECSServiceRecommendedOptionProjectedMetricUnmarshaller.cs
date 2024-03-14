@@ -71,13 +71,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recommendedCpuUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecommendedCpuUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recommendedMemorySize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecommendedMemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }

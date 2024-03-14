@@ -85,9 +85,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1800, Max=43200)]
-        public long SessionExpirationDurationInSeconds
+        public long? SessionExpirationDurationInSeconds
         {
-            get { return this._sessionExpirationDurationInSeconds.GetValueOrDefault(); }
+            get { return this._sessionExpirationDurationInSeconds; }
             set { this._sessionExpirationDurationInSeconds = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled);
+                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetEvaluationContext())
@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResultsPublishingEnabled())
             {
                 context.Writer.WritePropertyName("ResultsPublishingEnabled");
-                context.Writer.Write(requestObject.ResultsPublishingEnabled);
+                context.Writer.Write(requestObject.ResultsPublishingEnabled.Value);
             }
 
             if(requestObject.IsSetResultsS3Prefix())

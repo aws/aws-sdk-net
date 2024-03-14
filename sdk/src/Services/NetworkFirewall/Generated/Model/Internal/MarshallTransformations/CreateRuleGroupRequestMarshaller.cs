@@ -70,13 +70,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAnalyzeRuleGroup())
                 {
                     context.Writer.WritePropertyName("AnalyzeRuleGroup");
-                    context.Writer.Write(publicRequest.AnalyzeRuleGroup);
+                    context.Writer.Write(publicRequest.AnalyzeRuleGroup.Value);
                 }
 
                 if(publicRequest.IsSetCapacity())
                 {
                     context.Writer.WritePropertyName("Capacity");
-                    context.Writer.Write(publicRequest.Capacity);
+                    context.Writer.Write(publicRequest.Capacity.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -88,7 +88,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetEncryptionConfiguration())

@@ -47,9 +47,9 @@ namespace Amazon.OpenSearchService.Model
         /// to specify this parameter if you set <c>ScheduleAt</c> to <c>TIMESTAMP</c>.
         /// </para>
         /// </summary>
-        public long DesiredStartTime
+        public long? DesiredStartTime
         {
-            get { return this._desiredStartTime.GetValueOrDefault(); }
+            get { return this._desiredStartTime; }
             set { this._desiredStartTime = value; }
         }
 

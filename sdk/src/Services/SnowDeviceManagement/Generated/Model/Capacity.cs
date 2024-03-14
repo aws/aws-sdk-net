@@ -45,9 +45,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// The amount of capacity available for use on the device.
         /// </para>
         /// </summary>
-        public long Available
+        public long? Available
         {
-            get { return this._available.GetValueOrDefault(); }
+            get { return this._available; }
             set { this._available = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// The total capacity on the device.
         /// </para>
         /// </summary>
-        public long Total
+        public long? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// The amount of capacity used on the device.
         /// </para>
         /// </summary>
-        public long Used
+        public long? Used
         {
-            get { return this._used.GetValueOrDefault(); }
+            get { return this._used; }
             set { this._used = value; }
         }
 

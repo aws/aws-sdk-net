@@ -154,9 +154,9 @@ namespace Amazon.Macie2.Model
         /// or UNKNOWN.
         /// </para>
         /// </summary>
-        public DateTime LastJobRunTime
+        public DateTime? LastJobRunTime
         {
-            get { return this._lastJobRunTime.GetValueOrDefault(); }
+            get { return this._lastJobRunTime; }
             set { this._lastJobRunTime = value; }
         }
 

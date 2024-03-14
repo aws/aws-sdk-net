@@ -56,7 +56,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -68,7 +68,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("BackupRetentionPeriod", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,7 +86,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -159,7 +159,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("InstanceCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.InstanceCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -171,7 +171,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LatestRestorableTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LatestRestorableTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -183,7 +183,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PerformanceInsightsEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PerformanceInsightsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -207,13 +207,13 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PromotionTier", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PubliclyAccessible", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -226,7 +226,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StorageEncrypted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }

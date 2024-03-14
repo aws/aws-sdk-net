@@ -61,9 +61,9 @@ namespace Amazon.KafkaConnect.Model
         /// Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

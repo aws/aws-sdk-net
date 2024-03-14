@@ -83,9 +83,9 @@ namespace Amazon.DeviceFarm.Model
         /// Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
         /// </para>
         /// </summary>
-        public bool EditContent
+        public bool? EditContent
         {
-            get { return this._editContent.GetValueOrDefault(); }
+            get { return this._editContent; }
             set { this._editContent = value; }
         }
 

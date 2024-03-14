@@ -98,7 +98,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableDefaultInternetAccess())
                 {
                     context.Writer.WritePropertyName("EnableDefaultInternetAccess");
-                    context.Writer.Write(publicRequest.EnableDefaultInternetAccess);
+                    context.Writer.Write(publicRequest.EnableDefaultInternetAccess.Value);
                 }
 
                 if(publicRequest.IsSetIamRoleArn())

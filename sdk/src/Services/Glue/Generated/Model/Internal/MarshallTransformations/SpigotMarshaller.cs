@@ -71,13 +71,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProb())
             {
                 context.Writer.WritePropertyName("Prob");
-                context.Writer.Write(requestObject.Prob);
+                context.Writer.Write(requestObject.Prob.Value);
             }
 
             if(requestObject.IsSetTopk())
             {
                 context.Writer.WritePropertyName("Topk");
-                context.Writer.Write(requestObject.Topk);
+                context.Writer.Write(requestObject.Topk.Value);
             }
 
         }

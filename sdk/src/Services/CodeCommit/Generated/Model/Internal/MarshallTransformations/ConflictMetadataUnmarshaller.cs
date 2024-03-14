@@ -65,13 +65,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("contentConflict", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ContentConflict = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("fileModeConflict", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FileModeConflict = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,13 +107,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfConflicts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfConflicts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("objectTypeConflict", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ObjectTypeConflict = unmarshaller.Unmarshall(context);
                     continue;
                 }

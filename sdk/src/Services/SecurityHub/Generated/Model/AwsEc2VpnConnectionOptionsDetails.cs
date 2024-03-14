@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the VPN connection uses static routes only.
         /// </para>
         /// </summary>
-        public bool StaticRoutesOnly
+        public bool? StaticRoutesOnly
         {
-            get { return this._staticRoutesOnly.GetValueOrDefault(); }
+            get { return this._staticRoutesOnly; }
             set { this._staticRoutesOnly = value; }
         }
 

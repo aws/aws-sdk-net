@@ -76,13 +76,13 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPartFirstByte())
                 {
                     context.Writer.WritePropertyName("partFirstByte");
-                    context.Writer.Write(publicRequest.PartFirstByte);
+                    context.Writer.Write(publicRequest.PartFirstByte.Value);
                 }
 
                 if(publicRequest.IsSetPartLastByte())
                 {
                     context.Writer.WritePropertyName("partLastByte");
-                    context.Writer.Write(publicRequest.PartLastByte);
+                    context.Writer.Write(publicRequest.PartLastByte.Value);
                 }
 
                 if(publicRequest.IsSetRegistryId())

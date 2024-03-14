@@ -60,13 +60,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomEndpointEnabled())
             {
                 context.Writer.WritePropertyName("CustomEndpointEnabled");
-                context.Writer.Write(requestObject.CustomEndpointEnabled);
+                context.Writer.Write(requestObject.CustomEndpointEnabled.Value);
             }
 
             if(requestObject.IsSetEnforceHTTPS())
             {
                 context.Writer.WritePropertyName("EnforceHTTPS");
-                context.Writer.Write(requestObject.EnforceHTTPS);
+                context.Writer.Write(requestObject.EnforceHTTPS.Value);
             }
 
             if(requestObject.IsSetTLSSecurityPolicy())

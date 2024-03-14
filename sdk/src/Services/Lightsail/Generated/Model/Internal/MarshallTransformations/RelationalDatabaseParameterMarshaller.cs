@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsModifiable())
             {
                 context.Writer.WritePropertyName("isModifiable");
-                context.Writer.Write(requestObject.IsModifiable);
+                context.Writer.Write(requestObject.IsModifiable.Value);
             }
 
             if(requestObject.IsSetParameterName())

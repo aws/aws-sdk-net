@@ -50,9 +50,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AutoGenerateEndpointName
+        public bool? AutoGenerateEndpointName
         {
-            get { return this._autoGenerateEndpointName.GetValueOrDefault(); }
+            get { return this._autoGenerateEndpointName; }
             set { this._autoGenerateEndpointName = value; }
         }
 

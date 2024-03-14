@@ -61,9 +61,9 @@ namespace Amazon.IdentityManagement.Model
         /// period</a>.
         /// </para>
         /// </summary>
-        public DateTime LastAuthenticated
+        public DateTime? LastAuthenticated
         {
-            get { return this._lastAuthenticated.GetValueOrDefault(); }
+            get { return this._lastAuthenticated; }
             set { this._lastAuthenticated = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.IdentityManagement.Model
         /// period</a>.
         /// </para>
         /// </summary>
-        public int TotalAuthenticatedEntities
+        public int? TotalAuthenticatedEntities
         {
-            get { return this._totalAuthenticatedEntities.GetValueOrDefault(); }
+            get { return this._totalAuthenticatedEntities; }
             set { this._totalAuthenticatedEntities = value; }
         }
 

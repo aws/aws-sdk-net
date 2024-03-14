@@ -81,9 +81,9 @@ namespace Amazon.ServiceCatalog.Model
         /// The number of provisioned products found.
         /// </para>
         /// </summary>
-        public int TotalResultsCount
+        public int? TotalResultsCount
         {
-            get { return this._totalResultsCount.GetValueOrDefault(); }
+            get { return this._totalResultsCount; }
             set { this._totalResultsCount = value; }
         }
 

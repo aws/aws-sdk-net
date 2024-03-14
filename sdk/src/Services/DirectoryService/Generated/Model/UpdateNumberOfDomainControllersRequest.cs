@@ -48,9 +48,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2)]
-        public int DesiredNumber
+        public int? DesiredNumber
         {
-            get { return this._desiredNumber.GetValueOrDefault(); }
+            get { return this._desiredNumber; }
             set { this._desiredNumber = value; }
         }
 

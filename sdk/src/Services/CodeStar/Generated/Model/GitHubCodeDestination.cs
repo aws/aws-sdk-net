@@ -70,9 +70,9 @@ namespace Amazon.CodeStar.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IssuesEnabled
+        public bool? IssuesEnabled
         {
-            get { return this._issuesEnabled.GetValueOrDefault(); }
+            get { return this._issuesEnabled; }
             set { this._issuesEnabled = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.CodeStar.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PrivateRepository
+        public bool? PrivateRepository
         {
-            get { return this._privateRepository.GetValueOrDefault(); }
+            get { return this._privateRepository; }
             set { this._privateRepository = value; }
         }
 

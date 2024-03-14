@@ -61,9 +61,9 @@ namespace Amazon.Lightsail.Model
         /// The effective date of the pending database maintenance action.
         /// </para>
         /// </summary>
-        public DateTime CurrentApplyDate
+        public DateTime? CurrentApplyDate
         {
-            get { return this._currentApplyDate.GetValueOrDefault(); }
+            get { return this._currentApplyDate; }
             set { this._currentApplyDate = value; }
         }
 

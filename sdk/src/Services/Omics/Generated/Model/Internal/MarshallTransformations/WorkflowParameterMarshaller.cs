@@ -54,7 +54,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOptional())
             {
                 context.Writer.WritePropertyName("optional");
-                context.Writer.Write(requestObject.Optional);
+                context.Writer.Write(requestObject.Optional.Value);
             }
 
         }

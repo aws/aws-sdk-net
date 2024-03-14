@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SimpleEmail")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Simple Email Service. Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Simple Email Service. Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

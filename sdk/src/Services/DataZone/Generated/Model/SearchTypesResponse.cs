@@ -84,9 +84,9 @@ namespace Amazon.DataZone.Model
         /// Total number of search results.
         /// </para>
         /// </summary>
-        public int TotalMatchCount
+        public int? TotalMatchCount
         {
-            get { return this._totalMatchCount.GetValueOrDefault(); }
+            get { return this._totalMatchCount; }
             set { this._totalMatchCount = value; }
         }
 

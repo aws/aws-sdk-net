@@ -193,9 +193,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=600)]
-        public long SessionLifetimeInMinutes
+        public long? SessionLifetimeInMinutes
         {
-            get { return this._sessionLifetimeInMinutes.GetValueOrDefault(); }
+            get { return this._sessionLifetimeInMinutes; }
             set { this._sessionLifetimeInMinutes = value; }
         }
 

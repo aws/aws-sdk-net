@@ -77,7 +77,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("epssScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EpssScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("riskScore", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RiskScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

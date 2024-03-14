@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// this setting, you must first enable ENA Express.
         /// </para>
         /// </summary>
-        public bool EnaSrdUdpEnabled
+        public bool? EnaSrdUdpEnabled
         {
-            get { return this._enaSrdUdpEnabled.GetValueOrDefault(); }
+            get { return this._enaSrdUdpEnabled; }
             set { this._enaSrdUdpEnabled = value; }
         }
 

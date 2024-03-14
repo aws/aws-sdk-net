@@ -42,9 +42,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int StartTimeoutMs
+        public int? StartTimeoutMs
         {
-            get { return this._startTimeoutMs.GetValueOrDefault(); }
+            get { return this._startTimeoutMs; }
             set { this._startTimeoutMs = value; }
         }
 

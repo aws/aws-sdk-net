@@ -71,7 +71,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfRecordsUpdated", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfRecordsUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }

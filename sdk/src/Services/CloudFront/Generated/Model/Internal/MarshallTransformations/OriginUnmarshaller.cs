@@ -57,13 +57,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ConnectionAttempts", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ConnectionAttempts = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ConnectionTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ConnectionTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -49,9 +49,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// request header as traffic travels to applications on the endpoint fronted by the accelerator.
         /// </para>
         /// </summary>
-        public bool ClientIPPreservationEnabled
+        public bool? ClientIPPreservationEnabled
         {
-            get { return this._clientIPPreservationEnabled.GetValueOrDefault(); }
+            get { return this._clientIPPreservationEnabled; }
             set { this._clientIPPreservationEnabled = value; }
         }
 

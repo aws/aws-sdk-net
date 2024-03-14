@@ -48,9 +48,9 @@ namespace Amazon.APIGateway.Model
         /// limit does not apply here.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

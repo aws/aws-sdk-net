@@ -71,7 +71,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

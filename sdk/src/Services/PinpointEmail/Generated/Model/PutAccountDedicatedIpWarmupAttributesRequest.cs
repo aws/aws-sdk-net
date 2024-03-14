@@ -45,9 +45,9 @@ namespace Amazon.PinpointEmail.Model
         /// it.
         /// </para>
         /// </summary>
-        public bool AutoWarmupEnabled
+        public bool? AutoWarmupEnabled
         {
-            get { return this._autoWarmupEnabled.GetValueOrDefault(); }
+            get { return this._autoWarmupEnabled; }
             set { this._autoWarmupEnabled = value; }
         }
 

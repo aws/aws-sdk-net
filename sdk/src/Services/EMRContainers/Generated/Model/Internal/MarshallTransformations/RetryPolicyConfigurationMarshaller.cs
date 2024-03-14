@@ -48,7 +48,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAttempts())
             {
                 context.Writer.WritePropertyName("maxAttempts");
-                context.Writer.Write(requestObject.MaxAttempts);
+                context.Writer.Write(requestObject.MaxAttempts.Value);
             }
 
         }

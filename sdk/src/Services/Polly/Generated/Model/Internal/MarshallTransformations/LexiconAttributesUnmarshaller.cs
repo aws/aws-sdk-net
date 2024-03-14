@@ -77,13 +77,13 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LexemesCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LexemesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

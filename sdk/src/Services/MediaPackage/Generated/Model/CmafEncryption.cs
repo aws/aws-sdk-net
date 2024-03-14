@@ -75,9 +75,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property KeyRotationIntervalSeconds. Time (in seconds) between each
         /// encryption key rotation.
         /// </summary>
-        public int KeyRotationIntervalSeconds
+        public int? KeyRotationIntervalSeconds
         {
-            get { return this._keyRotationIntervalSeconds.GetValueOrDefault(); }
+            get { return this._keyRotationIntervalSeconds; }
             set { this._keyRotationIntervalSeconds = value; }
         }
 

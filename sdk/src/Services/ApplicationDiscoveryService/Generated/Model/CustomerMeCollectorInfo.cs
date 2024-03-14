@@ -48,9 +48,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ActiveMeCollectors
+        public int? ActiveMeCollectors
         {
-            get { return this._activeMeCollectors.GetValueOrDefault(); }
+            get { return this._activeMeCollectors; }
             set { this._activeMeCollectors = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DenyListedMeCollectors
+        public int? DenyListedMeCollectors
         {
-            get { return this._denyListedMeCollectors.GetValueOrDefault(); }
+            get { return this._denyListedMeCollectors; }
             set { this._denyListedMeCollectors = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HealthyMeCollectors
+        public int? HealthyMeCollectors
         {
-            get { return this._healthyMeCollectors.GetValueOrDefault(); }
+            get { return this._healthyMeCollectors; }
             set { this._healthyMeCollectors = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ShutdownMeCollectors
+        public int? ShutdownMeCollectors
         {
-            get { return this._shutdownMeCollectors.GetValueOrDefault(); }
+            get { return this._shutdownMeCollectors; }
             set { this._shutdownMeCollectors = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalMeCollectors
+        public int? TotalMeCollectors
         {
-            get { return this._totalMeCollectors.GetValueOrDefault(); }
+            get { return this._totalMeCollectors; }
             set { this._totalMeCollectors = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnhealthyMeCollectors
+        public int? UnhealthyMeCollectors
         {
-            get { return this._unhealthyMeCollectors.GetValueOrDefault(); }
+            get { return this._unhealthyMeCollectors; }
             set { this._unhealthyMeCollectors = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnknownMeCollectors
+        public int? UnknownMeCollectors
         {
-            get { return this._unknownMeCollectors.GetValueOrDefault(); }
+            get { return this._unknownMeCollectors; }
             set { this._unknownMeCollectors = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.VoiceID.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int RiskScore
+        public int? RiskScore
         {
-            get { return this._riskScore.GetValueOrDefault(); }
+            get { return this._riskScore; }
             set { this._riskScore = value; }
         }
 

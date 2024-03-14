@@ -106,9 +106,9 @@ namespace Amazon.DynamoDBv2.Model
         /// point in time.
         /// </para>
         /// </summary>
-        public DateTime ExportTime
+        public DateTime? ExportTime
         {
-            get { return this._exportTime.GetValueOrDefault(); }
+            get { return this._exportTime; }
             set { this._exportTime = value; }
         }
 

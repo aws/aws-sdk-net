@@ -65,13 +65,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("X", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.X = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Y", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Y = unmarshaller.Unmarshall(context);
                     continue;
                 }

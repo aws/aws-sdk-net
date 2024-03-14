@@ -48,13 +48,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelay())
             {
                 context.Writer.WritePropertyName("Delay");
-                context.Writer.Write(requestObject.Delay);
+                context.Writer.Write(requestObject.Delay.Value);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetQueueReference())

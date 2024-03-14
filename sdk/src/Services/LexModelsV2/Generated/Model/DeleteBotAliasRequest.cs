@@ -85,9 +85,9 @@ namespace Amazon.LexModelsV2.Model
         /// to skip this check and remove the alias even if it is being used by another resource.
         /// </para>
         /// </summary>
-        public bool SkipResourceInUseCheck
+        public bool? SkipResourceInUseCheck
         {
-            get { return this._skipResourceInUseCheck.GetValueOrDefault(); }
+            get { return this._skipResourceInUseCheck; }
             set { this._skipResourceInUseCheck = value; }
         }
 

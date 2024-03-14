@@ -65,13 +65,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ignoreFilterField", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnoreFilterField = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ignoreQualField", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnoreQualField = unmarshaller.Unmarshall(context);
                     continue;
                 }

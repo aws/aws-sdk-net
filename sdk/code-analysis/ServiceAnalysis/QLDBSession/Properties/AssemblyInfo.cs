@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.QLDBSession")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon QLDB Session. Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon QLDB Session. Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

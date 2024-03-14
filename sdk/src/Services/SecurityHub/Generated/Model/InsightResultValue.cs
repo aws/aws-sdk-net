@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.NetworkManager.Model
         /// lifetime of that flow. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ApplianceModeSupport
+        public bool? ApplianceModeSupport
         {
-            get { return this._applianceModeSupport.GetValueOrDefault(); }
+            get { return this._applianceModeSupport; }
             set { this._applianceModeSupport = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.NetworkManager.Model
         /// Indicates whether IPv6 is supported.
         /// </para>
         /// </summary>
-        public bool Ipv6Support
+        public bool? Ipv6Support
         {
-            get { return this._ipv6Support.GetValueOrDefault(); }
+            get { return this._ipv6Support; }
             set { this._ipv6Support = value; }
         }
 

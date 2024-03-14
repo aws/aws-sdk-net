@@ -83,7 +83,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsApplicable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsApplicable = unmarshaller.Unmarshall(context);
                     continue;
                 }

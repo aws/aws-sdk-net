@@ -71,16 +71,16 @@ namespace Amazon.Budgets.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2147483647)]
-        public decimal Amount
+        public decimal? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 
         // Check to see if Amount property is set
         internal bool IsSetAmount()
         {
-            return this._amount.HasValue; 
+            return this._amount != null;
         }
 
         /// <summary>

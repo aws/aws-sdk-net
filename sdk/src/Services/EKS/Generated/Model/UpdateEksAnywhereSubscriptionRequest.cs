@@ -46,9 +46,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AutoRenew
+        public bool? AutoRenew
         {
-            get { return this._autoRenew.GetValueOrDefault(); }
+            get { return this._autoRenew; }
             set { this._autoRenew = value; }
         }
 

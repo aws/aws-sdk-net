@@ -582,9 +582,9 @@ namespace Amazon.AutoScaling.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
+        public int? MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
         {
-            get { return this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice.GetValueOrDefault(); }
+            get { return this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice; }
             set { this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
         }
 
@@ -712,9 +712,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int OnDemandMaxPricePercentageOverLowestPrice
+        public int? OnDemandMaxPricePercentageOverLowestPrice
         {
-            get { return this._onDemandMaxPricePercentageOverLowestPrice.GetValueOrDefault(); }
+            get { return this._onDemandMaxPricePercentageOverLowestPrice; }
             set { this._onDemandMaxPricePercentageOverLowestPrice = value; }
         }
 
@@ -734,9 +734,9 @@ namespace Amazon.AutoScaling.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool RequireHibernateSupport
+        public bool? RequireHibernateSupport
         {
-            get { return this._requireHibernateSupport.GetValueOrDefault(); }
+            get { return this._requireHibernateSupport; }
             set { this._requireHibernateSupport = value; }
         }
 
@@ -783,9 +783,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int SpotMaxPricePercentageOverLowestPrice
+        public int? SpotMaxPricePercentageOverLowestPrice
         {
-            get { return this._spotMaxPricePercentageOverLowestPrice.GetValueOrDefault(); }
+            get { return this._spotMaxPricePercentageOverLowestPrice; }
             set { this._spotMaxPricePercentageOverLowestPrice = value; }
         }
 

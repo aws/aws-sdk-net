@@ -54,7 +54,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.Write(requestObject.Payload);
+                context.Writer.Write(requestObject.Payload.Value);
             }
 
             if(requestObject.IsSetPreset())

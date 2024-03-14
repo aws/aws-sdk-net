@@ -102,9 +102,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// A Boolean value indicating whether or not the device is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.IoT1ClickDevicesService.Model
         /// the device.
         /// </para>
         /// </summary>
-        public double RemainingLife
+        public double? RemainingLife
         {
-            get { return this._remainingLife.GetValueOrDefault(); }
+            get { return this._remainingLife; }
             set { this._remainingLife = value; }
         }
 

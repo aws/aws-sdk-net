@@ -71,9 +71,9 @@ namespace Amazon.AutoScaling.Model
         /// action runs and the capacity it attempts to maintain.
         /// </para>
         /// </summary>
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.AutoScaling.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.AutoScaling.Model
         /// The maximum size of the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.AutoScaling.Model
         /// The minimum size of the Auto Scaling group.
         /// </para>
         /// </summary>
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.AutoScaling.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.AutoScaling.Model
         /// This property is no longer used.
         /// </para>
         /// </summary>
-        public DateTime Time
+        public DateTime? Time
         {
-            get { return this._time.GetValueOrDefault(); }
+            get { return this._time; }
             set { this._time = value; }
         }
 

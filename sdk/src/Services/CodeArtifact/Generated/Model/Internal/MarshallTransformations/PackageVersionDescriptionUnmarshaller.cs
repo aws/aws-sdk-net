@@ -107,7 +107,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("publishedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PublishedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -82,7 +82,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKMSEncrypted())
                 {
                     context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
+                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
                 }
 
                 if(publicRequest.IsSetKMSKey())
@@ -100,7 +100,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPreserveExistingData())
                 {
                     context.Writer.WritePropertyName("PreserveExistingData");
-                    context.Writer.Write(publicRequest.PreserveExistingData);
+                    context.Writer.Write(publicRequest.PreserveExistingData.Value);
                 }
 
                 if(publicRequest.IsSetSnapshotId())

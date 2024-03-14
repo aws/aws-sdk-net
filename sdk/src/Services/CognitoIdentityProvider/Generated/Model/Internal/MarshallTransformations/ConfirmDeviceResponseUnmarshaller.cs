@@ -53,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("UserConfirmationNecessary", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.UserConfirmationNecessary = unmarshaller.Unmarshall(context);
                     continue;
                 }

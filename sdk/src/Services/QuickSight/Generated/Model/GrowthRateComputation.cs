@@ -83,9 +83,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=52)]
-        public int PeriodSize
+        public int? PeriodSize
         {
-            get { return this._periodSize.GetValueOrDefault(); }
+            get { return this._periodSize; }
             set { this._periodSize = value; }
         }
 

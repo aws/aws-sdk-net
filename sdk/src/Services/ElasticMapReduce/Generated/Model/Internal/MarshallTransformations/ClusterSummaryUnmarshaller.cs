@@ -83,7 +83,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NormalizedInstanceHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context);
                     continue;
                 }

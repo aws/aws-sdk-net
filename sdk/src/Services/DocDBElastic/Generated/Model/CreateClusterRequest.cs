@@ -266,9 +266,9 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ShardCapacity
+        public int? ShardCapacity
         {
-            get { return this._shardCapacity.GetValueOrDefault(); }
+            get { return this._shardCapacity; }
             set { this._shardCapacity = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ShardCount
+        public int? ShardCount
         {
-            get { return this._shardCount.GetValueOrDefault(); }
+            get { return this._shardCount; }
             set { this._shardCount = value; }
         }
 

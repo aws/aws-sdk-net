@@ -118,9 +118,9 @@ namespace Amazon.APIGateway.Model
         /// SDK configuration property is required (<c>true</c>) or not (<c>false</c>).
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

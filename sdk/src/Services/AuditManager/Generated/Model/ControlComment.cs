@@ -82,9 +82,9 @@ namespace Amazon.AuditManager.Model
         ///  The time when the comment was posted. 
         /// </para>
         /// </summary>
-        public DateTime PostedDate
+        public DateTime? PostedDate
         {
-            get { return this._postedDate.GetValueOrDefault(); }
+            get { return this._postedDate; }
             set { this._postedDate = value; }
         }
 

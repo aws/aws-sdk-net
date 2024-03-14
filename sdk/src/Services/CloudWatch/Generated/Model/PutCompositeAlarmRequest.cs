@@ -119,9 +119,9 @@ namespace Amazon.CloudWatch.Model
         /// of the composite alarm. The default is <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool ActionsEnabled
+        public bool? ActionsEnabled
         {
-            get { return this._actionsEnabled.GetValueOrDefault(); }
+            get { return this._actionsEnabled; }
             set { this._actionsEnabled = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int ActionsSuppressorExtensionPeriod
+        public int? ActionsSuppressorExtensionPeriod
         {
-            get { return this._actionsSuppressorExtensionPeriod.GetValueOrDefault(); }
+            get { return this._actionsSuppressorExtensionPeriod; }
             set { this._actionsSuppressorExtensionPeriod = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int ActionsSuppressorWaitPeriod
+        public int? ActionsSuppressorWaitPeriod
         {
-            get { return this._actionsSuppressorWaitPeriod.GetValueOrDefault(); }
+            get { return this._actionsSuppressorWaitPeriod; }
             set { this._actionsSuppressorWaitPeriod = value; }
         }
 

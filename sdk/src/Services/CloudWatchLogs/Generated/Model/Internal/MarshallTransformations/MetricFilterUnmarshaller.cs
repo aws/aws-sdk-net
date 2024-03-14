@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -106,9 +106,9 @@ namespace Amazon.ECS.Model
         /// up to 2 tasks.
         /// </para>
         /// </summary>
-        public int ComputedDesiredCount
+        public int? ComputedDesiredCount
         {
-            get { return this._computedDesiredCount.GetValueOrDefault(); }
+            get { return this._computedDesiredCount; }
             set { this._computedDesiredCount = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task set was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.ECS.Model
         /// time or when it's restarted after being in the <c>STOPPED</c> state.
         /// </para>
         /// </summary>
-        public int PendingCount
+        public int? PendingCount
         {
-            get { return this._pendingCount.GetValueOrDefault(); }
+            get { return this._pendingCount; }
             set { this._pendingCount = value; }
         }
 
@@ -310,9 +310,9 @@ namespace Amazon.ECS.Model
         /// deployment. A task in the <c>RUNNING</c> state is running and ready for use.
         /// </para>
         /// </summary>
-        public int RunningCount
+        public int? RunningCount
         {
-            get { return this._runningCount.GetValueOrDefault(); }
+            get { return this._runningCount; }
             set { this._runningCount = value; }
         }
 
@@ -426,9 +426,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task set stability status was retrieved.
         /// </para>
         /// </summary>
-        public DateTime StabilityStatusAt
+        public DateTime? StabilityStatusAt
         {
-            get { return this._stabilityStatusAt.GetValueOrDefault(); }
+            get { return this._stabilityStatusAt; }
             set { this._stabilityStatusAt = value; }
         }
 
@@ -592,9 +592,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task set was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -142,9 +142,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int EvaluationTimeout
+        public int? EvaluationTimeout
         {
-            get { return this._evaluationTimeout.GetValueOrDefault(); }
+            get { return this._evaluationTimeout; }
             set { this._evaluationTimeout = value; }
         }
 

@@ -98,9 +98,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool OnlyAvailable
+        public bool? OnlyAvailable
         {
-            get { return this._onlyAvailable.GetValueOrDefault(); }
+            get { return this._onlyAvailable; }
             set { this._onlyAvailable = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SuggestionCount
+        public int? SuggestionCount
         {
-            get { return this._suggestionCount.GetValueOrDefault(); }
+            get { return this._suggestionCount; }
             set { this._suggestionCount = value; }
         }
 

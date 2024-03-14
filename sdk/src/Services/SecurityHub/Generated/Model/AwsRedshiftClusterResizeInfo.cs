@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the resize operation can be canceled.
         /// </para>
         /// </summary>
-        public bool AllowCancelResize
+        public bool? AllowCancelResize
         {
-            get { return this._allowCancelResize.GetValueOrDefault(); }
+            get { return this._allowCancelResize; }
             set { this._allowCancelResize = value; }
         }
 

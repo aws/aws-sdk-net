@@ -70,7 +70,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumOfReports())
                 {
                     context.Writer.WritePropertyName("numOfReports");
-                    context.Writer.Write(publicRequest.NumOfReports);
+                    context.Writer.Write(publicRequest.NumOfReports.Value);
                 }
 
                 if(publicRequest.IsSetReportGroupArn())

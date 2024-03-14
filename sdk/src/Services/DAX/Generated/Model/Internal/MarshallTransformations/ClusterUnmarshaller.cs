@@ -65,7 +65,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActiveNodes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,7 +167,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalNodes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }

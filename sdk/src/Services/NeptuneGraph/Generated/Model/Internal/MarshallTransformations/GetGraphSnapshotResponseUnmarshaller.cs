@@ -77,7 +77,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("snapshotCreateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SnapshotCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

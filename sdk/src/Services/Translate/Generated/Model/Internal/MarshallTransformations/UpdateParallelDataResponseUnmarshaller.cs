@@ -53,7 +53,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LatestUpdateAttemptAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestUpdateAttemptAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

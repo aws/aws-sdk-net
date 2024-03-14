@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// Toggle for excluding devices deployed in other stages.
         /// </para>
         /// </summary>
-        public bool ExcludeDevicesDeployedInOtherStage
+        public bool? ExcludeDevicesDeployedInOtherStage
         {
-            get { return this._excludeDevicesDeployedInOtherStage.GetValueOrDefault(); }
+            get { return this._excludeDevicesDeployedInOtherStage; }
             set { this._excludeDevicesDeployedInOtherStage = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

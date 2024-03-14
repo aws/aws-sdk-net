@@ -101,9 +101,9 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.CloudHSMV2.Model
         /// of generation.
         /// </para>
         /// </summary>
-        public bool SortAscending
+        public bool? SortAscending
         {
-            get { return this._sortAscending.GetValueOrDefault(); }
+            get { return this._sortAscending; }
             set { this._sortAscending = value; }
         }
 

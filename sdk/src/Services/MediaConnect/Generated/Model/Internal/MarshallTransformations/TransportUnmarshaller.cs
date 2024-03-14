@@ -71,25 +71,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxBitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxLatency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxSyncBuffer", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSyncBuffer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minLatency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("senderControlPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SenderControlPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("smoothingLatency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SmoothingLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sourceListenerPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SourceListenerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

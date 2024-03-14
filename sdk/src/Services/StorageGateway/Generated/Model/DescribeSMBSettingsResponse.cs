@@ -118,9 +118,9 @@ namespace Amazon.StorageGateway.Model
         /// Gateways. 
         /// </para>
         /// </summary>
-        public bool FileSharesVisible
+        public bool? FileSharesVisible
         {
-            get { return this._fileSharesVisible.GetValueOrDefault(); }
+            get { return this._fileSharesVisible; }
             set { this._fileSharesVisible = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool SMBGuestPasswordSet
+        public bool? SMBGuestPasswordSet
         {
-            get { return this._smbGuestPasswordSet.GetValueOrDefault(); }
+            get { return this._smbGuestPasswordSet; }
             set { this._smbGuestPasswordSet = value; }
         }
 

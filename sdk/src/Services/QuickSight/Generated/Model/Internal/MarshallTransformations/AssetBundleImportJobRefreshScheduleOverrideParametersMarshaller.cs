@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartAfterDateTime())
             {
                 context.Writer.WritePropertyName("StartAfterDateTime");
-                context.Writer.Write(requestObject.StartAfterDateTime);
+                context.Writer.Write(requestObject.StartAfterDateTime.Value);
             }
 
         }

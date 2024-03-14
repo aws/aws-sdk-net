@@ -156,9 +156,9 @@ namespace Amazon.KinesisVideoMedia.Model
         /// starts with the chunk containing the fragment that has the specified timestamp.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

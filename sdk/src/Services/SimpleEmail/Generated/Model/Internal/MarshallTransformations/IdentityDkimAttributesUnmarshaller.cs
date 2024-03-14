@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DkimEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DkimEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -65,7 +65,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoAddGroupOwner", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAddGroupOwner = unmarshaller.Unmarshall(context);
                     continue;
                 }

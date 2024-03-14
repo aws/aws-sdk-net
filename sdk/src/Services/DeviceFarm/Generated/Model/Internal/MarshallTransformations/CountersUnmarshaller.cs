@@ -65,43 +65,43 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("errored", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Errored = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("failed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("passed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Passed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("skipped", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Skipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stopped", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("warned", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Warned = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -70,7 +70,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCapacityToRelease())
                 {
                     context.Writer.WritePropertyName("CapacityToRelease");
-                    context.Writer.Write(publicRequest.CapacityToRelease);
+                    context.Writer.Write(publicRequest.CapacityToRelease.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())

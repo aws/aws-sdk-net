@@ -53,7 +53,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,25 +89,25 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numChangesets", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NumChangesets = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numFiles", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NumFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }

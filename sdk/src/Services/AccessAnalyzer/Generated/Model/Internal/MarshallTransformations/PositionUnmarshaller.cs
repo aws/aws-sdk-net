@@ -65,19 +65,19 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("column", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("line", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Line = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("offset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
                     continue;
                 }

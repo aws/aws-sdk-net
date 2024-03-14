@@ -65,7 +65,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("approximateAssetCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ApproximateAssetCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.Redshift.Model
         /// The estimated disk utilizaton percentage.
         /// </para>
         /// </summary>
-        public double EstimatedDiskUtilizationPercent
+        public double? EstimatedDiskUtilizationPercent
         {
-            get { return this._estimatedDiskUtilizationPercent.GetValueOrDefault(); }
+            get { return this._estimatedDiskUtilizationPercent; }
             set { this._estimatedDiskUtilizationPercent = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Redshift.Model
         /// The number of nodes.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 

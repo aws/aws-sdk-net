@@ -59,9 +59,9 @@ namespace Amazon.EC2.Model
         /// The date and time that the endpoint was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.EC2.Model
         /// zone.
         /// </para>
         /// </summary>
-        public bool PrivateDnsEnabled
+        public bool? PrivateDnsEnabled
         {
-            get { return this._privateDnsEnabled.GetValueOrDefault(); }
+            get { return this._privateDnsEnabled; }
             set { this._privateDnsEnabled = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the endpoint is being managed by its service.
         /// </para>
         /// </summary>
-        public bool RequesterManaged
+        public bool? RequesterManaged
         {
-            get { return this._requesterManaged.GetValueOrDefault(); }
+            get { return this._requesterManaged; }
             set { this._requesterManaged = value; }
         }
 

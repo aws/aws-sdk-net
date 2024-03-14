@@ -44,9 +44,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ForTopKItemPredictions
+        public int? ForTopKItemPredictions
         {
-            get { return this._forTopKItemPredictions.GetValueOrDefault(); }
+            get { return this._forTopKItemPredictions; }
             set { this._forTopKItemPredictions = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

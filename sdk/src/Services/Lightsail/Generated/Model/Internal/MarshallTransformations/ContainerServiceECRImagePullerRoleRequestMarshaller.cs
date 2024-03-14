@@ -48,7 +48,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsActive())
             {
                 context.Writer.WritePropertyName("isActive");
-                context.Writer.Write(requestObject.IsActive);
+                context.Writer.Write(requestObject.IsActive.Value);
             }
 
         }

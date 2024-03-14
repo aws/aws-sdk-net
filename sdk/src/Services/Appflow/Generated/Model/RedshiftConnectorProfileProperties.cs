@@ -168,9 +168,9 @@ namespace Amazon.Appflow.Model
         /// Serverless data warehouse.
         /// </para>
         /// </summary>
-        public bool IsRedshiftServerless
+        public bool? IsRedshiftServerless
         {
-            get { return this._isRedshiftServerless.GetValueOrDefault(); }
+            get { return this._isRedshiftServerless; }
             set { this._isRedshiftServerless = value; }
         }
 

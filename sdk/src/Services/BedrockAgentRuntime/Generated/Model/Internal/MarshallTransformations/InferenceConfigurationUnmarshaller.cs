@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maximumLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,19 +77,19 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("temperature", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Temperature = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("topK", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TopK = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("topP", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TopP = unmarshaller.Unmarshall(context);
                     continue;
                 }

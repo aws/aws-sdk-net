@@ -72,9 +72,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int BaseCapacity
+        public int? BaseCapacity
         {
-            get { return this._baseCapacity.GetValueOrDefault(); }
+            get { return this._baseCapacity; }
             set { this._baseCapacity = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.CodeBuild.Model
         /// The time at which the compute fleet was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.CodeBuild.Model
         /// The time at which the compute fleet was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

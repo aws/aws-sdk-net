@@ -82,13 +82,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetManaged())
                 {
                     context.Writer.WritePropertyName("managed");
-                    context.Writer.Write(publicRequest.Managed);
+                    context.Writer.Write(publicRequest.Managed.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

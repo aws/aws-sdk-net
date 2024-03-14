@@ -56,19 +56,19 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DeleteSourceFromS3", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DeleteSourceFromS3 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxAgeInDays", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxAgeInDays = unmarshaller.Unmarshall(context);
                         continue;
                     }

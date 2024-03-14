@@ -66,7 +66,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("weight");
-                context.Writer.Write(requestObject.Weight);
+                context.Writer.Write(requestObject.Weight.Value);
             }
 
         }

@@ -46,9 +46,9 @@ namespace Amazon.MediaConvert.Model
         /// 1 and 3. For more information, see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
-        public int Destination608ChannelNumber
+        public int? Destination608ChannelNumber
         {
-            get { return this._destination608ChannelNumber.GetValueOrDefault(); }
+            get { return this._destination608ChannelNumber; }
             set { this._destination608ChannelNumber = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.MediaConvert.Model
         /// more information, see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int Destination708ServiceNumber
+        public int? Destination708ServiceNumber
         {
-            get { return this._destination708ServiceNumber.GetValueOrDefault(); }
+            get { return this._destination708ServiceNumber; }
             set { this._destination708ServiceNumber = value; }
         }
 

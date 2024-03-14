@@ -104,9 +104,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The top recommendation option is ranked as <c>1</c>. 
         /// </para>
         /// </summary>
-        public int Rank
+        public int? Rank
         {
-            get { return this._rank.GetValueOrDefault(); }
+            get { return this._rank; }
             set { this._rank = value; }
         }
 

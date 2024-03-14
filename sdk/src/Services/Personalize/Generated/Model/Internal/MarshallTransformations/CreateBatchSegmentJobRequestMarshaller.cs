@@ -104,7 +104,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumResults())
                 {
                     context.Writer.WritePropertyName("numResults");
-                    context.Writer.Write(publicRequest.NumResults);
+                    context.Writer.Write(publicRequest.NumResults.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

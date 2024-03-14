@@ -83,9 +83,9 @@ namespace Amazon.ComprehendMedical.Model
         /// to the identified SNOMED-CT concept. 
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

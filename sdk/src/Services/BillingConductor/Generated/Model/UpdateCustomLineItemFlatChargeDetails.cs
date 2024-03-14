@@ -43,9 +43,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000000)]
-        public double ChargeValue
+        public double? ChargeValue
         {
-            get { return this._chargeValue.GetValueOrDefault(); }
+            get { return this._chargeValue; }
             set { this._chargeValue = value; }
         }
 

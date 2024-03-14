@@ -46,9 +46,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of node instances to reserve.
         /// </para>
         /// </summary>
-        public int NodeCount
+        public int? NodeCount
         {
-            get { return this._nodeCount.GetValueOrDefault(); }
+            get { return this._nodeCount; }
             set { this._nodeCount = value; }
         }
 

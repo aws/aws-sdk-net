@@ -50,9 +50,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=120, Max=480)]
-        public int ContactPostPassDurationSeconds
+        public int? ContactPostPassDurationSeconds
         {
-            get { return this._contactPostPassDurationSeconds.GetValueOrDefault(); }
+            get { return this._contactPostPassDurationSeconds; }
             set { this._contactPostPassDurationSeconds = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=120, Max=480)]
-        public int ContactPrePassDurationSeconds
+        public int? ContactPrePassDurationSeconds
         {
-            get { return this._contactPrePassDurationSeconds.GetValueOrDefault(); }
+            get { return this._contactPrePassDurationSeconds; }
             set { this._contactPrePassDurationSeconds = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.CloudTrail.Model
         ///  The number of trail events imported into the event data store. 
         /// </para>
         /// </summary>
-        public long EventsCompleted
+        public long? EventsCompleted
         {
-            get { return this._eventsCompleted.GetValueOrDefault(); }
+            get { return this._eventsCompleted; }
             set { this._eventsCompleted = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.CloudTrail.Model
         ///  The number of failed entries. 
         /// </para>
         /// </summary>
-        public long FailedEntries
+        public long? FailedEntries
         {
-            get { return this._failedEntries.GetValueOrDefault(); }
+            get { return this._failedEntries; }
             set { this._failedEntries = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CloudTrail.Model
         /// The number of log files that completed import.
         /// </para>
         /// </summary>
-        public long FilesCompleted
+        public long? FilesCompleted
         {
-            get { return this._filesCompleted.GetValueOrDefault(); }
+            get { return this._filesCompleted; }
             set { this._filesCompleted = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.CloudTrail.Model
         ///  The number of S3 prefixes that completed import. 
         /// </para>
         /// </summary>
-        public long PrefixesCompleted
+        public long? PrefixesCompleted
         {
-            get { return this._prefixesCompleted.GetValueOrDefault(); }
+            get { return this._prefixesCompleted; }
             set { this._prefixesCompleted = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.CloudTrail.Model
         ///  The number of S3 prefixes found for the import. 
         /// </para>
         /// </summary>
-        public long PrefixesFound
+        public long? PrefixesFound
         {
-            get { return this._prefixesFound.GetValueOrDefault(); }
+            get { return this._prefixesFound; }
             set { this._prefixesFound = value; }
         }
 

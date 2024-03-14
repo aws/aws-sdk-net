@@ -48,31 +48,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("Eq");
-                context.Writer.Write(requestObject.Eq);
+                context.Writer.Write(requestObject.Eq.Value);
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("Gt");
-                context.Writer.Write(requestObject.Gt);
+                context.Writer.Write(requestObject.Gt.Value);
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("Gte");
-                context.Writer.Write(requestObject.Gte);
+                context.Writer.Write(requestObject.Gte.Value);
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("Lt");
-                context.Writer.Write(requestObject.Lt);
+                context.Writer.Write(requestObject.Lt.Value);
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("Lte");
-                context.Writer.Write(requestObject.Lte);
+                context.Writer.Write(requestObject.Lte.Value);
             }
 
         }

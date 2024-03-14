@@ -45,9 +45,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether the user can use SSH.
         /// </para>
         /// </summary>
-        public bool AllowSsh
+        public bool? AllowSsh
         {
-            get { return this._allowSsh.GetValueOrDefault(); }
+            get { return this._allowSsh; }
             set { this._allowSsh = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether the user can use <b>sudo</b>.
         /// </para>
         /// </summary>
-        public bool AllowSudo
+        public bool? AllowSudo
         {
-            get { return this._allowSudo.GetValueOrDefault(); }
+            get { return this._allowSudo; }
             set { this._allowSudo = value; }
         }
 

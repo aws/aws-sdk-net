@@ -59,9 +59,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int QueryCapacityUnits
+        public int? QueryCapacityUnits
         {
-            get { return this._queryCapacityUnits.GetValueOrDefault(); }
+            get { return this._queryCapacityUnits; }
             set { this._queryCapacityUnits = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int StorageCapacityUnits
+        public int? StorageCapacityUnits
         {
-            get { return this._storageCapacityUnits.GetValueOrDefault(); }
+            get { return this._storageCapacityUnits; }
             set { this._storageCapacityUnits = value; }
         }
 

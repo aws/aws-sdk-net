@@ -87,7 +87,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteDataInFileSystem())
                 {
                     context.Writer.WritePropertyName("DeleteDataInFileSystem");
-                    context.Writer.Write(publicRequest.DeleteDataInFileSystem);
+                    context.Writer.Write(publicRequest.DeleteDataInFileSystem.Value);
                 }
 
                 writer.WriteObjectEnd();

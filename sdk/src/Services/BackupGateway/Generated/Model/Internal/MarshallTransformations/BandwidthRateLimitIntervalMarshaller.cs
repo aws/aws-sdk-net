@@ -48,7 +48,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAverageUploadRateLimitInBitsPerSec())
             {
                 context.Writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
-                context.Writer.Write(requestObject.AverageUploadRateLimitInBitsPerSec);
+                context.Writer.Write(requestObject.AverageUploadRateLimitInBitsPerSec.Value);
             }
 
             if(requestObject.IsSetDaysOfWeek())
@@ -65,25 +65,25 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndHourOfDay())
             {
                 context.Writer.WritePropertyName("EndHourOfDay");
-                context.Writer.Write(requestObject.EndHourOfDay);
+                context.Writer.Write(requestObject.EndHourOfDay.Value);
             }
 
             if(requestObject.IsSetEndMinuteOfHour())
             {
                 context.Writer.WritePropertyName("EndMinuteOfHour");
-                context.Writer.Write(requestObject.EndMinuteOfHour);
+                context.Writer.Write(requestObject.EndMinuteOfHour.Value);
             }
 
             if(requestObject.IsSetStartHourOfDay())
             {
                 context.Writer.WritePropertyName("StartHourOfDay");
-                context.Writer.Write(requestObject.StartHourOfDay);
+                context.Writer.Write(requestObject.StartHourOfDay.Value);
             }
 
             if(requestObject.IsSetStartMinuteOfHour())
             {
                 context.Writer.WritePropertyName("StartMinuteOfHour");
-                context.Writer.Write(requestObject.StartMinuteOfHour);
+                context.Writer.Write(requestObject.StartMinuteOfHour.Value);
             }
 
         }

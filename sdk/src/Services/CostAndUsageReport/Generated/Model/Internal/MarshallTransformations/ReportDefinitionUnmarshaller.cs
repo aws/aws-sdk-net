@@ -95,7 +95,7 @@ namespace Amazon.CostAndUsageReport.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RefreshClosedReports", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RefreshClosedReports = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("backupRetentionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BackupRetentionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -293,9 +293,9 @@ namespace Amazon.EC2.Model
         /// Default: 600
         /// </para>
         /// </summary>
-        public int MaxAggregationInterval
+        public int? MaxAggregationInterval
         {
-            get { return this._maxAggregationInterval.GetValueOrDefault(); }
+            get { return this._maxAggregationInterval; }
             set { this._maxAggregationInterval = value; }
         }
 

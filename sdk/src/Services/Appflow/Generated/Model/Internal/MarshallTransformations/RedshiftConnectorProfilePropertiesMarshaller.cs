@@ -84,7 +84,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsRedshiftServerless())
             {
                 context.Writer.WritePropertyName("isRedshiftServerless");
-                context.Writer.Write(requestObject.IsRedshiftServerless);
+                context.Writer.Write(requestObject.IsRedshiftServerless.Value);
             }
 
             if(requestObject.IsSetRoleArn())

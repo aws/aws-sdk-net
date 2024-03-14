@@ -48,31 +48,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddGwMetadata())
             {
                 context.Writer.WritePropertyName("AddGwMetadata");
-                context.Writer.Write(requestObject.AddGwMetadata);
+                context.Writer.Write(requestObject.AddGwMetadata.Value);
             }
 
             if(requestObject.IsSetDrMax())
             {
                 context.Writer.WritePropertyName("DrMax");
-                context.Writer.Write(requestObject.DrMax);
+                context.Writer.Write(requestObject.DrMax.Value);
             }
 
             if(requestObject.IsSetDrMin())
             {
                 context.Writer.WritePropertyName("DrMin");
-                context.Writer.Write(requestObject.DrMin);
+                context.Writer.Write(requestObject.DrMin.Value);
             }
 
             if(requestObject.IsSetPrAllowed())
             {
                 context.Writer.WritePropertyName("PrAllowed");
-                context.Writer.Write(requestObject.PrAllowed);
+                context.Writer.Write(requestObject.PrAllowed.Value);
             }
 
             if(requestObject.IsSetRaAllowed())
             {
                 context.Writer.WritePropertyName("RaAllowed");
-                context.Writer.Write(requestObject.RaAllowed);
+                context.Writer.Write(requestObject.RaAllowed.Value);
             }
 
         }

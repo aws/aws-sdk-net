@@ -54,7 +54,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSendEmailNotification())
             {
                 context.Writer.WritePropertyName("SendEmailNotification");
-                context.Writer.Write(requestObject.SendEmailNotification);
+                context.Writer.Write(requestObject.SendEmailNotification.Value);
             }
 
             if(requestObject.IsSetStackName())

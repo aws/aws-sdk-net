@@ -74,9 +74,9 @@ namespace Amazon.ComprehendMedical.Model
         /// The time that the detection job completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.ComprehendMedical.Model
         /// operation.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.ComprehendMedical.Model
         /// The time that the detection job was submitted for processing.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

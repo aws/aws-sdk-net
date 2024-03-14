@@ -46,9 +46,9 @@ namespace Amazon.StepFunctions.Model
         /// The date the state machine alias was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.StepFunctions.Model
         /// For a newly created state machine, this is the same as the creation date.
         /// </para>
         /// </summary>
-        public DateTime UpdateDate
+        public DateTime? UpdateDate
         {
-            get { return this._updateDate.GetValueOrDefault(); }
+            get { return this._updateDate; }
             set { this._updateDate = value; }
         }
 

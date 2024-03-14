@@ -68,9 +68,9 @@ namespace Amazon.Imagebuilder.Model
         /// The epoch of the vulnerable package.
         /// </para>
         /// </summary>
-        public int Epoch
+        public int? Epoch
         {
-            get { return this._epoch.GetValueOrDefault(); }
+            get { return this._epoch; }
             set { this._epoch = value; }
         }
 

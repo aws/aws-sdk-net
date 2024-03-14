@@ -102,9 +102,9 @@ namespace Amazon.Textract.Model
         /// An object specifying the creation time of the the adapter that has been updated.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

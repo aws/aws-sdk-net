@@ -66,9 +66,9 @@ namespace Amazon.SSOOIDC.Model
         /// Indicates the time in seconds when an access token will expire.
         /// </para>
         /// </summary>
-        public int ExpiresIn
+        public int? ExpiresIn
         {
-            get { return this._expiresIn.GetValueOrDefault(); }
+            get { return this._expiresIn; }
             set { this._expiresIn = value; }
         }
 

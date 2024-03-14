@@ -116,9 +116,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1098)]
-        public int DefaultExpirationDays
+        public int? DefaultExpirationDays
         {
-            get { return this._defaultExpirationDays.GetValueOrDefault(); }
+            get { return this._defaultExpirationDays; }
             set { this._defaultExpirationDays = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HeightPixels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HeightPixels = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SamplingInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SamplingInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WidthPixels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WidthPixels = unmarshaller.Unmarshall(context);
                     continue;
                 }

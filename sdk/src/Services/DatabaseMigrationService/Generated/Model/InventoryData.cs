@@ -42,9 +42,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of databases in the Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public int NumberOfDatabases
+        public int? NumberOfDatabases
         {
-            get { return this._numberOfDatabases.GetValueOrDefault(); }
+            get { return this._numberOfDatabases; }
             set { this._numberOfDatabases = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of schemas in the Fleet Advisor collector inventory.
         /// </para>
         /// </summary>
-        public int NumberOfSchemas
+        public int? NumberOfSchemas
         {
-            get { return this._numberOfSchemas.GetValueOrDefault(); }
+            get { return this._numberOfSchemas; }
             set { this._numberOfSchemas = value; }
         }
 

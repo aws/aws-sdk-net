@@ -120,9 +120,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The length of time associated with the CloudWatch metric in number of seconds. 
         /// </para>
         /// </summary>
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 

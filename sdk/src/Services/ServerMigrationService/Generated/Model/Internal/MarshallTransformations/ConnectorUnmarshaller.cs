@@ -65,7 +65,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("associatedOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociatedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }

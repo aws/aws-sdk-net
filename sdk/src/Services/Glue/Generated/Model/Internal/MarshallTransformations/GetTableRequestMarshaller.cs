@@ -88,7 +88,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueryAsOfTime())
                 {
                     context.Writer.WritePropertyName("QueryAsOfTime");
-                    context.Writer.Write(publicRequest.QueryAsOfTime);
+                    context.Writer.Write(publicRequest.QueryAsOfTime.Value);
                 }
 
                 if(publicRequest.IsSetTransactionId())

@@ -49,9 +49,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double ApproximateValue
+        public double? ApproximateValue
         {
-            get { return this._approximateValue.GetValueOrDefault(); }
+            get { return this._approximateValue; }
             set { this._approximateValue = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

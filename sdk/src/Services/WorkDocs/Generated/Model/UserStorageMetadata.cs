@@ -60,9 +60,9 @@ namespace Amazon.WorkDocs.Model
         /// The amount of storage used, in bytes.
         /// </para>
         /// </summary>
-        public long StorageUtilizedInBytes
+        public long? StorageUtilizedInBytes
         {
-            get { return this._storageUtilizedInBytes.GetValueOrDefault(); }
+            get { return this._storageUtilizedInBytes; }
             set { this._storageUtilizedInBytes = value; }
         }
 

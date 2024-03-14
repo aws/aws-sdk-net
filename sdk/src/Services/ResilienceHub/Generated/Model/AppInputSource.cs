@@ -83,9 +83,9 @@ namespace Amazon.ResilienceHub.Model
         /// The number of resources.
         /// </para>
         /// </summary>
-        public int ResourceCount
+        public int? ResourceCount
         {
-            get { return this._resourceCount.GetValueOrDefault(); }
+            get { return this._resourceCount; }
             set { this._resourceCount = value; }
         }
 

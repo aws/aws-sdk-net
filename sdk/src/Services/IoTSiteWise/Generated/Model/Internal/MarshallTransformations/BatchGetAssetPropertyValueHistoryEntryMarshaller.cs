@@ -54,7 +54,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("endDate");
-                context.Writer.Write(requestObject.EndDate);
+                context.Writer.Write(requestObject.EndDate.Value);
             }
 
             if(requestObject.IsSetEntryId())
@@ -89,7 +89,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("startDate");
-                context.Writer.Write(requestObject.StartDate);
+                context.Writer.Write(requestObject.StartDate.Value);
             }
 
             if(requestObject.IsSetTimeOrdering())

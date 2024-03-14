@@ -104,9 +104,9 @@ namespace Amazon.Polly.Model
         /// Number of characters synthesized.
         /// </para>
         /// </summary>
-        public int RequestCharacters
+        public int? RequestCharacters
         {
-            get { return this._requestCharacters.GetValueOrDefault(); }
+            get { return this._requestCharacters; }
             set { this._requestCharacters = value; }
         }
 

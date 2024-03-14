@@ -110,7 +110,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfConnections())
                 {
                     context.Writer.WritePropertyName("numberOfConnections");
-                    context.Writer.Write(publicRequest.NumberOfConnections);
+                    context.Writer.Write(publicRequest.NumberOfConnections.Value);
                 }
 
                 if(publicRequest.IsSetProviderName())
@@ -122,7 +122,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRequestMACSec())
                 {
                     context.Writer.WritePropertyName("requestMACSec");
-                    context.Writer.Write(publicRequest.RequestMACSec);
+                    context.Writer.Write(publicRequest.RequestMACSec.Value);
                 }
 
                 if(publicRequest.IsSetTags())

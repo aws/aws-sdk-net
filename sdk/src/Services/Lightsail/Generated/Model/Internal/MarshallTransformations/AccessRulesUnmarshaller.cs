@@ -65,7 +65,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowPublicOverrides", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowPublicOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }

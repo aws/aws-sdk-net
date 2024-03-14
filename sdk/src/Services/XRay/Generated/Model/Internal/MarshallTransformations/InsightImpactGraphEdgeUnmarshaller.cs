@@ -65,7 +65,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReferenceId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context);
                     continue;
                 }

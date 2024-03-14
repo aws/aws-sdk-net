@@ -44,9 +44,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableCodeHookInvocation
+        public bool? EnableCodeHookInvocation
         {
-            get { return this._enableCodeHookInvocation.GetValueOrDefault(); }
+            get { return this._enableCodeHookInvocation; }
             set { this._enableCodeHookInvocation = value; }
         }
 

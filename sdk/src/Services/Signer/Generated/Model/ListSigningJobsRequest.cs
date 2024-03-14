@@ -56,9 +56,9 @@ namespace Amazon.Signer.Model
         /// Filters results to return only signing jobs with revoked signatures.
         /// </para>
         /// </summary>
-        public bool IsRevoked
+        public bool? IsRevoked
         {
-            get { return this._isRevoked.GetValueOrDefault(); }
+            get { return this._isRevoked; }
             set { this._isRevoked = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.Signer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.Signer.Model
         /// timestamp.
         /// </para>
         /// </summary>
-        public DateTime SignatureExpiresAfter
+        public DateTime? SignatureExpiresAfter
         {
-            get { return this._signatureExpiresAfter.GetValueOrDefault(); }
+            get { return this._signatureExpiresAfter; }
             set { this._signatureExpiresAfter = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.Signer.Model
         /// timestamp.
         /// </para>
         /// </summary>
-        public DateTime SignatureExpiresBefore
+        public DateTime? SignatureExpiresBefore
         {
-            get { return this._signatureExpiresBefore.GetValueOrDefault(); }
+            get { return this._signatureExpiresBefore; }
             set { this._signatureExpiresBefore = value; }
         }
 

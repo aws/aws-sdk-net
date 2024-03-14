@@ -49,9 +49,9 @@ namespace Amazon.OpenSearchService.Model
         /// fine-grained access control on an existing domain</a>.
         /// </para>
         /// </summary>
-        public bool AnonymousAuthEnabled
+        public bool? AnonymousAuthEnabled
         {
-            get { return this._anonymousAuthEnabled.GetValueOrDefault(); }
+            get { return this._anonymousAuthEnabled; }
             set { this._anonymousAuthEnabled = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.OpenSearchService.Model
         /// True to enable fine-grained access control.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.OpenSearchService.Model
         /// True to enable the internal user database.
         /// </para>
         /// </summary>
-        public bool InternalUserDatabaseEnabled
+        public bool? InternalUserDatabaseEnabled
         {
-            get { return this._internalUserDatabaseEnabled.GetValueOrDefault(); }
+            get { return this._internalUserDatabaseEnabled; }
             set { this._internalUserDatabaseEnabled = value; }
         }
 

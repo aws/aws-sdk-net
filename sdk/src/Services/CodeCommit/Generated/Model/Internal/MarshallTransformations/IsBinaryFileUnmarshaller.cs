@@ -65,19 +65,19 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("base", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Base = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("destination", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("source", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }

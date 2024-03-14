@@ -70,7 +70,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnforceConsumerDeletion())
                 {
                     context.Writer.WritePropertyName("EnforceConsumerDeletion");
-                    context.Writer.Write(publicRequest.EnforceConsumerDeletion);
+                    context.Writer.Write(publicRequest.EnforceConsumerDeletion.Value);
                 }
 
                 if(publicRequest.IsSetStreamARN())

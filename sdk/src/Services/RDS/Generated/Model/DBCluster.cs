@@ -227,9 +227,9 @@ namespace Amazon.RDS.Model
         /// adjusts as needed.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.RDS.Model
         /// The time when a stopped DB cluster is restarted automatically.
         /// </para>
         /// </summary>
-        public DateTime AutomaticRestartTime
+        public DateTime? AutomaticRestartTime
         {
-            get { return this._automaticRestartTime.GetValueOrDefault(); }
+            get { return this._automaticRestartTime; }
             set { this._automaticRestartTime = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -341,9 +341,9 @@ namespace Amazon.RDS.Model
         /// The number of change records stored for Backtrack.
         /// </para>
         /// </summary>
-        public long BacktrackConsumedChangeRecords
+        public long? BacktrackConsumedChangeRecords
         {
-            get { return this._backtrackConsumedChangeRecords.GetValueOrDefault(); }
+            get { return this._backtrackConsumedChangeRecords; }
             set { this._backtrackConsumedChangeRecords = value; }
         }
 
@@ -360,9 +360,9 @@ namespace Amazon.RDS.Model
         /// is disabled for the DB cluster. Otherwise, backtracking is enabled.
         /// </para>
         /// </summary>
-        public long BacktrackWindow
+        public long? BacktrackWindow
         {
-            get { return this._backtrackWindow.GetValueOrDefault(); }
+            get { return this._backtrackWindow; }
             set { this._backtrackWindow = value; }
         }
 
@@ -378,9 +378,9 @@ namespace Amazon.RDS.Model
         /// The number of days for which automatic DB snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.RDS.Model
         /// Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -457,9 +457,9 @@ namespace Amazon.RDS.Model
         /// The time when the DB cluster was created, in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
-        public DateTime ClusterCreateTime
+        public DateTime? ClusterCreateTime
         {
-            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            get { return this._clusterCreateTime; }
             set { this._clusterCreateTime = value; }
         }
 
@@ -475,9 +475,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether tags are copied from the DB cluster to snapshots of the DB cluster.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -494,9 +494,9 @@ namespace Amazon.RDS.Model
         /// Web Services account.
         /// </para>
         /// </summary>
-        public bool CrossAccountClone
+        public bool? CrossAccountClone
         {
-            get { return this._crossAccountClone.GetValueOrDefault(); }
+            get { return this._crossAccountClone; }
             set { this._crossAccountClone = value; }
         }
 
@@ -720,9 +720,9 @@ namespace Amazon.RDS.Model
         /// be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -756,9 +756,9 @@ namespace Amazon.RDS.Model
         /// The earliest time to which a DB cluster can be backtracked.
         /// </para>
         /// </summary>
-        public DateTime EarliestBacktrackTime
+        public DateTime? EarliestBacktrackTime
         {
-            get { return this._earliestBacktrackTime.GetValueOrDefault(); }
+            get { return this._earliestBacktrackTime; }
             set { this._earliestBacktrackTime = value; }
         }
 
@@ -774,9 +774,9 @@ namespace Amazon.RDS.Model
         /// The earliest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime EarliestRestorableTime
+        public DateTime? EarliestRestorableTime
         {
-            get { return this._earliestRestorableTime.GetValueOrDefault(); }
+            get { return this._earliestRestorableTime; }
             set { this._earliestRestorableTime = value; }
         }
 
@@ -896,9 +896,9 @@ namespace Amazon.RDS.Model
         /// using the write forwarding feature for this cluster.
         /// </para>
         /// </summary>
-        public bool GlobalWriteForwardingRequested
+        public bool? GlobalWriteForwardingRequested
         {
-            get { return this._globalWriteForwardingRequested.GetValueOrDefault(); }
+            get { return this._globalWriteForwardingRequested; }
             set { this._globalWriteForwardingRequested = value; }
         }
 
@@ -961,9 +961,9 @@ namespace Amazon.RDS.Model
         /// RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        public bool HttpEndpointEnabled
+        public bool? HttpEndpointEnabled
         {
-            get { return this._httpEndpointEnabled.GetValueOrDefault(); }
+            get { return this._httpEndpointEnabled; }
             set { this._httpEndpointEnabled = value; }
         }
 
@@ -980,9 +980,9 @@ namespace Amazon.RDS.Model
         /// (IAM) accounts to database accounts is enabled.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -1003,9 +1003,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for Aurora DB clusters.
         /// </para>
         /// </summary>
-        public DateTime IOOptimizedNextAllowedModificationTime
+        public DateTime? IOOptimizedNextAllowedModificationTime
         {
-            get { return this._ioOptimizedNextAllowedModificationTime.GetValueOrDefault(); }
+            get { return this._ioOptimizedNextAllowedModificationTime; }
             set { this._ioOptimizedNextAllowedModificationTime = value; }
         }
 
@@ -1025,9 +1025,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -1067,9 +1067,9 @@ namespace Amazon.RDS.Model
         /// The latest time to which a database can be restored with point-in-time restore.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -1172,9 +1172,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -1213,9 +1213,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB cluster has instances in multiple Availability Zones.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -1309,9 +1309,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
-        public bool PerformanceInsightsEnabled
+        public bool? PerformanceInsightsEnabled
         {
-            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            get { return this._performanceInsightsEnabled; }
             set { this._performanceInsightsEnabled = value; }
         }
 
@@ -1380,9 +1380,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>7</c> days
         /// </para>
         /// </summary>
-        public int PerformanceInsightsRetentionPeriod
+        public int? PerformanceInsightsRetentionPeriod
         {
-            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            get { return this._performanceInsightsRetentionPeriod; }
             set { this._performanceInsightsRetentionPeriod = value; }
         }
 
@@ -1398,9 +1398,9 @@ namespace Amazon.RDS.Model
         /// The port that the database engine is listening on.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -1476,9 +1476,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -1643,9 +1643,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

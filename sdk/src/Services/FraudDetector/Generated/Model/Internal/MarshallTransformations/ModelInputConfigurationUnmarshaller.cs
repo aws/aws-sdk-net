@@ -89,7 +89,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useEventVariables", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseEventVariables = unmarshaller.Unmarshall(context);
                     continue;
                 }

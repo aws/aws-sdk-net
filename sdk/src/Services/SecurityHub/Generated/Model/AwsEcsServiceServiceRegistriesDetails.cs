@@ -84,9 +84,9 @@ namespace Amazon.SecurityHub.Model
         /// , but not both.
         /// </para>
         /// </summary>
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SecurityHub.Model
         /// are used.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeranCid())
             {
                 context.Writer.WritePropertyName("GeranCid");
-                context.Writer.Write(requestObject.GeranCid);
+                context.Writer.Write(requestObject.GeranCid.Value);
             }
 
             if(requestObject.IsSetGsmLocalId())
@@ -81,31 +81,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGsmTimingAdvance())
             {
                 context.Writer.WritePropertyName("GsmTimingAdvance");
-                context.Writer.Write(requestObject.GsmTimingAdvance);
+                context.Writer.Write(requestObject.GsmTimingAdvance.Value);
             }
 
             if(requestObject.IsSetLac())
             {
                 context.Writer.WritePropertyName("Lac");
-                context.Writer.Write(requestObject.Lac);
+                context.Writer.Write(requestObject.Lac.Value);
             }
 
             if(requestObject.IsSetMcc())
             {
                 context.Writer.WritePropertyName("Mcc");
-                context.Writer.Write(requestObject.Mcc);
+                context.Writer.Write(requestObject.Mcc.Value);
             }
 
             if(requestObject.IsSetMnc())
             {
                 context.Writer.WritePropertyName("Mnc");
-                context.Writer.Write(requestObject.Mnc);
+                context.Writer.Write(requestObject.Mnc.Value);
             }
 
             if(requestObject.IsSetRxLevel())
             {
                 context.Writer.WritePropertyName("RxLevel");
-                context.Writer.Write(requestObject.RxLevel);
+                context.Writer.Write(requestObject.RxLevel.Value);
             }
 
         }

@@ -47,9 +47,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the CORS request includes credentials.
         /// </para>
         /// </summary>
-        public bool AllowCredentials
+        public bool? AllowCredentials
         {
-            get { return this._allowCredentials.GetValueOrDefault(); }
+            get { return this._allowCredentials; }
             set { this._allowCredentials = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of seconds for which the browser caches preflight request results.
         /// </para>
         /// </summary>
-        public int MaxAge
+        public int? MaxAge
         {
-            get { return this._maxAge.GetValueOrDefault(); }
+            get { return this._maxAge; }
             set { this._maxAge = value; }
         }
 

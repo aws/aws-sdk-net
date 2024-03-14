@@ -145,9 +145,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.RDS.Model
         /// Specifies whether to show only those reservations that support Multi-AZ.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 

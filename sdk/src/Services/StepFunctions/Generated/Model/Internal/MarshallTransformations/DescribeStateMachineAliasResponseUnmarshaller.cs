@@ -53,7 +53,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("creationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

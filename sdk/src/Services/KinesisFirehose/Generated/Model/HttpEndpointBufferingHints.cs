@@ -48,9 +48,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]
-        public int IntervalInSeconds
+        public int? IntervalInSeconds
         {
-            get { return this._intervalInSeconds.GetValueOrDefault(); }
+            get { return this._intervalInSeconds; }
             set { this._intervalInSeconds = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public int SizeInMBs
+        public int? SizeInMBs
         {
-            get { return this._sizeInMBs.GetValueOrDefault(); }
+            get { return this._sizeInMBs; }
             set { this._sizeInMBs = value; }
         }
 

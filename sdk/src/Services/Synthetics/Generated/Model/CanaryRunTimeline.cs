@@ -42,9 +42,9 @@ namespace Amazon.Synthetics.Model
         /// The end time of the run.
         /// </para>
         /// </summary>
-        public DateTime Completed
+        public DateTime? Completed
         {
-            get { return this._completed.GetValueOrDefault(); }
+            get { return this._completed; }
             set { this._completed = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.Synthetics.Model
         /// The start time of the run.
         /// </para>
         /// </summary>
-        public DateTime Started
+        public DateTime? Started
         {
-            get { return this._started.GetValueOrDefault(); }
+            get { return this._started; }
             set { this._started = value; }
         }
 

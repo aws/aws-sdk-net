@@ -54,13 +54,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorRetryDuration())
             {
                 context.Writer.WritePropertyName("ErrorRetryDuration");
-                context.Writer.Write(requestObject.ErrorRetryDuration);
+                context.Writer.Write(requestObject.ErrorRetryDuration.Value);
             }
 
             if(requestObject.IsSetFullLoadErrorPercentage())
             {
                 context.Writer.WritePropertyName("FullLoadErrorPercentage");
-                context.Writer.Write(requestObject.FullLoadErrorPercentage);
+                context.Writer.Write(requestObject.FullLoadErrorPercentage.Value);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())
@@ -72,7 +72,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseNewMappingType())
             {
                 context.Writer.WritePropertyName("UseNewMappingType");
-                context.Writer.Write(requestObject.UseNewMappingType);
+                context.Writer.Write(requestObject.UseNewMappingType.Value);
             }
 
         }

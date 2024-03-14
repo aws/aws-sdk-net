@@ -48,19 +48,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredSize())
             {
                 context.Writer.WritePropertyName("desiredSize");
-                context.Writer.Write(requestObject.DesiredSize);
+                context.Writer.Write(requestObject.DesiredSize.Value);
             }
 
             if(requestObject.IsSetMaxSize())
             {
                 context.Writer.WritePropertyName("maxSize");
-                context.Writer.Write(requestObject.MaxSize);
+                context.Writer.Write(requestObject.MaxSize.Value);
             }
 
             if(requestObject.IsSetMinSize())
             {
                 context.Writer.WritePropertyName("minSize");
-                context.Writer.Write(requestObject.MinSize);
+                context.Writer.Write(requestObject.MinSize.Value);
             }
 
         }

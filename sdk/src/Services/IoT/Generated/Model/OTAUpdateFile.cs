@@ -121,9 +121,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int FileType
+        public int? FileType
         {
-            get { return this._fileType.GetValueOrDefault(); }
+            get { return this._fileType; }
             set { this._fileType = value; }
         }
 

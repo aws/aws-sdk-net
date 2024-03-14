@@ -74,9 +74,9 @@ namespace Amazon.QLDB.Model
         /// UTC.)
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.QLDB.Model
         /// is undefined, the stream runs indefinitely until you cancel it.
         /// </para>
         /// </summary>
-        public DateTime ExclusiveEndTime
+        public DateTime? ExclusiveEndTime
         {
-            get { return this._exclusiveEndTime.GetValueOrDefault(); }
+            get { return this._exclusiveEndTime; }
             set { this._exclusiveEndTime = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.QLDB.Model
         /// The inclusive start date and time from which to start streaming journal data.
         /// </para>
         /// </summary>
-        public DateTime InclusiveStartTime
+        public DateTime? InclusiveStartTime
         {
-            get { return this._inclusiveStartTime.GetValueOrDefault(); }
+            get { return this._inclusiveStartTime; }
             set { this._inclusiveStartTime = value; }
         }
 

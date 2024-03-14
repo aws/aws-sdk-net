@@ -46,9 +46,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Kendra.Model
         /// otherwise, false.
         /// </para>
         /// </summary>
-        public bool TopAnswer
+        public bool? TopAnswer
         {
-            get { return this._topAnswer.GetValueOrDefault(); }
+            get { return this._topAnswer; }
             set { this._topAnswer = value; }
         }
 

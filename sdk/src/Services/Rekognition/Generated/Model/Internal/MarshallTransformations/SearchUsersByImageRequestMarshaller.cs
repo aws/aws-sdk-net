@@ -87,7 +87,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxUsers())
                 {
                     context.Writer.WritePropertyName("MaxUsers");
-                    context.Writer.Write(publicRequest.MaxUsers);
+                    context.Writer.Write(publicRequest.MaxUsers.Value);
                 }
 
                 if(publicRequest.IsSetQualityFilter())
@@ -99,7 +99,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUserMatchThreshold())
                 {
                     context.Writer.WritePropertyName("UserMatchThreshold");
-                    context.Writer.Write(publicRequest.UserMatchThreshold);
+                    context.Writer.Write(publicRequest.UserMatchThreshold.Value);
                 }
 
                 writer.WriteObjectEnd();

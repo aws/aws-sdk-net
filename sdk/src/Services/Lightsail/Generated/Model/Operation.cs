@@ -52,9 +52,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the operation was initialized (<c>1479816991.349</c>).
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the operation is terminal.
         /// </para>
         /// </summary>
-        public bool IsTerminal
+        public bool? IsTerminal
         {
-            get { return this._isTerminal.GetValueOrDefault(); }
+            get { return this._isTerminal; }
             set { this._isTerminal = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the status was changed (<c>1479816991.349</c>).
         /// </para>
         /// </summary>
-        public DateTime StatusChangedAt
+        public DateTime? StatusChangedAt
         {
-            get { return this._statusChangedAt.GetValueOrDefault(); }
+            get { return this._statusChangedAt; }
             set { this._statusChangedAt = value; }
         }
 

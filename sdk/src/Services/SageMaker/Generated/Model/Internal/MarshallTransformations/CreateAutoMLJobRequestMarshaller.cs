@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGenerateCandidateDefinitionsOnly())
                 {
                     context.Writer.WritePropertyName("GenerateCandidateDefinitionsOnly");
-                    context.Writer.Write(publicRequest.GenerateCandidateDefinitionsOnly);
+                    context.Writer.Write(publicRequest.GenerateCandidateDefinitionsOnly.Value);
                 }
 
                 if(publicRequest.IsSetInputDataConfig())

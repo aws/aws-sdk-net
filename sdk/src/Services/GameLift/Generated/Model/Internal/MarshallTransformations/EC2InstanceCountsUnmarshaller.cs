@@ -65,43 +65,43 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ACTIVE", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ACTIVE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DESIRED", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DESIRED = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IDLE", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IDLE = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MAXIMUM", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MAXIMUM = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MINIMUM", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MINIMUM = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PENDING", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PENDING = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TERMINATING", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TERMINATING = unmarshaller.Unmarshall(context);
                     continue;
                 }

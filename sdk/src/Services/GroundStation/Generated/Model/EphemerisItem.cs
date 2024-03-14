@@ -47,9 +47,9 @@ namespace Amazon.GroundStation.Model
         /// The time the ephemeris was uploaded in UTC.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.GroundStation.Model
         /// Whether or not the ephemeris is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=99999)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

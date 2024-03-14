@@ -119,7 +119,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("voutIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VoutIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

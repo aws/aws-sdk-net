@@ -65,19 +65,19 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeletedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Latest", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Latest = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ObservabilityConfigurationRevision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfigurationRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }

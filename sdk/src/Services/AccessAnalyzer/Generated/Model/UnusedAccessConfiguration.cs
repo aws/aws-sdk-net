@@ -45,9 +45,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// 1 and 180 days.
         /// </para>
         /// </summary>
-        public int UnusedAccessAge
+        public int? UnusedAccessAge
         {
-            get { return this._unusedAccessAge.GetValueOrDefault(); }
+            get { return this._unusedAccessAge; }
             set { this._unusedAccessAge = value; }
         }
 

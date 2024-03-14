@@ -65,7 +65,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("profilingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ProfilingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WorkMailMessageFlow")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

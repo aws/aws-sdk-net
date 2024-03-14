@@ -147,9 +147,9 @@ namespace Amazon.ConfigService.Model
         /// The time when the recording of configuration changes was initiated for the resource.
         /// </para>
         /// </summary>
-        public DateTime ConfigurationItemCaptureTime
+        public DateTime? ConfigurationItemCaptureTime
         {
-            get { return this._configurationItemCaptureTime.GetValueOrDefault(); }
+            get { return this._configurationItemCaptureTime; }
             set { this._configurationItemCaptureTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.ConfigService.Model
         /// The time when configuration changes for the resource were delivered.
         /// </para>
         /// </summary>
-        public DateTime ConfigurationItemDeliveryTime
+        public DateTime? ConfigurationItemDeliveryTime
         {
-            get { return this._configurationItemDeliveryTime.GetValueOrDefault(); }
+            get { return this._configurationItemDeliveryTime; }
             set { this._configurationItemDeliveryTime = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.ConfigService.Model
         /// The time stamp when the resource was created.
         /// </para>
         /// </summary>
-        public DateTime ResourceCreationTime
+        public DateTime? ResourceCreationTime
         {
-            get { return this._resourceCreationTime.GetValueOrDefault(); }
+            get { return this._resourceCreationTime; }
             set { this._resourceCreationTime = value; }
         }
 

@@ -70,13 +70,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDuration())
                 {
                     context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    context.Writer.Write(publicRequest.Duration.Value);
                 }
 
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetEventCategories())
@@ -115,7 +115,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxRecords())
                 {
                     context.Writer.WritePropertyName("MaxRecords");
-                    context.Writer.Write(publicRequest.MaxRecords);
+                    context.Writer.Write(publicRequest.MaxRecords.Value);
                 }
 
                 if(publicRequest.IsSetSourceIdentifier())
@@ -133,7 +133,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 writer.WriteObjectEnd();

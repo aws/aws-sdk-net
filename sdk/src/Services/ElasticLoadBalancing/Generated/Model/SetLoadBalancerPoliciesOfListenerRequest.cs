@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="loadBalancerName">The name of the load balancer.</param>
         /// <param name="loadBalancerPort">The external port of the load balancer.</param>
         /// <param name="policyNames">The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</param>
-        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames)
+        public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int? loadBalancerPort, List<string> policyNames)
         {
             _loadBalancerName = loadBalancerName;
             _loadBalancerPort = loadBalancerPort;
@@ -95,9 +95,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int LoadBalancerPort
+        public int? LoadBalancerPort
         {
-            get { return this._loadBalancerPort.GetValueOrDefault(); }
+            get { return this._loadBalancerPort; }
             set { this._loadBalancerPort = value; }
         }
 

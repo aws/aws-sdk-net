@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowVersionUpgrade())
             {
                 context.Writer.WritePropertyName("AllowVersionUpgrade");
-                context.Writer.Write(requestObject.AllowVersionUpgrade);
+                context.Writer.Write(requestObject.AllowVersionUpgrade.Value);
             }
 
             if(requestObject.IsSetAutomatedSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotRetentionPeriod");
-                context.Writer.Write(requestObject.AutomatedSnapshotRetentionPeriod);
+                context.Writer.Write(requestObject.AutomatedSnapshotRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
@@ -212,7 +212,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetEndpoint())
@@ -229,7 +229,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnhancedVpcRouting())
             {
                 context.Writer.WritePropertyName("EnhancedVpcRouting");
-                context.Writer.Write(requestObject.EnhancedVpcRouting);
+                context.Writer.Write(requestObject.EnhancedVpcRouting.Value);
             }
 
             if(requestObject.IsSetExpectedNextSnapshotScheduleTime())
@@ -297,7 +297,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManualSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("ManualSnapshotRetentionPeriod");
-                context.Writer.Write(requestObject.ManualSnapshotRetentionPeriod);
+                context.Writer.Write(requestObject.ManualSnapshotRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetMasterUsername())
@@ -321,7 +321,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfNodes())
             {
                 context.Writer.WritePropertyName("NumberOfNodes");
-                context.Writer.Write(requestObject.NumberOfNodes);
+                context.Writer.Write(requestObject.NumberOfNodes.Value);
             }
 
             if(requestObject.IsSetPendingActions())
@@ -355,7 +355,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible);
+                context.Writer.Write(requestObject.PubliclyAccessible.Value);
             }
 
             if(requestObject.IsSetResizeInfo())

@@ -59,7 +59,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("readCapacityUnits");
-                context.Writer.Write(requestObject.ReadCapacityUnits);
+                context.Writer.Write(requestObject.ReadCapacityUnits.Value);
             }
 
             if(requestObject.IsSetRegion())

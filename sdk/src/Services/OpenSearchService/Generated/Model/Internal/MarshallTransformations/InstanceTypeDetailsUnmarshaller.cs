@@ -65,13 +65,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AdvancedSecurityEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AdvancedSecurityEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AppLogsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AppLogsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CognitoEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CognitoEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WarmEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WarmEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

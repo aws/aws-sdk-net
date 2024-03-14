@@ -79,9 +79,9 @@ namespace Amazon.GlueDataBrew.Model
         /// Long.MAX_VALUE = 9223372036854775807
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

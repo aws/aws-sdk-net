@@ -94,7 +94,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndDate())
                 {
                     context.Writer.WritePropertyName("EndDate");
-                    context.Writer.Write(publicRequest.EndDate);
+                    context.Writer.Write(publicRequest.EndDate.Value);
                 }
 
                 if(publicRequest.IsSetFlexibleTimeWindow())
@@ -135,7 +135,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartDate())
                 {
                     context.Writer.WritePropertyName("StartDate");
-                    context.Writer.Write(publicRequest.StartDate);
+                    context.Writer.Write(publicRequest.StartDate.Value);
                 }
 
                 if(publicRequest.IsSetState())

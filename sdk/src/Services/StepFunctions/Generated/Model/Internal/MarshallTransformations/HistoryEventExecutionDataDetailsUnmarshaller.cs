@@ -65,7 +65,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("truncated", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Truncated = unmarshaller.Unmarshall(context);
                     continue;
                 }

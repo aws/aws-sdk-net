@@ -127,9 +127,9 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property StartedAt.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -174,9 +174,9 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property UpdatedAt.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

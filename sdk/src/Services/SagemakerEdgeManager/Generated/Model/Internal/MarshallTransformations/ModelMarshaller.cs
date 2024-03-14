@@ -48,13 +48,13 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatestInference())
             {
                 context.Writer.WritePropertyName("LatestInference");
-                context.Writer.Write(requestObject.LatestInference);
+                context.Writer.Write(requestObject.LatestInference.Value);
             }
 
             if(requestObject.IsSetLatestSampleTime())
             {
                 context.Writer.WritePropertyName("LatestSampleTime");
-                context.Writer.Write(requestObject.LatestSampleTime);
+                context.Writer.Write(requestObject.LatestSampleTime.Value);
             }
 
             if(requestObject.IsSetModelMetrics())

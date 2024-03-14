@@ -46,9 +46,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The time that the recommendation report generation task completes. 
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The time that the recommendation report generation task starts. 
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

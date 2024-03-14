@@ -41,9 +41,9 @@ namespace Amazon.QuickSight.Model
         /// The option to enable display of borders for visuals.
         /// </para>
         /// </summary>
-        public bool Show
+        public bool? Show
         {
-            get { return this._show.GetValueOrDefault(); }
+            get { return this._show; }
             set { this._show = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AggregationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AggregationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("disabledOnInitialization", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisabledOnInitialization = unmarshaller.Unmarshall(context);
                     continue;
                 }

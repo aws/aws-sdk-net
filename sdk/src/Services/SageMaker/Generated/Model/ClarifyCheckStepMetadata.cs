@@ -150,9 +150,9 @@ namespace Amazon.SageMaker.Model
         /// property. 
         /// </para>
         /// </summary>
-        public bool RegisterNewBaseline
+        public bool? RegisterNewBaseline
         {
-            get { return this._registerNewBaseline.GetValueOrDefault(); }
+            get { return this._registerNewBaseline; }
             set { this._registerNewBaseline = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.SageMaker.Model
         /// type must be available.
         /// </para>
         /// </summary>
-        public bool SkipCheck
+        public bool? SkipCheck
         {
-            get { return this._skipCheck.GetValueOrDefault(); }
+            get { return this._skipCheck; }
             set { this._skipCheck = value; }
         }
 

@@ -97,9 +97,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
-        public long EndTimeInSeconds
+        public long? EndTimeInSeconds
         {
-            get { return this._endTimeInSeconds.GetValueOrDefault(); }
+            get { return this._endTimeInSeconds; }
             set { this._endTimeInSeconds = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
-        public int EndTimeOffsetInNanos
+        public int? EndTimeOffsetInNanos
         {
-            get { return this._endTimeOffsetInNanos.GetValueOrDefault(); }
+            get { return this._endTimeOffsetInNanos; }
             set { this._endTimeOffsetInNanos = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=320000000)]
-        public long IntervalInSeconds
+        public long? IntervalInSeconds
         {
-            get { return this._intervalInSeconds.GetValueOrDefault(); }
+            get { return this._intervalInSeconds; }
             set { this._intervalInSeconds = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=320000000)]
-        public long IntervalWindowInSeconds
+        public long? IntervalWindowInSeconds
         {
-            get { return this._intervalWindowInSeconds.GetValueOrDefault(); }
+            get { return this._intervalWindowInSeconds; }
             set { this._intervalWindowInSeconds = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9223372036854774)]
-        public long StartTimeInSeconds
+        public long? StartTimeInSeconds
         {
-            get { return this._startTimeInSeconds.GetValueOrDefault(); }
+            get { return this._startTimeInSeconds; }
             set { this._startTimeInSeconds = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
-        public int StartTimeOffsetInNanos
+        public int? StartTimeOffsetInNanos
         {
-            get { return this._startTimeOffsetInNanos.GetValueOrDefault(); }
+            get { return this._startTimeOffsetInNanos; }
             set { this._startTimeOffsetInNanos = value; }
         }
 

@@ -283,9 +283,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=2592000)]
-        public int TimeoutSeconds
+        public int? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 

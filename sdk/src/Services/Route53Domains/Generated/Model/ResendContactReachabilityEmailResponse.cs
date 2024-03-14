@@ -84,9 +84,9 @@ namespace Amazon.Route53Domains.Model
         /// send another confirmation email.
         /// </para>
         /// </summary>
-        public bool IsAlreadyVerified
+        public bool? IsAlreadyVerified
         {
-            get { return this._isAlreadyVerified.GetValueOrDefault(); }
+            get { return this._isAlreadyVerified; }
             set { this._isAlreadyVerified = value; }
         }
 

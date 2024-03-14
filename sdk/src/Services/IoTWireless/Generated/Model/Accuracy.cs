@@ -47,9 +47,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float HorizontalAccuracy
+        public float? HorizontalAccuracy
         {
-            get { return this._horizontalAccuracy.GetValueOrDefault(); }
+            get { return this._horizontalAccuracy; }
             set { this._horizontalAccuracy = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float VerticalAccuracy
+        public float? VerticalAccuracy
         {
-            get { return this._verticalAccuracy.GetValueOrDefault(); }
+            get { return this._verticalAccuracy; }
             set { this._verticalAccuracy = value; }
         }
 

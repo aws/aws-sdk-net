@@ -71,13 +71,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("identifier", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }

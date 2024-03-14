@@ -65,13 +65,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Latitude", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Latitude = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Longitude", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Longitude = unmarshaller.Unmarshall(context);
                     continue;
                 }

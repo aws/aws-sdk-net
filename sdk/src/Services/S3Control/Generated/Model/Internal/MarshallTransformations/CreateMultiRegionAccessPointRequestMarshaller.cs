@@ -68,7 +68,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateMultiRegionAccessPointRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 if(publicRequest.IsSetClientToken())
-                    xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientToken));                    
+                    xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.ClientToken));
                 else                
                     xmlWriter.WriteElementString("ClientToken", "http://awss3control.amazonaws.com/doc/2018-08-20/", Guid.NewGuid().ToString());                
 
@@ -84,16 +84,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("PublicAccessBlock", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())
-                            xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls));                 
+                            xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls.Value));                 
 
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicPolicy())
-                            xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicPolicy));                 
+                            xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicPolicy.Value));                 
 
                         if(publicRequest.Details.PublicAccessBlock.IsSetIgnorePublicAcls())
-                            xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.IgnorePublicAcls));                 
+                            xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.IgnorePublicAcls.Value));                 
 
                         if(publicRequest.Details.PublicAccessBlock.IsSetRestrictPublicBuckets())
-                            xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.RestrictPublicBuckets));                 
+                            xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.RestrictPublicBuckets.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }

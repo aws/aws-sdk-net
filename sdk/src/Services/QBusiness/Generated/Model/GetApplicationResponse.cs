@@ -107,9 +107,9 @@ namespace Amazon.QBusiness.Model
         /// The Unix timestamp when the Amazon Q application was last updated.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.QBusiness.Model
         /// The Unix timestamp when the Amazon Q application was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

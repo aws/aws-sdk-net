@@ -93,9 +93,9 @@ namespace Amazon.Mgn.Model
         /// Template post migration custom action active status.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.Mgn.Model
         /// Template post migration custom action must succeed for cutover.
         /// </para>
         /// </summary>
-        public bool MustSucceedForCutover
+        public bool? MustSucceedForCutover
         {
-            get { return this._mustSucceedForCutover.GetValueOrDefault(); }
+            get { return this._mustSucceedForCutover; }
             set { this._mustSucceedForCutover = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1001, Max=10000)]
-        public int Order
+        public int? Order
         {
-            get { return this._order.GetValueOrDefault(); }
+            get { return this._order; }
             set { this._order = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TimeoutSeconds
+        public int? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 

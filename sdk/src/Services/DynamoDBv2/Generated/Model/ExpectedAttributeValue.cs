@@ -81,7 +81,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates ExpectedAttributeValue with the parameterized properties
         /// </summary>
         /// <param name="exists">Causes DynamoDB to evaluate the value before attempting a conditional operation: <ul> <li> If <c>Exists</c> is <c>true</c>, DynamoDB will check to see if that attribute value already exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a <c>ConditionCheckFailedException</c>. </li> <li> If <c>Exists</c> is <c>false</c>, DynamoDB assumes that the attribute value does not exist in the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is found, despite the assumption that it does not exist, the operation fails with a <c>ConditionCheckFailedException</c>. </li> </ul> The default setting for <c>Exists</c> is <c>true</c>. If you supply a <c>Value</c> all by itself, DynamoDB assumes the attribute exists: You don't have to set <c>Exists</c> to <c>true</c>, because it is implied. DynamoDB returns a <c>ValidationException</c> if: <ul> <li>  <c>Exists</c> is <c>true</c> but there is no <c>Value</c> to check. (You expect a value to exist, but don't specify what that value is.) </li> <li>  <c>Exists</c> is <c>false</c> but you also provide a <c>Value</c>. (You cannot expect an attribute to have a value, while also expecting it not to exist.) </li> </ul></param>
-        public ExpectedAttributeValue(bool exists)
+        public ExpectedAttributeValue(bool? exists)
         {
             _exists = exists;
         }
@@ -372,9 +372,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool Exists
+        public bool? Exists
         {
-            get { return this._exists.GetValueOrDefault(); }
+            get { return this._exists; }
             set { this._exists = value; }
         }
 

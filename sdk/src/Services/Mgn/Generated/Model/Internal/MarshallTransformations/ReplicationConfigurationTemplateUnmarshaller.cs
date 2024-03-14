@@ -71,19 +71,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("associateDefaultSecurityGroup", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AssociateDefaultSecurityGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bandwidthThrottling", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BandwidthThrottling = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createPublicIP", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CreatePublicIP = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,13 +149,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useDedicatedReplicationServer", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseDedicatedReplicationServer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("useFipsEndpoint", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseFipsEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,19 +65,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Cents", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cents = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Dollars", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Dollars = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TenthFractionsOfACent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TenthFractionsOfACent = unmarshaller.Unmarshall(context);
                     continue;
                 }

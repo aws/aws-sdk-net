@@ -81,9 +81,9 @@ namespace Amazon.OpsWorks.Model
         /// the <c>NextToken</c> request parameter to get the next set of results.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

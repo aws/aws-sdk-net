@@ -70,7 +70,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpireAt())
                 {
                     context.Writer.WritePropertyName("ExpireAt");
-                    context.Writer.Write(publicRequest.ExpireAt);
+                    context.Writer.Write(publicRequest.ExpireAt.Value);
                 }
 
                 if(publicRequest.IsSetHITId())

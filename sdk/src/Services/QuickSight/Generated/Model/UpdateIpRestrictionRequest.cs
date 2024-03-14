@@ -65,9 +65,9 @@ namespace Amazon.QuickSight.Model
         /// A value that specifies whether IP rules are turned on.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

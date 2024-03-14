@@ -65,7 +65,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxTimeDelaySeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTimeDelaySeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

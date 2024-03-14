@@ -65,7 +65,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("areAllPropertyValuesReturned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AreAllPropertyValuesReturned = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxTimeToLiveInMinutes())
             {
                 context.Writer.WritePropertyName("MaxTimeToLiveInMinutes");
-                context.Writer.Write(requestObject.MaxTimeToLiveInMinutes);
+                context.Writer.Write(requestObject.MaxTimeToLiveInMinutes.Value);
             }
 
         }

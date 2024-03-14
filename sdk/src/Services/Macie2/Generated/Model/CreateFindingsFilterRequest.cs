@@ -158,9 +158,9 @@ namespace Amazon.Macie2.Model
         /// to other filters that are also applied to the findings.
         /// </para>
         /// </summary>
-        public int Position
+        public int? Position
         {
-            get { return this._position.GetValueOrDefault(); }
+            get { return this._position; }
             set { this._position = value; }
         }
 

@@ -106,9 +106,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AtRestEncryptionEnabled
+        public bool? AtRestEncryptionEnabled
         {
-            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._atRestEncryptionEnabled; }
             set { this._atRestEncryptionEnabled = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AuthTokenEnabled
+        public bool? AuthTokenEnabled
         {
-            get { return this._authTokenEnabled.GetValueOrDefault(); }
+            get { return this._authTokenEnabled; }
             set { this._authTokenEnabled = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.ElastiCache.Model
         /// The date the auth token was last modified
         /// </para>
         /// </summary>
-        public DateTime AuthTokenLastModifiedDate
+        public DateTime? AuthTokenLastModifiedDate
         {
-            get { return this._authTokenLastModifiedDate.GetValueOrDefault(); }
+            get { return this._authTokenLastModifiedDate; }
             set { this._authTokenLastModifiedDate = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.ElastiCache.Model
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.ElastiCache.Model
         /// The date and time when the cluster was created.
         /// </para>
         /// </summary>
-        public DateTime CacheClusterCreateTime
+        public DateTime? CacheClusterCreateTime
         {
-            get { return this._cacheClusterCreateTime.GetValueOrDefault(); }
+            get { return this._cacheClusterCreateTime; }
             set { this._cacheClusterCreateTime = value; }
         }
 
@@ -657,9 +657,9 @@ namespace Amazon.ElastiCache.Model
         /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
-        public int NumCacheNodes
+        public int? NumCacheNodes
         {
-            get { return this._numCacheNodes.GetValueOrDefault(); }
+            get { return this._numCacheNodes; }
             set { this._numCacheNodes = value; }
         }
 
@@ -802,9 +802,9 @@ namespace Amazon.ElastiCache.Model
         /// A boolean value indicating whether log delivery is enabled for the replication group.
         /// </para>
         /// </summary>
-        public bool ReplicationGroupLogDeliveryEnabled
+        public bool? ReplicationGroupLogDeliveryEnabled
         {
-            get { return this._replicationGroupLogDeliveryEnabled.GetValueOrDefault(); }
+            get { return this._replicationGroupLogDeliveryEnabled; }
             set { this._replicationGroupLogDeliveryEnabled = value; }
         }
 
@@ -845,9 +845,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -895,9 +895,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

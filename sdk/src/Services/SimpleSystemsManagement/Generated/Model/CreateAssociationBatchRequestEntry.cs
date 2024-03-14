@@ -79,9 +79,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// isn't supported for rate expressions.
         /// </para>
         /// </summary>
-        public bool ApplyOnlyAtCronInterval
+        public bool? ApplyOnlyAtCronInterval
         {
-            get { return this._applyOnlyAtCronInterval.GetValueOrDefault(); }
+            get { return this._applyOnlyAtCronInterval; }
             set { this._applyOnlyAtCronInterval = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -428,9 +428,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int ScheduleOffset
+        public int? ScheduleOffset
         {
-            get { return this._scheduleOffset.GetValueOrDefault(); }
+            get { return this._scheduleOffset; }
             set { this._scheduleOffset = value; }
         }
 

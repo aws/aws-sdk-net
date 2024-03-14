@@ -90,9 +90,9 @@ namespace Amazon.DeviceFarm.Model
         /// The data throughput rate in bits per second, as an integer from 0 to 104857600.
         /// </para>
         /// </summary>
-        public long DownlinkBandwidthBits
+        public long? DownlinkBandwidthBits
         {
-            get { return this._downlinkBandwidthBits.GetValueOrDefault(); }
+            get { return this._downlinkBandwidthBits; }
             set { this._downlinkBandwidthBits = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.DeviceFarm.Model
         /// 2000.
         /// </para>
         /// </summary>
-        public long DownlinkDelayMs
+        public long? DownlinkDelayMs
         {
-            get { return this._downlinkDelayMs.GetValueOrDefault(); }
+            get { return this._downlinkDelayMs; }
             set { this._downlinkDelayMs = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.DeviceFarm.Model
         /// 0 to 2000.
         /// </para>
         /// </summary>
-        public long DownlinkJitterMs
+        public long? DownlinkJitterMs
         {
-            get { return this._downlinkJitterMs.GetValueOrDefault(); }
+            get { return this._downlinkJitterMs; }
             set { this._downlinkJitterMs = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int DownlinkLossPercent
+        public int? DownlinkLossPercent
         {
-            get { return this._downlinkLossPercent.GetValueOrDefault(); }
+            get { return this._downlinkLossPercent; }
             set { this._downlinkLossPercent = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.DeviceFarm.Model
         /// The data throughput rate in bits per second, as an integer from 0 to 104857600.
         /// </para>
         /// </summary>
-        public long UplinkBandwidthBits
+        public long? UplinkBandwidthBits
         {
-            get { return this._uplinkBandwidthBits.GetValueOrDefault(); }
+            get { return this._uplinkBandwidthBits; }
             set { this._uplinkBandwidthBits = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.DeviceFarm.Model
         /// 2000.
         /// </para>
         /// </summary>
-        public long UplinkDelayMs
+        public long? UplinkDelayMs
         {
-            get { return this._uplinkDelayMs.GetValueOrDefault(); }
+            get { return this._uplinkDelayMs; }
             set { this._uplinkDelayMs = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.DeviceFarm.Model
         /// 0 to 2000.
         /// </para>
         /// </summary>
-        public long UplinkJitterMs
+        public long? UplinkJitterMs
         {
-            get { return this._uplinkJitterMs.GetValueOrDefault(); }
+            get { return this._uplinkJitterMs; }
             set { this._uplinkJitterMs = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int UplinkLossPercent
+        public int? UplinkLossPercent
         {
-            get { return this._uplinkLossPercent.GetValueOrDefault(); }
+            get { return this._uplinkLossPercent; }
             set { this._uplinkLossPercent = value; }
         }
 

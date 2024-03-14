@@ -95,9 +95,9 @@ namespace Amazon.EC2.Model
         /// The duration of the Reserved Instance, in seconds.
         /// </para>
         /// </summary>
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.EC2.Model
         /// The time when the Reserved Instance expires.
         /// </para>
         /// </summary>
-        public DateTime End
+        public DateTime? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.EC2.Model
         /// The purchase price of the Reserved Instance.
         /// </para>
         /// </summary>
-        public float FixedPrice
+        public float? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.EC2.Model
         /// The number of reservations purchased.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.EC2.Model
         /// The date and time the Reserved Instance started.
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 
@@ -365,9 +365,9 @@ namespace Amazon.EC2.Model
         /// The usage price of the Reserved Instance, per hour.
         /// </para>
         /// </summary>
-        public float UsagePrice
+        public float? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

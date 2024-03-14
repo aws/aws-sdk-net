@@ -59,9 +59,9 @@ namespace Amazon.MediaLive.Model
         /// watermark
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Sid
+        public double? Sid
         {
-            get { return this._sid.GetValueOrDefault(); }
+            get { return this._sid; }
             set { this._sid = value; }
         }
 

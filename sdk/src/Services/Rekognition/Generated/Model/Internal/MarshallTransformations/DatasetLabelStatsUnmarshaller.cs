@@ -65,13 +65,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BoundingBoxCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BoundingBoxCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EntryCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EntryCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

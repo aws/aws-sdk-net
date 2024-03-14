@@ -41,9 +41,9 @@ namespace Amazon.MediaConvert.Model
         /// the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 
@@ -58,9 +58,9 @@ namespace Amazon.MediaConvert.Model
         /// job.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

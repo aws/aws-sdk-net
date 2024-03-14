@@ -71,7 +71,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoRenew())
                 {
                     context.Writer.WritePropertyName("autoRenew");
-                    context.Writer.Write(publicRequest.AutoRenew);
+                    context.Writer.Write(publicRequest.AutoRenew.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())

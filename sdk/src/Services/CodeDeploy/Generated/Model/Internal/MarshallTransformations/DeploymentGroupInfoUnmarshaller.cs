@@ -191,7 +191,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("terminationHookEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TerminationHookEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");
-                context.Writer.Write(requestObject.Size);
+                context.Writer.Write(requestObject.Size.Value);
             }
 
         }

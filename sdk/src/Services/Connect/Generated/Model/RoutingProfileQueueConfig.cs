@@ -47,9 +47,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=9999)]
-        public int Delay
+        public int? Delay
         {
-            get { return this._delay.GetValueOrDefault(); }
+            get { return this._delay; }
             set { this._delay = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=99)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

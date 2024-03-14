@@ -53,13 +53,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EndedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HealthScoreThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.HealthScoreThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,19 +95,19 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PercentOfTotalTrafficImpacted", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.PercentOfTotalTrafficImpacted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -88,9 +88,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeletionProtected
+        public bool? DeletionProtected
         {
-            get { return this._deletionProtected.GetValueOrDefault(); }
+            get { return this._deletionProtected; }
             set { this._deletionProtected = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

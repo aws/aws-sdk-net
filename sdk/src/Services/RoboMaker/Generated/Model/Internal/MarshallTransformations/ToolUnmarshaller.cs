@@ -83,13 +83,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("streamOutputToCloudWatch", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StreamOutputToCloudWatch = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("streamUI", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StreamUI = unmarshaller.Unmarshall(context);
                     continue;
                 }

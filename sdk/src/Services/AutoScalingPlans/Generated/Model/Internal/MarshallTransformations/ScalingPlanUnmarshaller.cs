@@ -71,7 +71,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScalingPlanVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ScalingPlanVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StatusStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StatusStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

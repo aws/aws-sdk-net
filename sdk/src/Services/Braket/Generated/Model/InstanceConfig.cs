@@ -46,9 +46,9 @@ namespace Amazon.Braket.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Braket.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int VolumeSizeInGb
+        public int? VolumeSizeInGb
         {
-            get { return this._volumeSizeInGb.GetValueOrDefault(); }
+            get { return this._volumeSizeInGb; }
             set { this._volumeSizeInGb = value; }
         }
 

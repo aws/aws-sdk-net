@@ -48,9 +48,9 @@ namespace Amazon.Imagebuilder.Model
         /// Requests a list of images with a specific recipe name.
         /// </para>
         /// </summary>
-        public bool ByName
+        public bool? ByName
         {
-            get { return this._byName.GetValueOrDefault(); }
+            get { return this._byName; }
             set { this._byName = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Imagebuilder.Model
         /// Includes deprecated images in the response list.
         /// </para>
         /// </summary>
-        public bool IncludeDeprecated
+        public bool? IncludeDeprecated
         {
-            get { return this._includeDeprecated.GetValueOrDefault(); }
+            get { return this._includeDeprecated; }
             set { this._includeDeprecated = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

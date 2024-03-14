@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the session used multi-factor authentication (MFA).
         /// </para>
         /// </summary>
-        public bool MfaAuthenticated
+        public bool? MfaAuthenticated
         {
-            get { return this._mfaAuthenticated.GetValueOrDefault(); }
+            get { return this._mfaAuthenticated; }
             set { this._mfaAuthenticated = value; }
         }
 

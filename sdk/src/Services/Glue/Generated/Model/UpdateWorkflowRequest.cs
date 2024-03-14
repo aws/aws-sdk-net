@@ -84,9 +84,9 @@ namespace Amazon.Glue.Model
         /// to the number of concurrent workflow runs.
         /// </para>
         /// </summary>
-        public int MaxConcurrentRuns
+        public int? MaxConcurrentRuns
         {
-            get { return this._maxConcurrentRuns.GetValueOrDefault(); }
+            get { return this._maxConcurrentRuns; }
             set { this._maxConcurrentRuns = value; }
         }
 

@@ -75,9 +75,9 @@ namespace Amazon.MTurk.Model
         /// prompting the Worker with a Qualification test. Valid values are True | False.
         /// </para>
         /// </summary>
-        public bool AutoGranted
+        public bool? AutoGranted
         {
-            get { return this._autoGranted.GetValueOrDefault(); }
+            get { return this._autoGranted; }
             set { this._autoGranted = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.MTurk.Model
         /// if AutoGranted is true. This is 1 by default. 
         /// </para>
         /// </summary>
-        public int AutoGrantedValue
+        public int? AutoGrantedValue
         {
-            get { return this._autoGrantedValue.GetValueOrDefault(); }
+            get { return this._autoGrantedValue; }
             set { this._autoGrantedValue = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.MTurk.Model
         ///  The date and time the Qualification type was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.MTurk.Model
         /// True | False. 
         /// </para>
         /// </summary>
-        public bool IsRequestable
+        public bool? IsRequestable
         {
-            get { return this._isRequestable.GetValueOrDefault(); }
+            get { return this._isRequestable; }
             set { this._isRequestable = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.MTurk.Model
         /// are disabled and Workers can request a Qualification only once. 
         /// </para>
         /// </summary>
-        public long RetryDelayInSeconds
+        public long? RetryDelayInSeconds
         {
-            get { return this._retryDelayInSeconds.GetValueOrDefault(); }
+            get { return this._retryDelayInSeconds; }
             set { this._retryDelayInSeconds = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.MTurk.Model
         /// beginning from the time the Worker requests the Qualification. 
         /// </para>
         /// </summary>
-        public long TestDurationInSeconds
+        public long? TestDurationInSeconds
         {
-            get { return this._testDurationInSeconds.GetValueOrDefault(); }
+            get { return this._testDurationInSeconds; }
             set { this._testDurationInSeconds = value; }
         }
 

@@ -61,9 +61,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// How long it took to process the request, in milliseconds.
         /// </para>
         /// </summary>
-        public long Timems
+        public long? Timems
         {
-            get { return this._timems.GetValueOrDefault(); }
+            get { return this._timems; }
             set { this._timems = value; }
         }
 

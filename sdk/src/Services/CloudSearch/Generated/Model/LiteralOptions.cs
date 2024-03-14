@@ -64,9 +64,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether facet information can be returned for the field.
         /// </para>
         /// </summary>
-        public bool FacetEnabled
+        public bool? FacetEnabled
         {
-            get { return this._facetEnabled.GetValueOrDefault(); }
+            get { return this._facetEnabled; }
             set { this._facetEnabled = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether the contents of the field can be returned in the search results.
         /// </para>
         /// </summary>
-        public bool ReturnEnabled
+        public bool? ReturnEnabled
         {
-            get { return this._returnEnabled.GetValueOrDefault(); }
+            get { return this._returnEnabled; }
             set { this._returnEnabled = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether the contents of the field are searchable.
         /// </para>
         /// </summary>
-        public bool SearchEnabled
+        public bool? SearchEnabled
         {
-            get { return this._searchEnabled.GetValueOrDefault(); }
+            get { return this._searchEnabled; }
             set { this._searchEnabled = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.CloudSearch.Model
         /// Whether the field can be used to sort the search results.
         /// </para>
         /// </summary>
-        public bool SortEnabled
+        public bool? SortEnabled
         {
-            get { return this._sortEnabled.GetValueOrDefault(); }
+            get { return this._sortEnabled; }
             set { this._sortEnabled = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int ApplicationVersion
+        public int? ApplicationVersion
         {
-            get { return this._applicationVersion.GetValueOrDefault(); }
+            get { return this._applicationVersion; }
             set { this._applicationVersion = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

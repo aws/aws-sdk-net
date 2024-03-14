@@ -83,7 +83,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LimitValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LimitValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// The time the version was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the version is the default version.
         /// </para>
         /// </summary>
-        public bool DefaultVersion
+        public bool? DefaultVersion
         {
-            get { return this._defaultVersion.GetValueOrDefault(); }
+            get { return this._defaultVersion; }
             set { this._defaultVersion = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.EC2.Model
         /// The version number.
         /// </para>
         /// </summary>
-        public long VersionNumber
+        public long? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

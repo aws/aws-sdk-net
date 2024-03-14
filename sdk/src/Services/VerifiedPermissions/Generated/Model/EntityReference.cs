@@ -70,9 +70,9 @@ namespace Amazon.VerifiedPermissions.Model
         /// search for policies that are not associated with a specific principal or resource.
         /// </para>
         /// </summary>
-        public bool Unspecified
+        public bool? Unspecified
         {
-            get { return this._unspecified.GetValueOrDefault(); }
+            get { return this._unspecified; }
             set { this._unspecified = value; }
         }
 

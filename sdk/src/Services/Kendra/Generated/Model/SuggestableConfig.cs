@@ -63,9 +63,9 @@ namespace Amazon.Kendra.Model
         /// the field can be used for query suggestions.
         /// </para>
         /// </summary>
-        public bool Suggestable
+        public bool? Suggestable
         {
-            get { return this._suggestable.GetValueOrDefault(); }
+            get { return this._suggestable; }
             set { this._suggestable = value; }
         }
 

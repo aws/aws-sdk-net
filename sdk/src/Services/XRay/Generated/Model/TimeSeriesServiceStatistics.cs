@@ -111,9 +111,9 @@ namespace Amazon.XRay.Model
         /// Timestamp of the window for which statistics are aggregated.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

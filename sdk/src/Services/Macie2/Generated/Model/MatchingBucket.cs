@@ -105,9 +105,9 @@ namespace Amazon.Macie2.Model
         /// or storage format.
         /// </para>
         /// </summary>
-        public long ClassifiableObjectCount
+        public long? ClassifiableObjectCount
         {
-            get { return this._classifiableObjectCount.GetValueOrDefault(); }
+            get { return this._classifiableObjectCount; }
             set { this._classifiableObjectCount = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.Macie2.Model
         /// reflect the storage size of all versions of each applicable object in the bucket.
         /// </para>
         /// </summary>
-        public long ClassifiableSizeInBytes
+        public long? ClassifiableSizeInBytes
         {
-            get { return this._classifiableSizeInBytes.GetValueOrDefault(); }
+            get { return this._classifiableSizeInBytes; }
             set { this._classifiableSizeInBytes = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.Macie2.Model
         /// disabled for your account.
         /// </para>
         /// </summary>
-        public DateTime LastAutomatedDiscoveryTime
+        public DateTime? LastAutomatedDiscoveryTime
         {
-            get { return this._lastAutomatedDiscoveryTime.GetValueOrDefault(); }
+            get { return this._lastAutomatedDiscoveryTime; }
             set { this._lastAutomatedDiscoveryTime = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.Macie2.Model
         /// The total number of objects in the bucket.
         /// </para>
         /// </summary>
-        public long ObjectCount
+        public long? ObjectCount
         {
-            get { return this._objectCount.GetValueOrDefault(); }
+            get { return this._objectCount; }
             set { this._objectCount = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.Macie2.Model
         /// disabled for your account.
         /// </para>
         /// </summary>
-        public int SensitivityScore
+        public int? SensitivityScore
         {
-            get { return this._sensitivityScore.GetValueOrDefault(); }
+            get { return this._sensitivityScore; }
             set { this._sensitivityScore = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.Macie2.Model
         /// reflect the storage size of all versions of each object in the bucket.
         /// </para>
         /// </summary>
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 
@@ -321,9 +321,9 @@ namespace Amazon.Macie2.Model
         /// bucket.
         /// </para>
         /// </summary>
-        public long SizeInBytesCompressed
+        public long? SizeInBytesCompressed
         {
-            get { return this._sizeInBytesCompressed.GetValueOrDefault(); }
+            get { return this._sizeInBytesCompressed; }
             set { this._sizeInBytesCompressed = value; }
         }
 

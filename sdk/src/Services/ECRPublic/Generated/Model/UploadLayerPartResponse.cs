@@ -45,9 +45,9 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long LastByteReceived
+        public long? LastByteReceived
         {
-            get { return this._lastByteReceived.GetValueOrDefault(); }
+            get { return this._lastByteReceived; }
             set { this._lastByteReceived = value; }
         }
 

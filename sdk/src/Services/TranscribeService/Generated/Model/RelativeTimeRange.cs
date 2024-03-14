@@ -67,9 +67,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int EndPercentage
+        public int? EndPercentage
         {
-            get { return this._endPercentage.GetValueOrDefault(); }
+            get { return this._endPercentage; }
             set { this._endPercentage = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int First
+        public int? First
         {
-            get { return this._first.GetValueOrDefault(); }
+            get { return this._first; }
             set { this._first = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Last
+        public int? Last
         {
-            get { return this._last.GetValueOrDefault(); }
+            get { return this._last; }
             set { this._last = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int StartPercentage
+        public int? StartPercentage
         {
-            get { return this._startPercentage.GetValueOrDefault(); }
+            get { return this._startPercentage; }
             set { this._startPercentage = value; }
         }
 

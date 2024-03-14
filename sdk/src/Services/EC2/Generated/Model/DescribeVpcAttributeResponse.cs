@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// is <c>true</c>, instances in the VPC get DNS hostnames; otherwise, they do not.
         /// </para>
         /// </summary>
-        public bool EnableDnsHostnames
+        public bool? EnableDnsHostnames
         {
-            get { return this._enableDnsHostnames.GetValueOrDefault(); }
+            get { return this._enableDnsHostnames; }
             set { this._enableDnsHostnames = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// IP addresses; otherwise, it does not.
         /// </para>
         /// </summary>
-        public bool EnableDnsSupport
+        public bool? EnableDnsSupport
         {
-            get { return this._enableDnsSupport.GetValueOrDefault(); }
+            get { return this._enableDnsSupport; }
             set { this._enableDnsSupport = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether Network Address Usage metrics are enabled for your VPC.
         /// </para>
         /// </summary>
-        public bool EnableNetworkAddressUsageMetrics
+        public bool? EnableNetworkAddressUsageMetrics
         {
-            get { return this._enableNetworkAddressUsageMetrics.GetValueOrDefault(); }
+            get { return this._enableNetworkAddressUsageMetrics; }
             set { this._enableNetworkAddressUsageMetrics = value; }
         }
 

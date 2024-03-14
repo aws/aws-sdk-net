@@ -59,9 +59,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The amount of storage (in gigabytes) to be allocated for the replication instance.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// version.
         /// </para>
         /// </summary>
-        public bool AllowMajorVersionUpgrade
+        public bool? AllowMajorVersionUpgrade
         {
-            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowMajorVersionUpgrade; }
             set { this._allowMajorVersionUpgrade = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// window.
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// 
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.AppStream.Model
         /// The desired number of streaming instances.
         /// </para>
         /// </summary>
-        public int DesiredInstances
+        public int? DesiredInstances
         {
-            get { return this._desiredInstances.GetValueOrDefault(); }
+            get { return this._desiredInstances; }
             set { this._desiredInstances = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.AppStream.Model
         /// or leave both attributes blank.
         /// </para>
         /// </summary>
-        public int DesiredSessions
+        public int? DesiredSessions
         {
-            get { return this._desiredSessions.GetValueOrDefault(); }
+            get { return this._desiredSessions; }
             set { this._desiredSessions = value; }
         }
 

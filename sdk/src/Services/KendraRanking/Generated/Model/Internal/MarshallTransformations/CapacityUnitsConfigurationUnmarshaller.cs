@@ -65,7 +65,7 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RescoreCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RescoreCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

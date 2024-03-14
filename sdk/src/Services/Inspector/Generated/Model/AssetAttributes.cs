@@ -164,9 +164,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int SchemaVersion
+        public int? SchemaVersion
         {
-            get { return this._schemaVersion.GetValueOrDefault(); }
+            get { return this._schemaVersion; }
             set { this._schemaVersion = value; }
         }
 

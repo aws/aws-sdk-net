@@ -71,13 +71,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("estimatedTimeRemainingSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EstimatedTimeRemainingSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("percentDone", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.PercentDone = unmarshaller.Unmarshall(context);
                     continue;
                 }

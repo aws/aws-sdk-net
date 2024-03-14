@@ -95,9 +95,9 @@ namespace Amazon.MachineLearning.Model
         /// receive a negative response from the <c>MLModel</c>, such as <c>false</c>.
         /// </para>
         /// </summary>
-        public float ScoreThreshold
+        public float? ScoreThreshold
         {
-            get { return this._scoreThreshold.GetValueOrDefault(); }
+            get { return this._scoreThreshold; }
             set { this._scoreThreshold = value; }
         }
 

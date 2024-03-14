@@ -60,7 +60,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentificationExpirationDate())
             {
                 context.Writer.WritePropertyName("IdentificationExpirationDate");
-                context.Writer.Write(requestObject.IdentificationExpirationDate);
+                context.Writer.Write(requestObject.IdentificationExpirationDate.Value);
             }
 
             if(requestObject.IsSetIdentificationIssuingOrg())

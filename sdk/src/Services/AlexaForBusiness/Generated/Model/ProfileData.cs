@@ -86,9 +86,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Retrieves if the profile data is default or not.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

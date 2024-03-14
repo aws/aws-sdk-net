@@ -58,9 +58,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The timestamp of when the export job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The timestamp of when the export job was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

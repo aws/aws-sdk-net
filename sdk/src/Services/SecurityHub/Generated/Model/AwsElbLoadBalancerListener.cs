@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// The port on which the instance is listening.
         /// </para>
         /// </summary>
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.SecurityHub.Model
         /// 587, 1024-65535.
         /// </para>
         /// </summary>
-        public int LoadBalancerPort
+        public int? LoadBalancerPort
         {
-            get { return this._loadBalancerPort.GetValueOrDefault(); }
+            get { return this._loadBalancerPort; }
             set { this._loadBalancerPort = value; }
         }
 

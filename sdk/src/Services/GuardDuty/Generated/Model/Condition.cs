@@ -92,9 +92,9 @@ namespace Amazon.GuardDuty.Model
         /// for findings.
         /// </para>
         /// </summary>
-        public long GreaterThan
+        public long? GreaterThan
         {
-            get { return this._greaterThan.GetValueOrDefault(); }
+            get { return this._greaterThan; }
             set { this._greaterThan = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.GuardDuty.Model
         /// when querying for findings.
         /// </para>
         /// </summary>
-        public long GreaterThanOrEqual
+        public long? GreaterThanOrEqual
         {
-            get { return this._greaterThanOrEqual.GetValueOrDefault(); }
+            get { return this._greaterThanOrEqual; }
             set { this._greaterThanOrEqual = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThan property should be used instead.")]
-        public int Gt
+        public int? Gt
         {
-            get { return this._gt.GetValueOrDefault(); }
+            get { return this._gt; }
             set { this._gt = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the GreaterThanOrEqual property should be used instead.")]
-        public int Gte
+        public int? Gte
         {
-            get { return this._gte.GetValueOrDefault(); }
+            get { return this._gte; }
             set { this._gte = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.GuardDuty.Model
         /// for findings.
         /// </para>
         /// </summary>
-        public long LessThan
+        public long? LessThan
         {
-            get { return this._lessThan.GetValueOrDefault(); }
+            get { return this._lessThan; }
             set { this._lessThan = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.GuardDuty.Model
         /// querying for findings.
         /// </para>
         /// </summary>
-        public long LessThanOrEqual
+        public long? LessThanOrEqual
         {
-            get { return this._lessThanOrEqual.GetValueOrDefault(); }
+            get { return this._lessThanOrEqual; }
             set { this._lessThanOrEqual = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThan property should be used instead.")]
-        public int Lt
+        public int? Lt
         {
-            get { return this._lt.GetValueOrDefault(); }
+            get { return this._lt; }
             set { this._lt = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated and the LessThanOrEqual property should be used instead.")]
-        public int Lte
+        public int? Lte
         {
-            get { return this._lte.GetValueOrDefault(); }
+            get { return this._lte; }
             set { this._lte = value; }
         }
 

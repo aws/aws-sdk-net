@@ -88,9 +88,9 @@ namespace Amazon.SecurityHub.Model
         /// The parent process ID. This field accepts positive integers between <c>O</c> and <c>2147483647</c>.
         /// </para>
         /// </summary>
-        public int ParentPid
+        public int? ParentPid
         {
-            get { return this._parentPid.GetValueOrDefault(); }
+            get { return this._parentPid; }
             set { this._parentPid = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SecurityHub.Model
         /// The process ID.
         /// </para>
         /// </summary>
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 

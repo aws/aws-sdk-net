@@ -85,9 +85,9 @@ namespace Amazon.Schemas.Model
         /// The date and time that schema was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Schemas.Model
         /// The date the schema version was created.
         /// </para>
         /// </summary>
-        public DateTime VersionCreatedDate
+        public DateTime? VersionCreatedDate
         {
-            get { return this._versionCreatedDate.GetValueOrDefault(); }
+            get { return this._versionCreatedDate; }
             set { this._versionCreatedDate = value; }
         }
 

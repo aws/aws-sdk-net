@@ -129,9 +129,9 @@ namespace Amazon.EC2.Model
         /// You cannot specify this parameter and the host IDs parameter in the same request.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

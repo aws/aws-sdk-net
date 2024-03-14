@@ -63,9 +63,9 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int PolicyVersionId
+        public int? PolicyVersionId
         {
-            get { return this._policyVersionId.GetValueOrDefault(); }
+            get { return this._policyVersionId; }
             set { this._policyVersionId = value; }
         }
 

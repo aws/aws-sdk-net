@@ -65,7 +65,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("End", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.End = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Start", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeDelaySeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeDelaySeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

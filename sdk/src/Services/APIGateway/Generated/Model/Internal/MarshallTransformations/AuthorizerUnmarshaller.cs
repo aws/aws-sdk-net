@@ -71,7 +71,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("authorizerResultTtlInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AuthorizerResultTtlInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -63,9 +63,9 @@ namespace Amazon.OpenSearchService.Model
         /// The floating point value representing the progress percentage of a particular step.
         /// </para>
         /// </summary>
-        public double ProgressPercent
+        public double? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 

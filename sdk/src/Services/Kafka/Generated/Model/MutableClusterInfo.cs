@@ -217,9 +217,9 @@ namespace Amazon.Kafka.Model
         /// The number of broker nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfBrokerNodes
+        public int? NumberOfBrokerNodes
         {
-            get { return this._numberOfBrokerNodes.GetValueOrDefault(); }
+            get { return this._numberOfBrokerNodes; }
             set { this._numberOfBrokerNodes = value; }
         }
 

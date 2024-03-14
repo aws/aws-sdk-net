@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EventCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EventCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetentionDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RetentionDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SizeBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.IoT1ClickDevicesService.Endpoints;
 using Amazon.IoT1ClickDevicesService.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class IoT1ClickDevicesServiceEndpointsTests

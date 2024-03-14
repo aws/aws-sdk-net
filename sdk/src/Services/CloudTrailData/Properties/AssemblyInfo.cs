@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudTrailData")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CloudTrail Data Service. Add CloudTrail Data Service to enable users to ingest activity events from non-AWS sources into CloudTrail Lake.")]
 #elif NETCOREAPP3_1

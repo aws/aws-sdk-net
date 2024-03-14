@@ -100,9 +100,9 @@ namespace Amazon.RDS.Model
         /// backups to the current Amazon Web Services Region.
         /// </para>
         /// </summary>
-        public bool SupportsDBInstanceAutomatedBackupsReplication
+        public bool? SupportsDBInstanceAutomatedBackupsReplication
         {
-            get { return this._supportsDBInstanceAutomatedBackupsReplication.GetValueOrDefault(); }
+            get { return this._supportsDBInstanceAutomatedBackupsReplication; }
             set { this._supportsDBInstanceAutomatedBackupsReplication = value; }
         }
 

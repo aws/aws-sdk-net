@@ -83,7 +83,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWithEvent())
             {
                 context.Writer.WritePropertyName("WithEvent");
-                context.Writer.Write(requestObject.WithEvent);
+                context.Writer.Write(requestObject.WithEvent.Value);
             }
 
         }

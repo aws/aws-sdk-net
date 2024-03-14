@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIgnoreErrors())
                 {
                     context.Writer.WritePropertyName("IgnoreErrors");
-                    context.Writer.Write(publicRequest.IgnoreErrors);
+                    context.Writer.Write(publicRequest.IgnoreErrors.Value);
                 }
 
                 if(publicRequest.IsSetProvisionedProductId())
@@ -94,7 +94,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetainPhysicalResources())
                 {
                     context.Writer.WritePropertyName("RetainPhysicalResources");
-                    context.Writer.Write(publicRequest.RetainPhysicalResources);
+                    context.Writer.Write(publicRequest.RetainPhysicalResources.Value);
                 }
 
                 if(publicRequest.IsSetTerminateToken())

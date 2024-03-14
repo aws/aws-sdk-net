@@ -103,9 +103,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp indicating the date and time that the bot was last built for this locale.
         /// </para>
         /// </summary>
-        public DateTime LastBuildSubmittedDateTime
+        public DateTime? LastBuildSubmittedDateTime
         {
-            get { return this._lastBuildSubmittedDateTime.GetValueOrDefault(); }
+            get { return this._lastBuildSubmittedDateTime; }
             set { this._lastBuildSubmittedDateTime = value; }
         }
 

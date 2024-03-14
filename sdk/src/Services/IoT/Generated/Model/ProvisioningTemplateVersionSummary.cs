@@ -43,9 +43,9 @@ namespace Amazon.IoT.Model
         /// The date when the provisioning template version was created
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.IoT.Model
         /// True if the provisioning template version is the default version, otherwise false.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.IoT.Model
         /// The ID of the fleet provisioning template version.
         /// </para>
         /// </summary>
-        public int VersionId
+        public int? VersionId
         {
-            get { return this._versionId.GetValueOrDefault(); }
+            get { return this._versionId; }
             set { this._versionId = value; }
         }
 

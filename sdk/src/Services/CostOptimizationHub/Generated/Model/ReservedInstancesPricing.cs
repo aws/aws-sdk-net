@@ -45,9 +45,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// across the month.
         /// </para>
         /// </summary>
-        public double EstimatedMonthlyAmortizedReservationCost
+        public double? EstimatedMonthlyAmortizedReservationCost
         {
-            get { return this._estimatedMonthlyAmortizedReservationCost.GetValueOrDefault(); }
+            get { return this._estimatedMonthlyAmortizedReservationCost; }
             set { this._estimatedMonthlyAmortizedReservationCost = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// instance, over the length of the lookback period.
         /// </para>
         /// </summary>
-        public double EstimatedOnDemandCost
+        public double? EstimatedOnDemandCost
         {
-            get { return this._estimatedOnDemandCost.GetValueOrDefault(); }
+            get { return this._estimatedOnDemandCost; }
             set { this._estimatedOnDemandCost = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The cost of paying for the recommended reserved instance monthly.
         /// </para>
         /// </summary>
-        public double MonthlyReservationEligibleCost
+        public double? MonthlyReservationEligibleCost
         {
-            get { return this._monthlyReservationEligibleCost.GetValueOrDefault(); }
+            get { return this._monthlyReservationEligibleCost; }
             set { this._monthlyReservationEligibleCost = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// this instance.
         /// </para>
         /// </summary>
-        public double SavingsPercentage
+        public double? SavingsPercentage
         {
-            get { return this._savingsPercentage.GetValueOrDefault(); }
+            get { return this._savingsPercentage; }
             set { this._savingsPercentage = value; }
         }
 

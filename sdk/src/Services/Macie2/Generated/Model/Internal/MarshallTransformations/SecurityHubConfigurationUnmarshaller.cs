@@ -65,13 +65,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("publishClassificationFindings", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublishClassificationFindings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("publishPolicyFindings", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublishPolicyFindings = unmarshaller.Unmarshall(context);
                     continue;
                 }

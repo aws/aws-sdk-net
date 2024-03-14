@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// standby or "sleep" mode.
         /// </para>
         /// </summary>
-        public bool WakeUp
+        public bool? WakeUp
         {
-            get { return this._wakeUp.GetValueOrDefault(); }
+            get { return this._wakeUp; }
             set { this._wakeUp = value; }
         }
 

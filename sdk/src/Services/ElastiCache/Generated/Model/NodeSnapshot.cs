@@ -65,9 +65,9 @@ namespace Amazon.ElastiCache.Model
         /// The date and time when the cache node was created in the source cluster.
         /// </para>
         /// </summary>
-        public DateTime CacheNodeCreateTime
+        public DateTime? CacheNodeCreateTime
         {
-            get { return this._cacheNodeCreateTime.GetValueOrDefault(); }
+            get { return this._cacheNodeCreateTime; }
             set { this._cacheNodeCreateTime = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.ElastiCache.Model
         /// for the snapshot.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public DateTime? SnapshotCreateTime
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
+            get { return this._snapshotCreateTime; }
             set { this._snapshotCreateTime = value; }
         }
 

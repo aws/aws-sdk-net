@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SSOOIDC")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS SSO OIDC. This is an initial release of AWS Single Sign-On OAuth device code authorization service.")]
 #elif NETCOREAPP3_1

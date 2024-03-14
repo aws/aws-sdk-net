@@ -47,9 +47,9 @@ namespace Amazon.Comprehend.Model
         /// in the word.
         /// </para>
         /// </summary>
-        public int BeginOffset
+        public int? BeginOffset
         {
-            get { return this._beginOffset.GetValueOrDefault(); }
+            get { return this._beginOffset; }
             set { this._beginOffset = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Comprehend.Model
         /// in the word.
         /// </para>
         /// </summary>
-        public int EndOffset
+        public int? EndOffset
         {
-            get { return this._endOffset.GetValueOrDefault(); }
+            get { return this._endOffset; }
             set { this._endOffset = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Comprehend.Model
         /// A unique identifier for a token.
         /// </para>
         /// </summary>
-        public int TokenId
+        public int? TokenId
         {
-            get { return this._tokenId.GetValueOrDefault(); }
+            get { return this._tokenId; }
             set { this._tokenId = value; }
         }
 

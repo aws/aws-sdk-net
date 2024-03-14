@@ -65,55 +65,55 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Decrypt", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Decrypt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeriveKey", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeriveKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Encrypt", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Encrypt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Generate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Generate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NoRestrictions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoRestrictions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sign", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Sign = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Unwrap", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Unwrap = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Verify", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Verify = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Wrap", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Wrap = unmarshaller.Unmarshall(context);
                     continue;
                 }

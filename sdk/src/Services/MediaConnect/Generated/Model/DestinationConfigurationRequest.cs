@@ -59,9 +59,9 @@ namespace Amazon.MediaConnect.Model
         /// use when it distributes the media stream to the output.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DestinationPort
+        public int? DestinationPort
         {
-            get { return this._destinationPort.GetValueOrDefault(); }
+            get { return this._destinationPort; }
             set { this._destinationPort = value; }
         }
 

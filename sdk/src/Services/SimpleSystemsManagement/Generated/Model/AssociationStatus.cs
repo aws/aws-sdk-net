@@ -64,9 +64,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 

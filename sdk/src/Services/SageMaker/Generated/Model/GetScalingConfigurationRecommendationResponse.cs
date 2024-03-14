@@ -163,9 +163,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int TargetCpuUtilizationPerCore
+        public int? TargetCpuUtilizationPerCore
         {
-            get { return this._targetCpuUtilizationPerCore.GetValueOrDefault(); }
+            get { return this._targetCpuUtilizationPerCore; }
             set { this._targetCpuUtilizationPerCore = value; }
         }
 

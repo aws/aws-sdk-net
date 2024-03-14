@@ -178,9 +178,9 @@ namespace Amazon.Glue.Model
         /// The number of Glue Data Processing Units (DPUs) to allocate to this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.Glue.Model
         /// <c>G.2X</c>. 
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 

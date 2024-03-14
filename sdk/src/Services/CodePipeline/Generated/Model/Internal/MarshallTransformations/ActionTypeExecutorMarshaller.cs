@@ -59,7 +59,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJobTimeout())
             {
                 context.Writer.WritePropertyName("jobTimeout");
-                context.Writer.Write(requestObject.JobTimeout);
+                context.Writer.Write(requestObject.JobTimeout.Value);
             }
 
             if(requestObject.IsSetPolicyStatementsTemplate())

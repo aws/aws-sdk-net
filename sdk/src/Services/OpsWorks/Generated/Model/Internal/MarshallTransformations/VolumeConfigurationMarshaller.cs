@@ -48,13 +48,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetMountPoint())
@@ -66,19 +66,19 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfDisks())
             {
                 context.Writer.WritePropertyName("NumberOfDisks");
-                context.Writer.Write(requestObject.NumberOfDisks);
+                context.Writer.Write(requestObject.NumberOfDisks.Value);
             }
 
             if(requestObject.IsSetRaidLevel())
             {
                 context.Writer.WritePropertyName("RaidLevel");
-                context.Writer.Write(requestObject.RaidLevel);
+                context.Writer.Write(requestObject.RaidLevel.Value);
             }
 
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");
-                context.Writer.Write(requestObject.Size);
+                context.Writer.Write(requestObject.Size.Value);
             }
 
             if(requestObject.IsSetVolumeType())

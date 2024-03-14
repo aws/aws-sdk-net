@@ -48,7 +48,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdcInsertsAndUpdates())
             {
                 context.Writer.WritePropertyName("CdcInsertsAndUpdates");
-                context.Writer.Write(requestObject.CdcInsertsAndUpdates);
+                context.Writer.Write(requestObject.CdcInsertsAndUpdates.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
@@ -60,19 +60,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMagneticStoreWrites())
             {
                 context.Writer.WritePropertyName("EnableMagneticStoreWrites");
-                context.Writer.Write(requestObject.EnableMagneticStoreWrites);
+                context.Writer.Write(requestObject.EnableMagneticStoreWrites.Value);
             }
 
             if(requestObject.IsSetMagneticDuration())
             {
                 context.Writer.WritePropertyName("MagneticDuration");
-                context.Writer.Write(requestObject.MagneticDuration);
+                context.Writer.Write(requestObject.MagneticDuration.Value);
             }
 
             if(requestObject.IsSetMemoryDuration())
             {
                 context.Writer.WritePropertyName("MemoryDuration");
-                context.Writer.Write(requestObject.MemoryDuration);
+                context.Writer.Write(requestObject.MemoryDuration.Value);
             }
 
         }

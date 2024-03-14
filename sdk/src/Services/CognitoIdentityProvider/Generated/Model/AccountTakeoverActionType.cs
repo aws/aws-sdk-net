@@ -82,9 +82,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Notify
+        public bool? Notify
         {
-            get { return this._notify.GetValueOrDefault(); }
+            get { return this._notify; }
             set { this._notify = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.Proton.Model
         /// a major template version update.
         /// </para>
         /// </summary>
-        public int BehindMajor
+        public int? BehindMajor
         {
-            get { return this._behindMajor.GetValueOrDefault(); }
+            get { return this._behindMajor; }
             set { this._behindMajor = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Proton.Model
         /// a minor template version update.
         /// </para>
         /// </summary>
-        public int BehindMinor
+        public int? BehindMinor
         {
-            get { return this._behindMinor.GetValueOrDefault(); }
+            get { return this._behindMinor; }
             set { this._behindMinor = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Proton.Model
         /// to deploy.
         /// </para>
         /// </summary>
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.Proton.Model
         /// with their template.
         /// </para>
         /// </summary>
-        public int UpToDate
+        public int? UpToDate
         {
-            get { return this._upToDate.GetValueOrDefault(); }
+            get { return this._upToDate; }
             set { this._upToDate = value; }
         }
 

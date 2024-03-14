@@ -65,13 +65,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ChallengeRequiredOnNewDevice", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ChallengeRequiredOnNewDevice = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeviceOnlyRememberedOnUserPrompt", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeviceOnlyRememberedOnUserPrompt = unmarshaller.Unmarshall(context);
                     continue;
                 }

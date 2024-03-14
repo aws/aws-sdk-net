@@ -65,7 +65,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalMatchCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalMatchCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

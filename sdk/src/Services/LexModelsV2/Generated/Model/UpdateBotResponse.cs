@@ -146,9 +146,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp of the date and time that the bot was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=86400)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp of the date and time that the bot was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumBuildsAllowed())
             {
                 context.Writer.WritePropertyName("maximumBuildsAllowed");
-                context.Writer.Write(requestObject.MaximumBuildsAllowed);
+                context.Writer.Write(requestObject.MaximumBuildsAllowed.Value);
             }
 
         }

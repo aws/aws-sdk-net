@@ -51,9 +51,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int IdleTTL
+        public int? IdleTTL
         {
-            get { return this._idleTTL.GetValueOrDefault(); }
+            get { return this._idleTTL; }
             set { this._idleTTL = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaximumTTL
+        public int? MaximumTTL
         {
-            get { return this._maximumTTL.GetValueOrDefault(); }
+            get { return this._maximumTTL; }
             set { this._maximumTTL = value; }
         }
 

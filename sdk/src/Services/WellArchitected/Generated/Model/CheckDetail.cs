@@ -105,9 +105,9 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9999)]
-        public int FlaggedResources
+        public int? FlaggedResources
         {
-            get { return this._flaggedResources.GetValueOrDefault(); }
+            get { return this._flaggedResources; }
             set { this._flaggedResources = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt.
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

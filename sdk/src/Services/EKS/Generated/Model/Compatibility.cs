@@ -61,9 +61,9 @@ namespace Amazon.EKS.Model
         /// The supported default version.
         /// </para>
         /// </summary>
-        public bool DefaultVersion
+        public bool? DefaultVersion
         {
-            get { return this._defaultVersion.GetValueOrDefault(); }
+            get { return this._defaultVersion; }
             set { this._defaultVersion = value; }
         }
 

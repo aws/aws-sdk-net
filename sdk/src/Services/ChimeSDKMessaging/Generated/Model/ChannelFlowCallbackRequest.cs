@@ -123,9 +123,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// with a value of true.
         /// </para>
         /// </summary>
-        public bool DeleteResource
+        public bool? DeleteResource
         {
-            get { return this._deleteResource.GetValueOrDefault(); }
+            get { return this._deleteResource; }
             set { this._deleteResource = value; }
         }
 

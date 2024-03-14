@@ -106,9 +106,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property LastSyncCount. The last server sync count for this record.
         /// </summary>
-        public long LastSyncCount
+        public long? LastSyncCount
         {
-            get { return this._lastSyncCount.GetValueOrDefault(); }
+            get { return this._lastSyncCount; }
             set { this._lastSyncCount = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property MaxResults. The maximum number of results to be returned.
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

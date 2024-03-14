@@ -54,7 +54,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeightFactor())
             {
                 context.Writer.WritePropertyName("weightFactor");
-                context.Writer.Write(requestObject.WeightFactor);
+                context.Writer.Write(requestObject.WeightFactor.Value);
             }
 
         }

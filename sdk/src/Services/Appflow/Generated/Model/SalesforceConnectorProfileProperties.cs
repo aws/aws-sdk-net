@@ -63,9 +63,9 @@ namespace Amazon.Appflow.Model
         /// 
         /// </para>
         /// </summary>
-        public bool IsSandboxEnvironment
+        public bool? IsSandboxEnvironment
         {
-            get { return this._isSandboxEnvironment.GetValueOrDefault(); }
+            get { return this._isSandboxEnvironment; }
             set { this._isSandboxEnvironment = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>
-        public bool UsePrivateLinkForMetadataAndAuthorization
+        public bool? UsePrivateLinkForMetadataAndAuthorization
         {
-            get { return this._usePrivateLinkForMetadataAndAuthorization.GetValueOrDefault(); }
+            get { return this._usePrivateLinkForMetadataAndAuthorization; }
             set { this._usePrivateLinkForMetadataAndAuthorization = value; }
         }
 

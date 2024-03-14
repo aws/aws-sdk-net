@@ -83,19 +83,19 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Max24HourSend", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.Max24HourSend = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxSendRate", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.MaxSendRate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SentLast24Hours", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.SentLast24Hours = unmarshaller.Unmarshall(context);
                         continue;
                     }

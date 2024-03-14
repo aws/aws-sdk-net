@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// Formation.
         /// </para>
         /// </summary>
-        public bool IsRegisteredWithLakeFormation
+        public bool? IsRegisteredWithLakeFormation
         {
-            get { return this._isRegisteredWithLakeFormation.GetValueOrDefault(); }
+            get { return this._isRegisteredWithLakeFormation; }
             set { this._isRegisteredWithLakeFormation = value; }
         }
 

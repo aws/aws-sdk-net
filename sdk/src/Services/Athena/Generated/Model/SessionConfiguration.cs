@@ -80,9 +80,9 @@ namespace Amazon.Athena.Model
         /// The idle timeout in seconds for the session.
         /// </para>
         /// </summary>
-        public long IdleTimeoutSeconds
+        public long? IdleTimeoutSeconds
         {
-            get { return this._idleTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._idleTimeoutSeconds; }
             set { this._idleTimeoutSeconds = value; }
         }
 

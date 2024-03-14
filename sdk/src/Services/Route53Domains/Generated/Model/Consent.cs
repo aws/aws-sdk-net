@@ -62,9 +62,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaxPrice
+        public double? MaxPrice
         {
-            get { return this._maxPrice.GetValueOrDefault(); }
+            get { return this._maxPrice; }
             set { this._maxPrice = value; }
         }
 

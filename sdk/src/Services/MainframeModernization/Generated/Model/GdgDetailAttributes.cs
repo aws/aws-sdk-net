@@ -46,9 +46,9 @@ namespace Amazon.MainframeModernization.Model
         /// The maximum number of generation data sets, up to 255, in a GDG.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

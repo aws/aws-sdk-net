@@ -48,7 +48,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetentionDays())
             {
                 context.Writer.WritePropertyName("RetentionDays");
-                context.Writer.Write(requestObject.RetentionDays);
+                context.Writer.Write(requestObject.RetentionDays.Value);
             }
 
         }

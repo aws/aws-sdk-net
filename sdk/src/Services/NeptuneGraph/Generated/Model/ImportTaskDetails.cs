@@ -49,9 +49,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long DictionaryEntryCount
+        public long? DictionaryEntryCount
         {
-            get { return this._dictionaryEntryCount.GetValueOrDefault(); }
+            get { return this._dictionaryEntryCount; }
             set { this._dictionaryEntryCount = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ErrorCount
+        public int? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ProgressPercentage
+        public int? ProgressPercentage
         {
-            get { return this._progressPercentage.GetValueOrDefault(); }
+            get { return this._progressPercentage; }
             set { this._progressPercentage = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StatementCount
+        public long? StatementCount
         {
-            get { return this._statementCount.GetValueOrDefault(); }
+            get { return this._statementCount; }
             set { this._statementCount = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TimeElapsedSeconds
+        public long? TimeElapsedSeconds
         {
-            get { return this._timeElapsedSeconds.GetValueOrDefault(); }
+            get { return this._timeElapsedSeconds; }
             set { this._timeElapsedSeconds = value; }
         }
 

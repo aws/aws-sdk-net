@@ -46,9 +46,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DurationInMinutes
+        public int? DurationInMinutes
         {
-            get { return this._durationInMinutes.GetValueOrDefault(); }
+            get { return this._durationInMinutes; }
             set { this._durationInMinutes = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

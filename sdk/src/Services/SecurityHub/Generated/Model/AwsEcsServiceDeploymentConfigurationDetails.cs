@@ -76,9 +76,9 @@ namespace Amazon.SecurityHub.Model
         /// For the Fargate launch type, the maximum percent value is not used.
         /// </para>
         /// </summary>
-        public int MaximumPercent
+        public int? MaximumPercent
         {
-            get { return this._maximumPercent.GetValueOrDefault(); }
+            get { return this._maximumPercent; }
             set { this._maximumPercent = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.SecurityHub.Model
         /// For the Fargate launch type, the minimum healthy percent value is not used.
         /// </para>
         /// </summary>
-        public int MinimumHealthyPercent
+        public int? MinimumHealthyPercent
         {
-            get { return this._minimumHealthyPercent.GetValueOrDefault(); }
+            get { return this._minimumHealthyPercent; }
             set { this._minimumHealthyPercent = value; }
         }
 

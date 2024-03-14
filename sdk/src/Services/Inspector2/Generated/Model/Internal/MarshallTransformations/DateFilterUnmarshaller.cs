@@ -65,13 +65,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("endInclusive", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startInclusive", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartInclusive = unmarshaller.Unmarshall(context);
                     continue;
                 }

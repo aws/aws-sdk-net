@@ -83,7 +83,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("preserveSourceDataTyping", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveSourceDataTyping = unmarshaller.Unmarshall(context);
                     continue;
                 }

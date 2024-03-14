@@ -45,9 +45,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// book an available room when a meeting is started with Alexa.
         /// </para>
         /// </summary>
-        public int DurationInMinutes
+        public int? DurationInMinutes
         {
-            get { return this._durationInMinutes.GetValueOrDefault(); }
+            get { return this._durationInMinutes; }
             set { this._durationInMinutes = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether instant booking is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

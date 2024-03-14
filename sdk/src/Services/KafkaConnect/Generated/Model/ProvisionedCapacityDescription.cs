@@ -43,9 +43,9 @@ namespace Amazon.KafkaConnect.Model
         /// valid values are 1,2,4,8.
         /// </para>
         /// </summary>
-        public int McuCount
+        public int? McuCount
         {
-            get { return this._mcuCount.GetValueOrDefault(); }
+            get { return this._mcuCount; }
             set { this._mcuCount = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.KafkaConnect.Model
         /// The number of workers that are allocated to the connector.
         /// </para>
         /// </summary>
-        public int WorkerCount
+        public int? WorkerCount
         {
-            get { return this._workerCount.GetValueOrDefault(); }
+            get { return this._workerCount; }
             set { this._workerCount = value; }
         }
 

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.CloudHSMV2.Endpoints;
 using Amazon.CloudHSMV2.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class CloudHSMV2EndpointsTests

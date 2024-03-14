@@ -89,7 +89,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("marketplaceCertified", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MarketplaceCertified = unmarshaller.Unmarshall(context);
                     continue;
                 }

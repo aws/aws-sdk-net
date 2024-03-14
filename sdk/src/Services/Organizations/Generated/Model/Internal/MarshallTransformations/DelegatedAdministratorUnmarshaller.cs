@@ -71,7 +71,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DelegationEnabledDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DelegationEnabledDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("JoinedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.JoinedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

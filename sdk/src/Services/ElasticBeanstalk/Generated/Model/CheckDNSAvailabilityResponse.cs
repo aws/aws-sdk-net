@@ -51,9 +51,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool Available
+        public bool? Available
         {
-            get { return this._available.GetValueOrDefault(); }
+            get { return this._available; }
             set { this._available = value; }
         }
 

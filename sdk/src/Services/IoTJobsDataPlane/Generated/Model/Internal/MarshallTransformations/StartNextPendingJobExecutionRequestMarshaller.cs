@@ -85,7 +85,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStepTimeoutInMinutes())
                 {
                     context.Writer.WritePropertyName("stepTimeoutInMinutes");
-                    context.Writer.Write(publicRequest.StepTimeoutInMinutes);
+                    context.Writer.Write(publicRequest.StepTimeoutInMinutes.Value);
                 }
 
                 writer.WriteObjectEnd();

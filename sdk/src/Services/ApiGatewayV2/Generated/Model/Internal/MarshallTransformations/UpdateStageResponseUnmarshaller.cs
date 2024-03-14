@@ -59,13 +59,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("apiGatewayManaged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ApiGatewayManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("autoDeploy", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoDeploy = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

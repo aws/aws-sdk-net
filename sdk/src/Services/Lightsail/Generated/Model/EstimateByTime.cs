@@ -101,9 +101,9 @@ namespace Amazon.Lightsail.Model
         /// 1 unit equals 1 hour.
         /// </para>
         /// </summary>
-        public double Unit
+        public double? Unit
         {
-            get { return this._unit.GetValueOrDefault(); }
+            get { return this._unit; }
             set { this._unit = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Lightsail.Model
         /// The amount of cost or usage that's measured for the cost estimate.
         /// </para>
         /// </summary>
-        public double UsageCost
+        public double? UsageCost
         {
-            get { return this._usageCost.GetValueOrDefault(); }
+            get { return this._usageCost; }
             set { this._usageCost = value; }
         }
 

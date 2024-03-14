@@ -42,9 +42,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool FetchSubmodules
+        public bool? FetchSubmodules
         {
-            get { return this._fetchSubmodules.GetValueOrDefault(); }
+            get { return this._fetchSubmodules; }
             set { this._fetchSubmodules = value; }
         }
 

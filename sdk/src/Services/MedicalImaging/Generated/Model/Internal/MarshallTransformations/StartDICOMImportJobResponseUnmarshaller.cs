@@ -71,7 +71,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("submittedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SubmittedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

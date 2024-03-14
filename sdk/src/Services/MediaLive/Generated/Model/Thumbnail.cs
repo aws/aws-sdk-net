@@ -86,9 +86,9 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property TimeStamp. Time stamp for the latest thumbnail.
         /// </summary>
-        public DateTime TimeStamp
+        public DateTime? TimeStamp
         {
-            get { return this._timeStamp.GetValueOrDefault(); }
+            get { return this._timeStamp; }
             set { this._timeStamp = value; }
         }
 

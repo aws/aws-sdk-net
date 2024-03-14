@@ -65,31 +65,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BytesScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EventsMatched", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EventsMatched = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EventsScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EventsScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExecutionTimeInMillis", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

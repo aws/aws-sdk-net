@@ -48,13 +48,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBeginInclusive())
             {
                 context.Writer.WritePropertyName("beginInclusive");
-                context.Writer.Write(requestObject.BeginInclusive);
+                context.Writer.Write(requestObject.BeginInclusive.Value);
             }
 
             if(requestObject.IsSetEndInclusive())
             {
                 context.Writer.WritePropertyName("endInclusive");
-                context.Writer.Write(requestObject.EndInclusive);
+                context.Writer.Write(requestObject.EndInclusive.Value);
             }
 
         }

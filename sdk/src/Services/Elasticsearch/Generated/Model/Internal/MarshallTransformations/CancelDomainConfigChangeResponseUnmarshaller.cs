@@ -65,7 +65,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DryRun", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DryRun = unmarshaller.Unmarshall(context);
                     continue;
                 }

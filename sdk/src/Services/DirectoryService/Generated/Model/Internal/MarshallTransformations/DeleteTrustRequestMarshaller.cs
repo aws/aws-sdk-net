@@ -70,7 +70,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteAssociatedConditionalForwarder())
                 {
                     context.Writer.WritePropertyName("DeleteAssociatedConditionalForwarder");
-                    context.Writer.Write(publicRequest.DeleteAssociatedConditionalForwarder);
+                    context.Writer.Write(publicRequest.DeleteAssociatedConditionalForwarder.Value);
                 }
 
                 if(publicRequest.IsSetTrustId())

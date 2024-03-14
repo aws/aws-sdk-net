@@ -83,7 +83,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("idleSessionTTLInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleSessionTTLInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

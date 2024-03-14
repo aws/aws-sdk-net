@@ -80,7 +80,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFinalized())
                 {
                     context.Writer.WritePropertyName("Finalized");
-                    context.Writer.Write(publicRequest.Finalized);
+                    context.Writer.Write(publicRequest.Finalized.Value);
                 }
 
                 writer.WriteObjectEnd();

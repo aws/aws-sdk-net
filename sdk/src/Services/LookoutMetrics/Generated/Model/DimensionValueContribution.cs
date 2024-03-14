@@ -43,9 +43,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double ContributionScore
+        public double? ContributionScore
         {
-            get { return this._contributionScore.GetValueOrDefault(); }
+            get { return this._contributionScore; }
             set { this._contributionScore = value; }
         }
 

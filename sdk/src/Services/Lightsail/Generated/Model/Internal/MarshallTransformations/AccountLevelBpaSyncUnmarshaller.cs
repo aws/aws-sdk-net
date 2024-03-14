@@ -65,13 +65,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bpaImpactsLightsail", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BpaImpactsLightsail = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastSyncedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSyncedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

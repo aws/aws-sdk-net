@@ -60,7 +60,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastUpdateTime())
             {
                 context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.Write(requestObject.LastUpdateTime);
+                context.Writer.Write(requestObject.LastUpdateTime.Value);
             }
 
             if(requestObject.IsSetName())

@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// Flag that indicates whether to append inference id to the output.
         /// </para>
         /// </summary>
-        public bool GenerateInferenceId
+        public bool? GenerateInferenceId
         {
-            get { return this._generateInferenceId.GetValueOrDefault(); }
+            get { return this._generateInferenceId; }
             set { this._generateInferenceId = value; }
         }
 

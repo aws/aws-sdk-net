@@ -42,9 +42,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of individual assessments that have completed, successfully or not.
         /// </para>
         /// </summary>
-        public int IndividualAssessmentCompletedCount
+        public int? IndividualAssessmentCompletedCount
         {
-            get { return this._individualAssessmentCompletedCount.GetValueOrDefault(); }
+            get { return this._individualAssessmentCompletedCount; }
             set { this._individualAssessmentCompletedCount = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of individual assessments that are specified to run.
         /// </para>
         /// </summary>
-        public int IndividualAssessmentCount
+        public int? IndividualAssessmentCount
         {
-            get { return this._individualAssessmentCount.GetValueOrDefault(); }
+            get { return this._individualAssessmentCount; }
             set { this._individualAssessmentCount = value; }
         }
 

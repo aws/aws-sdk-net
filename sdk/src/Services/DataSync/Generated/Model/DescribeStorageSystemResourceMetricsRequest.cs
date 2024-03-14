@@ -70,9 +70,9 @@ namespace Amazon.DataSync.Model
         /// gathered during a certain time frame, use this parameter with <c>StartTime</c>.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.DataSync.Model
         /// gathered during a certain time frame, use this parameter with <c>EndTime</c>.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -99,9 +99,9 @@ namespace Amazon.RDS.Model
         /// (UTC).
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.RDS.Model
         /// (UTC).
         /// </para>
         /// </summary>
-        public DateTime DeleteTime
+        public DateTime? DeleteTime
         {
-            get { return this._deleteTime.GetValueOrDefault(); }
+            get { return this._deleteTime; }
             set { this._deleteTime = value; }
         }
 

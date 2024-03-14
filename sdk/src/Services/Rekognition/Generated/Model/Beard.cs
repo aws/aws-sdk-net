@@ -43,9 +43,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float Confidence
+        public float? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Rekognition.Model
         /// Boolean value that indicates whether the face has beard or not.
         /// </para>
         /// </summary>
-        public bool Value
+        public bool? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

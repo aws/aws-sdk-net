@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBegin())
             {
                 context.Writer.WritePropertyName("Begin");
-                context.Writer.Write(requestObject.Begin);
+                context.Writer.Write(requestObject.Begin.Value);
             }
 
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End);
+                context.Writer.Write(requestObject.End.Value);
             }
 
         }

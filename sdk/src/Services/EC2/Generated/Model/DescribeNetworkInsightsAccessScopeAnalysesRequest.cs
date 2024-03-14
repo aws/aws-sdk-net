@@ -49,9 +49,9 @@ namespace Amazon.EC2.Model
         /// after this time.
         /// </para>
         /// </summary>
-        public DateTime AnalysisStartTimeBegin
+        public DateTime? AnalysisStartTimeBegin
         {
-            get { return this._analysisStartTimeBegin.GetValueOrDefault(); }
+            get { return this._analysisStartTimeBegin; }
             set { this._analysisStartTimeBegin = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// before this time.
         /// </para>
         /// </summary>
-        public DateTime AnalysisStartTimeEnd
+        public DateTime? AnalysisStartTimeEnd
         {
-            get { return this._analysisStartTimeEnd.GetValueOrDefault(); }
+            get { return this._analysisStartTimeEnd; }
             set { this._analysisStartTimeEnd = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

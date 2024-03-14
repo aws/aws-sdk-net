@@ -77,7 +77,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isConflict", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsConflict = unmarshaller.Unmarshall(context);
                     continue;
                 }

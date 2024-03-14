@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxHumanLabeledObjectCount())
             {
                 context.Writer.WritePropertyName("MaxHumanLabeledObjectCount");
-                context.Writer.Write(requestObject.MaxHumanLabeledObjectCount);
+                context.Writer.Write(requestObject.MaxHumanLabeledObjectCount.Value);
             }
 
             if(requestObject.IsSetMaxPercentageOfInputDatasetLabeled())
             {
                 context.Writer.WritePropertyName("MaxPercentageOfInputDatasetLabeled");
-                context.Writer.Write(requestObject.MaxPercentageOfInputDatasetLabeled);
+                context.Writer.Write(requestObject.MaxPercentageOfInputDatasetLabeled.Value);
             }
 
         }

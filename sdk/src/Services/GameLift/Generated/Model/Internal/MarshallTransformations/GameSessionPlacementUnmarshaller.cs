@@ -71,7 +71,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaximumPlayerSessionCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPlayerSessionCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,13 +155,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Port", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

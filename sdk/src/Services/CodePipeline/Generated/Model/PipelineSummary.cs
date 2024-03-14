@@ -46,9 +46,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time the pipeline was created, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.CodePipeline.Model
         /// The date and time of the last update to the pipeline, in timestamp format.
         /// </para>
         /// </summary>
-        public DateTime Updated
+        public DateTime? Updated
         {
-            get { return this._updated.GetValueOrDefault(); }
+            get { return this._updated; }
             set { this._updated = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the common name in the subject name.
         /// </para>
         /// </summary>
-        public bool RequireCommonName
+        public bool? RequireCommonName
         {
-            get { return this._requireCommonName.GetValueOrDefault(); }
+            get { return this._requireCommonName; }
             set { this._requireCommonName = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the directory path in the subject name.
         /// </para>
         /// </summary>
-        public bool RequireDirectoryPath
+        public bool? RequireDirectoryPath
         {
-            get { return this._requireDirectoryPath.GetValueOrDefault(); }
+            get { return this._requireDirectoryPath; }
             set { this._requireDirectoryPath = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the DNS as common name in the subject name.
         /// </para>
         /// </summary>
-        public bool RequireDnsAsCn
+        public bool? RequireDnsAsCn
         {
-            get { return this._requireDnsAsCn.GetValueOrDefault(); }
+            get { return this._requireDnsAsCn; }
             set { this._requireDnsAsCn = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the subject's email in the subject name.
         /// </para>
         /// </summary>
-        public bool RequireEmail
+        public bool? RequireEmail
         {
-            get { return this._requireEmail.GetValueOrDefault(); }
+            get { return this._requireEmail; }
             set { this._requireEmail = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the globally unique identifier (GUID) in the subject alternate name.
         /// </para>
         /// </summary>
-        public bool SanRequireDirectoryGuid
+        public bool? SanRequireDirectoryGuid
         {
-            get { return this._sanRequireDirectoryGuid.GetValueOrDefault(); }
+            get { return this._sanRequireDirectoryGuid; }
             set { this._sanRequireDirectoryGuid = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the DNS in the subject alternate name.
         /// </para>
         /// </summary>
-        public bool SanRequireDns
+        public bool? SanRequireDns
         {
-            get { return this._sanRequireDns.GetValueOrDefault(); }
+            get { return this._sanRequireDns; }
             set { this._sanRequireDns = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the domain DNS in the subject alternate name.
         /// </para>
         /// </summary>
-        public bool SanRequireDomainDns
+        public bool? SanRequireDomainDns
         {
-            get { return this._sanRequireDomainDns.GetValueOrDefault(); }
+            get { return this._sanRequireDomainDns; }
             set { this._sanRequireDomainDns = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the subject's email in the subject alternate name.
         /// </para>
         /// </summary>
-        public bool SanRequireEmail
+        public bool? SanRequireEmail
         {
-            get { return this._sanRequireEmail.GetValueOrDefault(); }
+            get { return this._sanRequireEmail; }
             set { this._sanRequireEmail = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the service principal name (SPN) in the subject alternate name.
         /// </para>
         /// </summary>
-        public bool SanRequireSpn
+        public bool? SanRequireSpn
         {
-            get { return this._sanRequireSpn.GetValueOrDefault(); }
+            get { return this._sanRequireSpn; }
             set { this._sanRequireSpn = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Include the user principal name (UPN) in the subject alternate name.
         /// </para>
         /// </summary>
-        public bool SanRequireUpn
+        public bool? SanRequireUpn
         {
-            get { return this._sanRequireUpn.GetValueOrDefault(); }
+            get { return this._sanRequireUpn; }
             set { this._sanRequireUpn = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10)]
-        public long PollingTime
+        public long? PollingTime
         {
-            get { return this._pollingTime.GetValueOrDefault(); }
+            get { return this._pollingTime; }
             set { this._pollingTime = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long RecordPollingLimit
+        public long? RecordPollingLimit
         {
-            get { return this._recordPollingLimit.GetValueOrDefault(); }
+            get { return this._recordPollingLimit; }
             set { this._recordPollingLimit = value; }
         }
 

@@ -70,9 +70,9 @@ namespace Amazon.CloudWatch.Model
         ///  An optional built-in rule that Amazon Web Services manages. 
         /// </para>
         /// </summary>
-        public bool ManagedRule
+        public bool? ManagedRule
         {
-            get { return this._managedRule.GetValueOrDefault(); }
+            get { return this._managedRule; }
             set { this._managedRule = value; }
         }
 

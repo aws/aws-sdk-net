@@ -56,9 +56,9 @@ namespace Amazon.EC2.Model
         /// to the service must first be accepted.
         /// </para>
         /// </summary>
-        public bool AcceptanceRequired
+        public bool? AcceptanceRequired
         {
-            get { return this._acceptanceRequired.GetValueOrDefault(); }
+            get { return this._acceptanceRequired; }
             set { this._acceptanceRequired = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.EC2.Model
         /// VPC endpoints using the VPC endpoint API is restricted.
         /// </para>
         /// </summary>
-        public bool ManagesVpcEndpoints
+        public bool? ManagesVpcEndpoints
         {
-            get { return this._managesVpcEndpoints.GetValueOrDefault(); }
+            get { return this._managesVpcEndpoints; }
             set { this._managesVpcEndpoints = value; }
         }
 

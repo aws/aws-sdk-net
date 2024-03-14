@@ -99,9 +99,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The usage amount.
         /// </para>
         /// </summary>
-        public double UsageAmount
+        public double? UsageAmount
         {
-            get { return this._usageAmount.GetValueOrDefault(); }
+            get { return this._usageAmount; }
             set { this._usageAmount = value; }
         }
 

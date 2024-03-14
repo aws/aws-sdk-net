@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// An IPv6 netmask length.
         /// </para>
         /// </summary>
-        public int Ipv6NetmaskLength
+        public int? Ipv6NetmaskLength
         {
-            get { return this._ipv6NetmaskLength.GetValueOrDefault(); }
+            get { return this._ipv6NetmaskLength; }
             set { this._ipv6NetmaskLength = value; }
         }
 

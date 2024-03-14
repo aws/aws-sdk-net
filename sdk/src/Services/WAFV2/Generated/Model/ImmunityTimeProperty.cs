@@ -49,9 +49,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=259200)]
-        public long ImmunityTime
+        public long? ImmunityTime
         {
-            get { return this._immunityTime.GetValueOrDefault(); }
+            get { return this._immunityTime; }
             set { this._immunityTime = value; }
         }
 

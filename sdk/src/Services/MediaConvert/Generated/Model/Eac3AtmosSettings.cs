@@ -59,9 +59,9 @@ namespace Amazon.MediaConvert.Model
         /// increases your output bitrate to 448k.
         /// </summary>
         [AWSProperty(Min=384000, Max=1024000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -215,9 +215,9 @@ namespace Amazon.MediaConvert.Model
         /// value, keep the default value, Custom for the setting Downmix control. Otherwise,
         /// MediaConvert ignores Left only/Right only center.
         /// </summary>
-        public double LoRoCenterMixLevel
+        public double? LoRoCenterMixLevel
         {
-            get { return this._loRoCenterMixLevel.GetValueOrDefault(); }
+            get { return this._loRoCenterMixLevel; }
             set { this._loRoCenterMixLevel = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.MediaConvert.Model
         /// this value, keep the default value, Custom for the setting Downmix control. Otherwise,
         /// MediaConvert ignores Left only/Right only surround.
         /// </summary>
-        public double LoRoSurroundMixLevel
+        public double? LoRoSurroundMixLevel
         {
-            get { return this._loRoSurroundMixLevel.GetValueOrDefault(); }
+            get { return this._loRoSurroundMixLevel; }
             set { this._loRoSurroundMixLevel = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.MediaConvert.Model
         /// use this value, keep the default value, Custom for the setting Downmix control. Otherwise,
         /// MediaConvert ignores Left total/Right total center.
         /// </summary>
-        public double LtRtCenterMixLevel
+        public double? LtRtCenterMixLevel
         {
-            get { return this._ltRtCenterMixLevel.GetValueOrDefault(); }
+            get { return this._ltRtCenterMixLevel; }
             set { this._ltRtCenterMixLevel = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.MediaConvert.Model
         /// To have MediaConvert use this value, keep the default value, Custom for the setting
         /// Downmix control. Otherwise, the service ignores Left total/Right total surround.
         /// </summary>
-        public double LtRtSurroundMixLevel
+        public double? LtRtSurroundMixLevel
         {
-            get { return this._ltRtSurroundMixLevel.GetValueOrDefault(); }
+            get { return this._ltRtSurroundMixLevel; }
             set { this._ltRtSurroundMixLevel = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.MediaConvert.Model
         /// sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=48000, Max=48000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 
@@ -329,9 +329,9 @@ namespace Amazon.MediaConvert.Model
         /// speech loudness as the overall program loudness. Default value: 15%
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int SpeechThreshold
+        public int? SpeechThreshold
         {
-            get { return this._speechThreshold.GetValueOrDefault(); }
+            get { return this._speechThreshold; }
             set { this._speechThreshold = value; }
         }
 

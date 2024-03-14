@@ -69,9 +69,9 @@ namespace Amazon.MemoryDB.Model
         /// The duration of the reservation in seconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.MemoryDB.Model
         /// The fixed price charged for this reserved node.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of nodes that have been reserved.
         /// </para>
         /// </summary>
-        public int NodeCount
+        public int? NodeCount
         {
-            get { return this._nodeCount.GetValueOrDefault(); }
+            get { return this._nodeCount; }
             set { this._nodeCount = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.MemoryDB.Model
         /// The time the reservation started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

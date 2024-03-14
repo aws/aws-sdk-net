@@ -77,13 +77,13 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Quantity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

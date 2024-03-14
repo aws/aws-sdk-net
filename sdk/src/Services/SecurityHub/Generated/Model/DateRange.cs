@@ -60,9 +60,9 @@ namespace Amazon.SecurityHub.Model
         /// A date range value for the date filter.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

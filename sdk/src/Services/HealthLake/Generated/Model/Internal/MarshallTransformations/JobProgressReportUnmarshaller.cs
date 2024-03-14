@@ -65,49 +65,49 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Throughput", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfFilesReadWithCustomerError", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfFilesReadWithCustomerError = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfImportedFiles", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfImportedFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesImported", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfResourcesImported = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfResourcesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesWithCustomerError", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfResourcesWithCustomerError = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfScannedFiles", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfScannedFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalSizeOfScannedFilesInMB", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalSizeOfScannedFilesInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }

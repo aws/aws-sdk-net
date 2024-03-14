@@ -174,9 +174,9 @@ namespace Amazon.Glue.Model
         /// created. True is not supported for <c>ON_DEMAND</c> triggers.
         /// </para>
         /// </summary>
-        public bool StartOnCreation
+        public bool? StartOnCreation
         {
-            get { return this._startOnCreation.GetValueOrDefault(); }
+            get { return this._startOnCreation; }
             set { this._startOnCreation = value; }
         }
 

@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.DLM")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Data Lifecycle Manager. Amazon Data Lifecycle Manager manages lifecycle of your AWS resources.")]
 #elif NETCOREAPP3_1

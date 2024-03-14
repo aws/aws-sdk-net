@@ -122,9 +122,9 @@ namespace Amazon.LexModelsV2.Model
         /// A timestamp specifying the date and time that the bot locale was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double NluIntentConfidenceThreshold
+        public double? NluIntentConfidenceThreshold
         {
-            get { return this._nluIntentConfidenceThreshold.GetValueOrDefault(); }
+            get { return this._nluIntentConfidenceThreshold; }
             set { this._nluIntentConfidenceThreshold = value; }
         }
 

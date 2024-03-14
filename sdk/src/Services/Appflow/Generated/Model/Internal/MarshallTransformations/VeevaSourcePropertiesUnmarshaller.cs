@@ -71,19 +71,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("includeAllVersions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeAllVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("includeRenditions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeRenditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("includeSourceFiles", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeSourceFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }

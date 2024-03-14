@@ -71,13 +71,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("cpuCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CpuCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("diskSizeInGb", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DiskSizeInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isActive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsActive = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,25 +101,25 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("power", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Power = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("price", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Price = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("publicIpv4AddressCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PublicIpv4AddressCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ramSizeInGb", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("transferPerMonthInGb", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransferPerMonthInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SessionTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SessionTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

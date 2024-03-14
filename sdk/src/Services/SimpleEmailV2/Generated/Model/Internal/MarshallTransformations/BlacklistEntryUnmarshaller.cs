@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ListingTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ListingTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

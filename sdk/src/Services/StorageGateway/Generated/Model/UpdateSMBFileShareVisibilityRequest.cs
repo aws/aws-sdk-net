@@ -45,9 +45,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool FileSharesVisible
+        public bool? FileSharesVisible
         {
-            get { return this._fileSharesVisible.GetValueOrDefault(); }
+            get { return this._fileSharesVisible; }
             set { this._fileSharesVisible = value; }
         }
 

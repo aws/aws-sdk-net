@@ -62,9 +62,9 @@ namespace Amazon.LookoutMetrics.Model
         /// The start time for the data quality metrics collection.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

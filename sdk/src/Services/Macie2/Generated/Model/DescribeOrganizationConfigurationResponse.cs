@@ -43,9 +43,9 @@ namespace Amazon.Macie2.Model
         /// to the organization.
         /// </para>
         /// </summary>
-        public bool AutoEnable
+        public bool? AutoEnable
         {
-            get { return this._autoEnable.GetValueOrDefault(); }
+            get { return this._autoEnable; }
             set { this._autoEnable = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Macie2.Model
         /// organization.
         /// </para>
         /// </summary>
-        public bool MaxAccountLimitReached
+        public bool? MaxAccountLimitReached
         {
-            get { return this._maxAccountLimitReached.GetValueOrDefault(); }
+            get { return this._maxAccountLimitReached; }
             set { this._maxAccountLimitReached = value; }
         }
 

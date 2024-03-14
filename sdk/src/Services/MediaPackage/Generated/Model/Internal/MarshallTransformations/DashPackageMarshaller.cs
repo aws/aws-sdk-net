@@ -76,7 +76,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetManifestLayout())
@@ -88,19 +88,19 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("manifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds);
+                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetMinBufferTimeSeconds())
             {
                 context.Writer.WritePropertyName("minBufferTimeSeconds");
-                context.Writer.Write(requestObject.MinBufferTimeSeconds);
+                context.Writer.Write(requestObject.MinBufferTimeSeconds.Value);
             }
 
             if(requestObject.IsSetMinUpdatePeriodSeconds())
             {
                 context.Writer.WritePropertyName("minUpdatePeriodSeconds");
-                context.Writer.Write(requestObject.MinUpdatePeriodSeconds);
+                context.Writer.Write(requestObject.MinUpdatePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetPeriodTriggers())
@@ -123,7 +123,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds);
+                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentTemplateFormat())
@@ -146,7 +146,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSuggestedPresentationDelaySeconds())
             {
                 context.Writer.WritePropertyName("suggestedPresentationDelaySeconds");
-                context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds);
+                context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds.Value);
             }
 
             if(requestObject.IsSetUtcTiming())

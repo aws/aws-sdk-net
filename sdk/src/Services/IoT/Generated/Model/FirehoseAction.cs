@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// <c>PutRecordBatch</c> </a> request. The resulting array can't have more than 500 records.
         /// </para>
         /// </summary>
-        public bool BatchMode
+        public bool? BatchMode
         {
-            get { return this._batchMode.GetValueOrDefault(); }
+            get { return this._batchMode; }
             set { this._batchMode = value; }
         }
 

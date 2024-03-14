@@ -59,7 +59,7 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,19 +71,19 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("destinationPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DestinationPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("modifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("packetSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.PacketSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -46,9 +46,9 @@ namespace Amazon.DocDB.Model
         /// that have <c>AutoMinorVersionUpgrade</c> set to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool AutoUpgrade
+        public bool? AutoUpgrade
         {
-            get { return this._autoUpgrade.GetValueOrDefault(); }
+            get { return this._autoUpgrade; }
             set { this._autoUpgrade = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.DocDB.Model
         /// A value that indicates whether a database engine is upgraded to a major version.
         /// </para>
         /// </summary>
-        public bool IsMajorVersionUpgrade
+        public bool? IsMajorVersionUpgrade
         {
-            get { return this._isMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._isMajorVersionUpgrade; }
             set { this._isMajorVersionUpgrade = value; }
         }
 

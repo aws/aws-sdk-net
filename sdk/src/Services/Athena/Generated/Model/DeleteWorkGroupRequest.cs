@@ -44,9 +44,9 @@ namespace Amazon.Athena.Model
         /// any named queries, query executions, or notebooks.
         /// </para>
         /// </summary>
-        public bool RecursiveDeleteOption
+        public bool? RecursiveDeleteOption
         {
-            get { return this._recursiveDeleteOption.GetValueOrDefault(); }
+            get { return this._recursiveDeleteOption; }
             set { this._recursiveDeleteOption = value; }
         }
 

@@ -204,9 +204,9 @@ namespace Amazon.EC2.Model
         /// specific time.
         /// </para>
         /// </summary>
-        public DateTime SampledEndTime
+        public DateTime? SampledEndTime
         {
-            get { return this._sampledEndTime.GetValueOrDefault(); }
+            get { return this._sampledEndTime; }
             set { this._sampledEndTime = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.EC2.Model
         /// specific time.
         /// </para>
         /// </summary>
-        public DateTime SampledStartTime
+        public DateTime? SampledStartTime
         {
-            get { return this._sampledStartTime.GetValueOrDefault(); }
+            get { return this._sampledStartTime; }
             set { this._sampledStartTime = value; }
         }
 

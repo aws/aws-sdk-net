@@ -81,7 +81,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHoldoutPercent())
             {
                 context.Writer.WritePropertyName("HoldoutPercent");
-                context.Writer.Write(requestObject.HoldoutPercent);
+                context.Writer.Write(requestObject.HoldoutPercent.Value);
             }
 
             if(requestObject.IsSetHook())
@@ -98,7 +98,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsPaused())
             {
                 context.Writer.WritePropertyName("IsPaused");
-                context.Writer.Write(requestObject.IsPaused);
+                context.Writer.Write(requestObject.IsPaused.Value);
             }
 
             if(requestObject.IsSetLimits())
@@ -132,7 +132,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority);
+                context.Writer.Write(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetSchedule())
@@ -155,7 +155,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentVersion())
             {
                 context.Writer.WritePropertyName("SegmentVersion");
-                context.Writer.Write(requestObject.SegmentVersion);
+                context.Writer.Write(requestObject.SegmentVersion.Value);
             }
 
             if(requestObject.IsSetTags())

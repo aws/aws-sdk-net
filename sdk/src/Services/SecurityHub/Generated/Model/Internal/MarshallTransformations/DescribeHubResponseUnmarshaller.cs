@@ -53,7 +53,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoEnableControls", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoEnableControls = unmarshaller.Unmarshall(context);
                     continue;
                 }

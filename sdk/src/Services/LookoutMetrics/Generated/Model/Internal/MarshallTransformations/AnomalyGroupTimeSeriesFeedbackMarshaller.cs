@@ -54,7 +54,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsAnomaly())
             {
                 context.Writer.WritePropertyName("IsAnomaly");
-                context.Writer.Write(requestObject.IsAnomaly);
+                context.Writer.Write(requestObject.IsAnomaly.Value);
             }
 
             if(requestObject.IsSetTimeSeriesId())

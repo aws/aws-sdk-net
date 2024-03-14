@@ -100,9 +100,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float MatchConfidence
+        public float? MatchConfidence
         {
-            get { return this._matchConfidence.GetValueOrDefault(); }
+            get { return this._matchConfidence; }
             set { this._matchConfidence = value; }
         }
 

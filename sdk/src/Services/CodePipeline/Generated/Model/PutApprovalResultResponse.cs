@@ -41,9 +41,9 @@ namespace Amazon.CodePipeline.Model
         /// The timestamp showing when the approval or rejection was submitted.
         /// </para>
         /// </summary>
-        public DateTime ApprovedAt
+        public DateTime? ApprovedAt
         {
-            get { return this._approvedAt.GetValueOrDefault(); }
+            get { return this._approvedAt; }
             set { this._approvedAt = value; }
         }
 

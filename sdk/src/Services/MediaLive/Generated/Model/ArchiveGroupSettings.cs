@@ -75,9 +75,9 @@ namespace Amazon.MediaLive.Model
         /// file before closing and starting a new one.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int RolloverInterval
+        public int? RolloverInterval
         {
-            get { return this._rolloverInterval.GetValueOrDefault(); }
+            get { return this._rolloverInterval; }
             set { this._rolloverInterval = value; }
         }
 

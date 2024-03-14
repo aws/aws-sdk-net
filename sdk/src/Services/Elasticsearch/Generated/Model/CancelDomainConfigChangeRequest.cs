@@ -63,9 +63,9 @@ namespace Amazon.Elasticsearch.Model
         /// cancelled without actually cancelling the change.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

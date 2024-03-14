@@ -69,9 +69,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double DPUHour
+        public double? DPUHour
         {
-            get { return this._dpuHour.GetValueOrDefault(); }
+            get { return this._dpuHour; }
             set { this._dpuHour = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Glue.Model
         /// The date and time on which the crawl ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Glue.Model
         /// The date and time on which the crawl started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

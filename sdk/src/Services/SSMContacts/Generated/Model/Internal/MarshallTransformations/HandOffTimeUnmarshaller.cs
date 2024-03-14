@@ -65,13 +65,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("HourOfDay", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HourOfDay = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinuteOfHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinuteOfHour = unmarshaller.Unmarshall(context);
                     continue;
                 }

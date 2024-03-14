@@ -219,9 +219,9 @@ namespace Amazon.ElastiCache.Model
         /// The date and time when the cache node was created.
         /// </para>
         /// </summary>
-        public DateTime CacheNodeCreateTime
+        public DateTime? CacheNodeCreateTime
         {
-            get { return this._cacheNodeCreateTime.GetValueOrDefault(); }
+            get { return this._cacheNodeCreateTime; }
             set { this._cacheNodeCreateTime = value; }
         }
 

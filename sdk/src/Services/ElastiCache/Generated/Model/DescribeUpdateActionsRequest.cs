@@ -108,9 +108,9 @@ namespace Amazon.ElastiCache.Model
         /// The maximum number of records to include in the response
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.ElastiCache.Model
         /// Dictates whether to include node level update status in the response 
         /// </para>
         /// </summary>
-        public bool ShowNodeLevelUpdateStatus
+        public bool? ShowNodeLevelUpdateStatus
         {
-            get { return this._showNodeLevelUpdateStatus.GetValueOrDefault(); }
+            get { return this._showNodeLevelUpdateStatus; }
             set { this._showNodeLevelUpdateStatus = value; }
         }
 

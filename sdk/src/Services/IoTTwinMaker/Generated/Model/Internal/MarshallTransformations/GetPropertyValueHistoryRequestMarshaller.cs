@@ -89,7 +89,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndDateTime())
                 {
                     context.Writer.WritePropertyName("endDateTime");
-                    context.Writer.Write(publicRequest.EndDateTime);
+                    context.Writer.Write(publicRequest.EndDateTime.Value);
                 }
 
                 if(publicRequest.IsSetEndTime())
@@ -118,7 +118,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -163,7 +163,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartDateTime())
                 {
                     context.Writer.WritePropertyName("startDateTime");
-                    context.Writer.Write(publicRequest.StartDateTime);
+                    context.Writer.Write(publicRequest.StartDateTime.Value);
                 }
 
                 if(publicRequest.IsSetStartTime())

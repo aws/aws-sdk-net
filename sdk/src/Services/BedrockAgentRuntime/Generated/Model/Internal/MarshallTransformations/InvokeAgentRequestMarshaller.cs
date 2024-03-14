@@ -77,13 +77,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableTrace())
                 {
                     context.Writer.WritePropertyName("enableTrace");
-                    context.Writer.Write(publicRequest.EnableTrace);
+                    context.Writer.Write(publicRequest.EnableTrace.Value);
                 }
 
                 if(publicRequest.IsSetEndSession())
                 {
                     context.Writer.WritePropertyName("endSession");
-                    context.Writer.Write(publicRequest.EndSession);
+                    context.Writer.Write(publicRequest.EndSession.Value);
                 }
 
                 if(publicRequest.IsSetInputText())

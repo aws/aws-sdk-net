@@ -45,9 +45,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10000, Max=60000)]
-        public long PeriodMs
+        public long? PeriodMs
         {
-            get { return this._periodMs.GetValueOrDefault(); }
+            get { return this._periodMs; }
             set { this._periodMs = value; }
         }
 

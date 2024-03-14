@@ -68,7 +68,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBypassPolicyLockoutCheck())
                 {
                     context.Writer.WritePropertyName("BypassPolicyLockoutCheck");
-                    context.Writer.Write(publicRequest.BypassPolicyLockoutCheck);
+                    context.Writer.Write(publicRequest.BypassPolicyLockoutCheck.Value);
                 }
 
                 if(publicRequest.IsSetPolicyDocument())

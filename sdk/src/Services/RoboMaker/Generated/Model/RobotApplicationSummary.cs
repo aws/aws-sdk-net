@@ -64,9 +64,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the robot application was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

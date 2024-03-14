@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// True if a list of predecessor runs should be returned.
         /// </para>
         /// </summary>
-        public bool PredecessorsIncluded
+        public bool? PredecessorsIncluded
         {
-            get { return this._predecessorsIncluded.GetValueOrDefault(); }
+            get { return this._predecessorsIncluded; }
             set { this._predecessorsIncluded = value; }
         }
 

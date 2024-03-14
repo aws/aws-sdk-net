@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// To exclude accelerator-enabled instance types, set <c>Max</c> to <c>0</c>.
         /// </para>
         /// </summary>
-        public int Max
+        public int? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// The minimum number of accelerators. To specify no minimum limit, omit this parameter.
         /// </para>
         /// </summary>
-        public int Min
+        public int? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

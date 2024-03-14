@@ -99,9 +99,9 @@ namespace Amazon.EC2.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime ElasticInferenceAcceleratorAssociationTime
+        public DateTime? ElasticInferenceAcceleratorAssociationTime
         {
-            get { return this._elasticInferenceAcceleratorAssociationTime.GetValueOrDefault(); }
+            get { return this._elasticInferenceAcceleratorAssociationTime; }
             set { this._elasticInferenceAcceleratorAssociationTime = value; }
         }
 

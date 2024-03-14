@@ -65,25 +65,25 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BytesTransferred", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesTransferred = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ObjectsTransferred", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ObjectsTransferred = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalObjects", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalObjects = unmarshaller.Unmarshall(context);
                     continue;
                 }

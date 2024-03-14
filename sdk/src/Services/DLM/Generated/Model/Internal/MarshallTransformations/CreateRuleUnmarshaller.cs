@@ -71,7 +71,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Interval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
                     continue;
                 }

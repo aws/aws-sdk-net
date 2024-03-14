@@ -63,9 +63,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int TileCount
+        public int? TileCount
         {
-            get { return this._tileCount.GetValueOrDefault(); }
+            get { return this._tileCount; }
             set { this._tileCount = value; }
         }
 

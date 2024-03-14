@@ -206,9 +206,9 @@ namespace Amazon.Lambda.Model
         /// The version number.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

@@ -71,19 +71,19 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CrawlComments", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlComments = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlTasks", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlTasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlWebLinks", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlWebLinks = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseChangeLog", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseChangeLog = unmarshaller.Unmarshall(context);
                     continue;
                 }

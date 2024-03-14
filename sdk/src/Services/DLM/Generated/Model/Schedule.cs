@@ -80,9 +80,9 @@ namespace Amazon.DLM.Model
         /// this policy.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

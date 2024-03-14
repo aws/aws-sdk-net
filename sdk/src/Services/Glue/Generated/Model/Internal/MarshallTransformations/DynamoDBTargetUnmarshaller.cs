@@ -71,13 +71,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scanAll", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ScanAll = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scanRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ScanRate = unmarshaller.Unmarshall(context);
                     continue;
                 }

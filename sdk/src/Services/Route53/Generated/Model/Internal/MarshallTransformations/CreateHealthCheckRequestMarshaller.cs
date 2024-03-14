@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));
 
                 
                 if (publicRequest.HealthCheckConfig != null) 
@@ -73,7 +73,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("IPAddress", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.IPAddress));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetPort())
-                        xmlWriter.WriteElementString("Port", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.Port));                 
+                        xmlWriter.WriteElementString("Port", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.Port.Value));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetType())
                         xmlWriter.WriteElementString("Type", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.Type));                 
@@ -88,22 +88,22 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("SearchString", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HealthCheckConfig.SearchString));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetRequestInterval())
-                        xmlWriter.WriteElementString("RequestInterval", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.RequestInterval));                 
+                        xmlWriter.WriteElementString("RequestInterval", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.RequestInterval.Value));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetFailureThreshold())
-                        xmlWriter.WriteElementString("FailureThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.FailureThreshold));                 
+                        xmlWriter.WriteElementString("FailureThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.FailureThreshold.Value));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetMeasureLatency())
-                        xmlWriter.WriteElementString("MeasureLatency", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.MeasureLatency));                 
+                        xmlWriter.WriteElementString("MeasureLatency", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.MeasureLatency.Value));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetInverted())
-                        xmlWriter.WriteElementString("Inverted", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.Inverted));                 
+                        xmlWriter.WriteElementString("Inverted", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.Inverted.Value));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetDisabled())
-                        xmlWriter.WriteElementString("Disabled", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.Disabled));                 
+                        xmlWriter.WriteElementString("Disabled", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.Disabled.Value));                 
 
                     if(publicRequest.HealthCheckConfig.IsSetHealthThreshold())
-                        xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold));                 
+                        xmlWriter.WriteElementString("HealthThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequest.HealthCheckConfig.HealthThreshold.Value));                 
 
                     var publicRequestHealthCheckConfigChildHealthChecks = publicRequest.HealthCheckConfig.ChildHealthChecks;
                     if (publicRequestHealthCheckConfigChildHealthChecks != null && publicRequestHealthCheckConfigChildHealthChecks.Count > 0) 
@@ -118,7 +118,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.HealthCheckConfig.IsSetEnableSNI())
-                        xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI));                 
+                        xmlWriter.WriteElementString("EnableSNI", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HealthCheckConfig.EnableSNI.Value));                 
 
                     var publicRequestHealthCheckConfigRegions = publicRequest.HealthCheckConfig.Regions;
                     if (publicRequestHealthCheckConfigRegions != null && publicRequestHealthCheckConfigRegions.Count > 0) 

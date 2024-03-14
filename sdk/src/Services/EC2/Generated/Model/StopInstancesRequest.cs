@@ -113,9 +113,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.EC2.Model
         ///  Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Hibernate
+        public bool? Hibernate
         {
-            get { return this._hibernate.GetValueOrDefault(); }
+            get { return this._hibernate; }
             set { this._hibernate = value; }
         }
 

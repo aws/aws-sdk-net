@@ -43,9 +43,9 @@ namespace Amazon.Neptunedata.Model
         /// The total number of characteristic-set instances.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Neptunedata.Model
         /// The total number of unique predicates.
         /// </para>
         /// </summary>
-        public int PredicateCount
+        public int? PredicateCount
         {
-            get { return this._predicateCount.GetValueOrDefault(); }
+            get { return this._predicateCount; }
             set { this._predicateCount = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.Neptunedata.Model
         /// The total number of signatures across all characteristic sets.
         /// </para>
         /// </summary>
-        public int SignatureCount
+        public int? SignatureCount
         {
-            get { return this._signatureCount.GetValueOrDefault(); }
+            get { return this._signatureCount; }
             set { this._signatureCount = value; }
         }
 

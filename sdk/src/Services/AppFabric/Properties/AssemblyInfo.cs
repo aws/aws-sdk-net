@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppFabric")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AppFabric. Initial release of AWS AppFabric for connecting SaaS applications for better productivity and security.")]
 #elif NETCOREAPP3_1

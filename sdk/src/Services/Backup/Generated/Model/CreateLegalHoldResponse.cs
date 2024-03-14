@@ -47,9 +47,9 @@ namespace Amazon.Backup.Model
         /// Time in number format when legal hold was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

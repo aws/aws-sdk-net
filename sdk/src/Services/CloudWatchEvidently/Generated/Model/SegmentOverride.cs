@@ -46,9 +46,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long EvaluationOrder
+        public long? EvaluationOrder
         {
-            get { return this._evaluationOrder.GetValueOrDefault(); }
+            get { return this._evaluationOrder; }
             set { this._evaluationOrder = value; }
         }
 

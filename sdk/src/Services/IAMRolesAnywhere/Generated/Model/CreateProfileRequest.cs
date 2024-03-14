@@ -56,9 +56,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=3600)]
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Specifies whether the profile is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// with this profile. 
         /// </para>
         /// </summary>
-        public bool RequireInstanceProperties
+        public bool? RequireInstanceProperties
         {
-            get { return this._requireInstanceProperties.GetValueOrDefault(); }
+            get { return this._requireInstanceProperties; }
             set { this._requireInstanceProperties = value; }
         }
 

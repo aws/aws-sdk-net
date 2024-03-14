@@ -48,9 +48,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool BenefitsConsidered
+        public bool? BenefitsConsidered
         {
-            get { return this._benefitsConsidered.GetValueOrDefault(); }
+            get { return this._benefitsConsidered; }
             set { this._benefitsConsidered = value; }
         }
 

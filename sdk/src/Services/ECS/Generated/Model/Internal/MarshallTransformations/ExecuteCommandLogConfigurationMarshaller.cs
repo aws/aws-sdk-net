@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("cloudWatchEncryptionEnabled");
-                context.Writer.Write(requestObject.CloudWatchEncryptionEnabled);
+                context.Writer.Write(requestObject.CloudWatchEncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetCloudWatchLogGroupName())
@@ -66,7 +66,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3EncryptionEnabled())
             {
                 context.Writer.WritePropertyName("s3EncryptionEnabled");
-                context.Writer.Write(requestObject.S3EncryptionEnabled);
+                context.Writer.Write(requestObject.S3EncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetS3KeyPrefix())

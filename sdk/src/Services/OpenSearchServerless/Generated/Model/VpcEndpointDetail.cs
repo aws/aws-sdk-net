@@ -47,9 +47,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The date the endpoint was created.
         /// </para>
         /// </summary>
-        public long CreatedDate
+        public long? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 

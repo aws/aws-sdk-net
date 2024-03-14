@@ -48,7 +48,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowMultipleValues())
             {
                 context.Writer.WritePropertyName("allowMultipleValues");
-                context.Writer.Write(requestObject.AllowMultipleValues);
+                context.Writer.Write(requestObject.AllowMultipleValues.Value);
             }
 
         }

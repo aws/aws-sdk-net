@@ -84,9 +84,9 @@ namespace Amazon.KeyManagementService.Model
         /// Formatted as Unix time.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.KeyManagementService.Model
         /// and Region. Formatted as Unix time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 

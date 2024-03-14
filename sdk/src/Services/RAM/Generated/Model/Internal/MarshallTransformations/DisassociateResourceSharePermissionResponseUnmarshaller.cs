@@ -59,7 +59,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("returnValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ReturnValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -67,9 +67,9 @@ namespace Amazon.Kinesis.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MillisBehindLatest
+        public long? MillisBehindLatest
         {
-            get { return this._millisBehindLatest.GetValueOrDefault(); }
+            get { return this._millisBehindLatest; }
             set { this._millisBehindLatest = value; }
         }
 

@@ -48,13 +48,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPollingTime())
             {
                 context.Writer.WritePropertyName("PollingTime");
-                context.Writer.Write(requestObject.PollingTime);
+                context.Writer.Write(requestObject.PollingTime.Value);
             }
 
             if(requestObject.IsSetRecordPollingLimit())
             {
                 context.Writer.WritePropertyName("RecordPollingLimit");
-                context.Writer.Write(requestObject.RecordPollingLimit);
+                context.Writer.Write(requestObject.RecordPollingLimit.Value);
             }
 
         }

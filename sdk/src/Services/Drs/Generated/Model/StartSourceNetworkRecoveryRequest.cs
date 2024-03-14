@@ -45,9 +45,9 @@ namespace Amazon.Drs.Model
         /// Don't update existing CloudFormation Stack, recover the network using a new stack.
         /// </para>
         /// </summary>
-        public bool DeployAsNew
+        public bool? DeployAsNew
         {
-            get { return this._deployAsNew.GetValueOrDefault(); }
+            get { return this._deployAsNew; }
             set { this._deployAsNew = value; }
         }
 

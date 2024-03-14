@@ -58,9 +58,9 @@ namespace Amazon.QuickSight.Model
         /// Includes the null value in custom action parameter values.
         /// </para>
         /// </summary>
-        public bool IncludeNullValue
+        public bool? IncludeNullValue
         {
-            get { return this._includeNullValue.GetValueOrDefault(); }
+            get { return this._includeNullValue; }
             set { this._includeNullValue = value; }
         }
 

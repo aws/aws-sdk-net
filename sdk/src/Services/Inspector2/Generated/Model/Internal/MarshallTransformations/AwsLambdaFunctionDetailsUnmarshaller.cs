@@ -89,7 +89,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

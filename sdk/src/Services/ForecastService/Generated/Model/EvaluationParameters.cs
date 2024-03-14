@@ -53,9 +53,9 @@ namespace Amazon.ForecastService.Model
         /// dataset length
         /// </para>
         /// </summary>
-        public int BackTestWindowOffset
+        public int? BackTestWindowOffset
         {
-            get { return this._backTestWindowOffset.GetValueOrDefault(); }
+            get { return this._backTestWindowOffset; }
             set { this._backTestWindowOffset = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.ForecastService.Model
         /// through 5.
         /// </para>
         /// </summary>
-        public int NumberOfBacktestWindows
+        public int? NumberOfBacktestWindows
         {
-            get { return this._numberOfBacktestWindows.GetValueOrDefault(); }
+            get { return this._numberOfBacktestWindows; }
             set { this._numberOfBacktestWindows = value; }
         }
 

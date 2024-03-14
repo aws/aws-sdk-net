@@ -52,9 +52,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Backup.Model
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastExecutionTime
+        public DateTime? LastExecutionTime
         {
-            get { return this._lastExecutionTime.GetValueOrDefault(); }
+            get { return this._lastExecutionTime; }
             set { this._lastExecutionTime = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.Backup.Model
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.Backup.Model
         /// this parameter has a maximum value of 168 hours (one week).
         /// </para>
         /// </summary>
-        public int StartWindowHours
+        public int? StartWindowHours
         {
-            get { return this._startWindowHours.GetValueOrDefault(); }
+            get { return this._startWindowHours; }
             set { this._startWindowHours = value; }
         }
 

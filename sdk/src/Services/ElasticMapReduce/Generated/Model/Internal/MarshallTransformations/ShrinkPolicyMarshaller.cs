@@ -48,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecommissionTimeout())
             {
                 context.Writer.WritePropertyName("DecommissionTimeout");
-                context.Writer.Write(requestObject.DecommissionTimeout);
+                context.Writer.Write(requestObject.DecommissionTimeout.Value);
             }
 
             if(requestObject.IsSetInstanceResizePolicy())

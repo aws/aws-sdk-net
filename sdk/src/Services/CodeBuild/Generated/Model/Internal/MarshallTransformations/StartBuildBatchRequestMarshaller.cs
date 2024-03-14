@@ -98,7 +98,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBuildTimeoutInMinutesOverride())
                 {
                     context.Writer.WritePropertyName("buildTimeoutInMinutesOverride");
-                    context.Writer.Write(publicRequest.BuildTimeoutInMinutesOverride);
+                    context.Writer.Write(publicRequest.BuildTimeoutInMinutesOverride.Value);
                 }
 
                 if(publicRequest.IsSetCacheOverride())
@@ -127,7 +127,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDebugSessionEnabled())
                 {
                     context.Writer.WritePropertyName("debugSessionEnabled");
-                    context.Writer.Write(publicRequest.DebugSessionEnabled);
+                    context.Writer.Write(publicRequest.DebugSessionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetEncryptionKeyOverride())
@@ -161,7 +161,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGitCloneDepthOverride())
                 {
                     context.Writer.WritePropertyName("gitCloneDepthOverride");
-                    context.Writer.Write(publicRequest.GitCloneDepthOverride);
+                    context.Writer.Write(publicRequest.GitCloneDepthOverride.Value);
                 }
 
                 if(publicRequest.IsSetGitSubmodulesConfigOverride())
@@ -196,7 +196,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInsecureSslOverride())
                 {
                     context.Writer.WritePropertyName("insecureSslOverride");
-                    context.Writer.Write(publicRequest.InsecureSslOverride);
+                    context.Writer.Write(publicRequest.InsecureSslOverride.Value);
                 }
 
                 if(publicRequest.IsSetLogsConfigOverride())
@@ -213,7 +213,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPrivilegedModeOverride())
                 {
                     context.Writer.WritePropertyName("privilegedModeOverride");
-                    context.Writer.Write(publicRequest.PrivilegedModeOverride);
+                    context.Writer.Write(publicRequest.PrivilegedModeOverride.Value);
                 }
 
                 if(publicRequest.IsSetProjectName())
@@ -225,7 +225,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueuedTimeoutInMinutesOverride())
                 {
                     context.Writer.WritePropertyName("queuedTimeoutInMinutesOverride");
-                    context.Writer.Write(publicRequest.QueuedTimeoutInMinutesOverride);
+                    context.Writer.Write(publicRequest.QueuedTimeoutInMinutesOverride.Value);
                 }
 
                 if(publicRequest.IsSetRegistryCredentialOverride())
@@ -242,7 +242,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReportBuildBatchStatusOverride())
                 {
                     context.Writer.WritePropertyName("reportBuildBatchStatusOverride");
-                    context.Writer.Write(publicRequest.ReportBuildBatchStatusOverride);
+                    context.Writer.Write(publicRequest.ReportBuildBatchStatusOverride.Value);
                 }
 
                 if(publicRequest.IsSetSecondaryArtifactsOverride())

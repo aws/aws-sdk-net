@@ -70,7 +70,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBypassPolicyLockoutSafetyCheck())
                 {
                     context.Writer.WritePropertyName("BypassPolicyLockoutSafetyCheck");
-                    context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck);
+                    context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck.Value);
                 }
 
                 if(publicRequest.IsSetCustomerMasterKeySpec())
@@ -106,7 +106,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMultiRegion())
                 {
                     context.Writer.WritePropertyName("MultiRegion");
-                    context.Writer.Write(publicRequest.MultiRegion);
+                    context.Writer.Write(publicRequest.MultiRegion.Value);
                 }
 
                 if(publicRequest.IsSetOrigin())

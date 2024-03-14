@@ -120,7 +120,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUserAuthorizationRequired())
                 {
                     context.Writer.WritePropertyName("UserAuthorizationRequired");
-                    context.Writer.Write(publicRequest.UserAuthorizationRequired);
+                    context.Writer.Write(publicRequest.UserAuthorizationRequired.Value);
                 }
 
                 writer.WriteObjectEnd();

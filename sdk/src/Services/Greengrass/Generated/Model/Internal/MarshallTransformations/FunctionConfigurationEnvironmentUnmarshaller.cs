@@ -65,7 +65,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AccessSysfs", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AccessSysfs = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,19 +71,19 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ColumnIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ColumnIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ColumnSpan", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ColumnSpan = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Page", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Page = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,13 +125,13 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RowIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RowSpan", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context);
                     continue;
                 }

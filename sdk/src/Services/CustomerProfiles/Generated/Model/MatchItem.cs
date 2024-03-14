@@ -49,9 +49,9 @@ namespace Amazon.CustomerProfiles.Model
         /// should not be used an absolute measure of matching quality.
         /// </para>
         /// </summary>
-        public double ConfidenceScore
+        public double? ConfidenceScore
         {
-            get { return this._confidenceScore.GetValueOrDefault(); }
+            get { return this._confidenceScore; }
             set { this._confidenceScore = value; }
         }
 

@@ -218,9 +218,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// The position of the vout in the transaction output list.
         /// </para>
         /// </summary>
-        public int VoutIndex
+        public int? VoutIndex
         {
-            get { return this._voutIndex.GetValueOrDefault(); }
+            get { return this._voutIndex; }
             set { this._voutIndex = value; }
         }
 

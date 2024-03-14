@@ -43,9 +43,9 @@ namespace Amazon.Batch.Model
         /// The exit code for the job attempt. A non-zero exit code is considered failed.
         /// </para>
         /// </summary>
-        public int ExitCode
+        public int? ExitCode
         {
-            get { return this._exitCode.GetValueOrDefault(); }
+            get { return this._exitCode; }
             set { this._exitCode = value; }
         }
 

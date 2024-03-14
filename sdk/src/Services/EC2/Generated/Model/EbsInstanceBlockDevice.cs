@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// The time stamp when the attachment initiated.
         /// </para>
         /// </summary>
-        public DateTime AttachTime
+        public DateTime? AttachTime
         {
-            get { return this._attachTime.GetValueOrDefault(); }
+            get { return this._attachTime; }
             set { this._attachTime = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the volume is deleted on instance termination.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 

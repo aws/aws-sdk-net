@@ -76,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeProvisioningArtifactParameters())
                 {
                     context.Writer.WritePropertyName("IncludeProvisioningArtifactParameters");
-                    context.Writer.Write(publicRequest.IncludeProvisioningArtifactParameters);
+                    context.Writer.Write(publicRequest.IncludeProvisioningArtifactParameters.Value);
                 }
 
                 if(publicRequest.IsSetProductId())
@@ -106,7 +106,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVerbose())
                 {
                     context.Writer.WritePropertyName("Verbose");
-                    context.Writer.Write(publicRequest.Verbose);
+                    context.Writer.Write(publicRequest.Verbose.Value);
                 }
 
                 writer.WriteObjectEnd();

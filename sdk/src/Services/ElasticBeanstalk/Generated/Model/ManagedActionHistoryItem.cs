@@ -102,9 +102,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date and time that the action started executing.
         /// </para>
         /// </summary>
-        public DateTime ExecutedTime
+        public DateTime? ExecutedTime
         {
-            get { return this._executedTime.GetValueOrDefault(); }
+            get { return this._executedTime; }
             set { this._executedTime = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date and time that the action finished executing.
         /// </para>
         /// </summary>
-        public DateTime FinishedTime
+        public DateTime? FinishedTime
         {
-            get { return this._finishedTime.GetValueOrDefault(); }
+            get { return this._finishedTime; }
             set { this._finishedTime = value; }
         }
 

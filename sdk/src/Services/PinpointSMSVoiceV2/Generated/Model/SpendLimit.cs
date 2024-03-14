@@ -50,9 +50,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long EnforcedLimit
+        public long? EnforcedLimit
         {
-            get { return this._enforcedLimit.GetValueOrDefault(); }
+            get { return this._enforcedLimit; }
             set { this._enforcedLimit = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MaxLimit
+        public long? MaxLimit
         {
-            get { return this._maxLimit.GetValueOrDefault(); }
+            get { return this._maxLimit; }
             set { this._maxLimit = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Overridden
+        public bool? Overridden
         {
-            get { return this._overridden.GetValueOrDefault(); }
+            get { return this._overridden; }
             set { this._overridden = value; }
         }
 

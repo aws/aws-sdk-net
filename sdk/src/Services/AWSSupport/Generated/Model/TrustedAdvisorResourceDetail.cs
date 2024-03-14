@@ -46,9 +46,9 @@ namespace Amazon.AWSSupport.Model
         /// because it was marked as suppressed by the user.
         /// </para>
         /// </summary>
-        public bool IsSuppressed
+        public bool? IsSuppressed
         {
-            get { return this._isSuppressed.GetValueOrDefault(); }
+            get { return this._isSuppressed; }
             set { this._isSuppressed = value; }
         }
 

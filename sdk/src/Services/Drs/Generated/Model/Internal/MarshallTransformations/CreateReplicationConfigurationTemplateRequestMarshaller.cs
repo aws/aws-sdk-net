@@ -68,25 +68,25 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssociateDefaultSecurityGroup())
                 {
                     context.Writer.WritePropertyName("associateDefaultSecurityGroup");
-                    context.Writer.Write(publicRequest.AssociateDefaultSecurityGroup);
+                    context.Writer.Write(publicRequest.AssociateDefaultSecurityGroup.Value);
                 }
 
                 if(publicRequest.IsSetAutoReplicateNewDisks())
                 {
                     context.Writer.WritePropertyName("autoReplicateNewDisks");
-                    context.Writer.Write(publicRequest.AutoReplicateNewDisks);
+                    context.Writer.Write(publicRequest.AutoReplicateNewDisks.Value);
                 }
 
                 if(publicRequest.IsSetBandwidthThrottling())
                 {
                     context.Writer.WritePropertyName("bandwidthThrottling");
-                    context.Writer.Write(publicRequest.BandwidthThrottling);
+                    context.Writer.Write(publicRequest.BandwidthThrottling.Value);
                 }
 
                 if(publicRequest.IsSetCreatePublicIP())
                 {
                     context.Writer.WritePropertyName("createPublicIP");
-                    context.Writer.Write(publicRequest.CreatePublicIP);
+                    context.Writer.Write(publicRequest.CreatePublicIP.Value);
                 }
 
                 if(publicRequest.IsSetDataPlaneRouting())
@@ -183,7 +183,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseDedicatedReplicationServer())
                 {
                     context.Writer.WritePropertyName("useDedicatedReplicationServer");
-                    context.Writer.Write(publicRequest.UseDedicatedReplicationServer);
+                    context.Writer.Write(publicRequest.UseDedicatedReplicationServer.Value);
                 }
 
                 writer.WriteObjectEnd();

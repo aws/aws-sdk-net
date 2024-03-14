@@ -65,7 +65,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cpuUtilizationPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CpuUtilizationPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

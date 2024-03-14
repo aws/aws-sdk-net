@@ -48,55 +48,55 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitMaskLength())
             {
                 context.Writer.WritePropertyName("bitMaskLength");
-                context.Writer.Write(requestObject.BitMaskLength);
+                context.Writer.Write(requestObject.BitMaskLength.Value);
             }
 
             if(requestObject.IsSetBitRightShift())
             {
                 context.Writer.WritePropertyName("bitRightShift");
-                context.Writer.Write(requestObject.BitRightShift);
+                context.Writer.Write(requestObject.BitRightShift.Value);
             }
 
             if(requestObject.IsSetByteLength())
             {
                 context.Writer.WritePropertyName("byteLength");
-                context.Writer.Write(requestObject.ByteLength);
+                context.Writer.Write(requestObject.ByteLength.Value);
             }
 
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid);
+                context.Writer.Write(requestObject.Pid.Value);
             }
 
             if(requestObject.IsSetPidResponseLength())
             {
                 context.Writer.WritePropertyName("pidResponseLength");
-                context.Writer.Write(requestObject.PidResponseLength);
+                context.Writer.Write(requestObject.PidResponseLength.Value);
             }
 
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
-                context.Writer.Write(requestObject.Scaling);
+                context.Writer.Write(requestObject.Scaling.Value);
             }
 
             if(requestObject.IsSetServiceMode())
             {
                 context.Writer.WritePropertyName("serviceMode");
-                context.Writer.Write(requestObject.ServiceMode);
+                context.Writer.Write(requestObject.ServiceMode.Value);
             }
 
             if(requestObject.IsSetStartByte())
             {
                 context.Writer.WritePropertyName("startByte");
-                context.Writer.Write(requestObject.StartByte);
+                context.Writer.Write(requestObject.StartByte.Value);
             }
 
         }

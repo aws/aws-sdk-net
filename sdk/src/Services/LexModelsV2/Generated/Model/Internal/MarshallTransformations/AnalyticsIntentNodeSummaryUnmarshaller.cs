@@ -65,13 +65,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("intentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("intentLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntentLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }

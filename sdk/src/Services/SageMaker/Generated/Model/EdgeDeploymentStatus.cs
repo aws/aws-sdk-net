@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EdgeDeploymentFailedInStage
+        public int? EdgeDeploymentFailedInStage
         {
-            get { return this._edgeDeploymentFailedInStage.GetValueOrDefault(); }
+            get { return this._edgeDeploymentFailedInStage; }
             set { this._edgeDeploymentFailedInStage = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EdgeDeploymentPendingInStage
+        public int? EdgeDeploymentPendingInStage
         {
-            get { return this._edgeDeploymentPendingInStage.GetValueOrDefault(); }
+            get { return this._edgeDeploymentPendingInStage; }
             set { this._edgeDeploymentPendingInStage = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the deployment API started.
         /// </para>
         /// </summary>
-        public DateTime EdgeDeploymentStageStartTime
+        public DateTime? EdgeDeploymentStageStartTime
         {
-            get { return this._edgeDeploymentStageStartTime.GetValueOrDefault(); }
+            get { return this._edgeDeploymentStageStartTime; }
             set { this._edgeDeploymentStageStartTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EdgeDeploymentSuccessInStage
+        public int? EdgeDeploymentSuccessInStage
         {
-            get { return this._edgeDeploymentSuccessInStage.GetValueOrDefault(); }
+            get { return this._edgeDeploymentSuccessInStage; }
             set { this._edgeDeploymentSuccessInStage = value; }
         }
 

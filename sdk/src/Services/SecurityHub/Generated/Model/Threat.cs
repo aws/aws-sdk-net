@@ -63,9 +63,9 @@ namespace Amazon.SecurityHub.Model
         /// This total number of items in which the threat has been detected. 
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 

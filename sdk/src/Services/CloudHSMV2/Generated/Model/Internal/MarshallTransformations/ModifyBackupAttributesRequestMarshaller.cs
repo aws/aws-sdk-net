@@ -76,7 +76,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNeverExpires())
                 {
                     context.Writer.WritePropertyName("NeverExpires");
-                    context.Writer.Write(publicRequest.NeverExpires);
+                    context.Writer.Write(publicRequest.NeverExpires.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -119,7 +119,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PersonalizationThresholdSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.PersonalizationThresholdSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

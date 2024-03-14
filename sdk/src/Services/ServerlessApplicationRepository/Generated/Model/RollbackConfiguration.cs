@@ -45,9 +45,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </i> Data Type.
         /// </para>
         /// </summary>
-        public int MonitoringTimeInMinutes
+        public int? MonitoringTimeInMinutes
         {
-            get { return this._monitoringTimeInMinutes.GetValueOrDefault(); }
+            get { return this._monitoringTimeInMinutes; }
             set { this._monitoringTimeInMinutes = value; }
         }
 

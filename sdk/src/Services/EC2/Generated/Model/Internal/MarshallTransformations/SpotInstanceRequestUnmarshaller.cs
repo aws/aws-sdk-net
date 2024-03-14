@@ -68,13 +68,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("blockDurationMinutes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BlockDurationMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("createTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -159,13 +159,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("validFrom", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ValidFrom = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("validUntil", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context);
                         continue;
                     }

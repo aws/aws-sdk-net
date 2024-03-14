@@ -46,9 +46,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FailedNonRetryableError
+        public int? FailedNonRetryableError
         {
-            get { return this._failedNonRetryableError.GetValueOrDefault(); }
+            get { return this._failedNonRetryableError; }
             set { this._failedNonRetryableError = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int HumanLabeled
+        public int? HumanLabeled
         {
-            get { return this._humanLabeled.GetValueOrDefault(); }
+            get { return this._humanLabeled; }
             set { this._humanLabeled = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MachineLabeled
+        public int? MachineLabeled
         {
-            get { return this._machineLabeled.GetValueOrDefault(); }
+            get { return this._machineLabeled; }
             set { this._machineLabeled = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TotalLabeled
+        public int? TotalLabeled
         {
-            get { return this._totalLabeled.GetValueOrDefault(); }
+            get { return this._totalLabeled; }
             set { this._totalLabeled = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Unlabeled
+        public int? Unlabeled
         {
-            get { return this._unlabeled.GetValueOrDefault(); }
+            get { return this._unlabeled; }
             set { this._unlabeled = value; }
         }
 

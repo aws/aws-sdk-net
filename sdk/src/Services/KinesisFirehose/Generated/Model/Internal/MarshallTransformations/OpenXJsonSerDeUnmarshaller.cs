@@ -65,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CaseInsensitive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CaseInsensitive = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConvertDotsInJsonKeysToUnderscores", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConvertDotsInJsonKeysToUnderscores = unmarshaller.Unmarshall(context);
                     continue;
                 }

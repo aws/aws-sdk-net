@@ -83,7 +83,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
                     if (context.TestExpression("isOptedOut", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.IsOptedOut = unmarshaller.Unmarshall(context);
                         continue;
                     }

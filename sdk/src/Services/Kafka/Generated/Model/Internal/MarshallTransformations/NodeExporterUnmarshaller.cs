@@ -65,7 +65,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enabledInBroker", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnabledInBroker = unmarshaller.Unmarshall(context);
                     continue;
                 }

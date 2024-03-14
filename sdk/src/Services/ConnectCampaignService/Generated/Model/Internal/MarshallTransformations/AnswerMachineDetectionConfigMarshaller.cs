@@ -48,7 +48,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableAnswerMachineDetection())
             {
                 context.Writer.WritePropertyName("enableAnswerMachineDetection");
-                context.Writer.Write(requestObject.EnableAnswerMachineDetection);
+                context.Writer.Write(requestObject.EnableAnswerMachineDetection.Value);
             }
 
         }

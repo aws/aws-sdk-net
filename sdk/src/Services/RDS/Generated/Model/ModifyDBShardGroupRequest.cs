@@ -63,9 +63,9 @@ namespace Amazon.RDS.Model
         /// The maximum capacity of the DB shard group in Aurora capacity units (ACUs).
         /// </para>
         /// </summary>
-        public double MaxACU
+        public double? MaxACU
         {
-            get { return this._maxACU.GetValueOrDefault(); }
+            get { return this._maxACU; }
             set { this._maxACU = value; }
         }
 

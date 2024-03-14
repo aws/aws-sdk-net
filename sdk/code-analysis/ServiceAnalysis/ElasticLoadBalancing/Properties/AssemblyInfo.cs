@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ElasticLoadBalancing")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Elastic Load Balancing. Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

@@ -79,9 +79,9 @@ namespace Amazon.LicenseManager.Model
         /// Number of licenses consumed. 
         /// </para>
         /// </summary>
-        public long ConsumedLicenses
+        public long? ConsumedLicenses
         {
-            get { return this._consumedLicenses.GetValueOrDefault(); }
+            get { return this._consumedLicenses; }
             set { this._consumedLicenses = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.LicenseManager.Model
         /// When true, disassociates a resource when software is uninstalled.
         /// </para>
         /// </summary>
-        public bool DisassociateWhenNotFound
+        public bool? DisassociateWhenNotFound
         {
-            get { return this._disassociateWhenNotFound.GetValueOrDefault(); }
+            get { return this._disassociateWhenNotFound; }
             set { this._disassociateWhenNotFound = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.LicenseManager.Model
         /// Number of licenses managed by the license configuration.
         /// </para>
         /// </summary>
-        public long LicenseCount
+        public long? LicenseCount
         {
-            get { return this._licenseCount.GetValueOrDefault(); }
+            get { return this._licenseCount; }
             set { this._licenseCount = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.LicenseManager.Model
         /// Number of available licenses as a hard limit.
         /// </para>
         /// </summary>
-        public bool LicenseCountHardLimit
+        public bool? LicenseCountHardLimit
         {
-            get { return this._licenseCountHardLimit.GetValueOrDefault(); }
+            get { return this._licenseCountHardLimit; }
             set { this._licenseCountHardLimit = value; }
         }
 

@@ -96,9 +96,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SubnetChangeProtection
+        public bool? SubnetChangeProtection
         {
-            get { return this._subnetChangeProtection.GetValueOrDefault(); }
+            get { return this._subnetChangeProtection; }
             set { this._subnetChangeProtection = value; }
         }
 

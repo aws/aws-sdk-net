@@ -83,7 +83,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseOffPeakWindow", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseOffPeakWindow = unmarshaller.Unmarshall(context);
                     continue;
                 }

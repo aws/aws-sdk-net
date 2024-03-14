@@ -44,9 +44,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EndUserOptedOut
+        public bool? EndUserOptedOut
         {
-            get { return this._endUserOptedOut.GetValueOrDefault(); }
+            get { return this._endUserOptedOut; }
             set { this._endUserOptedOut = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime OptedOutTimestamp
+        public DateTime? OptedOutTimestamp
         {
-            get { return this._optedOutTimestamp.GetValueOrDefault(); }
+            get { return this._optedOutTimestamp; }
             set { this._optedOutTimestamp = value; }
         }
 

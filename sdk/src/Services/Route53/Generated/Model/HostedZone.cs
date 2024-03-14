@@ -148,9 +148,9 @@ namespace Amazon.Route53.Model
         /// The number of resource record sets in the hosted zone.
         /// </para>
         /// </summary>
-        public long ResourceRecordSetCount
+        public long? ResourceRecordSetCount
         {
-            get { return this._resourceRecordSetCount.GetValueOrDefault(); }
+            get { return this._resourceRecordSetCount; }
             set { this._resourceRecordSetCount = value; }
         }
 

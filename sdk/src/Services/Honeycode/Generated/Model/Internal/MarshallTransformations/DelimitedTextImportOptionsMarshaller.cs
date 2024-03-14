@@ -60,13 +60,13 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHasHeaderRow())
             {
                 context.Writer.WritePropertyName("hasHeaderRow");
-                context.Writer.Write(requestObject.HasHeaderRow);
+                context.Writer.Write(requestObject.HasHeaderRow.Value);
             }
 
             if(requestObject.IsSetIgnoreEmptyRows())
             {
                 context.Writer.WritePropertyName("ignoreEmptyRows");
-                context.Writer.Write(requestObject.IgnoreEmptyRows);
+                context.Writer.Write(requestObject.IgnoreEmptyRows.Value);
             }
 
         }

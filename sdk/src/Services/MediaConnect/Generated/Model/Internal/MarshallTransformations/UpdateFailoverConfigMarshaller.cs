@@ -54,7 +54,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecoveryWindow())
             {
                 context.Writer.WritePropertyName("recoveryWindow");
-                context.Writer.Write(requestObject.RecoveryWindow);
+                context.Writer.Write(requestObject.RecoveryWindow.Value);
             }
 
             if(requestObject.IsSetSourcePriority())

@@ -65,37 +65,37 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("average", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Average = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maximum", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimum", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("standardDeviation", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.StandardDeviation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sum", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Sum = unmarshaller.Unmarshall(context);
                     continue;
                 }

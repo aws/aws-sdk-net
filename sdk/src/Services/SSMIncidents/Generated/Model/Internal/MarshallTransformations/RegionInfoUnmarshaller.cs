@@ -83,7 +83,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("statusUpdateDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StatusUpdateDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

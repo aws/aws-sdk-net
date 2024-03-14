@@ -44,9 +44,9 @@ namespace Amazon.KinesisFirehose.Model
         /// timestamp.
         /// </para>
         /// </summary>
-        public DateTime DeliveryStartTimestamp
+        public DateTime? DeliveryStartTimestamp
         {
-            get { return this._deliveryStartTimestamp.GetValueOrDefault(); }
+            get { return this._deliveryStartTimestamp; }
             set { this._deliveryStartTimestamp = value; }
         }
 

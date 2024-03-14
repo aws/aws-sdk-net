@@ -83,13 +83,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceUpdate())
                 {
                     context.Writer.WritePropertyName("ForceUpdate");
-                    context.Writer.Write(publicRequest.ForceUpdate);
+                    context.Writer.Write(publicRequest.ForceUpdate.Value);
                 }
 
                 if(publicRequest.IsSetNoExpiry())
                 {
                     context.Writer.WritePropertyName("NoExpiry");
-                    context.Writer.Write(publicRequest.NoExpiry);
+                    context.Writer.Write(publicRequest.NoExpiry.Value);
                 }
 
                 if(publicRequest.IsSetRestrictions())

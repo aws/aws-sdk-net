@@ -82,9 +82,9 @@ namespace Amazon.Macie2.Model
         /// invoked and produced the finding.
         /// </para>
         /// </summary>
-        public DateTime FirstSeen
+        public DateTime? FirstSeen
         {
-            get { return this._firstSeen.GetValueOrDefault(); }
+            get { return this._firstSeen; }
             set { this._firstSeen = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Macie2.Model
         /// operation (api) was invoked and produced the finding.
         /// </para>
         /// </summary>
-        public DateTime LastSeen
+        public DateTime? LastSeen
         {
-            get { return this._lastSeen.GetValueOrDefault(); }
+            get { return this._lastSeen; }
             set { this._lastSeen = value; }
         }
 

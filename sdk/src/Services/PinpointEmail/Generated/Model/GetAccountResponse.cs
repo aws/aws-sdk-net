@@ -47,9 +47,9 @@ namespace Amazon.PinpointEmail.Model
         /// addresses that are associated with your account.
         /// </para>
         /// </summary>
-        public bool DedicatedIpAutoWarmupEnabled
+        public bool? DedicatedIpAutoWarmupEnabled
         {
-            get { return this._dedicatedIpAutoWarmupEnabled.GetValueOrDefault(); }
+            get { return this._dedicatedIpAutoWarmupEnabled; }
             set { this._dedicatedIpAutoWarmupEnabled = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.PinpointEmail.Model
         /// sending rate for your account vary based on your specific use case.
         /// </para>
         /// </summary>
-        public bool ProductionAccessEnabled
+        public bool? ProductionAccessEnabled
         {
-            get { return this._productionAccessEnabled.GetValueOrDefault(); }
+            get { return this._productionAccessEnabled; }
             set { this._productionAccessEnabled = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.PinpointEmail.Model
         /// in the current AWS Region.
         /// </para>
         /// </summary>
-        public bool SendingEnabled
+        public bool? SendingEnabled
         {
-            get { return this._sendingEnabled.GetValueOrDefault(); }
+            get { return this._sendingEnabled; }
             set { this._sendingEnabled = value; }
         }
 

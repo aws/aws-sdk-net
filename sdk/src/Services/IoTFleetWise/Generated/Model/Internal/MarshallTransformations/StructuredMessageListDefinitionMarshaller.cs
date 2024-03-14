@@ -48,7 +48,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("capacity");
-                context.Writer.Write(requestObject.Capacity);
+                context.Writer.Write(requestObject.Capacity.Value);
             }
 
             if(requestObject.IsSetListType())

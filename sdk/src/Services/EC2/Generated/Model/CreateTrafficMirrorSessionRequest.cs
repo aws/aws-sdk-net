@@ -140,9 +140,9 @@ namespace Amazon.EC2.Model
         /// than 8500 will result in an error response.
         /// </para>
         /// </summary>
-        public int PacketLength
+        public int? PacketLength
         {
-            get { return this._packetLength.GetValueOrDefault(); }
+            get { return this._packetLength; }
             set { this._packetLength = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SessionNumber
+        public int? SessionNumber
         {
-            get { return this._sessionNumber.GetValueOrDefault(); }
+            get { return this._sessionNumber; }
             set { this._sessionNumber = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.EC2.Model
         /// not specify a <c>VirtualNetworkId</c>, an account-wide unique id is chosen at random.
         /// </para>
         /// </summary>
-        public int VirtualNetworkId
+        public int? VirtualNetworkId
         {
-            get { return this._virtualNetworkId.GetValueOrDefault(); }
+            get { return this._virtualNetworkId; }
             set { this._virtualNetworkId = value; }
         }
 

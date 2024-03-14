@@ -71,7 +71,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

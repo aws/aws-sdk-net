@@ -65,13 +65,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EarliestRestorableDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EarliestRestorableDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestRestorableDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestRestorableDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

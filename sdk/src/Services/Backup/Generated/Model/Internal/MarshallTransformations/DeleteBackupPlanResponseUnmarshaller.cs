@@ -65,7 +65,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeletionDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeletionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -281,9 +281,9 @@ namespace Amazon.CodeArtifact.Model
         /// Valid values: <c>unfinished</c> 
         /// </para>
         /// </summary>
-        public bool Unfinished
+        public bool? Unfinished
         {
-            get { return this._unfinished.GetValueOrDefault(); }
+            get { return this._unfinished; }
             set { this._unfinished = value; }
         }
 

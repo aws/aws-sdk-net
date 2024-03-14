@@ -65,19 +65,19 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Max24HourSend", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Max24HourSend = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxSendRate", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxSendRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SentLast24Hours", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SentLast24Hours = unmarshaller.Unmarshall(context);
                     continue;
                 }

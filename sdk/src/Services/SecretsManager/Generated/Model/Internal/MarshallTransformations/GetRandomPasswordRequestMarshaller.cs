@@ -76,43 +76,43 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExcludeLowercase())
                 {
                     context.Writer.WritePropertyName("ExcludeLowercase");
-                    context.Writer.Write(publicRequest.ExcludeLowercase);
+                    context.Writer.Write(publicRequest.ExcludeLowercase.Value);
                 }
 
                 if(publicRequest.IsSetExcludeNumbers())
                 {
                     context.Writer.WritePropertyName("ExcludeNumbers");
-                    context.Writer.Write(publicRequest.ExcludeNumbers);
+                    context.Writer.Write(publicRequest.ExcludeNumbers.Value);
                 }
 
                 if(publicRequest.IsSetExcludePunctuation())
                 {
                     context.Writer.WritePropertyName("ExcludePunctuation");
-                    context.Writer.Write(publicRequest.ExcludePunctuation);
+                    context.Writer.Write(publicRequest.ExcludePunctuation.Value);
                 }
 
                 if(publicRequest.IsSetExcludeUppercase())
                 {
                     context.Writer.WritePropertyName("ExcludeUppercase");
-                    context.Writer.Write(publicRequest.ExcludeUppercase);
+                    context.Writer.Write(publicRequest.ExcludeUppercase.Value);
                 }
 
                 if(publicRequest.IsSetIncludeSpace())
                 {
                     context.Writer.WritePropertyName("IncludeSpace");
-                    context.Writer.Write(publicRequest.IncludeSpace);
+                    context.Writer.Write(publicRequest.IncludeSpace.Value);
                 }
 
                 if(publicRequest.IsSetPasswordLength())
                 {
                     context.Writer.WritePropertyName("PasswordLength");
-                    context.Writer.Write(publicRequest.PasswordLength);
+                    context.Writer.Write(publicRequest.PasswordLength.Value);
                 }
 
                 if(publicRequest.IsSetRequireEachIncludedType())
                 {
                     context.Writer.WritePropertyName("RequireEachIncludedType");
-                    context.Writer.Write(publicRequest.RequireEachIncludedType);
+                    context.Writer.Write(publicRequest.RequireEachIncludedType.Value);
                 }
 
                 writer.WriteObjectEnd();

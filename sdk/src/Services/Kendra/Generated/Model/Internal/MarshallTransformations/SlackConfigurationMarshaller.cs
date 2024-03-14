@@ -48,13 +48,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlBotMessage())
             {
                 context.Writer.WritePropertyName("CrawlBotMessage");
-                context.Writer.Write(requestObject.CrawlBotMessage);
+                context.Writer.Write(requestObject.CrawlBotMessage.Value);
             }
 
             if(requestObject.IsSetExcludeArchived())
             {
                 context.Writer.WritePropertyName("ExcludeArchived");
-                context.Writer.Write(requestObject.ExcludeArchived);
+                context.Writer.Write(requestObject.ExcludeArchived.Value);
             }
 
             if(requestObject.IsSetExclusionPatterns())
@@ -98,7 +98,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLookBackPeriod())
             {
                 context.Writer.WritePropertyName("LookBackPeriod");
-                context.Writer.Write(requestObject.LookBackPeriod);
+                context.Writer.Write(requestObject.LookBackPeriod.Value);
             }
 
             if(requestObject.IsSetPrivateChannelFilter())
@@ -155,7 +155,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog);
+                context.Writer.Write(requestObject.UseChangeLog.Value);
             }
 
             if(requestObject.IsSetVpcConfiguration())

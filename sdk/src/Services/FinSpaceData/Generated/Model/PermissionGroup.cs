@@ -105,9 +105,9 @@ namespace Amazon.FinSpaceData.Model
         /// as epoch time in milliseconds. 
         /// </para>
         /// </summary>
-        public long CreateTime
+        public long? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.FinSpaceData.Model
         /// as epoch time in milliseconds. 
         /// </para>
         /// </summary>
-        public long LastModifiedTime
+        public long? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

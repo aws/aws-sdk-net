@@ -83,7 +83,7 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("notifyOnAddCorrespondenceToCase", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnAddCorrespondenceToCase = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("notifyOnCreateOrReopenCase", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnCreateOrReopenCase = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("notifyOnResolveCase", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyOnResolveCase = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Period", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Period = unmarshaller.Unmarshall(context);
                     continue;
                 }

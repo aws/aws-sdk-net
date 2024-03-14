@@ -115,9 +115,9 @@ namespace Amazon.LexModelsV2.Model
         /// uses it.
         /// </para>
         /// </summary>
-        public bool SkipResourceInUseCheck
+        public bool? SkipResourceInUseCheck
         {
-            get { return this._skipResourceInUseCheck.GetValueOrDefault(); }
+            get { return this._skipResourceInUseCheck; }
             set { this._skipResourceInUseCheck = value; }
         }
 

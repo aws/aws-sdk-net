@@ -44,9 +44,9 @@ namespace Amazon.Synthetics.Model
         /// The date and time the canary was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Synthetics.Model
         /// The date and time the canary was most recently modified.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Synthetics.Model
         /// The date and time that the canary's most recent run started.
         /// </para>
         /// </summary>
-        public DateTime LastStarted
+        public DateTime? LastStarted
         {
-            get { return this._lastStarted.GetValueOrDefault(); }
+            get { return this._lastStarted; }
             set { this._lastStarted = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.Synthetics.Model
         /// The date and time that the canary's most recent run ended.
         /// </para>
         /// </summary>
-        public DateTime LastStopped
+        public DateTime? LastStopped
         {
-            get { return this._lastStopped.GetValueOrDefault(); }
+            get { return this._lastStopped; }
             set { this._lastStopped = value; }
         }
 

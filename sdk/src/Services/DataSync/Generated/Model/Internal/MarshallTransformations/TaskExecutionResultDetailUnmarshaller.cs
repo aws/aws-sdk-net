@@ -77,7 +77,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PrepareDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PrepareDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TransferDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TransferDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VerifyDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VerifyDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

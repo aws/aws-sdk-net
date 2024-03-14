@@ -60,25 +60,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeepCsvFiles())
             {
                 context.Writer.WritePropertyName("KeepCsvFiles");
-                context.Writer.Write(requestObject.KeepCsvFiles);
+                context.Writer.Write(requestObject.KeepCsvFiles.Value);
             }
 
             if(requestObject.IsSetLoadTimeout())
             {
                 context.Writer.WritePropertyName("LoadTimeout");
-                context.Writer.Write(requestObject.LoadTimeout);
+                context.Writer.Write(requestObject.LoadTimeout.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize);
+                context.Writer.Write(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetMaxKBytesPerRead())
             {
                 context.Writer.WritePropertyName("MaxKBytesPerRead");
-                context.Writer.Write(requestObject.MaxKBytesPerRead);
+                context.Writer.Write(requestObject.MaxKBytesPerRead.Value);
             }
 
             if(requestObject.IsSetPassword())
@@ -90,7 +90,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
@@ -114,7 +114,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSetDataCaptureChanges())
             {
                 context.Writer.WritePropertyName("SetDataCaptureChanges");
-                context.Writer.Write(requestObject.SetDataCaptureChanges);
+                context.Writer.Write(requestObject.SetDataCaptureChanges.Value);
             }
 
             if(requestObject.IsSetUsername())
@@ -126,7 +126,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWriteBufferSize())
             {
                 context.Writer.WritePropertyName("WriteBufferSize");
-                context.Writer.Write(requestObject.WriteBufferSize);
+                context.Writer.Write(requestObject.WriteBufferSize.Value);
             }
 
         }

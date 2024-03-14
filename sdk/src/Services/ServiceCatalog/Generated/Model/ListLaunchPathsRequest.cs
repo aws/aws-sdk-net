@@ -85,9 +85,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

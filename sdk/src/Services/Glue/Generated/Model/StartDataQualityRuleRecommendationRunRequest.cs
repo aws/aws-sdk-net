@@ -113,9 +113,9 @@ namespace Amazon.Glue.Model
         /// The number of <c>G.1X</c> workers to be used in the run. The default is 5.
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

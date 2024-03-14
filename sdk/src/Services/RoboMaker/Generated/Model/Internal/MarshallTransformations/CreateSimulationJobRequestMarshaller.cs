@@ -129,7 +129,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxJobDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("maxJobDurationInSeconds");
-                    context.Writer.Write(publicRequest.MaxJobDurationInSeconds);
+                    context.Writer.Write(publicRequest.MaxJobDurationInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetOutputLocation())

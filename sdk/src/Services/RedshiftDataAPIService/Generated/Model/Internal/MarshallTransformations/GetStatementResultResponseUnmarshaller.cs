@@ -71,7 +71,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalNumRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalNumRows = unmarshaller.Unmarshall(context);
                     continue;
                 }

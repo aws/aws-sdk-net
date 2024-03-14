@@ -61,9 +61,9 @@ namespace Amazon.MediaConvert.Model
         /// number in the ancillary data track from which to extract captions. Unused for passthrough.
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
-        public int SourceAncillaryChannelNumber
+        public int? SourceAncillaryChannelNumber
         {
-            get { return this._sourceAncillaryChannelNumber.GetValueOrDefault(); }
+            get { return this._sourceAncillaryChannelNumber; }
             set { this._sourceAncillaryChannelNumber = value; }
         }
 

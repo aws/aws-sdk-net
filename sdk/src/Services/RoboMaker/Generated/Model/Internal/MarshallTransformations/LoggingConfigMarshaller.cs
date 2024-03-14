@@ -48,7 +48,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordAllRosTopics())
             {
                 context.Writer.WritePropertyName("recordAllRosTopics");
-                context.Writer.Write(requestObject.RecordAllRosTopics);
+                context.Writer.Write(requestObject.RecordAllRosTopics.Value);
             }
 
         }

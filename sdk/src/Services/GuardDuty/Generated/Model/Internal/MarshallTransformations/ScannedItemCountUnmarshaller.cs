@@ -65,19 +65,19 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("files", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Files = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalGb", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalGb = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Volumes = unmarshaller.Unmarshall(context);
                     continue;
                 }

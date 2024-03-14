@@ -196,9 +196,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the epoch value is <c>20180914-2</c>. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
-        public int Epoch
+        public int? Epoch
         {
-            get { return this._epoch.GetValueOrDefault(); }
+            get { return this._epoch; }
             set { this._epoch = value; }
         }
 
@@ -387,9 +387,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the patch was released.
         /// </para>
         /// </summary>
-        public DateTime ReleaseDate
+        public DateTime? ReleaseDate
         {
-            get { return this._releaseDate.GetValueOrDefault(); }
+            get { return this._releaseDate; }
             set { this._releaseDate = value; }
         }
 

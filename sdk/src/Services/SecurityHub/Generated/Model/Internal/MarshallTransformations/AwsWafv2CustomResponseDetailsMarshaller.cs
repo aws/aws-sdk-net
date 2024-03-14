@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResponseCode())
             {
                 context.Writer.WritePropertyName("ResponseCode");
-                context.Writer.Write(requestObject.ResponseCode);
+                context.Writer.Write(requestObject.ResponseCode.Value);
             }
 
             if(requestObject.IsSetResponseHeaders())

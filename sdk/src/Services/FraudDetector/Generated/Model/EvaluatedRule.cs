@@ -47,9 +47,9 @@ namespace Amazon.FraudDetector.Model
         ///  Indicates whether the rule was evaluated. 
         /// </para>
         /// </summary>
-        public bool Evaluated
+        public bool? Evaluated
         {
-            get { return this._evaluated.GetValueOrDefault(); }
+            get { return this._evaluated; }
             set { this._evaluated = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.FraudDetector.Model
         ///  Indicates whether the rule matched. 
         /// </para>
         /// </summary>
-        public bool Matched
+        public bool? Matched
         {
-            get { return this._matched.GetValueOrDefault(); }
+            get { return this._matched; }
             set { this._matched = value; }
         }
 

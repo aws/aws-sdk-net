@@ -314,9 +314,9 @@ namespace Amazon.Batch.Model
         /// The maximum number of VCPUs expected to be used for an unmanaged compute environment.
         /// </para>
         /// </summary>
-        public int UnmanagedvCpus
+        public int? UnmanagedvCpus
         {
-            get { return this._unmanagedvCpus.GetValueOrDefault(); }
+            get { return this._unmanagedvCpus; }
             set { this._unmanagedvCpus = value; }
         }
 

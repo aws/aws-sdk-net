@@ -83,9 +83,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
-        public int TrafficPolicyVersion
+        public int? TrafficPolicyVersion
         {
-            get { return this._trafficPolicyVersion.GetValueOrDefault(); }
+            get { return this._trafficPolicyVersion; }
             set { this._trafficPolicyVersion = value; }
         }
 

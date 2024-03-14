@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredInstanceCount())
             {
                 context.Writer.WritePropertyName("DesiredInstanceCount");
-                context.Writer.Write(requestObject.DesiredInstanceCount);
+                context.Writer.Write(requestObject.DesiredInstanceCount.Value);
             }
 
             if(requestObject.IsSetDesiredWeight())
             {
                 context.Writer.WritePropertyName("DesiredWeight");
-                context.Writer.Write(requestObject.DesiredWeight);
+                context.Writer.Write(requestObject.DesiredWeight.Value);
             }
 
             if(requestObject.IsSetServerlessUpdateConfig())

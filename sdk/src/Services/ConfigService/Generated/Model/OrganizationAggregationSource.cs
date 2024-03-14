@@ -44,9 +44,9 @@ namespace Amazon.ConfigService.Model
         /// If true, aggregate existing Config regions and future regions.
         /// </para>
         /// </summary>
-        public bool AllAwsRegions
+        public bool? AllAwsRegions
         {
-            get { return this._allAwsRegions.GetValueOrDefault(); }
+            get { return this._allAwsRegions; }
             set { this._allAwsRegions = value; }
         }
 

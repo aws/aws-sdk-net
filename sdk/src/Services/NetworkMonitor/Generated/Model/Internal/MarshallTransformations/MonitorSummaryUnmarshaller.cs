@@ -65,7 +65,7 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("aggregationPeriod", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AggregationPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }

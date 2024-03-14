@@ -108,9 +108,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates Horovod compatibility.
         /// </para>
         /// </summary>
-        public bool Horovod
+        public bool? Horovod
         {
-            get { return this._horovod.GetValueOrDefault(); }
+            get { return this._horovod; }
             set { this._horovod = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

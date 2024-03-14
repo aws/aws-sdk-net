@@ -51,9 +51,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// issues for an instance or environment.
         /// </para>
         /// </summary>
-        public int Degraded
+        public int? Degraded
         {
-            get { return this._degraded.GetValueOrDefault(); }
+            get { return this._degraded; }
             set { this._degraded = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  <b>Green.</b> An operation is in progress on an instance.
         /// </para>
         /// </summary>
-        public int Info
+        public int? Info
         {
-            get { return this._info.GetValueOrDefault(); }
+            get { return this._info; }
             set { this._info = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// an instance.
         /// </para>
         /// </summary>
-        public int NoData
+        public int? NoData
         {
-            get { return this._noData.GetValueOrDefault(); }
+            get { return this._noData; }
             set { this._noData = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// any problems.
         /// </para>
         /// </summary>
-        public int Ok
+        public int? Ok
         {
-            get { return this._ok.GetValueOrDefault(); }
+            get { return this._ok; }
             set { this._ok = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  <b>Grey.</b> An operation is in progress on an instance within the command timeout.
         /// </para>
         /// </summary>
-        public int Pending
+        public int? Pending
         {
-            get { return this._pending.GetValueOrDefault(); }
+            get { return this._pending; }
             set { this._pending = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// or other issues for an instance or environment.
         /// </para>
         /// </summary>
-        public int Severe
+        public int? Severe
         {
-            get { return this._severe.GetValueOrDefault(); }
+            get { return this._severe; }
             set { this._severe = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// amount of data on an instance.
         /// </para>
         /// </summary>
-        public int Unknown
+        public int? Unknown
         {
-            get { return this._unknown.GetValueOrDefault(); }
+            get { return this._unknown; }
             set { this._unknown = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// or other issues for an instance or environment.
         /// </para>
         /// </summary>
-        public int Warning
+        public int? Warning
         {
-            get { return this._warning.GetValueOrDefault(); }
+            get { return this._warning; }
             set { this._warning = value; }
         }
 

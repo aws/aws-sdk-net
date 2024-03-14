@@ -48,7 +48,7 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRescoreCapacityUnits())
             {
                 context.Writer.WritePropertyName("RescoreCapacityUnits");
-                context.Writer.Write(requestObject.RescoreCapacityUnits);
+                context.Writer.Write(requestObject.RescoreCapacityUnits.Value);
             }
 
         }

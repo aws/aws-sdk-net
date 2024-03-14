@@ -114,9 +114,9 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ForwardingEnabled
+        public bool? ForwardingEnabled
         {
-            get { return this._forwardingEnabled.GetValueOrDefault(); }
+            get { return this._forwardingEnabled; }
             set { this._forwardingEnabled = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.SimpleEmail.Model
         /// not include headers in bounce notifications.
         /// </para>
         /// </summary>
-        public bool HeadersInBounceNotificationsEnabled
+        public bool? HeadersInBounceNotificationsEnabled
         {
-            get { return this._headersInBounceNotificationsEnabled.GetValueOrDefault(); }
+            get { return this._headersInBounceNotificationsEnabled; }
             set { this._headersInBounceNotificationsEnabled = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.SimpleEmail.Model
         /// SES does not include headers in complaint notifications.
         /// </para>
         /// </summary>
-        public bool HeadersInComplaintNotificationsEnabled
+        public bool? HeadersInComplaintNotificationsEnabled
         {
-            get { return this._headersInComplaintNotificationsEnabled.GetValueOrDefault(); }
+            get { return this._headersInComplaintNotificationsEnabled; }
             set { this._headersInComplaintNotificationsEnabled = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.SimpleEmail.Model
         /// SES does not include headers in delivery notifications.
         /// </para>
         /// </summary>
-        public bool HeadersInDeliveryNotificationsEnabled
+        public bool? HeadersInDeliveryNotificationsEnabled
         {
-            get { return this._headersInDeliveryNotificationsEnabled.GetValueOrDefault(); }
+            get { return this._headersInDeliveryNotificationsEnabled; }
             set { this._headersInDeliveryNotificationsEnabled = value; }
         }
 

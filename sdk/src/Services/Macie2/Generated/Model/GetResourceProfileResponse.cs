@@ -46,9 +46,9 @@ namespace Amazon.Macie2.Model
         /// bucket's sensitivity score is calculated automatically, this includes the score.
         /// </para>
         /// </summary>
-        public DateTime ProfileUpdatedAt
+        public DateTime? ProfileUpdatedAt
         {
-            get { return this._profileUpdatedAt.GetValueOrDefault(); }
+            get { return this._profileUpdatedAt; }
             set { this._profileUpdatedAt = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Macie2.Model
         /// data that Macie has found in the bucket.
         /// </para>
         /// </summary>
-        public int SensitivityScore
+        public int? SensitivityScore
         {
-            get { return this._sensitivityScore.GetValueOrDefault(); }
+            get { return this._sensitivityScore; }
             set { this._sensitivityScore = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Macie2.Model
         /// score was calculated automatically by Amazon Macie.
         /// </para>
         /// </summary>
-        public bool SensitivityScoreOverridden
+        public bool? SensitivityScoreOverridden
         {
-            get { return this._sensitivityScoreOverridden.GetValueOrDefault(); }
+            get { return this._sensitivityScoreOverridden; }
             set { this._sensitivityScoreOverridden = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOverwriteExtensionPack())
                 {
                     context.Writer.WritePropertyName("OverwriteExtensionPack");
-                    context.Writer.Write(publicRequest.OverwriteExtensionPack);
+                    context.Writer.Write(publicRequest.OverwriteExtensionPack.Value);
                 }
 
                 if(publicRequest.IsSetSelectionRules())

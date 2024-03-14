@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomatedSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotRetentionPeriod");
-                context.Writer.Write(requestObject.AutomatedSnapshotRetentionPeriod);
+                context.Writer.Write(requestObject.AutomatedSnapshotRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetClusterIdentifier())
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnhancedVpcRouting())
             {
                 context.Writer.WritePropertyName("EnhancedVpcRouting");
-                context.Writer.Write(requestObject.EnhancedVpcRouting);
+                context.Writer.Write(requestObject.EnhancedVpcRouting.Value);
             }
 
             if(requestObject.IsSetMaintenanceTrackName())
@@ -102,13 +102,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfNodes())
             {
                 context.Writer.WritePropertyName("NumberOfNodes");
-                context.Writer.Write(requestObject.NumberOfNodes);
+                context.Writer.Write(requestObject.NumberOfNodes.Value);
             }
 
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible);
+                context.Writer.Write(requestObject.PubliclyAccessible.Value);
             }
 
         }

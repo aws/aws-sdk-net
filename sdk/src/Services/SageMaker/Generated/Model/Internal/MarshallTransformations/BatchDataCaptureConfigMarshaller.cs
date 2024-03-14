@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGenerateInferenceId())
             {
                 context.Writer.WritePropertyName("GenerateInferenceId");
-                context.Writer.Write(requestObject.GenerateInferenceId);
+                context.Writer.Write(requestObject.GenerateInferenceId.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())

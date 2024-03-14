@@ -56,13 +56,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HealthCheckEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.HealthCheckEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HealthCheckIntervalSeconds", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HealthCheckIntervalSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,13 +86,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("HealthCheckTimeoutSeconds", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HealthCheckTimeoutSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HealthyThresholdCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HealthyThresholdCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -117,7 +117,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -153,7 +153,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("UnhealthyThresholdCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.UnhealthyThresholdCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

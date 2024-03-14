@@ -93,9 +93,9 @@ namespace Amazon.MachineLearning.Model
         /// if the <c>DataSource</c> needs to be used for <c>MLModel</c> training.
         /// </para>
         /// </summary>
-        public bool ComputeStatistics
+        public bool? ComputeStatistics
         {
-            get { return this._computeStatistics.GetValueOrDefault(); }
+            get { return this._computeStatistics; }
             set { this._computeStatistics = value; }
         }
 

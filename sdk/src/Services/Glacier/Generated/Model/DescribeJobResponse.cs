@@ -119,9 +119,9 @@ namespace Amazon.Glacier.Model
         /// requested for download. For an inventory retrieval or select job, this value is null.
         /// </para>
         /// </summary>
-        public long ArchiveSizeInBytes
+        public long? ArchiveSizeInBytes
         {
-            get { return this._archiveSizeInBytes.GetValueOrDefault(); }
+            get { return this._archiveSizeInBytes; }
             set { this._archiveSizeInBytes = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Glacier.Model
         /// (GET output).
         /// </para>
         /// </summary>
-        public bool Completed
+        public bool? Completed
         {
-            get { return this._completed.GetValueOrDefault(); }
+            get { return this._completed; }
             set { this._completed = value; }
         }
 
@@ -157,16 +157,16 @@ namespace Amazon.Glacier.Model
         /// is null.
         /// </para>
         /// </summary>
-        public DateTime CompletionDate
+        public DateTime? CompletionDate
         {
-            get { return this._completionDate.GetValueOrDefault(); }
+            get { return this._completionDate; }
             set { this._completionDate = value; }
         }
 
         // Check to see if CompletionDate property is set
         internal bool IsSetCompletionDate()
         {
-            return this._completionDate.HasValue; 
+            return this._completionDate != null;
         }
 
         /// <summary>
@@ -176,16 +176,16 @@ namespace Amazon.Glacier.Model
         /// 8601 date format, for example <c>"2012-03-20T17:03:43.221Z"</c>.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this._creationDate.HasValue; 
+            return this._creationDate != null;
         }
 
         /// <summary>
@@ -213,9 +213,9 @@ namespace Amazon.Glacier.Model
         /// for download. For an archive retrieval or select job, this value is null.
         /// </para>
         /// </summary>
-        public long InventorySizeInBytes
+        public long? InventorySizeInBytes
         {
-            get { return this._inventorySizeInBytes.GetValueOrDefault(); }
+            get { return this._inventorySizeInBytes; }
             set { this._inventorySizeInBytes = value; }
         }
 

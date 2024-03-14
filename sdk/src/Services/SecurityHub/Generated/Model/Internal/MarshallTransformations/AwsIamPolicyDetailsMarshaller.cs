@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachmentCount())
             {
                 context.Writer.WritePropertyName("AttachmentCount");
-                context.Writer.Write(requestObject.AttachmentCount);
+                context.Writer.Write(requestObject.AttachmentCount.Value);
             }
 
             if(requestObject.IsSetCreateDate())
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsAttachable())
             {
                 context.Writer.WritePropertyName("IsAttachable");
-                context.Writer.Write(requestObject.IsAttachable);
+                context.Writer.Write(requestObject.IsAttachable.Value);
             }
 
             if(requestObject.IsSetPath())
@@ -84,7 +84,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPermissionsBoundaryUsageCount())
             {
                 context.Writer.WritePropertyName("PermissionsBoundaryUsageCount");
-                context.Writer.Write(requestObject.PermissionsBoundaryUsageCount);
+                context.Writer.Write(requestObject.PermissionsBoundaryUsageCount.Value);
             }
 
             if(requestObject.IsSetPolicyId())

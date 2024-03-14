@@ -48,9 +48,9 @@ namespace Amazon.DataPipeline.Model
         /// call. The default value is 100. 
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBcpPacketSize())
             {
                 context.Writer.WritePropertyName("BcpPacketSize");
-                context.Writer.Write(requestObject.BcpPacketSize);
+                context.Writer.Write(requestObject.BcpPacketSize.Value);
             }
 
             if(requestObject.IsSetControlTablesFileGroup())
@@ -66,7 +66,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForceLobLookup())
             {
                 context.Writer.WritePropertyName("ForceLobLookup");
-                context.Writer.Write(requestObject.ForceLobLookup);
+                context.Writer.Write(requestObject.ForceLobLookup.Value);
             }
 
             if(requestObject.IsSetPassword())
@@ -78,19 +78,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetQuerySingleAlwaysOnNode())
             {
                 context.Writer.WritePropertyName("QuerySingleAlwaysOnNode");
-                context.Writer.Write(requestObject.QuerySingleAlwaysOnNode);
+                context.Writer.Write(requestObject.QuerySingleAlwaysOnNode.Value);
             }
 
             if(requestObject.IsSetReadBackupOnly())
             {
                 context.Writer.WritePropertyName("ReadBackupOnly");
-                context.Writer.Write(requestObject.ReadBackupOnly);
+                context.Writer.Write(requestObject.ReadBackupOnly.Value);
             }
 
             if(requestObject.IsSetSafeguardPolicy())
@@ -126,13 +126,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrimSpaceInChar())
             {
                 context.Writer.WritePropertyName("TrimSpaceInChar");
-                context.Writer.Write(requestObject.TrimSpaceInChar);
+                context.Writer.Write(requestObject.TrimSpaceInChar.Value);
             }
 
             if(requestObject.IsSetUseBcpFullLoad())
             {
                 context.Writer.WritePropertyName("UseBcpFullLoad");
-                context.Writer.Write(requestObject.UseBcpFullLoad);
+                context.Writer.Write(requestObject.UseBcpFullLoad.Value);
             }
 
             if(requestObject.IsSetUsername())
@@ -144,7 +144,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseThirdPartyBackupDevice())
             {
                 context.Writer.WritePropertyName("UseThirdPartyBackupDevice");
-                context.Writer.Write(requestObject.UseThirdPartyBackupDevice);
+                context.Writer.Write(requestObject.UseThirdPartyBackupDevice.Value);
             }
 
         }

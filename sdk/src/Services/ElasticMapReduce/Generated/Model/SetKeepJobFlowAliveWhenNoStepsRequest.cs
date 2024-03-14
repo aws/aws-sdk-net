@@ -76,9 +76,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool KeepJobFlowAliveWhenNoSteps
+        public bool? KeepJobFlowAliveWhenNoSteps
         {
-            get { return this._keepJobFlowAliveWhenNoSteps.GetValueOrDefault(); }
+            get { return this._keepJobFlowAliveWhenNoSteps; }
             set { this._keepJobFlowAliveWhenNoSteps = value; }
         }
 

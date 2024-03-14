@@ -192,9 +192,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime FirstObservedAt
+        public DateTime? FirstObservedAt
         {
-            get { return this._firstObservedAt.GetValueOrDefault(); }
+            get { return this._firstObservedAt; }
             set { this._firstObservedAt = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.Inspector2.Model
         /// The Amazon Inspector score given to the finding.
         /// </para>
         /// </summary>
-        public double InspectorScore
+        public double? InspectorScore
         {
-            get { return this._inspectorScore.GetValueOrDefault(); }
+            get { return this._inspectorScore; }
             set { this._inspectorScore = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastObservedAt
+        public DateTime? LastObservedAt
         {
-            get { return this._lastObservedAt.GetValueOrDefault(); }
+            get { return this._lastObservedAt; }
             set { this._lastObservedAt = value; }
         }
 
@@ -444,9 +444,9 @@ namespace Amazon.Inspector2.Model
         /// The date and time the finding was last updated at.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

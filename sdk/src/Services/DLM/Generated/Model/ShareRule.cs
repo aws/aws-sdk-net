@@ -65,9 +65,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int UnshareInterval
+        public int? UnshareInterval
         {
-            get { return this._unshareInterval.GetValueOrDefault(); }
+            get { return this._unshareInterval; }
             set { this._unshareInterval = value; }
         }
 

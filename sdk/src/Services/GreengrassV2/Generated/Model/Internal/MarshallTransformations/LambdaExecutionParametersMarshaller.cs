@@ -106,37 +106,37 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxIdleTimeInSeconds())
             {
                 context.Writer.WritePropertyName("maxIdleTimeInSeconds");
-                context.Writer.Write(requestObject.MaxIdleTimeInSeconds);
+                context.Writer.Write(requestObject.MaxIdleTimeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaxInstancesCount())
             {
                 context.Writer.WritePropertyName("maxInstancesCount");
-                context.Writer.Write(requestObject.MaxInstancesCount);
+                context.Writer.Write(requestObject.MaxInstancesCount.Value);
             }
 
             if(requestObject.IsSetMaxQueueSize())
             {
                 context.Writer.WritePropertyName("maxQueueSize");
-                context.Writer.Write(requestObject.MaxQueueSize);
+                context.Writer.Write(requestObject.MaxQueueSize.Value);
             }
 
             if(requestObject.IsSetPinned())
             {
                 context.Writer.WritePropertyName("pinned");
-                context.Writer.Write(requestObject.Pinned);
+                context.Writer.Write(requestObject.Pinned.Value);
             }
 
             if(requestObject.IsSetStatusTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("statusTimeoutInSeconds");
-                context.Writer.Write(requestObject.StatusTimeoutInSeconds);
+                context.Writer.Write(requestObject.StatusTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("timeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds);
+                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
             }
 
         }

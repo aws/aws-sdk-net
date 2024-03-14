@@ -48,7 +48,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatePublicIpAddress())
             {
                 context.Writer.WritePropertyName("associatePublicIpAddress");
-                context.Writer.Write(requestObject.AssociatePublicIpAddress);
+                context.Writer.Write(requestObject.AssociatePublicIpAddress.Value);
             }
 
             if(requestObject.IsSetConfigureScript())

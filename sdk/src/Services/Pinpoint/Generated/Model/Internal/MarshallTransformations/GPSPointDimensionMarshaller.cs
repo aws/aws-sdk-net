@@ -59,7 +59,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRangeInKilometers())
             {
                 context.Writer.WritePropertyName("RangeInKilometers");
-                context.Writer.Write(requestObject.RangeInKilometers);
+                context.Writer.Write(requestObject.RangeInKilometers.Value);
             }
 
         }

@@ -147,9 +147,9 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property IdleSessionTTLInSeconds.
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 

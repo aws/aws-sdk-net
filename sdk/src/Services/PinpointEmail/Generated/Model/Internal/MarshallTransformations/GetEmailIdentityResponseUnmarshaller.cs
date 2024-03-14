@@ -59,7 +59,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FeedbackForwardingStatus", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.FeedbackForwardingStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -89,7 +89,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PerUnitStorageThroughput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PerUnitStorageThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -133,9 +133,9 @@ namespace Amazon.CodeCommit.Model
         /// the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.
         /// </para>
         /// </summary>
-        public bool KeepEmptyFolders
+        public bool? KeepEmptyFolders
         {
-            get { return this._keepEmptyFolders.GetValueOrDefault(); }
+            get { return this._keepEmptyFolders; }
             set { this._keepEmptyFolders = value; }
         }
 

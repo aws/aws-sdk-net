@@ -65,13 +65,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("indexedTextBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IndexedTextBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("indexedTextDocumentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndexedTextDocumentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

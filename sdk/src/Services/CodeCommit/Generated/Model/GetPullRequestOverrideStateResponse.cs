@@ -43,9 +43,9 @@ namespace Amazon.CodeCommit.Model
         /// (TRUE) or whether all approval rules still apply (FALSE).
         /// </para>
         /// </summary>
-        public bool Overridden
+        public bool? Overridden
         {
-            get { return this._overridden.GetValueOrDefault(); }
+            get { return this._overridden; }
             set { this._overridden = value; }
         }
 

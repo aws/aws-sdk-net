@@ -102,9 +102,9 @@ namespace Amazon.Batch.Model
         /// transitioned from the <c>STARTING</c> state to the <c>RUNNING</c> state).
         /// </para>
         /// </summary>
-        public long StartedAt
+        public long? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Batch.Model
         /// as <c>SUCCEEDED</c> or <c>FAILED</c>.
         /// </para>
         /// </summary>
-        public long StoppedAt
+        public long? StoppedAt
         {
-            get { return this._stoppedAt.GetValueOrDefault(); }
+            get { return this._stoppedAt; }
             set { this._stoppedAt = value; }
         }
 

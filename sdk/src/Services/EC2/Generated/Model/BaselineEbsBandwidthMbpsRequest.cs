@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// The maximum baseline bandwidth, in Mbps. To specify no maximum limit, omit this parameter.
         /// </para>
         /// </summary>
-        public int Max
+        public int? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// The minimum baseline bandwidth, in Mbps. To specify no minimum limit, omit this parameter.
         /// </para>
         /// </summary>
-        public int Min
+        public int? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

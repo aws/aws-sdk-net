@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.RDS.Endpoints;
 using Amazon.RDS.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class RDSEndpointsTests

@@ -75,9 +75,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// The default value is FALSE.
         /// </para>
         /// </summary>
-        public bool DenyAllTrafficToEndpoint
+        public bool? DenyAllTrafficToEndpoint
         {
-            get { return this._denyAllTrafficToEndpoint.GetValueOrDefault(); }
+            get { return this._denyAllTrafficToEndpoint; }
             set { this._denyAllTrafficToEndpoint = value; }
         }
 

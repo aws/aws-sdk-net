@@ -62,9 +62,9 @@ namespace Amazon.MediaLive.Model
         /// the height and width (resolution) from the source. Note, however, that leaving blank
         /// is not recommended. For the Frame Capture codec, height and width are required.
         /// </summary>
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.MediaLive.Model
         /// recommended for most content.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Sharpness
+        public int? Sharpness
         {
-            get { return this._sharpness.GetValueOrDefault(); }
+            get { return this._sharpness; }
             set { this._sharpness = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.MediaLive.Model
         /// and width (resolution) from the source. Note, however, that leaving blank is not recommended.
         /// For the Frame Capture codec, height and width are required.
         /// </summary>
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

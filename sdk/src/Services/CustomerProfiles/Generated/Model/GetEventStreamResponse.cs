@@ -48,9 +48,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp when the <c>State</c> changed to <c>STOPPED</c>.
         /// </para>
         /// </summary>
-        public DateTime StoppedSince
+        public DateTime? StoppedSince
         {
-            get { return this._stoppedSince.GetValueOrDefault(); }
+            get { return this._stoppedSince; }
             set { this._stoppedSince = value; }
         }
 

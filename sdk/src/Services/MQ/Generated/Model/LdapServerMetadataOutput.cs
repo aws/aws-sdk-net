@@ -137,9 +137,9 @@ namespace Amazon.MQ.Model
         /// subtree.
         /// </para>
         /// </summary>
-        public bool RoleSearchSubtree
+        public bool? RoleSearchSubtree
         {
-            get { return this._roleSearchSubtree.GetValueOrDefault(); }
+            get { return this._roleSearchSubtree; }
             set { this._roleSearchSubtree = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.MQ.Model
         /// subtree.
         /// </para>
         /// </summary>
-        public bool UserSearchSubtree
+        public bool? UserSearchSubtree
         {
-            get { return this._userSearchSubtree.GetValueOrDefault(); }
+            get { return this._userSearchSubtree; }
             set { this._userSearchSubtree = value; }
         }
 

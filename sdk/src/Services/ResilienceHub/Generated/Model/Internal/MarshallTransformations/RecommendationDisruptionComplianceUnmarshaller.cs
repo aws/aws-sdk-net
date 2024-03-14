@@ -77,7 +77,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expectedRpoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpectedRpoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expectedRtoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpectedRtoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -167,9 +167,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// it.
         /// </para>
         /// </summary>
-        public bool Configured
+        public bool? Configured
         {
-            get { return this._configured.GetValueOrDefault(); }
+            get { return this._configured; }
             set { this._configured = value; }
         }
 

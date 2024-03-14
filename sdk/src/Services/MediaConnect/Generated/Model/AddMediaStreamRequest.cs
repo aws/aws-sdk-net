@@ -62,9 +62,9 @@ namespace Amazon.MediaConnect.Model
         /// media stream type is video or ancillary data, set this value to 90000. If the media
         /// stream type is audio, set this value to either 48000 or 96000.
         /// </summary>
-        public int ClockRate
+        public int? ClockRate
         {
-            get { return this._clockRate.GetValueOrDefault(); }
+            get { return this._clockRate; }
             set { this._clockRate = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property MediaStreamId. A unique identifier for the media stream.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MediaStreamId
+        public int? MediaStreamId
         {
-            get { return this._mediaStreamId.GetValueOrDefault(); }
+            get { return this._mediaStreamId; }
             set { this._mediaStreamId = value; }
         }
 

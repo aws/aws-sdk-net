@@ -49,9 +49,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
-        public int ApproveAfterDays
+        public int? ApproveAfterDays
         {
-            get { return this._approveAfterDays.GetValueOrDefault(); }
+            get { return this._approveAfterDays; }
             set { this._approveAfterDays = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// is <c>false</c>. Applies to Linux managed nodes only.
         /// </para>
         /// </summary>
-        public bool EnableNonSecurity
+        public bool? EnableNonSecurity
         {
-            get { return this._enableNonSecurity.GetValueOrDefault(); }
+            get { return this._enableNonSecurity; }
             set { this._enableNonSecurity = value; }
         }
 

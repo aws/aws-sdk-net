@@ -143,9 +143,9 @@ namespace Amazon.EC2.Model
         /// instance types. Additional usage charges apply when using an EBS- optimized instance.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.EC2.Model
         /// the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.EC2.Model
         ///  <i>Deprecated.</i> 
         /// </para>
         /// </summary>
-        public bool EphemeralStorage
+        public bool? EphemeralStorage
         {
-            get { return this._ephemeralStorage.GetValueOrDefault(); }
+            get { return this._ephemeralStorage; }
             set { this._ephemeralStorage = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

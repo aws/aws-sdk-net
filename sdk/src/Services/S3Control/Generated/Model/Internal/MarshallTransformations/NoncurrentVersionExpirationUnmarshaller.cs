@@ -57,13 +57,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("NewerNoncurrentVersions", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NewerNoncurrentVersions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NoncurrentDays", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NoncurrentDays = unmarshaller.Unmarshall(context);
                         continue;
                     }

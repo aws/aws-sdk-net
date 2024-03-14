@@ -782,7 +782,7 @@ namespace Amazon.SQS
         /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
-        public virtual Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(string queueUrl, string receiptHandle, int visibilityTimeout, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(string queueUrl, string receiptHandle, int? visibilityTimeout, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ChangeMessageVisibilityRequest();
             request.QueueUrl = queueUrl;

@@ -59,13 +59,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiGatewayManaged())
             {
                 context.Writer.WritePropertyName("ApiGatewayManaged");
-                context.Writer.Write(requestObject.ApiGatewayManaged);
+                context.Writer.Write(requestObject.ApiGatewayManaged.Value);
             }
 
             if(requestObject.IsSetAutoDeploy())
             {
                 context.Writer.WritePropertyName("AutoDeploy");
-                context.Writer.Write(requestObject.AutoDeploy);
+                context.Writer.Write(requestObject.AutoDeploy.Value);
             }
 
             if(requestObject.IsSetClientCertificateId())

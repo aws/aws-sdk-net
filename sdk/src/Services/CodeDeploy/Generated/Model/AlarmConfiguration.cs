@@ -62,9 +62,9 @@ namespace Amazon.CodeDeploy.Model
         /// Indicates whether the alarm configuration is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool IgnorePollAlarmFailure
+        public bool? IgnorePollAlarmFailure
         {
-            get { return this._ignorePollAlarmFailure.GetValueOrDefault(); }
+            get { return this._ignorePollAlarmFailure; }
             set { this._ignorePollAlarmFailure = value; }
         }
 

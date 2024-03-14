@@ -68,13 +68,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetContentCreatedTimestamp())
                 {
                     context.Writer.WritePropertyName("ContentCreatedTimestamp");
-                    context.Writer.Write(publicRequest.ContentCreatedTimestamp);
+                    context.Writer.Write(publicRequest.ContentCreatedTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetContentModifiedTimestamp())
                 {
                     context.Writer.WritePropertyName("ContentModifiedTimestamp");
-                    context.Writer.Write(publicRequest.ContentModifiedTimestamp);
+                    context.Writer.Write(publicRequest.ContentModifiedTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetContentType())
@@ -86,7 +86,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDocumentSizeInBytes())
                 {
                     context.Writer.WritePropertyName("DocumentSizeInBytes");
-                    context.Writer.Write(publicRequest.DocumentSizeInBytes);
+                    context.Writer.Write(publicRequest.DocumentSizeInBytes.Value);
                 }
 
                 if(publicRequest.IsSetId())

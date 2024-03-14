@@ -65,7 +65,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BlockIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlockIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

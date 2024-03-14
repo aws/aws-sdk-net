@@ -77,7 +77,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CompleteTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -60,9 +60,9 @@ namespace Amazon.SsmSap.Model
         /// Gets and sets the property EnsureNoBackupInProcess.
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnsureNoBackupInProcess
+        public bool? EnsureNoBackupInProcess
         {
-            get { return this._ensureNoBackupInProcess.GetValueOrDefault(); }
+            get { return this._ensureNoBackupInProcess; }
             set { this._ensureNoBackupInProcess = value; }
         }
 

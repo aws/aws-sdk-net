@@ -59,7 +59,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AuthTokenExpirationTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AuthTokenExpirationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

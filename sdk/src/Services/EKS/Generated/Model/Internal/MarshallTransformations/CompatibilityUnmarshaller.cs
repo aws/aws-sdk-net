@@ -71,7 +71,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("defaultVersion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

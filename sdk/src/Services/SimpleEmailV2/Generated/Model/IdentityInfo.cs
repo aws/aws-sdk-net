@@ -88,9 +88,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// and that you authorize Amazon SES to send email from that identity.
         /// </para>
         /// </summary>
-        public bool SendingEnabled
+        public bool? SendingEnabled
         {
-            get { return this._sendingEnabled.GetValueOrDefault(); }
+            get { return this._sendingEnabled; }
             set { this._sendingEnabled = value; }
         }
 

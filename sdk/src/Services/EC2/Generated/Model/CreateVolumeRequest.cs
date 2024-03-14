@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The ID of the Availability Zone in which to create the volume. For example, <c>us-east-1a</c>.</param>
         /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB </li> <li>  <c>io1</c>: 4 - 16,384 GiB </li> <li>  <c>io2</c>: 4 - 65,536 GiB </li> <li>  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB </li> <li>  <c>standard</c>: 1 - 1024 GiB </li> </ul></param>
-        public CreateVolumeRequest(string availabilityZone, int size)
+        public CreateVolumeRequest(string availabilityZone, int? size)
         {
             _availabilityZone = availabilityZone;
             _size = size;
@@ -153,9 +153,9 @@ namespace Amazon.EC2.Model
         /// instance types</a>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.EC2.Model
         /// <c>st1</c>, <c>sc1</c>, or <c>standard</c> volumes.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.EC2.Model
         /// Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        public bool MultiAttachEnabled
+        public bool? MultiAttachEnabled
         {
-            get { return this._multiAttachEnabled.GetValueOrDefault(); }
+            get { return this._multiAttachEnabled; }
             set { this._multiAttachEnabled = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 
@@ -396,9 +396,9 @@ namespace Amazon.EC2.Model
         /// Valid Range: Minimum value of 125. Maximum value of 1000.
         /// </para>
         /// </summary>
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

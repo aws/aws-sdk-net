@@ -50,9 +50,9 @@ namespace Amazon.ApplicationInsights.Model
         /// 
         /// </para>
         /// </summary>
-        public bool AutoConfigEnabled
+        public bool? AutoConfigEnabled
         {
-            get { return this._autoConfigEnabled.GetValueOrDefault(); }
+            get { return this._autoConfigEnabled; }
             set { this._autoConfigEnabled = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.ApplicationInsights.Model
         /// Indicates whether the application component is monitored.
         /// </para>
         /// </summary>
-        public bool Monitor
+        public bool? Monitor
         {
-            get { return this._monitor.GetValueOrDefault(); }
+            get { return this._monitor; }
             set { this._monitor = value; }
         }
 

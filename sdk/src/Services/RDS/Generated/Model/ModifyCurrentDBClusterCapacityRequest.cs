@@ -96,9 +96,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.RDS.Model
         /// Specify a value between 10 and 600 seconds.
         /// </para>
         /// </summary>
-        public int SecondsBeforeTimeout
+        public int? SecondsBeforeTimeout
         {
-            get { return this._secondsBeforeTimeout.GetValueOrDefault(); }
+            get { return this._secondsBeforeTimeout; }
             set { this._secondsBeforeTimeout = value; }
         }
 

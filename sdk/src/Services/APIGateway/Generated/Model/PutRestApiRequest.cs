@@ -70,9 +70,9 @@ namespace Amazon.APIGateway.Model
         /// not (<c>false</c>) when a warning is encountered. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool FailOnWarnings
+        public bool? FailOnWarnings
         {
-            get { return this._failOnWarnings.GetValueOrDefault(); }
+            get { return this._failOnWarnings; }
             set { this._failOnWarnings = value; }
         }
 

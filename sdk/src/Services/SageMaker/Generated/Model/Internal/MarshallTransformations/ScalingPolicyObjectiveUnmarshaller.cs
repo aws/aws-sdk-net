@@ -65,13 +65,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxInvocationsPerMinute", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxInvocationsPerMinute = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinInvocationsPerMinute", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinInvocationsPerMinute = unmarshaller.Unmarshall(context);
                     continue;
                 }

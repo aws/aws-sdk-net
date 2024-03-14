@@ -48,7 +48,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpPutResponseHopLimit())
             {
                 context.Writer.WritePropertyName("httpPutResponseHopLimit");
-                context.Writer.Write(requestObject.HttpPutResponseHopLimit);
+                context.Writer.Write(requestObject.HttpPutResponseHopLimit.Value);
             }
 
             if(requestObject.IsSetHttpTokens())

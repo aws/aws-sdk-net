@@ -62,9 +62,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StateChangedAt
+        public DateTime? StateChangedAt
         {
-            get { return this._stateChangedAt.GetValueOrDefault(); }
+            get { return this._stateChangedAt; }
             set { this._stateChangedAt = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("endCharOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndCharOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startCharOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartCharOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

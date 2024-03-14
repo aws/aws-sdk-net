@@ -60,13 +60,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("keyRotationIntervalSeconds");
-                context.Writer.Write(requestObject.KeyRotationIntervalSeconds);
+                context.Writer.Write(requestObject.KeyRotationIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetRepeatExtXKey())
             {
                 context.Writer.WritePropertyName("repeatExtXKey");
-                context.Writer.Write(requestObject.RepeatExtXKey);
+                context.Writer.Write(requestObject.RepeatExtXKey.Value);
             }
 
             if(requestObject.IsSetSpekeKeyProvider())

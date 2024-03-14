@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.RDS;
 using Amazon.RDS.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class RDSConstructorCustomizationsTests
@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("RDS")]
         public void CreateDBInstanceRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.RDS.Model.CreateDBInstanceRequest), new System.Type[] { typeof(string), typeof(int), typeof(string), typeof(string), typeof(string), typeof(string), });
+            EnsureConstructorExists(typeof(Amazon.RDS.Model.CreateDBInstanceRequest), new System.Type[] { typeof(string), typeof(int?), typeof(string), typeof(string), typeof(string), typeof(string), });
         }
 
         [TestMethod]

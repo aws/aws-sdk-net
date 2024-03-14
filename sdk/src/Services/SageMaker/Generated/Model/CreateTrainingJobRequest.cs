@@ -228,9 +228,9 @@ namespace Amazon.SageMaker.Model
         /// Communications Between ML Compute Instances in a Distributed Training Job</a>.
         /// </para>
         /// </summary>
-        public bool EnableInterContainerTrafficEncryption
+        public bool? EnableInterContainerTrafficEncryption
         {
-            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            get { return this._enableInterContainerTrafficEncryption; }
             set { this._enableInterContainerTrafficEncryption = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.SageMaker.Model
         /// jobs are running, interrupted, resumed, or completed. 
         /// </para>
         /// </summary>
-        public bool EnableManagedSpotTraining
+        public bool? EnableManagedSpotTraining
         {
-            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            get { return this._enableManagedSpotTraining; }
             set { this._enableManagedSpotTraining = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.SageMaker.Model
         /// VPC, but the training container does not have network access.
         /// </para>
         /// </summary>
-        public bool EnableNetworkIsolation
+        public bool? EnableNetworkIsolation
         {
-            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            get { return this._enableNetworkIsolation; }
             set { this._enableNetworkIsolation = value; }
         }
 

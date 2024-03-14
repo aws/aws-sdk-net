@@ -81,7 +81,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnable())
                 {
                     context.Writer.WritePropertyName("Enable");
-                    context.Writer.Write(publicRequest.Enable);
+                    context.Writer.Write(publicRequest.Enable.Value);
                 }
 
                 if(publicRequest.IsSetLayerId())

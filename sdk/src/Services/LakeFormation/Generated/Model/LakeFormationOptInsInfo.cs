@@ -44,9 +44,9 @@ namespace Amazon.LakeFormation.Model
         /// The last modified date and time of the record.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

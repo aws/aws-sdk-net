@@ -65,7 +65,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("freeTrialDaysRemaining", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FreeTrialDaysRemaining = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -83,7 +83,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("zookeeperId", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ZookeeperId = unmarshaller.Unmarshall(context);
                     continue;
                 }

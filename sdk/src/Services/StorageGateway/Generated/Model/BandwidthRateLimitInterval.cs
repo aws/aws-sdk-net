@@ -53,9 +53,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=102400)]
-        public long AverageDownloadRateLimitInBitsPerSec
+        public long? AverageDownloadRateLimitInBitsPerSec
         {
-            get { return this._averageDownloadRateLimitInBitsPerSec.GetValueOrDefault(); }
+            get { return this._averageDownloadRateLimitInBitsPerSec; }
             set { this._averageDownloadRateLimitInBitsPerSec = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.StorageGateway.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=51200)]
-        public long AverageUploadRateLimitInBitsPerSec
+        public long? AverageUploadRateLimitInBitsPerSec
         {
-            get { return this._averageUploadRateLimitInBitsPerSec.GetValueOrDefault(); }
+            get { return this._averageUploadRateLimitInBitsPerSec; }
             set { this._averageUploadRateLimitInBitsPerSec = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=23)]
-        public int EndHourOfDay
+        public int? EndHourOfDay
         {
-            get { return this._endHourOfDay.GetValueOrDefault(); }
+            get { return this._endHourOfDay; }
             set { this._endHourOfDay = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.StorageGateway.Model
         ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=59)]
-        public int EndMinuteOfHour
+        public int? EndMinuteOfHour
         {
-            get { return this._endMinuteOfHour.GetValueOrDefault(); }
+            get { return this._endMinuteOfHour; }
             set { this._endMinuteOfHour = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=23)]
-        public int StartHourOfDay
+        public int? StartHourOfDay
         {
-            get { return this._startHourOfDay.GetValueOrDefault(); }
+            get { return this._startHourOfDay; }
             set { this._startHourOfDay = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=59)]
-        public int StartMinuteOfHour
+        public int? StartMinuteOfHour
         {
-            get { return this._startMinuteOfHour.GetValueOrDefault(); }
+            get { return this._startMinuteOfHour; }
             set { this._startMinuteOfHour = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only jobs created after a specified time.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeAfter
+        public DateTime? CreationTimeAfter
         {
-            get { return this._creationTimeAfter.GetValueOrDefault(); }
+            get { return this._creationTimeAfter; }
             set { this._creationTimeAfter = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only jobs created before a specified time.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeBefore
+        public DateTime? CreationTimeBefore
         {
-            get { return this._creationTimeBefore.GetValueOrDefault(); }
+            get { return this._creationTimeBefore; }
             set { this._creationTimeBefore = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only jobs modified before a specified time.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimeAfter
+        public DateTime? LastModifiedTimeAfter
         {
-            get { return this._lastModifiedTimeAfter.GetValueOrDefault(); }
+            get { return this._lastModifiedTimeAfter; }
             set { this._lastModifiedTimeAfter = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.SageMaker.Model
         /// A filter that returns only jobs modified after a specified time.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimeBefore
+        public DateTime? LastModifiedTimeBefore
         {
-            get { return this._lastModifiedTimeBefore.GetValueOrDefault(); }
+            get { return this._lastModifiedTimeBefore; }
             set { this._lastModifiedTimeBefore = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.SageMaker.Model
         /// Filter for jobs scheduled after a specified time.
         /// </para>
         /// </summary>
-        public DateTime ScheduledTimeAfter
+        public DateTime? ScheduledTimeAfter
         {
-            get { return this._scheduledTimeAfter.GetValueOrDefault(); }
+            get { return this._scheduledTimeAfter; }
             set { this._scheduledTimeAfter = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.SageMaker.Model
         /// Filter for jobs scheduled before a specified time.
         /// </para>
         /// </summary>
-        public DateTime ScheduledTimeBefore
+        public DateTime? ScheduledTimeBefore
         {
-            get { return this._scheduledTimeBefore.GetValueOrDefault(); }
+            get { return this._scheduledTimeBefore; }
             set { this._scheduledTimeBefore = value; }
         }
 

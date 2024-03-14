@@ -66,9 +66,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the listener was created, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the listener was last updated, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

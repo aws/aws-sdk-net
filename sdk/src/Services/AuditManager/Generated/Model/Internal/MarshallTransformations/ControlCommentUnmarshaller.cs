@@ -77,7 +77,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("postedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PostedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

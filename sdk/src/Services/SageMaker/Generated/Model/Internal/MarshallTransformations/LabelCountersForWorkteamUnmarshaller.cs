@@ -65,19 +65,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("HumanLabeled", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HumanLabeled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PendingHuman", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PendingHuman = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

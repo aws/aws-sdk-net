@@ -105,9 +105,9 @@ namespace Amazon.Lambda.Model
         /// the function code.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.Lambda.Model
         /// has the same effect as calling <a>PublishVersion</a> separately.
         /// </para>
         /// </summary>
-        public bool Publish
+        public bool? Publish
         {
-            get { return this._publish.GetValueOrDefault(); }
+            get { return this._publish; }
             set { this._publish = value; }
         }
 

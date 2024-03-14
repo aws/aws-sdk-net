@@ -48,7 +48,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessSysfs())
             {
                 context.Writer.WritePropertyName("AccessSysfs");
-                context.Writer.Write(requestObject.AccessSysfs);
+                context.Writer.Write(requestObject.AccessSysfs.Value);
             }
 
             if(requestObject.IsSetExecution())

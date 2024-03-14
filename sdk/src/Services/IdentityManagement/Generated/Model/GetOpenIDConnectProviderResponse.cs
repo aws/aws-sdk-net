@@ -65,9 +65,9 @@ namespace Amazon.IdentityManagement.Model
         /// Web Services account.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 

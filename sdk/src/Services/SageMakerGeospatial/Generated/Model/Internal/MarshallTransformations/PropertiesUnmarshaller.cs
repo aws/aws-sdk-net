@@ -65,13 +65,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EoCloudCover", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.EoCloudCover = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LandsatCloudCoverLand", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LandsatCloudCoverLand = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,19 +83,19 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ViewOffNadir", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ViewOffNadir = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ViewSunAzimuth", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ViewSunAzimuth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ViewSunElevation", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ViewSunElevation = unmarshaller.Unmarshall(context);
                     continue;
                 }

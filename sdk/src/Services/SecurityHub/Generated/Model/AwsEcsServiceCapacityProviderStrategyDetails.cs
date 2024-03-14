@@ -48,9 +48,9 @@ namespace Amazon.SecurityHub.Model
         /// The value must be between 0 and 100000.
         /// </para>
         /// </summary>
-        public int Base
+        public int? Base
         {
-            get { return this._base.GetValueOrDefault(); }
+            get { return this._base; }
             set { this._base = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.SecurityHub.Model
         /// The value can be between 0 and 1000.
         /// </para>
         /// </summary>
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

@@ -70,7 +70,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIntegerValue())
                 {
                     context.Writer.WritePropertyName("IntegerValue");
-                    context.Writer.Write(publicRequest.IntegerValue);
+                    context.Writer.Write(publicRequest.IntegerValue.Value);
                 }
 
                 if(publicRequest.IsSetQualificationRequestId())

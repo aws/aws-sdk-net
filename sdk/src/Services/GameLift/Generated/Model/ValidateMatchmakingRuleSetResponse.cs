@@ -41,9 +41,9 @@ namespace Amazon.GameLift.Model
         /// A response indicating whether the rule set is valid.
         /// </para>
         /// </summary>
-        public bool Valid
+        public bool? Valid
         {
-            get { return this._valid.GetValueOrDefault(); }
+            get { return this._valid; }
             set { this._valid = value; }
         }
 

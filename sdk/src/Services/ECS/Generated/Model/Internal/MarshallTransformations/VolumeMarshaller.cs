@@ -48,7 +48,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfiguredAtLaunch())
             {
                 context.Writer.WritePropertyName("configuredAtLaunch");
-                context.Writer.Write(requestObject.ConfiguredAtLaunch);
+                context.Writer.Write(requestObject.ConfiguredAtLaunch.Value);
             }
 
             if(requestObject.IsSetDockerVolumeConfiguration())

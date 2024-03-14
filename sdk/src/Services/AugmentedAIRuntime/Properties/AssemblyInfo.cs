@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AugmentedAIRuntime")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
 #elif NETCOREAPP3_1

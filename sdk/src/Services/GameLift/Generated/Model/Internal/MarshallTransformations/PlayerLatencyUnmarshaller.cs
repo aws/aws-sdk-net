@@ -65,7 +65,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LatencyInMilliseconds", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LatencyInMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

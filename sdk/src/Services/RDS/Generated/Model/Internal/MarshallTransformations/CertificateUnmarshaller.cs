@@ -74,13 +74,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CustomerOverride", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CustomerOverride = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CustomerOverrideValidTill", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CustomerOverrideValidTill = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -92,13 +92,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ValidFrom", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ValidFrom = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ValidTill", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ValidTill = unmarshaller.Unmarshall(context);
                         continue;
                     }

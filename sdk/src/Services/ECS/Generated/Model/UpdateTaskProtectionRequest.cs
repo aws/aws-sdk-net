@@ -112,9 +112,9 @@ namespace Amazon.ECS.Model
         /// (2 hours).
         /// </para>
         /// </summary>
-        public int ExpiresInMinutes
+        public int? ExpiresInMinutes
         {
-            get { return this._expiresInMinutes.GetValueOrDefault(); }
+            get { return this._expiresInMinutes; }
             set { this._expiresInMinutes = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ProtectionEnabled
+        public bool? ProtectionEnabled
         {
-            get { return this._protectionEnabled.GetValueOrDefault(); }
+            get { return this._protectionEnabled; }
             set { this._protectionEnabled = value; }
         }
 

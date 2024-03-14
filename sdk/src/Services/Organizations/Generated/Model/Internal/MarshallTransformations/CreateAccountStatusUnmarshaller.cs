@@ -77,7 +77,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CompletedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RequestedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

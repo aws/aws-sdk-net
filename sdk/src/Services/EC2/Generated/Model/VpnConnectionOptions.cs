@@ -50,9 +50,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether acceleration is enabled for the VPN connection.
         /// </para>
         /// </summary>
-        public bool EnableAcceleration
+        public bool? EnableAcceleration
         {
-            get { return this._enableAcceleration.GetValueOrDefault(); }
+            get { return this._enableAcceleration; }
             set { this._enableAcceleration = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.EC2.Model
         /// used for devices that don't support BGP.
         /// </para>
         /// </summary>
-        public bool StaticRoutesOnly
+        public bool? StaticRoutesOnly
         {
-            get { return this._staticRoutesOnly.GetValueOrDefault(); }
+            get { return this._staticRoutesOnly; }
             set { this._staticRoutesOnly = value; }
         }
 

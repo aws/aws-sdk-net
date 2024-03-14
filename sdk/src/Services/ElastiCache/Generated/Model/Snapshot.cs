@@ -107,9 +107,9 @@ namespace Amazon.ElastiCache.Model
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.ElastiCache.Model
         /// The date and time when the source cluster was created.
         /// </para>
         /// </summary>
-        public DateTime CacheClusterCreateTime
+        public DateTime? CacheClusterCreateTime
         {
-            get { return this._cacheClusterCreateTime.GetValueOrDefault(); }
+            get { return this._cacheClusterCreateTime; }
             set { this._cacheClusterCreateTime = value; }
         }
 
@@ -477,9 +477,9 @@ namespace Amazon.ElastiCache.Model
         /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
-        public int NumCacheNodes
+        public int? NumCacheNodes
         {
-            get { return this._numCacheNodes.GetValueOrDefault(); }
+            get { return this._numCacheNodes; }
             set { this._numCacheNodes = value; }
         }
 
@@ -497,9 +497,9 @@ namespace Amazon.ElastiCache.Model
         /// group must be the same.
         /// </para>
         /// </summary>
-        public int NumNodeGroups
+        public int? NumNodeGroups
         {
-            get { return this._numNodeGroups.GetValueOrDefault(); }
+            get { return this._numNodeGroups; }
             set { this._numNodeGroups = value; }
         }
 
@@ -515,9 +515,9 @@ namespace Amazon.ElastiCache.Model
         /// The port number used by each cache nodes in the source cluster.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -693,9 +693,9 @@ namespace Amazon.ElastiCache.Model
         /// are turned off.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 

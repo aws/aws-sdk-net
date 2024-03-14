@@ -48,9 +48,9 @@ namespace Amazon.DevOpsGuru.Model
         /// The total estimated monthly cost to analyze the active resources for this resource.
         /// </para>
         /// </summary>
-        public double Cost
+        public double? Cost
         {
-            get { return this._cost.GetValueOrDefault(); }
+            get { return this._cost; }
             set { this._cost = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.DevOpsGuru.Model
         /// estimate.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.DevOpsGuru.Model
         /// DevOps Guru pricing</a>.
         /// </para>
         /// </summary>
-        public double UnitCost
+        public double? UnitCost
         {
-            get { return this._unitCost.GetValueOrDefault(); }
+            get { return this._unitCost; }
             set { this._unitCost = value; }
         }
 

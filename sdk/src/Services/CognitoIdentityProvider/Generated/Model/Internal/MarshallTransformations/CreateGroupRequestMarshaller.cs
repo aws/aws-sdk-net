@@ -82,7 +82,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPrecedence())
                 {
                     context.Writer.WritePropertyName("Precedence");
-                    context.Writer.Write(publicRequest.Precedence);
+                    context.Writer.Write(publicRequest.Precedence.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

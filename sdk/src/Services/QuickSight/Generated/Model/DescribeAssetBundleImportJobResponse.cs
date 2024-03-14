@@ -131,9 +131,9 @@ namespace Amazon.QuickSight.Model
         /// The time that the import job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -347,9 +347,9 @@ namespace Amazon.QuickSight.Model
         /// The HTTP status of the response.
         /// </para>
         /// </summary>
-        public int Status
+        public int? Status
         {
-            get { return this._status.GetValueOrDefault(); }
+            get { return this._status; }
             set { this._status = value; }
         }
 

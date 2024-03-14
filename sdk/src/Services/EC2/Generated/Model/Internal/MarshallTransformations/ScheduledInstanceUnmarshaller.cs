@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("createDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("instanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -92,7 +92,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("nextSlotStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NextSlotStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("previousSlotEndTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.PreviousSlotEndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -122,25 +122,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("slotDurationInHours", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SlotDurationInHours = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("termEndDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.TermEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("termStartDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.TermStartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("totalScheduledInstanceHours", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TotalScheduledInstanceHours = unmarshaller.Unmarshall(context);
                         continue;
                     }

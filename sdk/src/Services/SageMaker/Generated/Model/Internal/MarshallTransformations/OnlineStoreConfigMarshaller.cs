@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableOnlineStore())
             {
                 context.Writer.WritePropertyName("EnableOnlineStore");
-                context.Writer.Write(requestObject.EnableOnlineStore);
+                context.Writer.Write(requestObject.EnableOnlineStore.Value);
             }
 
             if(requestObject.IsSetSecurityConfig())

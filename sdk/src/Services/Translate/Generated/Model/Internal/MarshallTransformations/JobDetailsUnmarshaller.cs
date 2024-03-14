@@ -65,19 +65,19 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DocumentsWithErrorsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DocumentsWithErrorsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InputDocumentsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InputDocumentsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TranslatedDocumentsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TranslatedDocumentsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

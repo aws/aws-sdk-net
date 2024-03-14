@@ -70,9 +70,9 @@ namespace Amazon.RedshiftServerless.Model
         /// was taken.
         /// </para>
         /// </summary>
-        public bool ManageAdminPassword
+        public bool? ManageAdminPassword
         {
-            get { return this._manageAdminPassword.GetValueOrDefault(); }
+            get { return this._manageAdminPassword; }
             set { this._manageAdminPassword = value; }
         }
 

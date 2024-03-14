@@ -104,9 +104,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float FaceMatchThreshold
+        public float? FaceMatchThreshold
         {
-            get { return this._faceMatchThreshold.GetValueOrDefault(); }
+            get { return this._faceMatchThreshold; }
             set { this._faceMatchThreshold = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeNullValue())
             {
                 context.Writer.WritePropertyName("IncludeNullValue");
-                context.Writer.Write(requestObject.IncludeNullValue);
+                context.Writer.Write(requestObject.IncludeNullValue.Value);
             }
 
         }

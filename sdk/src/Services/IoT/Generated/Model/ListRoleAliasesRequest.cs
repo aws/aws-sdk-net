@@ -50,9 +50,9 @@ namespace Amazon.IoT.Model
         /// Return the list of role aliases in ascending alphabetical order.
         /// </para>
         /// </summary>
-        public bool AscendingOrder
+        public bool? AscendingOrder
         {
-            get { return this._ascendingOrder.GetValueOrDefault(); }
+            get { return this._ascendingOrder; }
             set { this._ascendingOrder = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

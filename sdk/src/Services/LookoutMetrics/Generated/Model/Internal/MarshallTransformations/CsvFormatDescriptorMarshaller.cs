@@ -54,7 +54,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainsHeader())
             {
                 context.Writer.WritePropertyName("ContainsHeader");
-                context.Writer.Write(requestObject.ContainsHeader);
+                context.Writer.Write(requestObject.ContainsHeader.Value);
             }
 
             if(requestObject.IsSetDelimiter())

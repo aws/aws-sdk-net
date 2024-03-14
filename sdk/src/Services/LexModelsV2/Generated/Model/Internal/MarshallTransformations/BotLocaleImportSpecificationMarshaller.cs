@@ -66,7 +66,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNluIntentConfidenceThreshold())
             {
                 context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
-                context.Writer.Write(requestObject.NluIntentConfidenceThreshold);
+                context.Writer.Write(requestObject.NluIntentConfidenceThreshold.Value);
             }
 
             if(requestObject.IsSetVoiceSettings())

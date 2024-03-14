@@ -63,9 +63,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long OwnerGid
+        public long? OwnerGid
         {
-            get { return this._ownerGid.GetValueOrDefault(); }
+            get { return this._ownerGid; }
             set { this._ownerGid = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long OwnerUid
+        public long? OwnerUid
         {
-            get { return this._ownerUid.GetValueOrDefault(); }
+            get { return this._ownerUid; }
             set { this._ownerUid = value; }
         }
 

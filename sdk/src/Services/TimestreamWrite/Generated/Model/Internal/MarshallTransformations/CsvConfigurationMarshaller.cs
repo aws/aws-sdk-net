@@ -72,7 +72,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrimWhiteSpace())
             {
                 context.Writer.WritePropertyName("TrimWhiteSpace");
-                context.Writer.Write(requestObject.TrimWhiteSpace);
+                context.Writer.Write(requestObject.TrimWhiteSpace.Value);
             }
 
         }

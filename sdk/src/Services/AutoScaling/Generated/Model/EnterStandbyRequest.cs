@@ -102,9 +102,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ShouldDecrementDesiredCapacity
+        public bool? ShouldDecrementDesiredCapacity
         {
-            get { return this._shouldDecrementDesiredCapacity.GetValueOrDefault(); }
+            get { return this._shouldDecrementDesiredCapacity; }
             set { this._shouldDecrementDesiredCapacity = value; }
         }
 

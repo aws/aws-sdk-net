@@ -65,7 +65,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

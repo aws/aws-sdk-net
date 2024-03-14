@@ -42,9 +42,9 @@ namespace Amazon.IoTWireless.Model
         /// Whether the partner account is linked to the AWS account.
         /// </para>
         /// </summary>
-        public bool AccountLinked
+        public bool? AccountLinked
         {
-            get { return this._accountLinked.GetValueOrDefault(); }
+            get { return this._accountLinked; }
             set { this._accountLinked = value; }
         }
 

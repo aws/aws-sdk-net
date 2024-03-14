@@ -65,25 +65,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("NumFalseNegatives", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumFalseNegatives = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumFalsePositives", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumFalsePositives = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumTrueNegatives", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumTrueNegatives = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumTruePositives", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumTruePositives = unmarshaller.Unmarshall(context);
                     continue;
                 }

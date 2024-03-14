@@ -66,9 +66,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
-        public int ColumnRange
+        public int? ColumnRange
         {
-            get { return this._columnRange.GetValueOrDefault(); }
+            get { return this._columnRange; }
             set { this._columnRange = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.GlueDataBrew.Model
         /// value.
         /// </para>
         /// </summary>
-        public int RowRange
+        public int? RowRange
         {
-            get { return this._rowRange.GetValueOrDefault(); }
+            get { return this._rowRange; }
             set { this._rowRange = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int StartColumnIndex
+        public int? StartColumnIndex
         {
-            get { return this._startColumnIndex.GetValueOrDefault(); }
+            get { return this._startColumnIndex; }
             set { this._startColumnIndex = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int StartRowIndex
+        public int? StartRowIndex
         {
-            get { return this._startRowIndex.GetValueOrDefault(); }
+            get { return this._startRowIndex; }
             set { this._startRowIndex = value; }
         }
 

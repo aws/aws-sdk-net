@@ -103,9 +103,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The required memory on the Amazon RDS DB instance.
         /// </para>
         /// </summary>
-        public double InstanceMemory
+        public double? InstanceMemory
         {
-            get { return this._instanceMemory.GetValueOrDefault(); }
+            get { return this._instanceMemory; }
             set { this._instanceMemory = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.
         /// </para>
         /// </summary>
-        public double InstanceVcpu
+        public double? InstanceVcpu
         {
-            get { return this._instanceVcpu.GetValueOrDefault(); }
+            get { return this._instanceVcpu; }
             set { this._instanceVcpu = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// RDS DB instance.
         /// </para>
         /// </summary>
-        public int StorageIops
+        public int? StorageIops
         {
-            get { return this._storageIops.GetValueOrDefault(); }
+            get { return this._storageIops; }
             set { this._storageIops = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The required Amazon RDS DB instance storage size.
         /// </para>
         /// </summary>
-        public int StorageSize
+        public int? StorageSize
         {
-            get { return this._storageSize.GetValueOrDefault(); }
+            get { return this._storageSize; }
             set { this._storageSize = value; }
         }
 

@@ -61,9 +61,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Denotes the configration as enabled or disabled.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

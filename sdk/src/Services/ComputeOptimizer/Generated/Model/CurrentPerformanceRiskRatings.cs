@@ -51,9 +51,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// A count of the applicable resource types with a high performance risk rating.
         /// </para>
         /// </summary>
-        public long High
+        public long? High
         {
-            get { return this._high.GetValueOrDefault(); }
+            get { return this._high; }
             set { this._high = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// A count of the applicable resource types with a low performance risk rating.
         /// </para>
         /// </summary>
-        public long Low
+        public long? Low
         {
-            get { return this._low.GetValueOrDefault(); }
+            get { return this._low; }
             set { this._low = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// A count of the applicable resource types with a medium performance risk rating.
         /// </para>
         /// </summary>
-        public long Medium
+        public long? Medium
         {
-            get { return this._medium.GetValueOrDefault(); }
+            get { return this._medium; }
             set { this._medium = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// A count of the applicable resource types with a very low performance risk rating.
         /// </para>
         /// </summary>
-        public long VeryLow
+        public long? VeryLow
         {
-            get { return this._veryLow.GetValueOrDefault(); }
+            get { return this._veryLow; }
             set { this._veryLow = value; }
         }
 

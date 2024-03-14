@@ -163,9 +163,9 @@ namespace Amazon.EC2.Model
         /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 

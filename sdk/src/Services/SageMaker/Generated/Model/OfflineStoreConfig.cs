@@ -81,9 +81,9 @@ namespace Amazon.SageMaker.Model
         /// The default value is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool DisableGlueTableCreation
+        public bool? DisableGlueTableCreation
         {
-            get { return this._disableGlueTableCreation.GetValueOrDefault(); }
+            get { return this._disableGlueTableCreation; }
             set { this._disableGlueTableCreation = value; }
         }
 

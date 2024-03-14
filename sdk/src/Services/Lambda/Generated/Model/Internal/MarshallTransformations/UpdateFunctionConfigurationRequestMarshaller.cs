@@ -171,7 +171,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMemorySize())
                 {
                     context.Writer.WritePropertyName("MemorySize");
-                    context.Writer.Write(publicRequest.MemorySize);
+                    context.Writer.Write(publicRequest.MemorySize.Value);
                 }
 
                 if(publicRequest.IsSetRevisionId())
@@ -206,7 +206,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 if(publicRequest.IsSetTracingConfig())

@@ -61,9 +61,9 @@ namespace Amazon.RoboMaker.Model
         /// The total number of finished worlds.
         /// </para>
         /// </summary>
-        public int FinishedCount
+        public int? FinishedCount
         {
-            get { return this._finishedCount.GetValueOrDefault(); }
+            get { return this._finishedCount; }
             set { this._finishedCount = value; }
         }
 

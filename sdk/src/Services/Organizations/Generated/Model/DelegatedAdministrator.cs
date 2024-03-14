@@ -66,9 +66,9 @@ namespace Amazon.Organizations.Model
         /// The date when the account was made a delegated administrator.
         /// </para>
         /// </summary>
-        public DateTime DelegationEnabledDate
+        public DateTime? DelegationEnabledDate
         {
-            get { return this._delegationEnabledDate.GetValueOrDefault(); }
+            get { return this._delegationEnabledDate; }
             set { this._delegationEnabledDate = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Organizations.Model
         /// The date when the delegated administrator's account became a part of the organization.
         /// </para>
         /// </summary>
-        public DateTime JoinedTimestamp
+        public DateTime? JoinedTimestamp
         {
-            get { return this._joinedTimestamp.GetValueOrDefault(); }
+            get { return this._joinedTimestamp; }
             set { this._joinedTimestamp = value; }
         }
 

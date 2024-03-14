@@ -135,9 +135,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

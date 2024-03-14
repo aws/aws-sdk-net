@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// when you include Video generator.
         /// </summary>
         [AWSProperty(Min=50, Max=86400000)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

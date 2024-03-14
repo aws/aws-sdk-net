@@ -71,7 +71,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FineGrainedAuthorizationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FineGrainedAuthorizationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

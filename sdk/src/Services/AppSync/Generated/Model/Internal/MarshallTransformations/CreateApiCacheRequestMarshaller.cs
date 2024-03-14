@@ -77,7 +77,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAtRestEncryptionEnabled())
                 {
                     context.Writer.WritePropertyName("atRestEncryptionEnabled");
-                    context.Writer.Write(publicRequest.AtRestEncryptionEnabled);
+                    context.Writer.Write(publicRequest.AtRestEncryptionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetHealthMetricsConfig())
@@ -89,13 +89,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTransitEncryptionEnabled())
                 {
                     context.Writer.WritePropertyName("transitEncryptionEnabled");
-                    context.Writer.Write(publicRequest.TransitEncryptionEnabled);
+                    context.Writer.Write(publicRequest.TransitEncryptionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTtl())
                 {
                     context.Writer.WritePropertyName("ttl");
-                    context.Writer.Write(publicRequest.Ttl);
+                    context.Writer.Write(publicRequest.Ttl.Value);
                 }
 
                 if(publicRequest.IsSetType())

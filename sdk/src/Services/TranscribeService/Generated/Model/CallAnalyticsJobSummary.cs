@@ -98,9 +98,9 @@ namespace Amazon.TranscribeService.Model
         /// processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.TranscribeService.Model
         /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.TranscribeService.Model
         /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

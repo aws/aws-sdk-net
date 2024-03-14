@@ -85,9 +85,9 @@ namespace Amazon.LakeFormation.Model
         /// commit time will be used. Cannot be specified along with <c>TransactionId</c>.
         /// </para>
         /// </summary>
-        public DateTime QueryAsOfTime
+        public DateTime? QueryAsOfTime
         {
-            get { return this._queryAsOfTime.GetValueOrDefault(); }
+            get { return this._queryAsOfTime; }
             set { this._queryAsOfTime = value; }
         }
 

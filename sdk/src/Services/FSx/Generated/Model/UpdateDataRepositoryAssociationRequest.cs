@@ -91,9 +91,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512000)]
-        public int ImportedFileChunkSize
+        public int? ImportedFileChunkSize
         {
-            get { return this._importedFileChunkSize.GetValueOrDefault(); }
+            get { return this._importedFileChunkSize; }
             set { this._importedFileChunkSize = value; }
         }
 

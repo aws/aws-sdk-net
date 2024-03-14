@@ -46,9 +46,9 @@ namespace Amazon.S3Control.Model
         /// S3 User Guide</i>.
         /// </para>
         /// </summary>
-        public int NoncurrentDays
+        public int? NoncurrentDays
         {
-            get { return this._noncurrentDays.GetValueOrDefault(); }
+            get { return this._noncurrentDays; }
             set { this._noncurrentDays = value; }
         }
 

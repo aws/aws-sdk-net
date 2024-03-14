@@ -109,9 +109,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.Glue.Model
         /// commit time will be used. Cannot be specified along with <c>TransactionId</c>.
         /// </para>
         /// </summary>
-        public DateTime QueryAsOfTime
+        public DateTime? QueryAsOfTime
         {
-            get { return this._queryAsOfTime.GetValueOrDefault(); }
+            get { return this._queryAsOfTime; }
             set { this._queryAsOfTime = value; }
         }
 

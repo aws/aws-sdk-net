@@ -71,7 +71,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AvailabilityScoreThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityScoreThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PerformanceScoreThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PerformanceScoreThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

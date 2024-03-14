@@ -48,7 +48,7 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBackupsToRetain())
             {
                 context.Writer.WritePropertyName("maxBackupsToRetain");
-                context.Writer.Write(requestObject.MaxBackupsToRetain);
+                context.Writer.Write(requestObject.MaxBackupsToRetain.Value);
             }
 
             if(requestObject.IsSetMode())

@@ -49,7 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="state">The state of the step.</param>
         /// <param name="creationDateTime">The creation date and time of the step.</param>
-        public StepExecutionStatusDetail(StepExecutionState state, DateTime creationDateTime)
+        public StepExecutionStatusDetail(StepExecutionState state, DateTime? creationDateTime)
         {
             _state = state;
             _creationDateTime = creationDateTime;
@@ -62,9 +62,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The completion date and time of the step.
         /// </para>
         /// </summary>
-        public DateTime EndDateTime
+        public DateTime? EndDateTime
         {
-            get { return this._endDateTime.GetValueOrDefault(); }
+            get { return this._endDateTime; }
             set { this._endDateTime = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The start date and time of the step.
         /// </para>
         /// </summary>
-        public DateTime StartDateTime
+        public DateTime? StartDateTime
         {
-            get { return this._startDateTime.GetValueOrDefault(); }
+            get { return this._startDateTime; }
             set { this._startDateTime = value; }
         }
 

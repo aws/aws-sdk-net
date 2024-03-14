@@ -131,9 +131,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Ttl
+        public long? Ttl
         {
-            get { return this._ttl.GetValueOrDefault(); }
+            get { return this._ttl; }
             set { this._ttl = value; }
         }
 

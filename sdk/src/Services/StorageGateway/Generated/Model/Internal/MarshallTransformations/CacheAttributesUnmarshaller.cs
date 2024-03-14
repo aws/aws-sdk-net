@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CacheStaleTimeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CacheStaleTimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

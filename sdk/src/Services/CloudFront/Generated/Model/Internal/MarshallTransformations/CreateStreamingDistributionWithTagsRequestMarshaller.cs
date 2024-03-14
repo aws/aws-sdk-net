@@ -86,7 +86,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Aliases.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Aliases.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Aliases.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -97,7 +97,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Comment));                 
 
                         if(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.IsSetEnabled())
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Enabled));                 
+                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Enabled.Value));                 
 
                 
                         if (publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging != null) 
@@ -107,7 +107,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging.Bucket));                 
 
                             if(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging.IsSetEnabled())
-                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging.Enabled));                 
+                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging.Enabled.Value));                 
 
                             if(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging.IsSetPrefix())
                                 xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.Logging.Prefix));                 
@@ -134,7 +134,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                             if(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.IsSetEnabled())
-                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.Enabled));                 
+                                xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.Enabled.Value));                 
 
                             var publicRequestStreamingDistributionConfigWithTagsStreamingDistributionConfigTrustedSignersItems = publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.Items;
                             if (publicRequestStreamingDistributionConfigWithTagsStreamingDistributionConfigTrustedSignersItems != null && publicRequestStreamingDistributionConfigWithTagsStreamingDistributionConfigTrustedSignersItems.Count > 0) 
@@ -149,7 +149,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.StreamingDistributionConfigWithTags.StreamingDistributionConfig.TrustedSigners.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }

@@ -47,9 +47,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether the replication job produces encrypted AMIs.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The frequency of creating replication jobs for the server.
         /// </para>
         /// </summary>
-        public int Frequency
+        public int? Frequency
         {
-            get { return this._frequency.GetValueOrDefault(); }
+            get { return this._frequency; }
             set { this._frequency = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The number of recent AMIs to keep when creating a replication job for this server.
         /// </para>
         /// </summary>
-        public int NumberOfRecentAmisToKeep
+        public int? NumberOfRecentAmisToKeep
         {
-            get { return this._numberOfRecentAmisToKeep.GetValueOrDefault(); }
+            get { return this._numberOfRecentAmisToKeep; }
             set { this._numberOfRecentAmisToKeep = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether to run the replication job one time.
         /// </para>
         /// </summary>
-        public bool RunOnce
+        public bool? RunOnce
         {
-            get { return this._runOnce.GetValueOrDefault(); }
+            get { return this._runOnce; }
             set { this._runOnce = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The seed time for creating a replication job for the server.
         /// </para>
         /// </summary>
-        public DateTime SeedTime
+        public DateTime? SeedTime
         {
-            get { return this._seedTime.GetValueOrDefault(); }
+            get { return this._seedTime; }
             set { this._seedTime = value; }
         }
 

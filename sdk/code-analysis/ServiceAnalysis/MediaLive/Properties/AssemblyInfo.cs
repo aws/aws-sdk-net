@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.MediaLive")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Elemental MediaLive. AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

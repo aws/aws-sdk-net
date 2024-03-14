@@ -52,9 +52,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
         /// </para>
         /// </summary>
-        public int BaseCapacity
+        public int? BaseCapacity
         {
-            get { return this._baseCapacity.GetValueOrDefault(); }
+            get { return this._baseCapacity; }
             set { this._baseCapacity = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.RedshiftServerless.Model
         /// of over the internet.
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The max capacity is specified in RPUs.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.RedshiftServerless.Model
         /// and 8191-8215. The default is 5439.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.RedshiftServerless.Model
         /// A value that specifies whether the workgroup can be accessed from a public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

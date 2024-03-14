@@ -59,7 +59,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MilestoneNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MilestoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=128)]
-        public int MaxMemoryRequiredInMb
+        public int? MaxMemoryRequiredInMb
         {
-            get { return this._maxMemoryRequiredInMb.GetValueOrDefault(); }
+            get { return this._maxMemoryRequiredInMb; }
             set { this._maxMemoryRequiredInMb = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=128)]
-        public int MinMemoryRequiredInMb
+        public int? MinMemoryRequiredInMb
         {
-            get { return this._minMemoryRequiredInMb.GetValueOrDefault(); }
+            get { return this._minMemoryRequiredInMb; }
             set { this._minMemoryRequiredInMb = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public float NumberOfAcceleratorDevicesRequired
+        public float? NumberOfAcceleratorDevicesRequired
         {
-            get { return this._numberOfAcceleratorDevicesRequired.GetValueOrDefault(); }
+            get { return this._numberOfAcceleratorDevicesRequired; }
             set { this._numberOfAcceleratorDevicesRequired = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.SageMaker.Model
         /// component.
         /// </para>
         /// </summary>
-        public float NumberOfCpuCoresRequired
+        public float? NumberOfCpuCoresRequired
         {
-            get { return this._numberOfCpuCoresRequired.GetValueOrDefault(); }
+            get { return this._numberOfCpuCoresRequired; }
             set { this._numberOfCpuCoresRequired = value; }
         }
 

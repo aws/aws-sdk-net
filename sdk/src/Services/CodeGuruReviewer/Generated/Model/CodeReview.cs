@@ -137,9 +137,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// The time, in milliseconds since the epoch, when the code review was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimeStamp
+        public DateTime? CreatedTimeStamp
         {
-            get { return this._createdTimeStamp.GetValueOrDefault(); }
+            get { return this._createdTimeStamp; }
             set { this._createdTimeStamp = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// The time, in milliseconds since the epoch, when the code review was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimeStamp
+        public DateTime? LastUpdatedTimeStamp
         {
-            get { return this._lastUpdatedTimeStamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimeStamp; }
             set { this._lastUpdatedTimeStamp = value; }
         }
 

@@ -87,7 +87,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaximumPageSize())
                 {
                     context.Writer.WritePropertyName("maximumPageSize");
-                    context.Writer.Write(publicRequest.MaximumPageSize);
+                    context.Writer.Write(publicRequest.MaximumPageSize.Value);
                 }
 
                 if(publicRequest.IsSetNextPageToken())
@@ -99,7 +99,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReverseOrder())
                 {
                     context.Writer.WritePropertyName("reverseOrder");
-                    context.Writer.Write(publicRequest.ReverseOrder);
+                    context.Writer.Write(publicRequest.ReverseOrder.Value);
                 }
 
                 writer.WriteObjectEnd();

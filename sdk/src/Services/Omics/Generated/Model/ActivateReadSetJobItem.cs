@@ -45,9 +45,9 @@ namespace Amazon.Omics.Model
         /// When the job completed.
         /// </para>
         /// </summary>
-        public DateTime CompletionTime
+        public DateTime? CompletionTime
         {
-            get { return this._completionTime.GetValueOrDefault(); }
+            get { return this._completionTime; }
             set { this._completionTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

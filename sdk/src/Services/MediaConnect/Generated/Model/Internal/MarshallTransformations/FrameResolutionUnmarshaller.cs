@@ -65,13 +65,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("frameHeight", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FrameHeight = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("frameWidth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FrameWidth = unmarshaller.Unmarshall(context);
                     continue;
                 }

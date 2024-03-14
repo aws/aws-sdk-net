@@ -48,7 +48,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObjectCount())
             {
                 context.Writer.WritePropertyName("ObjectCount");
-                context.Writer.Write(requestObject.ObjectCount);
+                context.Writer.Write(requestObject.ObjectCount.Value);
             }
 
             if(requestObject.IsSetRange())

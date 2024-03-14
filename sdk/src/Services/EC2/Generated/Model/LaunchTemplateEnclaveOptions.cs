@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// Nitro Enclaves; otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

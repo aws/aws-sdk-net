@@ -66,9 +66,9 @@ namespace Amazon.LicenseManager.Model
         /// Failure time.
         /// </para>
         /// </summary>
-        public DateTime FailureTime
+        public DateTime? FailureTime
         {
-            get { return this._failureTime.GetValueOrDefault(); }
+            get { return this._failureTime; }
             set { this._failureTime = value; }
         }
 

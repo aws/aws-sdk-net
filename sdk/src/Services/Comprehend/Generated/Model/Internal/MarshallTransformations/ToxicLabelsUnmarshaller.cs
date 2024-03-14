@@ -71,7 +71,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Toxicity", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Toxicity = unmarshaller.Unmarshall(context);
                     continue;
                 }

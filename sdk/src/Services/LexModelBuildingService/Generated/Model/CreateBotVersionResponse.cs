@@ -117,9 +117,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// Lex FAQ.</a> 
         /// </para>
         /// </summary>
-        public bool ChildDirected
+        public bool? ChildDirected
         {
-            get { return this._childDirected.GetValueOrDefault(); }
+            get { return this._childDirected; }
             set { this._childDirected = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date when the bot version was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// for sentiment analysis.
         /// </para>
         /// </summary>
-        public bool DetectSentiment
+        public bool? DetectSentiment
         {
-            get { return this._detectSentiment.GetValueOrDefault(); }
+            get { return this._detectSentiment; }
             set { this._detectSentiment = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// bot is using the improvements, otherwise, <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableModelImprovements
+        public bool? EnableModelImprovements
         {
-            get { return this._enableModelImprovements.GetValueOrDefault(); }
+            get { return this._enableModelImprovements; }
             set { this._enableModelImprovements = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=86400)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 
@@ -286,9 +286,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date when the <c>$LATEST</c> version of this bot was updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 

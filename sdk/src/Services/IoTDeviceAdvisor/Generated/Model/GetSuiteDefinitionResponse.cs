@@ -48,9 +48,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Date (in Unix epoch time) when the suite definition was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Date (in Unix epoch time) when the suite definition was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 

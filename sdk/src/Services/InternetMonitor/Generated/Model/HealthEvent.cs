@@ -52,9 +52,9 @@ namespace Amazon.InternetMonitor.Model
         /// When the health event was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.InternetMonitor.Model
         /// end time is not set.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double HealthScoreThreshold
+        public double? HealthScoreThreshold
         {
-            get { return this._healthScoreThreshold.GetValueOrDefault(); }
+            get { return this._healthScoreThreshold; }
             set { this._healthScoreThreshold = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.InternetMonitor.Model
         /// client location to the Amazon Web Services location using this client network.
         /// </para>
         /// </summary>
-        public double PercentOfTotalTrafficImpacted
+        public double? PercentOfTotalTrafficImpacted
         {
-            get { return this._percentOfTotalTrafficImpacted.GetValueOrDefault(); }
+            get { return this._percentOfTotalTrafficImpacted; }
             set { this._percentOfTotalTrafficImpacted = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

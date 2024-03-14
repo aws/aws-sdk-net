@@ -99,13 +99,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPackageCleanup())
                 {
                     context.Writer.WritePropertyName("packageCleanup");
-                    context.Writer.Write(publicRequest.PackageCleanup);
+                    context.Writer.Write(publicRequest.PackageCleanup.Value);
                 }
 
                 if(publicRequest.IsSetRebootAfterUse())
                 {
                     context.Writer.WritePropertyName("rebootAfterUse");
-                    context.Writer.Write(publicRequest.RebootAfterUse);
+                    context.Writer.Write(publicRequest.RebootAfterUse.Value);
                 }
 
                 writer.WriteObjectEnd();

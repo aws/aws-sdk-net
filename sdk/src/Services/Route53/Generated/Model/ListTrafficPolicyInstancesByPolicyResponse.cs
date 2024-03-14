@@ -132,9 +132,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 

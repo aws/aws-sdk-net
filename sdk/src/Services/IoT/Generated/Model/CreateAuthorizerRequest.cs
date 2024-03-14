@@ -100,9 +100,9 @@ namespace Amazon.IoT.Model
         /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableCachingForHttp
+        public bool? EnableCachingForHttp
         {
-            get { return this._enableCachingForHttp.GetValueOrDefault(); }
+            get { return this._enableCachingForHttp; }
             set { this._enableCachingForHttp = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.IoT.Model
         /// Specifies whether IoT validates the token signature in an authorization request.
         /// </para>
         /// </summary>
-        public bool SigningDisabled
+        public bool? SigningDisabled
         {
-            get { return this._signingDisabled.GetValueOrDefault(); }
+            get { return this._signingDisabled; }
             set { this._signingDisabled = value; }
         }
 

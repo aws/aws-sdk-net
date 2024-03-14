@@ -60,7 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureDdls())
             {
                 context.Writer.WritePropertyName("CaptureDdls");
-                context.Writer.Write(requestObject.CaptureDdls);
+                context.Writer.Write(requestObject.CaptureDdls.Value);
             }
 
             if(requestObject.IsSetDatabaseMode())
@@ -84,25 +84,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecuteTimeout())
             {
                 context.Writer.WritePropertyName("ExecuteTimeout");
-                context.Writer.Write(requestObject.ExecuteTimeout);
+                context.Writer.Write(requestObject.ExecuteTimeout.Value);
             }
 
             if(requestObject.IsSetFailTasksOnLobTruncation())
             {
                 context.Writer.WritePropertyName("FailTasksOnLobTruncation");
-                context.Writer.Write(requestObject.FailTasksOnLobTruncation);
+                context.Writer.Write(requestObject.FailTasksOnLobTruncation.Value);
             }
 
             if(requestObject.IsSetHeartbeatEnable())
             {
                 context.Writer.WritePropertyName("HeartbeatEnable");
-                context.Writer.Write(requestObject.HeartbeatEnable);
+                context.Writer.Write(requestObject.HeartbeatEnable.Value);
             }
 
             if(requestObject.IsSetHeartbeatFrequency())
             {
                 context.Writer.WritePropertyName("HeartbeatFrequency");
-                context.Writer.Write(requestObject.HeartbeatFrequency);
+                context.Writer.Write(requestObject.HeartbeatFrequency.Value);
             }
 
             if(requestObject.IsSetHeartbeatSchema())
@@ -114,13 +114,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMapBooleanAsBoolean())
             {
                 context.Writer.WritePropertyName("MapBooleanAsBoolean");
-                context.Writer.Write(requestObject.MapBooleanAsBoolean);
+                context.Writer.Write(requestObject.MapBooleanAsBoolean.Value);
             }
 
             if(requestObject.IsSetMapJsonbAsClob())
             {
                 context.Writer.WritePropertyName("MapJsonbAsClob");
-                context.Writer.Write(requestObject.MapJsonbAsClob);
+                context.Writer.Write(requestObject.MapJsonbAsClob.Value);
             }
 
             if(requestObject.IsSetMapLongVarcharAs())
@@ -132,7 +132,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize);
+                context.Writer.Write(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetPassword())
@@ -150,7 +150,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
@@ -180,7 +180,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrimSpaceInChar())
             {
                 context.Writer.WritePropertyName("TrimSpaceInChar");
-                context.Writer.Write(requestObject.TrimSpaceInChar);
+                context.Writer.Write(requestObject.TrimSpaceInChar.Value);
             }
 
             if(requestObject.IsSetUsername())

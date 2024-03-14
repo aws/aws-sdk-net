@@ -48,9 +48,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ActiveAgentlessCollectors
+        public int? ActiveAgentlessCollectors
         {
-            get { return this._activeAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._activeAgentlessCollectors; }
             set { this._activeAgentlessCollectors = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DenyListedAgentlessCollectors
+        public int? DenyListedAgentlessCollectors
         {
-            get { return this._denyListedAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._denyListedAgentlessCollectors; }
             set { this._denyListedAgentlessCollectors = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HealthyAgentlessCollectors
+        public int? HealthyAgentlessCollectors
         {
-            get { return this._healthyAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._healthyAgentlessCollectors; }
             set { this._healthyAgentlessCollectors = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ShutdownAgentlessCollectors
+        public int? ShutdownAgentlessCollectors
         {
-            get { return this._shutdownAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._shutdownAgentlessCollectors; }
             set { this._shutdownAgentlessCollectors = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalAgentlessCollectors
+        public int? TotalAgentlessCollectors
         {
-            get { return this._totalAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._totalAgentlessCollectors; }
             set { this._totalAgentlessCollectors = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnhealthyAgentlessCollectors
+        public int? UnhealthyAgentlessCollectors
         {
-            get { return this._unhealthyAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._unhealthyAgentlessCollectors; }
             set { this._unhealthyAgentlessCollectors = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnknownAgentlessCollectors
+        public int? UnknownAgentlessCollectors
         {
-            get { return this._unknownAgentlessCollectors.GetValueOrDefault(); }
+            get { return this._unknownAgentlessCollectors; }
             set { this._unknownAgentlessCollectors = value; }
         }
 

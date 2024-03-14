@@ -127,9 +127,9 @@ namespace Amazon.SageMaker.Model
         /// no inbound or outbound network calls can be made to or from the model containers.
         /// </para>
         /// </summary>
-        public bool EnableNetworkIsolation
+        public bool? EnableNetworkIsolation
         {
-            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            get { return this._enableNetworkIsolation; }
             set { this._enableNetworkIsolation = value; }
         }
 

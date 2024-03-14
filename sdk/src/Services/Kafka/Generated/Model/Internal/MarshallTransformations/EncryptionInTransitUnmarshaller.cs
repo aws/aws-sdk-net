@@ -71,7 +71,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("inCluster", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InCluster = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -69,9 +69,9 @@ namespace Amazon.SecurityHub.Model
         /// If you provide <c>Days</c>, you cannot provide <c>Date</c>.
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxTokens
+        public int? MaxTokens
         {
-            get { return this._maxTokens.GetValueOrDefault(); }
+            get { return this._maxTokens; }
             set { this._maxTokens = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.BedrockAgent.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=99)]
-        public int OverlapPercentage
+        public int? OverlapPercentage
         {
-            get { return this._overlapPercentage.GetValueOrDefault(); }
+            get { return this._overlapPercentage; }
             set { this._overlapPercentage = value; }
         }
 

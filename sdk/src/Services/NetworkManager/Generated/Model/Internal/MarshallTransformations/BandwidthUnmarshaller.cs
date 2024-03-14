@@ -65,13 +65,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DownloadSpeed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DownloadSpeed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UploadSpeed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UploadSpeed = unmarshaller.Unmarshall(context);
                     continue;
                 }

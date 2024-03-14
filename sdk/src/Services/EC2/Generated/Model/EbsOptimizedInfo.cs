@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.
         /// </para>
         /// </summary>
-        public int BaselineBandwidthInMbps
+        public int? BaselineBandwidthInMbps
         {
-            get { return this._baselineBandwidthInMbps.GetValueOrDefault(); }
+            get { return this._baselineBandwidthInMbps; }
             set { this._baselineBandwidthInMbps = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// type.
         /// </para>
         /// </summary>
-        public int BaselineIops
+        public int? BaselineIops
         {
-            get { return this._baselineIops.GetValueOrDefault(); }
+            get { return this._baselineIops; }
             set { this._baselineIops = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// The baseline throughput performance for an EBS-optimized instance type, in MB/s.
         /// </para>
         /// </summary>
-        public double BaselineThroughputInMBps
+        public double? BaselineThroughputInMBps
         {
-            get { return this._baselineThroughputInMBps.GetValueOrDefault(); }
+            get { return this._baselineThroughputInMBps; }
             set { this._baselineThroughputInMBps = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.EC2.Model
         /// The maximum bandwidth performance for an EBS-optimized instance type, in Mbps.
         /// </para>
         /// </summary>
-        public int MaximumBandwidthInMbps
+        public int? MaximumBandwidthInMbps
         {
-            get { return this._maximumBandwidthInMbps.GetValueOrDefault(); }
+            get { return this._maximumBandwidthInMbps; }
             set { this._maximumBandwidthInMbps = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.EC2.Model
         /// type.
         /// </para>
         /// </summary>
-        public int MaximumIops
+        public int? MaximumIops
         {
-            get { return this._maximumIops.GetValueOrDefault(); }
+            get { return this._maximumIops; }
             set { this._maximumIops = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.EC2.Model
         /// The maximum throughput performance for an EBS-optimized instance type, in MB/s.
         /// </para>
         /// </summary>
-        public double MaximumThroughputInMBps
+        public double? MaximumThroughputInMBps
         {
-            get { return this._maximumThroughputInMBps.GetValueOrDefault(); }
+            get { return this._maximumThroughputInMBps; }
             set { this._maximumThroughputInMBps = value; }
         }
 

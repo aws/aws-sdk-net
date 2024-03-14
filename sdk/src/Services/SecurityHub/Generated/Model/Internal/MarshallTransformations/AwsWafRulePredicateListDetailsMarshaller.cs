@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNegated())
             {
                 context.Writer.WritePropertyName("Negated");
-                context.Writer.Write(requestObject.Negated);
+                context.Writer.Write(requestObject.Negated.Value);
             }
 
             if(requestObject.IsSetType())

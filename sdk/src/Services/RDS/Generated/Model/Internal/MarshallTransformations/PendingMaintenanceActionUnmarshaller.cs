@@ -62,13 +62,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("AutoAppliedAfterDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.AutoAppliedAfterDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CurrentApplyDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CurrentApplyDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ForcedApplyDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ForcedApplyDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

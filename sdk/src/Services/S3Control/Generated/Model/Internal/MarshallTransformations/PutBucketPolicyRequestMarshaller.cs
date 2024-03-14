@@ -76,7 +76,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("PutBucketPolicyRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 if(publicRequest.IsSetPolicy())
-                    xmlWriter.WriteElementString("Policy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Policy));                    
+                    xmlWriter.WriteElementString("Policy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Policy));
 
 
                 xmlWriter.WriteEndElement();

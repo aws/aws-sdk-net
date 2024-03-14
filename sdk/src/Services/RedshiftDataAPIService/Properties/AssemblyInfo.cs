@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.RedshiftDataAPIService")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 #elif NETCOREAPP3_1

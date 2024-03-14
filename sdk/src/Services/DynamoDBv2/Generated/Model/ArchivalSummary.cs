@@ -65,9 +65,9 @@ namespace Amazon.DynamoDBv2.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime ArchivalDateTime
+        public DateTime? ArchivalDateTime
         {
-            get { return this._archivalDateTime.GetValueOrDefault(); }
+            get { return this._archivalDateTime; }
             set { this._archivalDateTime = value; }
         }
 

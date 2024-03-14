@@ -89,13 +89,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DateCreated", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.DateCreated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateUpdated", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.DateUpdated = unmarshaller.Unmarshall(context);
                         continue;
                     }

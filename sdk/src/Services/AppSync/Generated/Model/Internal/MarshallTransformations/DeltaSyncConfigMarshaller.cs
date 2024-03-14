@@ -48,7 +48,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseTableTTL())
             {
                 context.Writer.WritePropertyName("baseTableTTL");
-                context.Writer.Write(requestObject.BaseTableTTL);
+                context.Writer.Write(requestObject.BaseTableTTL.Value);
             }
 
             if(requestObject.IsSetDeltaSyncTableName())
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeltaSyncTableTTL())
             {
                 context.Writer.WritePropertyName("deltaSyncTableTTL");
-                context.Writer.Write(requestObject.DeltaSyncTableTTL);
+                context.Writer.Write(requestObject.DeltaSyncTableTTL.Value);
             }
 
         }

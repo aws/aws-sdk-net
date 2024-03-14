@@ -45,9 +45,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxFiles
+        public int? MaxFiles
         {
-            get { return this._maxFiles.GetValueOrDefault(); }
+            get { return this._maxFiles; }
             set { this._maxFiles = value; }
         }
 

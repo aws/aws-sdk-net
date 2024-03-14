@@ -75,9 +75,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public double FixedRate
+        public double? FixedRate
         {
-            get { return this._fixedRate.GetValueOrDefault(); }
+            get { return this._fixedRate; }
             set { this._fixedRate = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9999)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ReservoirSize
+        public int? ReservoirSize
         {
-            get { return this._reservoirSize.GetValueOrDefault(); }
+            get { return this._reservoirSize; }
             set { this._reservoirSize = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

@@ -48,25 +48,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetLeft())
             {
                 context.Writer.WritePropertyName("Left");
-                context.Writer.Write(requestObject.Left);
+                context.Writer.Write(requestObject.Left.Value);
             }
 
             if(requestObject.IsSetTop())
             {
                 context.Writer.WritePropertyName("Top");
-                context.Writer.Write(requestObject.Top);
+                context.Writer.Write(requestObject.Top.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
         }

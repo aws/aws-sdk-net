@@ -43,9 +43,9 @@ namespace Amazon.AppRunner.Model
         /// from only within an Amazon VPC set it to <c>False</c>. 
         /// </para>
         /// </summary>
-        public bool IsPubliclyAccessible
+        public bool? IsPubliclyAccessible
         {
-            get { return this._isPubliclyAccessible.GetValueOrDefault(); }
+            get { return this._isPubliclyAccessible; }
             set { this._isPubliclyAccessible = value; }
         }
 

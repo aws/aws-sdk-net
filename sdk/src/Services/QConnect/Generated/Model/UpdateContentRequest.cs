@@ -132,9 +132,9 @@ namespace Amazon.QConnect.Model
         /// Unset the existing <c>overrideLinkOutUri</c> if it exists.
         /// </para>
         /// </summary>
-        public bool RemoveOverrideLinkOutUri
+        public bool? RemoveOverrideLinkOutUri
         {
-            get { return this._removeOverrideLinkOutUri.GetValueOrDefault(); }
+            get { return this._removeOverrideLinkOutUri; }
             set { this._removeOverrideLinkOutUri = value; }
         }
 

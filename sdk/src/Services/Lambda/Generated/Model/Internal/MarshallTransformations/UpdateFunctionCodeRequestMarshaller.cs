@@ -82,7 +82,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetImageUri())
@@ -94,7 +94,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublish())
                 {
                     context.Writer.WritePropertyName("Publish");
-                    context.Writer.Write(publicRequest.Publish);
+                    context.Writer.Write(publicRequest.Publish.Value);
                 }
 
                 if(publicRequest.IsSetRevisionId())

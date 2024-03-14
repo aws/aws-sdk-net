@@ -50,9 +50,9 @@ namespace Amazon.MediaConvert.Model
         /// signals, see the BBC WHP 198 and 051 white papers.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public int AudioDescriptionAudioChannel
+        public int? AudioDescriptionAudioChannel
         {
-            get { return this._audioDescriptionAudioChannel.GetValueOrDefault(); }
+            get { return this._audioDescriptionAudioChannel; }
             set { this._audioDescriptionAudioChannel = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.MediaConvert.Model
         /// description signals, see the BBC WHP 198 and 051 white papers.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public int AudioDescriptionDataChannel
+        public int? AudioDescriptionDataChannel
         {
-            get { return this._audioDescriptionDataChannel.GetValueOrDefault(); }
+            get { return this._audioDescriptionDataChannel; }
             set { this._audioDescriptionDataChannel = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.MediaConvert.Model
         /// of input channels in your output mapping.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public int ChannelsIn
+        public int? ChannelsIn
         {
-            get { return this._channelsIn.GetValueOrDefault(); }
+            get { return this._channelsIn; }
             set { this._channelsIn = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.MediaConvert.Model
         /// in your output mapping.
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public int ChannelsOut
+        public int? ChannelsOut
         {
-            get { return this._channelsOut.GetValueOrDefault(); }
+            get { return this._channelsOut; }
             set { this._channelsOut = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// The default value is <c>False</c>. 
         /// </para>
         /// </summary>
-        public bool BypassPolicyLockoutSafetyCheck
+        public bool? BypassPolicyLockoutSafetyCheck
         {
-            get { return this._bypassPolicyLockoutSafetyCheck.GetValueOrDefault(); }
+            get { return this._bypassPolicyLockoutSafetyCheck; }
             set { this._bypassPolicyLockoutSafetyCheck = value; }
         }
 

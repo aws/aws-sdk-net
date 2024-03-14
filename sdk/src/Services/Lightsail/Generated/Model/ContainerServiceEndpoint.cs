@@ -63,9 +63,9 @@ namespace Amazon.Lightsail.Model
         /// The port of the specified container to which traffic is forwarded to.
         /// </para>
         /// </summary>
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 

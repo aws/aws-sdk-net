@@ -48,7 +48,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlobal())
             {
                 context.Writer.WritePropertyName("Global");
-                context.Writer.Write(requestObject.Global);
+                context.Writer.Write(requestObject.Global.Value);
             }
 
             if(requestObject.IsSetTrackedIsps())

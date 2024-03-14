@@ -65,7 +65,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("badgeEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BadgeEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -43,9 +43,9 @@ namespace Amazon.Inspector2.Model
         /// The number of checks that failed.
         /// </para>
         /// </summary>
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Inspector2.Model
         /// The number of checks that passed.
         /// </para>
         /// </summary>
-        public int Passed
+        public int? Passed
         {
-            get { return this._passed.GetValueOrDefault(); }
+            get { return this._passed; }
             set { this._passed = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.Inspector2.Model
         /// The number of checks that were skipped.
         /// </para>
         /// </summary>
-        public int Skipped
+        public int? Skipped
         {
-            get { return this._skipped.GetValueOrDefault(); }
+            get { return this._skipped; }
             set { this._skipped = value; }
         }
 

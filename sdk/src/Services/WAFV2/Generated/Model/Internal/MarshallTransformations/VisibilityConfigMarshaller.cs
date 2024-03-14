@@ -48,7 +48,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled);
+                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetMetricName())
@@ -60,7 +60,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampledRequestsEnabled())
             {
                 context.Writer.WritePropertyName("SampledRequestsEnabled");
-                context.Writer.Write(requestObject.SampledRequestsEnabled);
+                context.Writer.Write(requestObject.SampledRequestsEnabled.Value);
             }
 
         }

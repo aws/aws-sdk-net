@@ -45,9 +45,9 @@ namespace Amazon.BCMDataExports.Model
         /// The time when the execution was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.BCMDataExports.Model
         /// The time when the execution was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.BCMDataExports.Model
         /// The time when the execution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

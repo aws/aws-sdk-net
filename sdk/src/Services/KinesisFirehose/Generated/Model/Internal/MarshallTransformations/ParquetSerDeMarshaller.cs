@@ -48,7 +48,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
-                context.Writer.Write(requestObject.BlockSizeBytes);
+                context.Writer.Write(requestObject.BlockSizeBytes.Value);
             }
 
             if(requestObject.IsSetCompression())
@@ -60,19 +60,19 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableDictionaryCompression())
             {
                 context.Writer.WritePropertyName("EnableDictionaryCompression");
-                context.Writer.Write(requestObject.EnableDictionaryCompression);
+                context.Writer.Write(requestObject.EnableDictionaryCompression.Value);
             }
 
             if(requestObject.IsSetMaxPaddingBytes())
             {
                 context.Writer.WritePropertyName("MaxPaddingBytes");
-                context.Writer.Write(requestObject.MaxPaddingBytes);
+                context.Writer.Write(requestObject.MaxPaddingBytes.Value);
             }
 
             if(requestObject.IsSetPageSizeBytes())
             {
                 context.Writer.WritePropertyName("PageSizeBytes");
-                context.Writer.Write(requestObject.PageSizeBytes);
+                context.Writer.Write(requestObject.PageSizeBytes.Value);
             }
 
             if(requestObject.IsSetWriterVersion())

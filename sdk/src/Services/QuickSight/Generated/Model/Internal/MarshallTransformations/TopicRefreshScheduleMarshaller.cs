@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasedOnSpiceSchedule())
             {
                 context.Writer.WritePropertyName("BasedOnSpiceSchedule");
-                context.Writer.Write(requestObject.BasedOnSpiceSchedule);
+                context.Writer.Write(requestObject.BasedOnSpiceSchedule.Value);
             }
 
             if(requestObject.IsSetIsEnabled())
             {
                 context.Writer.WritePropertyName("IsEnabled");
-                context.Writer.Write(requestObject.IsEnabled);
+                context.Writer.Write(requestObject.IsEnabled.Value);
             }
 
             if(requestObject.IsSetRepeatAt())
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartingAt())
             {
                 context.Writer.WritePropertyName("StartingAt");
-                context.Writer.Write(requestObject.StartingAt);
+                context.Writer.Write(requestObject.StartingAt.Value);
             }
 
             if(requestObject.IsSetTimezone())

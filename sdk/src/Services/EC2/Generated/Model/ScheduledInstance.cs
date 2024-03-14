@@ -73,9 +73,9 @@ namespace Amazon.EC2.Model
         /// The date when the Scheduled Instance was purchased.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.EC2.Model
         /// The number of instances.
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.EC2.Model
         /// The time for the next schedule to start.
         /// </para>
         /// </summary>
-        public DateTime NextSlotStartTime
+        public DateTime? NextSlotStartTime
         {
-            get { return this._nextSlotStartTime.GetValueOrDefault(); }
+            get { return this._nextSlotStartTime; }
             set { this._nextSlotStartTime = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.EC2.Model
         /// The time that the previous schedule ended or will end.
         /// </para>
         /// </summary>
-        public DateTime PreviousSlotEndTime
+        public DateTime? PreviousSlotEndTime
         {
-            get { return this._previousSlotEndTime.GetValueOrDefault(); }
+            get { return this._previousSlotEndTime; }
             set { this._previousSlotEndTime = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.EC2.Model
         /// The number of hours in the schedule.
         /// </para>
         /// </summary>
-        public int SlotDurationInHours
+        public int? SlotDurationInHours
         {
-            get { return this._slotDurationInHours.GetValueOrDefault(); }
+            get { return this._slotDurationInHours; }
             set { this._slotDurationInHours = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.EC2.Model
         /// The end date for the Scheduled Instance.
         /// </para>
         /// </summary>
-        public DateTime TermEndDate
+        public DateTime? TermEndDate
         {
-            get { return this._termEndDate.GetValueOrDefault(); }
+            get { return this._termEndDate; }
             set { this._termEndDate = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.EC2.Model
         /// The start date for the Scheduled Instance.
         /// </para>
         /// </summary>
-        public DateTime TermStartDate
+        public DateTime? TermStartDate
         {
-            get { return this._termStartDate.GetValueOrDefault(); }
+            get { return this._termStartDate; }
             set { this._termStartDate = value; }
         }
 
@@ -307,9 +307,9 @@ namespace Amazon.EC2.Model
         /// The total number of hours for a single instance for the entire term.
         /// </para>
         /// </summary>
-        public int TotalScheduledInstanceHours
+        public int? TotalScheduledInstanceHours
         {
-            get { return this._totalScheduledInstanceHours.GetValueOrDefault(); }
+            get { return this._totalScheduledInstanceHours; }
             set { this._totalScheduledInstanceHours = value; }
         }
 

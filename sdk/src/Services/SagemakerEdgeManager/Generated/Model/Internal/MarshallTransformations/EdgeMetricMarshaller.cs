@@ -60,13 +60,13 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.Write(requestObject.Timestamp.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.Write(requestObject.Value.Value);
             }
 
         }

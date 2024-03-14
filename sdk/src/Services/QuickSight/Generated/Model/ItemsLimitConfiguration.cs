@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// of slices that are displayed in a pie chart.
         /// </para>
         /// </summary>
-        public long ItemsLimit
+        public long? ItemsLimit
         {
-            get { return this._itemsLimit.GetValueOrDefault(); }
+            get { return this._itemsLimit; }
             set { this._itemsLimit = value; }
         }
 

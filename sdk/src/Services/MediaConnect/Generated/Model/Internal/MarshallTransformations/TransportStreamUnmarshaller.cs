@@ -65,7 +65,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("channels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pid", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Pid = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sampleRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sampleSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SampleSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

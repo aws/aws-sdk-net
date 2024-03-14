@@ -84,9 +84,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// change this value using the <a>UpdatePool</a> action.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 

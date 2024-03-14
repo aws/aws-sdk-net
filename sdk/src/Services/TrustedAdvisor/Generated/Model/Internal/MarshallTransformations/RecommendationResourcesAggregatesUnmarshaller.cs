@@ -65,19 +65,19 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("errorCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ErrorCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("okCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OkCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("warningCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WarningCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

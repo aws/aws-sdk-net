@@ -71,7 +71,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AnomalyGroupScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AnomalyGroupScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

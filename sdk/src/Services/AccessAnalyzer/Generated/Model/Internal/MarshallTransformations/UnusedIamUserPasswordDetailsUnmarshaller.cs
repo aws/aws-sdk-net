@@ -65,7 +65,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastAccessed", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAccessed = unmarshaller.Unmarshall(context);
                     continue;
                 }

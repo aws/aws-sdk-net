@@ -48,19 +48,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpPort())
             {
                 context.Writer.WritePropertyName("HttpPort");
-                context.Writer.Write(requestObject.HttpPort);
+                context.Writer.Write(requestObject.HttpPort.Value);
             }
 
             if(requestObject.IsSetHttpsPort())
             {
                 context.Writer.WritePropertyName("HttpsPort");
-                context.Writer.Write(requestObject.HttpsPort);
+                context.Writer.Write(requestObject.HttpsPort.Value);
             }
 
             if(requestObject.IsSetOriginKeepaliveTimeout())
             {
                 context.Writer.WritePropertyName("OriginKeepaliveTimeout");
-                context.Writer.Write(requestObject.OriginKeepaliveTimeout);
+                context.Writer.Write(requestObject.OriginKeepaliveTimeout.Value);
             }
 
             if(requestObject.IsSetOriginProtocolPolicy())
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOriginReadTimeout())
             {
                 context.Writer.WritePropertyName("OriginReadTimeout");
-                context.Writer.Write(requestObject.OriginReadTimeout);
+                context.Writer.Write(requestObject.OriginReadTimeout.Value);
             }
 
             if(requestObject.IsSetOriginSslProtocols())

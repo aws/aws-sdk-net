@@ -50,9 +50,9 @@ namespace Amazon.Backup.Model
         /// represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

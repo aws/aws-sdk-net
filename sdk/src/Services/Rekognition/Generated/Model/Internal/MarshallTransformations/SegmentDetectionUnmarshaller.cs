@@ -65,13 +65,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DurationFrames", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationFrames = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndFrameNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EndFrameNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndTimestampMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EndTimestampMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartFrameNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartFrameNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartTimestampMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartTimestampMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }

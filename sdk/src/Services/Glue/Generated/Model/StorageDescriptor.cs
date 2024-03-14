@@ -109,9 +109,9 @@ namespace Amazon.Glue.Model
         ///  <c>True</c> if the data in the table is compressed, or <c>False</c> if not.
         /// </para>
         /// </summary>
-        public bool Compressed
+        public bool? Compressed
         {
-            get { return this._compressed.GetValueOrDefault(); }
+            get { return this._compressed; }
             set { this._compressed = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Glue.Model
         /// Must be specified if the table contains any dimension columns.
         /// </para>
         /// </summary>
-        public int NumberOfBuckets
+        public int? NumberOfBuckets
         {
-            get { return this._numberOfBuckets.GetValueOrDefault(); }
+            get { return this._numberOfBuckets; }
             set { this._numberOfBuckets = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.Glue.Model
         ///  <c>True</c> if the table data is stored in subdirectories, or <c>False</c> if not.
         /// </para>
         /// </summary>
-        public bool StoredAsSubDirectories
+        public bool? StoredAsSubDirectories
         {
-            get { return this._storedAsSubDirectories.GetValueOrDefault(); }
+            get { return this._storedAsSubDirectories; }
             set { this._storedAsSubDirectories = value; }
         }
 

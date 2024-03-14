@@ -63,9 +63,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 

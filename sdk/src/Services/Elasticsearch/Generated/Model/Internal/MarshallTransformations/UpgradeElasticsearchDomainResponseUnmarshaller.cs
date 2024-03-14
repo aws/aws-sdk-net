@@ -65,7 +65,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PerformCheckOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PerformCheckOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }

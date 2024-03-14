@@ -65,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,13 +113,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasMoreDestinations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasMoreDestinations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdateTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

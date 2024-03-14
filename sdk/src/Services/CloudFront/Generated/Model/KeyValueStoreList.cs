@@ -63,9 +63,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

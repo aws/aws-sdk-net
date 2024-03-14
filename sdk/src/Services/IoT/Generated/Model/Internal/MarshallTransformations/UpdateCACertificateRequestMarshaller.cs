@@ -88,7 +88,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveAutoRegistration())
                 {
                     context.Writer.WritePropertyName("removeAutoRegistration");
-                    context.Writer.Write(publicRequest.RemoveAutoRegistration);
+                    context.Writer.Write(publicRequest.RemoveAutoRegistration.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -100,9 +100,9 @@ namespace Amazon.LexModelsV2.Model
         /// The duration in milliseconds of the audio associated with the utterance.
         /// </para>
         /// </summary>
-        public long AudioVoiceDurationMillis
+        public long? AudioVoiceDurationMillis
         {
-            get { return this._audioVoiceDurationMillis.GetValueOrDefault(); }
+            get { return this._audioVoiceDurationMillis; }
             set { this._audioVoiceDurationMillis = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.LexModelsV2.Model
         /// conversation is defined as a unique combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
-        public DateTime ConversationEndTime
+        public DateTime? ConversationEndTime
         {
-            get { return this._conversationEndTime.GetValueOrDefault(); }
+            get { return this._conversationEndTime; }
             set { this._conversationEndTime = value; }
         }
 
@@ -231,9 +231,9 @@ namespace Amazon.LexModelsV2.Model
         /// conversation is defined as a unique combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
-        public DateTime ConversationStartTime
+        public DateTime? ConversationStartTime
         {
-            get { return this._conversationStartTime.GetValueOrDefault(); }
+            get { return this._conversationStartTime; }
             set { this._conversationStartTime = value; }
         }
 
@@ -506,9 +506,9 @@ namespace Amazon.LexModelsV2.Model
         /// The date and time when the utterance took place.
         /// </para>
         /// </summary>
-        public DateTime UtteranceTimestamp
+        public DateTime? UtteranceTimestamp
         {
-            get { return this._utteranceTimestamp.GetValueOrDefault(); }
+            get { return this._utteranceTimestamp; }
             set { this._utteranceTimestamp = value; }
         }
 
@@ -524,9 +524,9 @@ namespace Amazon.LexModelsV2.Model
         /// Specifies whether the bot understood the utterance or not.
         /// </para>
         /// </summary>
-        public bool UtteranceUnderstood
+        public bool? UtteranceUnderstood
         {
-            get { return this._utteranceUnderstood.GetValueOrDefault(); }
+            get { return this._utteranceUnderstood; }
             set { this._utteranceUnderstood = value; }
         }
 

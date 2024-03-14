@@ -109,9 +109,9 @@ namespace Amazon.IotData.Model
         /// Amazon Web Services Reference Guide.
         /// </para>
         /// </summary>
-        public long MessageExpiry
+        public long? MessageExpiry
         {
-            get { return this._messageExpiry.GetValueOrDefault(); }
+            get { return this._messageExpiry; }
             set { this._messageExpiry = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.IotData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public int Qos
+        public int? Qos
         {
-            get { return this._qos.GetValueOrDefault(); }
+            get { return this._qos; }
             set { this._qos = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.IotData.Model
         /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Retain
+        public bool? Retain
         {
-            get { return this._retain.GetValueOrDefault(); }
+            get { return this._retain; }
             set { this._retain = value; }
         }
 

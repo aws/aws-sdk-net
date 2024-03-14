@@ -62,9 +62,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventDate
+        public DateTime? EventDate
         {
-            get { return this._eventDate.GetValueOrDefault(); }
+            get { return this._eventDate; }
             set { this._eventDate = value; }
         }
 

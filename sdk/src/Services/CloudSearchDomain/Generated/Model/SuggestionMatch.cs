@@ -61,9 +61,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// The relevance score of a suggested match.
         /// </para>
         /// </summary>
-        public long Score
+        public long? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

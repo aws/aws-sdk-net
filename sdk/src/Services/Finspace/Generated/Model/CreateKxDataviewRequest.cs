@@ -56,9 +56,9 @@ namespace Amazon.Finspace.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 

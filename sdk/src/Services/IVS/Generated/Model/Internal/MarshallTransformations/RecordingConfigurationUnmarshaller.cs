@@ -83,7 +83,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

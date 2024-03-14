@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("KeyGroupConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.KeyGroupConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Comment));
 
                     var publicRequestKeyGroupConfigItems = publicRequest.KeyGroupConfig.Items;
                     if (publicRequestKeyGroupConfigItems != null && publicRequestKeyGroupConfigItems.Count > 0) 
@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.KeyGroupConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.KeyGroupConfig.Name));
 
 
                     xmlWriter.WriteEndElement();

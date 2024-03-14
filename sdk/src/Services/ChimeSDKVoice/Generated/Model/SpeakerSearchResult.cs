@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float ConfidenceScore
+        public float? ConfidenceScore
         {
-            get { return this._confidenceScore.GetValueOrDefault(); }
+            get { return this._confidenceScore; }
             set { this._confidenceScore = value; }
         }
 

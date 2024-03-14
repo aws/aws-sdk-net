@@ -89,7 +89,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

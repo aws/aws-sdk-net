@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool IncludePublicKey
+        public bool? IncludePublicKey
         {
-            get { return this._includePublicKey.GetValueOrDefault(); }
+            get { return this._includePublicKey; }
             set { this._includePublicKey = value; }
         }
 

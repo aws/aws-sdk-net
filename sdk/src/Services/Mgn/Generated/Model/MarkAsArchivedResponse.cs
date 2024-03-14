@@ -147,9 +147,9 @@ namespace Amazon.Mgn.Model
         /// Source server archived status.
         /// </para>
         /// </summary>
-        public bool IsArchived
+        public bool? IsArchived
         {
-            get { return this._isArchived.GetValueOrDefault(); }
+            get { return this._isArchived; }
             set { this._isArchived = value; }
         }
 

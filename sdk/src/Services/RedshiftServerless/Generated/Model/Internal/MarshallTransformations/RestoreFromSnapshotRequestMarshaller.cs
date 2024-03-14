@@ -76,7 +76,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetManageAdminPassword())
                 {
                     context.Writer.WritePropertyName("manageAdminPassword");
-                    context.Writer.Write(publicRequest.ManageAdminPassword);
+                    context.Writer.Write(publicRequest.ManageAdminPassword.Value);
                 }
 
                 if(publicRequest.IsSetNamespaceName())

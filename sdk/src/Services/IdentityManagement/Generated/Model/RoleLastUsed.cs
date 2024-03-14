@@ -60,9 +60,9 @@ namespace Amazon.IdentityManagement.Model
         /// where data is tracked</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
-        public DateTime LastUsedDate
+        public DateTime? LastUsedDate
         {
-            get { return this._lastUsedDate.GetValueOrDefault(); }
+            get { return this._lastUsedDate; }
             set { this._lastUsedDate = value; }
         }
 

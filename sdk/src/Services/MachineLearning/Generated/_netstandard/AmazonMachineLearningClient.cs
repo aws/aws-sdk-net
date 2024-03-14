@@ -1658,7 +1658,7 @@ namespace Amazon.MachineLearning
         /// A specified resource cannot be located.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
-        public virtual Task<GetDataSourceResponse> GetDataSourceAsync(string dataSourceId, bool verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetDataSourceResponse> GetDataSourceAsync(string dataSourceId, bool? verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetDataSourceRequest();
             request.DataSourceId = dataSourceId;
@@ -1849,7 +1849,7 @@ namespace Amazon.MachineLearning
         /// A specified resource cannot be located.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
-        public virtual Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, bool verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, bool? verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetMLModelRequest();
             request.MLModelId = mlModelId;
@@ -2286,7 +2286,7 @@ namespace Amazon.MachineLearning
         /// A specified resource cannot be located.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
-        public virtual Task<UpdateMLModelResponse> UpdateMLModelAsync(string mlModelId, string mlModelName, float scoreThreshold, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<UpdateMLModelResponse> UpdateMLModelAsync(string mlModelId, string mlModelName, float? scoreThreshold, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateMLModelRequest();
             request.MLModelId = mlModelId;

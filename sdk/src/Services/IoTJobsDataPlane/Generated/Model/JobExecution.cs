@@ -52,9 +52,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// changed to <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
-        public long ApproximateSecondsBeforeTimedOut
+        public long? ApproximateSecondsBeforeTimedOut
         {
-            get { return this._approximateSecondsBeforeTimedOut.GetValueOrDefault(); }
+            get { return this._approximateSecondsBeforeTimedOut; }
             set { this._approximateSecondsBeforeTimedOut = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// be used later in commands that return or update job execution information.
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// 
         /// </para>
         /// </summary>
-        public long LastUpdatedAt
+        public long? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The time, in milliseconds since the epoch, when the job execution was enqueued.
         /// </para>
         /// </summary>
-        public long QueuedAt
+        public long? QueuedAt
         {
-            get { return this._queuedAt.GetValueOrDefault(); }
+            get { return this._queuedAt; }
             set { this._queuedAt = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// The time, in milliseconds since the epoch, when the job execution was started.
         /// </para>
         /// </summary>
-        public long StartedAt
+        public long? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// they are updated by a device.
         /// </para>
         /// </summary>
-        public long VersionNumber
+        public long? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CopyTagsToDataRepositoryAssociations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTagsToDataRepositoryAssociations = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,7 +149,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StorageCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }

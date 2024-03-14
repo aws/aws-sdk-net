@@ -110,9 +110,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float Confidence
+        public float? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 

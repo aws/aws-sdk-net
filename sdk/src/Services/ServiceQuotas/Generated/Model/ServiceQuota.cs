@@ -54,9 +54,9 @@ namespace Amazon.ServiceQuotas.Model
         /// Indicates whether the quota value can be increased.
         /// </para>
         /// </summary>
-        public bool Adjustable
+        public bool? Adjustable
         {
-            get { return this._adjustable.GetValueOrDefault(); }
+            get { return this._adjustable; }
             set { this._adjustable = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.ServiceQuotas.Model
         /// Indicates whether the quota is global.
         /// </para>
         /// </summary>
-        public bool GlobalQuota
+        public bool? GlobalQuota
         {
-            get { return this._globalQuota.GetValueOrDefault(); }
+            get { return this._globalQuota; }
             set { this._globalQuota = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.ServiceQuotas.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000000)]
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

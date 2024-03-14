@@ -45,9 +45,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ErrorCount
+        public long? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long OkCount
+        public long? OkCount
         {
-            get { return this._okCount.GetValueOrDefault(); }
+            get { return this._okCount; }
             set { this._okCount = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.TrustedAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long WarningCount
+        public long? WarningCount
         {
-            get { return this._warningCount.GetValueOrDefault(); }
+            get { return this._warningCount; }
             set { this._warningCount = value; }
         }
 

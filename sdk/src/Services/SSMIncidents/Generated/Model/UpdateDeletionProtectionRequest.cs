@@ -84,9 +84,9 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeletionProtected
+        public bool? DeletionProtected
         {
-            get { return this._deletionProtected.GetValueOrDefault(); }
+            get { return this._deletionProtected; }
             set { this._deletionProtected = value; }
         }
 

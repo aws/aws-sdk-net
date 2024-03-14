@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionOrder())
             {
                 context.Writer.WritePropertyName("ExecutionOrder");
-                context.Writer.Write(requestObject.ExecutionOrder);
+                context.Writer.Write(requestObject.ExecutionOrder.Value);
             }
 
             if(requestObject.IsSetFallbackAction())

@@ -65,9 +65,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp for when the request was run.
         /// </para>
         /// </summary>
-        public DateTime DateTime
+        public DateTime? DateTime
         {
-            get { return this._dateTime.GetValueOrDefault(); }
+            get { return this._dateTime; }
             set { this._dateTime = value; }
         }
 

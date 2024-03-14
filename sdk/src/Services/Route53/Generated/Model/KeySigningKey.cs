@@ -147,9 +147,9 @@ namespace Amazon.Route53.Model
         /// is always 257.
         /// </para>
         /// </summary>
-        public int Flag
+        public int? Flag
         {
-            get { return this._flag.GetValueOrDefault(); }
+            get { return this._flag; }
             set { this._flag = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.Route53.Model
         /// 3.1</a>. 
         /// </para>
         /// </summary>
-        public int SigningAlgorithmType
+        public int? SigningAlgorithmType
         {
-            get { return this._signingAlgorithmType.GetValueOrDefault(); }
+            get { return this._signingAlgorithmType; }
             set { this._signingAlgorithmType = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.Route53.Model
         /// Section 3.3</a>.
         /// </para>
         /// </summary>
-        public int DigestAlgorithmType
+        public int? DigestAlgorithmType
         {
-            get { return this._digestAlgorithmType.GetValueOrDefault(); }
+            get { return this._digestAlgorithmType; }
             set { this._digestAlgorithmType = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int KeyTag
+        public int? KeyTag
         {
-            get { return this._keyTag.GetValueOrDefault(); }
+            get { return this._keyTag; }
             set { this._keyTag = value; }
         }
 
@@ -410,9 +410,9 @@ namespace Amazon.Route53.Model
         /// The date when the key-signing key (KSK) was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -428,9 +428,9 @@ namespace Amazon.Route53.Model
         /// The last time that the key-signing key (KSK) was changed.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

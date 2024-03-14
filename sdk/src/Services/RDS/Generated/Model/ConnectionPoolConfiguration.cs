@@ -62,9 +62,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int ConnectionBorrowTimeout
+        public int? ConnectionBorrowTimeout
         {
-            get { return this._connectionBorrowTimeout.GetValueOrDefault(); }
+            get { return this._connectionBorrowTimeout; }
             set { this._connectionBorrowTimeout = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int MaxConnectionsPercent
+        public int? MaxConnectionsPercent
         {
-            get { return this._maxConnectionsPercent.GetValueOrDefault(); }
+            get { return this._maxConnectionsPercent; }
             set { this._maxConnectionsPercent = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int MaxIdleConnectionsPercent
+        public int? MaxIdleConnectionsPercent
         {
-            get { return this._maxIdleConnectionsPercent.GetValueOrDefault(); }
+            get { return this._maxIdleConnectionsPercent; }
             set { this._maxIdleConnectionsPercent = value; }
         }
 

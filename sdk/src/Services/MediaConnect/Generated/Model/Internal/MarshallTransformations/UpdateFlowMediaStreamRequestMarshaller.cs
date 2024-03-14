@@ -85,7 +85,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetClockRate())
                 {
                     context.Writer.WritePropertyName("clockRate");
-                    context.Writer.Write(publicRequest.ClockRate);
+                    context.Writer.Write(publicRequest.ClockRate.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

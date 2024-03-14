@@ -86,9 +86,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=180)]
-        public int DeleteKeyInDays
+        public int? DeleteKeyInDays
         {
-            get { return this._deleteKeyInDays.GetValueOrDefault(); }
+            get { return this._deleteKeyInDays; }
             set { this._deleteKeyInDays = value; }
         }
 

@@ -47,16 +47,16 @@ namespace Amazon.Glacier.Model
         /// be a string in the ISO 8601 date format, for example <c>2012-03-20T17:03:43.221Z</c>.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this._creationDate.HasValue; 
+            return this._creationDate != null;
         }
 
         /// <summary>
@@ -67,16 +67,16 @@ namespace Amazon.Glacier.Model
         /// <c>2012-03-20T17:03:43.221Z</c>.
         /// </para>
         /// </summary>
-        public DateTime LastInventoryDate
+        public DateTime? LastInventoryDate
         {
-            get { return this._lastInventoryDate.GetValueOrDefault(); }
+            get { return this._lastInventoryDate; }
             set { this._lastInventoryDate = value; }
         }
 
         // Check to see if LastInventoryDate property is set
         internal bool IsSetLastInventoryDate()
         {
-            return this._lastInventoryDate.HasValue; 
+            return this._lastInventoryDate != null;
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace Amazon.Glacier.Model
         /// just created the vault.
         /// </para>
         /// </summary>
-        public long NumberOfArchives
+        public long? NumberOfArchives
         {
-            get { return this._numberOfArchives.GetValueOrDefault(); }
+            get { return this._numberOfArchives; }
             set { this._numberOfArchives = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Glacier.Model
         /// if you just created the vault.
         /// </para>
         /// </summary>
-        public long SizeInBytes
+        public long? SizeInBytes
         {
-            get { return this._sizeInBytes.GetValueOrDefault(); }
+            get { return this._sizeInBytes; }
             set { this._sizeInBytes = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.DirectoryService.Model
         /// Delete a conditional forwarder as part of a DeleteTrustRequest.
         /// </para>
         /// </summary>
-        public bool DeleteAssociatedConditionalForwarder
+        public bool? DeleteAssociatedConditionalForwarder
         {
-            get { return this._deleteAssociatedConditionalForwarder.GetValueOrDefault(); }
+            get { return this._deleteAssociatedConditionalForwarder; }
             set { this._deleteAssociatedConditionalForwarder = value; }
         }
 

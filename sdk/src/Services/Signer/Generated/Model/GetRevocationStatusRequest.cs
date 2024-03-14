@@ -157,9 +157,9 @@ namespace Amazon.Signer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SignatureTimestamp
+        public DateTime? SignatureTimestamp
         {
-            get { return this._signatureTimestamp.GetValueOrDefault(); }
+            get { return this._signatureTimestamp; }
             set { this._signatureTimestamp = value; }
         }
 

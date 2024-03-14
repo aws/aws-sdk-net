@@ -79,7 +79,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeightPixels())
             {
                 context.Writer.WritePropertyName("HeightPixels");
-                context.Writer.Write(requestObject.HeightPixels);
+                context.Writer.Write(requestObject.HeightPixels.Value);
             }
 
             if(requestObject.IsSetImageSelectorType())
@@ -91,7 +91,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSamplingInterval())
             {
                 context.Writer.WritePropertyName("SamplingInterval");
-                context.Writer.Write(requestObject.SamplingInterval);
+                context.Writer.Write(requestObject.SamplingInterval.Value);
             }
 
             if(requestObject.IsSetStatus())
@@ -103,7 +103,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWidthPixels())
             {
                 context.Writer.WritePropertyName("WidthPixels");
-                context.Writer.Write(requestObject.WidthPixels);
+                context.Writer.Write(requestObject.WidthPixels.Value);
             }
 
         }

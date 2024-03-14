@@ -121,9 +121,9 @@ namespace Amazon.ECS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int IngressPortOverride
+        public int? IngressPortOverride
         {
-            get { return this._ingressPortOverride.GetValueOrDefault(); }
+            get { return this._ingressPortOverride; }
             set { this._ingressPortOverride = value; }
         }
 

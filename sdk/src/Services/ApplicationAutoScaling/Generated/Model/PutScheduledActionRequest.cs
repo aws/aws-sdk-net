@@ -81,9 +81,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The date and time for the recurring schedule to end, in UTC.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -461,9 +461,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The date and time for this scheduled action to start, in UTC.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

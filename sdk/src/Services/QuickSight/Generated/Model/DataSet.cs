@@ -116,9 +116,9 @@ namespace Amazon.QuickSight.Model
         /// imported into SPICE.
         /// </para>
         /// </summary>
-        public long ConsumedSpiceCapacityInBytes
+        public long? ConsumedSpiceCapacityInBytes
         {
-            get { return this._consumedSpiceCapacityInBytes.GetValueOrDefault(); }
+            get { return this._consumedSpiceCapacityInBytes; }
             set { this._consumedSpiceCapacityInBytes = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.QuickSight.Model
         /// The time that this dataset was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.QuickSight.Model
         /// The last time that this dataset was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParam())
             {
                 context.Writer.WritePropertyName("Param");
-                context.Writer.Write(requestObject.Param);
+                context.Writer.Write(requestObject.Param.Value);
             }
 
             if(requestObject.IsSetValue())

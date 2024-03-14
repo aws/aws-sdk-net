@@ -65,7 +65,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DataRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Frequency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context);
                     continue;
                 }

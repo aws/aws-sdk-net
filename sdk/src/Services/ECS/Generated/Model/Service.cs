@@ -108,9 +108,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the service was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.ECS.Model
         /// and it can be modified with <a>UpdateService</a>.
         /// </para>
         /// </summary>
-        public int DesiredCount
+        public int? DesiredCount
         {
-            get { return this._desiredCount.GetValueOrDefault(); }
+            get { return this._desiredCount; }
             set { this._desiredCount = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.ECS.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            get { return this._enableecsManagedTags; }
             set { this._enableecsManagedTags = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.ECS.Model
         /// in tasks as part of the service.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.ECS.Model
         /// Elastic Load Balancing target health checks after a task has first started.
         /// </para>
         /// </summary>
-        public int HealthCheckGracePeriodSeconds
+        public int? HealthCheckGracePeriodSeconds
         {
-            get { return this._healthCheckGracePeriodSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckGracePeriodSeconds; }
             set { this._healthCheckGracePeriodSeconds = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the cluster that are in the <c>PENDING</c> state.
         /// </para>
         /// </summary>
-        public int PendingCount
+        public int? PendingCount
         {
-            get { return this._pendingCount.GetValueOrDefault(); }
+            get { return this._pendingCount; }
             set { this._pendingCount = value; }
         }
 
@@ -493,9 +493,9 @@ namespace Amazon.ECS.Model
         /// The number of tasks in the cluster that are in the <c>RUNNING</c> state.
         /// </para>
         /// </summary>
-        public int RunningCount
+        public int? RunningCount
         {
-            get { return this._runningCount.GetValueOrDefault(); }
+            get { return this._runningCount; }
             set { this._runningCount = value; }
         }
 

@@ -87,9 +87,9 @@ namespace Amazon.Route53Resolver.Model
         /// on the values that you specify in the request.
         /// </para>
         /// </summary>
-        public int TotalCount
+        public int? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.Route53Resolver.Model
         /// in the specified Region, see <c>TotalCount</c>.
         /// </para>
         /// </summary>
-        public int TotalFilteredCount
+        public int? TotalFilteredCount
         {
-            get { return this._totalFilteredCount.GetValueOrDefault(); }
+            get { return this._totalFilteredCount; }
             set { this._totalFilteredCount = value; }
         }
 

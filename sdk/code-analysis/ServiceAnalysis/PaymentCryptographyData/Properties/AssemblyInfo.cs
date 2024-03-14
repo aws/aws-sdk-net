@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.PaymentCryptographyData")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Payment Cryptography Data Plane. Initial release of AWS Payment Cryptography DataPlane Plane service for performing cryptographic operations typically used during card payment processing.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Payment Cryptography Data Plane. Initial release of AWS Payment Cryptography DataPlane Plane service for performing cryptographic operations typically used during card payment processing.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

@@ -63,9 +63,9 @@ namespace Amazon.Comprehend.Model
         /// highest confidence.
         /// </para>
         /// </summary>
-        public float Toxicity
+        public float? Toxicity
         {
-            get { return this._toxicity.GetValueOrDefault(); }
+            get { return this._toxicity; }
             set { this._toxicity = value; }
         }
 

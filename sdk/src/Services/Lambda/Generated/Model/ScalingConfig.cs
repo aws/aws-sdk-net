@@ -43,9 +43,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=1000)]
-        public int MaximumConcurrency
+        public int? MaximumConcurrency
         {
-            get { return this._maximumConcurrency.GetValueOrDefault(); }
+            get { return this._maximumConcurrency; }
             set { this._maximumConcurrency = value; }
         }
 

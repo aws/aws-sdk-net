@@ -64,7 +64,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfChannels())
             {
                 context.Writer.WritePropertyName("NumberOfChannels");
-                context.Writer.Write(requestObject.NumberOfChannels);
+                context.Writer.Write(requestObject.NumberOfChannels.Value);
             }
 
         }

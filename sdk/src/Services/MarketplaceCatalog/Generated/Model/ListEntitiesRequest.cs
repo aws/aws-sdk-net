@@ -152,9 +152,9 @@ namespace Amazon.MarketplaceCatalog.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

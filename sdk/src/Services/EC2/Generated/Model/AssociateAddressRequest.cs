@@ -110,9 +110,9 @@ namespace Amazon.EC2.Model
         /// if the Elastic IP address is already associated with another resource.
         /// </para>
         /// </summary>
-        public bool AllowReassociation
+        public bool? AllowReassociation
         {
-            get { return this._allowReassociation.GetValueOrDefault(); }
+            get { return this._allowReassociation; }
             set { this._allowReassociation = value; }
         }
 

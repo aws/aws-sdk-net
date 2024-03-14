@@ -76,9 +76,9 @@ namespace Amazon.MediaPackageVod.Model
         /// instead of in the init fragment. This lets you use different SPS/PPS/VPS settings
         /// for your assets during content playback.
         /// </summary>
-        public bool IncludeEncoderConfigurationInSegments
+        public bool? IncludeEncoderConfigurationInSegments
         {
-            get { return this._includeEncoderConfigurationInSegments.GetValueOrDefault(); }
+            get { return this._includeEncoderConfigurationInSegments; }
             set { this._includeEncoderConfigurationInSegments = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each fragment.
         /// Actual fragments will berounded to the nearest multiple of the source fragment duration.
         /// </summary>
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 

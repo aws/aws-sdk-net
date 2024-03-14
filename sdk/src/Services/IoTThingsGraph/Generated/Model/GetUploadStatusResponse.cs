@@ -48,9 +48,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// namespace.
         /// </para>
         /// </summary>
-        public long NamespaceVersion
+        public long? NamespaceVersion
         {
-            get { return this._namespaceVersion.GetValueOrDefault(); }
+            get { return this._namespaceVersion; }
             set { this._namespaceVersion = value; }
         }
 

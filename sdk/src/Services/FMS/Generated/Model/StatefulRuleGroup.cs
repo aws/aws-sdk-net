@@ -78,9 +78,9 @@ namespace Amazon.FMS.Model
         /// for example use 100, 200, and so on. 
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

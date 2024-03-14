@@ -80,9 +80,9 @@ namespace Amazon.XRay.Model
         /// A flag that denotes a remote subsegment.
         /// </para>
         /// </summary>
-        public bool Remote
+        public bool? Remote
         {
-            get { return this._remote.GetValueOrDefault(); }
+            get { return this._remote; }
             set { this._remote = value; }
         }
 

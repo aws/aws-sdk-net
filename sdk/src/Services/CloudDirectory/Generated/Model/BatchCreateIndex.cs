@@ -66,9 +66,9 @@ namespace Amazon.CloudDirectory.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsUnique
+        public bool? IsUnique
         {
-            get { return this._isUnique.GetValueOrDefault(); }
+            get { return this._isUnique; }
             set { this._isUnique = value; }
         }
 

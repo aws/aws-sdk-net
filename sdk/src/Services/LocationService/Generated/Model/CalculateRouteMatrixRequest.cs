@@ -151,9 +151,9 @@ namespace Amazon.LocationService.Model
         /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
-        public bool DepartNow
+        public bool? DepartNow
         {
-            get { return this._departNow.GetValueOrDefault(); }
+            get { return this._departNow; }
             set { this._departNow = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime DepartureTime
+        public DateTime? DepartureTime
         {
-            get { return this._departureTime.GetValueOrDefault(); }
+            get { return this._departureTime; }
             set { this._departureTime = value; }
         }
 

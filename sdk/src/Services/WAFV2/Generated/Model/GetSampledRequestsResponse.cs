@@ -46,9 +46,9 @@ namespace Amazon.WAFV2.Model
         /// the specified time range.
         /// </para>
         /// </summary>
-        public long PopulationSize
+        public long? PopulationSize
         {
-            get { return this._populationSize.GetValueOrDefault(); }
+            get { return this._populationSize; }
             set { this._populationSize = value; }
         }
 

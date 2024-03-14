@@ -43,9 +43,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Maximum
+        public int? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Minimum
+        public int? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceAncillaryChannelNumber())
             {
                 context.Writer.WritePropertyName("sourceAncillaryChannelNumber");
-                context.Writer.Write(requestObject.SourceAncillaryChannelNumber);
+                context.Writer.Write(requestObject.SourceAncillaryChannelNumber.Value);
             }
 
         }

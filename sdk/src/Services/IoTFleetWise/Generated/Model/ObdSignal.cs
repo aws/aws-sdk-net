@@ -51,9 +51,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8)]
-        public int BitMaskLength
+        public int? BitMaskLength
         {
-            get { return this._bitMaskLength.GetValueOrDefault(); }
+            get { return this._bitMaskLength; }
             set { this._bitMaskLength = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BitRightShift
+        public int? BitRightShift
         {
-            get { return this._bitRightShift.GetValueOrDefault(); }
+            get { return this._bitRightShift; }
             set { this._bitRightShift = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8)]
-        public int ByteLength
+        public int? ByteLength
         {
-            get { return this._byteLength.GetValueOrDefault(); }
+            get { return this._byteLength; }
             set { this._byteLength = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Offset
+        public double? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int PidResponseLength
+        public int? PidResponseLength
         {
-            get { return this._pidResponseLength.GetValueOrDefault(); }
+            get { return this._pidResponseLength; }
             set { this._pidResponseLength = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Scaling
+        public double? Scaling
         {
-            get { return this._scaling.GetValueOrDefault(); }
+            get { return this._scaling; }
             set { this._scaling = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ServiceMode
+        public int? ServiceMode
         {
-            get { return this._serviceMode.GetValueOrDefault(); }
+            get { return this._serviceMode; }
             set { this._serviceMode = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int StartByte
+        public int? StartByte
         {
-            get { return this._startByte.GetValueOrDefault(); }
+            get { return this._startByte; }
             set { this._startByte = value; }
         }
 

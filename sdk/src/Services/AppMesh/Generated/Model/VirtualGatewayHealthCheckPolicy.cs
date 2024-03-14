@@ -49,9 +49,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]
-        public int HealthyThreshold
+        public int? HealthyThreshold
         {
-            get { return this._healthyThreshold.GetValueOrDefault(); }
+            get { return this._healthyThreshold; }
             set { this._healthyThreshold = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5000, Max=300000)]
-        public long IntervalMillis
+        public long? IntervalMillis
         {
-            get { return this._intervalMillis.GetValueOrDefault(); }
+            get { return this._intervalMillis; }
             set { this._intervalMillis = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2000, Max=60000)]
-        public long TimeoutMillis
+        public long? TimeoutMillis
         {
-            get { return this._timeoutMillis.GetValueOrDefault(); }
+            get { return this._timeoutMillis; }
             set { this._timeoutMillis = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]
-        public int UnhealthyThreshold
+        public int? UnhealthyThreshold
         {
-            get { return this._unhealthyThreshold.GetValueOrDefault(); }
+            get { return this._unhealthyThreshold; }
             set { this._unhealthyThreshold = value; }
         }
 

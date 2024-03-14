@@ -309,9 +309,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool ObjectLockEnabledForBucket
+        public bool? ObjectLockEnabledForBucket
         {
-            get { return this._objectLockEnabledForBucket.GetValueOrDefault(); }
+            get { return this._objectLockEnabledForBucket; }
             set { this._objectLockEnabledForBucket = value; }
         }
 

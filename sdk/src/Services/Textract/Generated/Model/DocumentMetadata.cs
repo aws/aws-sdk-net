@@ -42,9 +42,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Pages
+        public int? Pages
         {
-            get { return this._pages.GetValueOrDefault(); }
+            get { return this._pages; }
             set { this._pages = value; }
         }
 

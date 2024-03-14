@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.IoT.Model
         /// job executions or canceling previously created executions, otherwise false.
         /// </para>
         /// </summary>
-        public bool IsConcurrent
+        public bool? IsConcurrent
         {
-            get { return this._isConcurrent.GetValueOrDefault(); }
+            get { return this._isConcurrent; }
             set { this._isConcurrent = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

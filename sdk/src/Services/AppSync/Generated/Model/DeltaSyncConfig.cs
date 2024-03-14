@@ -43,9 +43,9 @@ namespace Amazon.AppSync.Model
         /// The number of minutes that an Item is stored in the data source.
         /// </para>
         /// </summary>
-        public long BaseTableTTL
+        public long? BaseTableTTL
         {
-            get { return this._baseTableTTL.GetValueOrDefault(); }
+            get { return this._baseTableTTL; }
             set { this._baseTableTTL = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.AppSync.Model
         /// The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.
         /// </para>
         /// </summary>
-        public long DeltaSyncTableTTL
+        public long? DeltaSyncTableTTL
         {
-            get { return this._deltaSyncTableTTL.GetValueOrDefault(); }
+            get { return this._deltaSyncTableTTL; }
             set { this._deltaSyncTableTTL = value; }
         }
 

@@ -45,9 +45,9 @@ namespace Amazon.MediaConvert.Model
         /// previous queue.
         /// </summary>
         [AWSProperty(Min=-50, Max=50)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.MediaConvert.Model
         /// hopping. Minimum wait time in minutes until the job can hop to the destination queue.
         /// Valid range is 1 to 4320 minutes, inclusive.
         /// </summary>
-        public int WaitMinutes
+        public int? WaitMinutes
         {
-            get { return this._waitMinutes.GetValueOrDefault(); }
+            get { return this._waitMinutes; }
             set { this._waitMinutes = value; }
         }
 

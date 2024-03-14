@@ -87,9 +87,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DashboardEnabled
+        public bool? DashboardEnabled
         {
-            get { return this._dashboardEnabled.GetValueOrDefault(); }
+            get { return this._dashboardEnabled; }
             set { this._dashboardEnabled = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// at the end of the month.
         /// </para>
         /// </summary>
-        public DateTime SubscriptionExpiryDate
+        public DateTime? SubscriptionExpiryDate
         {
-            get { return this._subscriptionExpiryDate.GetValueOrDefault(); }
+            get { return this._subscriptionExpiryDate; }
             set { this._subscriptionExpiryDate = value; }
         }
 

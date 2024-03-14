@@ -71,7 +71,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Port", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }

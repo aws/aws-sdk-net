@@ -42,9 +42,9 @@ namespace Amazon.Omics.Model
         /// The file's ignore filter field setting.
         /// </para>
         /// </summary>
-        public bool IgnoreFilterField
+        public bool? IgnoreFilterField
         {
-            get { return this._ignoreFilterField.GetValueOrDefault(); }
+            get { return this._ignoreFilterField; }
             set { this._ignoreFilterField = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.Omics.Model
         /// The file's ignore qual field setting.
         /// </para>
         /// </summary>
-        public bool IgnoreQualField
+        public bool? IgnoreQualField
         {
-            get { return this._ignoreQualField.GetValueOrDefault(); }
+            get { return this._ignoreQualField; }
             set { this._ignoreQualField = value; }
         }
 

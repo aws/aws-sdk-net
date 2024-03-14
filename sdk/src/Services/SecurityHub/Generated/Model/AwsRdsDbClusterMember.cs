@@ -80,9 +80,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the cluster member is the primary instance for the DB cluster.
         /// </para>
         /// </summary>
-        public bool IsClusterWriter
+        public bool? IsClusterWriter
         {
-            get { return this._isClusterWriter.GetValueOrDefault(); }
+            get { return this._isClusterWriter; }
             set { this._isClusterWriter = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.SecurityHub.Model
         /// when the existing primary instance fails.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

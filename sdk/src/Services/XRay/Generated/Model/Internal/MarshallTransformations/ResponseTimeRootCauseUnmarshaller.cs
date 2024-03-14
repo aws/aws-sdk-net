@@ -65,7 +65,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ClientImpacting", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ClientImpacting = unmarshaller.Unmarshall(context);
                     continue;
                 }

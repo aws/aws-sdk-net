@@ -95,9 +95,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime InstalledTime
+        public DateTime? InstalledTime
         {
-            get { return this._installedTime.GetValueOrDefault(); }
+            get { return this._installedTime; }
             set { this._installedTime = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExceptionTimeToLive())
                 {
                     context.Writer.WritePropertyName("exceptionTimeToLive");
-                    context.Writer.Write(publicRequest.ExceptionTimeToLive);
+                    context.Writer.Write(publicRequest.ExceptionTimeToLive.Value);
                 }
 
                 if(publicRequest.IsSetNotificationEndpoint())

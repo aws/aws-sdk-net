@@ -648,9 +648,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
+        public int? MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
         {
-            get { return this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice.GetValueOrDefault(); }
+            get { return this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice; }
             set { this._maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
         }
 
@@ -780,9 +780,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>20</c> 
         /// </para>
         /// </summary>
-        public int OnDemandMaxPricePercentageOverLowestPrice
+        public int? OnDemandMaxPricePercentageOverLowestPrice
         {
-            get { return this._onDemandMaxPricePercentageOverLowestPrice.GetValueOrDefault(); }
+            get { return this._onDemandMaxPricePercentageOverLowestPrice; }
             set { this._onDemandMaxPricePercentageOverLowestPrice = value; }
         }
 
@@ -806,9 +806,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool RequireHibernateSupport
+        public bool? RequireHibernateSupport
         {
-            get { return this._requireHibernateSupport.GetValueOrDefault(); }
+            get { return this._requireHibernateSupport; }
             set { this._requireHibernateSupport = value; }
         }
 
@@ -860,9 +860,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>100</c> 
         /// </para>
         /// </summary>
-        public int SpotMaxPricePercentageOverLowestPrice
+        public int? SpotMaxPricePercentageOverLowestPrice
         {
-            get { return this._spotMaxPricePercentageOverLowestPrice.GetValueOrDefault(); }
+            get { return this._spotMaxPricePercentageOverLowestPrice; }
             set { this._spotMaxPricePercentageOverLowestPrice = value; }
         }
 

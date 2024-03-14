@@ -95,13 +95,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProvisionedOnDemandCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedOnDemandCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedSpotCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedSpotCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,13 +119,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TargetOnDemandCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetOnDemandCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TargetSpotCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetSpotCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }

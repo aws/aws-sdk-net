@@ -99,9 +99,9 @@ namespace Amazon.CloudWatch.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeLinkedAccounts
+        public bool? IncludeLinkedAccounts
         {
-            get { return this._includeLinkedAccounts.GetValueOrDefault(); }
+            get { return this._includeLinkedAccounts; }
             set { this._includeLinkedAccounts = value; }
         }
 

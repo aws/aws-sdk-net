@@ -5194,7 +5194,7 @@ namespace Amazon.KeyManagementService
         /// resource is not valid for this operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
-        Task<GenerateRandomResponse> GenerateRandomAsync(int numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<GenerateRandomResponse> GenerateRandomAsync(int? numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -8444,7 +8444,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
-        Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, int pendingWindowInDays, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, int? pendingWindowInDays, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>

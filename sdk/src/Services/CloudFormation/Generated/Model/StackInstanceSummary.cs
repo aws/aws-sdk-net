@@ -112,9 +112,9 @@ namespace Amazon.CloudFormation.Model
         /// detection hasn't yet been performed.
         /// </para>
         /// </summary>
-        public DateTime LastDriftCheckTimestamp
+        public DateTime? LastDriftCheckTimestamp
         {
-            get { return this._lastDriftCheckTimestamp.GetValueOrDefault(); }
+            get { return this._lastDriftCheckTimestamp; }
             set { this._lastDriftCheckTimestamp = value; }
         }
 

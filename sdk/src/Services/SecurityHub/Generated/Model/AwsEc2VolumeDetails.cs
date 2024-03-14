@@ -111,9 +111,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies whether the volume is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.SecurityHub.Model
         /// The size of the volume, in GiBs.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

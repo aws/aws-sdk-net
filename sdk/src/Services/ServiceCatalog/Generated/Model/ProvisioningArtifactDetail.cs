@@ -48,9 +48,9 @@ namespace Amazon.ServiceCatalog.Model
         /// Indicates whether the product version is active.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.ServiceCatalog.Model
         /// The UTC time stamp of the creation time.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

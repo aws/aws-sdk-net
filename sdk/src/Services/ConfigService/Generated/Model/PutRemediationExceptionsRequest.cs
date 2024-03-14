@@ -123,9 +123,9 @@ namespace Amazon.ConfigService.Model
         /// The exception is automatically deleted after the expiration date.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

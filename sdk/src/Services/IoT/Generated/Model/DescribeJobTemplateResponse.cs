@@ -68,9 +68,9 @@ namespace Amazon.IoT.Model
         /// The time, in seconds since the epoch, when the job template was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

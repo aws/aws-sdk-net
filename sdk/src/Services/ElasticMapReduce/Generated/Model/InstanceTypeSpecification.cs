@@ -78,9 +78,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double BidPriceAsPercentageOfOnDemandPrice
+        public double? BidPriceAsPercentageOfOnDemandPrice
         {
-            get { return this._bidPriceAsPercentageOfOnDemandPrice.GetValueOrDefault(); }
+            get { return this._bidPriceAsPercentageOfOnDemandPrice; }
             set { this._bidPriceAsPercentageOfOnDemandPrice = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Evaluates to <c>TRUE</c> when the specified <c>InstanceType</c> is EBS-optimized.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int WeightedCapacity
+        public int? WeightedCapacity
         {
-            get { return this._weightedCapacity.GetValueOrDefault(); }
+            get { return this._weightedCapacity; }
             set { this._weightedCapacity = value; }
         }
 

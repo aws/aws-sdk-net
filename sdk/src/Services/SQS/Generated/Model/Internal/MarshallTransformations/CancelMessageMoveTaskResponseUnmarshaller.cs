@@ -53,7 +53,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ApproximateNumberOfMessagesMoved", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ApproximateNumberOfMessagesMoved = unmarshaller.Unmarshall(context);
                     continue;
                 }

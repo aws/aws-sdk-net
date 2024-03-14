@@ -70,7 +70,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIntegerValue())
                 {
                     context.Writer.WritePropertyName("IntegerValue");
-                    context.Writer.Write(publicRequest.IntegerValue);
+                    context.Writer.Write(publicRequest.IntegerValue.Value);
                 }
 
                 if(publicRequest.IsSetQualificationTypeId())
@@ -82,7 +82,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSendNotification())
                 {
                     context.Writer.WritePropertyName("SendNotification");
-                    context.Writer.Write(publicRequest.SendNotification);
+                    context.Writer.Write(publicRequest.SendNotification.Value);
                 }
 
                 if(publicRequest.IsSetWorkerId())

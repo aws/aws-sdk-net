@@ -47,9 +47,9 @@ namespace Amazon.GlueDataBrew.Model
         /// be used to create a new column in a dataset.
         /// </para>
         /// </summary>
-        public bool CreateColumn
+        public bool? CreateColumn
         {
-            get { return this._createColumn.GetValueOrDefault(); }
+            get { return this._createColumn; }
             set { this._createColumn = value; }
         }
 

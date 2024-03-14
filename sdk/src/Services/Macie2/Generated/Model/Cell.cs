@@ -67,9 +67,9 @@ namespace Amazon.Macie2.Model
         /// identifier, for example: 1 for column A, 2 for column B, and so on.
         /// </para>
         /// </summary>
-        public long Column
+        public long? Column
         {
-            get { return this._column.GetValueOrDefault(); }
+            get { return this._column; }
             set { this._column = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.Macie2.Model
         /// The row number of the row that contains the sensitive data.
         /// </para>
         /// </summary>
-        public long Row
+        public long? Row
         {
-            get { return this._row.GetValueOrDefault(); }
+            get { return this._row; }
             set { this._row = value; }
         }
 

@@ -59,9 +59,9 @@ namespace Amazon.ACMPCA.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool OmitExtension
+        public bool? OmitExtension
         {
-            get { return this._omitExtension.GetValueOrDefault(); }
+            get { return this._omitExtension; }
             set { this._omitExtension = value; }
         }
 

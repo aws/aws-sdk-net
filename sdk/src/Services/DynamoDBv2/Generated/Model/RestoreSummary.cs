@@ -45,9 +45,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RestoreDateTime
+        public DateTime? RestoreDateTime
         {
-            get { return this._restoreDateTime.GetValueOrDefault(); }
+            get { return this._restoreDateTime; }
             set { this._restoreDateTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RestoreInProgress
+        public bool? RestoreInProgress
         {
-            get { return this._restoreInProgress.GetValueOrDefault(); }
+            get { return this._restoreInProgress; }
             set { this._restoreInProgress = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.Scheduler.Model
         /// The time at which the schedule group was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Scheduler.Model
         /// The time at which the schedule group was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModificationDate
+        public DateTime? LastModificationDate
         {
-            get { return this._lastModificationDate.GetValueOrDefault(); }
+            get { return this._lastModificationDate; }
             set { this._lastModificationDate = value; }
         }
 

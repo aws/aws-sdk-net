@@ -67,9 +67,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

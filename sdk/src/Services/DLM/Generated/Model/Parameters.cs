@@ -58,9 +58,9 @@ namespace Amazon.DLM.Model
         /// be excluded from the multi-volume snapshot sets created by the policy.
         /// </para>
         /// </summary>
-        public bool ExcludeBootVolume
+        public bool? ExcludeBootVolume
         {
-            get { return this._excludeBootVolume.GetValueOrDefault(); }
+            get { return this._excludeBootVolume; }
             set { this._excludeBootVolume = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.DLM.Model
         /// rebooted when the policy runs. The default is <c>true</c> (instances are not rebooted).
         /// </para>
         /// </summary>
-        public bool NoReboot
+        public bool? NoReboot
         {
-            get { return this._noReboot.GetValueOrDefault(); }
+            get { return this._noReboot; }
             set { this._noReboot = value; }
         }
 

@@ -117,9 +117,9 @@ namespace Amazon.Lightsail.Model
         /// Lightsail Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableObjectVersioning
+        public bool? EnableObjectVersioning
         {
-            get { return this._enableObjectVersioning.GetValueOrDefault(); }
+            get { return this._enableObjectVersioning; }
             set { this._enableObjectVersioning = value; }
         }
 

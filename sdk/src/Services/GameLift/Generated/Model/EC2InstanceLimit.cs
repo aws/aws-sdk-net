@@ -50,9 +50,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentInstances
+        public int? CurrentInstances
         {
-            get { return this._currentInstances.GetValueOrDefault(); }
+            get { return this._currentInstances; }
             set { this._currentInstances = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InstanceLimit
+        public int? InstanceLimit
         {
-            get { return this._instanceLimit.GetValueOrDefault(); }
+            get { return this._instanceLimit; }
             set { this._instanceLimit = value; }
         }
 

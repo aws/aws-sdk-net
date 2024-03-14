@@ -45,9 +45,9 @@ namespace Amazon.Connect.Model
         /// the overall evaluation gets a score of 0.
         /// </para>
         /// </summary>
-        public bool AutomaticFail
+        public bool? AutomaticFail
         {
-            get { return this._automaticFail.GetValueOrDefault(); }
+            get { return this._automaticFail; }
             set { this._automaticFail = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int Score
+        public int? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMax())
             {
                 context.Writer.WritePropertyName("Max");
-                context.Writer.Write(requestObject.Max);
+                context.Writer.Write(requestObject.Max.Value);
             }
 
             if(requestObject.IsSetMin())
             {
                 context.Writer.WritePropertyName("Min");
-                context.Writer.Write(requestObject.Min);
+                context.Writer.Write(requestObject.Min.Value);
             }
 
         }

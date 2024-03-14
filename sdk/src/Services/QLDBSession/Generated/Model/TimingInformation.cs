@@ -43,9 +43,9 @@ namespace Amazon.QLDBSession.Model
         /// The amount of time that QLDB spent on processing the command, measured in milliseconds.
         /// </para>
         /// </summary>
-        public long ProcessingTimeMilliseconds
+        public long? ProcessingTimeMilliseconds
         {
-            get { return this._processingTimeMilliseconds.GetValueOrDefault(); }
+            get { return this._processingTimeMilliseconds; }
             set { this._processingTimeMilliseconds = value; }
         }
 

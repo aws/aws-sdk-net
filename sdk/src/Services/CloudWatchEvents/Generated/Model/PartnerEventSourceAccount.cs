@@ -63,9 +63,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// The date and time the event source was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// doesn't create a matching event bus for it.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTime
+        public DateTime? ExpirationTime
         {
-            get { return this._expirationTime.GetValueOrDefault(); }
+            get { return this._expirationTime; }
             set { this._expirationTime = value; }
         }
 

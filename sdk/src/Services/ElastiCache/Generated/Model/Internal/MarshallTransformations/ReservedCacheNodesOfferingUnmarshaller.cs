@@ -62,13 +62,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Duration", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FixedPrice", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,7 +99,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("UsagePrice", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.UsagePrice = unmarshaller.Unmarshall(context);
                         continue;
                     }

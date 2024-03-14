@@ -72,9 +72,9 @@ namespace Amazon.IoT.Model
         ///  A list of all suppressed alerts. 
         /// </para>
         /// </summary>
-        public bool ListSuppressedAlerts
+        public bool? ListSuppressedAlerts
         {
-            get { return this._listSuppressedAlerts.GetValueOrDefault(); }
+            get { return this._listSuppressedAlerts; }
             set { this._listSuppressedAlerts = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

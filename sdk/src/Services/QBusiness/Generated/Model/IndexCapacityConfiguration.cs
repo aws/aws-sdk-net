@@ -42,9 +42,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Units
+        public int? Units
         {
-            get { return this._units.GetValueOrDefault(); }
+            get { return this._units; }
             set { this._units = value; }
         }
 

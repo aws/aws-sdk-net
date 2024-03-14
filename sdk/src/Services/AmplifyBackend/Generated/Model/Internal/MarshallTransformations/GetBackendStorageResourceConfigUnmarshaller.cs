@@ -71,7 +71,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("imported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Imported = unmarshaller.Unmarshall(context);
                     continue;
                 }

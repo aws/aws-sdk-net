@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// For example, <c>2022-06-12T12:00:00.000Z</c>.
         /// </para>
         /// </summary>
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// time must be formatted as <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2022-06-10T12:00:00.000Z</c>.
         /// </para>
         /// </summary>
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Value.
         /// </summary>
-        public float Value
+        public float? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentCopyCount
+        public int? CurrentCopyCount
         {
-            get { return this._currentCopyCount.GetValueOrDefault(); }
+            get { return this._currentCopyCount; }
             set { this._currentCopyCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredCopyCount
+        public int? DesiredCopyCount
         {
-            get { return this._desiredCopyCount.GetValueOrDefault(); }
+            get { return this._desiredCopyCount; }
             set { this._desiredCopyCount = value; }
         }
 

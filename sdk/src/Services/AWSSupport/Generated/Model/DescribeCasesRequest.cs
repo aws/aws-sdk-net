@@ -163,9 +163,9 @@ namespace Amazon.AWSSupport.Model
         /// By default, communications are included.
         /// </para>
         /// </summary>
-        public bool IncludeCommunications
+        public bool? IncludeCommunications
         {
-            get { return this._includeCommunications.GetValueOrDefault(); }
+            get { return this._includeCommunications; }
             set { this._includeCommunications = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.AWSSupport.Model
         /// By default, resolved cases aren't included.
         /// </para>
         /// </summary>
-        public bool IncludeResolvedCases
+        public bool? IncludeResolvedCases
         {
-            get { return this._includeResolvedCases.GetValueOrDefault(); }
+            get { return this._includeResolvedCases; }
             set { this._includeResolvedCases = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

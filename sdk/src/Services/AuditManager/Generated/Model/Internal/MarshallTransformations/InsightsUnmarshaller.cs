@@ -65,43 +65,43 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("activeAssessmentsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveAssessmentsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("assessmentControlsCountByNoncompliantEvidence", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AssessmentControlsCountByNoncompliantEvidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("compliantEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inconclusiveEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InconclusiveEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("noncompliantEvidenceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoncompliantEvidenceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalAssessmentControlsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAssessmentControlsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

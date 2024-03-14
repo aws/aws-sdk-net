@@ -111,9 +111,9 @@ namespace Amazon.BackupStorage.Model
         /// <summary>
         /// Gets and sets the property InlineChunkLength. Length of the inline chunk data.
         /// </summary>
-        public long InlineChunkLength
+        public long? InlineChunkLength
         {
-            get { return this._inlineChunkLength.GetValueOrDefault(); }
+            get { return this._inlineChunkLength; }
             set { this._inlineChunkLength = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.BackupStorage.Model
         /// Gets and sets the property ThrowOnDuplicate. Throw an exception if Object name is
         /// already exist.
         /// </summary>
-        public bool ThrowOnDuplicate
+        public bool? ThrowOnDuplicate
         {
-            get { return this._throwOnDuplicate.GetValueOrDefault(); }
+            get { return this._throwOnDuplicate; }
             set { this._throwOnDuplicate = value; }
         }
 

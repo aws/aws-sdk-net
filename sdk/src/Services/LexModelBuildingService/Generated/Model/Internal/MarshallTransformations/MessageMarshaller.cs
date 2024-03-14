@@ -60,7 +60,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupNumber())
             {
                 context.Writer.WritePropertyName("groupNumber");
-                context.Writer.Write(requestObject.GroupNumber);
+                context.Writer.Write(requestObject.GroupNumber.Value);
             }
 
         }

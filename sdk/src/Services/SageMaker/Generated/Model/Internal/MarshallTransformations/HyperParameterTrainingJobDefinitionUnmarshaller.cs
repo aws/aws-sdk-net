@@ -83,19 +83,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableInterContainerTrafficEncryption", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableInterContainerTrafficEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableManagedSpotTraining", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableManagedSpotTraining = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableNetworkIsolation = unmarshaller.Unmarshall(context);
                     continue;
                 }

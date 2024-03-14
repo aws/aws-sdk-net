@@ -109,9 +109,9 @@ namespace Amazon.Keyspaces.Model
         /// This optional parameter enables auto scaling for the table if set to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AutoScalingDisabled
+        public bool? AutoScalingDisabled
         {
-            get { return this._autoScalingDisabled.GetValueOrDefault(); }
+            get { return this._autoScalingDisabled; }
             set { this._autoScalingDisabled = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long MaximumUnits
+        public long? MaximumUnits
         {
-            get { return this._maximumUnits.GetValueOrDefault(); }
+            get { return this._maximumUnits; }
             set { this._maximumUnits = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long MinimumUnits
+        public long? MinimumUnits
         {
-            get { return this._minimumUnits.GetValueOrDefault(); }
+            get { return this._minimumUnits; }
             set { this._minimumUnits = value; }
         }
 

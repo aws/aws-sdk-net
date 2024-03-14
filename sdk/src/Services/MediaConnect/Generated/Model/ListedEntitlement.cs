@@ -41,9 +41,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
         /// of the data transfer cost to be billed to the subscriber.
         /// </summary>
-        public int DataTransferSubscriberFeePercent
+        public int? DataTransferSubscriberFeePercent
         {
-            get { return this._dataTransferSubscriberFeePercent.GetValueOrDefault(); }
+            get { return this._dataTransferSubscriberFeePercent; }
             set { this._dataTransferSubscriberFeePercent = value; }
         }
 

@@ -246,9 +246,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the simulation job was last started.
         /// </para>
         /// </summary>
-        public DateTime LastStartedAt
+        public DateTime? LastStartedAt
         {
-            get { return this._lastStartedAt.GetValueOrDefault(); }
+            get { return this._lastStartedAt; }
             set { this._lastStartedAt = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the simulation job was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.RoboMaker.Model
         /// The maximum simulation job duration in seconds. 
         /// </para>
         /// </summary>
-        public long MaxJobDurationInSeconds
+        public long? MaxJobDurationInSeconds
         {
-            get { return this._maxJobDurationInSeconds.GetValueOrDefault(); }
+            get { return this._maxJobDurationInSeconds; }
             set { this._maxJobDurationInSeconds = value; }
         }
 
@@ -374,9 +374,9 @@ namespace Amazon.RoboMaker.Model
         /// The simulation job execution duration in milliseconds.
         /// </para>
         /// </summary>
-        public long SimulationTimeMillis
+        public long? SimulationTimeMillis
         {
-            get { return this._simulationTimeMillis.GetValueOrDefault(); }
+            get { return this._simulationTimeMillis; }
             set { this._simulationTimeMillis = value; }
         }
 

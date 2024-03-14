@@ -48,13 +48,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfter())
             {
                 context.Writer.WritePropertyName("After");
-                context.Writer.Write(requestObject.After);
+                context.Writer.Write(requestObject.After.Value);
             }
 
             if(requestObject.IsSetBefore())
             {
                 context.Writer.WritePropertyName("Before");
-                context.Writer.Write(requestObject.Before);
+                context.Writer.Write(requestObject.Before.Value);
             }
 
         }

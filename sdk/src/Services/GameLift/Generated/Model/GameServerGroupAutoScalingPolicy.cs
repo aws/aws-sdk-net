@@ -56,9 +56,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int EstimatedInstanceWarmup
+        public int? EstimatedInstanceWarmup
         {
-            get { return this._estimatedInstanceWarmup.GetValueOrDefault(); }
+            get { return this._estimatedInstanceWarmup; }
             set { this._estimatedInstanceWarmup = value; }
         }
 

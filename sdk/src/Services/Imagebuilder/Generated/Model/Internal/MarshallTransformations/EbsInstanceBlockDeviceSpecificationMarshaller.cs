@@ -48,19 +48,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("deleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination);
+                context.Writer.Write(requestObject.DeleteOnTermination.Value);
             }
 
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops);
+                context.Writer.Write(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -78,13 +78,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("throughput");
-                context.Writer.Write(requestObject.Throughput);
+                context.Writer.Write(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("volumeSize");
-                context.Writer.Write(requestObject.VolumeSize);
+                context.Writer.Write(requestObject.VolumeSize.Value);
             }
 
             if(requestObject.IsSetVolumeType())

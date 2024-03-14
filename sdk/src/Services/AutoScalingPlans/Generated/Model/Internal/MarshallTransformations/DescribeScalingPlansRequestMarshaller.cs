@@ -86,7 +86,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -109,7 +109,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScalingPlanVersion())
                 {
                     context.Writer.WritePropertyName("ScalingPlanVersion");
-                    context.Writer.Write(publicRequest.ScalingPlanVersion);
+                    context.Writer.Write(publicRequest.ScalingPlanVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

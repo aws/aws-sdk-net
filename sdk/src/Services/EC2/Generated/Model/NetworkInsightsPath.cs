@@ -54,9 +54,9 @@ namespace Amazon.EC2.Model
         /// The time stamp when the path was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.EC2.Model
         /// The destination port.
         /// </para>
         /// </summary>
-        public int DestinationPort
+        public int? DestinationPort
         {
-            get { return this._destinationPort.GetValueOrDefault(); }
+            get { return this._destinationPort; }
             set { this._destinationPort = value; }
         }
 

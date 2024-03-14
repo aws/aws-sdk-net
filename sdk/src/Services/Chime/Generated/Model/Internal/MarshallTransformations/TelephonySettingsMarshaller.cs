@@ -48,19 +48,19 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInboundCalling())
             {
                 context.Writer.WritePropertyName("InboundCalling");
-                context.Writer.Write(requestObject.InboundCalling);
+                context.Writer.Write(requestObject.InboundCalling.Value);
             }
 
             if(requestObject.IsSetOutboundCalling())
             {
                 context.Writer.WritePropertyName("OutboundCalling");
-                context.Writer.Write(requestObject.OutboundCalling);
+                context.Writer.Write(requestObject.OutboundCalling.Value);
             }
 
             if(requestObject.IsSetSMS())
             {
                 context.Writer.WritePropertyName("SMS");
-                context.Writer.Write(requestObject.SMS);
+                context.Writer.Write(requestObject.SMS.Value);
             }
 
         }

@@ -65,9 +65,9 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.WellArchitected.Model
         /// Gets and sets the property MilestoneNumber.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MilestoneNumber
+        public int? MilestoneNumber
         {
-            get { return this._milestoneNumber.GetValueOrDefault(); }
+            get { return this._milestoneNumber; }
             set { this._milestoneNumber = value; }
         }
 

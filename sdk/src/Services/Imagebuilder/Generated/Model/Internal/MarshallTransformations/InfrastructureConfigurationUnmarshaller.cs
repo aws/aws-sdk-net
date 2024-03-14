@@ -155,7 +155,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("terminateInstanceOnFailure", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TerminateInstanceOnFailure = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -55,9 +55,9 @@ namespace Amazon.SageMaker.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime ResolutionTime
+        public DateTime? ResolutionTime
         {
-            get { return this._resolutionTime.GetValueOrDefault(); }
+            get { return this._resolutionTime; }
             set { this._resolutionTime = value; }
         }
 

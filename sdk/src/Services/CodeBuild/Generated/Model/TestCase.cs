@@ -49,9 +49,9 @@ namespace Amazon.CodeBuild.Model
         ///  The number of nanoseconds it took to run this test case. 
         /// </para>
         /// </summary>
-        public long DurationInNanoSeconds
+        public long? DurationInNanoSeconds
         {
-            get { return this._durationInNanoSeconds.GetValueOrDefault(); }
+            get { return this._durationInNanoSeconds; }
             set { this._durationInNanoSeconds = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CodeBuild.Model
         /// An expired test case is not available to view in CodeBuild. 
         /// </para>
         /// </summary>
-        public DateTime Expired
+        public DateTime? Expired
         {
-            get { return this._expired.GetValueOrDefault(); }
+            get { return this._expired; }
             set { this._expired = value; }
         }
 

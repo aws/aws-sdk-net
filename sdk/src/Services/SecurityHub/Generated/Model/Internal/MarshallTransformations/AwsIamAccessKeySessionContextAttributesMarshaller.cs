@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMfaAuthenticated())
             {
                 context.Writer.WritePropertyName("MfaAuthenticated");
-                context.Writer.Write(requestObject.MfaAuthenticated);
+                context.Writer.Write(requestObject.MfaAuthenticated.Value);
             }
 
         }

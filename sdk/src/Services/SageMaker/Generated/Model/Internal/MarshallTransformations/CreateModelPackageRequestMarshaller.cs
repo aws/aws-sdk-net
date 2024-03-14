@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCertifyForMarketplace())
                 {
                     context.Writer.WritePropertyName("CertifyForMarketplace");
-                    context.Writer.Write(publicRequest.CertifyForMarketplace);
+                    context.Writer.Write(publicRequest.CertifyForMarketplace.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

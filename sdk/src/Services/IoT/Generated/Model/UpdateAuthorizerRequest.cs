@@ -93,9 +93,9 @@ namespace Amazon.IoT.Model
         /// device reuses the same HTTP connection.
         /// </para>
         /// </summary>
-        public bool EnableCachingForHttp
+        public bool? EnableCachingForHttp
         {
-            get { return this._enableCachingForHttp.GetValueOrDefault(); }
+            get { return this._enableCachingForHttp; }
             set { this._enableCachingForHttp = value; }
         }
 

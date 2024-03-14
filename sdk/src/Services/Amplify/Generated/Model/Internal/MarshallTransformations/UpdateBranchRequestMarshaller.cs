@@ -115,31 +115,31 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableAutoBuild())
                 {
                     context.Writer.WritePropertyName("enableAutoBuild");
-                    context.Writer.Write(publicRequest.EnableAutoBuild);
+                    context.Writer.Write(publicRequest.EnableAutoBuild.Value);
                 }
 
                 if(publicRequest.IsSetEnableBasicAuth())
                 {
                     context.Writer.WritePropertyName("enableBasicAuth");
-                    context.Writer.Write(publicRequest.EnableBasicAuth);
+                    context.Writer.Write(publicRequest.EnableBasicAuth.Value);
                 }
 
                 if(publicRequest.IsSetEnableNotification())
                 {
                     context.Writer.WritePropertyName("enableNotification");
-                    context.Writer.Write(publicRequest.EnableNotification);
+                    context.Writer.Write(publicRequest.EnableNotification.Value);
                 }
 
                 if(publicRequest.IsSetEnablePerformanceMode())
                 {
                     context.Writer.WritePropertyName("enablePerformanceMode");
-                    context.Writer.Write(publicRequest.EnablePerformanceMode);
+                    context.Writer.Write(publicRequest.EnablePerformanceMode.Value);
                 }
 
                 if(publicRequest.IsSetEnablePullRequestPreview())
                 {
                     context.Writer.WritePropertyName("enablePullRequestPreview");
-                    context.Writer.Write(publicRequest.EnablePullRequestPreview);
+                    context.Writer.Write(publicRequest.EnablePullRequestPreview.Value);
                 }
 
                 if(publicRequest.IsSetEnvironmentVariables())

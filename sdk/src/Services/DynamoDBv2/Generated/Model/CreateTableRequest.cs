@@ -157,9 +157,9 @@ namespace Amazon.DynamoDBv2.Model
         /// on the table.
         /// </para>
         /// </summary>
-        public bool DeletionProtectionEnabled
+        public bool? DeletionProtectionEnabled
         {
-            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            get { return this._deletionProtectionEnabled; }
             set { this._deletionProtectionEnabled = value; }
         }
 

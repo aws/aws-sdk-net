@@ -135,7 +135,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartoverWindowSeconds())
                 {
                     context.Writer.WritePropertyName("StartoverWindowSeconds");
-                    context.Writer.Write(publicRequest.StartoverWindowSeconds);
+                    context.Writer.Write(publicRequest.StartoverWindowSeconds.Value);
                 }
 
                 if(publicRequest.IsSetTags())

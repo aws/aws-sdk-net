@@ -63,9 +63,9 @@ namespace Amazon.ECRPublic.Model
         /// tokens are valid for 12 hours.
         /// </para>
         /// </summary>
-        public DateTime ExpiresAt
+        public DateTime? ExpiresAt
         {
-            get { return this._expiresAt.GetValueOrDefault(); }
+            get { return this._expiresAt; }
             set { this._expiresAt = value; }
         }
 

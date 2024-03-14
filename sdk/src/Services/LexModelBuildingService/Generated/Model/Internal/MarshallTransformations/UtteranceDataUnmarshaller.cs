@@ -65,25 +65,25 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("count", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("distinctUsers", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DistinctUsers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("firstUtteredDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstUtteredDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUtteredDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUtteredDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

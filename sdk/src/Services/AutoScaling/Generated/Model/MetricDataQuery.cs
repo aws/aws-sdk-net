@@ -161,9 +161,9 @@ namespace Amazon.AutoScaling.Model
         /// specify anything for <c>ReturnData</c>. This sets it to its default (<c>true</c>).
         /// </para>
         /// </summary>
-        public bool ReturnData
+        public bool? ReturnData
         {
-            get { return this._returnData.GetValueOrDefault(); }
+            get { return this._returnData; }
             set { this._returnData = value; }
         }
 

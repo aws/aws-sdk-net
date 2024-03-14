@@ -63,9 +63,9 @@ namespace Amazon.FMS.Model
         /// Indicates that over 100 resources are noncompliant with the Firewall Manager policy.
         /// </para>
         /// </summary>
-        public bool EvaluationLimitExceeded
+        public bool? EvaluationLimitExceeded
         {
-            get { return this._evaluationLimitExceeded.GetValueOrDefault(); }
+            get { return this._evaluationLimitExceeded; }
             set { this._evaluationLimitExceeded = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.FMS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ViolatorCount
+        public long? ViolatorCount
         {
-            get { return this._violatorCount.GetValueOrDefault(); }
+            get { return this._violatorCount; }
             set { this._violatorCount = value; }
         }
 

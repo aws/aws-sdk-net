@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxConcurrentInvocationsPerInstance
+        public int? MaxConcurrentInvocationsPerInstance
         {
-            get { return this._maxConcurrentInvocationsPerInstance.GetValueOrDefault(); }
+            get { return this._maxConcurrentInvocationsPerInstance; }
             set { this._maxConcurrentInvocationsPerInstance = value; }
         }
 

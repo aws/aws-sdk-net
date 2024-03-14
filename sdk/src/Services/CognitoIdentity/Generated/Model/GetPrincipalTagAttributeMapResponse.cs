@@ -103,9 +103,9 @@ namespace Amazon.CognitoIdentity.Model
         /// You can use this operation to list 
         /// </para>
         /// </summary>
-        public bool UseDefaults
+        public bool? UseDefaults
         {
-            get { return this._useDefaults.GetValueOrDefault(); }
+            get { return this._useDefaults; }
             set { this._useDefaults = value; }
         }
 

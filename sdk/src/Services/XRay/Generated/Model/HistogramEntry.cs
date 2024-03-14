@@ -43,9 +43,9 @@ namespace Amazon.XRay.Model
         /// The prevalence of the entry.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.XRay.Model
         /// The value of the entry.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

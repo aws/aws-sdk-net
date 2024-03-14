@@ -63,9 +63,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The creation date of the device.
         /// </para>
         /// </summary>
-        public DateTime DeviceCreateDate
+        public DateTime? DeviceCreateDate
         {
-            get { return this._deviceCreateDate.GetValueOrDefault(); }
+            get { return this._deviceCreateDate; }
             set { this._deviceCreateDate = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The date when the device was last authenticated.
         /// </para>
         /// </summary>
-        public DateTime DeviceLastAuthenticatedDate
+        public DateTime? DeviceLastAuthenticatedDate
         {
-            get { return this._deviceLastAuthenticatedDate.GetValueOrDefault(); }
+            get { return this._deviceLastAuthenticatedDate; }
             set { this._deviceLastAuthenticatedDate = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
-        public DateTime DeviceLastModifiedDate
+        public DateTime? DeviceLastModifiedDate
         {
-            get { return this._deviceLastModifiedDate.GetValueOrDefault(); }
+            get { return this._deviceLastModifiedDate; }
             set { this._deviceLastModifiedDate = value; }
         }
 

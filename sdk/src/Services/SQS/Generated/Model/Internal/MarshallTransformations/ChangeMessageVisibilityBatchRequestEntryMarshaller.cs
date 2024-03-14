@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVisibilityTimeout())
             {
                 context.Writer.WritePropertyName("VisibilityTimeout");
-                context.Writer.Write(requestObject.VisibilityTimeout);
+                context.Writer.Write(requestObject.VisibilityTimeout.Value);
             }
 
         }

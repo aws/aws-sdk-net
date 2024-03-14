@@ -430,9 +430,9 @@ namespace Amazon.CodeDeploy.Model
         /// in</a> topic in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
-        public bool TerminationHookEnabled
+        public bool? TerminationHookEnabled
         {
-            get { return this._terminationHookEnabled.GetValueOrDefault(); }
+            get { return this._terminationHookEnabled; }
             set { this._terminationHookEnabled = value; }
         }
 

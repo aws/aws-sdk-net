@@ -48,7 +48,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowDeferredExecution())
             {
                 context.Writer.WritePropertyName("AllowDeferredExecution");
-                context.Writer.Write(requestObject.AllowDeferredExecution);
+                context.Writer.Write(requestObject.AllowDeferredExecution.Value);
             }
 
             if(requestObject.IsSetDataAccessRoleArn())

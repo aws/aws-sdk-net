@@ -45,9 +45,9 @@ namespace Amazon.Rekognition.Model
         /// or both are performing poorly. 
         /// </para>
         /// </summary>
-        public float F1Score
+        public float? F1Score
         {
-            get { return this._f1Score.GetValueOrDefault(); }
+            get { return this._f1Score; }
             set { this._f1Score = value; }
         }
 

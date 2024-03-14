@@ -66,9 +66,9 @@ namespace Amazon.ServerMigrationService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=28800)]
-        public int ExecutionTimeoutSeconds
+        public int? ExecutionTimeoutSeconds
         {
-            get { return this._executionTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._executionTimeoutSeconds; }
             set { this._executionTimeoutSeconds = value; }
         }
 

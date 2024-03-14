@@ -42,9 +42,9 @@ namespace Amazon.WorkDocs.Model
         /// The size end range (in bytes).
         /// </para>
         /// </summary>
-        public long EndValue
+        public long? EndValue
         {
-            get { return this._endValue.GetValueOrDefault(); }
+            get { return this._endValue; }
             set { this._endValue = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.WorkDocs.Model
         /// The size start range (in bytes).
         /// </para>
         /// </summary>
-        public long StartValue
+        public long? StartValue
         {
-            get { return this._startValue.GetValueOrDefault(); }
+            get { return this._startValue; }
             set { this._startValue = value; }
         }
 

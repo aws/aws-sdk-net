@@ -81,9 +81,9 @@ namespace Amazon.MediaConvert.Model
         /// Minimum: 192000. Maximum: 3024000.
         /// </summary>
         [AWSProperty(Min=32000, Max=3024000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.MediaConvert.Model
         /// input audio is Dolby Digital Plus, dialnorm will be passed through.
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
-        public int Dialnorm
+        public int? Dialnorm
         {
-            get { return this._dialnorm.GetValueOrDefault(); }
+            get { return this._dialnorm; }
             set { this._dialnorm = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.MediaConvert.Model
         /// value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different
         /// value for Coding mode, the service ignores Left only/Right only center.
         /// </summary>
-        public double LoRoCenterMixLevel
+        public double? LoRoCenterMixLevel
         {
-            get { return this._loRoCenterMixLevel.GetValueOrDefault(); }
+            get { return this._loRoCenterMixLevel; }
             set { this._loRoCenterMixLevel = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.MediaConvert.Model
         /// C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding
         /// mode, the service ignores Left only/Right only surround.
         /// </summary>
-        public double LoRoSurroundMixLevel
+        public double? LoRoSurroundMixLevel
         {
-            get { return this._loRoSurroundMixLevel.GetValueOrDefault(); }
+            get { return this._loRoSurroundMixLevel; }
             set { this._loRoSurroundMixLevel = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.MediaConvert.Model
         /// value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different
         /// value for Coding mode, the service ignores Left total/Right total center.
         /// </summary>
-        public double LtRtCenterMixLevel
+        public double? LtRtCenterMixLevel
         {
-            get { return this._ltRtCenterMixLevel.GetValueOrDefault(); }
+            get { return this._ltRtCenterMixLevel; }
             set { this._ltRtCenterMixLevel = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.MediaConvert.Model
         /// of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value
         /// for Coding mode, the service ignores Left total/Right total surround.
         /// </summary>
-        public double LtRtSurroundMixLevel
+        public double? LtRtSurroundMixLevel
         {
-            get { return this._ltRtSurroundMixLevel.GetValueOrDefault(); }
+            get { return this._ltRtSurroundMixLevel; }
             set { this._ltRtSurroundMixLevel = value; }
         }
 
@@ -373,9 +373,9 @@ namespace Amazon.MediaConvert.Model
         /// sample rate in Hz.
         /// </summary>
         [AWSProperty(Min=48000, Max=48000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 

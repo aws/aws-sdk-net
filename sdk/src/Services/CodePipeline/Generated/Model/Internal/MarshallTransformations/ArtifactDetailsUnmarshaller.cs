@@ -65,13 +65,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maximumCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,9 +65,9 @@ namespace Amazon.QuickSight.Model
         /// The time that this dashboard was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.QuickSight.Model
         /// The last time that this dashboard was published.
         /// </para>
         /// </summary>
-        public DateTime LastPublishedTime
+        public DateTime? LastPublishedTime
         {
-            get { return this._lastPublishedTime.GetValueOrDefault(); }
+            get { return this._lastPublishedTime; }
             set { this._lastPublishedTime = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.QuickSight.Model
         /// The last time that this dashboard was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long PublishedVersionNumber
+        public long? PublishedVersionNumber
         {
-            get { return this._publishedVersionNumber.GetValueOrDefault(); }
+            get { return this._publishedVersionNumber; }
             set { this._publishedVersionNumber = value; }
         }
 

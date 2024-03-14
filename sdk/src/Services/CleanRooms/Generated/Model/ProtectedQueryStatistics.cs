@@ -41,9 +41,9 @@ namespace Amazon.CleanRooms.Model
         /// The duration of the Protected Query, from creation until query completion.
         /// </para>
         /// </summary>
-        public long TotalDurationInMillis
+        public long? TotalDurationInMillis
         {
-            get { return this._totalDurationInMillis.GetValueOrDefault(); }
+            get { return this._totalDurationInMillis; }
             set { this._totalDurationInMillis = value; }
         }
 

@@ -71,13 +71,13 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("defaultTimeToLive", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DefaultTimeToLive = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -58,9 +58,9 @@ namespace Amazon.LookoutforVision.Model
         /// Only includes entries after the specified date in the response. For example, <c>2020-06-23T00:00:00</c>.
         /// </para>
         /// </summary>
-        public DateTime AfterCreationDate
+        public DateTime? AfterCreationDate
         {
-            get { return this._afterCreationDate.GetValueOrDefault(); }
+            get { return this._afterCreationDate; }
             set { this._afterCreationDate = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.LookoutforVision.Model
         /// Only includes entries before the specified date in the response. For example, <c>2020-06-23T00:00:00</c>.
         /// </para>
         /// </summary>
-        public DateTime BeforeCreationDate
+        public DateTime? BeforeCreationDate
         {
-            get { return this._beforeCreationDate.GetValueOrDefault(); }
+            get { return this._beforeCreationDate; }
             set { this._beforeCreationDate = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.LookoutforVision.Model
         /// you don't specify a value, Lookout for Vision returns all entries.
         /// </para>
         /// </summary>
-        public bool Labeled
+        public bool? Labeled
         {
-            get { return this._labeled.GetValueOrDefault(); }
+            get { return this._labeled; }
             set { this._labeled = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.LookoutforVision.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("estimatedTotalDedupedSavings", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.EstimatedTotalDedupedSavings = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -99,9 +99,9 @@ namespace Amazon.ECR.Model
         /// The time of the last completed image scan.
         /// </para>
         /// </summary>
-        public DateTime ImageScanCompletedAt
+        public DateTime? ImageScanCompletedAt
         {
-            get { return this._imageScanCompletedAt.GetValueOrDefault(); }
+            get { return this._imageScanCompletedAt; }
             set { this._imageScanCompletedAt = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.ECR.Model
         /// The time when the vulnerability data was last scanned.
         /// </para>
         /// </summary>
-        public DateTime VulnerabilitySourceUpdatedAt
+        public DateTime? VulnerabilitySourceUpdatedAt
         {
-            get { return this._vulnerabilitySourceUpdatedAt.GetValueOrDefault(); }
+            get { return this._vulnerabilitySourceUpdatedAt; }
             set { this._vulnerabilitySourceUpdatedAt = value; }
         }
 

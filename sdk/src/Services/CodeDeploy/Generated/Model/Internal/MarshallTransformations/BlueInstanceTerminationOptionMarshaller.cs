@@ -54,7 +54,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTerminationWaitTimeInMinutes())
             {
                 context.Writer.WritePropertyName("terminationWaitTimeInMinutes");
-                context.Writer.Write(requestObject.TerminationWaitTimeInMinutes);
+                context.Writer.Write(requestObject.TerminationWaitTimeInMinutes.Value);
             }
 
         }

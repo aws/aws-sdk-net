@@ -54,7 +54,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReservedStreamCapacity())
             {
                 context.Writer.WritePropertyName("ReservedStreamCapacity");
-                context.Writer.Write(requestObject.ReservedStreamCapacity);
+                context.Writer.Write(requestObject.ReservedStreamCapacity.Value);
             }
 
             if(requestObject.IsSetSinkArn())

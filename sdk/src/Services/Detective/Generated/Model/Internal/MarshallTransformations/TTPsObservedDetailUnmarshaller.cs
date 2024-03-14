@@ -65,7 +65,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("APIFailureCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.APIFailureCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("APISuccessCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.APISuccessCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -45,9 +45,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int LineItemGroupIndex
+        public int? LineItemGroupIndex
         {
-            get { return this._lineItemGroupIndex.GetValueOrDefault(); }
+            get { return this._lineItemGroupIndex; }
             set { this._lineItemGroupIndex = value; }
         }
 

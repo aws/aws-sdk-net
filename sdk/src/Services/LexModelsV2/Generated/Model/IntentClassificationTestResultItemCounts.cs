@@ -82,9 +82,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalResultCount
+        public int? TotalResultCount
         {
-            get { return this._totalResultCount.GetValueOrDefault(); }
+            get { return this._totalResultCount; }
             set { this._totalResultCount = value; }
         }
 

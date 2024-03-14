@@ -48,7 +48,7 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrimary())
             {
                 context.Writer.WritePropertyName("Primary");
-                context.Writer.Write(requestObject.Primary);
+                context.Writer.Write(requestObject.Primary.Value);
             }
 
             if(requestObject.IsSetType())

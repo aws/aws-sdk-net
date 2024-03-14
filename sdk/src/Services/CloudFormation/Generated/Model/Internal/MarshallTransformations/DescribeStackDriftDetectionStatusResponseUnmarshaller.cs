@@ -95,7 +95,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DriftedStackResourceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.DriftedStackResourceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -119,7 +119,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.Timestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }

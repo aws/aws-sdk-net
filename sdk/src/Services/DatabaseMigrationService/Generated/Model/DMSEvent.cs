@@ -47,9 +47,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date of the event.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 

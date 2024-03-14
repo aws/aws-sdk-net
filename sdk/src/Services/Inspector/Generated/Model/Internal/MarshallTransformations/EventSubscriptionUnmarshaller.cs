@@ -71,7 +71,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("subscribedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SubscribedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

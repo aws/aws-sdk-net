@@ -71,7 +71,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfAssociatedServices", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAssociatedServices = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfAssociatedVPCs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAssociatedVPCs = unmarshaller.Unmarshall(context);
                     continue;
                 }

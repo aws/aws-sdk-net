@@ -98,9 +98,9 @@ namespace Amazon.ManagedBlockchain.Model
         ///  The date and time that the proposal was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// aren't carried out. 
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.ManagedBlockchain.Model
         ///  The current total of <c>NO</c> votes cast on the proposal by members. 
         /// </para>
         /// </summary>
-        public int NoVoteCount
+        public int? NoVoteCount
         {
-            get { return this._noVoteCount.GetValueOrDefault(); }
+            get { return this._noVoteCount; }
             set { this._noVoteCount = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// the number of members minus the sum of <c>YES</c> votes and <c>NO</c> votes. 
         /// </para>
         /// </summary>
-        public int OutstandingVoteCount
+        public int? OutstandingVoteCount
         {
-            get { return this._outstandingVoteCount.GetValueOrDefault(); }
+            get { return this._outstandingVoteCount; }
             set { this._outstandingVoteCount = value; }
         }
 
@@ -343,9 +343,9 @@ namespace Amazon.ManagedBlockchain.Model
         ///  The current total of <c>YES</c> votes cast on the proposal by members. 
         /// </para>
         /// </summary>
-        public int YesVoteCount
+        public int? YesVoteCount
         {
-            get { return this._yesVoteCount.GetValueOrDefault(); }
+            get { return this._yesVoteCount; }
             set { this._yesVoteCount = value; }
         }
 

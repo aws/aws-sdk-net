@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CodeStarconnections")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CodeStar connections. Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.")]
 #elif NETCOREAPP3_1

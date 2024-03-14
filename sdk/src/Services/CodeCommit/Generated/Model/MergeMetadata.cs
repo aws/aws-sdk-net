@@ -45,9 +45,9 @@ namespace Amazon.CodeCommit.Model
         /// A Boolean value indicating whether the merge has been made.
         /// </para>
         /// </summary>
-        public bool IsMerged
+        public bool? IsMerged
         {
-            get { return this._isMerged.GetValueOrDefault(); }
+            get { return this._isMerged; }
             set { this._isMerged = value; }
         }
 

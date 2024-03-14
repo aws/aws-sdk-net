@@ -65,7 +65,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FromPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FromPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ToPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ToPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

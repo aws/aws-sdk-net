@@ -48,9 +48,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Disables or enables a SIP rule. You must disable SIP rules before you can delete them.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

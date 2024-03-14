@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of infected files identified.
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.GuardDuty.Model
         /// threat.
         /// </para>
         /// </summary>
-        public bool Shortened
+        public bool? Shortened
         {
-            get { return this._shortened.GetValueOrDefault(); }
+            get { return this._shortened; }
             set { this._shortened = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of unique threats by name identified, as part of the malware scan.
         /// </para>
         /// </summary>
-        public int UniqueThreatNameCount
+        public int? UniqueThreatNameCount
         {
-            get { return this._uniqueThreatNameCount.GetValueOrDefault(); }
+            get { return this._uniqueThreatNameCount; }
             set { this._uniqueThreatNameCount = value; }
         }
 

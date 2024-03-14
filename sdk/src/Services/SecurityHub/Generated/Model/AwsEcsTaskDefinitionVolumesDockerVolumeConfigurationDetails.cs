@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to create the Docker volume automatically if it does not already exist.
         /// </para>
         /// </summary>
-        public bool Autoprovision
+        public bool? Autoprovision
         {
-            get { return this._autoprovision.GetValueOrDefault(); }
+            get { return this._autoprovision; }
             set { this._autoprovision = value; }
         }
 

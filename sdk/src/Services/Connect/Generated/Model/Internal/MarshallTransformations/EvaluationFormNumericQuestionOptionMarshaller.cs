@@ -48,25 +48,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticFail())
             {
                 context.Writer.WritePropertyName("AutomaticFail");
-                context.Writer.Write(requestObject.AutomaticFail);
+                context.Writer.Write(requestObject.AutomaticFail.Value);
             }
 
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("MaxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                context.Writer.Write(requestObject.MaxValue.Value);
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("MinValue");
-                context.Writer.Write(requestObject.MinValue);
+                context.Writer.Write(requestObject.MinValue.Value);
             }
 
             if(requestObject.IsSetScore())
             {
                 context.Writer.WritePropertyName("Score");
-                context.Writer.Write(requestObject.Score);
+                context.Writer.Write(requestObject.Score.Value);
             }
 
         }

@@ -124,9 +124,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The last time that the TLS inspection configuration was changed.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The number of firewall policies that use this TLS inspection configuration.
         /// </para>
         /// </summary>
-        public int NumberOfAssociations
+        public int? NumberOfAssociations
         {
-            get { return this._numberOfAssociations.GetValueOrDefault(); }
+            get { return this._numberOfAssociations; }
             set { this._numberOfAssociations = value; }
         }
 

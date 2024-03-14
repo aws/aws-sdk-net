@@ -92,7 +92,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRoomUtilizationMetricsEnabled())
             {
                 context.Writer.WritePropertyName("RoomUtilizationMetricsEnabled");
-                context.Writer.Write(requestObject.RoomUtilizationMetricsEnabled);
+                context.Writer.Write(requestObject.RoomUtilizationMetricsEnabled.Value);
             }
 
         }

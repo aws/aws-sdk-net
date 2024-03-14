@@ -44,9 +44,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
-        public int NumberOfDays
+        public int? NumberOfDays
         {
-            get { return this._numberOfDays.GetValueOrDefault(); }
+            get { return this._numberOfDays; }
             set { this._numberOfDays = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.IoTSiteWise.Model
         /// If set to true, the data is stored indefinitely in the warm tier.
         /// </para>
         /// </summary>
-        public bool Unlimited
+        public bool? Unlimited
         {
-            get { return this._unlimited.GetValueOrDefault(); }
+            get { return this._unlimited; }
             set { this._unlimited = value; }
         }
 

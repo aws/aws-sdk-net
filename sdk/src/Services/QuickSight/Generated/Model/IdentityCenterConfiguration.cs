@@ -41,9 +41,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean option that controls whether Trusted Identity Propagation should be used.
         /// </para>
         /// </summary>
-        public bool EnableIdentityPropagation
+        public bool? EnableIdentityPropagation
         {
-            get { return this._enableIdentityPropagation.GetValueOrDefault(); }
+            get { return this._enableIdentityPropagation; }
             set { this._enableIdentityPropagation = value; }
         }
 

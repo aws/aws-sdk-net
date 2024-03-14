@@ -131,9 +131,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.RDS.Model
         /// If you restore an RDS Custom DB instance, you must disable this parameter.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.RDS.Model
         /// Copying tags to DB instance snapshots</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -564,9 +564,9 @@ namespace Amazon.RDS.Model
         /// Specifies whether to enable a dedicated log volume (DLV) for the DB instance.
         /// </para>
         /// </summary>
-        public bool DedicatedLogVolume
+        public bool? DedicatedLogVolume
         {
-            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._dedicatedLogVolume; }
             set { this._dedicatedLogVolume = value; }
         }
 
@@ -585,9 +585,9 @@ namespace Amazon.RDS.Model
         /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -828,9 +828,9 @@ namespace Amazon.RDS.Model
         /// IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableCustomerOwnedIp
+        public bool? EnableCustomerOwnedIp
         {
-            get { return this._enableCustomerOwnedIp.GetValueOrDefault(); }
+            get { return this._enableCustomerOwnedIp; }
             set { this._enableCustomerOwnedIp = value; }
         }
 
@@ -857,9 +857,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -977,9 +977,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Must be an integer greater than 1000.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -1035,9 +1035,9 @@ namespace Amazon.RDS.Model
         /// is a Multi-AZ deployment.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -1130,9 +1130,9 @@ namespace Amazon.RDS.Model
         /// Constraints: Value must be <c>1150-65535</c> 
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -1189,9 +1189,9 @@ namespace Amazon.RDS.Model
         /// For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -1211,9 +1211,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom or Amazon Aurora.
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public int? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 
@@ -1325,9 +1325,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
-        public bool UseDefaultProcessorFeatures
+        public bool? UseDefaultProcessorFeatures
         {
-            get { return this._useDefaultProcessorFeatures.GetValueOrDefault(); }
+            get { return this._useDefaultProcessorFeatures; }
             set { this._useDefaultProcessorFeatures = value; }
         }
 

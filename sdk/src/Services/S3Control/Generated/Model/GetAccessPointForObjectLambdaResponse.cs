@@ -62,9 +62,9 @@ namespace Amazon.S3Control.Model
         /// The date and time when the specified Object Lambda Access Point was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 

@@ -48,13 +48,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDownloadSpeed())
             {
                 context.Writer.WritePropertyName("DownloadSpeed");
-                context.Writer.Write(requestObject.DownloadSpeed);
+                context.Writer.Write(requestObject.DownloadSpeed.Value);
             }
 
             if(requestObject.IsSetUploadSpeed())
             {
                 context.Writer.WritePropertyName("UploadSpeed");
-                context.Writer.Write(requestObject.UploadSpeed);
+                context.Writer.Write(requestObject.UploadSpeed.Value);
             }
 
         }

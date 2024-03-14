@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseAwsOwnedKey())
             {
                 context.Writer.WritePropertyName("UseAwsOwnedKey");
-                context.Writer.Write(requestObject.UseAwsOwnedKey);
+                context.Writer.Write(requestObject.UseAwsOwnedKey.Value);
             }
 
         }

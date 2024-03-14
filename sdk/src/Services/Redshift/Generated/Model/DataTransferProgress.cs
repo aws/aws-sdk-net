@@ -47,9 +47,9 @@ namespace Amazon.Redshift.Model
         /// Describes the data transfer rate in MB's per second.
         /// </para>
         /// </summary>
-        public double CurrentRateInMegaBytesPerSecond
+        public double? CurrentRateInMegaBytesPerSecond
         {
-            get { return this._currentRateInMegaBytesPerSecond.GetValueOrDefault(); }
+            get { return this._currentRateInMegaBytesPerSecond; }
             set { this._currentRateInMegaBytesPerSecond = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Redshift.Model
         /// Describes the total amount of data that has been transfered in MB's.
         /// </para>
         /// </summary>
-        public long DataTransferredInMegaBytes
+        public long? DataTransferredInMegaBytes
         {
-            get { return this._dataTransferredInMegaBytes.GetValueOrDefault(); }
+            get { return this._dataTransferredInMegaBytes; }
             set { this._dataTransferredInMegaBytes = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Redshift.Model
         /// Describes the number of seconds that have elapsed during the data transfer.
         /// </para>
         /// </summary>
-        public long ElapsedTimeInSeconds
+        public long? ElapsedTimeInSeconds
         {
-            get { return this._elapsedTimeInSeconds.GetValueOrDefault(); }
+            get { return this._elapsedTimeInSeconds; }
             set { this._elapsedTimeInSeconds = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Redshift.Model
         /// Describes the estimated number of seconds remaining to complete the transfer.
         /// </para>
         /// </summary>
-        public long EstimatedTimeToCompletionInSeconds
+        public long? EstimatedTimeToCompletionInSeconds
         {
-            get { return this._estimatedTimeToCompletionInSeconds.GetValueOrDefault(); }
+            get { return this._estimatedTimeToCompletionInSeconds; }
             set { this._estimatedTimeToCompletionInSeconds = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.Redshift.Model
         /// Describes the total amount of data to be transfered in megabytes.
         /// </para>
         /// </summary>
-        public long TotalDataInMegaBytes
+        public long? TotalDataInMegaBytes
         {
-            get { return this._totalDataInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalDataInMegaBytes; }
             set { this._totalDataInMegaBytes = value; }
         }
 

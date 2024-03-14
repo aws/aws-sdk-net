@@ -59,19 +59,19 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableDynamicScaling())
             {
                 context.Writer.WritePropertyName("DisableDynamicScaling");
-                context.Writer.Write(requestObject.DisableDynamicScaling);
+                context.Writer.Write(requestObject.DisableDynamicScaling.Value);
             }
 
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity);
+                context.Writer.Write(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetMinCapacity())
             {
                 context.Writer.WritePropertyName("MinCapacity");
-                context.Writer.Write(requestObject.MinCapacity);
+                context.Writer.Write(requestObject.MinCapacity.Value);
             }
 
             if(requestObject.IsSetPredefinedLoadMetricSpecification())
@@ -94,7 +94,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPredictiveScalingMaxCapacityBuffer())
             {
                 context.Writer.WritePropertyName("PredictiveScalingMaxCapacityBuffer");
-                context.Writer.Write(requestObject.PredictiveScalingMaxCapacityBuffer);
+                context.Writer.Write(requestObject.PredictiveScalingMaxCapacityBuffer.Value);
             }
 
             if(requestObject.IsSetPredictiveScalingMode())
@@ -124,7 +124,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduledActionBufferTime())
             {
                 context.Writer.WritePropertyName("ScheduledActionBufferTime");
-                context.Writer.Write(requestObject.ScheduledActionBufferTime);
+                context.Writer.Write(requestObject.ScheduledActionBufferTime.Value);
             }
 
             if(requestObject.IsSetServiceNamespace())

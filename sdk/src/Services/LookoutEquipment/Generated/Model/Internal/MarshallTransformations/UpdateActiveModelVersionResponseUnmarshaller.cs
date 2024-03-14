@@ -53,7 +53,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CurrentActiveVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CurrentActiveVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PreviousActiveVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PreviousActiveVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

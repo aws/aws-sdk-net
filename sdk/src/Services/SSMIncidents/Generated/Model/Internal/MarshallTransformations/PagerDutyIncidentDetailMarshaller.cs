@@ -48,7 +48,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoResolve())
             {
                 context.Writer.WritePropertyName("autoResolve");
-                context.Writer.Write(requestObject.AutoResolve);
+                context.Writer.Write(requestObject.AutoResolve.Value);
             }
 
             if(requestObject.IsSetId())

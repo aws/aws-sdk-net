@@ -87,7 +87,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBlockSize())
                 {
                     context.Writer.WritePropertyName("BlockSize");
-                    context.Writer.Write(publicRequest.BlockSize);
+                    context.Writer.Write(publicRequest.BlockSize.Value);
                 }
 
                 if(publicRequest.IsSetKerberosKeytab())
@@ -144,7 +144,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplicationFactor())
                 {
                     context.Writer.WritePropertyName("ReplicationFactor");
-                    context.Writer.Write(publicRequest.ReplicationFactor);
+                    context.Writer.Write(publicRequest.ReplicationFactor.Value);
                 }
 
                 if(publicRequest.IsSetSimpleUser())

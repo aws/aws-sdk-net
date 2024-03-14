@@ -56,9 +56,9 @@ namespace Amazon.EC2.Model
         /// by the service owner.
         /// </para>
         /// </summary>
-        public bool AcceptanceRequired
+        public bool? AcceptanceRequired
         {
-            get { return this._acceptanceRequired.GetValueOrDefault(); }
+            get { return this._acceptanceRequired; }
             set { this._acceptanceRequired = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         /// VPC endpoints using the VPC endpoint API is restricted.
         /// </para>
         /// </summary>
-        public bool ManagesVpcEndpoints
+        public bool? ManagesVpcEndpoints
         {
-            get { return this._managesVpcEndpoints.GetValueOrDefault(); }
+            get { return this._managesVpcEndpoints; }
             set { this._managesVpcEndpoints = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the service supports endpoint policies.
         /// </para>
         /// </summary>
-        public bool VpcEndpointPolicySupported
+        public bool? VpcEndpointPolicySupported
         {
-            get { return this._vpcEndpointPolicySupported.GetValueOrDefault(); }
+            get { return this._vpcEndpointPolicySupported; }
             set { this._vpcEndpointPolicySupported = value; }
         }
 

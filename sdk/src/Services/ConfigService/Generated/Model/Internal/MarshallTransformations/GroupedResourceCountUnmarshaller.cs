@@ -71,7 +71,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ResourceCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ResourceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriodSize())
             {
                 context.Writer.WritePropertyName("PeriodSize");
-                context.Writer.Write(requestObject.PeriodSize);
+                context.Writer.Write(requestObject.PeriodSize.Value);
             }
 
             if(requestObject.IsSetTime())

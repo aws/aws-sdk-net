@@ -44,9 +44,9 @@ namespace Amazon.CostExplorer.Model
         /// Determines whether the result is estimated.
         /// </para>
         /// </summary>
-        public bool Estimated
+        public bool? Estimated
         {
-            get { return this._estimated.GetValueOrDefault(); }
+            get { return this._estimated; }
             set { this._estimated = value; }
         }
 

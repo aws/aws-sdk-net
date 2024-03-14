@@ -87,9 +87,9 @@ namespace Amazon.ElastiCache.Model
         /// obtained for the snapshot. Available for Redis only.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ElastiCache.Model
         /// The time that the serverless cache snapshot will expire. Available for Redis only.
         /// </para>
         /// </summary>
-        public DateTime ExpiryTime
+        public DateTime? ExpiryTime
         {
-            get { return this._expiryTime.GetValueOrDefault(); }
+            get { return this._expiryTime; }
             set { this._expiryTime = value; }
         }
 

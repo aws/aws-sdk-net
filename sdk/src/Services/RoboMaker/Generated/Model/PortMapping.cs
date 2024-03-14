@@ -44,9 +44,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1024, Max=65535)]
-        public int ApplicationPort
+        public int? ApplicationPort
         {
-            get { return this._applicationPort.GetValueOrDefault(); }
+            get { return this._applicationPort; }
             set { this._applicationPort = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.RoboMaker.Model
         /// A Boolean indicating whether to enable this port mapping on public IP.
         /// </para>
         /// </summary>
-        public bool EnableOnPublicIp
+        public bool? EnableOnPublicIp
         {
-            get { return this._enableOnPublicIp.GetValueOrDefault(); }
+            get { return this._enableOnPublicIp; }
             set { this._enableOnPublicIp = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int JobPort
+        public int? JobPort
         {
-            get { return this._jobPort.GetValueOrDefault(); }
+            get { return this._jobPort; }
             set { this._jobPort = value; }
         }
 

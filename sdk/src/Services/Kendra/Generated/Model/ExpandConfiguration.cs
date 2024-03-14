@@ -44,9 +44,9 @@ namespace Amazon.Kendra.Model
         /// if you set this value to 3, then at most 3 results per collapsed group will be displayed.
         /// </para>
         /// </summary>
-        public int MaxExpandedResultsPerItem
+        public int? MaxExpandedResultsPerItem
         {
-            get { return this._maxExpandedResultsPerItem.GetValueOrDefault(); }
+            get { return this._maxExpandedResultsPerItem; }
             set { this._maxExpandedResultsPerItem = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Kendra.Model
         /// 
         /// </para>
         /// </summary>
-        public int MaxResultItemsToExpand
+        public int? MaxResultItemsToExpand
         {
-            get { return this._maxResultItemsToExpand.GetValueOrDefault(); }
+            get { return this._maxResultItemsToExpand; }
             set { this._maxResultItemsToExpand = value; }
         }
 

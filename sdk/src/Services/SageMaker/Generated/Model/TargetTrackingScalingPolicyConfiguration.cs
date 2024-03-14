@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// The recommended target value to specify for the metric when creating a scaling policy.
         /// </para>
         /// </summary>
-        public double TargetValue
+        public double? TargetValue
         {
-            get { return this._targetValue.GetValueOrDefault(); }
+            get { return this._targetValue; }
             set { this._targetValue = value; }
         }
 

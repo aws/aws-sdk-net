@@ -67,9 +67,9 @@ namespace Amazon.CloudFront.Model
         /// Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        public long ErrorCachingMinTTL
+        public long? ErrorCachingMinTTL
         {
-            get { return this._errorCachingMinTTL.GetValueOrDefault(); }
+            get { return this._errorCachingMinTTL; }
             set { this._errorCachingMinTTL = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ErrorCode
+        public int? ErrorCode
         {
-            get { return this._errorCode.GetValueOrDefault(); }
+            get { return this._errorCode; }
             set { this._errorCode = value; }
         }
 

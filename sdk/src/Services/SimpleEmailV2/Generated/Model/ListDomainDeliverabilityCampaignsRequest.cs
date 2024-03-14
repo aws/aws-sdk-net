@@ -50,9 +50,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// to obtain additional results.
         /// </para>
         /// </summary>
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

@@ -72,9 +72,9 @@ namespace Amazon.Pinpoint.Model
         /// Specifies whether to enable application-related alarms in Amazon CloudWatch.
         /// </para>
         /// </summary>
-        public bool CloudWatchMetricsEnabled
+        public bool? CloudWatchMetricsEnabled
         {
-            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchMetricsEnabled; }
             set { this._cloudWatchMetricsEnabled = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EventTaggingEnabled.
         /// </summary>
-        public bool EventTaggingEnabled
+        public bool? EventTaggingEnabled
         {
-            get { return this._eventTaggingEnabled.GetValueOrDefault(); }
+            get { return this._eventTaggingEnabled; }
             set { this._eventTaggingEnabled = value; }
         }
 

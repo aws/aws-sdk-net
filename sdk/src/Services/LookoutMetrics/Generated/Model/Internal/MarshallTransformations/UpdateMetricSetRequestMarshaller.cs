@@ -140,7 +140,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOffset())
                 {
                     context.Writer.WritePropertyName("Offset");
-                    context.Writer.Write(publicRequest.Offset);
+                    context.Writer.Write(publicRequest.Offset.Value);
                 }
 
                 if(publicRequest.IsSetTimestampColumn())

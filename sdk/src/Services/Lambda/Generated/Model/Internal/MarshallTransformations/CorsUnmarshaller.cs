@@ -65,7 +65,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowCredentials", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxAge", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAge = unmarshaller.Unmarshall(context);
                     continue;
                 }

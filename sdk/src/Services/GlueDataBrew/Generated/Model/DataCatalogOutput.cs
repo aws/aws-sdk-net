@@ -106,9 +106,9 @@ namespace Amazon.GlueDataBrew.Model
         /// overwritten with new output. Not supported with DatabaseOptions.
         /// </para>
         /// </summary>
-        public bool Overwrite
+        public bool? Overwrite
         {
-            get { return this._overwrite.GetValueOrDefault(); }
+            get { return this._overwrite; }
             set { this._overwrite = value; }
         }
 

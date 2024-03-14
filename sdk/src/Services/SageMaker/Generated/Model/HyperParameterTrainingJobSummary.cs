@@ -53,9 +53,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.SageMaker.Model
         /// For failed jobs, this is the time when SageMaker detects a job failure.
         /// </para>
         /// </summary>
-        public DateTime TrainingEndTime
+        public DateTime? TrainingEndTime
         {
-            get { return this._trainingEndTime.GetValueOrDefault(); }
+            get { return this._trainingEndTime; }
             set { this._trainingEndTime = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.SageMaker.Model
         /// The date and time that the training job started.
         /// </para>
         /// </summary>
-        public DateTime TrainingStartTime
+        public DateTime? TrainingStartTime
         {
-            get { return this._trainingStartTime.GetValueOrDefault(); }
+            get { return this._trainingStartTime; }
             set { this._trainingStartTime = value; }
         }
 

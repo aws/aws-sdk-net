@@ -71,13 +71,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("endpointPrivateAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EndpointPrivateAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("endpointPublicAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

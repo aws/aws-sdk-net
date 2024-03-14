@@ -77,7 +77,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WarmupPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WarmupPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

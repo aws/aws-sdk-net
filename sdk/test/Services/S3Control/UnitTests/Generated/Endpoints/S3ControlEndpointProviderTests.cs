@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.S3Control.Endpoints;
 using Amazon.S3Control.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class S3ControlEndpointsTests

@@ -88,7 +88,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxConflictFiles())
                 {
                     context.Writer.WritePropertyName("maxConflictFiles");
-                    context.Writer.Write(publicRequest.MaxConflictFiles);
+                    context.Writer.Write(publicRequest.MaxConflictFiles.Value);
                 }
 
                 if(publicRequest.IsSetMergeOption())

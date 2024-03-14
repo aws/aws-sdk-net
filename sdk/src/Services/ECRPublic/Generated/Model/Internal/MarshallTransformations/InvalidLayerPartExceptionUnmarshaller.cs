@@ -66,7 +66,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastValidByteReceived", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastValidByteReceived = unmarshaller.Unmarshall(context);
                     continue;
                 }

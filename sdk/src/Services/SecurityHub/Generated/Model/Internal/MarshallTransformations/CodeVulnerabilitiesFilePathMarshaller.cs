@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndLine())
             {
                 context.Writer.WritePropertyName("EndLine");
-                context.Writer.Write(requestObject.EndLine);
+                context.Writer.Write(requestObject.EndLine.Value);
             }
 
             if(requestObject.IsSetFileName())
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartLine())
             {
                 context.Writer.WritePropertyName("StartLine");
-                context.Writer.Write(requestObject.StartLine);
+                context.Writer.Write(requestObject.StartLine.Value);
             }
 
         }

@@ -88,7 +88,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInteractive())
                 {
                     context.Writer.WritePropertyName("interactive");
-                    context.Writer.Write(publicRequest.Interactive);
+                    context.Writer.Write(publicRequest.Interactive.Value);
                 }
 
                 if(publicRequest.IsSetTask())

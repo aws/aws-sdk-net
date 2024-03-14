@@ -119,9 +119,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The update date and time.
         /// </para>
         /// </summary>
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

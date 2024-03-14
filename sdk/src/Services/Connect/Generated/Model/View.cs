@@ -90,9 +90,9 @@ namespace Amazon.Connect.Model
         /// The timestamp of when the view was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.Connect.Model
         /// Latest timestamp of the <c>UpdateViewContent</c> or <c>CreateViewVersion</c> operations.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.Connect.Model
         /// Current version of the view.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

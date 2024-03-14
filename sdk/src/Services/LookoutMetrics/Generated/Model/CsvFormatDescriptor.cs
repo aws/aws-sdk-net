@@ -65,9 +65,9 @@ namespace Amazon.LookoutMetrics.Model
         /// Whether or not the source CSV file contains a header.
         /// </para>
         /// </summary>
-        public bool ContainsHeader
+        public bool? ContainsHeader
         {
-            get { return this._containsHeader.GetValueOrDefault(); }
+            get { return this._containsHeader; }
             set { this._containsHeader = value; }
         }
 

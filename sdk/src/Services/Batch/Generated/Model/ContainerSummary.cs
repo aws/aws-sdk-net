@@ -42,9 +42,9 @@ namespace Amazon.Batch.Model
         /// The exit code to return upon completion.
         /// </para>
         /// </summary>
-        public int ExitCode
+        public int? ExitCode
         {
-            get { return this._exitCode.GetValueOrDefault(); }
+            get { return this._exitCode; }
             set { this._exitCode = value; }
         }
 

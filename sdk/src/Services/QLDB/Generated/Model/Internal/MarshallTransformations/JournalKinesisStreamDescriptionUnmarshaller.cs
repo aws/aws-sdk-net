@@ -71,7 +71,7 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExclusiveEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExclusiveEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InclusiveStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InclusiveStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

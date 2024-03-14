@@ -49,9 +49,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The time stamp of when the import job was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedTimestamp
+        public DateTime? CompletedTimestamp
         {
-            get { return this._completedTimestamp.GetValueOrDefault(); }
+            get { return this._completedTimestamp; }
             set { this._completedTimestamp = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The time stamp of when the import job was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The number of records that failed processing because of invalid input or other reasons.
         /// </para>
         /// </summary>
-        public int FailedRecordsCount
+        public int? FailedRecordsCount
         {
-            get { return this._failedRecordsCount.GetValueOrDefault(); }
+            get { return this._failedRecordsCount; }
             set { this._failedRecordsCount = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The current number of records processed.
         /// </para>
         /// </summary>
-        public int ProcessedRecordsCount
+        public int? ProcessedRecordsCount
         {
-            get { return this._processedRecordsCount.GetValueOrDefault(); }
+            get { return this._processedRecordsCount; }
             set { this._processedRecordsCount = value; }
         }
 

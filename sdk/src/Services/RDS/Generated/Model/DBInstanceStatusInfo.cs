@@ -64,9 +64,9 @@ namespace Amazon.RDS.Model
         /// (FALSE).
         /// </para>
         /// </summary>
-        public bool Normal
+        public bool? Normal
         {
-            get { return this._normal.GetValueOrDefault(); }
+            get { return this._normal; }
             set { this._normal = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDaysAfterInitiation())
             {
                 context.Writer.WritePropertyName("DaysAfterInitiation");
-                context.Writer.Write(requestObject.DaysAfterInitiation);
+                context.Writer.Write(requestObject.DaysAfterInitiation.Value);
             }
 
         }

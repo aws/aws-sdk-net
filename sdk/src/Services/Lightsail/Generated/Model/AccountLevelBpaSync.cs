@@ -62,9 +62,9 @@ namespace Amazon.Lightsail.Model
         /// your Lightsail buckets.
         /// </para>
         /// </summary>
-        public bool BpaImpactsLightsail
+        public bool? BpaImpactsLightsail
         {
-            get { return this._bpaImpactsLightsail.GetValueOrDefault(); }
+            get { return this._bpaImpactsLightsail; }
             set { this._bpaImpactsLightsail = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Lightsail.Model
         /// value is null when the account-level BPA configuration has not been synchronized.
         /// </para>
         /// </summary>
-        public DateTime LastSyncedAt
+        public DateTime? LastSyncedAt
         {
-            get { return this._lastSyncedAt.GetValueOrDefault(); }
+            get { return this._lastSyncedAt; }
             set { this._lastSyncedAt = value; }
         }
 

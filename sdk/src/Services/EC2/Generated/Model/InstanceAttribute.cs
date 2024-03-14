@@ -76,9 +76,9 @@ namespace Amazon.EC2.Model
         /// to <c>true</c>; otherwise, set it to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool DisableApiStop
+        public bool? DisableApiStop
         {
-            get { return this._disableApiStop.GetValueOrDefault(); }
+            get { return this._disableApiStop; }
             set { this._disableApiStop = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.EC2.Model
         /// console, CLI, or API; otherwise, you can.
         /// </para>
         /// </summary>
-        public bool DisableApiTermination
+        public bool? DisableApiTermination
         {
-            get { return this._disableApiTermination.GetValueOrDefault(); }
+            get { return this._disableApiTermination; }
             set { this._disableApiTermination = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the instance is optimized for Amazon EBS I/O.
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether enhanced networking with ENA is enabled.
         /// </para>
         /// </summary>
-        public bool EnaSupport
+        public bool? EnaSupport
         {
-            get { return this._enaSupport.GetValueOrDefault(); }
+            get { return this._enaSupport; }
             set { this._enaSupport = value; }
         }
 
@@ -317,9 +317,9 @@ namespace Amazon.EC2.Model
         /// such as network address translation, routing, or firewalls.
         /// </para>
         /// </summary>
-        public bool SourceDestCheck
+        public bool? SourceDestCheck
         {
-            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            get { return this._sourceDestCheck; }
             set { this._sourceDestCheck = value; }
         }
 

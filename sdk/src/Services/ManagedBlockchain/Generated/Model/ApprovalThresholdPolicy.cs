@@ -55,9 +55,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=168)]
-        public int ProposalDurationInHours
+        public int? ProposalDurationInHours
         {
-            get { return this._proposalDurationInHours.GetValueOrDefault(); }
+            get { return this._proposalDurationInHours; }
             set { this._proposalDurationInHours = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int ThresholdPercentage
+        public int? ThresholdPercentage
         {
-            get { return this._thresholdPercentage.GetValueOrDefault(); }
+            get { return this._thresholdPercentage; }
             set { this._thresholdPercentage = value; }
         }
 

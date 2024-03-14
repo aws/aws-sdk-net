@@ -63,9 +63,9 @@ namespace Amazon.RedshiftServerless.Model
         /// How long to retain the final snapshot.
         /// </para>
         /// </summary>
-        public int FinalSnapshotRetentionPeriod
+        public int? FinalSnapshotRetentionPeriod
         {
-            get { return this._finalSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._finalSnapshotRetentionPeriod; }
             set { this._finalSnapshotRetentionPeriod = value; }
         }
 

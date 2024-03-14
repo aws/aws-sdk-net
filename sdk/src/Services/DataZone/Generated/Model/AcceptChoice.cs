@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model
         /// can be accepted.
         /// </para>
         /// </summary>
-        public int PredictionChoice
+        public int? PredictionChoice
         {
-            get { return this._predictionChoice.GetValueOrDefault(); }
+            get { return this._predictionChoice; }
             set { this._predictionChoice = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.GroundStation.Model
         /// Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
         /// </para>
         /// </summary>
-        public int Mtu
+        public int? Mtu
         {
-            get { return this._mtu.GetValueOrDefault(); }
+            get { return this._mtu; }
             set { this._mtu = value; }
         }
 

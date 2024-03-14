@@ -65,7 +65,7 @@ namespace Amazon.BackupStorage.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ChunksCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ChunksCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

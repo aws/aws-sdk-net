@@ -71,9 +71,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=7200, Max=2419200)]
-        public int MaxPendingTimeInSeconds
+        public int? MaxPendingTimeInSeconds
         {
-            get { return this._maxPendingTimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxPendingTimeInSeconds; }
             set { this._maxPendingTimeInSeconds = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxRuntimeInSeconds
+        public int? MaxRuntimeInSeconds
         {
-            get { return this._maxRuntimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxRuntimeInSeconds; }
             set { this._maxRuntimeInSeconds = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxWaitTimeInSeconds
+        public int? MaxWaitTimeInSeconds
         {
-            get { return this._maxWaitTimeInSeconds.GetValueOrDefault(); }
+            get { return this._maxWaitTimeInSeconds; }
             set { this._maxWaitTimeInSeconds = value; }
         }
 

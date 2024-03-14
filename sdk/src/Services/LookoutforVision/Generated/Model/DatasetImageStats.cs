@@ -44,9 +44,9 @@ namespace Amazon.LookoutforVision.Model
         /// the total number of images labeled as an anomaly.
         /// </para>
         /// </summary>
-        public int Anomaly
+        public int? Anomaly
         {
-            get { return this._anomaly.GetValueOrDefault(); }
+            get { return this._anomaly; }
             set { this._anomaly = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.LookoutforVision.Model
         /// The total number of labeled images.
         /// </para>
         /// </summary>
-        public int Labeled
+        public int? Labeled
         {
-            get { return this._labeled.GetValueOrDefault(); }
+            get { return this._labeled; }
             set { this._labeled = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.LookoutforVision.Model
         /// The total number of images labeled as normal.
         /// </para>
         /// </summary>
-        public int Normal
+        public int? Normal
         {
-            get { return this._normal.GetValueOrDefault(); }
+            get { return this._normal; }
             set { this._normal = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.LookoutforVision.Model
         /// The total number of images in the dataset.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

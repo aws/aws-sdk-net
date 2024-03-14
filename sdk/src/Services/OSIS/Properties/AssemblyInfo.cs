@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.OSIS")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon OpenSearch Ingestion. Initial release for OpenSearch Ingestion")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon OpenSearch Ingestion. Initial release for OpenSearch Ingestion")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon OpenSearch Ingestion. Initial release for OpenSearch Ingestion")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon OpenSearch Ingestion. Initial release for OpenSearch Ingestion")]
 #elif NETCOREAPP3_1

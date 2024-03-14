@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsOptional())
             {
                 context.Writer.WritePropertyName("IsOptional");
-                context.Writer.Write(requestObject.IsOptional);
+                context.Writer.Write(requestObject.IsOptional.Value);
             }
 
             if(requestObject.IsSetListType())

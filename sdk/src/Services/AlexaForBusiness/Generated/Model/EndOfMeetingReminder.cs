@@ -44,9 +44,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether an end of meeting reminder is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

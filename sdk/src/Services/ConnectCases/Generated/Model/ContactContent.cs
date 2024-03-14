@@ -64,9 +64,9 @@ namespace Amazon.ConnectCases.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ConnectedToSystemTime
+        public DateTime? ConnectedToSystemTime
         {
-            get { return this._connectedToSystemTime.GetValueOrDefault(); }
+            get { return this._connectedToSystemTime; }
             set { this._connectedToSystemTime = value; }
         }
 

@@ -96,37 +96,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeHeaders())
             {
                 context.Writer.WritePropertyName("IncludeHeaders");
-                context.Writer.Write(requestObject.IncludeHeaders);
+                context.Writer.Write(requestObject.IncludeHeaders.Value);
             }
 
             if(requestObject.IsSetMaxOffsetsPerTrigger())
             {
                 context.Writer.WritePropertyName("MaxOffsetsPerTrigger");
-                context.Writer.Write(requestObject.MaxOffsetsPerTrigger);
+                context.Writer.Write(requestObject.MaxOffsetsPerTrigger.Value);
             }
 
             if(requestObject.IsSetMinPartitions())
             {
                 context.Writer.WritePropertyName("MinPartitions");
-                context.Writer.Write(requestObject.MinPartitions);
+                context.Writer.Write(requestObject.MinPartitions.Value);
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("NumRetries");
-                context.Writer.Write(requestObject.NumRetries);
+                context.Writer.Write(requestObject.NumRetries.Value);
             }
 
             if(requestObject.IsSetPollTimeoutMs())
             {
                 context.Writer.WritePropertyName("PollTimeoutMs");
-                context.Writer.Write(requestObject.PollTimeoutMs);
+                context.Writer.Write(requestObject.PollTimeoutMs.Value);
             }
 
             if(requestObject.IsSetRetryIntervalMs())
             {
                 context.Writer.WritePropertyName("RetryIntervalMs");
-                context.Writer.Write(requestObject.RetryIntervalMs);
+                context.Writer.Write(requestObject.RetryIntervalMs.Value);
             }
 
             if(requestObject.IsSetSecurityProtocol())

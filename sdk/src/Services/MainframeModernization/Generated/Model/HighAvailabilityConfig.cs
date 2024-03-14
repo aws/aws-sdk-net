@@ -43,9 +43,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int DesiredCapacity
+        public int? DesiredCapacity
         {
-            get { return this._desiredCapacity.GetValueOrDefault(); }
+            get { return this._desiredCapacity; }
             set { this._desiredCapacity = value; }
         }
 

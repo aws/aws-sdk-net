@@ -45,9 +45,9 @@ namespace Amazon.InternetMonitor.Model
         /// RTT at the 50th percentile (p50).
         /// </para>
         /// </summary>
-        public double P50
+        public double? P50
         {
-            get { return this._p50.GetValueOrDefault(); }
+            get { return this._p50; }
             set { this._p50 = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.InternetMonitor.Model
         /// RTT at the 90th percentile (p90). 
         /// </para>
         /// </summary>
-        public double P90
+        public double? P90
         {
-            get { return this._p90.GetValueOrDefault(); }
+            get { return this._p90; }
             set { this._p90 = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.InternetMonitor.Model
         /// RTT at the 95th percentile (p95). 
         /// </para>
         /// </summary>
-        public double P95
+        public double? P95
         {
-            get { return this._p95.GetValueOrDefault(); }
+            get { return this._p95; }
             set { this._p95 = value; }
         }
 

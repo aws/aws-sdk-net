@@ -119,9 +119,9 @@ namespace Amazon.Comprehend.Model
         /// The time that training the document classifier completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the document classifier was submitted for training.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 
@@ -348,9 +348,9 @@ namespace Amazon.Comprehend.Model
         /// interval between this time and the value of TrainingStartTime.
         /// </para>
         /// </summary>
-        public DateTime TrainingEndTime
+        public DateTime? TrainingEndTime
         {
-            get { return this._trainingEndTime.GetValueOrDefault(); }
+            get { return this._trainingEndTime; }
             set { this._trainingEndTime = value; }
         }
 
@@ -367,9 +367,9 @@ namespace Amazon.Comprehend.Model
         /// billed for the time interval between this time and the value of TrainingEndTime. 
         /// </para>
         /// </summary>
-        public DateTime TrainingStartTime
+        public DateTime? TrainingStartTime
         {
-            get { return this._trainingStartTime.GetValueOrDefault(); }
+            get { return this._trainingStartTime; }
             set { this._trainingStartTime = value; }
         }
 

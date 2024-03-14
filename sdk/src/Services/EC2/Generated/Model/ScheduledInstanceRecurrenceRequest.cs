@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// For example, every 2 weeks or every 2 months.
         /// </para>
         /// </summary>
-        public int Interval
+        public int? Interval
         {
-            get { return this._interval.GetValueOrDefault(); }
+            get { return this._interval; }
             set { this._interval = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.EC2.Model
         /// You can't specify this value with a daily schedule.
         /// </para>
         /// </summary>
-        public bool OccurrenceRelativeToEnd
+        public bool? OccurrenceRelativeToEnd
         {
-            get { return this._occurrenceRelativeToEnd.GetValueOrDefault(); }
+            get { return this._occurrenceRelativeToEnd; }
             set { this._occurrenceRelativeToEnd = value; }
         }
 

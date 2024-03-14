@@ -70,7 +70,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssociatePublicIpAddress())
                 {
                     context.Writer.WritePropertyName("AssociatePublicIpAddress");
-                    context.Writer.Write(publicRequest.AssociatePublicIpAddress);
+                    context.Writer.Write(publicRequest.AssociatePublicIpAddress.Value);
                 }
 
                 if(publicRequest.IsSetBackupId())
@@ -82,7 +82,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBackupRetentionCount())
                 {
                     context.Writer.WritePropertyName("BackupRetentionCount");
-                    context.Writer.Write(publicRequest.BackupRetentionCount);
+                    context.Writer.Write(publicRequest.BackupRetentionCount.Value);
                 }
 
                 if(publicRequest.IsSetCustomCertificate())
@@ -106,7 +106,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisableAutomatedBackup())
                 {
                     context.Writer.WritePropertyName("DisableAutomatedBackup");
-                    context.Writer.Write(publicRequest.DisableAutomatedBackup);
+                    context.Writer.Write(publicRequest.DisableAutomatedBackup.Value);
                 }
 
                 if(publicRequest.IsSetEngine())

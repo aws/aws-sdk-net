@@ -56,7 +56,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AutoUpdateAfterRecommendedApplyByDate", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AutoUpdateAfterRecommendedApplyByDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,7 +86,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ServiceUpdateEndDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ServiceUpdateEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -98,13 +98,13 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ServiceUpdateRecommendedApplyByDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ServiceUpdateRecommendedApplyByDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ServiceUpdateReleaseDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ServiceUpdateReleaseDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

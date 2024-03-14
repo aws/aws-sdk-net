@@ -70,7 +70,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 if(publicRequest.IsSetDeleteHistory())
                 {
                     context.Writer.WritePropertyName("deleteHistory");
-                    context.Writer.Write(publicRequest.DeleteHistory);
+                    context.Writer.Write(publicRequest.DeleteHistory.Value);
                 }
 
                 if(publicRequest.IsSetImportTaskIds())

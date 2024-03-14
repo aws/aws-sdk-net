@@ -49,9 +49,9 @@ namespace Amazon.LexModelsV2.Model
         /// set to true.
         /// </para>
         /// </summary>
-        public bool ContainsDataFromDeletedResources
+        public bool? ContainsDataFromDeletedResources
         {
-            get { return this._containsDataFromDeletedResources.GetValueOrDefault(); }
+            get { return this._containsDataFromDeletedResources; }
             set { this._containsDataFromDeletedResources = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.LexModelsV2.Model
         /// period. When an utterance is detected, it activates an intent or a slot.
         /// </para>
         /// </summary>
-        public int HitCount
+        public int? HitCount
         {
-            get { return this._hitCount.GetValueOrDefault(); }
+            get { return this._hitCount; }
             set { this._hitCount = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.LexModelsV2.Model
         /// when it doesn't activate an intent or slot.
         /// </para>
         /// </summary>
-        public int MissedCount
+        public int? MissedCount
         {
-            get { return this._missedCount.GetValueOrDefault(); }
+            get { return this._missedCount; }
             set { this._missedCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.LexModelsV2.Model
         /// within the time window are counted.
         /// </para>
         /// </summary>
-        public DateTime UtteranceFirstRecordedInAggregationDuration
+        public DateTime? UtteranceFirstRecordedInAggregationDuration
         {
-            get { return this._utteranceFirstRecordedInAggregationDuration.GetValueOrDefault(); }
+            get { return this._utteranceFirstRecordedInAggregationDuration; }
             set { this._utteranceFirstRecordedInAggregationDuration = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.LexModelsV2.Model
         /// the time window are counted.
         /// </para>
         /// </summary>
-        public DateTime UtteranceLastRecordedInAggregationDuration
+        public DateTime? UtteranceLastRecordedInAggregationDuration
         {
-            get { return this._utteranceLastRecordedInAggregationDuration.GetValueOrDefault(); }
+            get { return this._utteranceLastRecordedInAggregationDuration; }
             set { this._utteranceLastRecordedInAggregationDuration = value; }
         }
 

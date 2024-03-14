@@ -65,7 +65,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ContributionScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ContributionScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

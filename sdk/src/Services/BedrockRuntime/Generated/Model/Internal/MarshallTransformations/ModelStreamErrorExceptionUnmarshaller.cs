@@ -72,7 +72,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("originalStatusCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OriginalStatusCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

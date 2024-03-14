@@ -65,13 +65,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowDuplicates", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDuplicates = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("length", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Length = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("offset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
                     continue;
                 }

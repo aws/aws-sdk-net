@@ -64,9 +64,9 @@ namespace Amazon.IdentityManagement.Model
         /// The date that a specified user's MFA device was first enabled.
         /// </para>
         /// </summary>
-        public DateTime EnableDate
+        public DateTime? EnableDate
         {
-            get { return this._enableDate.GetValueOrDefault(); }
+            get { return this._enableDate; }
             set { this._enableDate = value; }
         }
 

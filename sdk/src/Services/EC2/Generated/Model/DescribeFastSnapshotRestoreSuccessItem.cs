@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// The time at which fast snapshot restores entered the <c>disabled</c> state.
         /// </para>
         /// </summary>
-        public DateTime DisabledTime
+        public DateTime? DisabledTime
         {
-            get { return this._disabledTime.GetValueOrDefault(); }
+            get { return this._disabledTime; }
             set { this._disabledTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.EC2.Model
         /// The time at which fast snapshot restores entered the <c>disabling</c> state.
         /// </para>
         /// </summary>
-        public DateTime DisablingTime
+        public DateTime? DisablingTime
         {
-            get { return this._disablingTime.GetValueOrDefault(); }
+            get { return this._disablingTime; }
             set { this._disablingTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.EC2.Model
         /// The time at which fast snapshot restores entered the <c>enabled</c> state.
         /// </para>
         /// </summary>
-        public DateTime EnabledTime
+        public DateTime? EnabledTime
         {
-            get { return this._enabledTime.GetValueOrDefault(); }
+            get { return this._enabledTime; }
             set { this._enabledTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.EC2.Model
         /// The time at which fast snapshot restores entered the <c>enabling</c> state.
         /// </para>
         /// </summary>
-        public DateTime EnablingTime
+        public DateTime? EnablingTime
         {
-            get { return this._enablingTime.GetValueOrDefault(); }
+            get { return this._enablingTime; }
             set { this._enablingTime = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.EC2.Model
         /// The time at which fast snapshot restores entered the <c>optimizing</c> state.
         /// </para>
         /// </summary>
-        public DateTime OptimizingTime
+        public DateTime? OptimizingTime
         {
-            get { return this._optimizingTime.GetValueOrDefault(); }
+            get { return this._optimizingTime; }
             set { this._optimizingTime = value; }
         }
 

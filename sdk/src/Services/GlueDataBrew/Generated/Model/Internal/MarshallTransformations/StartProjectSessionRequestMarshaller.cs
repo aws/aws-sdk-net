@@ -71,7 +71,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAssumeControl())
                 {
                     context.Writer.WritePropertyName("AssumeControl");
-                    context.Writer.Write(publicRequest.AssumeControl);
+                    context.Writer.Write(publicRequest.AssumeControl.Value);
                 }
 
                 writer.WriteObjectEnd();

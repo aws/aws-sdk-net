@@ -82,9 +82,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// also set to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool ExcludeCompliantResources
+        public bool? ExcludeCompliantResources
         {
-            get { return this._excludeCompliantResources.GetValueOrDefault(); }
+            get { return this._excludeCompliantResources; }
             set { this._excludeCompliantResources = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// the tag policy and to get details.
         /// </para>
         /// </summary>
-        public bool IncludeComplianceDetails
+        public bool? IncludeComplianceDetails
         {
-            get { return this._includeComplianceDetails.GetValueOrDefault(); }
+            get { return this._includeComplianceDetails; }
             set { this._includeComplianceDetails = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// You can specify a minimum of 1 and a maximum value of 100.
         /// </para>
         /// </summary>
-        public int ResourcesPerPage
+        public int? ResourcesPerPage
         {
-            get { return this._resourcesPerPage.GetValueOrDefault(); }
+            get { return this._resourcesPerPage; }
             set { this._resourcesPerPage = value; }
         }
 
@@ -329,9 +329,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// You can set <c>TagsPerPage</c> to a minimum of 100 items up to a maximum of 500 items.
         /// </para>
         /// </summary>
-        public int TagsPerPage
+        public int? TagsPerPage
         {
-            get { return this._tagsPerPage.GetValueOrDefault(); }
+            get { return this._tagsPerPage; }
             set { this._tagsPerPage = value; }
         }
 

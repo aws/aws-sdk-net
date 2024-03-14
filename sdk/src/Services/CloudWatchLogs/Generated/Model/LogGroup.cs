@@ -81,16 +81,16 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
         // Check to see if CreationTime property is set
         internal bool IsSetCreationTime()
         {
-            return this._creationTime.HasValue; 
+            return this._creationTime != null;
         }
 
         /// <summary>
@@ -244,9 +244,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The number of metric filters.
         /// </para>
         /// </summary>
-        public int MetricFilterCount
+        public int? MetricFilterCount
         {
-            get { return this._metricFilterCount.GetValueOrDefault(); }
+            get { return this._metricFilterCount; }
             set { this._metricFilterCount = value; }
         }
 
@@ -278,9 +278,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long StoredBytes
+        public long? StoredBytes
         {
-            get { return this._storedBytes.GetValueOrDefault(); }
+            get { return this._storedBytes; }
             set { this._storedBytes = value; }
         }
 

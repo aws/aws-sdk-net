@@ -65,7 +65,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("attemptDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AttemptDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

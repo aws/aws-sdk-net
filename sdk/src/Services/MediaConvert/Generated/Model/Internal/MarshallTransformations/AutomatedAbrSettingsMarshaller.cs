@@ -48,19 +48,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAbrBitrate())
             {
                 context.Writer.WritePropertyName("maxAbrBitrate");
-                context.Writer.Write(requestObject.MaxAbrBitrate);
+                context.Writer.Write(requestObject.MaxAbrBitrate.Value);
             }
 
             if(requestObject.IsSetMaxRenditions())
             {
                 context.Writer.WritePropertyName("maxRenditions");
-                context.Writer.Write(requestObject.MaxRenditions);
+                context.Writer.Write(requestObject.MaxRenditions.Value);
             }
 
             if(requestObject.IsSetMinAbrBitrate())
             {
                 context.Writer.WritePropertyName("minAbrBitrate");
-                context.Writer.Write(requestObject.MinAbrBitrate);
+                context.Writer.Write(requestObject.MinAbrBitrate.Value);
             }
 
             if(requestObject.IsSetRules())

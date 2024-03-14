@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// address.
         /// </para>
         /// </summary>
-        public bool Primary
+        public bool? Primary
         {
-            get { return this._primary.GetValueOrDefault(); }
+            get { return this._primary; }
             set { this._primary = value; }
         }
 

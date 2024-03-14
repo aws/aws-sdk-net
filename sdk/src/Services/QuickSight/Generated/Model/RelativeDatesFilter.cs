@@ -234,9 +234,9 @@ namespace Amazon.QuickSight.Model
         /// The date value of the filter.
         /// </para>
         /// </summary>
-        public int RelativeDateValue
+        public int? RelativeDateValue
         {
-            get { return this._relativeDateValue.GetValueOrDefault(); }
+            get { return this._relativeDateValue; }
             set { this._relativeDateValue = value; }
         }
 

@@ -83,7 +83,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("S3DataSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.S3DataSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

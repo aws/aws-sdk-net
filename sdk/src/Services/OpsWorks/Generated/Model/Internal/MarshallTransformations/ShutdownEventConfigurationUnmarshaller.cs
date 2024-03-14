@@ -65,13 +65,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DelayUntilElbConnectionsDrained", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DelayUntilElbConnectionsDrained = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExecutionTimeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -119,9 +119,9 @@ namespace Amazon.XRay.Model
         /// Identifier for the service. Unique within the service map.
         /// </para>
         /// </summary>
-        public int ReferenceId
+        public int? ReferenceId
         {
-            get { return this._referenceId.GetValueOrDefault(); }
+            get { return this._referenceId; }
             set { this._referenceId = value; }
         }
 

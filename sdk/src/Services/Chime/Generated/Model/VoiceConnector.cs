@@ -68,9 +68,9 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime Voice Connector creation timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Chime.Model
         /// Designates whether encryption is required for the Amazon Chime Voice Connector.
         /// </para>
         /// </summary>
-        public bool RequireEncryption
+        public bool? RequireEncryption
         {
-            get { return this._requireEncryption.GetValueOrDefault(); }
+            get { return this._requireEncryption; }
             set { this._requireEncryption = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Chime.Model
         /// The updated Amazon Chime Voice Connector timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

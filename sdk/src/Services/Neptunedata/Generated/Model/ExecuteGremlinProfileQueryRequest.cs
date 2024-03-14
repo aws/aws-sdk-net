@@ -64,9 +64,9 @@ namespace Amazon.Neptunedata.Model
         /// If set to zero, the string contains all the results.
         /// </para>
         /// </summary>
-        public int Chop
+        public int? Chop
         {
-            get { return this._chop.GetValueOrDefault(); }
+            get { return this._chop; }
             set { this._chop = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Neptunedata.Model
         /// operations that took place during query execution and serialization.
         /// </para>
         /// </summary>
-        public bool IndexOps
+        public bool? IndexOps
         {
-            get { return this._indexOps.GetValueOrDefault(); }
+            get { return this._indexOps; }
             set { this._indexOps = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.Neptunedata.Model
         /// part of the profile report. If <c>FALSE</c>, only the result count is displayed.
         /// </para>
         /// </summary>
-        public bool Results
+        public bool? Results
         {
-            get { return this._results.GetValueOrDefault(); }
+            get { return this._results; }
             set { this._results = value; }
         }
 

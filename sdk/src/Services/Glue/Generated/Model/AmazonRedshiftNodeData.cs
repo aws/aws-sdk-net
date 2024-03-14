@@ -522,9 +522,9 @@ namespace Amazon.Glue.Model
         /// The action used on Redshift sinks when doing an APPEND.
         /// </para>
         /// </summary>
-        public bool Upsert
+        public bool? Upsert
         {
-            get { return this._upsert.GetValueOrDefault(); }
+            get { return this._upsert; }
             set { this._upsert = value; }
         }
 

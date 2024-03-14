@@ -118,9 +118,9 @@ namespace Amazon.Comprehend.Model
         /// Page number where the block appears.
         /// </para>
         /// </summary>
-        public int Page
+        public int? Page
         {
-            get { return this._page.GetValueOrDefault(); }
+            get { return this._page; }
             set { this._page = value; }
         }
 

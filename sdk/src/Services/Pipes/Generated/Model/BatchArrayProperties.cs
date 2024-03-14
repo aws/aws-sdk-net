@@ -44,9 +44,9 @@ namespace Amazon.Pipes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10000)]
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.Chime.Model
         /// Allows or denies inbound calling for the specified phone number.
         /// </para>
         /// </summary>
-        public bool InboundCall
+        public bool? InboundCall
         {
-            get { return this._inboundCall.GetValueOrDefault(); }
+            get { return this._inboundCall; }
             set { this._inboundCall = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Chime.Model
         /// Allows or denies inbound MMS messaging for the specified phone number.
         /// </para>
         /// </summary>
-        public bool InboundMMS
+        public bool? InboundMMS
         {
-            get { return this._inboundMMS.GetValueOrDefault(); }
+            get { return this._inboundMMS; }
             set { this._inboundMMS = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Chime.Model
         /// Allows or denies inbound SMS messaging for the specified phone number.
         /// </para>
         /// </summary>
-        public bool InboundSMS
+        public bool? InboundSMS
         {
-            get { return this._inboundSMS.GetValueOrDefault(); }
+            get { return this._inboundSMS; }
             set { this._inboundSMS = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Chime.Model
         /// Allows or denies outbound calling for the specified phone number.
         /// </para>
         /// </summary>
-        public bool OutboundCall
+        public bool? OutboundCall
         {
-            get { return this._outboundCall.GetValueOrDefault(); }
+            get { return this._outboundCall; }
             set { this._outboundCall = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Chime.Model
         /// Allows or denies outbound MMS messaging for the specified phone number.
         /// </para>
         /// </summary>
-        public bool OutboundMMS
+        public bool? OutboundMMS
         {
-            get { return this._outboundMMS.GetValueOrDefault(); }
+            get { return this._outboundMMS; }
             set { this._outboundMMS = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Chime.Model
         /// Allows or denies outbound SMS messaging for the specified phone number.
         /// </para>
         /// </summary>
-        public bool OutboundSMS
+        public bool? OutboundSMS
         {
-            get { return this._outboundSMS.GetValueOrDefault(); }
+            get { return this._outboundSMS; }
             set { this._outboundSMS = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizerResultTtlInSeconds())
             {
                 context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
-                context.Writer.Write(requestObject.AuthorizerResultTtlInSeconds);
+                context.Writer.Write(requestObject.AuthorizerResultTtlInSeconds.Value);
             }
 
             if(requestObject.IsSetAuthorizerUri())

@@ -121,9 +121,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the instance is launched.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

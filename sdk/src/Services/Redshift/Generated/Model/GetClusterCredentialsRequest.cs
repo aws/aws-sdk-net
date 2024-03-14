@@ -80,9 +80,9 @@ namespace Amazon.Redshift.Model
         /// if one does not exist.
         /// </para>
         /// </summary>
-        public bool AutoCreate
+        public bool? AutoCreate
         {
-            get { return this._autoCreate.GetValueOrDefault(); }
+            get { return this._autoCreate; }
             set { this._autoCreate = value; }
         }
 
@@ -296,9 +296,9 @@ namespace Amazon.Redshift.Model
         /// Default: 900
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// The first port in the port range.
         /// </para>
         /// </summary>
-        public int From
+        public int? From
         {
-            get { return this._from.GetValueOrDefault(); }
+            get { return this._from; }
             set { this._from = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.SecurityHub.Model
         /// The last port in the port range.
         /// </para>
         /// </summary>
-        public int To
+        public int? To
         {
-            get { return this._to.GetValueOrDefault(); }
+            get { return this._to; }
             set { this._to = value; }
         }
 

@@ -214,9 +214,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Determines whether the recommendation is size flexible.
         /// </para>
         /// </summary>
-        public bool SizeFlexEligible
+        public bool? SizeFlexEligible
         {
-            get { return this._sizeFlexEligible.GetValueOrDefault(); }
+            get { return this._sizeFlexEligible; }
             set { this._sizeFlexEligible = value; }
         }
 

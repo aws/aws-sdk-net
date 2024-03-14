@@ -70,7 +70,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTotalCount())
             {
                 context.Writer.WritePropertyName("TotalCount");
-                context.Writer.Write(requestObject.TotalCount);
+                context.Writer.Write(requestObject.TotalCount.Value);
             }
 
         }

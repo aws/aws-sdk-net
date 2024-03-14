@@ -65,19 +65,19 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MagneticStore", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MagneticStore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MemoryStore", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryStore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

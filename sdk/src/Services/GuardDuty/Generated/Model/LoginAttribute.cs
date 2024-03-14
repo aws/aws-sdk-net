@@ -63,9 +63,9 @@ namespace Amazon.GuardDuty.Model
         /// to the database instance.
         /// </para>
         /// </summary>
-        public int FailedLoginAttempts
+        public int? FailedLoginAttempts
         {
-            get { return this._failedLoginAttempts.GetValueOrDefault(); }
+            get { return this._failedLoginAttempts; }
             set { this._failedLoginAttempts = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.GuardDuty.Model
         /// made to the database instance by the actor.
         /// </para>
         /// </summary>
-        public int SuccessfulLoginAttempts
+        public int? SuccessfulLoginAttempts
         {
-            get { return this._successfulLoginAttempts.GetValueOrDefault(); }
+            get { return this._successfulLoginAttempts; }
             set { this._successfulLoginAttempts = value; }
         }
 

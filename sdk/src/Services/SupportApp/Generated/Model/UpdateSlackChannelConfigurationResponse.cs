@@ -109,9 +109,9 @@ namespace Amazon.SupportApp.Model
         /// Whether you want to get notified when a support case has a new correspondence.
         /// </para>
         /// </summary>
-        public bool NotifyOnAddCorrespondenceToCase
+        public bool? NotifyOnAddCorrespondenceToCase
         {
-            get { return this._notifyOnAddCorrespondenceToCase.GetValueOrDefault(); }
+            get { return this._notifyOnAddCorrespondenceToCase; }
             set { this._notifyOnAddCorrespondenceToCase = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SupportApp.Model
         /// Whether you want to get notified when a support case is created or reopened.
         /// </para>
         /// </summary>
-        public bool NotifyOnCreateOrReopenCase
+        public bool? NotifyOnCreateOrReopenCase
         {
-            get { return this._notifyOnCreateOrReopenCase.GetValueOrDefault(); }
+            get { return this._notifyOnCreateOrReopenCase; }
             set { this._notifyOnCreateOrReopenCase = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.SupportApp.Model
         /// Whether you want to get notified when a support case is resolved.
         /// </para>
         /// </summary>
-        public bool NotifyOnResolveCase
+        public bool? NotifyOnResolveCase
         {
-            get { return this._notifyOnResolveCase.GetValueOrDefault(); }
+            get { return this._notifyOnResolveCase; }
             set { this._notifyOnResolveCase = value; }
         }
 

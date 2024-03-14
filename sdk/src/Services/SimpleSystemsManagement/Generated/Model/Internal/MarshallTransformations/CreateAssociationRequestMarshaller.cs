@@ -81,7 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplyOnlyAtCronInterval())
                 {
                     context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
-                    context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval);
+                    context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval.Value);
                 }
 
                 if(publicRequest.IsSetAssociationName())
@@ -122,7 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDuration())
                 {
                     context.Writer.WritePropertyName("Duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    context.Writer.Write(publicRequest.Duration.Value);
                 }
 
                 if(publicRequest.IsSetInstanceId())
@@ -188,7 +188,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScheduleOffset())
                 {
                     context.Writer.WritePropertyName("ScheduleOffset");
-                    context.Writer.Write(publicRequest.ScheduleOffset);
+                    context.Writer.Write(publicRequest.ScheduleOffset.Value);
                 }
 
                 if(publicRequest.IsSetSyncCompliance())

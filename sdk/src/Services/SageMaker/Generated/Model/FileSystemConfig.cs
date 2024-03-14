@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int DefaultGid
+        public int? DefaultGid
         {
-            get { return this._defaultGid.GetValueOrDefault(); }
+            get { return this._defaultGid; }
             set { this._defaultGid = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int DefaultUid
+        public int? DefaultUid
         {
-            get { return this._defaultUid.GetValueOrDefault(); }
+            get { return this._defaultUid; }
             set { this._defaultUid = value; }
         }
 

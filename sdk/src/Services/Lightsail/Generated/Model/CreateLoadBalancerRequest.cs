@@ -156,9 +156,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=-1, Max=65535)]
-        public int InstancePort
+        public int? InstancePort
         {
-            get { return this._instancePort.GetValueOrDefault(); }
+            get { return this._instancePort; }
             set { this._instancePort = value; }
         }
 

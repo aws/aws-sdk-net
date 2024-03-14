@@ -95,9 +95,9 @@ namespace Amazon.AutoScaling.Model
         /// health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.
         /// </para>
         /// </summary>
-        public bool NoDevice
+        public bool? NoDevice
         {
-            get { return this._noDevice.GetValueOrDefault(); }
+            get { return this._noDevice; }
             set { this._noDevice = value; }
         }
 

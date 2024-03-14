@@ -87,49 +87,49 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxIopsPerDbInstance", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxIopsPerDbInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxIopsPerGib", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MaxIopsPerGib = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxStorageSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxStorageSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinIopsPerDbInstance", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinIopsPerDbInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinIopsPerGib", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MinIopsPerGib = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinStorageSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinStorageSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MultiAZCapable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MultiAZCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReadReplicaCapable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ReadReplicaCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -141,43 +141,43 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportsEnhancedMonitoring", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsEnhancedMonitoring = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIAMDatabaseAuthentication", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsIAMDatabaseAuthentication = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIops", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsPerformanceInsights", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsPerformanceInsights = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsStorageEncryption", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsStorageEncryption = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Vpc", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
                         continue;
                     }

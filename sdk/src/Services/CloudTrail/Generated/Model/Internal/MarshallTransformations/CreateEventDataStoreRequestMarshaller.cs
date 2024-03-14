@@ -98,7 +98,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMultiRegionEnabled())
                 {
                     context.Writer.WritePropertyName("MultiRegionEnabled");
-                    context.Writer.Write(publicRequest.MultiRegionEnabled);
+                    context.Writer.Write(publicRequest.MultiRegionEnabled.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -110,19 +110,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOrganizationEnabled())
                 {
                     context.Writer.WritePropertyName("OrganizationEnabled");
-                    context.Writer.Write(publicRequest.OrganizationEnabled);
+                    context.Writer.Write(publicRequest.OrganizationEnabled.Value);
                 }
 
                 if(publicRequest.IsSetRetentionPeriod())
                 {
                     context.Writer.WritePropertyName("RetentionPeriod");
-                    context.Writer.Write(publicRequest.RetentionPeriod);
+                    context.Writer.Write(publicRequest.RetentionPeriod.Value);
                 }
 
                 if(publicRequest.IsSetStartIngestion())
                 {
                     context.Writer.WritePropertyName("StartIngestion");
-                    context.Writer.Write(publicRequest.StartIngestion);
+                    context.Writer.Write(publicRequest.StartIngestion.Value);
                 }
 
                 if(publicRequest.IsSetTagsList())
@@ -144,7 +144,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTerminationProtectionEnabled())
                 {
                     context.Writer.WritePropertyName("TerminationProtectionEnabled");
-                    context.Writer.Write(publicRequest.TerminationProtectionEnabled);
+                    context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

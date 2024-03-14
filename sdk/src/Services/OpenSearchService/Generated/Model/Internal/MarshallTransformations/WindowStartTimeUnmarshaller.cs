@@ -65,13 +65,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Hours", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Hours = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Minutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Minutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

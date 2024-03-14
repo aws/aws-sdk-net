@@ -77,9 +77,9 @@ namespace Amazon.IoT.Model
         /// thing.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

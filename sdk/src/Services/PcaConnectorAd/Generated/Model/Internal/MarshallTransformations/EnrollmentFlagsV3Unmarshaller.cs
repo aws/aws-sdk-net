@@ -65,31 +65,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableKeyReuseOnNtTokenKeysetStorageFull", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableKeyReuseOnNtTokenKeysetStorageFull = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeSymmetricAlgorithms", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeSymmetricAlgorithms = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NoSecurityExtension", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoSecurityExtension = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RemoveInvalidCertificateFromPersonalStore", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RemoveInvalidCertificateFromPersonalStore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UserInteractionRequired", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserInteractionRequired = unmarshaller.Unmarshall(context);
                     continue;
                 }

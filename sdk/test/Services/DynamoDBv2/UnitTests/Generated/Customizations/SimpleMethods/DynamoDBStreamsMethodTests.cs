@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class DynamoDBStreamsMethodCustomizationsTests

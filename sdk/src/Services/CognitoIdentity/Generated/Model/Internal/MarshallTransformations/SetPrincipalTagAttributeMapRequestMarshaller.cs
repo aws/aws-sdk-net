@@ -96,7 +96,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUseDefaults())
                 {
                     context.Writer.WritePropertyName("UseDefaults");
-                    context.Writer.Write(publicRequest.UseDefaults);
+                    context.Writer.Write(publicRequest.UseDefaults.Value);
                 }
 
                 writer.WriteObjectEnd();

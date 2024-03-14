@@ -77,9 +77,9 @@ namespace Amazon.Proton.Model
         /// The date and time the deployment was completed.
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 
@@ -340,9 +340,9 @@ namespace Amazon.Proton.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TargetResourceCreatedAt
+        public DateTime? TargetResourceCreatedAt
         {
-            get { return this._targetResourceCreatedAt.GetValueOrDefault(); }
+            get { return this._targetResourceCreatedAt; }
             set { this._targetResourceCreatedAt = value; }
         }
 

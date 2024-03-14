@@ -109,13 +109,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetainAllVariantProperties())
                 {
                     context.Writer.WritePropertyName("RetainAllVariantProperties");
-                    context.Writer.Write(publicRequest.RetainAllVariantProperties);
+                    context.Writer.Write(publicRequest.RetainAllVariantProperties.Value);
                 }
 
                 if(publicRequest.IsSetRetainDeploymentConfig())
                 {
                     context.Writer.WritePropertyName("RetainDeploymentConfig");
-                    context.Writer.Write(publicRequest.RetainDeploymentConfig);
+                    context.Writer.Write(publicRequest.RetainDeploymentConfig.Value);
                 }
 
                 writer.WriteObjectEnd();

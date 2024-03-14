@@ -88,9 +88,9 @@ namespace Amazon.SecretsManager.Model
         /// this switch, the password can contain lowercase letters.
         /// </para>
         /// </summary>
-        public bool ExcludeLowercase
+        public bool? ExcludeLowercase
         {
-            get { return this._excludeLowercase.GetValueOrDefault(); }
+            get { return this._excludeLowercase; }
             set { this._excludeLowercase = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SecretsManager.Model
         /// switch, the password can contain numbers.
         /// </para>
         /// </summary>
-        public bool ExcludeNumbers
+        public bool? ExcludeNumbers
         {
-            get { return this._excludeNumbers.GetValueOrDefault(); }
+            get { return this._excludeNumbers; }
             set { this._excludeNumbers = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.SecretsManager.Model
         /// If you don't include this switch, the password can contain punctuation.
         /// </para>
         /// </summary>
-        public bool ExcludePunctuation
+        public bool? ExcludePunctuation
         {
-            get { return this._excludePunctuation.GetValueOrDefault(); }
+            get { return this._excludePunctuation; }
             set { this._excludePunctuation = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.SecretsManager.Model
         /// this switch, the password can contain uppercase letters.
         /// </para>
         /// </summary>
-        public bool ExcludeUppercase
+        public bool? ExcludeUppercase
         {
-            get { return this._excludeUppercase.GetValueOrDefault(); }
+            get { return this._excludeUppercase; }
             set { this._excludeUppercase = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.SecretsManager.Model
         /// password can contain space characters.
         /// </para>
         /// </summary>
-        public bool IncludeSpace
+        public bool? IncludeSpace
         {
-            get { return this._includeSpace.GetValueOrDefault(); }
+            get { return this._includeSpace; }
             set { this._includeSpace = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
-        public long PasswordLength
+        public long? PasswordLength
         {
-            get { return this._passwordLength.GetValueOrDefault(); }
+            get { return this._passwordLength; }
             set { this._passwordLength = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.SecretsManager.Model
         /// one of every character type.
         /// </para>
         /// </summary>
-        public bool RequireEachIncludedType
+        public bool? RequireEachIncludedType
         {
-            get { return this._requireEachIncludedType.GetValueOrDefault(); }
+            get { return this._requireEachIncludedType; }
             set { this._requireEachIncludedType = value; }
         }
 

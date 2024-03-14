@@ -64,7 +64,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDropped())
             {
                 context.Writer.WritePropertyName("Dropped");
-                context.Writer.Write(requestObject.Dropped);
+                context.Writer.Write(requestObject.Dropped.Value);
             }
 
             if(requestObject.IsSetFromPath())

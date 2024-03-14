@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxVisibleColumns())
             {
                 context.Writer.WritePropertyName("MaxVisibleColumns");
-                context.Writer.Write(requestObject.MaxVisibleColumns);
+                context.Writer.Write(requestObject.MaxVisibleColumns.Value);
             }
 
             if(requestObject.IsSetMaxVisibleRows())
             {
                 context.Writer.WritePropertyName("MaxVisibleRows");
-                context.Writer.Write(requestObject.MaxVisibleRows);
+                context.Writer.Write(requestObject.MaxVisibleRows.Value);
             }
 
             if(requestObject.IsSetPanelConfiguration())

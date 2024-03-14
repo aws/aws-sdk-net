@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ResourceGroupsTaggingAPI")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 #elif NETCOREAPP3_1

@@ -51,9 +51,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsEnabled
+        public bool? IsEnabled
         {
-            get { return this._isEnabled.GetValueOrDefault(); }
+            get { return this._isEnabled; }
             set { this._isEnabled = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("dateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

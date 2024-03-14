@@ -63,9 +63,9 @@ namespace Amazon.LicenseManager.Model
         /// Time when the license configuration was associated with the resource.
         /// </para>
         /// </summary>
-        public DateTime AssociationTime
+        public DateTime? AssociationTime
         {
-            get { return this._associationTime.GetValueOrDefault(); }
+            get { return this._associationTime; }
             set { this._associationTime = value; }
         }
 

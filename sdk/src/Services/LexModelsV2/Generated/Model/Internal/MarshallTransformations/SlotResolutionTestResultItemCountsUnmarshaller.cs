@@ -77,7 +77,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalResultCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalResultCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

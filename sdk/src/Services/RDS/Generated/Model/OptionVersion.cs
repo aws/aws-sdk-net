@@ -43,9 +43,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the version is the default version of the option.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

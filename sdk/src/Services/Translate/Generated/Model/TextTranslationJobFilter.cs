@@ -84,9 +84,9 @@ namespace Amazon.Translate.Model
         /// descending order, newest to oldest.
         /// </para>
         /// </summary>
-        public DateTime SubmittedAfterTime
+        public DateTime? SubmittedAfterTime
         {
-            get { return this._submittedAfterTime.GetValueOrDefault(); }
+            get { return this._submittedAfterTime; }
             set { this._submittedAfterTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Translate.Model
         /// ascending order, oldest to newest.
         /// </para>
         /// </summary>
-        public DateTime SubmittedBeforeTime
+        public DateTime? SubmittedBeforeTime
         {
-            get { return this._submittedBeforeTime.GetValueOrDefault(); }
+            get { return this._submittedBeforeTime; }
             set { this._submittedBeforeTime = value; }
         }
 

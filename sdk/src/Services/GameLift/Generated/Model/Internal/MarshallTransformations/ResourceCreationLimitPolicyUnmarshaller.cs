@@ -65,13 +65,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("NewGameSessionsPerCreator", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NewGameSessionsPerCreator = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PolicyPeriodInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PolicyPeriodInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

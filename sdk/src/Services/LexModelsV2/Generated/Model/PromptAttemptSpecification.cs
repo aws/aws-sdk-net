@@ -63,9 +63,9 @@ namespace Amazon.LexModelsV2.Model
         /// Indicates whether the user can interrupt a speech prompt attempt from the bot.
         /// </para>
         /// </summary>
-        public bool AllowInterrupt
+        public bool? AllowInterrupt
         {
-            get { return this._allowInterrupt.GetValueOrDefault(); }
+            get { return this._allowInterrupt; }
             set { this._allowInterrupt = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsAdvancedManagedRuleSet", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAdvancedManagedRuleSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsVersioningSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsVersioningSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }

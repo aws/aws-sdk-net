@@ -89,9 +89,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the network interface is deleted when the instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.SecurityHub.Model
         /// The device index of the network interface attachment on the instance.
         /// </para>
         /// </summary>
-        public int DeviceIndex
+        public int? DeviceIndex
         {
-            get { return this._deviceIndex.GetValueOrDefault(); }
+            get { return this._deviceIndex; }
             set { this._deviceIndex = value; }
         }
 

@@ -86,9 +86,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int NumNodes
+        public int? NumNodes
         {
-            get { return this._numNodes.GetValueOrDefault(); }
+            get { return this._numNodes; }
             set { this._numNodes = value; }
         }
 

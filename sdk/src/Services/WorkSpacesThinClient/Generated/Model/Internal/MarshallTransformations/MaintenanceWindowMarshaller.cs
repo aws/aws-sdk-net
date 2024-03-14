@@ -65,25 +65,25 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTimeHour())
             {
                 context.Writer.WritePropertyName("endTimeHour");
-                context.Writer.Write(requestObject.EndTimeHour);
+                context.Writer.Write(requestObject.EndTimeHour.Value);
             }
 
             if(requestObject.IsSetEndTimeMinute())
             {
                 context.Writer.WritePropertyName("endTimeMinute");
-                context.Writer.Write(requestObject.EndTimeMinute);
+                context.Writer.Write(requestObject.EndTimeMinute.Value);
             }
 
             if(requestObject.IsSetStartTimeHour())
             {
                 context.Writer.WritePropertyName("startTimeHour");
-                context.Writer.Write(requestObject.StartTimeHour);
+                context.Writer.Write(requestObject.StartTimeHour.Value);
             }
 
             if(requestObject.IsSetStartTimeMinute())
             {
                 context.Writer.WritePropertyName("startTimeMinute");
-                context.Writer.Write(requestObject.StartTimeMinute);
+                context.Writer.Write(requestObject.StartTimeMinute.Value);
             }
 
             if(requestObject.IsSetType())

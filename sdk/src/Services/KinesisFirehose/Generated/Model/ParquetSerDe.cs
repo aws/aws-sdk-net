@@ -51,9 +51,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=67108864)]
-        public int BlockSizeBytes
+        public int? BlockSizeBytes
         {
-            get { return this._blockSizeBytes.GetValueOrDefault(); }
+            get { return this._blockSizeBytes; }
             set { this._blockSizeBytes = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Indicates whether to enable dictionary compression.
         /// </para>
         /// </summary>
-        public bool EnableDictionaryCompression
+        public bool? EnableDictionaryCompression
         {
-            get { return this._enableDictionaryCompression.GetValueOrDefault(); }
+            get { return this._enableDictionaryCompression; }
             set { this._enableDictionaryCompression = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxPaddingBytes
+        public int? MaxPaddingBytes
         {
-            get { return this._maxPaddingBytes.GetValueOrDefault(); }
+            get { return this._maxPaddingBytes; }
             set { this._maxPaddingBytes = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=65536)]
-        public int PageSizeBytes
+        public int? PageSizeBytes
         {
-            get { return this._pageSizeBytes.GetValueOrDefault(); }
+            get { return this._pageSizeBytes; }
             set { this._pageSizeBytes = value; }
         }
 

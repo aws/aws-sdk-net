@@ -59,7 +59,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("associatePublicIpAddress", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,13 +71,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("copyPrivateIp", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CopyPrivateIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("copyTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CopyTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableMapAutoTagging", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableMapAutoTagging = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("smallVolumeMaxSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.SmallVolumeMaxSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

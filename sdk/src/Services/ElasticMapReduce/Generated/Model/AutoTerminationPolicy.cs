@@ -46,9 +46,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// (seven days).
         /// </para>
         /// </summary>
-        public long IdleTimeout
+        public long? IdleTimeout
         {
-            get { return this._idleTimeout.GetValueOrDefault(); }
+            get { return this._idleTimeout; }
             set { this._idleTimeout = value; }
         }
 

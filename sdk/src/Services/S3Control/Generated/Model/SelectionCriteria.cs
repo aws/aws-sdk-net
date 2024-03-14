@@ -63,9 +63,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int MaxDepth
+        public int? MaxDepth
         {
-            get { return this._maxDepth.GetValueOrDefault(); }
+            get { return this._maxDepth; }
             set { this._maxDepth = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.S3Control.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Max=100)]
-        public double MinStorageBytesPercentage
+        public double? MinStorageBytesPercentage
         {
-            get { return this._minStorageBytesPercentage.GetValueOrDefault(); }
+            get { return this._minStorageBytesPercentage; }
             set { this._minStorageBytesPercentage = value; }
         }
 

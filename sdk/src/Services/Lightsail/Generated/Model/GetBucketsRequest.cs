@@ -78,9 +78,9 @@ namespace Amazon.Lightsail.Model
         /// action.
         /// </para>
         /// </summary>
-        public bool IncludeConnectedResources
+        public bool? IncludeConnectedResources
         {
-            get { return this._includeConnectedResources.GetValueOrDefault(); }
+            get { return this._includeConnectedResources; }
             set { this._includeConnectedResources = value; }
         }
 

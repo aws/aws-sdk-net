@@ -53,9 +53,9 @@ namespace Amazon.GuardDuty.Model
         /// associated with GuardDuty.
         /// </para>
         /// </summary>
-        public int ActiveAccountsCount
+        public int? ActiveAccountsCount
         {
-            get { return this._activeAccountsCount.GetValueOrDefault(); }
+            get { return this._activeAccountsCount; }
             set { this._activeAccountsCount = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of accounts that have enabled GuardDuty.
         /// </para>
         /// </summary>
-        public int EnabledAccountsCount
+        public int? EnabledAccountsCount
         {
-            get { return this._enabledAccountsCount.GetValueOrDefault(); }
+            get { return this._enabledAccountsCount; }
             set { this._enabledAccountsCount = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.GuardDuty.Model
         /// with GuardDuty.
         /// </para>
         /// </summary>
-        public int MemberAccountsCount
+        public int? MemberAccountsCount
         {
-            get { return this._memberAccountsCount.GetValueOrDefault(); }
+            get { return this._memberAccountsCount; }
             set { this._memberAccountsCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of accounts in your Amazon Web Services organization.
         /// </para>
         /// </summary>
-        public int TotalAccountsCount
+        public int? TotalAccountsCount
         {
-            get { return this._totalAccountsCount.GetValueOrDefault(); }
+            get { return this._totalAccountsCount; }
             set { this._totalAccountsCount = value; }
         }
 

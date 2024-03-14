@@ -81,7 +81,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTerminationProtected())
                 {
                     context.Writer.WritePropertyName("TerminationProtected");
-                    context.Writer.Write(publicRequest.TerminationProtected);
+                    context.Writer.Write(publicRequest.TerminationProtected.Value);
                 }
 
                 writer.WriteObjectEnd();

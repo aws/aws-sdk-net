@@ -80,7 +80,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Order", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Order = unmarshaller.Unmarshall(context);
                         continue;
                     }

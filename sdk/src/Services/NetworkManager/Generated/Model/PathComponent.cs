@@ -80,9 +80,9 @@ namespace Amazon.NetworkManager.Model
         /// The sequence number in the path. The destination is 0.
         /// </para>
         /// </summary>
-        public int Sequence
+        public int? Sequence
         {
-            get { return this._sequence.GetValueOrDefault(); }
+            get { return this._sequence; }
             set { this._sequence = value; }
         }
 

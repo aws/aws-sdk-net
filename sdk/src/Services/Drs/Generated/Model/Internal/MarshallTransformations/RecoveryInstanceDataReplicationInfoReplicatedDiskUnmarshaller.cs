@@ -65,7 +65,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("backloggedStorageBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BackloggedStorageBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,19 +77,19 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("replicatedStorageBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReplicatedStorageBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rescannedStorageBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RescannedStorageBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalStorageBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalStorageBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

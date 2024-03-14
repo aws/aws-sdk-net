@@ -83,7 +83,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AllowedAllVPCs", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AllowedAllVPCs = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("AuthorizeTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.AuthorizeTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -114,7 +114,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EndpointCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.EndpointCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

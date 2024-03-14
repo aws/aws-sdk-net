@@ -117,9 +117,9 @@ namespace Amazon.Detective.Model
         /// Organization accounts in the organization behavior graph do not receive email notifications.
         /// </para>
         /// </summary>
-        public bool DisableEmailNotification
+        public bool? DisableEmailNotification
         {
-            get { return this._disableEmailNotification.GetValueOrDefault(); }
+            get { return this._disableEmailNotification; }
             set { this._disableEmailNotification = value; }
         }
 

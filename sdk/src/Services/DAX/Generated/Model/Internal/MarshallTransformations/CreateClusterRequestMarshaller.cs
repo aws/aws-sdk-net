@@ -129,7 +129,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplicationFactor())
                 {
                     context.Writer.WritePropertyName("ReplicationFactor");
-                    context.Writer.Write(publicRequest.ReplicationFactor);
+                    context.Writer.Write(publicRequest.ReplicationFactor.Value);
                 }
 
                 if(publicRequest.IsSetSecurityGroupIds())

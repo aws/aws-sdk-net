@@ -62,9 +62,9 @@ namespace Amazon.CloudTrail.Model
         /// The ending time of validity of the public key.
         /// </para>
         /// </summary>
-        public DateTime ValidityEndTime
+        public DateTime? ValidityEndTime
         {
-            get { return this._validityEndTime.GetValueOrDefault(); }
+            get { return this._validityEndTime; }
             set { this._validityEndTime = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CloudTrail.Model
         /// The starting time of validity of the public key.
         /// </para>
         /// </summary>
-        public DateTime ValidityStartTime
+        public DateTime? ValidityStartTime
         {
-            get { return this._validityStartTime.GetValueOrDefault(); }
+            get { return this._validityStartTime; }
             set { this._validityStartTime = value; }
         }
 

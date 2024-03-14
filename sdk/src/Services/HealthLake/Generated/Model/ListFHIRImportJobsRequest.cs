@@ -109,9 +109,9 @@ namespace Amazon.HealthLake.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.HealthLake.Model
         /// date. 
         /// </para>
         /// </summary>
-        public DateTime SubmittedAfter
+        public DateTime? SubmittedAfter
         {
-            get { return this._submittedAfter.GetValueOrDefault(); }
+            get { return this._submittedAfter; }
             set { this._submittedAfter = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.HealthLake.Model
         /// date. 
         /// </para>
         /// </summary>
-        public DateTime SubmittedBefore
+        public DateTime? SubmittedBefore
         {
-            get { return this._submittedBefore.GetValueOrDefault(); }
+            get { return this._submittedBefore; }
             set { this._submittedBefore = value; }
         }
 

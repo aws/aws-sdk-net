@@ -52,9 +52,9 @@ namespace Amazon.Personalize.Model
         /// pricing</a>. 
         /// </para>
         /// </summary>
-        public bool EnableMetadataWithRecommendations
+        public bool? EnableMetadataWithRecommendations
         {
-            get { return this._enableMetadataWithRecommendations.GetValueOrDefault(); }
+            get { return this._enableMetadataWithRecommendations; }
             set { this._enableMetadataWithRecommendations = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.RDS.Model
         /// A POSIX timestamp when the last log entry was written.
         /// </para>
         /// </summary>
-        public long LastWritten
+        public long? LastWritten
         {
-            get { return this._lastWritten.GetValueOrDefault(); }
+            get { return this._lastWritten; }
             set { this._lastWritten = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.RDS.Model
         /// The size, in bytes, of the log file for the specified DB instance.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

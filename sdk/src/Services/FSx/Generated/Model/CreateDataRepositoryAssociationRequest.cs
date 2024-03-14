@@ -70,9 +70,9 @@ namespace Amazon.FSx.Model
         /// Default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool BatchImportMetaDataOnCreate
+        public bool? BatchImportMetaDataOnCreate
         {
-            get { return this._batchImportMetaDataOnCreate.GetValueOrDefault(); }
+            get { return this._batchImportMetaDataOnCreate; }
             set { this._batchImportMetaDataOnCreate = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512000)]
-        public int ImportedFileChunkSize
+        public int? ImportedFileChunkSize
         {
-            get { return this._importedFileChunkSize.GetValueOrDefault(); }
+            get { return this._importedFileChunkSize; }
             set { this._importedFileChunkSize = value; }
         }
 

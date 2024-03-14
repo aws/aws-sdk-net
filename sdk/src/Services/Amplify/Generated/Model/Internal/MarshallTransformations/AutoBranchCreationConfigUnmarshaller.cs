@@ -77,25 +77,25 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableAutoBuild", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAutoBuild = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enableBasicAuth", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableBasicAuth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enablePerformanceMode", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnablePerformanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enablePullRequestPreview", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnablePullRequestPreview = unmarshaller.Unmarshall(context);
                     continue;
                 }

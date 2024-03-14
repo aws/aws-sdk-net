@@ -65,7 +65,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("N", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.N = unmarshaller.Unmarshall(context);
                     continue;
                 }

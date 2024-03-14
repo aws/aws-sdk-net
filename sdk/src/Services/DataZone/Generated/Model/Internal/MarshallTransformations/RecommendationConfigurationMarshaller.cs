@@ -48,7 +48,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableBusinessNameGeneration())
             {
                 context.Writer.WritePropertyName("enableBusinessNameGeneration");
-                context.Writer.Write(requestObject.EnableBusinessNameGeneration);
+                context.Writer.Write(requestObject.EnableBusinessNameGeneration.Value);
             }
 
         }

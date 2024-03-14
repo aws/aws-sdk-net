@@ -48,13 +48,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointPrivateAccess())
             {
                 context.Writer.WritePropertyName("endpointPrivateAccess");
-                context.Writer.Write(requestObject.EndpointPrivateAccess);
+                context.Writer.Write(requestObject.EndpointPrivateAccess.Value);
             }
 
             if(requestObject.IsSetEndpointPublicAccess())
             {
                 context.Writer.WritePropertyName("endpointPublicAccess");
-                context.Writer.Write(requestObject.EndpointPublicAccess);
+                context.Writer.Write(requestObject.EndpointPublicAccess.Value);
             }
 
             if(requestObject.IsSetPublicAccessCidrs())

@@ -44,9 +44,9 @@ namespace Amazon.Comprehend.Model
         /// Filter the datasets to include datasets created after the specified time.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeAfter
+        public DateTime? CreationTimeAfter
         {
-            get { return this._creationTimeAfter.GetValueOrDefault(); }
+            get { return this._creationTimeAfter; }
             set { this._creationTimeAfter = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Comprehend.Model
         /// Filter the datasets to include datasets created before the specified time.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeBefore
+        public DateTime? CreationTimeBefore
         {
-            get { return this._creationTimeBefore.GetValueOrDefault(); }
+            get { return this._creationTimeBefore; }
             set { this._creationTimeBefore = value; }
         }
 

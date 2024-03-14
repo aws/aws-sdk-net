@@ -41,9 +41,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether automatic service software updates are enabled for the domain.
         /// </para>
         /// </summary>
-        public bool AutoSoftwareUpdateEnabled
+        public bool? AutoSoftwareUpdateEnabled
         {
-            get { return this._autoSoftwareUpdateEnabled.GetValueOrDefault(); }
+            get { return this._autoSoftwareUpdateEnabled; }
             set { this._autoSoftwareUpdateEnabled = value; }
         }
 

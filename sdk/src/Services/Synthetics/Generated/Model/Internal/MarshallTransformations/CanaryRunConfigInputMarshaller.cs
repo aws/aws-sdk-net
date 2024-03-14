@@ -48,7 +48,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveTracing())
             {
                 context.Writer.WritePropertyName("ActiveTracing");
-                context.Writer.Write(requestObject.ActiveTracing);
+                context.Writer.Write(requestObject.ActiveTracing.Value);
             }
 
             if(requestObject.IsSetEnvironmentVariables())
@@ -68,13 +68,13 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemoryInMB())
             {
                 context.Writer.WritePropertyName("MemoryInMB");
-                context.Writer.Write(requestObject.MemoryInMB);
+                context.Writer.Write(requestObject.MemoryInMB.Value);
             }
 
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("TimeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds);
+                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
             }
 
         }

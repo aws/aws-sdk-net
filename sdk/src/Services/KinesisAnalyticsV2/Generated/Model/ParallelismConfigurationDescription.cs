@@ -47,9 +47,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// of the application in response to increased throughput.
         /// </para>
         /// </summary>
-        public bool AutoScalingEnabled
+        public bool? AutoScalingEnabled
         {
-            get { return this._autoScalingEnabled.GetValueOrDefault(); }
+            get { return this._autoScalingEnabled; }
             set { this._autoScalingEnabled = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int CurrentParallelism
+        public int? CurrentParallelism
         {
-            get { return this._currentParallelism.GetValueOrDefault(); }
+            get { return this._currentParallelism; }
             set { this._currentParallelism = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Parallelism
+        public int? Parallelism
         {
-            get { return this._parallelism.GetValueOrDefault(); }
+            get { return this._parallelism; }
             set { this._parallelism = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParallelismPerKPU
+        public int? ParallelismPerKPU
         {
-            get { return this._parallelismPerKPU.GetValueOrDefault(); }
+            get { return this._parallelismPerKPU; }
             set { this._parallelismPerKPU = value; }
         }
 

@@ -65,37 +65,37 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AccessAlternateDirectly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AccessAlternateDirectly = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AdditionalArchivedLogDestId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AdditionalArchivedLogDestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AddSupplementalLogging", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AddSupplementalLogging = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AllowSelectNestedTables", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowSelectNestedTables = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ArchivedLogDestId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ArchivedLogDestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ArchivedLogsOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ArchivedLogsOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConvertTimestampWithZoneToUTC", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConvertTimestampWithZoneToUTC = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,19 +137,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DirectPathNoLog", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DirectPathNoLog = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DirectPathParallelLoad", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DirectPathParallelLoad = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableHomogenousTablespace", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableHomogenousTablespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -161,19 +161,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FailTasksOnLobTruncation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FailTasksOnLobTruncation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberDatatypeScale", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberDatatypeScale = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OpenTransactionWindow", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OpenTransactionWindow = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -185,7 +185,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ParallelAsmReadThreads", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ParallelAsmReadThreads = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -197,31 +197,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Port", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReadAheadBlocks", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReadAheadBlocks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReadTableSpaceName", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadTableSpaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReplacePathPrefix", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReplacePathPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RetryInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -275,37 +275,37 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StandbyDelayTime", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StandbyDelayTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrimSpaceInChar", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TrimSpaceInChar = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseAlternateFolderForOnline", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseAlternateFolderForOnline = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseBFile", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseBFile = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseDirectPathFullLoad", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseDirectPathFullLoad = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UseLogminerReader", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseLogminerReader = unmarshaller.Unmarshall(context);
                     continue;
                 }

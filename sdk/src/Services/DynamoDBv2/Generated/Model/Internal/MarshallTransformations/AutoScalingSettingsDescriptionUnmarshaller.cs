@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoScalingDisabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaximumUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -66,9 +66,9 @@ namespace Amazon.DocDB.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ApplyImmediately
+        public bool? ApplyImmediately
         {
-            get { return this._applyImmediately.GetValueOrDefault(); }
+            get { return this._applyImmediately; }
             set { this._applyImmediately = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.DocDB.Model
         /// minor version upgrades regardless of the value set.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.DocDB.Model
         /// Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
         /// </para>
         /// </summary>
-        public bool CertificateRotationRestart
+        public bool? CertificateRotationRestart
         {
-            get { return this._certificateRotationRestart.GetValueOrDefault(); }
+            get { return this._certificateRotationRestart; }
             set { this._certificateRotationRestart = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.DocDB.Model
         /// of the DB instance. By default, tags are not copied.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.DocDB.Model
         /// Amazon Performance Insights</a>.
         /// </para>
         /// </summary>
-        public bool EnablePerformanceInsights
+        public bool? EnablePerformanceInsights
         {
-            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            get { return this._enablePerformanceInsights; }
             set { this._enablePerformanceInsights = value; }
         }
 
@@ -372,9 +372,9 @@ namespace Amazon.DocDB.Model
         /// Valid values: 0-15
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

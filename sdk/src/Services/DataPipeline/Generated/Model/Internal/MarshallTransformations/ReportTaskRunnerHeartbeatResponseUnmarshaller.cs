@@ -53,7 +53,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("terminate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Terminate = unmarshaller.Unmarshall(context);
                     continue;
                 }

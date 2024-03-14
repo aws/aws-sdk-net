@@ -102,9 +102,9 @@ namespace Amazon.AppStream.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TimeoutInSeconds
+        public int? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

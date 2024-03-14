@@ -77,7 +77,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TimePeriod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimePeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }

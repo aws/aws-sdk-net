@@ -41,9 +41,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// A value that indicates whether the cancel statement succeeded (true). 
         /// </para>
         /// </summary>
-        public bool Status
+        public bool? Status
         {
-            get { return this._status.GetValueOrDefault(); }
+            get { return this._status; }
             set { this._status = value; }
         }
 

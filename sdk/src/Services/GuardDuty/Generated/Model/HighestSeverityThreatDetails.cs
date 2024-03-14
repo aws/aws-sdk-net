@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of infected files with the highest severity threat detected.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

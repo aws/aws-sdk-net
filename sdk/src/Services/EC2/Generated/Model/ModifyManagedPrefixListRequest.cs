@@ -77,9 +77,9 @@ namespace Amazon.EC2.Model
         /// The current version of the prefix list.
         /// </para>
         /// </summary>
-        public long CurrentVersion
+        public long? CurrentVersion
         {
-            get { return this._currentVersion.GetValueOrDefault(); }
+            get { return this._currentVersion; }
             set { this._currentVersion = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.EC2.Model
         /// ten resources that do not support the new maximum size.
         /// </para>
         /// </summary>
-        public int MaxEntries
+        public int? MaxEntries
         {
-            get { return this._maxEntries.GetValueOrDefault(); }
+            get { return this._maxEntries; }
             set { this._maxEntries = value; }
         }
 

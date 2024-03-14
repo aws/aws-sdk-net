@@ -65,7 +65,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("length", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Length = unmarshaller.Unmarshall(context);
                     continue;
                 }

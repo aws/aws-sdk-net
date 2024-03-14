@@ -59,13 +59,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartedAfter())
             {
                 context.Writer.WritePropertyName("StartedAfter");
-                context.Writer.Write(requestObject.StartedAfter);
+                context.Writer.Write(requestObject.StartedAfter.Value);
             }
 
             if(requestObject.IsSetStartedBefore())
             {
                 context.Writer.WritePropertyName("StartedBefore");
-                context.Writer.Write(requestObject.StartedBefore);
+                context.Writer.Write(requestObject.StartedBefore.Value);
             }
 
         }

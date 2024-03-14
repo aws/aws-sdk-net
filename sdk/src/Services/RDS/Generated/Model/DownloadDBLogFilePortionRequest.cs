@@ -149,9 +149,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int NumberOfLines
+        public int? NumberOfLines
         {
-            get { return this._numberOfLines.GetValueOrDefault(); }
+            get { return this._numberOfLines; }
             set { this._numberOfLines = value; }
         }
 

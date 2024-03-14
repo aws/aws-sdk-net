@@ -42,9 +42,9 @@ namespace Amazon.ComprehendMedical.Model
         /// Comprehend Medical. 
         /// </para>
         /// </summary>
-        public int OriginalTextCharacters
+        public int? OriginalTextCharacters
         {
-            get { return this._originalTextCharacters.GetValueOrDefault(); }
+            get { return this._originalTextCharacters; }
             set { this._originalTextCharacters = value; }
         }
 

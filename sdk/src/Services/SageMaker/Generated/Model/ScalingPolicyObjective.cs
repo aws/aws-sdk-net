@@ -42,9 +42,9 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of expected requests to your endpoint per minute.
         /// </para>
         /// </summary>
-        public int MaxInvocationsPerMinute
+        public int? MaxInvocationsPerMinute
         {
-            get { return this._maxInvocationsPerMinute.GetValueOrDefault(); }
+            get { return this._maxInvocationsPerMinute; }
             set { this._maxInvocationsPerMinute = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.SageMaker.Model
         /// The minimum number of expected requests to your endpoint per minute.
         /// </para>
         /// </summary>
-        public int MinInvocationsPerMinute
+        public int? MinInvocationsPerMinute
         {
-            get { return this._minInvocationsPerMinute.GetValueOrDefault(); }
+            get { return this._minInvocationsPerMinute; }
             set { this._minInvocationsPerMinute = value; }
         }
 

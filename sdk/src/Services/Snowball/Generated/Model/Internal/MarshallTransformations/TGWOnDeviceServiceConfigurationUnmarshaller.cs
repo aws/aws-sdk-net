@@ -65,7 +65,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("StorageLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

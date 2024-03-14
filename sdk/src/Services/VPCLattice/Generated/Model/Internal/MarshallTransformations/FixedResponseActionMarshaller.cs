@@ -48,7 +48,7 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStatusCode())
             {
                 context.Writer.WritePropertyName("statusCode");
-                context.Writer.Write(requestObject.StatusCode);
+                context.Writer.Write(requestObject.StatusCode.Value);
             }
 
         }

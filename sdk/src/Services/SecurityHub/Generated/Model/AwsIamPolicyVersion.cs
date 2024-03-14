@@ -67,9 +67,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the version is the default version.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 

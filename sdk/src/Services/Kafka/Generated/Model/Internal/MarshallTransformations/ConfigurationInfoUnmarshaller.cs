@@ -71,7 +71,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("revision", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }

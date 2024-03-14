@@ -48,13 +48,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
+                context.Writer.Write(requestObject.DoubleValue.Value);
             }
 
             if(requestObject.IsSetExpression())
@@ -66,7 +66,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntegerValue())
             {
                 context.Writer.WritePropertyName("integerValue");
-                context.Writer.Write(requestObject.IntegerValue);
+                context.Writer.Write(requestObject.IntegerValue.Value);
             }
 
             if(requestObject.IsSetListValue())
@@ -88,7 +88,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue);
+                context.Writer.Write(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetMapValue())

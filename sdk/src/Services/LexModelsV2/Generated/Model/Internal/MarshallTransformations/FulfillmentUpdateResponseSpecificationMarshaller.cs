@@ -48,13 +48,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowInterrupt())
             {
                 context.Writer.WritePropertyName("allowInterrupt");
-                context.Writer.Write(requestObject.AllowInterrupt);
+                context.Writer.Write(requestObject.AllowInterrupt.Value);
             }
 
             if(requestObject.IsSetFrequencyInSeconds())
             {
                 context.Writer.WritePropertyName("frequencyInSeconds");
-                context.Writer.Write(requestObject.FrequencyInSeconds);
+                context.Writer.Write(requestObject.FrequencyInSeconds.Value);
             }
 
             if(requestObject.IsSetMessageGroups())

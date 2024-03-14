@@ -155,9 +155,9 @@ namespace Amazon.StorageGateway.Model
         /// The local disk size in bytes.
         /// </para>
         /// </summary>
-        public long DiskSizeInBytes
+        public long? DiskSizeInBytes
         {
-            get { return this._diskSizeInBytes.GetValueOrDefault(); }
+            get { return this._diskSizeInBytes; }
             set { this._diskSizeInBytes = value; }
         }
 

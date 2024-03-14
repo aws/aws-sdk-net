@@ -81,7 +81,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndEventTime())
                 {
                     context.Writer.WritePropertyName("EndEventTime");
-                    context.Writer.Write(publicRequest.EndEventTime);
+                    context.Writer.Write(publicRequest.EndEventTime.Value);
                 }
 
                 if(publicRequest.IsSetImportId())
@@ -104,7 +104,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartEventTime())
                 {
                     context.Writer.WritePropertyName("StartEventTime");
-                    context.Writer.Write(publicRequest.StartEventTime);
+                    context.Writer.Write(publicRequest.StartEventTime.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -77,7 +77,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SendingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SendingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

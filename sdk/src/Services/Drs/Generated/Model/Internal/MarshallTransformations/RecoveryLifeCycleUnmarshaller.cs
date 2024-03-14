@@ -65,7 +65,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("apiCallDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ApiCallDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

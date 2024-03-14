@@ -81,7 +81,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.Write(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetResourceRequirements())
@@ -103,7 +103,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVcpus())
             {
                 context.Writer.WritePropertyName("vcpus");
-                context.Writer.Write(requestObject.Vcpus);
+                context.Writer.Write(requestObject.Vcpus.Value);
             }
 
         }

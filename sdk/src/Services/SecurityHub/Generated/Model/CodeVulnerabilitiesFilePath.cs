@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         ///  The line number of the last line of code in which the vulnerability is located. 
         /// </para>
         /// </summary>
-        public int EndLine
+        public int? EndLine
         {
-            get { return this._endLine.GetValueOrDefault(); }
+            get { return this._endLine; }
             set { this._endLine = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public int StartLine
+        public int? StartLine
         {
-            get { return this._startLine.GetValueOrDefault(); }
+            get { return this._startLine; }
             set { this._startLine = value; }
         }
 

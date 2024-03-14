@@ -71,7 +71,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ttl", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Ttl = unmarshaller.Unmarshall(context);
                     continue;
                 }

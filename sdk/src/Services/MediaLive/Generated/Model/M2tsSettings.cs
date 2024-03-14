@@ -172,9 +172,9 @@ namespace Amazon.MediaLive.Model
         /// for each PES packet.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AudioFramesPerPes
+        public int? AudioFramesPerPes
         {
-            get { return this._audioFramesPerPes.GetValueOrDefault(); }
+            get { return this._audioFramesPerPes; }
             set { this._audioFramesPerPes = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.MediaLive.Model
         /// bitrate.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -398,9 +398,9 @@ namespace Amazon.MediaLive.Model
         /// elsewhere to create sufficient latency to make the lookahead accurate.
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int EbpLookaheadMs
+        public int? EbpLookaheadMs
         {
-            get { return this._ebpLookaheadMs.GetValueOrDefault(); }
+            get { return this._ebpLookaheadMs; }
             set { this._ebpLookaheadMs = value; }
         }
 
@@ -496,9 +496,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FragmentTime. The length in seconds of each fragment. Only
         /// used with EBP markers.
         /// </summary>
-        public double FragmentTime
+        public double? FragmentTime
         {
-            get { return this._fragmentTime.GetValueOrDefault(); }
+            get { return this._fragmentTime; }
             set { this._fragmentTime = value; }
         }
 
@@ -564,9 +564,9 @@ namespace Amazon.MediaLive.Model
         /// packets to insert into the transport stream. This can be used if a downstream encryption
         /// system requires periodic null packets.
         /// </summary>
-        public double NullPacketBitrate
+        public double? NullPacketBitrate
         {
-            get { return this._nullPacketBitrate.GetValueOrDefault(); }
+            get { return this._nullPacketBitrate; }
             set { this._nullPacketBitrate = value; }
         }
 
@@ -581,9 +581,9 @@ namespace Amazon.MediaLive.Model
         /// of this table in the output transport stream.  Valid values are 0, 10..1000.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PatInterval
+        public int? PatInterval
         {
-            get { return this._patInterval.GetValueOrDefault(); }
+            get { return this._patInterval; }
             set { this._patInterval = value; }
         }
 
@@ -616,9 +616,9 @@ namespace Amazon.MediaLive.Model
         /// Clock Reference (PCRs) inserted into the transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int PcrPeriod
+        public int? PcrPeriod
         {
-            get { return this._pcrPeriod.GetValueOrDefault(); }
+            get { return this._pcrPeriod; }
             set { this._pcrPeriod = value; }
         }
 
@@ -651,9 +651,9 @@ namespace Amazon.MediaLive.Model
         /// of this table in the output transport stream. Valid values are 0, 10..1000.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PmtInterval
+        public int? PmtInterval
         {
-            get { return this._pmtInterval.GetValueOrDefault(); }
+            get { return this._pmtInterval; }
             set { this._pmtInterval = value; }
         }
 
@@ -685,9 +685,9 @@ namespace Amazon.MediaLive.Model
         /// Program Map Table.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int ProgramNum
+        public int? ProgramNum
         {
-            get { return this._programNum.GetValueOrDefault(); }
+            get { return this._programNum; }
             set { this._programNum = value; }
         }
 
@@ -774,9 +774,9 @@ namespace Amazon.MediaLive.Model
         /// make the preroll shorter. Be aware that latency in the output will increase by the
         /// pullup amount.
         /// </summary>
-        public double Scte35PrerollPullupMilliseconds
+        public double? Scte35PrerollPullupMilliseconds
         {
-            get { return this._scte35PrerollPullupMilliseconds.GetValueOrDefault(); }
+            get { return this._scte35PrerollPullupMilliseconds; }
             set { this._scte35PrerollPullupMilliseconds = value; }
         }
 
@@ -836,9 +836,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SegmentationTime. The length in seconds of each segment.
         /// Required unless markers is set to _none_.
         /// </summary>
-        public double SegmentationTime
+        public double? SegmentationTime
         {
-            get { return this._segmentationTime.GetValueOrDefault(); }
+            get { return this._segmentationTime; }
             set { this._segmentationTime = value; }
         }
 
@@ -886,9 +886,9 @@ namespace Amazon.MediaLive.Model
         /// field in the Program Map Table.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int TransportStreamId
+        public int? TransportStreamId
         {
-            get { return this._transportStreamId.GetValueOrDefault(); }
+            get { return this._transportStreamId; }
             set { this._transportStreamId = value; }
         }
 

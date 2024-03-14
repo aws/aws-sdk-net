@@ -144,9 +144,9 @@ namespace Amazon.WorkMail.Model
         /// Exchange. If <c>true</c>, you must include a AD Connector directory ID in the request.
         /// </para>
         /// </summary>
-        public bool EnableInteroperability
+        public bool? EnableInteroperability
         {
-            get { return this._enableInteroperability.GetValueOrDefault(); }
+            get { return this._enableInteroperability; }
             set { this._enableInteroperability = value; }
         }
 

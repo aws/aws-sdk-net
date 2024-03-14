@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to require that all traffic to the domain arrive over HTTPS.
         /// </para>
         /// </summary>
-        public bool EnforceHTTPS
+        public bool? EnforceHTTPS
         {
-            get { return this._enforceHTTPS.GetValueOrDefault(); }
+            get { return this._enforceHTTPS; }
             set { this._enforceHTTPS = value; }
         }
 

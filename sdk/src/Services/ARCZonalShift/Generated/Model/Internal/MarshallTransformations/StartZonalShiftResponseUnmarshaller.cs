@@ -65,7 +65,7 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

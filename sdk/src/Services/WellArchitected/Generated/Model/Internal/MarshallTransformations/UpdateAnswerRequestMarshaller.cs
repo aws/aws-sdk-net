@@ -96,7 +96,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsApplicable())
                 {
                     context.Writer.WritePropertyName("IsApplicable");
-                    context.Writer.Write(publicRequest.IsApplicable);
+                    context.Writer.Write(publicRequest.IsApplicable.Value);
                 }
 
                 if(publicRequest.IsSetNotes())

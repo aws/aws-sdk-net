@@ -250,9 +250,9 @@ namespace Amazon.MediaConvert.Model
         /// of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
-        public int FilterStrength
+        public int? FilterStrength
         {
-            get { return this._filterStrength.GetValueOrDefault(); }
+            get { return this._filterStrength; }
             set { this._filterStrength = value; }
         }
 
@@ -347,9 +347,9 @@ namespace Amazon.MediaConvert.Model
         /// doesn't exist, the transcoding service will use this default.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int ProgramNumber
+        public int? ProgramNumber
         {
-            get { return this._programNumber.GetValueOrDefault(); }
+            get { return this._programNumber; }
             set { this._programNumber = value; }
         }
 

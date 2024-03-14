@@ -87,9 +87,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
-        public long DataDelayOffsetInMinutes
+        public long? DataDelayOffsetInMinutes
         {
-            get { return this._dataDelayOffsetInMinutes.GetValueOrDefault(); }
+            get { return this._dataDelayOffsetInMinutes; }
             set { this._dataDelayOffsetInMinutes = value; }
         }
 

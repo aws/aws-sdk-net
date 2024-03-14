@@ -48,9 +48,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool BasedOnSpiceSchedule
+        public bool? BasedOnSpiceSchedule
         {
-            get { return this._basedOnSpiceSchedule.GetValueOrDefault(); }
+            get { return this._basedOnSpiceSchedule; }
             set { this._basedOnSpiceSchedule = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsEnabled
+        public bool? IsEnabled
         {
-            get { return this._isEnabled.GetValueOrDefault(); }
+            get { return this._isEnabled; }
             set { this._isEnabled = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.QuickSight.Model
         /// The starting date and time for the refresh schedule.
         /// </para>
         /// </summary>
-        public DateTime StartingAt
+        public DateTime? StartingAt
         {
-            get { return this._startingAt.GetValueOrDefault(); }
+            get { return this._startingAt; }
             set { this._startingAt = value; }
         }
 

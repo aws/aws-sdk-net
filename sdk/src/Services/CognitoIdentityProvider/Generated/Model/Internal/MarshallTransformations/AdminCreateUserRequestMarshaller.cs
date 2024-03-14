@@ -95,7 +95,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceAliasCreation())
                 {
                     context.Writer.WritePropertyName("ForceAliasCreation");
-                    context.Writer.Write(publicRequest.ForceAliasCreation);
+                    context.Writer.Write(publicRequest.ForceAliasCreation.Value);
                 }
 
                 if(publicRequest.IsSetMessageAction())

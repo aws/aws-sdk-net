@@ -71,7 +71,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("deletionProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,19 +101,19 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("provisionedMemory", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedMemory = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("publicConnectivity", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublicConnectivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("replicaCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReplicaCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -83,9 +83,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// Compute Optimizer recommendations for a given resource.
         /// </para>
         /// </summary>
-        public double SavingsOpportunityPercentage
+        public double? SavingsOpportunityPercentage
         {
-            get { return this._savingsOpportunityPercentage.GetValueOrDefault(); }
+            get { return this._savingsOpportunityPercentage; }
             set { this._savingsOpportunityPercentage = value; }
         }
 

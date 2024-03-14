@@ -48,9 +48,9 @@ namespace Amazon.Appflow.Model
         /// all supported entities in a recursive fashion. 
         /// </para>
         /// </summary>
-        public bool HasNestedEntities
+        public bool? HasNestedEntities
         {
-            get { return this._hasNestedEntities.GetValueOrDefault(); }
+            get { return this._hasNestedEntities; }
             set { this._hasNestedEntities = value; }
         }
 

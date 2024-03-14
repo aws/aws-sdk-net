@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PreservedExistingData", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreservedExistingData = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,13 +125,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VolumeProgress", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.VolumeProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VolumeSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,7 +149,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VolumeUsedInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VolumeUsedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

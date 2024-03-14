@@ -68,9 +68,9 @@ namespace Amazon.CodeStar.Model
         /// itself. Recommended for most use cases.
         /// </para>
         /// </summary>
-        public bool DeleteStack
+        public bool? DeleteStack
         {
-            get { return this._deleteStack.GetValueOrDefault(); }
+            get { return this._deleteStack; }
             set { this._deleteStack = value; }
         }
 

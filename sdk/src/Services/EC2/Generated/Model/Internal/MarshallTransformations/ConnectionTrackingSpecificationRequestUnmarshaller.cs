@@ -56,19 +56,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("tcpEstablishedTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TcpEstablishedTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("udpStreamTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.UdpStreamTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("udpTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.UdpTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

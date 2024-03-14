@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.BedrockAgent")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Agents for Amazon Bedrock. This release introduces Agents for Amazon Bedrock")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Agents for Amazon Bedrock. This release introduces Agents for Amazon Bedrock")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Agents for Amazon Bedrock. This release introduces Agents for Amazon Bedrock")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Agents for Amazon Bedrock. This release introduces Agents for Amazon Bedrock")]
 #elif NETCOREAPP3_1

@@ -62,13 +62,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("OnDemandBaseCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OnDemandBaseCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OnDemandPercentageAboveBaseCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OnDemandPercentageAboveBaseCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SpotInstancePools", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SpotInstancePools = unmarshaller.Unmarshall(context);
                         continue;
                     }

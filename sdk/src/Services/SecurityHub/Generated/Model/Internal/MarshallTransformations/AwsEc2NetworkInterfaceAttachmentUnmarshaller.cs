@@ -77,13 +77,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeleteOnTermination", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeviceIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DeviceIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

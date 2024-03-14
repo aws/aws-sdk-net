@@ -108,9 +108,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

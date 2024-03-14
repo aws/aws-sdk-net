@@ -79,7 +79,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetImpact())
                 {
                     context.Writer.WritePropertyName("impact");
-                    context.Writer.Write(publicRequest.Impact);
+                    context.Writer.Write(publicRequest.Impact.Value);
                 }
 
                 if(publicRequest.IsSetRelatedItems())

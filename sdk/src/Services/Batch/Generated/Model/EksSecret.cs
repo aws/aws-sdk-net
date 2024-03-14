@@ -44,9 +44,9 @@ namespace Amazon.Batch.Model
         /// Specifies whether the secret or the secret's keys must be defined.
         /// </para>
         /// </summary>
-        public bool Optional
+        public bool? Optional
         {
-            get { return this._optional.GetValueOrDefault(); }
+            get { return this._optional; }
             set { this._optional = value; }
         }
 

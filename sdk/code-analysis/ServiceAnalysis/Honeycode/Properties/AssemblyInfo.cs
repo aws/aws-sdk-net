@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Honeycode")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Honeycode. Introducing Amazon Honeycode - a fully managed service that allows you to quickly build mobile and web apps for teams without programming.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

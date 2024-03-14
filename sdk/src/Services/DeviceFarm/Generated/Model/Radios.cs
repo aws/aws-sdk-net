@@ -45,9 +45,9 @@ namespace Amazon.DeviceFarm.Model
         /// True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
-        public bool Bluetooth
+        public bool? Bluetooth
         {
-            get { return this._bluetooth.GetValueOrDefault(); }
+            get { return this._bluetooth; }
             set { this._bluetooth = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.DeviceFarm.Model
         /// True if GPS is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
-        public bool Gps
+        public bool? Gps
         {
-            get { return this._gps.GetValueOrDefault(); }
+            get { return this._gps; }
             set { this._gps = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.DeviceFarm.Model
         /// True if NFC is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
-        public bool Nfc
+        public bool? Nfc
         {
-            get { return this._nfc.GetValueOrDefault(); }
+            get { return this._nfc; }
             set { this._nfc = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.DeviceFarm.Model
         /// True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
-        public bool Wifi
+        public bool? Wifi
         {
-            get { return this._wifi.GetValueOrDefault(); }
+            get { return this._wifi; }
             set { this._wifi = value; }
         }
 

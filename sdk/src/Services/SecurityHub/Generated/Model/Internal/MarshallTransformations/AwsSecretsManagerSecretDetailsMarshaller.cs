@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleted())
             {
                 context.Writer.WritePropertyName("Deleted");
-                context.Writer.Write(requestObject.Deleted);
+                context.Writer.Write(requestObject.Deleted.Value);
             }
 
             if(requestObject.IsSetDescription())
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRotationEnabled())
             {
                 context.Writer.WritePropertyName("RotationEnabled");
-                context.Writer.Write(requestObject.RotationEnabled);
+                context.Writer.Write(requestObject.RotationEnabled.Value);
             }
 
             if(requestObject.IsSetRotationLambdaArn())
@@ -84,7 +84,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRotationOccurredWithinFrequency())
             {
                 context.Writer.WritePropertyName("RotationOccurredWithinFrequency");
-                context.Writer.Write(requestObject.RotationOccurredWithinFrequency);
+                context.Writer.Write(requestObject.RotationOccurredWithinFrequency.Value);
             }
 
             if(requestObject.IsSetRotationRules())

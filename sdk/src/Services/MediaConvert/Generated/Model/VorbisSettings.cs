@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         /// Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int Channels
+        public int? Channels
         {
-            get { return this._channels.GetValueOrDefault(); }
+            get { return this._channels; }
             set { this._channels = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MediaConvert.Model
         /// Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
         /// </summary>
         [AWSProperty(Min=22050, Max=48000)]
-        public int SampleRate
+        public int? SampleRate
         {
-            get { return this._sampleRate.GetValueOrDefault(); }
+            get { return this._sampleRate; }
             set { this._sampleRate = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.MediaConvert.Model
         /// 160 and 192 kbit/s, respectively.
         /// </summary>
         [AWSProperty(Min=-1, Max=10)]
-        public int VbrQuality
+        public int? VbrQuality
         {
-            get { return this._vbrQuality.GetValueOrDefault(); }
+            get { return this._vbrQuality; }
             set { this._vbrQuality = value; }
         }
 

@@ -66,9 +66,9 @@ namespace Amazon.CodeCatalyst.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpiresTime
+        public DateTime? ExpiresTime
         {
-            get { return this._expiresTime.GetValueOrDefault(); }
+            get { return this._expiresTime; }
             set { this._expiresTime = value; }
         }
 

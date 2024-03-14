@@ -48,13 +48,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSampleCount())
             {
                 context.Writer.WritePropertyName("maxSampleCount");
-                context.Writer.Write(requestObject.MaxSampleCount);
+                context.Writer.Write(requestObject.MaxSampleCount.Value);
             }
 
             if(requestObject.IsSetMinimumSamplingIntervalMs())
             {
                 context.Writer.WritePropertyName("minimumSamplingIntervalMs");
-                context.Writer.Write(requestObject.MinimumSamplingIntervalMs);
+                context.Writer.Write(requestObject.MinimumSamplingIntervalMs.Value);
             }
 
             if(requestObject.IsSetName())

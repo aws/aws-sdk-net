@@ -42,9 +42,9 @@ namespace Amazon.KafkaConnect.Model
         /// in to be triggered.
         /// </para>
         /// </summary>
-        public int CpuUtilizationPercentage
+        public int? CpuUtilizationPercentage
         {
-            get { return this._cpuUtilizationPercentage.GetValueOrDefault(); }
+            get { return this._cpuUtilizationPercentage; }
             set { this._cpuUtilizationPercentage = value; }
         }
 

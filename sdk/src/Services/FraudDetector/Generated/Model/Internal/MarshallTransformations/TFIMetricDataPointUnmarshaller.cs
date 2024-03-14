@@ -65,25 +65,25 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("fpr", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Fpr = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("precision", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("threshold", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tpr", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Tpr = unmarshaller.Unmarshall(context);
                     continue;
                 }

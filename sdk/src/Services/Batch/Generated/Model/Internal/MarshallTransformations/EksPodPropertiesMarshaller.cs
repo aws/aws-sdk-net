@@ -70,7 +70,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostNetwork())
             {
                 context.Writer.WritePropertyName("hostNetwork");
-                context.Writer.Write(requestObject.HostNetwork);
+                context.Writer.Write(requestObject.HostNetwork.Value);
             }
 
             if(requestObject.IsSetMetadata())

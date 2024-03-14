@@ -63,19 +63,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DefaultTTL", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.DefaultTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxTTL", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.MaxTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinTTL", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.MinTTL = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -62,9 +62,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
         /// depend on the coding mode.
         /// </summary>
-        public double Bitrate
+        public double? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.MediaLive.Model
         /// and input audio is Dolby Digital, dialnorm will be passed through.
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
-        public int Dialnorm
+        public int? Dialnorm
         {
-            get { return this._dialnorm.GetValueOrDefault(); }
+            get { return this._dialnorm; }
             set { this._dialnorm = value; }
         }
 

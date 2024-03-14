@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 

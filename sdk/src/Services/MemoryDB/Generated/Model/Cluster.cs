@@ -104,9 +104,9 @@ namespace Amazon.MemoryDB.Model
         /// after launch.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of shards in the cluster
         /// </para>
         /// </summary>
-        public int NumberOfShards
+        public int? NumberOfShards
         {
-            get { return this._numberOfShards.GetValueOrDefault(); }
+            get { return this._numberOfShards; }
             set { this._numberOfShards = value; }
         }
 
@@ -418,9 +418,9 @@ namespace Amazon.MemoryDB.Model
         /// today is retained for 5 days before being deleted.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -528,9 +528,9 @@ namespace Amazon.MemoryDB.Model
         /// A flag to indicate if In-transit encryption is enabled
         /// </para>
         /// </summary>
-        public bool TLSEnabled
+        public bool? TLSEnabled
         {
-            get { return this._tlsEnabled.GetValueOrDefault(); }
+            get { return this._tlsEnabled; }
             set { this._tlsEnabled = value; }
         }
 

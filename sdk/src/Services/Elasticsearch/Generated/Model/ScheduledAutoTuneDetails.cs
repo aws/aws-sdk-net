@@ -82,9 +82,9 @@ namespace Amazon.Elasticsearch.Model
         /// Specifies timestamp for the Auto-Tune action scheduled for the domain. 
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 

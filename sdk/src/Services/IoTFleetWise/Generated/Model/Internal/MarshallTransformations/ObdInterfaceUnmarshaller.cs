@@ -65,13 +65,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("dtcRequestIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DtcRequestIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("hasTransmissionEcu", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasTransmissionEcu = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pidRequestIntervalSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PidRequestIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("requestMessageId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RequestMessageId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("useExtendedIds", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseExtendedIds = unmarshaller.Unmarshall(context);
                     continue;
                 }

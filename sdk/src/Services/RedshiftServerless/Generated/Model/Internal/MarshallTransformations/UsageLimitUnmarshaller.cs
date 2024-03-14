@@ -65,7 +65,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("amount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Amount = unmarshaller.Unmarshall(context);
                     continue;
                 }

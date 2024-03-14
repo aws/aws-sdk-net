@@ -65,9 +65,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// by <c>resourceId</c>.
         /// </para>
         /// </summary>
-        public bool IncludeAllRecommendations
+        public bool? IncludeAllRecommendations
         {
-            get { return this._includeAllRecommendations.GetValueOrDefault(); }
+            get { return this._includeAllRecommendations; }
             set { this._includeAllRecommendations = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -90,9 +90,9 @@ namespace Amazon.BackupStorage.Model
         /// Gets and sets the property Length. Data length
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Length
+        public long? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 

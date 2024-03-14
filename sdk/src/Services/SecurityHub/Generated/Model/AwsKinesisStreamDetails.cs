@@ -83,9 +83,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public int RetentionPeriodHours
+        public int? RetentionPeriodHours
         {
-            get { return this._retentionPeriodHours.GetValueOrDefault(); }
+            get { return this._retentionPeriodHours; }
             set { this._retentionPeriodHours = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of shards that the stream uses. 
         /// </para>
         /// </summary>
-        public int ShardCount
+        public int? ShardCount
         {
-            get { return this._shardCount.GetValueOrDefault(); }
+            get { return this._shardCount; }
             set { this._shardCount = value; }
         }
 

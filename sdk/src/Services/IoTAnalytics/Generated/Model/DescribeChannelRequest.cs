@@ -63,9 +63,9 @@ namespace Amazon.IoTAnalytics.Model
         /// This feature can't be used with a channel whose S3 storage is customer-managed.
         /// </para>
         /// </summary>
-        public bool IncludeStatistics
+        public bool? IncludeStatistics
         {
-            get { return this._includeStatistics.GetValueOrDefault(); }
+            get { return this._includeStatistics; }
             set { this._includeStatistics = value; }
         }
 

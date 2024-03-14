@@ -48,9 +48,9 @@ namespace Amazon.Snowball.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
-        public int FaultTolerance
+        public int? FaultTolerance
         {
-            get { return this._faultTolerance.GetValueOrDefault(); }
+            get { return this._faultTolerance; }
             set { this._faultTolerance = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Snowball.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=16)]
-        public int ServiceSize
+        public int? ServiceSize
         {
-            get { return this._serviceSize.GetValueOrDefault(); }
+            get { return this._serviceSize; }
             set { this._serviceSize = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Snowball.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double StorageLimit
+        public double? StorageLimit
         {
-            get { return this._storageLimit.GetValueOrDefault(); }
+            get { return this._storageLimit; }
             set { this._storageLimit = value; }
         }
 

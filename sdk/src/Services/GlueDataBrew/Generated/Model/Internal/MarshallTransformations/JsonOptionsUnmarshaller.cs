@@ -65,7 +65,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MultiLine", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MultiLine = unmarshaller.Unmarshall(context);
                     continue;
                 }

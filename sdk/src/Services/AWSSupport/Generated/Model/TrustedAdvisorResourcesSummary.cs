@@ -47,9 +47,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ResourcesFlagged
+        public long? ResourcesFlagged
         {
-            get { return this._resourcesFlagged.GetValueOrDefault(); }
+            get { return this._resourcesFlagged; }
             set { this._resourcesFlagged = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ResourcesIgnored
+        public long? ResourcesIgnored
         {
-            get { return this._resourcesIgnored.GetValueOrDefault(); }
+            get { return this._resourcesIgnored; }
             set { this._resourcesIgnored = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ResourcesProcessed
+        public long? ResourcesProcessed
         {
-            get { return this._resourcesProcessed.GetValueOrDefault(); }
+            get { return this._resourcesProcessed; }
             set { this._resourcesProcessed = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ResourcesSuppressed
+        public long? ResourcesSuppressed
         {
-            get { return this._resourcesSuppressed.GetValueOrDefault(); }
+            get { return this._resourcesSuppressed; }
             set { this._resourcesSuppressed = value; }
         }
 

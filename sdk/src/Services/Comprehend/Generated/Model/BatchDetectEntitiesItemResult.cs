@@ -61,9 +61,9 @@ namespace Amazon.Comprehend.Model
         /// The zero-based index of the document in the input list.
         /// </para>
         /// </summary>
-        public int Index
+        public int? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 

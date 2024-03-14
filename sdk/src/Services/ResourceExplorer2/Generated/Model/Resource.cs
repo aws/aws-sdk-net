@@ -69,9 +69,9 @@ namespace Amazon.ResourceExplorer2.Model
         /// index with the latest information about the resource.
         /// </para>
         /// </summary>
-        public DateTime LastReportedAt
+        public DateTime? LastReportedAt
         {
-            get { return this._lastReportedAt.GetValueOrDefault(); }
+            get { return this._lastReportedAt; }
             set { this._lastReportedAt = value; }
         }
 

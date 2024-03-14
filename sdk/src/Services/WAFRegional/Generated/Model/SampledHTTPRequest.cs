@@ -123,9 +123,9 @@ namespace Amazon.WAFRegional.Model
         /// format (in seconds).
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long Weight
+        public long? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

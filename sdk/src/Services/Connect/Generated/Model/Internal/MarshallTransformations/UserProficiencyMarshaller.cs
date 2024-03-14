@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level);
+                context.Writer.Write(requestObject.Level.Value);
             }
 
         }

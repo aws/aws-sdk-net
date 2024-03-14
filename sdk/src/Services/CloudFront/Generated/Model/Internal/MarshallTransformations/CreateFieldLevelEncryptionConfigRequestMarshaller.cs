@@ -65,10 +65,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("FieldLevelEncryptionConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.FieldLevelEncryptionConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionConfig.CallerReference));
 
                     if(publicRequest.FieldLevelEncryptionConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionConfig.Comment));
 
                 
                     if (publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig != null) 
@@ -103,12 +103,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.IsSetForwardWhenContentTypeIsUnknown())
-                            xmlWriter.WriteElementString("ForwardWhenContentTypeIsUnknown", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ForwardWhenContentTypeIsUnknown));                 
+                            xmlWriter.WriteElementString("ForwardWhenContentTypeIsUnknown", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ForwardWhenContentTypeIsUnknown.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -117,7 +117,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("QueryArgProfileConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
                         if(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.IsSetForwardWhenQueryArgProfileIsUnknown())
-                            xmlWriter.WriteElementString("ForwardWhenQueryArgProfileIsUnknown", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.ForwardWhenQueryArgProfileIsUnknown));                 
+                            xmlWriter.WriteElementString("ForwardWhenQueryArgProfileIsUnknown", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.ForwardWhenQueryArgProfileIsUnknown.Value));                 
 
                 
                         if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles != null) 
@@ -145,7 +145,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }

@@ -70,13 +70,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConsistentRead())
                 {
                     context.Writer.WritePropertyName("ConsistentRead");
-                    context.Writer.Write(publicRequest.ConsistentRead);
+                    context.Writer.Write(publicRequest.ConsistentRead.Value);
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

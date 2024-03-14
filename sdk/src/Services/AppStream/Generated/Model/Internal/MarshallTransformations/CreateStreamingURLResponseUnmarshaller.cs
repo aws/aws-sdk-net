@@ -53,7 +53,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Expires", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Expires = unmarshaller.Unmarshall(context);
                     continue;
                 }

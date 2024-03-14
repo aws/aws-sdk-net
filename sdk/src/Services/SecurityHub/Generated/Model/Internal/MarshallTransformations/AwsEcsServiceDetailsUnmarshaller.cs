@@ -89,25 +89,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DesiredCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableEcsManagedTags", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableEcsManagedTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableExecuteCommand", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HealthCheckGracePeriodSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckGracePeriodSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

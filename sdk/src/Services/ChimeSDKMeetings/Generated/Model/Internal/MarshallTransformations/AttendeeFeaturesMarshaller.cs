@@ -48,7 +48,7 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCount())
             {
                 context.Writer.WritePropertyName("MaxCount");
-                context.Writer.Write(requestObject.MaxCount);
+                context.Writer.Write(requestObject.MaxCount.Value);
             }
 
         }

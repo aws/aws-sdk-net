@@ -62,9 +62,9 @@ namespace Amazon.AmplifyBackend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MinimumLength
+        public double? MinimumLength
         {
-            get { return this._minimumLength.GetValueOrDefault(); }
+            get { return this._minimumLength; }
             set { this._minimumLength = value; }
         }
 

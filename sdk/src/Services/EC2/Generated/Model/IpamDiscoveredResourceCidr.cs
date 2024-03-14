@@ -91,9 +91,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double IpUsage
+        public double? IpUsage
         {
-            get { return this._ipUsage.GetValueOrDefault(); }
+            get { return this._ipUsage; }
             set { this._ipUsage = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.EC2.Model
         /// The last successful resource discovery time.
         /// </para>
         /// </summary>
-        public DateTime SampleTime
+        public DateTime? SampleTime
         {
-            get { return this._sampleTime.GetValueOrDefault(); }
+            get { return this._sampleTime; }
             set { this._sampleTime = value; }
         }
 

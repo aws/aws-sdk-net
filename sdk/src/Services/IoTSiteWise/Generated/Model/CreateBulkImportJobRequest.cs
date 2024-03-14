@@ -65,9 +65,9 @@ namespace Amazon.IoTSiteWise.Model
         /// into IoT SiteWise as is.
         /// </para>
         /// </summary>
-        public bool AdaptiveIngestion
+        public bool? AdaptiveIngestion
         {
-            get { return this._adaptiveIngestion.GetValueOrDefault(); }
+            get { return this._adaptiveIngestion; }
             set { this._adaptiveIngestion = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IoTSiteWise.Model
         /// storage.
         /// </para>
         /// </summary>
-        public bool DeleteFilesAfterImport
+        public bool? DeleteFilesAfterImport
         {
-            get { return this._deleteFilesAfterImport.GetValueOrDefault(); }
+            get { return this._deleteFilesAfterImport; }
             set { this._deleteFilesAfterImport = value; }
         }
 

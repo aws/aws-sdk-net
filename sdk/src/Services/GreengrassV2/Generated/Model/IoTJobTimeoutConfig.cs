@@ -47,9 +47,9 @@ namespace Amazon.GreengrassV2.Model
         /// The timeout interval must be between 1 minute and 7 days (10080 minutes).
         /// </para>
         /// </summary>
-        public long InProgressTimeoutInMinutes
+        public long? InProgressTimeoutInMinutes
         {
-            get { return this._inProgressTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._inProgressTimeoutInMinutes; }
             set { this._inProgressTimeoutInMinutes = value; }
         }
 

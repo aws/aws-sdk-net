@@ -48,7 +48,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetVirtualNode())
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("weight");
-                context.Writer.Write(requestObject.Weight);
+                context.Writer.Write(requestObject.Weight.Value);
             }
 
         }

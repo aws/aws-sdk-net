@@ -117,9 +117,9 @@ namespace Amazon.ConfigService.Model
         /// The time that you first activated the Config rule.
         /// </para>
         /// </summary>
-        public DateTime FirstActivatedTime
+        public DateTime? FirstActivatedTime
         {
-            get { return this._firstActivatedTime.GetValueOrDefault(); }
+            get { return this._firstActivatedTime; }
             set { this._firstActivatedTime = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool FirstEvaluationStarted
+        public bool? FirstEvaluationStarted
         {
-            get { return this._firstEvaluationStarted.GetValueOrDefault(); }
+            get { return this._firstEvaluationStarted; }
             set { this._firstEvaluationStarted = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.ConfigService.Model
         /// The time that you last turned off the Config rule.
         /// </para>
         /// </summary>
-        public DateTime LastDeactivatedTime
+        public DateTime? LastDeactivatedTime
         {
-            get { return this._lastDeactivatedTime.GetValueOrDefault(); }
+            get { return this._lastDeactivatedTime; }
             set { this._lastDeactivatedTime = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.ConfigService.Model
         /// rules.
         /// </para>
         /// </summary>
-        public DateTime LastDebugLogDeliveryTime
+        public DateTime? LastDebugLogDeliveryTime
         {
-            get { return this._lastDebugLogDeliveryTime.GetValueOrDefault(); }
+            get { return this._lastDebugLogDeliveryTime; }
             set { this._lastDebugLogDeliveryTime = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.ConfigService.Model
         /// the rule.
         /// </para>
         /// </summary>
-        public DateTime LastFailedEvaluationTime
+        public DateTime? LastFailedEvaluationTime
         {
-            get { return this._lastFailedEvaluationTime.GetValueOrDefault(); }
+            get { return this._lastFailedEvaluationTime; }
             set { this._lastFailedEvaluationTime = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.ConfigService.Model
         /// Web Services resources.
         /// </para>
         /// </summary>
-        public DateTime LastFailedInvocationTime
+        public DateTime? LastFailedInvocationTime
         {
-            get { return this._lastFailedInvocationTime.GetValueOrDefault(); }
+            get { return this._lastFailedInvocationTime; }
             set { this._lastFailedInvocationTime = value; }
         }
 
@@ -314,9 +314,9 @@ namespace Amazon.ConfigService.Model
         /// against the rule.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulEvaluationTime
+        public DateTime? LastSuccessfulEvaluationTime
         {
-            get { return this._lastSuccessfulEvaluationTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulEvaluationTime; }
             set { this._lastSuccessfulEvaluationTime = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.ConfigService.Model
         /// Web Services resources.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulInvocationTime
+        public DateTime? LastSuccessfulInvocationTime
         {
-            get { return this._lastSuccessfulInvocationTime.GetValueOrDefault(); }
+            get { return this._lastSuccessfulInvocationTime; }
             set { this._lastSuccessfulInvocationTime = value; }
         }
 

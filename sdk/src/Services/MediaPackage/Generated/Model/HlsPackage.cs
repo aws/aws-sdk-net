@@ -117,9 +117,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property IncludeDvbSubtitles. When enabled, MediaPackage passes
         /// through digital video broadcasting (DVB) subtitles into the output.
         /// </summary>
-        public bool IncludeDvbSubtitles
+        public bool? IncludeDvbSubtitles
         {
-            get { return this._includeDvbSubtitles.GetValueOrDefault(); }
+            get { return this._includeDvbSubtitles; }
             set { this._includeDvbSubtitles = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property IncludeIframeOnlyStream. When enabled, an I-Frame only
         /// stream will be included in the output.
         /// </summary>
-        public bool IncludeIframeOnlyStream
+        public bool? IncludeIframeOnlyStream
         {
-            get { return this._includeIframeOnlyStream.GetValueOrDefault(); }
+            get { return this._includeIframeOnlyStream; }
             set { this._includeIframeOnlyStream = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property PlaylistWindowSeconds. Time window (in seconds) contained
         /// in each parent manifest.
         /// </summary>
-        public int PlaylistWindowSeconds
+        public int? PlaylistWindowSeconds
         {
-            get { return this._playlistWindowSeconds.GetValueOrDefault(); }
+            get { return this._playlistWindowSeconds; }
             set { this._playlistWindowSeconds = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.MediaPackage.Model
         /// ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,it will be passed through
         /// to HLS output.
         /// </summary>
-        public int ProgramDateTimeIntervalSeconds
+        public int? ProgramDateTimeIntervalSeconds
         {
-            get { return this._programDateTimeIntervalSeconds.GetValueOrDefault(); }
+            get { return this._programDateTimeIntervalSeconds; }
             set { this._programDateTimeIntervalSeconds = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each fragment.
         /// Actual fragments will berounded to the nearest multiple of the source fragment duration.
         /// </summary>
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property UseAudioRenditionGroup. When enabled, audio streams will
         /// be placed in rendition groups in the output.
         /// </summary>
-        public bool UseAudioRenditionGroup
+        public bool? UseAudioRenditionGroup
         {
-            get { return this._useAudioRenditionGroup.GetValueOrDefault(); }
+            get { return this._useAudioRenditionGroup; }
             set { this._useAudioRenditionGroup = value; }
         }
 

@@ -101,7 +101,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lookbackPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

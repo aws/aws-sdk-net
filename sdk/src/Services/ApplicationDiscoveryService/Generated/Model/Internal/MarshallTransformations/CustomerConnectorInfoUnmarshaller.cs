@@ -65,43 +65,43 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             {
                 if (context.TestExpression("activeConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("blackListedConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlackListedConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("healthyConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthyConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("shutdownConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShutdownConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unhealthyConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnhealthyConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("unknownConnectors", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnknownConnectors = unmarshaller.Unmarshall(context);
                     continue;
                 }

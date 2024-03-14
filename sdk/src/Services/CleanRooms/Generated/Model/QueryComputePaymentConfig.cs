@@ -57,9 +57,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsResponsible
+        public bool? IsResponsible
         {
-            get { return this._isResponsible.GetValueOrDefault(); }
+            get { return this._isResponsible; }
             set { this._isResponsible = value; }
         }
 

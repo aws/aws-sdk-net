@@ -77,9 +77,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int CurrentPlayerSessionCount
+        public int? CurrentPlayerSessionCount
         {
-            get { return this._currentPlayerSessionCount.GetValueOrDefault(); }
+            get { return this._currentPlayerSessionCount; }
             set { this._currentPlayerSessionCount = value; }
         }
 
@@ -335,9 +335,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaximumPlayerSessionCount
+        public int? MaximumPlayerSessionCount
         {
-            get { return this._maximumPlayerSessionCount.GetValueOrDefault(); }
+            get { return this._maximumPlayerSessionCount; }
             set { this._maximumPlayerSessionCount = value; }
         }
 
@@ -393,9 +393,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=60000)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -451,9 +451,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime TerminationTime
+        public DateTime? TerminationTime
         {
-            get { return this._terminationTime.GetValueOrDefault(); }
+            get { return this._terminationTime; }
             set { this._terminationTime = value; }
         }
 

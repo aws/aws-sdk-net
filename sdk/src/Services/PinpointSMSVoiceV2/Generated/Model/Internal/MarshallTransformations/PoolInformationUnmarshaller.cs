@@ -65,13 +65,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeletionProtectionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,13 +101,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SelfManagedOptOutsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedOptOutsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SharedRoutesEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SharedRoutesEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TwoWayEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TwoWayEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

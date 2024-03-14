@@ -71,7 +71,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("readOnly", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }

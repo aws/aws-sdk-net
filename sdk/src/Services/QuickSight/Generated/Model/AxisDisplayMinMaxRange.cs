@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// The maximum setup for an axis display range.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.QuickSight.Model
         /// The minimum setup for an axis display range.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 

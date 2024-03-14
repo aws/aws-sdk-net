@@ -71,7 +71,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetVersionWeight", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TargetVersionWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }

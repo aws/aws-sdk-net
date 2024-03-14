@@ -65,9 +65,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The expiration period of the authentication result in seconds.
         /// </para>
         /// </summary>
-        public int ExpiresIn
+        public int? ExpiresIn
         {
-            get { return this._expiresIn.GetValueOrDefault(); }
+            get { return this._expiresIn; }
             set { this._expiresIn = value; }
         }
 

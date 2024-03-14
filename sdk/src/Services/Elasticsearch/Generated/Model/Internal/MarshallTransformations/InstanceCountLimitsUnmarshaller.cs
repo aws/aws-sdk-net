@@ -65,13 +65,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaximumInstanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumInstanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumInstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,7 +71,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minimum", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
                     continue;
                 }

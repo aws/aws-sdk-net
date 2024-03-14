@@ -65,7 +65,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("timeoutInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

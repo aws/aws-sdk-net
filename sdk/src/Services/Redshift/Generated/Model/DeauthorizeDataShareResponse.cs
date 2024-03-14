@@ -46,9 +46,9 @@ namespace Amazon.Redshift.Model
         /// cluster.
         /// </para>
         /// </summary>
-        public bool AllowPubliclyAccessibleConsumers
+        public bool? AllowPubliclyAccessibleConsumers
         {
-            get { return this._allowPubliclyAccessibleConsumers.GetValueOrDefault(); }
+            get { return this._allowPubliclyAccessibleConsumers; }
             set { this._allowPubliclyAccessibleConsumers = value; }
         }
 

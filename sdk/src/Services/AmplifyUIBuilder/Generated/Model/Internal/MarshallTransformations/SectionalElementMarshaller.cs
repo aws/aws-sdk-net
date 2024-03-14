@@ -48,13 +48,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcluded())
             {
                 context.Writer.WritePropertyName("excluded");
-                context.Writer.Write(requestObject.Excluded);
+                context.Writer.Write(requestObject.Excluded.Value);
             }
 
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("level");
-                context.Writer.Write(requestObject.Level);
+                context.Writer.Write(requestObject.Level.Value);
             }
 
             if(requestObject.IsSetOrientation())

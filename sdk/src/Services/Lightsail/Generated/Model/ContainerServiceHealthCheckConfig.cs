@@ -47,9 +47,9 @@ namespace Amazon.Lightsail.Model
         /// to the <c>Healthy</c> state. The default value is <c>2</c>.
         /// </para>
         /// </summary>
-        public int HealthyThreshold
+        public int? HealthyThreshold
         {
-            get { return this._healthyThreshold.GetValueOrDefault(); }
+            get { return this._healthyThreshold; }
             set { this._healthyThreshold = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Lightsail.Model
         /// You can specify between 5 and 300 seconds. The default value is <c>5</c>.
         /// </para>
         /// </summary>
-        public int IntervalSeconds
+        public int? IntervalSeconds
         {
-            get { return this._intervalSeconds.GetValueOrDefault(); }
+            get { return this._intervalSeconds; }
             set { this._intervalSeconds = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Lightsail.Model
         /// You can specify between 2 and 60 seconds. The default value is <c>2</c>.
         /// </para>
         /// </summary>
-        public int TimeoutSeconds
+        public int? TimeoutSeconds
         {
-            get { return this._timeoutSeconds.GetValueOrDefault(); }
+            get { return this._timeoutSeconds; }
             set { this._timeoutSeconds = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Lightsail.Model
         /// to the <c>Unhealthy</c> state. The default value is <c>2</c>.
         /// </para>
         /// </summary>
-        public int UnhealthyThreshold
+        public int? UnhealthyThreshold
         {
-            get { return this._unhealthyThreshold.GetValueOrDefault(); }
+            get { return this._unhealthyThreshold; }
             set { this._unhealthyThreshold = value; }
         }
 

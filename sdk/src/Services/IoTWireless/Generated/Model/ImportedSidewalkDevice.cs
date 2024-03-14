@@ -44,9 +44,9 @@ namespace Amazon.IoTWireless.Model
         /// The time at which the status information was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

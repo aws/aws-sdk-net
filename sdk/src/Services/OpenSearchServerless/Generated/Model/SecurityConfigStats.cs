@@ -41,9 +41,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// The number of security configurations in the current account.
         /// </para>
         /// </summary>
-        public long SamlConfigCount
+        public long? SamlConfigCount
         {
-            get { return this._samlConfigCount.GetValueOrDefault(); }
+            get { return this._samlConfigCount; }
             set { this._samlConfigCount = value; }
         }
 

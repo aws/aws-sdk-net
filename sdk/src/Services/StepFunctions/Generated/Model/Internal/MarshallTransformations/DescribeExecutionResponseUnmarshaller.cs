@@ -107,13 +107,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("redriveCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RedriveCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("redriveDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.RedriveDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -161,7 +161,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StopDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

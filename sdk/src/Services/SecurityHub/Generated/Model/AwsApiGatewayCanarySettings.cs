@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         /// The percentage of traffic that is diverted to a canary deployment.
         /// </para>
         /// </summary>
-        public double PercentTraffic
+        public double? PercentTraffic
         {
-            get { return this._percentTraffic.GetValueOrDefault(); }
+            get { return this._percentTraffic; }
             set { this._percentTraffic = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether the canary deployment uses the stage cache.
         /// </para>
         /// </summary>
-        public bool UseStageCache
+        public bool? UseStageCache
         {
-            get { return this._useStageCache.GetValueOrDefault(); }
+            get { return this._useStageCache; }
             set { this._useStageCache = value; }
         }
 

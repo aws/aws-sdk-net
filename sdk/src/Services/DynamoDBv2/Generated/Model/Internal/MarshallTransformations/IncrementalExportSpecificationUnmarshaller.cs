@@ -65,13 +65,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExportFromTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExportFromTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExportToTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExportToTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

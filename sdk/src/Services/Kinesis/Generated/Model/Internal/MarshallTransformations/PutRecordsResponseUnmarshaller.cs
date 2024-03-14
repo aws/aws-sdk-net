@@ -59,7 +59,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FailedRecordCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FailedRecordCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

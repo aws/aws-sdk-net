@@ -65,25 +65,25 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue);
+                context.Writer.Write(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
             {
                 context.Writer.WritePropertyName("doubleValue");
-                context.Writer.Write(requestObject.DoubleValue);
+                context.Writer.Write(requestObject.DoubleValue.Value);
             }
 
             if(requestObject.IsSetIsNull())
             {
                 context.Writer.WritePropertyName("isNull");
-                context.Writer.Write(requestObject.IsNull);
+                context.Writer.Write(requestObject.IsNull.Value);
             }
 
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue);
+                context.Writer.Write(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetStringValue())

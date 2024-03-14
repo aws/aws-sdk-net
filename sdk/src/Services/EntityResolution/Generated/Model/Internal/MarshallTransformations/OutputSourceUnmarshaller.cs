@@ -65,7 +65,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("applyNormalization", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplyNormalization = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -95,13 +95,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Expiration", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.Expiration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("NextRefreshTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.NextRefreshTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

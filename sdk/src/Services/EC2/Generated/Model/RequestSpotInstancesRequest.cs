@@ -122,9 +122,9 @@ namespace Amazon.EC2.Model
         /// Deprecated.
         /// </para>
         /// </summary>
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.EC2.Model
         /// Default: 1
         /// </para>
         /// </summary>
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -319,9 +319,9 @@ namespace Amazon.EC2.Model
         /// must specify a start date and time that occurs after the current date and time.
         /// </para>
         /// </summary>
-        public DateTime ValidFromUtc
+        public DateTime? ValidFromUtc
         {
-            get { return this._validFromUtc.GetValueOrDefault(); }
+            get { return this._validFromUtc; }
             set { this._validFrom = this._validFromUtc = value; }
         }
 
@@ -349,9 +349,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime ValidUntilUtc
+        public DateTime? ValidUntilUtc
         {
-            get { return this._validUntilUtc.GetValueOrDefault(); }
+            get { return this._validUntilUtc; }
             set { this._validUntil = this._validUntilUtc = value; }
         }
 
@@ -393,13 +393,20 @@ namespace Amazon.EC2.Model
             "ValidFromUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidFrom is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
             get { return this._validFrom.GetValueOrDefault(); }
             set
             {
                 this._validFrom = value;
-                this._validFromUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validFromUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validFromUtc = null;
+                }
             }
         }
         /// <summary>
@@ -434,13 +441,20 @@ namespace Amazon.EC2.Model
             "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
             "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
             "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
             get { return this._validUntil.GetValueOrDefault(); }
             set
             {
                 this._validUntil = value;
-                this._validUntilUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
+                if (value != null)
+                {
+                    this._validUntilUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
+                }
+                else
+                {
+                    this._validUntilUtc = null;
+                }
             }
         }
 #endregion

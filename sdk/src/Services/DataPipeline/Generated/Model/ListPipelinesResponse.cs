@@ -43,9 +43,9 @@ namespace Amazon.DataPipeline.Model
         /// Indicates whether there are more results that can be obtained by a subsequent call.
         /// </para>
         /// </summary>
-        public bool HasMoreResults
+        public bool? HasMoreResults
         {
-            get { return this._hasMoreResults.GetValueOrDefault(); }
+            get { return this._hasMoreResults; }
             set { this._hasMoreResults = value; }
         }
 

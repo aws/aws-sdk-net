@@ -95,13 +95,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LastFailureTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.LastFailureTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastSuccessfulDeliveryTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.LastSuccessfulDeliveryTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -120,7 +120,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LoggingEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.LoggingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -80,9 +80,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the cluster member is the primary DB instance for the DB cluster.
         /// </para>
         /// </summary>
-        public bool IsClusterWriter
+        public bool? IsClusterWriter
         {
-            get { return this._isClusterWriter.GetValueOrDefault(); }
+            get { return this._isClusterWriter; }
             set { this._isClusterWriter = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.RDS.Model
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

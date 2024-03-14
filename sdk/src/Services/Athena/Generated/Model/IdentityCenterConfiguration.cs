@@ -42,9 +42,9 @@ namespace Amazon.Athena.Model
         /// Specifies whether the workgroup is IAM Identity Center supported.
         /// </para>
         /// </summary>
-        public bool EnableIdentityCenter
+        public bool? EnableIdentityCenter
         {
-            get { return this._enableIdentityCenter.GetValueOrDefault(); }
+            get { return this._enableIdentityCenter; }
             set { this._enableIdentityCenter = value; }
         }
 

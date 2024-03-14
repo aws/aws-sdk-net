@@ -65,7 +65,7 @@ namespace Amazon.IoTFleetHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("applicationCreationDate", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationCreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.IoTFleetHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("applicationLastUpdateDate", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationLastUpdateDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

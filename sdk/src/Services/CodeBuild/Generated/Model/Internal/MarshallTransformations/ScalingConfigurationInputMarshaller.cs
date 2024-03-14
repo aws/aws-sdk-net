@@ -48,7 +48,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("maxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity);
+                context.Writer.Write(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetScalingType())

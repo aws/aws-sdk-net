@@ -42,9 +42,9 @@ namespace Amazon.ConfigService.Model
         /// Number of compliant conformance packs.
         /// </para>
         /// </summary>
-        public int CompliantConformancePackCount
+        public int? CompliantConformancePackCount
         {
-            get { return this._compliantConformancePackCount.GetValueOrDefault(); }
+            get { return this._compliantConformancePackCount; }
             set { this._compliantConformancePackCount = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.ConfigService.Model
         /// Number of noncompliant conformance packs.
         /// </para>
         /// </summary>
-        public int NonCompliantConformancePackCount
+        public int? NonCompliantConformancePackCount
         {
-            get { return this._nonCompliantConformancePackCount.GetValueOrDefault(); }
+            get { return this._nonCompliantConformancePackCount; }
             set { this._nonCompliantConformancePackCount = value; }
         }
 

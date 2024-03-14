@@ -125,9 +125,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to Linux managed nodes only.
         /// </para>
         /// </summary>
-        public bool ApprovedPatchesEnableNonSecurity
+        public bool? ApprovedPatchesEnableNonSecurity
         {
-            get { return this._approvedPatchesEnableNonSecurity.GetValueOrDefault(); }
+            get { return this._approvedPatchesEnableNonSecurity; }
             set { this._approvedPatchesEnableNonSecurity = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// set to null.
         /// </para>
         /// </summary>
-        public bool Replace
+        public bool? Replace
         {
-            get { return this._replace.GetValueOrDefault(); }
+            get { return this._replace; }
             set { this._replace = value; }
         }
 

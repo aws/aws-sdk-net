@@ -74,7 +74,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPerformCheckOnly())
                 {
                     context.Writer.WritePropertyName("PerformCheckOnly");
-                    context.Writer.Write(publicRequest.PerformCheckOnly);
+                    context.Writer.Write(publicRequest.PerformCheckOnly.Value);
                 }
 
                 if(publicRequest.IsSetTargetVersion())

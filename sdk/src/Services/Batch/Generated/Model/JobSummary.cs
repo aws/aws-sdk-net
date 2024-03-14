@@ -92,9 +92,9 @@ namespace Amazon.Batch.Model
         /// job was spawned by its parent and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
-        public long CreatedAt
+        public long? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.Batch.Model
         /// job transitioned from the <c>STARTING</c> state to the <c>RUNNING</c> state.
         /// </para>
         /// </summary>
-        public long StartedAt
+        public long? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.Batch.Model
         /// or <c>FAILED</c>.
         /// </para>
         /// </summary>
-        public long StoppedAt
+        public long? StoppedAt
         {
-            get { return this._stoppedAt.GetValueOrDefault(); }
+            get { return this._stoppedAt; }
             set { this._stoppedAt = value; }
         }
 

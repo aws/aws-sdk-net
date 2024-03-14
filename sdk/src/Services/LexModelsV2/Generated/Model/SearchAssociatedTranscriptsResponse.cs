@@ -147,9 +147,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000)]
-        public int NextIndex
+        public int? NextIndex
         {
-            get { return this._nextIndex.GetValueOrDefault(); }
+            get { return this._nextIndex; }
             set { this._nextIndex = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int TotalResults
+        public int? TotalResults
         {
-            get { return this._totalResults.GetValueOrDefault(); }
+            get { return this._totalResults; }
             set { this._totalResults = value; }
         }
 

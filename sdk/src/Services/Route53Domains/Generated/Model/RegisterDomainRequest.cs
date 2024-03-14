@@ -121,9 +121,9 @@ namespace Amazon.Route53Domains.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool AutoRenew
+        public bool? AutoRenew
         {
-            get { return this._autoRenew.GetValueOrDefault(); }
+            get { return this._autoRenew; }
             set { this._autoRenew = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int DurationInYears
+        public int? DurationInYears
         {
-            get { return this._durationInYears.GetValueOrDefault(); }
+            get { return this._durationInYears; }
             set { this._durationInYears = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.Route53Domains.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool PrivacyProtectAdminContact
+        public bool? PrivacyProtectAdminContact
         {
-            get { return this._privacyProtectAdminContact.GetValueOrDefault(); }
+            get { return this._privacyProtectAdminContact; }
             set { this._privacyProtectAdminContact = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool PrivacyProtectBillingContact
+        public bool? PrivacyProtectBillingContact
         {
-            get { return this._privacyProtectBillingContact.GetValueOrDefault(); }
+            get { return this._privacyProtectBillingContact; }
             set { this._privacyProtectBillingContact = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.Route53Domains.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool PrivacyProtectRegistrantContact
+        public bool? PrivacyProtectRegistrantContact
         {
-            get { return this._privacyProtectRegistrantContact.GetValueOrDefault(); }
+            get { return this._privacyProtectRegistrantContact; }
             set { this._privacyProtectRegistrantContact = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.Route53Domains.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool PrivacyProtectTechContact
+        public bool? PrivacyProtectTechContact
         {
-            get { return this._privacyProtectTechContact.GetValueOrDefault(); }
+            get { return this._privacyProtectTechContact; }
             set { this._privacyProtectTechContact = value; }
         }
 

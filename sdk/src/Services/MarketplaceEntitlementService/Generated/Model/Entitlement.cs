@@ -90,9 +90,9 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// an expiration date.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 

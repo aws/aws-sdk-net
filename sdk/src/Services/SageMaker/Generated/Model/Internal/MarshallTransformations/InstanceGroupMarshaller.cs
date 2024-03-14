@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceGroupName())

@@ -377,9 +377,9 @@ namespace Amazon.MediaConvert.Model
         /// length; when you set the minimum final segment length to 1, your final segment is
         /// 3.5 seconds.
         /// </summary>
-        public double MinFinalSegmentLength
+        public double? MinFinalSegmentLength
         {
-            get { return this._minFinalSegmentLength.GetValueOrDefault(); }
+            get { return this._minFinalSegmentLength; }
             set { this._minFinalSegmentLength = value; }
         }
 
@@ -395,9 +395,9 @@ namespace Amazon.MediaConvert.Model
         /// the segment size if needed.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MinSegmentLength
+        public int? MinSegmentLength
         {
-            get { return this._minSegmentLength.GetValueOrDefault(); }
+            get { return this._minSegmentLength; }
             set { this._minSegmentLength = value; }
         }
 
@@ -446,9 +446,9 @@ namespace Amazon.MediaConvert.Model
         /// entry, in seconds.
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int ProgramDateTimePeriod
+        public int? ProgramDateTimePeriod
         {
-            get { return this._programDateTimePeriod.GetValueOrDefault(); }
+            get { return this._programDateTimePeriod; }
             set { this._programDateTimePeriod = value; }
         }
 
@@ -507,9 +507,9 @@ namespace Amazon.MediaConvert.Model
         /// segment files or one content file that has metadata to mark the segment boundaries.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int SegmentLength
+        public int? SegmentLength
         {
-            get { return this._segmentLength.GetValueOrDefault(); }
+            get { return this._segmentLength; }
             set { this._segmentLength = value; }
         }
 
@@ -544,9 +544,9 @@ namespace Amazon.MediaConvert.Model
         /// structure to Subdirectory per stream for this setting to have an effect.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int SegmentsPerSubdirectory
+        public int? SegmentsPerSubdirectory
         {
-            get { return this._segmentsPerSubdirectory.GetValueOrDefault(); }
+            get { return this._segmentsPerSubdirectory; }
             set { this._segmentsPerSubdirectory = value; }
         }
 
@@ -621,9 +621,9 @@ namespace Amazon.MediaConvert.Model
         /// ID3 timestamp frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int TimedMetadataId3Period
+        public int? TimedMetadataId3Period
         {
-            get { return this._timedMetadataId3Period.GetValueOrDefault(); }
+            get { return this._timedMetadataId3Period; }
             set { this._timedMetadataId3Period = value; }
         }
 
@@ -638,9 +638,9 @@ namespace Amazon.MediaConvert.Model
         /// delta offset to fine tune the timestamps.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int TimestampDeltaMilliseconds
+        public int? TimestampDeltaMilliseconds
         {
-            get { return this._timestampDeltaMilliseconds.GetValueOrDefault(); }
+            get { return this._timestampDeltaMilliseconds; }
             set { this._timestampDeltaMilliseconds = value; }
         }
 

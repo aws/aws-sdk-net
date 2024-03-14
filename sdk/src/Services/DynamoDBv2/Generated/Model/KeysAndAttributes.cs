@@ -75,9 +75,9 @@ namespace Amazon.DynamoDBv2.Model
         /// read is used; otherwise, an eventually consistent read is used.
         /// </para>
         /// </summary>
-        public bool ConsistentRead
+        public bool? ConsistentRead
         {
-            get { return this._consistentRead.GetValueOrDefault(); }
+            get { return this._consistentRead; }
             set { this._consistentRead = value; }
         }
 

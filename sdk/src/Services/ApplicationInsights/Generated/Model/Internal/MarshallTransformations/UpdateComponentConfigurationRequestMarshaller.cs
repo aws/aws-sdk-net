@@ -70,7 +70,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoConfigEnabled())
                 {
                     context.Writer.WritePropertyName("AutoConfigEnabled");
-                    context.Writer.Write(publicRequest.AutoConfigEnabled);
+                    context.Writer.Write(publicRequest.AutoConfigEnabled.Value);
                 }
 
                 if(publicRequest.IsSetComponentConfiguration())
@@ -88,7 +88,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMonitor())
                 {
                     context.Writer.WritePropertyName("Monitor");
-                    context.Writer.Write(publicRequest.Monitor);
+                    context.Writer.Write(publicRequest.Monitor.Value);
                 }
 
                 if(publicRequest.IsSetResourceGroupName())

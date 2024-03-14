@@ -92,7 +92,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTestMode())
                 {
                     context.Writer.WritePropertyName("TestMode");
-                    context.Writer.Write(publicRequest.TestMode);
+                    context.Writer.Write(publicRequest.TestMode.Value);
                 }
 
                 writer.WriteObjectEnd();

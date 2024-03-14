@@ -65,7 +65,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CaseSensitive", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CaseSensitive = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Precision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Scale", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Scale = unmarshaller.Unmarshall(context);
                     continue;
                 }

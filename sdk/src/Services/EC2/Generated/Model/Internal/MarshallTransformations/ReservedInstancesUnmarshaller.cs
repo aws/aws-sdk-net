@@ -68,25 +68,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("duration", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("end", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.End = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("fixedPrice", targetDepth))
                     {
-                        var unmarshaller = FloatUnmarshaller.Instance;
+                        var unmarshaller = NullableFloatUnmarshaller.Instance;
                         unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("start", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("usagePrice", targetDepth))
                     {
-                        var unmarshaller = FloatUnmarshaller.Instance;
+                        var unmarshaller = NullableFloatUnmarshaller.Instance;
                         unmarshalledObject.UsagePrice = unmarshaller.Unmarshall(context);
                         continue;
                     }

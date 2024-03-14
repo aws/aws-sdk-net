@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AutomatedSnapshotRetentionPeriod", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AutomatedSnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,7 +86,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EnhancedVpcRouting", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -110,13 +110,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NumberOfNodes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PubliclyAccessible", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -84,9 +84,9 @@ namespace Amazon.MTurk.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NumberOfAdditionalAssignments
+        public int? NumberOfAdditionalAssignments
         {
-            get { return this._numberOfAdditionalAssignments.GetValueOrDefault(); }
+            get { return this._numberOfAdditionalAssignments; }
             set { this._numberOfAdditionalAssignments = value; }
         }
 

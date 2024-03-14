@@ -48,9 +48,9 @@ namespace Amazon.IdentityManagement.Model
         /// The column in the line containing the specified position in the document.
         /// </para>
         /// </summary>
-        public int Column
+        public int? Column
         {
-            get { return this._column.GetValueOrDefault(); }
+            get { return this._column; }
             set { this._column = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.IdentityManagement.Model
         /// The line containing the specified position in the document.
         /// </para>
         /// </summary>
-        public int Line
+        public int? Line
         {
-            get { return this._line.GetValueOrDefault(); }
+            get { return this._line; }
             set { this._line = value; }
         }
 

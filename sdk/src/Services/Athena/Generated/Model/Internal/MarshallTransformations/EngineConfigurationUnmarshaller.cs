@@ -71,19 +71,19 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CoordinatorDpuSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CoordinatorDpuSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DefaultExecutorDpuSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DefaultExecutorDpuSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxConcurrentDpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentDpus = unmarshaller.Unmarshall(context);
                     continue;
                 }

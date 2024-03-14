@@ -47,9 +47,9 @@ namespace Amazon.MediaConvert.Model
         /// each Capture.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.MediaConvert.Model
         /// number zero padded to 7 decimal places.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MediaConvert.Model
         /// files).
         /// </summary>
         [AWSProperty(Min=1, Max=10000000)]
-        public int MaxCaptures
+        public int? MaxCaptures
         {
-            get { return this._maxCaptures.GetValueOrDefault(); }
+            get { return this._maxCaptures; }
             set { this._maxCaptures = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property Quality. JPEG Quality - a higher value equals higher quality.
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Quality
+        public int? Quality
         {
-            get { return this._quality.GetValueOrDefault(); }
+            get { return this._quality; }
             set { this._quality = value; }
         }
 

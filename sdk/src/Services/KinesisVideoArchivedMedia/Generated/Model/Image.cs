@@ -93,9 +93,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// the pagination window.
         /// </para>
         /// </summary>
-        public DateTime TimeStamp
+        public DateTime? TimeStamp
         {
-            get { return this._timeStamp.GetValueOrDefault(); }
+            get { return this._timeStamp; }
             set { this._timeStamp = value; }
         }
 

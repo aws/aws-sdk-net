@@ -70,9 +70,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// specified when the job was created (<c>CreateJob</c> using field <c>timeoutConfig</c>).
         /// </para>
         /// </summary>
-        public long StepTimeoutInMinutes
+        public long? StepTimeoutInMinutes
         {
-            get { return this._stepTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._stepTimeoutInMinutes; }
             set { this._stepTimeoutInMinutes = value; }
         }
 

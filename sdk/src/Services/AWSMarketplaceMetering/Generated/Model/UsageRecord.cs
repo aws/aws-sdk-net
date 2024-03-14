@@ -94,9 +94,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

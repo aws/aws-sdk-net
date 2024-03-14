@@ -112,9 +112,9 @@ namespace Amazon.Bedrock.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int ModelUnits
+        public int? ModelUnits
         {
-            get { return this._modelUnits.GetValueOrDefault(); }
+            get { return this._modelUnits; }
             set { this._modelUnits = value; }
         }
 

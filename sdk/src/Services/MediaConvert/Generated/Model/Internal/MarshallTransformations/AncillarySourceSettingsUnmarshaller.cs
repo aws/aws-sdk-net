@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sourceAncillaryChannelNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SourceAncillaryChannelNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

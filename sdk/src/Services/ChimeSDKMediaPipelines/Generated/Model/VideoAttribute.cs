@@ -63,9 +63,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int BorderThickness
+        public int? BorderThickness
         {
-            get { return this._borderThickness.GetValueOrDefault(); }
+            get { return this._borderThickness; }
             set { this._borderThickness = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
-        public int CornerRadius
+        public int? CornerRadius
         {
-            get { return this._cornerRadius.GetValueOrDefault(); }
+            get { return this._cornerRadius; }
             set { this._cornerRadius = value; }
         }
 

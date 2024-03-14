@@ -98,9 +98,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the data source was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp that specifies when the data source was last run.
         /// </para>
         /// </summary>
-        public DateTime LastRunAt
+        public DateTime? LastRunAt
         {
-            get { return this._lastRunAt.GetValueOrDefault(); }
+            get { return this._lastRunAt; }
             set { this._lastRunAt = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.DataZone.Model
         /// be also automatically published to the catalog.
         /// </para>
         /// </summary>
-        public bool PublishOnImport
+        public bool? PublishOnImport
         {
-            get { return this._publishOnImport.GetValueOrDefault(); }
+            get { return this._publishOnImport; }
             set { this._publishOnImport = value; }
         }
 
@@ -416,9 +416,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the data source was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

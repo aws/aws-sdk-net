@@ -65,25 +65,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bandwidth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Bandwidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bufferSegments", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BufferSegments = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("retries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Retries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("retryInterval", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }

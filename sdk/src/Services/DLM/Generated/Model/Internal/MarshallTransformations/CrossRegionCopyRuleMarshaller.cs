@@ -54,7 +54,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
-                context.Writer.Write(requestObject.CopyTags);
+                context.Writer.Write(requestObject.CopyTags.Value);
             }
 
             if(requestObject.IsSetDeprecateRule())
@@ -71,7 +71,7 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted);
+                context.Writer.Write(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetRetainRule())

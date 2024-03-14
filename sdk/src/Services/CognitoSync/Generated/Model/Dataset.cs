@@ -48,9 +48,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property CreationDate. Date on which the dataset was created.
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.CognitoSync.Model
         /// Gets and sets the property DataStorage. Total size in bytes of the records in this
         /// dataset.
         /// </summary>
-        public long DataStorage
+        public long? DataStorage
         {
-            get { return this._dataStorage.GetValueOrDefault(); }
+            get { return this._dataStorage; }
             set { this._dataStorage = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. Date when the dataset was last modified.
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.CognitoSync.Model
         /// <summary>
         /// Gets and sets the property NumRecords. Number of records in this dataset.
         /// </summary>
-        public long NumRecords
+        public long? NumRecords
         {
-            get { return this._numRecords.GetValueOrDefault(); }
+            get { return this._numRecords; }
             set { this._numRecords = value; }
         }
 

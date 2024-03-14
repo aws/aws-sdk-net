@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Id
+        public int? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 

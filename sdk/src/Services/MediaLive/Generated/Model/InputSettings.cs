@@ -114,9 +114,9 @@ namespace Amazon.MediaLive.Model
         /// 1 (minimal) to 5 (strongest).
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int FilterStrength
+        public int? FilterStrength
         {
-            get { return this._filterStrength.GetValueOrDefault(); }
+            get { return this._filterStrength; }
             set { this._filterStrength = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.MediaLive.Model
         /// left undefined, EML will select the first SCTE-35 PID found in the input.
         /// </summary>
         [AWSProperty(Min=32, Max=8191)]
-        public int Scte35Pid
+        public int? Scte35Pid
         {
-            get { return this._scte35Pid.GetValueOrDefault(); }
+            get { return this._scte35Pid; }
             set { this._scte35Pid = value; }
         }
 

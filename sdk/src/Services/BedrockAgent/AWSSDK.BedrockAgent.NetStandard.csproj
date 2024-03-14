@@ -55,8 +55,6 @@
     <Analyzer Include= "../../../../buildtools/CustomRoslynAnalyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="**/_bcl35/**"/>
-    <Compile Remove="**/_bcl45/**"/>
     <Compile Remove="**/_bcl/**"/>
     <Compile Remove="**/obj/**"/>
     <None Remove="**/obj/**" />

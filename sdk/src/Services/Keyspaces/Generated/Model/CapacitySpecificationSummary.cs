@@ -59,9 +59,9 @@ namespace Amazon.Keyspaces.Model
         /// of a table.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateToPayPerRequestTimestamp
+        public DateTime? LastUpdateToPayPerRequestTimestamp
         {
-            get { return this._lastUpdateToPayPerRequestTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateToPayPerRequestTimestamp; }
             set { this._lastUpdateToPayPerRequestTimestamp = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ReadCapacityUnits
+        public long? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long WriteCapacityUnits
+        public long? WriteCapacityUnits
         {
-            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            get { return this._writeCapacityUnits; }
             set { this._writeCapacityUnits = value; }
         }
 

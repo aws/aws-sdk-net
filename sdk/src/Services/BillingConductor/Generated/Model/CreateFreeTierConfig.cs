@@ -42,9 +42,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Activated
+        public bool? Activated
         {
-            get { return this._activated.GetValueOrDefault(); }
+            get { return this._activated; }
             set { this._activated = value; }
         }
 

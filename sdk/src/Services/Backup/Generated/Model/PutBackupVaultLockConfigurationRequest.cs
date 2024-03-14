@@ -98,9 +98,9 @@ namespace Amazon.Backup.Model
         /// <c>PutBackupVaultLockConfiguration</c> at any time.
         /// </para>
         /// </summary>
-        public long ChangeableForDays
+        public long? ChangeableForDays
         {
-            get { return this._changeableForDays.GetValueOrDefault(); }
+            get { return this._changeableForDays; }
             set { this._changeableForDays = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.Backup.Model
         /// to Vault Lock are not affected.
         /// </para>
         /// </summary>
-        public long MaxRetentionDays
+        public long? MaxRetentionDays
         {
-            get { return this._maxRetentionDays.GetValueOrDefault(); }
+            get { return this._maxRetentionDays; }
             set { this._maxRetentionDays = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.Backup.Model
         /// is 1 day. Recovery points already saved in the vault prior to Vault Lock are not affected.
         /// </para>
         /// </summary>
-        public long MinRetentionDays
+        public long? MinRetentionDays
         {
-            get { return this._minRetentionDays.GetValueOrDefault(); }
+            get { return this._minRetentionDays; }
             set { this._minRetentionDays = value; }
         }
 

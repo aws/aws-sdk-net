@@ -70,9 +70,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp that indicates when the monitor evaluation was started. 
         /// </para>
         /// </summary>
-        public DateTime EvaluationTime
+        public DateTime? EvaluationTime
         {
-            get { return this._evaluationTime.GetValueOrDefault(); }
+            get { return this._evaluationTime; }
             set { this._evaluationTime = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.ForecastService.Model
         /// The number of items considered during the evaluation.
         /// </para>
         /// </summary>
-        public long NumItemsEvaluated
+        public long? NumItemsEvaluated
         {
-            get { return this._numItemsEvaluated.GetValueOrDefault(); }
+            get { return this._numItemsEvaluated; }
             set { this._numItemsEvaluated = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp that indicates the end of the window that is used for monitor evaluation.
         /// </para>
         /// </summary>
-        public DateTime WindowEndDatetime
+        public DateTime? WindowEndDatetime
         {
-            get { return this._windowEndDatetime.GetValueOrDefault(); }
+            get { return this._windowEndDatetime; }
             set { this._windowEndDatetime = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp that indicates the start of the window that is used for monitor evaluation.
         /// </para>
         /// </summary>
-        public DateTime WindowStartDatetime
+        public DateTime? WindowStartDatetime
         {
-            get { return this._windowStartDatetime.GetValueOrDefault(); }
+            get { return this._windowStartDatetime; }
             set { this._windowStartDatetime = value; }
         }
 

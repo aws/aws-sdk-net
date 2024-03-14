@@ -61,9 +61,9 @@ namespace Amazon.ComprehendMedical.Model
         /// trait.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

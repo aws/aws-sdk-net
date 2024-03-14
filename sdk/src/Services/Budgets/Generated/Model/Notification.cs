@@ -135,9 +135,9 @@ namespace Amazon.Budgets.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=15000000000000)]
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

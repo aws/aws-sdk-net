@@ -71,13 +71,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BorderThickness", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BorderThickness = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CornerRadius", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CornerRadius = unmarshaller.Unmarshall(context);
                     continue;
                 }

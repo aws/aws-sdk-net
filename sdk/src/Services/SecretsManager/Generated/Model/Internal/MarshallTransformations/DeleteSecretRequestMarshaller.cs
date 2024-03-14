@@ -70,13 +70,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceDeleteWithoutRecovery())
                 {
                     context.Writer.WritePropertyName("ForceDeleteWithoutRecovery");
-                    context.Writer.Write(publicRequest.ForceDeleteWithoutRecovery);
+                    context.Writer.Write(publicRequest.ForceDeleteWithoutRecovery.Value);
                 }
 
                 if(publicRequest.IsSetRecoveryWindowInDays())
                 {
                     context.Writer.WritePropertyName("RecoveryWindowInDays");
-                    context.Writer.Write(publicRequest.RecoveryWindowInDays);
+                    context.Writer.Write(publicRequest.RecoveryWindowInDays.Value);
                 }
 
                 if(publicRequest.IsSetSecretId())

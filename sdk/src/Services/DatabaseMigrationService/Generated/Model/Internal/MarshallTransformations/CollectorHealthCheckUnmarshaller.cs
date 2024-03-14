@@ -71,19 +71,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LocalCollectorS3Access", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.LocalCollectorS3Access = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WebCollectorGrantedRoleBasedAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WebCollectorGrantedRoleBasedAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WebCollectorS3Access", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.WebCollectorS3Access = unmarshaller.Unmarshall(context);
                     continue;
                 }

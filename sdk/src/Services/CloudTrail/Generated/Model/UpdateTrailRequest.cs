@@ -111,9 +111,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool EnableLogFileValidation
+        public bool? EnableLogFileValidation
         {
-            get { return this._enableLogFileValidation.GetValueOrDefault(); }
+            get { return this._enableLogFileValidation; }
             set { this._enableLogFileValidation = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.CloudTrail.Model
         /// to the log files.
         /// </para>
         /// </summary>
-        public bool IncludeGlobalServiceEvents
+        public bool? IncludeGlobalServiceEvents
         {
-            get { return this._includeGlobalServiceEvents.GetValueOrDefault(); }
+            get { return this._includeGlobalServiceEvents; }
             set { this._includeGlobalServiceEvents = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.CloudTrail.Model
         /// Regions.
         /// </para>
         /// </summary>
-        public bool IsMultiRegionTrail
+        public bool? IsMultiRegionTrail
         {
-            get { return this._isMultiRegionTrail.GetValueOrDefault(); }
+            get { return this._isMultiRegionTrail; }
             set { this._isMultiRegionTrail = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool IsOrganizationTrail
+        public bool? IsOrganizationTrail
         {
-            get { return this._isOrganizationTrail.GetValueOrDefault(); }
+            get { return this._isOrganizationTrail; }
             set { this._isOrganizationTrail = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.KeyManagementService.Model
         /// is deleted.
         /// </para>
         /// </summary>
-        public DateTime DeletionDate
+        public DateTime? DeletionDate
         {
-            get { return this._deletionDate.GetValueOrDefault(); }
+            get { return this._deletionDate; }
             set { this._deletionDate = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=365)]
-        public int PendingWindowInDays
+        public int? PendingWindowInDays
         {
-            get { return this._pendingWindowInDays.GetValueOrDefault(); }
+            get { return this._pendingWindowInDays; }
             set { this._pendingWindowInDays = value; }
         }
 

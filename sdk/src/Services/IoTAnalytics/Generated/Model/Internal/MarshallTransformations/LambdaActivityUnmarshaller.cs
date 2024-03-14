@@ -65,7 +65,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("batchSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

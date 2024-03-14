@@ -325,9 +325,9 @@ namespace Amazon.ApplicationInsights.Model
         /// The time when the observation ended, in epoch seconds.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -454,9 +454,9 @@ namespace Amazon.ApplicationInsights.Model
         /// The timestamp in the CloudWatch Logs that specifies when the matched line occurred.
         /// </para>
         /// </summary>
-        public DateTime LineTime
+        public DateTime? LineTime
         {
-            get { return this._lineTime.GetValueOrDefault(); }
+            get { return this._lineTime; }
             set { this._lineTime = value; }
         }
 
@@ -652,9 +652,9 @@ namespace Amazon.ApplicationInsights.Model
         /// The time when the observation was first detected, in epoch seconds.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -761,9 +761,9 @@ namespace Amazon.ApplicationInsights.Model
         /// The value of the source observation metric.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 
@@ -779,9 +779,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The X-Ray request error percentage for this node. 
         /// </para>
         /// </summary>
-        public int XRayErrorPercent
+        public int? XRayErrorPercent
         {
-            get { return this._xRayErrorPercent.GetValueOrDefault(); }
+            get { return this._xRayErrorPercent; }
             set { this._xRayErrorPercent = value; }
         }
 
@@ -797,9 +797,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The X-Ray request fault percentage for this node. 
         /// </para>
         /// </summary>
-        public int XRayFaultPercent
+        public int? XRayFaultPercent
         {
-            get { return this._xRayFaultPercent.GetValueOrDefault(); }
+            get { return this._xRayFaultPercent; }
             set { this._xRayFaultPercent = value; }
         }
 
@@ -851,9 +851,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The X-Ray node request average latency for this node. 
         /// </para>
         /// </summary>
-        public long XRayRequestAverageLatency
+        public long? XRayRequestAverageLatency
         {
-            get { return this._xRayRequestAverageLatency.GetValueOrDefault(); }
+            get { return this._xRayRequestAverageLatency; }
             set { this._xRayRequestAverageLatency = value; }
         }
 
@@ -869,9 +869,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The X-Ray request count for this node. 
         /// </para>
         /// </summary>
-        public int XRayRequestCount
+        public int? XRayRequestCount
         {
-            get { return this._xRayRequestCount.GetValueOrDefault(); }
+            get { return this._xRayRequestCount; }
             set { this._xRayRequestCount = value; }
         }
 
@@ -887,9 +887,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The X-Ray request throttle percentage for this node. 
         /// </para>
         /// </summary>
-        public int XRayThrottlePercent
+        public int? XRayThrottlePercent
         {
-            get { return this._xRayThrottlePercent.GetValueOrDefault(); }
+            get { return this._xRayThrottlePercent; }
             set { this._xRayThrottlePercent = value; }
         }
 

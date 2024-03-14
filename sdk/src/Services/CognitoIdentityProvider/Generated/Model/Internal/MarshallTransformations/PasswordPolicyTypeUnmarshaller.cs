@@ -65,37 +65,37 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MinimumLength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumLength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireLowercase", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireLowercase = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireNumbers", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireNumbers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireSymbols", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireSymbols = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequireUppercase", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequireUppercase = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TemporaryPasswordValidityDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TemporaryPasswordValidityDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,7 +71,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EvaluationPeriods", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ScalingAdjustment", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Threshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -49,9 +49,9 @@ namespace Amazon.Omics.Model
         ///  The timestamp for when the share was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.Omics.Model
         ///  The timestamp of the share update. 
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

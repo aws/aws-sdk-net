@@ -77,7 +77,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Capacity", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
                     continue;
                 }

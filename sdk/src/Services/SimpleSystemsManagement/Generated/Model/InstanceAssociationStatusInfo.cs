@@ -161,9 +161,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the association ran. 
         /// </para>
         /// </summary>
-        public DateTime ExecutionDate
+        public DateTime? ExecutionDate
         {
-            get { return this._executionDate.GetValueOrDefault(); }
+            get { return this._executionDate; }
             set { this._executionDate = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("detectSentiment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetectSentiment = unmarshaller.Unmarshall(context);
                     continue;
                 }

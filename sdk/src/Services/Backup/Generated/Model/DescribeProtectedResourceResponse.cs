@@ -52,9 +52,9 @@ namespace Amazon.Backup.Model
         /// AM.
         /// </para>
         /// </summary>
-        public DateTime LastBackupTime
+        public DateTime? LastBackupTime
         {
-            get { return this._lastBackupTime.GetValueOrDefault(); }
+            get { return this._lastBackupTime; }
             set { this._lastBackupTime = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Backup.Model
         /// This is the time in minutes the most recent restore job took to complete.
         /// </para>
         /// </summary>
-        public long LatestRestoreExecutionTimeMinutes
+        public long? LatestRestoreExecutionTimeMinutes
         {
-            get { return this._latestRestoreExecutionTimeMinutes.GetValueOrDefault(); }
+            get { return this._latestRestoreExecutionTimeMinutes; }
             set { this._latestRestoreExecutionTimeMinutes = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Backup.Model
         /// This is the creation date of the most recent restore job.
         /// </para>
         /// </summary>
-        public DateTime LatestRestoreJobCreationDate
+        public DateTime? LatestRestoreJobCreationDate
         {
-            get { return this._latestRestoreJobCreationDate.GetValueOrDefault(); }
+            get { return this._latestRestoreJobCreationDate; }
             set { this._latestRestoreJobCreationDate = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Backup.Model
         /// This is the date the most recent recovery point was created.
         /// </para>
         /// </summary>
-        public DateTime LatestRestoreRecoveryPointCreationDate
+        public DateTime? LatestRestoreRecoveryPointCreationDate
         {
-            get { return this._latestRestoreRecoveryPointCreationDate.GetValueOrDefault(); }
+            get { return this._latestRestoreRecoveryPointCreationDate; }
             set { this._latestRestoreRecoveryPointCreationDate = value; }
         }
 

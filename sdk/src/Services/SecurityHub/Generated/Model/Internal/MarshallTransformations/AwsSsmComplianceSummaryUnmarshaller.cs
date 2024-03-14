@@ -71,37 +71,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CompliantCriticalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantCriticalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CompliantHighCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantHighCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CompliantInformationalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantInformationalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CompliantLowCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantLowCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CompliantMediumCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantMediumCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CompliantUnspecifiedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantUnspecifiedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,37 +113,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NonCompliantCriticalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantCriticalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantHighCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantHighCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantInformationalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantInformationalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantLowCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantLowCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantMediumCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantMediumCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantUnspecifiedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantUnspecifiedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

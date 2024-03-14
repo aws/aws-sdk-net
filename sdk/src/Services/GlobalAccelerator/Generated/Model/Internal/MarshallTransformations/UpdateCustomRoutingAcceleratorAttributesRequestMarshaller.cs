@@ -76,7 +76,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFlowLogsEnabled())
                 {
                     context.Writer.WritePropertyName("FlowLogsEnabled");
-                    context.Writer.Write(publicRequest.FlowLogsEnabled);
+                    context.Writer.Write(publicRequest.FlowLogsEnabled.Value);
                 }
 
                 if(publicRequest.IsSetFlowLogsS3Bucket())

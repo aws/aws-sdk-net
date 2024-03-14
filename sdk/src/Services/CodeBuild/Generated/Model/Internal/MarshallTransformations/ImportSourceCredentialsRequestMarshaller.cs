@@ -82,7 +82,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetShouldOverwrite())
                 {
                     context.Writer.WritePropertyName("shouldOverwrite");
-                    context.Writer.Write(publicRequest.ShouldOverwrite);
+                    context.Writer.Write(publicRequest.ShouldOverwrite.Value);
                 }
 
                 if(publicRequest.IsSetToken())

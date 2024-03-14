@@ -61,9 +61,9 @@ namespace Amazon.FIS.Model
         /// The schema version.
         /// </para>
         /// </summary>
-        public int LogSchemaVersion
+        public int? LogSchemaVersion
         {
-            get { return this._logSchemaVersion.GetValueOrDefault(); }
+            get { return this._logSchemaVersion; }
             set { this._logSchemaVersion = value; }
         }
 

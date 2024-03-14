@@ -61,9 +61,9 @@ namespace Amazon.LicenseManager.Model
         /// value is <c>1</c>.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("memorySize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("rank", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Rank = unmarshaller.Unmarshall(context);
                     continue;
                 }

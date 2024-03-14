@@ -77,7 +77,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sessionTimeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SessionTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

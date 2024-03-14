@@ -167,9 +167,9 @@ namespace Amazon.EventBridge.Model
         /// Indicates whether to send an event back to EventBridge after the SQL statement runs.
         /// </para>
         /// </summary>
-        public bool WithEvent
+        public bool? WithEvent
         {
-            get { return this._withEvent.GetValueOrDefault(); }
+            get { return this._withEvent; }
             set { this._withEvent = value; }
         }
 

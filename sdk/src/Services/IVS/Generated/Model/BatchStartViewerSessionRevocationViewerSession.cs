@@ -84,9 +84,9 @@ namespace Amazon.IVS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ViewerSessionVersionsLessThanOrEqualTo
+        public int? ViewerSessionVersionsLessThanOrEqualTo
         {
-            get { return this._viewerSessionVersionsLessThanOrEqualTo.GetValueOrDefault(); }
+            get { return this._viewerSessionVersionsLessThanOrEqualTo; }
             set { this._viewerSessionVersionsLessThanOrEqualTo = value; }
         }
 

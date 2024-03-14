@@ -48,9 +48,9 @@ namespace Amazon.Transfer.Model
         /// Specifies whether this policy enables Federal Information Processing Standards (FIPS).
         /// </para>
         /// </summary>
-        public bool Fips
+        public bool? Fips
         {
-            get { return this._fips.GetValueOrDefault(); }
+            get { return this._fips; }
             set { this._fips = value; }
         }
 

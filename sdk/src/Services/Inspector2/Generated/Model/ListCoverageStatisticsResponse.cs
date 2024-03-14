@@ -85,9 +85,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TotalCounts
+        public long? TotalCounts
         {
-            get { return this._totalCounts.GetValueOrDefault(); }
+            get { return this._totalCounts; }
             set { this._totalCounts = value; }
         }
 

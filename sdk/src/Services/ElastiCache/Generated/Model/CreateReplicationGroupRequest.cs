@@ -147,9 +147,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AtRestEncryptionEnabled
+        public bool? AtRestEncryptionEnabled
         {
-            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._atRestEncryptionEnabled; }
             set { this._atRestEncryptionEnabled = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool AutomaticFailoverEnabled
+        public bool? AutomaticFailoverEnabled
         {
-            get { return this._automaticFailoverEnabled.GetValueOrDefault(); }
+            get { return this._automaticFailoverEnabled; }
             set { this._automaticFailoverEnabled = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.ElastiCache.Model
         /// is disabled for previous versions.  
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -547,9 +547,9 @@ namespace Amazon.ElastiCache.Model
         /// tiering</a>.
         /// </para>
         /// </summary>
-        public bool DataTieringEnabled
+        public bool? DataTieringEnabled
         {
-            get { return this._dataTieringEnabled.GetValueOrDefault(); }
+            get { return this._dataTieringEnabled; }
             set { this._dataTieringEnabled = value; }
         }
 
@@ -689,9 +689,9 @@ namespace Amazon.ElastiCache.Model
         /// Downtime: Multi-AZ</a>.
         /// </para>
         /// </summary>
-        public bool MultiAZEnabled
+        public bool? MultiAZEnabled
         {
-            get { return this._multiAZEnabled.GetValueOrDefault(); }
+            get { return this._multiAZEnabled; }
             set { this._multiAZEnabled = value; }
         }
 
@@ -796,9 +796,9 @@ namespace Amazon.ElastiCache.Model
         /// The maximum permitted value for <c>NumCacheClusters</c> is 6 (1 primary plus 5 replicas).
         /// </para>
         /// </summary>
-        public int NumCacheClusters
+        public int? NumCacheClusters
         {
-            get { return this._numCacheClusters.GetValueOrDefault(); }
+            get { return this._numCacheClusters; }
             set { this._numCacheClusters = value; }
         }
 
@@ -820,9 +820,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: 1
         /// </para>
         /// </summary>
-        public int NumNodeGroups
+        public int? NumNodeGroups
         {
-            get { return this._numNodeGroups.GetValueOrDefault(); }
+            get { return this._numNodeGroups; }
             set { this._numNodeGroups = value; }
         }
 
@@ -838,9 +838,9 @@ namespace Amazon.ElastiCache.Model
         /// The port number on which each member of the replication group accepts connections.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -983,9 +983,9 @@ namespace Amazon.ElastiCache.Model
         /// (shard). Valid values are 0 to 5.
         /// </para>
         /// </summary>
-        public int ReplicasPerNodeGroup
+        public int? ReplicasPerNodeGroup
         {
-            get { return this._replicasPerNodeGroup.GetValueOrDefault(); }
+            get { return this._replicasPerNodeGroup; }
             set { this._replicasPerNodeGroup = value; }
         }
 
@@ -1150,9 +1150,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: 0 (i.e., automatic backups are disabled for this cluster).
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 
@@ -1243,9 +1243,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

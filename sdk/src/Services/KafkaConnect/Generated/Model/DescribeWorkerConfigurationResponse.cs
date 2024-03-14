@@ -45,9 +45,9 @@ namespace Amazon.KafkaConnect.Model
         /// The time that the worker configuration was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

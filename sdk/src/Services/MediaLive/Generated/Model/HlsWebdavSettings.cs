@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model
         /// retrying connection to the CDN if the connection is lost.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ConnectionRetryInterval
+        public int? ConnectionRetryInterval
         {
-            get { return this._connectionRetryInterval.GetValueOrDefault(); }
+            get { return this._connectionRetryInterval; }
             set { this._connectionRetryInterval = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.MediaLive.Model
         /// outputs.
         /// </summary>
         [AWSProperty(Min=0, Max=600)]
-        public int FilecacheDuration
+        public int? FilecacheDuration
         {
-            get { return this._filecacheDuration.GetValueOrDefault(); }
+            get { return this._filecacheDuration; }
             set { this._filecacheDuration = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.MediaLive.Model
         /// URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumRetries
+        public int? NumRetries
         {
-            get { return this._numRetries.GetValueOrDefault(); }
+            get { return this._numRetries; }
             set { this._numRetries = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.MediaLive.Model
         /// to wait until a restart is initiated. A value of 0 means never restart.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int RestartDelay
+        public int? RestartDelay
         {
-            get { return this._restartDelay.GetValueOrDefault(); }
+            get { return this._restartDelay; }
             set { this._restartDelay = value; }
         }
 

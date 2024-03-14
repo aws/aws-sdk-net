@@ -70,7 +70,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHideDisabled())
                 {
                     context.Writer.WritePropertyName("HideDisabled");
-                    context.Writer.Write(publicRequest.HideDisabled);
+                    context.Writer.Write(publicRequest.HideDisabled.Value);
                 }
 
                 if(publicRequest.IsSetIdentityPoolId())
@@ -82,7 +82,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

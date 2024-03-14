@@ -56,9 +56,9 @@ namespace Amazon.RDS.Model
         /// The retention period for the replicated automated backups.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 

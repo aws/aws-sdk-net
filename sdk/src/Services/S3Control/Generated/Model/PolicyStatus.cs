@@ -40,9 +40,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property IsPublic.
         /// </summary>
-        public bool IsPublic
+        public bool? IsPublic
         {
-            get { return this._isPublic.GetValueOrDefault(); }
+            get { return this._isPublic; }
             set { this._isPublic = value; }
         }
 

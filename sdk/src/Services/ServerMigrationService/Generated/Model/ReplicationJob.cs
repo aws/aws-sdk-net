@@ -76,9 +76,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether the replication job should produce encrypted AMIs.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The time between consecutive replication runs, in hours.
         /// </para>
         /// </summary>
-        public int Frequency
+        public int? Frequency
         {
-            get { return this._frequency.GetValueOrDefault(); }
+            get { return this._frequency; }
             set { this._frequency = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The start time of the next replication run.
         /// </para>
         /// </summary>
-        public DateTime NextReplicationRunStartTime
+        public DateTime? NextReplicationRunStartTime
         {
-            get { return this._nextReplicationRunStartTime.GetValueOrDefault(); }
+            get { return this._nextReplicationRunStartTime; }
             set { this._nextReplicationRunStartTime = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.ServerMigrationService.Model
         /// By default, the value is set to zero, meaning that all AMIs are kept.
         /// </para>
         /// </summary>
-        public int NumberOfRecentAmisToKeep
+        public int? NumberOfRecentAmisToKeep
         {
-            get { return this._numberOfRecentAmisToKeep.GetValueOrDefault(); }
+            get { return this._numberOfRecentAmisToKeep; }
             set { this._numberOfRecentAmisToKeep = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.ServerMigrationService.Model
         /// Indicates whether to run the replication job one time.
         /// </para>
         /// </summary>
-        public bool RunOnce
+        public bool? RunOnce
         {
-            get { return this._runOnce.GetValueOrDefault(); }
+            get { return this._runOnce; }
             set { this._runOnce = value; }
         }
 
@@ -297,9 +297,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The seed replication time.
         /// </para>
         /// </summary>
-        public DateTime SeedReplicationTime
+        public DateTime? SeedReplicationTime
         {
-            get { return this._seedReplicationTime.GetValueOrDefault(); }
+            get { return this._seedReplicationTime; }
             set { this._seedReplicationTime = value; }
         }
 

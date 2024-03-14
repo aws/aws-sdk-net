@@ -85,9 +85,9 @@ namespace Amazon.Rekognition.Model
         /// in the video.
         /// </para>
         /// </summary>
-        public long Timestamp
+        public long? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

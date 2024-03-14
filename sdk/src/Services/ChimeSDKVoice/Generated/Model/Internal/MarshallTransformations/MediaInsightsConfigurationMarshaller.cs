@@ -54,7 +54,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled);
+                context.Writer.Write(requestObject.Disabled.Value);
             }
 
         }

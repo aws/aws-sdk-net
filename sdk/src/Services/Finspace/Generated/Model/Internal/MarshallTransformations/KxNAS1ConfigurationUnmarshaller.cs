@@ -65,7 +65,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("size", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

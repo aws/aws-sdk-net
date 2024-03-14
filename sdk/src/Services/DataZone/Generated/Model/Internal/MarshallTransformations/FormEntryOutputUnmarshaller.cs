@@ -65,7 +65,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("required", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Required = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -45,9 +45,9 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float LowerBoundValue
+        public float? LowerBoundValue
         {
-            get { return this._lowerBoundValue.GetValueOrDefault(); }
+            get { return this._lowerBoundValue; }
             set { this._lowerBoundValue = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float UpperBoundValue
+        public float? UpperBoundValue
         {
-            get { return this._upperBoundValue.GetValueOrDefault(); }
+            get { return this._upperBoundValue; }
             set { this._upperBoundValue = value; }
         }
 

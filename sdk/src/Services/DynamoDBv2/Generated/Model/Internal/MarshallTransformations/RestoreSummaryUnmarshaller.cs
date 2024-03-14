@@ -65,13 +65,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RestoreDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RestoreDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RestoreInProgress", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RestoreInProgress = unmarshaller.Unmarshall(context);
                     continue;
                 }

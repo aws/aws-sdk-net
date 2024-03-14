@@ -47,9 +47,9 @@ namespace Amazon.FSx.Model
         /// A running total of the number of files that the task failed to process.
         /// </para>
         /// </summary>
-        public long FailedCount
+        public long? FailedCount
         {
-            get { return this._failedCount.GetValueOrDefault(); }
+            get { return this._failedCount; }
             set { this._failedCount = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.FSx.Model
         /// The time at which the task status was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.FSx.Model
         /// task that automatically releases files from the cache.
         /// </para>
         /// </summary>
-        public long ReleasedCapacity
+        public long? ReleasedCapacity
         {
-            get { return this._releasedCapacity.GetValueOrDefault(); }
+            get { return this._releasedCapacity; }
             set { this._releasedCapacity = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.FSx.Model
         /// A running total of the number of files that the task has successfully processed.
         /// </para>
         /// </summary>
-        public long SucceededCount
+        public long? SucceededCount
         {
-            get { return this._succeededCount.GetValueOrDefault(); }
+            get { return this._succeededCount; }
             set { this._succeededCount = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.FSx.Model
         /// plus <c>FailedCount</c>.
         /// </para>
         /// </summary>
-        public long TotalCount
+        public long? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

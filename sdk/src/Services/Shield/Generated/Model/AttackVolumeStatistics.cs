@@ -42,9 +42,9 @@ namespace Amazon.Shield.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 

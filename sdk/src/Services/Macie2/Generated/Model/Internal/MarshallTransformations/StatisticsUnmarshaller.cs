@@ -65,13 +65,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("approximateNumberOfObjectsToProcess", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ApproximateNumberOfObjectsToProcess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfRuns", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRuns = unmarshaller.Unmarshall(context);
                     continue;
                 }

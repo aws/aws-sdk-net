@@ -65,31 +65,31 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastDecreaseDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastDecreaseDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastIncreaseDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastIncreaseDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfDecreasesToday", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDecreasesToday = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReadCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WriteCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

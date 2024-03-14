@@ -40,9 +40,9 @@ namespace Amazon.MediaLive.Model
         /// as defined in SCTE-35.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long SpliceEventId
+        public long? SpliceEventId
         {
-            get { return this._spliceEventId.GetValueOrDefault(); }
+            get { return this._spliceEventId; }
             set { this._spliceEventId = value; }
         }
 

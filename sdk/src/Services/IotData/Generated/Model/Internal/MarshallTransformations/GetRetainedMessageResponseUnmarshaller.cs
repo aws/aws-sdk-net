@@ -53,7 +53,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("qos", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Qos = unmarshaller.Unmarshall(context);
                     continue;
                 }

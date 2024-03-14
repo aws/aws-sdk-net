@@ -54,7 +54,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotify())
             {
                 context.Writer.WritePropertyName("Notify");
-                context.Writer.Write(requestObject.Notify);
+                context.Writer.Write(requestObject.Notify.Value);
             }
 
         }

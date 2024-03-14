@@ -43,9 +43,9 @@ namespace Amazon.MediaConvert.Model
         /// code functionality. If you must include this property, set the value to zero.
         /// </summary>
         [AWSProperty(Min=0, Max=0)]
-        public int BreakoutCode
+        public int? BreakoutCode
         {
-            get { return this._breakoutCode.GetValueOrDefault(); }
+            get { return this._breakoutCode; }
             set { this._breakoutCode = value; }
         }
 

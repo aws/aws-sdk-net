@@ -132,9 +132,9 @@ namespace Amazon.AutoScaling.Model
         /// Default: None
         /// </para>
         /// </summary>
-        public int Cooldown
+        public int? Cooldown
         {
-            get { return this._cooldown.GetValueOrDefault(); }
+            get { return this._cooldown; }
             set { this._cooldown = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.AutoScaling.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int EstimatedInstanceWarmup
+        public int? EstimatedInstanceWarmup
         {
-            get { return this._estimatedInstanceWarmup.GetValueOrDefault(); }
+            get { return this._estimatedInstanceWarmup; }
             set { this._estimatedInstanceWarmup = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MinAdjustmentMagnitude
+        public int? MinAdjustmentMagnitude
         {
-            get { return this._minAdjustmentMagnitude.GetValueOrDefault(); }
+            get { return this._minAdjustmentMagnitude; }
             set { this._minAdjustmentMagnitude = value; }
         }
 
@@ -267,9 +267,9 @@ namespace Amazon.AutoScaling.Model
         /// Available for backward compatibility. Use <c>MinAdjustmentMagnitude</c> instead.
         /// </para>
         /// </summary>
-        public int MinAdjustmentStep
+        public int? MinAdjustmentStep
         {
-            get { return this._minAdjustmentStep.GetValueOrDefault(); }
+            get { return this._minAdjustmentStep; }
             set { this._minAdjustmentStep = value; }
         }
 
@@ -379,9 +379,9 @@ namespace Amazon.AutoScaling.Model
         /// type.) 
         /// </para>
         /// </summary>
-        public int ScalingAdjustment
+        public int? ScalingAdjustment
         {
-            get { return this._scalingAdjustment.GetValueOrDefault(); }
+            get { return this._scalingAdjustment; }
             set { this._scalingAdjustment = value; }
         }
 

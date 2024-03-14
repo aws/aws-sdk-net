@@ -65,43 +65,43 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CrawlIssue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlIssue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlIssueComment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlIssueComment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlIssueCommentAttachment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlIssueCommentAttachment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlPullRequest", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlPullRequest = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlPullRequestComment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlPullRequestComment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlPullRequestCommentAttachment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlPullRequestCommentAttachment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CrawlRepositoryDocuments", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlRepositoryDocuments = unmarshaller.Unmarshall(context);
                     continue;
                 }

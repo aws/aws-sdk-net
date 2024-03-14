@@ -64,9 +64,9 @@ namespace Amazon.TranscribeService.Model
         /// multi-channel audio</a>.
         /// </para>
         /// </summary>
-        public bool ChannelIdentification
+        public bool? ChannelIdentification
         {
-            get { return this._channelIdentification.GetValueOrDefault(); }
+            get { return this._channelIdentification; }
             set { this._channelIdentification = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
-        public int MaxAlternatives
+        public int? MaxAlternatives
         {
-            get { return this._maxAlternatives.GetValueOrDefault(); }
+            get { return this._maxAlternatives; }
             set { this._maxAlternatives = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
-        public int MaxSpeakerLabels
+        public int? MaxSpeakerLabels
         {
-            get { return this._maxSpeakerLabels.GetValueOrDefault(); }
+            get { return this._maxSpeakerLabels; }
             set { this._maxSpeakerLabels = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.TranscribeService.Model
         /// transcriptions</a>.
         /// </para>
         /// </summary>
-        public bool ShowAlternatives
+        public bool? ShowAlternatives
         {
-            get { return this._showAlternatives.GetValueOrDefault(); }
+            get { return this._showAlternatives; }
             set { this._showAlternatives = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.TranscribeService.Model
         /// speakers (diarization)</a>.
         /// </para>
         /// </summary>
-        public bool ShowSpeakerLabels
+        public bool? ShowSpeakerLabels
         {
-            get { return this._showSpeakerLabels.GetValueOrDefault(); }
+            get { return this._showSpeakerLabels; }
             set { this._showSpeakerLabels = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.LakeFormation.Model
         /// The size of the Amazon S3 object in bytes.
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

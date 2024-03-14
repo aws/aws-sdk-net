@@ -75,9 +75,9 @@ namespace Amazon.ConfigService.Model
         /// The number of compliant Config Rules.
         /// </para>
         /// </summary>
-        public int CompliantRuleCount
+        public int? CompliantRuleCount
         {
-            get { return this._compliantRuleCount.GetValueOrDefault(); }
+            get { return this._compliantRuleCount; }
             set { this._compliantRuleCount = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.ConfigService.Model
         /// The number of noncompliant Config Rules.
         /// </para>
         /// </summary>
-        public int NonCompliantRuleCount
+        public int? NonCompliantRuleCount
         {
-            get { return this._nonCompliantRuleCount.GetValueOrDefault(); }
+            get { return this._nonCompliantRuleCount; }
             set { this._nonCompliantRuleCount = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.ConfigService.Model
         /// any applicable resources to evaluate upon resulting in insufficient data.
         /// </para>
         /// </summary>
-        public int TotalRuleCount
+        public int? TotalRuleCount
         {
-            get { return this._totalRuleCount.GetValueOrDefault(); }
+            get { return this._totalRuleCount; }
             set { this._totalRuleCount = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Distance", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Distance = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Relevance", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Relevance = unmarshaller.Unmarshall(context);
                     continue;
                 }

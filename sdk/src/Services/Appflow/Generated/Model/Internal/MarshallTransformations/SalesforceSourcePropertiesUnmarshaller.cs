@@ -71,13 +71,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enableDynamicFieldUpdate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableDynamicFieldUpdate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("includeDeletedRecords", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeDeletedRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }

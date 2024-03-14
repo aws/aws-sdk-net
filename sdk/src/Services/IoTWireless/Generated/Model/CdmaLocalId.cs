@@ -44,9 +44,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4095)]
-        public int CdmaChannel
+        public int? CdmaChannel
         {
-            get { return this._cdmaChannel.GetValueOrDefault(); }
+            get { return this._cdmaChannel; }
             set { this._cdmaChannel = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=511)]
-        public int PnOffset
+        public int? PnOffset
         {
-            get { return this._pnOffset.GetValueOrDefault(); }
+            get { return this._pnOffset; }
             set { this._pnOffset = value; }
         }
 

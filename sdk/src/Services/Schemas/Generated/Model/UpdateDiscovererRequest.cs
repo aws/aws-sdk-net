@@ -45,9 +45,9 @@ namespace Amazon.Schemas.Model
         /// true)
         /// </para>
         /// </summary>
-        public bool CrossAccount
+        public bool? CrossAccount
         {
-            get { return this._crossAccount.GetValueOrDefault(); }
+            get { return this._crossAccount; }
             set { this._crossAccount = value; }
         }
 

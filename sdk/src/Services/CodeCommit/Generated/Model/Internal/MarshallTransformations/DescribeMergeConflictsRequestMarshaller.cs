@@ -94,7 +94,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxMergeHunks())
                 {
                     context.Writer.WritePropertyName("maxMergeHunks");
-                    context.Writer.Write(publicRequest.MaxMergeHunks);
+                    context.Writer.Write(publicRequest.MaxMergeHunks.Value);
                 }
 
                 if(publicRequest.IsSetMergeOption())

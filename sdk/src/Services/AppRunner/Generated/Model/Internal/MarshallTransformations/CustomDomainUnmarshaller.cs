@@ -77,7 +77,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableWWWSubdomain", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableWWWSubdomain = unmarshaller.Unmarshall(context);
                     continue;
                 }

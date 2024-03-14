@@ -79,9 +79,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// specification, Amazon Redshift inserts a NULL value into that field. 
         /// </para>
         /// </summary>
-        public bool AcceptAnyDate
+        public bool? AcceptAnyDate
         {
-            get { return this._acceptAnyDate.GetValueOrDefault(); }
+            get { return this._acceptAnyDate; }
             set { this._acceptAnyDate = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to <c>true</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool CaseSensitiveNames
+        public bool? CaseSensitiveNames
         {
-            get { return this._caseSensitiveNames.GetValueOrDefault(); }
+            get { return this._caseSensitiveNames; }
             set { this._caseSensitiveNames = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// is disabled and existing column encodings aren't changed. The default is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool CompUpdate
+        public bool? CompUpdate
         {
-            get { return this._compUpdate.GetValueOrDefault(); }
+            get { return this._compUpdate; }
             set { this._compUpdate = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// beginning from when you initially establish a connection.
         /// </para>
         /// </summary>
-        public int ConnectionTimeout
+        public int? ConnectionTimeout
         {
-            get { return this._connectionTimeout.GetValueOrDefault(); }
+            get { return this._connectionTimeout; }
             set { this._connectionTimeout = value; }
         }
 
@@ -272,9 +272,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EmptyAsNull
+        public bool? EmptyAsNull
         {
-            get { return this._emptyAsNull.GetValueOrDefault(); }
+            get { return this._emptyAsNull; }
             set { this._emptyAsNull = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// tables. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ExplicitIds
+        public bool? ExplicitIds
         {
-            get { return this._explicitIds.GetValueOrDefault(); }
+            get { return this._explicitIds; }
             set { this._explicitIds = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// 10.
         /// </para>
         /// </summary>
-        public int FileTransferUploadStreams
+        public int? FileTransferUploadStreams
         {
-            get { return this._fileTransferUploadStreams.GetValueOrDefault(); }
+            get { return this._fileTransferUploadStreams; }
             set { this._fileTransferUploadStreams = value; }
         }
 
@@ -374,9 +374,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
         /// </para>
         /// </summary>
-        public int LoadTimeout
+        public int? LoadTimeout
         {
-            get { return this._loadTimeout.GetValueOrDefault(); }
+            get { return this._loadTimeout; }
             set { this._loadTimeout = value; }
         }
 
@@ -394,9 +394,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// and target endpoints for it to take effect.
         /// </para>
         /// </summary>
-        public bool MapBooleanAsBoolean
+        public bool? MapBooleanAsBoolean
         {
-            get { return this._mapBooleanAsBoolean.GetValueOrDefault(); }
+            get { return this._mapBooleanAsBoolean; }
             set { this._mapBooleanAsBoolean = value; }
         }
 
@@ -413,9 +413,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// data to Amazon Redshift. It defaults to 1048576KB (1 GB).
         /// </para>
         /// </summary>
-        public int MaxFileSize
+        public int? MaxFileSize
         {
-            get { return this._maxFileSize.GetValueOrDefault(); }
+            get { return this._maxFileSize; }
             set { this._maxFileSize = value; }
         }
 
@@ -450,9 +450,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The port number for Amazon Redshift. The default value is 5439.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -470,9 +470,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Choose <c>true</c> to remove quotation marks. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool RemoveQuotes
+        public bool? RemoveQuotes
         {
-            get { return this._removeQuotes.GetValueOrDefault(); }
+            get { return this._removeQuotes; }
             set { this._removeQuotes = value; }
         }
 
@@ -663,9 +663,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to remove unneeded white space. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool TrimBlanks
+        public bool? TrimBlanks
         {
-            get { return this._trimBlanks.GetValueOrDefault(); }
+            get { return this._trimBlanks; }
             set { this._trimBlanks = value; }
         }
 
@@ -684,9 +684,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to truncate data. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool TruncateColumns
+        public bool? TruncateColumns
         {
-            get { return this._truncateColumns.GetValueOrDefault(); }
+            get { return this._truncateColumns; }
             set { this._truncateColumns = value; }
         }
 
@@ -722,9 +722,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// size is 1000KB).
         /// </para>
         /// </summary>
-        public int WriteBufferSize
+        public int? WriteBufferSize
         {
-            get { return this._writeBufferSize.GetValueOrDefault(); }
+            get { return this._writeBufferSize; }
             set { this._writeBufferSize = value; }
         }
 

@@ -66,9 +66,9 @@ namespace Amazon.RedshiftServerless.Model
         /// The retention period of the snapshot created by the scheduled action.
         /// </para>
         /// </summary>
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 

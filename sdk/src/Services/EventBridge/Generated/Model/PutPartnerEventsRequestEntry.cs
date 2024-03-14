@@ -148,9 +148,9 @@ namespace Amazon.EventBridge.Model
         /// The date and time of the event.
         /// </para>
         /// </summary>
-        public DateTime Time
+        public DateTime? Time
         {
-            get { return this._time.GetValueOrDefault(); }
+            get { return this._time; }
             set { this._time = value; }
         }
 

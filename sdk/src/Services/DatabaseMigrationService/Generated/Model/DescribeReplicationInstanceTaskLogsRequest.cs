@@ -74,9 +74,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Constraints: Minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

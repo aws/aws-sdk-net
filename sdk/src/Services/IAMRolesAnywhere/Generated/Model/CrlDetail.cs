@@ -48,9 +48,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the certificate revocation list (CRL) was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Indicates whether the certificate revocation list (CRL) is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

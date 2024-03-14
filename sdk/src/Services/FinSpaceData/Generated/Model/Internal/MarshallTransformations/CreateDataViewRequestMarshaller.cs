@@ -71,13 +71,13 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAsOfTimestamp())
                 {
                     context.Writer.WritePropertyName("asOfTimestamp");
-                    context.Writer.Write(publicRequest.AsOfTimestamp);
+                    context.Writer.Write(publicRequest.AsOfTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetAutoUpdate())
                 {
                     context.Writer.WritePropertyName("autoUpdate");
-                    context.Writer.Write(publicRequest.AutoUpdate);
+                    context.Writer.Write(publicRequest.AutoUpdate.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

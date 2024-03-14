@@ -65,13 +65,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxVisibleColumns", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxVisibleColumns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxVisibleRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxVisibleRows = unmarshaller.Unmarshall(context);
                     continue;
                 }

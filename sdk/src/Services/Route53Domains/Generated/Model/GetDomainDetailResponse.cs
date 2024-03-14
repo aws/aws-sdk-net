@@ -126,9 +126,9 @@ namespace Amazon.Route53Domains.Model
         /// queries return the information that you entered for the admin contact.
         /// </para>
         /// </summary>
-        public bool AdminPrivacy
+        public bool? AdminPrivacy
         {
-            get { return this._adminPrivacy.GetValueOrDefault(); }
+            get { return this._adminPrivacy; }
             set { this._adminPrivacy = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.Route53Domains.Model
         /// Specifies whether the domain registration is set to renew automatically.
         /// </para>
         /// </summary>
-        public bool AutoRenew
+        public bool? AutoRenew
         {
-            get { return this._autoRenew.GetValueOrDefault(); }
+            get { return this._autoRenew; }
             set { this._autoRenew = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Route53Domains.Model
         /// queries return the information that you entered for the billing contact.
         /// </para>
         /// </summary>
-        public bool BillingPrivacy
+        public bool? BillingPrivacy
         {
-            get { return this._billingPrivacy.GetValueOrDefault(); }
+            get { return this._billingPrivacy; }
             set { this._billingPrivacy = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Route53Domains.Model
         /// date and time is in Unix time format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.Route53Domains.Model
         /// is in Unix time format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.Route53Domains.Model
         /// owner).
         /// </para>
         /// </summary>
-        public bool RegistrantPrivacy
+        public bool? RegistrantPrivacy
         {
-            get { return this._registrantPrivacy.GetValueOrDefault(); }
+            get { return this._registrantPrivacy; }
             set { this._registrantPrivacy = value; }
         }
 
@@ -483,9 +483,9 @@ namespace Amazon.Route53Domains.Model
         /// queries return the information that you entered for the technical contact.
         /// </para>
         /// </summary>
-        public bool TechPrivacy
+        public bool? TechPrivacy
         {
-            get { return this._techPrivacy.GetValueOrDefault(); }
+            get { return this._techPrivacy; }
             set { this._techPrivacy = value; }
         }
 
@@ -502,9 +502,9 @@ namespace Amazon.Route53Domains.Model
         /// date and time is in Unix time format and Coordinated Universal time (UTC).
         /// </para>
         /// </summary>
-        public DateTime UpdatedDate
+        public DateTime? UpdatedDate
         {
-            get { return this._updatedDate.GetValueOrDefault(); }
+            get { return this._updatedDate; }
             set { this._updatedDate = value; }
         }
 

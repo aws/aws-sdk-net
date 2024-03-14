@@ -87,7 +87,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoRenew())
                 {
                     context.Writer.WritePropertyName("AutoRenew");
-                    context.Writer.Write(publicRequest.AutoRenew);
+                    context.Writer.Write(publicRequest.AutoRenew.Value);
                 }
 
                 if(publicRequest.IsSetBillingContact())
@@ -110,7 +110,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDurationInYears())
                 {
                     context.Writer.WritePropertyName("DurationInYears");
-                    context.Writer.Write(publicRequest.DurationInYears);
+                    context.Writer.Write(publicRequest.DurationInYears.Value);
                 }
 
                 if(publicRequest.IsSetIdnLangCode())
@@ -138,25 +138,25 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPrivacyProtectAdminContact())
                 {
                     context.Writer.WritePropertyName("PrivacyProtectAdminContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectAdminContact);
+                    context.Writer.Write(publicRequest.PrivacyProtectAdminContact.Value);
                 }
 
                 if(publicRequest.IsSetPrivacyProtectBillingContact())
                 {
                     context.Writer.WritePropertyName("PrivacyProtectBillingContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectBillingContact);
+                    context.Writer.Write(publicRequest.PrivacyProtectBillingContact.Value);
                 }
 
                 if(publicRequest.IsSetPrivacyProtectRegistrantContact())
                 {
                     context.Writer.WritePropertyName("PrivacyProtectRegistrantContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectRegistrantContact);
+                    context.Writer.Write(publicRequest.PrivacyProtectRegistrantContact.Value);
                 }
 
                 if(publicRequest.IsSetPrivacyProtectTechContact())
                 {
                     context.Writer.WritePropertyName("PrivacyProtectTechContact");
-                    context.Writer.Write(publicRequest.PrivacyProtectTechContact);
+                    context.Writer.Write(publicRequest.PrivacyProtectTechContact.Value);
                 }
 
                 if(publicRequest.IsSetRegistrantContact())

@@ -48,7 +48,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMultiLine())
             {
                 context.Writer.WritePropertyName("MultiLine");
-                context.Writer.Write(requestObject.MultiLine);
+                context.Writer.Write(requestObject.MultiLine.Value);
             }
 
         }

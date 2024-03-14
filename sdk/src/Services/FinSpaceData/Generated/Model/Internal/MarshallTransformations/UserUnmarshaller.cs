@@ -77,7 +77,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,25 +95,25 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastDisabledTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastDisabledTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastEnabledTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastEnabledTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastLoginTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastLoginTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

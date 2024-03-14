@@ -55,9 +55,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property RenewalCount. Count for the reservation renewal
         /// </summary>
         [AWSProperty(Min=1)]
-        public int RenewalCount
+        public int? RenewalCount
         {
-            get { return this._renewalCount.GetValueOrDefault(); }
+            get { return this._renewalCount; }
             set { this._renewalCount = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceDelete())
                 {
                     context.Writer.WritePropertyName("forceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete);
+                    context.Writer.Write(publicRequest.ForceDelete.Value);
                 }
 
                 writer.WriteObjectEnd();

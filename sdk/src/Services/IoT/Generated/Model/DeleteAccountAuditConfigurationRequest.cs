@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// If true, all scheduled audits are deleted.
         /// </para>
         /// </summary>
-        public bool DeleteScheduledAudits
+        public bool? DeleteScheduledAudits
         {
-            get { return this._deleteScheduledAudits.GetValueOrDefault(); }
+            get { return this._deleteScheduledAudits; }
             set { this._deleteScheduledAudits = value; }
         }
 

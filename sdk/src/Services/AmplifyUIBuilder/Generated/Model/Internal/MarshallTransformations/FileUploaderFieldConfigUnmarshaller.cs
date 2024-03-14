@@ -77,25 +77,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isResumable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsResumable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxFileCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFileCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("showThumbnails", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ShowThumbnails = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,13 +48,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPublishClassificationFindings())
             {
                 context.Writer.WritePropertyName("publishClassificationFindings");
-                context.Writer.Write(requestObject.PublishClassificationFindings);
+                context.Writer.Write(requestObject.PublishClassificationFindings.Value);
             }
 
             if(requestObject.IsSetPublishPolicyFindings())
             {
                 context.Writer.WritePropertyName("publishPolicyFindings");
-                context.Writer.Write(requestObject.PublishPolicyFindings);
+                context.Writer.Write(requestObject.PublishPolicyFindings.Value);
             }
 
         }

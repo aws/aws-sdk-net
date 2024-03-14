@@ -71,13 +71,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("automatedDiscoveryFreeTrialStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AutomatedDiscoveryFreeTrialStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("freeTrialStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FreeTrialStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -59,7 +59,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumLength())
             {
                 context.Writer.WritePropertyName("minimumLength");
-                context.Writer.Write(requestObject.MinimumLength);
+                context.Writer.Write(requestObject.MinimumLength.Value);
             }
 
         }

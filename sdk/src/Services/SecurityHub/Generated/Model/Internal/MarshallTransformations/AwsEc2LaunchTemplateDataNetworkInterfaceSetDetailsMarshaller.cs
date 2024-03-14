@@ -48,19 +48,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociateCarrierIpAddress())
             {
                 context.Writer.WritePropertyName("AssociateCarrierIpAddress");
-                context.Writer.Write(requestObject.AssociateCarrierIpAddress);
+                context.Writer.Write(requestObject.AssociateCarrierIpAddress.Value);
             }
 
             if(requestObject.IsSetAssociatePublicIpAddress())
             {
                 context.Writer.WritePropertyName("AssociatePublicIpAddress");
-                context.Writer.Write(requestObject.AssociatePublicIpAddress);
+                context.Writer.Write(requestObject.AssociatePublicIpAddress.Value);
             }
 
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination);
+                context.Writer.Write(requestObject.DeleteOnTermination.Value);
             }
 
             if(requestObject.IsSetDescription())
@@ -72,7 +72,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceIndex())
             {
                 context.Writer.WritePropertyName("DeviceIndex");
-                context.Writer.Write(requestObject.DeviceIndex);
+                context.Writer.Write(requestObject.DeviceIndex.Value);
             }
 
             if(requestObject.IsSetGroups())
@@ -95,7 +95,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpv4PrefixCount())
             {
                 context.Writer.WritePropertyName("Ipv4PrefixCount");
-                context.Writer.Write(requestObject.Ipv4PrefixCount);
+                context.Writer.Write(requestObject.Ipv4PrefixCount.Value);
             }
 
             if(requestObject.IsSetIpv4Prefixes())
@@ -117,7 +117,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpv6AddressCount())
             {
                 context.Writer.WritePropertyName("Ipv6AddressCount");
-                context.Writer.Write(requestObject.Ipv6AddressCount);
+                context.Writer.Write(requestObject.Ipv6AddressCount.Value);
             }
 
             if(requestObject.IsSetIpv6Addresses())
@@ -139,7 +139,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpv6PrefixCount())
             {
                 context.Writer.WritePropertyName("Ipv6PrefixCount");
-                context.Writer.Write(requestObject.Ipv6PrefixCount);
+                context.Writer.Write(requestObject.Ipv6PrefixCount.Value);
             }
 
             if(requestObject.IsSetIpv6Prefixes())
@@ -161,7 +161,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkCardIndex())
             {
                 context.Writer.WritePropertyName("NetworkCardIndex");
-                context.Writer.Write(requestObject.NetworkCardIndex);
+                context.Writer.Write(requestObject.NetworkCardIndex.Value);
             }
 
             if(requestObject.IsSetNetworkInterfaceId())
@@ -195,7 +195,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSecondaryPrivateIpAddressCount())
             {
                 context.Writer.WritePropertyName("SecondaryPrivateIpAddressCount");
-                context.Writer.Write(requestObject.SecondaryPrivateIpAddressCount);
+                context.Writer.Write(requestObject.SecondaryPrivateIpAddressCount.Value);
             }
 
             if(requestObject.IsSetSubnetId())

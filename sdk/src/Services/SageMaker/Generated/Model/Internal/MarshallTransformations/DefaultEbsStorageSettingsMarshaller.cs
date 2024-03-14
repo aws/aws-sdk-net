@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultEbsVolumeSizeInGb())
             {
                 context.Writer.WritePropertyName("DefaultEbsVolumeSizeInGb");
-                context.Writer.Write(requestObject.DefaultEbsVolumeSizeInGb);
+                context.Writer.Write(requestObject.DefaultEbsVolumeSizeInGb.Value);
             }
 
             if(requestObject.IsSetMaximumEbsVolumeSizeInGb())
             {
                 context.Writer.WritePropertyName("MaximumEbsVolumeSizeInGb");
-                context.Writer.Write(requestObject.MaximumEbsVolumeSizeInGb);
+                context.Writer.Write(requestObject.MaximumEbsVolumeSizeInGb.Value);
             }
 
         }

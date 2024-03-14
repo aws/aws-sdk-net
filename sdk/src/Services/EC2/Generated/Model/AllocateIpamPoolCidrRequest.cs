@@ -209,9 +209,9 @@ namespace Amazon.EC2.Model
         /// IPv6 addresses are 0 - 128.
         /// </para>
         /// </summary>
-        public int NetmaskLength
+        public int? NetmaskLength
         {
-            get { return this._netmaskLength.GetValueOrDefault(); }
+            get { return this._netmaskLength; }
             set { this._netmaskLength = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.EC2.Model
         /// A preview of the next available CIDR in a pool.
         /// </para>
         /// </summary>
-        public bool PreviewNextCidr
+        public bool? PreviewNextCidr
         {
-            get { return this._previewNextCidr.GetValueOrDefault(); }
+            get { return this._previewNextCidr; }
             set { this._previewNextCidr = value; }
         }
 

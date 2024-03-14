@@ -65,13 +65,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("encrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("frequency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,19 +89,19 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfRecentAmisToKeep", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRecentAmisToKeep = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runOnce", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RunOnce = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("seedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SeedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

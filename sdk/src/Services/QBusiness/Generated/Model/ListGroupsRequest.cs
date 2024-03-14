@@ -105,9 +105,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedEarlierThan
+        public DateTime? UpdatedEarlierThan
         {
-            get { return this._updatedEarlierThan.GetValueOrDefault(); }
+            get { return this._updatedEarlierThan; }
             set { this._updatedEarlierThan = value; }
         }
 

@@ -76,7 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDetails())
                 {
                     context.Writer.WritePropertyName("Details");
-                    context.Writer.Write(publicRequest.Details);
+                    context.Writer.Write(publicRequest.Details.Value);
                 }
 
                 if(publicRequest.IsSetFilters())
@@ -104,7 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

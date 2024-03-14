@@ -77,7 +77,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CodeSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -185,7 +185,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MemorySize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -257,7 +257,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Timeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }

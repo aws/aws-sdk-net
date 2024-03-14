@@ -63,9 +63,9 @@ namespace Amazon.CodeBuild.Model
         /// Specifies the maximum number of builds allowed.
         /// </para>
         /// </summary>
-        public int MaximumBuildsAllowed
+        public int? MaximumBuildsAllowed
         {
-            get { return this._maximumBuildsAllowed.GetValueOrDefault(); }
+            get { return this._maximumBuildsAllowed; }
             set { this._maximumBuildsAllowed = value; }
         }
 

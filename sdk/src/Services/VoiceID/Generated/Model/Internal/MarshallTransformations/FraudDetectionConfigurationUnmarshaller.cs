@@ -65,7 +65,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RiskThreshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RiskThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

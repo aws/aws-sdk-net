@@ -68,13 +68,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrentTransforms())
             {
                 context.Writer.WritePropertyName("MaxConcurrentTransforms");
-                context.Writer.Write(requestObject.MaxConcurrentTransforms);
+                context.Writer.Write(requestObject.MaxConcurrentTransforms.Value);
             }
 
             if(requestObject.IsSetMaxPayloadInMB())
             {
                 context.Writer.WritePropertyName("MaxPayloadInMB");
-                context.Writer.Write(requestObject.MaxPayloadInMB);
+                context.Writer.Write(requestObject.MaxPayloadInMB.Value);
             }
 
             if(requestObject.IsSetTransformInput())

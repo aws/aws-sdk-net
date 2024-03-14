@@ -54,7 +54,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFaceMatchThreshold())
             {
                 context.Writer.WritePropertyName("FaceMatchThreshold");
-                context.Writer.Write(requestObject.FaceMatchThreshold);
+                context.Writer.Write(requestObject.FaceMatchThreshold.Value);
             }
 
         }

@@ -54,7 +54,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfRetries())
             {
                 context.Writer.WritePropertyName("numberOfRetries");
-                context.Writer.Write(requestObject.NumberOfRetries);
+                context.Writer.Write(requestObject.NumberOfRetries.Value);
             }
 
         }

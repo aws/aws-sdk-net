@@ -54,13 +54,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("greaterThan");
-                context.Writer.Write(requestObject.GreaterThan);
+                context.Writer.Write(requestObject.GreaterThan.Value);
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("lessThan");
-                context.Writer.Write(requestObject.LessThan);
+                context.Writer.Write(requestObject.LessThan.Value);
             }
 
         }

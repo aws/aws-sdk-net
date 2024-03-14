@@ -54,19 +54,19 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStep())
             {
                 context.Writer.WritePropertyName("Step");
-                context.Writer.Write(requestObject.Step);
+                context.Writer.Write(requestObject.Step.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.Write(requestObject.Timestamp.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.Write(requestObject.Value.Value);
             }
 
         }

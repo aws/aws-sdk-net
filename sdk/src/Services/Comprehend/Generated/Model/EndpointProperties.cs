@@ -54,9 +54,9 @@ namespace Amazon.Comprehend.Model
         /// The creation date and time of the endpoint.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int CurrentInferenceUnits
+        public int? CurrentInferenceUnits
         {
-            get { return this._currentInferenceUnits.GetValueOrDefault(); }
+            get { return this._currentInferenceUnits; }
             set { this._currentInferenceUnits = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DesiredInferenceUnits
+        public int? DesiredInferenceUnits
         {
-            get { return this._desiredInferenceUnits.GetValueOrDefault(); }
+            get { return this._desiredInferenceUnits; }
             set { this._desiredInferenceUnits = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.Comprehend.Model
         /// The date and time that the endpoint was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

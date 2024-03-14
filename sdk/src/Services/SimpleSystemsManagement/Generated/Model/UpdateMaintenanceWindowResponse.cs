@@ -53,9 +53,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// defined for those targets.
         /// </para>
         /// </summary>
-        public bool AllowUnassociatedTargets
+        public bool? AllowUnassociatedTargets
         {
-            get { return this._allowUnassociatedTargets.GetValueOrDefault(); }
+            get { return this._allowUnassociatedTargets; }
             set { this._allowUnassociatedTargets = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
-        public int Cutoff
+        public int? Cutoff
         {
-            get { return this._cutoff.GetValueOrDefault(); }
+            get { return this._cutoff; }
             set { this._cutoff = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Whether the maintenance window is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
-        public int ScheduleOffset
+        public int? ScheduleOffset
         {
-            get { return this._scheduleOffset.GetValueOrDefault(); }
+            get { return this._scheduleOffset; }
             set { this._scheduleOffset = value; }
         }
 

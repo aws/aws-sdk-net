@@ -87,19 +87,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHasErrors())
                 {
                     context.Writer.WritePropertyName("HasErrors");
-                    context.Writer.Write(publicRequest.HasErrors);
+                    context.Writer.Write(publicRequest.HasErrors.Value);
                 }
 
                 if(publicRequest.IsSetLabeled())
                 {
                     context.Writer.WritePropertyName("Labeled");
-                    context.Writer.Write(publicRequest.Labeled);
+                    context.Writer.Write(publicRequest.Labeled.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

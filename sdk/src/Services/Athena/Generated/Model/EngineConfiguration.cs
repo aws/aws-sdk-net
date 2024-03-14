@@ -71,9 +71,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
-        public int CoordinatorDpuSize
+        public int? CoordinatorDpuSize
         {
-            get { return this._coordinatorDpuSize.GetValueOrDefault(); }
+            get { return this._coordinatorDpuSize; }
             set { this._coordinatorDpuSize = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
-        public int DefaultExecutorDpuSize
+        public int? DefaultExecutorDpuSize
         {
-            get { return this._defaultExecutorDpuSize.GetValueOrDefault(); }
+            get { return this._defaultExecutorDpuSize; }
             set { this._defaultExecutorDpuSize = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5000)]
-        public int MaxConcurrentDpus
+        public int? MaxConcurrentDpus
         {
-            get { return this._maxConcurrentDpus.GetValueOrDefault(); }
+            get { return this._maxConcurrentDpus; }
             set { this._maxConcurrentDpus = value; }
         }
 

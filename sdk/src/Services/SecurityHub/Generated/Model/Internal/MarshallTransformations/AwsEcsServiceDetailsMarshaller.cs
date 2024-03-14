@@ -92,25 +92,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredCount())
             {
                 context.Writer.WritePropertyName("DesiredCount");
-                context.Writer.Write(requestObject.DesiredCount);
+                context.Writer.Write(requestObject.DesiredCount.Value);
             }
 
             if(requestObject.IsSetEnableEcsManagedTags())
             {
                 context.Writer.WritePropertyName("EnableEcsManagedTags");
-                context.Writer.Write(requestObject.EnableEcsManagedTags);
+                context.Writer.Write(requestObject.EnableEcsManagedTags.Value);
             }
 
             if(requestObject.IsSetEnableExecuteCommand())
             {
                 context.Writer.WritePropertyName("EnableExecuteCommand");
-                context.Writer.Write(requestObject.EnableExecuteCommand);
+                context.Writer.Write(requestObject.EnableExecuteCommand.Value);
             }
 
             if(requestObject.IsSetHealthCheckGracePeriodSeconds())
             {
                 context.Writer.WritePropertyName("HealthCheckGracePeriodSeconds");
-                context.Writer.Write(requestObject.HealthCheckGracePeriodSeconds);
+                context.Writer.Write(requestObject.HealthCheckGracePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetLaunchType())

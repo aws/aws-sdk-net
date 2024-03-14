@@ -82,9 +82,9 @@ namespace Amazon.QBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SubmittedAt
+        public DateTime? SubmittedAt
         {
-            get { return this._submittedAt.GetValueOrDefault(); }
+            get { return this._submittedAt; }
             set { this._submittedAt = value; }
         }
 

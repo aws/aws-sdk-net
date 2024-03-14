@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableInterContainerTrafficEncryption())
             {
                 context.Writer.WritePropertyName("EnableInterContainerTrafficEncryption");
-                context.Writer.Write(requestObject.EnableInterContainerTrafficEncryption);
+                context.Writer.Write(requestObject.EnableInterContainerTrafficEncryption.Value);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())

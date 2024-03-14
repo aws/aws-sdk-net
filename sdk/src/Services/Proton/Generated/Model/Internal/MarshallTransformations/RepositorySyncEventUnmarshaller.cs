@@ -77,7 +77,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("time", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Time = unmarshaller.Unmarshall(context);
                     continue;
                 }

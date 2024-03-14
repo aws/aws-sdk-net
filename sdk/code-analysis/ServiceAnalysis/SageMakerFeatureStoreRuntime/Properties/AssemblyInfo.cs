@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SageMakerFeatureStoreRuntime")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon SageMaker Feature Store Runtime. This release adds support for Amazon SageMaker Feature Store, which makes it easy for customers to create, version, share, and manage curated data for machine learning (ML) development.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon SageMaker Feature Store Runtime. This release adds support for Amazon SageMaker Feature Store, which makes it easy for customers to create, version, share, and manage curated data for machine learning (ML) development.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

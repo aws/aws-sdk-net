@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudFrontKeyValueStore")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

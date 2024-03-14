@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// Sets the upper limit for the target number of files that will be processed.
         /// </para>
         /// </summary>
-        public long BoundedFiles
+        public long? BoundedFiles
         {
-            get { return this._boundedFiles.GetValueOrDefault(); }
+            get { return this._boundedFiles; }
             set { this._boundedFiles = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// Sets the upper limit for the target size of the dataset in bytes that will be processed.
         /// </para>
         /// </summary>
-        public long BoundedSize
+        public long? BoundedSize
         {
-            get { return this._boundedSize.GetValueOrDefault(); }
+            get { return this._boundedSize; }
             set { this._boundedSize = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Glue.Model
         /// Sets option to enable a sample path.
         /// </para>
         /// </summary>
-        public bool EnableSamplePath
+        public bool? EnableSamplePath
         {
-            get { return this._enableSamplePath.GetValueOrDefault(); }
+            get { return this._enableSamplePath; }
             set { this._enableSamplePath = value; }
         }
 

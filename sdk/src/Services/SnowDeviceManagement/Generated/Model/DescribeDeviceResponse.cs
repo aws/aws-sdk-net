@@ -125,9 +125,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// is online.
         /// </para>
         /// </summary>
-        public DateTime LastReachedOutAt
+        public DateTime? LastReachedOutAt
         {
-            get { return this._lastReachedOutAt.GetValueOrDefault(); }
+            get { return this._lastReachedOutAt; }
             set { this._lastReachedOutAt = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// when the device cache was refreshed.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

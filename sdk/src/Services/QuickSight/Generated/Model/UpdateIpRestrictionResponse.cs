@@ -80,9 +80,9 @@ namespace Amazon.QuickSight.Model
         /// The HTTP status of the request. 
         /// </para>
         /// </summary>
-        public int Status
+        public int? Status
         {
-            get { return this._status.GetValueOrDefault(); }
+            get { return this._status; }
             set { this._status = value; }
         }
 

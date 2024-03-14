@@ -53,9 +53,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool GenerateAbstractiveSummary
+        public bool? GenerateAbstractiveSummary
         {
-            get { return this._generateAbstractiveSummary.GetValueOrDefault(); }
+            get { return this._generateAbstractiveSummary; }
             set { this._generateAbstractiveSummary = value; }
         }
 

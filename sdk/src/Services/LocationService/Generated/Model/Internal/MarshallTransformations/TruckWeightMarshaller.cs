@@ -48,7 +48,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");
-                context.Writer.Write(requestObject.Total);
+                context.Writer.Write(requestObject.Total.Value);
             }
 
             if(requestObject.IsSetUnit())

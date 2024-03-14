@@ -97,9 +97,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>40</c> 
         /// </para>
         /// </summary>
-        public int DPDTimeoutSeconds
+        public int? DPDTimeoutSeconds
         {
-            get { return this._dpdTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._dpdTimeoutSeconds; }
             set { this._dpdTimeoutSeconds = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.EC2.Model
         /// Turn on or off tunnel endpoint lifecycle control feature.
         /// </para>
         /// </summary>
-        public bool EnableTunnelLifecycleControl
+        public bool? EnableTunnelLifecycleControl
         {
-            get { return this._enableTunnelLifecycleControl.GetValueOrDefault(); }
+            get { return this._enableTunnelLifecycleControl; }
             set { this._enableTunnelLifecycleControl = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>28800</c> 
         /// </para>
         /// </summary>
-        public int Phase1LifetimeSeconds
+        public int? Phase1LifetimeSeconds
         {
-            get { return this._phase1LifetimeSeconds.GetValueOrDefault(); }
+            get { return this._phase1LifetimeSeconds; }
             set { this._phase1LifetimeSeconds = value; }
         }
 
@@ -351,9 +351,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>3600</c> 
         /// </para>
         /// </summary>
-        public int Phase2LifetimeSeconds
+        public int? Phase2LifetimeSeconds
         {
-            get { return this._phase2LifetimeSeconds.GetValueOrDefault(); }
+            get { return this._phase2LifetimeSeconds; }
             set { this._phase2LifetimeSeconds = value; }
         }
 
@@ -403,9 +403,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>100</c> 
         /// </para>
         /// </summary>
-        public int RekeyFuzzPercentage
+        public int? RekeyFuzzPercentage
         {
-            get { return this._rekeyFuzzPercentage.GetValueOrDefault(); }
+            get { return this._rekeyFuzzPercentage; }
             set { this._rekeyFuzzPercentage = value; }
         }
 
@@ -431,9 +431,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>270</c> 
         /// </para>
         /// </summary>
-        public int RekeyMarginTimeSeconds
+        public int? RekeyMarginTimeSeconds
         {
-            get { return this._rekeyMarginTimeSeconds.GetValueOrDefault(); }
+            get { return this._rekeyMarginTimeSeconds; }
             set { this._rekeyMarginTimeSeconds = value; }
         }
 
@@ -457,9 +457,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>1024</c> 
         /// </para>
         /// </summary>
-        public int ReplayWindowSize
+        public int? ReplayWindowSize
         {
-            get { return this._replayWindowSize.GetValueOrDefault(); }
+            get { return this._replayWindowSize; }
             set { this._replayWindowSize = value; }
         }
 

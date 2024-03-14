@@ -68,9 +68,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Retrieve workflows ended after timestamp.
         /// </para>
         /// </summary>
-        public DateTime QueryEndDate
+        public DateTime? QueryEndDate
         {
-            get { return this._queryEndDate.GetValueOrDefault(); }
+            get { return this._queryEndDate; }
             set { this._queryEndDate = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.CustomerProfiles.Model
         /// Retrieve workflows started after timestamp.
         /// </para>
         /// </summary>
-        public DateTime QueryStartDate
+        public DateTime? QueryStartDate
         {
-            get { return this._queryStartDate.GetValueOrDefault(); }
+            get { return this._queryStartDate; }
             set { this._queryStartDate = value; }
         }
 

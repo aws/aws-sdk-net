@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableUseAsDirectQuerySource())
             {
                 context.Writer.WritePropertyName("DisableUseAsDirectQuerySource");
-                context.Writer.Write(requestObject.DisableUseAsDirectQuerySource);
+                context.Writer.Write(requestObject.DisableUseAsDirectQuerySource.Value);
             }
 
             if(requestObject.IsSetDisableUseAsImportedSource())
             {
                 context.Writer.WritePropertyName("DisableUseAsImportedSource");
-                context.Writer.Write(requestObject.DisableUseAsImportedSource);
+                context.Writer.Write(requestObject.DisableUseAsImportedSource.Value);
             }
 
         }

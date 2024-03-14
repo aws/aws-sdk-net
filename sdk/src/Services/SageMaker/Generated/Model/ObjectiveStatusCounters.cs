@@ -49,9 +49,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Pending
+        public int? Pending
         {
-            get { return this._pending.GetValueOrDefault(); }
+            get { return this._pending; }
             set { this._pending = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Succeeded
+        public int? Succeeded
         {
-            get { return this._succeeded.GetValueOrDefault(); }
+            get { return this._succeeded; }
             set { this._succeeded = value; }
         }
 

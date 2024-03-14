@@ -71,7 +71,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetryAfter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RetryAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }

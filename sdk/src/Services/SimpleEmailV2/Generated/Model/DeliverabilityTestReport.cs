@@ -46,9 +46,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The date and time when the predictive inbox placement test was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 

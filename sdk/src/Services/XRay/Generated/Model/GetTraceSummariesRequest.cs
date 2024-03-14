@@ -76,9 +76,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.XRay.Model
         /// Set to <c>true</c> to get summaries for only a subset of available traces.
         /// </para>
         /// </summary>
-        public bool Sampling
+        public bool? Sampling
         {
-            get { return this._sampling.GetValueOrDefault(); }
+            get { return this._sampling; }
             set { this._sampling = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.XRay.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

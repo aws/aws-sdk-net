@@ -48,13 +48,13 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumEventAgeInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumEventAgeInSeconds");
-                context.Writer.Write(requestObject.MaximumEventAgeInSeconds);
+                context.Writer.Write(requestObject.MaximumEventAgeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaximumRetryAttempts())
             {
                 context.Writer.WritePropertyName("MaximumRetryAttempts");
-                context.Writer.Write(requestObject.MaximumRetryAttempts);
+                context.Writer.Write(requestObject.MaximumRetryAttempts.Value);
             }
 
         }

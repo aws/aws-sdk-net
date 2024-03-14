@@ -99,9 +99,9 @@ namespace Amazon.ElastiCache.Model
         /// is retained.
         /// </para>
         /// </summary>
-        public bool RetainPrimaryCluster
+        public bool? RetainPrimaryCluster
         {
-            get { return this._retainPrimaryCluster.GetValueOrDefault(); }
+            get { return this._retainPrimaryCluster; }
             set { this._retainPrimaryCluster = value; }
         }
 

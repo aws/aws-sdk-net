@@ -69,9 +69,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to create the subscription but not activate it. 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

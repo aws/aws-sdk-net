@@ -66,7 +66,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("TimeoutSeconds");
-                context.Writer.Write(requestObject.TimeoutSeconds);
+                context.Writer.Write(requestObject.TimeoutSeconds.Value);
             }
 
         }

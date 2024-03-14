@@ -71,9 +71,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// adopting Compute Optimizer’s EC2 instance recommendations. 
         /// </para>
         /// </summary>
-        public double SavingsOpportunityPercentage
+        public double? SavingsOpportunityPercentage
         {
-            get { return this._savingsOpportunityPercentage.GetValueOrDefault(); }
+            get { return this._savingsOpportunityPercentage; }
             set { this._savingsOpportunityPercentage = value; }
         }
 

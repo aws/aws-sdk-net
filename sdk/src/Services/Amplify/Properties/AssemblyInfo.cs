@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Amplify")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Amplify. Amplify is a fully managed continuous deployment and hosting service for modern web apps.")]
 #elif NETCOREAPP3_1

@@ -147,9 +147,9 @@ namespace Amazon.AppConfig.Model
         /// of the latest hosted configuration version.
         /// </para>
         /// </summary>
-        public int LatestVersionNumber
+        public int? LatestVersionNumber
         {
-            get { return this._latestVersionNumber.GetValueOrDefault(); }
+            get { return this._latestVersionNumber; }
             set { this._latestVersionNumber = value; }
         }
 

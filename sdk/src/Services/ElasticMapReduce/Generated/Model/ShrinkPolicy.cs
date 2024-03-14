@@ -44,9 +44,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// timeout.
         /// </para>
         /// </summary>
-        public int DecommissionTimeout
+        public int? DecommissionTimeout
         {
-            get { return this._decommissionTimeout.GetValueOrDefault(); }
+            get { return this._decommissionTimeout; }
             set { this._decommissionTimeout = value; }
         }
 

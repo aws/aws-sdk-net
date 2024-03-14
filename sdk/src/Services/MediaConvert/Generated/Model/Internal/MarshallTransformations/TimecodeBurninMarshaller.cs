@@ -48,7 +48,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFontSize())
             {
                 context.Writer.WritePropertyName("fontSize");
-                context.Writer.Write(requestObject.FontSize);
+                context.Writer.Write(requestObject.FontSize.Value);
             }
 
             if(requestObject.IsSetPosition())

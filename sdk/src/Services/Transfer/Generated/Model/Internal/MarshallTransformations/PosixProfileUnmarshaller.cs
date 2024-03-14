@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Gid", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Gid = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Uid", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
                     continue;
                 }

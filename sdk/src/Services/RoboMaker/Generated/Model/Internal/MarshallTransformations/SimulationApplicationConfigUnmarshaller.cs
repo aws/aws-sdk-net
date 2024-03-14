@@ -95,13 +95,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useDefaultTools", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseDefaultTools = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("useDefaultUploadConfigurations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseDefaultUploadConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }

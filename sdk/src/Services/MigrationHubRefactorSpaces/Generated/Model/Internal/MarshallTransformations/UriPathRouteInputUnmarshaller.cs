@@ -71,13 +71,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                 }
                 if (context.TestExpression("AppendSourcePath", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AppendSourcePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeChildPaths", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeChildPaths = unmarshaller.Unmarshall(context);
                     continue;
                 }

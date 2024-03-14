@@ -48,7 +48,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxFilesToKeep())
             {
                 context.Writer.WritePropertyName("maxFilesToKeep");
-                context.Writer.Write(requestObject.MaxFilesToKeep);
+                context.Writer.Write(requestObject.MaxFilesToKeep.Value);
             }
 
             if(requestObject.IsSetRotationSize())

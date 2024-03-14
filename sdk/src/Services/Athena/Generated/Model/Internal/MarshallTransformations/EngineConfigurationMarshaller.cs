@@ -62,19 +62,19 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoordinatorDpuSize())
             {
                 context.Writer.WritePropertyName("CoordinatorDpuSize");
-                context.Writer.Write(requestObject.CoordinatorDpuSize);
+                context.Writer.Write(requestObject.CoordinatorDpuSize.Value);
             }
 
             if(requestObject.IsSetDefaultExecutorDpuSize())
             {
                 context.Writer.WritePropertyName("DefaultExecutorDpuSize");
-                context.Writer.Write(requestObject.DefaultExecutorDpuSize);
+                context.Writer.Write(requestObject.DefaultExecutorDpuSize.Value);
             }
 
             if(requestObject.IsSetMaxConcurrentDpus())
             {
                 context.Writer.WritePropertyName("MaxConcurrentDpus");
-                context.Writer.Write(requestObject.MaxConcurrentDpus);
+                context.Writer.Write(requestObject.MaxConcurrentDpus.Value);
             }
 
             if(requestObject.IsSetSparkProperties())

@@ -73,9 +73,9 @@ namespace Amazon.ServiceCatalog.Model
         /// The UTC time stamp of the creation time.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 

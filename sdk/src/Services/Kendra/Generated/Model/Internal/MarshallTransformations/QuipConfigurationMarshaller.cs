@@ -64,19 +64,19 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlAttachments())
             {
                 context.Writer.WritePropertyName("CrawlAttachments");
-                context.Writer.Write(requestObject.CrawlAttachments);
+                context.Writer.Write(requestObject.CrawlAttachments.Value);
             }
 
             if(requestObject.IsSetCrawlChatRooms())
             {
                 context.Writer.WritePropertyName("CrawlChatRooms");
-                context.Writer.Write(requestObject.CrawlChatRooms);
+                context.Writer.Write(requestObject.CrawlChatRooms.Value);
             }
 
             if(requestObject.IsSetCrawlFileComments())
             {
                 context.Writer.WritePropertyName("CrawlFileComments");
-                context.Writer.Write(requestObject.CrawlFileComments);
+                context.Writer.Write(requestObject.CrawlFileComments.Value);
             }
 
             if(requestObject.IsSetDomain())

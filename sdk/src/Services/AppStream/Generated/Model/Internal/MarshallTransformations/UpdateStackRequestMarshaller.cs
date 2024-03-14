@@ -108,7 +108,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteStorageConnectors())
                 {
                     context.Writer.WritePropertyName("DeleteStorageConnectors");
-                    context.Writer.Write(publicRequest.DeleteStorageConnectors);
+                    context.Writer.Write(publicRequest.DeleteStorageConnectors.Value);
                 }
 
                 if(publicRequest.IsSetDescription())

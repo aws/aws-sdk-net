@@ -48,7 +48,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttempts())
             {
                 context.Writer.WritePropertyName("attempts");
-                context.Writer.Write(requestObject.Attempts);
+                context.Writer.Write(requestObject.Attempts.Value);
             }
 
             if(requestObject.IsSetEvaluateOnExit())

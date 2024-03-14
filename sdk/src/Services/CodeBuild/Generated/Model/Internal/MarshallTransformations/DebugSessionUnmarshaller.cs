@@ -65,7 +65,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("sessionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SessionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

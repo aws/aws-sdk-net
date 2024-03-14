@@ -100,9 +100,9 @@ namespace Amazon.PI.Model
         /// The aggregated metric value for the dimensions, over the requested time range.
         /// </para>
         /// </summary>
-        public double Total
+        public double? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

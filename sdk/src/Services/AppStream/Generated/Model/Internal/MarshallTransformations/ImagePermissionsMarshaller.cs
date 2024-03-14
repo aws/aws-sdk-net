@@ -48,13 +48,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowFleet())
             {
                 context.Writer.WritePropertyName("allowFleet");
-                context.Writer.Write(requestObject.AllowFleet);
+                context.Writer.Write(requestObject.AllowFleet.Value);
             }
 
             if(requestObject.IsSetAllowImageBuilder())
             {
                 context.Writer.WritePropertyName("allowImageBuilder");
-                context.Writer.Write(requestObject.AllowImageBuilder);
+                context.Writer.Write(requestObject.AllowImageBuilder.Value);
             }
 
         }

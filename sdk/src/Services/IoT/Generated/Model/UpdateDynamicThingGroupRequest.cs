@@ -53,9 +53,9 @@ namespace Amazon.IoT.Model
         /// The expected version of the dynamic thing group to update.
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 

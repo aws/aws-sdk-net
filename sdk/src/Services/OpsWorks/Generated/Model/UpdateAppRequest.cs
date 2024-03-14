@@ -170,9 +170,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether SSL is enabled for the app.
         /// </para>
         /// </summary>
-        public bool EnableSsl
+        public bool? EnableSsl
         {
-            get { return this._enableSsl.GetValueOrDefault(); }
+            get { return this._enableSsl; }
             set { this._enableSsl = value; }
         }
 

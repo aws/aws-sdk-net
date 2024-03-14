@@ -62,9 +62,9 @@ namespace Amazon.Comprehend.Model
         /// The number of labels in the input data. 
         /// </para>
         /// </summary>
-        public int NumberOfLabels
+        public int? NumberOfLabels
         {
-            get { return this._numberOfLabels.GetValueOrDefault(); }
+            get { return this._numberOfLabels; }
             set { this._numberOfLabels = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Comprehend.Model
         /// this is 10 to 20 percent of the input documents, up to 10,000 documents.
         /// </para>
         /// </summary>
-        public int NumberOfTestDocuments
+        public int? NumberOfTestDocuments
         {
-            get { return this._numberOfTestDocuments.GetValueOrDefault(); }
+            get { return this._numberOfTestDocuments; }
             set { this._numberOfTestDocuments = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Comprehend.Model
         /// Typically this is 80 to 90 percent of the input documents.
         /// </para>
         /// </summary>
-        public int NumberOfTrainedDocuments
+        public int? NumberOfTrainedDocuments
         {
-            get { return this._numberOfTrainedDocuments.GetValueOrDefault(); }
+            get { return this._numberOfTrainedDocuments; }
             set { this._numberOfTrainedDocuments = value; }
         }
 

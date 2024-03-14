@@ -59,7 +59,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWorkerCount())
             {
                 context.Writer.WritePropertyName("workerCount");
-                context.Writer.Write(requestObject.WorkerCount);
+                context.Writer.Write(requestObject.WorkerCount.Value);
             }
 
         }

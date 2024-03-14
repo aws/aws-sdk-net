@@ -45,9 +45,9 @@ namespace Amazon.WorkMail.Model
         /// must be associated to the resource.
         /// </para>
         /// </summary>
-        public bool AutoAcceptRequests
+        public bool? AutoAcceptRequests
         {
-            get { return this._autoAcceptRequests.GetValueOrDefault(); }
+            get { return this._autoAcceptRequests; }
             set { this._autoAcceptRequests = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.WorkMail.Model
         /// The resource's ability to automatically decline any conflicting requests.
         /// </para>
         /// </summary>
-        public bool AutoDeclineConflictingRequests
+        public bool? AutoDeclineConflictingRequests
         {
-            get { return this._autoDeclineConflictingRequests.GetValueOrDefault(); }
+            get { return this._autoDeclineConflictingRequests; }
             set { this._autoDeclineConflictingRequests = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.WorkMail.Model
         /// The resource's ability to automatically decline any recurring requests.
         /// </para>
         /// </summary>
-        public bool AutoDeclineRecurringRequests
+        public bool? AutoDeclineRecurringRequests
         {
-            get { return this._autoDeclineRecurringRequests.GetValueOrDefault(); }
+            get { return this._autoDeclineRecurringRequests; }
             set { this._autoDeclineRecurringRequests = value; }
         }
 

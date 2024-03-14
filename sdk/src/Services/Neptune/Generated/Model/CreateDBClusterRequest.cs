@@ -114,9 +114,9 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.Neptune.Model
         /// is created.</i> 
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.Neptune.Model
         /// protection is enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.Neptune.Model
         /// Default: <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -518,9 +518,9 @@ namespace Amazon.Neptune.Model
         ///  Default: <c>8182</c> 
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -680,9 +680,9 @@ namespace Amazon.Neptune.Model
         /// Specifies whether the DB cluster is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 

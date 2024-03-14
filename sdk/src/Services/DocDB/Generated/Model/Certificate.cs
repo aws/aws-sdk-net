@@ -134,9 +134,9 @@ namespace Amazon.DocDB.Model
         /// Example: <c>2019-07-31T17:57:09Z</c> 
         /// </para>
         /// </summary>
-        public DateTime ValidFrom
+        public DateTime? ValidFrom
         {
-            get { return this._validFrom.GetValueOrDefault(); }
+            get { return this._validFrom; }
             set { this._validFrom = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.DocDB.Model
         /// Example: <c>2024-07-31T17:57:09Z</c> 
         /// </para>
         /// </summary>
-        public DateTime ValidTill
+        public DateTime? ValidTill
         {
-            get { return this._validTill.GetValueOrDefault(); }
+            get { return this._validTill; }
             set { this._validTill = value; }
         }
 

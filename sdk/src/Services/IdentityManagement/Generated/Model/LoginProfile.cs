@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</param>
         /// <param name="createDate">The date when the password for the user was created.</param>
-        public LoginProfile(string userName, DateTime createDate)
+        public LoginProfile(string userName, DateTime? createDate)
         {
             _userName = userName;
             _createDate = createDate;
@@ -66,9 +66,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.IdentityManagement.Model
         /// Specifies whether the user is required to set a new password on next sign-in.
         /// </para>
         /// </summary>
-        public bool PasswordResetRequired
+        public bool? PasswordResetRequired
         {
-            get { return this._passwordResetRequired.GetValueOrDefault(); }
+            get { return this._passwordResetRequired; }
             set { this._passwordResetRequired = value; }
         }
 

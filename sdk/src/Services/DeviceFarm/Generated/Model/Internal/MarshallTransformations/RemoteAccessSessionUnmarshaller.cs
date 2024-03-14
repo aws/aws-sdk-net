@@ -83,7 +83,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("remoteDebugEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RemoteDebugEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,7 +155,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("remoteRecordEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RemoteRecordEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -167,13 +167,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("skipAppResign", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SkipAppResign = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("started", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Started = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -185,7 +185,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("stopped", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisplayOrder())
                 {
                     context.Writer.WritePropertyName("DisplayOrder");
-                    context.Writer.Write(publicRequest.DisplayOrder);
+                    context.Writer.Write(publicRequest.DisplayOrder.Value);
                 }
 
                 if(publicRequest.IsSetName())

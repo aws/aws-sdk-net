@@ -89,9 +89,9 @@ namespace Amazon.ECS.Model
         /// must allow ingress traffic on the <c>hostPort</c> of the port mapping.
         /// </para>
         /// </summary>
-        public int ContainerPort
+        public int? ContainerPort
         {
-            get { return this._containerPort.GetValueOrDefault(); }
+            get { return this._containerPort; }
             set { this._containerPort = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasMoreDeliveryStreams", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HasMoreDeliveryStreams = unmarshaller.Unmarshall(context);
                     continue;
                 }

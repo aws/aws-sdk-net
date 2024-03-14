@@ -59,7 +59,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ApplicationVersionId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ApplicationVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,13 +65,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PollingTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PollingTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordPollingLimit", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordPollingLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

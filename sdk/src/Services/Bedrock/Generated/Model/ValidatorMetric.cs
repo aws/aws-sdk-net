@@ -41,9 +41,9 @@ namespace Amazon.Bedrock.Model
         /// The validation loss associated with this validator.
         /// </para>
         /// </summary>
-        public float ValidationLoss
+        public float? ValidationLoss
         {
-            get { return this._validationLoss.GetValueOrDefault(); }
+            get { return this._validationLoss; }
             set { this._validationLoss = value; }
         }
 

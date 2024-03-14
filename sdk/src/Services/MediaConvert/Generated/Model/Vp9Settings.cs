@@ -52,9 +52,9 @@ namespace Amazon.MediaConvert.Model
         /// five megabits per second as 5000000.
         /// </summary>
         [AWSProperty(Min=1000, Max=480000000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.MediaConvert.Model
         /// value as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.MediaConvert.Model
         /// as a decimal number for Framerate. In this example, specify 23.976.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property GopSize. GOP Length (keyframe interval) in frames. Must
         /// be greater than zero.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.MediaConvert.Model
         /// For example, enter five megabits as 5000000.
         /// </summary>
         [AWSProperty(Min=0, Max=47185920)]
-        public int HrdBufferSize
+        public int? HrdBufferSize
         {
-            get { return this._hrdBufferSize.GetValueOrDefault(); }
+            get { return this._hrdBufferSize; }
             set { this._hrdBufferSize = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.MediaConvert.Model
         /// bitrate as the maximum bitrate.
         /// </summary>
         [AWSProperty(Min=1000, Max=480000000)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.MediaConvert.Model
         /// 33.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int ParDenominator
+        public int? ParDenominator
         {
-            get { return this._parDenominator.GetValueOrDefault(); }
+            get { return this._parDenominator; }
             set { this._parDenominator = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.MediaConvert.Model
         /// 40.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int ParNumerator
+        public int? ParNumerator
         {
-            get { return this._parNumerator.GetValueOrDefault(); }
+            get { return this._parNumerator; }
             set { this._parNumerator = value; }
         }
 

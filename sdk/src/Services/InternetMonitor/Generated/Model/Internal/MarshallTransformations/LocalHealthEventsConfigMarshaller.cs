@@ -48,13 +48,13 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthScoreThreshold())
             {
                 context.Writer.WritePropertyName("HealthScoreThreshold");
-                context.Writer.Write(requestObject.HealthScoreThreshold);
+                context.Writer.Write(requestObject.HealthScoreThreshold.Value);
             }
 
             if(requestObject.IsSetMinTrafficImpact())
             {
                 context.Writer.WritePropertyName("MinTrafficImpact");
-                context.Writer.Write(requestObject.MinTrafficImpact);
+                context.Writer.Write(requestObject.MinTrafficImpact.Value);
             }
 
             if(requestObject.IsSetStatus())

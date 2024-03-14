@@ -48,19 +48,19 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxWorkerCount())
             {
                 context.Writer.WritePropertyName("maxWorkerCount");
-                context.Writer.Write(requestObject.MaxWorkerCount);
+                context.Writer.Write(requestObject.MaxWorkerCount.Value);
             }
 
             if(requestObject.IsSetMcuCount())
             {
                 context.Writer.WritePropertyName("mcuCount");
-                context.Writer.Write(requestObject.McuCount);
+                context.Writer.Write(requestObject.McuCount.Value);
             }
 
             if(requestObject.IsSetMinWorkerCount())
             {
                 context.Writer.WritePropertyName("minWorkerCount");
-                context.Writer.Write(requestObject.MinWorkerCount);
+                context.Writer.Write(requestObject.MinWorkerCount.Value);
             }
 
             if(requestObject.IsSetScaleInPolicy())

@@ -124,9 +124,9 @@ namespace Amazon.Organizations.Model
         /// and is no longer valid.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTimestamp
+        public DateTime? ExpirationTimestamp
         {
-            get { return this._expirationTimestamp.GetValueOrDefault(); }
+            get { return this._expirationTimestamp; }
             set { this._expirationTimestamp = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Organizations.Model
         /// The date and time that the handshake request was made.
         /// </para>
         /// </summary>
-        public DateTime RequestedTimestamp
+        public DateTime? RequestedTimestamp
         {
-            get { return this._requestedTimestamp.GetValueOrDefault(); }
+            get { return this._requestedTimestamp; }
             set { this._requestedTimestamp = value; }
         }
 

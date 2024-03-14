@@ -49,9 +49,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether fine-grained access control is supported for the instance type.
         /// </para>
         /// </summary>
-        public bool AdvancedSecurityEnabled
+        public bool? AdvancedSecurityEnabled
         {
-            get { return this._advancedSecurityEnabled.GetValueOrDefault(); }
+            get { return this._advancedSecurityEnabled; }
             set { this._advancedSecurityEnabled = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether logging is supported for the instance type.
         /// </para>
         /// </summary>
-        public bool AppLogsEnabled
+        public bool? AppLogsEnabled
         {
-            get { return this._appLogsEnabled.GetValueOrDefault(); }
+            get { return this._appLogsEnabled; }
             set { this._appLogsEnabled = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether Amazon Cognito access is supported for the instance type.
         /// </para>
         /// </summary>
-        public bool CognitoEnabled
+        public bool? CognitoEnabled
         {
-            get { return this._cognitoEnabled.GetValueOrDefault(); }
+            get { return this._cognitoEnabled; }
             set { this._cognitoEnabled = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.OpenSearchService.Model
         /// type.
         /// </para>
         /// </summary>
-        public bool EncryptionEnabled
+        public bool? EncryptionEnabled
         {
-            get { return this._encryptionEnabled.GetValueOrDefault(); }
+            get { return this._encryptionEnabled; }
             set { this._encryptionEnabled = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether UltraWarm is supported for the instance type.
         /// </para>
         /// </summary>
-        public bool WarmEnabled
+        public bool? WarmEnabled
         {
-            get { return this._warmEnabled.GetValueOrDefault(); }
+            get { return this._warmEnabled; }
             set { this._warmEnabled = value; }
         }
 

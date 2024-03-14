@@ -45,9 +45,9 @@ namespace Amazon.LexModelsV2.Model
         /// the code hook doesn't run.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

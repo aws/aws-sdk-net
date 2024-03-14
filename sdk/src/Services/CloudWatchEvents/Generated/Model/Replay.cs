@@ -50,9 +50,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// prior to the <c>EventEndTime</c> specified is replayed.
         /// </para>
         /// </summary>
-        public DateTime EventEndTime
+        public DateTime? EventEndTime
         {
-            get { return this._eventEndTime.GetValueOrDefault(); }
+            get { return this._eventEndTime; }
             set { this._eventEndTime = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// A time stamp for the time that the last event was replayed.
         /// </para>
         /// </summary>
-        public DateTime EventLastReplayedTime
+        public DateTime? EventLastReplayedTime
         {
-            get { return this._eventLastReplayedTime.GetValueOrDefault(); }
+            get { return this._eventLastReplayedTime; }
             set { this._eventLastReplayedTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.
         /// </para>
         /// </summary>
-        public DateTime EventStartTime
+        public DateTime? EventStartTime
         {
-            get { return this._eventStartTime.GetValueOrDefault(); }
+            get { return this._eventStartTime; }
             set { this._eventStartTime = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// A time stamp for the time that the replay completed.
         /// </para>
         /// </summary>
-        public DateTime ReplayEndTime
+        public DateTime? ReplayEndTime
         {
-            get { return this._replayEndTime.GetValueOrDefault(); }
+            get { return this._replayEndTime; }
             set { this._replayEndTime = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// A time stamp for the time that the replay started.
         /// </para>
         /// </summary>
-        public DateTime ReplayStartTime
+        public DateTime? ReplayStartTime
         {
-            get { return this._replayStartTime.GetValueOrDefault(); }
+            get { return this._replayStartTime; }
             set { this._replayStartTime = value; }
         }
 

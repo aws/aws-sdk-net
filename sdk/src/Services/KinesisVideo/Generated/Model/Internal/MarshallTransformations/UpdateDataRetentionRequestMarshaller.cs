@@ -74,7 +74,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDataRetentionChangeInHours())
                 {
                     context.Writer.WritePropertyName("DataRetentionChangeInHours");
-                    context.Writer.Write(publicRequest.DataRetentionChangeInHours);
+                    context.Writer.Write(publicRequest.DataRetentionChangeInHours.Value);
                 }
 
                 if(publicRequest.IsSetOperation())

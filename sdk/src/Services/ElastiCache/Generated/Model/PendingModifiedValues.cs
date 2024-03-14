@@ -150,9 +150,9 @@ namespace Amazon.ElastiCache.Model
         /// this value must be between 1 and 40.
         /// </para>
         /// </summary>
-        public int NumCacheNodes
+        public int? NumCacheNodes
         {
-            get { return this._numCacheNodes.GetValueOrDefault(); }
+            get { return this._numCacheNodes; }
             set { this._numCacheNodes = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.ElastiCache.Model
         /// A flag that enables in-transit encryption when set to true.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

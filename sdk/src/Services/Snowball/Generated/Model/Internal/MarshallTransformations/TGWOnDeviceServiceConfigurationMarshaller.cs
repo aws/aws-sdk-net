@@ -48,7 +48,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageLimit())
             {
                 context.Writer.WritePropertyName("StorageLimit");
-                context.Writer.Write(requestObject.StorageLimit);
+                context.Writer.Write(requestObject.StorageLimit.Value);
             }
 
             if(requestObject.IsSetStorageUnit())

@@ -49,9 +49,9 @@ namespace Amazon.Macie2.Model
         /// and objects in the bucket.
         /// </para>
         /// </summary>
-        public bool BlockPublicAcls
+        public bool? BlockPublicAcls
         {
-            get { return this._blockPublicAcls.GetValueOrDefault(); }
+            get { return this._blockPublicAcls; }
             set { this._blockPublicAcls = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Macie2.Model
         /// Specifies whether Amazon S3 blocks public bucket policies for the bucket.
         /// </para>
         /// </summary>
-        public bool BlockPublicPolicy
+        public bool? BlockPublicPolicy
         {
-            get { return this._blockPublicPolicy.GetValueOrDefault(); }
+            get { return this._blockPublicPolicy; }
             set { this._blockPublicPolicy = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Macie2.Model
         /// bucket.
         /// </para>
         /// </summary>
-        public bool IgnorePublicAcls
+        public bool? IgnorePublicAcls
         {
-            get { return this._ignorePublicAcls.GetValueOrDefault(); }
+            get { return this._ignorePublicAcls; }
             set { this._ignorePublicAcls = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Macie2.Model
         /// Specifies whether Amazon S3 restricts public bucket policies for the bucket.
         /// </para>
         /// </summary>
-        public bool RestrictPublicBuckets
+        public bool? RestrictPublicBuckets
         {
-            get { return this._restrictPublicBuckets.GetValueOrDefault(); }
+            get { return this._restrictPublicBuckets; }
             set { this._restrictPublicBuckets = value; }
         }
 

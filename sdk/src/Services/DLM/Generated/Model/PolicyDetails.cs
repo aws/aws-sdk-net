@@ -82,9 +82,9 @@ namespace Amazon.DLM.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int CreateInterval
+        public int? CreateInterval
         {
-            get { return this._createInterval.GetValueOrDefault(); }
+            get { return this._createInterval; }
             set { this._createInterval = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.DLM.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool ExtendDeletion
+        public bool? ExtendDeletion
         {
-            get { return this._extendDeletion.GetValueOrDefault(); }
+            get { return this._extendDeletion; }
             set { this._extendDeletion = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int RetainInterval
+        public int? RetainInterval
         {
-            get { return this._retainInterval.GetValueOrDefault(); }
+            get { return this._retainInterval; }
             set { this._retainInterval = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableMachineLearning", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMachineLearning = unmarshaller.Unmarshall(context);
                     continue;
                 }

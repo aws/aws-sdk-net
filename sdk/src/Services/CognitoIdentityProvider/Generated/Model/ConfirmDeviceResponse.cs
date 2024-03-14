@@ -41,9 +41,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Indicates whether the user confirmation must confirm the device response.
         /// </para>
         /// </summary>
-        public bool UserConfirmationNecessary
+        public bool? UserConfirmationNecessary
         {
-            get { return this._userConfirmationNecessary.GetValueOrDefault(); }
+            get { return this._userConfirmationNecessary; }
             set { this._userConfirmationNecessary = value; }
         }
 

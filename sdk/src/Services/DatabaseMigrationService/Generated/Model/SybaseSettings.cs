@@ -84,9 +84,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint TCP port. The default is 5000.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

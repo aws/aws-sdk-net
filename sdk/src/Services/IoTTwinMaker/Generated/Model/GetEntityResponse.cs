@@ -54,9 +54,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// number of components returned is 30.
         /// </para>
         /// </summary>
-        public bool AreAllComponentsReturned
+        public bool? AreAllComponentsReturned
         {
-            get { return this._areAllComponentsReturned.GetValueOrDefault(); }
+            get { return this._areAllComponentsReturned; }
             set { this._areAllComponentsReturned = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasChildEntities
+        public bool? HasChildEntities
         {
-            get { return this._hasChildEntities.GetValueOrDefault(); }
+            get { return this._hasChildEntities; }
             set { this._hasChildEntities = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

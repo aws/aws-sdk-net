@@ -48,7 +48,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTTL())
             {
                 context.Writer.WritePropertyName("TTL");
-                context.Writer.Write(requestObject.TTL);
+                context.Writer.Write(requestObject.TTL.Value);
             }
 
         }

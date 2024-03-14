@@ -48,13 +48,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerBound())
             {
                 context.Writer.WritePropertyName("LowerBound");
-                context.Writer.Write(requestObject.LowerBound);
+                context.Writer.Write(requestObject.LowerBound.Value);
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("UpperBound");
-                context.Writer.Write(requestObject.UpperBound);
+                context.Writer.Write(requestObject.UpperBound.Value);
             }
 
         }

@@ -48,31 +48,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeControlDetails())
             {
                 context.Writer.WritePropertyName("IncludeControlDetails");
-                context.Writer.Write(requestObject.IncludeControlDetails);
+                context.Writer.Write(requestObject.IncludeControlDetails.Value);
             }
 
             if(requestObject.IsSetIncludeNullAndEmpty())
             {
                 context.Writer.WritePropertyName("IncludeNullAndEmpty");
-                context.Writer.Write(requestObject.IncludeNullAndEmpty);
+                context.Writer.Write(requestObject.IncludeNullAndEmpty.Value);
             }
 
             if(requestObject.IsSetIncludePartitionValue())
             {
                 context.Writer.WritePropertyName("IncludePartitionValue");
-                context.Writer.Write(requestObject.IncludePartitionValue);
+                context.Writer.Write(requestObject.IncludePartitionValue.Value);
             }
 
             if(requestObject.IsSetIncludeTableAlterOperations())
             {
                 context.Writer.WritePropertyName("IncludeTableAlterOperations");
-                context.Writer.Write(requestObject.IncludeTableAlterOperations);
+                context.Writer.Write(requestObject.IncludeTableAlterOperations.Value);
             }
 
             if(requestObject.IsSetIncludeTransactionDetails())
             {
                 context.Writer.WritePropertyName("IncludeTransactionDetails");
-                context.Writer.Write(requestObject.IncludeTransactionDetails);
+                context.Writer.Write(requestObject.IncludeTransactionDetails.Value);
             }
 
             if(requestObject.IsSetMessageFormat())
@@ -84,13 +84,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNoHexPrefix())
             {
                 context.Writer.WritePropertyName("NoHexPrefix");
-                context.Writer.Write(requestObject.NoHexPrefix);
+                context.Writer.Write(requestObject.NoHexPrefix.Value);
             }
 
             if(requestObject.IsSetPartitionIncludeSchemaTable())
             {
                 context.Writer.WritePropertyName("PartitionIncludeSchemaTable");
-                context.Writer.Write(requestObject.PartitionIncludeSchemaTable);
+                context.Writer.Write(requestObject.PartitionIncludeSchemaTable.Value);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())

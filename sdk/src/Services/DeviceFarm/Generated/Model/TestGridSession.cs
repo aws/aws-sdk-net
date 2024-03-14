@@ -66,9 +66,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of billed minutes that were used for this session. 
         /// </para>
         /// </summary>
-        public double BillingMinutes
+        public double? BillingMinutes
         {
-            get { return this._billingMinutes.GetValueOrDefault(); }
+            get { return this._billingMinutes; }
             set { this._billingMinutes = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.DeviceFarm.Model
         /// The time that the session was started.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.DeviceFarm.Model
         /// The time the session ended.
         /// </para>
         /// </summary>
-        public DateTime Ended
+        public DateTime? Ended
         {
-            get { return this._ended.GetValueOrDefault(); }
+            get { return this._ended; }
             set { this._ended = value; }
         }
 

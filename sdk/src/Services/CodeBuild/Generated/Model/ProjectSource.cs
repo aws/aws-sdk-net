@@ -124,9 +124,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GitCloneDepth
+        public int? GitCloneDepth
         {
-            get { return this._gitCloneDepth.GetValueOrDefault(); }
+            get { return this._gitCloneDepth; }
             set { this._gitCloneDepth = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.CodeBuild.Model
         /// Enable this flag to ignore SSL warnings while connecting to the project source code.
         /// </para>
         /// </summary>
-        public bool InsecureSsl
+        public bool? InsecureSsl
         {
-            get { return this._insecureSsl.GetValueOrDefault(); }
+            get { return this._insecureSsl; }
             set { this._insecureSsl = value; }
         }
 
@@ -273,9 +273,9 @@ namespace Amazon.CodeBuild.Model
         /// the repo for a change to this property to take effect.
         /// </para>
         /// </summary>
-        public bool ReportBuildStatus
+        public bool? ReportBuildStatus
         {
-            get { return this._reportBuildStatus.GetValueOrDefault(); }
+            get { return this._reportBuildStatus; }
             set { this._reportBuildStatus = value; }
         }
 

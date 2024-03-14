@@ -68,9 +68,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Key
+        public bool? Key
         {
-            get { return this._key.GetValueOrDefault(); }
+            get { return this._key; }
             set { this._key = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool NoEcho
+        public bool? NoEcho
         {
-            get { return this._noEcho.GetValueOrDefault(); }
+            get { return this._noEcho; }
             set { this._noEcho = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Optional
+        public bool? Optional
         {
-            get { return this._optional.GetValueOrDefault(); }
+            get { return this._optional; }
             set { this._optional = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.CodePipeline.Model
         /// queryable property. If it has one, that property must be both required and not secret.
         /// </para>
         /// </summary>
-        public bool Queryable
+        public bool? Queryable
         {
-            get { return this._queryable.GetValueOrDefault(); }
+            get { return this._queryable; }
             set { this._queryable = value; }
         }
 

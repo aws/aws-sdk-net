@@ -70,9 +70,9 @@ namespace Amazon.IoT.Model
         /// request is rejected with a <c>VersionConflictException</c>.
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 

@@ -92,7 +92,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTimestamp())
                 {
                     context.Writer.WritePropertyName("startTimestamp");
-                    context.Writer.Write(publicRequest.StartTimestamp);
+                    context.Writer.Write(publicRequest.StartTimestamp.Value);
                 }
 
                 writer.WriteObjectEnd();

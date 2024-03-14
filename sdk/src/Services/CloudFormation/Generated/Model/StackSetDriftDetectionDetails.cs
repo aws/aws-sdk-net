@@ -108,9 +108,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DriftedStackInstancesCount
+        public int? DriftedStackInstancesCount
         {
-            get { return this._driftedStackInstancesCount.GetValueOrDefault(); }
+            get { return this._driftedStackInstancesCount; }
             set { this._driftedStackInstancesCount = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FailedStackInstancesCount
+        public int? FailedStackInstancesCount
         {
-            get { return this._failedStackInstancesCount.GetValueOrDefault(); }
+            get { return this._failedStackInstancesCount; }
             set { this._failedStackInstancesCount = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InProgressStackInstancesCount
+        public int? InProgressStackInstancesCount
         {
-            get { return this._inProgressStackInstancesCount.GetValueOrDefault(); }
+            get { return this._inProgressStackInstancesCount; }
             set { this._inProgressStackInstancesCount = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int InSyncStackInstancesCount
+        public int? InSyncStackInstancesCount
         {
-            get { return this._inSyncStackInstancesCount.GetValueOrDefault(); }
+            get { return this._inSyncStackInstancesCount; }
             set { this._inSyncStackInstancesCount = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.CloudFormation.Model
         /// hasn't yet been performed.
         /// </para>
         /// </summary>
-        public DateTime LastDriftCheckTimestamp
+        public DateTime? LastDriftCheckTimestamp
         {
-            get { return this._lastDriftCheckTimestamp.GetValueOrDefault(); }
+            get { return this._lastDriftCheckTimestamp; }
             set { this._lastDriftCheckTimestamp = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TotalStackInstancesCount
+        public int? TotalStackInstancesCount
         {
-            get { return this._totalStackInstancesCount.GetValueOrDefault(); }
+            get { return this._totalStackInstancesCount; }
             set { this._totalStackInstancesCount = value; }
         }
 

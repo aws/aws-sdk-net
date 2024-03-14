@@ -65,7 +65,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsWifiEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsWifiEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

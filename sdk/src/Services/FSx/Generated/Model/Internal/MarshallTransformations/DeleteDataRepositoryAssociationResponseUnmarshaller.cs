@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeleteDataInFileSystem", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DeleteDataInFileSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -43,9 +43,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int DataRate
+        public int? DataRate
         {
-            get { return this._dataRate.GetValueOrDefault(); }
+            get { return this._dataRate; }
             set { this._dataRate = value; }
         }
 

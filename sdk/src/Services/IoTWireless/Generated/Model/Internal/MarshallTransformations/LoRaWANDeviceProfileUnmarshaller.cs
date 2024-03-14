@@ -65,13 +65,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ClassBTimeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ClassBTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ClassCTimeout", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ClassCTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,31 +89,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxDutyCycle", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxDutyCycle = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxEirp", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PingSlotDr", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PingSlotDr = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PingSlotFreq", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PingSlotFreq = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PingSlotPeriod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PingSlotPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,49 +131,49 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RxDataRate2", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RxDataRate2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RxDelay1", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RxDelay1 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RxDrOffset1", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RxDrOffset1 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RxFreq2", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RxFreq2 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Supports32BitFCnt", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Supports32BitFCnt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SupportsClassB", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SupportsClassB = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SupportsClassC", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SupportsClassC = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SupportsJoin", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SupportsJoin = unmarshaller.Unmarshall(context);
                     continue;
                 }

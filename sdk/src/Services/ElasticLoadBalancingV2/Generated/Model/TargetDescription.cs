@@ -117,9 +117,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

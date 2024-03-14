@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetId())
                 {
                     context.Writer.WritePropertyName("Id");
-                    context.Writer.Write(publicRequest.Id);
+                    context.Writer.Write(publicRequest.Id.Value);
                 }
 
                 if(publicRequest.IsSetRequestOrigin())

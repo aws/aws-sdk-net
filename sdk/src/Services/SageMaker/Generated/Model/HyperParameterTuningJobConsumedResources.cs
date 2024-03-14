@@ -41,9 +41,9 @@ namespace Amazon.SageMaker.Model
         /// The wall clock runtime in seconds used by your hyperparameter tuning job.
         /// </para>
         /// </summary>
-        public int RuntimeInSeconds
+        public int? RuntimeInSeconds
         {
-            get { return this._runtimeInSeconds.GetValueOrDefault(); }
+            get { return this._runtimeInSeconds; }
             set { this._runtimeInSeconds = value; }
         }
 

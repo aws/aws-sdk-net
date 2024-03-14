@@ -48,7 +48,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCredentials())
             {
                 context.Writer.WritePropertyName("AllowCredentials");
-                context.Writer.Write(requestObject.AllowCredentials);
+                context.Writer.Write(requestObject.AllowCredentials.Value);
             }
 
             if(requestObject.IsSetAllowHeaders())
@@ -98,7 +98,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAge())
             {
                 context.Writer.WritePropertyName("MaxAge");
-                context.Writer.Write(requestObject.MaxAge);
+                context.Writer.Write(requestObject.MaxAge.Value);
             }
 
         }

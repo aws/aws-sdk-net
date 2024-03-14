@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether this is the main route table.
         /// </para>
         /// </summary>
-        public bool Main
+        public bool? Main
         {
-            get { return this._main.GetValueOrDefault(); }
+            get { return this._main; }
             set { this._main = value; }
         }
 

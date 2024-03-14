@@ -48,13 +48,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddColumnName())
             {
                 context.Writer.WritePropertyName("AddColumnName");
-                context.Writer.Write(requestObject.AddColumnName);
+                context.Writer.Write(requestObject.AddColumnName.Value);
             }
 
             if(requestObject.IsSetAddTrailingPaddingCharacter())
             {
                 context.Writer.WritePropertyName("AddTrailingPaddingCharacter");
-                context.Writer.Write(requestObject.AddTrailingPaddingCharacter);
+                context.Writer.Write(requestObject.AddTrailingPaddingCharacter.Value);
             }
 
             if(requestObject.IsSetBucketFolder())
@@ -78,25 +78,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdcInsertsAndUpdates())
             {
                 context.Writer.WritePropertyName("CdcInsertsAndUpdates");
-                context.Writer.Write(requestObject.CdcInsertsAndUpdates);
+                context.Writer.Write(requestObject.CdcInsertsAndUpdates.Value);
             }
 
             if(requestObject.IsSetCdcInsertsOnly())
             {
                 context.Writer.WritePropertyName("CdcInsertsOnly");
-                context.Writer.Write(requestObject.CdcInsertsOnly);
+                context.Writer.Write(requestObject.CdcInsertsOnly.Value);
             }
 
             if(requestObject.IsSetCdcMaxBatchInterval())
             {
                 context.Writer.WritePropertyName("CdcMaxBatchInterval");
-                context.Writer.Write(requestObject.CdcMaxBatchInterval);
+                context.Writer.Write(requestObject.CdcMaxBatchInterval.Value);
             }
 
             if(requestObject.IsSetCdcMinFileSize())
             {
                 context.Writer.WritePropertyName("CdcMinFileSize");
-                context.Writer.Write(requestObject.CdcMinFileSize);
+                context.Writer.Write(requestObject.CdcMinFileSize.Value);
             }
 
             if(requestObject.IsSetCdcPath())
@@ -144,7 +144,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataPageSize())
             {
                 context.Writer.WritePropertyName("DataPageSize");
-                context.Writer.Write(requestObject.DataPageSize);
+                context.Writer.Write(requestObject.DataPageSize.Value);
             }
 
             if(requestObject.IsSetDatePartitionDelimiter())
@@ -156,7 +156,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatePartitionEnabled())
             {
                 context.Writer.WritePropertyName("DatePartitionEnabled");
-                context.Writer.Write(requestObject.DatePartitionEnabled);
+                context.Writer.Write(requestObject.DatePartitionEnabled.Value);
             }
 
             if(requestObject.IsSetDatePartitionSequence())
@@ -174,13 +174,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDictPageSizeLimit())
             {
                 context.Writer.WritePropertyName("DictPageSizeLimit");
-                context.Writer.Write(requestObject.DictPageSizeLimit);
+                context.Writer.Write(requestObject.DictPageSizeLimit.Value);
             }
 
             if(requestObject.IsSetEnableStatistics())
             {
                 context.Writer.WritePropertyName("EnableStatistics");
-                context.Writer.Write(requestObject.EnableStatistics);
+                context.Writer.Write(requestObject.EnableStatistics.Value);
             }
 
             if(requestObject.IsSetEncodingType())
@@ -210,31 +210,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlueCatalogGeneration())
             {
                 context.Writer.WritePropertyName("GlueCatalogGeneration");
-                context.Writer.Write(requestObject.GlueCatalogGeneration);
+                context.Writer.Write(requestObject.GlueCatalogGeneration.Value);
             }
 
             if(requestObject.IsSetIgnoreHeaderRows())
             {
                 context.Writer.WritePropertyName("IgnoreHeaderRows");
-                context.Writer.Write(requestObject.IgnoreHeaderRows);
+                context.Writer.Write(requestObject.IgnoreHeaderRows.Value);
             }
 
             if(requestObject.IsSetIncludeOpForFullLoad())
             {
                 context.Writer.WritePropertyName("IncludeOpForFullLoad");
-                context.Writer.Write(requestObject.IncludeOpForFullLoad);
+                context.Writer.Write(requestObject.IncludeOpForFullLoad.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize);
+                context.Writer.Write(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetParquetTimestampInMillisecond())
             {
                 context.Writer.WritePropertyName("ParquetTimestampInMillisecond");
-                context.Writer.Write(requestObject.ParquetTimestampInMillisecond);
+                context.Writer.Write(requestObject.ParquetTimestampInMillisecond.Value);
             }
 
             if(requestObject.IsSetParquetVersion())
@@ -246,19 +246,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPreserveTransactions())
             {
                 context.Writer.WritePropertyName("PreserveTransactions");
-                context.Writer.Write(requestObject.PreserveTransactions);
+                context.Writer.Write(requestObject.PreserveTransactions.Value);
             }
 
             if(requestObject.IsSetRfc4180())
             {
                 context.Writer.WritePropertyName("Rfc4180");
-                context.Writer.Write(requestObject.Rfc4180);
+                context.Writer.Write(requestObject.Rfc4180.Value);
             }
 
             if(requestObject.IsSetRowGroupLength())
             {
                 context.Writer.WritePropertyName("RowGroupLength");
-                context.Writer.Write(requestObject.RowGroupLength);
+                context.Writer.Write(requestObject.RowGroupLength.Value);
             }
 
             if(requestObject.IsSetServerSideEncryptionKmsKeyId())
@@ -282,13 +282,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseCsvNoSupValue())
             {
                 context.Writer.WritePropertyName("UseCsvNoSupValue");
-                context.Writer.Write(requestObject.UseCsvNoSupValue);
+                context.Writer.Write(requestObject.UseCsvNoSupValue.Value);
             }
 
             if(requestObject.IsSetUseTaskStartTimeForFullLoadTimestamp())
             {
                 context.Writer.WritePropertyName("UseTaskStartTimeForFullLoadTimestamp");
-                context.Writer.Write(requestObject.UseTaskStartTimeForFullLoadTimestamp);
+                context.Writer.Write(requestObject.UseTaskStartTimeForFullLoadTimestamp.Value);
             }
 
         }

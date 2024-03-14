@@ -63,9 +63,9 @@ namespace Amazon.Finspace.Model
         /// is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 

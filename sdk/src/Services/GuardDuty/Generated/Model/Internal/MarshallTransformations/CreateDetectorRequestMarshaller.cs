@@ -90,7 +90,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnable())
                 {
                     context.Writer.WritePropertyName("enable");
-                    context.Writer.Write(publicRequest.Enable);
+                    context.Writer.Write(publicRequest.Enable.Value);
                 }
 
                 if(publicRequest.IsSetFeatures())

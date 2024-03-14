@@ -77,13 +77,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfOnCalls", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfOnCalls = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecurrenceMultiplier", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecurrenceMultiplier = unmarshaller.Unmarshall(context);
                     continue;
                 }

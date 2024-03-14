@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
-                context.Writer.Write(requestObject.Count);
+                context.Writer.Write(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetName())

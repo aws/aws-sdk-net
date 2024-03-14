@@ -78,9 +78,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the recognizer creation completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.Comprehend.Model
         /// The time that the recognizer was submitted for processing.
         /// </para>
         /// </summary>
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 
@@ -313,9 +313,9 @@ namespace Amazon.Comprehend.Model
         /// The time that training of the entity recognizer was completed.
         /// </para>
         /// </summary>
-        public DateTime TrainingEndTime
+        public DateTime? TrainingEndTime
         {
-            get { return this._trainingEndTime.GetValueOrDefault(); }
+            get { return this._trainingEndTime; }
             set { this._trainingEndTime = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.Comprehend.Model
         /// The time that training of the entity recognizer started.
         /// </para>
         /// </summary>
-        public DateTime TrainingStartTime
+        public DateTime? TrainingStartTime
         {
-            get { return this._trainingStartTime.GetValueOrDefault(); }
+            get { return this._trainingStartTime; }
             set { this._trainingStartTime = value; }
         }
 

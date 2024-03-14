@@ -60,7 +60,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubmittedAt())
             {
                 context.Writer.WritePropertyName("submittedAt");
-                context.Writer.Write(requestObject.SubmittedAt);
+                context.Writer.Write(requestObject.SubmittedAt.Value);
             }
 
             if(requestObject.IsSetUsefulness())

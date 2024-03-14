@@ -72,9 +72,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppIntegrationsService")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon AppIntegrations Service. The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.")]
 #elif NETCOREAPP3_1

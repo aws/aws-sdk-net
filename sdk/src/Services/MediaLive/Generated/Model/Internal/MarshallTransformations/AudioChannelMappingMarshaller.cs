@@ -64,7 +64,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutputChannel())
             {
                 context.Writer.WritePropertyName("outputChannel");
-                context.Writer.Write(requestObject.OutputChannel);
+                context.Writer.Write(requestObject.OutputChannel.Value);
             }
 
         }

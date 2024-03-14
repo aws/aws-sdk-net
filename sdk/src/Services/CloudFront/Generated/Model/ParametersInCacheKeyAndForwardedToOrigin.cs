@@ -117,9 +117,9 @@ namespace Amazon.CloudFront.Model
         /// HTTP header.
         /// </para>
         /// </summary>
-        public bool EnableAcceptEncodingBrotli
+        public bool? EnableAcceptEncodingBrotli
         {
-            get { return this._enableAcceptEncodingBrotli.GetValueOrDefault(); }
+            get { return this._enableAcceptEncodingBrotli; }
             set { this._enableAcceptEncodingBrotli = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableAcceptEncodingGzip
+        public bool? EnableAcceptEncodingGzip
         {
-            get { return this._enableAcceptEncodingGzip.GetValueOrDefault(); }
+            get { return this._enableAcceptEncodingGzip; }
             set { this._enableAcceptEncodingGzip = value; }
         }
 

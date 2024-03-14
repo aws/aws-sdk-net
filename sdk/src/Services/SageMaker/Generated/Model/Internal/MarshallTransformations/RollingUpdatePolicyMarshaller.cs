@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumExecutionTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumExecutionTimeoutInSeconds");
-                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds);
+                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetRollbackMaximumBatchSize())
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWaitIntervalInSeconds())
             {
                 context.Writer.WritePropertyName("WaitIntervalInSeconds");
-                context.Writer.Write(requestObject.WaitIntervalInSeconds);
+                context.Writer.Write(requestObject.WaitIntervalInSeconds.Value);
             }
 
         }

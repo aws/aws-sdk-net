@@ -101,7 +101,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("configured", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Configured = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -61,9 +61,9 @@ namespace Amazon.AppRunner.Model
         /// The time when the VPC connector was created. It's in Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.AppRunner.Model
         /// The time when the VPC connector was deleted. It's in Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime DeletedAt
+        public DateTime? DeletedAt
         {
-            get { return this._deletedAt.GetValueOrDefault(); }
+            get { return this._deletedAt; }
             set { this._deletedAt = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int VpcConnectorRevision
+        public int? VpcConnectorRevision
         {
-            get { return this._vpcConnectorRevision.GetValueOrDefault(); }
+            get { return this._vpcConnectorRevision; }
             set { this._vpcConnectorRevision = value; }
         }
 

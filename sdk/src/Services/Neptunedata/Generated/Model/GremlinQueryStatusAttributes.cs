@@ -61,9 +61,9 @@ namespace Amazon.Neptunedata.Model
         /// The HTTP response code returned fro the Gremlin query request..
         /// </para>
         /// </summary>
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 

@@ -14603,7 +14603,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
-        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, int days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, int? days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;
@@ -15210,7 +15210,7 @@ namespace Amazon.S3
         /// 
         /// <returns>The response from the RestoreObject service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
-        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, string versionId, int days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<RestoreObjectResponse> RestoreObjectAsync(string bucketName, string key, string versionId, int? days, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RestoreObjectRequest();
             request.BucketName = bucketName;

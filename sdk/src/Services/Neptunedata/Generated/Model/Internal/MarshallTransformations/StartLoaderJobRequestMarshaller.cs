@@ -79,7 +79,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFailOnError())
                 {
                     context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError);
+                    context.Writer.Write(publicRequest.FailOnError.Value);
                 }
 
                 if(publicRequest.IsSetFormat())
@@ -123,7 +123,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueueRequest())
                 {
                     context.Writer.WritePropertyName("queueRequest");
-                    context.Writer.Write(publicRequest.QueueRequest);
+                    context.Writer.Write(publicRequest.QueueRequest.Value);
                 }
 
                 if(publicRequest.IsSetS3BucketRegion())
@@ -141,13 +141,13 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateSingleCardinalityProperties())
                 {
                     context.Writer.WritePropertyName("updateSingleCardinalityProperties");
-                    context.Writer.Write(publicRequest.UpdateSingleCardinalityProperties);
+                    context.Writer.Write(publicRequest.UpdateSingleCardinalityProperties.Value);
                 }
 
                 if(publicRequest.IsSetUserProvidedEdgeIds())
                 {
                     context.Writer.WritePropertyName("userProvidedEdgeIds");
-                    context.Writer.Write(publicRequest.UserProvidedEdgeIds);
+                    context.Writer.Write(publicRequest.UserProvidedEdgeIds.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -74,7 +74,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultVersion())
                 {
                     context.Writer.WritePropertyName("defaultVersion");
-                    context.Writer.Write(publicRequest.DefaultVersion);
+                    context.Writer.Write(publicRequest.DefaultVersion.Value);
                 }
 
                 if(publicRequest.IsSetFeatureSet())
@@ -86,7 +86,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -104,7 +104,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPermissionVersion())
                 {
                     context.Writer.WritePropertyName("permissionVersion");
-                    context.Writer.Write(publicRequest.PermissionVersion);
+                    context.Writer.Write(publicRequest.PermissionVersion.Value);
                 }
 
                 if(publicRequest.IsSetResourceType())

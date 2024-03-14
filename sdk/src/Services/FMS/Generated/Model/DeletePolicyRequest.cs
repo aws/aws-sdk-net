@@ -89,9 +89,9 @@ namespace Amazon.FMS.Model
         /// are in scope. 
         /// </para>
         /// </summary>
-        public bool DeleteAllPolicyResources
+        public bool? DeleteAllPolicyResources
         {
-            get { return this._deleteAllPolicyResources.GetValueOrDefault(); }
+            get { return this._deleteAllPolicyResources; }
             set { this._deleteAllPolicyResources = value; }
         }
 

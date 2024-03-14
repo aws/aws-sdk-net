@@ -103,9 +103,9 @@ namespace Amazon.ECRPublic.Model
         /// image was pushed to the repository at. 
         /// </para>
         /// </summary>
-        public DateTime ImagePushedAt
+        public DateTime? ImagePushedAt
         {
-            get { return this._imagePushedAt.GetValueOrDefault(); }
+            get { return this._imagePushedAt; }
             set { this._imagePushedAt = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long ImageSizeInBytes
+        public long? ImageSizeInBytes
         {
-            get { return this._imageSizeInBytes.GetValueOrDefault(); }
+            get { return this._imageSizeInBytes; }
             set { this._imageSizeInBytes = value; }
         }
 

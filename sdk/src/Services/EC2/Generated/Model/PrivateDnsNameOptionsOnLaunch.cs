@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to respond to DNS queries for instance hostname with DNS AAAA records.
         /// </para>
         /// </summary>
-        public bool EnableResourceNameDnsAAAARecord
+        public bool? EnableResourceNameDnsAAAARecord
         {
-            get { return this._enableResourceNameDnsAAAARecord.GetValueOrDefault(); }
+            get { return this._enableResourceNameDnsAAAARecord; }
             set { this._enableResourceNameDnsAAAARecord = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether to respond to DNS queries for instance hostnames with DNS A records.
         /// </para>
         /// </summary>
-        public bool EnableResourceNameDnsARecord
+        public bool? EnableResourceNameDnsARecord
         {
-            get { return this._enableResourceNameDnsARecord.GetValueOrDefault(); }
+            get { return this._enableResourceNameDnsARecord; }
             set { this._enableResourceNameDnsARecord = value; }
         }
 

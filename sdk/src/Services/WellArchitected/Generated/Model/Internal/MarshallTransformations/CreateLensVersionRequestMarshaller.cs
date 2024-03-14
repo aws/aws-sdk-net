@@ -82,7 +82,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsMajorVersion())
                 {
                     context.Writer.WritePropertyName("IsMajorVersion");
-                    context.Writer.Write(publicRequest.IsMajorVersion);
+                    context.Writer.Write(publicRequest.IsMajorVersion.Value);
                 }
 
                 if(publicRequest.IsSetLensVersion())

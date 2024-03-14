@@ -119,7 +119,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultTimeToLive())
                 {
                     context.Writer.WritePropertyName("defaultTimeToLive");
-                    context.Writer.Write(publicRequest.DefaultTimeToLive);
+                    context.Writer.Write(publicRequest.DefaultTimeToLive.Value);
                 }
 
                 if(publicRequest.IsSetEncryptionSpecification())

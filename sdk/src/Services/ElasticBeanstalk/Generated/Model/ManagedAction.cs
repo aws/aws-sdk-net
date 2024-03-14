@@ -118,9 +118,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The start time of the maintenance window in which the managed action will execute.
         /// </para>
         /// </summary>
-        public DateTime WindowStartTime
+        public DateTime? WindowStartTime
         {
-            get { return this._windowStartTime.GetValueOrDefault(); }
+            get { return this._windowStartTime; }
             set { this._windowStartTime = value; }
         }
 

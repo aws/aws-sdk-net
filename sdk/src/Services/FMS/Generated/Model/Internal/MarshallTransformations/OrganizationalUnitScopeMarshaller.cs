@@ -48,13 +48,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllOrganizationalUnitsEnabled())
             {
                 context.Writer.WritePropertyName("AllOrganizationalUnitsEnabled");
-                context.Writer.Write(requestObject.AllOrganizationalUnitsEnabled);
+                context.Writer.Write(requestObject.AllOrganizationalUnitsEnabled.Value);
             }
 
             if(requestObject.IsSetExcludeSpecifiedOrganizationalUnits())
             {
                 context.Writer.WritePropertyName("ExcludeSpecifiedOrganizationalUnits");
-                context.Writer.Write(requestObject.ExcludeSpecifiedOrganizationalUnits);
+                context.Writer.Write(requestObject.ExcludeSpecifiedOrganizationalUnits.Value);
             }
 
             if(requestObject.IsSetOrganizationalUnits())

@@ -77,9 +77,9 @@ namespace Amazon.SageMakerMetrics.Model
         /// An index that corresponds to the metric in the request.
         /// </para>
         /// </summary>
-        public int MetricIndex
+        public int? MetricIndex
         {
-            get { return this._metricIndex.GetValueOrDefault(); }
+            get { return this._metricIndex; }
             set { this._metricIndex = value; }
         }
 

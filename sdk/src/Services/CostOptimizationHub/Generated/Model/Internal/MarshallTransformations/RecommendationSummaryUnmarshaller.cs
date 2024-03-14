@@ -65,7 +65,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("estimatedMonthlySavings", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("recommendationCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecommendationCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

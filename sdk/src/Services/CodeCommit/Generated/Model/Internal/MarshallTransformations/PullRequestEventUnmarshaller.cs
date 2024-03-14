@@ -89,7 +89,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

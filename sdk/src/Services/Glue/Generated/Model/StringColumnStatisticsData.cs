@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double AverageLength
+        public double? AverageLength
         {
-            get { return this._averageLength.GetValueOrDefault(); }
+            get { return this._averageLength; }
             set { this._averageLength = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long MaximumLength
+        public long? MaximumLength
         {
-            get { return this._maximumLength.GetValueOrDefault(); }
+            get { return this._maximumLength; }
             set { this._maximumLength = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfDistinctValues
+        public long? NumberOfDistinctValues
         {
-            get { return this._numberOfDistinctValues.GetValueOrDefault(); }
+            get { return this._numberOfDistinctValues; }
             set { this._numberOfDistinctValues = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfNulls
+        public long? NumberOfNulls
         {
-            get { return this._numberOfNulls.GetValueOrDefault(); }
+            get { return this._numberOfNulls; }
             set { this._numberOfNulls = value; }
         }
 

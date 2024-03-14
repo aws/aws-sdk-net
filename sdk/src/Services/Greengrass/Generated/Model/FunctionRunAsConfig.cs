@@ -45,9 +45,9 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property Gid. The group ID whose permissions are used to run a Lambda
         /// function.
         /// </summary>
-        public int Gid
+        public int? Gid
         {
-            get { return this._gid.GetValueOrDefault(); }
+            get { return this._gid; }
             set { this._gid = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Greengrass.Model
         /// Gets and sets the property Uid. The user ID whose permissions are used to run a Lambda
         /// function.
         /// </summary>
-        public int Uid
+        public int? Uid
         {
-            get { return this._uid.GetValueOrDefault(); }
+            get { return this._uid; }
             set { this._uid = value; }
         }
 

@@ -52,9 +52,9 @@ namespace Amazon.Finspace.Model
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Finspace.Model
         /// is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimestamp
+        public DateTime? LastModifiedTimestamp
         {
-            get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimestamp; }
             set { this._lastModifiedTimestamp = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Finspace.Model
         /// The total number of bytes in the database.
         /// </para>
         /// </summary>
-        public long NumBytes
+        public long? NumBytes
         {
-            get { return this._numBytes.GetValueOrDefault(); }
+            get { return this._numBytes; }
             set { this._numBytes = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.Finspace.Model
         /// The total number of changesets in the database.
         /// </para>
         /// </summary>
-        public int NumChangesets
+        public int? NumChangesets
         {
-            get { return this._numChangesets.GetValueOrDefault(); }
+            get { return this._numChangesets; }
             set { this._numChangesets = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.Finspace.Model
         /// The total number of files in the database.
         /// </para>
         /// </summary>
-        public int NumFiles
+        public int? NumFiles
         {
-            get { return this._numFiles.GetValueOrDefault(); }
+            get { return this._numFiles; }
             set { this._numFiles = value; }
         }
 

@@ -117,9 +117,9 @@ namespace Amazon.SageMaker.Model
         /// training.
         /// </para>
         /// </summary>
-        public bool EnableInterContainerTrafficEncryption
+        public bool? EnableInterContainerTrafficEncryption
         {
-            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            get { return this._enableInterContainerTrafficEncryption; }
             set { this._enableInterContainerTrafficEncryption = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.SageMaker.Model
         /// (<c>False</c>).
         /// </para>
         /// </summary>
-        public bool EnableManagedSpotTraining
+        public bool? EnableManagedSpotTraining
         {
-            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            get { return this._enableManagedSpotTraining; }
             set { this._enableManagedSpotTraining = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.SageMaker.Model
         /// but the training container does not have network access.
         /// </para>
         /// </summary>
-        public bool EnableNetworkIsolation
+        public bool? EnableNetworkIsolation
         {
-            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            get { return this._enableNetworkIsolation; }
             set { this._enableNetworkIsolation = value; }
         }
 

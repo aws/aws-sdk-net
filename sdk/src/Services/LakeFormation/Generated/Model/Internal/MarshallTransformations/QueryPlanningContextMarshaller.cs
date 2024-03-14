@@ -60,7 +60,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryAsOfTime())
             {
                 context.Writer.WritePropertyName("QueryAsOfTime");
-                context.Writer.Write(requestObject.QueryAsOfTime);
+                context.Writer.Write(requestObject.QueryAsOfTime.Value);
             }
 
             if(requestObject.IsSetQueryParameters())

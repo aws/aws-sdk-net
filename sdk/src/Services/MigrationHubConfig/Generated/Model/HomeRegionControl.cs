@@ -87,9 +87,9 @@ namespace Amazon.MigrationHubConfig.Model
         /// and set the home region for the account.
         /// </para>
         /// </summary>
-        public DateTime RequestedTime
+        public DateTime? RequestedTime
         {
-            get { return this._requestedTime.GetValueOrDefault(); }
+            get { return this._requestedTime; }
             set { this._requestedTime = value; }
         }
 

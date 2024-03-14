@@ -51,9 +51,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// This flag notes whether all <c>compositeComponents</c> are returned in the API response.
         /// </para>
         /// </summary>
-        public bool AreAllCompositeComponentsReturned
+        public bool? AreAllCompositeComponentsReturned
         {
-            get { return this._areAllCompositeComponentsReturned.GetValueOrDefault(); }
+            get { return this._areAllCompositeComponentsReturned; }
             set { this._areAllCompositeComponentsReturned = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The maximum number of properties returned is 800.
         /// </para>
         /// </summary>
-        public bool AreAllPropertiesReturned
+        public bool? AreAllPropertiesReturned
         {
-            get { return this._areAllPropertiesReturned.GetValueOrDefault(); }
+            get { return this._areAllPropertiesReturned; }
             set { this._areAllPropertiesReturned = value; }
         }
 

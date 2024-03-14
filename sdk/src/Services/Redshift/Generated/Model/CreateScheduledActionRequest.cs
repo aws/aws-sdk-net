@@ -53,9 +53,9 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
-        public bool Enable
+        public bool? Enable
         {
-            get { return this._enable.GetValueOrDefault(); }
+            get { return this._enable; }
             set { this._enable = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.Redshift.Model
         /// does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

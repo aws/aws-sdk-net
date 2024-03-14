@@ -93,9 +93,9 @@ namespace Amazon.RDS.Model
         /// The number of reserved DB instances.
         /// </para>
         /// </summary>
-        public int DBInstanceCount
+        public int? DBInstanceCount
         {
-            get { return this._dbInstanceCount.GetValueOrDefault(); }
+            get { return this._dbInstanceCount; }
             set { this._dbInstanceCount = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.RDS.Model
         /// The duration of the reservation in seconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.RDS.Model
         /// The fixed price charged for this reserved DB instance.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the reservation applies to Multi-AZ deployments.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -297,9 +297,9 @@ namespace Amazon.RDS.Model
         /// The time the reservation started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.RDS.Model
         /// The hourly price charged for this reserved DB instance.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

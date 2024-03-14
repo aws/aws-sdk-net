@@ -64,9 +64,9 @@ namespace Amazon.AutoScaling.Model
         /// Determines whether the tag is added to new instances as they are launched in the group.
         /// </para>
         /// </summary>
-        public bool PropagateAtLaunch
+        public bool? PropagateAtLaunch
         {
-            get { return this._propagateAtLaunch.GetValueOrDefault(); }
+            get { return this._propagateAtLaunch; }
             set { this._propagateAtLaunch = value; }
         }
 

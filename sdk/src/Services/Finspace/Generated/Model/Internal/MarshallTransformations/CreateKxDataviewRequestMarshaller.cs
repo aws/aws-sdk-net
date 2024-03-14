@@ -74,7 +74,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoUpdate())
                 {
                     context.Writer.WritePropertyName("autoUpdate");
-                    context.Writer.Write(publicRequest.AutoUpdate);
+                    context.Writer.Write(publicRequest.AutoUpdate.Value);
                 }
 
                 if(publicRequest.IsSetAvailabilityZoneId())

@@ -65,10 +65,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("FieldLevelEncryptionProfileConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.CallerReference));
 
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Comment));
 
                 
                     if (publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities != null) 
@@ -101,7 +101,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();            
                                     }
                                     if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
-                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity));                 
+                                        xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -117,12 +117,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.FieldLevelEncryptionProfileConfig.Name));
 
 
                     xmlWriter.WriteEndElement();

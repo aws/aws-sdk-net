@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepCount())
             {
                 context.Writer.WritePropertyName("StepCount");
-                context.Writer.Write(requestObject.StepCount);
+                context.Writer.Write(requestObject.StepCount.Value);
             }
 
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-                context.Writer.Write(requestObject.StepSize);
+                context.Writer.Write(requestObject.StepSize.Value);
             }
 
         }

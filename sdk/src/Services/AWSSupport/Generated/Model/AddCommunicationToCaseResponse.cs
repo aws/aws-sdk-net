@@ -41,9 +41,9 @@ namespace Amazon.AWSSupport.Model
         /// True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.
         /// </para>
         /// </summary>
-        public bool Result
+        public bool? Result
         {
-            get { return this._result.GetValueOrDefault(); }
+            get { return this._result; }
             set { this._result = value; }
         }
 

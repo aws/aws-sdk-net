@@ -67,9 +67,9 @@ namespace Amazon.Kendra.Model
         /// or <c>DELETE</c> action for mapping users to their groups.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32535158400000)]
-        public long OrderingId
+        public long? OrderingId
         {
-            get { return this._orderingId.GetValueOrDefault(); }
+            get { return this._orderingId; }
             set { this._orderingId = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Kendra.Model
         /// a <c>PUT</c> or <c>DELETE</c> action for mapping users to their groups.
         /// </para>
         /// </summary>
-        public DateTime ReceivedAt
+        public DateTime? ReceivedAt
         {
-            get { return this._receivedAt.GetValueOrDefault(); }
+            get { return this._receivedAt; }
             set { this._receivedAt = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeploymentDurationInMinutes())
                 {
                     context.Writer.WritePropertyName("DeploymentDurationInMinutes");
-                    context.Writer.Write(publicRequest.DeploymentDurationInMinutes);
+                    context.Writer.Write(publicRequest.DeploymentDurationInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -80,13 +80,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFinalBakeTimeInMinutes())
                 {
                     context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
-                    context.Writer.Write(publicRequest.FinalBakeTimeInMinutes);
+                    context.Writer.Write(publicRequest.FinalBakeTimeInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetGrowthFactor())
                 {
                     context.Writer.WritePropertyName("GrowthFactor");
-                    context.Writer.Write(publicRequest.GrowthFactor);
+                    context.Writer.Write(publicRequest.GrowthFactor.Value);
                 }
 
                 if(publicRequest.IsSetGrowthType())

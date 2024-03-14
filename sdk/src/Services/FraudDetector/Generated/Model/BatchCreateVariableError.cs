@@ -43,9 +43,9 @@ namespace Amazon.FraudDetector.Model
         /// The error code. 
         /// </para>
         /// </summary>
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 

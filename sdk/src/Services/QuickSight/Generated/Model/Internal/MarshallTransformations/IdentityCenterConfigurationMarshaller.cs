@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableIdentityPropagation())
             {
                 context.Writer.WritePropertyName("EnableIdentityPropagation");
-                context.Writer.Write(requestObject.EnableIdentityPropagation);
+                context.Writer.Write(requestObject.EnableIdentityPropagation.Value);
             }
 
         }

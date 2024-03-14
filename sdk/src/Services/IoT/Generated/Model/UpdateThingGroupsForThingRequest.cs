@@ -54,9 +54,9 @@ namespace Amazon.IoT.Model
         /// group.
         /// </para>
         /// </summary>
-        public bool OverrideDynamicGroups
+        public bool? OverrideDynamicGroups
         {
-            get { return this._overrideDynamicGroups.GetValueOrDefault(); }
+            get { return this._overrideDynamicGroups; }
             set { this._overrideDynamicGroups = value; }
         }
 

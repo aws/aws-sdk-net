@@ -135,7 +135,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncidentTemplateImpact())
                 {
                     context.Writer.WritePropertyName("incidentTemplateImpact");
-                    context.Writer.Write(publicRequest.IncidentTemplateImpact);
+                    context.Writer.Write(publicRequest.IncidentTemplateImpact.Value);
                 }
 
                 if(publicRequest.IsSetIncidentTemplateNotificationTargets())

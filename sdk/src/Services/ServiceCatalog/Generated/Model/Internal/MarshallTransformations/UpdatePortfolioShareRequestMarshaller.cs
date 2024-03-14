@@ -99,13 +99,13 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSharePrincipals())
                 {
                     context.Writer.WritePropertyName("SharePrincipals");
-                    context.Writer.Write(publicRequest.SharePrincipals);
+                    context.Writer.Write(publicRequest.SharePrincipals.Value);
                 }
 
                 if(publicRequest.IsSetShareTagOptions())
                 {
                     context.Writer.WritePropertyName("ShareTagOptions");
-                    context.Writer.Write(publicRequest.ShareTagOptions);
+                    context.Writer.Write(publicRequest.ShareTagOptions.Value);
                 }
 
                 writer.WriteObjectEnd();

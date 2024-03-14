@@ -116,7 +116,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSamplingRate())
                 {
                     context.Writer.WritePropertyName("samplingRate");
-                    context.Writer.Write(publicRequest.SamplingRate);
+                    context.Writer.Write(publicRequest.SamplingRate.Value);
                 }
 
                 if(publicRequest.IsSetSegment())

@@ -43,9 +43,9 @@ namespace Amazon.CloudFormation.Model
         /// If <c>true</c>, the resource is managed by a CloudFormation stack.
         /// </para>
         /// </summary>
-        public bool ManagedByStack
+        public bool? ManagedByStack
         {
-            get { return this._managedByStack.GetValueOrDefault(); }
+            get { return this._managedByStack; }
             set { this._managedByStack = value; }
         }
 

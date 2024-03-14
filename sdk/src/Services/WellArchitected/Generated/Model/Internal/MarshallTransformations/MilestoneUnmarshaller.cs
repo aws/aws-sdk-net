@@ -71,13 +71,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MilestoneNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MilestoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RecordedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

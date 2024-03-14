@@ -56,31 +56,31 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AutoPause", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AutoPause = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SecondsBeforeTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SecondsBeforeTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SecondsUntilAutoPause", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SecondsUntilAutoPause = unmarshaller.Unmarshall(context);
                         continue;
                     }

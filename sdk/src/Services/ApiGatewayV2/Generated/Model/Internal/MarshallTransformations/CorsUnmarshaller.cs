@@ -65,7 +65,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowCredentials", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowCredentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxAge", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAge = unmarshaller.Unmarshall(context);
                     continue;
                 }

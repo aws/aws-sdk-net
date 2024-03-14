@@ -65,13 +65,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("beginOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("endOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

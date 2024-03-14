@@ -65,7 +65,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Accepted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Accepted = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SharePrincipals", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SharePrincipals = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShareTagOptions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ShareTagOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }

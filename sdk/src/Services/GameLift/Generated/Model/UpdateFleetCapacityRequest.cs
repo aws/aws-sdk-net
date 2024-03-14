@@ -103,9 +103,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int DesiredInstances
+        public int? DesiredInstances
         {
-            get { return this._desiredInstances.GetValueOrDefault(); }
+            get { return this._desiredInstances; }
             set { this._desiredInstances = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxSize
+        public int? MaxSize
         {
-            get { return this._maxSize.GetValueOrDefault(); }
+            get { return this._maxSize; }
             set { this._maxSize = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MinSize
+        public int? MinSize
         {
-            get { return this._minSize.GetValueOrDefault(); }
+            get { return this._minSize; }
             set { this._minSize = value; }
         }
 

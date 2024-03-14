@@ -76,10 +76,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CopyDistributionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CallerReference));
 
                 if(publicRequest.IsSetEnabled())
-                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.Enabled));                    
+                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.Enabled.Value));
 
 
                 xmlWriter.WriteEndElement();

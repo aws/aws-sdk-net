@@ -149,9 +149,9 @@ namespace Amazon.RDS.Model
         /// By default, all parameters in the DB parameter group are reset to default values.
         /// </para>
         /// </summary>
-        public bool ResetAllParameters
+        public bool? ResetAllParameters
         {
-            get { return this._resetAllParameters.GetValueOrDefault(); }
+            get { return this._resetAllParameters; }
             set { this._resetAllParameters = value; }
         }
 

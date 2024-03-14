@@ -65,13 +65,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MajorRevision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MajorRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinorRevision", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinorRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -122,9 +122,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.IoT.Model
         /// attribute values that match the entire <c>attributeValue</c> provided. 
         /// </para>
         /// </summary>
-        public bool UsePrefixAttributeValue
+        public bool? UsePrefixAttributeValue
         {
-            get { return this._usePrefixAttributeValue.GetValueOrDefault(); }
+            get { return this._usePrefixAttributeValue; }
             set { this._usePrefixAttributeValue = value; }
         }
 

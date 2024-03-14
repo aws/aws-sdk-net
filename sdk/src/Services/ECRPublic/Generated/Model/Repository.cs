@@ -45,9 +45,9 @@ namespace Amazon.ECRPublic.Model
         /// The date and time, in JavaScript date format, when the repository was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

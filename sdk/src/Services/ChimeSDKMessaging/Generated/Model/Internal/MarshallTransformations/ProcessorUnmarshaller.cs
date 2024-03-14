@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExecutionOrder", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExecutionOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }

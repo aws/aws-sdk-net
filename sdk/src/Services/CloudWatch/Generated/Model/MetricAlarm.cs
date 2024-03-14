@@ -69,9 +69,9 @@ namespace Amazon.CloudWatch.Model
         /// Indicates whether actions should be executed during any changes to the alarm state.
         /// </para>
         /// </summary>
-        public bool ActionsEnabled
+        public bool? ActionsEnabled
         {
-            get { return this._actionsEnabled.GetValueOrDefault(); }
+            get { return this._actionsEnabled; }
             set { this._actionsEnabled = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.CloudWatch.Model
         /// The time stamp of the last update to the alarm configuration.
         /// </para>
         /// </summary>
-        public DateTime AlarmConfigurationUpdatedTimestamp
+        public DateTime? AlarmConfigurationUpdatedTimestamp
         {
-            get { return this._alarmConfigurationUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._alarmConfigurationUpdatedTimestamp; }
             set { this._alarmConfigurationUpdatedTimestamp = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int DatapointsToAlarm
+        public int? DatapointsToAlarm
         {
-            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            get { return this._datapointsToAlarm; }
             set { this._datapointsToAlarm = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -421,9 +421,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -477,9 +477,9 @@ namespace Amazon.CloudWatch.Model
         /// The date and time that the alarm's <c>StateValue</c> most recently changed.
         /// </para>
         /// </summary>
-        public DateTime StateTransitionedTimestamp
+        public DateTime? StateTransitionedTimestamp
         {
-            get { return this._stateTransitionedTimestamp.GetValueOrDefault(); }
+            get { return this._stateTransitionedTimestamp; }
             set { this._stateTransitionedTimestamp = value; }
         }
 
@@ -496,9 +496,9 @@ namespace Amazon.CloudWatch.Model
         /// <c>EvaluationState</c> parameters.
         /// </para>
         /// </summary>
-        public DateTime StateUpdatedTimestamp
+        public DateTime? StateUpdatedTimestamp
         {
-            get { return this._stateUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._stateUpdatedTimestamp; }
             set { this._stateUpdatedTimestamp = value; }
         }
 
@@ -551,9 +551,9 @@ namespace Amazon.CloudWatch.Model
         /// The value to compare with the specified statistic.
         /// </para>
         /// </summary>
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

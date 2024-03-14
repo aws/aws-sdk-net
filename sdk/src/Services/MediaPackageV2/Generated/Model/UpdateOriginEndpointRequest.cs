@@ -216,9 +216,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=1209600)]
-        public int StartoverWindowSeconds
+        public int? StartoverWindowSeconds
         {
-            get { return this._startoverWindowSeconds.GetValueOrDefault(); }
+            get { return this._startoverWindowSeconds; }
             set { this._startoverWindowSeconds = value; }
         }
 

@@ -48,19 +48,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClockSync())
             {
                 context.Writer.WritePropertyName("ClockSync");
-                context.Writer.Write(requestObject.ClockSync);
+                context.Writer.Write(requestObject.ClockSync.Value);
             }
 
             if(requestObject.IsSetGnss())
             {
                 context.Writer.WritePropertyName("Gnss");
-                context.Writer.Write(requestObject.Gnss);
+                context.Writer.Write(requestObject.Gnss.Value);
             }
 
             if(requestObject.IsSetStream())
             {
                 context.Writer.WritePropertyName("Stream");
-                context.Writer.Write(requestObject.Stream);
+                context.Writer.Write(requestObject.Stream.Value);
             }
 
         }

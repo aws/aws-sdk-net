@@ -109,9 +109,9 @@ namespace Amazon.SageMaker.Model
         /// created
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.SageMaker.Model
         /// last modified. 
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -491,9 +491,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=16384)]
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

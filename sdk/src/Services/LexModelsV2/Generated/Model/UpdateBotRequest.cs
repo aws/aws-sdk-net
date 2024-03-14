@@ -177,9 +177,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=86400)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 

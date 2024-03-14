@@ -87,9 +87,9 @@ namespace Amazon.CertificateManager.Model
         /// The time at which the certificate was requested.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.CertificateManager.Model
         /// certificate type is <c>PRIVATE</c>.
         /// </para>
         /// </summary>
-        public bool Exported
+        public bool? Exported
         {
-            get { return this._exported.GetValueOrDefault(); }
+            get { return this._exported; }
             set { this._exported = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.CertificateManager.Model
         /// alternative names, use <a href="https://docs.aws.amazon.com/acm/latestAPIReference/API_DescribeCertificate.html">DescribeCertificate</a>.
         /// </para>
         /// </summary>
-        public bool HasAdditionalSubjectAlternativeNames
+        public bool? HasAdditionalSubjectAlternativeNames
         {
-            get { return this._hasAdditionalSubjectAlternativeNames.GetValueOrDefault(); }
+            get { return this._hasAdditionalSubjectAlternativeNames; }
             set { this._hasAdditionalSubjectAlternativeNames = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.CertificateManager.Model
         /// certificate type is <c>IMPORTED</c>. 
         /// </para>
         /// </summary>
-        public DateTime ImportedAt
+        public DateTime? ImportedAt
         {
-            get { return this._importedAt.GetValueOrDefault(); }
+            get { return this._importedAt; }
             set { this._importedAt = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.CertificateManager.Model
         /// Indicates whether the certificate is currently in use by any Amazon Web Services resources.
         /// </para>
         /// </summary>
-        public bool InUse
+        public bool? InUse
         {
-            get { return this._inUse.GetValueOrDefault(); }
+            get { return this._inUse; }
             set { this._inUse = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.CertificateManager.Model
         /// type is <c>AMAZON_ISSUED</c>. 
         /// </para>
         /// </summary>
-        public DateTime IssuedAt
+        public DateTime? IssuedAt
         {
-            get { return this._issuedAt.GetValueOrDefault(); }
+            get { return this._issuedAt; }
             set { this._issuedAt = value; }
         }
 
@@ -281,9 +281,9 @@ namespace Amazon.CertificateManager.Model
         /// The time after which the certificate is not valid.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.CertificateManager.Model
         /// The time before which the certificate is not valid.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 
@@ -337,9 +337,9 @@ namespace Amazon.CertificateManager.Model
         /// status is <c>REVOKED</c>. 
         /// </para>
         /// </summary>
-        public DateTime RevokedAt
+        public DateTime? RevokedAt
         {
-            get { return this._revokedAt.GetValueOrDefault(); }
+            get { return this._revokedAt; }
             set { this._revokedAt = value; }
         }
 

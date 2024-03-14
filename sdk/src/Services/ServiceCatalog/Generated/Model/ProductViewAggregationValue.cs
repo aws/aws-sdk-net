@@ -43,9 +43,9 @@ namespace Amazon.ServiceCatalog.Model
         /// An approximate count of the products that match the value.
         /// </para>
         /// </summary>
-        public int ApproximateCount
+        public int? ApproximateCount
         {
-            get { return this._approximateCount.GetValueOrDefault(); }
+            get { return this._approximateCount; }
             set { this._approximateCount = value; }
         }
 

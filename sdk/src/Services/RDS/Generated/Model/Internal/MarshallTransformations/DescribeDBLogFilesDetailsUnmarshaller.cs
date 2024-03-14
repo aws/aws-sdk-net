@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("LastWritten", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.LastWritten = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Size", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }

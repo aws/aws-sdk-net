@@ -41,9 +41,9 @@ namespace Amazon.IoT.Model
         /// True if this audit check is enabled for this account.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

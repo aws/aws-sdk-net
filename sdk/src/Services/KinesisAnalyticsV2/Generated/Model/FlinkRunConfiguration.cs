@@ -53,9 +53,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool AllowNonRestoredState
+        public bool? AllowNonRestoredState
         {
-            get { return this._allowNonRestoredState.GetValueOrDefault(); }
+            get { return this._allowNonRestoredState; }
             set { this._allowNonRestoredState = value; }
         }
 

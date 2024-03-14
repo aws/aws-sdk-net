@@ -44,9 +44,9 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4294967295)]
-        public long MaxSampleCount
+        public long? MaxSampleCount
         {
-            get { return this._maxSampleCount.GetValueOrDefault(); }
+            get { return this._maxSampleCount; }
             set { this._maxSampleCount = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.IoTFleetWise.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MinimumSamplingIntervalMs
+        public long? MinimumSamplingIntervalMs
         {
-            get { return this._minimumSamplingIntervalMs.GetValueOrDefault(); }
+            get { return this._minimumSamplingIntervalMs; }
             set { this._minimumSamplingIntervalMs = value; }
         }
 

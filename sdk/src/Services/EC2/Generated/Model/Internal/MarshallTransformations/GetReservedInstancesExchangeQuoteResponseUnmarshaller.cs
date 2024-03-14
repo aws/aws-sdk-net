@@ -63,13 +63,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("isValidExchange", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.IsValidExchange = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("outputReservedInstancesWillExpireAt", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.OutputReservedInstancesWillExpireAt = unmarshaller.Unmarshall(context);
                         continue;
                     }

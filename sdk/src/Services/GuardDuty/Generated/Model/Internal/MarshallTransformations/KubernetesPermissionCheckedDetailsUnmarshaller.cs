@@ -65,7 +65,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Allowed = unmarshaller.Unmarshall(context);
                     continue;
                 }

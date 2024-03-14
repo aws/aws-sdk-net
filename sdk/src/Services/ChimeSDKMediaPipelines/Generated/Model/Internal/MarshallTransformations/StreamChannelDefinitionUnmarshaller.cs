@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfChannels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfChannels = unmarshaller.Unmarshall(context);
                     continue;
                 }

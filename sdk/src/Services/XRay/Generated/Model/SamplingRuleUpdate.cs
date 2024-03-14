@@ -71,9 +71,9 @@ namespace Amazon.XRay.Model
         /// The percentage of matching requests to instrument, after the reservoir is exhausted.
         /// </para>
         /// </summary>
-        public double FixedRate
+        public double? FixedRate
         {
-            get { return this._fixedRate.GetValueOrDefault(); }
+            get { return this._fixedRate; }
             set { this._fixedRate = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.XRay.Model
         /// The priority of the sampling rule.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.XRay.Model
         /// using the rule collectively.
         /// </para>
         /// </summary>
-        public int ReservoirSize
+        public int? ReservoirSize
         {
-            get { return this._reservoirSize.GetValueOrDefault(); }
+            get { return this._reservoirSize; }
             set { this._reservoirSize = value; }
         }
 

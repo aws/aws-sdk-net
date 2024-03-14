@@ -65,25 +65,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ErrorEntries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ErrorEntries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LabeledEntries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LabeledEntries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalEntries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalEntries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalLabels", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalLabels = unmarshaller.Unmarshall(context);
                     continue;
                 }

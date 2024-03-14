@@ -88,7 +88,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRevealSecrets())
                 {
                     context.Writer.WritePropertyName("revealSecrets");
-                    context.Writer.Write(publicRequest.RevealSecrets);
+                    context.Writer.Write(publicRequest.RevealSecrets.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

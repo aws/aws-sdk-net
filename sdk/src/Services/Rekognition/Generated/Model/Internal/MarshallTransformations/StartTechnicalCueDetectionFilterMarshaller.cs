@@ -59,7 +59,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinSegmentConfidence())
             {
                 context.Writer.WritePropertyName("MinSegmentConfidence");
-                context.Writer.Write(requestObject.MinSegmentConfidence);
+                context.Writer.Write(requestObject.MinSegmentConfidence.Value);
             }
 
         }

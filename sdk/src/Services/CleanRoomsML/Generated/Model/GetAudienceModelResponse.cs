@@ -73,9 +73,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.CleanRoomsML.Model
         /// The end date specified for the training window.
         /// </para>
         /// </summary>
-        public DateTime TrainingDataEndTime
+        public DateTime? TrainingDataEndTime
         {
-            get { return this._trainingDataEndTime.GetValueOrDefault(); }
+            get { return this._trainingDataEndTime; }
             set { this._trainingDataEndTime = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.CleanRoomsML.Model
         /// The start date specified for the training window.
         /// </para>
         /// </summary>
-        public DateTime TrainingDataStartTime
+        public DateTime? TrainingDataStartTime
         {
-            get { return this._trainingDataStartTime.GetValueOrDefault(); }
+            get { return this._trainingDataStartTime; }
             set { this._trainingDataStartTime = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

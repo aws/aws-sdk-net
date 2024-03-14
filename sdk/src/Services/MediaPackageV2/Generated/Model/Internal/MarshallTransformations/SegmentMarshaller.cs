@@ -59,7 +59,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeIframeOnlyStreams())
             {
                 context.Writer.WritePropertyName("IncludeIframeOnlyStreams");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStreams);
+                context.Writer.Write(requestObject.IncludeIframeOnlyStreams.Value);
             }
 
             if(requestObject.IsSetScte())
@@ -76,7 +76,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("SegmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds);
+                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentName())
@@ -88,13 +88,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTsIncludeDvbSubtitles())
             {
                 context.Writer.WritePropertyName("TsIncludeDvbSubtitles");
-                context.Writer.Write(requestObject.TsIncludeDvbSubtitles);
+                context.Writer.Write(requestObject.TsIncludeDvbSubtitles.Value);
             }
 
             if(requestObject.IsSetTsUseAudioRenditionGroup())
             {
                 context.Writer.WritePropertyName("TsUseAudioRenditionGroup");
-                context.Writer.Write(requestObject.TsUseAudioRenditionGroup);
+                context.Writer.Write(requestObject.TsUseAudioRenditionGroup.Value);
             }
 
         }

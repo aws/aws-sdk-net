@@ -77,7 +77,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApiKeyRequired())
                 {
                     context.Writer.WritePropertyName("apiKeyRequired");
-                    context.Writer.Write(publicRequest.ApiKeyRequired);
+                    context.Writer.Write(publicRequest.ApiKeyRequired.Value);
                 }
 
                 if(publicRequest.IsSetAuthorizationScopes())

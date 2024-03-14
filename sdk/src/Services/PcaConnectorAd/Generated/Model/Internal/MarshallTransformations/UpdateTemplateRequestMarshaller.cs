@@ -82,7 +82,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReenrollAllCertificateHolders())
                 {
                     context.Writer.WritePropertyName("ReenrollAllCertificateHolders");
-                    context.Writer.Write(publicRequest.ReenrollAllCertificateHolders);
+                    context.Writer.Write(publicRequest.ReenrollAllCertificateHolders.Value);
                 }
 
                 writer.WriteObjectEnd();

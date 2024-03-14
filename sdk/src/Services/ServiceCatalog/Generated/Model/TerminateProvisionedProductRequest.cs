@@ -85,9 +85,9 @@ namespace Amazon.ServiceCatalog.Model
         /// if it cannot delete the underlying resources.
         /// </para>
         /// </summary>
-        public bool IgnoreErrors
+        public bool? IgnoreErrors
         {
-            get { return this._ignoreErrors.GetValueOrDefault(); }
+            get { return this._ignoreErrors; }
             set { this._ignoreErrors = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.ServiceCatalog.Model
         /// product. The default value is false.
         /// </para>
         /// </summary>
-        public bool RetainPhysicalResources
+        public bool? RetainPhysicalResources
         {
-            get { return this._retainPhysicalResources.GetValueOrDefault(); }
+            get { return this._retainPhysicalResources; }
             set { this._retainPhysicalResources = value; }
         }
 

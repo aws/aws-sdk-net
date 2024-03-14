@@ -225,9 +225,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// seconds (7 days).
         /// </para>
         /// </summary>
-        public long SessionTimeout
+        public long? SessionTimeout
         {
-            get { return this._sessionTimeout.GetValueOrDefault(); }
+            get { return this._sessionTimeout; }
             set { this._sessionTimeout = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// are creating a rule, you can omit this parameter or set it to false.
         /// </para>
         /// </summary>
-        public bool UseExistingClientSecret
+        public bool? UseExistingClientSecret
         {
-            get { return this._useExistingClientSecret.GetValueOrDefault(); }
+            get { return this._useExistingClientSecret; }
             set { this._useExistingClientSecret = value; }
         }
 

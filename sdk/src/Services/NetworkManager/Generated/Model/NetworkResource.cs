@@ -128,9 +128,9 @@ namespace Amazon.NetworkManager.Model
         /// The time that the resource definition was retrieved.
         /// </para>
         /// </summary>
-        public DateTime DefinitionTimestamp
+        public DateTime? DefinitionTimestamp
         {
-            get { return this._definitionTimestamp.GetValueOrDefault(); }
+            get { return this._definitionTimestamp; }
             set { this._definitionTimestamp = value; }
         }
 

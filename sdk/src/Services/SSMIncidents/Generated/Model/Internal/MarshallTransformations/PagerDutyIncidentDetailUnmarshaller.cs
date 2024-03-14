@@ -65,7 +65,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("autoResolve", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoResolve = unmarshaller.Unmarshall(context);
                     continue;
                 }

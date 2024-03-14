@@ -43,9 +43,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of read replica nodes in this shard.
         /// </para>
         /// </summary>
-        public int ReplicaCount
+        public int? ReplicaCount
         {
-            get { return this._replicaCount.GetValueOrDefault(); }
+            get { return this._replicaCount; }
             set { this._replicaCount = value; }
         }
 

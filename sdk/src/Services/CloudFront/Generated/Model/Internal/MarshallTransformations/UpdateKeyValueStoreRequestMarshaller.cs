@@ -71,7 +71,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("UpdateKeyValueStoreRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
                 if(publicRequest.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Comment));                    
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Comment));
 
 
                 xmlWriter.WriteEndElement();

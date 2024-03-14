@@ -83,7 +83,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("CurrentCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.CurrentCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -95,13 +95,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PendingCapacity", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.PendingCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SecondsBeforeTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.SecondsBeforeTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

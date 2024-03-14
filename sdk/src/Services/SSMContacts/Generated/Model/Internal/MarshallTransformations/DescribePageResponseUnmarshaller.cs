@@ -65,7 +65,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReadTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReadTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SentTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SentTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

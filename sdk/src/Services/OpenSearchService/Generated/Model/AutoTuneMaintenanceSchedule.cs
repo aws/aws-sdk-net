@@ -92,9 +92,9 @@ namespace Amazon.OpenSearchService.Model
         /// The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
         /// </para>
         /// </summary>
-        public DateTime StartAt
+        public DateTime? StartAt
         {
-            get { return this._startAt.GetValueOrDefault(); }
+            get { return this._startAt; }
             set { this._startAt = value; }
         }
 

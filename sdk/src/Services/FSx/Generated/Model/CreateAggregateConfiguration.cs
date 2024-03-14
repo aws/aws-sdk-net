@@ -65,9 +65,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int ConstituentsPerAggregate
+        public int? ConstituentsPerAggregate
         {
-            get { return this._constituentsPerAggregate.GetValueOrDefault(); }
+            get { return this._constituentsPerAggregate; }
             set { this._constituentsPerAggregate = value; }
         }
 

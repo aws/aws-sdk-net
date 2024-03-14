@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TestPassed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.TestPassed = unmarshaller.Unmarshall(context);
                     continue;
                 }

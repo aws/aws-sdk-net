@@ -76,7 +76,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeferActivation())
                 {
                     context.Writer.WritePropertyName("DeferActivation");
-                    context.Writer.Write(publicRequest.DeferActivation);
+                    context.Writer.Write(publicRequest.DeferActivation.Value);
                 }
 
                 if(publicRequest.IsSetDeliveryAddress())

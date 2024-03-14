@@ -60,13 +60,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeAssets())
             {
                 context.Writer.WritePropertyName("includeAssets");
-                context.Writer.Write(requestObject.IncludeAssets);
+                context.Writer.Write(requestObject.IncludeAssets.Value);
             }
 
             if(requestObject.IsSetIncludeOffspring())
             {
                 context.Writer.WritePropertyName("includeOffspring");
-                context.Writer.Write(requestObject.IncludeOffspring);
+                context.Writer.Write(requestObject.IncludeOffspring.Value);
             }
 
         }

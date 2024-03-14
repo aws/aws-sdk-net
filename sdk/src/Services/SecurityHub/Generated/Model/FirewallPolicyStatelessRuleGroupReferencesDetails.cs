@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// The order in which to run the stateless rule group.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

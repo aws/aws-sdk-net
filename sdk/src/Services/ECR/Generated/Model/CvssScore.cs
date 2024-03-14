@@ -44,9 +44,9 @@ namespace Amazon.ECR.Model
         /// The base CVSS score used for the finding.
         /// </para>
         /// </summary>
-        public double BaseScore
+        public double? BaseScore
         {
-            get { return this._baseScore.GetValueOrDefault(); }
+            get { return this._baseScore; }
             set { this._baseScore = value; }
         }
 

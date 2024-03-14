@@ -48,13 +48,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("HealthyThreshold");
-                context.Writer.Write(requestObject.HealthyThreshold);
+                context.Writer.Write(requestObject.HealthyThreshold.Value);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval);
+                context.Writer.Write(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetPath())
@@ -72,13 +72,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout);
+                context.Writer.Write(requestObject.Timeout.Value);
             }
 
             if(requestObject.IsSetUnhealthyThreshold())
             {
                 context.Writer.WritePropertyName("UnhealthyThreshold");
-                context.Writer.Write(requestObject.UnhealthyThreshold);
+                context.Writer.Write(requestObject.UnhealthyThreshold.Value);
             }
 
         }

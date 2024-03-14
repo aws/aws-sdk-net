@@ -59,7 +59,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnforce())
             {
                 context.Writer.WritePropertyName("enforce");
-                context.Writer.Write(requestObject.Enforce);
+                context.Writer.Write(requestObject.Enforce.Value);
             }
 
             if(requestObject.IsSetPorts())

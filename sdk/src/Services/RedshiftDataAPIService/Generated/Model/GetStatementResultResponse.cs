@@ -105,9 +105,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// needed to page through the results. 
         /// </para>
         /// </summary>
-        public long TotalNumRows
+        public long? TotalNumRows
         {
-            get { return this._totalNumRows.GetValueOrDefault(); }
+            get { return this._totalNumRows; }
             set { this._totalNumRows = value; }
         }
 

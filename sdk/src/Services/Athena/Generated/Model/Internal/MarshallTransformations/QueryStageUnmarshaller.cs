@@ -65,31 +65,31 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExecutionTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InputBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InputBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InputRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InputRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutputBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutputRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StageId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StageId = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("targetResourceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetResourceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

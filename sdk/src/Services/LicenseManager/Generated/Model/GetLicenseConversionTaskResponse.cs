@@ -67,9 +67,9 @@ namespace Amazon.LicenseManager.Model
         /// Time at which the license type conversion task was completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.LicenseManager.Model
         /// Amount of time to complete the license type conversion.
         /// </para>
         /// </summary>
-        public DateTime LicenseConversionTime
+        public DateTime? LicenseConversionTime
         {
-            get { return this._licenseConversionTime.GetValueOrDefault(); }
+            get { return this._licenseConversionTime; }
             set { this._licenseConversionTime = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.LicenseManager.Model
         /// Time at which the license type conversion task was started .
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

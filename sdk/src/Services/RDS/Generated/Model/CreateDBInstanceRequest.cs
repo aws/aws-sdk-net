@@ -129,7 +129,7 @@ namespace Amazon.RDS.Model
         /// <param name="engine">The database engine to use for this DB instance. Not every database engine is available in every Amazon Web Services Region. Valid Values: <ul> <li>  <c>aurora-mysql</c> (for Aurora MySQL DB instances) </li> <li>  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances) </li> <li>  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances) </li> <li>  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances) </li> <li>  <c>db2-ae</c>  </li> <li>  <c>db2-se</c>  </li> <li>  <c>mariadb</c>  </li> <li>  <c>mysql</c>  </li> <li>  <c>oracle-ee</c>  </li> <li>  <c>oracle-ee-cdb</c>  </li> <li>  <c>oracle-se2</c>  </li> <li>  <c>oracle-se2-cdb</c>  </li> <li>  <c>postgres</c>  </li> <li>  <c>sqlserver-ee</c>  </li> <li>  <c>sqlserver-se</c>  </li> <li>  <c>sqlserver-ex</c>  </li> <li>  <c>sqlserver-web</c>  </li> </ul></param>
         /// <param name="masterUsername">The name for the master user. This setting doesn't apply to Amazon Aurora DB instances. The name for the master user is managed by the DB cluster. This setting is required for RDS DB instances. Constraints: <ul> <li> Must be 1 to 16 letters, numbers, or underscores. </li> <li> First character must be a letter. </li> <li> Can't be a reserved word for the chosen database engine. </li> </ul></param>
         /// <param name="masterUserPassword">The password for the master user. This setting doesn't apply to Amazon Aurora DB instances. The password for the master user is managed by the DB cluster. Constraints: <ul> <li> Can't be specified if <c>ManageMasterUserPassword</c> is turned on. </li> <li> Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character. </li> </ul> Length Constraints: <ul> <li> RDS for Db2 - Must contain from 8 to 255 characters. </li> <li> RDS for MariaDB - Must contain from 8 to 41 characters. </li> <li> RDS for Microsoft SQL Server - Must contain from 8 to 128 characters. </li> <li> RDS for MySQL - Must contain from 8 to 41 characters. </li> <li> RDS for Oracle - Must contain from 8 to 30 characters. </li> <li> RDS for PostgreSQL - Must contain from 8 to 128 characters. </li> </ul></param>
-        public CreateDBInstanceRequest(string dbInstanceIdentifier, int allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
+        public CreateDBInstanceRequest(string dbInstanceIdentifier, int? allocatedStorage, string dbInstanceClass, string engine, string masterUsername, string masterUserPassword)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
             _allocatedStorage = allocatedStorage;
@@ -282,9 +282,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> </dl>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.RDS.Model
         /// to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -401,9 +401,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -529,9 +529,9 @@ namespace Amazon.RDS.Model
         /// effect on the DB cluster setting.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -996,9 +996,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
         /// </para>
         /// </summary>
-        public bool DedicatedLogVolume
+        public bool? DedicatedLogVolume
         {
-            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._dedicatedLogVolume; }
             set { this._dedicatedLogVolume = value; }
         }
 
@@ -1024,9 +1024,9 @@ namespace Amazon.RDS.Model
         /// for the DB cluster.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -1310,9 +1310,9 @@ namespace Amazon.RDS.Model
         /// IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
         /// </para>
         /// </summary>
-        public bool EnableCustomerOwnedIp
+        public bool? EnableCustomerOwnedIp
         {
-            get { return this._enableCustomerOwnedIp.GetValueOrDefault(); }
+            get { return this._enableCustomerOwnedIp; }
             set { this._enableCustomerOwnedIp = value; }
         }
 
@@ -1349,9 +1349,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool EnableIAMDatabaseAuthentication
+        public bool? EnableIAMDatabaseAuthentication
         {
-            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            get { return this._enableIAMDatabaseAuthentication; }
             set { this._enableIAMDatabaseAuthentication = value; }
         }
 
@@ -1373,9 +1373,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
-        public bool EnablePerformanceInsights
+        public bool? EnablePerformanceInsights
         {
-            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            get { return this._enablePerformanceInsights; }
             set { this._enablePerformanceInsights = value; }
         }
 
@@ -1597,9 +1597,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -1726,9 +1726,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ManageMasterUserPassword
+        public bool? ManageMasterUserPassword
         {
-            get { return this._manageMasterUserPassword.GetValueOrDefault(); }
+            get { return this._manageMasterUserPassword; }
             set { this._manageMasterUserPassword = value; }
         }
 
@@ -1916,9 +1916,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int MaxAllocatedStorage
+        public int? MaxAllocatedStorage
         {
-            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            get { return this._maxAllocatedStorage; }
             set { this._maxAllocatedStorage = value; }
         }
 
@@ -1953,9 +1953,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>0</c> 
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -2015,9 +2015,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -2051,9 +2051,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool MultiTenant
+        public bool? MultiTenant
         {
-            get { return this._multiTenant.GetValueOrDefault(); }
+            get { return this._multiTenant; }
             set { this._multiTenant = value; }
         }
 
@@ -2217,9 +2217,9 @@ namespace Amazon.RDS.Model
         /// returns an error.
         /// </para>
         /// </summary>
-        public int PerformanceInsightsRetentionPeriod
+        public int? PerformanceInsightsRetentionPeriod
         {
-            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            get { return this._performanceInsightsRetentionPeriod; }
             set { this._performanceInsightsRetentionPeriod = value; }
         }
 
@@ -2282,9 +2282,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -2435,9 +2435,9 @@ namespace Amazon.RDS.Model
         /// Valid Values: <c>0 - 15</c> 
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 
@@ -2503,9 +2503,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -2531,9 +2531,9 @@ namespace Amazon.RDS.Model
         /// is managed by the DB cluster.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 
@@ -2557,9 +2557,9 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public int? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 

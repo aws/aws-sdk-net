@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExists())
             {
                 context.Writer.WritePropertyName("Exists");
-                context.Writer.Write(requestObject.Exists);
+                context.Writer.Write(requestObject.Exists.Value);
             }
 
             if(requestObject.IsSetValue())

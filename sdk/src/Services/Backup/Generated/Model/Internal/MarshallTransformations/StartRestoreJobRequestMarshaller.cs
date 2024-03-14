@@ -68,7 +68,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCopySourceTagsToRestoredResource())
                 {
                     context.Writer.WritePropertyName("CopySourceTagsToRestoredResource");
-                    context.Writer.Write(publicRequest.CopySourceTagsToRestoredResource);
+                    context.Writer.Write(publicRequest.CopySourceTagsToRestoredResource.Value);
                 }
 
                 if(publicRequest.IsSetIamRoleArn())

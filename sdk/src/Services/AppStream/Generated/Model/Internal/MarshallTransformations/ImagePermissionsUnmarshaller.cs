@@ -65,13 +65,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowFleet", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowFleet = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("allowImageBuilder", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowImageBuilder = unmarshaller.Unmarshall(context);
                     continue;
                 }

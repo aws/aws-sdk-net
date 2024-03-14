@@ -82,7 +82,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublicKeyVersion())
                 {
                     context.Writer.WritePropertyName("PublicKeyVersion");
-                    context.Writer.Write(publicRequest.PublicKeyVersion);
+                    context.Writer.Write(publicRequest.PublicKeyVersion.Value);
                 }
 
                 writer.WriteObjectEnd();

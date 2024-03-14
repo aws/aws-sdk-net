@@ -60,9 +60,9 @@ namespace Amazon.EC2.Model
         /// The total memory of all FPGA accelerators for the instance type.
         /// </para>
         /// </summary>
-        public int TotalFpgaMemoryInMiB
+        public int? TotalFpgaMemoryInMiB
         {
-            get { return this._totalFpgaMemoryInMiB.GetValueOrDefault(); }
+            get { return this._totalFpgaMemoryInMiB; }
             set { this._totalFpgaMemoryInMiB = value; }
         }
 

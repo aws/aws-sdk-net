@@ -193,9 +193,9 @@ namespace Amazon.ConfigService.Model
         /// The last time a conformation pack update was requested. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdateRequestedTime
+        public DateTime? LastUpdateRequestedTime
         {
-            get { return this._lastUpdateRequestedTime.GetValueOrDefault(); }
+            get { return this._lastUpdateRequestedTime; }
             set { this._lastUpdateRequestedTime = value; }
         }
 

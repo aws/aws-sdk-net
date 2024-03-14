@@ -47,9 +47,9 @@ namespace Amazon.Glue.Model
         /// The attempt ID number.
         /// </para>
         /// </summary>
-        public int Attempt
+        public int? Attempt
         {
-            get { return this._attempt.GetValueOrDefault(); }
+            get { return this._attempt; }
             set { this._attempt = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Glue.Model
         /// The run ID number.
         /// </para>
         /// </summary>
-        public int Run
+        public int? Run
         {
-            get { return this._run.GetValueOrDefault(); }
+            get { return this._run; }
             set { this._run = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.Glue.Model
         /// The version of the job.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

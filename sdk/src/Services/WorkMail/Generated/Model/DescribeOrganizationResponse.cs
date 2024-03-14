@@ -90,9 +90,9 @@ namespace Amazon.WorkMail.Model
         /// epoch time format.
         /// </para>
         /// </summary>
-        public DateTime CompletedDate
+        public DateTime? CompletedDate
         {
-            get { return this._completedDate.GetValueOrDefault(); }
+            get { return this._completedDate; }
             set { this._completedDate = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.WorkMail.Model
         /// Indicates if interoperability is enabled for this organization.
         /// </para>
         /// </summary>
-        public bool InteroperabilityEnabled
+        public bool? InteroperabilityEnabled
         {
-            get { return this._interoperabilityEnabled.GetValueOrDefault(); }
+            get { return this._interoperabilityEnabled; }
             set { this._interoperabilityEnabled = value; }
         }
 

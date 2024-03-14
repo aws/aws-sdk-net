@@ -82,9 +82,9 @@ namespace Amazon.Kafka.Model
         /// Enables synchronization of consumer groups to target cluster.
         /// </para>
         /// </summary>
-        public bool DetectAndCopyNewConsumerGroups
+        public bool? DetectAndCopyNewConsumerGroups
         {
-            get { return this._detectAndCopyNewConsumerGroups.GetValueOrDefault(); }
+            get { return this._detectAndCopyNewConsumerGroups; }
             set { this._detectAndCopyNewConsumerGroups = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Kafka.Model
         /// offsets will be written to topic __consumer_offsets.
         /// </para>
         /// </summary>
-        public bool SynchroniseConsumerGroupOffsets
+        public bool? SynchroniseConsumerGroupOffsets
         {
-            get { return this._synchroniseConsumerGroupOffsets.GetValueOrDefault(); }
+            get { return this._synchroniseConsumerGroupOffsets; }
             set { this._synchroniseConsumerGroupOffsets = value; }
         }
 

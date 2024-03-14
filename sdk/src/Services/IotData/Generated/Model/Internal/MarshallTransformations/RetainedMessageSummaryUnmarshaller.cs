@@ -65,19 +65,19 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("payloadSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PayloadSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("qos", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Qos = unmarshaller.Unmarshall(context);
                     continue;
                 }

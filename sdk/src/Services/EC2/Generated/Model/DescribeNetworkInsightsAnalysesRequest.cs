@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// The time when the network insights analyses ended.
         /// </para>
         /// </summary>
-        public DateTime AnalysisEndTime
+        public DateTime? AnalysisEndTime
         {
-            get { return this._analysisEndTime.GetValueOrDefault(); }
+            get { return this._analysisEndTime; }
             set { this._analysisEndTime = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.EC2.Model
         /// The time when the network insights analyses started.
         /// </para>
         /// </summary>
-        public DateTime AnalysisStartTime
+        public DateTime? AnalysisStartTime
         {
-            get { return this._analysisStartTime.GetValueOrDefault(); }
+            get { return this._analysisStartTime; }
             set { this._analysisStartTime = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

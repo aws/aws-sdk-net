@@ -97,9 +97,9 @@ namespace Amazon.RDS.Model
         /// to safeguard any sensitive information that appears in the logs.
         /// </para>
         /// </summary>
-        public bool DebugLogging
+        public bool? DebugLogging
         {
-            get { return this._debugLogging.GetValueOrDefault(); }
+            get { return this._debugLogging; }
             set { this._debugLogging = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.RDS.Model
         /// limit for the associated database.
         /// </para>
         /// </summary>
-        public int IdleClientTimeout
+        public int? IdleClientTimeout
         {
-            get { return this._idleClientTimeout.GetValueOrDefault(); }
+            get { return this._idleClientTimeout; }
             set { this._idleClientTimeout = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.RDS.Model
         /// to the proxy.
         /// </para>
         /// </summary>
-        public bool RequireTLS
+        public bool? RequireTLS
         {
-            get { return this._requireTLS.GetValueOrDefault(); }
+            get { return this._requireTLS; }
             set { this._requireTLS = value; }
         }
 

@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         /// an HTTPS connection with this origin. 
         /// </para>
         /// </summary>
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

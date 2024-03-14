@@ -48,7 +48,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUninstallAfterBuild())
             {
                 context.Writer.WritePropertyName("uninstallAfterBuild");
-                context.Writer.Write(requestObject.UninstallAfterBuild);
+                context.Writer.Write(requestObject.UninstallAfterBuild.Value);
             }
 
         }

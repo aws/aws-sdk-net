@@ -48,7 +48,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffsetSeconds())
             {
                 context.Writer.WritePropertyName("offsetSeconds");
-                context.Writer.Write(requestObject.OffsetSeconds);
+                context.Writer.Write(requestObject.OffsetSeconds.Value);
             }
 
             if(requestObject.IsSetTimeExpression())

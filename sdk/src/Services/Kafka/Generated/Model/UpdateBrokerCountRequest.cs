@@ -85,9 +85,9 @@ namespace Amazon.Kafka.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]
-        public int TargetNumberOfBrokerNodes
+        public int? TargetNumberOfBrokerNodes
         {
-            get { return this._targetNumberOfBrokerNodes.GetValueOrDefault(); }
+            get { return this._targetNumberOfBrokerNodes; }
             set { this._targetNumberOfBrokerNodes = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMachineLearning())
             {
                 context.Writer.WritePropertyName("EnableMachineLearning");
-                context.Writer.Write(requestObject.EnableMachineLearning);
+                context.Writer.Write(requestObject.EnableMachineLearning.Value);
             }
 
             if(requestObject.IsSetInspectionLevel())

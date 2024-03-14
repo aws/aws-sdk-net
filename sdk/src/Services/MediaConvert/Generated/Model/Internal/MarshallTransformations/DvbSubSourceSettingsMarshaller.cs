@@ -48,7 +48,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid);
+                context.Writer.Write(requestObject.Pid.Value);
             }
 
         }

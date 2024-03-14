@@ -64,9 +64,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// the management account of an organization.
         /// </para>
         /// </summary>
-        public bool IncludeMemberAccounts
+        public bool? IncludeMemberAccounts
         {
-            get { return this._includeMemberAccounts.GetValueOrDefault(); }
+            get { return this._includeMemberAccounts; }
             set { this._includeMemberAccounts = value; }
         }
 

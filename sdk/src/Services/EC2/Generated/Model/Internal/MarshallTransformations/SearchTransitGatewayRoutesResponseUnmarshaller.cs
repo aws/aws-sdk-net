@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("additionalRoutesAvailable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.AdditionalRoutesAvailable = unmarshaller.Unmarshall(context);
                         continue;
                     }

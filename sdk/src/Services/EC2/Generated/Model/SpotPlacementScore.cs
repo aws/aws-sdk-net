@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// 
         /// </para>
         /// </summary>
-        public int Score
+        public int? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

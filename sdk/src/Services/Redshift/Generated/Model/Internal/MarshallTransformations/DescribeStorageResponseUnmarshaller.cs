@@ -83,13 +83,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("TotalBackupSizeInMegaBytes", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.TotalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TotalProvisionedStorageInMegaBytes", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.TotalProvisionedStorageInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }

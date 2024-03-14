@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.KinesisAnalytics")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif NETCOREAPP3_1

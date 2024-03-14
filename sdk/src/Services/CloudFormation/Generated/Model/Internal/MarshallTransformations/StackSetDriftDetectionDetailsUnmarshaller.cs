@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DriftedStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DriftedStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,31 +74,31 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("FailedStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.FailedStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("InProgressStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InProgressStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("InSyncStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InSyncStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastDriftCheckTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastDriftCheckTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TotalStackInstancesCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TotalStackInstancesCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

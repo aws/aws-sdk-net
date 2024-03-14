@@ -56,9 +56,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public long AutomaticallyAfterDays
+        public long? AutomaticallyAfterDays
         {
-            get { return this._automaticallyAfterDays.GetValueOrDefault(); }
+            get { return this._automaticallyAfterDays; }
             set { this._automaticallyAfterDays = value; }
         }
 

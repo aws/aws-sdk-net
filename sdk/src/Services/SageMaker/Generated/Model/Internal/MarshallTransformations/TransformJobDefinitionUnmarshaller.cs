@@ -77,13 +77,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxConcurrentTransforms", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentTransforms = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxPayloadInMB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPayloadInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }

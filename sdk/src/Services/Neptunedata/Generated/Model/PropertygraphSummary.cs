@@ -167,9 +167,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of distinct edge labels in the graph.
         /// </para>
         /// </summary>
-        public long NumEdgeLabels
+        public long? NumEdgeLabels
         {
-            get { return this._numEdgeLabels.GetValueOrDefault(); }
+            get { return this._numEdgeLabels; }
             set { this._numEdgeLabels = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of distinct edge properties in the graph.
         /// </para>
         /// </summary>
-        public long NumEdgeProperties
+        public long? NumEdgeProperties
         {
-            get { return this._numEdgeProperties.GetValueOrDefault(); }
+            get { return this._numEdgeProperties; }
             set { this._numEdgeProperties = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of edges in the graph.
         /// </para>
         /// </summary>
-        public long NumEdges
+        public long? NumEdges
         {
-            get { return this._numEdges.GetValueOrDefault(); }
+            get { return this._numEdges; }
             set { this._numEdges = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of distinct node labels in the graph.
         /// </para>
         /// </summary>
-        public long NumNodeLabels
+        public long? NumNodeLabels
         {
-            get { return this._numNodeLabels.GetValueOrDefault(); }
+            get { return this._numNodeLabels; }
             set { this._numNodeLabels = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.Neptunedata.Model
         /// where each property is used.
         /// </para>
         /// </summary>
-        public long NumNodeProperties
+        public long? NumNodeProperties
         {
-            get { return this._numNodeProperties.GetValueOrDefault(); }
+            get { return this._numNodeProperties; }
             set { this._numNodeProperties = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of nodes in the graph.
         /// </para>
         /// </summary>
-        public long NumNodes
+        public long? NumNodes
         {
-            get { return this._numNodes.GetValueOrDefault(); }
+            get { return this._numNodes; }
             set { this._numNodes = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.Neptunedata.Model
         /// The total number of usages of all edge properties.
         /// </para>
         /// </summary>
-        public long TotalEdgePropertyValues
+        public long? TotalEdgePropertyValues
         {
-            get { return this._totalEdgePropertyValues.GetValueOrDefault(); }
+            get { return this._totalEdgePropertyValues; }
             set { this._totalEdgePropertyValues = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.Neptunedata.Model
         /// The total number of usages of all node properties.
         /// </para>
         /// </summary>
-        public long TotalNodePropertyValues
+        public long? TotalNodePropertyValues
         {
-            get { return this._totalNodePropertyValues.GetValueOrDefault(); }
+            get { return this._totalNodePropertyValues; }
             set { this._totalNodePropertyValues = value; }
         }
 

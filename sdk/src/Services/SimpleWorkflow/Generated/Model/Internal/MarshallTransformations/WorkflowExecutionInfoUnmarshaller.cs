@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cancelRequested", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CancelRequested = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("closeTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CloseTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

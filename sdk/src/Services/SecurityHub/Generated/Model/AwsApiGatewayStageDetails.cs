@@ -74,9 +74,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether a cache cluster is enabled for the stage.
         /// </para>
         /// </summary>
-        public bool CacheClusterEnabled
+        public bool? CacheClusterEnabled
         {
-            get { return this._cacheClusterEnabled.GetValueOrDefault(); }
+            get { return this._cacheClusterEnabled; }
             set { this._cacheClusterEnabled = value; }
         }
 
@@ -302,9 +302,9 @@ namespace Amazon.SecurityHub.Model
         /// Indicates whether active tracing with X-Ray is enabled for the stage.
         /// </para>
         /// </summary>
-        public bool TracingEnabled
+        public bool? TracingEnabled
         {
-            get { return this._tracingEnabled.GetValueOrDefault(); }
+            get { return this._tracingEnabled; }
             set { this._tracingEnabled = value; }
         }
 

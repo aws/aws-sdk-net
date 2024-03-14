@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateFunctionRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
                 if(publicRequest.IsSetFunctionCode())
-                    xmlWriter.WriteElementString("FunctionCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromMemoryStream(publicRequest.FunctionCode));                    
+                    xmlWriter.WriteElementString("FunctionCode", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromMemoryStream(publicRequest.FunctionCode));
 
                 
                 if (publicRequest.FunctionConfig != null) 
@@ -95,7 +95,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.FunctionConfig.KeyValueStoreAssociations.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.FunctionConfig.KeyValueStoreAssociations.Quantity.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }
@@ -105,7 +105,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Name));
 
 
                 xmlWriter.WriteEndElement();

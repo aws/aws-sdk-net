@@ -77,7 +77,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("GrantTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.GrantTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

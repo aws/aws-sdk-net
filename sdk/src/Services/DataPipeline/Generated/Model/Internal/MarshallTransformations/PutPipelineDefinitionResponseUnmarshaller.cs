@@ -53,7 +53,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("errored", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Errored = unmarshaller.Unmarshall(context);
                     continue;
                 }

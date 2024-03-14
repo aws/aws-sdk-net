@@ -189,9 +189,9 @@ namespace Amazon.OpsWorks.Model
         /// The deployment duration.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.BillingConductor.Model
         /// Services accounts that join your consolidated billing family.
         /// </para>
         /// </summary>
-        public bool AutoAssociate
+        public bool? AutoAssociate
         {
-            get { return this._autoAssociate.GetValueOrDefault(); }
+            get { return this._autoAssociate; }
             set { this._autoAssociate = value; }
         }
 

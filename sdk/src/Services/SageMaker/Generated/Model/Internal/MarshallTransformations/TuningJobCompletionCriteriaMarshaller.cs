@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetObjectiveMetricValue())
             {
                 context.Writer.WritePropertyName("TargetObjectiveMetricValue");
-                context.Writer.Write(requestObject.TargetObjectiveMetricValue);
+                context.Writer.Write(requestObject.TargetObjectiveMetricValue.Value);
             }
 
         }

@@ -133,9 +133,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

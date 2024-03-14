@@ -48,7 +48,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetPrimitiveType())
@@ -60,13 +60,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
-                context.Writer.Write(requestObject.Scaling);
+                context.Writer.Write(requestObject.Scaling.Value);
             }
 
             if(requestObject.IsSetUpperBound())
             {
                 context.Writer.WritePropertyName("upperBound");
-                context.Writer.Write(requestObject.UpperBound);
+                context.Writer.Write(requestObject.UpperBound.Value);
             }
 
         }

@@ -48,7 +48,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsNative())
             {
                 context.Writer.WritePropertyName("isNative");
-                context.Writer.Write(requestObject.IsNative);
+                context.Writer.Write(requestObject.IsNative.Value);
             }
 
             if(requestObject.IsSetLambda())

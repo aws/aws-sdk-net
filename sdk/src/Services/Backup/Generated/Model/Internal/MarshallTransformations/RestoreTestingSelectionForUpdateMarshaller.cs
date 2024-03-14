@@ -90,7 +90,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidationWindowHours())
             {
                 context.Writer.WritePropertyName("ValidationWindowHours");
-                context.Writer.Write(requestObject.ValidationWindowHours);
+                context.Writer.Write(requestObject.ValidationWindowHours.Value);
             }
 
         }

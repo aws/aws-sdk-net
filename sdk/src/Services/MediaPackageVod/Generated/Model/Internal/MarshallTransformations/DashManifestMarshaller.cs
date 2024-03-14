@@ -60,7 +60,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinBufferTimeSeconds())
             {
                 context.Writer.WritePropertyName("minBufferTimeSeconds");
-                context.Writer.Write(requestObject.MinBufferTimeSeconds);
+                context.Writer.Write(requestObject.MinBufferTimeSeconds.Value);
             }
 
             if(requestObject.IsSetProfile())

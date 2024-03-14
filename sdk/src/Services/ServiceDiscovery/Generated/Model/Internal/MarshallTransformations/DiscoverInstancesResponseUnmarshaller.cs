@@ -59,7 +59,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InstancesRevision", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.InstancesRevision = unmarshaller.Unmarshall(context);
                     continue;
                 }

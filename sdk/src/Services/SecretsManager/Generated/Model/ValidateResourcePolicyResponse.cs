@@ -42,9 +42,9 @@ namespace Amazon.SecretsManager.Model
         /// True if your policy passes validation, otherwise false.
         /// </para>
         /// </summary>
-        public bool PolicyValidationPassed
+        public bool? PolicyValidationPassed
         {
-            get { return this._policyValidationPassed.GetValueOrDefault(); }
+            get { return this._policyValidationPassed; }
             set { this._policyValidationPassed = value; }
         }
 

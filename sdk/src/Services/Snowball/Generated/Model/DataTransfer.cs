@@ -46,9 +46,9 @@ namespace Amazon.Snowball.Model
         /// The number of bytes transferred between a Snow device and Amazon S3.
         /// </para>
         /// </summary>
-        public long BytesTransferred
+        public long? BytesTransferred
         {
-            get { return this._bytesTransferred.GetValueOrDefault(); }
+            get { return this._bytesTransferred; }
             set { this._bytesTransferred = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Snowball.Model
         /// The number of objects transferred between a Snow device and Amazon S3.
         /// </para>
         /// </summary>
-        public long ObjectsTransferred
+        public long? ObjectsTransferred
         {
-            get { return this._objectsTransferred.GetValueOrDefault(); }
+            get { return this._objectsTransferred; }
             set { this._objectsTransferred = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Snowball.Model
         /// is set to 0 (zero) until all the keys that will be transferred have been listed.
         /// </para>
         /// </summary>
-        public long TotalBytes
+        public long? TotalBytes
         {
-            get { return this._totalBytes.GetValueOrDefault(); }
+            get { return this._totalBytes; }
             set { this._totalBytes = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Snowball.Model
         /// value is set to 0 (zero) until all the keys that will be transferred have been listed.
         /// </para>
         /// </summary>
-        public long TotalObjects
+        public long? TotalObjects
         {
-            get { return this._totalObjects.GetValueOrDefault(); }
+            get { return this._totalObjects; }
             set { this._totalObjects = value; }
         }
 

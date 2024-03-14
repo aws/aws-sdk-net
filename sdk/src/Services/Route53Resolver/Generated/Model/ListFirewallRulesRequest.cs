@@ -119,9 +119,9 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Route53Resolver.Model
         /// lowest setting.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

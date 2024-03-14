@@ -66,9 +66,9 @@ namespace Amazon.S3Control.Model
         /// the Batch Operations job.
         /// </para>
         /// </summary>
-        public DateTime RetainUntilDate
+        public DateTime? RetainUntilDate
         {
-            get { return this._retainUntilDate.GetValueOrDefault(); }
+            get { return this._retainUntilDate; }
             set { this._retainUntilDate = value; }
         }
 

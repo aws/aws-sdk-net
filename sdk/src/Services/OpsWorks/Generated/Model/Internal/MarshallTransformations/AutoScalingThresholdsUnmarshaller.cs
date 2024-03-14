@@ -71,37 +71,37 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CpuThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CpuThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IgnoreMetricsTime", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IgnoreMetricsTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LoadThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LoadThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MemoryThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MemoryThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThresholdsWaitTime", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThresholdsWaitTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

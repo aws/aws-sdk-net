@@ -43,9 +43,9 @@ namespace Amazon.Signer.Model
         /// The time when revocation becomes effective.
         /// </para>
         /// </summary>
-        public DateTime RevocationEffectiveFrom
+        public DateTime? RevocationEffectiveFrom
         {
-            get { return this._revocationEffectiveFrom.GetValueOrDefault(); }
+            get { return this._revocationEffectiveFrom; }
             set { this._revocationEffectiveFrom = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Signer.Model
         /// The time when the signing profile was revoked.
         /// </para>
         /// </summary>
-        public DateTime RevokedAt
+        public DateTime? RevokedAt
         {
-            get { return this._revokedAt.GetValueOrDefault(); }
+            get { return this._revokedAt; }
             set { this._revokedAt = value; }
         }
 

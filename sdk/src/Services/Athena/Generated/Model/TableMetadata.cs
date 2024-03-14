@@ -65,9 +65,9 @@ namespace Amazon.Athena.Model
         /// The time that the table was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Athena.Model
         /// The last time the table was accessed.
         /// </para>
         /// </summary>
-        public DateTime LastAccessTime
+        public DateTime? LastAccessTime
         {
-            get { return this._lastAccessTime.GetValueOrDefault(); }
+            get { return this._lastAccessTime; }
             set { this._lastAccessTime = value; }
         }
 

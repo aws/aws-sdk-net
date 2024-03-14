@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// originates from on-premises to the interface endpoint.
         /// </para>
         /// </summary>
-        public bool PrivateDnsOnlyForInboundResolverEndpoint
+        public bool? PrivateDnsOnlyForInboundResolverEndpoint
         {
-            get { return this._privateDnsOnlyForInboundResolverEndpoint.GetValueOrDefault(); }
+            get { return this._privateDnsOnlyForInboundResolverEndpoint; }
             set { this._privateDnsOnlyForInboundResolverEndpoint = value; }
         }
 

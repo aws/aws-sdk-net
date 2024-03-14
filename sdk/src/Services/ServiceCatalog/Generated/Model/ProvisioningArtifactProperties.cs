@@ -71,9 +71,9 @@ namespace Amazon.ServiceCatalog.Model
         /// type. 
         /// </para>
         /// </summary>
-        public bool DisableTemplateValidation
+        public bool? DisableTemplateValidation
         {
-            get { return this._disableTemplateValidation.GetValueOrDefault(); }
+            get { return this._disableTemplateValidation; }
             set { this._disableTemplateValidation = value; }
         }
 

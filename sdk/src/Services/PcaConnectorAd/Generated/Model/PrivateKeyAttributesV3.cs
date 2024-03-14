@@ -124,9 +124,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MinimalKeyLength
+        public int? MinimalKeyLength
         {
-            get { return this._minimalKeyLength.GetValueOrDefault(); }
+            get { return this._minimalKeyLength; }
             set { this._minimalKeyLength = value; }
         }
 

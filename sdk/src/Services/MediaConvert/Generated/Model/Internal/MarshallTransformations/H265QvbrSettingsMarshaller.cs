@@ -48,19 +48,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAverageBitrate())
             {
                 context.Writer.WritePropertyName("maxAverageBitrate");
-                context.Writer.Write(requestObject.MaxAverageBitrate);
+                context.Writer.Write(requestObject.MaxAverageBitrate.Value);
             }
 
             if(requestObject.IsSetQvbrQualityLevel())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevel");
-                context.Writer.Write(requestObject.QvbrQualityLevel);
+                context.Writer.Write(requestObject.QvbrQualityLevel.Value);
             }
 
             if(requestObject.IsSetQvbrQualityLevelFineTune())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevelFineTune");
-                context.Writer.Write(requestObject.QvbrQualityLevelFineTune);
+                context.Writer.Write(requestObject.QvbrQualityLevelFineTune.Value);
             }
 
         }

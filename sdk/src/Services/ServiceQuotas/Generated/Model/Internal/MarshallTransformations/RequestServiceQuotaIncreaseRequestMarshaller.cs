@@ -76,7 +76,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDesiredValue())
                 {
                     context.Writer.WritePropertyName("DesiredValue");
-                    context.Writer.Write(publicRequest.DesiredValue);
+                    context.Writer.Write(publicRequest.DesiredValue.Value);
                 }
 
                 if(publicRequest.IsSetQuotaCode())

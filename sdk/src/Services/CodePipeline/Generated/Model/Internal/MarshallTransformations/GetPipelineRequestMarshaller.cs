@@ -76,7 +76,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("version");
-                    context.Writer.Write(publicRequest.Version);
+                    context.Writer.Write(publicRequest.Version.Value);
                 }
 
                 writer.WriteObjectEnd();

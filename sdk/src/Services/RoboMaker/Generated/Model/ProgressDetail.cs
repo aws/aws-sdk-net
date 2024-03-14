@@ -89,9 +89,9 @@ namespace Amazon.RoboMaker.Model
         /// steps.
         /// </para>
         /// </summary>
-        public int EstimatedTimeRemainingSeconds
+        public int? EstimatedTimeRemainingSeconds
         {
-            get { return this._estimatedTimeRemainingSeconds.GetValueOrDefault(); }
+            get { return this._estimatedTimeRemainingSeconds; }
             set { this._estimatedTimeRemainingSeconds = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float PercentDone
+        public float? PercentDone
         {
-            get { return this._percentDone.GetValueOrDefault(); }
+            get { return this._percentDone; }
             set { this._percentDone = value; }
         }
 

@@ -126,9 +126,9 @@ namespace Amazon.OpsWorks.Model
         /// For PIOPS volumes, the IOPS per disk.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of disks in the array.
         /// </para>
         /// </summary>
-        public int NumberOfDisks
+        public int? NumberOfDisks
         {
-            get { return this._numberOfDisks.GetValueOrDefault(); }
+            get { return this._numberOfDisks; }
             set { this._numberOfDisks = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.OpsWorks.Model
         /// The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
         /// </para>
         /// </summary>
-        public int RaidLevel
+        public int? RaidLevel
         {
-            get { return this._raidLevel.GetValueOrDefault(); }
+            get { return this._raidLevel; }
             set { this._raidLevel = value; }
         }
 
@@ -234,9 +234,9 @@ namespace Amazon.OpsWorks.Model
         /// The array's size.
         /// </para>
         /// </summary>
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

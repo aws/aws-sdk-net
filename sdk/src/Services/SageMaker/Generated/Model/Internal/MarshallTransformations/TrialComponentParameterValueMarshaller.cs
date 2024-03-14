@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("NumberValue");
-                context.Writer.Write(requestObject.NumberValue);
+                context.Writer.Write(requestObject.NumberValue.Value);
             }
 
             if(requestObject.IsSetStringValue())

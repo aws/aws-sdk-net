@@ -256,9 +256,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TimeoutInSeconds
+        public int? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

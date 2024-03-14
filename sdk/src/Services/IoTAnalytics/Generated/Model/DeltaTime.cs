@@ -49,9 +49,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int OffsetSeconds
+        public int? OffsetSeconds
         {
-            get { return this._offsetSeconds.GetValueOrDefault(); }
+            get { return this._offsetSeconds; }
             set { this._offsetSeconds = value; }
         }
 

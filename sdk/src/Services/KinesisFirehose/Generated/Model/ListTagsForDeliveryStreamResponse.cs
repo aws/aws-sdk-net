@@ -45,9 +45,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool HasMoreTags
+        public bool? HasMoreTags
         {
-            get { return this._hasMoreTags.GetValueOrDefault(); }
+            get { return this._hasMoreTags; }
             set { this._hasMoreTags = value; }
         }
 

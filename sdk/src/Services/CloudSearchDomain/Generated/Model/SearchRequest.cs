@@ -314,9 +314,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// indicating that the results might be incomplete due to a temporary system outage.
         /// </para>
         /// </summary>
-        public bool Partial
+        public bool? Partial
         {
-            get { return this._partial.GetValueOrDefault(); }
+            get { return this._partial; }
             set { this._partial = value; }
         }
 
@@ -520,9 +520,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// Specifies the maximum number of search hits to include in the response. 
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 
@@ -575,9 +575,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.
         /// </para>
         /// </summary>
-        public long Start
+        public long? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 

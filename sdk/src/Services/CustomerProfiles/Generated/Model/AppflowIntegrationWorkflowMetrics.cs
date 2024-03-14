@@ -44,9 +44,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long RecordsProcessed
+        public long? RecordsProcessed
         {
-            get { return this._recordsProcessed.GetValueOrDefault(); }
+            get { return this._recordsProcessed; }
             set { this._recordsProcessed = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StepsCompleted
+        public long? StepsCompleted
         {
-            get { return this._stepsCompleted.GetValueOrDefault(); }
+            get { return this._stepsCompleted; }
             set { this._stepsCompleted = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TotalSteps
+        public long? TotalSteps
         {
-            get { return this._totalSteps.GetValueOrDefault(); }
+            get { return this._totalSteps; }
             set { this._totalSteps = value; }
         }
 

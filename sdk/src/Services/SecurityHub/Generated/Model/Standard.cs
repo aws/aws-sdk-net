@@ -70,9 +70,9 @@ namespace Amazon.SecurityHub.Model
         /// standard is enabled by default unless <c>EnableDefaultStandards</c> is set to <c>false</c>.
         /// </para>
         /// </summary>
-        public bool EnabledByDefault
+        public bool? EnabledByDefault
         {
-            get { return this._enabledByDefault.GetValueOrDefault(); }
+            get { return this._enabledByDefault; }
             set { this._enabledByDefault = value; }
         }
 

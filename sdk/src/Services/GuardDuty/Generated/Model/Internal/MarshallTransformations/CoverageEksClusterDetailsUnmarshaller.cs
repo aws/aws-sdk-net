@@ -77,13 +77,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("compatibleNodes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CompatibleNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("coveredNodes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CoveredNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }

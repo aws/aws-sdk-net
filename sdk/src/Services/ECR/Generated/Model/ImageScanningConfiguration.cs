@@ -45,9 +45,9 @@ namespace Amazon.ECR.Model
         /// API.
         /// </para>
         /// </summary>
-        public bool ScanOnPush
+        public bool? ScanOnPush
         {
-            get { return this._scanOnPush.GetValueOrDefault(); }
+            get { return this._scanOnPush; }
             set { this._scanOnPush = value; }
         }
 

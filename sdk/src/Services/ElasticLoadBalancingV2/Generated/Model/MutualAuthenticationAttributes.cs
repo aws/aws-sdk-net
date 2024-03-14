@@ -43,9 +43,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Indicates whether expired client certificates are ignored.
         /// </para>
         /// </summary>
-        public bool IgnoreClientCertificateExpiry
+        public bool? IgnoreClientCertificateExpiry
         {
-            get { return this._ignoreClientCertificateExpiry.GetValueOrDefault(); }
+            get { return this._ignoreClientCertificateExpiry; }
             set { this._ignoreClientCertificateExpiry = value; }
         }
 

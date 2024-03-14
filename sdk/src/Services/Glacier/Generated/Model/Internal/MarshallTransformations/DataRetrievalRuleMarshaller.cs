@@ -48,7 +48,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytesPerHour())
             {
                 context.Writer.WritePropertyName("BytesPerHour");
-                context.Writer.Write(requestObject.BytesPerHour);
+                context.Writer.Write(requestObject.BytesPerHour.Value);
             }
 
             if(requestObject.IsSetStrategy())

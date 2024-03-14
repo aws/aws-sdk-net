@@ -65,13 +65,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("imageTestsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ImageTestsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("timeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

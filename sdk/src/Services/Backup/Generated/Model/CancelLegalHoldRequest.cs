@@ -84,9 +84,9 @@ namespace Amazon.Backup.Model
         /// legal hold.
         /// </para>
         /// </summary>
-        public long RetainRecordInDays
+        public long? RetainRecordInDays
         {
-            get { return this._retainRecordInDays.GetValueOrDefault(); }
+            get { return this._retainRecordInDays; }
             set { this._retainRecordInDays = value; }
         }
 

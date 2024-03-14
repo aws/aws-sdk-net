@@ -48,25 +48,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
             if(requestObject.IsSetX())
             {
                 context.Writer.WritePropertyName("x");
-                context.Writer.Write(requestObject.X);
+                context.Writer.Write(requestObject.X.Value);
             }
 
             if(requestObject.IsSetY())
             {
                 context.Writer.WritePropertyName("y");
-                context.Writer.Write(requestObject.Y);
+                context.Writer.Write(requestObject.Y.Value);
             }
 
         }

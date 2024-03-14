@@ -77,9 +77,9 @@ namespace Amazon.FSx.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -74,7 +74,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAllowProfileCreation())
                 {
                     context.Writer.WritePropertyName("AllowProfileCreation");
-                    context.Writer.Write(publicRequest.AllowProfileCreation);
+                    context.Writer.Write(publicRequest.AllowProfileCreation.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -92,7 +92,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationDays())
                 {
                     context.Writer.WritePropertyName("ExpirationDays");
-                    context.Writer.Write(publicRequest.ExpirationDays);
+                    context.Writer.Write(publicRequest.ExpirationDays.Value);
                 }
 
                 if(publicRequest.IsSetFields())

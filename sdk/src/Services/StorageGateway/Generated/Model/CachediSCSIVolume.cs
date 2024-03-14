@@ -54,9 +54,9 @@ namespace Amazon.StorageGateway.Model
         /// this timestamp.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -214,9 +214,9 @@ namespace Amazon.StorageGateway.Model
         /// if the cached volume is not restoring or bootstrapping.
         /// </para>
         /// </summary>
-        public double VolumeProgress
+        public double? VolumeProgress
         {
-            get { return this._volumeProgress.GetValueOrDefault(); }
+            get { return this._volumeProgress; }
             set { this._volumeProgress = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.StorageGateway.Model
         /// The size, in bytes, of the volume capacity.
         /// </para>
         /// </summary>
-        public long VolumeSizeInBytes
+        public long? VolumeSizeInBytes
         {
-            get { return this._volumeSizeInBytes.GetValueOrDefault(); }
+            get { return this._volumeSizeInBytes; }
             set { this._volumeSizeInBytes = value; }
         }
 
@@ -305,9 +305,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long VolumeUsedInBytes
+        public long? VolumeUsedInBytes
         {
-            get { return this._volumeUsedInBytes.GetValueOrDefault(); }
+            get { return this._volumeUsedInBytes; }
             set { this._volumeUsedInBytes = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.Drs.Model
         /// The date and time the last Source Network recovery was initiated.
         /// </para>
         /// </summary>
-        public DateTime ApiCallDateTime
+        public DateTime? ApiCallDateTime
         {
-            get { return this._apiCallDateTime.GetValueOrDefault(); }
+            get { return this._apiCallDateTime; }
             set { this._apiCallDateTime = value; }
         }
 

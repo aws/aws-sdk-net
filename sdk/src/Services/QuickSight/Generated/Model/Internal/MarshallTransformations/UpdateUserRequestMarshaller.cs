@@ -113,7 +113,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUnapplyCustomPermissions())
                 {
                     context.Writer.WritePropertyName("UnapplyCustomPermissions");
-                    context.Writer.Write(publicRequest.UnapplyCustomPermissions);
+                    context.Writer.Write(publicRequest.UnapplyCustomPermissions.Value);
                 }
 
                 writer.WriteObjectEnd();

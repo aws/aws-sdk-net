@@ -83,9 +83,9 @@ namespace Amazon.Pinpoint.Model
         /// The latitude coordinate of the endpoint location, rounded to one decimal place.
         /// </para>
         /// </summary>
-        public double Latitude
+        public double? Latitude
         {
-            get { return this._latitude.GetValueOrDefault(); }
+            get { return this._latitude; }
             set { this._latitude = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Pinpoint.Model
         /// The longitude coordinate of the endpoint location, rounded to one decimal place.
         /// </para>
         /// </summary>
-        public double Longitude
+        public double? Longitude
         {
-            get { return this._longitude.GetValueOrDefault(); }
+            get { return this._longitude; }
             set { this._longitude = value; }
         }
 

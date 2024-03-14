@@ -81,9 +81,9 @@ namespace Amazon.XRay.Model
         /// The response status.
         /// </para>
         /// </summary>
-        public int HttpStatus
+        public int? HttpStatus
         {
-            get { return this._httpStatus.GetValueOrDefault(); }
+            get { return this._httpStatus; }
             set { this._httpStatus = value; }
         }
 

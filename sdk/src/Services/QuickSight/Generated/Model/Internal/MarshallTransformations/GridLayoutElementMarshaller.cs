@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnIndex())
             {
                 context.Writer.WritePropertyName("ColumnIndex");
-                context.Writer.Write(requestObject.ColumnIndex);
+                context.Writer.Write(requestObject.ColumnIndex.Value);
             }
 
             if(requestObject.IsSetColumnSpan())
             {
                 context.Writer.WritePropertyName("ColumnSpan");
-                context.Writer.Write(requestObject.ColumnSpan);
+                context.Writer.Write(requestObject.ColumnSpan.Value);
             }
 
             if(requestObject.IsSetElementId())
@@ -72,13 +72,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRowIndex())
             {
                 context.Writer.WritePropertyName("RowIndex");
-                context.Writer.Write(requestObject.RowIndex);
+                context.Writer.Write(requestObject.RowIndex.Value);
             }
 
             if(requestObject.IsSetRowSpan())
             {
                 context.Writer.WritePropertyName("RowSpan");
-                context.Writer.Write(requestObject.RowSpan);
+                context.Writer.Write(requestObject.RowSpan.Value);
             }
 
         }

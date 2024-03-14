@@ -42,9 +42,9 @@ namespace Amazon.GuardDuty.Model
         /// Total number of accounts that have enabled the additional configuration.
         /// </para>
         /// </summary>
-        public int EnabledAccountsCount
+        public int? EnabledAccountsCount
         {
-            get { return this._enabledAccountsCount.GetValueOrDefault(); }
+            get { return this._enabledAccountsCount; }
             set { this._enabledAccountsCount = value; }
         }
 

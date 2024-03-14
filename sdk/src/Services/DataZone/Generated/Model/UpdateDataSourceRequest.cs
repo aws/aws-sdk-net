@@ -183,9 +183,9 @@ namespace Amazon.DataZone.Model
         /// action.
         /// </para>
         /// </summary>
-        public bool PublishOnImport
+        public bool? PublishOnImport
         {
-            get { return this._publishOnImport.GetValueOrDefault(); }
+            get { return this._publishOnImport; }
             set { this._publishOnImport = value; }
         }
 

@@ -73,9 +73,9 @@ namespace Amazon.ForecastService.Model
         /// Whether the predictor was created with <a>CreateAutoPredictor</a>.
         /// </para>
         /// </summary>
-        public bool IsAutoPredictor
+        public bool? IsAutoPredictor
         {
-            get { return this._isAutoPredictor.GetValueOrDefault(); }
+            get { return this._isAutoPredictor; }
             set { this._isAutoPredictor = value; }
         }
 

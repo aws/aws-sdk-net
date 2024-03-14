@@ -46,9 +46,9 @@ namespace Amazon.Appflow.Model
         ///  The total number of bytes processed by the flow run. 
         /// </para>
         /// </summary>
-        public long BytesProcessed
+        public long? BytesProcessed
         {
-            get { return this._bytesProcessed.GetValueOrDefault(); }
+            get { return this._bytesProcessed; }
             set { this._bytesProcessed = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Appflow.Model
         ///  The total number of bytes written as a result of the flow run. 
         /// </para>
         /// </summary>
-        public long BytesWritten
+        public long? BytesWritten
         {
-            get { return this._bytesWritten.GetValueOrDefault(); }
+            get { return this._bytesWritten; }
             set { this._bytesWritten = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Appflow.Model
         /// from your SAP application.
         /// </para>
         /// </summary>
-        public long MaxPageSize
+        public long? MaxPageSize
         {
-            get { return this._maxPageSize.GetValueOrDefault(); }
+            get { return this._maxPageSize; }
             set { this._maxPageSize = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.Appflow.Model
         /// your data.
         /// </para>
         /// </summary>
-        public long NumParallelProcesses
+        public long? NumParallelProcesses
         {
-            get { return this._numParallelProcesses.GetValueOrDefault(); }
+            get { return this._numParallelProcesses; }
             set { this._numParallelProcesses = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Appflow.Model
         ///  The number of records processed in the flow run. 
         /// </para>
         /// </summary>
-        public long RecordsProcessed
+        public long? RecordsProcessed
         {
-            get { return this._recordsProcessed.GetValueOrDefault(); }
+            get { return this._recordsProcessed; }
             set { this._recordsProcessed = value; }
         }
 

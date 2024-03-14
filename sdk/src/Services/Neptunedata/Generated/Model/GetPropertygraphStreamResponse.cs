@@ -92,9 +92,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long LastTrxTimestampInMillis
+        public long? LastTrxTimestampInMillis
         {
-            get { return this._lastTrxTimestampInMillis.GetValueOrDefault(); }
+            get { return this._lastTrxTimestampInMillis; }
             set { this._lastTrxTimestampInMillis = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalRecords
+        public int? TotalRecords
         {
-            get { return this._totalRecords.GetValueOrDefault(); }
+            get { return this._totalRecords; }
             set { this._totalRecords = value; }
         }
 

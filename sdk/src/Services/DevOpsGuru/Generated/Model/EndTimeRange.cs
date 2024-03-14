@@ -42,9 +42,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The earliest end time in the time range. 
         /// </para>
         /// </summary>
-        public DateTime FromTime
+        public DateTime? FromTime
         {
-            get { return this._fromTime.GetValueOrDefault(); }
+            get { return this._fromTime; }
             set { this._fromTime = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.DevOpsGuru.Model
         ///  The latest end time in the time range. 
         /// </para>
         /// </summary>
-        public DateTime ToTime
+        public DateTime? ToTime
         {
-            get { return this._toTime.GetValueOrDefault(); }
+            get { return this._toTime; }
             set { this._toTime = value; }
         }
 

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WellArchitected")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

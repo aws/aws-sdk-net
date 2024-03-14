@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEgress())
             {
                 context.Writer.WritePropertyName("Egress");
-                context.Writer.Write(requestObject.Egress);
+                context.Writer.Write(requestObject.Egress.Value);
             }
 
             if(requestObject.IsSetIcmpTypeCode())
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuleNumber())
             {
                 context.Writer.WritePropertyName("RuleNumber");
-                context.Writer.Write(requestObject.RuleNumber);
+                context.Writer.Write(requestObject.RuleNumber.Value);
             }
 
         }

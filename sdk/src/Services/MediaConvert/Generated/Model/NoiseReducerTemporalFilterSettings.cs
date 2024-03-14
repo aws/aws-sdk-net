@@ -45,9 +45,9 @@ namespace Amazon.MediaConvert.Model
         /// complex scenes more aggressively and creates better VQ for low bitrate outputs.
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
-        public int AggressiveMode
+        public int? AggressiveMode
         {
-            get { return this._aggressiveMode.GetValueOrDefault(); }
+            get { return this._aggressiveMode; }
             set { this._aggressiveMode = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.MediaConvert.Model
         /// transcode time at the cost of bit rate.
         /// </summary>
         [AWSProperty(Min=-1, Max=3)]
-        public int Speed
+        public int? Speed
         {
-            get { return this._speed.GetValueOrDefault(); }
+            get { return this._speed; }
             set { this._speed = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.MediaConvert.Model
         /// * 8-16 for a high level of complexity reduction
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
-        public int Strength
+        public int? Strength
         {
-            get { return this._strength.GetValueOrDefault(); }
+            get { return this._strength; }
             set { this._strength = value; }
         }
 

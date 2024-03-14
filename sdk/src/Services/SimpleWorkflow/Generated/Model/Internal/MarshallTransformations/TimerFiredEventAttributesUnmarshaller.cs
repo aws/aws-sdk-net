@@ -65,7 +65,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("startedEventId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context);
                     continue;
                 }

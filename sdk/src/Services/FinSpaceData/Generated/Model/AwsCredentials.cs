@@ -63,9 +63,9 @@ namespace Amazon.FinSpaceData.Model
         ///  The Epoch time when the current credentials expire.
         /// </para>
         /// </summary>
-        public long Expiration
+        public long? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

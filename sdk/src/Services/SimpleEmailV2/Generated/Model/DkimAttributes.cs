@@ -77,9 +77,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// [Easy DKIM] The last time a key pair was generated for this identity.
         /// </para>
         /// </summary>
-        public DateTime LastKeyGenerationTimestamp
+        public DateTime? LastKeyGenerationTimestamp
         {
-            get { return this._lastKeyGenerationTimestamp.GetValueOrDefault(); }
+            get { return this._lastKeyGenerationTimestamp; }
             set { this._lastKeyGenerationTimestamp = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// the identity aren't DKIM-signed.
         /// </para>
         /// </summary>
-        public bool SigningEnabled
+        public bool? SigningEnabled
         {
-            get { return this._signingEnabled.GetValueOrDefault(); }
+            get { return this._signingEnabled; }
             set { this._signingEnabled = value; }
         }
 

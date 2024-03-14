@@ -48,13 +48,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFadeOut())
             {
                 context.Writer.WritePropertyName("fadeOut");
-                context.Writer.Write(requestObject.FadeOut);
+                context.Writer.Write(requestObject.FadeOut.Value);
             }
 
             if(requestObject.IsSetLayer())
             {
                 context.Writer.WritePropertyName("layer");
-                context.Writer.Write(requestObject.Layer);
+                context.Writer.Write(requestObject.Layer.Value);
             }
 
             if(requestObject.IsSetOutputNames())

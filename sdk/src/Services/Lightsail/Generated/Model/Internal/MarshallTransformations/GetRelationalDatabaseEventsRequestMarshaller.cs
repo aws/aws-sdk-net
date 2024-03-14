@@ -70,7 +70,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDurationInMinutes())
                 {
                     context.Writer.WritePropertyName("durationInMinutes");
-                    context.Writer.Write(publicRequest.DurationInMinutes);
+                    context.Writer.Write(publicRequest.DurationInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetPageToken())

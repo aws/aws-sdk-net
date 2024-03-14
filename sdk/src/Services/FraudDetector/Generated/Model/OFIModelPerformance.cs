@@ -43,9 +43,9 @@ namespace Amazon.FraudDetector.Model
         /// false positive rate (FPR) across all possible model score thresholds. 
         /// </para>
         /// </summary>
-        public float Auc
+        public float? Auc
         {
-            get { return this._auc.GetValueOrDefault(); }
+            get { return this._auc; }
             set { this._auc = value; }
         }
 

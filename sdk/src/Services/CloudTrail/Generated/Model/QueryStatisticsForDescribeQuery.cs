@@ -49,9 +49,9 @@ namespace Amazon.CloudTrail.Model
         /// is still running.
         /// </para>
         /// </summary>
-        public long BytesScanned
+        public long? BytesScanned
         {
-            get { return this._bytesScanned.GetValueOrDefault(); }
+            get { return this._bytesScanned; }
             set { this._bytesScanned = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.CloudTrail.Model
         /// The creation time of the query.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.CloudTrail.Model
         /// The number of events that matched a query.
         /// </para>
         /// </summary>
-        public long EventsMatched
+        public long? EventsMatched
         {
-            get { return this._eventsMatched.GetValueOrDefault(); }
+            get { return this._eventsMatched; }
             set { this._eventsMatched = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.CloudTrail.Model
         /// The number of events that the query scanned in the event data store.
         /// </para>
         /// </summary>
-        public long EventsScanned
+        public long? EventsScanned
         {
-            get { return this._eventsScanned.GetValueOrDefault(); }
+            get { return this._eventsScanned; }
             set { this._eventsScanned = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.CloudTrail.Model
         /// The query's run time, in milliseconds.
         /// </para>
         /// </summary>
-        public int ExecutionTimeInMillis
+        public int? ExecutionTimeInMillis
         {
-            get { return this._executionTimeInMillis.GetValueOrDefault(); }
+            get { return this._executionTimeInMillis; }
             set { this._executionTimeInMillis = value; }
         }
 

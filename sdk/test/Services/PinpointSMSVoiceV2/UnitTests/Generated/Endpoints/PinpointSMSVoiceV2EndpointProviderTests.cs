@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.PinpointSMSVoiceV2.Endpoints;
 using Amazon.PinpointSMSVoiceV2.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class PinpointSMSVoiceV2EndpointsTests

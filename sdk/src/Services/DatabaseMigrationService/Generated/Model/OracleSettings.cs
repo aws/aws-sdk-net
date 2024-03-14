@@ -85,9 +85,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// access redo logs through any specified path prefix replacement using direct file access.
         /// </para>
         /// </summary>
-        public bool AccessAlternateDirectly
+        public bool? AccessAlternateDirectly
         {
-            get { return this._accessAlternateDirectly.GetValueOrDefault(); }
+            get { return this._accessAlternateDirectly; }
             set { this._accessAlternateDirectly = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
         /// </para>
         /// </summary>
-        public int AdditionalArchivedLogDestId
+        public int? AdditionalArchivedLogDestId
         {
-            get { return this._additionalArchivedLogDestId.GetValueOrDefault(); }
+            get { return this._additionalArchivedLogDestId; }
             set { this._additionalArchivedLogDestId = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// If you use this option, you still need to enable database-level supplemental logging.
         /// </para>
         /// </summary>
-        public bool AddSupplementalLogging
+        public bool? AddSupplementalLogging
         {
-            get { return this._addSupplementalLogging.GetValueOrDefault(); }
+            get { return this._addSupplementalLogging; }
             set { this._addSupplementalLogging = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// columns that are nested tables or defined types.
         /// </para>
         /// </summary>
-        public bool AllowSelectNestedTables
+        public bool? AllowSelectNestedTables
         {
-            get { return this._allowSelectNestedTables.GetValueOrDefault(); }
+            get { return this._allowSelectNestedTables; }
             set { this._allowSelectNestedTables = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// ensuring that the correct logs are accessed from the outset.
         /// </para>
         /// </summary>
-        public int ArchivedLogDestId
+        public int? ArchivedLogDestId
         {
-            get { return this._archivedLogDestId.GetValueOrDefault(); }
+            get { return this._archivedLogDestId; }
             set { this._archivedLogDestId = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// user account needs to be granted ASM privileges.
         /// </para>
         /// </summary>
-        public bool ArchivedLogsOnly
+        public bool? ArchivedLogsOnly
         {
-            get { return this._archivedLogsOnly.GetValueOrDefault(); }
+            get { return this._archivedLogsOnly; }
             set { this._archivedLogsOnly = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// When true, converts timestamps with the <c>timezone</c> datatype to their UTC value.
         /// </para>
         /// </summary>
-        public bool ConvertTimestampWithZoneToUTC
+        public bool? ConvertTimestampWithZoneToUTC
         {
-            get { return this._convertTimestampWithZoneToUTC.GetValueOrDefault(); }
+            get { return this._convertTimestampWithZoneToUTC; }
             set { this._convertTimestampWithZoneToUTC = value; }
         }
 
@@ -346,9 +346,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// logs.
         /// </para>
         /// </summary>
-        public bool DirectPathNoLog
+        public bool? DirectPathNoLog
         {
-            get { return this._directPathNoLog.GetValueOrDefault(); }
+            get { return this._directPathNoLog; }
             set { this._directPathNoLog = value; }
         }
 
@@ -366,9 +366,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// load feature. Note that the target table cannot have any constraints or indexes.
         /// </para>
         /// </summary>
-        public bool DirectPathParallelLoad
+        public bool? DirectPathParallelLoad
         {
-            get { return this._directPathParallelLoad.GetValueOrDefault(); }
+            get { return this._directPathParallelLoad; }
             set { this._directPathParallelLoad = value; }
         }
 
@@ -385,9 +385,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// tables or indexes under the same tablespace on the target.
         /// </para>
         /// </summary>
-        public bool EnableHomogenousTablespace
+        public bool? EnableHomogenousTablespace
         {
-            get { return this._enableHomogenousTablespace.GetValueOrDefault(); }
+            get { return this._enableHomogenousTablespace; }
             set { this._enableHomogenousTablespace = value; }
         }
 
@@ -458,9 +458,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// fails instead of truncating the LOB data.
         /// </para>
         /// </summary>
-        public bool FailTasksOnLobTruncation
+        public bool? FailTasksOnLobTruncation
         {
-            get { return this._failTasksOnLobTruncation.GetValueOrDefault(); }
+            get { return this._failTasksOnLobTruncation; }
             set { this._failTasksOnLobTruncation = value; }
         }
 
@@ -481,9 +481,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <c>numberDataTypeScale=12</c> 
         /// </para>
         /// </summary>
-        public int NumberDatatypeScale
+        public int? NumberDatatypeScale
         {
-            get { return this._numberDatatypeScale.GetValueOrDefault(); }
+            get { return this._numberDatatypeScale; }
             set { this._numberDatatypeScale = value; }
         }
 
@@ -509,9 +509,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int OpenTransactionWindow
+        public int? OpenTransactionWindow
         {
-            get { return this._openTransactionWindow.GetValueOrDefault(); }
+            get { return this._openTransactionWindow; }
             set { this._openTransactionWindow = value; }
         }
 
@@ -550,9 +550,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// this attribute together with the <c>readAheadBlocks</c> attribute.
         /// </para>
         /// </summary>
-        public int ParallelAsmReadThreads
+        public int? ParallelAsmReadThreads
         {
-            get { return this._parallelAsmReadThreads.GetValueOrDefault(); }
+            get { return this._parallelAsmReadThreads; }
             set { this._parallelAsmReadThreads = value; }
         }
 
@@ -587,9 +587,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint TCP port.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -608,9 +608,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// maximum).
         /// </para>
         /// </summary>
-        public int ReadAheadBlocks
+        public int? ReadAheadBlocks
         {
-            get { return this._readAheadBlocks.GetValueOrDefault(); }
+            get { return this._readAheadBlocks; }
             set { this._readAheadBlocks = value; }
         }
 
@@ -626,9 +626,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// When set to <c>true</c>, this attribute supports tablespace replication.
         /// </para>
         /// </summary>
-        public bool ReadTableSpaceName
+        public bool? ReadTableSpaceName
         {
-            get { return this._readTableSpaceName.GetValueOrDefault(); }
+            get { return this._readTableSpaceName; }
             set { this._readTableSpaceName = value; }
         }
 
@@ -647,9 +647,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// the redo logs.
         /// </para>
         /// </summary>
-        public bool ReplacePathPrefix
+        public bool? ReplacePathPrefix
         {
-            get { return this._replacePathPrefix.GetValueOrDefault(); }
+            get { return this._replacePathPrefix; }
             set { this._replacePathPrefix = value; }
         }
 
@@ -669,9 +669,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Example: <c>retryInterval=6;</c> 
         /// </para>
         /// </summary>
-        public int RetryInterval
+        public int? RetryInterval
         {
-            get { return this._retryInterval.GetValueOrDefault(); }
+            get { return this._retryInterval; }
             set { this._retryInterval = value; }
         }
 
@@ -897,9 +897,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to an active database that might be in production.
         /// </para>
         /// </summary>
-        public int StandbyDelayTime
+        public int? StandbyDelayTime
         {
-            get { return this._standbyDelayTime.GetValueOrDefault(); }
+            get { return this._standbyDelayTime; }
             set { this._standbyDelayTime = value; }
         }
 
@@ -916,9 +916,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// data types during migration. The default value is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool TrimSpaceInChar
+        public bool? TrimSpaceInChar
         {
-            get { return this._trimSpaceInChar.GetValueOrDefault(); }
+            get { return this._trimSpaceInChar; }
             set { this._trimSpaceInChar = value; }
         }
 
@@ -936,9 +936,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// any specified prefix replacement to access all online redo logs.
         /// </para>
         /// </summary>
-        public bool UseAlternateFolderForOnline
+        public bool? UseAlternateFolderForOnline
         {
-            get { return this._useAlternateFolderForOnline.GetValueOrDefault(); }
+            get { return this._useAlternateFolderForOnline; }
             set { this._useAlternateFolderForOnline = value; }
         }
 
@@ -958,9 +958,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
         /// </para>
         /// </summary>
-        public bool UseBFile
+        public bool? UseBFile
         {
-            get { return this._useBFile.GetValueOrDefault(); }
+            get { return this._useBFile; }
             set { this._useBFile = value; }
         }
 
@@ -978,9 +978,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// OCI protocol, you can bulk-load Oracle target tables during a full load.
         /// </para>
         /// </summary>
-        public bool UseDirectPathFullLoad
+        public bool? UseDirectPathFullLoad
         {
-            get { return this._useDirectPathFullLoad.GetValueOrDefault(); }
+            get { return this._useDirectPathFullLoad; }
             set { this._useDirectPathFullLoad = value; }
         }
 
@@ -1000,9 +1000,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
         /// </para>
         /// </summary>
-        public bool UseLogminerReader
+        public bool? UseLogminerReader
         {
-            get { return this._useLogminerReader.GetValueOrDefault(); }
+            get { return this._useLogminerReader; }
             set { this._useLogminerReader = value; }
         }
 

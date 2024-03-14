@@ -79,9 +79,9 @@ namespace Amazon.MTurk.Model
         /// The date and time of when the bonus was granted.
         /// </para>
         /// </summary>
-        public DateTime GrantTime
+        public DateTime? GrantTime
         {
-            get { return this._grantTime.GetValueOrDefault(); }
+            get { return this._grantTime; }
             set { this._grantTime = value; }
         }
 

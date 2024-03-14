@@ -47,9 +47,9 @@ namespace Amazon.DataPipeline.Model
         /// descriptions are returned.
         /// </para>
         /// </summary>
-        public bool EvaluateExpressions
+        public bool? EvaluateExpressions
         {
-            get { return this._evaluateExpressions.GetValueOrDefault(); }
+            get { return this._evaluateExpressions; }
             set { this._evaluateExpressions = value; }
         }
 

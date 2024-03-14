@@ -152,9 +152,9 @@ namespace Amazon.Redshift.Model
         /// The default value is -1.
         /// </para>
         /// </summary>
-        public int FinalClusterSnapshotRetentionPeriod
+        public int? FinalClusterSnapshotRetentionPeriod
         {
-            get { return this._finalClusterSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._finalClusterSnapshotRetentionPeriod; }
             set { this._finalClusterSnapshotRetentionPeriod = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Redshift.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool SkipFinalClusterSnapshot
+        public bool? SkipFinalClusterSnapshot
         {
-            get { return this._skipFinalClusterSnapshot.GetValueOrDefault(); }
+            get { return this._skipFinalClusterSnapshot; }
             set { this._skipFinalClusterSnapshot = value; }
         }
 

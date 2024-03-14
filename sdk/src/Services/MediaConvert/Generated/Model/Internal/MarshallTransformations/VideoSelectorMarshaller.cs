@@ -83,7 +83,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxLuminance())
             {
                 context.Writer.WritePropertyName("maxLuminance");
-                context.Writer.Write(requestObject.MaxLuminance);
+                context.Writer.Write(requestObject.MaxLuminance.Value);
             }
 
             if(requestObject.IsSetPadVideo())
@@ -95,13 +95,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid);
+                context.Writer.Write(requestObject.Pid.Value);
             }
 
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber);
+                context.Writer.Write(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetRotate())

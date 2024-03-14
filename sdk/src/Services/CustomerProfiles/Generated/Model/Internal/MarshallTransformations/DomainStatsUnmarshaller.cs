@@ -65,25 +65,25 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MeteringProfileCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MeteringProfileCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ObjectCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ObjectCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProfileCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProfileCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

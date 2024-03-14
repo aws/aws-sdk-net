@@ -48,7 +48,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteUnusedFMManagedResources())
             {
                 context.Writer.WritePropertyName("DeleteUnusedFMManagedResources");
-                context.Writer.Write(requestObject.DeleteUnusedFMManagedResources);
+                context.Writer.Write(requestObject.DeleteUnusedFMManagedResources.Value);
             }
 
             if(requestObject.IsSetExcludeMap())
@@ -73,7 +73,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeResourceTags())
             {
                 context.Writer.WritePropertyName("ExcludeResourceTags");
-                context.Writer.Write(requestObject.ExcludeResourceTags);
+                context.Writer.Write(requestObject.ExcludeResourceTags.Value);
             }
 
             if(requestObject.IsSetIncludeMap())
@@ -128,7 +128,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRemediationEnabled())
             {
                 context.Writer.WritePropertyName("RemediationEnabled");
-                context.Writer.Write(requestObject.RemediationEnabled);
+                context.Writer.Write(requestObject.RemediationEnabled.Value);
             }
 
             if(requestObject.IsSetResourceSetIds())

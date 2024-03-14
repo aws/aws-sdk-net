@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrefixForAllResources())
             {
                 context.Writer.WritePropertyName("PrefixForAllResources");
-                context.Writer.Write(requestObject.PrefixForAllResources);
+                context.Writer.Write(requestObject.PrefixForAllResources.Value);
             }
 
         }

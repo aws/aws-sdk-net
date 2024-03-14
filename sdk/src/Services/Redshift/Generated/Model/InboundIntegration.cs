@@ -46,9 +46,9 @@ namespace Amazon.Redshift.Model
         /// The creation time of an inbound integration.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 

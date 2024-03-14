@@ -118,9 +118,9 @@ namespace Amazon.IdentityManagement.Model
         /// period</a>.
         /// </para>
         /// </summary>
-        public DateTime LastAccessedTime
+        public DateTime? LastAccessedTime
         {
-            get { return this._lastAccessedTime.GetValueOrDefault(); }
+            get { return this._lastAccessedTime; }
             set { this._lastAccessedTime = value; }
         }
 

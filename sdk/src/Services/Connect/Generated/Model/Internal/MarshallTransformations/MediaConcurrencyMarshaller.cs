@@ -54,7 +54,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConcurrency())
             {
                 context.Writer.WritePropertyName("Concurrency");
-                context.Writer.Write(requestObject.Concurrency);
+                context.Writer.Write(requestObject.Concurrency.Value);
             }
 
             if(requestObject.IsSetCrossChannelBehavior())

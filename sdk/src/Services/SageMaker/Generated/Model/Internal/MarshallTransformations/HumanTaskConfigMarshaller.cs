@@ -59,13 +59,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrentTaskCount())
             {
                 context.Writer.WritePropertyName("MaxConcurrentTaskCount");
-                context.Writer.Write(requestObject.MaxConcurrentTaskCount);
+                context.Writer.Write(requestObject.MaxConcurrentTaskCount.Value);
             }
 
             if(requestObject.IsSetNumberOfHumanWorkersPerDataObject())
             {
                 context.Writer.WritePropertyName("NumberOfHumanWorkersPerDataObject");
-                context.Writer.Write(requestObject.NumberOfHumanWorkersPerDataObject);
+                context.Writer.Write(requestObject.NumberOfHumanWorkersPerDataObject.Value);
             }
 
             if(requestObject.IsSetPreHumanTaskLambdaArn())
@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTaskAvailabilityLifetimeInSeconds())
             {
                 context.Writer.WritePropertyName("TaskAvailabilityLifetimeInSeconds");
-                context.Writer.Write(requestObject.TaskAvailabilityLifetimeInSeconds);
+                context.Writer.Write(requestObject.TaskAvailabilityLifetimeInSeconds.Value);
             }
 
             if(requestObject.IsSetTaskDescription())
@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTaskTimeLimitInSeconds())
             {
                 context.Writer.WritePropertyName("TaskTimeLimitInSeconds");
-                context.Writer.Write(requestObject.TaskTimeLimitInSeconds);
+                context.Writer.Write(requestObject.TaskTimeLimitInSeconds.Value);
             }
 
             if(requestObject.IsSetTaskTitle())

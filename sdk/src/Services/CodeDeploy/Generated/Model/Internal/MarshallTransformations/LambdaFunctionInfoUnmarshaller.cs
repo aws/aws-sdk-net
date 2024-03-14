@@ -89,7 +89,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("targetVersionWeight", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TargetVersionWeight = unmarshaller.Unmarshall(context);
                     continue;
                 }

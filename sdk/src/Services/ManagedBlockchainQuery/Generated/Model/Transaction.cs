@@ -258,9 +258,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long NumberOfTransactions
+        public long? NumberOfTransactions
         {
-            get { return this._numberOfTransactions.GetValueOrDefault(); }
+            get { return this._numberOfTransactions; }
             set { this._numberOfTransactions = value; }
         }
 
@@ -312,9 +312,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// The signature of the transaction. The Z coordinate of a point V.
         /// </para>
         /// </summary>
-        public int SignatureV
+        public int? SignatureV
         {
-            get { return this._signaturev.GetValueOrDefault(); }
+            get { return this._signaturev; }
             set { this._signaturev = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TransactionIndex
+        public long? TransactionIndex
         {
-            get { return this._transactionIndex.GetValueOrDefault(); }
+            get { return this._transactionIndex; }
             set { this._transactionIndex = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime TransactionTimestamp
+        public DateTime? TransactionTimestamp
         {
-            get { return this._transactionTimestamp.GetValueOrDefault(); }
+            get { return this._transactionTimestamp; }
             set { this._transactionTimestamp = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReservedConcurrentExecutions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReservedConcurrentExecutions = unmarshaller.Unmarshall(context);
                     continue;
                 }

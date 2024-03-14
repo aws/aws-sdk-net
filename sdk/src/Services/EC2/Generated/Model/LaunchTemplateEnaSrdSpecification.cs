@@ -55,9 +55,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether ENA Express is enabled for the network interface.
         /// </para>
         /// </summary>
-        public bool EnaSrdEnabled
+        public bool? EnaSrdEnabled
         {
-            get { return this._enaSrdEnabled.GetValueOrDefault(); }
+            get { return this._enaSrdEnabled; }
             set { this._enaSrdEnabled = value; }
         }
 

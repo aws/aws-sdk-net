@@ -63,9 +63,9 @@ namespace Amazon.Inspector2.Model
         /// The number of container images impacted by the findings.
         /// </para>
         /// </summary>
-        public long AffectedImages
+        public long? AffectedImages
         {
-            get { return this._affectedImages.GetValueOrDefault(); }
+            get { return this._affectedImages; }
             set { this._affectedImages = value; }
         }
 

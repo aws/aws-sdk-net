@@ -140,9 +140,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the VPC is the default VPC.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

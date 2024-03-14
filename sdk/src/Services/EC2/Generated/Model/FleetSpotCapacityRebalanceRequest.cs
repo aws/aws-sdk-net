@@ -91,9 +91,9 @@ namespace Amazon.EC2.Model
         /// Valid values: Minimum value of <c>120</c> seconds. Maximum value of <c>7200</c> seconds.
         /// </para>
         /// </summary>
-        public int TerminationDelay
+        public int? TerminationDelay
         {
-            get { return this._terminationDelay.GetValueOrDefault(); }
+            get { return this._terminationDelay; }
             set { this._terminationDelay = value; }
         }
 

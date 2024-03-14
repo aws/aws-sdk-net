@@ -60,9 +60,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances in the Assigning state.
         /// </para>
         /// </summary>
-        public int Assigning
+        public int? Assigning
         {
-            get { return this._assigning.GetValueOrDefault(); }
+            get { return this._assigning; }
             set { this._assigning = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>booting</c> status.
         /// </para>
         /// </summary>
-        public int Booting
+        public int? Booting
         {
-            get { return this._booting.GetValueOrDefault(); }
+            get { return this._booting; }
             set { this._booting = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>connection_lost</c> status.
         /// </para>
         /// </summary>
-        public int ConnectionLost
+        public int? ConnectionLost
         {
-            get { return this._connectionLost.GetValueOrDefault(); }
+            get { return this._connectionLost; }
             set { this._connectionLost = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances in the Deregistering state.
         /// </para>
         /// </summary>
-        public int Deregistering
+        public int? Deregistering
         {
-            get { return this._deregistering.GetValueOrDefault(); }
+            get { return this._deregistering; }
             set { this._deregistering = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>online</c> status.
         /// </para>
         /// </summary>
-        public int Online
+        public int? Online
         {
-            get { return this._online.GetValueOrDefault(); }
+            get { return this._online; }
             set { this._online = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>pending</c> status.
         /// </para>
         /// </summary>
-        public int Pending
+        public int? Pending
         {
-            get { return this._pending.GetValueOrDefault(); }
+            get { return this._pending; }
             set { this._pending = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>rebooting</c> status.
         /// </para>
         /// </summary>
-        public int Rebooting
+        public int? Rebooting
         {
-            get { return this._rebooting.GetValueOrDefault(); }
+            get { return this._rebooting; }
             set { this._rebooting = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances in the Registered state.
         /// </para>
         /// </summary>
-        public int Registered
+        public int? Registered
         {
-            get { return this._registered.GetValueOrDefault(); }
+            get { return this._registered; }
             set { this._registered = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances in the Registering state.
         /// </para>
         /// </summary>
-        public int Registering
+        public int? Registering
         {
-            get { return this._registering.GetValueOrDefault(); }
+            get { return this._registering; }
             set { this._registering = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>requested</c> status.
         /// </para>
         /// </summary>
-        public int Requested
+        public int? Requested
         {
-            get { return this._requested.GetValueOrDefault(); }
+            get { return this._requested; }
             set { this._requested = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>running_setup</c> status.
         /// </para>
         /// </summary>
-        public int RunningSetup
+        public int? RunningSetup
         {
-            get { return this._runningSetup.GetValueOrDefault(); }
+            get { return this._runningSetup; }
             set { this._runningSetup = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>setup_failed</c> status.
         /// </para>
         /// </summary>
-        public int SetupFailed
+        public int? SetupFailed
         {
-            get { return this._setupFailed.GetValueOrDefault(); }
+            get { return this._setupFailed; }
             set { this._setupFailed = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>shutting_down</c> status.
         /// </para>
         /// </summary>
-        public int ShuttingDown
+        public int? ShuttingDown
         {
-            get { return this._shuttingDown.GetValueOrDefault(); }
+            get { return this._shuttingDown; }
             set { this._shuttingDown = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>start_failed</c> status.
         /// </para>
         /// </summary>
-        public int StartFailed
+        public int? StartFailed
         {
-            get { return this._startFailed.GetValueOrDefault(); }
+            get { return this._startFailed; }
             set { this._startFailed = value; }
         }
 
@@ -312,9 +312,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>stop_failed</c> status.
         /// </para>
         /// </summary>
-        public int StopFailed
+        public int? StopFailed
         {
-            get { return this._stopFailed.GetValueOrDefault(); }
+            get { return this._stopFailed; }
             set { this._stopFailed = value; }
         }
 
@@ -330,9 +330,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>stopped</c> status.
         /// </para>
         /// </summary>
-        public int Stopped
+        public int? Stopped
         {
-            get { return this._stopped.GetValueOrDefault(); }
+            get { return this._stopped; }
             set { this._stopped = value; }
         }
 
@@ -348,9 +348,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>stopping</c> status.
         /// </para>
         /// </summary>
-        public int Stopping
+        public int? Stopping
         {
-            get { return this._stopping.GetValueOrDefault(); }
+            get { return this._stopping; }
             set { this._stopping = value; }
         }
 
@@ -366,9 +366,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>terminated</c> status.
         /// </para>
         /// </summary>
-        public int Terminated
+        public int? Terminated
         {
-            get { return this._terminated.GetValueOrDefault(); }
+            get { return this._terminated; }
             set { this._terminated = value; }
         }
 
@@ -384,9 +384,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances with <c>terminating</c> status.
         /// </para>
         /// </summary>
-        public int Terminating
+        public int? Terminating
         {
-            get { return this._terminating.GetValueOrDefault(); }
+            get { return this._terminating; }
             set { this._terminating = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.OpsWorks.Model
         /// The number of instances in the Unassigning state.
         /// </para>
         /// </summary>
-        public int Unassigning
+        public int? Unassigning
         {
-            get { return this._unassigning.GetValueOrDefault(); }
+            get { return this._unassigning; }
             set { this._unassigning = value; }
         }
 

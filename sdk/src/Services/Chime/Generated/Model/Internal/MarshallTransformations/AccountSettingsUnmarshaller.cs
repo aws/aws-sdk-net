@@ -65,13 +65,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DisableRemoteControl", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableRemoteControl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnableDialOut", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableDialOut = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStrength())
             {
                 context.Writer.WritePropertyName("strength");
-                context.Writer.Write(requestObject.Strength);
+                context.Writer.Write(requestObject.Strength.Value);
             }
 
         }

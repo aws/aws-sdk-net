@@ -82,7 +82,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHttpPutResponseHopLimit())
                 {
                     context.Writer.WritePropertyName("httpPutResponseHopLimit");
-                    context.Writer.Write(publicRequest.HttpPutResponseHopLimit);
+                    context.Writer.Write(publicRequest.HttpPutResponseHopLimit.Value);
                 }
 
                 if(publicRequest.IsSetHttpTokens())

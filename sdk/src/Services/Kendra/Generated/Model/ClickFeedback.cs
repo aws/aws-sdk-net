@@ -44,9 +44,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ClickTime
+        public DateTime? ClickTime
         {
-            get { return this._clickTime.GetValueOrDefault(); }
+            get { return this._clickTime; }
             set { this._clickTime = value; }
         }
 

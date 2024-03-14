@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CustomerProfiles")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Connect Customer Profiles. This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Connect Customer Profiles. This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

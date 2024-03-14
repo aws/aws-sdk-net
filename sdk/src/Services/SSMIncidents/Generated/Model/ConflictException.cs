@@ -102,7 +102,7 @@ namespace Amazon.SSMIncidents.Model
         {
             this.ResourceIdentifier = (string)info.GetValue("ResourceIdentifier", typeof(string));
             this.ResourceType = (ResourceType)info.GetValue("ResourceType", typeof(ResourceType));
-            this.RetryAfter = (DateTime)info.GetValue("RetryAfter", typeof(DateTime));
+            this.RetryAfter = (DateTime?)info.GetValue("RetryAfter", typeof(DateTime?));
         }
 
         /// <summary>
@@ -111,11 +111,6 @@ namespace Amazon.SSMIncidents.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -171,9 +166,9 @@ namespace Amazon.SSMIncidents.Model
         /// If present in the output, the operation can be retried after this time
         /// </para>
         /// </summary>
-        public DateTime RetryAfter
+        public DateTime? RetryAfter
         {
-            get { return this._retryAfter.GetValueOrDefault(); }
+            get { return this._retryAfter; }
             set { this._retryAfter = value; }
         }
 

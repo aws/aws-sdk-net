@@ -107,9 +107,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The number of servers that have been migrated.
         /// </para>
         /// </summary>
-        public int NoOfSrvCompleted
+        public int? NoOfSrvCompleted
         {
-            get { return this._noOfSrvCompleted.GetValueOrDefault(); }
+            get { return this._noOfSrvCompleted; }
             set { this._noOfSrvCompleted = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The number of servers that have failed to migrate.
         /// </para>
         /// </summary>
-        public int NoOfSrvFailed
+        public int? NoOfSrvFailed
         {
-            get { return this._noOfSrvFailed.GetValueOrDefault(); }
+            get { return this._noOfSrvFailed; }
             set { this._noOfSrvFailed = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The total number of servers that have been migrated.
         /// </para>
         /// </summary>
-        public int TotalNoOfSrv
+        public int? TotalNoOfSrv
         {
-            get { return this._totalNoOfSrv.GetValueOrDefault(); }
+            get { return this._totalNoOfSrv; }
             set { this._totalNoOfSrv = value; }
         }
 

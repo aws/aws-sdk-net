@@ -70,9 +70,9 @@ namespace Amazon.Kendra.Model
         ///  <c>TRUE</c> to delete content if the condition used for the target attribute is met.
         /// </para>
         /// </summary>
-        public bool DocumentContentDeletion
+        public bool? DocumentContentDeletion
         {
-            get { return this._documentContentDeletion.GetValueOrDefault(); }
+            get { return this._documentContentDeletion; }
             set { this._documentContentDeletion = value; }
         }
 

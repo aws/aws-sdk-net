@@ -56,13 +56,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("CreationTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DeletionTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DeletionTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,7 +74,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("LastUpdatedTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

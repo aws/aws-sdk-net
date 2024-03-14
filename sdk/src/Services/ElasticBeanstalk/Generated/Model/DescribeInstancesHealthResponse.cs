@@ -86,9 +86,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date and time that the health information was retrieved.
         /// </para>
         /// </summary>
-        public DateTime RefreshedAt
+        public DateTime? RefreshedAt
         {
-            get { return this._refreshedAt.GetValueOrDefault(); }
+            get { return this._refreshedAt; }
             set { this._refreshedAt = value; }
         }
 

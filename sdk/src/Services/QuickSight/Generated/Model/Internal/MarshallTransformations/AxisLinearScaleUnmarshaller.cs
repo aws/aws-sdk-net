@@ -65,13 +65,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("StepCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StepCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StepSize", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.StepSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,9 +48,9 @@ namespace Amazon.MemoryDB.Model
         /// values.
         /// </para>
         /// </summary>
-        public bool AllParameters
+        public bool? AllParameters
         {
-            get { return this._allParameters.GetValueOrDefault(); }
+            get { return this._allParameters; }
             set { this._allParameters = value; }
         }
 

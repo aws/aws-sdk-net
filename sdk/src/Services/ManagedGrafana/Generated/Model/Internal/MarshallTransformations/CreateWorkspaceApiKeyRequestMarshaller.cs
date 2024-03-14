@@ -83,7 +83,7 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSecondsToLive())
                 {
                     context.Writer.WritePropertyName("secondsToLive");
-                    context.Writer.Write(publicRequest.SecondsToLive);
+                    context.Writer.Write(publicRequest.SecondsToLive.Value);
                 }
 
                 writer.WriteObjectEnd();

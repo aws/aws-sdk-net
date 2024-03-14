@@ -102,9 +102,9 @@ namespace Amazon.Redshift.Model
         /// The value must be either -1 or an integer between 1 and 3,653.
         /// </para>
         /// </summary>
-        public int ManualSnapshotRetentionPeriod
+        public int? ManualSnapshotRetentionPeriod
         {
-            get { return this._manualSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._manualSnapshotRetentionPeriod; }
             set { this._manualSnapshotRetentionPeriod = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Redshift.Model
         /// Constraints: Must be at least 1 and no more than 35.
         /// </para>
         /// </summary>
-        public int RetentionPeriod
+        public int? RetentionPeriod
         {
-            get { return this._retentionPeriod.GetValueOrDefault(); }
+            get { return this._retentionPeriod; }
             set { this._retentionPeriod = value; }
         }
 

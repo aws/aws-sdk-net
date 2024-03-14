@@ -48,7 +48,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddGroupOwner())
             {
                 context.Writer.WritePropertyName("addGroupOwner");
-                context.Writer.Write(requestObject.AddGroupOwner);
+                context.Writer.Write(requestObject.AddGroupOwner.Value);
             }
 
             if(requestObject.IsSetDestinationPath())

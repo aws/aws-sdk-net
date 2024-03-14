@@ -54,7 +54,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCooldown())
             {
                 context.Writer.WritePropertyName("Cooldown");
-                context.Writer.Write(requestObject.Cooldown);
+                context.Writer.Write(requestObject.Cooldown.Value);
             }
 
             if(requestObject.IsSetMetricAggregationType())
@@ -66,7 +66,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinAdjustmentMagnitude())
             {
                 context.Writer.WritePropertyName("MinAdjustmentMagnitude");
-                context.Writer.Write(requestObject.MinAdjustmentMagnitude);
+                context.Writer.Write(requestObject.MinAdjustmentMagnitude.Value);
             }
 
             if(requestObject.IsSetStepAdjustments())

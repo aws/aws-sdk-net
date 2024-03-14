@@ -93,9 +93,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether data retention of the profile is enabled.
         /// </para>
         /// </summary>
-        public bool DataRetentionOptIn
+        public bool? DataRetentionOptIn
         {
-            get { return this._dataRetentionOptIn.GetValueOrDefault(); }
+            get { return this._dataRetentionOptIn; }
             set { this._dataRetentionOptIn = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The maximum volume limit for a room profile.
         /// </para>
         /// </summary>
-        public int MaxVolumeLimit
+        public int? MaxVolumeLimit
         {
-            get { return this._maxVolumeLimit.GetValueOrDefault(); }
+            get { return this._maxVolumeLimit; }
             set { this._maxVolumeLimit = value; }
         }
 
@@ -205,9 +205,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether PSTN calling is enabled.
         /// </para>
         /// </summary>
-        public bool PSTNEnabled
+        public bool? PSTNEnabled
         {
-            get { return this._pstnEnabled.GetValueOrDefault(); }
+            get { return this._pstnEnabled; }
             set { this._pstnEnabled = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether room profile setup is enabled.
         /// </para>
         /// </summary>
-        public bool SetupModeDisabled
+        public bool? SetupModeDisabled
         {
-            get { return this._setupModeDisabled.GetValueOrDefault(); }
+            get { return this._setupModeDisabled; }
             set { this._setupModeDisabled = value; }
         }
 

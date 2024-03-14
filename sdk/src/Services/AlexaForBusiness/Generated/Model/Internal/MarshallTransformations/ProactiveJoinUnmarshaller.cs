@@ -65,7 +65,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnabledByMotion", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnabledByMotion = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,19 +71,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("dateCreated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dateLastRun", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateLastRun = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dateUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }

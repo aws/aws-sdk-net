@@ -76,7 +76,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationInDays())
                 {
                     context.Writer.WritePropertyName("ExpirationInDays");
-                    context.Writer.Write(publicRequest.ExpirationInDays);
+                    context.Writer.Write(publicRequest.ExpirationInDays.Value);
                 }
 
                 if(publicRequest.IsSetLicenseArn())

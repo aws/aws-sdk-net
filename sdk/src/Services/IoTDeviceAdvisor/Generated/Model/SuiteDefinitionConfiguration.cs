@@ -85,9 +85,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Gets the tests intended for qualification in a suite.
         /// </para>
         /// </summary>
-        public bool IntendedForQualification
+        public bool? IntendedForQualification
         {
-            get { return this._intendedForQualification.GetValueOrDefault(); }
+            get { return this._intendedForQualification; }
             set { this._intendedForQualification = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Verifies if the test suite is a long duration test.
         /// </para>
         /// </summary>
-        public bool IsLongDurationTest
+        public bool? IsLongDurationTest
         {
-            get { return this._isLongDurationTest.GetValueOrDefault(); }
+            get { return this._isLongDurationTest; }
             set { this._isLongDurationTest = value; }
         }
 

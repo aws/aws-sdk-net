@@ -65,25 +65,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EndPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("First", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.First = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Last", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Last = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

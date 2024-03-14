@@ -77,7 +77,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RootVolumeEncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RootVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UserVolumeEncryptionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UserVolumeEncryptionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

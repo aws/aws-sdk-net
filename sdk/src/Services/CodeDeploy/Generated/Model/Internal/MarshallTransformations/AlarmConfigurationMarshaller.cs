@@ -64,13 +64,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetIgnorePollAlarmFailure())
             {
                 context.Writer.WritePropertyName("ignorePollAlarmFailure");
-                context.Writer.Write(requestObject.IgnorePollAlarmFailure);
+                context.Writer.Write(requestObject.IgnorePollAlarmFailure.Value);
             }
 
         }

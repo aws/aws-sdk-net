@@ -53,7 +53,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Enforced", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Enforced = unmarshaller.Unmarshall(context);
                     continue;
                 }

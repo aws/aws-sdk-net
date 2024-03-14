@@ -81,7 +81,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeQueriesWithoutUserInformation())
                 {
                     context.Writer.WritePropertyName("IncludeQueriesWithoutUserInformation");
-                    context.Writer.Write(publicRequest.IncludeQueriesWithoutUserInformation);
+                    context.Writer.Write(publicRequest.IncludeQueriesWithoutUserInformation.Value);
                 }
 
                 if(publicRequest.IsSetIndexId())
@@ -93,13 +93,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinimumNumberOfQueryingUsers())
                 {
                     context.Writer.WritePropertyName("MinimumNumberOfQueryingUsers");
-                    context.Writer.Write(publicRequest.MinimumNumberOfQueryingUsers);
+                    context.Writer.Write(publicRequest.MinimumNumberOfQueryingUsers.Value);
                 }
 
                 if(publicRequest.IsSetMinimumQueryCount())
                 {
                     context.Writer.WritePropertyName("MinimumQueryCount");
-                    context.Writer.Write(publicRequest.MinimumQueryCount);
+                    context.Writer.Write(publicRequest.MinimumQueryCount.Value);
                 }
 
                 if(publicRequest.IsSetMode())
@@ -111,7 +111,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueryLogLookBackWindowInDays())
                 {
                     context.Writer.WritePropertyName("QueryLogLookBackWindowInDays");
-                    context.Writer.Write(publicRequest.QueryLogLookBackWindowInDays);
+                    context.Writer.Write(publicRequest.QueryLogLookBackWindowInDays.Value);
                 }
 
                 writer.WriteObjectEnd();

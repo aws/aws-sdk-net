@@ -65,13 +65,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CoreCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CoreCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ThreadsPerCore", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThreadsPerCore = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("baseTableTTL", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BaseTableTTL = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("deltaSyncTableTTL", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DeltaSyncTableTTL = unmarshaller.Unmarshall(context);
                     continue;
                 }

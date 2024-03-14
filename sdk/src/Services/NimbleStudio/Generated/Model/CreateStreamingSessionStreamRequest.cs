@@ -73,9 +73,9 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int ExpirationInSeconds
+        public int? ExpirationInSeconds
         {
-            get { return this._expirationInSeconds.GetValueOrDefault(); }
+            get { return this._expirationInSeconds; }
             set { this._expirationInSeconds = value; }
         }
 

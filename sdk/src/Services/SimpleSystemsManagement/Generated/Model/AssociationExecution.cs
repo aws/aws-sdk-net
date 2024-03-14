@@ -101,9 +101,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the execution started.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date of the last execution.
         /// </para>
         /// </summary>
-        public DateTime LastExecutionDate
+        public DateTime? LastExecutionDate
         {
-            get { return this._lastExecutionDate.GetValueOrDefault(); }
+            get { return this._lastExecutionDate; }
             set { this._lastExecutionDate = value; }
         }
 

@@ -125,9 +125,9 @@ namespace Amazon.Chime.Model
         /// The Amazon Chime account creation timestamp, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 

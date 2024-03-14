@@ -108,7 +108,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeToLiveInSeconds())
                 {
                     context.Writer.WritePropertyName("TimeToLiveInSeconds");
-                    context.Writer.Write(publicRequest.TimeToLiveInSeconds);
+                    context.Writer.Write(publicRequest.TimeToLiveInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -68,9 +68,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double LastRuntimeSeconds
+        public double? LastRuntimeSeconds
         {
-            get { return this._lastRuntimeSeconds.GetValueOrDefault(); }
+            get { return this._lastRuntimeSeconds; }
             set { this._lastRuntimeSeconds = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double MedianRuntimeSeconds
+        public double? MedianRuntimeSeconds
         {
-            get { return this._medianRuntimeSeconds.GetValueOrDefault(); }
+            get { return this._medianRuntimeSeconds; }
             set { this._medianRuntimeSeconds = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Glue.Model
         /// True if the crawler is still estimating how long it will take to complete this run.
         /// </para>
         /// </summary>
-        public bool StillEstimating
+        public bool? StillEstimating
         {
-            get { return this._stillEstimating.GetValueOrDefault(); }
+            get { return this._stillEstimating; }
             set { this._stillEstimating = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TablesCreated
+        public int? TablesCreated
         {
-            get { return this._tablesCreated.GetValueOrDefault(); }
+            get { return this._tablesCreated; }
             set { this._tablesCreated = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TablesDeleted
+        public int? TablesDeleted
         {
-            get { return this._tablesDeleted.GetValueOrDefault(); }
+            get { return this._tablesDeleted; }
             set { this._tablesDeleted = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TablesUpdated
+        public int? TablesUpdated
         {
-            get { return this._tablesUpdated.GetValueOrDefault(); }
+            get { return this._tablesUpdated; }
             set { this._tablesUpdated = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TimeLeftSeconds
+        public double? TimeLeftSeconds
         {
-            get { return this._timeLeftSeconds.GetValueOrDefault(); }
+            get { return this._timeLeftSeconds; }
             set { this._timeLeftSeconds = value; }
         }
 

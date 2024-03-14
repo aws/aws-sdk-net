@@ -57,9 +57,9 @@ namespace Amazon.Personalize.Model
         /// The date and time (in Unix time) that this version of the solution was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDateTime
+        public DateTime? CreationDateTime
         {
-            get { return this._creationDateTime.GetValueOrDefault(); }
+            get { return this._creationDateTime; }
             set { this._creationDateTime = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.Personalize.Model
         /// The date and time (in Unix time) that the solution was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.Personalize.Model
         /// solution configuration. When false (the default), Amazon Personalize uses <c>recipeArn</c>.
         /// </para>
         /// </summary>
-        public bool PerformAutoML
+        public bool? PerformAutoML
         {
-            get { return this._performAutoML.GetValueOrDefault(); }
+            get { return this._performAutoML; }
             set { this._performAutoML = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.Personalize.Model
         /// is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool PerformHPO
+        public bool? PerformHPO
         {
-            get { return this._performhpo.GetValueOrDefault(); }
+            get { return this._performhpo; }
             set { this._performhpo = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TrainingHours
+        public double? TrainingHours
         {
-            get { return this._trainingHours.GetValueOrDefault(); }
+            get { return this._trainingHours; }
             set { this._trainingHours = value; }
         }
 

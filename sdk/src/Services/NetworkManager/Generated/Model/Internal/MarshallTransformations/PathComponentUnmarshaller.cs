@@ -77,7 +77,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Sequence", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Sequence = unmarshaller.Unmarshall(context);
                     continue;
                 }

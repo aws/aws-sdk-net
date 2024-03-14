@@ -47,9 +47,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Firewall runs the analysis.
         /// </para>
         /// </summary>
-        public bool AnalyzeRuleGroup
+        public bool? AnalyzeRuleGroup
         {
-            get { return this._analyzeRuleGroup.GetValueOrDefault(); }
+            get { return this._analyzeRuleGroup; }
             set { this._analyzeRuleGroup = value; }
         }
 

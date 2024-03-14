@@ -65,73 +65,73 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bluePrimaryX", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BluePrimaryX = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bluePrimaryY", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BluePrimaryY = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("greenPrimaryX", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GreenPrimaryX = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("greenPrimaryY", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GreenPrimaryY = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxContentLightLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxContentLightLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxFrameAverageLightLevel", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFrameAverageLightLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxLuminance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLuminance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minLuminance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinLuminance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("redPrimaryX", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RedPrimaryX = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("redPrimaryY", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RedPrimaryY = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("whitePointX", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WhitePointX = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("whitePointY", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WhitePointY = unmarshaller.Unmarshall(context);
                     continue;
                 }

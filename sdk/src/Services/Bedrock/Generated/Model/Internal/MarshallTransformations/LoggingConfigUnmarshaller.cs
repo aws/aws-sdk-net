@@ -71,13 +71,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("embeddingDataDeliveryEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EmbeddingDataDeliveryEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("imageDataDeliveryEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ImageDataDeliveryEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("textDataDeliveryEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TextDataDeliveryEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -77,7 +77,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMarkLatest())
                 {
                     context.Writer.WritePropertyName("MarkLatest");
-                    context.Writer.Write(publicRequest.MarkLatest);
+                    context.Writer.Write(publicRequest.MarkLatest.Value);
                 }
 
                 if(publicRequest.IsSetOwnerAccount())

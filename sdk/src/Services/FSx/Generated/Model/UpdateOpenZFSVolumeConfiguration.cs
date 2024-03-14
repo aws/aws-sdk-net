@@ -102,9 +102,9 @@ namespace Amazon.FSx.Model
         /// A Boolean value indicating whether the volume is read-only.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]
-        public int RecordSizeKiB
+        public int? RecordSizeKiB
         {
-            get { return this._recordSizeKiB.GetValueOrDefault(); }
+            get { return this._recordSizeKiB; }
             set { this._recordSizeKiB = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
-        public int StorageCapacityQuotaGiB
+        public int? StorageCapacityQuotaGiB
         {
-            get { return this._storageCapacityQuotaGiB.GetValueOrDefault(); }
+            get { return this._storageCapacityQuotaGiB; }
             set { this._storageCapacityQuotaGiB = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
-        public int StorageCapacityReservationGiB
+        public int? StorageCapacityReservationGiB
         {
-            get { return this._storageCapacityReservationGiB.GetValueOrDefault(); }
+            get { return this._storageCapacityReservationGiB; }
             set { this._storageCapacityReservationGiB = value; }
         }
 

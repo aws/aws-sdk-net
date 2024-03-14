@@ -64,7 +64,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEbsOptimized())
             {
                 context.Writer.WritePropertyName("EbsOptimized");
-                context.Writer.Write(requestObject.EbsOptimized);
+                context.Writer.Write(requestObject.EbsOptimized.Value);
             }
 
         }

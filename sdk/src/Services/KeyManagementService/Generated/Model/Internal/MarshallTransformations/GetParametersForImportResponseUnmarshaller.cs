@@ -65,7 +65,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ParametersValidTo", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ParametersValidTo = unmarshaller.Unmarshall(context);
                     continue;
                 }

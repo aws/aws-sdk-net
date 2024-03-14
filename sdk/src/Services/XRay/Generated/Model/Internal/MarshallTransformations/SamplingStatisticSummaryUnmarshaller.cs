@@ -65,13 +65,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BorrowCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BorrowCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequestCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RequestCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,13 +83,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SampledCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SampledCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -106,9 +106,9 @@ namespace Amazon.ECS.Model
         /// docker version --format '{{.Server.APIVersion}}'</c> 
         /// </para>
         /// </summary>
-        public bool InitProcessEnabled
+        public bool? InitProcessEnabled
         {
-            get { return this._initProcessEnabled.GetValueOrDefault(); }
+            get { return this._initProcessEnabled; }
             set { this._initProcessEnabled = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int MaxSwap
+        public int? MaxSwap
         {
-            get { return this._maxSwap.GetValueOrDefault(); }
+            get { return this._maxSwap; }
             set { this._maxSwap = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int SharedMemorySize
+        public int? SharedMemorySize
         {
-            get { return this._sharedMemorySize.GetValueOrDefault(); }
+            get { return this._sharedMemorySize; }
             set { this._sharedMemorySize = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int Swappiness
+        public int? Swappiness
         {
-            get { return this._swappiness.GetValueOrDefault(); }
+            get { return this._swappiness; }
             set { this._swappiness = value; }
         }
 

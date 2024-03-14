@@ -60,13 +60,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRadiusPort())
             {
                 context.Writer.WritePropertyName("RadiusPort");
-                context.Writer.Write(requestObject.RadiusPort);
+                context.Writer.Write(requestObject.RadiusPort.Value);
             }
 
             if(requestObject.IsSetRadiusRetries())
             {
                 context.Writer.WritePropertyName("RadiusRetries");
-                context.Writer.Write(requestObject.RadiusRetries);
+                context.Writer.Write(requestObject.RadiusRetries.Value);
             }
 
             if(requestObject.IsSetRadiusServers())
@@ -83,7 +83,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRadiusTimeout())
             {
                 context.Writer.WritePropertyName("RadiusTimeout");
-                context.Writer.Write(requestObject.RadiusTimeout);
+                context.Writer.Write(requestObject.RadiusTimeout.Value);
             }
 
             if(requestObject.IsSetSharedSecret())
@@ -95,7 +95,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseSameUsername())
             {
                 context.Writer.WritePropertyName("UseSameUsername");
-                context.Writer.Write(requestObject.UseSameUsername);
+                context.Writer.Write(requestObject.UseSameUsername.Value);
             }
 
         }

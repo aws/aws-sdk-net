@@ -92,13 +92,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxLabels())
                 {
                     context.Writer.WritePropertyName("MaxLabels");
-                    context.Writer.Write(publicRequest.MaxLabels);
+                    context.Writer.Write(publicRequest.MaxLabels.Value);
                 }
 
                 if(publicRequest.IsSetMinConfidence())
                 {
                     context.Writer.WritePropertyName("MinConfidence");
-                    context.Writer.Write(publicRequest.MinConfidence);
+                    context.Writer.Write(publicRequest.MinConfidence.Value);
                 }
 
                 if(publicRequest.IsSetSettings())

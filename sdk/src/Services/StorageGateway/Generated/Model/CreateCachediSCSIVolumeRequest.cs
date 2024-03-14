@@ -114,9 +114,9 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-        public bool KMSEncrypted
+        public bool? KMSEncrypted
         {
-            get { return this._kmsEncrypted.GetValueOrDefault(); }
+            get { return this._kmsEncrypted; }
             set { this._kmsEncrypted = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long VolumeSizeInBytes
+        public long? VolumeSizeInBytes
         {
-            get { return this._volumeSizeInBytes.GetValueOrDefault(); }
+            get { return this._volumeSizeInBytes; }
             set { this._volumeSizeInBytes = value; }
         }
 

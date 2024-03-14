@@ -196,9 +196,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Time in the past to restore the table to.
         /// </para>
         /// </summary>
-        public DateTime RestoreDateTime
+        public DateTime? RestoreDateTime
         {
-            get { return this._restoreDateTime.GetValueOrDefault(); }
+            get { return this._restoreDateTime; }
             set { this._restoreDateTime = value; }
         }
 
@@ -289,9 +289,9 @@ namespace Amazon.DynamoDBv2.Model
         /// typically 5 minutes before the current time. 
         /// </para>
         /// </summary>
-        public bool UseLatestRestorableTime
+        public bool? UseLatestRestorableTime
         {
-            get { return this._useLatestRestorableTime.GetValueOrDefault(); }
+            get { return this._useLatestRestorableTime; }
             set { this._useLatestRestorableTime = value; }
         }
 

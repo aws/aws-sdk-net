@@ -132,7 +132,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableIndexing())
             {
                 context.Writer.WritePropertyName("DisableIndexing");
-                context.Writer.Write(requestObject.DisableIndexing);
+                context.Writer.Write(requestObject.DisableIndexing.Value);
             }
 
             if(requestObject.IsSetExpression())
@@ -144,19 +144,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsIncludedInTopic())
             {
                 context.Writer.WritePropertyName("IsIncludedInTopic");
-                context.Writer.Write(requestObject.IsIncludedInTopic);
+                context.Writer.Write(requestObject.IsIncludedInTopic.Value);
             }
 
             if(requestObject.IsSetNeverAggregateInFilter())
             {
                 context.Writer.WritePropertyName("NeverAggregateInFilter");
-                context.Writer.Write(requestObject.NeverAggregateInFilter);
+                context.Writer.Write(requestObject.NeverAggregateInFilter.Value);
             }
 
             if(requestObject.IsSetNonAdditive())
             {
                 context.Writer.WritePropertyName("NonAdditive");
-                context.Writer.Write(requestObject.NonAdditive);
+                context.Writer.Write(requestObject.NonAdditive.Value);
             }
 
             if(requestObject.IsSetNotAllowedAggregations())

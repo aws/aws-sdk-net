@@ -83,9 +83,9 @@ namespace Amazon.IdentityStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public bool MembershipExists
+        public bool? MembershipExists
         {
-            get { return this._membershipExists.GetValueOrDefault(); }
+            get { return this._membershipExists; }
             set { this._membershipExists = value; }
         }
 

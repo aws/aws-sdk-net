@@ -77,7 +77,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("exists", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Exists = unmarshaller.Unmarshall(context);
                     continue;
                 }

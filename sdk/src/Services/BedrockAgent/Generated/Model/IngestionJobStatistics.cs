@@ -45,9 +45,9 @@ namespace Amazon.BedrockAgent.Model
         /// Number of deleted documents
         /// </para>
         /// </summary>
-        public long NumberOfDocumentsDeleted
+        public long? NumberOfDocumentsDeleted
         {
-            get { return this._numberOfDocumentsDeleted.GetValueOrDefault(); }
+            get { return this._numberOfDocumentsDeleted; }
             set { this._numberOfDocumentsDeleted = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.BedrockAgent.Model
         /// Number of failed documents
         /// </para>
         /// </summary>
-        public long NumberOfDocumentsFailed
+        public long? NumberOfDocumentsFailed
         {
-            get { return this._numberOfDocumentsFailed.GetValueOrDefault(); }
+            get { return this._numberOfDocumentsFailed; }
             set { this._numberOfDocumentsFailed = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.BedrockAgent.Model
         /// Number of scanned documents
         /// </para>
         /// </summary>
-        public long NumberOfDocumentsScanned
+        public long? NumberOfDocumentsScanned
         {
-            get { return this._numberOfDocumentsScanned.GetValueOrDefault(); }
+            get { return this._numberOfDocumentsScanned; }
             set { this._numberOfDocumentsScanned = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.BedrockAgent.Model
         /// Number of modified documents indexed
         /// </para>
         /// </summary>
-        public long NumberOfModifiedDocumentsIndexed
+        public long? NumberOfModifiedDocumentsIndexed
         {
-            get { return this._numberOfModifiedDocumentsIndexed.GetValueOrDefault(); }
+            get { return this._numberOfModifiedDocumentsIndexed; }
             set { this._numberOfModifiedDocumentsIndexed = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.BedrockAgent.Model
         /// Number of indexed documents
         /// </para>
         /// </summary>
-        public long NumberOfNewDocumentsIndexed
+        public long? NumberOfNewDocumentsIndexed
         {
-            get { return this._numberOfNewDocumentsIndexed.GetValueOrDefault(); }
+            get { return this._numberOfNewDocumentsIndexed; }
             set { this._numberOfNewDocumentsIndexed = value; }
         }
 

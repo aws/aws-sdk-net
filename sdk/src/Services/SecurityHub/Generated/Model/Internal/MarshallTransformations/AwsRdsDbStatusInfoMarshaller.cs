@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNormal())
             {
                 context.Writer.WritePropertyName("Normal");
-                context.Writer.Write(requestObject.Normal);
+                context.Writer.Write(requestObject.Normal.Value);
             }
 
             if(requestObject.IsSetStatus())

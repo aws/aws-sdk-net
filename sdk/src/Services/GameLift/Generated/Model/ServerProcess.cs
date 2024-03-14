@@ -47,9 +47,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int ConcurrentExecutions
+        public int? ConcurrentExecutions
         {
-            get { return this._concurrentExecutions.GetValueOrDefault(); }
+            get { return this._concurrentExecutions; }
             set { this._concurrentExecutions = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used to sign CRLs.
         /// </para>
         /// </summary>
-        public bool CRLSign
+        public bool? CRLSign
         {
-            get { return this._crlSign.GetValueOrDefault(); }
+            get { return this._crlSign; }
             set { this._crlSign = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used to decipher data.
         /// </para>
         /// </summary>
-        public bool DataEncipherment
+        public bool? DataEncipherment
         {
-            get { return this._dataEncipherment.GetValueOrDefault(); }
+            get { return this._dataEncipherment; }
             set { this._dataEncipherment = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used only to decipher data.
         /// </para>
         /// </summary>
-        public bool DecipherOnly
+        public bool? DecipherOnly
         {
-            get { return this._decipherOnly.GetValueOrDefault(); }
+            get { return this._decipherOnly; }
             set { this._decipherOnly = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.ACMPCA.Model
         ///  Key can be used for digital signing.
         /// </para>
         /// </summary>
-        public bool DigitalSignature
+        public bool? DigitalSignature
         {
-            get { return this._digitalSignature.GetValueOrDefault(); }
+            get { return this._digitalSignature; }
             set { this._digitalSignature = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used only to encipher data.
         /// </para>
         /// </summary>
-        public bool EncipherOnly
+        public bool? EncipherOnly
         {
-            get { return this._encipherOnly.GetValueOrDefault(); }
+            get { return this._encipherOnly; }
             set { this._encipherOnly = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used in a key-agreement protocol.
         /// </para>
         /// </summary>
-        public bool KeyAgreement
+        public bool? KeyAgreement
         {
-            get { return this._keyAgreement.GetValueOrDefault(); }
+            get { return this._keyAgreement; }
             set { this._keyAgreement = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used to sign certificates.
         /// </para>
         /// </summary>
-        public bool KeyCertSign
+        public bool? KeyCertSign
         {
-            get { return this._keyCertSign.GetValueOrDefault(); }
+            get { return this._keyCertSign; }
             set { this._keyCertSign = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used to encipher data.
         /// </para>
         /// </summary>
-        public bool KeyEncipherment
+        public bool? KeyEncipherment
         {
-            get { return this._keyEncipherment.GetValueOrDefault(); }
+            get { return this._keyEncipherment; }
             set { this._keyEncipherment = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.ACMPCA.Model
         /// Key can be used for non-repudiation.
         /// </para>
         /// </summary>
-        public bool NonRepudiation
+        public bool? NonRepudiation
         {
-            get { return this._nonRepudiation.GetValueOrDefault(); }
+            get { return this._nonRepudiation; }
             set { this._nonRepudiation = value; }
         }
 

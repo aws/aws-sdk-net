@@ -259,9 +259,9 @@ namespace Amazon.SecurityHub.Model
         ///  The maximum VPN session duration time in hours. 
         /// </para>
         /// </summary>
-        public int SessionTimeoutHours
+        public int? SessionTimeoutHours
         {
-            get { return this._sessionTimeoutHours.GetValueOrDefault(); }
+            get { return this._sessionTimeoutHours; }
             set { this._sessionTimeoutHours = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.SecurityHub.Model
         ///  Indicates whether split-tunnel is enabled in the Client VPN endpoint. 
         /// </para>
         /// </summary>
-        public bool SplitTunnel
+        public bool? SplitTunnel
         {
-            get { return this._splitTunnel.GetValueOrDefault(); }
+            get { return this._splitTunnel; }
             set { this._splitTunnel = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.SecurityHub.Model
         ///  The port number for the Client VPN endpoint. 
         /// </para>
         /// </summary>
-        public int VpnPort
+        public int? VpnPort
         {
-            get { return this._vpnPort.GetValueOrDefault(); }
+            get { return this._vpnPort; }
             set { this._vpnPort = value; }
         }
 

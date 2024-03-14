@@ -55,9 +55,9 @@ namespace Amazon.Pinpoint.Model
         /// an error will occur.
         /// </para>
         /// </summary>
-        public bool CreateNewVersion
+        public bool? CreateNewVersion
         {
-            get { return this._createNewVersion.GetValueOrDefault(); }
+            get { return this._createNewVersion; }
             set { this._createNewVersion = value; }
         }
 

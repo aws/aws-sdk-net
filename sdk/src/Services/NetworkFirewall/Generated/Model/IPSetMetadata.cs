@@ -44,9 +44,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public int ResolvedCIDRCount
+        public int? ResolvedCIDRCount
         {
-            get { return this._resolvedCIDRCount.GetValueOrDefault(); }
+            get { return this._resolvedCIDRCount; }
             set { this._resolvedCIDRCount = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the managed agent was last started.
         /// </para>
         /// </summary>
-        public DateTime LastStartedAt
+        public DateTime? LastStartedAt
         {
-            get { return this._lastStartedAt.GetValueOrDefault(); }
+            get { return this._lastStartedAt; }
             set { this._lastStartedAt = value; }
         }
 

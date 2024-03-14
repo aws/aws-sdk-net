@@ -77,9 +77,9 @@ namespace Amazon.Macie2.Model
         /// Specifies whether the finding is archived (suppressed).
         /// </para>
         /// </summary>
-        public bool Archived
+        public bool? Archived
         {
-            get { return this._archived.GetValueOrDefault(); }
+            get { return this._archived; }
             set { this._archived = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Macie2.Model
         /// value is always 1. All sensitive data findings are considered unique.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.Macie2.Model
         /// the finding.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.Macie2.Model
         /// that uses example data to demonstrate what a finding might contain.
         /// </para>
         /// </summary>
-        public bool Sample
+        public bool? Sample
         {
-            get { return this._sample.GetValueOrDefault(); }
+            get { return this._sample; }
             set { this._sample = value; }
         }
 
@@ -372,9 +372,9 @@ namespace Amazon.Macie2.Model
         /// the createdAt property. All sensitive data findings are considered new.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long AccountMaxReadCapacityUnits
+        public long? AccountMaxReadCapacityUnits
         {
-            get { return this._accountMaxReadCapacityUnits.GetValueOrDefault(); }
+            get { return this._accountMaxReadCapacityUnits; }
             set { this._accountMaxReadCapacityUnits = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long AccountMaxWriteCapacityUnits
+        public long? AccountMaxWriteCapacityUnits
         {
-            get { return this._accountMaxWriteCapacityUnits.GetValueOrDefault(); }
+            get { return this._accountMaxWriteCapacityUnits; }
             set { this._accountMaxWriteCapacityUnits = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long TableMaxReadCapacityUnits
+        public long? TableMaxReadCapacityUnits
         {
-            get { return this._tableMaxReadCapacityUnits.GetValueOrDefault(); }
+            get { return this._tableMaxReadCapacityUnits; }
             set { this._tableMaxReadCapacityUnits = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long TableMaxWriteCapacityUnits
+        public long? TableMaxWriteCapacityUnits
         {
-            get { return this._tableMaxWriteCapacityUnits.GetValueOrDefault(); }
+            get { return this._tableMaxWriteCapacityUnits; }
             set { this._tableMaxWriteCapacityUnits = value; }
         }
 

@@ -41,9 +41,9 @@ namespace Amazon.IoT.Model
         /// The approximate count of unique values that match the query.
         /// </para>
         /// </summary>
-        public int Cardinality
+        public int? Cardinality
         {
-            get { return this._cardinality.GetValueOrDefault(); }
+            get { return this._cardinality; }
             set { this._cardinality = value; }
         }
 

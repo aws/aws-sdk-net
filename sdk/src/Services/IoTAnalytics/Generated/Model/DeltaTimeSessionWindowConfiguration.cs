@@ -59,9 +59,9 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]
-        public int TimeoutInMinutes
+        public int? TimeoutInMinutes
         {
-            get { return this._timeoutInMinutes.GetValueOrDefault(); }
+            get { return this._timeoutInMinutes; }
             set { this._timeoutInMinutes = value; }
         }
 

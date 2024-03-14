@@ -85,7 +85,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDepartNow())
                 {
                     context.Writer.WritePropertyName("DepartNow");
-                    context.Writer.Write(publicRequest.DepartNow);
+                    context.Writer.Write(publicRequest.DepartNow.Value);
                 }
 
                 if(publicRequest.IsSetDeparturePositions())

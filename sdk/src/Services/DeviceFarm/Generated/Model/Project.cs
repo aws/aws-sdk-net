@@ -64,9 +64,9 @@ namespace Amazon.DeviceFarm.Model
         /// When the project was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.DeviceFarm.Model
         /// times out. The default value is 150 minutes.
         /// </para>
         /// </summary>
-        public int DefaultJobTimeoutMinutes
+        public int? DefaultJobTimeoutMinutes
         {
-            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._defaultJobTimeoutMinutes; }
             set { this._defaultJobTimeoutMinutes = value; }
         }
 

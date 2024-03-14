@@ -95,9 +95,9 @@ namespace Amazon.AppSync.Model
         /// At-rest encryption flag for cache. You cannot update this setting after creation.
         /// </para>
         /// </summary>
-        public bool AtRestEncryptionEnabled
+        public bool? AtRestEncryptionEnabled
         {
-            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._atRestEncryptionEnabled; }
             set { this._atRestEncryptionEnabled = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.AppSync.Model
         /// creation.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long Ttl
+        public long? Ttl
         {
-            get { return this._ttl.GetValueOrDefault(); }
+            get { return this._ttl; }
             set { this._ttl = value; }
         }
 

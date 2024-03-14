@@ -73,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         /// <param name="userId">The stable and unique string identifying the user. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</param>
         /// <param name="arn">The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </param>
         /// <param name="createDate">The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user was created.</param>
-        public User(string path, string userName, string userId, string arn, DateTime createDate)
+        public User(string path, string userName, string userId, string arn, DateTime? createDate)
         {
             _path = path;
             _userName = userName;
@@ -111,9 +111,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.IdentityManagement.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime PasswordLastUsed
+        public DateTime? PasswordLastUsed
         {
-            get { return this._passwordLastUsed.GetValueOrDefault(); }
+            get { return this._passwordLastUsed; }
             set { this._passwordLastUsed = value; }
         }
 

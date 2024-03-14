@@ -44,9 +44,9 @@ namespace Amazon.Chime.Model
         /// The timestamp of the phone number association, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime AssociatedTimestamp
+        public DateTime? AssociatedTimestamp
         {
-            get { return this._associatedTimestamp.GetValueOrDefault(); }
+            get { return this._associatedTimestamp; }
             set { this._associatedTimestamp = value; }
         }
 

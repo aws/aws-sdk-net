@@ -54,9 +54,9 @@ namespace Amazon.KinesisVideo.Model
         /// Amazon Web Services cloud.
         /// </para>
         /// </summary>
-        public bool DeleteAfterUpload
+        public bool? DeleteAfterUpload
         {
-            get { return this._deleteAfterUpload.GetValueOrDefault(); }
+            get { return this._deleteAfterUpload; }
             set { this._deleteAfterUpload = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.KinesisVideo.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=720)]
-        public int EdgeRetentionInHours
+        public int? EdgeRetentionInHours
         {
-            get { return this._edgeRetentionInHours.GetValueOrDefault(); }
+            get { return this._edgeRetentionInHours; }
             set { this._edgeRetentionInHours = value; }
         }
 

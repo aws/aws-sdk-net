@@ -65,13 +65,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("areAllCompositeComponentsReturned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AreAllCompositeComponentsReturned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("areAllPropertiesReturned", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AreAllPropertiesReturned = unmarshaller.Unmarshall(context);
                     continue;
                 }

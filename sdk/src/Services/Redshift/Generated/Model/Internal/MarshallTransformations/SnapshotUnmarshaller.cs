@@ -63,7 +63,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ActualIncrementalBackupSizeInMegaBytes", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.ActualIncrementalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -75,13 +75,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("BackupProgressInMegaBytes", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.BackupProgressInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ClusterCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -99,7 +99,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CurrentBackupRateInMegaBytesPerSecond", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.CurrentBackupRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -111,19 +111,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Encrypted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EncryptedWithHSM", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EncryptedWithHSM = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -135,13 +135,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EnhancedVpcRouting", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EstimatedSecondsToCompletion", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.EstimatedSecondsToCompletion = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -159,13 +159,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ManualSnapshotRemainingDays", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ManualSnapshotRemainingDays = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ManualSnapshotRetentionPeriod", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ManualSnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -195,7 +195,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NumberOfNodes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.NumberOfNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -207,7 +207,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -220,7 +220,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SnapshotCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -232,7 +232,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SnapshotRetentionStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SnapshotRetentionStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -263,7 +263,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TotalBackupSizeInMegaBytes", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.TotalBackupSizeInMegaBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }

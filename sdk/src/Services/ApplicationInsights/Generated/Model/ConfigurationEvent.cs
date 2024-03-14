@@ -142,9 +142,9 @@ namespace Amazon.ApplicationInsights.Model
         ///  The timestamp of the event. 
         /// </para>
         /// </summary>
-        public DateTime EventTime
+        public DateTime? EventTime
         {
-            get { return this._eventTime.GetValueOrDefault(); }
+            get { return this._eventTime; }
             set { this._eventTime = value; }
         }
 

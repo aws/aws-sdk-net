@@ -50,9 +50,9 @@ namespace Amazon.IoT.Model
         /// Set to true to return the list of streams in ascending order.
         /// </para>
         /// </summary>
-        public bool AscendingOrder
+        public bool? AscendingOrder
         {
-            get { return this._ascendingOrder.GetValueOrDefault(); }
+            get { return this._ascendingOrder; }
             set { this._ascendingOrder = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

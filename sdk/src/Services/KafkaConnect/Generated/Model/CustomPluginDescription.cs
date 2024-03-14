@@ -60,9 +60,9 @@ namespace Amazon.KafkaConnect.Model
         /// The revision of the custom plugin.
         /// </para>
         /// </summary>
-        public long Revision
+        public long? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

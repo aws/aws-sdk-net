@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property MaxResults. Optional. Max number of endpoints, up to twenty,
         /// that will be returned at one time.
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -77,25 +77,25 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("endTimeHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndTimeHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("endTimeMinute", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndTimeMinute = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTimeHour", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartTimeHour = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startTimeMinute", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartTimeMinute = unmarshaller.Unmarshall(context);
                     continue;
                 }

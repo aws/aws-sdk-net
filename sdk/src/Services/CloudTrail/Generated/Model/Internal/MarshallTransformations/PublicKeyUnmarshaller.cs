@@ -71,13 +71,13 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ValidityEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ValidityEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ValidityStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ValidityStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

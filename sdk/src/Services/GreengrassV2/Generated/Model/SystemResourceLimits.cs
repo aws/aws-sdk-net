@@ -52,9 +52,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Cpus
+        public double? Cpus
         {
-            get { return this._cpus.GetValueOrDefault(); }
+            get { return this._cpus; }
             set { this._cpus = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=9223372036854771712)]
-        public long Memory
+        public long? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 

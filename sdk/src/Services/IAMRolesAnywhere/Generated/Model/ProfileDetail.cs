@@ -52,9 +52,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the profile was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         ///  The number of seconds the vended session credentials are valid for. 
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Indicates whether the profile is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// with this profile. 
         /// </para>
         /// </summary>
-        public bool RequireInstanceProperties
+        public bool? RequireInstanceProperties
         {
-            get { return this._requireInstanceProperties.GetValueOrDefault(); }
+            get { return this._requireInstanceProperties; }
             set { this._requireInstanceProperties = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The ISO-8601 timestamp when the profile was last updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

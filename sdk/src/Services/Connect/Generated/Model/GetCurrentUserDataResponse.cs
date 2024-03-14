@@ -43,9 +43,9 @@ namespace Amazon.Connect.Model
         /// The total count of the result, regardless of the current page size.
         /// </para>
         /// </summary>
-        public long ApproximateTotalCount
+        public long? ApproximateTotalCount
         {
-            get { return this._approximateTotalCount.GetValueOrDefault(); }
+            get { return this._approximateTotalCount; }
             set { this._approximateTotalCount = value; }
         }
 

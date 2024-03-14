@@ -48,7 +48,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlComments())
             {
                 context.Writer.WritePropertyName("CrawlComments");
-                context.Writer.Write(requestObject.CrawlComments);
+                context.Writer.Write(requestObject.CrawlComments.Value);
             }
 
             if(requestObject.IsSetExclusionPatterns())
@@ -98,7 +98,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog);
+                context.Writer.Write(requestObject.UseChangeLog.Value);
             }
 
         }

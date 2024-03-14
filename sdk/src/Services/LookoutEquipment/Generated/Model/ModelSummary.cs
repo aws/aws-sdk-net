@@ -57,9 +57,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ActiveModelVersion
+        public long? ActiveModelVersion
         {
-            get { return this._activeModelVersion.GetValueOrDefault(); }
+            get { return this._activeModelVersion; }
             set { this._activeModelVersion = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.LookoutEquipment.Model
         /// The time at which the specific model was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long LatestScheduledRetrainingModelVersion
+        public long? LatestScheduledRetrainingModelVersion
         {
-            get { return this._latestScheduledRetrainingModelVersion.GetValueOrDefault(); }
+            get { return this._latestScheduledRetrainingModelVersion; }
             set { this._latestScheduledRetrainingModelVersion = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the start time of the most recent scheduled retraining run. 
         /// </para>
         /// </summary>
-        public DateTime LatestScheduledRetrainingStartTime
+        public DateTime? LatestScheduledRetrainingStartTime
         {
-            get { return this._latestScheduledRetrainingStartTime.GetValueOrDefault(); }
+            get { return this._latestScheduledRetrainingStartTime; }
             set { this._latestScheduledRetrainingStartTime = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.LookoutEquipment.Model
         /// nearest UTC day</a>.
         /// </para>
         /// </summary>
-        public DateTime NextScheduledRetrainingStartDate
+        public DateTime? NextScheduledRetrainingStartDate
         {
-            get { return this._nextScheduledRetrainingStartDate.GetValueOrDefault(); }
+            get { return this._nextScheduledRetrainingStartDate; }
             set { this._nextScheduledRetrainingStartDate = value; }
         }
 

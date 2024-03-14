@@ -135,9 +135,9 @@ namespace Amazon.QuickSight.Model
         /// format.
         /// </para>
         /// </summary>
-        public DateTime StartAfterDateTime
+        public DateTime? StartAfterDateTime
         {
-            get { return this._startAfterDateTime.GetValueOrDefault(); }
+            get { return this._startAfterDateTime; }
             set { this._startAfterDateTime = value; }
         }
 

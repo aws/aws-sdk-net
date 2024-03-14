@@ -56,13 +56,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("enableResourceNameDnsAAAARecord", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableResourceNameDnsAAAARecord = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("enableResourceNameDnsARecord", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableResourceNameDnsARecord = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -118,9 +118,9 @@ namespace Amazon.IVS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60)]
-        public long TargetIntervalSeconds
+        public long? TargetIntervalSeconds
         {
-            get { return this._targetIntervalSeconds.GetValueOrDefault(); }
+            get { return this._targetIntervalSeconds; }
             set { this._targetIntervalSeconds = value; }
         }
 

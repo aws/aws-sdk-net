@@ -62,19 +62,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("allocationDefaultNetmaskLength", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AllocationDefaultNetmaskLength = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("allocationMaxNetmaskLength", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AllocationMaxNetmaskLength = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("allocationMinNetmaskLength", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AllocationMinNetmaskLength = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("autoImport", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AutoImport = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -153,7 +153,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("poolDepth", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PoolDepth = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -165,7 +165,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("publiclyAdvertisable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.PubliclyAdvertisable = unmarshaller.Unmarshall(context);
                         continue;
                     }

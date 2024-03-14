@@ -44,9 +44,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RegisteredAt
+        public DateTime? RegisteredAt
         {
-            get { return this._registeredAt.GetValueOrDefault(); }
+            get { return this._registeredAt; }
             set { this._registeredAt = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Valid
+        public bool? Valid
         {
-            get { return this._valid.GetValueOrDefault(); }
+            get { return this._valid; }
             set { this._valid = value; }
         }
 

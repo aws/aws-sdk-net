@@ -67,9 +67,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ProfileEndTime
+        public DateTime? ProfileEndTime
         {
-            get { return this._profileEndTime.GetValueOrDefault(); }
+            get { return this._profileEndTime; }
             set { this._profileEndTime = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ProfileStartTime
+        public DateTime? ProfileStartTime
         {
-            get { return this._profileStartTime.GetValueOrDefault(); }
+            get { return this._profileStartTime; }
             set { this._profileStartTime = value; }
         }
 

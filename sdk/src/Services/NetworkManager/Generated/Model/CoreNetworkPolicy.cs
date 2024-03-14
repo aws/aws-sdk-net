@@ -104,9 +104,9 @@ namespace Amazon.NetworkManager.Model
         /// The timestamp when a core network policy was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.NetworkManager.Model
         /// The ID of the policy version.
         /// </para>
         /// </summary>
-        public int PolicyVersionId
+        public int? PolicyVersionId
         {
-            get { return this._policyVersionId.GetValueOrDefault(); }
+            get { return this._policyVersionId; }
             set { this._policyVersionId = value; }
         }
 

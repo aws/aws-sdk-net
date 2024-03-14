@@ -65,19 +65,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("postFilterSharpenStrength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PostFilterSharpenStrength = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("speed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Speed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("strength", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Strength = unmarshaller.Unmarshall(context);
                     continue;
                 }

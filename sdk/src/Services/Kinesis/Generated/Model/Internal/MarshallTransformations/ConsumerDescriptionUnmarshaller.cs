@@ -71,7 +71,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ConsumerCreationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConsumerCreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

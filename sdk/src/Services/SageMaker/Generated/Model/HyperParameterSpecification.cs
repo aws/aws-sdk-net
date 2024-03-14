@@ -86,9 +86,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates whether this hyperparameter is required.
         /// </para>
         /// </summary>
-        public bool IsRequired
+        public bool? IsRequired
         {
-            get { return this._isRequired.GetValueOrDefault(); }
+            get { return this._isRequired; }
             set { this._isRequired = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.
         /// </para>
         /// </summary>
-        public bool IsTunable
+        public bool? IsTunable
         {
-            get { return this._isTunable.GetValueOrDefault(); }
+            get { return this._isTunable; }
             set { this._isTunable = value; }
         }
 

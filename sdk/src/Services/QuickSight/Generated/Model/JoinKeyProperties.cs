@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// in a join key. This is used by Amazon QuickSight to optimize query performance.
         /// </para>
         /// </summary>
-        public bool UniqueKey
+        public bool? UniqueKey
         {
-            get { return this._uniqueKey.GetValueOrDefault(); }
+            get { return this._uniqueKey; }
             set { this._uniqueKey = value; }
         }
 

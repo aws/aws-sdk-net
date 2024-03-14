@@ -48,9 +48,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ActiveAgents
+        public int? ActiveAgents
         {
-            get { return this._activeAgents.GetValueOrDefault(); }
+            get { return this._activeAgents; }
             set { this._activeAgents = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int BlackListedAgents
+        public int? BlackListedAgents
         {
-            get { return this._blackListedAgents.GetValueOrDefault(); }
+            get { return this._blackListedAgents; }
             set { this._blackListedAgents = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int HealthyAgents
+        public int? HealthyAgents
         {
-            get { return this._healthyAgents.GetValueOrDefault(); }
+            get { return this._healthyAgents; }
             set { this._healthyAgents = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ShutdownAgents
+        public int? ShutdownAgents
         {
-            get { return this._shutdownAgents.GetValueOrDefault(); }
+            get { return this._shutdownAgents; }
             set { this._shutdownAgents = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalAgents
+        public int? TotalAgents
         {
-            get { return this._totalAgents.GetValueOrDefault(); }
+            get { return this._totalAgents; }
             set { this._totalAgents = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnhealthyAgents
+        public int? UnhealthyAgents
         {
-            get { return this._unhealthyAgents.GetValueOrDefault(); }
+            get { return this._unhealthyAgents; }
             set { this._unhealthyAgents = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int UnknownAgents
+        public int? UnknownAgents
         {
-            get { return this._unknownAgents.GetValueOrDefault(); }
+            get { return this._unknownAgents; }
             set { this._unknownAgents = value; }
         }
 

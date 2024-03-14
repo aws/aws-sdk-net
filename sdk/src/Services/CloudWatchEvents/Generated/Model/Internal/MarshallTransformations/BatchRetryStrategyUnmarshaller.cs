@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Attempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Attempts = unmarshaller.Unmarshall(context);
                     continue;
                 }

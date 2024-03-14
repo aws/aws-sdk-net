@@ -79,9 +79,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date when the platform version was created.
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date when the platform version was last updated.
         /// </para>
         /// </summary>
-        public DateTime DateUpdated
+        public DateTime? DateUpdated
         {
-            get { return this._dateUpdated.GetValueOrDefault(); }
+            get { return this._dateUpdated; }
             set { this._dateUpdated = value; }
         }
 

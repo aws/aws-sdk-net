@@ -94,9 +94,9 @@ namespace Amazon.MTurk.Model
         /// rejected. Defaults to <c>False</c>. 
         /// </para>
         /// </summary>
-        public bool OverrideRejection
+        public bool? OverrideRejection
         {
-            get { return this._overrideRejection.GetValueOrDefault(); }
+            get { return this._overrideRejection; }
             set { this._overrideRejection = value; }
         }
 

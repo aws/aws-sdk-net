@@ -45,9 +45,9 @@ namespace Amazon.IoT.Model
         /// The date the transfer was accepted.
         /// </para>
         /// </summary>
-        public DateTime AcceptDate
+        public DateTime? AcceptDate
         {
-            get { return this._acceptDate.GetValueOrDefault(); }
+            get { return this._acceptDate; }
             set { this._acceptDate = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoT.Model
         /// The date the transfer was rejected.
         /// </para>
         /// </summary>
-        public DateTime RejectDate
+        public DateTime? RejectDate
         {
-            get { return this._rejectDate.GetValueOrDefault(); }
+            get { return this._rejectDate; }
             set { this._rejectDate = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.IoT.Model
         /// The date the transfer took place.
         /// </para>
         /// </summary>
-        public DateTime TransferDate
+        public DateTime? TransferDate
         {
-            get { return this._transferDate.GetValueOrDefault(); }
+            get { return this._transferDate; }
             set { this._transferDate = value; }
         }
 

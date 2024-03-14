@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// The number of reservations available for the price.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.EC2.Model
         /// The price per instance.
         /// </para>
         /// </summary>
-        public double Price
+        public double? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 

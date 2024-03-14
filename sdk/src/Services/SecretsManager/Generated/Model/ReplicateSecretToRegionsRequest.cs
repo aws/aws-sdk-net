@@ -83,9 +83,9 @@ namespace Amazon.SecretsManager.Model
         /// By default, secrets aren't overwritten.
         /// </para>
         /// </summary>
-        public bool ForceOverwriteReplicaSecret
+        public bool? ForceOverwriteReplicaSecret
         {
-            get { return this._forceOverwriteReplicaSecret.GetValueOrDefault(); }
+            get { return this._forceOverwriteReplicaSecret; }
             set { this._forceOverwriteReplicaSecret = value; }
         }
 

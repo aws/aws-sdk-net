@@ -65,7 +65,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("scanCompletedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScanCompletedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scanStartedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScanStartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -73,16 +73,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("PublicKeyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.PublicKeyConfig.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.CallerReference));
 
                     if(publicRequest.PublicKeyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.Comment));
 
                     if(publicRequest.PublicKeyConfig.IsSetEncodedKey())
-                        xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));                    
+                        xmlWriter.WriteElementString("EncodedKey", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.EncodedKey));
 
                     if(publicRequest.PublicKeyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.PublicKeyConfig.Name));
 
 
                     xmlWriter.WriteEndElement();

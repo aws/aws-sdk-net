@@ -45,9 +45,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Reserved Instances and Savings Plans.
         /// </para>
         /// </summary>
-        public double EstimatedCostAfterDiscounts
+        public double? EstimatedCostAfterDiscounts
         {
-            get { return this._estimatedCostAfterDiscounts.GetValueOrDefault(); }
+            get { return this._estimatedCostAfterDiscounts; }
             set { this._estimatedCostAfterDiscounts = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// any discounts.
         /// </para>
         /// </summary>
-        public double EstimatedCostBeforeDiscounts
+        public double? EstimatedCostBeforeDiscounts
         {
-            get { return this._estimatedCostBeforeDiscounts.GetValueOrDefault(); }
+            get { return this._estimatedCostBeforeDiscounts; }
             set { this._estimatedCostBeforeDiscounts = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The estimated net unused amortized commitment for the recommendation.
         /// </para>
         /// </summary>
-        public double EstimatedNetUnusedAmortizedCommitments
+        public double? EstimatedNetUnusedAmortizedCommitments
         {
-            get { return this._estimatedNetUnusedAmortizedCommitments.GetValueOrDefault(); }
+            get { return this._estimatedNetUnusedAmortizedCommitments; }
             set { this._estimatedNetUnusedAmortizedCommitments = value; }
         }
 

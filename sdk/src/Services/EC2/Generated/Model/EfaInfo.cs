@@ -41,9 +41,9 @@ namespace Amazon.EC2.Model
         /// The maximum number of Elastic Fabric Adapters for the instance type.
         /// </para>
         /// </summary>
-        public int MaximumEfaInterfaces
+        public int? MaximumEfaInterfaces
         {
-            get { return this._maximumEfaInterfaces.GetValueOrDefault(); }
+            get { return this._maximumEfaInterfaces; }
             set { this._maximumEfaInterfaces = value; }
         }
 

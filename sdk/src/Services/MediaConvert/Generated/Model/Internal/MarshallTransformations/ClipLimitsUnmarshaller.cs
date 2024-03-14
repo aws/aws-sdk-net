@@ -65,25 +65,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maximumRGBTolerance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumRGBTolerance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maximumYUV", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumYUV = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumRGBTolerance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumRGBTolerance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minimumYUV", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumYUV = unmarshaller.Unmarshall(context);
                     continue;
                 }

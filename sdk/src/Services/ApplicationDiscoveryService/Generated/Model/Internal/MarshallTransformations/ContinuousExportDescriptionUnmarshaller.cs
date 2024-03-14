@@ -89,7 +89,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("stopTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

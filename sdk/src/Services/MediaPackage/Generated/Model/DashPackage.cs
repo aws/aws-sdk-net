@@ -99,9 +99,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property IncludeIframeOnlyStream. When enabled, an I-Frame only
         /// stream will be included in the output.
         /// </summary>
-        public bool IncludeIframeOnlyStream
+        public bool? IncludeIframeOnlyStream
         {
-            get { return this._includeIframeOnlyStream.GetValueOrDefault(); }
+            get { return this._includeIframeOnlyStream; }
             set { this._includeIframeOnlyStream = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property ManifestWindowSeconds. Time window (in seconds) contained
         /// in each manifest.
         /// </summary>
-        public int ManifestWindowSeconds
+        public int? ManifestWindowSeconds
         {
-            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            get { return this._manifestWindowSeconds; }
             set { this._manifestWindowSeconds = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property MinBufferTimeSeconds. Minimum duration (in seconds) that
         /// a player will buffer media before starting the presentation.
         /// </summary>
-        public int MinBufferTimeSeconds
+        public int? MinBufferTimeSeconds
         {
-            get { return this._minBufferTimeSeconds.GetValueOrDefault(); }
+            get { return this._minBufferTimeSeconds; }
             set { this._minBufferTimeSeconds = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.MediaPackage.Model
         /// potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
         /// Description (MPD).
         /// </summary>
-        public int MinUpdatePeriodSeconds
+        public int? MinUpdatePeriodSeconds
         {
-            get { return this._minUpdatePeriodSeconds.GetValueOrDefault(); }
+            get { return this._minUpdatePeriodSeconds; }
             set { this._minUpdatePeriodSeconds = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each segment.
         /// Actual segments will berounded to the nearest multiple of the source segment duration.
         /// </summary>
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property SuggestedPresentationDelaySeconds. Duration (in seconds)
         /// to delay live content before presentation.
         /// </summary>
-        public int SuggestedPresentationDelaySeconds
+        public int? SuggestedPresentationDelaySeconds
         {
-            get { return this._suggestedPresentationDelaySeconds.GetValueOrDefault(); }
+            get { return this._suggestedPresentationDelaySeconds; }
             set { this._suggestedPresentationDelaySeconds = value; }
         }
 

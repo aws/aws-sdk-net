@@ -70,7 +70,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsLongTermPricingAutoRenew())
                 {
                     context.Writer.WritePropertyName("IsLongTermPricingAutoRenew");
-                    context.Writer.Write(publicRequest.IsLongTermPricingAutoRenew);
+                    context.Writer.Write(publicRequest.IsLongTermPricingAutoRenew.Value);
                 }
 
                 if(publicRequest.IsSetLongTermPricingId())

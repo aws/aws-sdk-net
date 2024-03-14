@@ -42,9 +42,9 @@ namespace Amazon.ConfigService.Model
         /// The end time of an execution. The end time must be after the start date.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.ConfigService.Model
         /// The start time of an execution.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

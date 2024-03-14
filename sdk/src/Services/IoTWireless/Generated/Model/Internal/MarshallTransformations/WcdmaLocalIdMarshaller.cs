@@ -48,13 +48,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPsc())
             {
                 context.Writer.WritePropertyName("Psc");
-                context.Writer.Write(requestObject.Psc);
+                context.Writer.Write(requestObject.Psc.Value);
             }
 
             if(requestObject.IsSetUarfcndl())
             {
                 context.Writer.WritePropertyName("Uarfcndl");
-                context.Writer.Write(requestObject.Uarfcndl);
+                context.Writer.Write(requestObject.Uarfcndl.Value);
             }
 
         }

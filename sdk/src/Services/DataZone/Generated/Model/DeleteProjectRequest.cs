@@ -82,9 +82,9 @@ namespace Amazon.DataZone.Model
         /// Optional flag to asynchronously delete child entities within the project
         /// </para>
         /// </summary>
-        public bool SkipDeletionCheck
+        public bool? SkipDeletionCheck
         {
-            get { return this._skipDeletionCheck.GetValueOrDefault(); }
+            get { return this._skipDeletionCheck; }
             set { this._skipDeletionCheck = value; }
         }
 

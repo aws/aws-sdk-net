@@ -71,7 +71,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Percentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Percentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

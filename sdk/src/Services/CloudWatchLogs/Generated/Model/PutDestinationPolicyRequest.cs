@@ -97,9 +97,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// If you omit this parameter, the default of <c>false</c> is used.
         /// </para>
         /// </summary>
-        public bool ForceUpdate
+        public bool? ForceUpdate
         {
-            get { return this._forceUpdate.GetValueOrDefault(); }
+            get { return this._forceUpdate; }
             set { this._forceUpdate = value; }
         }
 

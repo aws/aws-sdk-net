@@ -65,19 +65,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Iops", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SizeInGB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeInGB = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Throughput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
                     continue;
                 }

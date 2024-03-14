@@ -71,7 +71,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("itemCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

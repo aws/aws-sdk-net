@@ -65,37 +65,37 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("rootVolume", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RootVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeBaselineIOPS", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeBaselineIOPS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeBaselineThroughput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeBaselineThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeBurstIOPS", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeBurstIOPS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeBurstThroughput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeBurstThroughput = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

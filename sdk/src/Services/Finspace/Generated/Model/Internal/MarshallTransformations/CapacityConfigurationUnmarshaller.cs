@@ -65,7 +65,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("nodeCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NodeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

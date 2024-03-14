@@ -65,19 +65,19 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("boolValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BoolValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("doubleValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("longValue", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LongValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

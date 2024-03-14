@@ -80,9 +80,9 @@ namespace Amazon.Neptunedata.Model
         /// and ignored when <c>iteratorType</c> is <c>TRIM_HORIZON</c> or <c>LATEST</c>.
         /// </para>
         /// </summary>
-        public long CommitNum
+        public long? CommitNum
         {
-            get { return this._commitNum.GetValueOrDefault(); }
+            get { return this._commitNum; }
             set { this._commitNum = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long Limit
+        public long? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Neptunedata.Model
         /// the change-log stream data. The default is <c>1</c>.
         /// </para>
         /// </summary>
-        public long OpNum
+        public long? OpNum
         {
-            get { return this._opNum.GetValueOrDefault(); }
+            get { return this._opNum; }
             set { this._opNum = value; }
         }
 

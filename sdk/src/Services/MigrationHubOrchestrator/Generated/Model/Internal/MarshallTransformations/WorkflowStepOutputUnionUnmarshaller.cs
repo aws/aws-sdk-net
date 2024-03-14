@@ -65,7 +65,7 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("integerValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntegerValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

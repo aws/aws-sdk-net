@@ -48,7 +48,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumLength())
             {
                 context.Writer.WritePropertyName("maximumLength");
-                context.Writer.Write(requestObject.MaximumLength);
+                context.Writer.Write(requestObject.MaximumLength.Value);
             }
 
             if(requestObject.IsSetStopSequences())
@@ -65,19 +65,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTemperature())
             {
                 context.Writer.WritePropertyName("temperature");
-                context.Writer.Write(requestObject.Temperature);
+                context.Writer.Write(requestObject.Temperature.Value);
             }
 
             if(requestObject.IsSetTopK())
             {
                 context.Writer.WritePropertyName("topK");
-                context.Writer.Write(requestObject.TopK);
+                context.Writer.Write(requestObject.TopK.Value);
             }
 
             if(requestObject.IsSetTopP())
             {
                 context.Writer.WritePropertyName("topP");
-                context.Writer.Write(requestObject.TopP);
+                context.Writer.Write(requestObject.TopP.Value);
             }
 
         }

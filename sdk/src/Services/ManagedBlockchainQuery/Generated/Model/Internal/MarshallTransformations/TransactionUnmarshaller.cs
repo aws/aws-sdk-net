@@ -125,7 +125,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfTransactions", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTransactions = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("signatureV", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SignatureV = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -173,13 +173,13 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("transactionIndex", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TransactionIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("transactionTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TransactionTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

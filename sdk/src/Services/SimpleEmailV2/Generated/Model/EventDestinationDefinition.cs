@@ -73,9 +73,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// disabled, events aren't sent to the specified destinations.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

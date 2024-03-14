@@ -48,7 +48,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudMetricEnabled())
             {
                 context.Writer.WritePropertyName("cloudMetricEnabled");
-                context.Writer.Write(requestObject.CloudMetricEnabled);
+                context.Writer.Write(requestObject.CloudMetricEnabled.Value);
             }
 
             if(requestObject.IsSetMetricRuleRoleArn())

@@ -114,9 +114,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.EC2.Model
         /// capacity into a single Availability Zone.
         /// </para>
         /// </summary>
-        public bool SingleAvailabilityZone
+        public bool? SingleAvailabilityZone
         {
-            get { return this._singleAvailabilityZone.GetValueOrDefault(); }
+            get { return this._singleAvailabilityZone; }
             set { this._singleAvailabilityZone = value; }
         }
 
@@ -196,9 +196,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000000000)]
-        public int TargetCapacity
+        public int? TargetCapacity
         {
-            get { return this._targetCapacity.GetValueOrDefault(); }
+            get { return this._targetCapacity; }
             set { this._targetCapacity = value; }
         }
 

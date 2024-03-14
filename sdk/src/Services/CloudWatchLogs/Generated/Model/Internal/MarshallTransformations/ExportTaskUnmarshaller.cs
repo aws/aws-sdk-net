@@ -83,7 +83,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("from", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.From = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("to", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.To = unmarshaller.Unmarshall(context);
                     continue;
                 }

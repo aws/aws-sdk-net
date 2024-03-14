@@ -60,7 +60,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabasePort())
             {
                 context.Writer.WritePropertyName("DatabasePort");
-                context.Writer.Write(requestObject.DatabasePort);
+                context.Writer.Write(requestObject.DatabasePort.Value);
             }
 
             if(requestObject.IsSetDBInstanceIdentifier())

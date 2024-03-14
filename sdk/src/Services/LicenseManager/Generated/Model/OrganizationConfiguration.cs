@@ -42,9 +42,9 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableIntegration
+        public bool? EnableIntegration
         {
-            get { return this._enableIntegration.GetValueOrDefault(); }
+            get { return this._enableIntegration; }
             set { this._enableIntegration = value; }
         }
 

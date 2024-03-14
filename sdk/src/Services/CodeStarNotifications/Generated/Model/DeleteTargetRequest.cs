@@ -45,9 +45,9 @@ namespace Amazon.CodeStarNotifications.Model
         /// every notification rule in your Amazon Web Services account are deleted.
         /// </para>
         /// </summary>
-        public bool ForceUnsubscribeAll
+        public bool? ForceUnsubscribeAll
         {
-            get { return this._forceUnsubscribeAll.GetValueOrDefault(); }
+            get { return this._forceUnsubscribeAll; }
             set { this._forceUnsubscribeAll = value; }
         }
 

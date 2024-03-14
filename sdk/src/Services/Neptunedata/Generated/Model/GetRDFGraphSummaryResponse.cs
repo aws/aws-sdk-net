@@ -60,9 +60,9 @@ namespace Amazon.Neptunedata.Model
         /// The HTTP return code of the request. If the request succeeded, the code is 200.
         /// </para>
         /// </summary>
-        public int StatusCode
+        public int? StatusCode
         {
-            get { return this._statusCode.GetValueOrDefault(); }
+            get { return this._statusCode; }
             set { this._statusCode = value; }
         }
 

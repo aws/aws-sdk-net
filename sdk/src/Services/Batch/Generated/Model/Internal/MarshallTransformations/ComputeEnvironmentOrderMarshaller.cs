@@ -54,7 +54,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOrder())
             {
                 context.Writer.WritePropertyName("order");
-                context.Writer.Write(requestObject.Order);
+                context.Writer.Write(requestObject.Order.Value);
             }
 
         }

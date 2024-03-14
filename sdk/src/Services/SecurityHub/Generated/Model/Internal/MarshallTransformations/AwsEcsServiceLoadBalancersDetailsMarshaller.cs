@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerPort())
             {
                 context.Writer.WritePropertyName("ContainerPort");
-                context.Writer.Write(requestObject.ContainerPort);
+                context.Writer.Write(requestObject.ContainerPort.Value);
             }
 
             if(requestObject.IsSetLoadBalancerName())

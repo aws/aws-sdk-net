@@ -65,13 +65,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumValue())
             {
                 context.Writer.WritePropertyName("MaximumValue");
-                context.Writer.Write(requestObject.MaximumValue);
+                context.Writer.Write(requestObject.MaximumValue.Value);
             }
 
             if(requestObject.IsSetMinimumValue())
             {
                 context.Writer.WritePropertyName("MinimumValue");
-                context.Writer.Write(requestObject.MinimumValue);
+                context.Writer.Write(requestObject.MinimumValue.Value);
             }
 
             if(requestObject.IsSetSourceFilterId())
@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStepSize())
             {
                 context.Writer.WritePropertyName("StepSize");
-                context.Writer.Write(requestObject.StepSize);
+                context.Writer.Write(requestObject.StepSize.Value);
             }
 
             if(requestObject.IsSetTitle())

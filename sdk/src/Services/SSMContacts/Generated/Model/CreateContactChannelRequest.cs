@@ -67,9 +67,9 @@ namespace Amazon.SSMContacts.Model
         /// Incident Manager can't engage your contact channel until it has been activated.
         /// </para>
         /// </summary>
-        public bool DeferActivation
+        public bool? DeferActivation
         {
-            get { return this._deferActivation.GetValueOrDefault(); }
+            get { return this._deferActivation; }
             set { this._deferActivation = value; }
         }
 

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Signer.Endpoints;
 using Amazon.Signer.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class SignerEndpointsTests

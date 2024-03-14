@@ -98,7 +98,7 @@ namespace Amazon.RDSDataService.Model
         protected StatementTimeoutException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.DbConnectionId = (long)info.GetValue("DbConnectionId", typeof(long));
+            this.DbConnectionId = (long?)info.GetValue("DbConnectionId", typeof(long?));
         }
 
         /// <summary>
@@ -107,11 +107,6 @@ namespace Amazon.RDSDataService.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -129,9 +124,9 @@ namespace Amazon.RDSDataService.Model
         /// The database connection ID that executed the SQL statement.
         /// </para>
         /// </summary>
-        public long DbConnectionId
+        public long? DbConnectionId
         {
-            get { return this._dbConnectionId.GetValueOrDefault(); }
+            get { return this._dbConnectionId; }
             set { this._dbConnectionId = value; }
         }
 

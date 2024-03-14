@@ -42,9 +42,9 @@ namespace Amazon.LexModelsV2.Model
         /// The number of recommended slot types associated with the bot recommendation.
         /// </para>
         /// </summary>
-        public int DiscoveredSlotTypeCount
+        public int? DiscoveredSlotTypeCount
         {
-            get { return this._discoveredSlotTypeCount.GetValueOrDefault(); }
+            get { return this._discoveredSlotTypeCount; }
             set { this._discoveredSlotTypeCount = value; }
         }
 

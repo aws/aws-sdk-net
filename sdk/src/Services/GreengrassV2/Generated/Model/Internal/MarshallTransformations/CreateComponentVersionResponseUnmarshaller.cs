@@ -71,7 +71,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

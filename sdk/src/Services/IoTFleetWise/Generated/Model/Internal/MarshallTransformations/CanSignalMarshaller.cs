@@ -48,31 +48,31 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFactor())
             {
                 context.Writer.WritePropertyName("factor");
-                context.Writer.Write(requestObject.Factor);
+                context.Writer.Write(requestObject.Factor.Value);
             }
 
             if(requestObject.IsSetIsBigEndian())
             {
                 context.Writer.WritePropertyName("isBigEndian");
-                context.Writer.Write(requestObject.IsBigEndian);
+                context.Writer.Write(requestObject.IsBigEndian.Value);
             }
 
             if(requestObject.IsSetIsSigned())
             {
                 context.Writer.WritePropertyName("isSigned");
-                context.Writer.Write(requestObject.IsSigned);
+                context.Writer.Write(requestObject.IsSigned.Value);
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("length");
-                context.Writer.Write(requestObject.Length);
+                context.Writer.Write(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetMessageId())
             {
                 context.Writer.WritePropertyName("messageId");
-                context.Writer.Write(requestObject.MessageId);
+                context.Writer.Write(requestObject.MessageId.Value);
             }
 
             if(requestObject.IsSetName())
@@ -84,13 +84,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset);
+                context.Writer.Write(requestObject.Offset.Value);
             }
 
             if(requestObject.IsSetStartBit())
             {
                 context.Writer.WritePropertyName("startBit");
-                context.Writer.Write(requestObject.StartBit);
+                context.Writer.Write(requestObject.StartBit.Value);
             }
 
         }

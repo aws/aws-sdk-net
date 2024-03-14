@@ -68,13 +68,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("GlobalTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.GlobalTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("HeartbeatTimeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HeartbeatTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

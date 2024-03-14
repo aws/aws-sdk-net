@@ -143,9 +143,9 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=2000000000)]
-        public long RateLimit
+        public long? RateLimit
         {
-            get { return this._rateLimit.GetValueOrDefault(); }
+            get { return this._rateLimit; }
             set { this._rateLimit = value; }
         }
 

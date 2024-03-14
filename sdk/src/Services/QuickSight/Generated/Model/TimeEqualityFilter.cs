@@ -151,9 +151,9 @@ namespace Amazon.QuickSight.Model
         /// This field is mutually exclusive to <c>RollingDate</c> and <c>ParameterName</c>.
         /// </para>
         /// </summary>
-        public DateTime Value
+        public DateTime? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

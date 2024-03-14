@@ -137,7 +137,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsRouteTableUsedInDifferentAZ", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRouteTableUsedInDifferentAZ = unmarshaller.Unmarshall(context);
                     continue;
                 }

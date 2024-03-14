@@ -69,9 +69,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// the application's job plan.
         /// </para>
         /// </summary>
-        public bool IncludeAdditionalDetails
+        public bool? IncludeAdditionalDetails
         {
-            get { return this._includeAdditionalDetails.GetValueOrDefault(); }
+            get { return this._includeAdditionalDetails; }
             set { this._includeAdditionalDetails = value; }
         }
 

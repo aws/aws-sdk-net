@@ -130,7 +130,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRestoreTimestamp())
                 {
                     context.Writer.WritePropertyName("restoreTimestamp");
-                    context.Writer.Write(publicRequest.RestoreTimestamp);
+                    context.Writer.Write(publicRequest.RestoreTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetSourceKeyspaceName())

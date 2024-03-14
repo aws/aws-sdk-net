@@ -311,9 +311,9 @@ namespace Amazon.KeyManagementService.Model
         /// request on the KMS key.
         /// </para>
         /// </summary>
-        public bool BypassPolicyLockoutSafetyCheck
+        public bool? BypassPolicyLockoutSafetyCheck
         {
-            get { return this._bypassPolicyLockoutSafetyCheck.GetValueOrDefault(); }
+            get { return this._bypassPolicyLockoutSafetyCheck; }
             set { this._bypassPolicyLockoutSafetyCheck = value; }
         }
 
@@ -612,9 +612,9 @@ namespace Amazon.KeyManagementService.Model
         /// custom key store.
         /// </para>
         /// </summary>
-        public bool MultiRegion
+        public bool? MultiRegion
         {
-            get { return this._multiRegion.GetValueOrDefault(); }
+            get { return this._multiRegion; }
             set { this._multiRegion = value; }
         }
 

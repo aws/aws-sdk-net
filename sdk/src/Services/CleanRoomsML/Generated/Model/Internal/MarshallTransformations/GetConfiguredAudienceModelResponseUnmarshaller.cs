@@ -77,7 +77,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minMatchingSeedSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinMatchingSeedSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

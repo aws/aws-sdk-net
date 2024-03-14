@@ -71,7 +71,7 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("score", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Score = unmarshaller.Unmarshall(context);
                     continue;
                 }

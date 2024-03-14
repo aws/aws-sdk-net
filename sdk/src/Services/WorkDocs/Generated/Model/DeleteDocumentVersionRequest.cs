@@ -66,9 +66,9 @@ namespace Amazon.WorkDocs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeletePriorVersions
+        public bool? DeletePriorVersions
         {
-            get { return this._deletePriorVersions.GetValueOrDefault(); }
+            get { return this._deletePriorVersions; }
             set { this._deletePriorVersions = value; }
         }
 

@@ -50,9 +50,9 @@ namespace Amazon.Macie2.Model
         /// Web Services account that isn't in the same Amazon Macie organization.
         /// </para>
         /// </summary>
-        public long External
+        public long? External
         {
-            get { return this._external.GetValueOrDefault(); }
+            get { return this._external; }
             set { this._external = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.Macie2.Model
         /// OAIs or OACs.
         /// </para>
         /// </summary>
-        public long Internal
+        public long? Internal
         {
-            get { return this._internal.GetValueOrDefault(); }
+            get { return this._internal; }
             set { this._internal = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Macie2.Model
         /// Amazon CloudFront OAIs, or CloudFront OACs.
         /// </para>
         /// </summary>
-        public long NotShared
+        public long? NotShared
         {
-            get { return this._notShared.GetValueOrDefault(); }
+            get { return this._notShared; }
             set { this._notShared = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Macie2.Model
         /// Web Services accounts, Amazon CloudFront OAIs, or CloudFront OACs.
         /// </para>
         /// </summary>
-        public long Unknown
+        public long? Unknown
         {
-            get { return this._unknown.GetValueOrDefault(); }
+            get { return this._unknown; }
             set { this._unknown = value; }
         }
 

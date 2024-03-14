@@ -128,7 +128,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUnmanagedvCpus())
                 {
                     context.Writer.WritePropertyName("unmanagedvCpus");
-                    context.Writer.Write(publicRequest.UnmanagedvCpus);
+                    context.Writer.Write(publicRequest.UnmanagedvCpus.Value);
                 }
 
                 writer.WriteObjectEnd();

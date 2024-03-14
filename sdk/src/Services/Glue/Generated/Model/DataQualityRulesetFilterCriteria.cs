@@ -47,9 +47,9 @@ namespace Amazon.Glue.Model
         /// Filter on rulesets created after this date.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Glue.Model
         /// Filter on rulesets created before this date.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Glue.Model
         /// Filter on rulesets last modified after this date.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedAfter
+        public DateTime? LastModifiedAfter
         {
-            get { return this._lastModifiedAfter.GetValueOrDefault(); }
+            get { return this._lastModifiedAfter; }
             set { this._lastModifiedAfter = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.Glue.Model
         /// Filter on rulesets last modified before this date.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedBefore
+        public DateTime? LastModifiedBefore
         {
-            get { return this._lastModifiedBefore.GetValueOrDefault(); }
+            get { return this._lastModifiedBefore; }
             set { this._lastModifiedBefore = value; }
         }
 

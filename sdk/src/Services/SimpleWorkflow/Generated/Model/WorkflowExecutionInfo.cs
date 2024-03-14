@@ -49,9 +49,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// Set to true if a cancellation is requested for this workflow execution.
         /// </para>
         /// </summary>
-        public bool CancelRequested
+        public bool? CancelRequested
         {
-            get { return this._cancelRequested.GetValueOrDefault(); }
+            get { return this._cancelRequested; }
             set { this._cancelRequested = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// is CLOSED.
         /// </para>
         /// </summary>
-        public DateTime CloseTimestamp
+        public DateTime? CloseTimestamp
         {
-            get { return this._closeTimestamp.GetValueOrDefault(); }
+            get { return this._closeTimestamp; }
             set { this._closeTimestamp = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

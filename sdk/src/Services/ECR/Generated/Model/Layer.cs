@@ -80,9 +80,9 @@ namespace Amazon.ECR.Model
         /// The size, in bytes, of the image layer.
         /// </para>
         /// </summary>
-        public long LayerSize
+        public long? LayerSize
         {
-            get { return this._layerSize.GetValueOrDefault(); }
+            get { return this._layerSize; }
             set { this._layerSize = value; }
         }
 

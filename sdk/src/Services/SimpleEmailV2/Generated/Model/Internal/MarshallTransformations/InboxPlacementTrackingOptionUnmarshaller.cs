@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Global", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Global = unmarshaller.Unmarshall(context);
                     continue;
                 }

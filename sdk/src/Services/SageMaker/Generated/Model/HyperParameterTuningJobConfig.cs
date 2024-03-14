@@ -92,9 +92,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RandomSeed
+        public int? RandomSeed
         {
-            get { return this._randomSeed.GetValueOrDefault(); }
+            get { return this._randomSeed; }
             set { this._randomSeed = value; }
         }
 

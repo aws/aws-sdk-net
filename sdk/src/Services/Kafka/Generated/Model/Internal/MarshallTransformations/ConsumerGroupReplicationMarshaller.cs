@@ -70,13 +70,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetectAndCopyNewConsumerGroups())
             {
                 context.Writer.WritePropertyName("detectAndCopyNewConsumerGroups");
-                context.Writer.Write(requestObject.DetectAndCopyNewConsumerGroups);
+                context.Writer.Write(requestObject.DetectAndCopyNewConsumerGroups.Value);
             }
 
             if(requestObject.IsSetSynchroniseConsumerGroupOffsets())
             {
                 context.Writer.WritePropertyName("synchroniseConsumerGroupOffsets");
-                context.Writer.Write(requestObject.SynchroniseConsumerGroupOffsets);
+                context.Writer.Write(requestObject.SynchroniseConsumerGroupOffsets.Value);
             }
 
         }

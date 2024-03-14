@@ -65,9 +65,9 @@ namespace Amazon.MachineLearning.Model
         /// data. 
         /// </para>
         /// </summary>
-        public bool ComputeStatistics
+        public bool? ComputeStatistics
         {
-            get { return this._computeStatistics.GetValueOrDefault(); }
+            get { return this._computeStatistics; }
             set { this._computeStatistics = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ComputeTime.
         /// </summary>
-        public long ComputeTime
+        public long? ComputeTime
         {
-            get { return this._computeTime.GetValueOrDefault(); }
+            get { return this._computeTime; }
             set { this._computeTime = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.MachineLearning.Model
         /// The time that the <c>DataSource</c> was created. The time is expressed in epoch time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.MachineLearning.Model
         /// references.
         /// </para>
         /// </summary>
-        public long DataSizeInBytes
+        public long? DataSizeInBytes
         {
-            get { return this._dataSizeInBytes.GetValueOrDefault(); }
+            get { return this._dataSizeInBytes; }
             set { this._dataSizeInBytes = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FinishedAt.
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.MachineLearning.Model
         /// in epoch time.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.MachineLearning.Model
         /// The number of data files referenced by the <c>DataSource</c>.
         /// </para>
         /// </summary>
-        public long NumberOfFiles
+        public long? NumberOfFiles
         {
-            get { return this._numberOfFiles.GetValueOrDefault(); }
+            get { return this._numberOfFiles; }
             set { this._numberOfFiles = value; }
         }
 
@@ -346,9 +346,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property StartedAt.
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

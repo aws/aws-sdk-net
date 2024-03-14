@@ -59,7 +59,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isValid", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsValid = unmarshaller.Unmarshall(context);
                     continue;
                 }

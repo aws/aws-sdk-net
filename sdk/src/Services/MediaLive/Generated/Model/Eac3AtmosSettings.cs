@@ -45,9 +45,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Valid bitrates
         /// depend on the coding mode.//  * @affectsRightSizing true
         /// </summary>
-        public double Bitrate
+        public double? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Dialnorm. Sets the dialnorm for the output. Default 23.
         /// </summary>
         [AWSProperty(Min=1, Max=31)]
-        public int Dialnorm
+        public int? Dialnorm
         {
-            get { return this._dialnorm.GetValueOrDefault(); }
+            get { return this._dialnorm; }
             set { this._dialnorm = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.MediaLive.Model
         /// to attenuate the height channels when the downstream player isn??t configured to handle
         /// Dolby Digital Plus with Dolby Atmos and must remix the channels.
         /// </summary>
-        public double HeightTrim
+        public double? HeightTrim
         {
-            get { return this._heightTrim.GetValueOrDefault(); }
+            get { return this._heightTrim; }
             set { this._heightTrim = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.MediaLive.Model
         /// amount to attenuate the surround channels when the downstream player isn't configured
         /// to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
         /// </summary>
-        public double SurroundTrim
+        public double? SurroundTrim
         {
-            get { return this._surroundTrim.GetValueOrDefault(); }
+            get { return this._surroundTrim; }
             set { this._surroundTrim = value; }
         }
 

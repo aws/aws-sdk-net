@@ -65,7 +65,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("noMinRetentionPeriod", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NoMinRetentionPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }

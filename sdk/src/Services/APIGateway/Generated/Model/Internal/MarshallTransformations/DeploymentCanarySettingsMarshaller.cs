@@ -48,7 +48,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentTraffic())
             {
                 context.Writer.WritePropertyName("percentTraffic");
-                context.Writer.Write(requestObject.PercentTraffic);
+                context.Writer.Write(requestObject.PercentTraffic.Value);
             }
 
             if(requestObject.IsSetStageVariableOverrides())
@@ -68,7 +68,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseStageCache())
             {
                 context.Writer.WritePropertyName("useStageCache");
-                context.Writer.Write(requestObject.UseStageCache);
+                context.Writer.Write(requestObject.UseStageCache.Value);
             }
 
         }

@@ -124,9 +124,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int AlertSensitivityThreshold
+        public int? AlertSensitivityThreshold
         {
-            get { return this._alertSensitivityThreshold.GetValueOrDefault(); }
+            get { return this._alertSensitivityThreshold; }
             set { this._alertSensitivityThreshold = value; }
         }
 

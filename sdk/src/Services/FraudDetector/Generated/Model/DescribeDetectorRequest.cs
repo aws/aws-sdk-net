@@ -64,9 +64,9 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1000, Max=2500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

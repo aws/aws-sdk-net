@@ -65,9 +65,9 @@ namespace Amazon.Rekognition.Model
         /// 1970.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long FaceCount
+        public long? FaceCount
         {
-            get { return this._faceCount.GetValueOrDefault(); }
+            get { return this._faceCount; }
             set { this._faceCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long UserCount
+        public long? UserCount
         {
-            get { return this._userCount.GetValueOrDefault(); }
+            get { return this._userCount; }
             set { this._userCount = value; }
         }
 

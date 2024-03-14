@@ -65,7 +65,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("occurrencesThreshold", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OccurrencesThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

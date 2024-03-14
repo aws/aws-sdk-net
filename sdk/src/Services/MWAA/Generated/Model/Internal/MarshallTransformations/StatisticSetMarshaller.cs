@@ -48,25 +48,25 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximum())
             {
                 context.Writer.WritePropertyName("Maximum");
-                context.Writer.Write(requestObject.Maximum);
+                context.Writer.Write(requestObject.Maximum.Value);
             }
 
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("Minimum");
-                context.Writer.Write(requestObject.Minimum);
+                context.Writer.Write(requestObject.Minimum.Value);
             }
 
             if(requestObject.IsSetSampleCount())
             {
                 context.Writer.WritePropertyName("SampleCount");
-                context.Writer.Write(requestObject.SampleCount);
+                context.Writer.Write(requestObject.SampleCount.Value);
             }
 
             if(requestObject.IsSetSum())
             {
                 context.Writer.WritePropertyName("Sum");
-                context.Writer.Write(requestObject.Sum);
+                context.Writer.Write(requestObject.Sum.Value);
             }
 
         }

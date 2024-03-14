@@ -45,9 +45,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int ConcurrentExecutionRatePercentage
+        public int? ConcurrentExecutionRatePercentage
         {
-            get { return this._concurrentExecutionRatePercentage.GetValueOrDefault(); }
+            get { return this._concurrentExecutionRatePercentage; }
             set { this._concurrentExecutionRatePercentage = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int ErrorPercentage
+        public int? ErrorPercentage
         {
-            get { return this._errorPercentage.GetValueOrDefault(); }
+            get { return this._errorPercentage; }
             set { this._errorPercentage = value; }
         }
 

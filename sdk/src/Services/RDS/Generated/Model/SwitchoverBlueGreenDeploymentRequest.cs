@@ -96,9 +96,9 @@ namespace Amazon.RDS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
-        public int SwitchoverTimeout
+        public int? SwitchoverTimeout
         {
-            get { return this._switchoverTimeout.GetValueOrDefault(); }
+            get { return this._switchoverTimeout; }
             set { this._switchoverTimeout = value; }
         }
 

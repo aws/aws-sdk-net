@@ -98,9 +98,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.CloudWatch.Model
         /// If you omit this, the default of 10 is used.
         /// </para>
         /// </summary>
-        public int MaxContributorCount
+        public int? MaxContributorCount
         {
-            get { return this._maxContributorCount.GetValueOrDefault(); }
+            get { return this._maxContributorCount; }
             set { this._maxContributorCount = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

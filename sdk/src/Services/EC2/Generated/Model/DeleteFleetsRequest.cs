@@ -112,9 +112,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool TerminateInstances
+        public bool? TerminateInstances
         {
-            get { return this._terminateInstances.GetValueOrDefault(); }
+            get { return this._terminateInstances; }
             set { this._terminateInstances = value; }
         }
 

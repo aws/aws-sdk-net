@@ -65,7 +65,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastAttemptTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAttemptTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastSuccessfulTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfulTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("nextDeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NextDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

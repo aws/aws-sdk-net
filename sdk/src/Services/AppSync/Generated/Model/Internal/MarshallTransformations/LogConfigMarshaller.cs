@@ -54,7 +54,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeVerboseContent())
             {
                 context.Writer.WritePropertyName("excludeVerboseContent");
-                context.Writer.Write(requestObject.ExcludeVerboseContent);
+                context.Writer.Write(requestObject.ExcludeVerboseContent.Value);
             }
 
             if(requestObject.IsSetFieldLogLevel())

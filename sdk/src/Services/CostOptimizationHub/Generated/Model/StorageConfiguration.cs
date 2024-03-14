@@ -42,9 +42,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The storage volume.
         /// </para>
         /// </summary>
-        public double SizeInGb
+        public double? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

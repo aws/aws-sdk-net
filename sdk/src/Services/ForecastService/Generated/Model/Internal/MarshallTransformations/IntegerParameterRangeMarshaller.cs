@@ -48,13 +48,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("MaxValue");
-                context.Writer.Write(requestObject.MaxValue);
+                context.Writer.Write(requestObject.MaxValue.Value);
             }
 
             if(requestObject.IsSetMinValue())
             {
                 context.Writer.WritePropertyName("MinValue");
-                context.Writer.Write(requestObject.MinValue);
+                context.Writer.Write(requestObject.MinValue.Value);
             }
 
             if(requestObject.IsSetName())

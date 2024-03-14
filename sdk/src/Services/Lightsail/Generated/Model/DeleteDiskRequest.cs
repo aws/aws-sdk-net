@@ -75,9 +75,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value to indicate whether to delete all add-ons for the disk.
         /// </para>
         /// </summary>
-        public bool ForceDeleteAddOns
+        public bool? ForceDeleteAddOns
         {
-            get { return this._forceDeleteAddOns.GetValueOrDefault(); }
+            get { return this._forceDeleteAddOns; }
             set { this._forceDeleteAddOns = value; }
         }
 

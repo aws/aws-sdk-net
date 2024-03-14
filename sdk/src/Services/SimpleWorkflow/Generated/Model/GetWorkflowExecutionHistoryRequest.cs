@@ -124,9 +124,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int MaximumPageSize
+        public int? MaximumPageSize
         {
-            get { return this._maximumPageSize.GetValueOrDefault(); }
+            get { return this._maximumPageSize; }
             set { this._maximumPageSize = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// are returned in ascending order of the <c>eventTimeStamp</c> of the events.
         /// </para>
         /// </summary>
-        public bool ReverseOrder
+        public bool? ReverseOrder
         {
-            get { return this._reverseOrder.GetValueOrDefault(); }
+            get { return this._reverseOrder; }
             set { this._reverseOrder = value; }
         }
 

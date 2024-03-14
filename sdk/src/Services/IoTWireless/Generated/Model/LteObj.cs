@@ -51,9 +51,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=268435455)]
-        public int EutranCid
+        public int? EutranCid
         {
-            get { return this._eutranCid.GetValueOrDefault(); }
+            get { return this._eutranCid; }
             set { this._eutranCid = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1282)]
-        public int LteTimingAdvance
+        public int? LteTimingAdvance
         {
-            get { return this._lteTimingAdvance.GetValueOrDefault(); }
+            get { return this._lteTimingAdvance; }
             set { this._lteTimingAdvance = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=200, Max=999)]
-        public int Mcc
+        public int? Mcc
         {
-            get { return this._mcc.GetValueOrDefault(); }
+            get { return this._mcc; }
             set { this._mcc = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=999)]
-        public int Mnc
+        public int? Mnc
         {
-            get { return this._mnc.GetValueOrDefault(); }
+            get { return this._mnc; }
             set { this._mnc = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.IoTWireless.Model
         /// radio).
         /// </para>
         /// </summary>
-        public bool NrCapable
+        public bool? NrCapable
         {
-            get { return this._nrCapable.GetValueOrDefault(); }
+            get { return this._nrCapable; }
             set { this._nrCapable = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-140, Max=-44)]
-        public int Rsrp
+        public int? Rsrp
         {
-            get { return this._rsrp.GetValueOrDefault(); }
+            get { return this._rsrp; }
             set { this._rsrp = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=-3)]
-        public float Rsrq
+        public float? Rsrq
         {
-            get { return this._rsrq.GetValueOrDefault(); }
+            get { return this._rsrq; }
             set { this._rsrq = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int Tac
+        public int? Tac
         {
-            get { return this._tac.GetValueOrDefault(); }
+            get { return this._tac; }
             set { this._tac = value; }
         }
 

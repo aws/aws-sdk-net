@@ -59,7 +59,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoDeploymentsEnabled())
             {
                 context.Writer.WritePropertyName("AutoDeploymentsEnabled");
-                context.Writer.Write(requestObject.AutoDeploymentsEnabled);
+                context.Writer.Write(requestObject.AutoDeploymentsEnabled.Value);
             }
 
             if(requestObject.IsSetCodeRepository())

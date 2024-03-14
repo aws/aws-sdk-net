@@ -65,7 +65,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastModifiedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

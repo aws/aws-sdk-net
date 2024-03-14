@@ -71,9 +71,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Port. The network source port.
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

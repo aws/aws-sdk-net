@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("elasticInferenceAcceleratorAssociationTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ElasticInferenceAcceleratorAssociationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

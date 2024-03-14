@@ -66,9 +66,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// to Global Accelerator through bring your own IP address (BYOIP).
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

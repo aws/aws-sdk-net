@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ReuseOnScaleIn", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ReuseOnScaleIn = unmarshaller.Unmarshall(context);
                         continue;
                     }

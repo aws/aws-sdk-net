@@ -86,9 +86,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the listener rule was created, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.VPCLattice.Model
         /// Indicates whether this is the default rule.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.VPCLattice.Model
         /// The date and time that the listener rule was last updated, specified in ISO-8601 format.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -197,9 +197,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("end", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.End = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("start", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Start = unmarshaller.Unmarshall(context);
                     continue;
                 }

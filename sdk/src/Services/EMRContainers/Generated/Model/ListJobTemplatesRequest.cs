@@ -48,9 +48,9 @@ namespace Amazon.EMRContainers.Model
         /// The date and time after which the job templates were created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.EMRContainers.Model
         ///  The date and time before which the job templates were created.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EMRContainers.Model
         ///  The maximum number of job templates that can be listed.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

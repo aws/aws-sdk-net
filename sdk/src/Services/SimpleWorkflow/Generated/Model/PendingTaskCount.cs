@@ -43,9 +43,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// by this API and the count returned is the truncated value.
         /// </para>
         /// </summary>
-        public bool Truncated
+        public bool? Truncated
         {
-            get { return this._truncated.GetValueOrDefault(); }
+            get { return this._truncated; }
             set { this._truncated = value; }
         }
 

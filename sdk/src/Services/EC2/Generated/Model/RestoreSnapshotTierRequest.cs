@@ -56,9 +56,9 @@ namespace Amazon.EC2.Model
         /// parameter.
         /// </para>
         /// </summary>
-        public bool PermanentRestore
+        public bool? PermanentRestore
         {
-            get { return this._permanentRestore.GetValueOrDefault(); }
+            get { return this._permanentRestore; }
             set { this._permanentRestore = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.EC2.Model
         /// <b>PermanentRestore</b> parameter or set it to <c>false</c>.
         /// </para>
         /// </summary>
-        public int TemporaryRestoreDays
+        public int? TemporaryRestoreDays
         {
-            get { return this._temporaryRestoreDays.GetValueOrDefault(); }
+            get { return this._temporaryRestoreDays; }
             set { this._temporaryRestoreDays = value; }
         }
 

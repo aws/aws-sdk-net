@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// true.
         /// </para>
         /// </summary>
-        public bool ExportMetric
+        public bool? ExportMetric
         {
-            get { return this._exportMetric.GetValueOrDefault(); }
+            get { return this._exportMetric; }
             set { this._exportMetric = value; }
         }
 

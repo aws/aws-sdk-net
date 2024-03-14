@@ -65,7 +65,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MarkLatest", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MarkLatest = unmarshaller.Unmarshall(context);
                     continue;
                 }

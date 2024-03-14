@@ -96,9 +96,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int PeriodInSeconds
+        public int? PeriodInSeconds
         {
-            get { return this._periodInSeconds.GetValueOrDefault(); }
+            get { return this._periodInSeconds; }
             set { this._periodInSeconds = value; }
         }
 
@@ -116,9 +116,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ShouldProfile
+        public bool? ShouldProfile
         {
-            get { return this._shouldProfile.GetValueOrDefault(); }
+            get { return this._shouldProfile; }
             set { this._shouldProfile = value; }
         }
 

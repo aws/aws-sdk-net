@@ -43,9 +43,9 @@ namespace Amazon.FMS.Model
         /// Specifies whether the list to retrieve is a default list owned by Firewall Manager.
         /// </para>
         /// </summary>
-        public bool DefaultList
+        public bool? DefaultList
         {
-            get { return this._defaultList.GetValueOrDefault(); }
+            get { return this._defaultList; }
             set { this._defaultList = value; }
         }
 

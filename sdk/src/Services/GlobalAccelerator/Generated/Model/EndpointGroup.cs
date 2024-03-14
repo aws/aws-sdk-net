@@ -109,9 +109,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=30)]
-        public int HealthCheckIntervalSeconds
+        public int? HealthCheckIntervalSeconds
         {
-            get { return this._healthCheckIntervalSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckIntervalSeconds; }
             set { this._healthCheckIntervalSeconds = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int HealthCheckPort
+        public int? HealthCheckPort
         {
-            get { return this._healthCheckPort.GetValueOrDefault(); }
+            get { return this._healthCheckPort; }
             set { this._healthCheckPort = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int ThresholdCount
+        public int? ThresholdCount
         {
-            get { return this._thresholdCount.GetValueOrDefault(); }
+            get { return this._thresholdCount; }
             set { this._thresholdCount = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float TrafficDialPercentage
+        public float? TrafficDialPercentage
         {
-            get { return this._trafficDialPercentage.GetValueOrDefault(); }
+            get { return this._trafficDialPercentage; }
             set { this._trafficDialPercentage = value; }
         }
 

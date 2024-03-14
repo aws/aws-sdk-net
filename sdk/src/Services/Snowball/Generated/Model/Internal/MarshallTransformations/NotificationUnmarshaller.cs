@@ -77,7 +77,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NotifyAll", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotifyAll = unmarshaller.Unmarshall(context);
                     continue;
                 }

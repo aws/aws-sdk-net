@@ -65,9 +65,9 @@ namespace Amazon.Glue.Model
         /// The unix time and date that the job definition was completed.
         /// </para>
         /// </summary>
-        public long CompletedOn
+        public long? CompletedOn
         {
-            get { return this._completedOn.GetValueOrDefault(); }
+            get { return this._completedOn; }
             set { this._completedOn = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.Glue.Model
         /// The ID of the statement.
         /// </para>
         /// </summary>
-        public int Id
+        public int? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Glue.Model
         /// The code execution progress.
         /// </para>
         /// </summary>
-        public double Progress
+        public double? Progress
         {
-            get { return this._progress.GetValueOrDefault(); }
+            get { return this._progress; }
             set { this._progress = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.Glue.Model
         /// The unix time and date that the job definition was started.
         /// </para>
         /// </summary>
-        public long StartedOn
+        public long? StartedOn
         {
-            get { return this._startedOn.GetValueOrDefault(); }
+            get { return this._startedOn; }
             set { this._startedOn = value; }
         }
 

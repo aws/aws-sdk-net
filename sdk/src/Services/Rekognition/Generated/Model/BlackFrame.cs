@@ -62,9 +62,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float MaxPixelThreshold
+        public float? MaxPixelThreshold
         {
-            get { return this._maxPixelThreshold.GetValueOrDefault(); }
+            get { return this._maxPixelThreshold; }
             set { this._maxPixelThreshold = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float MinCoveragePercentage
+        public float? MinCoveragePercentage
         {
-            get { return this._minCoveragePercentage.GetValueOrDefault(); }
+            get { return this._minCoveragePercentage; }
             set { this._minCoveragePercentage = value; }
         }
 

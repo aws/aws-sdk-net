@@ -45,9 +45,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MajorRevision
+        public int? MajorRevision
         {
-            get { return this._majorRevision.GetValueOrDefault(); }
+            get { return this._majorRevision; }
             set { this._majorRevision = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinorRevision
+        public int? MinorRevision
         {
-            get { return this._minorRevision.GetValueOrDefault(); }
+            get { return this._minorRevision; }
             set { this._minorRevision = value; }
         }
 

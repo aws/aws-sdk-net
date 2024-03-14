@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// seconds.
         /// </para>
         /// </summary>
-        public int TcpEstablishedTimeout
+        public int? TcpEstablishedTimeout
         {
-            get { return this._tcpEstablishedTimeout.GetValueOrDefault(); }
+            get { return this._tcpEstablishedTimeout; }
             set { this._tcpEstablishedTimeout = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.EC2.Model
         /// Default: 180 seconds.
         /// </para>
         /// </summary>
-        public int UdpStreamTimeout
+        public int? UdpStreamTimeout
         {
-            get { return this._udpStreamTimeout.GetValueOrDefault(); }
+            get { return this._udpStreamTimeout; }
             set { this._udpStreamTimeout = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.EC2.Model
         /// 30 seconds.
         /// </para>
         /// </summary>
-        public int UdpTimeout
+        public int? UdpTimeout
         {
-            get { return this._udpTimeout.GetValueOrDefault(); }
+            get { return this._udpTimeout; }
             set { this._udpTimeout = value; }
         }
 

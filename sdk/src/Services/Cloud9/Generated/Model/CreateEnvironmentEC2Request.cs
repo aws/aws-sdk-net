@@ -55,9 +55,9 @@ namespace Amazon.Cloud9.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20160)]
-        public int AutomaticStopTimeMinutes
+        public int? AutomaticStopTimeMinutes
         {
-            get { return this._automaticStopTimeMinutes.GetValueOrDefault(); }
+            get { return this._automaticStopTimeMinutes; }
             set { this._automaticStopTimeMinutes = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.Cloud9.Model
         /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

@@ -53,9 +53,9 @@ namespace Amazon.Neptunedata.Model
         /// value is <c>TRUE</c>.
         /// </para>
         /// </summary>
-        public bool IncludeQueuedLoads
+        public bool? IncludeQueuedLoads
         {
-            get { return this._includeQueuedLoads.GetValueOrDefault(); }
+            get { return this._includeQueuedLoads; }
             set { this._includeQueuedLoads = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

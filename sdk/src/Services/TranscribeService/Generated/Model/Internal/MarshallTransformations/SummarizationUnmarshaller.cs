@@ -65,7 +65,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("GenerateAbstractiveSummary", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GenerateAbstractiveSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }

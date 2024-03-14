@@ -59,9 +59,9 @@ namespace Amazon.Neptunedata.Model
         /// to be returned for waiting queries as well as for running queries.
         /// </para>
         /// </summary>
-        public bool IncludeWaiting
+        public bool? IncludeWaiting
         {
-            get { return this._includeWaiting.GetValueOrDefault(); }
+            get { return this._includeWaiting; }
             set { this._includeWaiting = value; }
         }
 

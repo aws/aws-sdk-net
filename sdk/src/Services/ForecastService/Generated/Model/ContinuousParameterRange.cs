@@ -46,9 +46,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaxValue
+        public double? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MinValue
+        public double? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 

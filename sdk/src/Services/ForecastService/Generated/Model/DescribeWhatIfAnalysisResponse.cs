@@ -49,9 +49,9 @@ namespace Amazon.ForecastService.Model
         /// When the what-if analysis was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ForecastService.Model
         /// The approximate time remaining to complete the what-if analysis, in minutes.
         /// </para>
         /// </summary>
-        public long EstimatedTimeRemainingInMinutes
+        public long? EstimatedTimeRemainingInMinutes
         {
-            get { return this._estimatedTimeRemainingInMinutes.GetValueOrDefault(); }
+            get { return this._estimatedTimeRemainingInMinutes; }
             set { this._estimatedTimeRemainingInMinutes = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 

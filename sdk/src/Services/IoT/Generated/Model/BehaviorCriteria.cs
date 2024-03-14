@@ -86,9 +86,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int ConsecutiveDatapointsToAlarm
+        public int? ConsecutiveDatapointsToAlarm
         {
-            get { return this._consecutiveDatapointsToAlarm.GetValueOrDefault(); }
+            get { return this._consecutiveDatapointsToAlarm; }
             set { this._consecutiveDatapointsToAlarm = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int ConsecutiveDatapointsToClear
+        public int? ConsecutiveDatapointsToClear
         {
-            get { return this._consecutiveDatapointsToClear.GetValueOrDefault(); }
+            get { return this._consecutiveDatapointsToClear; }
             set { this._consecutiveDatapointsToClear = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.IoT.Model
         /// datatypes.
         /// </para>
         /// </summary>
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

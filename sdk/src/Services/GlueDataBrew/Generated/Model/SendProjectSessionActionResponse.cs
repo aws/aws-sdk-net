@@ -43,9 +43,9 @@ namespace Amazon.GlueDataBrew.Model
         /// A unique identifier for the action that was performed.
         /// </para>
         /// </summary>
-        public int ActionId
+        public int? ActionId
         {
-            get { return this._actionId.GetValueOrDefault(); }
+            get { return this._actionId; }
             set { this._actionId = value; }
         }
 

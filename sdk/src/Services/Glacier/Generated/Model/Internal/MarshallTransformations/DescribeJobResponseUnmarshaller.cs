@@ -71,25 +71,25 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ArchiveSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ArchiveSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Completed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Completed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CompletionDate", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     response.CompletionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller.Instance;
+                    var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InventorySizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.InventorySizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,9 +51,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaximumCapacityUnits
+        public int? MaximumCapacityUnits
         {
-            get { return this._maximumCapacityUnits.GetValueOrDefault(); }
+            get { return this._maximumCapacityUnits; }
             set { this._maximumCapacityUnits = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// parameter is used to split capacity allocation between core and task nodes. 
         /// </para>
         /// </summary>
-        public int MaximumCoreCapacityUnits
+        public int? MaximumCoreCapacityUnits
         {
-            get { return this._maximumCoreCapacityUnits.GetValueOrDefault(); }
+            get { return this._maximumCoreCapacityUnits; }
             set { this._maximumCoreCapacityUnits = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// to split capacity allocation between On-Demand and Spot Instances. 
         /// </para>
         /// </summary>
-        public int MaximumOnDemandCapacityUnits
+        public int? MaximumOnDemandCapacityUnits
         {
-            get { return this._maximumOnDemandCapacityUnits.GetValueOrDefault(); }
+            get { return this._maximumOnDemandCapacityUnits; }
             set { this._maximumOnDemandCapacityUnits = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinimumCapacityUnits
+        public int? MinimumCapacityUnits
         {
-            get { return this._minimumCapacityUnits.GetValueOrDefault(); }
+            get { return this._minimumCapacityUnits; }
             set { this._minimumCapacityUnits = value; }
         }
 

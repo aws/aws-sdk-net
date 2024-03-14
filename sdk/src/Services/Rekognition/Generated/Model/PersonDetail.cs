@@ -80,9 +80,9 @@ namespace Amazon.Rekognition.Model
         /// person throughout the video. The identifier is not stored by Amazon Rekognition.
         /// </para>
         /// </summary>
-        public long Index
+        public long? Index
         {
-            get { return this._index.GetValueOrDefault(); }
+            get { return this._index; }
             set { this._index = value; }
         }
 

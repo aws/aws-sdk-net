@@ -43,9 +43,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
-        public int GeranCid
+        public int? GeranCid
         {
-            get { return this._geranCid.GetValueOrDefault(); }
+            get { return this._geranCid; }
             set { this._geranCid = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]
-        public int Lac
+        public int? Lac
         {
-            get { return this._lac.GetValueOrDefault(); }
+            get { return this._lac; }
             set { this._lac = value; }
         }
 

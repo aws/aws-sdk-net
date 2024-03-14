@@ -53,13 +53,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Encrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailedPutCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FailedPutCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

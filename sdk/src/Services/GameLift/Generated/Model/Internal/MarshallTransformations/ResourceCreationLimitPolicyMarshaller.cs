@@ -48,13 +48,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNewGameSessionsPerCreator())
             {
                 context.Writer.WritePropertyName("NewGameSessionsPerCreator");
-                context.Writer.Write(requestObject.NewGameSessionsPerCreator);
+                context.Writer.Write(requestObject.NewGameSessionsPerCreator.Value);
             }
 
             if(requestObject.IsSetPolicyPeriodInMinutes())
             {
                 context.Writer.WritePropertyName("PolicyPeriodInMinutes");
-                context.Writer.Write(requestObject.PolicyPeriodInMinutes);
+                context.Writer.Write(requestObject.PolicyPeriodInMinutes.Value);
             }
 
         }

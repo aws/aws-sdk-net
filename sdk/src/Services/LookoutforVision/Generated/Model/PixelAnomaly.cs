@@ -64,9 +64,9 @@ namespace Amazon.LookoutforVision.Model
         /// The percentage area of the image that the anomaly type covers.
         /// </para>
         /// </summary>
-        public float TotalPercentageArea
+        public float? TotalPercentageArea
         {
-            get { return this._totalPercentageArea.GetValueOrDefault(); }
+            get { return this._totalPercentageArea; }
             set { this._totalPercentageArea = value; }
         }
 

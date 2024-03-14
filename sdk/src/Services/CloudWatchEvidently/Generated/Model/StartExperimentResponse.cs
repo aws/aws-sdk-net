@@ -41,9 +41,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// A timestamp that indicates when the experiment started.
         /// </para>
         /// </summary>
-        public DateTime StartedTime
+        public DateTime? StartedTime
         {
-            get { return this._startedTime.GetValueOrDefault(); }
+            get { return this._startedTime; }
             set { this._startedTime = value; }
         }
 

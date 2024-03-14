@@ -175,9 +175,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task definition was deregistered.
         /// </para>
         /// </summary>
-        public DateTime DeregisteredAt
+        public DateTime? DeregisteredAt
         {
-            get { return this._deregisteredAt.GetValueOrDefault(); }
+            get { return this._deregisteredAt; }
             set { this._deregisteredAt = value; }
         }
 
@@ -573,9 +573,9 @@ namespace Amazon.ECS.Model
         /// The Unix timestamp for the time when the task definition was registered.
         /// </para>
         /// </summary>
-        public DateTime RegisteredAt
+        public DateTime? RegisteredAt
         {
-            get { return this._registeredAt.GetValueOrDefault(); }
+            get { return this._registeredAt; }
             set { this._registeredAt = value; }
         }
 
@@ -663,9 +663,9 @@ namespace Amazon.ECS.Model
         /// even if you deregistered previous revisions in this family.
         /// </para>
         /// </summary>
-        public int Revision
+        public int? Revision
         {
-            get { return this._revision.GetValueOrDefault(); }
+            get { return this._revision; }
             set { this._revision = value; }
         }
 

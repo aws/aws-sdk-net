@@ -74,13 +74,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("lastAttemptedDiscoveryTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastAttemptedDiscoveryTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("lastSuccessfulDiscoveryTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastSuccessfulDiscoveryTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

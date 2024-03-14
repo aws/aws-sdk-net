@@ -65,7 +65,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DataDelayOffsetInMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DataDelayOffsetInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

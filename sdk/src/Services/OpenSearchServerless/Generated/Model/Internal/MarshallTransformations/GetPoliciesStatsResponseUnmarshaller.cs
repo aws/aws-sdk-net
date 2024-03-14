@@ -77,7 +77,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalPolicyCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalPolicyCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

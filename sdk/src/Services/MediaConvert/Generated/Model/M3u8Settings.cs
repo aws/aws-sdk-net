@@ -87,9 +87,9 @@ namespace Amazon.MediaConvert.Model
         /// for each PES packet.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int AudioFramesPerPes
+        public int? AudioFramesPerPes
         {
-            get { return this._audioFramesPerPes.GetValueOrDefault(); }
+            get { return this._audioFramesPerPes; }
             set { this._audioFramesPerPes = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.MediaConvert.Model
         /// between Program Clock References (PCRs) inserted into the transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int MaxPcrInterval
+        public int? MaxPcrInterval
         {
-            get { return this._maxPcrInterval.GetValueOrDefault(); }
+            get { return this._maxPcrInterval; }
             set { this._maxPcrInterval = value; }
         }
 
@@ -173,9 +173,9 @@ namespace Amazon.MediaConvert.Model
         /// of this table in the output transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PatInterval
+        public int? PatInterval
         {
-            get { return this._patInterval.GetValueOrDefault(); }
+            get { return this._patInterval; }
             set { this._patInterval = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.MediaConvert.Model
         /// same value as the Video PID.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int PcrPid
+        public int? PcrPid
         {
-            get { return this._pcrPid.GetValueOrDefault(); }
+            get { return this._pcrPid; }
             set { this._pcrPid = value; }
         }
 
@@ -226,9 +226,9 @@ namespace Amazon.MediaConvert.Model
         /// of this table in the output transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PmtInterval
+        public int? PmtInterval
         {
-            get { return this._pmtInterval.GetValueOrDefault(); }
+            get { return this._pmtInterval; }
             set { this._pmtInterval = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.MediaConvert.Model
         /// (PMT) in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int PmtPid
+        public int? PmtPid
         {
-            get { return this._pmtPid.GetValueOrDefault(); }
+            get { return this._pmtPid; }
             set { this._pmtPid = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.MediaConvert.Model
         /// metadata stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int PrivateMetadataPid
+        public int? PrivateMetadataPid
         {
-            get { return this._privateMetadataPid.GetValueOrDefault(); }
+            get { return this._privateMetadataPid; }
             set { this._privateMetadataPid = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.MediaConvert.Model
         /// the Program Map Table.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int ProgramNumber
+        public int? ProgramNumber
         {
-            get { return this._programNumber.GetValueOrDefault(); }
+            get { return this._programNumber; }
             set { this._programNumber = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.MediaConvert.Model
         /// blank to keep the default value 2.
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int PtsOffset
+        public int? PtsOffset
         {
-            get { return this._ptsOffset.GetValueOrDefault(); }
+            get { return this._ptsOffset; }
             set { this._ptsOffset = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.MediaConvert.Model
         /// in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int Scte35Pid
+        public int? Scte35Pid
         {
-            get { return this._scte35Pid.GetValueOrDefault(); }
+            get { return this._scte35Pid; }
             set { this._scte35Pid = value; }
         }
 
@@ -389,9 +389,9 @@ namespace Amazon.MediaConvert.Model
         /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int TimedMetadataPid
+        public int? TimedMetadataPid
         {
-            get { return this._timedMetadataPid.GetValueOrDefault(); }
+            get { return this._timedMetadataPid; }
             set { this._timedMetadataPid = value; }
         }
 
@@ -406,9 +406,9 @@ namespace Amazon.MediaConvert.Model
         /// field in the Program Map Table.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int TransportStreamId
+        public int? TransportStreamId
         {
-            get { return this._transportStreamId.GetValueOrDefault(); }
+            get { return this._transportStreamId; }
             set { this._transportStreamId = value; }
         }
 
@@ -423,9 +423,9 @@ namespace Amazon.MediaConvert.Model
         /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int VideoPid
+        public int? VideoPid
         {
-            get { return this._videoPid.GetValueOrDefault(); }
+            get { return this._videoPid; }
             set { this._videoPid = value; }
         }
 

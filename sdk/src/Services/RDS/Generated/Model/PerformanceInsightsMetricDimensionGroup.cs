@@ -108,9 +108,9 @@ namespace Amazon.RDS.Model
         /// The maximum number of items to fetch for this dimension group.
         /// </para>
         /// </summary>
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

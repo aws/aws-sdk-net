@@ -53,9 +53,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int EndpointPort
+        public int? EndpointPort
         {
-            get { return this._endpointPort.GetValueOrDefault(); }
+            get { return this._endpointPort; }
             set { this._endpointPort = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int ListenerPort
+        public int? ListenerPort
         {
-            get { return this._listenerPort.GetValueOrDefault(); }
+            get { return this._listenerPort; }
             set { this._listenerPort = value; }
         }
 

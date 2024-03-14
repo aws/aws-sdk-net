@@ -63,9 +63,9 @@ namespace Amazon.AppConfig.Model
         /// highest version.
         /// </para>
         /// </summary>
-        public int VersionNumber
+        public int? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public long BinCountLimit
+        public long? BinCountLimit
         {
-            get { return this._binCountLimit.GetValueOrDefault(); }
+            get { return this._binCountLimit; }
             set { this._binCountLimit = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

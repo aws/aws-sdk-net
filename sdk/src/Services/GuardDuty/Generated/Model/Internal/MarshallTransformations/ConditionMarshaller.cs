@@ -70,49 +70,49 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("greaterThan");
-                context.Writer.Write(requestObject.GreaterThan);
+                context.Writer.Write(requestObject.GreaterThan.Value);
             }
 
             if(requestObject.IsSetGreaterThanOrEqual())
             {
                 context.Writer.WritePropertyName("greaterThanOrEqual");
-                context.Writer.Write(requestObject.GreaterThanOrEqual);
+                context.Writer.Write(requestObject.GreaterThanOrEqual.Value);
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("gt");
-                context.Writer.Write(requestObject.Gt);
+                context.Writer.Write(requestObject.Gt.Value);
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("gte");
-                context.Writer.Write(requestObject.Gte);
+                context.Writer.Write(requestObject.Gte.Value);
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("lessThan");
-                context.Writer.Write(requestObject.LessThan);
+                context.Writer.Write(requestObject.LessThan.Value);
             }
 
             if(requestObject.IsSetLessThanOrEqual())
             {
                 context.Writer.WritePropertyName("lessThanOrEqual");
-                context.Writer.Write(requestObject.LessThanOrEqual);
+                context.Writer.Write(requestObject.LessThanOrEqual.Value);
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("lt");
-                context.Writer.Write(requestObject.Lt);
+                context.Writer.Write(requestObject.Lt.Value);
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("lte");
-                context.Writer.Write(requestObject.Lte);
+                context.Writer.Write(requestObject.Lte.Value);
             }
 
             if(requestObject.IsSetNeq())

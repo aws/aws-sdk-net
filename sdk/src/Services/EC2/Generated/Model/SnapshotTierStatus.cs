@@ -52,9 +52,9 @@ namespace Amazon.EC2.Model
         /// The date and time when the last archive process was completed.
         /// </para>
         /// </summary>
-        public DateTime ArchivalCompleteTime
+        public DateTime? ArchivalCompleteTime
         {
-            get { return this._archivalCompleteTime.GetValueOrDefault(); }
+            get { return this._archivalCompleteTime; }
             set { this._archivalCompleteTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.EC2.Model
         /// The progress of the last archive or restore process, as a percentage.
         /// </para>
         /// </summary>
-        public int LastTieringProgress
+        public int? LastTieringProgress
         {
-            get { return this._lastTieringProgress.GetValueOrDefault(); }
+            get { return this._lastTieringProgress; }
             set { this._lastTieringProgress = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.EC2.Model
         /// The date and time when the last archive or restore process was started.
         /// </para>
         /// </summary>
-        public DateTime LastTieringStartTime
+        public DateTime? LastTieringStartTime
         {
-            get { return this._lastTieringStartTime.GetValueOrDefault(); }
+            get { return this._lastTieringStartTime; }
             set { this._lastTieringStartTime = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.EC2.Model
         /// time when a temporarily restored snapshot will be automatically re-archived.
         /// </para>
         /// </summary>
-        public DateTime RestoreExpiryTime
+        public DateTime? RestoreExpiryTime
         {
-            get { return this._restoreExpiryTime.GetValueOrDefault(); }
+            get { return this._restoreExpiryTime; }
             set { this._restoreExpiryTime = value; }
         }
 

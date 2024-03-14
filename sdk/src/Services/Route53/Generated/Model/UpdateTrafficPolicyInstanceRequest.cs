@@ -102,9 +102,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public long TTL
+        public long? TTL
         {
-            get { return this._ttl.GetValueOrDefault(); }
+            get { return this._ttl; }
             set { this._ttl = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
-        public int TrafficPolicyVersion
+        public int? TrafficPolicyVersion
         {
-            get { return this._trafficPolicyVersion.GetValueOrDefault(); }
+            get { return this._trafficPolicyVersion; }
             set { this._trafficPolicyVersion = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double From
+        public double? From
         {
-            get { return this._from.GetValueOrDefault(); }
+            get { return this._from; }
             set { this._from = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double To
+        public double? To
         {
-            get { return this._to.GetValueOrDefault(); }
+            get { return this._to; }
             set { this._to = value; }
         }
 

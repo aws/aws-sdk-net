@@ -83,13 +83,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("ApplyImmediately", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.ApplyImmediately = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EngineNativeAuditFieldsIncluded", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.EngineNativeAuditFieldsIncluded = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -127,9 +127,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=25, Max=500000)]
-        public int MinMatchingSeedSize
+        public int? MinMatchingSeedSize
         {
-            get { return this._minMatchingSeedSize.GetValueOrDefault(); }
+            get { return this._minMatchingSeedSize; }
             set { this._minMatchingSeedSize = value; }
         }
 

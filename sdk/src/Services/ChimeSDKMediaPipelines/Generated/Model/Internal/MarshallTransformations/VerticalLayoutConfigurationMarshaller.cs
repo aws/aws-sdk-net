@@ -54,7 +54,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTileCount())
             {
                 context.Writer.WritePropertyName("TileCount");
-                context.Writer.Write(requestObject.TileCount);
+                context.Writer.Write(requestObject.TileCount.Value);
             }
 
             if(requestObject.IsSetTileOrder())

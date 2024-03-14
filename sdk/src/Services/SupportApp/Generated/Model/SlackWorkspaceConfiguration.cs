@@ -44,9 +44,9 @@ namespace Amazon.SupportApp.Model
         /// be part of an organization in Organizations.
         /// </para>
         /// </summary>
-        public bool AllowOrganizationMemberAccount
+        public bool? AllowOrganizationMemberAccount
         {
-            get { return this._allowOrganizationMemberAccount.GetValueOrDefault(); }
+            get { return this._allowOrganizationMemberAccount; }
             set { this._allowOrganizationMemberAccount = value; }
         }
 

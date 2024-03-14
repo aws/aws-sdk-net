@@ -161,9 +161,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property McGroupId.
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
-        public int McGroupId
+        public int? McGroupId
         {
-            get { return this._mcGroupId.GetValueOrDefault(); }
+            get { return this._mcGroupId; }
             set { this._mcGroupId = value; }
         }
 

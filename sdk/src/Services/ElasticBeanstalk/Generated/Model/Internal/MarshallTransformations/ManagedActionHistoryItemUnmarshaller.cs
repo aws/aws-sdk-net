@@ -74,7 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ExecutedTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.ExecutedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -92,7 +92,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("FinishedTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.FinishedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

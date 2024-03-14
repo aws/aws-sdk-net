@@ -43,9 +43,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool ReusedPreviousResult
+        public bool? ReusedPreviousResult
         {
-            get { return this._reusedPreviousResult.GetValueOrDefault(); }
+            get { return this._reusedPreviousResult; }
             set { this._reusedPreviousResult = value; }
         }
 

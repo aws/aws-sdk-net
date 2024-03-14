@@ -66,7 +66,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("UpdateHostedZoneCommentRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 if(publicRequest.IsSetComment())
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));                    
+                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Comment));
 
 
                 xmlWriter.WriteEndElement();

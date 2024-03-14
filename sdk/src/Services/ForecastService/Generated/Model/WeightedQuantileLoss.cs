@@ -44,9 +44,9 @@ namespace Amazon.ForecastService.Model
         /// weighted (normalized) by dividing by the sum over all quantiles.
         /// </para>
         /// </summary>
-        public double LossValue
+        public double? LossValue
         {
-            get { return this._lossValue.GetValueOrDefault(); }
+            get { return this._lossValue; }
             set { this._lossValue = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ForecastService.Model
         /// the quantiles would be 0.2, 0.4, 0.6, and 0.8.
         /// </para>
         /// </summary>
-        public double Quantile
+        public double? Quantile
         {
-            get { return this._quantile.GetValueOrDefault(); }
+            get { return this._quantile; }
             set { this._quantile = value; }
         }
 

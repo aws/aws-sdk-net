@@ -71,7 +71,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("key", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,19 +83,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("queryable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Queryable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("required", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Required = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("secret", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Secret = unmarshaller.Unmarshall(context);
                     continue;
                 }

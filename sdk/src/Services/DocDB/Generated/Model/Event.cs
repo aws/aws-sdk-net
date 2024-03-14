@@ -46,9 +46,9 @@ namespace Amazon.DocDB.Model
         /// Specifies the date and time of the event.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 

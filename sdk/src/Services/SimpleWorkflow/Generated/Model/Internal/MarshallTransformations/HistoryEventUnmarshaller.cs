@@ -191,13 +191,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("eventId", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("eventTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

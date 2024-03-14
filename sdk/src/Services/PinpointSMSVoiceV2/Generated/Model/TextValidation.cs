@@ -44,9 +44,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxLength
+        public int? MaxLength
         {
-            get { return this._maxLength.GetValueOrDefault(); }
+            get { return this._maxLength; }
             set { this._maxLength = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinLength
+        public int? MinLength
         {
-            get { return this._minLength.GetValueOrDefault(); }
+            get { return this._minLength; }
             set { this._minLength = value; }
         }
 

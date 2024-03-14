@@ -46,9 +46,9 @@ namespace Amazon.MediaPackageVod.Model
         /// Gets and sets the property ApproximateAssetCount. The approximate asset count of the
         /// PackagingGroup.
         /// </summary>
-        public int ApproximateAssetCount
+        public int? ApproximateAssetCount
         {
-            get { return this._approximateAssetCount.GetValueOrDefault(); }
+            get { return this._approximateAssetCount; }
             set { this._approximateAssetCount = value; }
         }
 

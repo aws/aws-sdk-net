@@ -77,7 +77,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SubscriptionCreatedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionCreatedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

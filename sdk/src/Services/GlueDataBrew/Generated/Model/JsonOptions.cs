@@ -42,9 +42,9 @@ namespace Amazon.GlueDataBrew.Model
         /// A value that specifies whether JSON input contains embedded new line characters.
         /// </para>
         /// </summary>
-        public bool MultiLine
+        public bool? MultiLine
         {
-            get { return this._multiLine.GetValueOrDefault(); }
+            get { return this._multiLine; }
             set { this._multiLine = value; }
         }
 

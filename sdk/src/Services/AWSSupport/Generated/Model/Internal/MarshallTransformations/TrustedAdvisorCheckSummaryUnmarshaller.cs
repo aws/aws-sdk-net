@@ -77,7 +77,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("hasFlaggedResources", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasFlaggedResources = unmarshaller.Unmarshall(context);
                     continue;
                 }

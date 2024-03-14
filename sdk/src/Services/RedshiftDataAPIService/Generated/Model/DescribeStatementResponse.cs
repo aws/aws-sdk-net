@@ -77,9 +77,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// The date and time (UTC) when the SQL statement was submitted to run. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// The amount of time in nanoseconds that the statement ran. 
         /// </para>
         /// </summary>
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// returns a result set.
         /// </para>
         /// </summary>
-        public bool HasResultSet
+        public bool? HasResultSet
         {
-            get { return this._hasResultSet.GetValueOrDefault(); }
+            get { return this._hasResultSet; }
             set { this._hasResultSet = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// The process identifier from Amazon Redshift. 
         /// </para>
         /// </summary>
-        public long RedshiftPid
+        public long? RedshiftPid
         {
-            get { return this._redshiftPid.GetValueOrDefault(); }
+            get { return this._redshiftPid; }
             set { this._redshiftPid = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// available in the <c>query</c> column of the <c>STL_QUERY</c> system view. 
         /// </para>
         /// </summary>
-        public long RedshiftQueryId
+        public long? RedshiftQueryId
         {
-            get { return this._redshiftQueryId.GetValueOrDefault(); }
+            get { return this._redshiftQueryId; }
             set { this._redshiftQueryId = value; }
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// the value is null.
         /// </para>
         /// </summary>
-        public long ResultRows
+        public long? ResultRows
         {
-            get { return this._resultRows.GetValueOrDefault(); }
+            get { return this._resultRows; }
             set { this._resultRows = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// The size in bytes of the returned results. A <c>-1</c> indicates the value is null.
         /// </para>
         /// </summary>
-        public long ResultSize
+        public long? ResultSize
         {
-            get { return this._resultSize.GetValueOrDefault(); }
+            get { return this._resultSize; }
             set { this._resultSize = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// An example is the time the status last changed. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

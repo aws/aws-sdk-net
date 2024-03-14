@@ -54,31 +54,31 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxNodeCount())
             {
                 context.Writer.WritePropertyName("maxNodeCount");
-                context.Writer.Write(requestObject.MaxNodeCount);
+                context.Writer.Write(requestObject.MaxNodeCount.Value);
             }
 
             if(requestObject.IsSetMetricTarget())
             {
                 context.Writer.WritePropertyName("metricTarget");
-                context.Writer.Write(requestObject.MetricTarget);
+                context.Writer.Write(requestObject.MetricTarget.Value);
             }
 
             if(requestObject.IsSetMinNodeCount())
             {
                 context.Writer.WritePropertyName("minNodeCount");
-                context.Writer.Write(requestObject.MinNodeCount);
+                context.Writer.Write(requestObject.MinNodeCount.Value);
             }
 
             if(requestObject.IsSetScaleInCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleInCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleInCooldownSeconds);
+                context.Writer.Write(requestObject.ScaleInCooldownSeconds.Value);
             }
 
             if(requestObject.IsSetScaleOutCooldownSeconds())
             {
                 context.Writer.WritePropertyName("scaleOutCooldownSeconds");
-                context.Writer.Write(requestObject.ScaleOutCooldownSeconds);
+                context.Writer.Write(requestObject.ScaleOutCooldownSeconds.Value);
             }
 
         }

@@ -42,9 +42,9 @@ namespace Amazon.WorkMail.Model
         /// The authentication token's validity, in seconds.
         /// </para>
         /// </summary>
-        public long ExpiresIn
+        public long? ExpiresIn
         {
-            get { return this._expiresIn.GetValueOrDefault(); }
+            get { return this._expiresIn; }
             set { this._expiresIn = value; }
         }
 

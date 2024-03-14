@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSessionLifetimeInMinutes())
                 {
                     context.Writer.WritePropertyName("SessionLifetimeInMinutes");
-                    context.Writer.Write(publicRequest.SessionLifetimeInMinutes);
+                    context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetUserArn())

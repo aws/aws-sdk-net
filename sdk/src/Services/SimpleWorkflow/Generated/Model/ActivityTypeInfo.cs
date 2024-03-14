@@ -65,9 +65,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.
         /// </para>
         /// </summary>
-        public DateTime DeprecationDate
+        public DateTime? DeprecationDate
         {
-            get { return this._deprecationDate.GetValueOrDefault(); }
+            get { return this._deprecationDate; }
             set { this._deprecationDate = value; }
         }
 

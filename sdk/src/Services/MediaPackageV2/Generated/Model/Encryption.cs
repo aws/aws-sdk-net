@@ -95,9 +95,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=300, Max=31536000)]
-        public int KeyRotationIntervalSeconds
+        public int? KeyRotationIntervalSeconds
         {
-            get { return this._keyRotationIntervalSeconds.GetValueOrDefault(); }
+            get { return this._keyRotationIntervalSeconds; }
             set { this._keyRotationIntervalSeconds = value; }
         }
 

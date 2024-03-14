@@ -42,9 +42,9 @@ namespace Amazon.Redshift.Model
         /// The amount charged per the period of time specified by the recurring charge frequency.
         /// </para>
         /// </summary>
-        public double RecurringChargeAmount
+        public double? RecurringChargeAmount
         {
-            get { return this._recurringChargeAmount.GetValueOrDefault(); }
+            get { return this._recurringChargeAmount; }
             set { this._recurringChargeAmount = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSkipSnapshot())
                 {
                     context.Writer.WritePropertyName("skipSnapshot");
-                    context.Writer.Write(publicRequest.SkipSnapshot);
+                    context.Writer.Write(publicRequest.SkipSnapshot.Value);
                 }
 
                 writer.WriteObjectEnd();

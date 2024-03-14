@@ -162,9 +162,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property RunningBridgeCount. The running bridge count.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RunningBridgeCount
+        public int? RunningBridgeCount
         {
-            get { return this._runningBridgeCount.GetValueOrDefault(); }
+            get { return this._runningBridgeCount; }
             set { this._runningBridgeCount = value; }
         }
 

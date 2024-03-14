@@ -61,9 +61,9 @@ namespace Amazon.Chime.Model
         /// Enables or disables a rule. You must disable rules before you can delete them.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

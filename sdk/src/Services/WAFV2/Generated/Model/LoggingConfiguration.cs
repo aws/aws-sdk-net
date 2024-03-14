@@ -140,9 +140,9 @@ namespace Amazon.WAFV2.Model
         /// the configuration. 
         /// </para>
         /// </summary>
-        public bool ManagedByFirewallManager
+        public bool? ManagedByFirewallManager
         {
-            get { return this._managedByFirewallManager.GetValueOrDefault(); }
+            get { return this._managedByFirewallManager; }
             set { this._managedByFirewallManager = value; }
         }
 

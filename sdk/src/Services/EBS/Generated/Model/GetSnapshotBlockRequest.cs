@@ -57,9 +57,9 @@ namespace Amazon.EBS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int BlockIndex
+        public int? BlockIndex
         {
-            get { return this._blockIndex.GetValueOrDefault(); }
+            get { return this._blockIndex; }
             set { this._blockIndex = value; }
         }
 

@@ -87,7 +87,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.Configuration.IsSetCloudWatchMetricsEnabled())
-                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled));                 
+                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled.Value));                 
 
                     if(publicRequest.Configuration.IsSetSupportingAccessPoint())
                         xmlWriter.WriteElementString("SupportingAccessPoint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));                 

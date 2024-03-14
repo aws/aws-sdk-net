@@ -71,9 +71,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int Weight
+        public int? Weight
         {
-            get { return this._weight.GetValueOrDefault(); }
+            get { return this._weight; }
             set { this._weight = value; }
         }
 

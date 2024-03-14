@@ -65,7 +65,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("associatePublicIpAddress", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }

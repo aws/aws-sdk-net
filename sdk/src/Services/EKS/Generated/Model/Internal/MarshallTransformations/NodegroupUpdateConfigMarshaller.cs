@@ -48,13 +48,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxUnavailable())
             {
                 context.Writer.WritePropertyName("maxUnavailable");
-                context.Writer.Write(requestObject.MaxUnavailable);
+                context.Writer.Write(requestObject.MaxUnavailable.Value);
             }
 
             if(requestObject.IsSetMaxUnavailablePercentage())
             {
                 context.Writer.WritePropertyName("maxUnavailablePercentage");
-                context.Writer.Write(requestObject.MaxUnavailablePercentage);
+                context.Writer.Write(requestObject.MaxUnavailablePercentage.Value);
             }
 
         }

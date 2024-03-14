@@ -96,7 +96,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetMaxPricePerMinute())
@@ -126,7 +126,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeToLive())
                 {
                     context.Writer.WritePropertyName("TimeToLive");
-                    context.Writer.Write(publicRequest.TimeToLive);
+                    context.Writer.Write(publicRequest.TimeToLive.Value);
                 }
 
                 if(publicRequest.IsSetVoiceId())

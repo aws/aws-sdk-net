@@ -71,7 +71,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("cacheClusterEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CacheClusterEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -149,7 +149,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("tracingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TracingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

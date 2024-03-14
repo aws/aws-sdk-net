@@ -65,9 +65,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The threshold for the calculated attribute.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the calculated attribute definition was most recently edited.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

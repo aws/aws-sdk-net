@@ -42,9 +42,9 @@ namespace Amazon.DataExchange.Model
         /// resource supporting the data set was updated.
         /// </para>
         /// </summary>
-        public DateTime DataUpdatedAt
+        public DateTime? DataUpdatedAt
         {
-            get { return this._dataUpdatedAt.GetValueOrDefault(); }
+            get { return this._dataUpdatedAt; }
             set { this._dataUpdatedAt = value; }
         }
 

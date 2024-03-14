@@ -83,7 +83,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("failedRecordsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedRecordsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("processedRecordsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProcessedRecordsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalRecordsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalRecordsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

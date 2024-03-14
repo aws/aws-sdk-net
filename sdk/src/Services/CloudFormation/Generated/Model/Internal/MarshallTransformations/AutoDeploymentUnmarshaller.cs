@@ -56,13 +56,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Enabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("RetainStacksOnAccountRemoval", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.RetainStacksOnAccountRemoval = unmarshaller.Unmarshall(context);
                         continue;
                     }

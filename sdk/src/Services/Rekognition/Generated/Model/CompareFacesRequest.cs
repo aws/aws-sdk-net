@@ -157,9 +157,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float SimilarityThreshold
+        public float? SimilarityThreshold
         {
-            get { return this._similarityThreshold.GetValueOrDefault(); }
+            get { return this._similarityThreshold; }
             set { this._similarityThreshold = value; }
         }
 

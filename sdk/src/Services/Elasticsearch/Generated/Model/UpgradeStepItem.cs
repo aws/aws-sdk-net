@@ -63,9 +63,9 @@ namespace Amazon.Elasticsearch.Model
         /// The Floating point value representing progress percentage of a particular step.
         /// </para>
         /// </summary>
-        public double ProgressPercent
+        public double? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 

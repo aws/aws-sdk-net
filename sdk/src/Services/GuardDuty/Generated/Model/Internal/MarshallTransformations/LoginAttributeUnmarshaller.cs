@@ -71,13 +71,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("failedLoginAttempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedLoginAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("successfulLoginAttempts", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessfulLoginAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }

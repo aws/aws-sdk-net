@@ -54,9 +54,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool CloudWatchMetricsEnabled
+        public bool? CloudWatchMetricsEnabled
         {
-            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchMetricsEnabled; }
             set { this._cloudWatchMetricsEnabled = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool SampledRequestsEnabled
+        public bool? SampledRequestsEnabled
         {
-            get { return this._sampledRequestsEnabled.GetValueOrDefault(); }
+            get { return this._sampledRequestsEnabled; }
             set { this._sampledRequestsEnabled = value; }
         }
 

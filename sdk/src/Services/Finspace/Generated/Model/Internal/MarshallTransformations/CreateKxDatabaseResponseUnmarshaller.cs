@@ -53,7 +53,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

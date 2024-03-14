@@ -74,7 +74,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBackup())
                 {
                     context.Writer.WritePropertyName("Backup");
-                    context.Writer.Write(publicRequest.Backup);
+                    context.Writer.Write(publicRequest.Backup.Value);
                 }
 
                 if(publicRequest.IsSetCreationToken())
@@ -91,7 +91,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEncrypted())
                 {
                     context.Writer.WritePropertyName("Encrypted");
-                    context.Writer.Write(publicRequest.Encrypted);
+                    context.Writer.Write(publicRequest.Encrypted.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())
@@ -109,7 +109,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetProvisionedThroughputInMibps())
                 {
                     context.Writer.WritePropertyName("ProvisionedThroughputInMibps");
-                    context.Writer.Write(publicRequest.ProvisionedThroughputInMibps);
+                    context.Writer.Write(publicRequest.ProvisionedThroughputInMibps.Value);
                 }
 
                 if(publicRequest.IsSetTags())

@@ -179,9 +179,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NumberOfConnections
+        public int? NumberOfConnections
         {
-            get { return this._numberOfConnections.GetValueOrDefault(); }
+            get { return this._numberOfConnections; }
             set { this._numberOfConnections = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool RequestMACSec
+        public bool? RequestMACSec
         {
-            get { return this._requestmacSec.GetValueOrDefault(); }
+            get { return this._requestmacSec; }
             set { this._requestmacSec = value; }
         }
 

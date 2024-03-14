@@ -81,9 +81,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfDistinctValues
+        public long? NumberOfDistinctValues
         {
-            get { return this._numberOfDistinctValues.GetValueOrDefault(); }
+            get { return this._numberOfDistinctValues; }
             set { this._numberOfDistinctValues = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public long NumberOfNulls
+        public long? NumberOfNulls
         {
-            get { return this._numberOfNulls.GetValueOrDefault(); }
+            get { return this._numberOfNulls; }
             set { this._numberOfNulls = value; }
         }
 

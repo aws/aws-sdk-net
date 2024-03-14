@@ -76,9 +76,9 @@ namespace Amazon.Mgn.Model
         /// Security group.
         /// </para>
         /// </summary>
-        public bool AssociateDefaultSecurityGroup
+        public bool? AssociateDefaultSecurityGroup
         {
-            get { return this._associateDefaultSecurityGroup.GetValueOrDefault(); }
+            get { return this._associateDefaultSecurityGroup; }
             set { this._associateDefaultSecurityGroup = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.Mgn.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public long BandwidthThrottling
+        public long? BandwidthThrottling
         {
-            get { return this._bandwidthThrottling.GetValueOrDefault(); }
+            get { return this._bandwidthThrottling; }
             set { this._bandwidthThrottling = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration template create Public IP.
         /// </para>
         /// </summary>
-        public bool CreatePublicIP
+        public bool? CreatePublicIP
         {
-            get { return this._createPublicIP.GetValueOrDefault(); }
+            get { return this._createPublicIP; }
             set { this._createPublicIP = value; }
         }
 
@@ -318,9 +318,9 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration template use Dedicated Replication Server.
         /// </para>
         /// </summary>
-        public bool UseDedicatedReplicationServer
+        public bool? UseDedicatedReplicationServer
         {
-            get { return this._useDedicatedReplicationServer.GetValueOrDefault(); }
+            get { return this._useDedicatedReplicationServer; }
             set { this._useDedicatedReplicationServer = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.Mgn.Model
         /// Replication Configuration template use Fips Endpoint.
         /// </para>
         /// </summary>
-        public bool UseFipsEndpoint
+        public bool? UseFipsEndpoint
         {
-            get { return this._useFipsEndpoint.GetValueOrDefault(); }
+            get { return this._useFipsEndpoint; }
             set { this._useFipsEndpoint = value; }
         }
 

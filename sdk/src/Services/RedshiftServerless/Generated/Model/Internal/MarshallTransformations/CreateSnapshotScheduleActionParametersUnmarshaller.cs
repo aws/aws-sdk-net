@@ -71,7 +71,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("retentionPeriod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }

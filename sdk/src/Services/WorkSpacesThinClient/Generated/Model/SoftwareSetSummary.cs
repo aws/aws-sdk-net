@@ -83,9 +83,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The timestamp of when the software set was released.
         /// </para>
         /// </summary>
-        public DateTime ReleasedAt
+        public DateTime? ReleasedAt
         {
-            get { return this._releasedAt.GetValueOrDefault(); }
+            get { return this._releasedAt; }
             set { this._releasedAt = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The timestamp of the end of support for the software set.
         /// </para>
         /// </summary>
-        public DateTime SupportedUntil
+        public DateTime? SupportedUntil
         {
-            get { return this._supportedUntil.GetValueOrDefault(); }
+            get { return this._supportedUntil; }
             set { this._supportedUntil = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.Chime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5475)]
-        public int RetentionDays
+        public int? RetentionDays
         {
-            get { return this._retentionDays.GetValueOrDefault(); }
+            get { return this._retentionDays; }
             set { this._retentionDays = value; }
         }
 

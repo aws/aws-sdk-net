@@ -110,9 +110,9 @@ namespace Amazon.AppConfigData.Model
         /// again. Use <c>RequiredMinimumPollIntervalInSeconds</c> to set the desired poll interval.
         /// </para>
         /// </summary>
-        public int NextPollIntervalInSeconds
+        public int? NextPollIntervalInSeconds
         {
-            get { return this._nextPollIntervalInSeconds.GetValueOrDefault(); }
+            get { return this._nextPollIntervalInSeconds; }
             set { this._nextPollIntervalInSeconds = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSchemaVersionNumber())
             {
                 context.Writer.WritePropertyName("SchemaVersionNumber");
-                context.Writer.Write(requestObject.SchemaVersionNumber);
+                context.Writer.Write(requestObject.SchemaVersionNumber.Value);
             }
 
         }

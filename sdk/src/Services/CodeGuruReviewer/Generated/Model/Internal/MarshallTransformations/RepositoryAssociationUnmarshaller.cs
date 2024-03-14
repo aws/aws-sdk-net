@@ -83,7 +83,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedTimeStamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdatedTimeStamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTimeStamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,25 +65,25 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Displayable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Displayable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Facetable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Facetable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Searchable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Searchable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Sortable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Sortable = unmarshaller.Unmarshall(context);
                     continue;
                 }

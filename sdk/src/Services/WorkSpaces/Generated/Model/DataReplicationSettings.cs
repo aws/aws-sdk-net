@@ -61,9 +61,9 @@ namespace Amazon.WorkSpaces.Model
         /// used for replicating data.
         /// </para>
         /// </summary>
-        public DateTime RecoverySnapshotTime
+        public DateTime? RecoverySnapshotTime
         {
-            get { return this._recoverySnapshotTime.GetValueOrDefault(); }
+            get { return this._recoverySnapshotTime; }
             set { this._recoverySnapshotTime = value; }
         }
 

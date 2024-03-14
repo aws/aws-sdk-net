@@ -168,9 +168,9 @@ namespace Amazon.Glue.Model
         /// <c>MaxCapacity</c> field is set automatically and becomes read-only.
         /// </para>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.Glue.Model
         /// The maximum number of times to retry a task for this transform after a task run fails.
         /// </para>
         /// </summary>
-        public int MaxRetries
+        public int? MaxRetries
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
+            get { return this._maxRetries; }
             set { this._maxRetries = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.Glue.Model
         /// If <c>WorkerType</c> is set, then <c>NumberOfWorkers</c> is required (and vice versa).
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -325,9 +325,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

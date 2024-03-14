@@ -63,9 +63,9 @@ namespace Amazon.OSIS.Model
         /// Whether logs should be published.
         /// </para>
         /// </summary>
-        public bool IsLoggingEnabled
+        public bool? IsLoggingEnabled
         {
-            get { return this._isLoggingEnabled.GetValueOrDefault(); }
+            get { return this._isLoggingEnabled; }
             set { this._isLoggingEnabled = value; }
         }
 

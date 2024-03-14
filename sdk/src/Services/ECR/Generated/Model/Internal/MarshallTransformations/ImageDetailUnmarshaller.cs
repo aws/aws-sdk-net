@@ -83,7 +83,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("imagePushedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ImagePushedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("imageSizeInBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ImageSizeInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastRecordedPullTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRecordedPullTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

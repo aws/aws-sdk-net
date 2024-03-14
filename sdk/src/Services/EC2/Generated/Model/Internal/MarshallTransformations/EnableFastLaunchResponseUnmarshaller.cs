@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("maxParallelLaunches", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.MaxParallelLaunches = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("stateTransitionTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.StateTransitionTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

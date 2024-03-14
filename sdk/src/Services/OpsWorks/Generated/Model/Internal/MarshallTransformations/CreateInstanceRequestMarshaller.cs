@@ -116,7 +116,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     context.Writer.WritePropertyName("EbsOptimized");
-                    context.Writer.Write(publicRequest.EbsOptimized);
+                    context.Writer.Write(publicRequest.EbsOptimized.Value);
                 }
 
                 if(publicRequest.IsSetHostname())
@@ -128,7 +128,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInstallUpdatesOnBoot())
                 {
                     context.Writer.WritePropertyName("InstallUpdatesOnBoot");
-                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot);
+                    context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
                 }
 
                 if(publicRequest.IsSetInstanceType())

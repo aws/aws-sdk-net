@@ -46,9 +46,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// The billable entity count.
         /// </para>
         /// </summary>
-        public long BillableEntityCount
+        public long? BillableEntityCount
         {
-            get { return this._billableEntityCount.GetValueOrDefault(); }
+            get { return this._billableEntityCount; }
             set { this._billableEntityCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EffectiveDateTime
+        public DateTime? EffectiveDateTime
         {
-            get { return this._effectiveDateTime.GetValueOrDefault(); }
+            get { return this._effectiveDateTime; }
             set { this._effectiveDateTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

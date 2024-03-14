@@ -98,9 +98,9 @@ namespace Amazon.EC2.Model
         /// pre-provisioned snapshots for Windows fast launch. Value must be <c>6</c> or greater.
         /// </para>
         /// </summary>
-        public int MaxParallelLaunches
+        public int? MaxParallelLaunches
         {
-            get { return this._maxParallelLaunches.GetValueOrDefault(); }
+            get { return this._maxParallelLaunches; }
             set { this._maxParallelLaunches = value; }
         }
 

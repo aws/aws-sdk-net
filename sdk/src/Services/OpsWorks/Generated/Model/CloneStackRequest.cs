@@ -171,9 +171,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether to clone the source stack's permissions.
         /// </para>
         /// </summary>
-        public bool ClonePermissions
+        public bool? ClonePermissions
         {
-            get { return this._clonePermissions.GetValueOrDefault(); }
+            get { return this._clonePermissions; }
             set { this._clonePermissions = value; }
         }
 
@@ -591,9 +591,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether to use custom cookbooks.
         /// </para>
         /// </summary>
-        public bool UseCustomCookbooks
+        public bool? UseCustomCookbooks
         {
-            get { return this._useCustomCookbooks.GetValueOrDefault(); }
+            get { return this._useCustomCookbooks; }
             set { this._useCustomCookbooks = value; }
         }
 
@@ -636,9 +636,9 @@ namespace Amazon.OpsWorks.Model
         /// a New Stack</a>.
         /// </para>
         /// </summary>
-        public bool UseOpsworksSecurityGroups
+        public bool? UseOpsworksSecurityGroups
         {
-            get { return this._useOpsworksSecurityGroups.GetValueOrDefault(); }
+            get { return this._useOpsworksSecurityGroups; }
             set { this._useOpsworksSecurityGroups = value; }
         }
 

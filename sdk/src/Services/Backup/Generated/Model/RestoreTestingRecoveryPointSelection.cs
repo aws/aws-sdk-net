@@ -122,9 +122,9 @@ namespace Amazon.Backup.Model
         /// Accepted values are integers from 1 to 365.
         /// </para>
         /// </summary>
-        public int SelectionWindowDays
+        public int? SelectionWindowDays
         {
-            get { return this._selectionWindowDays.GetValueOrDefault(); }
+            get { return this._selectionWindowDays; }
             set { this._selectionWindowDays = value; }
         }
 

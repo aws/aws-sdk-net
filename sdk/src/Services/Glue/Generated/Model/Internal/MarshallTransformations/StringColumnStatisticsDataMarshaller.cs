@@ -48,25 +48,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAverageLength())
             {
                 context.Writer.WritePropertyName("AverageLength");
-                context.Writer.Write(requestObject.AverageLength);
+                context.Writer.Write(requestObject.AverageLength.Value);
             }
 
             if(requestObject.IsSetMaximumLength())
             {
                 context.Writer.WritePropertyName("MaximumLength");
-                context.Writer.Write(requestObject.MaximumLength);
+                context.Writer.Write(requestObject.MaximumLength.Value);
             }
 
             if(requestObject.IsSetNumberOfDistinctValues())
             {
                 context.Writer.WritePropertyName("NumberOfDistinctValues");
-                context.Writer.Write(requestObject.NumberOfDistinctValues);
+                context.Writer.Write(requestObject.NumberOfDistinctValues.Value);
             }
 
             if(requestObject.IsSetNumberOfNulls())
             {
                 context.Writer.WritePropertyName("NumberOfNulls");
-                context.Writer.Write(requestObject.NumberOfNulls);
+                context.Writer.Write(requestObject.NumberOfNulls.Value);
             }
 
         }

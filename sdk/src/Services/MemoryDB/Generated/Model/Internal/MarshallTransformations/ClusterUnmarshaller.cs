@@ -77,7 +77,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfShards", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfShards = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -179,7 +179,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SnapshotRetentionLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SnapshotRetentionLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -215,7 +215,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TLSEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TLSEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

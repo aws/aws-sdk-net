@@ -50,9 +50,9 @@ namespace Amazon.Comprehend.Model
         /// Creation time of the dataset.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Comprehend.Model
         /// Time when the data from the dataset becomes available in the data lake.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.Comprehend.Model
         /// The number of documents in the dataset.
         /// </para>
         /// </summary>
-        public long NumberOfDocuments
+        public long? NumberOfDocuments
         {
-            get { return this._numberOfDocuments.GetValueOrDefault(); }
+            get { return this._numberOfDocuments; }
             set { this._numberOfDocuments = value; }
         }
 

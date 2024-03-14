@@ -45,9 +45,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  Indicates if a specific strategy is preferred for the application component. 
         /// </para>
         /// </summary>
-        public bool IsPreferred
+        public bool? IsPreferred
         {
-            get { return this._isPreferred.GetValueOrDefault(); }
+            get { return this._isPreferred; }
             set { this._isPreferred = value; }
         }
 

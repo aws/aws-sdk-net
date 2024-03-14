@@ -48,13 +48,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPixelThreshold())
             {
                 context.Writer.WritePropertyName("MaxPixelThreshold");
-                context.Writer.Write(requestObject.MaxPixelThreshold);
+                context.Writer.Write(requestObject.MaxPixelThreshold.Value);
             }
 
             if(requestObject.IsSetMinCoveragePercentage())
             {
                 context.Writer.WritePropertyName("MinCoveragePercentage");
-                context.Writer.Write(requestObject.MinCoveragePercentage);
+                context.Writer.Write(requestObject.MinCoveragePercentage.Value);
             }
 
         }

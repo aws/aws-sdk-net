@@ -61,9 +61,9 @@ namespace Amazon.ConfigService.Model
         /// The starting time of an execution.
         /// </para>
         /// </summary>
-        public DateTime EvaluationStartTimestamp
+        public DateTime? EvaluationStartTimestamp
         {
-            get { return this._evaluationStartTimestamp.GetValueOrDefault(); }
+            get { return this._evaluationStartTimestamp; }
             set { this._evaluationStartTimestamp = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("creationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isLatestForTarget", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLatestForTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }

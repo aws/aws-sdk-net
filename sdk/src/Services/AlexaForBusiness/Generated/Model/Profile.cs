@@ -92,9 +92,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether data retention of the profile is enabled.
         /// </para>
         /// </summary>
-        public bool DataRetentionOptIn
+        public bool? DataRetentionOptIn
         {
-            get { return this._dataRetentionOptIn.GetValueOrDefault(); }
+            get { return this._dataRetentionOptIn; }
             set { this._dataRetentionOptIn = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Retrieves if the profile is default or not.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The max volume limit of a room profile.
         /// </para>
         /// </summary>
-        public int MaxVolumeLimit
+        public int? MaxVolumeLimit
         {
-            get { return this._maxVolumeLimit.GetValueOrDefault(); }
+            get { return this._maxVolumeLimit; }
             set { this._maxVolumeLimit = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The PSTN setting of a room profile.
         /// </para>
         /// </summary>
-        public bool PSTNEnabled
+        public bool? PSTNEnabled
         {
-            get { return this._pstnEnabled.GetValueOrDefault(); }
+            get { return this._pstnEnabled; }
             set { this._pstnEnabled = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The setup mode of a room profile.
         /// </para>
         /// </summary>
-        public bool SetupModeDisabled
+        public bool? SetupModeDisabled
         {
-            get { return this._setupModeDisabled.GetValueOrDefault(); }
+            get { return this._setupModeDisabled; }
             set { this._setupModeDisabled = value; }
         }
 

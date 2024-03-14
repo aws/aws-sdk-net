@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentileValue())
             {
                 context.Writer.WritePropertyName("PercentileValue");
-                context.Writer.Write(requestObject.PercentileValue);
+                context.Writer.Write(requestObject.PercentileValue.Value);
             }
 
         }

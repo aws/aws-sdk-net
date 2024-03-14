@@ -81,7 +81,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SessionTimeout", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.SessionTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -70,7 +70,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRecursiveDeleteOption())
                 {
                     context.Writer.WritePropertyName("RecursiveDeleteOption");
-                    context.Writer.Write(publicRequest.RecursiveDeleteOption);
+                    context.Writer.Write(publicRequest.RecursiveDeleteOption.Value);
                 }
 
                 if(publicRequest.IsSetWorkGroup())

@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model
         /// True if the provisioning template version is the default version, otherwise false.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.IoT.Model
         /// The version of the provisioning template.
         /// </para>
         /// </summary>
-        public int VersionId
+        public int? VersionId
         {
-            get { return this._versionId.GetValueOrDefault(); }
+            get { return this._versionId; }
             set { this._versionId = value; }
         }
 

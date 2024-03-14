@@ -71,9 +71,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int AssessmentRunCount
+        public int? AssessmentRunCount
         {
-            get { return this._assessmentRunCount.GetValueOrDefault(); }
+            get { return this._assessmentRunCount; }
             set { this._assessmentRunCount = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=180, Max=86400)]
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

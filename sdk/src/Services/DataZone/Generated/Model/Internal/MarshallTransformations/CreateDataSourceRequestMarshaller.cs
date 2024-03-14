@@ -139,7 +139,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublishOnImport())
                 {
                     context.Writer.WritePropertyName("publishOnImport");
-                    context.Writer.Write(publicRequest.PublishOnImport);
+                    context.Writer.Write(publicRequest.PublishOnImport.Value);
                 }
 
                 if(publicRequest.IsSetRecommendation())

@@ -53,9 +53,9 @@ namespace Amazon.RDS.Model
         /// instances.
         /// </para>
         /// </summary>
-        public bool AllowsVpcAndNonVpcInstanceMemberships
+        public bool? AllowsVpcAndNonVpcInstanceMemberships
         {
-            get { return this._allowsVpcAndNonVpcInstanceMemberships.GetValueOrDefault(); }
+            get { return this._allowsVpcAndNonVpcInstanceMemberships; }
             set { this._allowsVpcAndNonVpcInstanceMemberships = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.RDS.Model
         /// Indicates when the option group was copied.
         /// </para>
         /// </summary>
-        public DateTime CopyTimestamp
+        public DateTime? CopyTimestamp
         {
-            get { return this._copyTimestamp.GetValueOrDefault(); }
+            get { return this._copyTimestamp; }
             set { this._copyTimestamp = value; }
         }
 

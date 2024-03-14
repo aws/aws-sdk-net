@@ -53,25 +53,25 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Count", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DatasetDeletedAfterRequestedSyncCount", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DatasetDeletedAfterRequestedSyncCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DatasetExists", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DatasetExists = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DatasetSyncCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.DatasetSyncCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

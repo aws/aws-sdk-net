@@ -49,9 +49,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 90 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P10
+        public double? P10
         {
-            get { return this._p10.GetValueOrDefault(); }
+            get { return this._p10; }
             set { this._p10 = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 50 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P50
+        public double? P50
         {
-            get { return this._p50.GetValueOrDefault(); }
+            get { return this._p50; }
             set { this._p50 = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 25 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P75
+        public double? P75
         {
-            get { return this._p75.GetValueOrDefault(); }
+            get { return this._p75; }
             set { this._p75 = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 15 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P85
+        public double? P85
         {
-            get { return this._p85.GetValueOrDefault(); }
+            get { return this._p85; }
             set { this._p85 = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 10 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P90
+        public double? P90
         {
-            get { return this._p90.GetValueOrDefault(); }
+            get { return this._p90; }
             set { this._p90 = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 5 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P95
+        public double? P95
         {
-            get { return this._p95.GetValueOrDefault(); }
+            get { return this._p95; }
             set { this._p95 = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 1 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P99
+        public double? P99
         {
-            get { return this._p99.GetValueOrDefault(); }
+            get { return this._p99; }
             set { this._p99 = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The average latency for the slowest 0.1 percent of requests over the last 10 seconds.
         /// </para>
         /// </summary>
-        public double P999
+        public double? P999
         {
-            get { return this._p999.GetValueOrDefault(); }
+            get { return this._p999; }
             set { this._p999 = value; }
         }
 

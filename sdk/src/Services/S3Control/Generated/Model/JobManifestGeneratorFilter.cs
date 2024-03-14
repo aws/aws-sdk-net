@@ -49,9 +49,9 @@ namespace Amazon.S3Control.Model
         /// created after this time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAfter
+        public DateTime? CreatedAfter
         {
-            get { return this._createdAfter.GetValueOrDefault(); }
+            get { return this._createdAfter; }
             set { this._createdAfter = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.S3Control.Model
         /// created before this time.
         /// </para>
         /// </summary>
-        public DateTime CreatedBefore
+        public DateTime? CreatedBefore
         {
-            get { return this._createdBefore.GetValueOrDefault(); }
+            get { return this._createdBefore; }
             set { this._createdBefore = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.S3Control.Model
         /// according to the Replication configuration on the source bucket.
         /// </para>
         /// </summary>
-        public bool EligibleForReplication
+        public bool? EligibleForReplication
         {
-            get { return this._eligibleForReplication.GetValueOrDefault(); }
+            get { return this._eligibleForReplication; }
             set { this._eligibleForReplication = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.S3Control.Model
         /// size is greater than the specified number of bytes.
         /// </para>
         /// </summary>
-        public long ObjectSizeGreaterThanBytes
+        public long? ObjectSizeGreaterThanBytes
         {
-            get { return this._objectSizeGreaterThanBytes.GetValueOrDefault(); }
+            get { return this._objectSizeGreaterThanBytes; }
             set { this._objectSizeGreaterThanBytes = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.S3Control.Model
         /// size is less than the specified number of bytes.
         /// </para>
         /// </summary>
-        public long ObjectSizeLessThanBytes
+        public long? ObjectSizeLessThanBytes
         {
-            get { return this._objectSizeLessThanBytes.GetValueOrDefault(); }
+            get { return this._objectSizeLessThanBytes; }
             set { this._objectSizeLessThanBytes = value; }
         }
 

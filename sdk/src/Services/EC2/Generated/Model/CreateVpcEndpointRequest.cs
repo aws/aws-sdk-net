@@ -150,9 +150,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool PrivateDnsEnabled
+        public bool? PrivateDnsEnabled
         {
-            get { return this._privateDnsEnabled.GetValueOrDefault(); }
+            get { return this._privateDnsEnabled; }
             set { this._privateDnsEnabled = value; }
         }
 

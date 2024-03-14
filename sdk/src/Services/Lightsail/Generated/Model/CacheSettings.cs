@@ -140,9 +140,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public long DefaultTTL
+        public long? DefaultTTL
         {
-            get { return this._defaultttl.GetValueOrDefault(); }
+            get { return this._defaultttl; }
             set { this._defaultttl = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.Lightsail.Model
         /// max-age</c>, <c>Cache-Control s-maxage</c>, and <c>Expires</c> to objects.
         /// </para>
         /// </summary>
-        public long MaximumTTL
+        public long? MaximumTTL
         {
-            get { return this._maximumttl.GetValueOrDefault(); }
+            get { return this._maximumttl; }
             set { this._maximumttl = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.Lightsail.Model
         /// configured to forward all headers to the origin.
         /// </para>
         /// </summary>
-        public long MinimumTTL
+        public long? MinimumTTL
         {
-            get { return this._minimumttl.GetValueOrDefault(); }
+            get { return this._minimumttl; }
             set { this._minimumttl = value; }
         }
 

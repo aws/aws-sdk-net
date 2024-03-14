@@ -54,9 +54,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.PaymentCryptography.Model
         /// and the key is scheduled for deletion.
         /// </para>
         /// </summary>
-        public DateTime DeletePendingTimestamp
+        public DateTime? DeletePendingTimestamp
         {
-            get { return this._deletePendingTimestamp.GetValueOrDefault(); }
+            get { return this._deletePendingTimestamp; }
             set { this._deletePendingTimestamp = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.PaymentCryptography.Model
         /// and the Amazon Web Services Payment Cryptography key is deleted.
         /// </para>
         /// </summary>
-        public DateTime DeleteTimestamp
+        public DateTime? DeleteTimestamp
         {
-            get { return this._deleteTimestamp.GetValueOrDefault(); }
+            get { return this._deleteTimestamp; }
             set { this._deleteTimestamp = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Exportable
+        public bool? Exportable
         {
-            get { return this._exportable.GetValueOrDefault(); }
+            get { return this._exportable; }
             set { this._exportable = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.PaymentCryptography.Model
         /// using the key material for cryptographic operations.
         /// </para>
         /// </summary>
-        public DateTime UsageStartTimestamp
+        public DateTime? UsageStartTimestamp
         {
-            get { return this._usageStartTimestamp.GetValueOrDefault(); }
+            get { return this._usageStartTimestamp; }
             set { this._usageStartTimestamp = value; }
         }
 
@@ -296,9 +296,9 @@ namespace Amazon.PaymentCryptography.Model
         /// the key material for cryptographic operations.
         /// </para>
         /// </summary>
-        public DateTime UsageStopTimestamp
+        public DateTime? UsageStopTimestamp
         {
-            get { return this._usageStopTimestamp.GetValueOrDefault(); }
+            get { return this._usageStopTimestamp; }
             set { this._usageStopTimestamp = value; }
         }
 

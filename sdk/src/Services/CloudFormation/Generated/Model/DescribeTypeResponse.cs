@@ -89,9 +89,9 @@ namespace Amazon.CloudFormation.Model
         /// public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.CloudFormation.Model
         /// returns <c>null</c>.
         /// </para>
         /// </summary>
-        public bool IsActivated
+        public bool? IsActivated
         {
-            get { return this._isActivated.GetValueOrDefault(); }
+            get { return this._isActivated; }
             set { this._isActivated = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.CloudFormation.Model
         /// are activated in your account, CloudFormation returns <c>null</c>.
         /// </para>
         /// </summary>
-        public bool IsDefaultVersion
+        public bool? IsDefaultVersion
         {
-            get { return this._isDefaultVersion.GetValueOrDefault(); }
+            get { return this._isDefaultVersion; }
             set { this._isDefaultVersion = value; }
         }
 
@@ -324,9 +324,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -598,9 +598,9 @@ namespace Amazon.CloudFormation.Model
         /// When the specified private extension version was registered or activated in your account.
         /// </para>
         /// </summary>
-        public DateTime TimeCreated
+        public DateTime? TimeCreated
         {
-            get { return this._timeCreated.GetValueOrDefault(); }
+            get { return this._timeCreated; }
             set { this._timeCreated = value; }
         }
 

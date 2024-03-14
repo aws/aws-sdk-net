@@ -118,9 +118,9 @@ namespace Amazon.AppSync.Model
         /// result will be in UTC format and your local time zone.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessfulMergeDate
+        public DateTime? LastSuccessfulMergeDate
         {
-            get { return this._lastSuccessfulMergeDate.GetValueOrDefault(); }
+            get { return this._lastSuccessfulMergeDate; }
             set { this._lastSuccessfulMergeDate = value; }
         }
 

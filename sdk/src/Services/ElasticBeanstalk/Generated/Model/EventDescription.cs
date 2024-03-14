@@ -92,9 +92,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The date when the event occurred.
         /// </para>
         /// </summary>
-        public DateTime EventDate
+        public DateTime? EventDate
         {
-            get { return this._eventDate.GetValueOrDefault(); }
+            get { return this._eventDate; }
             set { this._eventDate = value; }
         }
 

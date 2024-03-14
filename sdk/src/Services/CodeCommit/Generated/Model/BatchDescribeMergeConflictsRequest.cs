@@ -132,9 +132,9 @@ namespace Amazon.CodeCommit.Model
         /// The maximum number of files to include in the output.
         /// </para>
         /// </summary>
-        public int MaxConflictFiles
+        public int? MaxConflictFiles
         {
-            get { return this._maxConflictFiles.GetValueOrDefault(); }
+            get { return this._maxConflictFiles; }
             set { this._maxConflictFiles = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.CodeCommit.Model
         /// The maximum number of merge hunks to include in the output.
         /// </para>
         /// </summary>
-        public int MaxMergeHunks
+        public int? MaxMergeHunks
         {
-            get { return this._maxMergeHunks.GetValueOrDefault(); }
+            get { return this._maxMergeHunks; }
             set { this._maxMergeHunks = value; }
         }
 

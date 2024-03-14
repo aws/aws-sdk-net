@@ -48,13 +48,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetX())
             {
                 context.Writer.WritePropertyName("X");
-                context.Writer.Write(requestObject.X);
+                context.Writer.Write(requestObject.X.Value);
             }
 
             if(requestObject.IsSetY())
             {
                 context.Writer.WritePropertyName("Y");
-                context.Writer.Write(requestObject.Y);
+                context.Writer.Write(requestObject.Y.Value);
             }
 
         }

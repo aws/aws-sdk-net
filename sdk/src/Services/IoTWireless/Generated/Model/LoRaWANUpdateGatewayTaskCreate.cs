@@ -63,9 +63,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4294967295)]
-        public long SigKeyCrc
+        public long? SigKeyCrc
         {
-            get { return this._sigKeyCrc.GetValueOrDefault(); }
+            get { return this._sigKeyCrc; }
             set { this._sigKeyCrc = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DashboardEnabled
+        public bool? DashboardEnabled
         {
-            get { return this._dashboardEnabled.GetValueOrDefault(); }
+            get { return this._dashboardEnabled; }
             set { this._dashboardEnabled = value; }
         }
 

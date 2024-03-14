@@ -115,9 +115,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxEntries
+        public int? MaxEntries
         {
-            get { return this._maxEntries.GetValueOrDefault(); }
+            get { return this._maxEntries; }
             set { this._maxEntries = value; }
         }
 

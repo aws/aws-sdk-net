@@ -65,7 +65,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("RackElevation", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackElevation = unmarshaller.Unmarshall(context);
                     continue;
                 }

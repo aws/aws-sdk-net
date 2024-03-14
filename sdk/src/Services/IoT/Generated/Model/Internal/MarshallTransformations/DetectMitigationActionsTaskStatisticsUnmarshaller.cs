@@ -65,19 +65,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("actionsExecuted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ActionsExecuted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("actionsFailed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ActionsFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("actionsSkipped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ActionsSkipped = unmarshaller.Unmarshall(context);
                     continue;
                 }

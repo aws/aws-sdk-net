@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableOCSPCheck())
             {
                 context.Writer.WritePropertyName("enableOCSPCheck");
-                context.Writer.Write(requestObject.EnableOCSPCheck);
+                context.Writer.Write(requestObject.EnableOCSPCheck.Value);
             }
 
         }

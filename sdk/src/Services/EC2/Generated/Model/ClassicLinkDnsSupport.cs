@@ -49,9 +49,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether ClassicLink DNS support is enabled for the VPC.
         /// </para>
         /// </summary>
-        public bool ClassicLinkDnsSupported
+        public bool? ClassicLinkDnsSupported
         {
-            get { return this._classicLinkDnsSupported.GetValueOrDefault(); }
+            get { return this._classicLinkDnsSupported; }
             set { this._classicLinkDnsSupported = value; }
         }
 

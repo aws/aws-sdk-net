@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WorkMailMessageFlow")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon WorkMail Message Flow. This release allows customers to access email messages as they flow to and from Amazon WorkMail.")]
 #elif NETCOREAPP3_1

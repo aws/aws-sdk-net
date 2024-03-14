@@ -79,9 +79,9 @@ namespace Amazon.EC2.Model
         /// The number of seconds after which a DPD timeout occurs.
         /// </para>
         /// </summary>
-        public int DpdTimeoutSeconds
+        public int? DpdTimeoutSeconds
         {
-            get { return this._dpdTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._dpdTimeoutSeconds; }
             set { this._dpdTimeoutSeconds = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.EC2.Model
         /// Status of tunnel endpoint lifecycle control feature.
         /// </para>
         /// </summary>
-        public bool EnableTunnelLifecycleControl
+        public bool? EnableTunnelLifecycleControl
         {
-            get { return this._enableTunnelLifecycleControl.GetValueOrDefault(); }
+            get { return this._enableTunnelLifecycleControl; }
             set { this._enableTunnelLifecycleControl = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.EC2.Model
         /// The lifetime for phase 1 of the IKE negotiation, in seconds.
         /// </para>
         /// </summary>
-        public int Phase1LifetimeSeconds
+        public int? Phase1LifetimeSeconds
         {
-            get { return this._phase1LifetimeSeconds.GetValueOrDefault(); }
+            get { return this._phase1LifetimeSeconds; }
             set { this._phase1LifetimeSeconds = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.EC2.Model
         /// The lifetime for phase 2 of the IKE negotiation, in seconds.
         /// </para>
         /// </summary>
-        public int Phase2LifetimeSeconds
+        public int? Phase2LifetimeSeconds
         {
-            get { return this._phase2LifetimeSeconds.GetValueOrDefault(); }
+            get { return this._phase2LifetimeSeconds; }
             set { this._phase2LifetimeSeconds = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.EC2.Model
         /// which the rekey time is randomly selected.
         /// </para>
         /// </summary>
-        public int RekeyFuzzPercentage
+        public int? RekeyFuzzPercentage
         {
-            get { return this._rekeyFuzzPercentage.GetValueOrDefault(); }
+            get { return this._rekeyFuzzPercentage; }
             set { this._rekeyFuzzPercentage = value; }
         }
 
@@ -353,9 +353,9 @@ namespace Amazon.EC2.Model
         /// Amazon Web Services side of the VPN connection performs an IKE rekey.
         /// </para>
         /// </summary>
-        public int RekeyMarginTimeSeconds
+        public int? RekeyMarginTimeSeconds
         {
-            get { return this._rekeyMarginTimeSeconds.GetValueOrDefault(); }
+            get { return this._rekeyMarginTimeSeconds; }
             set { this._rekeyMarginTimeSeconds = value; }
         }
 
@@ -371,9 +371,9 @@ namespace Amazon.EC2.Model
         /// The number of packets in an IKE replay window.
         /// </para>
         /// </summary>
-        public int ReplayWindowSize
+        public int? ReplayWindowSize
         {
-            get { return this._replayWindowSize.GetValueOrDefault(); }
+            get { return this._replayWindowSize; }
             set { this._replayWindowSize = value; }
         }
 

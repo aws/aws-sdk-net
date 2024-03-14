@@ -42,9 +42,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        public int EndCharOffset
+        public int? EndCharOffset
         {
-            get { return this._endCharOffset.GetValueOrDefault(); }
+            get { return this._endCharOffset; }
             set { this._endCharOffset = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        public int StartCharOffset
+        public int? StartCharOffset
         {
-            get { return this._startCharOffset.GetValueOrDefault(); }
+            get { return this._startCharOffset; }
             set { this._startCharOffset = value; }
         }
 

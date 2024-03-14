@@ -65,7 +65,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRetentionPeriodHours())
             {
                 context.Writer.WritePropertyName("RetentionPeriodHours");
-                context.Writer.Write(requestObject.RetentionPeriodHours);
+                context.Writer.Write(requestObject.RetentionPeriodHours.Value);
             }
 
         }

@@ -227,9 +227,9 @@ namespace Amazon.DataZone.Model
         /// be also automatically published to the catalog.
         /// </para>
         /// </summary>
-        public bool PublishOnImport
+        public bool? PublishOnImport
         {
-            get { return this._publishOnImport.GetValueOrDefault(); }
+            get { return this._publishOnImport; }
             set { this._publishOnImport = value; }
         }
 

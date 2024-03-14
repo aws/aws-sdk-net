@@ -78,7 +78,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.Write(requestObject.StartTime.Value);
             }
 
         }

@@ -63,9 +63,9 @@ namespace Amazon.CodeCommit.Model
         /// the reactions might still appear in total reaction counts.
         /// </para>
         /// </summary>
-        public int ReactionsFromDeletedUsersCount
+        public int? ReactionsFromDeletedUsersCount
         {
-            get { return this._reactionsFromDeletedUsersCount.GetValueOrDefault(); }
+            get { return this._reactionsFromDeletedUsersCount; }
             set { this._reactionsFromDeletedUsersCount = value; }
         }
 

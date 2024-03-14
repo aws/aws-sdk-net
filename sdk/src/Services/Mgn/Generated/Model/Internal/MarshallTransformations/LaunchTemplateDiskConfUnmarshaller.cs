@@ -65,13 +65,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("iops", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("throughput", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
                     continue;
                 }

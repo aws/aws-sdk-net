@@ -120,9 +120,9 @@ namespace Amazon.StepFunctions.Model
         /// The maximum allowed duration of the Lambda function.
         /// </para>
         /// </summary>
-        public long TimeoutInSeconds
+        public long? TimeoutInSeconds
         {
-            get { return this._timeoutInSeconds.GetValueOrDefault(); }
+            get { return this._timeoutInSeconds; }
             set { this._timeoutInSeconds = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSigKeyCrc())
             {
                 context.Writer.WritePropertyName("SigKeyCrc");
-                context.Writer.Write(requestObject.SigKeyCrc);
+                context.Writer.Write(requestObject.SigKeyCrc.Value);
             }
 
             if(requestObject.IsSetUpdateSignature())

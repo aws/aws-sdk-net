@@ -117,9 +117,9 @@ namespace Amazon.Keyspaces.Model
         /// The creation timestamp of the specified table.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=630720000)]
-        public int DefaultTimeToLive
+        public int? DefaultTimeToLive
         {
-            get { return this._defaultTimeToLive.GetValueOrDefault(); }
+            get { return this._defaultTimeToLive; }
             set { this._defaultTimeToLive = value; }
         }
 

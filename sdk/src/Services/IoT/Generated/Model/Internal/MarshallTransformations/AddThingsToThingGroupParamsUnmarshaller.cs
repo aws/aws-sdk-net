@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("overrideDynamicGroups", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OverrideDynamicGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }

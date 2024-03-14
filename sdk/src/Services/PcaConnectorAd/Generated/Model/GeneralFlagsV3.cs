@@ -43,9 +43,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Allows certificate issuance using autoenrollment. Set to TRUE to allow autoenrollment.
         /// </para>
         /// </summary>
-        public bool AutoEnrollment
+        public bool? AutoEnrollment
         {
-            get { return this._autoEnrollment.GetValueOrDefault(); }
+            get { return this._autoEnrollment; }
             set { this._autoEnrollment = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// machines. Set to FALSE if the template is for users
         /// </para>
         /// </summary>
-        public bool MachineType
+        public bool? MachineType
         {
-            get { return this._machineType.GetValueOrDefault(); }
+            get { return this._machineType; }
             set { this._machineType = value; }
         }
 

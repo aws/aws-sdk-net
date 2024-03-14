@@ -46,9 +46,9 @@ namespace Amazon.DeviceFarm.Model
         /// True if account cleanup is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
-        public bool AccountsCleanup
+        public bool? AccountsCleanup
         {
-            get { return this._accountsCleanup.GetValueOrDefault(); }
+            get { return this._accountsCleanup; }
             set { this._accountsCleanup = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.DeviceFarm.Model
         /// True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
         /// </para>
         /// </summary>
-        public bool AppPackagesCleanup
+        public bool? AppPackagesCleanup
         {
-            get { return this._appPackagesCleanup.GetValueOrDefault(); }
+            get { return this._appPackagesCleanup; }
             set { this._appPackagesCleanup = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of minutes a test run executes before it times out.
         /// </para>
         /// </summary>
-        public int JobTimeoutMinutes
+        public int? JobTimeoutMinutes
         {
-            get { return this._jobTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._jobTimeoutMinutes; }
             set { this._jobTimeoutMinutes = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.DeviceFarm.Model
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
-        public bool SkipAppResign
+        public bool? SkipAppResign
         {
-            get { return this._skipAppResign.GetValueOrDefault(); }
+            get { return this._skipAppResign; }
             set { this._skipAppResign = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DeviceFarm.Model
         /// Set to true to enable video capture. Otherwise, set to false. The default is true.
         /// </para>
         /// </summary>
-        public bool VideoCapture
+        public bool? VideoCapture
         {
-            get { return this._videoCapture.GetValueOrDefault(); }
+            get { return this._videoCapture; }
             set { this._videoCapture = value; }
         }
 

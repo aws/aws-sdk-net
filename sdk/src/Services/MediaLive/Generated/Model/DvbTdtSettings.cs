@@ -40,9 +40,9 @@ namespace Amazon.MediaLive.Model
         /// of this table in the output transport stream.
         /// </summary>
         [AWSProperty(Min=1000, Max=30000)]
-        public int RepInterval
+        public int? RepInterval
         {
-            get { return this._repInterval.GetValueOrDefault(); }
+            get { return this._repInterval; }
             set { this._repInterval = value; }
         }
 

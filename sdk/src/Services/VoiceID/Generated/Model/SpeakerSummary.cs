@@ -47,9 +47,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp showing the speaker's creation time. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.VoiceID.Model
         /// a successful authentication. This timestamp is accurate to one hour.
         /// </para>
         /// </summary>
-        public DateTime LastAccessedAt
+        public DateTime? LastAccessedAt
         {
-            get { return this._lastAccessedAt.GetValueOrDefault(); }
+            get { return this._lastAccessedAt; }
             set { this._lastAccessedAt = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.VoiceID.Model
         /// A timestamp showing the speaker's last update.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

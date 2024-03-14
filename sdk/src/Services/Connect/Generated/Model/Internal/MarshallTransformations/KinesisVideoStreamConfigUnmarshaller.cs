@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetentionPeriodHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context);
                     continue;
                 }

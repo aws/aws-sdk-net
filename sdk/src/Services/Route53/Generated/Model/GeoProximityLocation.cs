@@ -144,9 +144,9 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=-99, Max=99)]
-        public int Bias
+        public int? Bias
         {
-            get { return this._bias.GetValueOrDefault(); }
+            get { return this._bias; }
             set { this._bias = value; }
         }
 

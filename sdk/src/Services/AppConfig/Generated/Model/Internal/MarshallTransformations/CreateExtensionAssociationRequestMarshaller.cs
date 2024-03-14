@@ -74,7 +74,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExtensionVersionNumber())
                 {
                     context.Writer.WritePropertyName("ExtensionVersionNumber");
-                    context.Writer.Write(publicRequest.ExtensionVersionNumber);
+                    context.Writer.Write(publicRequest.ExtensionVersionNumber.Value);
                 }
 
                 if(publicRequest.IsSetParameters())

@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 if(publicRequest.IsSetName())
-                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));                    
+                    xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.Name));
 
                 
                 if (publicRequest.VPC != null) 
@@ -78,7 +78,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetCallerReference())
-                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));                    
+                    xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.CallerReference));
 
                 
                 if (publicRequest.HostedZoneConfig != null) 
@@ -88,12 +88,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.HostedZoneConfig.Comment));                 
 
                     if(publicRequest.HostedZoneConfig.IsSetPrivateZone())
-                        xmlWriter.WriteElementString("PrivateZone", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone));                 
+                        xmlWriter.WriteElementString("PrivateZone", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequest.HostedZoneConfig.PrivateZone.Value));                 
 
                     xmlWriter.WriteEndElement();
                 }
                 if(publicRequest.IsSetDelegationSetId())
-                    xmlWriter.WriteElementString("DelegationSetId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.DelegationSetId));                    
+                    xmlWriter.WriteElementString("DelegationSetId", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequest.DelegationSetId));
 
 
                 xmlWriter.WriteEndElement();

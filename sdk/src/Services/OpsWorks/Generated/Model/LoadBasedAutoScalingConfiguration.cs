@@ -63,9 +63,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether load-based auto scaling is enabled for the layer.
         /// </para>
         /// </summary>
-        public bool Enable
+        public bool? Enable
         {
-            get { return this._enable.GetValueOrDefault(); }
+            get { return this._enable; }
             set { this._enable = value; }
         }
 

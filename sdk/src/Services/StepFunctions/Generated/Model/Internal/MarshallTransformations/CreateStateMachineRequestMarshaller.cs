@@ -93,7 +93,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublish())
                 {
                     context.Writer.WritePropertyName("publish");
-                    context.Writer.Write(publicRequest.Publish);
+                    context.Writer.Write(publicRequest.Publish.Value);
                 }
 
                 if(publicRequest.IsSetRoleArn())

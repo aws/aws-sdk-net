@@ -70,7 +70,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("fromPort");
-                context.Writer.Write(requestObject.FromPort);
+                context.Writer.Write(requestObject.FromPort.Value);
             }
 
             if(requestObject.IsSetIpv6Cidrs())
@@ -93,7 +93,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetToPort())
             {
                 context.Writer.WritePropertyName("toPort");
-                context.Writer.Write(requestObject.ToPort);
+                context.Writer.Write(requestObject.ToPort.Value);
             }
 
         }

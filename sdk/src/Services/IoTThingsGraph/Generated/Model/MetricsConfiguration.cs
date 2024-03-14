@@ -43,9 +43,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// A Boolean that specifies whether cloud metrics are collected.
         /// </para>
         /// </summary>
-        public bool CloudMetricEnabled
+        public bool? CloudMetricEnabled
         {
-            get { return this._cloudMetricEnabled.GetValueOrDefault(); }
+            get { return this._cloudMetricEnabled; }
             set { this._cloudMetricEnabled = value; }
         }
 

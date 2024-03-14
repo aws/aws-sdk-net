@@ -76,7 +76,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfBytes())
                 {
                     context.Writer.WritePropertyName("NumberOfBytes");
-                    context.Writer.Write(publicRequest.NumberOfBytes);
+                    context.Writer.Write(publicRequest.NumberOfBytes.Value);
                 }
 
                 if(publicRequest.IsSetRecipient())

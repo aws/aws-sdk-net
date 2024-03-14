@@ -80,9 +80,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=200, Max=599)]
-        public int ResponseCode
+        public int? ResponseCode
         {
-            get { return this._responseCode.GetValueOrDefault(); }
+            get { return this._responseCode; }
             set { this._responseCode = value; }
         }
 

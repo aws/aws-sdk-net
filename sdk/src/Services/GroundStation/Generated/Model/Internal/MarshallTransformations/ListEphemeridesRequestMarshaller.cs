@@ -74,7 +74,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(publicRequest.EndTime);
+                    context.Writer.Write(publicRequest.EndTime.Value);
                 }
 
                 if(publicRequest.IsSetSatelliteId())
@@ -86,7 +86,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 if(publicRequest.IsSetStatusList())

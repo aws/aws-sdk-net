@@ -43,9 +43,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Count of distinct servers that are one hop away from the given server.
         /// </para>
         /// </summary>
-        public long KnownDependencyCount
+        public long? KnownDependencyCount
         {
-            get { return this._knownDependencyCount.GetValueOrDefault(); }
+            get { return this._knownDependencyCount; }
             set { this._knownDependencyCount = value; }
         }
 

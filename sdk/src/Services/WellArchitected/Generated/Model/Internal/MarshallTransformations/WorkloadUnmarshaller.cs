@@ -125,7 +125,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsReviewOwnerUpdateAcknowledged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsReviewOwnerUpdateAcknowledged = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -179,7 +179,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReviewRestrictionDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReviewRestrictionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -203,7 +203,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UpdatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

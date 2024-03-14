@@ -71,7 +71,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastBuildSubmittedDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastBuildSubmittedDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

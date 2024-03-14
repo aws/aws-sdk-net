@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </summary>
         /// <param name="logGroupName">The name of the log group.</param>
         /// <param name="retentionInDays">Sets the PutRetentionPolicyRequest RetentionInDays property</param>
-        public PutRetentionPolicyRequest(string logGroupName, int retentionInDays)
+        public PutRetentionPolicyRequest(string logGroupName, int? retentionInDays)
         {
             _logGroupName = logGroupName;
             _retentionInDays = retentionInDays;
@@ -103,9 +103,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property RetentionInDays.
         /// </summary>
         [AWSProperty(Required=true)]
-        public int RetentionInDays
+        public int? RetentionInDays
         {
-            get { return this._retentionInDays.GetValueOrDefault(); }
+            get { return this._retentionInDays; }
             set { this._retentionInDays = value; }
         }
 

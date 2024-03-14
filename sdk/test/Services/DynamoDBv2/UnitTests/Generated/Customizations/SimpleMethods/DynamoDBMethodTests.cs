@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class DynamoDBMethodCustomizationsTests
@@ -46,10 +46,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "DescribeTable", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "DescribeTimeToLive", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "GetItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
-            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "GetItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(bool), });
+            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "GetItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(bool?), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "ListTables", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "ListTables", new Type[] { typeof(string), typeof(int), });
-            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "ListTables", new Type[] { typeof(int), });
+            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "ListTables", new Type[] { typeof(string), typeof(int?), });
+            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "ListTables", new Type[] { typeof(int?), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "PutItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "PutItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(ReturnValue), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "Scan", new Type[] { typeof(string), typeof(List<string>), });

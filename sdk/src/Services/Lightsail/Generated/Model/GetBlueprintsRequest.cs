@@ -80,9 +80,9 @@ namespace Amazon.Lightsail.Model
         /// in the response of your request.
         /// </para>
         /// </summary>
-        public bool IncludeInactive
+        public bool? IncludeInactive
         {
-            get { return this._includeInactive.GetValueOrDefault(); }
+            get { return this._includeInactive; }
             set { this._includeInactive = value; }
         }
 

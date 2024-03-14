@@ -69,9 +69,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the deployment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.Lightsail.Model
         /// The version number of the deployment.
         /// </para>
         /// </summary>
-        public int Version
+        public int? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

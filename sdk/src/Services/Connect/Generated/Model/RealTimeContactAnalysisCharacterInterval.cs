@@ -43,9 +43,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int BeginOffsetChar
+        public int? BeginOffsetChar
         {
-            get { return this._beginOffsetChar.GetValueOrDefault(); }
+            get { return this._beginOffsetChar; }
             set { this._beginOffsetChar = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int EndOffsetChar
+        public int? EndOffsetChar
         {
-            get { return this._endOffsetChar.GetValueOrDefault(); }
+            get { return this._endOffsetChar; }
             set { this._endOffsetChar = value; }
         }
 

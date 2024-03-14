@@ -69,9 +69,9 @@ namespace Amazon.Lightsail.Model
         /// to that resource.
         /// </para>
         /// </summary>
-        public bool IsAlias
+        public bool? IsAlias
         {
-            get { return this._isAlias.GetValueOrDefault(); }
+            get { return this._isAlias; }
             set { this._isAlias = value; }
         }
 

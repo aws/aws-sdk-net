@@ -65,7 +65,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ExistingVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExistingVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RecordIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,7 +71,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FCntStart", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FCntStart = unmarshaller.Unmarshall(context);
                     continue;
                 }

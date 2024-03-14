@@ -102,9 +102,9 @@ namespace Amazon.LookoutforVision.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxInferenceUnits
+        public int? MaxInferenceUnits
         {
-            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            get { return this._maxInferenceUnits; }
             set { this._maxInferenceUnits = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.LookoutforVision.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MinInferenceUnits
+        public int? MinInferenceUnits
         {
-            get { return this._minInferenceUnits.GetValueOrDefault(); }
+            get { return this._minInferenceUnits; }
             set { this._minInferenceUnits = value; }
         }
 

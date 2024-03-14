@@ -49,9 +49,9 @@ namespace Amazon.Kafka.Model
         /// The time the replicator was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Kafka.Model
         /// Whether this resource is a replicator reference.
         /// </para>
         /// </summary>
-        public bool IsReplicatorReference
+        public bool? IsReplicatorReference
         {
-            get { return this._isReplicatorReference.GetValueOrDefault(); }
+            get { return this._isReplicatorReference; }
             set { this._isReplicatorReference = value; }
         }
 

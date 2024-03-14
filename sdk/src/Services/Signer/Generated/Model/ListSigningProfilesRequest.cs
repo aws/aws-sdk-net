@@ -52,9 +52,9 @@ namespace Amazon.Signer.Model
         /// Designates whether to include profiles with the status of <c>CANCELED</c>.
         /// </para>
         /// </summary>
-        public bool IncludeCanceled
+        public bool? IncludeCanceled
         {
-            get { return this._includeCanceled.GetValueOrDefault(); }
+            get { return this._includeCanceled; }
             set { this._includeCanceled = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Signer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

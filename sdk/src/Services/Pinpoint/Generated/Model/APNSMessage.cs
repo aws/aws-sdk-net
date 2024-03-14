@@ -152,9 +152,9 @@ namespace Amazon.Pinpoint.Model
         /// the badge doesn't change. To remove the badge, set this value to 0.
         /// </para>
         /// </summary>
-        public int Badge
+        public int? Badge
         {
-            get { return this._badge.GetValueOrDefault(); }
+            get { return this._badge; }
             set { this._badge = value; }
         }
 
@@ -382,9 +382,9 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         /// </note>
         /// </summary>
-        public bool SilentPush
+        public bool? SilentPush
         {
-            get { return this._silentPush.GetValueOrDefault(); }
+            get { return this._silentPush; }
             set { this._silentPush = value; }
         }
 
@@ -468,9 +468,9 @@ namespace Amazon.Pinpoint.Model
         /// sends the notification message to APNs.
         /// </para>
         /// </summary>
-        public int TimeToLive
+        public int? TimeToLive
         {
-            get { return this._timeToLive.GetValueOrDefault(); }
+            get { return this._timeToLive; }
             set { this._timeToLive = value; }
         }
 

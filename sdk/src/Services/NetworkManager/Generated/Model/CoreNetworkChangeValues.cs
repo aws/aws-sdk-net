@@ -47,9 +47,9 @@ namespace Amazon.NetworkManager.Model
         /// The ASN of a core network.
         /// </para>
         /// </summary>
-        public long Asn
+        public long? Asn
         {
-            get { return this._asn.GetValueOrDefault(); }
+            get { return this._asn; }
             set { this._asn = value; }
         }
 

@@ -82,25 +82,25 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableLogFileValidation())
                 {
                     context.Writer.WritePropertyName("EnableLogFileValidation");
-                    context.Writer.Write(publicRequest.EnableLogFileValidation);
+                    context.Writer.Write(publicRequest.EnableLogFileValidation.Value);
                 }
 
                 if(publicRequest.IsSetIncludeGlobalServiceEvents())
                 {
                     context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
-                    context.Writer.Write(publicRequest.IncludeGlobalServiceEvents);
+                    context.Writer.Write(publicRequest.IncludeGlobalServiceEvents.Value);
                 }
 
                 if(publicRequest.IsSetIsMultiRegionTrail())
                 {
                     context.Writer.WritePropertyName("IsMultiRegionTrail");
-                    context.Writer.Write(publicRequest.IsMultiRegionTrail);
+                    context.Writer.Write(publicRequest.IsMultiRegionTrail.Value);
                 }
 
                 if(publicRequest.IsSetIsOrganizationTrail())
                 {
                     context.Writer.WritePropertyName("IsOrganizationTrail");
-                    context.Writer.Write(publicRequest.IsOrganizationTrail);
+                    context.Writer.Write(publicRequest.IsOrganizationTrail.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())

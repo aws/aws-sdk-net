@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9)]
-        public int NumberOfHumanWorkersPerDataObject
+        public int? NumberOfHumanWorkersPerDataObject
         {
-            get { return this._numberOfHumanWorkersPerDataObject.GetValueOrDefault(); }
+            get { return this._numberOfHumanWorkersPerDataObject; }
             set { this._numberOfHumanWorkersPerDataObject = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

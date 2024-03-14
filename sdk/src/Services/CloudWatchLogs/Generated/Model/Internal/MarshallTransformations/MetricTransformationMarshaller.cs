@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue);
+                context.Writer.Write(requestObject.DefaultValue.Value);
             }
 
             if(requestObject.IsSetDimensions())

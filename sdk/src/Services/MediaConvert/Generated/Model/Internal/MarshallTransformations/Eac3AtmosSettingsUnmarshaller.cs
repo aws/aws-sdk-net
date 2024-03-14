@@ -65,7 +65,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,25 +113,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("loRoCenterMixLevel", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LoRoCenterMixLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("loRoSurroundMixLevel", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LoRoSurroundMixLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ltRtCenterMixLevel", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LtRtCenterMixLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ltRtSurroundMixLevel", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LtRtSurroundMixLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,13 +143,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("sampleRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("speechThreshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SpeechThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

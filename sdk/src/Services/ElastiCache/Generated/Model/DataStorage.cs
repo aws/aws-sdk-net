@@ -43,9 +43,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Maximum
+        public int? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 

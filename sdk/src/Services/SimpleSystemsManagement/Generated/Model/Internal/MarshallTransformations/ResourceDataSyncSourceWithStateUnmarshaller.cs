@@ -71,13 +71,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableAllOpsDataSources", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAllOpsDataSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IncludeFutureRegions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeFutureRegions = unmarshaller.Unmarshall(context);
                     continue;
                 }

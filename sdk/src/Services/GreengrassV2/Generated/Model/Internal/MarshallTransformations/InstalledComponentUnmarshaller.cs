@@ -77,7 +77,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isRoot", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRoot = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastReportedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastReportedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastStatusChangeTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastStatusChangeTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

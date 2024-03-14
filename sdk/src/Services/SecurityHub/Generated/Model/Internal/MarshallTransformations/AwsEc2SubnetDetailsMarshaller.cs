@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssignIpv6AddressOnCreation())
             {
                 context.Writer.WritePropertyName("AssignIpv6AddressOnCreation");
-                context.Writer.Write(requestObject.AssignIpv6AddressOnCreation);
+                context.Writer.Write(requestObject.AssignIpv6AddressOnCreation.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailableIpAddressCount())
             {
                 context.Writer.WritePropertyName("AvailableIpAddressCount");
-                context.Writer.Write(requestObject.AvailableIpAddressCount);
+                context.Writer.Write(requestObject.AvailableIpAddressCount.Value);
             }
 
             if(requestObject.IsSetCidrBlock())
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultForAz())
             {
                 context.Writer.WritePropertyName("DefaultForAz");
-                context.Writer.Write(requestObject.DefaultForAz);
+                context.Writer.Write(requestObject.DefaultForAz.Value);
             }
 
             if(requestObject.IsSetIpv6CidrBlockAssociationSet())
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMapPublicIpOnLaunch())
             {
                 context.Writer.WritePropertyName("MapPublicIpOnLaunch");
-                context.Writer.Write(requestObject.MapPublicIpOnLaunch);
+                context.Writer.Write(requestObject.MapPublicIpOnLaunch.Value);
             }
 
             if(requestObject.IsSetOwnerId())

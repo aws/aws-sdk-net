@@ -45,9 +45,9 @@ namespace Amazon.Kendra.Model
         /// key.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 

@@ -77,9 +77,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are compliant, the number that have a severity of <c>CRITICAL</c>.
         /// </para>
         /// </summary>
-        public int CompliantCriticalCount
+        public int? CompliantCriticalCount
         {
-            get { return this._compliantCriticalCount.GetValueOrDefault(); }
+            get { return this._compliantCriticalCount; }
             set { this._compliantCriticalCount = value; }
         }
 
@@ -95,9 +95,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are compliant, the number that have a severity of <c>HIGH</c>.
         /// </para>
         /// </summary>
-        public int CompliantHighCount
+        public int? CompliantHighCount
         {
-            get { return this._compliantHighCount.GetValueOrDefault(); }
+            get { return this._compliantHighCount; }
             set { this._compliantHighCount = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are compliant, the number that have a severity of <c>INFORMATIONAL</c>.
         /// </para>
         /// </summary>
-        public int CompliantInformationalCount
+        public int? CompliantInformationalCount
         {
-            get { return this._compliantInformationalCount.GetValueOrDefault(); }
+            get { return this._compliantInformationalCount; }
             set { this._compliantInformationalCount = value; }
         }
 
@@ -131,9 +131,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are compliant, the number that have a severity of <c>LOW</c>.
         /// </para>
         /// </summary>
-        public int CompliantLowCount
+        public int? CompliantLowCount
         {
-            get { return this._compliantLowCount.GetValueOrDefault(); }
+            get { return this._compliantLowCount; }
             set { this._compliantLowCount = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are compliant, the number that have a severity of <c>MEDIUM</c>.
         /// </para>
         /// </summary>
-        public int CompliantMediumCount
+        public int? CompliantMediumCount
         {
-            get { return this._compliantMediumCount.GetValueOrDefault(); }
+            get { return this._compliantMediumCount; }
             set { this._compliantMediumCount = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are compliant, the number that have a severity of <c>UNSPECIFIED</c>.
         /// </para>
         /// </summary>
-        public int CompliantUnspecifiedCount
+        public int? CompliantUnspecifiedCount
         {
-            get { return this._compliantUnspecifiedCount.GetValueOrDefault(); }
+            get { return this._compliantUnspecifiedCount; }
             set { this._compliantUnspecifiedCount = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.SecurityHub.Model
         /// of <c>CRITICAL</c>.
         /// </para>
         /// </summary>
-        public int NonCompliantCriticalCount
+        public int? NonCompliantCriticalCount
         {
-            get { return this._nonCompliantCriticalCount.GetValueOrDefault(); }
+            get { return this._nonCompliantCriticalCount; }
             set { this._nonCompliantCriticalCount = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are noncompliant, the number that have a severity of <c>HIGH</c>.
         /// </para>
         /// </summary>
-        public int NonCompliantHighCount
+        public int? NonCompliantHighCount
         {
-            get { return this._nonCompliantHighCount.GetValueOrDefault(); }
+            get { return this._nonCompliantHighCount; }
             set { this._nonCompliantHighCount = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are noncompliant, the number that have a severity of <c>INFORMATIONAL</c>.
         /// </para>
         /// </summary>
-        public int NonCompliantInformationalCount
+        public int? NonCompliantInformationalCount
         {
-            get { return this._nonCompliantInformationalCount.GetValueOrDefault(); }
+            get { return this._nonCompliantInformationalCount; }
             set { this._nonCompliantInformationalCount = value; }
         }
 
@@ -258,9 +258,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are noncompliant, the number that have a severity of <c>LOW</c>.
         /// </para>
         /// </summary>
-        public int NonCompliantLowCount
+        public int? NonCompliantLowCount
         {
-            get { return this._nonCompliantLowCount.GetValueOrDefault(); }
+            get { return this._nonCompliantLowCount; }
             set { this._nonCompliantLowCount = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are noncompliant, the number that have a severity of <c>MEDIUM</c>.
         /// </para>
         /// </summary>
-        public int NonCompliantMediumCount
+        public int? NonCompliantMediumCount
         {
-            get { return this._nonCompliantMediumCount.GetValueOrDefault(); }
+            get { return this._nonCompliantMediumCount; }
             set { this._nonCompliantMediumCount = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.SecurityHub.Model
         /// For the patches that are noncompliant, the number that have a severity of <c>UNSPECIFIED</c>.
         /// </para>
         /// </summary>
-        public int NonCompliantUnspecifiedCount
+        public int? NonCompliantUnspecifiedCount
         {
-            get { return this._nonCompliantUnspecifiedCount.GetValueOrDefault(); }
+            get { return this._nonCompliantUnspecifiedCount; }
             set { this._nonCompliantUnspecifiedCount = value; }
         }
 

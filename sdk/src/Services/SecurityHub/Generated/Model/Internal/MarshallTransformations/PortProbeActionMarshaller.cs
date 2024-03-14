@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlocked())
             {
                 context.Writer.WritePropertyName("Blocked");
-                context.Writer.Write(requestObject.Blocked);
+                context.Writer.Write(requestObject.Blocked.Value);
             }
 
             if(requestObject.IsSetPortProbeDetails())

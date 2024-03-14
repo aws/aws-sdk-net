@@ -65,7 +65,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("latency", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Latency = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }

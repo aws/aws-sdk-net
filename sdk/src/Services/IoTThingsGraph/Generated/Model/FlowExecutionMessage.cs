@@ -98,9 +98,9 @@ namespace Amazon.IoTThingsGraph.Model
         /// The date and time when the message was last updated.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

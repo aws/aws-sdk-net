@@ -80,9 +80,9 @@ namespace Amazon.LookoutMetrics.Model
         /// The number of groups found.
         /// </para>
         /// </summary>
-        public int TotalCount
+        public int? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

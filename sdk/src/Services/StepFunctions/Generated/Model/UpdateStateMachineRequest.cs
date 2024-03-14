@@ -163,9 +163,9 @@ namespace Amazon.StepFunctions.Model
         /// To publish a version after updating the state machine, set <c>publish</c> to <c>true</c>.
         /// </para>
         /// </summary>
-        public bool Publish
+        public bool? Publish
         {
-            get { return this._publish.GetValueOrDefault(); }
+            get { return this._publish; }
             set { this._publish = value; }
         }
 

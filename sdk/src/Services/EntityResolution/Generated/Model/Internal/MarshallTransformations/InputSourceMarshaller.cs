@@ -48,7 +48,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplyNormalization())
             {
                 context.Writer.WritePropertyName("applyNormalization");
-                context.Writer.Write(requestObject.ApplyNormalization);
+                context.Writer.Write(requestObject.ApplyNormalization.Value);
             }
 
             if(requestObject.IsSetInputSourceARN())

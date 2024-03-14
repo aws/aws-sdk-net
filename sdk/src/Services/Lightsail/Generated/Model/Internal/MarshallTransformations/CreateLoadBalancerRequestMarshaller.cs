@@ -99,7 +99,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInstancePort())
                 {
                     context.Writer.WritePropertyName("instancePort");
-                    context.Writer.Write(publicRequest.InstancePort);
+                    context.Writer.Write(publicRequest.InstancePort.Value);
                 }
 
                 if(publicRequest.IsSetIpAddressType())

@@ -70,9 +70,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
-        public int WaitTimeSeconds
+        public int? WaitTimeSeconds
         {
-            get { return this._waitTimeSeconds.GetValueOrDefault(); }
+            get { return this._waitTimeSeconds; }
             set { this._waitTimeSeconds = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// not including the currently accepted invitation.
         /// </para>
         /// </summary>
-        public int InvitationsCount
+        public int? InvitationsCount
         {
-            get { return this._invitationsCount.GetValueOrDefault(); }
+            get { return this._invitationsCount; }
             set { this._invitationsCount = value; }
         }
 

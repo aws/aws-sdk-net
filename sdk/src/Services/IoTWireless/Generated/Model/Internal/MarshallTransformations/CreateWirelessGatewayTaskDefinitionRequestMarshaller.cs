@@ -68,7 +68,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoCreateTasks())
                 {
                     context.Writer.WritePropertyName("AutoCreateTasks");
-                    context.Writer.Write(publicRequest.AutoCreateTasks);
+                    context.Writer.Write(publicRequest.AutoCreateTasks.Value);
                 }
 
                 if(publicRequest.IsSetClientRequestToken())

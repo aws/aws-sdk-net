@@ -65,7 +65,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("amount", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Amount = unmarshaller.Unmarshall(context);
                     continue;
                 }

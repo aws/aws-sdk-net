@@ -48,7 +48,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartTimeoutMs())
             {
                 context.Writer.WritePropertyName("startTimeoutMs");
-                context.Writer.Write(requestObject.StartTimeoutMs);
+                context.Writer.Write(requestObject.StartTimeoutMs.Value);
             }
 
         }

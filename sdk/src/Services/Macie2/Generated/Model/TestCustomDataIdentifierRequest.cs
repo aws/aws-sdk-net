@@ -92,9 +92,9 @@ namespace Amazon.Macie2.Model
         /// The distance can be 1-300 characters. The default value is 50.
         /// </para>
         /// </summary>
-        public int MaximumMatchDistance
+        public int? MaximumMatchDistance
         {
-            get { return this._maximumMatchDistance.GetValueOrDefault(); }
+            get { return this._maximumMatchDistance; }
             set { this._maximumMatchDistance = value; }
         }
 

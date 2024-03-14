@@ -41,9 +41,9 @@ namespace Amazon.MemoryDB.Model
         /// The number of shards in the cluster
         /// </para>
         /// </summary>
-        public int ShardCount
+        public int? ShardCount
         {
-            get { return this._shardCount.GetValueOrDefault(); }
+            get { return this._shardCount; }
             set { this._shardCount = value; }
         }
 

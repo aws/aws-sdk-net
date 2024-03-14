@@ -54,7 +54,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParticipantTimerDurationInMinutes())
             {
                 context.Writer.WritePropertyName("ParticipantTimerDurationInMinutes");
-                context.Writer.Write(requestObject.ParticipantTimerDurationInMinutes);
+                context.Writer.Write(requestObject.ParticipantTimerDurationInMinutes.Value);
             }
 
         }

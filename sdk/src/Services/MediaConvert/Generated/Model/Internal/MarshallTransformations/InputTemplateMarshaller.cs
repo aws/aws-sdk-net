@@ -157,7 +157,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterStrength())
             {
                 context.Writer.WritePropertyName("filterStrength");
-                context.Writer.Write(requestObject.FilterStrength);
+                context.Writer.Write(requestObject.FilterStrength.Value);
             }
 
             if(requestObject.IsSetImageInserter())
@@ -207,7 +207,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber);
+                context.Writer.Write(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetPsiControl())

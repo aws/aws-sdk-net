@@ -62,9 +62,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
-        public int ErrorCategory
+        public int? ErrorCategory
         {
-            get { return this._errorCategory.GetValueOrDefault(); }
+            get { return this._errorCategory; }
             set { this._errorCategory = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=9999)]
-        public int ErrorType
+        public int? ErrorType
         {
-            get { return this._errorType.GetValueOrDefault(); }
+            get { return this._errorType; }
             set { this._errorType = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Athena.Model
         /// True if the query might succeed if resubmitted.
         /// </para>
         /// </summary>
-        public bool Retryable
+        public bool? Retryable
         {
-            get { return this._retryable.GetValueOrDefault(); }
+            get { return this._retryable; }
             set { this._retryable = value; }
         }
 

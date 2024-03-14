@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Imagebuilder")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - EC2 Image Builder. This is the first release of EC2 Image Builder, a service that provides a managed experience for automating the creation of EC2 AMIs.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

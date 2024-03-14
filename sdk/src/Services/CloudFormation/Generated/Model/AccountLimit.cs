@@ -88,9 +88,9 @@ namespace Amazon.CloudFormation.Model
         /// The value that's associated with the account limit name.
         /// </para>
         /// </summary>
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The time that the code generation job summary was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The time that the code generation job summary was modified.
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

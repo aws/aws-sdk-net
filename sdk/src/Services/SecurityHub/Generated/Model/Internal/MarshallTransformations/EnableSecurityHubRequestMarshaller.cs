@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableDefaultStandards())
                 {
                     context.Writer.WritePropertyName("EnableDefaultStandards");
-                    context.Writer.Write(publicRequest.EnableDefaultStandards);
+                    context.Writer.Write(publicRequest.EnableDefaultStandards.Value);
                 }
 
                 if(publicRequest.IsSetTags())

@@ -113,9 +113,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property FragmentIntervalMS.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int FragmentIntervalMS
+        public int? FragmentIntervalMS
         {
-            get { return this._fragmentIntervalMS.GetValueOrDefault(); }
+            get { return this._fragmentIntervalMS; }
             set { this._fragmentIntervalMS = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property FragmentSizeBytes.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int FragmentSizeBytes
+        public int? FragmentSizeBytes
         {
-            get { return this._fragmentSizeBytes.GetValueOrDefault(); }
+            get { return this._fragmentSizeBytes; }
             set { this._fragmentSizeBytes = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property RedundancyPercent.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int RedundancyPercent
+        public int? RedundancyPercent
         {
-            get { return this._redundancyPercent.GetValueOrDefault(); }
+            get { return this._redundancyPercent; }
             set { this._redundancyPercent = value; }
         }
 

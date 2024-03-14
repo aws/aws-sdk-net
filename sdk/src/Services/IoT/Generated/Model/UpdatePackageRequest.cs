@@ -141,9 +141,9 @@ namespace Amazon.IoT.Model
         /// equal to <c>true</c> at the same time.
         /// </para>
         /// </summary>
-        public bool UnsetDefaultVersion
+        public bool? UnsetDefaultVersion
         {
-            get { return this._unsetDefaultVersion.GetValueOrDefault(); }
+            get { return this._unsetDefaultVersion; }
             set { this._unsetDefaultVersion = value; }
         }
 

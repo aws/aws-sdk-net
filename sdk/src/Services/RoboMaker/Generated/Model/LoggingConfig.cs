@@ -47,9 +47,9 @@ namespace Amazon.RoboMaker.Model
         ///  </important>
         /// </summary>
         [Obsolete("AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
-        public bool RecordAllRosTopics
+        public bool? RecordAllRosTopics
         {
-            get { return this._recordAllRosTopics.GetValueOrDefault(); }
+            get { return this._recordAllRosTopics; }
             set { this._recordAllRosTopics = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.Kinesis.Model
         /// The timestamp at which the stream was created.
         /// </para>
         /// </summary>
-        public DateTime StreamCreationTimestamp
+        public DateTime? StreamCreationTimestamp
         {
-            get { return this._streamCreationTimestamp.GetValueOrDefault(); }
+            get { return this._streamCreationTimestamp; }
             set { this._streamCreationTimestamp = value; }
         }
 

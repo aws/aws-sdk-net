@@ -119,9 +119,9 @@ namespace Amazon.RDS.Model
         /// The optional port for the option.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

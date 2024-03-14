@@ -48,73 +48,73 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBluePrimaryX())
             {
                 context.Writer.WritePropertyName("bluePrimaryX");
-                context.Writer.Write(requestObject.BluePrimaryX);
+                context.Writer.Write(requestObject.BluePrimaryX.Value);
             }
 
             if(requestObject.IsSetBluePrimaryY())
             {
                 context.Writer.WritePropertyName("bluePrimaryY");
-                context.Writer.Write(requestObject.BluePrimaryY);
+                context.Writer.Write(requestObject.BluePrimaryY.Value);
             }
 
             if(requestObject.IsSetGreenPrimaryX())
             {
                 context.Writer.WritePropertyName("greenPrimaryX");
-                context.Writer.Write(requestObject.GreenPrimaryX);
+                context.Writer.Write(requestObject.GreenPrimaryX.Value);
             }
 
             if(requestObject.IsSetGreenPrimaryY())
             {
                 context.Writer.WritePropertyName("greenPrimaryY");
-                context.Writer.Write(requestObject.GreenPrimaryY);
+                context.Writer.Write(requestObject.GreenPrimaryY.Value);
             }
 
             if(requestObject.IsSetMaxContentLightLevel())
             {
                 context.Writer.WritePropertyName("maxContentLightLevel");
-                context.Writer.Write(requestObject.MaxContentLightLevel);
+                context.Writer.Write(requestObject.MaxContentLightLevel.Value);
             }
 
             if(requestObject.IsSetMaxFrameAverageLightLevel())
             {
                 context.Writer.WritePropertyName("maxFrameAverageLightLevel");
-                context.Writer.Write(requestObject.MaxFrameAverageLightLevel);
+                context.Writer.Write(requestObject.MaxFrameAverageLightLevel.Value);
             }
 
             if(requestObject.IsSetMaxLuminance())
             {
                 context.Writer.WritePropertyName("maxLuminance");
-                context.Writer.Write(requestObject.MaxLuminance);
+                context.Writer.Write(requestObject.MaxLuminance.Value);
             }
 
             if(requestObject.IsSetMinLuminance())
             {
                 context.Writer.WritePropertyName("minLuminance");
-                context.Writer.Write(requestObject.MinLuminance);
+                context.Writer.Write(requestObject.MinLuminance.Value);
             }
 
             if(requestObject.IsSetRedPrimaryX())
             {
                 context.Writer.WritePropertyName("redPrimaryX");
-                context.Writer.Write(requestObject.RedPrimaryX);
+                context.Writer.Write(requestObject.RedPrimaryX.Value);
             }
 
             if(requestObject.IsSetRedPrimaryY())
             {
                 context.Writer.WritePropertyName("redPrimaryY");
-                context.Writer.Write(requestObject.RedPrimaryY);
+                context.Writer.Write(requestObject.RedPrimaryY.Value);
             }
 
             if(requestObject.IsSetWhitePointX())
             {
                 context.Writer.WritePropertyName("whitePointX");
-                context.Writer.Write(requestObject.WhitePointX);
+                context.Writer.Write(requestObject.WhitePointX.Value);
             }
 
             if(requestObject.IsSetWhitePointY())
             {
                 context.Writer.WritePropertyName("whitePointY");
-                context.Writer.Write(requestObject.WhitePointY);
+                context.Writer.Write(requestObject.WhitePointY.Value);
             }
 
         }

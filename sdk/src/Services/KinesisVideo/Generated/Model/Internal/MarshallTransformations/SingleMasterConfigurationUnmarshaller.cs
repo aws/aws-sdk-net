@@ -65,7 +65,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MessageTtlSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessageTtlSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

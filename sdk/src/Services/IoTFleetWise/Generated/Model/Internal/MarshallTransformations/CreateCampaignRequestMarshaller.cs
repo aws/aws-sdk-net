@@ -126,7 +126,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpiryTime())
                 {
                     context.Writer.WritePropertyName("expiryTime");
-                    context.Writer.Write(publicRequest.ExpiryTime);
+                    context.Writer.Write(publicRequest.ExpiryTime.Value);
                 }
 
                 if(publicRequest.IsSetName())
@@ -138,13 +138,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPostTriggerCollectionDuration())
                 {
                     context.Writer.WritePropertyName("postTriggerCollectionDuration");
-                    context.Writer.Write(publicRequest.PostTriggerCollectionDuration);
+                    context.Writer.Write(publicRequest.PostTriggerCollectionDuration.Value);
                 }
 
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetSignalCatalogArn())
@@ -178,7 +178,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(publicRequest.StartTime);
+                    context.Writer.Write(publicRequest.StartTime.Value);
                 }
 
                 if(publicRequest.IsSetTags())

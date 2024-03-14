@@ -90,9 +90,9 @@ namespace Amazon.IdentityManagement.Model
         /// check <c>IsTruncated</c> after every call to ensure that you receive all your results.
         /// </para>
         /// </summary>
-        public bool IsTruncated
+        public bool? IsTruncated
         {
-            get { return this._isTruncated.GetValueOrDefault(); }
+            get { return this._isTruncated; }
             set { this._isTruncated = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime JobCompletionDate
+        public DateTime? JobCompletionDate
         {
-            get { return this._jobCompletionDate.GetValueOrDefault(); }
+            get { return this._jobCompletionDate; }
             set { this._jobCompletionDate = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime JobCreationDate
+        public DateTime? JobCreationDate
         {
-            get { return this._jobCreationDate.GetValueOrDefault(); }
+            get { return this._jobCreationDate; }
             set { this._jobCreationDate = value; }
         }
 

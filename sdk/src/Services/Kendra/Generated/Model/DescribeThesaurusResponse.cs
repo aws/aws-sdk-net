@@ -53,9 +53,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when the thesaurus was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Kendra.Model
         /// The size of the thesaurus file in bytes.
         /// </para>
         /// </summary>
-        public long FileSizeBytes
+        public long? FileSizeBytes
         {
-            get { return this._fileSizeBytes.GetValueOrDefault(); }
+            get { return this._fileSizeBytes; }
             set { this._fileSizeBytes = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.Kendra.Model
         /// The number of synonym rules in the thesaurus file.
         /// </para>
         /// </summary>
-        public long SynonymRuleCount
+        public long? SynonymRuleCount
         {
-            get { return this._synonymRuleCount.GetValueOrDefault(); }
+            get { return this._synonymRuleCount; }
             set { this._synonymRuleCount = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.Kendra.Model
         /// and <c>a=&gt;d</c>, the term count would be 4. 
         /// </para>
         /// </summary>
-        public long TermCount
+        public long? TermCount
         {
-            get { return this._termCount.GetValueOrDefault(); }
+            get { return this._termCount; }
             set { this._termCount = value; }
         }
 
@@ -282,9 +282,9 @@ namespace Amazon.Kendra.Model
         /// The Unix timestamp when the thesaurus was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

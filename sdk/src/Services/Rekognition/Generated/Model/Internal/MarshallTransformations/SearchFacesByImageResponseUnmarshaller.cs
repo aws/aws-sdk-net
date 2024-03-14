@@ -71,7 +71,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SearchedFaceConfidence", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.SearchedFaceConfidence = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BlockSizeBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlockSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BloomFilterFalsePositiveProbability", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BloomFilterFalsePositiveProbability = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DictionaryKeyThreshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DictionaryKeyThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EnablePadding", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnablePadding = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,19 +107,19 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PaddingTolerance", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PaddingTolerance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RowIndexStride", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowIndexStride = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StripeSizeBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StripeSizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

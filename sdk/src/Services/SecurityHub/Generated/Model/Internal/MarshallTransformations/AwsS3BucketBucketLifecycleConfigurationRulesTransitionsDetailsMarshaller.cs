@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDays())
             {
                 context.Writer.WritePropertyName("Days");
-                context.Writer.Write(requestObject.Days);
+                context.Writer.Write(requestObject.Days.Value);
             }
 
             if(requestObject.IsSetStorageClass())

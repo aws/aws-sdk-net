@@ -114,9 +114,9 @@ namespace Amazon.Lambda.Model
         /// The size of the function's deployment package, in bytes.
         /// </para>
         /// </summary>
-        public long CodeSize
+        public long? CodeSize
         {
-            get { return this._codeSize.GetValueOrDefault(); }
+            get { return this._codeSize; }
             set { this._codeSize = value; }
         }
 
@@ -453,9 +453,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
-        public int MemorySize
+        public int? MemorySize
         {
-            get { return this._memorySize.GetValueOrDefault(); }
+            get { return this._memorySize; }
             set { this._memorySize = value; }
         }
 
@@ -683,9 +683,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

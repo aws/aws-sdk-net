@@ -81,7 +81,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKeepJobFlowAliveWhenNoSteps())
                 {
                     context.Writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
-                    context.Writer.Write(publicRequest.KeepJobFlowAliveWhenNoSteps);
+                    context.Writer.Write(publicRequest.KeepJobFlowAliveWhenNoSteps.Value);
                 }
 
                 writer.WriteObjectEnd();

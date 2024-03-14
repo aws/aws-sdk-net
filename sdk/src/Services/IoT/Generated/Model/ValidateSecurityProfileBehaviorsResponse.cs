@@ -42,9 +42,9 @@ namespace Amazon.IoT.Model
         /// True if the behaviors were valid.
         /// </para>
         /// </summary>
-        public bool Valid
+        public bool? Valid
         {
-            get { return this._valid.GetValueOrDefault(); }
+            get { return this._valid; }
             set { this._valid = value; }
         }
 

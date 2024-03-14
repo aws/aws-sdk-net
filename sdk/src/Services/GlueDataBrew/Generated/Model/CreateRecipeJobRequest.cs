@@ -181,9 +181,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The maximum number of nodes that DataBrew can consume when the job processes data.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxRetries
+        public int? MaxRetries
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
+            get { return this._maxRetries; }
             set { this._maxRetries = value; }
         }
 
@@ -333,9 +333,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

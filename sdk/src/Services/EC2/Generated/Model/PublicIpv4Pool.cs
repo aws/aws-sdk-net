@@ -139,9 +139,9 @@ namespace Amazon.EC2.Model
         /// The total number of addresses.
         /// </para>
         /// </summary>
-        public int TotalAddressCount
+        public int? TotalAddressCount
         {
-            get { return this._totalAddressCount.GetValueOrDefault(); }
+            get { return this._totalAddressCount; }
             set { this._totalAddressCount = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.EC2.Model
         /// The total number of available addresses.
         /// </para>
         /// </summary>
-        public int TotalAvailableAddressCount
+        public int? TotalAvailableAddressCount
         {
-            get { return this._totalAvailableAddressCount.GetValueOrDefault(); }
+            get { return this._totalAvailableAddressCount; }
             set { this._totalAvailableAddressCount = value; }
         }
 

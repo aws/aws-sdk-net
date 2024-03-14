@@ -41,9 +41,9 @@ namespace Amazon.WellArchitected.Model
         /// Gets and sets the property MilestoneNumber.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int MilestoneNumber
+        public int? MilestoneNumber
         {
-            get { return this._milestoneNumber.GetValueOrDefault(); }
+            get { return this._milestoneNumber; }
             set { this._milestoneNumber = value; }
         }
 

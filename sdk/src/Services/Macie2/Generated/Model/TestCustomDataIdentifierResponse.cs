@@ -42,9 +42,9 @@ namespace Amazon.Macie2.Model
         /// custom data identifier.
         /// </para>
         /// </summary>
-        public int MatchCount
+        public int? MatchCount
         {
-            get { return this._matchCount.GetValueOrDefault(); }
+            get { return this._matchCount; }
             set { this._matchCount = value; }
         }
 

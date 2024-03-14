@@ -96,9 +96,9 @@ namespace Amazon.EventBridge.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventEndTime
+        public DateTime? EventEndTime
         {
-            get { return this._eventEndTime.GetValueOrDefault(); }
+            get { return this._eventEndTime; }
             set { this._eventEndTime = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.EventBridge.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EventStartTime
+        public DateTime? EventStartTime
         {
-            get { return this._eventStartTime.GetValueOrDefault(); }
+            get { return this._eventStartTime; }
             set { this._eventStartTime = value; }
         }
 

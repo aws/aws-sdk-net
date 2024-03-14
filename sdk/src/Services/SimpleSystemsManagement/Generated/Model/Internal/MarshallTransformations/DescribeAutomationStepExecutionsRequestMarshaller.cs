@@ -92,7 +92,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -104,7 +104,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReverseOrder())
                 {
                     context.Writer.WritePropertyName("ReverseOrder");
-                    context.Writer.Write(publicRequest.ReverseOrder);
+                    context.Writer.Write(publicRequest.ReverseOrder.Value);
                 }
 
                 writer.WriteObjectEnd();

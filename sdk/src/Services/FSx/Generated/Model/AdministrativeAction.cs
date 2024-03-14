@@ -83,9 +83,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int ProgressPercent
+        public int? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RemainingTransferBytes
+        public long? RemainingTransferBytes
         {
-            get { return this._remainingTransferBytes.GetValueOrDefault(); }
+            get { return this._remainingTransferBytes; }
             set { this._remainingTransferBytes = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.FSx.Model
         /// The time that the administrative action request was received.
         /// </para>
         /// </summary>
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long TotalTransferBytes
+        public long? TotalTransferBytes
         {
-            get { return this._totalTransferBytes.GetValueOrDefault(); }
+            get { return this._totalTransferBytes; }
             set { this._totalTransferBytes = value; }
         }
 

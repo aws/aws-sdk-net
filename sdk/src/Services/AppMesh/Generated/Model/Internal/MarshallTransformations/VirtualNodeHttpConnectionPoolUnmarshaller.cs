@@ -65,13 +65,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxConnections", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConnections = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxPendingRequests", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPendingRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }

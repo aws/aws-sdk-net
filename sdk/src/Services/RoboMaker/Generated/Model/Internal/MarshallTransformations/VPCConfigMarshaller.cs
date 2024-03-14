@@ -48,7 +48,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssignPublicIp())
             {
                 context.Writer.WritePropertyName("assignPublicIp");
-                context.Writer.Write(requestObject.AssignPublicIp);
+                context.Writer.Write(requestObject.AssignPublicIp.Value);
             }
 
             if(requestObject.IsSetSecurityGroups())

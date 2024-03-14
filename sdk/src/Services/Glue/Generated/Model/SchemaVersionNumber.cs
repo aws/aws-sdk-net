@@ -42,9 +42,9 @@ namespace Amazon.Glue.Model
         /// The latest version available for the schema.
         /// </para>
         /// </summary>
-        public bool LatestVersion
+        public bool? LatestVersion
         {
-            get { return this._latestVersion.GetValueOrDefault(); }
+            get { return this._latestVersion; }
             set { this._latestVersion = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long VersionNumber
+        public long? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

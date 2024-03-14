@@ -107,13 +107,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastRefreshTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRefreshTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastTransitionTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastTransitionTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

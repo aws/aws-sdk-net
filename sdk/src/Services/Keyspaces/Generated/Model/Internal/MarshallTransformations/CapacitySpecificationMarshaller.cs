@@ -48,7 +48,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("readCapacityUnits");
-                context.Writer.Write(requestObject.ReadCapacityUnits);
+                context.Writer.Write(requestObject.ReadCapacityUnits.Value);
             }
 
             if(requestObject.IsSetThroughputMode())
@@ -60,7 +60,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWriteCapacityUnits())
             {
                 context.Writer.WritePropertyName("writeCapacityUnits");
-                context.Writer.Write(requestObject.WriteCapacityUnits);
+                context.Writer.Write(requestObject.WriteCapacityUnits.Value);
             }
 
         }

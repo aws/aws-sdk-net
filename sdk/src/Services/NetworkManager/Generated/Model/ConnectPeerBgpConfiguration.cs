@@ -63,9 +63,9 @@ namespace Amazon.NetworkManager.Model
         /// The ASN of the Coret Network.
         /// </para>
         /// </summary>
-        public long CoreNetworkAsn
+        public long? CoreNetworkAsn
         {
-            get { return this._coreNetworkAsn.GetValueOrDefault(); }
+            get { return this._coreNetworkAsn; }
             set { this._coreNetworkAsn = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.NetworkManager.Model
         /// The ASN of the Connect peer.
         /// </para>
         /// </summary>
-        public long PeerAsn
+        public long? PeerAsn
         {
-            get { return this._peerAsn.GetValueOrDefault(); }
+            get { return this._peerAsn; }
             set { this._peerAsn = value; }
         }
 

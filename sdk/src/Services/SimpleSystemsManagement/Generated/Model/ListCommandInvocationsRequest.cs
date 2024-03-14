@@ -85,9 +85,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// output. The default value is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool Details
+        public bool? Details
         {
-            get { return this._details.GetValueOrDefault(); }
+            get { return this._details; }
             set { this._details = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

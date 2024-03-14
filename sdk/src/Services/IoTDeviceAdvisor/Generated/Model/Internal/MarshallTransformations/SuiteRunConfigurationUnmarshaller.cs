@@ -65,7 +65,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("parallelRun", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ParallelRun = unmarshaller.Unmarshall(context);
                     continue;
                 }

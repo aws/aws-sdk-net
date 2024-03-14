@@ -94,7 +94,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveOverrideLinkOutUri())
                 {
                     context.Writer.WritePropertyName("removeOverrideLinkOutUri");
-                    context.Writer.Write(publicRequest.RemoveOverrideLinkOutUri);
+                    context.Writer.Write(publicRequest.RemoveOverrideLinkOutUri.Value);
                 }
 
                 if(publicRequest.IsSetRevisionId())

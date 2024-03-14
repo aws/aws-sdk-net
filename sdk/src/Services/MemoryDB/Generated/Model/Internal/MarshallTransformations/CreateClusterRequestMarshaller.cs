@@ -76,7 +76,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoMinorVersionUpgrade())
                 {
                     context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade);
+                    context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
                 }
 
                 if(publicRequest.IsSetClusterName())
@@ -88,7 +88,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDataTiering())
                 {
                     context.Writer.WritePropertyName("DataTiering");
-                    context.Writer.Write(publicRequest.DataTiering);
+                    context.Writer.Write(publicRequest.DataTiering.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -124,13 +124,13 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumReplicasPerShard())
                 {
                     context.Writer.WritePropertyName("NumReplicasPerShard");
-                    context.Writer.Write(publicRequest.NumReplicasPerShard);
+                    context.Writer.Write(publicRequest.NumReplicasPerShard.Value);
                 }
 
                 if(publicRequest.IsSetNumShards())
                 {
                     context.Writer.WritePropertyName("NumShards");
-                    context.Writer.Write(publicRequest.NumShards);
+                    context.Writer.Write(publicRequest.NumShards.Value);
                 }
 
                 if(publicRequest.IsSetParameterGroupName())
@@ -142,7 +142,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPort())
                 {
                     context.Writer.WritePropertyName("Port");
-                    context.Writer.Write(publicRequest.Port);
+                    context.Writer.Write(publicRequest.Port.Value);
                 }
 
                 if(publicRequest.IsSetSecurityGroupIds())
@@ -176,7 +176,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSnapshotRetentionLimit())
                 {
                     context.Writer.WritePropertyName("SnapshotRetentionLimit");
-                    context.Writer.Write(publicRequest.SnapshotRetentionLimit);
+                    context.Writer.Write(publicRequest.SnapshotRetentionLimit.Value);
                 }
 
                 if(publicRequest.IsSetSnapshotWindow())
@@ -216,7 +216,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTLSEnabled())
                 {
                     context.Writer.WritePropertyName("TLSEnabled");
-                    context.Writer.Write(publicRequest.TLSEnabled);
+                    context.Writer.Write(publicRequest.TLSEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

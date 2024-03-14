@@ -83,9 +83,9 @@ namespace Amazon.RoboMaker.Model
         /// The number of failed worlds.
         /// </para>
         /// </summary>
-        public int FailureCount
+        public int? FailureCount
         {
-            get { return this._failureCount.GetValueOrDefault(); }
+            get { return this._failureCount; }
             set { this._failureCount = value; }
         }
 

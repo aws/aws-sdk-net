@@ -149,9 +149,9 @@ namespace Amazon.Lightsail.Model
         /// is the M.
         /// </para>
         /// </summary>
-        public int DatapointsToAlarm
+        public int? DatapointsToAlarm
         {
-            get { return this._datapointsToAlarm.GetValueOrDefault(); }
+            get { return this._datapointsToAlarm; }
             set { this._datapointsToAlarm = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.Lightsail.Model
         /// Notifications are enabled by default if you don't specify this parameter.
         /// </para>
         /// </summary>
-        public bool NotificationEnabled
+        public bool? NotificationEnabled
         {
-            get { return this._notificationEnabled.GetValueOrDefault(); }
+            get { return this._notificationEnabled; }
             set { this._notificationEnabled = value; }
         }
 
@@ -359,9 +359,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

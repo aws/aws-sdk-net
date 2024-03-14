@@ -54,7 +54,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorderRadius())
             {
                 context.Writer.WritePropertyName("BorderRadius");
-                context.Writer.Write(requestObject.BorderRadius);
+                context.Writer.Write(requestObject.BorderRadius.Value);
             }
 
             if(requestObject.IsSetButtonAction())

@@ -81,7 +81,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxNumberOfMessages())
                 {
                     context.Writer.WritePropertyName("MaxNumberOfMessages");
-                    context.Writer.Write(publicRequest.MaxNumberOfMessages);
+                    context.Writer.Write(publicRequest.MaxNumberOfMessages.Value);
                 }
 
                 if(publicRequest.IsSetMessageAttributeNames())
@@ -110,13 +110,13 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetVisibilityTimeout())
                 {
                     context.Writer.WritePropertyName("VisibilityTimeout");
-                    context.Writer.Write(publicRequest.VisibilityTimeout);
+                    context.Writer.Write(publicRequest.VisibilityTimeout.Value);
                 }
 
                 if(publicRequest.IsSetWaitTimeSeconds())
                 {
                     context.Writer.WritePropertyName("WaitTimeSeconds");
-                    context.Writer.Write(publicRequest.WaitTimeSeconds);
+                    context.Writer.Write(publicRequest.WaitTimeSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

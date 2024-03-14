@@ -54,9 +54,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=3600)]
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

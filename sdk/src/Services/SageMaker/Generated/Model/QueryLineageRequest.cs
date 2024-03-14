@@ -112,9 +112,9 @@ namespace Amazon.SageMaker.Model
         /// that match your query.
         /// </para>
         /// </summary>
-        public bool IncludeEdges
+        public bool? IncludeEdges
         {
-            get { return this._includeEdges.GetValueOrDefault(); }
+            get { return this._includeEdges; }
             set { this._includeEdges = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
-        public int MaxDepth
+        public int? MaxDepth
         {
-            get { return this._maxDepth.GetValueOrDefault(); }
+            get { return this._maxDepth; }
             set { this._maxDepth = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

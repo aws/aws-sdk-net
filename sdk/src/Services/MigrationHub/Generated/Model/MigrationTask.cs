@@ -122,9 +122,9 @@ namespace Amazon.MigrationHub.Model
         /// The timestamp when the task was gathered.
         /// </para>
         /// </summary>
-        public DateTime UpdateDateTime
+        public DateTime? UpdateDateTime
         {
-            get { return this._updateDateTime.GetValueOrDefault(); }
+            get { return this._updateDateTime; }
             set { this._updateDateTime = value; }
         }
 

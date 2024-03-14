@@ -44,9 +44,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000000)]
-        public int MaxValue
+        public int? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1000000)]
-        public int MinValue
+        public int? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 

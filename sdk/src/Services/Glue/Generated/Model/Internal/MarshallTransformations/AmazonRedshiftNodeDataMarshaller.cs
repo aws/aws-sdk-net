@@ -258,7 +258,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUpsert())
             {
                 context.Writer.WritePropertyName("Upsert");
-                context.Writer.Write(requestObject.Upsert);
+                context.Writer.Write(requestObject.Upsert.Value);
             }
 
         }

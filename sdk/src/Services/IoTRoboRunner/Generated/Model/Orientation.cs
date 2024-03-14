@@ -42,9 +42,9 @@ namespace Amazon.IoTRoboRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
-        public double Degrees
+        public double? Degrees
         {
-            get { return this._degrees.GetValueOrDefault(); }
+            get { return this._degrees; }
             set { this._degrees = value; }
         }
 

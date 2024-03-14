@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxResource())
             {
                 context.Writer.WritePropertyName("MaxResource");
-                context.Writer.Write(requestObject.MaxResource);
+                context.Writer.Write(requestObject.MaxResource.Value);
             }
 
             if(requestObject.IsSetMinResource())
             {
                 context.Writer.WritePropertyName("MinResource");
-                context.Writer.Write(requestObject.MinResource);
+                context.Writer.Write(requestObject.MinResource.Value);
             }
 
         }

@@ -127,9 +127,9 @@ namespace Amazon.QuickSight.Model
         /// Determines the number of fraction digits.
         /// </para>
         /// </summary>
-        public int FractionDigits
+        public int? FractionDigits
         {
-            get { return this._fractionDigits.GetValueOrDefault(); }
+            get { return this._fractionDigits; }
             set { this._fractionDigits = value; }
         }
 
@@ -239,9 +239,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates whether to use blank cell format.
         /// </para>
         /// </summary>
-        public bool UseBlankCellFormat
+        public bool? UseBlankCellFormat
         {
-            get { return this._useBlankCellFormat.GetValueOrDefault(); }
+            get { return this._useBlankCellFormat; }
             set { this._useBlankCellFormat = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.QuickSight.Model
         /// A Boolean value that indicates whether to use grouping.
         /// </para>
         /// </summary>
-        public bool UseGrouping
+        public bool? UseGrouping
         {
-            get { return this._useGrouping.GetValueOrDefault(); }
+            get { return this._useGrouping; }
             set { this._useGrouping = value; }
         }
 

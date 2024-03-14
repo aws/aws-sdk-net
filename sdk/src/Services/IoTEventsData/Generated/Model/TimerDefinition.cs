@@ -62,9 +62,9 @@ namespace Amazon.IoTEventsData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Seconds
+        public int? Seconds
         {
-            get { return this._seconds.GetValueOrDefault(); }
+            get { return this._seconds; }
             set { this._seconds = value; }
         }
 

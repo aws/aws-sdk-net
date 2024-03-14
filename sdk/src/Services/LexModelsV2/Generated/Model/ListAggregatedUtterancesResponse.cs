@@ -102,9 +102,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime AggregationLastRefreshedDateTime
+        public DateTime? AggregationLastRefreshedDateTime
         {
-            get { return this._aggregationLastRefreshedDateTime.GetValueOrDefault(); }
+            get { return this._aggregationLastRefreshedDateTime; }
             set { this._aggregationLastRefreshedDateTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.LexModelsV2.Model
         /// start time and the end time are returned in the results. 
         /// </para>
         /// </summary>
-        public DateTime AggregationWindowEndTime
+        public DateTime? AggregationWindowEndTime
         {
-            get { return this._aggregationWindowEndTime.GetValueOrDefault(); }
+            get { return this._aggregationWindowEndTime; }
             set { this._aggregationWindowEndTime = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.LexModelsV2.Model
         /// time is returned in the results.
         /// </para>
         /// </summary>
-        public DateTime AggregationWindowStartTime
+        public DateTime? AggregationWindowStartTime
         {
-            get { return this._aggregationWindowStartTime.GetValueOrDefault(); }
+            get { return this._aggregationWindowStartTime; }
             set { this._aggregationWindowStartTime = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifies whether a code generation job supports non models.
         /// </para>
         /// </summary>
-        public bool IsNonModelSupported
+        public bool? IsNonModelSupported
         {
-            get { return this._isNonModelSupported.GetValueOrDefault(); }
+            get { return this._isNonModelSupported; }
             set { this._isNonModelSupported = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Specifes whether a code generation job supports data relationships.
         /// </para>
         /// </summary>
-        public bool IsRelationshipSupported
+        public bool? IsRelationshipSupported
         {
-            get { return this._isRelationshipSupported.GetValueOrDefault(); }
+            get { return this._isRelationshipSupported; }
             set { this._isRelationshipSupported = value; }
         }
 

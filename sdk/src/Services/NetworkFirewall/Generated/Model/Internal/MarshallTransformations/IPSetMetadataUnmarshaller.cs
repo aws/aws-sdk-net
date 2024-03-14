@@ -65,7 +65,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ResolvedCIDRCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResolvedCIDRCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

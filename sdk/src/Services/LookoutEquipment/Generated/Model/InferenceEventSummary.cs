@@ -68,9 +68,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long EventDurationInSeconds
+        public long? EventDurationInSeconds
         {
-            get { return this._eventDurationInSeconds.GetValueOrDefault(); }
+            get { return this._eventDurationInSeconds; }
             set { this._eventDurationInSeconds = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the ending time of an inference event. 
         /// </para>
         /// </summary>
-        public DateTime EventEndTime
+        public DateTime? EventEndTime
         {
-            get { return this._eventEndTime.GetValueOrDefault(); }
+            get { return this._eventEndTime; }
             set { this._eventEndTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.LookoutEquipment.Model
         /// Indicates the starting time of an inference event. 
         /// </para>
         /// </summary>
-        public DateTime EventStartTime
+        public DateTime? EventStartTime
         {
-            get { return this._eventStartTime.GetValueOrDefault(); }
+            get { return this._eventStartTime; }
             set { this._eventStartTime = value; }
         }
 

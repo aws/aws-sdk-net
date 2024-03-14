@@ -51,9 +51,9 @@ namespace Amazon.VPCLattice.Model
         /// Indicates whether health checking is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
-        public int HealthCheckIntervalSeconds
+        public int? HealthCheckIntervalSeconds
         {
-            get { return this._healthCheckIntervalSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckIntervalSeconds; }
             set { this._healthCheckIntervalSeconds = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=120)]
-        public int HealthCheckTimeoutSeconds
+        public int? HealthCheckTimeoutSeconds
         {
-            get { return this._healthCheckTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckTimeoutSeconds; }
             set { this._healthCheckTimeoutSeconds = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int HealthyThresholdCount
+        public int? HealthyThresholdCount
         {
-            get { return this._healthyThresholdCount.GetValueOrDefault(); }
+            get { return this._healthyThresholdCount; }
             set { this._healthyThresholdCount = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int UnhealthyThresholdCount
+        public int? UnhealthyThresholdCount
         {
-            get { return this._unhealthyThresholdCount.GetValueOrDefault(); }
+            get { return this._unhealthyThresholdCount; }
             set { this._unhealthyThresholdCount = value; }
         }
 

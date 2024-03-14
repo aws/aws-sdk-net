@@ -62,9 +62,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double PercentageAdjust
+        public double? PercentageAdjust
         {
-            get { return this._percentageAdjust.GetValueOrDefault(); }
+            get { return this._percentageAdjust; }
             set { this._percentageAdjust = value; }
         }
 

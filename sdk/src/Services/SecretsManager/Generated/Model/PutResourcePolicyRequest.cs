@@ -68,9 +68,9 @@ namespace Amazon.SecretsManager.Model
         /// policies aren't blocked.
         /// </para>
         /// </summary>
-        public bool BlockPublicPolicy
+        public bool? BlockPublicPolicy
         {
-            get { return this._blockPublicPolicy.GetValueOrDefault(); }
+            get { return this._blockPublicPolicy; }
             set { this._blockPublicPolicy = value; }
         }
 

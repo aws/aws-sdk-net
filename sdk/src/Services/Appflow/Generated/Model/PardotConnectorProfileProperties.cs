@@ -81,9 +81,9 @@ namespace Amazon.Appflow.Model
         /// Indicates whether the connector profile applies to a sandbox or production environment.
         /// </para>
         /// </summary>
-        public bool IsSandboxEnvironment
+        public bool? IsSandboxEnvironment
         {
-            get { return this._isSandboxEnvironment.GetValueOrDefault(); }
+            get { return this._isSandboxEnvironment; }
             set { this._isSandboxEnvironment = value; }
         }
 

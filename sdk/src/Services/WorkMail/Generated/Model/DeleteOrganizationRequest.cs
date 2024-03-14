@@ -68,9 +68,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DeleteDirectory
+        public bool? DeleteDirectory
         {
-            get { return this._deleteDirectory.GetValueOrDefault(); }
+            get { return this._deleteDirectory; }
             set { this._deleteDirectory = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.WorkMail.Model
         /// Deletes a WorkMail organization even if the organization has enabled users.
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

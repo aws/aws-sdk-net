@@ -57,7 +57,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("EnableManifestOutput", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.EnableManifestOutput = unmarshaller.Unmarshall(context);
                         continue;
                     }

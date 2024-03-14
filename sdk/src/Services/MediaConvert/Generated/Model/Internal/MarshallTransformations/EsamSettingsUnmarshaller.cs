@@ -71,7 +71,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("responseSignalPreroll", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResponseSignalPreroll = unmarshaller.Unmarshall(context);
                     continue;
                 }

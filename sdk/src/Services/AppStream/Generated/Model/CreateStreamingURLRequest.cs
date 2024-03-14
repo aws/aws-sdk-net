@@ -148,9 +148,9 @@ namespace Amazon.AppStream.Model
         /// 1 and 604800 seconds. The default is 60 seconds.
         /// </para>
         /// </summary>
-        public long Validity
+        public long? Validity
         {
-            get { return this._validity.GetValueOrDefault(); }
+            get { return this._validity; }
             set { this._validity = value; }
         }
 

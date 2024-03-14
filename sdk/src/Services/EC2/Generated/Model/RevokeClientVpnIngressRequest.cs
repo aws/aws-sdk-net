@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether access should be revoked for all clients.
         /// </para>
         /// </summary>
-        public bool RevokeAllGroups
+        public bool? RevokeAllGroups
         {
-            get { return this._revokeAllGroups.GetValueOrDefault(); }
+            get { return this._revokeAllGroups; }
             set { this._revokeAllGroups = value; }
         }
 

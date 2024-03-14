@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// Specifies whether to include the workflow graph in response or not.
         /// </para>
         /// </summary>
-        public bool IncludeGraph
+        public bool? IncludeGraph
         {
-            get { return this._includeGraph.GetValueOrDefault(); }
+            get { return this._includeGraph; }
             set { this._includeGraph = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

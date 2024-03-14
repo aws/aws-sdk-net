@@ -89,9 +89,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// control panel. If you create a control panel yourself, this flag is set to false.
         /// </para>
         /// </summary>
-        public bool DefaultControlPanel
+        public bool? DefaultControlPanel
         {
-            get { return this._defaultControlPanel.GetValueOrDefault(); }
+            get { return this._defaultControlPanel; }
             set { this._defaultControlPanel = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// The number of routing controls in the control panel.
         /// </para>
         /// </summary>
-        public int RoutingControlCount
+        public int? RoutingControlCount
         {
-            get { return this._routingControlCount.GetValueOrDefault(); }
+            get { return this._routingControlCount; }
             set { this._routingControlCount = value; }
         }
 

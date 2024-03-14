@@ -64,9 +64,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long MillisUntilNextRefreshable
+        public long? MillisUntilNextRefreshable
         {
-            get { return this._millisUntilNextRefreshable.GetValueOrDefault(); }
+            get { return this._millisUntilNextRefreshable; }
             set { this._millisUntilNextRefreshable = value; }
         }
 

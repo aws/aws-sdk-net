@@ -85,9 +85,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

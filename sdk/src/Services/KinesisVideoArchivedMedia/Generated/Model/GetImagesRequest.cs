@@ -57,9 +57,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndTimestamp
+        public DateTime? EndTimestamp
         {
-            get { return this._endTimestamp.GetValueOrDefault(); }
+            get { return this._endTimestamp; }
             set { this._endTimestamp = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2160)]
-        public int HeightPixels
+        public int? HeightPixels
         {
-            get { return this._heightPixels.GetValueOrDefault(); }
+            get { return this._heightPixels; }
             set { this._heightPixels = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public long MaxResults
+        public long? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// will be returned if available. 
         /// </para>
         /// </summary>
-        public int SamplingInterval
+        public int? SamplingInterval
         {
-            get { return this._samplingInterval.GetValueOrDefault(); }
+            get { return this._samplingInterval; }
             set { this._samplingInterval = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 
@@ -294,9 +294,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3840)]
-        public int WidthPixels
+        public int? WidthPixels
         {
-            get { return this._widthPixels.GetValueOrDefault(); }
+            get { return this._widthPixels; }
             set { this._widthPixels = value; }
         }
 

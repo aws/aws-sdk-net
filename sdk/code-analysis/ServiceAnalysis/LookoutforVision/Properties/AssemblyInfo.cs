@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.LookoutforVision")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Lookout for Vision. This release introduces support for Amazon Lookout for Vision.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Lookout for Vision. This release introduces support for Amazon Lookout for Vision.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

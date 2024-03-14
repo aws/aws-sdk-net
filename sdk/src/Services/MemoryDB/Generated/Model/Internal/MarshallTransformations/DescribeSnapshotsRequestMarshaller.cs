@@ -76,7 +76,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -88,7 +88,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetShowDetail())
                 {
                     context.Writer.WritePropertyName("ShowDetail");
-                    context.Writer.Write(publicRequest.ShowDetail);
+                    context.Writer.Write(publicRequest.ShowDetail.Value);
                 }
 
                 if(publicRequest.IsSetSnapshotName())

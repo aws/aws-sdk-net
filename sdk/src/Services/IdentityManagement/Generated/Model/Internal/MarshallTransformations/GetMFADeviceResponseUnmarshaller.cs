@@ -90,7 +90,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EnableDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         response.EnableDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

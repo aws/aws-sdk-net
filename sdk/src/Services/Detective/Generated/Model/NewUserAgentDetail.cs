@@ -42,9 +42,9 @@ namespace Amazon.Detective.Model
         /// Checks if the user agent is new for the entire account.
         /// </para>
         /// </summary>
-        public bool IsNewForEntireAccount
+        public bool? IsNewForEntireAccount
         {
-            get { return this._isNewForEntireAccount.GetValueOrDefault(); }
+            get { return this._isNewForEntireAccount; }
             set { this._isNewForEntireAccount = value; }
         }
 

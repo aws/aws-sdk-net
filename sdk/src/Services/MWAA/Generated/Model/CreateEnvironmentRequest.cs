@@ -248,9 +248,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxWorkers
+        public int? MaxWorkers
         {
-            get { return this._maxWorkers.GetValueOrDefault(); }
+            get { return this._maxWorkers; }
             set { this._maxWorkers = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinWorkers
+        public int? MinWorkers
         {
-            get { return this._minWorkers.GetValueOrDefault(); }
+            get { return this._minWorkers; }
             set { this._minWorkers = value; }
         }
 
@@ -426,9 +426,9 @@ namespace Amazon.MWAA.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=5)]
-        public int Schedulers
+        public int? Schedulers
         {
-            get { return this._schedulers.GetValueOrDefault(); }
+            get { return this._schedulers; }
             set { this._schedulers = value; }
         }
 

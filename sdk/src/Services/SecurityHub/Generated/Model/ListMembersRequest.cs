@@ -52,9 +52,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.SecurityHub.Model
         /// member accounts. 
         /// </para>
         /// </summary>
-        public bool OnlyAssociated
+        public bool? OnlyAssociated
         {
-            get { return this._onlyAssociated.GetValueOrDefault(); }
+            get { return this._onlyAssociated; }
             set { this._onlyAssociated = value; }
         }
 

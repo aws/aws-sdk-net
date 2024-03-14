@@ -71,9 +71,9 @@ namespace Amazon.CloudSearch.Model
         /// complete.
         /// </para>
         /// </summary>
-        public bool Created
+        public bool? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.CloudSearch.Model
         /// minutes until resource cleanup is complete.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.CloudSearch.Model
         /// True if processing is being done to activate the current domain configuration.
         /// </para>
         /// </summary>
-        public bool Processing
+        public bool? Processing
         {
-            get { return this._processing.GetValueOrDefault(); }
+            get { return this._processing; }
             set { this._processing = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool RequiresIndexDocuments
+        public bool? RequiresIndexDocuments
         {
-            get { return this._requiresIndexDocuments.GetValueOrDefault(); }
+            get { return this._requiresIndexDocuments; }
             set { this._requiresIndexDocuments = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int SearchInstanceCount
+        public int? SearchInstanceCount
         {
-            get { return this._searchInstanceCount.GetValueOrDefault(); }
+            get { return this._searchInstanceCount; }
             set { this._searchInstanceCount = value; }
         }
 
@@ -250,9 +250,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int SearchPartitionCount
+        public int? SearchPartitionCount
         {
-            get { return this._searchPartitionCount.GetValueOrDefault(); }
+            get { return this._searchPartitionCount; }
             set { this._searchPartitionCount = value; }
         }
 

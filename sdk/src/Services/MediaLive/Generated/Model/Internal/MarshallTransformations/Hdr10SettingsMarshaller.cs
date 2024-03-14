@@ -48,13 +48,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCll())
             {
                 context.Writer.WritePropertyName("maxCll");
-                context.Writer.Write(requestObject.MaxCll);
+                context.Writer.Write(requestObject.MaxCll.Value);
             }
 
             if(requestObject.IsSetMaxFall())
             {
                 context.Writer.WritePropertyName("maxFall");
-                context.Writer.Write(requestObject.MaxFall);
+                context.Writer.Write(requestObject.MaxFall.Value);
             }
 
         }

@@ -48,7 +48,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");
-                context.Writer.Write(requestObject.ShardCount);
+                context.Writer.Write(requestObject.ShardCount.Value);
             }
 
         }

@@ -60,9 +60,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether to enable Berkshelf.
         /// </para>
         /// </summary>
-        public bool ManageBerkshelf
+        public bool? ManageBerkshelf
         {
-            get { return this._manageBerkshelf.GetValueOrDefault(); }
+            get { return this._manageBerkshelf; }
             set { this._manageBerkshelf = value; }
         }
 

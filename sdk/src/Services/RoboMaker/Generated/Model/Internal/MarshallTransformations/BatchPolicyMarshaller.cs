@@ -48,13 +48,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrency())
             {
                 context.Writer.WritePropertyName("maxConcurrency");
-                context.Writer.Write(requestObject.MaxConcurrency);
+                context.Writer.Write(requestObject.MaxConcurrency.Value);
             }
 
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("timeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds);
+                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
             }
 
         }

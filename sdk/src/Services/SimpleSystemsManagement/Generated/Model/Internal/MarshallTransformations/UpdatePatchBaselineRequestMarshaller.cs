@@ -98,7 +98,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApprovedPatchesEnableNonSecurity())
                 {
                     context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
-                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity);
+                    context.Writer.Write(publicRequest.ApprovedPatchesEnableNonSecurity.Value);
                 }
 
                 if(publicRequest.IsSetBaselineId())
@@ -150,7 +150,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReplace())
                 {
                     context.Writer.WritePropertyName("Replace");
-                    context.Writer.Write(publicRequest.Replace);
+                    context.Writer.Write(publicRequest.Replace.Value);
                 }
 
                 if(publicRequest.IsSetSources())

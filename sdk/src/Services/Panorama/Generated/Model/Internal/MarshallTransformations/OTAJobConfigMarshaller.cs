@@ -48,7 +48,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowMajorVersionUpdate())
             {
                 context.Writer.WritePropertyName("AllowMajorVersionUpdate");
-                context.Writer.Write(requestObject.AllowMajorVersionUpdate);
+                context.Writer.Write(requestObject.AllowMajorVersionUpdate.Value);
             }
 
             if(requestObject.IsSetImageVersion())

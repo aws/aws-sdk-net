@@ -46,9 +46,9 @@ namespace Amazon.MediaConvert.Model
         /// in pixels, for this rule.
         /// </summary>
         [AWSProperty(Min=32, Max=8192)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.MediaConvert.Model
         /// in pixels, for this rule.
         /// </summary>
         [AWSProperty(Min=32, Max=8192)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

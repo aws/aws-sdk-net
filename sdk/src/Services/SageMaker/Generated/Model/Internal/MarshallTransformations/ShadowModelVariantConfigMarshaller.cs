@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSamplingPercentage())
             {
                 context.Writer.WritePropertyName("SamplingPercentage");
-                context.Writer.Write(requestObject.SamplingPercentage);
+                context.Writer.Write(requestObject.SamplingPercentage.Value);
             }
 
             if(requestObject.IsSetShadowModelVariantName())

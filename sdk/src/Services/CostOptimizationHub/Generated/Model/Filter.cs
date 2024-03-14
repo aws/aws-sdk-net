@@ -204,9 +204,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Whether or not implementing the recommendation requires a restart.
         /// </para>
         /// </summary>
-        public bool RestartNeeded
+        public bool? RestartNeeded
         {
-            get { return this._restartNeeded.GetValueOrDefault(); }
+            get { return this._restartNeeded; }
             set { this._restartNeeded = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Whether or not implementing the recommendation can be rolled back.
         /// </para>
         /// </summary>
-        public bool RollbackPossible
+        public bool? RollbackPossible
         {
-            get { return this._rollbackPossible.GetValueOrDefault(); }
+            get { return this._rollbackPossible; }
             set { this._rollbackPossible = value; }
         }
 

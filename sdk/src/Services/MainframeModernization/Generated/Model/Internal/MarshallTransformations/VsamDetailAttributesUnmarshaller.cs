@@ -71,13 +71,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("cacheAtStartup", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CacheAtStartup = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("compressed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Compressed = unmarshaller.Unmarshall(context);
                     continue;
                 }

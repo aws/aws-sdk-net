@@ -86,7 +86,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActive())
                 {
                     context.Writer.WritePropertyName("active");
-                    context.Writer.Write(publicRequest.Active);
+                    context.Writer.Write(publicRequest.Active.Value);
                 }
 
                 if(publicRequest.IsSetCategory())
@@ -110,13 +110,13 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOptional())
                 {
                     context.Writer.WritePropertyName("optional");
-                    context.Writer.Write(publicRequest.Optional);
+                    context.Writer.Write(publicRequest.Optional.Value);
                 }
 
                 if(publicRequest.IsSetOrder())
                 {
                     context.Writer.WritePropertyName("order");
-                    context.Writer.Write(publicRequest.Order);
+                    context.Writer.Write(publicRequest.Order.Value);
                 }
 
                 if(publicRequest.IsSetParameters())

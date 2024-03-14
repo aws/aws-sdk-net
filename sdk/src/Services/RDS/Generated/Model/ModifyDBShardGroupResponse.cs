@@ -65,9 +65,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int ComputeRedundancy
+        public int? ComputeRedundancy
         {
-            get { return this._computeRedundancy.GetValueOrDefault(); }
+            get { return this._computeRedundancy; }
             set { this._computeRedundancy = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.RDS.Model
         /// The maximum capacity of the DB shard group in Aurora capacity units (ACUs).
         /// </para>
         /// </summary>
-        public double MaxACU
+        public double? MaxACU
         {
-            get { return this._maxACU.GetValueOrDefault(); }
+            get { return this._maxACU; }
             set { this._maxACU = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.RDS.Model
         /// This setting is only for Aurora Limitless Database.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

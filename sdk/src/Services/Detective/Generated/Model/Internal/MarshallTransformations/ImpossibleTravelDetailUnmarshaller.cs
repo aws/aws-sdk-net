@@ -77,7 +77,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HourlyTimeDelta", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HourlyTimeDelta = unmarshaller.Unmarshall(context);
                     continue;
                 }

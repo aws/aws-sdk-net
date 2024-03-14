@@ -76,7 +76,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDefaultJobTimeoutMinutes())
                 {
                     context.Writer.WritePropertyName("defaultJobTimeoutMinutes");
-                    context.Writer.Write(publicRequest.DefaultJobTimeoutMinutes);
+                    context.Writer.Write(publicRequest.DefaultJobTimeoutMinutes.Value);
                 }
 
                 if(publicRequest.IsSetName())

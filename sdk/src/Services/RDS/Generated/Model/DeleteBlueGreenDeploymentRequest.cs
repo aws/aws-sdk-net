@@ -83,9 +83,9 @@ namespace Amazon.RDS.Model
         /// is <c>SWITCHOVER_COMPLETED</c>.
         /// </para>
         /// </summary>
-        public bool DeleteTarget
+        public bool? DeleteTarget
         {
-            get { return this._deleteTarget.GetValueOrDefault(); }
+            get { return this._deleteTarget; }
             set { this._deleteTarget = value; }
         }
 

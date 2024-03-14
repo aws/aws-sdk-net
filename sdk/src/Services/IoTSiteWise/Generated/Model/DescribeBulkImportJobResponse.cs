@@ -53,9 +53,9 @@ namespace Amazon.IoTSiteWise.Model
         /// into IoT SiteWise as is.
         /// </para>
         /// </summary>
-        public bool AdaptiveIngestion
+        public bool? AdaptiveIngestion
         {
-            get { return this._adaptiveIngestion.GetValueOrDefault(); }
+            get { return this._adaptiveIngestion; }
             set { this._adaptiveIngestion = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.IoTSiteWise.Model
         /// storage.
         /// </para>
         /// </summary>
-        public bool DeleteFilesAfterImport
+        public bool? DeleteFilesAfterImport
         {
-            get { return this._deleteFilesAfterImport.GetValueOrDefault(); }
+            get { return this._deleteFilesAfterImport; }
             set { this._deleteFilesAfterImport = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime JobCreationDate
+        public DateTime? JobCreationDate
         {
-            get { return this._jobCreationDate.GetValueOrDefault(); }
+            get { return this._jobCreationDate; }
             set { this._jobCreationDate = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime JobLastUpdateDate
+        public DateTime? JobLastUpdateDate
         {
-            get { return this._jobLastUpdateDate.GetValueOrDefault(); }
+            get { return this._jobLastUpdateDate; }
             set { this._jobLastUpdateDate = value; }
         }
 

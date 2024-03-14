@@ -89,7 +89,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("deprecationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enhancedImageMetadataEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnhancedImageMetadataEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

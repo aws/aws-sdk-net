@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -98,13 +98,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DedicatedLogVolume", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.DedicatedLogVolume = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Encrypted", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -122,19 +122,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IAMDatabaseAuthenticationEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("InstanceCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.InstanceCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Iops", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -158,7 +158,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MultiTenant", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MultiTenant = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -170,19 +170,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("OriginalSnapshotCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.OriginalSnapshotCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PercentProgress", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PercentProgress = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Port", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -195,13 +195,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SnapshotCreateTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SnapshotDatabaseTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SnapshotDatabaseTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -237,7 +237,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("StorageThroughput", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.StorageThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -46,9 +46,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// capacity when a scaling policy is triggered. The default is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool DynamicScalingInSuspended
+        public bool? DynamicScalingInSuspended
         {
-            get { return this._dynamicScalingInSuspended.GetValueOrDefault(); }
+            get { return this._dynamicScalingInSuspended; }
             set { this._dynamicScalingInSuspended = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// to add capacity when a scaling policy is triggered. The default is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool DynamicScalingOutSuspended
+        public bool? DynamicScalingOutSuspended
         {
-            get { return this._dynamicScalingOutSuspended.GetValueOrDefault(); }
+            get { return this._dynamicScalingOutSuspended; }
             set { this._dynamicScalingOutSuspended = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The default is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool ScheduledScalingSuspended
+        public bool? ScheduledScalingSuspended
         {
-            get { return this._scheduledScalingSuspended.GetValueOrDefault(); }
+            get { return this._scheduledScalingSuspended; }
             set { this._scheduledScalingSuspended = value; }
         }
 

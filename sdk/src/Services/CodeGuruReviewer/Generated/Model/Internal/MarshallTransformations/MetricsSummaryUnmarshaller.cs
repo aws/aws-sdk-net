@@ -65,19 +65,19 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FindingsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FindingsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MeteredLinesOfCodeCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MeteredLinesOfCodeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SuppressedLinesOfCodeCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SuppressedLinesOfCodeCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

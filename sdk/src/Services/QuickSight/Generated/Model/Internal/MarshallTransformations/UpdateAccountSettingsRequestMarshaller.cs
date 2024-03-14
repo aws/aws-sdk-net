@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTerminationProtectionEnabled())
                 {
                     context.Writer.WritePropertyName("TerminationProtectionEnabled");
-                    context.Writer.Write(publicRequest.TerminationProtectionEnabled);
+                    context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

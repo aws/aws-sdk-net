@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.WorkSpacesThinClient")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon WorkSpaces Thin Client. Initial release of Amazon WorkSpaces Thin Client")]
 #elif NETCOREAPP3_1

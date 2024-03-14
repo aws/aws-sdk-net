@@ -90,9 +90,9 @@ namespace Amazon.XRay.Model
         /// The time, in Unix seconds, at which the insight ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.XRay.Model
         /// The time, in Unix seconds, that the insight was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.XRay.Model
         /// The time, in Unix seconds, at which the insight began.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHasCustomEventSelectors())
             {
                 context.Writer.WritePropertyName("HasCustomEventSelectors");
-                context.Writer.Write(requestObject.HasCustomEventSelectors);
+                context.Writer.Write(requestObject.HasCustomEventSelectors.Value);
             }
 
             if(requestObject.IsSetHomeRegion())
@@ -72,19 +72,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeGlobalServiceEvents())
             {
                 context.Writer.WritePropertyName("IncludeGlobalServiceEvents");
-                context.Writer.Write(requestObject.IncludeGlobalServiceEvents);
+                context.Writer.Write(requestObject.IncludeGlobalServiceEvents.Value);
             }
 
             if(requestObject.IsSetIsMultiRegionTrail())
             {
                 context.Writer.WritePropertyName("IsMultiRegionTrail");
-                context.Writer.Write(requestObject.IsMultiRegionTrail);
+                context.Writer.Write(requestObject.IsMultiRegionTrail.Value);
             }
 
             if(requestObject.IsSetIsOrganizationTrail())
             {
                 context.Writer.WritePropertyName("IsOrganizationTrail");
-                context.Writer.Write(requestObject.IsOrganizationTrail);
+                context.Writer.Write(requestObject.IsOrganizationTrail.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -96,7 +96,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogFileValidationEnabled())
             {
                 context.Writer.WritePropertyName("LogFileValidationEnabled");
-                context.Writer.Write(requestObject.LogFileValidationEnabled);
+                context.Writer.Write(requestObject.LogFileValidationEnabled.Value);
             }
 
             if(requestObject.IsSetName())

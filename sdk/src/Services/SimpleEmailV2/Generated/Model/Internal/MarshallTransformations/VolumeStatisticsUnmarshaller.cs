@@ -65,25 +65,25 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InboxRawCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InboxRawCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProjectedInbox", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProjectedInbox = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProjectedSpam", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProjectedSpam = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SpamRawCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SpamRawCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -66,7 +66,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableSSO())
             {
                 context.Writer.WritePropertyName("disableSSO");
-                context.Writer.Write(requestObject.DisableSSO);
+                context.Writer.Write(requestObject.DisableSSO.Value);
             }
 
             if(requestObject.IsSetLogonLanguage())
@@ -89,7 +89,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPortNumber())
             {
                 context.Writer.WritePropertyName("portNumber");
-                context.Writer.Write(requestObject.PortNumber);
+                context.Writer.Write(requestObject.PortNumber.Value);
             }
 
             if(requestObject.IsSetPrivateLinkServiceName())

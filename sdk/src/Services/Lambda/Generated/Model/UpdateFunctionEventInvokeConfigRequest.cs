@@ -134,9 +134,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=21600)]
-        public int MaximumEventAgeInSeconds
+        public int? MaximumEventAgeInSeconds
         {
-            get { return this._maximumEventAgeInSeconds.GetValueOrDefault(); }
+            get { return this._maximumEventAgeInSeconds; }
             set { this._maximumEventAgeInSeconds = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Lambda.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
-        public int MaximumRetryAttempts
+        public int? MaximumRetryAttempts
         {
-            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            get { return this._maximumRetryAttempts; }
             set { this._maximumRetryAttempts = value; }
         }
 

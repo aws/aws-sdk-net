@@ -69,9 +69,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
-        public long EndTime
+        public long? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
-        public long First
+        public long? First
         {
-            get { return this._first.GetValueOrDefault(); }
+            get { return this._first; }
             set { this._first = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
-        public long Last
+        public long? Last
         {
-            get { return this._last.GetValueOrDefault(); }
+            get { return this._last; }
             set { this._last = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
-        public long StartTime
+        public long? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

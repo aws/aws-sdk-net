@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.MigrationHubRefactorSpaces")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Migration Hub Refactor Spaces. This is the initial SDK release for AWS Migration Hub Refactor Spaces")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

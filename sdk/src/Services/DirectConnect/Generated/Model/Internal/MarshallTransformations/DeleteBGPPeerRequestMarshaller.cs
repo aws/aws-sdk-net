@@ -70,7 +70,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAsn())
                 {
                     context.Writer.WritePropertyName("asn");
-                    context.Writer.Write(publicRequest.Asn);
+                    context.Writer.Write(publicRequest.Asn.Value);
                 }
 
                 if(publicRequest.IsSetBgpPeerId())

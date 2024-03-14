@@ -181,9 +181,9 @@ namespace Amazon.DirectoryService.Model
         /// These security rules impact an internal network interface that is not exposed publicly.
         /// </para>
         /// </summary>
-        public bool UpdateSecurityGroupForDirectoryControllers
+        public bool? UpdateSecurityGroupForDirectoryControllers
         {
-            get { return this._updateSecurityGroupForDirectoryControllers.GetValueOrDefault(); }
+            get { return this._updateSecurityGroupForDirectoryControllers; }
             set { this._updateSecurityGroupForDirectoryControllers = value; }
         }
 

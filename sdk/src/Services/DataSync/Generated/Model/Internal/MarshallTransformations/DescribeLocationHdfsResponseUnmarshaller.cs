@@ -65,13 +65,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BlockSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.BlockSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReplicationFactor", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ReplicationFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }

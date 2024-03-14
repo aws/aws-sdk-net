@@ -42,9 +42,9 @@ namespace Amazon.EC2.Model
         /// The ICMP code. A value of -1 means all codes for the specified ICMP type.
         /// </para>
         /// </summary>
-        public int Code
+        public int? Code
         {
-            get { return this._code.GetValueOrDefault(); }
+            get { return this._code; }
             set { this._code = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.EC2.Model
         /// The ICMP type. A value of -1 means all types.
         /// </para>
         /// </summary>
-        public int Type
+        public int? Type
         {
-            get { return this._type.GetValueOrDefault(); }
+            get { return this._type; }
             set { this._type = value; }
         }
 

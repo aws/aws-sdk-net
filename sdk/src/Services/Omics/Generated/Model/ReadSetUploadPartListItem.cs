@@ -67,9 +67,9 @@ namespace Amazon.Omics.Model
         ///  The time stamp for when a direct upload was created. 
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Omics.Model
         ///  The time stamp for the most recent update to an uploaded part. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10000)]
-        public int PartNumber
+        public int? PartNumber
         {
-            get { return this._partNumber.GetValueOrDefault(); }
+            get { return this._partNumber; }
             set { this._partNumber = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Omics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5368709120)]
-        public long PartSize
+        public long? PartSize
         {
-            get { return this._partSize.GetValueOrDefault(); }
+            get { return this._partSize; }
             set { this._partSize = value; }
         }
 

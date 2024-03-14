@@ -45,9 +45,9 @@ namespace Amazon.SageMaker.Model
         /// behind the endpoint at the time of the request.
         /// </para>
         /// </summary>
-        public int InvocationsPerInstance
+        public int? InvocationsPerInstance
         {
-            get { return this._invocationsPerInstance.GetValueOrDefault(); }
+            get { return this._invocationsPerInstance; }
             set { this._invocationsPerInstance = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SageMaker.Model
         /// in the container.
         /// </para>
         /// </summary>
-        public int ModelLatency
+        public int? ModelLatency
         {
-            get { return this._modelLatency.GetValueOrDefault(); }
+            get { return this._modelLatency; }
             set { this._modelLatency = value; }
         }
 

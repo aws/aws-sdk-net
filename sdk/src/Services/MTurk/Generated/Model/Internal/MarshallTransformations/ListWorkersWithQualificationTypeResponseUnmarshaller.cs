@@ -59,7 +59,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumResults", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NumResults = unmarshaller.Unmarshall(context);
                     continue;
                 }

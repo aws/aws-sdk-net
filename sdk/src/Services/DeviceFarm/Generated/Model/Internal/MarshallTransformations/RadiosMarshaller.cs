@@ -48,25 +48,25 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBluetooth())
             {
                 context.Writer.WritePropertyName("bluetooth");
-                context.Writer.Write(requestObject.Bluetooth);
+                context.Writer.Write(requestObject.Bluetooth.Value);
             }
 
             if(requestObject.IsSetGps())
             {
                 context.Writer.WritePropertyName("gps");
-                context.Writer.Write(requestObject.Gps);
+                context.Writer.Write(requestObject.Gps.Value);
             }
 
             if(requestObject.IsSetNfc())
             {
                 context.Writer.WritePropertyName("nfc");
-                context.Writer.Write(requestObject.Nfc);
+                context.Writer.Write(requestObject.Nfc.Value);
             }
 
             if(requestObject.IsSetWifi())
             {
                 context.Writer.WritePropertyName("wifi");
-                context.Writer.Write(requestObject.Wifi);
+                context.Writer.Write(requestObject.Wifi.Value);
             }
 
         }

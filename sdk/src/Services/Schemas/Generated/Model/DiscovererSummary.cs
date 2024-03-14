@@ -46,9 +46,9 @@ namespace Amazon.Schemas.Model
         /// The Status if the discoverer will discover schemas from events sent from another account.
         /// </para>
         /// </summary>
-        public bool CrossAccount
+        public bool? CrossAccount
         {
-            get { return this._crossAccount.GetValueOrDefault(); }
+            get { return this._crossAccount; }
             set { this._crossAccount = value; }
         }
 

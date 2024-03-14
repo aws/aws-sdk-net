@@ -70,7 +70,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletePipelineProvisioningRepository())
                 {
                     context.Writer.WritePropertyName("deletePipelineProvisioningRepository");
-                    context.Writer.Write(publicRequest.DeletePipelineProvisioningRepository);
+                    context.Writer.Write(publicRequest.DeletePipelineProvisioningRepository.Value);
                 }
 
                 if(publicRequest.IsSetPipelineCodebuildRoleArn())

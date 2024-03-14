@@ -65,7 +65,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeprecationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DeprecationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReleaseDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReleaseDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

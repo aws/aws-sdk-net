@@ -58,9 +58,9 @@ namespace Amazon.MediaLive.Model
         /// for each PES packet.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AudioFramesPerPes
+        public int? AudioFramesPerPes
         {
-            get { return this._audioFramesPerPes.GetValueOrDefault(); }
+            get { return this._audioFramesPerPes; }
             set { this._audioFramesPerPes = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.MediaLive.Model
         /// once per segment file.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PatInterval
+        public int? PatInterval
         {
-            get { return this._patInterval.GetValueOrDefault(); }
+            get { return this._patInterval; }
             set { this._patInterval = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.MediaLive.Model
         /// Clock References (PCRs) inserted into the transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int PcrPeriod
+        public int? PcrPeriod
         {
-            get { return this._pcrPeriod.GetValueOrDefault(); }
+            get { return this._pcrPeriod; }
             set { this._pcrPeriod = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.MediaLive.Model
         /// once per segment file.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PmtInterval
+        public int? PmtInterval
         {
-            get { return this._pmtInterval.GetValueOrDefault(); }
+            get { return this._pmtInterval; }
             set { this._pmtInterval = value; }
         }
 
@@ -262,9 +262,9 @@ namespace Amazon.MediaLive.Model
         /// Program Map Table.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int ProgramNum
+        public int? ProgramNum
         {
-            get { return this._programNum.GetValueOrDefault(); }
+            get { return this._programNum; }
             set { this._programNum = value; }
         }
 
@@ -344,9 +344,9 @@ namespace Amazon.MediaLive.Model
         /// field in the Program Map Table.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int TransportStreamId
+        public int? TransportStreamId
         {
-            get { return this._transportStreamId.GetValueOrDefault(); }
+            get { return this._transportStreamId; }
             set { this._transportStreamId = value; }
         }
 

@@ -164,9 +164,9 @@ namespace Amazon.SageMaker.Model
         /// The last heartbeat received from the device.
         /// </para>
         /// </summary>
-        public DateTime LatestHeartbeat
+        public DateTime? LatestHeartbeat
         {
-            get { return this._latestHeartbeat.GetValueOrDefault(); }
+            get { return this._latestHeartbeat; }
             set { this._latestHeartbeat = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.SageMaker.Model
         /// The timestamp of the last registration or de-reregistration.
         /// </para>
         /// </summary>
-        public DateTime RegistrationTime
+        public DateTime? RegistrationTime
         {
-            get { return this._registrationTime.GetValueOrDefault(); }
+            get { return this._registrationTime; }
             set { this._registrationTime = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maximumBuildsAllowed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumBuildsAllowed = unmarshaller.Unmarshall(context);
                     continue;
                 }

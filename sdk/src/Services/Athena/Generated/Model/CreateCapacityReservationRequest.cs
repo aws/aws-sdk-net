@@ -83,9 +83,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=24)]
-        public int TargetDpus
+        public int? TargetDpus
         {
-            get { return this._targetDpus.GetValueOrDefault(); }
+            get { return this._targetDpus; }
             set { this._targetDpus = value; }
         }
 

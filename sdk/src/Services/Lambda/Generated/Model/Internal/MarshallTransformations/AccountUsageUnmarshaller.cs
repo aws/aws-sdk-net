@@ -65,13 +65,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FunctionCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FunctionCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalCodeSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalCodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

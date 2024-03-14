@@ -65,55 +65,55 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("totalBytesClassified", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalBytesClassified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalDetections", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalDetections = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalDetectionsSuppressed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalDetectionsSuppressed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalItemsClassified", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsClassified = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalItemsSensitive", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSensitive = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalItemsSkipped", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkipped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalItemsSkippedInvalidEncryption", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkippedInvalidEncryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalItemsSkippedInvalidKms", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkippedInvalidKms = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalItemsSkippedPermissionDenied", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalItemsSkippedPermissionDenied = unmarshaller.Unmarshall(context);
                     continue;
                 }

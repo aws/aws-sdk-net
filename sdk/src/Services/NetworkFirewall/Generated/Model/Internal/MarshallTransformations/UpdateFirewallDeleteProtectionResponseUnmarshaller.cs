@@ -53,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeleteProtection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DeleteProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }

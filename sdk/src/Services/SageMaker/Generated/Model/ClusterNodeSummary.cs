@@ -123,9 +123,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 

@@ -58,9 +58,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether to delete the instance Elastic IP address.
         /// </para>
         /// </summary>
-        public bool DeleteElasticIp
+        public bool? DeleteElasticIp
         {
-            get { return this._deleteElasticIp.GetValueOrDefault(); }
+            get { return this._deleteElasticIp; }
             set { this._deleteElasticIp = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.OpsWorks.Model
         /// Whether to delete the instance's Amazon EBS volumes.
         /// </para>
         /// </summary>
-        public bool DeleteVolumes
+        public bool? DeleteVolumes
         {
-            get { return this._deleteVolumes.GetValueOrDefault(); }
+            get { return this._deleteVolumes; }
             set { this._deleteVolumes = value; }
         }
 

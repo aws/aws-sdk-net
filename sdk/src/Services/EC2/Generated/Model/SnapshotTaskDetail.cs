@@ -69,9 +69,9 @@ namespace Amazon.EC2.Model
         /// The size of the disk in the snapshot, in GiB.
         /// </para>
         /// </summary>
-        public double DiskImageSize
+        public double? DiskImageSize
         {
-            get { return this._diskImageSize.GetValueOrDefault(); }
+            get { return this._diskImageSize; }
             set { this._diskImageSize = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the snapshot is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 

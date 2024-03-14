@@ -88,7 +88,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("Priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -146,9 +146,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool ExactSettings
+        public bool? ExactSettings
         {
-            get { return this._exactSettings.GetValueOrDefault(); }
+            get { return this._exactSettings; }
             set { this._exactSettings = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.EntityResolution.Model
         /// in the output to (123)-456-7890.
         /// </para>
         /// </summary>
-        public bool ApplyNormalization
+        public bool? ApplyNormalization
         {
-            get { return this._applyNormalization.GetValueOrDefault(); }
+            get { return this._applyNormalization; }
             set { this._applyNormalization = value; }
         }
 

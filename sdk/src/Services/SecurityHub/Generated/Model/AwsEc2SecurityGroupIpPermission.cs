@@ -53,9 +53,9 @@ namespace Amazon.SecurityHub.Model
         /// you must specify all codes. 
         /// </para>
         /// </summary>
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.SecurityHub.Model
         /// types, you must specify all codes.
         /// </para>
         /// </summary>
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

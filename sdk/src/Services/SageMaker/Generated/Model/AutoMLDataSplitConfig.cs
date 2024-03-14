@@ -51,9 +51,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float ValidationFraction
+        public float? ValidationFraction
         {
-            get { return this._validationFraction.GetValueOrDefault(); }
+            get { return this._validationFraction; }
             set { this._validationFraction = value; }
         }
 

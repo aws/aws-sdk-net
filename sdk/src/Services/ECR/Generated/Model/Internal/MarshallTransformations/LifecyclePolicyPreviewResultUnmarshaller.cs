@@ -71,7 +71,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("appliedRulePriority", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AppliedRulePriority = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("imagePushedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ImagePushedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

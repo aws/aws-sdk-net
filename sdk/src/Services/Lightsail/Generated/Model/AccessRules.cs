@@ -61,9 +61,9 @@ namespace Amazon.Lightsail.Model
         /// ACL, or to private using the <c>private</c> ACL.
         /// </para>
         /// </summary>
-        public bool AllowPublicOverrides
+        public bool? AllowPublicOverrides
         {
-            get { return this._allowPublicOverrides.GetValueOrDefault(); }
+            get { return this._allowPublicOverrides; }
             set { this._allowPublicOverrides = value; }
         }
 

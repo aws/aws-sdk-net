@@ -120,9 +120,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Linking support for a skill.
         /// </para>
         /// </summary>
-        public bool SupportsLinking
+        public bool? SupportsLinking
         {
-            get { return this._supportsLinking.GetValueOrDefault(); }
+            get { return this._supportsLinking; }
             set { this._supportsLinking = value; }
         }
 

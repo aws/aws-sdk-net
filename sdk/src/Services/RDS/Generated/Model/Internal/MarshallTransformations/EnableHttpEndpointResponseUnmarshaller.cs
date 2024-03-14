@@ -83,7 +83,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("HttpEndpointEnabled", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.HttpEndpointEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -151,9 +151,9 @@ namespace Amazon.QuickSight.Model
         /// and data source resource that is a dependency of the dashboard is also exported.
         /// </para>
         /// </summary>
-        public bool IncludeAllDependencies
+        public bool? IncludeAllDependencies
         {
-            get { return this._includeAllDependencies.GetValueOrDefault(); }
+            get { return this._includeAllDependencies; }
             set { this._includeAllDependencies = value; }
         }
 
@@ -171,9 +171,9 @@ namespace Amazon.QuickSight.Model
         /// associated with each resource are exported. 
         /// </para>
         /// </summary>
-        public bool IncludePermissions
+        public bool? IncludePermissions
         {
-            get { return this._includePermissions.GetValueOrDefault(); }
+            get { return this._includePermissions; }
             set { this._includePermissions = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.QuickSight.Model
         /// resource are exported.
         /// </para>
         /// </summary>
-        public bool IncludeTags
+        public bool? IncludeTags
         {
-            get { return this._includeTags.GetValueOrDefault(); }
+            get { return this._includeTags; }
             set { this._includeTags = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeQuerySpellCheckSuggestions())
             {
                 context.Writer.WritePropertyName("IncludeQuerySpellCheckSuggestions");
-                context.Writer.Write(requestObject.IncludeQuerySpellCheckSuggestions);
+                context.Writer.Write(requestObject.IncludeQuerySpellCheckSuggestions.Value);
             }
 
         }

@@ -85,9 +85,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ExpectedRpoInSecs
+        public int? ExpectedRpoInSecs
         {
-            get { return this._expectedRpoInSecs.GetValueOrDefault(); }
+            get { return this._expectedRpoInSecs; }
             set { this._expectedRpoInSecs = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ExpectedRtoInSecs
+        public int? ExpectedRtoInSecs
         {
-            get { return this._expectedRtoInSecs.GetValueOrDefault(); }
+            get { return this._expectedRtoInSecs; }
             set { this._expectedRtoInSecs = value; }
         }
 

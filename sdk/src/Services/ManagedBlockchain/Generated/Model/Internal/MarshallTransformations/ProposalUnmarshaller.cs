@@ -77,7 +77,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpirationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,13 +101,13 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NoVoteCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoVoteCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutstandingVoteCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OutstandingVoteCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,7 +143,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("YesVoteCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.YesVoteCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

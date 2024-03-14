@@ -92,7 +92,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetRequestId())
@@ -133,7 +133,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStorageCapacity())
                 {
                     context.Writer.WritePropertyName("storageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity);
+                    context.Writer.Write(publicRequest.StorageCapacity.Value);
                 }
 
                 if(publicRequest.IsSetTags())

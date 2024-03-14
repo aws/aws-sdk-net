@@ -56,13 +56,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("InstancesToUpdateOnRollback", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.InstancesToUpdateOnRollback = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PercentageCompleteOnRollback", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.PercentageCompleteOnRollback = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -80,7 +80,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RollbackStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.RollbackStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -71,7 +71,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("includeExecutionData", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeExecutionData = unmarshaller.Unmarshall(context);
                     continue;
                 }

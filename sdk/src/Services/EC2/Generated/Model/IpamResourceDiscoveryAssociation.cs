@@ -163,9 +163,9 @@ namespace Amazon.EC2.Model
         /// resource discovery is created for your IPAM and it's associated with your IPAM.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 

@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("output", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         response.Output = unmarshaller.Unmarshall(context);
                         continue;
                     }

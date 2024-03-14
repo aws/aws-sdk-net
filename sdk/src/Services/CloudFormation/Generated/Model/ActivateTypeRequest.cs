@@ -68,9 +68,9 @@ namespace Amazon.CloudFormation.Model
         /// The default is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool AutoUpdate
+        public bool? AutoUpdate
         {
-            get { return this._autoUpdate.GetValueOrDefault(); }
+            get { return this._autoUpdate; }
             set { this._autoUpdate = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
-        public long MajorVersion
+        public long? MajorVersion
         {
-            get { return this._majorVersion.GetValueOrDefault(); }
+            get { return this._majorVersion; }
             set { this._majorVersion = value; }
         }
 

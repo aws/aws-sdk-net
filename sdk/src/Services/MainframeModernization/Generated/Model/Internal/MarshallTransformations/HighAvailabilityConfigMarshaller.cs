@@ -48,7 +48,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredCapacity())
             {
                 context.Writer.WritePropertyName("desiredCapacity");
-                context.Writer.Write(requestObject.DesiredCapacity);
+                context.Writer.Write(requestObject.DesiredCapacity.Value);
             }
 
         }

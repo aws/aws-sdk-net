@@ -71,7 +71,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 }
                 if (context.TestExpression("warningCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WarningCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

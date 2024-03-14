@@ -45,9 +45,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The severity of the finding is critical and should be addressed immediately.
         /// </para>
         /// </summary>
-        public double Critical
+        public double? Critical
         {
-            get { return this._critical.GetValueOrDefault(); }
+            get { return this._critical; }
             set { this._critical = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The severity of the finding is high and should be addressed as a near-term priority.
         /// </para>
         /// </summary>
-        public double High
+        public double? High
         {
-            get { return this._high.GetValueOrDefault(); }
+            get { return this._high; }
             set { this._high = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The finding is related to quality or readability improvements and not considered actionable.
         /// </para>
         /// </summary>
-        public double Info
+        public double? Info
         {
-            get { return this._info.GetValueOrDefault(); }
+            get { return this._info; }
             set { this._info = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The severity of the finding is low and does require action on its own.
         /// </para>
         /// </summary>
-        public double Low
+        public double? Low
         {
-            get { return this._low.GetValueOrDefault(); }
+            get { return this._low; }
             set { this._low = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The severity of the finding is medium and should be addressed as a mid-term priority.
         /// </para>
         /// </summary>
-        public double Medium
+        public double? Medium
         {
-            get { return this._medium.GetValueOrDefault(); }
+            get { return this._medium; }
             set { this._medium = value; }
         }
 

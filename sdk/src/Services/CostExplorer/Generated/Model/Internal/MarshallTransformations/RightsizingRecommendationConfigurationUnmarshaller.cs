@@ -65,7 +65,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BenefitsConsidered", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BenefitsConsidered = unmarshaller.Unmarshall(context);
                     continue;
                 }

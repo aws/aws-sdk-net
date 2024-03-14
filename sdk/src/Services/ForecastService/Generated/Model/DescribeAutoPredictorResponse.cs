@@ -59,9 +59,9 @@ namespace Amazon.ForecastService.Model
         /// The timestamp of the CreateAutoPredictor request.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.ForecastService.Model
         /// The estimated time remaining in minutes for the predictor training job to complete.
         /// </para>
         /// </summary>
-        public long EstimatedTimeRemainingInMinutes
+        public long? EstimatedTimeRemainingInMinutes
         {
-            get { return this._estimatedTimeRemainingInMinutes.GetValueOrDefault(); }
+            get { return this._estimatedTimeRemainingInMinutes; }
             set { this._estimatedTimeRemainingInMinutes = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.ForecastService.Model
         /// the prediction length.
         /// </para>
         /// </summary>
-        public int ForecastHorizon
+        public int? ForecastHorizon
         {
-            get { return this._forecastHorizon.GetValueOrDefault(); }
+            get { return this._forecastHorizon; }
             set { this._forecastHorizon = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime LastModificationTime
+        public DateTime? LastModificationTime
         {
-            get { return this._lastModificationTime.GetValueOrDefault(); }
+            get { return this._lastModificationTime; }
             set { this._lastModificationTime = value; }
         }
 

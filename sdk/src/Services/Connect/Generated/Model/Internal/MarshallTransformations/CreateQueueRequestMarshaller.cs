@@ -83,7 +83,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxContacts())
                 {
                     context.Writer.WritePropertyName("MaxContacts");
-                    context.Writer.Write(publicRequest.MaxContacts);
+                    context.Writer.Write(publicRequest.MaxContacts.Value);
                 }
 
                 if(publicRequest.IsSetName())

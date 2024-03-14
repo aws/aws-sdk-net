@@ -133,9 +133,9 @@ namespace Amazon.Lightsail.Model
         /// due to operating system updates or new application releases.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.Lightsail.Model
         /// sizes. 
         /// </para>
         /// </summary>
-        public int MinPower
+        public int? MinPower
         {
-            get { return this._minPower.GetValueOrDefault(); }
+            get { return this._minPower; }
             set { this._minPower = value; }
         }
 

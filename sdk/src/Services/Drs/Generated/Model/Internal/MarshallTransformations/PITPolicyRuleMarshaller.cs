@@ -48,25 +48,25 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("interval");
-                context.Writer.Write(requestObject.Interval);
+                context.Writer.Write(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetRetentionDuration())
             {
                 context.Writer.WritePropertyName("retentionDuration");
-                context.Writer.Write(requestObject.RetentionDuration);
+                context.Writer.Write(requestObject.RetentionDuration.Value);
             }
 
             if(requestObject.IsSetRuleID())
             {
                 context.Writer.WritePropertyName("ruleID");
-                context.Writer.Write(requestObject.RuleID);
+                context.Writer.Write(requestObject.RuleID.Value);
             }
 
             if(requestObject.IsSetUnits())

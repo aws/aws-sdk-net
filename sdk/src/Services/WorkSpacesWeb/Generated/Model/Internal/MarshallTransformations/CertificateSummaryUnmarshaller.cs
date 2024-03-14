@@ -71,13 +71,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("notValidAfter", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NotValidAfter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("notValidBefore", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NotValidBefore = unmarshaller.Unmarshall(context);
                     continue;
                 }

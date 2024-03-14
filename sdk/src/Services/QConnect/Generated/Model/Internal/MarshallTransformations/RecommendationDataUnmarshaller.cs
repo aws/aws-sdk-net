@@ -89,7 +89,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("relevanceScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RelevanceScore = unmarshaller.Unmarshall(context);
                     continue;
                 }

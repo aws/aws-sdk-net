@@ -43,9 +43,9 @@ namespace Amazon.Glue.Model
         ///  <c>True</c> if the migration has completed, or <c>False</c> otherwise.
         /// </para>
         /// </summary>
-        public bool ImportCompleted
+        public bool? ImportCompleted
         {
-            get { return this._importCompleted.GetValueOrDefault(); }
+            get { return this._importCompleted; }
             set { this._importCompleted = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Glue.Model
         /// The time that the migration was started.
         /// </para>
         /// </summary>
-        public DateTime ImportTime
+        public DateTime? ImportTime
         {
-            get { return this._importTime.GetValueOrDefault(); }
+            get { return this._importTime; }
             set { this._importTime = value; }
         }
 

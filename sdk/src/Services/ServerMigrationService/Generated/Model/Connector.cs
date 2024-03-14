@@ -50,9 +50,9 @@ namespace Amazon.ServerMigrationService.Model
         /// The time the connector was associated.
         /// </para>
         /// </summary>
-        public DateTime AssociatedOn
+        public DateTime? AssociatedOn
         {
-            get { return this._associatedOn.GetValueOrDefault(); }
+            get { return this._associatedOn; }
             set { this._associatedOn = value; }
         }
 

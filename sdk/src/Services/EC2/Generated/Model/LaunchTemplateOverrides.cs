@@ -127,9 +127,9 @@ namespace Amazon.EC2.Model
         /// You can set the same priority for different launch template overrides.
         /// </para>
         /// </summary>
-        public double Priority
+        public double? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.EC2.Model
         /// The number of units provided by the specified instance type.
         /// </para>
         /// </summary>
-        public double WeightedCapacity
+        public double? WeightedCapacity
         {
-            get { return this._weightedCapacity.GetValueOrDefault(); }
+            get { return this._weightedCapacity; }
             set { this._weightedCapacity = value; }
         }
 

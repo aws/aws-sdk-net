@@ -65,31 +65,31 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isCreatable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCreatable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isDefaultedOnCreate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDefaultedOnCreate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isNullable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNullable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isUpdatable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsUpdatable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isUpsertable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsUpsertable = unmarshaller.Unmarshall(context);
                     continue;
                 }

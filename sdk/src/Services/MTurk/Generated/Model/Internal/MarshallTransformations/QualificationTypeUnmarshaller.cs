@@ -71,19 +71,19 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AutoGranted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoGranted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoGrantedValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutoGrantedValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsRequestable", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRequestable = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetryDelayInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RetryDelayInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TestDurationInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TestDurationInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

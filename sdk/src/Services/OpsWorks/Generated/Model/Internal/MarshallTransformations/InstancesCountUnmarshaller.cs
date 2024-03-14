@@ -65,121 +65,121 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Assigning", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Assigning = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Booting", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Booting = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConnectionLost", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConnectionLost = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Deregistering", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Deregistering = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Online", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Online = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Pending", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Rebooting", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Rebooting = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Registered", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Registered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Registering", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Registering = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Requested", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Requested = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RunningSetup", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningSetup = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SetupFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SetupFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ShuttingDown", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShuttingDown = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StopFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StopFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Stopped", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Stopped = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Stopping", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Stopping = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Terminated", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Terminated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Terminating", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Terminating = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Unassigning", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Unassigning = unmarshaller.Unmarshall(context);
                     continue;
                 }

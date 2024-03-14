@@ -43,9 +43,9 @@ namespace Amazon.LookoutforVision.Model
         /// The overall F1 score metric for the trained model.
         /// </para>
         /// </summary>
-        public float F1Score
+        public float? F1Score
         {
-            get { return this._f1Score.GetValueOrDefault(); }
+            get { return this._f1Score; }
             set { this._f1Score = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.LookoutforVision.Model
         /// The overall precision metric value for the trained model.
         /// </para>
         /// </summary>
-        public float Precision
+        public float? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.LookoutforVision.Model
         /// The overall recall metric value for the trained model. 
         /// </para>
         /// </summary>
-        public float Recall
+        public float? Recall
         {
-            get { return this._recall.GetValueOrDefault(); }
+            get { return this._recall; }
             set { this._recall = value; }
         }
 

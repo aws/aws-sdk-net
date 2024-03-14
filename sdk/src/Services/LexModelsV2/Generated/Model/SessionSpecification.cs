@@ -111,9 +111,9 @@ namespace Amazon.LexModelsV2.Model
         /// combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
-        public long ConversationDurationSeconds
+        public long? ConversationDurationSeconds
         {
-            get { return this._conversationDurationSeconds.GetValueOrDefault(); }
+            get { return this._conversationDurationSeconds; }
             set { this._conversationDurationSeconds = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.LexModelsV2.Model
         /// combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
-        public DateTime ConversationEndTime
+        public DateTime? ConversationEndTime
         {
-            get { return this._conversationEndTime.GetValueOrDefault(); }
+            get { return this._conversationEndTime; }
             set { this._conversationEndTime = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.LexModelsV2.Model
         /// combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
-        public DateTime ConversationStartTime
+        public DateTime? ConversationStartTime
         {
-            get { return this._conversationStartTime.GetValueOrDefault(); }
+            get { return this._conversationStartTime; }
             set { this._conversationStartTime = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.LexModelsV2.Model
         /// The number of turns that the session took.
         /// </para>
         /// </summary>
-        public long NumberOfTurns
+        public long? NumberOfTurns
         {
-            get { return this._numberOfTurns.GetValueOrDefault(); }
+            get { return this._numberOfTurns; }
             set { this._numberOfTurns = value; }
         }
 

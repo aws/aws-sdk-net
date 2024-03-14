@@ -76,7 +76,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSimilarityThreshold())
                 {
                     context.Writer.WritePropertyName("SimilarityThreshold");
-                    context.Writer.Write(publicRequest.SimilarityThreshold);
+                    context.Writer.Write(publicRequest.SimilarityThreshold.Value);
                 }
 
                 if(publicRequest.IsSetSourceImage())

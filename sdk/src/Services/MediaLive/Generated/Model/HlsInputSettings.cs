@@ -46,9 +46,9 @@ namespace Amazon.MediaLive.Model
         /// second, as in an HLS manifest.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Bandwidth
+        public int? Bandwidth
         {
-            get { return this._bandwidth.GetValueOrDefault(); }
+            get { return this._bandwidth; }
             set { this._bandwidth = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.MediaLive.Model
         /// the m3u8.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BufferSegments
+        public int? BufferSegments
         {
-            get { return this._bufferSegments.GetValueOrDefault(); }
+            get { return this._bufferSegments; }
             set { this._bufferSegments = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.MediaLive.Model
         /// to read a manifest or segment must fail before the input is considered unavailable.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Retries
+        public int? Retries
         {
-            get { return this._retries.GetValueOrDefault(); }
+            get { return this._retries; }
             set { this._retries = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.MediaLive.Model
         /// an attempt to read a manifest or segment fails.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RetryInterval
+        public int? RetryInterval
         {
-            get { return this._retryInterval.GetValueOrDefault(); }
+            get { return this._retryInterval; }
             set { this._retryInterval = value; }
         }
 

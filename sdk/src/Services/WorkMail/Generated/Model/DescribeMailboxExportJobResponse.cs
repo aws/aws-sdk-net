@@ -71,9 +71,9 @@ namespace Amazon.WorkMail.Model
         /// The mailbox export job end timestamp.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int EstimatedProgress
+        public int? EstimatedProgress
         {
-            get { return this._estimatedProgress.GetValueOrDefault(); }
+            get { return this._estimatedProgress; }
             set { this._estimatedProgress = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.WorkMail.Model
         /// The mailbox export job start timestamp.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

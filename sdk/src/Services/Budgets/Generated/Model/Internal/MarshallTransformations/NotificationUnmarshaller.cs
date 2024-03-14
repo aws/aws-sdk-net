@@ -83,7 +83,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Threshold", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

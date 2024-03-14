@@ -204,9 +204,9 @@ namespace Amazon.Lightsail.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=-1, Max=65535)]
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -328,9 +328,9 @@ namespace Amazon.Lightsail.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=-1, Max=65535)]
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

@@ -70,13 +70,13 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCategoryId())
                 {
                     context.Writer.WritePropertyName("CategoryId");
-                    context.Writer.Write(publicRequest.CategoryId);
+                    context.Writer.Write(publicRequest.CategoryId.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

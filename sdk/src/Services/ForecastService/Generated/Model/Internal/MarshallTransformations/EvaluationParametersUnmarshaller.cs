@@ -65,13 +65,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BackTestWindowOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BackTestWindowOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NumberOfBacktestWindows", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfBacktestWindows = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -109,9 +109,9 @@ namespace Amazon.LookoutforVision.Model
         /// <c>IsAnomalous</c>.
         /// </para>
         /// </summary>
-        public float Confidence
+        public float? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.LookoutforVision.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool IsAnomalous
+        public bool? IsAnomalous
         {
-            get { return this._isAnomalous.GetValueOrDefault(); }
+            get { return this._isAnomalous; }
             set { this._isAnomalous = value; }
         }
 

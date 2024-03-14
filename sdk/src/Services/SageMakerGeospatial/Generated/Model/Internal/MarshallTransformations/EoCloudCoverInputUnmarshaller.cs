@@ -65,13 +65,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LowerBound", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.LowerBound = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UpperBound", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.UpperBound = unmarshaller.Unmarshall(context);
                     continue;
                 }

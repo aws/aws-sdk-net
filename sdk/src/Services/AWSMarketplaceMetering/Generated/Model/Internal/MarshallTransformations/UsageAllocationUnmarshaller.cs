@@ -65,7 +65,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllocatedUsageQuantity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AllocatedUsageQuantity = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -69,7 +69,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Flag", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Flag = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -81,7 +81,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SigningAlgorithmType", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SigningAlgorithmType = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -93,13 +93,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DigestAlgorithmType", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DigestAlgorithmType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("KeyTag", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.KeyTag = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -141,13 +141,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("CreatedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastModifiedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

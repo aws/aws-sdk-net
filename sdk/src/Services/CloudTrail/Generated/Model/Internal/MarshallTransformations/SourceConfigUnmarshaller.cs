@@ -71,7 +71,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ApplyToAllRegions", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplyToAllRegions = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -54,13 +54,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocsToInvestigate())
             {
                 context.Writer.WritePropertyName("DocsToInvestigate");
-                context.Writer.Write(requestObject.DocsToInvestigate);
+                context.Writer.Write(requestObject.DocsToInvestigate.Value);
             }
 
             if(requestObject.IsSetExtractDocId())
             {
                 context.Writer.WritePropertyName("ExtractDocId");
-                context.Writer.Write(requestObject.ExtractDocId);
+                context.Writer.Write(requestObject.ExtractDocId.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
@@ -84,13 +84,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetReplicateShardCollections())
             {
                 context.Writer.WritePropertyName("ReplicateShardCollections");
-                context.Writer.Write(requestObject.ReplicateShardCollections);
+                context.Writer.Write(requestObject.ReplicateShardCollections.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
@@ -120,7 +120,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseUpdateLookUp())
             {
                 context.Writer.WritePropertyName("UseUpdateLookUp");
-                context.Writer.Write(requestObject.UseUpdateLookUp);
+                context.Writer.Write(requestObject.UseUpdateLookUp.Value);
             }
 
         }

@@ -122,9 +122,9 @@ namespace Amazon.RAM.Model
         /// that use the specified version of the managed permission.
         /// </para>
         /// </summary>
-        public int FromPermissionVersion
+        public int? FromPermissionVersion
         {
-            get { return this._fromPermissionVersion.GetValueOrDefault(); }
+            get { return this._fromPermissionVersion; }
             set { this._fromPermissionVersion = value; }
         }
 

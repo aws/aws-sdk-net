@@ -87,9 +87,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the event notification subscription is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

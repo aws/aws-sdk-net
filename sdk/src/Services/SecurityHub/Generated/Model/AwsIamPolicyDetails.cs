@@ -51,9 +51,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of users, groups, and roles that the policy is attached to.
         /// </para>
         /// </summary>
-        public int AttachmentCount
+        public int? AttachmentCount
         {
-            get { return this._attachmentCount.GetValueOrDefault(); }
+            get { return this._attachmentCount; }
             set { this._attachmentCount = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the policy can be attached to a user, group, or role.
         /// </para>
         /// </summary>
-        public bool IsAttachable
+        public bool? IsAttachable
         {
-            get { return this._isAttachable.GetValueOrDefault(); }
+            get { return this._isAttachable; }
             set { this._isAttachable = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of users and roles that use the policy to set the permissions boundary.
         /// </para>
         /// </summary>
-        public int PermissionsBoundaryUsageCount
+        public int? PermissionsBoundaryUsageCount
         {
-            get { return this._permissionsBoundaryUsageCount.GetValueOrDefault(); }
+            get { return this._permissionsBoundaryUsageCount; }
             set { this._permissionsBoundaryUsageCount = value; }
         }
 

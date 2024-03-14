@@ -65,7 +65,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableAnswerMachineDetection", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAnswerMachineDetection = unmarshaller.Unmarshall(context);
                     continue;
                 }

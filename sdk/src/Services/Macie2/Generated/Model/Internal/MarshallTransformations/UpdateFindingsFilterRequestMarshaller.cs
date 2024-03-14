@@ -111,7 +111,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPosition())
                 {
                     context.Writer.WritePropertyName("position");
-                    context.Writer.Write(publicRequest.Position);
+                    context.Writer.Write(publicRequest.Position.Value);
                 }
 
                 writer.WriteObjectEnd();

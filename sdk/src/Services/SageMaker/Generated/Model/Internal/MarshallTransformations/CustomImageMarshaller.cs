@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageVersionNumber())
             {
                 context.Writer.WritePropertyName("ImageVersionNumber");
-                context.Writer.Write(requestObject.ImageVersionNumber);
+                context.Writer.Write(requestObject.ImageVersionNumber.Value);
             }
 
         }

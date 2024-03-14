@@ -61,9 +61,9 @@ namespace Amazon.EKS.Model
         /// access entry during cluster creation time.
         /// </para>
         /// </summary>
-        public bool BootstrapClusterCreatorAdminPermissions
+        public bool? BootstrapClusterCreatorAdminPermissions
         {
-            get { return this._bootstrapClusterCreatorAdminPermissions.GetValueOrDefault(); }
+            get { return this._bootstrapClusterCreatorAdminPermissions; }
             set { this._bootstrapClusterCreatorAdminPermissions = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time that the job was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.GlueDataBrew.Model
         /// The date and time that the job was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.GlueDataBrew.Model
         /// data.
         /// </para>
         /// </summary>
-        public int MaxCapacity
+        public int? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -298,9 +298,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxRetries
+        public int? MaxRetries
         {
-            get { return this._maxRetries.GetValueOrDefault(); }
+            get { return this._maxRetries; }
             set { this._maxRetries = value; }
         }
 
@@ -468,9 +468,9 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

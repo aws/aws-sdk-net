@@ -63,9 +63,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether a DB instance supports using a dedicated log volume (DLV).
         /// </para>
         /// </summary>
-        public bool SupportsDedicatedLogVolume
+        public bool? SupportsDedicatedLogVolume
         {
-            get { return this._supportsDedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._supportsDedicatedLogVolume; }
             set { this._supportsDedicatedLogVolume = value; }
         }
 

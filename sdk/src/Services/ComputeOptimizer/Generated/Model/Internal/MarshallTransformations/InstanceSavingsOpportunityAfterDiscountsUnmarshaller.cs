@@ -71,7 +71,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("savingsOpportunityPercentage", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SavingsOpportunityPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

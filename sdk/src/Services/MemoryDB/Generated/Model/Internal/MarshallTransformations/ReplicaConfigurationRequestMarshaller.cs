@@ -48,7 +48,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReplicaCount())
             {
                 context.Writer.WritePropertyName("ReplicaCount");
-                context.Writer.Write(requestObject.ReplicaCount);
+                context.Writer.Write(requestObject.ReplicaCount.Value);
             }
 
         }

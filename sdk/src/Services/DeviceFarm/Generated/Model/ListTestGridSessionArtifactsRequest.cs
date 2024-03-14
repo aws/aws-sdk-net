@@ -46,9 +46,9 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResult
+        public int? MaxResult
         {
-            get { return this._maxResult.GetValueOrDefault(); }
+            get { return this._maxResult; }
             set { this._maxResult = value; }
         }
 

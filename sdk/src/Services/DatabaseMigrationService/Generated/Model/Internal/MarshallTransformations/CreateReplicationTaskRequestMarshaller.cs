@@ -76,7 +76,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCdcStartTime())
                 {
                     context.Writer.WritePropertyName("CdcStartTime");
-                    context.Writer.Write(publicRequest.CdcStartTime);
+                    context.Writer.Write(publicRequest.CdcStartTime.Value);
                 }
 
                 if(publicRequest.IsSetCdcStopPosition())

@@ -65,13 +65,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EndpointPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndpointPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ListenerPort", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ListenerPort = unmarshaller.Unmarshall(context);
                     continue;
                 }

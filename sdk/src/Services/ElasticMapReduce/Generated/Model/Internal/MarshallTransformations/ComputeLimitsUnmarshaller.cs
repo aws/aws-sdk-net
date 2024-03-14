@@ -65,25 +65,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaximumCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumCoreCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumCoreCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaximumOnDemandCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumOnDemandCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinimumCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

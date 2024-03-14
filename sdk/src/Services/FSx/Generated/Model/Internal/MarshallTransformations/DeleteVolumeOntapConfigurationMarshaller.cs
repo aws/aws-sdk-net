@@ -48,7 +48,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBypassSnaplockEnterpriseRetention())
             {
                 context.Writer.WritePropertyName("BypassSnaplockEnterpriseRetention");
-                context.Writer.Write(requestObject.BypassSnaplockEnterpriseRetention);
+                context.Writer.Write(requestObject.BypassSnaplockEnterpriseRetention.Value);
             }
 
             if(requestObject.IsSetFinalBackupTags())
@@ -70,7 +70,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSkipFinalBackup())
             {
                 context.Writer.WritePropertyName("SkipFinalBackup");
-                context.Writer.Write(requestObject.SkipFinalBackup);
+                context.Writer.Write(requestObject.SkipFinalBackup.Value);
             }
 
         }

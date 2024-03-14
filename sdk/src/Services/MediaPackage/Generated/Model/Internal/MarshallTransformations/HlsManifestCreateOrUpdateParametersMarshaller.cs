@@ -77,7 +77,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetManifestName())
@@ -95,13 +95,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPlaylistWindowSeconds())
             {
                 context.Writer.WritePropertyName("playlistWindowSeconds");
-                context.Writer.Write(requestObject.PlaylistWindowSeconds);
+                context.Writer.Write(requestObject.PlaylistWindowSeconds.Value);
             }
 
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("programDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds);
+                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
         }

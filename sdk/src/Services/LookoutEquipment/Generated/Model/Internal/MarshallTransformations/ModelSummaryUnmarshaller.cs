@@ -65,7 +65,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ActiveModelVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ActiveModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestScheduledRetrainingModelVersion", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LatestScheduledRetrainingModelVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestScheduledRetrainingStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestScheduledRetrainingStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NextScheduledRetrainingStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NextScheduledRetrainingStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

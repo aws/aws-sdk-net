@@ -89,13 +89,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("packageCleanup", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PackageCleanup = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rebootAfterUse", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RebootAfterUse = unmarshaller.Unmarshall(context);
                     continue;
                 }

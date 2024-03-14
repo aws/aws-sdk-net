@@ -242,7 +242,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTerminationHookEnabled())
                 {
                     context.Writer.WritePropertyName("terminationHookEnabled");
-                    context.Writer.Write(publicRequest.TerminationHookEnabled);
+                    context.Writer.Write(publicRequest.TerminationHookEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTriggerConfigurations())

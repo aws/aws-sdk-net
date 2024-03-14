@@ -76,13 +76,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOnlyAvailable())
                 {
                     context.Writer.WritePropertyName("OnlyAvailable");
-                    context.Writer.Write(publicRequest.OnlyAvailable);
+                    context.Writer.Write(publicRequest.OnlyAvailable.Value);
                 }
 
                 if(publicRequest.IsSetSuggestionCount())
                 {
                     context.Writer.WritePropertyName("SuggestionCount");
-                    context.Writer.Write(publicRequest.SuggestionCount);
+                    context.Writer.Write(publicRequest.SuggestionCount.Value);
                 }
 
                 writer.WriteObjectEnd();

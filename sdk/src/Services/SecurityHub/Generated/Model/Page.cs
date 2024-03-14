@@ -80,9 +80,9 @@ namespace Amazon.SecurityHub.Model
         /// The page number of the page that contains the sensitive data.
         /// </para>
         /// </summary>
-        public long PageNumber
+        public long? PageNumber
         {
-            get { return this._pageNumber.GetValueOrDefault(); }
+            get { return this._pageNumber; }
             set { this._pageNumber = value; }
         }
 

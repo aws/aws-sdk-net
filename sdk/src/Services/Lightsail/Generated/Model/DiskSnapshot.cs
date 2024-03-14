@@ -73,9 +73,9 @@ namespace Amazon.Lightsail.Model
         /// The date when the disk snapshot was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the snapshot was created from an automatic snapshot.
         /// </para>
         /// </summary>
-        public bool IsFromAutoSnapshot
+        public bool? IsFromAutoSnapshot
         {
-            get { return this._isFromAutoSnapshot.GetValueOrDefault(); }
+            get { return this._isFromAutoSnapshot; }
             set { this._isFromAutoSnapshot = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk in GB.
         /// </para>
         /// </summary>
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

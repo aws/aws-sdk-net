@@ -97,13 +97,13 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNamespaceVersion())
                 {
                     context.Writer.WritePropertyName("namespaceVersion");
-                    context.Writer.Write(publicRequest.NamespaceVersion);
+                    context.Writer.Write(publicRequest.NamespaceVersion.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

@@ -53,7 +53,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("PublicKeyRotationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.PublicKeyRotationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

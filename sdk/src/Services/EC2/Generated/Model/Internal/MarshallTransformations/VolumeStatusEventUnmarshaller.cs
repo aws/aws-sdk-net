@@ -80,13 +80,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("notAfter", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NotAfter = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("notBefore", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -158,9 +158,9 @@ namespace Amazon.MWAA.Model
         /// The day and time the environment was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxWorkers
+        public int? MaxWorkers
         {
-            get { return this._maxWorkers.GetValueOrDefault(); }
+            get { return this._maxWorkers; }
             set { this._maxWorkers = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MinWorkers
+        public int? MinWorkers
         {
-            get { return this._minWorkers.GetValueOrDefault(); }
+            get { return this._minWorkers; }
             set { this._minWorkers = value; }
         }
 
@@ -527,9 +527,9 @@ namespace Amazon.MWAA.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
-        public int Schedulers
+        public int? Schedulers
         {
-            get { return this._schedulers.GetValueOrDefault(); }
+            get { return this._schedulers; }
             set { this._schedulers = value; }
         }
 

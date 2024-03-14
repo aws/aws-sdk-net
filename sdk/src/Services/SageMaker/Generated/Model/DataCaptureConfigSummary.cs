@@ -65,9 +65,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int CurrentSamplingPercentage
+        public int? CurrentSamplingPercentage
         {
-            get { return this._currentSamplingPercentage.GetValueOrDefault(); }
+            get { return this._currentSamplingPercentage; }
             set { this._currentSamplingPercentage = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableCapture
+        public bool? EnableCapture
         {
-            get { return this._enableCapture.GetValueOrDefault(); }
+            get { return this._enableCapture; }
             set { this._enableCapture = value; }
         }
 

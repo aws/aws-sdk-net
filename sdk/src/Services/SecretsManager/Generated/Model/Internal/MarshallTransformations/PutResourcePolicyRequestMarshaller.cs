@@ -70,7 +70,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBlockPublicPolicy())
                 {
                     context.Writer.WritePropertyName("BlockPublicPolicy");
-                    context.Writer.Write(publicRequest.BlockPublicPolicy);
+                    context.Writer.Write(publicRequest.BlockPublicPolicy.Value);
                 }
 
                 if(publicRequest.IsSetResourcePolicy())

@@ -67,9 +67,9 @@ namespace Amazon.Outposts.Model
         /// The fulfillment date of the order.
         /// </para>
         /// </summary>
-        public DateTime OrderFulfilledDate
+        public DateTime? OrderFulfilledDate
         {
-            get { return this._orderFulfilledDate.GetValueOrDefault(); }
+            get { return this._orderFulfilledDate; }
             set { this._orderFulfilledDate = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.Outposts.Model
         /// The submission date for the order.
         /// </para>
         /// </summary>
-        public DateTime OrderSubmissionDate
+        public DateTime? OrderSubmissionDate
         {
-            get { return this._orderSubmissionDate.GetValueOrDefault(); }
+            get { return this._orderSubmissionDate; }
             set { this._orderSubmissionDate = value; }
         }
 

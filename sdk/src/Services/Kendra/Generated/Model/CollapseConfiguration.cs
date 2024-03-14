@@ -67,9 +67,9 @@ namespace Amazon.Kendra.Model
         /// Specifies whether to expand the collapsed results.
         /// </para>
         /// </summary>
-        public bool Expand
+        public bool? Expand
         {
-            get { return this._expand.GetValueOrDefault(); }
+            get { return this._expand; }
             set { this._expand = value; }
         }
 

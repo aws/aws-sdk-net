@@ -83,7 +83,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ValidForInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ValidForInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

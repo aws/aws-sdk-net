@@ -45,9 +45,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The time of report delivery.
         /// </para>
         /// </summary>
-        public DateTime DeliveryTime
+        public DateTime? DeliveryTime
         {
-            get { return this._deliveryTime.GetValueOrDefault(); }
+            get { return this._deliveryTime; }
             set { this._deliveryTime = value; }
         }
 

@@ -349,9 +349,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool UseLatestRestorableAutoSnapshot
+        public bool? UseLatestRestorableAutoSnapshot
         {
-            get { return this._useLatestRestorableAutoSnapshot.GetValueOrDefault(); }
+            get { return this._useLatestRestorableAutoSnapshot; }
             set { this._useLatestRestorableAutoSnapshot = value; }
         }
 

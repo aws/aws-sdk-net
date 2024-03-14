@@ -44,9 +44,9 @@ namespace Amazon.Translate.Model
         /// The time that the most recent update was attempted.
         /// </para>
         /// </summary>
-        public DateTime LatestUpdateAttemptAt
+        public DateTime? LatestUpdateAttemptAt
         {
-            get { return this._latestUpdateAttemptAt.GetValueOrDefault(); }
+            get { return this._latestUpdateAttemptAt; }
             set { this._latestUpdateAttemptAt = value; }
         }
 

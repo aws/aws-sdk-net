@@ -123,7 +123,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastUpdatedTime())
             {
                 context.Writer.WritePropertyName("LastUpdatedTime");
-                context.Writer.Write(requestObject.LastUpdatedTime);
+                context.Writer.Write(requestObject.LastUpdatedTime.Value);
             }
 
             if(requestObject.IsSetPlannedBudgetLimits())

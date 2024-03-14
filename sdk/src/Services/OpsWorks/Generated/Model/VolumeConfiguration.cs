@@ -49,9 +49,9 @@ namespace Amazon.OpsWorks.Model
         /// EBS Encryption</a>.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.OpsWorks.Model
         /// For PIOPS volumes, the IOPS per disk.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NumberOfDisks
+        public int? NumberOfDisks
         {
-            get { return this._numberOfDisks.GetValueOrDefault(); }
+            get { return this._numberOfDisks; }
             set { this._numberOfDisks = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.OpsWorks.Model
         /// The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.
         /// </para>
         /// </summary>
-        public int RaidLevel
+        public int? RaidLevel
         {
-            get { return this._raidLevel.GetValueOrDefault(); }
+            get { return this._raidLevel; }
             set { this._raidLevel = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Size
+        public int? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

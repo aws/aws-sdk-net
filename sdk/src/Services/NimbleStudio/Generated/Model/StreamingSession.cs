@@ -138,9 +138,9 @@ namespace Amazon.NimbleStudio.Model
         /// The ISO timestamp in seconds for when the resource was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int MaxBackupsToRetain
+        public int? MaxBackupsToRetain
         {
-            get { return this._maxBackupsToRetain.GetValueOrDefault(); }
+            get { return this._maxBackupsToRetain; }
             set { this._maxBackupsToRetain = value; }
         }
 
@@ -287,9 +287,9 @@ namespace Amazon.NimbleStudio.Model
         /// The time the session entered <c>START_IN_PROGRESS</c> state.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -396,9 +396,9 @@ namespace Amazon.NimbleStudio.Model
         /// the session themselves. 
         /// </para>
         /// </summary>
-        public DateTime StopAt
+        public DateTime? StopAt
         {
-            get { return this._stopAt.GetValueOrDefault(); }
+            get { return this._stopAt; }
             set { this._stopAt = value; }
         }
 
@@ -414,9 +414,9 @@ namespace Amazon.NimbleStudio.Model
         /// The time the session entered <c>STOP_IN_PROGRESS</c> state.
         /// </para>
         /// </summary>
-        public DateTime StoppedAt
+        public DateTime? StoppedAt
         {
-            get { return this._stoppedAt.GetValueOrDefault(); }
+            get { return this._stoppedAt; }
             set { this._stoppedAt = value; }
         }
 
@@ -488,9 +488,9 @@ namespace Amazon.NimbleStudio.Model
         /// user.
         /// </para>
         /// </summary>
-        public DateTime TerminateAt
+        public DateTime? TerminateAt
         {
-            get { return this._terminateAt.GetValueOrDefault(); }
+            get { return this._terminateAt; }
             set { this._terminateAt = value; }
         }
 
@@ -506,9 +506,9 @@ namespace Amazon.NimbleStudio.Model
         /// The ISO timestamp in seconds for when the resource was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -101,7 +101,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SupportsLinking", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SupportsLinking = unmarshaller.Unmarshall(context);
                     continue;
                 }

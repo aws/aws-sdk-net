@@ -68,9 +68,9 @@ namespace Amazon.SecurityHub.Model
         /// is <c>S3</c>.
         /// </para>
         /// </summary>
-        public bool EncryptionDisabled
+        public bool? EncryptionDisabled
         {
-            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            get { return this._encryptionDisabled; }
             set { this._encryptionDisabled = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the name specified in the buildspec file overrides the artifact name.
         /// </para>
         /// </summary>
-        public bool OverrideArtifactName
+        public bool? OverrideArtifactName
         {
-            get { return this._overrideArtifactName.GetValueOrDefault(); }
+            get { return this._overrideArtifactName; }
             set { this._overrideArtifactName = value; }
         }
 

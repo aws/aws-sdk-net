@@ -70,7 +70,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManagedByFirewallManager())
             {
                 context.Writer.WritePropertyName("ManagedByFirewallManager");
-                context.Writer.Write(requestObject.ManagedByFirewallManager);
+                context.Writer.Write(requestObject.ManagedByFirewallManager.Value);
             }
 
             if(requestObject.IsSetRedactedFields())

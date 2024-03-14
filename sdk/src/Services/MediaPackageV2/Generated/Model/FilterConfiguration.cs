@@ -47,9 +47,9 @@ namespace Amazon.MediaPackageV2.Model
         /// endpoint URL.
         /// </para>
         /// </summary>
-        public DateTime End
+        public DateTime? End
         {
-            get { return this._end.GetValueOrDefault(); }
+            get { return this._end; }
             set { this._end = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.MediaPackageV2.Model
         /// manifest's endpoint URL.
         /// </para>
         /// </summary>
-        public DateTime Start
+        public DateTime? Start
         {
-            get { return this._start.GetValueOrDefault(); }
+            get { return this._start; }
             set { this._start = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1209600)]
-        public int TimeDelaySeconds
+        public int? TimeDelaySeconds
         {
-            get { return this._timeDelaySeconds.GetValueOrDefault(); }
+            get { return this._timeDelaySeconds; }
             set { this._timeDelaySeconds = value; }
         }
 

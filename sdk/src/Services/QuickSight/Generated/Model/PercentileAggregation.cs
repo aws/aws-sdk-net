@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double PercentileValue
+        public double? PercentileValue
         {
-            get { return this._percentileValue.GetValueOrDefault(); }
+            get { return this._percentileValue; }
             set { this._percentileValue = value; }
         }
 

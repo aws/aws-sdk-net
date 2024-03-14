@@ -57,7 +57,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ExpirationInDays", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.ExpirationInDays = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("DeferMaintenanceEndTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DeferMaintenanceEndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -68,7 +68,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DeferMaintenanceStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DeferMaintenanceStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

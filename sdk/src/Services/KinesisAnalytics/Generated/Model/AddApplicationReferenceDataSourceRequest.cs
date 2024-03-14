@@ -97,9 +97,9 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
-        public long CurrentApplicationVersionId
+        public long? CurrentApplicationVersionId
         {
-            get { return this._currentApplicationVersionId.GetValueOrDefault(); }
+            get { return this._currentApplicationVersionId; }
             set { this._currentApplicationVersionId = value; }
         }
 

@@ -65,19 +65,19 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InboundCalling", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InboundCalling = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutboundCalling", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OutboundCalling = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SMS", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SMS = unmarshaller.Unmarshall(context);
                     continue;
                 }

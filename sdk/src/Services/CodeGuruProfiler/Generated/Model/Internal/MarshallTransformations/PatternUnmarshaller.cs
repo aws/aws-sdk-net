@@ -101,7 +101,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("thresholdPercent", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ThresholdPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }

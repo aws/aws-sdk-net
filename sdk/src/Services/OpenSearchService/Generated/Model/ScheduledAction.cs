@@ -52,9 +52,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether or not the scheduled action is cancellable.
         /// </para>
         /// </summary>
-        public bool Cancellable
+        public bool? Cancellable
         {
-            get { return this._cancellable.GetValueOrDefault(); }
+            get { return this._cancellable; }
             set { this._cancellable = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.OpenSearchService.Model
         /// Whether the action is required or optional.
         /// </para>
         /// </summary>
-        public bool Mandatory
+        public bool? Mandatory
         {
-            get { return this._mandatory.GetValueOrDefault(); }
+            get { return this._mandatory; }
             set { this._mandatory = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ScheduledTime
+        public long? ScheduledTime
         {
-            get { return this._scheduledTime.GetValueOrDefault(); }
+            get { return this._scheduledTime; }
             set { this._scheduledTime = value; }
         }
 

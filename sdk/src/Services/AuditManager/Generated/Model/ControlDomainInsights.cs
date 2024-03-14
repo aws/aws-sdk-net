@@ -53,9 +53,9 @@ namespace Amazon.AuditManager.Model
         /// on the <c>lastUpdated</c> date. 
         /// </para>
         /// </summary>
-        public int ControlsCountByNoncompliantEvidence
+        public int? ControlsCountByNoncompliantEvidence
         {
-            get { return this._controlsCountByNoncompliantEvidence.GetValueOrDefault(); }
+            get { return this._controlsCountByNoncompliantEvidence; }
             set { this._controlsCountByNoncompliantEvidence = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.AuditManager.Model
         /// The time when the control domain insights were last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdated
+        public DateTime? LastUpdated
         {
-            get { return this._lastUpdated.GetValueOrDefault(); }
+            get { return this._lastUpdated; }
             set { this._lastUpdated = value; }
         }
 
@@ -146,9 +146,9 @@ namespace Amazon.AuditManager.Model
         /// The total number of controls in the control domain. 
         /// </para>
         /// </summary>
-        public int TotalControlsCount
+        public int? TotalControlsCount
         {
-            get { return this._totalControlsCount.GetValueOrDefault(); }
+            get { return this._totalControlsCount; }
             set { this._totalControlsCount = value; }
         }
 

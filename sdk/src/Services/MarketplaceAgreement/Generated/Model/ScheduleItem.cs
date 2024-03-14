@@ -63,9 +63,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Invoices are generated on the date provided.
         /// </para>
         /// </summary>
-        public DateTime ChargeDate
+        public DateTime? ChargeDate
         {
-            get { return this._chargeDate.GetValueOrDefault(); }
+            get { return this._chargeDate; }
             set { this._chargeDate = value; }
         }
 

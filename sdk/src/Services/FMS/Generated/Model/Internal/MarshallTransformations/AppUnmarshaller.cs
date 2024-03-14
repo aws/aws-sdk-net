@@ -71,7 +71,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Port", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }

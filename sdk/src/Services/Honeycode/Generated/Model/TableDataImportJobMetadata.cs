@@ -102,9 +102,9 @@ namespace Amazon.Honeycode.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime SubmitTime
+        public DateTime? SubmitTime
         {
-            get { return this._submitTime.GetValueOrDefault(); }
+            get { return this._submitTime; }
             set { this._submitTime = value; }
         }
 

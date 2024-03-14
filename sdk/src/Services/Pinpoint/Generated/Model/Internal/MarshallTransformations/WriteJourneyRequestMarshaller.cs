@@ -112,7 +112,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLocalTime())
             {
                 context.Writer.WritePropertyName("LocalTime");
-                context.Writer.Write(requestObject.LocalTime);
+                context.Writer.Write(requestObject.LocalTime.Value);
             }
 
             if(requestObject.IsSetName())
@@ -152,7 +152,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRefreshOnSegmentUpdate())
             {
                 context.Writer.WritePropertyName("RefreshOnSegmentUpdate");
-                context.Writer.Write(requestObject.RefreshOnSegmentUpdate);
+                context.Writer.Write(requestObject.RefreshOnSegmentUpdate.Value);
             }
 
             if(requestObject.IsSetSchedule())
@@ -169,7 +169,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSendingSchedule())
             {
                 context.Writer.WritePropertyName("SendingSchedule");
-                context.Writer.Write(requestObject.SendingSchedule);
+                context.Writer.Write(requestObject.SendingSchedule.Value);
             }
 
             if(requestObject.IsSetStartActivity())
@@ -209,7 +209,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWaitForQuietTime())
             {
                 context.Writer.WritePropertyName("WaitForQuietTime");
-                context.Writer.Write(requestObject.WaitForQuietTime);
+                context.Writer.Write(requestObject.WaitForQuietTime.Value);
             }
 
         }

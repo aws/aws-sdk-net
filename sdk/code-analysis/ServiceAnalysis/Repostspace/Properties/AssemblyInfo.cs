@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Repostspace")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS re:Post Private. Initial release of AWS re:Post Private")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS re:Post Private. Initial release of AWS re:Post Private")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

@@ -71,13 +71,13 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("bigIntValue", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BigIntValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bitValue", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BitValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,25 +89,25 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("doubleValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DoubleValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("intValue", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IntValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isNull", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNull = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("realValue", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RealValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

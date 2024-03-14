@@ -71,7 +71,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("unauthenticatedLogin", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UnauthenticatedLogin = unmarshaller.Unmarshall(context);
                     continue;
                 }

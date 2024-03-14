@@ -65,7 +65,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("compatible", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Compatible = unmarshaller.Unmarshall(context);
                     continue;
                 }

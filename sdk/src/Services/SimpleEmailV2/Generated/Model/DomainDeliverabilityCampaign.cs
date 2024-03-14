@@ -78,9 +78,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// the message by using an email client that supports images.
         /// </para>
         /// </summary>
-        public double DeleteRate
+        public double? DeleteRate
         {
-            get { return this._deleteRate.GetValueOrDefault(); }
+            get { return this._deleteRate; }
             set { this._deleteRate = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// value can help you determine how long it took for a campaign to deliver an email message.
         /// </para>
         /// </summary>
-        public DateTime FirstSeenDateTime
+        public DateTime? FirstSeenDateTime
         {
-            get { return this._firstSeenDateTime.GetValueOrDefault(); }
+            get { return this._firstSeenDateTime; }
             set { this._firstSeenDateTime = value; }
         }
 
@@ -170,9 +170,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The number of email messages that were delivered to recipients’ inboxes.
         /// </para>
         /// </summary>
-        public long InboxCount
+        public long? InboxCount
         {
-            get { return this._inboxCount.GetValueOrDefault(); }
+            get { return this._inboxCount; }
             set { this._inboxCount = value; }
         }
 
@@ -189,9 +189,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// value can help you determine how long it took for a campaign to deliver an email message.
         /// </para>
         /// </summary>
-        public DateTime LastSeenDateTime
+        public DateTime? LastSeenDateTime
         {
-            get { return this._lastSeenDateTime.GetValueOrDefault(); }
+            get { return this._lastSeenDateTime; }
             set { this._lastSeenDateTime = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The projected number of recipients that the email message was sent to.
         /// </para>
         /// </summary>
-        public long ProjectedVolume
+        public long? ProjectedVolume
         {
-            get { return this._projectedVolume.GetValueOrDefault(); }
+            get { return this._projectedVolume; }
             set { this._projectedVolume = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// by using an email client that supports images.
         /// </para>
         /// </summary>
-        public double ReadDeleteRate
+        public double? ReadDeleteRate
         {
-            get { return this._readDeleteRate.GetValueOrDefault(); }
+            get { return this._readDeleteRate; }
             set { this._readDeleteRate = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// email client that supports images.
         /// </para>
         /// </summary>
-        public double ReadRate
+        public double? ReadRate
         {
-            get { return this._readRate.GetValueOrDefault(); }
+            get { return this._readRate; }
             set { this._readRate = value; }
         }
 
@@ -284,9 +284,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// folders.
         /// </para>
         /// </summary>
-        public long SpamCount
+        public long? SpamCount
         {
-            get { return this._spamCount.GetValueOrDefault(); }
+            get { return this._spamCount; }
             set { this._spamCount = value; }
         }
 

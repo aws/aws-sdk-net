@@ -71,7 +71,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DefaultAdmin", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultAdmin = unmarshaller.Unmarshall(context);
                     continue;
                 }

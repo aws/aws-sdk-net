@@ -53,13 +53,13 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowClassicFlow", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowClassicFlow = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AllowUnauthenticatedIdentities", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowUnauthenticatedIdentities = unmarshaller.Unmarshall(context);
                     continue;
                 }

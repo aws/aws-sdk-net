@@ -81,7 +81,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCopyTags())
                 {
                     context.Writer.WritePropertyName("CopyTags");
-                    context.Writer.Write(publicRequest.CopyTags);
+                    context.Writer.Write(publicRequest.CopyTags.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())

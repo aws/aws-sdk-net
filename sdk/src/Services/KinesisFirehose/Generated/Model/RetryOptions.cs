@@ -43,9 +43,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=7200)]
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 

@@ -48,13 +48,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetIdleTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("idleTimeoutMinutes");
-                context.Writer.Write(requestObject.IdleTimeoutMinutes);
+                context.Writer.Write(requestObject.IdleTimeoutMinutes.Value);
             }
 
         }

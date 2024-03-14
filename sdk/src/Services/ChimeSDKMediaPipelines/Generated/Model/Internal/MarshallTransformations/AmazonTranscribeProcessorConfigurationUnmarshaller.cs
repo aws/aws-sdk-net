@@ -77,19 +77,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnablePartialResultsStabilization", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnablePartialResultsStabilization = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FilterPartialResults", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FilterPartialResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IdentifyLanguage", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ShowSpeakerLabel", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ShowSpeakerLabel = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,9 +51,9 @@ namespace Amazon.ResilienceHub.Model
         /// alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
         /// </para>
         /// </summary>
-        public long ExcludedCount
+        public long? ExcludedCount
         {
-            get { return this._excludedCount.GetValueOrDefault(); }
+            get { return this._excludedCount; }
             set { this._excludedCount = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.ResilienceHub.Model
         /// to achieve the maximum possible score.
         /// </para>
         /// </summary>
-        public long OutstandingCount
+        public long? OutstandingCount
         {
-            get { return this._outstandingCount.GetValueOrDefault(); }
+            get { return this._outstandingCount; }
             set { this._outstandingCount = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.ResilienceHub.Model
         /// Hub recommendations.
         /// </para>
         /// </summary>
-        public double PossibleScore
+        public double? PossibleScore
         {
-            get { return this._possibleScore.GetValueOrDefault(); }
+            get { return this._possibleScore; }
             set { this._possibleScore = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.ResilienceHub.Model
         /// Resiliency score of your application.
         /// </para>
         /// </summary>
-        public double Score
+        public double? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");
-                context.Writer.Write(requestObject.Size);
+                context.Writer.Write(requestObject.Size.Value);
             }
 
             if(requestObject.IsSetType())

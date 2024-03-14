@@ -48,25 +48,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockPublicAcls())
             {
                 context.Writer.WritePropertyName("BlockPublicAcls");
-                context.Writer.Write(requestObject.BlockPublicAcls);
+                context.Writer.Write(requestObject.BlockPublicAcls.Value);
             }
 
             if(requestObject.IsSetBlockPublicPolicy())
             {
                 context.Writer.WritePropertyName("BlockPublicPolicy");
-                context.Writer.Write(requestObject.BlockPublicPolicy);
+                context.Writer.Write(requestObject.BlockPublicPolicy.Value);
             }
 
             if(requestObject.IsSetIgnorePublicAcls())
             {
                 context.Writer.WritePropertyName("IgnorePublicAcls");
-                context.Writer.Write(requestObject.IgnorePublicAcls);
+                context.Writer.Write(requestObject.IgnorePublicAcls.Value);
             }
 
             if(requestObject.IsSetRestrictPublicBuckets())
             {
                 context.Writer.WritePropertyName("RestrictPublicBuckets");
-                context.Writer.Write(requestObject.RestrictPublicBuckets);
+                context.Writer.Write(requestObject.RestrictPublicBuckets.Value);
             }
 
         }

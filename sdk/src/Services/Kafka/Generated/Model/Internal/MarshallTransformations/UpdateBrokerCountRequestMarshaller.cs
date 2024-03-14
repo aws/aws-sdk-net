@@ -77,7 +77,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTargetNumberOfBrokerNodes())
                 {
                     context.Writer.WritePropertyName("targetNumberOfBrokerNodes");
-                    context.Writer.Write(publicRequest.TargetNumberOfBrokerNodes);
+                    context.Writer.Write(publicRequest.TargetNumberOfBrokerNodes.Value);
                 }
 
                 writer.WriteObjectEnd();

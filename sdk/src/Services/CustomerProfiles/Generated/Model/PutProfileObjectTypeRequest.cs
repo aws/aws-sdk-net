@@ -62,9 +62,9 @@ namespace Amazon.CustomerProfiles.Model
         /// is found, then the service creates a new standard profile.
         /// </para>
         /// </summary>
-        public bool AllowProfileCreation
+        public bool? AllowProfileCreation
         {
-            get { return this._allowProfileCreation.GetValueOrDefault(); }
+            get { return this._allowProfileCreation; }
             set { this._allowProfileCreation = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1098)]
-        public int ExpirationDays
+        public int? ExpirationDays
         {
-            get { return this._expirationDays.GetValueOrDefault(); }
+            get { return this._expirationDays; }
             set { this._expirationDays = value; }
         }
 

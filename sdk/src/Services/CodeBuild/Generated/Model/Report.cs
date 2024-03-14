@@ -93,9 +93,9 @@ namespace Amazon.CodeBuild.Model
         ///  The date and time this report run occurred. 
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.CodeBuild.Model
         /// An expired report is not available to view in CodeBuild. 
         /// </para>
         /// </summary>
-        public DateTime Expired
+        public DateTime? Expired
         {
-            get { return this._expired.GetValueOrDefault(); }
+            get { return this._expired; }
             set { this._expired = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.CodeBuild.Model
         /// is truncated after the maximum number of test cases is reached. 
         /// </para>
         /// </summary>
-        public bool Truncated
+        public bool? Truncated
         {
-            get { return this._truncated.GetValueOrDefault(); }
+            get { return this._truncated; }
             set { this._truncated = value; }
         }
 

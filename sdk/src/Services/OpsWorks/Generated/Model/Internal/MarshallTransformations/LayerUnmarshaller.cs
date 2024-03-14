@@ -77,13 +77,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AutoAssignElasticIps", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAssignElasticIps = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AutoAssignPublicIps", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAssignPublicIps = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,13 +137,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnableAutoHealing", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAutoHealing = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InstallUpdatesOnBoot = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -191,7 +191,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("UseEbsOptimizedInstances", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseEbsOptimizedInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }

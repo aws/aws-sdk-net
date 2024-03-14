@@ -341,9 +341,9 @@ namespace Amazon.Imagebuilder.Model
         /// The terminate instance on failure configuration of the infrastructure configuration.
         /// </para>
         /// </summary>
-        public bool TerminateInstanceOnFailure
+        public bool? TerminateInstanceOnFailure
         {
-            get { return this._terminateInstanceOnFailure.GetValueOrDefault(); }
+            get { return this._terminateInstanceOnFailure; }
             set { this._terminateInstanceOnFailure = value; }
         }
 

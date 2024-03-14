@@ -163,7 +163,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTrustedIdentityPropagationEnabled())
                 {
                     context.Writer.WritePropertyName("TrustedIdentityPropagationEnabled");
-                    context.Writer.Write(publicRequest.TrustedIdentityPropagationEnabled);
+                    context.Writer.Write(publicRequest.TrustedIdentityPropagationEnabled.Value);
                 }
 
                 if(publicRequest.IsSetUserRole())

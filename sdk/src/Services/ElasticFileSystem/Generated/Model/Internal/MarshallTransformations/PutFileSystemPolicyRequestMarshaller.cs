@@ -71,7 +71,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetBypassPolicyLockoutSafetyCheck())
                 {
                     context.Writer.WritePropertyName("BypassPolicyLockoutSafetyCheck");
-                    context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck);
+                    context.Writer.Write(publicRequest.BypassPolicyLockoutSafetyCheck.Value);
                 }
 
                 if(publicRequest.IsSetPolicy())

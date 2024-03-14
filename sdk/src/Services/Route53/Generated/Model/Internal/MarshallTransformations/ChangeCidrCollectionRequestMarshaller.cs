@@ -66,7 +66,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("ChangeCidrCollectionRequest", "https://route53.amazonaws.com/doc/2013-04-01/");    
                 if(publicRequest.IsSetCollectionVersion())
-                    xmlWriter.WriteElementString("CollectionVersion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequest.CollectionVersion));                    
+                    xmlWriter.WriteElementString("CollectionVersion", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequest.CollectionVersion.Value));
 
                 var publicRequestChanges = publicRequest.Changes;
                 if (publicRequestChanges != null && publicRequestChanges.Count > 0) 

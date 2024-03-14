@@ -64,9 +64,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// every instance in the instance group
         /// </para>
         /// </summary>
-        public int VolumesPerInstance
+        public int? VolumesPerInstance
         {
-            get { return this._volumesPerInstance.GetValueOrDefault(); }
+            get { return this._volumesPerInstance; }
             set { this._volumesPerInstance = value; }
         }
 

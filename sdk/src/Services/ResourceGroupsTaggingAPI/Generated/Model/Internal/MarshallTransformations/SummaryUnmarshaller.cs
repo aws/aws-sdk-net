@@ -71,7 +71,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NonCompliantResources", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantResources = unmarshaller.Unmarshall(context);
                     continue;
                 }

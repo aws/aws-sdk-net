@@ -160,9 +160,9 @@ namespace Amazon.Drs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RamBytes
+        public long? RamBytes
         {
-            get { return this._ramBytes.GetValueOrDefault(); }
+            get { return this._ramBytes; }
             set { this._ramBytes = value; }
         }
 

@@ -114,9 +114,9 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// can reduce latency in your output, but may impact accuracy.
         /// </para>
         /// </summary>
-        public bool EnablePartialResultsStabilization
+        public bool? EnablePartialResultsStabilization
         {
-            get { return this._enablePartialResultsStabilization.GetValueOrDefault(); }
+            get { return this._enablePartialResultsStabilization; }
             set { this._enablePartialResultsStabilization = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// Language identification can't be combined with custom language models or redaction.
         /// </para>
         /// </summary>
-        public bool IdentifyLanguage
+        public bool? IdentifyLanguage
         {
-            get { return this._identifyLanguage.GetValueOrDefault(); }
+            get { return this._identifyLanguage; }
             set { this._identifyLanguage = value; }
         }
 

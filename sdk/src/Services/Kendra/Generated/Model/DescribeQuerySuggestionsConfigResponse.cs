@@ -70,9 +70,9 @@ namespace Amazon.Kendra.Model
         /// to generate the query suggestions.
         /// </para>
         /// </summary>
-        public bool IncludeQueriesWithoutUserInformation
+        public bool? IncludeQueriesWithoutUserInformation
         {
-            get { return this._includeQueriesWithoutUserInformation.GetValueOrDefault(); }
+            get { return this._includeQueriesWithoutUserInformation; }
             set { this._includeQueriesWithoutUserInformation = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.Kendra.Model
         /// re-occurences of a query from the time you cleared suggestions. 
         /// </para>
         /// </summary>
-        public DateTime LastClearTime
+        public DateTime? LastClearTime
         {
-            get { return this._lastClearTime.GetValueOrDefault(); }
+            get { return this._lastClearTime; }
             set { this._lastClearTime = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Kendra.Model
         /// list</a>.
         /// </para>
         /// </summary>
-        public DateTime LastSuggestionsBuildTime
+        public DateTime? LastSuggestionsBuildTime
         {
-            get { return this._lastSuggestionsBuildTime.GetValueOrDefault(); }
+            get { return this._lastSuggestionsBuildTime; }
             set { this._lastSuggestionsBuildTime = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MinimumNumberOfQueryingUsers
+        public int? MinimumNumberOfQueryingUsers
         {
-            get { return this._minimumNumberOfQueryingUsers.GetValueOrDefault(); }
+            get { return this._minimumNumberOfQueryingUsers; }
             set { this._minimumNumberOfQueryingUsers = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Kendra.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
-        public int MinimumQueryCount
+        public int? MinimumQueryCount
         {
-            get { return this._minimumQueryCount.GetValueOrDefault(); }
+            get { return this._minimumQueryCount; }
             set { this._minimumQueryCount = value; }
         }
 
@@ -201,9 +201,9 @@ namespace Amazon.Kendra.Model
         /// How recent your queries are in your query log time window (in days).
         /// </para>
         /// </summary>
-        public int QueryLogLookBackWindowInDays
+        public int? QueryLogLookBackWindowInDays
         {
-            get { return this._queryLogLookBackWindowInDays.GetValueOrDefault(); }
+            get { return this._queryLogLookBackWindowInDays; }
             set { this._queryLogLookBackWindowInDays = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.Kendra.Model
         /// settings are too strict.
         /// </para>
         /// </summary>
-        public int TotalSuggestionsCount
+        public int? TotalSuggestionsCount
         {
-            get { return this._totalSuggestionsCount.GetValueOrDefault(); }
+            get { return this._totalSuggestionsCount; }
             set { this._totalSuggestionsCount = value; }
         }
 

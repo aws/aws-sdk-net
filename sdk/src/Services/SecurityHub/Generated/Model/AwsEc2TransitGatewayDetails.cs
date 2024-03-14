@@ -53,9 +53,9 @@ namespace Amazon.SecurityHub.Model
         /// A private Autonomous System Number (ASN) for the Amazon side of a BGP session. 
         /// </para>
         /// </summary>
-        public int AmazonSideAsn
+        public int? AmazonSideAsn
         {
-            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            get { return this._amazonSideAsn; }
             set { this._amazonSideAsn = value; }
         }
 

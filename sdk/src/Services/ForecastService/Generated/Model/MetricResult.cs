@@ -69,9 +69,9 @@ namespace Amazon.ForecastService.Model
         /// The value for the metric.
         /// </para>
         /// </summary>
-        public double MetricValue
+        public double? MetricValue
         {
-            get { return this._metricValue.GetValueOrDefault(); }
+            get { return this._metricValue; }
             set { this._metricValue = value; }
         }
 

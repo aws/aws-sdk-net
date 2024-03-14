@@ -65,7 +65,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxTimeToLiveInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTimeToLiveInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

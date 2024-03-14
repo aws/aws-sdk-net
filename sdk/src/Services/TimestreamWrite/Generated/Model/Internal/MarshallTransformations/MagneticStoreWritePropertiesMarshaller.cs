@@ -48,7 +48,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMagneticStoreWrites())
             {
                 context.Writer.WritePropertyName("EnableMagneticStoreWrites");
-                context.Writer.Write(requestObject.EnableMagneticStoreWrites);
+                context.Writer.Write(requestObject.EnableMagneticStoreWrites.Value);
             }
 
             if(requestObject.IsSetMagneticStoreRejectedDataLocation())

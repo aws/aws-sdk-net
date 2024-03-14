@@ -92,7 +92,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableNetworkIsolation())
                 {
                     context.Writer.WritePropertyName("EnableNetworkIsolation");
-                    context.Writer.Write(publicRequest.EnableNetworkIsolation);
+                    context.Writer.Write(publicRequest.EnableNetworkIsolation.Value);
                 }
 
                 if(publicRequest.IsSetEndpointConfigName())

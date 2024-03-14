@@ -67,9 +67,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

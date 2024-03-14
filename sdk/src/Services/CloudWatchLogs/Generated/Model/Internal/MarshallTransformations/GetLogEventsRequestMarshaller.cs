@@ -70,13 +70,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("endTime");
-                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime));
+                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime.Value));
                 }
 
                 if(publicRequest.IsSetLimit())
                 {
                     context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
+                    context.Writer.Write(publicRequest.Limit.Value);
                 }
 
                 if(publicRequest.IsSetLogGroupIdentifier())
@@ -106,19 +106,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartFromHead())
                 {
                     context.Writer.WritePropertyName("startFromHead");
-                    context.Writer.Write(publicRequest.StartFromHead);
+                    context.Writer.Write(publicRequest.StartFromHead.Value);
                 }
 
                 if(publicRequest.IsSetStartTime())
                 {
                     context.Writer.WritePropertyName("startTime");
-                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime));
+                    context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime.Value));
                 }
 
                 if(publicRequest.IsSetUnmask())
                 {
                     context.Writer.WritePropertyName("unmask");
-                    context.Writer.Write(publicRequest.Unmask);
+                    context.Writer.Write(publicRequest.Unmask.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -62,9 +62,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5475)]
-        public int ExpirationDays
+        public int? ExpirationDays
         {
-            get { return this._expirationDays.GetValueOrDefault(); }
+            get { return this._expirationDays; }
             set { this._expirationDays = value; }
         }
 

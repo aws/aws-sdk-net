@@ -99,7 +99,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("SetIdentifier", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.SetIdentifier));                 
 
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetWeight())
-                                    xmlWriter.WriteElementString("Weight", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.Weight));                 
+                                    xmlWriter.WriteElementString("Weight", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.Weight.Value));                 
 
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetRegion())
                                     xmlWriter.WriteElementString("Region", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Region));                 
@@ -123,10 +123,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteElementString("Failover", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.Failover));                 
 
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetMultiValueAnswer())
-                                    xmlWriter.WriteElementString("MultiValueAnswer", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.MultiValueAnswer));                 
+                                    xmlWriter.WriteElementString("MultiValueAnswer", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.MultiValueAnswer.Value));                 
 
                                 if(publicRequestChangeBatchChangesValue.ResourceRecordSet.IsSetTTL())
-                                    xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.TTL));                 
+                                    xmlWriter.WriteElementString("TTL", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromLong(publicRequestChangeBatchChangesValue.ResourceRecordSet.TTL.Value));                 
 
                                 var publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords = publicRequestChangeBatchChangesValue.ResourceRecordSet.ResourceRecords;
                                 if (publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords != null && publicRequestChangeBatchChangesValueResourceRecordSetResourceRecords.Count > 0) 
@@ -157,7 +157,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("DNSName", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromString(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.DNSName));                 
 
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.IsSetEvaluateTargetHealth())
-                                        xmlWriter.WriteElementString("EvaluateTargetHealth", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.EvaluateTargetHealth));                 
+                                        xmlWriter.WriteElementString("EvaluateTargetHealth", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromBool(publicRequestChangeBatchChangesValue.ResourceRecordSet.AliasTarget.EvaluateTargetHealth.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }
@@ -202,7 +202,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteEndElement();
                                     }
                                     if(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.IsSetBias())
-                                        xmlWriter.WriteElementString("Bias", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Bias));                 
+                                        xmlWriter.WriteElementString("Bias", "https://route53.amazonaws.com/doc/2013-04-01/", StringUtils.FromInt(publicRequestChangeBatchChangesValue.ResourceRecordSet.GeoProximityLocation.Bias.Value));                 
 
                                     xmlWriter.WriteEndElement();
                                 }

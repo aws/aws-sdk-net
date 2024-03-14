@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJobDurationInSeconds())
             {
                 context.Writer.WritePropertyName("JobDurationInSeconds");
-                context.Writer.Write(requestObject.JobDurationInSeconds);
+                context.Writer.Write(requestObject.JobDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetModelName())

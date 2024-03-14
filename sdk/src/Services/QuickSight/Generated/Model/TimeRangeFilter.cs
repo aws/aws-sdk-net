@@ -106,9 +106,9 @@ namespace Amazon.QuickSight.Model
         /// in the filtered results.
         /// </para>
         /// </summary>
-        public bool IncludeMaximum
+        public bool? IncludeMaximum
         {
-            get { return this._includeMaximum.GetValueOrDefault(); }
+            get { return this._includeMaximum; }
             set { this._includeMaximum = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.QuickSight.Model
         /// in the filtered results.
         /// </para>
         /// </summary>
-        public bool IncludeMinimum
+        public bool? IncludeMinimum
         {
-            get { return this._includeMinimum.GetValueOrDefault(); }
+            get { return this._includeMinimum; }
             set { this._includeMinimum = value; }
         }
 

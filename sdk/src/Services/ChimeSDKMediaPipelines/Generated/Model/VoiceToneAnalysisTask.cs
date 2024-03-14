@@ -45,9 +45,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The time at which a voice tone analysis task was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The time at which a voice tone analysis task was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTimestamp
+        public DateTime? UpdatedTimestamp
         {
-            get { return this._updatedTimestamp.GetValueOrDefault(); }
+            get { return this._updatedTimestamp; }
             set { this._updatedTimestamp = value; }
         }
 

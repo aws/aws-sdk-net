@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.KafkaConnect")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Managed Streaming for Kafka Connect. This is the initial SDK release for Amazon Managed Streaming for Apache Kafka Connect (MSK Connect).")]
 #elif NETCOREAPP3_1

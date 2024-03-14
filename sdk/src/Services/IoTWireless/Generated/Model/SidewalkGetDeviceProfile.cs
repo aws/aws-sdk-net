@@ -80,9 +80,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets information about the certification status of a Sidewalk device profile.
         /// </para>
         /// </summary>
-        public bool QualificationStatus
+        public bool? QualificationStatus
         {
-            get { return this._qualificationStatus.GetValueOrDefault(); }
+            get { return this._qualificationStatus; }
             set { this._qualificationStatus = value; }
         }
 

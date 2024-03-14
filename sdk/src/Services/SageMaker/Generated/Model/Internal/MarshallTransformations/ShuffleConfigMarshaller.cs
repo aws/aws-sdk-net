@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSeed())
             {
                 context.Writer.WritePropertyName("Seed");
-                context.Writer.Write(requestObject.Seed);
+                context.Writer.Write(requestObject.Seed.Value);
             }
 
         }

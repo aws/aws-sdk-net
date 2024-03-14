@@ -114,9 +114,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=10080)]
-        public int ChatDurationInMinutes
+        public int? ChatDurationInMinutes
         {
-            get { return this._chatDurationInMinutes.GetValueOrDefault(); }
+            get { return this._chatDurationInMinutes; }
             set { this._chatDurationInMinutes = value; }
         }
 

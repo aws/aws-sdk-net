@@ -52,9 +52,9 @@ namespace Amazon.Backup.Model
         /// This can only be applied to backups created through Backup.
         /// </para>
         /// </summary>
-        public bool CopySourceTagsToRestoredResource
+        public bool? CopySourceTagsToRestoredResource
         {
-            get { return this._copySourceTagsToRestoredResource.GetValueOrDefault(); }
+            get { return this._copySourceTagsToRestoredResource; }
             set { this._copySourceTagsToRestoredResource = value; }
         }
 

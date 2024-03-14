@@ -42,9 +42,9 @@ namespace Amazon.LicenseManager.Model
         /// Number of licenses consumed by the resource.
         /// </para>
         /// </summary>
-        public long ConsumedLicenses
+        public long? ConsumedLicenses
         {
-            get { return this._consumedLicenses.GetValueOrDefault(); }
+            get { return this._consumedLicenses; }
             set { this._consumedLicenses = value; }
         }
 

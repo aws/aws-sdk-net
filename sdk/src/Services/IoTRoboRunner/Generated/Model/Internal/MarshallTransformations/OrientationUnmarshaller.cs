@@ -65,7 +65,7 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("degrees", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Degrees = unmarshaller.Unmarshall(context);
                     continue;
                 }

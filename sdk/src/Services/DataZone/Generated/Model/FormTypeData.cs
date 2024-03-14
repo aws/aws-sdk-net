@@ -52,9 +52,9 @@ namespace Amazon.DataZone.Model
         /// The timestamp of when the metadata form type was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

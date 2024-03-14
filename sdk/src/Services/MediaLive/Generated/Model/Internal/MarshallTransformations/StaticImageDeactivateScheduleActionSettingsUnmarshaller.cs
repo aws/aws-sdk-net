@@ -65,13 +65,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("fadeOut", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FadeOut = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("layer", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Layer = unmarshaller.Unmarshall(context);
                     continue;
                 }

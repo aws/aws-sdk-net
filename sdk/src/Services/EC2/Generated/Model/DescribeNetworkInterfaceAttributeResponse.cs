@@ -117,9 +117,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether source/destination checking is enabled.
         /// </para>
         /// </summary>
-        public bool SourceDestCheck
+        public bool? SourceDestCheck
         {
-            get { return this._sourceDestCheck.GetValueOrDefault(); }
+            get { return this._sourceDestCheck; }
             set { this._sourceDestCheck = value; }
         }
 

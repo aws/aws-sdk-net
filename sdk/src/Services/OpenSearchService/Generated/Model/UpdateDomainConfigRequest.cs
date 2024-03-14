@@ -237,9 +237,9 @@ namespace Amazon.OpenSearchService.Model
         /// run determines what type of deployment the update will cause.
         /// </para>
         /// </summary>
-        public bool DryRun
+        public bool? DryRun
         {
-            get { return this._dryRun.GetValueOrDefault(); }
+            get { return this._dryRun; }
             set { this._dryRun = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LatestVersionCreatedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestVersionCreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfVersions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }

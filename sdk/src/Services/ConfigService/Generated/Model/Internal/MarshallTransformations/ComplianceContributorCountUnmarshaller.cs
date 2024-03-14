@@ -65,13 +65,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CapExceeded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CapExceeded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CappedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CappedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

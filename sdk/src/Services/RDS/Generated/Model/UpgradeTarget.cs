@@ -52,9 +52,9 @@ namespace Amazon.RDS.Model
         /// <c>AutoMinorVersionUpgrade</c> set to true.
         /// </para>
         /// </summary>
-        public bool AutoUpgrade
+        public bool? AutoUpgrade
         {
-            get { return this._autoUpgrade.GetValueOrDefault(); }
+            get { return this._autoUpgrade; }
             set { this._autoUpgrade = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.RDS.Model
         /// of the database engine.
         /// </para>
         /// </summary>
-        public bool IsMajorVersionUpgrade
+        public bool? IsMajorVersionUpgrade
         {
-            get { return this._isMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._isMajorVersionUpgrade; }
             set { this._isMajorVersionUpgrade = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.RDS.Model
         /// version.
         /// </para>
         /// </summary>
-        public bool SupportsBabelfish
+        public bool? SupportsBabelfish
         {
-            get { return this._supportsBabelfish.GetValueOrDefault(); }
+            get { return this._supportsBabelfish; }
             set { this._supportsBabelfish = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether you can use Aurora global databases with the target engine version.
         /// </para>
         /// </summary>
-        public bool SupportsGlobalDatabases
+        public bool? SupportsGlobalDatabases
         {
-            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            get { return this._supportsGlobalDatabases; }
             set { this._supportsGlobalDatabases = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.RDS.Model
         /// Redshift.
         /// </para>
         /// </summary>
-        public bool SupportsIntegrations
+        public bool? SupportsIntegrations
         {
-            get { return this._supportsIntegrations.GetValueOrDefault(); }
+            get { return this._supportsIntegrations; }
             set { this._supportsIntegrations = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.RDS.Model
         /// Valid for: Aurora DB clusters only
         /// </para>
         /// </summary>
-        public bool SupportsLocalWriteForwarding
+        public bool? SupportsLocalWriteForwarding
         {
-            get { return this._supportsLocalWriteForwarding.GetValueOrDefault(); }
+            get { return this._supportsLocalWriteForwarding; }
             set { this._supportsLocalWriteForwarding = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether you can use Aurora parallel query with the target engine version.
         /// </para>
         /// </summary>
-        public bool SupportsParallelQuery
+        public bool? SupportsParallelQuery
         {
-            get { return this._supportsParallelQuery.GetValueOrDefault(); }
+            get { return this._supportsParallelQuery; }
             set { this._supportsParallelQuery = value; }
         }
 

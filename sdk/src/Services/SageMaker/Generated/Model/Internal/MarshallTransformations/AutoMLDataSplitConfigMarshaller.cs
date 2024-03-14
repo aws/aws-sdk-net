@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidationFraction())
             {
                 context.Writer.WritePropertyName("ValidationFraction");
-                context.Writer.Write(requestObject.ValidationFraction);
+                context.Writer.Write(requestObject.ValidationFraction.Value);
             }
 
         }

@@ -65,7 +65,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AssociatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

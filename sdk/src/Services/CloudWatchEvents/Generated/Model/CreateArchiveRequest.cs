@@ -127,9 +127,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int RetentionDays
+        public int? RetentionDays
         {
-            get { return this._retentionDays.GetValueOrDefault(); }
+            get { return this._retentionDays; }
             set { this._retentionDays = value; }
         }
 

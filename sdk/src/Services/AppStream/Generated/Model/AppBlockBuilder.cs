@@ -111,9 +111,9 @@ namespace Amazon.AppStream.Model
         /// The creation time of the app block builder.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.AppStream.Model
         /// Indicates whether default internet access is enabled for the app block builder.
         /// </para>
         /// </summary>
-        public bool EnableDefaultInternetAccess
+        public bool? EnableDefaultInternetAccess
         {
-            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            get { return this._enableDefaultInternetAccess; }
             set { this._enableDefaultInternetAccess = value; }
         }
 

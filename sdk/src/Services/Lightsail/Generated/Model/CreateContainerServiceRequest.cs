@@ -188,9 +188,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
-        public int Scale
+        public int? Scale
         {
-            get { return this._scale.GetValueOrDefault(); }
+            get { return this._scale; }
             set { this._scale = value; }
         }
 

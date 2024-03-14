@@ -45,9 +45,9 @@ namespace Amazon.Finspace.Model
         /// The timestamp at which the kdb user was created. 
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Finspace.Model
         /// The timestamp at which the kdb user was updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdateTimestamp
+        public DateTime? UpdateTimestamp
         {
-            get { return this._updateTimestamp.GetValueOrDefault(); }
+            get { return this._updateTimestamp; }
             set { this._updateTimestamp = value; }
         }
 

@@ -89,9 +89,9 @@ namespace Amazon.IdentityManagement.Model
         /// period</a>.
         /// </para>
         /// </summary>
-        public DateTime LastAuthenticatedTime
+        public DateTime? LastAuthenticatedTime
         {
-            get { return this._lastAuthenticatedTime.GetValueOrDefault(); }
+            get { return this._lastAuthenticatedTime; }
             set { this._lastAuthenticatedTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.IdentityManagement.Model
         /// roles) that attempted to access the service in the tracking period.
         /// </para>
         /// </summary>
-        public int TotalAuthenticatedEntities
+        public int? TotalAuthenticatedEntities
         {
-            get { return this._totalAuthenticatedEntities.GetValueOrDefault(); }
+            get { return this._totalAuthenticatedEntities; }
             set { this._totalAuthenticatedEntities = value; }
         }
 

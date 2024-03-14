@@ -57,9 +57,9 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Force. If true, performs a best-effort only core reset.
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

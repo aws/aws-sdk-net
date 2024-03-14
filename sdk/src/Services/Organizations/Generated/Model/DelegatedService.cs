@@ -43,9 +43,9 @@ namespace Amazon.Organizations.Model
         /// The date that the account became a delegated administrator for this service. 
         /// </para>
         /// </summary>
-        public DateTime DelegationEnabledDate
+        public DateTime? DelegationEnabledDate
         {
-            get { return this._delegationEnabledDate.GetValueOrDefault(); }
+            get { return this._delegationEnabledDate; }
             set { this._delegationEnabledDate = value; }
         }
 

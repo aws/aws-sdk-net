@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.LicenseManagerUserSubscriptions")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS License Manager User Subscriptions. This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

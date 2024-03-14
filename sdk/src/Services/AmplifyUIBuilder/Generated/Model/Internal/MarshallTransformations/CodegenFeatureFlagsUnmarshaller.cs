@@ -65,13 +65,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isNonModelSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsNonModelSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isRelationshipSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsRelationshipSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }

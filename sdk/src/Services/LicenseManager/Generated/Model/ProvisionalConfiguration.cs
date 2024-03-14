@@ -42,9 +42,9 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxTimeToLiveInMinutes
+        public int? MaxTimeToLiveInMinutes
         {
-            get { return this._maxTimeToLiveInMinutes.GetValueOrDefault(); }
+            get { return this._maxTimeToLiveInMinutes; }
             set { this._maxTimeToLiveInMinutes = value; }
         }
 

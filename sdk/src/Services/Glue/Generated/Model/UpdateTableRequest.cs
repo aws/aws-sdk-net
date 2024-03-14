@@ -89,9 +89,9 @@ namespace Amazon.Glue.Model
         /// not create the archived version.
         /// </para>
         /// </summary>
-        public bool SkipArchive
+        public bool? SkipArchive
         {
-            get { return this._skipArchive.GetValueOrDefault(); }
+            get { return this._skipArchive; }
             set { this._skipArchive = value; }
         }
 

@@ -81,7 +81,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTestDurationInMinutes())
                 {
                     context.Writer.WritePropertyName("testDurationInMinutes");
-                    context.Writer.Write(publicRequest.TestDurationInMinutes);
+                    context.Writer.Write(publicRequest.TestDurationInMinutes.Value);
                 }
 
                 if(publicRequest.IsSetVirtualInterfaceId())

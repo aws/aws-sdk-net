@@ -71,7 +71,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StreamCreationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StreamCreationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

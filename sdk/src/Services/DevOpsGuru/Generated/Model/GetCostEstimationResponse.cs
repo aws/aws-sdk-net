@@ -143,9 +143,9 @@ namespace Amazon.DevOpsGuru.Model
         /// in this response.
         /// </para>
         /// </summary>
-        public double TotalCost
+        public double? TotalCost
         {
-            get { return this._totalCost.GetValueOrDefault(); }
+            get { return this._totalCost; }
             set { this._totalCost = value; }
         }
 

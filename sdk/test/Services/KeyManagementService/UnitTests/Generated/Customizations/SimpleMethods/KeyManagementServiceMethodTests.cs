@@ -26,7 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.KeyManagementService.Model;
 using Amazon.KeyManagementService;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class KeyManagementServiceMethodCustomizationsTests
@@ -44,7 +44,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "DisableKeyRotation", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "EnableKey", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "EnableKeyRotation", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "GenerateRandom", new Type[] { typeof(int), });
+            EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "GenerateRandom", new Type[] { typeof(int?), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "GetKeyPolicy", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "GetKeyRotationStatus", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "ListRetirableGrants", new Type[] { typeof(string), });
@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "RetireGrant", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "RevokeGrant", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "ScheduleKeyDeletion", new Type[] { typeof(string), });
-            EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "ScheduleKeyDeletion", new Type[] { typeof(string), typeof(int), });
+            EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "ScheduleKeyDeletion", new Type[] { typeof(string), typeof(int?), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "UpdateAlias", new Type[] { typeof(string), typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.KeyManagementService.AmazonKeyManagementServiceClient), "UpdateKeyDescription", new Type[] { typeof(string), typeof(string), });
         }

@@ -69,9 +69,9 @@ namespace Amazon.CodeArtifact.Model
         ///  The total size of all assets in the domain. 
         /// </para>
         /// </summary>
-        public long AssetSizeBytes
+        public long? AssetSizeBytes
         {
-            get { return this._assetSizeBytes.GetValueOrDefault(); }
+            get { return this._assetSizeBytes; }
             set { this._assetSizeBytes = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.CodeArtifact.Model
         ///  A timestamp that represents the date and time the domain was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.CodeArtifact.Model
         ///  The number of repositories in the domain. 
         /// </para>
         /// </summary>
-        public int RepositoryCount
+        public int? RepositoryCount
         {
-            get { return this._repositoryCount.GetValueOrDefault(); }
+            get { return this._repositoryCount; }
             set { this._repositoryCount = value; }
         }
 

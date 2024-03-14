@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainsHeader())
             {
                 context.Writer.WritePropertyName("ContainsHeader");
-                context.Writer.Write(requestObject.ContainsHeader);
+                context.Writer.Write(requestObject.ContainsHeader.Value);
             }
 
             if(requestObject.IsSetDelimiter())
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartFromRow())
             {
                 context.Writer.WritePropertyName("StartFromRow");
-                context.Writer.Write(requestObject.StartFromRow);
+                context.Writer.Write(requestObject.StartFromRow.Value);
             }
 
             if(requestObject.IsSetTextQualifier())

@@ -46,9 +46,9 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
-        public long Amount
+        public long? Amount
         {
-            get { return this._amount.GetValueOrDefault(); }
+            get { return this._amount; }
             set { this._amount = value; }
         }
 

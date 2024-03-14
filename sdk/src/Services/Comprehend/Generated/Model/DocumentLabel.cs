@@ -63,9 +63,9 @@ namespace Amazon.Comprehend.Model
         /// your request includes the <c>Byte</c> parameter. 
         /// </para>
         /// </summary>
-        public int Page
+        public int? Page
         {
-            get { return this._page.GetValueOrDefault(); }
+            get { return this._page; }
             set { this._page = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Comprehend.Model
         /// The confidence score that Amazon Comprehend has this label correctly attributed.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

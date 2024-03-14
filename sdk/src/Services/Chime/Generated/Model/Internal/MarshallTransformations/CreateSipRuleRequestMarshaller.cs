@@ -68,7 +68,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisabled())
                 {
                     context.Writer.WritePropertyName("Disabled");
-                    context.Writer.Write(publicRequest.Disabled);
+                    context.Writer.Write(publicRequest.Disabled.Value);
                 }
 
                 if(publicRequest.IsSetName())

@@ -42,9 +42,9 @@ namespace Amazon.GuardDuty.Model
         /// The number of the remaining free trial days for the feature.
         /// </para>
         /// </summary>
-        public int FreeTrialDaysRemaining
+        public int? FreeTrialDaysRemaining
         {
-            get { return this._freeTrialDaysRemaining.GetValueOrDefault(); }
+            get { return this._freeTrialDaysRemaining; }
             set { this._freeTrialDaysRemaining = value; }
         }
 

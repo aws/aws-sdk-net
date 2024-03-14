@@ -65,7 +65,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("OmitExtension", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.OmitExtension = unmarshaller.Unmarshall(context);
                     continue;
                 }

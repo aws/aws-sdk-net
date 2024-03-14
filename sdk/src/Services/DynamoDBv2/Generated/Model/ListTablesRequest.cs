@@ -58,7 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for <c>LastEvaluatedTableName</c> in a previous operation, so that you can obtain the next page of results.</param>
         /// <param name="limit">A maximum number of table names to return. If this parameter is not specified, the limit is 100.</param>
-        public ListTablesRequest(string exclusiveStartTableName, int limit)
+        public ListTablesRequest(string exclusiveStartTableName, int? limit)
         {
             _exclusiveStartTableName = exclusiveStartTableName;
             _limit = limit;
@@ -93,9 +93,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Limit
+        public int? Limit
         {
-            get { return this._limit.GetValueOrDefault(); }
+            get { return this._limit; }
             set { this._limit = value; }
         }
 

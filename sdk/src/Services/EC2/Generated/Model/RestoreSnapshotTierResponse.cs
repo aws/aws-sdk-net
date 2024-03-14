@@ -45,9 +45,9 @@ namespace Amazon.EC2.Model
         /// restore. <c>false</c> indicates a temporary restore.
         /// </para>
         /// </summary>
-        public bool IsPermanentRestore
+        public bool? IsPermanentRestore
         {
-            get { return this._isPermanentRestore.GetValueOrDefault(); }
+            get { return this._isPermanentRestore; }
             set { this._isPermanentRestore = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// temporarily restored.
         /// </para>
         /// </summary>
-        public int RestoreDuration
+        public int? RestoreDuration
         {
-            get { return this._restoreDuration.GetValueOrDefault(); }
+            get { return this._restoreDuration; }
             set { this._restoreDuration = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EC2.Model
         /// The date and time when the snapshot restore process started.
         /// </para>
         /// </summary>
-        public DateTime RestoreStartTime
+        public DateTime? RestoreStartTime
         {
-            get { return this._restoreStartTime.GetValueOrDefault(); }
+            get { return this._restoreStartTime; }
             set { this._restoreStartTime = value; }
         }
 

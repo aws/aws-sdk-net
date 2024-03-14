@@ -64,7 +64,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDevices())
             {
                 context.Writer.WritePropertyName("maxDevices");
-                context.Writer.Write(requestObject.MaxDevices);
+                context.Writer.Write(requestObject.MaxDevices.Value);
             }
 
         }

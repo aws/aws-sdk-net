@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="loadBalancerName">The name of the load balancer.</param>
         /// <param name="loadBalancerPort">The port that uses the specified SSL certificate.</param>
         /// <param name="sslCertificateId">The Amazon Resource Name (ARN) of the SSL certificate.</param>
-        public SetLoadBalancerListenerSSLCertificateRequest(string loadBalancerName, int loadBalancerPort, string sslCertificateId)
+        public SetLoadBalancerListenerSSLCertificateRequest(string loadBalancerName, int? loadBalancerPort, string sslCertificateId)
         {
             _loadBalancerName = loadBalancerName;
             _loadBalancerPort = loadBalancerPort;
@@ -90,9 +90,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int LoadBalancerPort
+        public int? LoadBalancerPort
         {
-            get { return this._loadBalancerPort.GetValueOrDefault(); }
+            get { return this._loadBalancerPort; }
             set { this._loadBalancerPort = value; }
         }
 

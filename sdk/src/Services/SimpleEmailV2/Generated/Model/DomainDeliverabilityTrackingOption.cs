@@ -85,9 +85,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The date when you enabled the Deliverability dashboard for the domain.
         /// </para>
         /// </summary>
-        public DateTime SubscriptionStartDate
+        public DateTime? SubscriptionStartDate
         {
-            get { return this._subscriptionStartDate.GetValueOrDefault(); }
+            get { return this._subscriptionStartDate; }
             set { this._subscriptionStartDate = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The total overall savings for the aggregated view.
         /// </para>
         /// </summary>
-        public double EstimatedTotalDedupedSavings
+        public double? EstimatedTotalDedupedSavings
         {
-            get { return this._estimatedTotalDedupedSavings.GetValueOrDefault(); }
+            get { return this._estimatedTotalDedupedSavings; }
             set { this._estimatedTotalDedupedSavings = value; }
         }
 

@@ -82,7 +82,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFrom())
                 {
                     context.Writer.WritePropertyName("from");
-                    context.Writer.Write(publicRequest.From);
+                    context.Writer.Write(publicRequest.From.Value);
                 }
 
                 if(publicRequest.IsSetLogGroupName())
@@ -106,7 +106,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTo())
                 {
                     context.Writer.WritePropertyName("to");
-                    context.Writer.Write(publicRequest.To);
+                    context.Writer.Write(publicRequest.To.Value);
                 }
 
                 writer.WriteObjectEnd();

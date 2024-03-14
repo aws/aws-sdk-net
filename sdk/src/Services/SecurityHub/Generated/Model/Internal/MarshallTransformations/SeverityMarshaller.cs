@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNormalized())
             {
                 context.Writer.WritePropertyName("Normalized");
-                context.Writer.Write(requestObject.Normalized);
+                context.Writer.Write(requestObject.Normalized.Value);
             }
 
             if(requestObject.IsSetOriginal())
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProduct())
             {
                 context.Writer.WritePropertyName("Product");
-                context.Writer.Write(requestObject.Product);
+                context.Writer.Write(requestObject.Product.Value);
             }
 
         }

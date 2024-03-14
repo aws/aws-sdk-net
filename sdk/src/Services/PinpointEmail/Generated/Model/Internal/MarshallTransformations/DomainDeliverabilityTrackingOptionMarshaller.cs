@@ -65,7 +65,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubscriptionStartDate())
             {
                 context.Writer.WritePropertyName("SubscriptionStartDate");
-                context.Writer.Write(requestObject.SubscriptionStartDate);
+                context.Writer.Write(requestObject.SubscriptionStartDate.Value);
             }
 
         }

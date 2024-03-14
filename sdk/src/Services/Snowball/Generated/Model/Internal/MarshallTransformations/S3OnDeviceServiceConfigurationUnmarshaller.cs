@@ -65,19 +65,19 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FaultTolerance", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FaultTolerance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ServiceSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StorageLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.StorageLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

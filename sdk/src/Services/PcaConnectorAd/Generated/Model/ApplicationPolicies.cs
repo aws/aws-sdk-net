@@ -42,9 +42,9 @@ namespace Amazon.PcaConnectorAd.Model
         /// Marks the application policy extension as critical.
         /// </para>
         /// </summary>
-        public bool Critical
+        public bool? Critical
         {
-            get { return this._critical.GetValueOrDefault(); }
+            get { return this._critical; }
             set { this._critical = value; }
         }
 

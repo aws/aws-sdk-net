@@ -45,9 +45,9 @@ namespace Amazon.ForecastService.Model
         /// The average value of all weighted quantile losses.
         /// </para>
         /// </summary>
-        public double AverageWeightedQuantileLoss
+        public double? AverageWeightedQuantileLoss
         {
-            get { return this._averageWeightedQuantileLoss.GetValueOrDefault(); }
+            get { return this._averageWeightedQuantileLoss; }
             set { this._averageWeightedQuantileLoss = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
-        public double RMSE
+        public double? RMSE
         {
-            get { return this._rmse.GetValueOrDefault(); }
+            get { return this._rmse; }
             set { this._rmse = value; }
         }
 

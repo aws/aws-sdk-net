@@ -69,9 +69,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int ComputeRedundancy
+        public int? ComputeRedundancy
         {
-            get { return this._computeRedundancy.GetValueOrDefault(); }
+            get { return this._computeRedundancy; }
             set { this._computeRedundancy = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.RDS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double MaxACU
+        public double? MaxACU
         {
-            get { return this._maxACU.GetValueOrDefault(); }
+            get { return this._maxACU; }
             set { this._maxACU = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

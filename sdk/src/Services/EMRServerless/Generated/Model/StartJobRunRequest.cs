@@ -127,9 +127,9 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public long ExecutionTimeoutMinutes
+        public long? ExecutionTimeoutMinutes
         {
-            get { return this._executionTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._executionTimeoutMinutes; }
             set { this._executionTimeoutMinutes = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MailboxQuota
+        public int? MailboxQuota
         {
-            get { return this._mailboxQuota.GetValueOrDefault(); }
+            get { return this._mailboxQuota; }
             set { this._mailboxQuota = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double MailboxSize
+        public double? MailboxSize
         {
-            get { return this._mailboxSize.GetValueOrDefault(); }
+            get { return this._mailboxSize; }
             set { this._mailboxSize = value; }
         }
 

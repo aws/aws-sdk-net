@@ -83,13 +83,13 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("noOfSrvCompleted", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoOfSrvCompleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("noOfSrvFailed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoOfSrvFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalNoOfSrv", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNoOfSrv = unmarshaller.Unmarshall(context);
                     continue;
                 }

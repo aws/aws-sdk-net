@@ -68,7 +68,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -80,7 +80,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOnlyAssociated())
                 {
                     context.Writer.WritePropertyName("onlyAssociated");
-                    context.Writer.Write(publicRequest.OnlyAssociated);
+                    context.Writer.Write(publicRequest.OnlyAssociated.Value);
                 }
 
                 writer.WriteObjectEnd();

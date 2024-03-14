@@ -108,9 +108,9 @@ namespace Amazon.Chime.Model
         /// Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime InvitedOn
+        public DateTime? InvitedOn
         {
-            get { return this._invitedOn.GetValueOrDefault(); }
+            get { return this._invitedOn; }
             set { this._invitedOn = value; }
         }
 
@@ -200,9 +200,9 @@ namespace Amazon.Chime.Model
         /// Date and time when the user is registered, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime RegisteredOn
+        public DateTime? RegisteredOn
         {
-            get { return this._registeredOn.GetValueOrDefault(); }
+            get { return this._registeredOn; }
             set { this._registeredOn = value; }
         }
 

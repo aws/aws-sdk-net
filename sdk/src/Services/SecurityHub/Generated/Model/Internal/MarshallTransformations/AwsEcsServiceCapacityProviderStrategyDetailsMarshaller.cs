@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBase())
             {
                 context.Writer.WritePropertyName("Base");
-                context.Writer.Write(requestObject.Base);
+                context.Writer.Write(requestObject.Base.Value);
             }
 
             if(requestObject.IsSetCapacityProvider())
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-                context.Writer.Write(requestObject.Weight);
+                context.Writer.Write(requestObject.Weight.Value);
             }
 
         }

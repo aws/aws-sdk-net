@@ -42,9 +42,9 @@ namespace Amazon.LexModelsV2.Model
         /// The number of recommended intents associated with the bot recommendation.
         /// </para>
         /// </summary>
-        public int DiscoveredIntentCount
+        public int? DiscoveredIntentCount
         {
-            get { return this._discoveredIntentCount.GetValueOrDefault(); }
+            get { return this._discoveredIntentCount; }
             set { this._discoveredIntentCount = value; }
         }
 

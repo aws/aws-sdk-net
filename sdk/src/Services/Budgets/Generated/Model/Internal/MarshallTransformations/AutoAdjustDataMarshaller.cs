@@ -65,7 +65,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastAutoAdjustTime())
             {
                 context.Writer.WritePropertyName("LastAutoAdjustTime");
-                context.Writer.Write(requestObject.LastAutoAdjustTime);
+                context.Writer.Write(requestObject.LastAutoAdjustTime.Value);
             }
 
         }

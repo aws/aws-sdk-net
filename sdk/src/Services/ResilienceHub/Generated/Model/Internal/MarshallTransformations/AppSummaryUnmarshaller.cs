@@ -83,7 +83,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastAppComplianceEvaluationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAppComplianceEvaluationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,19 +113,19 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("resiliencyScore", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ResiliencyScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rpoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RpoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("rtoInSecs", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RtoInSecs = unmarshaller.Unmarshall(context);
                     continue;
                 }

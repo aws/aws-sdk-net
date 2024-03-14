@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisableRollback())
             {
                 context.Writer.WritePropertyName("DisableRollback");
-                context.Writer.Write(requestObject.DisableRollback);
+                context.Writer.Write(requestObject.DisableRollback.Value);
             }
 
             if(requestObject.IsSetDriftInformation())
@@ -88,7 +88,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableTerminationProtection())
             {
                 context.Writer.WritePropertyName("EnableTerminationProtection");
-                context.Writer.Write(requestObject.EnableTerminationProtection);
+                context.Writer.Write(requestObject.EnableTerminationProtection.Value);
             }
 
             if(requestObject.IsSetLastUpdatedTime())
@@ -157,7 +157,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("TimeoutInMinutes");
-                context.Writer.Write(requestObject.TimeoutInMinutes);
+                context.Writer.Write(requestObject.TimeoutInMinutes.Value);
             }
 
         }

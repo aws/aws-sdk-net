@@ -100,9 +100,9 @@ namespace Amazon.FraudDetector.Model
         ///  Indicates whether event variables were used to generate predictions. 
         /// </para>
         /// </summary>
-        public bool UseEventVariables
+        public bool? UseEventVariables
         {
-            get { return this._useEventVariables.GetValueOrDefault(); }
+            get { return this._useEventVariables; }
             set { this._useEventVariables = value; }
         }
 

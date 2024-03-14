@@ -48,9 +48,9 @@ namespace Amazon.LookoutEquipment.Model
         /// The time when this model version was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ModelVersion
+        public long? ModelVersion
         {
-            get { return this._modelVersion.GetValueOrDefault(); }
+            get { return this._modelVersion; }
             set { this._modelVersion = value; }
         }
 

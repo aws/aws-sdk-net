@@ -74,7 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SampleTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SampleTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }

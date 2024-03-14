@@ -45,9 +45,9 @@ namespace Amazon.SSMIncidents.Model
         /// Incident Manager incident.
         /// </para>
         /// </summary>
-        public bool AutoResolve
+        public bool? AutoResolve
         {
-            get { return this._autoResolve.GetValueOrDefault(); }
+            get { return this._autoResolve; }
             set { this._autoResolve = value; }
         }
 

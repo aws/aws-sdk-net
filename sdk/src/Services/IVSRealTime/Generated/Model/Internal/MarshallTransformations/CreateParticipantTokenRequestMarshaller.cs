@@ -93,7 +93,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDuration())
                 {
                     context.Writer.WritePropertyName("duration");
-                    context.Writer.Write(publicRequest.Duration);
+                    context.Writer.Write(publicRequest.Duration.Value);
                 }
 
                 if(publicRequest.IsSetStageArn())

@@ -136,25 +136,25 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteAdditionalMetricsToRetain())
                 {
                     context.Writer.WritePropertyName("deleteAdditionalMetricsToRetain");
-                    context.Writer.Write(publicRequest.DeleteAdditionalMetricsToRetain);
+                    context.Writer.Write(publicRequest.DeleteAdditionalMetricsToRetain.Value);
                 }
 
                 if(publicRequest.IsSetDeleteAlertTargets())
                 {
                     context.Writer.WritePropertyName("deleteAlertTargets");
-                    context.Writer.Write(publicRequest.DeleteAlertTargets);
+                    context.Writer.Write(publicRequest.DeleteAlertTargets.Value);
                 }
 
                 if(publicRequest.IsSetDeleteBehaviors())
                 {
                     context.Writer.WritePropertyName("deleteBehaviors");
-                    context.Writer.Write(publicRequest.DeleteBehaviors);
+                    context.Writer.Write(publicRequest.DeleteBehaviors.Value);
                 }
 
                 if(publicRequest.IsSetDeleteMetricsExportConfig())
                 {
                     context.Writer.WritePropertyName("deleteMetricsExportConfig");
-                    context.Writer.Write(publicRequest.DeleteMetricsExportConfig);
+                    context.Writer.Write(publicRequest.DeleteMetricsExportConfig.Value);
                 }
 
                 if(publicRequest.IsSetMetricsExportConfig())

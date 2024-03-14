@@ -46,9 +46,9 @@ namespace Amazon.Personalize.Model
         /// Whether the hyperparameter is tunable.
         /// </para>
         /// </summary>
-        public bool IsTunable
+        public bool? IsTunable
         {
-            get { return this._isTunable.GetValueOrDefault(); }
+            get { return this._isTunable; }
             set { this._isTunable = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1000000)]
-        public double MaxValue
+        public double? MaxValue
         {
-            get { return this._maxValue.GetValueOrDefault(); }
+            get { return this._maxValue; }
             set { this._maxValue = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1000000)]
-        public double MinValue
+        public double? MinValue
         {
-            get { return this._minValue.GetValueOrDefault(); }
+            get { return this._minValue; }
             set { this._minValue = value; }
         }
 

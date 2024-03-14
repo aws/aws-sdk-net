@@ -83,13 +83,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("fileOffset", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.FileOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("kantarLicenseId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KantarLicenseId = unmarshaller.Unmarshall(context);
                     continue;
                 }

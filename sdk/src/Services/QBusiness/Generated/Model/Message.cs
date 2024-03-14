@@ -152,9 +152,9 @@ namespace Amazon.QBusiness.Model
         /// The timestamp of the first Amazon Q web experience message.
         /// </para>
         /// </summary>
-        public DateTime Time
+        public DateTime? Time
         {
-            get { return this._time.GetValueOrDefault(); }
+            get { return this._time; }
             set { this._time = value; }
         }
 

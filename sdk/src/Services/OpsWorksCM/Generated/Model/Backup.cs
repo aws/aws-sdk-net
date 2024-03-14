@@ -121,9 +121,9 @@ namespace Amazon.OpsWorksCM.Model
         /// 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -316,9 +316,9 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated and is no longer used")]
-        public int S3DataSize
+        public int? S3DataSize
         {
-            get { return this._s3DataSize.GetValueOrDefault(); }
+            get { return this._s3DataSize; }
             set { this._s3DataSize = value; }
         }
 

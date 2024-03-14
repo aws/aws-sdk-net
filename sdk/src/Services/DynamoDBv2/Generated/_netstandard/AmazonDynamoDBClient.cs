@@ -312,7 +312,7 @@ namespace Amazon.DynamoDBv2
                 var endpoints = new List<DiscoveryEndpointBase>();
                 foreach(var endpoint in response.Endpoints)
                 {
-                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes));
+                    endpoints.Add(new DiscoveryEndpoint(endpoint.Address, endpoint.CachePeriodInMinutes.GetValueOrDefault()));
                 }
             
                 return endpoints;
@@ -3680,7 +3680,7 @@ namespace Amazon.DynamoDBv2
         /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
-        public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool? consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetItemRequest();
             request.TableName = tableName;
@@ -4194,7 +4194,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public virtual Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(string exclusiveStartTableName, int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.ExclusiveStartTableName = exclusiveStartTableName;
@@ -4218,7 +4218,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
-        public virtual Task<ListTablesResponse> ListTablesAsync(int limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<ListTablesResponse> ListTablesAsync(int? limit, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListTablesRequest();
             request.Limit = limit;

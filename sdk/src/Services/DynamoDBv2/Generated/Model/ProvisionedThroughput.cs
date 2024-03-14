@@ -53,7 +53,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="readCapacityUnits">The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <c>ThrottlingException</c>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. If read/write capacity mode is <c>PAY_PER_REQUEST</c> the value is set to 0.</param>
         /// <param name="writeCapacityUnits">The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException</c>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. If read/write capacity mode is <c>PAY_PER_REQUEST</c> the value is set to 0.</param>
-        public ProvisionedThroughput(long readCapacityUnits, long writeCapacityUnits)
+        public ProvisionedThroughput(long? readCapacityUnits, long? writeCapacityUnits)
         {
             _readCapacityUnits = readCapacityUnits;
             _writeCapacityUnits = writeCapacityUnits;
@@ -72,9 +72,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long ReadCapacityUnits
+        public long? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long WriteCapacityUnits
+        public long? WriteCapacityUnits
         {
-            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            get { return this._writeCapacityUnits; }
             set { this._writeCapacityUnits = value; }
         }
 

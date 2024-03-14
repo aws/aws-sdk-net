@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53Domains")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 #elif NETCOREAPP3_1

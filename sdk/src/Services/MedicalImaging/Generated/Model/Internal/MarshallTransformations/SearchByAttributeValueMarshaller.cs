@@ -48,7 +48,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("createdAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.Write(requestObject.CreatedAt.Value);
             }
 
             if(requestObject.IsSetDICOMAccessionNumber())

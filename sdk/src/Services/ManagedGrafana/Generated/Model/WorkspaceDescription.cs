@@ -107,9 +107,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.ManagedGrafana.Model
         /// Enterprise.
         /// </para>
         /// </summary>
-        public bool FreeTrialConsumed
+        public bool? FreeTrialConsumed
         {
-            get { return this._freeTrialConsumed.GetValueOrDefault(); }
+            get { return this._freeTrialConsumed; }
             set { this._freeTrialConsumed = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.ManagedGrafana.Model
         /// value specifies when that free trial ends.
         /// </para>
         /// </summary>
-        public DateTime FreeTrialExpiration
+        public DateTime? FreeTrialExpiration
         {
-            get { return this._freeTrialExpiration.GetValueOrDefault(); }
+            get { return this._freeTrialExpiration; }
             set { this._freeTrialExpiration = value; }
         }
 
@@ -266,9 +266,9 @@ namespace Amazon.ManagedGrafana.Model
         /// ends and will need to be renewed.
         /// </para>
         /// </summary>
-        public DateTime LicenseExpiration
+        public DateTime? LicenseExpiration
         {
-            get { return this._licenseExpiration.GetValueOrDefault(); }
+            get { return this._licenseExpiration; }
             set { this._licenseExpiration = value; }
         }
 
@@ -304,9 +304,9 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Modified
+        public DateTime? Modified
         {
-            get { return this._modified.GetValueOrDefault(); }
+            get { return this._modified; }
             set { this._modified = value; }
         }
 

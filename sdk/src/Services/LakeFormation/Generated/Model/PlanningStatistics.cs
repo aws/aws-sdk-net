@@ -44,9 +44,9 @@ namespace Amazon.LakeFormation.Model
         /// An estimate of the data that was scanned in bytes.
         /// </para>
         /// </summary>
-        public long EstimatedDataToScanBytes
+        public long? EstimatedDataToScanBytes
         {
-            get { return this._estimatedDataToScanBytes.GetValueOrDefault(); }
+            get { return this._estimatedDataToScanBytes; }
             set { this._estimatedDataToScanBytes = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.LakeFormation.Model
         /// The time that it took to process the request.
         /// </para>
         /// </summary>
-        public long PlanningTimeMillis
+        public long? PlanningTimeMillis
         {
-            get { return this._planningTimeMillis.GetValueOrDefault(); }
+            get { return this._planningTimeMillis; }
             set { this._planningTimeMillis = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.LakeFormation.Model
         /// The time the request was in queue to be processed.
         /// </para>
         /// </summary>
-        public long QueueTimeMillis
+        public long? QueueTimeMillis
         {
-            get { return this._queueTimeMillis.GetValueOrDefault(); }
+            get { return this._queueTimeMillis; }
             set { this._queueTimeMillis = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.LakeFormation.Model
         /// The number of work units generated.
         /// </para>
         /// </summary>
-        public long WorkUnitsGeneratedCount
+        public long? WorkUnitsGeneratedCount
         {
-            get { return this._workUnitsGeneratedCount.GetValueOrDefault(); }
+            get { return this._workUnitsGeneratedCount; }
             set { this._workUnitsGeneratedCount = value; }
         }
 

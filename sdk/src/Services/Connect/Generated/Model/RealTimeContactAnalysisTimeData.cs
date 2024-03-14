@@ -42,9 +42,9 @@ namespace Amazon.Connect.Model
         /// Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.
         /// </para>
         /// </summary>
-        public DateTime AbsoluteTime
+        public DateTime? AbsoluteTime
         {
-            get { return this._absoluteTime.GetValueOrDefault(); }
+            get { return this._absoluteTime; }
             set { this._absoluteTime = value; }
         }
 

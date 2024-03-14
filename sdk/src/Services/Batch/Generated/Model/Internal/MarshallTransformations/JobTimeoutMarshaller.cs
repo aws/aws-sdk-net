@@ -48,7 +48,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttemptDurationSeconds())
             {
                 context.Writer.WritePropertyName("attemptDurationSeconds");
-                context.Writer.Write(requestObject.AttemptDurationSeconds);
+                context.Writer.Write(requestObject.AttemptDurationSeconds.Value);
             }
 
         }

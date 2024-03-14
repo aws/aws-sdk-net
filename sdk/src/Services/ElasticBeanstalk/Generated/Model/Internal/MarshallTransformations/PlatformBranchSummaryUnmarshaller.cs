@@ -62,7 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("BranchOrder", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BranchOrder = unmarshaller.Unmarshall(context);
                         continue;
                     }

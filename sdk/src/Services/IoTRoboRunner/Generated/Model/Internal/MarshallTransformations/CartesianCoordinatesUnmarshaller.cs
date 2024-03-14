@@ -65,19 +65,19 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("x", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.X = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("y", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Y = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("z", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Z = unmarshaller.Unmarshall(context);
                     continue;
                 }

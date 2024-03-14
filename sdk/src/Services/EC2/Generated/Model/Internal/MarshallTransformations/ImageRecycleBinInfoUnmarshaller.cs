@@ -74,13 +74,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("recycleBinEnterTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.RecycleBinEnterTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("recycleBinExitTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.RecycleBinExitTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

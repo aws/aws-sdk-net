@@ -220,9 +220,9 @@ namespace Amazon.AutoScaling.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double TargetValue
+        public double? TargetValue
         {
-            get { return this._targetValue.GetValueOrDefault(); }
+            get { return this._targetValue; }
             set { this._targetValue = value; }
         }
 

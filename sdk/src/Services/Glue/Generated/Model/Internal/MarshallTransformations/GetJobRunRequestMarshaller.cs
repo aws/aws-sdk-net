@@ -76,7 +76,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPredecessorsIncluded())
                 {
                     context.Writer.WritePropertyName("PredecessorsIncluded");
-                    context.Writer.Write(publicRequest.PredecessorsIncluded);
+                    context.Writer.Write(publicRequest.PredecessorsIncluded.Value);
                 }
 
                 if(publicRequest.IsSetRunId())

@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("MonitoringTimeInMinutes", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MonitoringTimeInMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }

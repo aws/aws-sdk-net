@@ -160,9 +160,9 @@ namespace Amazon.RDS.Model
         /// that use the new instance class.
         /// </para>
         /// </summary>
-        public bool SupportsStorageAutoscaling
+        public bool? SupportsStorageAutoscaling
         {
-            get { return this._supportsStorageAutoscaling.GetValueOrDefault(); }
+            get { return this._supportsStorageAutoscaling; }
             set { this._supportsStorageAutoscaling = value; }
         }
 

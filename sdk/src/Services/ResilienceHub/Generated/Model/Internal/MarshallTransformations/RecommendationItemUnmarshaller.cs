@@ -65,13 +65,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("alreadyImplemented", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AlreadyImplemented = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("excluded", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
                     continue;
                 }

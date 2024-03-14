@@ -46,9 +46,9 @@ namespace Amazon.MediaLive.Model
         /// to tts:extent - Y in the TTML standard.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Height
+        public double? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.MediaLive.Model
         /// the frame.This field corresponds to tts:origin - X in the TTML standard.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double LeftOffset
+        public double? LeftOffset
         {
-            get { return this._leftOffset.GetValueOrDefault(); }
+            get { return this._leftOffset; }
             set { this._leftOffset = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.MediaLive.Model
         /// - Y in the TTML standard.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double TopOffset
+        public double? TopOffset
         {
-            get { return this._topOffset.GetValueOrDefault(); }
+            get { return this._topOffset; }
             set { this._topOffset = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.MediaLive.Model
         /// tts:extent - X in the TTML standard.
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Width
+        public double? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

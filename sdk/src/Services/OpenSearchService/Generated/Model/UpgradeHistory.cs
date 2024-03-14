@@ -45,9 +45,9 @@ namespace Amazon.OpenSearchService.Model
         /// UTC timestamp at which the upgrade API call was made, in the format <c>yyyy-MM-ddTHH:mm:ssZ</c>.
         /// </para>
         /// </summary>
-        public DateTime StartTimestamp
+        public DateTime? StartTimestamp
         {
-            get { return this._startTimestamp.GetValueOrDefault(); }
+            get { return this._startTimestamp; }
             set { this._startTimestamp = value; }
         }
 

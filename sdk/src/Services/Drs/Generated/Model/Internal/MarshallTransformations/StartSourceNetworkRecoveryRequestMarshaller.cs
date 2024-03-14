@@ -68,7 +68,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeployAsNew())
                 {
                     context.Writer.WritePropertyName("deployAsNew");
-                    context.Writer.Write(publicRequest.DeployAsNew);
+                    context.Writer.Write(publicRequest.DeployAsNew.Value);
                 }
 
                 if(publicRequest.IsSetSourceNetworks())

@@ -64,7 +64,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumNodes())
             {
                 context.Writer.WritePropertyName("numNodes");
-                context.Writer.Write(requestObject.NumNodes);
+                context.Writer.Write(requestObject.NumNodes.Value);
             }
 
         }

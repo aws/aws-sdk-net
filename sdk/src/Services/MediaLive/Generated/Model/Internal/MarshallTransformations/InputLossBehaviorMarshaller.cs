@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlackFrameMsec())
             {
                 context.Writer.WritePropertyName("blackFrameMsec");
-                context.Writer.Write(requestObject.BlackFrameMsec);
+                context.Writer.Write(requestObject.BlackFrameMsec.Value);
             }
 
             if(requestObject.IsSetInputLossImageColor())
@@ -77,7 +77,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRepeatFrameMsec())
             {
                 context.Writer.WritePropertyName("repeatFrameMsec");
-                context.Writer.Write(requestObject.RepeatFrameMsec);
+                context.Writer.Write(requestObject.RepeatFrameMsec.Value);
             }
 
         }

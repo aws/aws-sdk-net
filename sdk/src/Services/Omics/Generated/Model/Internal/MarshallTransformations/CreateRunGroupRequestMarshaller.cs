@@ -68,25 +68,25 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCpus())
                 {
                     context.Writer.WritePropertyName("maxCpus");
-                    context.Writer.Write(publicRequest.MaxCpus);
+                    context.Writer.Write(publicRequest.MaxCpus.Value);
                 }
 
                 if(publicRequest.IsSetMaxDuration())
                 {
                     context.Writer.WritePropertyName("maxDuration");
-                    context.Writer.Write(publicRequest.MaxDuration);
+                    context.Writer.Write(publicRequest.MaxDuration.Value);
                 }
 
                 if(publicRequest.IsSetMaxGpus())
                 {
                     context.Writer.WritePropertyName("maxGpus");
-                    context.Writer.Write(publicRequest.MaxGpus);
+                    context.Writer.Write(publicRequest.MaxGpus.Value);
                 }
 
                 if(publicRequest.IsSetMaxRuns())
                 {
                     context.Writer.WritePropertyName("maxRuns");
-                    context.Writer.Write(publicRequest.MaxRuns);
+                    context.Writer.Write(publicRequest.MaxRuns.Value);
                 }
 
                 if(publicRequest.IsSetName())

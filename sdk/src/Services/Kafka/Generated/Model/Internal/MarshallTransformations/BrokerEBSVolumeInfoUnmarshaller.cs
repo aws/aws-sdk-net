@@ -77,7 +77,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("volumeSizeGB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeGB = unmarshaller.Unmarshall(context);
                     continue;
                 }

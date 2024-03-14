@@ -66,9 +66,9 @@ namespace Amazon.TimestreamWrite.Model
         /// The time when the database was created, calculated from the Unix epoch time.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.TimestreamWrite.Model
         ///  The last time that this database was updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.TimestreamWrite.Model
         /// The total number of tables found within a Timestream database. 
         /// </para>
         /// </summary>
-        public long TableCount
+        public long? TableCount
         {
-            get { return this._tableCount.GetValueOrDefault(); }
+            get { return this._tableCount; }
             set { this._tableCount = value; }
         }
 

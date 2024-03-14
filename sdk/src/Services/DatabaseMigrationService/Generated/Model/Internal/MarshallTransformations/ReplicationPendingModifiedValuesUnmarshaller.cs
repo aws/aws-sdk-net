@@ -65,7 +65,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllocatedStorage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MultiAZ", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                     continue;
                 }

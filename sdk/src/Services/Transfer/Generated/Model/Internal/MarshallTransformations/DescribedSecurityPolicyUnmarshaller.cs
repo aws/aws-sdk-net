@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Fips", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Fips = unmarshaller.Unmarshall(context);
                     continue;
                 }

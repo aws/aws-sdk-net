@@ -43,9 +43,9 @@ namespace Amazon.Macie2.Model
         /// The date and time, in UTC and ISO 8601 format, when the credentials were issued.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Macie2.Model
         /// (MFA) device.
         /// </para>
         /// </summary>
-        public bool MfaAuthenticated
+        public bool? MfaAuthenticated
         {
-            get { return this._mfaAuthenticated.GetValueOrDefault(); }
+            get { return this._mfaAuthenticated; }
             set { this._mfaAuthenticated = value; }
         }
 

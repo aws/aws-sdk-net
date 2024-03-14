@@ -65,7 +65,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("conditionLanguageVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConditionLanguageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minimumTriggerIntervalMs", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumTriggerIntervalMs = unmarshaller.Unmarshall(context);
                     continue;
                 }

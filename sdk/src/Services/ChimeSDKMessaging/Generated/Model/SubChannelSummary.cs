@@ -42,9 +42,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The number of members in a SubChannel.
         /// </para>
         /// </summary>
-        public int MembershipCount
+        public int? MembershipCount
         {
-            get { return this._membershipCount.GetValueOrDefault(); }
+            get { return this._membershipCount; }
             set { this._membershipCount = value; }
         }
 

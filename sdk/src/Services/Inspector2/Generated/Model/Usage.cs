@@ -63,9 +63,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double EstimatedMonthlyCost
+        public double? EstimatedMonthlyCost
         {
-            get { return this._estimatedMonthlyCost.GetValueOrDefault(); }
+            get { return this._estimatedMonthlyCost; }
             set { this._estimatedMonthlyCost = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Total
+        public double? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

@@ -176,9 +176,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// are mutually exclusive.
         /// </para>
         /// </summary>
-        public bool IncludeMemberAccounts
+        public bool? IncludeMemberAccounts
         {
-            get { return this._includeMemberAccounts.GetValueOrDefault(); }
+            get { return this._includeMemberAccounts; }
             set { this._includeMemberAccounts = value; }
         }
 

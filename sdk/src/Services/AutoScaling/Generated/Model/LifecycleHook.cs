@@ -94,9 +94,9 @@ namespace Amazon.AutoScaling.Model
         /// is 172800 seconds (48 hours) or 100 times <c>HeartbeatTimeout</c>, whichever is smaller.
         /// </para>
         /// </summary>
-        public int GlobalTimeout
+        public int? GlobalTimeout
         {
-            get { return this._globalTimeout.GetValueOrDefault(); }
+            get { return this._globalTimeout; }
             set { this._globalTimeout = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.AutoScaling.Model
         /// you specified in the <c>DefaultResult</c> property.
         /// </para>
         /// </summary>
-        public int HeartbeatTimeout
+        public int? HeartbeatTimeout
         {
-            get { return this._heartbeatTimeout.GetValueOrDefault(); }
+            get { return this._heartbeatTimeout; }
             set { this._heartbeatTimeout = value; }
         }
 

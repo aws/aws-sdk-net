@@ -425,9 +425,9 @@ namespace Amazon.SecurityHub.Model
         ///  The size, in GB, of the ML storage volume to attach to the notebook instance. 
         /// </para>
         /// </summary>
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

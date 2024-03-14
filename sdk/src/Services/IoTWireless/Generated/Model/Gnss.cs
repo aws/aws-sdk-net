@@ -47,9 +47,9 @@ namespace Amazon.IoTWireless.Model
         /// specified in meters above the WGS84 reference ellipsoid.
         /// </para>
         /// </summary>
-        public float AssistAltitude
+        public float? AssistAltitude
         {
-            get { return this._assistAltitude.GetValueOrDefault(); }
+            get { return this._assistAltitude; }
             set { this._assistAltitude = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.IoTWireless.Model
         /// server time is used.
         /// </para>
         /// </summary>
-        public float CaptureTime
+        public float? CaptureTime
         {
-            get { return this._captureTime.GetValueOrDefault(); }
+            get { return this._captureTime; }
             set { this._captureTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.IoTWireless.Model
         /// time accuracy is not specified, default value of 300 is used.
         /// </para>
         /// </summary>
-        public float CaptureTimeAccuracy
+        public float? CaptureTimeAccuracy
         {
-            get { return this._captureTimeAccuracy.GetValueOrDefault(); }
+            get { return this._captureTimeAccuracy; }
             set { this._captureTimeAccuracy = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.IoTWireless.Model
         /// should have an accuracy of at least 10 meters.
         /// </para>
         /// </summary>
-        public bool Use2DSolver
+        public bool? Use2DSolver
         {
-            get { return this._use2DSolver.GetValueOrDefault(); }
+            get { return this._use2DSolver; }
             set { this._use2DSolver = value; }
         }
 

@@ -117,9 +117,9 @@ namespace Amazon.Kendra.Model
         /// The maximum number of returned data for the metric.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

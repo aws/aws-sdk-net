@@ -107,19 +107,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastClaimTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastClaimTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastHealthCheckTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastHealthCheckTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RegistrationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RegistrationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

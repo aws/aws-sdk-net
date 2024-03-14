@@ -83,9 +83,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property DataTransferSubscriberFeePercent. Percentage from 0-100
         /// of the data transfer cost to be billed to the subscriber.
         /// </summary>
-        public int DataTransferSubscriberFeePercent
+        public int? DataTransferSubscriberFeePercent
         {
-            get { return this._dataTransferSubscriberFeePercent.GetValueOrDefault(); }
+            get { return this._dataTransferSubscriberFeePercent; }
             set { this._dataTransferSubscriberFeePercent = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.MediaConnect.Model
         /// Gets and sets the property Port. The port to use when content is distributed to this
         /// output.
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

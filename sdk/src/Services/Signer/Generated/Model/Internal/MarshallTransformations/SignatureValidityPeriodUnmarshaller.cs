@@ -71,7 +71,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

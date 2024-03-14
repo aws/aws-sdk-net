@@ -294,9 +294,9 @@ namespace Amazon.EC2.Model
         /// The sequence number.
         /// </para>
         /// </summary>
-        public int SequenceNumber
+        public int? SequenceNumber
         {
-            get { return this._sequenceNumber.GetValueOrDefault(); }
+            get { return this._sequenceNumber; }
             set { this._sequenceNumber = value; }
         }
 

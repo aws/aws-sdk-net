@@ -65,9 +65,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Maximum number of results to return in a single page of output.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Flag to indicate if port and protocol information is needed as part of the response.
         /// </para>
         /// </summary>
-        public bool PortInformationNeeded
+        public bool? PortInformationNeeded
         {
-            get { return this._portInformationNeeded.GetValueOrDefault(); }
+            get { return this._portInformationNeeded; }
             set { this._portInformationNeeded = value; }
         }
 

@@ -77,13 +77,13 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IsAnomalous", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAnomalous = unmarshaller.Unmarshall(context);
                     continue;
                 }

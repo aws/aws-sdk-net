@@ -48,7 +48,7 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDegrees())
             {
                 context.Writer.WritePropertyName("degrees");
-                context.Writer.Write(requestObject.Degrees);
+                context.Writer.Write(requestObject.Degrees.Value);
             }
 
         }

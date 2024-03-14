@@ -65,7 +65,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("autoMinorVersionUpgrade", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -215,7 +215,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("publiclyAccessible", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PubliclyAccessible = unmarshaller.Unmarshall(context);
                     continue;
                 }

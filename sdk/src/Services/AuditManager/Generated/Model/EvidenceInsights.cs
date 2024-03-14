@@ -46,9 +46,9 @@ namespace Amazon.AuditManager.Model
         /// or collected from Config with a <i>Compliant</i> ruling. 
         /// </para>
         /// </summary>
-        public int CompliantEvidenceCount
+        public int? CompliantEvidenceCount
         {
-            get { return this._compliantEvidenceCount.GetValueOrDefault(); }
+            get { return this._compliantEvidenceCount; }
             set { this._compliantEvidenceCount = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int InconclusiveEvidenceCount
+        public int? InconclusiveEvidenceCount
         {
-            get { return this._inconclusiveEvidenceCount.GetValueOrDefault(); }
+            get { return this._inconclusiveEvidenceCount; }
             set { this._inconclusiveEvidenceCount = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.AuditManager.Model
         /// or collected from Config with a <i>Non-compliant</i> ruling. 
         /// </para>
         /// </summary>
-        public int NoncompliantEvidenceCount
+        public int? NoncompliantEvidenceCount
         {
-            get { return this._noncompliantEvidenceCount.GetValueOrDefault(); }
+            get { return this._noncompliantEvidenceCount; }
             set { this._noncompliantEvidenceCount = value; }
         }
 

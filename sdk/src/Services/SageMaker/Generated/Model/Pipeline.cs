@@ -68,9 +68,9 @@ namespace Amazon.SageMaker.Model
         /// The creation time of the pipeline.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.SageMaker.Model
         /// The time that the pipeline was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.SageMaker.Model
         /// The time when the pipeline was last run.
         /// </para>
         /// </summary>
-        public DateTime LastRunTime
+        public DateTime? LastRunTime
         {
-            get { return this._lastRunTime.GetValueOrDefault(); }
+            get { return this._lastRunTime; }
             set { this._lastRunTime = value; }
         }
 

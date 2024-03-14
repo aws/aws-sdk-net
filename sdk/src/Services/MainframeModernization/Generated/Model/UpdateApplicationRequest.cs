@@ -65,9 +65,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int CurrentApplicationVersion
+        public int? CurrentApplicationVersion
         {
-            get { return this._currentApplicationVersion.GetValueOrDefault(); }
+            get { return this._currentApplicationVersion; }
             set { this._currentApplicationVersion = value; }
         }
 

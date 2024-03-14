@@ -45,9 +45,9 @@ namespace Amazon.Neptunedata.Model
         /// Set to <c>TRUE</c> if the query was cancelled, or FALSE otherwise.
         /// </para>
         /// </summary>
-        public bool Cancelled
+        public bool? Cancelled
         {
-            get { return this._cancelled.GetValueOrDefault(); }
+            get { return this._cancelled; }
             set { this._cancelled = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Neptunedata.Model
         /// The number of milliseconds the query has been running so far.
         /// </para>
         /// </summary>
-        public int Elapsed
+        public int? Elapsed
         {
-            get { return this._elapsed.GetValueOrDefault(); }
+            get { return this._elapsed; }
             set { this._elapsed = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Neptunedata.Model
         /// Indicates how long the query waited, in milliseconds.
         /// </para>
         /// </summary>
-        public int Waited
+        public int? Waited
         {
-            get { return this._waited.GetValueOrDefault(); }
+            get { return this._waited; }
             set { this._waited = value; }
         }
 

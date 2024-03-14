@@ -69,9 +69,9 @@ namespace Amazon.RDS.Model
         /// The associated option group can be copied only with cross-account snapshot copy calls.
         /// </para>
         /// </summary>
-        public bool CopyOptionGroup
+        public bool? CopyOptionGroup
         {
-            get { return this._copyOptionGroup.GetValueOrDefault(); }
+            get { return this._copyOptionGroup; }
             set { this._copyOptionGroup = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.RDS.Model
         /// By default, tags aren't copied.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 

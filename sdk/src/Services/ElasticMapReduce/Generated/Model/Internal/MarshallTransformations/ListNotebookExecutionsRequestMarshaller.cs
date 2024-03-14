@@ -82,7 +82,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFrom())
                 {
                     context.Writer.WritePropertyName("From");
-                    context.Writer.Write(publicRequest.From);
+                    context.Writer.Write(publicRequest.From.Value);
                 }
 
                 if(publicRequest.IsSetMarker())
@@ -100,7 +100,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTo())
                 {
                     context.Writer.WritePropertyName("To");
-                    context.Writer.Write(publicRequest.To);
+                    context.Writer.Write(publicRequest.To.Value);
                 }
 
                 writer.WriteObjectEnd();

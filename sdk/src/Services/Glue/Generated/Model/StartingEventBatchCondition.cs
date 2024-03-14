@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// Number of events in the batch.
         /// </para>
         /// </summary>
-        public int BatchSize
+        public int? BatchSize
         {
-            get { return this._batchSize.GetValueOrDefault(); }
+            get { return this._batchSize; }
             set { this._batchSize = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// Duration of the batch window in seconds.
         /// </para>
         /// </summary>
-        public int BatchWindow
+        public int? BatchWindow
         {
-            get { return this._batchWindow.GetValueOrDefault(); }
+            get { return this._batchWindow; }
             set { this._batchWindow = value; }
         }
 

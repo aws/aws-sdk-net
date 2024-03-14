@@ -81,9 +81,9 @@ namespace Amazon.GuardDuty.Model
         /// Represents all the nodes within the EKS cluster in your account.
         /// </para>
         /// </summary>
-        public long CompatibleNodes
+        public long? CompatibleNodes
         {
-            get { return this._compatibleNodes.GetValueOrDefault(); }
+            get { return this._compatibleNodes; }
             set { this._compatibleNodes = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.GuardDuty.Model
         /// Represents the nodes within the EKS cluster that have a <c>HEALTHY</c> coverage status.
         /// </para>
         /// </summary>
-        public long CoveredNodes
+        public long? CoveredNodes
         {
-            get { return this._coveredNodes.GetValueOrDefault(); }
+            get { return this._coveredNodes; }
             set { this._coveredNodes = value; }
         }
 

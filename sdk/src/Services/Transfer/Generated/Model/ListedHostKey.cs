@@ -65,9 +65,9 @@ namespace Amazon.Transfer.Model
         /// The date on which the host key was added to the server.
         /// </para>
         /// </summary>
-        public DateTime DateImported
+        public DateTime? DateImported
         {
-            get { return this._dateImported.GetValueOrDefault(); }
+            get { return this._dateImported; }
             set { this._dateImported = value; }
         }
 

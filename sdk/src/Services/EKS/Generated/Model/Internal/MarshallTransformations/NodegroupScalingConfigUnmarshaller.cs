@@ -65,19 +65,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("desiredSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

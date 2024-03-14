@@ -48,9 +48,9 @@ namespace Amazon.RDS.Model
         /// connections and all connections are busy with client sessions.
         /// </para>
         /// </summary>
-        public int ConnectionBorrowTimeout
+        public int? ConnectionBorrowTimeout
         {
-            get { return this._connectionBorrowTimeout.GetValueOrDefault(); }
+            get { return this._connectionBorrowTimeout; }
             set { this._connectionBorrowTimeout = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.RDS.Model
         /// instance or Aurora DB cluster used by the target group.
         /// </para>
         /// </summary>
-        public int MaxConnectionsPercent
+        public int? MaxConnectionsPercent
         {
-            get { return this._maxConnectionsPercent.GetValueOrDefault(); }
+            get { return this._maxConnectionsPercent; }
             set { this._maxConnectionsPercent = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.RDS.Model
         /// value causes the proxy to close more idle connections and return them to the database.
         /// </para>
         /// </summary>
-        public int MaxIdleConnectionsPercent
+        public int? MaxIdleConnectionsPercent
         {
-            get { return this._maxIdleConnectionsPercent.GetValueOrDefault(); }
+            get { return this._maxIdleConnectionsPercent; }
             set { this._maxIdleConnectionsPercent = value; }
         }
 

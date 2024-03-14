@@ -101,7 +101,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IpAddressCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IpAddressCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

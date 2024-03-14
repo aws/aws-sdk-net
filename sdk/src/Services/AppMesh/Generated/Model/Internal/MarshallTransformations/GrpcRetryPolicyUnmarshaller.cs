@@ -77,7 +77,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxRetries", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxRetries = unmarshaller.Unmarshall(context);
                     continue;
                 }

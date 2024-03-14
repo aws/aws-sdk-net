@@ -42,9 +42,9 @@ namespace Amazon.Inspector2.Model
         /// The date an image was last pulled at.
         /// </para>
         /// </summary>
-        public DateTime ImagePulledAt
+        public DateTime? ImagePulledAt
         {
-            get { return this._imagePulledAt.GetValueOrDefault(); }
+            get { return this._imagePulledAt; }
             set { this._imagePulledAt = value; }
         }
 

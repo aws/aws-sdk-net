@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProvisionedReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("ProvisionedReadCapacityUnits");
-                context.Writer.Write(requestObject.ProvisionedReadCapacityUnits);
+                context.Writer.Write(requestObject.ProvisionedReadCapacityUnits.Value);
             }
 
             if(requestObject.IsSetProvisionedWriteCapacityUnits())
             {
                 context.Writer.WritePropertyName("ProvisionedWriteCapacityUnits");
-                context.Writer.Write(requestObject.ProvisionedWriteCapacityUnits);
+                context.Writer.Write(requestObject.ProvisionedWriteCapacityUnits.Value);
             }
 
             if(requestObject.IsSetThroughputMode())

@@ -65,31 +65,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CurrentRestoreRateInMegaBytesPerSecond", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CurrentRestoreRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EstimatedTimeToCompletionInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProgressInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SnapshotSizeInMegaBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SnapshotSizeInMegaBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

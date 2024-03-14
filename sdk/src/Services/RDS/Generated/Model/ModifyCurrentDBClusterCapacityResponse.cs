@@ -45,9 +45,9 @@ namespace Amazon.RDS.Model
         /// The current capacity of the DB cluster.
         /// </para>
         /// </summary>
-        public int CurrentCapacity
+        public int? CurrentCapacity
         {
-            get { return this._currentCapacity.GetValueOrDefault(); }
+            get { return this._currentCapacity; }
             set { this._currentCapacity = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.RDS.Model
         /// A value that specifies the capacity that the DB cluster scales to next.
         /// </para>
         /// </summary>
-        public int PendingCapacity
+        public int? PendingCapacity
         {
-            get { return this._pendingCapacity.GetValueOrDefault(); }
+            get { return this._pendingCapacity; }
             set { this._pendingCapacity = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.RDS.Model
         /// out.
         /// </para>
         /// </summary>
-        public int SecondsBeforeTimeout
+        public int? SecondsBeforeTimeout
         {
-            get { return this._secondsBeforeTimeout.GetValueOrDefault(); }
+            get { return this._secondsBeforeTimeout; }
             set { this._secondsBeforeTimeout = value; }
         }
 

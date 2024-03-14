@@ -74,7 +74,7 @@ namespace Amazon.BackupStorage.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThrowOnDuplicate())
                 {
                     context.Writer.WritePropertyName("ThrowOnDuplicate");
-                    context.Writer.Write(publicRequest.ThrowOnDuplicate);
+                    context.Writer.Write(publicRequest.ThrowOnDuplicate.Value);
                 }
 
                 writer.WriteObjectEnd();

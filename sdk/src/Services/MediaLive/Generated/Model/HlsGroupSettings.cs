@@ -398,9 +398,9 @@ namespace Amazon.MediaLive.Model
         /// number in the Keep Segments field.
         /// </summary>
         [AWSProperty(Min=3)]
-        public int IndexNSegments
+        public int? IndexNSegments
         {
-            get { return this._indexNSegments.GetValueOrDefault(); }
+            get { return this._indexNSegments; }
             set { this._indexNSegments = value; }
         }
 
@@ -473,9 +473,9 @@ namespace Amazon.MediaLive.Model
         /// situation would result in a 404 HTTP error on the player.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int KeepSegments
+        public int? KeepSegments
         {
-            get { return this._keepSegments.GetValueOrDefault(); }
+            get { return this._keepSegments; }
             set { this._keepSegments = value; }
         }
 
@@ -571,9 +571,9 @@ namespace Amazon.MediaLive.Model
         /// if needed.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MinSegmentLength
+        public int? MinSegmentLength
         {
-            get { return this._minSegmentLength.GetValueOrDefault(); }
+            get { return this._minSegmentLength; }
             set { this._minSegmentLength = value; }
         }
 
@@ -663,9 +663,9 @@ namespace Amazon.MediaLive.Model
         /// entry, in seconds.
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int ProgramDateTimePeriod
+        public int? ProgramDateTimePeriod
         {
-            get { return this._programDateTimePeriod.GetValueOrDefault(); }
+            get { return this._programDateTimePeriod; }
             set { this._programDateTimePeriod = value; }
         }
 
@@ -721,9 +721,9 @@ namespace Amazon.MediaLive.Model
         /// duration, so actual segment length may be longer.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int SegmentLength
+        public int? SegmentLength
         {
-            get { return this._segmentLength.GetValueOrDefault(); }
+            get { return this._segmentLength; }
             set { this._segmentLength = value; }
         }
 
@@ -739,9 +739,9 @@ namespace Amazon.MediaLive.Model
         /// for this setting to have an effect.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int SegmentsPerSubdirectory
+        public int? SegmentsPerSubdirectory
         {
-            get { return this._segmentsPerSubdirectory.GetValueOrDefault(); }
+            get { return this._segmentsPerSubdirectory; }
             set { this._segmentsPerSubdirectory = value; }
         }
 
@@ -787,9 +787,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimedMetadataId3Period. Timed Metadata interval in seconds.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TimedMetadataId3Period
+        public int? TimedMetadataId3Period
         {
-            get { return this._timedMetadataId3Period.GetValueOrDefault(); }
+            get { return this._timedMetadataId3Period; }
             set { this._timedMetadataId3Period = value; }
         }
 
@@ -804,9 +804,9 @@ namespace Amazon.MediaLive.Model
         /// delta offset to fine tune the timestamps.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TimestampDeltaMilliseconds
+        public int? TimestampDeltaMilliseconds
         {
-            get { return this._timestampDeltaMilliseconds.GetValueOrDefault(); }
+            get { return this._timestampDeltaMilliseconds; }
             set { this._timestampDeltaMilliseconds = value; }
         }
 

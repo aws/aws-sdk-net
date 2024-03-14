@@ -104,9 +104,9 @@ namespace Amazon.Textract.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PageNumber
+        public int? PageNumber
         {
-            get { return this._pageNumber.GetValueOrDefault(); }
+            get { return this._pageNumber; }
             set { this._pageNumber = value; }
         }
 

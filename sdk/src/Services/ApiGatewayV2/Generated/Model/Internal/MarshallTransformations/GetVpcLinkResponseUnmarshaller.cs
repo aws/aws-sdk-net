@@ -53,7 +53,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

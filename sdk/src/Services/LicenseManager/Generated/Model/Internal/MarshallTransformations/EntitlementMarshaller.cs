@@ -48,13 +48,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCheckIn())
             {
                 context.Writer.WritePropertyName("AllowCheckIn");
-                context.Writer.Write(requestObject.AllowCheckIn);
+                context.Writer.Write(requestObject.AllowCheckIn.Value);
             }
 
             if(requestObject.IsSetMaxCount())
             {
                 context.Writer.WritePropertyName("MaxCount");
-                context.Writer.Write(requestObject.MaxCount);
+                context.Writer.Write(requestObject.MaxCount.Value);
             }
 
             if(requestObject.IsSetName())
@@ -66,7 +66,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverage())
             {
                 context.Writer.WritePropertyName("Overage");
-                context.Writer.Write(requestObject.Overage);
+                context.Writer.Write(requestObject.Overage.Value);
             }
 
             if(requestObject.IsSetUnit())

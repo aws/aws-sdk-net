@@ -54,9 +54,9 @@ namespace Amazon.Lightsail.Model
         /// This value is null if the access key has not been used.
         /// </para>
         /// </summary>
-        public DateTime LastUsedDate
+        public DateTime? LastUsedDate
         {
-            get { return this._lastUsedDate.GetValueOrDefault(); }
+            get { return this._lastUsedDate; }
             set { this._lastUsedDate = value; }
         }
 

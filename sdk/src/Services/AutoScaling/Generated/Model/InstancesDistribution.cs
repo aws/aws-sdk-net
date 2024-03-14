@@ -101,9 +101,9 @@ namespace Amazon.AutoScaling.Model
         /// Default: 0
         /// </para>
         /// </summary>
-        public int OnDemandBaseCapacity
+        public int? OnDemandBaseCapacity
         {
-            get { return this._onDemandBaseCapacity.GetValueOrDefault(); }
+            get { return this._onDemandBaseCapacity; }
             set { this._onDemandBaseCapacity = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.AutoScaling.Model
         /// Default: 100
         /// </para>
         /// </summary>
-        public int OnDemandPercentageAboveBaseCapacity
+        public int? OnDemandPercentageAboveBaseCapacity
         {
-            get { return this._onDemandPercentageAboveBaseCapacity.GetValueOrDefault(); }
+            get { return this._onDemandPercentageAboveBaseCapacity; }
             set { this._onDemandPercentageAboveBaseCapacity = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.AutoScaling.Model
         /// Default: 2
         /// </para>
         /// </summary>
-        public int SpotInstancePools
+        public int? SpotInstancePools
         {
-            get { return this._spotInstancePools.GetValueOrDefault(); }
+            get { return this._spotInstancePools; }
             set { this._spotInstancePools = value; }
         }
 

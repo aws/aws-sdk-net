@@ -60,13 +60,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination);
+                context.Writer.Write(requestObject.DeleteOnTermination.Value);
             }
 
             if(requestObject.IsSetDeviceIndex())
             {
                 context.Writer.WritePropertyName("DeviceIndex");
-                context.Writer.Write(requestObject.DeviceIndex);
+                context.Writer.Write(requestObject.DeviceIndex.Value);
             }
 
             if(requestObject.IsSetInstanceId())

@@ -47,9 +47,9 @@ namespace Amazon.KinesisFirehose.Model
         /// before deserializing them.
         /// </para>
         /// </summary>
-        public bool CaseInsensitive
+        public bool? CaseInsensitive
         {
-            get { return this._caseInsensitive.GetValueOrDefault(); }
+            get { return this._caseInsensitive; }
             set { this._caseInsensitive = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.KinesisFirehose.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ConvertDotsInJsonKeysToUnderscores
+        public bool? ConvertDotsInJsonKeysToUnderscores
         {
-            get { return this._convertDotsInJsonKeysToUnderscores.GetValueOrDefault(); }
+            get { return this._convertDotsInJsonKeysToUnderscores; }
             set { this._convertDotsInJsonKeysToUnderscores = value; }
         }
 

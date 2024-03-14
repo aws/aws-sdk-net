@@ -65,9 +65,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies whether the user is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The creation date of the user.
         /// </para>
         /// </summary>
-        public DateTime UserCreateDate
+        public DateTime? UserCreateDate
         {
-            get { return this._userCreateDate.GetValueOrDefault(); }
+            get { return this._userCreateDate; }
             set { this._userCreateDate = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
-        public DateTime UserLastModifiedDate
+        public DateTime? UserLastModifiedDate
         {
-            get { return this._userLastModifiedDate.GetValueOrDefault(); }
+            get { return this._userLastModifiedDate; }
             set { this._userLastModifiedDate = value; }
         }
 

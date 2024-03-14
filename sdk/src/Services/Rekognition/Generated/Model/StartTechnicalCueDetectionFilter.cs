@@ -74,9 +74,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=100)]
-        public float MinSegmentConfidence
+        public float? MinSegmentConfidence
         {
-            get { return this._minSegmentConfidence.GetValueOrDefault(); }
+            get { return this._minSegmentConfidence; }
             set { this._minSegmentConfidence = value; }
         }
 

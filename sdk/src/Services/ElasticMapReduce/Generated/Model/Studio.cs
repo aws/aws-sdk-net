@@ -80,9 +80,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The time the Amazon EMR Studio was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -369,9 +369,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// value is <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool TrustedIdentityPropagationEnabled
+        public bool? TrustedIdentityPropagationEnabled
         {
-            get { return this._trustedIdentityPropagationEnabled.GetValueOrDefault(); }
+            get { return this._trustedIdentityPropagationEnabled; }
             set { this._trustedIdentityPropagationEnabled = value; }
         }
 

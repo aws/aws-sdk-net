@@ -47,9 +47,9 @@ namespace Amazon.ServiceCatalog.Model
         /// field is always set to true.
         /// </para>
         /// </summary>
-        public bool Accepted
+        public bool? Accepted
         {
-            get { return this._accepted.GetValueOrDefault(); }
+            get { return this._accepted; }
             set { this._accepted = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.ServiceCatalog.Model
         /// 
         /// </para>
         /// </summary>
-        public bool SharePrincipals
+        public bool? SharePrincipals
         {
-            get { return this._sharePrincipals.GetValueOrDefault(); }
+            get { return this._sharePrincipals; }
             set { this._sharePrincipals = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.ServiceCatalog.Model
         /// Indicates whether TagOptions sharing is enabled or disabled for the portfolio share.
         /// </para>
         /// </summary>
-        public bool ShareTagOptions
+        public bool? ShareTagOptions
         {
-            get { return this._shareTagOptions.GetValueOrDefault(); }
+            get { return this._shareTagOptions; }
             set { this._shareTagOptions = value; }
         }
 

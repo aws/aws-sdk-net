@@ -45,9 +45,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MaxCount
+        public int? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 

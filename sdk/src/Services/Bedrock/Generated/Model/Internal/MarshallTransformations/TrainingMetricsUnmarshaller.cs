@@ -65,7 +65,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("trainingLoss", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TrainingLoss = unmarshaller.Unmarshall(context);
                     continue;
                 }

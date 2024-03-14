@@ -209,9 +209,9 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
-        public int InvocationTimeoutSeconds
+        public int? InvocationTimeoutSeconds
         {
-            get { return this._invocationTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._invocationTimeoutSeconds; }
             set { this._invocationTimeoutSeconds = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=21600)]
-        public int RequestTTLSeconds
+        public int? RequestTTLSeconds
         {
-            get { return this._requestTTLSeconds.GetValueOrDefault(); }
+            get { return this._requestTTLSeconds; }
             set { this._requestTTLSeconds = value; }
         }
 

@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HookInvocationCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HookInvocationCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -43,9 +43,9 @@ namespace Amazon.APIGateway.Model
         /// The percentage (0.0-100.0) of traffic routed to the canary deployment.
         /// </para>
         /// </summary>
-        public double PercentTraffic
+        public double? PercentTraffic
         {
-            get { return this._percentTraffic.GetValueOrDefault(); }
+            get { return this._percentTraffic; }
             set { this._percentTraffic = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.APIGateway.Model
         /// or not.
         /// </para>
         /// </summary>
-        public bool UseStageCache
+        public bool? UseStageCache
         {
-            get { return this._useStageCache.GetValueOrDefault(); }
+            get { return this._useStageCache; }
             set { this._useStageCache = value; }
         }
 

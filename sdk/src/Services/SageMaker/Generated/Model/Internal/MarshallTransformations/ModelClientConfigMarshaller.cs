@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInvocationsMaxRetries())
             {
                 context.Writer.WritePropertyName("InvocationsMaxRetries");
-                context.Writer.Write(requestObject.InvocationsMaxRetries);
+                context.Writer.Write(requestObject.InvocationsMaxRetries.Value);
             }
 
             if(requestObject.IsSetInvocationsTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("InvocationsTimeoutInSeconds");
-                context.Writer.Write(requestObject.InvocationsTimeoutInSeconds);
+                context.Writer.Write(requestObject.InvocationsTimeoutInSeconds.Value);
             }
 
         }

@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int MaxConcurrency
+        public int? MaxConcurrency
         {
-            get { return this._maxConcurrency.GetValueOrDefault(); }
+            get { return this._maxConcurrency; }
             set { this._maxConcurrency = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
-        public int ProvisionedConcurrency
+        public int? ProvisionedConcurrency
         {
-            get { return this._provisionedConcurrency.GetValueOrDefault(); }
+            get { return this._provisionedConcurrency; }
             set { this._provisionedConcurrency = value; }
         }
 

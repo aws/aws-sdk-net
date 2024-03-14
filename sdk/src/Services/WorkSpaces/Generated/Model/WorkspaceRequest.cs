@@ -89,9 +89,9 @@ namespace Amazon.WorkSpaces.Model
         /// Indicates whether the data stored on the root volume is encrypted.
         /// </para>
         /// </summary>
-        public bool RootVolumeEncryptionEnabled
+        public bool? RootVolumeEncryptionEnabled
         {
-            get { return this._rootVolumeEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._rootVolumeEncryptionEnabled; }
             set { this._rootVolumeEncryptionEnabled = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.WorkSpaces.Model
         /// Indicates whether the data stored on the user volume is encrypted.
         /// </para>
         /// </summary>
-        public bool UserVolumeEncryptionEnabled
+        public bool? UserVolumeEncryptionEnabled
         {
-            get { return this._userVolumeEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._userVolumeEncryptionEnabled; }
             set { this._userVolumeEncryptionEnabled = value; }
         }
 

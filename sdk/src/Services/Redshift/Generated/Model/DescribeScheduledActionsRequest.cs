@@ -50,9 +50,9 @@ namespace Amazon.Redshift.Model
         /// scheduled actions. 
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Redshift.Model
         /// that have invocations before this time are retrieved.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.Redshift.Model
         /// Constraints: minimum 20, maximum 100.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.Redshift.Model
         /// actions that have invocations after this time are retrieved.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeletionProtectionEnabled())
             {
                 context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                context.Writer.Write(requestObject.DeletionProtectionEnabled);
+                context.Writer.Write(requestObject.DeletionProtectionEnabled.Value);
             }
 
             if(requestObject.IsSetGlobalSecondaryIndexes())
@@ -109,7 +109,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetItemCount())
             {
                 context.Writer.WritePropertyName("ItemCount");
-                context.Writer.Write(requestObject.ItemCount);
+                context.Writer.Write(requestObject.ItemCount.Value);
             }
 
             if(requestObject.IsSetKeySchema())
@@ -231,7 +231,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTableSizeBytes())
             {
                 context.Writer.WritePropertyName("TableSizeBytes");
-                context.Writer.Write(requestObject.TableSizeBytes);
+                context.Writer.Write(requestObject.TableSizeBytes.Value);
             }
 
             if(requestObject.IsSetTableStatus())

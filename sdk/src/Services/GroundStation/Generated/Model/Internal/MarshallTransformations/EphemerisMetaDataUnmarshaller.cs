@@ -71,7 +71,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("epoch", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Epoch = unmarshaller.Unmarshall(context);
                     continue;
                 }

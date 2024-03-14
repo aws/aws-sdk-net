@@ -78,9 +78,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// the <c>logs:Unmask</c> permission.
         /// </para>
         /// </summary>
-        public bool Unmask
+        public bool? Unmask
         {
-            get { return this._unmask.GetValueOrDefault(); }
+            get { return this._unmask; }
             set { this._unmask = value; }
         }
 

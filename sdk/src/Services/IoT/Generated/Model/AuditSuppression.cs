@@ -81,9 +81,9 @@ namespace Amazon.IoT.Model
         /// adhere to. 
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.IoT.Model
         ///  Indicates whether a suppression should exist indefinitely or not. 
         /// </para>
         /// </summary>
-        public bool SuppressIndefinitely
+        public bool? SuppressIndefinitely
         {
-            get { return this._suppressIndefinitely.GetValueOrDefault(); }
+            get { return this._suppressIndefinitely; }
             set { this._suppressIndefinitely = value; }
         }
 

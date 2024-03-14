@@ -128,9 +128,9 @@ namespace Amazon.Route53Resolver.Model
         /// setting of <c>OVERRIDE</c>.
         /// </para>
         /// </summary>
-        public int BlockOverrideTtl
+        public int? BlockOverrideTtl
         {
-            get { return this._blockOverrideTtl.GetValueOrDefault(); }
+            get { return this._blockOverrideTtl; }
             set { this._blockOverrideTtl = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.Route53Resolver.Model
         /// from the lowest setting.
         /// </para>
         /// </summary>
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

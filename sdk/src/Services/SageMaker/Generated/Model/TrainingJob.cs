@@ -116,9 +116,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int BillableTimeInSeconds
+        public int? BillableTimeInSeconds
         {
-            get { return this._billableTimeInSeconds.GetValueOrDefault(); }
+            get { return this._billableTimeInSeconds; }
             set { this._billableTimeInSeconds = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates when the training job was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.SageMaker.Model
         /// training.
         /// </para>
         /// </summary>
-        public bool EnableInterContainerTrafficEncryption
+        public bool? EnableInterContainerTrafficEncryption
         {
-            get { return this._enableInterContainerTrafficEncryption.GetValueOrDefault(); }
+            get { return this._enableInterContainerTrafficEncryption; }
             set { this._enableInterContainerTrafficEncryption = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.SageMaker.Model
         /// Spot Training</a>.
         /// </para>
         /// </summary>
-        public bool EnableManagedSpotTraining
+        public bool? EnableManagedSpotTraining
         {
-            get { return this._enableManagedSpotTraining.GetValueOrDefault(); }
+            get { return this._enableManagedSpotTraining; }
             set { this._enableManagedSpotTraining = value; }
         }
 
@@ -264,9 +264,9 @@ namespace Amazon.SageMaker.Model
         /// they run in.
         /// </para>
         /// </summary>
-        public bool EnableNetworkIsolation
+        public bool? EnableNetworkIsolation
         {
-            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            get { return this._enableNetworkIsolation; }
             set { this._enableNetworkIsolation = value; }
         }
 
@@ -416,9 +416,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that indicates when the status of the training job was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -713,9 +713,9 @@ namespace Amazon.SageMaker.Model
         /// For failed jobs, this is the time when SageMaker detects a job failure.
         /// </para>
         /// </summary>
-        public DateTime TrainingEndTime
+        public DateTime? TrainingEndTime
         {
-            get { return this._trainingEndTime.GetValueOrDefault(); }
+            get { return this._trainingEndTime; }
             set { this._trainingEndTime = value; }
         }
 
@@ -821,9 +821,9 @@ namespace Amazon.SageMaker.Model
         /// container.
         /// </para>
         /// </summary>
-        public DateTime TrainingStartTime
+        public DateTime? TrainingStartTime
         {
-            get { return this._trainingStartTime.GetValueOrDefault(); }
+            get { return this._trainingStartTime; }
             set { this._trainingStartTime = value; }
         }
 
@@ -840,9 +840,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TrainingTimeInSeconds
+        public int? TrainingTimeInSeconds
         {
-            get { return this._trainingTimeInSeconds.GetValueOrDefault(); }
+            get { return this._trainingTimeInSeconds; }
             set { this._trainingTimeInSeconds = value; }
         }
 

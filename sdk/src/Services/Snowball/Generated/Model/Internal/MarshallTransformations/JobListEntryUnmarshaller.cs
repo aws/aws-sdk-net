@@ -65,7 +65,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsMaster", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsMaster = unmarshaller.Unmarshall(context);
                     continue;
                 }

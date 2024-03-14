@@ -70,7 +70,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoMounting())
                 {
                     context.Writer.WritePropertyName("autoMounting");
-                    context.Writer.Write(publicRequest.AutoMounting);
+                    context.Writer.Write(publicRequest.AutoMounting.Value);
                 }
 
                 if(publicRequest.IsSetDiskName())

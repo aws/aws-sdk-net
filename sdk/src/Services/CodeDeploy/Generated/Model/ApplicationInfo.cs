@@ -102,9 +102,9 @@ namespace Amazon.CodeDeploy.Model
         /// The time at which the application was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.CodeDeploy.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool LinkedToGitHub
+        public bool? LinkedToGitHub
         {
-            get { return this._linkedToGitHub.GetValueOrDefault(); }
+            get { return this._linkedToGitHub; }
             set { this._linkedToGitHub = value; }
         }
 

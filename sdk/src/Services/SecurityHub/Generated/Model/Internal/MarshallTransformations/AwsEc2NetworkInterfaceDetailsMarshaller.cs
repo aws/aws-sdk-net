@@ -125,7 +125,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceDestCheck())
             {
                 context.Writer.WritePropertyName("SourceDestCheck");
-                context.Writer.Write(requestObject.SourceDestCheck);
+                context.Writer.Write(requestObject.SourceDestCheck.Value);
             }
 
         }

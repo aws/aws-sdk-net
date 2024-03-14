@@ -65,7 +65,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IsPubliclyAccessible", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsPubliclyAccessible = unmarshaller.Unmarshall(context);
                     continue;
                 }

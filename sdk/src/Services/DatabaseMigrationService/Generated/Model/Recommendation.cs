@@ -135,9 +135,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Indicates that this target is the rightsized migration destination.
         /// </para>
         /// </summary>
-        public bool Preferred
+        public bool? Preferred
         {
-            get { return this._preferred.GetValueOrDefault(); }
+            get { return this._preferred; }
             set { this._preferred = value; }
         }
 

@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQuantity())
             {
                 context.Writer.WritePropertyName("Quantity");
-                context.Writer.Write(requestObject.Quantity);
+                context.Writer.Write(requestObject.Quantity.Value);
             }
 
         }

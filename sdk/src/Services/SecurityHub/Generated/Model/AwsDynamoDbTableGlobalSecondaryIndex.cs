@@ -49,9 +49,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the index is currently backfilling.
         /// </para>
         /// </summary>
-        public bool Backfilling
+        public bool? Backfilling
         {
-            get { return this._backfilling.GetValueOrDefault(); }
+            get { return this._backfilling; }
             set { this._backfilling = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SecurityHub.Model
         /// The total size in bytes of the index.
         /// </para>
         /// </summary>
-        public long IndexSizeBytes
+        public long? IndexSizeBytes
         {
-            get { return this._indexSizeBytes.GetValueOrDefault(); }
+            get { return this._indexSizeBytes; }
             set { this._indexSizeBytes = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of items in the index.
         /// </para>
         /// </summary>
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeMatchedPattern())
             {
                 context.Writer.WritePropertyName("excludeMatchedPattern");
-                context.Writer.Write(requestObject.ExcludeMatchedPattern);
+                context.Writer.Write(requestObject.ExcludeMatchedPattern.Value);
             }
 
             if(requestObject.IsSetPattern())

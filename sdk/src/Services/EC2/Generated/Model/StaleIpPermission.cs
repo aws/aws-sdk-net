@@ -47,9 +47,9 @@ namespace Amazon.EC2.Model
         /// A value of -1 indicates all ICMP types. 
         /// </para>
         /// </summary>
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.EC2.Model
         /// value of <c>-1</c> indicates all ICMP types. 
         /// </para>
         /// </summary>
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInMinutes())
             {
                 context.Writer.WritePropertyName("DurationInMinutes");
-                context.Writer.Write(requestObject.DurationInMinutes);
+                context.Writer.Write(requestObject.DurationInMinutes.Value);
             }
 
             if(requestObject.IsSetTargets())

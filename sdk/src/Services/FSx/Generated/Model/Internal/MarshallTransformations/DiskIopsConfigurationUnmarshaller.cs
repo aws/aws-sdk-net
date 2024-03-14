@@ -65,7 +65,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Iops", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
                     continue;
                 }

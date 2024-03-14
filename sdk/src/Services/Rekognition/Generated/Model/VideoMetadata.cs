@@ -86,9 +86,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DurationMillis
+        public long? DurationMillis
         {
-            get { return this._durationMillis.GetValueOrDefault(); }
+            get { return this._durationMillis; }
             set { this._durationMillis = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long FrameHeight
+        public long? FrameHeight
         {
-            get { return this._frameHeight.GetValueOrDefault(); }
+            get { return this._frameHeight; }
             set { this._frameHeight = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.Rekognition.Model
         /// Number of frames per second in the video.
         /// </para>
         /// </summary>
-        public float FrameRate
+        public float? FrameRate
         {
-            get { return this._frameRate.GetValueOrDefault(); }
+            get { return this._frameRate; }
             set { this._frameRate = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long FrameWidth
+        public long? FrameWidth
         {
-            get { return this._frameWidth.GetValueOrDefault(); }
+            get { return this._frameWidth; }
             set { this._frameWidth = value; }
         }
 

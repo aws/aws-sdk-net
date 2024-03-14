@@ -81,9 +81,9 @@ namespace Amazon.StorageGateway.Model
         /// The total number of bytes allocated in the gateway's as upload buffer.
         /// </para>
         /// </summary>
-        public long UploadBufferAllocatedInBytes
+        public long? UploadBufferAllocatedInBytes
         {
-            get { return this._uploadBufferAllocatedInBytes.GetValueOrDefault(); }
+            get { return this._uploadBufferAllocatedInBytes; }
             set { this._uploadBufferAllocatedInBytes = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.StorageGateway.Model
         /// The total number of bytes being used in the gateway's upload buffer.
         /// </para>
         /// </summary>
-        public long UploadBufferUsedInBytes
+        public long? UploadBufferUsedInBytes
         {
-            get { return this._uploadBufferUsedInBytes.GetValueOrDefault(); }
+            get { return this._uploadBufferUsedInBytes; }
             set { this._uploadBufferUsedInBytes = value; }
         }
 

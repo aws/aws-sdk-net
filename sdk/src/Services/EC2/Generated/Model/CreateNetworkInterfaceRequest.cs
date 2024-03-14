@@ -138,9 +138,9 @@ namespace Amazon.EC2.Model
         /// with the ENI becomes the primary IPv6 address.
         /// </para>
         /// </summary>
-        public bool EnablePrimaryIpv6
+        public bool? EnablePrimaryIpv6
         {
-            get { return this._enablePrimaryIpv6.GetValueOrDefault(); }
+            get { return this._enablePrimaryIpv6; }
             set { this._enablePrimaryIpv6 = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.EC2.Model
         /// addresses.
         /// </para>
         /// </summary>
-        public int Ipv4PrefixCount
+        public int? Ipv4PrefixCount
         {
-            get { return this._ipv4PrefixCount.GetValueOrDefault(); }
+            get { return this._ipv4PrefixCount; }
             set { this._ipv4PrefixCount = value; }
         }
 
@@ -256,9 +256,9 @@ namespace Amazon.EC2.Model
         /// that setting by specifying 0 as the IPv6 address count.
         /// </para>
         /// </summary>
-        public int Ipv6AddressCount
+        public int? Ipv6AddressCount
         {
-            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            get { return this._ipv6AddressCount; }
             set { this._ipv6AddressCount = value; }
         }
 
@@ -303,9 +303,9 @@ namespace Amazon.EC2.Model
         /// specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.
         /// </para>
         /// </summary>
-        public int Ipv6PrefixCount
+        public int? Ipv6PrefixCount
         {
-            get { return this._ipv6PrefixCount.GetValueOrDefault(); }
+            get { return this._ipv6PrefixCount; }
             set { this._ipv6PrefixCount = value; }
         }
 
@@ -397,9 +397,9 @@ namespace Amazon.EC2.Model
         /// IPv4 prefixes.
         /// </para>
         /// </summary>
-        public int SecondaryPrivateIpAddressCount
+        public int? SecondaryPrivateIpAddressCount
         {
-            get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
+            get { return this._secondaryPrivateIpAddressCount; }
             set { this._secondaryPrivateIpAddressCount = value; }
         }
 

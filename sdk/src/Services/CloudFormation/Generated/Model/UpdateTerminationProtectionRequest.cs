@@ -54,9 +54,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableTerminationProtection
+        public bool? EnableTerminationProtection
         {
-            get { return this._enableTerminationProtection.GetValueOrDefault(); }
+            get { return this._enableTerminationProtection; }
             set { this._enableTerminationProtection = value; }
         }
 

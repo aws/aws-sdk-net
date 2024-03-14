@@ -82,9 +82,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// both values results in an error.
         /// </para>
         /// </summary>
-        public DateTime CdcStartTime
+        public DateTime? CdcStartTime
         {
-            get { return this._cdcStartTime.GetValueOrDefault(); }
+            get { return this._cdcStartTime; }
             set { this._cdcStartTime = value; }
         }
 
@@ -211,9 +211,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time the serverless replication was created.
         /// </para>
         /// </summary>
-        public DateTime ReplicationCreateTime
+        public DateTime? ReplicationCreateTime
         {
-            get { return this._replicationCreateTime.GetValueOrDefault(); }
+            get { return this._replicationCreateTime; }
             set { this._replicationCreateTime = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The timestamp when DMS will deprovision the replication.
         /// </para>
         /// </summary>
-        public DateTime ReplicationDeprovisionTime
+        public DateTime? ReplicationDeprovisionTime
         {
-            get { return this._replicationDeprovisionTime.GetValueOrDefault(); }
+            get { return this._replicationDeprovisionTime; }
             set { this._replicationDeprovisionTime = value; }
         }
 
@@ -247,9 +247,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The timestamp when replication was last stopped.
         /// </para>
         /// </summary>
-        public DateTime ReplicationLastStopTime
+        public DateTime? ReplicationLastStopTime
         {
-            get { return this._replicationLastStopTime.GetValueOrDefault(); }
+            get { return this._replicationLastStopTime; }
             set { this._replicationLastStopTime = value; }
         }
 
@@ -301,9 +301,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time the serverless replication was updated.
         /// </para>
         /// </summary>
-        public DateTime ReplicationUpdateTime
+        public DateTime? ReplicationUpdateTime
         {
-            get { return this._replicationUpdateTime.GetValueOrDefault(); }
+            get { return this._replicationUpdateTime; }
             set { this._replicationUpdateTime = value; }
         }
 

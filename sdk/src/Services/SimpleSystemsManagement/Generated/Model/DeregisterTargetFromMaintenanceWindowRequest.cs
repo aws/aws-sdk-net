@@ -46,9 +46,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// maintenance window.
         /// </para>
         /// </summary>
-        public bool Safe
+        public bool? Safe
         {
-            get { return this._safe.GetValueOrDefault(); }
+            get { return this._safe; }
             set { this._safe = value; }
         }
 

@@ -48,19 +48,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseLat())
             {
                 context.Writer.WritePropertyName("BaseLat");
-                context.Writer.Write(requestObject.BaseLat);
+                context.Writer.Write(requestObject.BaseLat.Value);
             }
 
             if(requestObject.IsSetBaseLng())
             {
                 context.Writer.WritePropertyName("BaseLng");
-                context.Writer.Write(requestObject.BaseLng);
+                context.Writer.Write(requestObject.BaseLng.Value);
             }
 
             if(requestObject.IsSetBaseStationId())
             {
                 context.Writer.WritePropertyName("BaseStationId");
-                context.Writer.Write(requestObject.BaseStationId);
+                context.Writer.Write(requestObject.BaseStationId.Value);
             }
 
             if(requestObject.IsSetCdmaLocalId())
@@ -93,25 +93,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkId())
             {
                 context.Writer.WritePropertyName("NetworkId");
-                context.Writer.Write(requestObject.NetworkId);
+                context.Writer.Write(requestObject.NetworkId.Value);
             }
 
             if(requestObject.IsSetPilotPower())
             {
                 context.Writer.WritePropertyName("PilotPower");
-                context.Writer.Write(requestObject.PilotPower);
+                context.Writer.Write(requestObject.PilotPower.Value);
             }
 
             if(requestObject.IsSetRegistrationZone())
             {
                 context.Writer.WritePropertyName("RegistrationZone");
-                context.Writer.Write(requestObject.RegistrationZone);
+                context.Writer.Write(requestObject.RegistrationZone.Value);
             }
 
             if(requestObject.IsSetSystemId())
             {
                 context.Writer.WritePropertyName("SystemId");
-                context.Writer.Write(requestObject.SystemId);
+                context.Writer.Write(requestObject.SystemId.Value);
             }
 
         }

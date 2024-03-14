@@ -205,9 +205,9 @@ namespace Amazon.CodeArtifact.Model
         ///  A timestamp that contains the date and time the package version was published. 
         /// </para>
         /// </summary>
-        public DateTime PublishedTime
+        public DateTime? PublishedTime
         {
-            get { return this._publishedTime.GetValueOrDefault(); }
+            get { return this._publishedTime; }
             set { this._publishedTime = value; }
         }
 

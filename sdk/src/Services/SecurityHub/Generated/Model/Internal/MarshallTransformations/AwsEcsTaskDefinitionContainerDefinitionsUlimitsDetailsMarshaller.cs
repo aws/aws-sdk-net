@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHardLimit())
             {
                 context.Writer.WritePropertyName("HardLimit");
-                context.Writer.Write(requestObject.HardLimit);
+                context.Writer.Write(requestObject.HardLimit.Value);
             }
 
             if(requestObject.IsSetName())
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSoftLimit())
             {
                 context.Writer.WritePropertyName("SoftLimit");
-                context.Writer.Write(requestObject.SoftLimit);
+                context.Writer.Write(requestObject.SoftLimit.Value);
             }
 
         }

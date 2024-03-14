@@ -45,9 +45,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 

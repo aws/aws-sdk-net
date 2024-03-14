@@ -44,9 +44,9 @@ namespace Amazon.DeviceFarm.Model
         /// The date on which the offering is effective.
         /// </para>
         /// </summary>
-        public DateTime EffectiveOn
+        public DateTime? EffectiveOn
         {
-            get { return this._effectiveOn.GetValueOrDefault(); }
+            get { return this._effectiveOn; }
             set { this._effectiveOn = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of available devices in the offering.
         /// </para>
         /// </summary>
-        public int Quantity
+        public int? Quantity
         {
-            get { return this._quantity.GetValueOrDefault(); }
+            get { return this._quantity; }
             set { this._quantity = value; }
         }
 

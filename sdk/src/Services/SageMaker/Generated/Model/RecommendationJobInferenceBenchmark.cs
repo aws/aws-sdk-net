@@ -95,9 +95,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the benchmark completed.
         /// </para>
         /// </summary>
-        public DateTime InvocationEndTime
+        public DateTime? InvocationEndTime
         {
-            get { return this._invocationEndTime.GetValueOrDefault(); }
+            get { return this._invocationEndTime; }
             set { this._invocationEndTime = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.SageMaker.Model
         /// A timestamp that shows when the benchmark started.
         /// </para>
         /// </summary>
-        public DateTime InvocationStartTime
+        public DateTime? InvocationStartTime
         {
-            get { return this._invocationStartTime.GetValueOrDefault(); }
+            get { return this._invocationStartTime; }
             set { this._invocationStartTime = value; }
         }
 

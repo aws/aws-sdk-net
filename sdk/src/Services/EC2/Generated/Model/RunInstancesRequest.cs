@@ -152,7 +152,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageId">The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</param>
         /// <param name="minCount">The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</param>
         /// <param name="maxCount">The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible number of instances above <c>MinCount</c>. Constraints: Between 1 and the maximum number you're allowed for the specified instance type. For more information about the default limits, and how to request an increase, see <a href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</param>
-        public RunInstancesRequest(string imageId, int minCount, int maxCount)
+        public RunInstancesRequest(string imageId, int? minCount, int? maxCount)
         {
             _imageId = imageId;
             _minCount = minCount;
@@ -304,9 +304,9 @@ namespace Amazon.EC2.Model
         /// protection</a>. 
         /// </para>
         /// </summary>
-        public bool DisableApiStop
+        public bool? DisableApiStop
         {
-            get { return this._disableApiStop.GetValueOrDefault(); }
+            get { return this._disableApiStop; }
             set { this._disableApiStop = value; }
         }
 
@@ -330,9 +330,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool DisableApiTermination
+        public bool? DisableApiTermination
         {
-            get { return this._disableApiTermination.GetValueOrDefault(); }
+            get { return this._disableApiTermination; }
             set { this._disableApiTermination = value; }
         }
 
@@ -355,9 +355,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool EbsOptimized
+        public bool? EbsOptimized
         {
-            get { return this._ebsOptimized.GetValueOrDefault(); }
+            get { return this._ebsOptimized; }
             set { this._ebsOptimized = value; }
         }
 
@@ -444,9 +444,9 @@ namespace Amazon.EC2.Model
         /// the primary IPv6 address.
         /// </para>
         /// </summary>
-        public bool EnablePrimaryIpv6
+        public bool? EnablePrimaryIpv6
         {
-            get { return this._enablePrimaryIpv6.GetValueOrDefault(); }
+            get { return this._enablePrimaryIpv6; }
             set { this._enablePrimaryIpv6 = value; }
         }
 
@@ -621,9 +621,9 @@ namespace Amazon.EC2.Model
         /// You cannot specify this option and the network interfaces option in the same request.
         /// </para>
         /// </summary>
-        public int Ipv6AddressCount
+        public int? Ipv6AddressCount
         {
-            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            get { return this._ipv6AddressCount; }
             set { this._ipv6AddressCount = value; }
         }
 
@@ -780,9 +780,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxCount
+        public int? MaxCount
         {
-            get { return this._maxCount.GetValueOrDefault(); }
+            get { return this._maxCount; }
             set { this._maxCount = value; }
         }
 
@@ -827,9 +827,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MinCount
+        public int? MinCount
         {
-            get { return this._minCount.GetValueOrDefault(); }
+            get { return this._minCount; }
             set { this._minCount = value; }
         }
 
@@ -845,9 +845,9 @@ namespace Amazon.EC2.Model
         /// Specifies whether detailed monitoring is enabled for the instance.
         /// </para>
         /// </summary>
-        public bool Monitoring
+        public bool? Monitoring
         {
-            get { return this._monitoring.GetValueOrDefault(); }
+            get { return this._monitoring; }
             set { this._monitoring = value; }
         }
 

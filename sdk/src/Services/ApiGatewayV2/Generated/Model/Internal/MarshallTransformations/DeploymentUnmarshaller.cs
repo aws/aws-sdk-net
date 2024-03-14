@@ -65,13 +65,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("autoDeployed", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeployed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

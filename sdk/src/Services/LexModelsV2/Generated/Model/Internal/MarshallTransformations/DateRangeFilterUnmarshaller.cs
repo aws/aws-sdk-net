@@ -65,13 +65,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("endDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

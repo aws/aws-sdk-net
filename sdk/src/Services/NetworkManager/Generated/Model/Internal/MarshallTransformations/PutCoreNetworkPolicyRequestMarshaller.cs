@@ -88,7 +88,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLatestVersionId())
                 {
                     context.Writer.WritePropertyName("LatestVersionId");
-                    context.Writer.Write(publicRequest.LatestVersionId);
+                    context.Writer.Write(publicRequest.LatestVersionId.Value);
                 }
 
                 if(publicRequest.IsSetPolicyDocument())

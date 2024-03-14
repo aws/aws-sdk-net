@@ -62,25 +62,25 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("FailureToleranceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.FailureToleranceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("FailureTolerancePercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.FailureTolerancePercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxConcurrentCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxConcurrentCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxConcurrentPercentage", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxConcurrentPercentage = unmarshaller.Unmarshall(context);
                         continue;
                     }

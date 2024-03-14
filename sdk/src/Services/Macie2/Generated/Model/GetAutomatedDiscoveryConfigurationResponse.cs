@@ -68,9 +68,9 @@ namespace Amazon.Macie2.Model
         /// sensitive data discovery wasn't enabled and subsequently disabled for the account.
         /// </para>
         /// </summary>
-        public DateTime DisabledAt
+        public DateTime? DisabledAt
         {
-            get { return this._disabledAt.GetValueOrDefault(); }
+            get { return this._disabledAt; }
             set { this._disabledAt = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.Macie2.Model
         /// data discovery has never been enabled for the account.
         /// </para>
         /// </summary>
-        public DateTime FirstEnabledAt
+        public DateTime? FirstEnabledAt
         {
-            get { return this._firstEnabledAt.GetValueOrDefault(); }
+            get { return this._firstEnabledAt; }
             set { this._firstEnabledAt = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Macie2.Model
         /// discovery was most recently enabled or disabled for the account.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

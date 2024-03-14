@@ -85,9 +85,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Shared
+        public bool? Shared
         {
-            get { return this._shared.GetValueOrDefault(); }
+            get { return this._shared; }
             set { this._shared = value; }
         }
 

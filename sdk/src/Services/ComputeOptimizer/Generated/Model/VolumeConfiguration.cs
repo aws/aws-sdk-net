@@ -47,9 +47,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  Contains the image used to boot the instance during launch. 
         /// </para>
         /// </summary>
-        public bool RootVolume
+        public bool? RootVolume
         {
-            get { return this._rootVolume.GetValueOrDefault(); }
+            get { return this._rootVolume; }
             set { this._rootVolume = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The baseline IOPS of the volume.
         /// </para>
         /// </summary>
-        public int VolumeBaselineIOPS
+        public int? VolumeBaselineIOPS
         {
-            get { return this._volumeBaselineIOPS.GetValueOrDefault(); }
+            get { return this._volumeBaselineIOPS; }
             set { this._volumeBaselineIOPS = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The baseline throughput of the volume.
         /// </para>
         /// </summary>
-        public int VolumeBaselineThroughput
+        public int? VolumeBaselineThroughput
         {
-            get { return this._volumeBaselineThroughput.GetValueOrDefault(); }
+            get { return this._volumeBaselineThroughput; }
             set { this._volumeBaselineThroughput = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The burst IOPS of the volume.
         /// </para>
         /// </summary>
-        public int VolumeBurstIOPS
+        public int? VolumeBurstIOPS
         {
-            get { return this._volumeBurstIOPS.GetValueOrDefault(); }
+            get { return this._volumeBurstIOPS; }
             set { this._volumeBurstIOPS = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The burst throughput of the volume.
         /// </para>
         /// </summary>
-        public int VolumeBurstThroughput
+        public int? VolumeBurstThroughput
         {
-            get { return this._volumeBurstThroughput.GetValueOrDefault(); }
+            get { return this._volumeBurstThroughput; }
             set { this._volumeBurstThroughput = value; }
         }
 
@@ -137,9 +137,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// The size of the volume, in GiB.
         /// </para>
         /// </summary>
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

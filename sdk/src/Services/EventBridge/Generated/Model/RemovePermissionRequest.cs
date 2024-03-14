@@ -67,9 +67,9 @@ namespace Amazon.EventBridge.Model
         /// Specifies whether to remove all permissions.
         /// </para>
         /// </summary>
-        public bool RemoveAllPermissions
+        public bool? RemoveAllPermissions
         {
-            get { return this._removeAllPermissions.GetValueOrDefault(); }
+            get { return this._removeAllPermissions; }
             set { this._removeAllPermissions = value; }
         }
 

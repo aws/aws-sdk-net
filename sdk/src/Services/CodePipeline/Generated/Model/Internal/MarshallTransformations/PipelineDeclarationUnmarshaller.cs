@@ -119,7 +119,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("version", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }

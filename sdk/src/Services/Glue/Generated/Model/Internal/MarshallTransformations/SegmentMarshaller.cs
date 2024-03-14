@@ -48,13 +48,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentNumber())
             {
                 context.Writer.WritePropertyName("SegmentNumber");
-                context.Writer.Write(requestObject.SegmentNumber);
+                context.Writer.Write(requestObject.SegmentNumber.Value);
             }
 
             if(requestObject.IsSetTotalSegments())
             {
                 context.Writer.WritePropertyName("TotalSegments");
-                context.Writer.Write(requestObject.TotalSegments);
+                context.Writer.Write(requestObject.TotalSegments.Value);
             }
 
         }

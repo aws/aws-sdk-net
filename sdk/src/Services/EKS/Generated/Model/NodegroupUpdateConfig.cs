@@ -45,9 +45,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxUnavailable
+        public int? MaxUnavailable
         {
-            get { return this._maxUnavailable.GetValueOrDefault(); }
+            get { return this._maxUnavailable; }
             set { this._maxUnavailable = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.EKS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxUnavailablePercentage
+        public int? MaxUnavailablePercentage
         {
-            get { return this._maxUnavailablePercentage.GetValueOrDefault(); }
+            get { return this._maxUnavailablePercentage; }
             set { this._maxUnavailablePercentage = value; }
         }
 

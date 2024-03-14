@@ -74,9 +74,9 @@ namespace Amazon.LakeFormation.Model
         /// by both Lake Formation permissions as well as Amazon S3 bucket policies. 
         /// </para>
         /// </summary>
-        public bool HybridAccessEnabled
+        public bool? HybridAccessEnabled
         {
-            get { return this._hybridAccessEnabled.GetValueOrDefault(); }
+            get { return this._hybridAccessEnabled; }
             set { this._hybridAccessEnabled = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.LakeFormation.Model
         /// Service-Linked Roles for Lake Formation</a>.
         /// </para>
         /// </summary>
-        public bool UseServiceLinkedRole
+        public bool? UseServiceLinkedRole
         {
-            get { return this._useServiceLinkedRole.GetValueOrDefault(); }
+            get { return this._useServiceLinkedRole; }
             set { this._useServiceLinkedRole = value; }
         }
 
@@ -154,9 +154,9 @@ namespace Amazon.LakeFormation.Model
         /// Whether or not the resource is a federated resource.
         /// </para>
         /// </summary>
-        public bool WithFederation
+        public bool? WithFederation
         {
-            get { return this._withFederation.GetValueOrDefault(); }
+            get { return this._withFederation; }
             set { this._withFederation = value; }
         }
 

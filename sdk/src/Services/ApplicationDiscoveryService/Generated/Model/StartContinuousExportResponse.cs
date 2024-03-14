@@ -123,9 +123,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// The timestamp representing when the continuous export was started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

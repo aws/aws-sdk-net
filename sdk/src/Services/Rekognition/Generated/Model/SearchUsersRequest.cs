@@ -89,9 +89,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxUsers
+        public int? MaxUsers
         {
-            get { return this._maxUsers.GetValueOrDefault(); }
+            get { return this._maxUsers; }
             set { this._maxUsers = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public float UserMatchThreshold
+        public float? UserMatchThreshold
         {
-            get { return this._userMatchThreshold.GetValueOrDefault(); }
+            get { return this._userMatchThreshold; }
             set { this._userMatchThreshold = value; }
         }
 

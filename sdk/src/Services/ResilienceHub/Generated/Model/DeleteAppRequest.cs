@@ -89,9 +89,9 @@ namespace Amazon.ResilienceHub.Model
         /// A boolean option to force the deletion of an Resilience Hub application. 
         /// </para>
         /// </summary>
-        public bool ForceDelete
+        public bool? ForceDelete
         {
-            get { return this._forceDelete.GetValueOrDefault(); }
+            get { return this._forceDelete; }
             set { this._forceDelete = value; }
         }
 

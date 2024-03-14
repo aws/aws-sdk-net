@@ -76,13 +76,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceStopAppReplication())
                 {
                     context.Writer.WritePropertyName("forceStopAppReplication");
-                    context.Writer.Write(publicRequest.ForceStopAppReplication);
+                    context.Writer.Write(publicRequest.ForceStopAppReplication.Value);
                 }
 
                 if(publicRequest.IsSetForceTerminateApp())
                 {
                     context.Writer.WritePropertyName("forceTerminateApp");
-                    context.Writer.Write(publicRequest.ForceTerminateApp);
+                    context.Writer.Write(publicRequest.ForceTerminateApp.Value);
                 }
 
                 writer.WriteObjectEnd();

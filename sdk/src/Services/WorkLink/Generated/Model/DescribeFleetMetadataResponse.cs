@@ -67,9 +67,9 @@ namespace Amazon.WorkLink.Model
         /// The time that the fleet was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.WorkLink.Model
         /// The time that the fleet was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTime
+        public DateTime? LastUpdatedTime
         {
-            get { return this._lastUpdatedTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedTime; }
             set { this._lastUpdatedTime = value; }
         }
 
@@ -160,9 +160,9 @@ namespace Amazon.WorkLink.Model
         /// AWS Region to users, which may be outside of your home Region.
         /// </para>
         /// </summary>
-        public bool OptimizeForEndUserLocation
+        public bool? OptimizeForEndUserLocation
         {
-            get { return this._optimizeForEndUserLocation.GetValueOrDefault(); }
+            get { return this._optimizeForEndUserLocation; }
             set { this._optimizeForEndUserLocation = value; }
         }
 

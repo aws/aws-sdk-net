@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.FSx")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon FSx. Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

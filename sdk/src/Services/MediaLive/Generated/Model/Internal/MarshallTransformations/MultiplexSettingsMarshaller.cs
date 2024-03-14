@@ -48,25 +48,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumVideoBufferDelayMilliseconds())
             {
                 context.Writer.WritePropertyName("maximumVideoBufferDelayMilliseconds");
-                context.Writer.Write(requestObject.MaximumVideoBufferDelayMilliseconds);
+                context.Writer.Write(requestObject.MaximumVideoBufferDelayMilliseconds.Value);
             }
 
             if(requestObject.IsSetTransportStreamBitrate())
             {
                 context.Writer.WritePropertyName("transportStreamBitrate");
-                context.Writer.Write(requestObject.TransportStreamBitrate);
+                context.Writer.Write(requestObject.TransportStreamBitrate.Value);
             }
 
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");
-                context.Writer.Write(requestObject.TransportStreamId);
+                context.Writer.Write(requestObject.TransportStreamId.Value);
             }
 
             if(requestObject.IsSetTransportStreamReservedBitrate())
             {
                 context.Writer.WritePropertyName("transportStreamReservedBitrate");
-                context.Writer.Write(requestObject.TransportStreamReservedBitrate);
+                context.Writer.Write(requestObject.TransportStreamReservedBitrate.Value);
             }
 
         }

@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumExecutionTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumExecutionTimeoutInSeconds");
-                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds);
+                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetTerminationWaitInSeconds())
             {
                 context.Writer.WritePropertyName("TerminationWaitInSeconds");
-                context.Writer.Write(requestObject.TerminationWaitInSeconds);
+                context.Writer.Write(requestObject.TerminationWaitInSeconds.Value);
             }
 
             if(requestObject.IsSetTrafficRoutingConfiguration())

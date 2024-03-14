@@ -42,9 +42,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StopDate
+        public DateTime? StopDate
         {
-            get { return this._stopDate.GetValueOrDefault(); }
+            get { return this._stopDate; }
             set { this._stopDate = value; }
         }
 

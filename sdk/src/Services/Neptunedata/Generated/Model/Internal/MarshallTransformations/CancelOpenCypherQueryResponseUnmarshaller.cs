@@ -53,7 +53,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("payload", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Payload = unmarshaller.Unmarshall(context);
                     continue;
                 }

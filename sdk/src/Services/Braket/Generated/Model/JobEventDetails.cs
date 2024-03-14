@@ -80,9 +80,9 @@ namespace Amazon.Braket.Model
         /// The type of event that occurred related to the Amazon Braket job.
         /// </para>
         /// </summary>
-        public DateTime TimeOfEvent
+        public DateTime? TimeOfEvent
         {
-            get { return this._timeOfEvent.GetValueOrDefault(); }
+            get { return this._timeOfEvent; }
             set { this._timeOfEvent = value; }
         }
 

@@ -54,9 +54,9 @@ namespace Amazon.Rekognition.Model
         /// Date and time the stream processor was created
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.Rekognition.Model
         /// starts or stops the stream processor.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetReputationMetricsEnabled())
                 {
                     context.Writer.WritePropertyName("ReputationMetricsEnabled");
-                    context.Writer.Write(publicRequest.ReputationMetricsEnabled);
+                    context.Writer.Write(publicRequest.ReputationMetricsEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

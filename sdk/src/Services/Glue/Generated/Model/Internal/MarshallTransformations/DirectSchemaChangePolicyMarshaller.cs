@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableUpdateCatalog())
             {
                 context.Writer.WritePropertyName("EnableUpdateCatalog");
-                context.Writer.Write(requestObject.EnableUpdateCatalog);
+                context.Writer.Write(requestObject.EnableUpdateCatalog.Value);
             }
 
             if(requestObject.IsSetTable())

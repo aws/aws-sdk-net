@@ -59,13 +59,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("count");
-                context.Writer.Write(requestObject.Count);
+                context.Writer.Write(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetNumber())
             {
                 context.Writer.WritePropertyName("number");
-                context.Writer.Write(requestObject.Number);
+                context.Writer.Write(requestObject.Number.Value);
             }
 
             if(requestObject.IsSetNumbers())

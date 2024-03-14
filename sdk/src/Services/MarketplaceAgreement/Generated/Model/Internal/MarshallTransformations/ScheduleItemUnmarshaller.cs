@@ -71,7 +71,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("chargeDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ChargeDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -76,7 +76,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFaceMatchThreshold())
                 {
                     context.Writer.WritePropertyName("FaceMatchThreshold");
-                    context.Writer.Write(publicRequest.FaceMatchThreshold);
+                    context.Writer.Write(publicRequest.FaceMatchThreshold.Value);
                 }
 
                 if(publicRequest.IsSetImage())
@@ -93,7 +93,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxFaces())
                 {
                     context.Writer.WritePropertyName("MaxFaces");
-                    context.Writer.Write(publicRequest.MaxFaces);
+                    context.Writer.Write(publicRequest.MaxFaces.Value);
                 }
 
                 if(publicRequest.IsSetQualityFilter())

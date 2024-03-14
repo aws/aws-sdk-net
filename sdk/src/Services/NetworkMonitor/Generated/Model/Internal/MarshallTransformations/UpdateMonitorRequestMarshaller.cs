@@ -71,7 +71,7 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAggregationPeriod())
                 {
                     context.Writer.WritePropertyName("aggregationPeriod");
-                    context.Writer.Write(publicRequest.AggregationPeriod);
+                    context.Writer.Write(publicRequest.AggregationPeriod.Value);
                 }
 
                 writer.WriteObjectEnd();

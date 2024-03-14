@@ -65,55 +65,55 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CloudOnlyDirectoriesCurrentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CloudOnlyDirectoriesCurrentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CloudOnlyDirectoriesLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CloudOnlyDirectoriesLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CloudOnlyDirectoriesLimitReached", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CloudOnlyDirectoriesLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CloudOnlyMicrosoftADCurrentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CloudOnlyMicrosoftADCurrentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CloudOnlyMicrosoftADLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CloudOnlyMicrosoftADLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CloudOnlyMicrosoftADLimitReached", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CloudOnlyMicrosoftADLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConnectedDirectoriesCurrentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConnectedDirectoriesCurrentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConnectedDirectoriesLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConnectedDirectoriesLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConnectedDirectoriesLimitReached", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConnectedDirectoriesLimitReached = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -104,13 +104,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("sampledEndTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SampledEndTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sampledStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SampledStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }

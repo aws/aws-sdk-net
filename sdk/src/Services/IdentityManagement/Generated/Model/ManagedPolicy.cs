@@ -79,9 +79,9 @@ namespace Amazon.IdentityManagement.Model
         /// The number of entities (users, groups, and roles) that the policy is attached to.
         /// </para>
         /// </summary>
-        public int AttachmentCount
+        public int? AttachmentCount
         {
-            get { return this._attachmentCount.GetValueOrDefault(); }
+            get { return this._attachmentCount; }
             set { this._attachmentCount = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.IdentityManagement.Model
         /// format</a>, when the policy was created.
         /// </para>
         /// </summary>
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.IdentityManagement.Model
         /// Specifies whether the policy can be attached to an IAM user, group, or role.
         /// </para>
         /// </summary>
-        public bool IsAttachable
+        public bool? IsAttachable
         {
-            get { return this._isAttachable.GetValueOrDefault(); }
+            get { return this._isAttachable; }
             set { this._isAttachable = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.IdentityManagement.Model
         /// boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
-        public int PermissionsBoundaryUsageCount
+        public int? PermissionsBoundaryUsageCount
         {
-            get { return this._permissionsBoundaryUsageCount.GetValueOrDefault(); }
+            get { return this._permissionsBoundaryUsageCount; }
             set { this._permissionsBoundaryUsageCount = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.IdentityManagement.Model
         /// date and time when the most recent policy version was created.
         /// </para>
         /// </summary>
-        public DateTime UpdateDate
+        public DateTime? UpdateDate
         {
-            get { return this._updateDate.GetValueOrDefault(); }
+            get { return this._updateDate; }
             set { this._updateDate = value; }
         }
 

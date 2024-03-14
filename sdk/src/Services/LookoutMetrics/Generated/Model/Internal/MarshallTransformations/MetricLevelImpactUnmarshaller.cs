@@ -77,7 +77,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumTimeSeries", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumTimeSeries = unmarshaller.Unmarshall(context);
                     continue;
                 }

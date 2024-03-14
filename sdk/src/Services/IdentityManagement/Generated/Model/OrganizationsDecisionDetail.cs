@@ -42,9 +42,9 @@ namespace Amazon.IdentityManagement.Model
         /// control policies that impact the simulated user's account.
         /// </para>
         /// </summary>
-        public bool AllowedByOrganizations
+        public bool? AllowedByOrganizations
         {
-            get { return this._allowedByOrganizations.GetValueOrDefault(); }
+            get { return this._allowedByOrganizations; }
             set { this._allowedByOrganizations = value; }
         }
 

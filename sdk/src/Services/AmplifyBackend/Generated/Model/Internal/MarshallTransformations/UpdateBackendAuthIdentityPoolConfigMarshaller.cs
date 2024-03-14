@@ -48,7 +48,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnauthenticatedLogin())
             {
                 context.Writer.WritePropertyName("unauthenticatedLogin");
-                context.Writer.Write(requestObject.UnauthenticatedLogin);
+                context.Writer.Write(requestObject.UnauthenticatedLogin.Value);
             }
 
         }

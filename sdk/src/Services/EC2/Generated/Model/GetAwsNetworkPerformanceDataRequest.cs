@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2022-06-12T12:00:00.000Z</c>.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
         /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.EC2.Model
         /// as <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2022-06-10T12:00:00.000Z</c>.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

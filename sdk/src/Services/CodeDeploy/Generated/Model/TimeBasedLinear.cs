@@ -46,9 +46,9 @@ namespace Amazon.CodeDeploy.Model
         /// deployment.
         /// </para>
         /// </summary>
-        public int LinearInterval
+        public int? LinearInterval
         {
-            get { return this._linearInterval.GetValueOrDefault(); }
+            get { return this._linearInterval; }
             set { this._linearInterval = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.CodeDeploy.Model
         /// deployment.
         /// </para>
         /// </summary>
-        public int LinearPercentage
+        public int? LinearPercentage
         {
-            get { return this._linearPercentage.GetValueOrDefault(); }
+            get { return this._linearPercentage; }
             set { this._linearPercentage = value; }
         }
 

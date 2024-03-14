@@ -46,9 +46,9 @@ namespace Amazon.EC2.Model
         /// This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
         /// </para>
         /// </summary>
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 
@@ -128,9 +128,9 @@ namespace Amazon.EC2.Model
         /// is persistent, it remains active until it is canceled or this date and time is reached.
         /// </para>
         /// </summary>
-        public DateTime ValidUntil
+        public DateTime? ValidUntil
         {
-            get { return this._validUntil.GetValueOrDefault(); }
+            get { return this._validUntil; }
             set { this._validUntil = value; }
         }
 

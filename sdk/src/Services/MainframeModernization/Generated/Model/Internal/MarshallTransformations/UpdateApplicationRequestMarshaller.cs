@@ -71,7 +71,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCurrentApplicationVersion())
                 {
                     context.Writer.WritePropertyName("currentApplicationVersion");
-                    context.Writer.Write(publicRequest.CurrentApplicationVersion);
+                    context.Writer.Write(publicRequest.CurrentApplicationVersion.Value);
                 }
 
                 if(publicRequest.IsSetDefinition())

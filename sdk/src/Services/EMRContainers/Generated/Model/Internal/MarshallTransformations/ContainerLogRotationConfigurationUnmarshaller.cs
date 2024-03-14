@@ -65,7 +65,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxFilesToKeep", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxFilesToKeep = unmarshaller.Unmarshall(context);
                     continue;
                 }

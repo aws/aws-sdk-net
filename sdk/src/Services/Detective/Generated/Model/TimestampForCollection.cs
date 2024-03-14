@@ -42,9 +42,9 @@ namespace Amazon.Detective.Model
         /// ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

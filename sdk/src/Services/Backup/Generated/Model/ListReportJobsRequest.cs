@@ -49,9 +49,9 @@ namespace Amazon.Backup.Model
         /// Friday, January 26, 2018 12:11:30 AM.
         /// </para>
         /// </summary>
-        public DateTime ByCreationAfter
+        public DateTime? ByCreationAfter
         {
-            get { return this._byCreationAfter.GetValueOrDefault(); }
+            get { return this._byCreationAfter; }
             set { this._byCreationAfter = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.Backup.Model
         /// Friday, January 26, 2018 12:11:30 AM.
         /// </para>
         /// </summary>
-        public DateTime ByCreationBefore
+        public DateTime? ByCreationBefore
         {
-            get { return this._byCreationBefore.GetValueOrDefault(); }
+            get { return this._byCreationBefore; }
             set { this._byCreationBefore = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Backup.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

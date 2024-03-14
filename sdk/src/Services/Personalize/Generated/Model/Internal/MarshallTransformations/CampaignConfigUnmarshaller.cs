@@ -65,7 +65,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableMetadataWithRecommendations", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMetadataWithRecommendations = unmarshaller.Unmarshall(context);
                     continue;
                 }

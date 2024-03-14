@@ -170,9 +170,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The timestamp of when the license recommendation was last generated. 
         /// </para>
         /// </summary>
-        public DateTime LastRefreshTimestamp
+        public DateTime? LastRefreshTimestamp
         {
-            get { return this._lastRefreshTimestamp.GetValueOrDefault(); }
+            get { return this._lastRefreshTimestamp; }
             set { this._lastRefreshTimestamp = value; }
         }
 
@@ -207,9 +207,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// runs on a license. 
         /// </para>
         /// </summary>
-        public double LookbackPeriodInDays
+        public double? LookbackPeriodInDays
         {
-            get { return this._lookbackPeriodInDays.GetValueOrDefault(); }
+            get { return this._lookbackPeriodInDays; }
             set { this._lookbackPeriodInDays = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestIngestionAttemptTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionAttemptTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LatestIngestionSuccessTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionSuccessTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

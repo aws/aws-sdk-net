@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Budgets")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Budgets. AWS Budget service will provide create/get/list/update/delete budgets for cost management. ")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

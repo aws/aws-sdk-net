@@ -65,13 +65,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Maximum", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Maximum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Minimum", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context);
                     continue;
                 }

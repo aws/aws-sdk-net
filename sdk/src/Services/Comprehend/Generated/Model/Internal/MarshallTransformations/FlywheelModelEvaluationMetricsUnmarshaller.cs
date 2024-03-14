@@ -65,25 +65,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AverageAccuracy", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AverageAccuracy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AverageF1Score", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AverageF1Score = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AveragePrecision", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AveragePrecision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AverageRecall", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AverageRecall = unmarshaller.Unmarshall(context);
                     continue;
                 }

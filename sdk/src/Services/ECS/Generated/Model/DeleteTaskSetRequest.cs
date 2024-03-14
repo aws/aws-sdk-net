@@ -67,9 +67,9 @@ namespace Amazon.ECS.Model
         /// If <c>true</c>, you can delete a task set even if it hasn't been scaled down to zero.
         /// </para>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

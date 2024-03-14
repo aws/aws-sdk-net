@@ -105,9 +105,9 @@ namespace Amazon.ConfigService.Model
         /// The time from the last status change.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChangeTime
+        public DateTime? LastStatusChangeTime
         {
-            get { return this._lastStatusChangeTime.GetValueOrDefault(); }
+            get { return this._lastStatusChangeTime; }
             set { this._lastStatusChangeTime = value; }
         }
 

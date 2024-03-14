@@ -64,7 +64,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlAttachments())
             {
                 context.Writer.WritePropertyName("CrawlAttachments");
-                context.Writer.Write(requestObject.CrawlAttachments);
+                context.Writer.Write(requestObject.CrawlAttachments.Value);
             }
 
         }

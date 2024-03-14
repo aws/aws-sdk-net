@@ -82,7 +82,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetForceUpdate())
                 {
                     context.Writer.WritePropertyName("forceUpdate");
-                    context.Writer.Write(publicRequest.ForceUpdate);
+                    context.Writer.Write(publicRequest.ForceUpdate.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -88,7 +88,7 @@ namespace Amazon.CodeStar.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoteAccessAllowed())
                 {
                     context.Writer.WritePropertyName("remoteAccessAllowed");
-                    context.Writer.Write(publicRequest.RemoteAccessAllowed);
+                    context.Writer.Write(publicRequest.RemoteAccessAllowed.Value);
                 }
 
                 if(publicRequest.IsSetUserArn())

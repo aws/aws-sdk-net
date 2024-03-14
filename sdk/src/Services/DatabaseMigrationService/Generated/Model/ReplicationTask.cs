@@ -215,9 +215,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication task was created.
         /// </para>
         /// </summary>
-        public DateTime ReplicationTaskCreationDate
+        public DateTime? ReplicationTaskCreationDate
         {
-            get { return this._replicationTaskCreationDate.GetValueOrDefault(); }
+            get { return this._replicationTaskCreationDate; }
             set { this._replicationTaskCreationDate = value; }
         }
 
@@ -286,9 +286,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date the replication task is scheduled to start.
         /// </para>
         /// </summary>
-        public DateTime ReplicationTaskStartDate
+        public DateTime? ReplicationTaskStartDate
         {
-            get { return this._replicationTaskStartDate.GetValueOrDefault(); }
+            get { return this._replicationTaskStartDate; }
             set { this._replicationTaskStartDate = value; }
         }
 

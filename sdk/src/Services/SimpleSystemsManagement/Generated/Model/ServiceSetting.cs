@@ -83,9 +83,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The last time the service setting was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

@@ -150,9 +150,9 @@ namespace Amazon.CostAndUsageReport.Model
         /// include refunds, credits, or support fees.
         /// </para>
         /// </summary>
-        public bool RefreshClosedReports
+        public bool? RefreshClosedReports
         {
-            get { return this._refreshClosedReports.GetValueOrDefault(); }
+            get { return this._refreshClosedReports; }
             set { this._refreshClosedReports = value; }
         }
 

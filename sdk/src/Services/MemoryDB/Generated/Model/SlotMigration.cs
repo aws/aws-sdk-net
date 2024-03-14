@@ -41,9 +41,9 @@ namespace Amazon.MemoryDB.Model
         /// The percentage of the slot migration that is complete.
         /// </para>
         /// </summary>
-        public double ProgressPercentage
+        public double? ProgressPercentage
         {
-            get { return this._progressPercentage.GetValueOrDefault(); }
+            get { return this._progressPercentage; }
             set { this._progressPercentage = value; }
         }
 

@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// The expected version of the thing group to delete.
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 

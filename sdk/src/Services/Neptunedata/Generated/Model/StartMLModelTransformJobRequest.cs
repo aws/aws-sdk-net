@@ -87,9 +87,9 @@ namespace Amazon.Neptunedata.Model
         /// size based on the recommendation generated in the data processing step.
         /// </para>
         /// </summary>
-        public int BaseProcessingInstanceVolumeSizeInGB
+        public int? BaseProcessingInstanceVolumeSizeInGB
         {
-            get { return this._baseProcessingInstanceVolumeSizeInGB.GetValueOrDefault(); }
+            get { return this._baseProcessingInstanceVolumeSizeInGB; }
             set { this._baseProcessingInstanceVolumeSizeInGB = value; }
         }
 

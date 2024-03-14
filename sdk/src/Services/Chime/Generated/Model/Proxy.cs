@@ -44,9 +44,9 @@ namespace Amazon.Chime.Model
         /// The default number of minutes allowed for proxy sessions.
         /// </para>
         /// </summary>
-        public int DefaultSessionExpiryMinutes
+        public int? DefaultSessionExpiryMinutes
         {
-            get { return this._defaultSessionExpiryMinutes.GetValueOrDefault(); }
+            get { return this._defaultSessionExpiryMinutes; }
             set { this._defaultSessionExpiryMinutes = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Chime.Model
         /// Connector.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

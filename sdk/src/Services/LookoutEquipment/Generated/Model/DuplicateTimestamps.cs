@@ -42,9 +42,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int TotalNumberOfDuplicateTimestamps
+        public int? TotalNumberOfDuplicateTimestamps
         {
-            get { return this._totalNumberOfDuplicateTimestamps.GetValueOrDefault(); }
+            get { return this._totalNumberOfDuplicateTimestamps; }
             set { this._totalNumberOfDuplicateTimestamps = value; }
         }
 

@@ -46,9 +46,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to delete the volume when the instance is terminated.
         /// </para>
         /// </summary>
-        public bool DeleteOnTermination
+        public bool? DeleteOnTermination
         {
-            get { return this._deleteOnTermination.GetValueOrDefault(); }
+            get { return this._deleteOnTermination; }
             set { this._deleteOnTermination = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to encrypt the volume.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.SecurityHub.Model
         /// Not used with <c>standard</c>, <c>gp2</c>, <c>st1</c>, or <c>sc1</c> volumes.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.SecurityHub.Model
         /// than the size of the snapshot.
         /// </para>
         /// </summary>
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.XRay.Model
         /// The provided end time. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.XRay.Model
         /// The time, in Unix seconds, at which the service graph ended.
         /// </para>
         /// </summary>
-        public DateTime ServiceGraphEndTime
+        public DateTime? ServiceGraphEndTime
         {
-            get { return this._serviceGraphEndTime.GetValueOrDefault(); }
+            get { return this._serviceGraphEndTime; }
             set { this._serviceGraphEndTime = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.XRay.Model
         /// The time, in Unix seconds, at which the service graph started.
         /// </para>
         /// </summary>
-        public DateTime ServiceGraphStartTime
+        public DateTime? ServiceGraphStartTime
         {
-            get { return this._serviceGraphStartTime.GetValueOrDefault(); }
+            get { return this._serviceGraphStartTime; }
             set { this._serviceGraphStartTime = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.XRay.Model
         /// The provided start time.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

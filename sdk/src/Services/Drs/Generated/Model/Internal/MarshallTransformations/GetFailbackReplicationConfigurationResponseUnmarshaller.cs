@@ -53,7 +53,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bandwidthThrottling", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BandwidthThrottling = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,7 +71,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("usePrivateIP", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.UsePrivateIP = unmarshaller.Unmarshall(context);
                     continue;
                 }

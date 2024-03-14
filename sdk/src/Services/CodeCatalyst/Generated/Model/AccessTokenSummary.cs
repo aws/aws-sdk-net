@@ -45,9 +45,9 @@ namespace Amazon.CodeCatalyst.Model
         /// 3339</a>.
         /// </para>
         /// </summary>
-        public DateTime ExpiresTime
+        public DateTime? ExpiresTime
         {
-            get { return this._expiresTime.GetValueOrDefault(); }
+            get { return this._expiresTime; }
             set { this._expiresTime = value; }
         }
 

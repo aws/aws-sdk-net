@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndValue())
             {
                 context.Writer.WritePropertyName("EndValue");
-                context.Writer.Write(requestObject.EndValue);
+                context.Writer.Write(requestObject.EndValue.Value);
             }
 
             if(requestObject.IsSetNumericOperator())
@@ -60,7 +60,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartValue())
             {
                 context.Writer.WritePropertyName("StartValue");
-                context.Writer.Write(requestObject.StartValue);
+                context.Writer.Write(requestObject.StartValue.Value);
             }
 
         }

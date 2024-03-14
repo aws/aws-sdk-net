@@ -71,7 +71,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCacheClusterEnabled())
                 {
                     context.Writer.WritePropertyName("cacheClusterEnabled");
-                    context.Writer.Write(publicRequest.CacheClusterEnabled);
+                    context.Writer.Write(publicRequest.CacheClusterEnabled.Value);
                 }
 
                 if(publicRequest.IsSetCacheClusterSize())
@@ -112,7 +112,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTracingEnabled())
                 {
                     context.Writer.WritePropertyName("tracingEnabled");
-                    context.Writer.Write(publicRequest.TracingEnabled);
+                    context.Writer.Write(publicRequest.TracingEnabled.Value);
                 }
 
                 if(publicRequest.IsSetVariables())

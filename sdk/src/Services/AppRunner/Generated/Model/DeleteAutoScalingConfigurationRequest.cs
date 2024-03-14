@@ -78,9 +78,9 @@ namespace Amazon.AppRunner.Model
         /// Amazon Resource Name (ARN) is a partial ARN ending with: <c>.../name</c>.
         /// </para>
         /// </summary>
-        public bool DeleteAllRevisions
+        public bool? DeleteAllRevisions
         {
-            get { return this._deleteAllRevisions.GetValueOrDefault(); }
+            get { return this._deleteAllRevisions; }
             set { this._deleteAllRevisions = value; }
         }
 

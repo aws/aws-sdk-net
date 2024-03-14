@@ -48,9 +48,9 @@ namespace Amazon.SecurityHub.Model
         /// The HTTP port that CloudFront uses to connect to the origin. 
         /// </para>
         /// </summary>
-        public int HttpPort
+        public int? HttpPort
         {
-            get { return this._httpPort.GetValueOrDefault(); }
+            get { return this._httpPort; }
             set { this._httpPort = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
         /// The HTTPS port that CloudFront uses to connect to the origin. 
         /// </para>
         /// </summary>
-        public int HttpsPort
+        public int? HttpsPort
         {
-            get { return this._httpsPort.GetValueOrDefault(); }
+            get { return this._httpsPort; }
             set { this._httpsPort = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
-        public int OriginKeepaliveTimeout
+        public int? OriginKeepaliveTimeout
         {
-            get { return this._originKeepaliveTimeout.GetValueOrDefault(); }
+            get { return this._originKeepaliveTimeout; }
             set { this._originKeepaliveTimeout = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SecurityHub.Model
         /// Specifies how long, in seconds, CloudFront waits for a response from the origin. 
         /// </para>
         /// </summary>
-        public int OriginReadTimeout
+        public int? OriginReadTimeout
         {
-            get { return this._originReadTimeout.GetValueOrDefault(); }
+            get { return this._originReadTimeout; }
             set { this._originReadTimeout = value; }
         }
 

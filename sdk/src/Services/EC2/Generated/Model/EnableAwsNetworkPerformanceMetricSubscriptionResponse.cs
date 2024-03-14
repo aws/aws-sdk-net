@@ -41,9 +41,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the subscribe action was successful.
         /// </para>
         /// </summary>
-        public bool Output
+        public bool? Output
         {
-            get { return this._output.GetValueOrDefault(); }
+            get { return this._output; }
             set { this._output = value; }
         }
 

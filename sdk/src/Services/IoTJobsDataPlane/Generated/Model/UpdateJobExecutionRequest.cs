@@ -50,9 +50,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// Optional. A number that identifies a particular job execution on a particular device.
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// to obtain the job execution status data.)
         /// </para>
         /// </summary>
-        public long ExpectedVersion
+        public long? ExpectedVersion
         {
-            get { return this._expectedVersion.GetValueOrDefault(); }
+            get { return this._expectedVersion; }
             set { this._expectedVersion = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// false.
         /// </para>
         /// </summary>
-        public bool IncludeJobDocument
+        public bool? IncludeJobDocument
         {
-            get { return this._includeJobDocument.GetValueOrDefault(); }
+            get { return this._includeJobDocument; }
             set { this._includeJobDocument = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// data. The default is false.
         /// </para>
         /// </summary>
-        public bool IncludeJobExecutionState
+        public bool? IncludeJobExecutionState
         {
-            get { return this._includeJobExecutionState.GetValueOrDefault(); }
+            get { return this._includeJobExecutionState; }
             set { this._includeJobExecutionState = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// been specified when the job was created (<c>CreateJob</c> using field <c>timeoutConfig</c>).
         /// </para>
         /// </summary>
-        public long StepTimeoutInMinutes
+        public long? StepTimeoutInMinutes
         {
-            get { return this._stepTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._stepTimeoutInMinutes; }
             set { this._stepTimeoutInMinutes = value; }
         }
 

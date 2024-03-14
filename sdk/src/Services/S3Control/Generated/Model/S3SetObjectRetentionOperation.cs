@@ -52,9 +52,9 @@ namespace Amazon.S3Control.Model
         /// if they have Object Lock <c> GOVERNANCE</c> type in place.
         /// </para>
         /// </summary>
-        public bool BypassGovernanceRetention
+        public bool? BypassGovernanceRetention
         {
-            get { return this._bypassGovernanceRetention.GetValueOrDefault(); }
+            get { return this._bypassGovernanceRetention; }
             set { this._bypassGovernanceRetention = value; }
         }
 

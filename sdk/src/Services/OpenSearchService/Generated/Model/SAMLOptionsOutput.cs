@@ -45,9 +45,9 @@ namespace Amazon.OpenSearchService.Model
         /// True if SAML is enabled.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.OpenSearchService.Model
         /// The duration, in minutes, after which a user session becomes inactive.
         /// </para>
         /// </summary>
-        public int SessionTimeoutMinutes
+        public int? SessionTimeoutMinutes
         {
-            get { return this._sessionTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._sessionTimeoutMinutes; }
             set { this._sessionTimeoutMinutes = value; }
         }
 

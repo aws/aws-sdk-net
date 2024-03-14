@@ -85,9 +85,9 @@ namespace Amazon.FSx.Model
         /// repository association.
         /// </para>
         /// </summary>
-        public bool DeleteDataInFileSystem
+        public bool? DeleteDataInFileSystem
         {
-            get { return this._deleteDataInFileSystem.GetValueOrDefault(); }
+            get { return this._deleteDataInFileSystem; }
             set { this._deleteDataInFileSystem = value; }
         }
 

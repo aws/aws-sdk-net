@@ -65,7 +65,7 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

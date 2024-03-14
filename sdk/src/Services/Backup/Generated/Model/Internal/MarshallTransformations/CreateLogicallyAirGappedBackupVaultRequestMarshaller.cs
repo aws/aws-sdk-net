@@ -91,13 +91,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxRetentionDays())
                 {
                     context.Writer.WritePropertyName("MaxRetentionDays");
-                    context.Writer.Write(publicRequest.MaxRetentionDays);
+                    context.Writer.Write(publicRequest.MaxRetentionDays.Value);
                 }
 
                 if(publicRequest.IsSetMinRetentionDays())
                 {
                     context.Writer.WritePropertyName("MinRetentionDays");
-                    context.Writer.Write(publicRequest.MinRetentionDays);
+                    context.Writer.Write(publicRequest.MinRetentionDays.Value);
                 }
 
                 writer.WriteObjectEnd();

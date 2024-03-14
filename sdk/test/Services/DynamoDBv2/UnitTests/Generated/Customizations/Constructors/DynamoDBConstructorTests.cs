@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class DynamoDBConstructorCustomizationsTests
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void GetItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.GetItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
-            EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.GetItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(bool), });
+            EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.GetItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(bool?), });
         }
 
         [TestMethod]
@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public void ListTablesRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.ListTablesRequest), new System.Type[] { typeof(string), });
-            EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.ListTablesRequest), new System.Type[] { typeof(string), typeof(int), });
+            EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.ListTablesRequest), new System.Type[] { typeof(string), typeof(int?), });
         }
 
         [TestMethod]

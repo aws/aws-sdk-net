@@ -82,7 +82,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFirewallPolicyChangeProtection())
                 {
                     context.Writer.WritePropertyName("FirewallPolicyChangeProtection");
-                    context.Writer.Write(publicRequest.FirewallPolicyChangeProtection);
+                    context.Writer.Write(publicRequest.FirewallPolicyChangeProtection.Value);
                 }
 
                 if(publicRequest.IsSetUpdateToken())

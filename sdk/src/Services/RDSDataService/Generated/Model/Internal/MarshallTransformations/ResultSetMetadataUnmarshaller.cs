@@ -65,7 +65,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("columnCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ColumnCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

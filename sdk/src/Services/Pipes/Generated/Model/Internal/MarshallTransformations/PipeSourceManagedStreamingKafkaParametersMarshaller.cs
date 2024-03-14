@@ -48,7 +48,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize);
+                context.Writer.Write(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetConsumerGroupID())
@@ -71,7 +71,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumBatchingWindowInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                context.Writer.Write(requestObject.MaximumBatchingWindowInSeconds);
+                context.Writer.Write(requestObject.MaximumBatchingWindowInSeconds.Value);
             }
 
             if(requestObject.IsSetStartingPosition())

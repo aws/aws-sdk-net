@@ -71,9 +71,9 @@ namespace Amazon.EC2.Model
         /// The number of available instances.
         /// </para>
         /// </summary>
-        public int AvailableInstanceCount
+        public int? AvailableInstanceCount
         {
-            get { return this._availableInstanceCount.GetValueOrDefault(); }
+            get { return this._availableInstanceCount; }
             set { this._availableInstanceCount = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.EC2.Model
         /// The time period for the first schedule to start.
         /// </para>
         /// </summary>
-        public DateTime FirstSlotStartTime
+        public DateTime? FirstSlotStartTime
         {
-            get { return this._firstSlotStartTime.GetValueOrDefault(); }
+            get { return this._firstSlotStartTime; }
             set { this._firstSlotStartTime = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.EC2.Model
         /// The maximum term. The only possible value is 365 days.
         /// </para>
         /// </summary>
-        public int MaxTermDurationInDays
+        public int? MaxTermDurationInDays
         {
-            get { return this._maxTermDurationInDays.GetValueOrDefault(); }
+            get { return this._maxTermDurationInDays; }
             set { this._maxTermDurationInDays = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.EC2.Model
         /// The minimum term. The only possible value is 365 days.
         /// </para>
         /// </summary>
-        public int MinTermDurationInDays
+        public int? MinTermDurationInDays
         {
-            get { return this._minTermDurationInDays.GetValueOrDefault(); }
+            get { return this._minTermDurationInDays; }
             set { this._minTermDurationInDays = value; }
         }
 
@@ -251,9 +251,9 @@ namespace Amazon.EC2.Model
         /// The number of hours in the schedule.
         /// </para>
         /// </summary>
-        public int SlotDurationInHours
+        public int? SlotDurationInHours
         {
-            get { return this._slotDurationInHours.GetValueOrDefault(); }
+            get { return this._slotDurationInHours; }
             set { this._slotDurationInHours = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.EC2.Model
         /// The total number of hours for a single instance for the entire term.
         /// </para>
         /// </summary>
-        public int TotalScheduledInstanceHours
+        public int? TotalScheduledInstanceHours
         {
-            get { return this._totalScheduledInstanceHours.GetValueOrDefault(); }
+            get { return this._totalScheduledInstanceHours; }
             set { this._totalScheduledInstanceHours = value; }
         }
 

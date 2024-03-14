@@ -110,7 +110,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.Write(requestObject.Version.Value);
             }
 
         }

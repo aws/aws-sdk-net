@@ -82,7 +82,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -94,7 +94,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOrderingId())
                 {
                     context.Writer.WritePropertyName("OrderingId");
-                    context.Writer.Write(publicRequest.OrderingId);
+                    context.Writer.Write(publicRequest.OrderingId.Value);
                 }
 
                 writer.WriteObjectEnd();

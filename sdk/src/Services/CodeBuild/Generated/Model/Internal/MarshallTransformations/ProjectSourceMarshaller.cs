@@ -76,7 +76,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGitCloneDepth())
             {
                 context.Writer.WritePropertyName("gitCloneDepth");
-                context.Writer.Write(requestObject.GitCloneDepth);
+                context.Writer.Write(requestObject.GitCloneDepth.Value);
             }
 
             if(requestObject.IsSetGitSubmodulesConfig())
@@ -93,7 +93,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInsecureSsl())
             {
                 context.Writer.WritePropertyName("insecureSsl");
-                context.Writer.Write(requestObject.InsecureSsl);
+                context.Writer.Write(requestObject.InsecureSsl.Value);
             }
 
             if(requestObject.IsSetLocation())
@@ -105,7 +105,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReportBuildStatus())
             {
                 context.Writer.WritePropertyName("reportBuildStatus");
-                context.Writer.Write(requestObject.ReportBuildStatus);
+                context.Writer.Write(requestObject.ReportBuildStatus.Value);
             }
 
             if(requestObject.IsSetSourceIdentifier())

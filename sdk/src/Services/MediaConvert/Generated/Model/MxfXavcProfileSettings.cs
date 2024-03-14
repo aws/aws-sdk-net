@@ -66,9 +66,9 @@ namespace Amazon.MediaConvert.Model
         /// data, specify a larger number.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxAncDataSize
+        public int? MaxAncDataSize
         {
-            get { return this._maxAncDataSize.GetValueOrDefault(); }
+            get { return this._maxAncDataSize; }
             set { this._maxAncDataSize = value; }
         }
 

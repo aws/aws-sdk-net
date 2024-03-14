@@ -87,7 +87,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNewReplicationFactor())
                 {
                     context.Writer.WritePropertyName("NewReplicationFactor");
-                    context.Writer.Write(publicRequest.NewReplicationFactor);
+                    context.Writer.Write(publicRequest.NewReplicationFactor.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -61,9 +61,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The time (in epoch) when the device connection status changed.
         /// </para>
         /// </summary>
-        public DateTime ConnectionStatusUpdatedTime
+        public DateTime? ConnectionStatusUpdatedTime
         {
-            get { return this._connectionStatusUpdatedTime.GetValueOrDefault(); }
+            get { return this._connectionStatusUpdatedTime; }
             set { this._connectionStatusUpdatedTime = value; }
         }
 

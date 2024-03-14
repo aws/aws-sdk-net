@@ -168,9 +168,9 @@ namespace Amazon.MediaConvert.Model
         /// the audio from the input video.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.MediaConvert.Model
         /// the service ignore the program IDs and include all the programs in the track.
         /// </summary>
         [AWSProperty(Min=0, Max=8)]
-        public int ProgramSelection
+        public int? ProgramSelection
         {
-            get { return this._programSelection.GetValueOrDefault(); }
+            get { return this._programSelection; }
             set { this._programSelection = value; }
         }
 

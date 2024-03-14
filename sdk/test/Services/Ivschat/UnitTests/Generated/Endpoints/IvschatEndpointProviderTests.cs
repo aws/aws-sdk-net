@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.Ivschat.Endpoints;
 using Amazon.Ivschat.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class IvschatEndpointsTests

@@ -105,9 +105,9 @@ namespace Amazon.Inspector2.Model
         /// results was last changed.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedAt
+        public DateTime? LastModifiedAt
         {
-            get { return this._lastModifiedAt.GetValueOrDefault(); }
+            get { return this._lastModifiedAt; }
             set { this._lastModifiedAt = value; }
         }
 

@@ -95,7 +95,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("rollingBackTrxCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RollingBackTrxCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

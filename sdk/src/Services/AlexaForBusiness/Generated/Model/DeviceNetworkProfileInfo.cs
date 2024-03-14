@@ -61,9 +61,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// The time (in epoch) when the certificate expires.
         /// </para>
         /// </summary>
-        public DateTime CertificateExpirationTime
+        public DateTime? CertificateExpirationTime
         {
-            get { return this._certificateExpirationTime.GetValueOrDefault(); }
+            get { return this._certificateExpirationTime; }
             set { this._certificateExpirationTime = value; }
         }
 

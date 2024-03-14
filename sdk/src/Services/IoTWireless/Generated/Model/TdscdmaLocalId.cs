@@ -43,9 +43,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=127)]
-        public int CellParams
+        public int? CellParams
         {
-            get { return this._cellParams.GetValueOrDefault(); }
+            get { return this._cellParams; }
             set { this._cellParams = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=16383)]
-        public int Uarfcn
+        public int? Uarfcn
         {
-            get { return this._uarfcn.GetValueOrDefault(); }
+            get { return this._uarfcn; }
             set { this._uarfcn = value; }
         }
 

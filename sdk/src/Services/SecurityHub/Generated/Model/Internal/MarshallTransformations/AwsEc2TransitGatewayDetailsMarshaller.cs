@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmazonSideAsn())
             {
                 context.Writer.WritePropertyName("AmazonSideAsn");
-                context.Writer.Write(requestObject.AmazonSideAsn);
+                context.Writer.Write(requestObject.AmazonSideAsn.Value);
             }
 
             if(requestObject.IsSetAssociationDefaultRouteTableId())

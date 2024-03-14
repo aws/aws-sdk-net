@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// If set to True, enables remote debugging.
         /// </para>
         /// </summary>
-        public bool EnableRemoteDebug
+        public bool? EnableRemoteDebug
         {
-            get { return this._enableRemoteDebug.GetValueOrDefault(); }
+            get { return this._enableRemoteDebug; }
             set { this._enableRemoteDebug = value; }
         }
 

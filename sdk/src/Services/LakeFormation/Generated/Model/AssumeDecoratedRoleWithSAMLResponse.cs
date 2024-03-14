@@ -63,9 +63,9 @@ namespace Amazon.LakeFormation.Model
         /// The date and time when the temporary credentials expire.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

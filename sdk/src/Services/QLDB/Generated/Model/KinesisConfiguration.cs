@@ -56,9 +56,9 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool AggregationEnabled
+        public bool? AggregationEnabled
         {
-            get { return this._aggregationEnabled.GetValueOrDefault(); }
+            get { return this._aggregationEnabled; }
             set { this._aggregationEnabled = value; }
         }
 

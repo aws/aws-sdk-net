@@ -71,7 +71,7 @@ namespace Amazon.Honeycode.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("workbookCursor", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.WorkbookCursor = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -62,9 +62,9 @@ namespace Amazon.S3Control.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ExpirationInDays
+        public int? ExpirationInDays
         {
-            get { return this._expirationInDays.GetValueOrDefault(); }
+            get { return this._expirationInDays; }
             set { this._expirationInDays = value; }
         }
 

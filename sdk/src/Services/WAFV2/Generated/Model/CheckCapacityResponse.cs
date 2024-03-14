@@ -42,9 +42,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long Capacity
+        public long? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 

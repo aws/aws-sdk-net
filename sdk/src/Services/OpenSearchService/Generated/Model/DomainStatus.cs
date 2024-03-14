@@ -221,9 +221,9 @@ namespace Amazon.OpenSearchService.Model
         /// False if domain creation is still in progress.
         /// </para>
         /// </summary>
-        public bool Created
+        public bool? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.OpenSearchService.Model
         /// of the domain is no longer returned.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -542,9 +542,9 @@ namespace Amazon.OpenSearchService.Model
         /// changes. False if the configuration is active.
         /// </para>
         /// </summary>
-        public bool Processing
+        public bool? Processing
         {
-            get { return this._processing.GetValueOrDefault(); }
+            get { return this._processing; }
             set { this._processing = value; }
         }
 
@@ -617,9 +617,9 @@ namespace Amazon.OpenSearchService.Model
         /// is active.
         /// </para>
         /// </summary>
-        public bool UpgradeProcessing
+        public bool? UpgradeProcessing
         {
-            get { return this._upgradeProcessing.GetValueOrDefault(); }
+            get { return this._upgradeProcessing; }
             set { this._upgradeProcessing = value; }
         }
 

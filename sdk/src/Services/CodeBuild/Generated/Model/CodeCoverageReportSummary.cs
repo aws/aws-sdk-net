@@ -58,9 +58,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double BranchCoveragePercentage
+        public double? BranchCoveragePercentage
         {
-            get { return this._branchCoveragePercentage.GetValueOrDefault(); }
+            get { return this._branchCoveragePercentage; }
             set { this._branchCoveragePercentage = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BranchesCovered
+        public int? BranchesCovered
         {
-            get { return this._branchesCovered.GetValueOrDefault(); }
+            get { return this._branchesCovered; }
             set { this._branchesCovered = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BranchesMissed
+        public int? BranchesMissed
         {
-            get { return this._branchesMissed.GetValueOrDefault(); }
+            get { return this._branchesMissed; }
             set { this._branchesMissed = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double LineCoveragePercentage
+        public double? LineCoveragePercentage
         {
-            get { return this._lineCoveragePercentage.GetValueOrDefault(); }
+            get { return this._lineCoveragePercentage; }
             set { this._lineCoveragePercentage = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int LinesCovered
+        public int? LinesCovered
         {
-            get { return this._linesCovered.GetValueOrDefault(); }
+            get { return this._linesCovered; }
             set { this._linesCovered = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int LinesMissed
+        public int? LinesMissed
         {
-            get { return this._linesMissed.GetValueOrDefault(); }
+            get { return this._linesMissed; }
             set { this._linesMissed = value; }
         }
 

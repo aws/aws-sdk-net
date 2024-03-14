@@ -61,9 +61,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// the contact has not noted their preference for subscribing to a topic.
         /// </para>
         /// </summary>
-        public bool UseDefaultIfPreferenceUnavailable
+        public bool? UseDefaultIfPreferenceUnavailable
         {
-            get { return this._useDefaultIfPreferenceUnavailable.GetValueOrDefault(); }
+            get { return this._useDefaultIfPreferenceUnavailable; }
             set { this._useDefaultIfPreferenceUnavailable = value; }
         }
 

@@ -64,9 +64,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time that a reviewer entered a response to a document review request.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date and time that a reviewer last updated a response to a document review request.
         /// </para>
         /// </summary>
-        public DateTime UpdatedTime
+        public DateTime? UpdatedTime
         {
-            get { return this._updatedTime.GetValueOrDefault(); }
+            get { return this._updatedTime; }
             set { this._updatedTime = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.S3Control.Model
         /// A container for whether the CloudWatch metrics configuration is enabled.
         /// </para>
         /// </summary>
-        public bool CloudWatchMetricsEnabled
+        public bool? CloudWatchMetricsEnabled
         {
-            get { return this._cloudWatchMetricsEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchMetricsEnabled; }
             set { this._cloudWatchMetricsEnabled = value; }
         }
 

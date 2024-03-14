@@ -99,9 +99,9 @@ namespace Amazon.Kafka.Model
         /// The role-specific ID for Zookeeper.
         /// </para>
         /// </summary>
-        public double ZookeeperId
+        public double? ZookeeperId
         {
-            get { return this._zookeeperId.GetValueOrDefault(); }
+            get { return this._zookeeperId; }
             set { this._zookeeperId = value; }
         }
 

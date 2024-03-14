@@ -62,9 +62,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of devices that matched the device filter selection criteria.
         /// </para>
         /// </summary>
-        public int MatchedDevicesCount
+        public int? MatchedDevicesCount
         {
-            get { return this._matchedDevicesCount.GetValueOrDefault(); }
+            get { return this._matchedDevicesCount; }
             set { this._matchedDevicesCount = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.DeviceFarm.Model
         /// test run.
         /// </para>
         /// </summary>
-        public int MaxDevices
+        public int? MaxDevices
         {
-            get { return this._maxDevices.GetValueOrDefault(); }
+            get { return this._maxDevices; }
             set { this._maxDevices = value; }
         }
 

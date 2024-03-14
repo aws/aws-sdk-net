@@ -53,13 +53,13 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BulkPublishCompleteTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.BulkPublishCompleteTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BulkPublishStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.BulkPublishStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

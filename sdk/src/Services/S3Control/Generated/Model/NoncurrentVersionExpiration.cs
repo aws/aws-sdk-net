@@ -45,9 +45,9 @@ namespace Amazon.S3Control.Model
         /// configuration elements</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
-        public int NewerNoncurrentVersions
+        public int? NewerNoncurrentVersions
         {
-            get { return this._newerNoncurrentVersions.GetValueOrDefault(); }
+            get { return this._newerNoncurrentVersions; }
             set { this._newerNoncurrentVersions = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.S3Control.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public int NoncurrentDays
+        public int? NoncurrentDays
         {
-            get { return this._noncurrentDays.GetValueOrDefault(); }
+            get { return this._noncurrentDays; }
             set { this._noncurrentDays = value; }
         }
 

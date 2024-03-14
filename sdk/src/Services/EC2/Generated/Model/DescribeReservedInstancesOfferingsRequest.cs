@@ -152,9 +152,9 @@ namespace Amazon.EC2.Model
         /// Include Reserved Instance Marketplace offerings in the response.
         /// </para>
         /// </summary>
-        public bool IncludeMarketplace
+        public bool? IncludeMarketplace
         {
-            get { return this._includeMarketplace.GetValueOrDefault(); }
+            get { return this._includeMarketplace; }
             set { this._includeMarketplace = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.EC2.Model
         /// Default: 94608000 (3 years)
         /// </para>
         /// </summary>
-        public long MaxDuration
+        public long? MaxDuration
         {
-            get { return this._maxDuration.GetValueOrDefault(); }
+            get { return this._maxDuration; }
             set { this._maxDuration = value; }
         }
 
@@ -245,9 +245,9 @@ namespace Amazon.EC2.Model
         /// Default: 20
         /// </para>
         /// </summary>
-        public int MaxInstanceCount
+        public int? MaxInstanceCount
         {
-            get { return this._maxInstanceCount.GetValueOrDefault(); }
+            get { return this._maxInstanceCount; }
             set { this._maxInstanceCount = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.EC2.Model
         /// Default: 100
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.EC2.Model
         /// Default: 2592000 (1 month)
         /// </para>
         /// </summary>
-        public long MinDuration
+        public long? MinDuration
         {
-            get { return this._minDuration.GetValueOrDefault(); }
+            get { return this._minDuration; }
             set { this._minDuration = value; }
         }
 

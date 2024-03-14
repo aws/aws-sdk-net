@@ -64,9 +64,9 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime InvocationTime
+        public DateTime? InvocationTime
         {
-            get { return this._invocationTime.GetValueOrDefault(); }
+            get { return this._invocationTime; }
             set { this._invocationTime = value; }
         }
 

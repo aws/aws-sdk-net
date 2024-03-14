@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// a deadline is not yet available for this resource type, this field is not returned.
         /// </para>
         /// </summary>
-        public DateTime Deadline
+        public DateTime? Deadline
         {
-            get { return this._deadline.GetValueOrDefault(); }
+            get { return this._deadline; }
             set { this._deadline = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether longer IDs (17-character IDs) are enabled for the resource.
         /// </para>
         /// </summary>
-        public bool UseLongIds
+        public bool? UseLongIds
         {
-            get { return this._useLongIds.GetValueOrDefault(); }
+            get { return this._useLongIds; }
             set { this._useLongIds = value; }
         }
 

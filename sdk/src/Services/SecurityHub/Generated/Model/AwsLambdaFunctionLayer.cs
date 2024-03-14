@@ -60,9 +60,9 @@ namespace Amazon.SecurityHub.Model
         /// The size of the layer archive in bytes.
         /// </para>
         /// </summary>
-        public int CodeSize
+        public int? CodeSize
         {
-            get { return this._codeSize.GetValueOrDefault(); }
+            get { return this._codeSize; }
             set { this._codeSize = value; }
         }
 

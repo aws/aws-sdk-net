@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArcAngle())
             {
                 context.Writer.WritePropertyName("ArcAngle");
-                context.Writer.Write(requestObject.ArcAngle);
+                context.Writer.Write(requestObject.ArcAngle.Value);
             }
 
             if(requestObject.IsSetArcThickness())

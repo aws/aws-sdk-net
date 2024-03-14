@@ -48,19 +48,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowDnsResolutionFromRemoteVpc())
             {
                 context.Writer.WritePropertyName("AllowDnsResolutionFromRemoteVpc");
-                context.Writer.Write(requestObject.AllowDnsResolutionFromRemoteVpc);
+                context.Writer.Write(requestObject.AllowDnsResolutionFromRemoteVpc.Value);
             }
 
             if(requestObject.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
             {
                 context.Writer.WritePropertyName("AllowEgressFromLocalClassicLinkToRemoteVpc");
-                context.Writer.Write(requestObject.AllowEgressFromLocalClassicLinkToRemoteVpc);
+                context.Writer.Write(requestObject.AllowEgressFromLocalClassicLinkToRemoteVpc.Value);
             }
 
             if(requestObject.IsSetAllowEgressFromLocalVpcToRemoteClassicLink())
             {
                 context.Writer.WritePropertyName("AllowEgressFromLocalVpcToRemoteClassicLink");
-                context.Writer.Write(requestObject.AllowEgressFromLocalVpcToRemoteClassicLink);
+                context.Writer.Write(requestObject.AllowEgressFromLocalVpcToRemoteClassicLink.Value);
             }
 
         }

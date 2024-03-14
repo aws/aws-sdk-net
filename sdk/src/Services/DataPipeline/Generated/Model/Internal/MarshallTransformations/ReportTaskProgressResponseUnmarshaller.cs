@@ -53,7 +53,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("canceled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Canceled = unmarshaller.Unmarshall(context);
                     continue;
                 }

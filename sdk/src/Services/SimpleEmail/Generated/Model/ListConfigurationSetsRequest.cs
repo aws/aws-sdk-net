@@ -56,9 +56,9 @@ namespace Amazon.SimpleEmail.Model
         /// The number of configuration sets to return.
         /// </para>
         /// </summary>
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

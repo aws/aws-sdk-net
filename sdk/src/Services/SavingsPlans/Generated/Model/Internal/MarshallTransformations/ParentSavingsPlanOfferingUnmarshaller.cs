@@ -71,7 +71,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("durationSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

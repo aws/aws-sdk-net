@@ -70,9 +70,9 @@ namespace Amazon.Glue.Model
         /// The date and time when the workflow was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedOn
+        public DateTime? CreatedOn
         {
-            get { return this._createdOn.GetValueOrDefault(); }
+            get { return this._createdOn; }
             set { this._createdOn = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.Glue.Model
         /// The date and time when the workflow was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedOn
+        public DateTime? LastModifiedOn
         {
-            get { return this._lastModifiedOn.GetValueOrDefault(); }
+            get { return this._lastModifiedOn; }
             set { this._lastModifiedOn = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.Glue.Model
         /// to the number of concurrent workflow runs.
         /// </para>
         /// </summary>
-        public int MaxConcurrentRuns
+        public int? MaxConcurrentRuns
         {
-            get { return this._maxConcurrentRuns.GetValueOrDefault(); }
+            get { return this._maxConcurrentRuns; }
             set { this._maxConcurrentRuns = value; }
         }
 

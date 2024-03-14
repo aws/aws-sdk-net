@@ -316,9 +316,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=300, Max=43200)]
-        public int Expires
+        public int? Expires
         {
-            get { return this._expires.GetValueOrDefault(); }
+            get { return this._expires; }
             set { this._expires = value; }
         }
 
@@ -360,9 +360,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public long MaxManifestFragmentResults
+        public long? MaxManifestFragmentResults
         {
-            get { return this._maxManifestFragmentResults.GetValueOrDefault(); }
+            get { return this._maxManifestFragmentResults; }
             set { this._maxManifestFragmentResults = value; }
         }
 

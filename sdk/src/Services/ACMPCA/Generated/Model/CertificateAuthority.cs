@@ -101,9 +101,9 @@ namespace Amazon.ACMPCA.Model
         /// Date and time at which your private CA was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.ACMPCA.Model
         /// Date and time at which your private CA was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastStateChangeAt
+        public DateTime? LastStateChangeAt
         {
-            get { return this._lastStateChangeAt.GetValueOrDefault(); }
+            get { return this._lastStateChangeAt; }
             set { this._lastStateChangeAt = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.ACMPCA.Model
         /// Date and time after which your private CA certificate is not valid.
         /// </para>
         /// </summary>
-        public DateTime NotAfter
+        public DateTime? NotAfter
         {
-            get { return this._notAfter.GetValueOrDefault(); }
+            get { return this._notAfter; }
             set { this._notAfter = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.ACMPCA.Model
         /// Date and time before which your private CA certificate is not valid.
         /// </para>
         /// </summary>
-        public DateTime NotBefore
+        public DateTime? NotBefore
         {
-            get { return this._notBefore.GetValueOrDefault(); }
+            get { return this._notBefore; }
             set { this._notBefore = value; }
         }
 
@@ -243,9 +243,9 @@ namespace Amazon.ACMPCA.Model
         /// action. 
         /// </para>
         /// </summary>
-        public DateTime RestorableUntil
+        public DateTime? RestorableUntil
         {
-            get { return this._restorableUntil.GetValueOrDefault(); }
+            get { return this._restorableUntil; }
             set { this._restorableUntil = value; }
         }
 

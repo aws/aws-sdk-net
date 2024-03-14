@@ -65,7 +65,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("offsetSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OffsetSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -88,9 +88,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CommitTime
+        public DateTime? CommitTime
         {
-            get { return this._commitTime.GetValueOrDefault(); }
+            get { return this._commitTime; }
             set { this._commitTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Amplify.Model
         ///  The end date and time for the job. 
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

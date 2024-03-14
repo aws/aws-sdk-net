@@ -122,9 +122,9 @@ namespace Amazon.DirectoryService.Model
         /// Specifies when the domain controller was created.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the status was last updated.
         /// </para>
         /// </summary>
-        public DateTime StatusLastUpdatedDateTime
+        public DateTime? StatusLastUpdatedDateTime
         {
-            get { return this._statusLastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._statusLastUpdatedDateTime; }
             set { this._statusLastUpdatedDateTime = value; }
         }
 

@@ -59,13 +59,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeletedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeletedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,19 +83,19 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastAccessedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastAccessedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastChangedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastChangedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastRotatedDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastRotatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NextRotationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.NextRotationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RotationEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.RotationEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

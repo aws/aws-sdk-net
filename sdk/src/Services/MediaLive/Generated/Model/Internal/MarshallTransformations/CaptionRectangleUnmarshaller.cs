@@ -65,25 +65,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("height", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("leftOffset", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LeftOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("topOffset", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TopOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("width", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Width = unmarshaller.Unmarshall(context);
                     continue;
                 }

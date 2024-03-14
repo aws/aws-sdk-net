@@ -63,9 +63,9 @@ namespace Amazon.Lightsail.Model
         /// The percentage of completion for the operation.
         /// </para>
         /// </summary>
-        public int PercentageComplete
+        public int? PercentageComplete
         {
-            get { return this._percentageComplete.GetValueOrDefault(); }
+            get { return this._percentageComplete; }
             set { this._percentageComplete = value; }
         }
 

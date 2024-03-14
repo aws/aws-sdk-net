@@ -67,9 +67,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Backfilling
+        public bool? Backfilling
         {
-            get { return this._backfilling.GetValueOrDefault(); }
+            get { return this._backfilling; }
             set { this._backfilling = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.DynamoDBv2.Model
         /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
-        public long IndexSizeBytes
+        public long? IndexSizeBytes
         {
-            get { return this._indexSizeBytes.GetValueOrDefault(); }
+            get { return this._indexSizeBytes; }
             set { this._indexSizeBytes = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.DynamoDBv2.Model
         /// every six hours. Recent changes might not be reflected in this value.
         /// </para>
         /// </summary>
-        public long ItemCount
+        public long? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 

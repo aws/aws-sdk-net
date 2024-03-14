@@ -63,9 +63,9 @@ namespace Amazon.LicenseManager.Model
         /// Maximum number of results to return in a single call.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

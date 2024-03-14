@@ -111,9 +111,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the backup was copied from a source backup.
         /// </para>
         /// </summary>
-        public DateTime CopyTimestamp
+        public DateTime? CopyTimestamp
         {
-            get { return this._copyTimestamp.GetValueOrDefault(); }
+            get { return this._copyTimestamp; }
             set { this._copyTimestamp = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the backup was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTimestamp
+        public DateTime? CreateTimestamp
         {
-            get { return this._createTimestamp.GetValueOrDefault(); }
+            get { return this._createTimestamp; }
             set { this._createTimestamp = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.CloudHSMV2.Model
         /// The date and time when the backup will be permanently deleted.
         /// </para>
         /// </summary>
-        public DateTime DeleteTimestamp
+        public DateTime? DeleteTimestamp
         {
-            get { return this._deleteTimestamp.GetValueOrDefault(); }
+            get { return this._deleteTimestamp; }
             set { this._deleteTimestamp = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.CloudHSMV2.Model
         /// means the service applies the backup retention policy defined at the cluster.
         /// </para>
         /// </summary>
-        public bool NeverExpires
+        public bool? NeverExpires
         {
-            get { return this._neverExpires.GetValueOrDefault(); }
+            get { return this._neverExpires; }
             set { this._neverExpires = value; }
         }
 

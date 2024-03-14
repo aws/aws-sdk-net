@@ -133,9 +133,9 @@ namespace Amazon.MediaConvert.Model
         /// value 0.
         /// </summary>
         [AWSProperty(Min=-50, Max=50)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

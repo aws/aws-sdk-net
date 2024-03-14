@@ -59,25 +59,25 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("interval");
-                context.Writer.Write(requestObject.Interval);
+                context.Writer.Write(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetRetries())
             {
                 context.Writer.WritePropertyName("retries");
-                context.Writer.Write(requestObject.Retries);
+                context.Writer.Write(requestObject.Retries.Value);
             }
 
             if(requestObject.IsSetStartPeriod())
             {
                 context.Writer.WritePropertyName("startPeriod");
-                context.Writer.Write(requestObject.StartPeriod);
+                context.Writer.Write(requestObject.StartPeriod.Value);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("timeout");
-                context.Writer.Write(requestObject.Timeout);
+                context.Writer.Write(requestObject.Timeout.Value);
             }
 
         }

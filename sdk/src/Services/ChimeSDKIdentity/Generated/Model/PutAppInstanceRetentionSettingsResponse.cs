@@ -60,9 +60,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The time at which the API deletes data.
         /// </para>
         /// </summary>
-        public DateTime InitiateDeletionTimestamp
+        public DateTime? InitiateDeletionTimestamp
         {
-            get { return this._initiateDeletionTimestamp.GetValueOrDefault(); }
+            get { return this._initiateDeletionTimestamp; }
             set { this._initiateDeletionTimestamp = value; }
         }
 

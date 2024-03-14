@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4000)]
-        public int MaxDrainDurationSeconds
+        public int? MaxDrainDurationSeconds
         {
-            get { return this._maxDrainDurationSeconds.GetValueOrDefault(); }
+            get { return this._maxDrainDurationSeconds; }
             set { this._maxDrainDurationSeconds = value; }
         }
 

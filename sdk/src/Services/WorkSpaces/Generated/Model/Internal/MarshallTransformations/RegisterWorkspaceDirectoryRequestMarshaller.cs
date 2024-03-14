@@ -76,13 +76,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableSelfService())
                 {
                     context.Writer.WritePropertyName("EnableSelfService");
-                    context.Writer.Write(publicRequest.EnableSelfService);
+                    context.Writer.Write(publicRequest.EnableSelfService.Value);
                 }
 
                 if(publicRequest.IsSetEnableWorkDocs())
                 {
                     context.Writer.WritePropertyName("EnableWorkDocs");
-                    context.Writer.Write(publicRequest.EnableWorkDocs);
+                    context.Writer.Write(publicRequest.EnableWorkDocs.Value);
                 }
 
                 if(publicRequest.IsSetSubnetIds())

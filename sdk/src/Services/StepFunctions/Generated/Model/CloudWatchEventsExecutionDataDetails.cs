@@ -42,9 +42,9 @@ namespace Amazon.StepFunctions.Model
         /// for API calls. 
         /// </para>
         /// </summary>
-        public bool Included
+        public bool? Included
         {
-            get { return this._included.GetValueOrDefault(); }
+            get { return this._included; }
             set { this._included = value; }
         }
 

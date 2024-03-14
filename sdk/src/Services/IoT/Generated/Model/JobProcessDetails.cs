@@ -49,9 +49,9 @@ namespace Amazon.IoT.Model
         /// The number of things that cancelled the job.
         /// </para>
         /// </summary>
-        public int NumberOfCanceledThings
+        public int? NumberOfCanceledThings
         {
-            get { return this._numberOfCanceledThings.GetValueOrDefault(); }
+            get { return this._numberOfCanceledThings; }
             set { this._numberOfCanceledThings = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.IoT.Model
         /// The number of things that failed executing the job.
         /// </para>
         /// </summary>
-        public int NumberOfFailedThings
+        public int? NumberOfFailedThings
         {
-            get { return this._numberOfFailedThings.GetValueOrDefault(); }
+            get { return this._numberOfFailedThings; }
             set { this._numberOfFailedThings = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.IoT.Model
         /// The number of things currently executing the job.
         /// </para>
         /// </summary>
-        public int NumberOfInProgressThings
+        public int? NumberOfInProgressThings
         {
-            get { return this._numberOfInProgressThings.GetValueOrDefault(); }
+            get { return this._numberOfInProgressThings; }
             set { this._numberOfInProgressThings = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.IoT.Model
         /// The number of things that are awaiting execution of the job.
         /// </para>
         /// </summary>
-        public int NumberOfQueuedThings
+        public int? NumberOfQueuedThings
         {
-            get { return this._numberOfQueuedThings.GetValueOrDefault(); }
+            get { return this._numberOfQueuedThings; }
             set { this._numberOfQueuedThings = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.IoT.Model
         /// The number of things that rejected the job.
         /// </para>
         /// </summary>
-        public int NumberOfRejectedThings
+        public int? NumberOfRejectedThings
         {
-            get { return this._numberOfRejectedThings.GetValueOrDefault(); }
+            get { return this._numberOfRejectedThings; }
             set { this._numberOfRejectedThings = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.IoT.Model
         /// have been deleted or have been removed from the group that was a target of the job.
         /// </para>
         /// </summary>
-        public int NumberOfRemovedThings
+        public int? NumberOfRemovedThings
         {
-            get { return this._numberOfRemovedThings.GetValueOrDefault(); }
+            get { return this._numberOfRemovedThings; }
             set { this._numberOfRemovedThings = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.IoT.Model
         /// The number of things which successfully completed the job.
         /// </para>
         /// </summary>
-        public int NumberOfSucceededThings
+        public int? NumberOfSucceededThings
         {
-            get { return this._numberOfSucceededThings.GetValueOrDefault(); }
+            get { return this._numberOfSucceededThings; }
             set { this._numberOfSucceededThings = value; }
         }
 
@@ -176,9 +176,9 @@ namespace Amazon.IoT.Model
         /// The number of things whose job execution status is <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
-        public int NumberOfTimedOutThings
+        public int? NumberOfTimedOutThings
         {
-            get { return this._numberOfTimedOutThings.GetValueOrDefault(); }
+            get { return this._numberOfTimedOutThings; }
             set { this._numberOfTimedOutThings = value; }
         }
 

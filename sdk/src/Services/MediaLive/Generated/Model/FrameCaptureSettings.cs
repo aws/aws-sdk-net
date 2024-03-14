@@ -43,9 +43,9 @@ namespace Amazon.MediaLive.Model
         /// specified by captureIntervalUnits.
         /// </summary>
         [AWSProperty(Min=1, Max=3600000)]
-        public int CaptureInterval
+        public int? CaptureInterval
         {
-            get { return this._captureInterval.GetValueOrDefault(); }
+            get { return this._captureInterval; }
             set { this._captureInterval = value; }
         }
 

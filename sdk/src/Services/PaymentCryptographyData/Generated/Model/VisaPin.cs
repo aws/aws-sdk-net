@@ -43,9 +43,9 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=9)]
-        public int PinVerificationKeyIndex
+        public int? PinVerificationKeyIndex
         {
-            get { return this._pinVerificationKeyIndex.GetValueOrDefault(); }
+            get { return this._pinVerificationKeyIndex; }
             set { this._pinVerificationKeyIndex = value; }
         }
 

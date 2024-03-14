@@ -41,9 +41,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property ClockSync.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int ClockSync
+        public int? ClockSync
         {
-            get { return this._clockSync.GetValueOrDefault(); }
+            get { return this._clockSync; }
             set { this._clockSync = value; }
         }
 
@@ -57,9 +57,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property Gnss.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int Gnss
+        public int? Gnss
         {
-            get { return this._gnss.GetValueOrDefault(); }
+            get { return this._gnss; }
             set { this._gnss = value; }
         }
 
@@ -73,9 +73,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property Stream.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int Stream
+        public int? Stream
         {
-            get { return this._stream.GetValueOrDefault(); }
+            get { return this._stream; }
             set { this._stream = value; }
         }
 

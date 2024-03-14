@@ -64,9 +64,9 @@ namespace Amazon.Rekognition.Model
         /// is 0.5. 
         /// </para>
         /// </summary>
-        public float X
+        public float? X
         {
-            get { return this._x.GetValueOrDefault(); }
+            get { return this._x; }
             set { this._x = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Rekognition.Model
         /// is 0.25.
         /// </para>
         /// </summary>
-        public float Y
+        public float? Y
         {
-            get { return this._y.GetValueOrDefault(); }
+            get { return this._y; }
             set { this._y = value; }
         }
 

@@ -135,9 +135,9 @@ namespace Amazon.RDS.Model
         /// stream.
         /// </para>
         /// </summary>
-        public bool ActivityStreamEngineNativeAuditFieldsIncluded
+        public bool? ActivityStreamEngineNativeAuditFieldsIncluded
         {
-            get { return this._activityStreamEngineNativeAuditFieldsIncluded.GetValueOrDefault(); }
+            get { return this._activityStreamEngineNativeAuditFieldsIncluded; }
             set { this._activityStreamEngineNativeAuditFieldsIncluded = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.RDS.Model
         /// The amount of storage in gibibytes (GiB) allocated for the DB instance.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.RDS.Model
         /// The time when a stopped DB instance is restarted automatically.
         /// </para>
         /// </summary>
-        public DateTime AutomaticRestartTime
+        public DateTime? AutomaticRestartTime
         {
-            get { return this._automaticRestartTime.GetValueOrDefault(); }
+            get { return this._automaticRestartTime; }
             set { this._automaticRestartTime = value; }
         }
 
@@ -321,9 +321,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether minor version patches are applied automatically.
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -375,9 +375,9 @@ namespace Amazon.RDS.Model
         /// The number of days for which automatic DB snapshots are retained.
         /// </para>
         /// </summary>
-        public int BackupRetentionPeriod
+        public int? BackupRetentionPeriod
         {
-            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            get { return this._backupRetentionPeriod; }
             set { this._backupRetentionPeriod = value; }
         }
 
@@ -481,9 +481,9 @@ namespace Amazon.RDS.Model
         /// effect on the DB cluster setting. For more information, see <c>DBCluster</c>.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -517,9 +517,9 @@ namespace Amazon.RDS.Model
         /// IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
         /// </para>
         /// </summary>
-        public bool CustomerOwnedIpEnabled
+        public bool? CustomerOwnedIpEnabled
         {
-            get { return this._customerOwnedIpEnabled.GetValueOrDefault(); }
+            get { return this._customerOwnedIpEnabled; }
             set { this._customerOwnedIpEnabled = value; }
         }
 
@@ -665,9 +665,9 @@ namespace Amazon.RDS.Model
         /// this can be a different port than the DB cluster port.
         /// </para>
         /// </summary>
-        public int DbInstancePort
+        public int? DbInstancePort
         {
-            get { return this._dbInstancePort.GetValueOrDefault(); }
+            get { return this._dbInstancePort; }
             set { this._dbInstancePort = value; }
         }
 
@@ -821,9 +821,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
         /// </para>
         /// </summary>
-        public bool DedicatedLogVolume
+        public bool? DedicatedLogVolume
         {
-            get { return this._dedicatedLogVolume.GetValueOrDefault(); }
+            get { return this._dedicatedLogVolume; }
             set { this._dedicatedLogVolume = value; }
         }
 
@@ -841,9 +841,9 @@ namespace Amazon.RDS.Model
         /// Deleting a DB Instance</a>.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 
@@ -986,9 +986,9 @@ namespace Amazon.RDS.Model
         /// database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        public bool IAMDatabaseAuthenticationEnabled
+        public bool? IAMDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -1004,9 +1004,9 @@ namespace Amazon.RDS.Model
         /// The date and time when the DB instance was created.
         /// </para>
         /// </summary>
-        public DateTime InstanceCreateTime
+        public DateTime? InstanceCreateTime
         {
-            get { return this._instanceCreateTime.GetValueOrDefault(); }
+            get { return this._instanceCreateTime; }
             set { this._instanceCreateTime = value; }
         }
 
@@ -1022,9 +1022,9 @@ namespace Amazon.RDS.Model
         /// The Provisioned IOPS (I/O operations per second) value for the DB instance.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -1044,9 +1044,9 @@ namespace Amazon.RDS.Model
         /// the storage file system for a DB instance</a>.
         /// </para>
         /// </summary>
-        public bool IsStorageConfigUpgradeAvailable
+        public bool? IsStorageConfigUpgradeAvailable
         {
-            get { return this._isStorageConfigUpgradeAvailable.GetValueOrDefault(); }
+            get { return this._isStorageConfigUpgradeAvailable; }
             set { this._isStorageConfigUpgradeAvailable = value; }
         }
 
@@ -1087,9 +1087,9 @@ namespace Amazon.RDS.Model
         /// restore.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -1186,9 +1186,9 @@ namespace Amazon.RDS.Model
         /// storage of the DB instance.
         /// </para>
         /// </summary>
-        public int MaxAllocatedStorage
+        public int? MaxAllocatedStorage
         {
-            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            get { return this._maxAllocatedStorage; }
             set { this._maxAllocatedStorage = value; }
         }
 
@@ -1205,9 +1205,9 @@ namespace Amazon.RDS.Model
         /// for the DB instance.
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -1243,9 +1243,9 @@ namespace Amazon.RDS.Model
         /// to RDS Custom DB instances.
         /// </para>
         /// </summary>
-        public bool MultiAZ
+        public bool? MultiAZ
         {
-            get { return this._multiAZ.GetValueOrDefault(); }
+            get { return this._multiAZ; }
             set { this._multiAZ = value; }
         }
 
@@ -1262,9 +1262,9 @@ namespace Amazon.RDS.Model
         /// single-tenant configuration (FALSE).
         /// </para>
         /// </summary>
-        public bool MultiTenant
+        public bool? MultiTenant
         {
-            get { return this._multiTenant.GetValueOrDefault(); }
+            get { return this._multiTenant; }
             set { this._multiTenant = value; }
         }
 
@@ -1390,9 +1390,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether Performance Insights is enabled for the DB instance.
         /// </para>
         /// </summary>
-        public bool PerformanceInsightsEnabled
+        public bool? PerformanceInsightsEnabled
         {
-            get { return this._performanceInsightsEnabled.GetValueOrDefault(); }
+            get { return this._performanceInsightsEnabled; }
             set { this._performanceInsightsEnabled = value; }
         }
 
@@ -1453,9 +1453,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>7</c> days
         /// </para>
         /// </summary>
-        public int PerformanceInsightsRetentionPeriod
+        public int? PerformanceInsightsRetentionPeriod
         {
-            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            get { return this._performanceInsightsRetentionPeriod; }
             set { this._performanceInsightsRetentionPeriod = value; }
         }
 
@@ -1530,9 +1530,9 @@ namespace Amazon.RDS.Model
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 
@@ -1566,9 +1566,9 @@ namespace Amazon.RDS.Model
         /// For more information, see <a>CreateDBInstance</a>.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 
@@ -1690,9 +1690,9 @@ namespace Amazon.RDS.Model
         /// resumes full automation. The minimum value is 60 (default). The maximum value is 1,440.
         /// </para>
         /// </summary>
-        public DateTime ResumeFullAutomationModeTime
+        public DateTime? ResumeFullAutomationModeTime
         {
-            get { return this._resumeFullAutomationModeTime.GetValueOrDefault(); }
+            get { return this._resumeFullAutomationModeTime; }
             set { this._resumeFullAutomationModeTime = value; }
         }
 
@@ -1746,9 +1746,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the DB instance is encrypted.
         /// </para>
         /// </summary>
-        public bool StorageEncrypted
+        public bool? StorageEncrypted
         {
-            get { return this._storageEncrypted.GetValueOrDefault(); }
+            get { return this._storageEncrypted; }
             set { this._storageEncrypted = value; }
         }
 
@@ -1768,9 +1768,9 @@ namespace Amazon.RDS.Model
         /// This setting applies only to the <c>gp3</c> storage type.
         /// </para>
         /// </summary>
-        public int StorageThroughput
+        public int? StorageThroughput
         {
-            get { return this._storageThroughput.GetValueOrDefault(); }
+            get { return this._storageThroughput; }
             set { this._storageThroughput = value; }
         }
 

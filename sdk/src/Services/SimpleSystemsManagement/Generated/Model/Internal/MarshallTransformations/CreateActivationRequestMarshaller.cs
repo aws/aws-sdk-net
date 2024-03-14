@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationDate())
                 {
                     context.Writer.WritePropertyName("ExpirationDate");
-                    context.Writer.Write(publicRequest.ExpirationDate);
+                    context.Writer.Write(publicRequest.ExpirationDate.Value);
                 }
 
                 if(publicRequest.IsSetIamRole())
@@ -94,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRegistrationLimit())
                 {
                     context.Writer.WritePropertyName("RegistrationLimit");
-                    context.Writer.Write(publicRequest.RegistrationLimit);
+                    context.Writer.Write(publicRequest.RegistrationLimit.Value);
                 }
 
                 if(publicRequest.IsSetRegistrationMetadata())

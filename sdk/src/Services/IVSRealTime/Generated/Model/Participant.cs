@@ -112,9 +112,9 @@ namespace Amazon.IVSRealTime.Model
         /// session.
         /// </para>
         /// </summary>
-        public DateTime FirstJoinTime
+        public DateTime? FirstJoinTime
         {
-            get { return this._firstJoinTime.GetValueOrDefault(); }
+            get { return this._firstJoinTime; }
             set { this._firstJoinTime = value; }
         }
 
@@ -206,9 +206,9 @@ namespace Amazon.IVSRealTime.Model
         /// Whether the participant ever published to the stage session.
         /// </para>
         /// </summary>
-        public bool Published
+        public bool? Published
         {
-            get { return this._published.GetValueOrDefault(); }
+            get { return this._published; }
             set { this._published = value; }
         }
 

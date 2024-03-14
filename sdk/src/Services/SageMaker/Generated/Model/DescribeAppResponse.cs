@@ -108,9 +108,9 @@ namespace Amazon.SageMaker.Model
         /// The creation time.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.SageMaker.Model
         /// The timestamp of the last health check.
         /// </para>
         /// </summary>
-        public DateTime LastHealthCheckTimestamp
+        public DateTime? LastHealthCheckTimestamp
         {
-            get { return this._lastHealthCheckTimestamp.GetValueOrDefault(); }
+            get { return this._lastHealthCheckTimestamp; }
             set { this._lastHealthCheckTimestamp = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.SageMaker.Model
         /// this value is set to the same value as <c>LastHealthCheckTimestamp</c>.
         /// </para>
         /// </summary>
-        public DateTime LastUserActivityTimestamp
+        public DateTime? LastUserActivityTimestamp
         {
-            get { return this._lastUserActivityTimestamp.GetValueOrDefault(); }
+            get { return this._lastUserActivityTimestamp; }
             set { this._lastUserActivityTimestamp = value; }
         }
 

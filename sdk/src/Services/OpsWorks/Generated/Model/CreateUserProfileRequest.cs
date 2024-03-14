@@ -55,9 +55,9 @@ namespace Amazon.OpsWorks.Model
         /// an IAM User's Public SSH Key</a>.
         /// </para>
         /// </summary>
-        public bool AllowSelfManagement
+        public bool? AllowSelfManagement
         {
-            get { return this._allowSelfManagement.GetValueOrDefault(); }
+            get { return this._allowSelfManagement; }
             set { this._allowSelfManagement = value; }
         }
 

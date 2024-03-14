@@ -54,7 +54,7 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetForce())
             {
                 context.Writer.WritePropertyName("force");
-                context.Writer.Write(requestObject.Force);
+                context.Writer.Write(requestObject.Force.Value);
             }
 
         }

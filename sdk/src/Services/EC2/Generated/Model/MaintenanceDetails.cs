@@ -43,9 +43,9 @@ namespace Amazon.EC2.Model
         /// Timestamp of last applied maintenance.
         /// </para>
         /// </summary>
-        public DateTime LastMaintenanceApplied
+        public DateTime? LastMaintenanceApplied
         {
-            get { return this._lastMaintenanceApplied.GetValueOrDefault(); }
+            get { return this._lastMaintenanceApplied; }
             set { this._lastMaintenanceApplied = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// The timestamp after which Amazon Web Services will automatically apply maintenance.
         /// </para>
         /// </summary>
-        public DateTime MaintenanceAutoAppliedAfter
+        public DateTime? MaintenanceAutoAppliedAfter
         {
-            get { return this._maintenanceAutoAppliedAfter.GetValueOrDefault(); }
+            get { return this._maintenanceAutoAppliedAfter; }
             set { this._maintenanceAutoAppliedAfter = value; }
         }
 

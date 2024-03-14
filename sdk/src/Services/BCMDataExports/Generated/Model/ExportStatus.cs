@@ -45,9 +45,9 @@ namespace Amazon.BCMDataExports.Model
         /// The timestamp of when the export was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.BCMDataExports.Model
         /// The timestamp of when the export was last generated.
         /// </para>
         /// </summary>
-        public DateTime LastRefreshedAt
+        public DateTime? LastRefreshedAt
         {
-            get { return this._lastRefreshedAt.GetValueOrDefault(); }
+            get { return this._lastRefreshedAt; }
             set { this._lastRefreshedAt = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.BCMDataExports.Model
         /// The timestamp of when the export was updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

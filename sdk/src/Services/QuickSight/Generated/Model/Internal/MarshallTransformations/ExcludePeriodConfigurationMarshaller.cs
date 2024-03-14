@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmount())
             {
                 context.Writer.WritePropertyName("Amount");
-                context.Writer.Write(requestObject.Amount);
+                context.Writer.Write(requestObject.Amount.Value);
             }
 
             if(requestObject.IsSetGranularity())

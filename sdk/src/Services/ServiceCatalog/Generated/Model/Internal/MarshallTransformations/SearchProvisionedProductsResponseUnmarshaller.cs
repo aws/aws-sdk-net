@@ -65,7 +65,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalResultsCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalResultsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

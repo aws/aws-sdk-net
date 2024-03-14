@@ -51,9 +51,9 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2)]
-        public int DesiredNumberOfDomainControllers
+        public int? DesiredNumberOfDomainControllers
         {
-            get { return this._desiredNumberOfDomainControllers.GetValueOrDefault(); }
+            get { return this._desiredNumberOfDomainControllers; }
             set { this._desiredNumberOfDomainControllers = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the Region description was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDateTime
+        public DateTime? LastUpdatedDateTime
         {
-            get { return this._lastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._lastUpdatedDateTime; }
             set { this._lastUpdatedDateTime = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.DirectoryService.Model
         /// Specifies when the Region replication began.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.DirectoryService.Model
         /// The date and time that the Region status was last updated.
         /// </para>
         /// </summary>
-        public DateTime StatusLastUpdatedDateTime
+        public DateTime? StatusLastUpdatedDateTime
         {
-            get { return this._statusLastUpdatedDateTime.GetValueOrDefault(); }
+            get { return this._statusLastUpdatedDateTime; }
             set { this._statusLastUpdatedDateTime = value; }
         }
 

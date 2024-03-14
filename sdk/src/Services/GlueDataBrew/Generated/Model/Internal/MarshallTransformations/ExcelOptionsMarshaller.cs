@@ -48,7 +48,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaderRow())
             {
                 context.Writer.WritePropertyName("HeaderRow");
-                context.Writer.Write(requestObject.HeaderRow);
+                context.Writer.Write(requestObject.HeaderRow.Value);
             }
 
             if(requestObject.IsSetSheetIndexes())

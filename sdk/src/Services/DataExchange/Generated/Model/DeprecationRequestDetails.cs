@@ -42,9 +42,9 @@ namespace Amazon.DataExchange.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime DeprecationAt
+        public DateTime? DeprecationAt
         {
-            get { return this._deprecationAt.GetValueOrDefault(); }
+            get { return this._deprecationAt; }
             set { this._deprecationAt = value; }
         }
 

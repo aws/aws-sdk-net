@@ -67,9 +67,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime IntervalEndTime
+        public DateTime? IntervalEndTime
         {
-            get { return this._intervalEndTime.GetValueOrDefault(); }
+            get { return this._intervalEndTime; }
             set { this._intervalEndTime = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime IntervalStartTime
+        public DateTime? IntervalStartTime
         {
-            get { return this._intervalStartTime.GetValueOrDefault(); }
+            get { return this._intervalStartTime; }
             set { this._intervalStartTime = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

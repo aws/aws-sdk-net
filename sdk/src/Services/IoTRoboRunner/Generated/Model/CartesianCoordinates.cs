@@ -44,9 +44,9 @@ namespace Amazon.IoTRoboRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double X
+        public double? X
         {
-            get { return this._x.GetValueOrDefault(); }
+            get { return this._x; }
             set { this._x = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.IoTRoboRunner.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Y
+        public double? Y
         {
-            get { return this._y.GetValueOrDefault(); }
+            get { return this._y; }
             set { this._y = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.IoTRoboRunner.Model
         /// Z coordinate.
         /// </para>
         /// </summary>
-        public double Z
+        public double? Z
         {
-            get { return this._z.GetValueOrDefault(); }
+            get { return this._z; }
             set { this._z = value; }
         }
 

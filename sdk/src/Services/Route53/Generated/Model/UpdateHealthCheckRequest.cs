@@ -106,9 +106,9 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long HealthCheckVersion
+        public long? HealthCheckVersion
         {
-            get { return this._healthCheckVersion.GetValueOrDefault(); }
+            get { return this._healthCheckVersion; }
             set { this._healthCheckVersion = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Route53.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 
@@ -407,9 +407,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int FailureThreshold
+        public int? FailureThreshold
         {
-            get { return this._failureThreshold.GetValueOrDefault(); }
+            get { return this._failureThreshold; }
             set { this._failureThreshold = value; }
         }
 
@@ -427,9 +427,9 @@ namespace Amazon.Route53.Model
         /// healthy.
         /// </para>
         /// </summary>
-        public bool Inverted
+        public bool? Inverted
         {
-            get { return this._inverted.GetValueOrDefault(); }
+            get { return this._inverted; }
             set { this._inverted = value; }
         }
 
@@ -475,9 +475,9 @@ namespace Amazon.Route53.Model
         /// Pricing</a>.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 
@@ -512,9 +512,9 @@ namespace Amazon.Route53.Model
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public int HealthThreshold
+        public int? HealthThreshold
         {
-            get { return this._healthThreshold.GetValueOrDefault(); }
+            get { return this._healthThreshold; }
             set { this._healthThreshold = value; }
         }
 
@@ -572,9 +572,9 @@ namespace Amazon.Route53.Model
         /// the <c>client_hello</c> message.
         /// </para>
         /// </summary>
-        public bool EnableSNI
+        public bool? EnableSNI
         {
-            get { return this._enableSNI.GetValueOrDefault(); }
+            get { return this._enableSNI; }
             set { this._enableSNI = value; }
         }
 

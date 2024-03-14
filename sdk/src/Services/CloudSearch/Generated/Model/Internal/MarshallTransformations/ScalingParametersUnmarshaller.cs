@@ -62,13 +62,13 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DesiredPartitionCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DesiredPartitionCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DesiredReplicationCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.DesiredReplicationCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

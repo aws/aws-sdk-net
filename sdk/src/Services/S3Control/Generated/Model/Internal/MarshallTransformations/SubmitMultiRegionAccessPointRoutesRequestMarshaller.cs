@@ -87,7 +87,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));                 
 
                         if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
-                            xmlWriter.WriteElementString("TrafficDialPercentage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage));                 
+                            xmlWriter.WriteElementString("TrafficDialPercentage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));                 
 
                         xmlWriter.WriteEndElement();
                     }

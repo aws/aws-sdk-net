@@ -105,9 +105,9 @@ namespace Amazon.ManagedGrafana.Model
         /// again.
         /// </para>
         /// </summary>
-        public int LoginValidityDuration
+        public int? LoginValidityDuration
         {
-            get { return this._loginValidityDuration.GetValueOrDefault(); }
+            get { return this._loginValidityDuration; }
             set { this._loginValidityDuration = value; }
         }
 

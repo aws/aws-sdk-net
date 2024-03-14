@@ -65,7 +65,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("totalDiscoveredResources", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalDiscoveredResources = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -97,7 +97,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDisableExecuteApiEndpoint())
                 {
                     context.Writer.WritePropertyName("disableExecuteApiEndpoint");
-                    context.Writer.Write(publicRequest.DisableExecuteApiEndpoint);
+                    context.Writer.Write(publicRequest.DisableExecuteApiEndpoint.Value);
                 }
 
                 if(publicRequest.IsSetEndpointConfiguration())
@@ -114,7 +114,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMinimumCompressionSize())
                 {
                     context.Writer.WritePropertyName("minimumCompressionSize");
-                    context.Writer.Write(publicRequest.MinimumCompressionSize);
+                    context.Writer.Write(publicRequest.MinimumCompressionSize.Value);
                 }
 
                 if(publicRequest.IsSetName())

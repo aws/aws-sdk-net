@@ -71,7 +71,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsMiddlebox", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsMiddlebox = unmarshaller.Unmarshall(context);
                     continue;
                 }

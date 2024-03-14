@@ -89,9 +89,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// value is false.
         /// </para>
         /// </summary>
-        public bool AutoDeploy
+        public bool? AutoDeploy
         {
-            get { return this._autoDeploy.GetValueOrDefault(); }
+            get { return this._autoDeploy; }
             set { this._autoDeploy = value; }
         }
 

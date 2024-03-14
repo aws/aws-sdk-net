@@ -65,19 +65,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxAbrBitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAbrBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxRenditions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRenditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minAbrBitrate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinAbrBitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }

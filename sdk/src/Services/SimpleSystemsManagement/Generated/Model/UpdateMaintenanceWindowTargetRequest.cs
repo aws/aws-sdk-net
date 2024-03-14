@@ -139,9 +139,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// are set to null.
         /// </para>
         /// </summary>
-        public bool Replace
+        public bool? Replace
         {
-            get { return this._replace.GetValueOrDefault(); }
+            get { return this._replace; }
             set { this._replace = value; }
         }
 

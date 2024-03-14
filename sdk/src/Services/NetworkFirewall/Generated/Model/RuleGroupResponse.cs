@@ -88,9 +88,9 @@ namespace Amazon.NetworkFirewall.Model
         /// 
         /// </para>
         /// </summary>
-        public int Capacity
+        public int? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The number of capacity units currently consumed by the rule group rules. 
         /// </para>
         /// </summary>
-        public int ConsumedCapacity
+        public int? ConsumedCapacity
         {
-            get { return this._consumedCapacity.GetValueOrDefault(); }
+            get { return this._consumedCapacity; }
             set { this._consumedCapacity = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The last time that the rule group was changed.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.NetworkFirewall.Model
         /// The number of firewall policies that use this rule group.
         /// </para>
         /// </summary>
-        public int NumberOfAssociations
+        public int? NumberOfAssociations
         {
-            get { return this._numberOfAssociations.GetValueOrDefault(); }
+            get { return this._numberOfAssociations; }
             set { this._numberOfAssociations = value; }
         }
 

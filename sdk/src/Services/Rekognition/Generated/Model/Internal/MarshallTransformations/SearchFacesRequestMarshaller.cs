@@ -82,13 +82,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFaceMatchThreshold())
                 {
                     context.Writer.WritePropertyName("FaceMatchThreshold");
-                    context.Writer.Write(publicRequest.FaceMatchThreshold);
+                    context.Writer.Write(publicRequest.FaceMatchThreshold.Value);
                 }
 
                 if(publicRequest.IsSetMaxFaces())
                 {
                     context.Writer.WritePropertyName("MaxFaces");
-                    context.Writer.Write(publicRequest.MaxFaces);
+                    context.Writer.Write(publicRequest.MaxFaces.Value);
                 }
 
                 writer.WriteObjectEnd();

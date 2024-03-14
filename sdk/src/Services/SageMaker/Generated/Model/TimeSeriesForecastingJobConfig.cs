@@ -173,9 +173,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int ForecastHorizon
+        public int? ForecastHorizon
         {
-            get { return this._forecastHorizon.GetValueOrDefault(); }
+            get { return this._forecastHorizon; }
             set { this._forecastHorizon = value; }
         }
 

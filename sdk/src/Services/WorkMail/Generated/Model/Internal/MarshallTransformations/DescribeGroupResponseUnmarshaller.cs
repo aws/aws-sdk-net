@@ -53,7 +53,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DisabledDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DisabledDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EnabledDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EnabledDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HiddenFromGlobalAddressList", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.HiddenFromGlobalAddressList = unmarshaller.Unmarshall(context);
                     continue;
                 }

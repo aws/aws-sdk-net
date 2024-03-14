@@ -48,7 +48,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabledInBroker())
             {
                 context.Writer.WritePropertyName("enabledInBroker");
-                context.Writer.Write(requestObject.EnabledInBroker);
+                context.Writer.Write(requestObject.EnabledInBroker.Value);
             }
 
         }

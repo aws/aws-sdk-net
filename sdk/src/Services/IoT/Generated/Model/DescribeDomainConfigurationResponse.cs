@@ -161,9 +161,9 @@ namespace Amazon.IoT.Model
         /// The date and time the domain configuration's status was last changed.
         /// </para>
         /// </summary>
-        public DateTime LastStatusChangeDate
+        public DateTime? LastStatusChangeDate
         {
-            get { return this._lastStatusChangeDate.GetValueOrDefault(); }
+            get { return this._lastStatusChangeDate; }
             set { this._lastStatusChangeDate = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.AppRegistry.Model
         /// The time the resource was associated with the application.
         /// </para>
         /// </summary>
-        public DateTime AssociationTime
+        public DateTime? AssociationTime
         {
-            get { return this._associationTime.GetValueOrDefault(); }
+            get { return this._associationTime; }
             set { this._associationTime = value; }
         }
 

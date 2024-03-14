@@ -132,9 +132,9 @@ namespace Amazon.Neptune.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool SkipFinalSnapshot
+        public bool? SkipFinalSnapshot
         {
-            get { return this._skipFinalSnapshot.GetValueOrDefault(); }
+            get { return this._skipFinalSnapshot; }
             set { this._skipFinalSnapshot = value; }
         }
 

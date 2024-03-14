@@ -60,9 +60,9 @@ namespace Amazon.CloudFormation.Model
         /// The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool AcceptTermsAndConditions
+        public bool? AcceptTermsAndConditions
         {
-            get { return this._acceptTermsAndConditions.GetValueOrDefault(); }
+            get { return this._acceptTermsAndConditions; }
             set { this._acceptTermsAndConditions = value; }
         }
 

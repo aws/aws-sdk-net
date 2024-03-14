@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// job execution on a particular device.
         /// </para>
         /// </summary>
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 

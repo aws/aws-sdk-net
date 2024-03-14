@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReserveRange())
             {
                 context.Writer.WritePropertyName("ReserveRange");
-                context.Writer.Write(requestObject.ReserveRange);
+                context.Writer.Write(requestObject.ReserveRange.Value);
             }
 
         }

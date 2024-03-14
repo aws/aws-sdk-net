@@ -287,9 +287,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.
         /// </para>
         /// </summary>
-        public int EbsRootVolumeIops
+        public int? EbsRootVolumeIops
         {
-            get { return this._ebsRootVolumeIops.GetValueOrDefault(); }
+            get { return this._ebsRootVolumeIops; }
             set { this._ebsRootVolumeIops = value; }
         }
 
@@ -306,9 +306,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.
         /// </para>
         /// </summary>
-        public int EbsRootVolumeSize
+        public int? EbsRootVolumeSize
         {
-            get { return this._ebsRootVolumeSize.GetValueOrDefault(); }
+            get { return this._ebsRootVolumeSize; }
             set { this._ebsRootVolumeSize = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// later.
         /// </para>
         /// </summary>
-        public int EbsRootVolumeThroughput
+        public int? EbsRootVolumeThroughput
         {
-            get { return this._ebsRootVolumeThroughput.GetValueOrDefault(); }
+            get { return this._ebsRootVolumeThroughput; }
             set { this._ebsRootVolumeThroughput = value; }
         }
 
@@ -698,9 +698,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// is <c>1</c>. The maximum value is <c>256</c>.
         /// </para>
         /// </summary>
-        public int StepConcurrencyLevel
+        public int? StepConcurrencyLevel
         {
-            get { return this._stepConcurrencyLevel.GetValueOrDefault(); }
+            get { return this._stepConcurrencyLevel; }
             set { this._stepConcurrencyLevel = value; }
         }
 
@@ -803,9 +803,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Guide</i>.
         /// </para>
         /// </summary>
-        public bool VisibleToAllUsers
+        public bool? VisibleToAllUsers
         {
-            get { return this._visibleToAllUsers.GetValueOrDefault(); }
+            get { return this._visibleToAllUsers; }
             set { this._visibleToAllUsers = value; }
         }
 

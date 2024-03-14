@@ -73,9 +73,9 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int StageIndex
+        public int? StageIndex
         {
-            get { return this._stageIndex.GetValueOrDefault(); }
+            get { return this._stageIndex; }
             set { this._stageIndex = value; }
         }
 

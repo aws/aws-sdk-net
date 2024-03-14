@@ -48,13 +48,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLowerInclusive())
             {
                 context.Writer.WritePropertyName("lowerInclusive");
-                context.Writer.Write(requestObject.LowerInclusive);
+                context.Writer.Write(requestObject.LowerInclusive.Value);
             }
 
             if(requestObject.IsSetUpperInclusive())
             {
                 context.Writer.WritePropertyName("upperInclusive");
-                context.Writer.Write(requestObject.UpperInclusive);
+                context.Writer.Write(requestObject.UpperInclusive.Value);
             }
 
         }

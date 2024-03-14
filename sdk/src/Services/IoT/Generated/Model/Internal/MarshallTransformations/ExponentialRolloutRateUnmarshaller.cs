@@ -65,13 +65,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("baseRatePerMinute", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BaseRatePerMinute = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("incrementFactor", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.IncrementFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }

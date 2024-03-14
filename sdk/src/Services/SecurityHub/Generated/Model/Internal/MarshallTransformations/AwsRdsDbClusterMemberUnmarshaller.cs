@@ -77,13 +77,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsClusterWriter", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsClusterWriter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PromotionTier", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -88,9 +88,9 @@ namespace Amazon.DataExchange.Model
         /// The date and time that the revision was created, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.DataExchange.Model
         /// ARN.
         /// </para>
         /// </summary>
-        public bool Finalized
+        public bool? Finalized
         {
-            get { return this._finalized.GetValueOrDefault(); }
+            get { return this._finalized; }
             set { this._finalized = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.DataExchange.Model
         /// A status indicating that subscribers' access to the revision was revoked.
         /// </para>
         /// </summary>
-        public bool Revoked
+        public bool? Revoked
         {
-            get { return this._revoked.GetValueOrDefault(); }
+            get { return this._revoked; }
             set { this._revoked = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.DataExchange.Model
         /// The date and time that the revision was revoked, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime RevokedAt
+        public DateTime? RevokedAt
         {
-            get { return this._revokedAt.GetValueOrDefault(); }
+            get { return this._revokedAt; }
             set { this._revokedAt = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.DataExchange.Model
         /// The date and time that the revision was last updated, in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

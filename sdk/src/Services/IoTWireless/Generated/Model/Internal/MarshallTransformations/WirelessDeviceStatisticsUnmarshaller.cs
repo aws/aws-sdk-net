@@ -101,7 +101,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("McGroupId", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.McGroupId = unmarshaller.Unmarshall(context);
                     continue;
                 }

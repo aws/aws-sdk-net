@@ -68,9 +68,9 @@ namespace Amazon.GuardDuty.Model
         /// Whether the host IPC flag is enabled for the pods in the workload.
         /// </para>
         /// </summary>
-        public bool HostIPC
+        public bool? HostIPC
         {
-            get { return this._hostIPC.GetValueOrDefault(); }
+            get { return this._hostIPC; }
             set { this._hostIPC = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.GuardDuty.Model
         /// Whether the hostNetwork flag is enabled for the pods included in the workload.
         /// </para>
         /// </summary>
-        public bool HostNetwork
+        public bool? HostNetwork
         {
-            get { return this._hostNetwork.GetValueOrDefault(); }
+            get { return this._hostNetwork; }
             set { this._hostNetwork = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.GuardDuty.Model
         /// Whether the host PID flag is enabled for the pods in the workload. 
         /// </para>
         /// </summary>
-        public bool HostPID
+        public bool? HostPID
         {
-            get { return this._hostPID.GetValueOrDefault(); }
+            get { return this._hostPID; }
             set { this._hostPID = value; }
         }
 

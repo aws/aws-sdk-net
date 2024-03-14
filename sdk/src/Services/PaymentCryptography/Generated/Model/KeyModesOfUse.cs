@@ -51,9 +51,9 @@ namespace Amazon.PaymentCryptography.Model
         /// data.
         /// </para>
         /// </summary>
-        public bool Decrypt
+        public bool? Decrypt
         {
-            get { return this._decrypt.GetValueOrDefault(); }
+            get { return this._decrypt; }
             set { this._decrypt = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.PaymentCryptography.Model
         /// new keys.
         /// </para>
         /// </summary>
-        public bool DeriveKey
+        public bool? DeriveKey
         {
-            get { return this._deriveKey.GetValueOrDefault(); }
+            get { return this._deriveKey; }
             set { this._deriveKey = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.PaymentCryptography.Model
         /// data.
         /// </para>
         /// </summary>
-        public bool Encrypt
+        public bool? Encrypt
         {
-            get { return this._encrypt.GetValueOrDefault(); }
+            get { return this._encrypt; }
             set { this._encrypt = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.PaymentCryptography.Model
         /// and verify other card and PIN verification keys.
         /// </para>
         /// </summary>
-        public bool Generate
+        public bool? Generate
         {
-            get { return this._generate.GetValueOrDefault(); }
+            get { return this._generate; }
             set { this._generate = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.PaymentCryptography.Model
         /// other than the restrictions implied by <c>KeyUsage</c>.
         /// </para>
         /// </summary>
-        public bool NoRestrictions
+        public bool? NoRestrictions
         {
-            get { return this._noRestrictions.GetValueOrDefault(); }
+            get { return this._noRestrictions; }
             set { this._noRestrictions = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.PaymentCryptography.Model
         /// Speciﬁes whether an Amazon Web Services Payment Cryptography key can be used for signing.
         /// </para>
         /// </summary>
-        public bool Sign
+        public bool? Sign
         {
-            get { return this._sign.GetValueOrDefault(); }
+            get { return this._sign; }
             set { this._sign = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.PaymentCryptography.Model
         /// other keys.
         /// </para>
         /// </summary>
-        public bool Unwrap
+        public bool? Unwrap
         {
-            get { return this._unwrap.GetValueOrDefault(); }
+            get { return this._unwrap; }
             set { this._unwrap = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.PaymentCryptography.Model
         /// signatures.
         /// </para>
         /// </summary>
-        public bool Verify
+        public bool? Verify
         {
-            get { return this._verify.GetValueOrDefault(); }
+            get { return this._verify; }
             set { this._verify = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.PaymentCryptography.Model
         /// other keys.
         /// </para>
         /// </summary>
-        public bool Wrap
+        public bool? Wrap
         {
-            get { return this._wrap.GetValueOrDefault(); }
+            get { return this._wrap; }
             set { this._wrap = value; }
         }
 

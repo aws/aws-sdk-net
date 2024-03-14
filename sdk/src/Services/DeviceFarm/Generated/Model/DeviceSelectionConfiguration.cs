@@ -197,9 +197,9 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int MaxDevices
+        public int? MaxDevices
         {
-            get { return this._maxDevices.GetValueOrDefault(); }
+            get { return this._maxDevices; }
             set { this._maxDevices = value; }
         }
 

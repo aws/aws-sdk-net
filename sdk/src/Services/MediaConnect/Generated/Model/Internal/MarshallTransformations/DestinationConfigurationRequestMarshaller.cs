@@ -54,7 +54,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationPort())
             {
                 context.Writer.WritePropertyName("destinationPort");
-                context.Writer.Write(requestObject.DestinationPort);
+                context.Writer.Write(requestObject.DestinationPort.Value);
             }
 
             if(requestObject.IsSetInterface())

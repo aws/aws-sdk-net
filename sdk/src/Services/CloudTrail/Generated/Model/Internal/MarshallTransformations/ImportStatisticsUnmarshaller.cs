@@ -65,31 +65,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EventsCompleted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EventsCompleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FailedEntries", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FailedEntries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FilesCompleted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FilesCompleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PrefixesCompleted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PrefixesCompleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PrefixesFound", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PrefixesFound = unmarshaller.Unmarshall(context);
                     continue;
                 }

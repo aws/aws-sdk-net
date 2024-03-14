@@ -67,9 +67,9 @@ namespace Amazon.EC2.Model
         /// subnet.
         /// </para>
         /// </summary>
-        public bool Ipv6Native
+        public bool? Ipv6Native
         {
-            get { return this._ipv6Native.GetValueOrDefault(); }
+            get { return this._ipv6Native; }
             set { this._ipv6Native = value; }
         }
 

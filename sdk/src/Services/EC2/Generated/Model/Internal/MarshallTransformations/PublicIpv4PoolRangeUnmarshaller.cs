@@ -56,13 +56,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("addressCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AddressCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("availableAddressCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AvailableAddressCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

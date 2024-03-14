@@ -99,9 +99,9 @@ namespace Amazon.Glue.Model
         /// The time when the table definition was created in the Data Catalog.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -175,9 +175,9 @@ namespace Amazon.Glue.Model
         /// Indicates whether the table has been registered with Lake Formation.
         /// </para>
         /// </summary>
-        public bool IsRegisteredWithLakeFormation
+        public bool? IsRegisteredWithLakeFormation
         {
-            get { return this._isRegisteredWithLakeFormation.GetValueOrDefault(); }
+            get { return this._isRegisteredWithLakeFormation; }
             set { this._isRegisteredWithLakeFormation = value; }
         }
 
@@ -194,9 +194,9 @@ namespace Amazon.Glue.Model
         /// not be reliable.
         /// </para>
         /// </summary>
-        public DateTime LastAccessTime
+        public DateTime? LastAccessTime
         {
-            get { return this._lastAccessTime.GetValueOrDefault(); }
+            get { return this._lastAccessTime; }
             set { this._lastAccessTime = value; }
         }
 
@@ -212,9 +212,9 @@ namespace Amazon.Glue.Model
         /// The last time that column statistics were computed for this table.
         /// </para>
         /// </summary>
-        public DateTime LastAnalyzedTime
+        public DateTime? LastAnalyzedTime
         {
-            get { return this._lastAnalyzedTime.GetValueOrDefault(); }
+            get { return this._lastAnalyzedTime; }
             set { this._lastAnalyzedTime = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Retention
+        public int? Retention
         {
-            get { return this._retention.GetValueOrDefault(); }
+            get { return this._retention; }
             set { this._retention = value; }
         }
 
@@ -402,9 +402,9 @@ namespace Amazon.Glue.Model
         /// The last time that the table was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

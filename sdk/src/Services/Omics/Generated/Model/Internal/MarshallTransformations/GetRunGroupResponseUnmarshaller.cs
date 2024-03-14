@@ -59,7 +59,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,25 +71,25 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxCpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxDuration", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxGpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxGpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxRuns", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxRuns = unmarshaller.Unmarshall(context);
                     continue;
                 }

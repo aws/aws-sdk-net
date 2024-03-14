@@ -84,9 +84,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int MaxEjectionPercent
+        public int? MaxEjectionPercent
         {
-            get { return this._maxEjectionPercent.GetValueOrDefault(); }
+            get { return this._maxEjectionPercent; }
             set { this._maxEjectionPercent = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.AppMesh.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long MaxServerErrors
+        public long? MaxServerErrors
         {
-            get { return this._maxServerErrors.GetValueOrDefault(); }
+            get { return this._maxServerErrors; }
             set { this._maxServerErrors = value; }
         }
 

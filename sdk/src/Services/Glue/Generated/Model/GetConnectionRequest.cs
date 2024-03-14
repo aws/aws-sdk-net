@@ -68,9 +68,9 @@ namespace Amazon.Glue.Model
         /// the rest of the connection properties.
         /// </para>
         /// </summary>
-        public bool HidePassword
+        public bool? HidePassword
         {
-            get { return this._hidePassword.GetValueOrDefault(); }
+            get { return this._hidePassword; }
             set { this._hidePassword = value; }
         }
 

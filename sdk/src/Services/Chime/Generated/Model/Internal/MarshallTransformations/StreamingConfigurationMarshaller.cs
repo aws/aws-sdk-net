@@ -48,13 +48,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataRetentionInHours())
             {
                 context.Writer.WritePropertyName("DataRetentionInHours");
-                context.Writer.Write(requestObject.DataRetentionInHours);
+                context.Writer.Write(requestObject.DataRetentionInHours.Value);
             }
 
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled);
+                context.Writer.Write(requestObject.Disabled.Value);
             }
 
             if(requestObject.IsSetStreamingNotificationTargets())

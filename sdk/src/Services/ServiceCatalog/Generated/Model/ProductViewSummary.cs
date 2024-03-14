@@ -73,9 +73,9 @@ namespace Amazon.ServiceCatalog.Model
         /// with <a>DescribeProvisioningParameters</a>.
         /// </para>
         /// </summary>
-        public bool HasDefaultPath
+        public bool? HasDefaultPath
         {
-            get { return this._hasDefaultPath.GetValueOrDefault(); }
+            get { return this._hasDefaultPath; }
             set { this._hasDefaultPath = value; }
         }
 

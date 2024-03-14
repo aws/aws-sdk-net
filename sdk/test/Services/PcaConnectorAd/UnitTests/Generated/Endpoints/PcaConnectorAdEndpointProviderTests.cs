@@ -22,7 +22,7 @@ using Amazon.Runtime;
 using Amazon.PcaConnectorAd.Endpoints;
 using Amazon.PcaConnectorAd.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class PcaConnectorAdEndpointsTests

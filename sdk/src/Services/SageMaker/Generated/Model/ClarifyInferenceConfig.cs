@@ -198,9 +198,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int LabelIndex
+        public int? LabelIndex
         {
-            get { return this._labelIndex.GetValueOrDefault(); }
+            get { return this._labelIndex; }
             set { this._labelIndex = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
-        public int MaxPayloadInMB
+        public int? MaxPayloadInMB
         {
-            get { return this._maxPayloadInMB.GetValueOrDefault(); }
+            get { return this._maxPayloadInMB; }
             set { this._maxPayloadInMB = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int MaxRecordCount
+        public int? MaxRecordCount
         {
-            get { return this._maxRecordCount.GetValueOrDefault(); }
+            get { return this._maxRecordCount; }
             set { this._maxRecordCount = value; }
         }
 
@@ -302,9 +302,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ProbabilityIndex
+        public int? ProbabilityIndex
         {
-            get { return this._probabilityIndex.GetValueOrDefault(); }
+            get { return this._probabilityIndex; }
             set { this._probabilityIndex = value; }
         }
 

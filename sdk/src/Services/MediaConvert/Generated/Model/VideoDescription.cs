@@ -166,9 +166,9 @@ namespace Amazon.MediaConvert.Model
         /// of this video output.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
-        public int FixedAfd
+        public int? FixedAfd
         {
-            get { return this._fixedAfd.GetValueOrDefault(); }
+            get { return this._fixedAfd; }
             set { this._fixedAfd = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.MediaConvert.Model
         /// to 1280, your output will be 1280x720.
         /// </summary>
         [AWSProperty(Min=32, Max=8192)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -260,9 +260,9 @@ namespace Amazon.MediaConvert.Model
         /// most content.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Sharpness
+        public int? Sharpness
         {
-            get { return this._sharpness.GetValueOrDefault(); }
+            get { return this._sharpness; }
             set { this._sharpness = value; }
         }
 
@@ -322,9 +322,9 @@ namespace Amazon.MediaConvert.Model
         /// to 720, your output will be 1280x720.
         /// </summary>
         [AWSProperty(Min=32, Max=8192)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

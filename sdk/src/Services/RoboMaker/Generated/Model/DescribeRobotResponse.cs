@@ -88,9 +88,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the robot was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.RoboMaker.Model
         /// The time of the last deployment job.
         /// </para>
         /// </summary>
-        public DateTime LastDeploymentTime
+        public DateTime? LastDeploymentTime
         {
-            get { return this._lastDeploymentTime.GetValueOrDefault(); }
+            get { return this._lastDeploymentTime; }
             set { this._lastDeploymentTime = value; }
         }
 

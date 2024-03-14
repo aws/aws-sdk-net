@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Braket")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

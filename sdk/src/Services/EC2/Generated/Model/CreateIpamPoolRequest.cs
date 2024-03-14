@@ -90,9 +90,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int AllocationDefaultNetmaskLength
+        public int? AllocationDefaultNetmaskLength
         {
-            get { return this._allocationDefaultNetmaskLength.GetValueOrDefault(); }
+            get { return this._allocationDefaultNetmaskLength; }
             set { this._allocationDefaultNetmaskLength = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int AllocationMaxNetmaskLength
+        public int? AllocationMaxNetmaskLength
         {
-            get { return this._allocationMaxNetmaskLength.GetValueOrDefault(); }
+            get { return this._allocationMaxNetmaskLength; }
             set { this._allocationMaxNetmaskLength = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
-        public int AllocationMinNetmaskLength
+        public int? AllocationMinNetmaskLength
         {
-            get { return this._allocationMinNetmaskLength.GetValueOrDefault(); }
+            get { return this._allocationMinNetmaskLength; }
             set { this._allocationMinNetmaskLength = value; }
         }
 
@@ -184,9 +184,9 @@ namespace Amazon.EC2.Model
         /// A locale must be set on the pool for this feature to work.
         /// </para>
         /// </summary>
-        public bool AutoImport
+        public bool? AutoImport
         {
-            get { return this._autoImport.GetValueOrDefault(); }
+            get { return this._autoImport; }
             set { this._autoImport = value; }
         }
 
@@ -331,9 +331,9 @@ namespace Amazon.EC2.Model
         /// pools with AddressFamily set to <c>ipv4</c>.
         /// </para>
         /// </summary>
-        public bool PubliclyAdvertisable
+        public bool? PubliclyAdvertisable
         {
-            get { return this._publiclyAdvertisable.GetValueOrDefault(); }
+            get { return this._publiclyAdvertisable; }
             set { this._publiclyAdvertisable = value; }
         }
 

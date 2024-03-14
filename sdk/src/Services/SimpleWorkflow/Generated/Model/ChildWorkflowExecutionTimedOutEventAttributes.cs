@@ -49,9 +49,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long InitiatedEventId
+        public long? InitiatedEventId
         {
-            get { return this._initiatedEventId.GetValueOrDefault(); }
+            get { return this._initiatedEventId; }
             set { this._initiatedEventId = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long StartedEventId
+        public long? StartedEventId
         {
-            get { return this._startedEventId.GetValueOrDefault(); }
+            get { return this._startedEventId; }
             set { this._startedEventId = value; }
         }
 

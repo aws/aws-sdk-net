@@ -41,9 +41,9 @@ namespace Amazon.SageMaker.Model
         /// Indicates if the file should be read as a JSON object per line. 
         /// </para>
         /// </summary>
-        public bool Line
+        public bool? Line
         {
-            get { return this._line.GetValueOrDefault(); }
+            get { return this._line; }
             set { this._line = value; }
         }
 

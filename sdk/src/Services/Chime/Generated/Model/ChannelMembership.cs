@@ -65,9 +65,9 @@ namespace Amazon.Chime.Model
         /// The time at which the channel membership was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.Chime.Model
         /// The time at which a channel membership was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedTimestamp
+        public DateTime? LastUpdatedTimestamp
         {
-            get { return this._lastUpdatedTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdatedTimestamp; }
             set { this._lastUpdatedTimestamp = value; }
         }
 

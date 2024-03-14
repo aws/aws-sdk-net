@@ -80,9 +80,9 @@ namespace Amazon.Backup.Model
         /// The size, in bytes, of a copy job.
         /// </para>
         /// </summary>
-        public long BackupSizeInBytes
+        public long? BackupSizeInBytes
         {
-            get { return this._backupSizeInBytes.GetValueOrDefault(); }
+            get { return this._backupSizeInBytes; }
             set { this._backupSizeInBytes = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CompletionDate
+        public DateTime? CompletionDate
         {
-            get { return this._completionDate.GetValueOrDefault(); }
+            get { return this._completionDate; }
             set { this._completionDate = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.Backup.Model
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.Backup.Model
         /// This is a boolean value indicating this is a parent (composite) copy job.
         /// </para>
         /// </summary>
-        public bool IsParent
+        public bool? IsParent
         {
-            get { return this._isParent.GetValueOrDefault(); }
+            get { return this._isParent; }
             set { this._isParent = value; }
         }
 
@@ -316,9 +316,9 @@ namespace Amazon.Backup.Model
         /// This is the number of child (nested) copy jobs.
         /// </para>
         /// </summary>
-        public long NumberOfChildJobs
+        public long? NumberOfChildJobs
         {
-            get { return this._numberOfChildJobs.GetValueOrDefault(); }
+            get { return this._numberOfChildJobs; }
             set { this._numberOfChildJobs = value; }
         }
 

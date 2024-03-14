@@ -56,9 +56,9 @@ namespace Amazon.QLDB.Model
         /// Universal Coordinated Time (UTC). For example: <c>2019-06-13T21:36:34Z</c>.
         /// </para>
         /// </summary>
-        public DateTime ExclusiveEndTime
+        public DateTime? ExclusiveEndTime
         {
-            get { return this._exclusiveEndTime.GetValueOrDefault(); }
+            get { return this._exclusiveEndTime; }
             set { this._exclusiveEndTime = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.QLDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime InclusiveStartTime
+        public DateTime? InclusiveStartTime
         {
-            get { return this._inclusiveStartTime.GetValueOrDefault(); }
+            get { return this._inclusiveStartTime; }
             set { this._inclusiveStartTime = value; }
         }
 

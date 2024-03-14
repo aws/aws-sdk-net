@@ -65,9 +65,9 @@ namespace Amazon.SSO.Model
         /// The date on which temporary security credentials expire.
         /// </para>
         /// </summary>
-        public long Expiration
+        public long? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 

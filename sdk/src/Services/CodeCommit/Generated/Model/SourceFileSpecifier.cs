@@ -61,9 +61,9 @@ namespace Amazon.CodeCommit.Model
         /// Whether to remove the source file from the parent commit.
         /// </para>
         /// </summary>
-        public bool IsMove
+        public bool? IsMove
         {
-            get { return this._isMove.GetValueOrDefault(); }
+            get { return this._isMove; }
             set { this._isMove = value; }
         }
 

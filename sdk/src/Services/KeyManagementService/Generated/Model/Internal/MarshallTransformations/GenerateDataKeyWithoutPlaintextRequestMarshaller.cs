@@ -70,7 +70,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDryRun())
                 {
                     context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
+                    context.Writer.Write(publicRequest.DryRun.Value);
                 }
 
                 if(publicRequest.IsSetEncryptionContext())
@@ -113,7 +113,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfBytes())
                 {
                     context.Writer.WritePropertyName("NumberOfBytes");
-                    context.Writer.Write(publicRequest.NumberOfBytes);
+                    context.Writer.Write(publicRequest.NumberOfBytes.Value);
                 }
 
                 writer.WriteObjectEnd();

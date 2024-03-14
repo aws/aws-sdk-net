@@ -120,9 +120,9 @@ namespace Amazon.IoT.Model
         /// The version of the thing record in the registry.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

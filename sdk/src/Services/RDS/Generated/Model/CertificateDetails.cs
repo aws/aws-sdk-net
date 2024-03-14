@@ -69,9 +69,9 @@ namespace Amazon.RDS.Model
         /// The expiration date of the DB instance’s server certificate.
         /// </para>
         /// </summary>
-        public DateTime ValidTill
+        public DateTime? ValidTill
         {
-            get { return this._validTill.GetValueOrDefault(); }
+            get { return this._validTill; }
             set { this._validTill = value; }
         }
 

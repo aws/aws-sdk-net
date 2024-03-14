@@ -42,9 +42,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The number of GPUs for the instance type. 
         /// </para>
         /// </summary>
-        public int GpuCount
+        public int? GpuCount
         {
-            get { return this._gpuCount.GetValueOrDefault(); }
+            get { return this._gpuCount; }
             set { this._gpuCount = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// 
         /// </para>
         /// </summary>
-        public int GpuMemorySizeInMiB
+        public int? GpuMemorySizeInMiB
         {
-            get { return this._gpuMemorySizeInMiB.GetValueOrDefault(); }
+            get { return this._gpuMemorySizeInMiB; }
             set { this._gpuMemorySizeInMiB = value; }
         }
 

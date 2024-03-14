@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("evaluationOrder", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EvaluationOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }

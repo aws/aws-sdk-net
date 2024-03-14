@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForecastHorizon())
             {
                 context.Writer.WritePropertyName("ForecastHorizon");
-                context.Writer.Write(requestObject.ForecastHorizon);
+                context.Writer.Write(requestObject.ForecastHorizon.Value);
             }
 
             if(requestObject.IsSetForecastQuantiles())

@@ -47,9 +47,9 @@ namespace Amazon.AppRunner.Model
         /// The time when the operation ended. It's in the Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.AppRunner.Model
         /// The time when the operation started. It's in the Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.AppRunner.Model
         /// The time when the operation was last updated. It's in the Unix time stamp format.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("completedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CompletedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("encrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scheduledStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduledStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -216,9 +216,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The timestamp of when the Amazon ECS service recommendation was last generated. 
         /// </para>
         /// </summary>
-        public DateTime LastRefreshTimestamp
+        public DateTime? LastRefreshTimestamp
         {
-            get { return this._lastRefreshTimestamp.GetValueOrDefault(); }
+            get { return this._lastRefreshTimestamp; }
             set { this._lastRefreshTimestamp = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The number of days the Amazon ECS service utilization metrics were analyzed. 
         /// </para>
         /// </summary>
-        public double LookbackPeriodInDays
+        public double? LookbackPeriodInDays
         {
-            get { return this._lookbackPeriodInDays.GetValueOrDefault(); }
+            get { return this._lookbackPeriodInDays; }
             set { this._lookbackPeriodInDays = value; }
         }
 

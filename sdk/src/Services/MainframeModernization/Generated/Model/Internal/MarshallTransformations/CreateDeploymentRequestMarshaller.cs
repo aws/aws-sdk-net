@@ -71,7 +71,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplicationVersion())
                 {
                     context.Writer.WritePropertyName("applicationVersion");
-                    context.Writer.Write(publicRequest.ApplicationVersion);
+                    context.Writer.Write(publicRequest.ApplicationVersion.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

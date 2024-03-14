@@ -87,9 +87,9 @@ namespace Amazon.BackupStorage.Model
         /// <summary>
         /// Gets and sets the property MetadataBlobLength. The size of MetadataBlob.
         /// </summary>
-        public long MetadataBlobLength
+        public long? MetadataBlobLength
         {
-            get { return this._metadataBlobLength.GetValueOrDefault(); }
+            get { return this._metadataBlobLength; }
             set { this._metadataBlobLength = value; }
         }
 

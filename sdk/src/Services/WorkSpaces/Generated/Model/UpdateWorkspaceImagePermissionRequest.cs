@@ -82,9 +82,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AllowCopyImage
+        public bool? AllowCopyImage
         {
-            get { return this._allowCopyImage.GetValueOrDefault(); }
+            get { return this._allowCopyImage; }
             set { this._allowCopyImage = value; }
         }
 

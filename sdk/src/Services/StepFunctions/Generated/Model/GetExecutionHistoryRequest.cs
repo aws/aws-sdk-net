@@ -81,9 +81,9 @@ namespace Amazon.StepFunctions.Model
         /// The default is <c>true</c>.
         /// </para>
         /// </summary>
-        public bool IncludeExecutionData
+        public bool? IncludeExecutionData
         {
-            get { return this._includeExecutionData.GetValueOrDefault(); }
+            get { return this._includeExecutionData; }
             set { this._includeExecutionData = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.StepFunctions.Model
         /// Lists events in descending order of their <c>timeStamp</c>.
         /// </para>
         /// </summary>
-        public bool ReverseOrder
+        public bool? ReverseOrder
         {
-            get { return this._reverseOrder.GetValueOrDefault(); }
+            get { return this._reverseOrder; }
             set { this._reverseOrder = value; }
         }
 

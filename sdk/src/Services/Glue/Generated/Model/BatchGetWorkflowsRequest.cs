@@ -46,9 +46,9 @@ namespace Amazon.Glue.Model
         /// Specifies whether to include a graph when returning the workflow resource metadata.
         /// </para>
         /// </summary>
-        public bool IncludeGraph
+        public bool? IncludeGraph
         {
-            get { return this._includeGraph.GetValueOrDefault(); }
+            get { return this._includeGraph; }
             set { this._includeGraph = value; }
         }
 

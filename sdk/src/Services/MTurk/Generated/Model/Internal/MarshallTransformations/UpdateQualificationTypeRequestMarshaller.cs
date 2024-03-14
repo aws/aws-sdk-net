@@ -76,13 +76,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoGranted())
                 {
                     context.Writer.WritePropertyName("AutoGranted");
-                    context.Writer.Write(publicRequest.AutoGranted);
+                    context.Writer.Write(publicRequest.AutoGranted.Value);
                 }
 
                 if(publicRequest.IsSetAutoGrantedValue())
                 {
                     context.Writer.WritePropertyName("AutoGrantedValue");
-                    context.Writer.Write(publicRequest.AutoGrantedValue);
+                    context.Writer.Write(publicRequest.AutoGrantedValue.Value);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -106,7 +106,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetryDelayInSeconds())
                 {
                     context.Writer.WritePropertyName("RetryDelayInSeconds");
-                    context.Writer.Write(publicRequest.RetryDelayInSeconds);
+                    context.Writer.Write(publicRequest.RetryDelayInSeconds.Value);
                 }
 
                 if(publicRequest.IsSetTest())
@@ -118,7 +118,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTestDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("TestDurationInSeconds");
-                    context.Writer.Write(publicRequest.TestDurationInSeconds);
+                    context.Writer.Write(publicRequest.TestDurationInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -83,9 +83,9 @@ namespace Amazon.CleanRooms.Model
         /// The upper bound of the aggregation expression.
         /// </para>
         /// </summary>
-        public float MaxColumnValue
+        public float? MaxColumnValue
         {
-            get { return this._maxColumnValue.GetValueOrDefault(); }
+            get { return this._maxColumnValue; }
             set { this._maxColumnValue = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.CleanRooms.Model
         /// The lower bound of the aggregation expression.
         /// </para>
         /// </summary>
-        public float MinColumnValue
+        public float? MinColumnValue
         {
-            get { return this._minColumnValue.GetValueOrDefault(); }
+            get { return this._minColumnValue; }
             set { this._minColumnValue = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int UserContributionLimit
+        public int? UserContributionLimit
         {
-            get { return this._userContributionLimit.GetValueOrDefault(); }
+            get { return this._userContributionLimit; }
             set { this._userContributionLimit = value; }
         }
 

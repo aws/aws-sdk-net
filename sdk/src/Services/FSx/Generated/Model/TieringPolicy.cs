@@ -74,9 +74,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=183)]
-        public int CoolingPeriod
+        public int? CoolingPeriod
         {
-            get { return this._coolingPeriod.GetValueOrDefault(); }
+            get { return this._coolingPeriod; }
             set { this._coolingPeriod = value; }
         }
 

@@ -110,9 +110,9 @@ namespace Amazon.FraudDetector.Model
         /// The number of records that failed to import. 
         /// </para>
         /// </summary>
-        public int FailedRecordsCount
+        public int? FailedRecordsCount
         {
-            get { return this._failedRecordsCount.GetValueOrDefault(); }
+            get { return this._failedRecordsCount; }
             set { this._failedRecordsCount = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.FraudDetector.Model
         /// The number of records processed by batch import job.
         /// </para>
         /// </summary>
-        public int ProcessedRecordsCount
+        public int? ProcessedRecordsCount
         {
-            get { return this._processedRecordsCount.GetValueOrDefault(); }
+            get { return this._processedRecordsCount; }
             set { this._processedRecordsCount = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.FraudDetector.Model
         /// The total number of records in the batch import job.
         /// </para>
         /// </summary>
-        public int TotalRecordsCount
+        public int? TotalRecordsCount
         {
-            get { return this._totalRecordsCount.GetValueOrDefault(); }
+            get { return this._totalRecordsCount; }
             set { this._totalRecordsCount = value; }
         }
 

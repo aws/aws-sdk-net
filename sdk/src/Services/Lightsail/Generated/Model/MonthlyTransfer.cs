@@ -42,9 +42,9 @@ namespace Amazon.Lightsail.Model
         /// The amount allocated per month (in GB).
         /// </para>
         /// </summary>
-        public int GbPerMonthAllocated
+        public int? GbPerMonthAllocated
         {
-            get { return this._gbPerMonthAllocated.GetValueOrDefault(); }
+            get { return this._gbPerMonthAllocated; }
             set { this._gbPerMonthAllocated = value; }
         }
 

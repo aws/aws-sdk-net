@@ -45,9 +45,9 @@ namespace Amazon.XRay.Model
         /// time of the last segment that completed.
         /// </para>
         /// </summary>
-        public double Duration
+        public double? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.XRay.Model
         /// X-Ray endpoints and quotas</a>.
         /// </para>
         /// </summary>
-        public bool LimitExceeded
+        public bool? LimitExceeded
         {
-            get { return this._limitExceeded.GetValueOrDefault(); }
+            get { return this._limitExceeded; }
             set { this._limitExceeded = value; }
         }
 

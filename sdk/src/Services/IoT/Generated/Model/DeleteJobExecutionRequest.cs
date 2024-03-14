@@ -59,9 +59,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long ExecutionNumber
+        public long? ExecutionNumber
         {
-            get { return this._executionNumber.GetValueOrDefault(); }
+            get { return this._executionNumber; }
             set { this._executionNumber = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Force
+        public bool? Force
         {
-            get { return this._force.GetValueOrDefault(); }
+            get { return this._force; }
             set { this._force = value; }
         }
 

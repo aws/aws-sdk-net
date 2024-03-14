@@ -83,13 +83,13 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("remainingLife", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RemainingLife = unmarshaller.Unmarshall(context);
                     continue;
                 }

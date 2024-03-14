@@ -48,13 +48,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
-                context.Writer.Write(requestObject.Duration);
+                context.Writer.Write(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetSpliceEventId())
             {
                 context.Writer.WritePropertyName("spliceEventId");
-                context.Writer.Write(requestObject.SpliceEventId);
+                context.Writer.Write(requestObject.SpliceEventId.Value);
             }
 
         }

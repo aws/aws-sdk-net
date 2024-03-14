@@ -104,9 +104,9 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Priority
+        public int? Priority
         {
-            get { return this._priority.GetValueOrDefault(); }
+            get { return this._priority; }
             set { this._priority = value; }
         }
 

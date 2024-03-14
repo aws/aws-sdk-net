@@ -84,9 +84,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether automated backup retention is enabled for the database.
         /// </para>
         /// </summary>
-        public bool BackupRetentionEnabled
+        public bool? BackupRetentionEnabled
         {
-            get { return this._backupRetentionEnabled.GetValueOrDefault(); }
+            get { return this._backupRetentionEnabled; }
             set { this._backupRetentionEnabled = value; }
         }
 
@@ -120,9 +120,9 @@ namespace Amazon.Lightsail.Model
         /// The timestamp when the database was created. Formatted in Unix time.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -193,9 +193,9 @@ namespace Amazon.Lightsail.Model
         /// time.
         /// </para>
         /// </summary>
-        public DateTime LatestRestorableTime
+        public DateTime? LatestRestorableTime
         {
-            get { return this._latestRestorableTime.GetValueOrDefault(); }
+            get { return this._latestRestorableTime; }
             set { this._latestRestorableTime = value; }
         }
 
@@ -396,9 +396,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value indicating whether the database is publicly accessible.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

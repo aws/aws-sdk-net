@@ -48,9 +48,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int RetainAtLeast
+        public int? RetainAtLeast
         {
-            get { return this._retainAtLeast.GetValueOrDefault(); }
+            get { return this._retainAtLeast; }
             set { this._retainAtLeast = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.Imagebuilder.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
-        public int Value
+        public int? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

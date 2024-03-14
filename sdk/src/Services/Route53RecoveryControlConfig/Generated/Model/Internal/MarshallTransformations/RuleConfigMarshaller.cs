@@ -48,13 +48,13 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             if(requestObject.IsSetInverted())
             {
                 context.Writer.WritePropertyName("Inverted");
-                context.Writer.Write(requestObject.Inverted);
+                context.Writer.Write(requestObject.Inverted.Value);
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold);
+                context.Writer.Write(requestObject.Threshold.Value);
             }
 
             if(requestObject.IsSetType())

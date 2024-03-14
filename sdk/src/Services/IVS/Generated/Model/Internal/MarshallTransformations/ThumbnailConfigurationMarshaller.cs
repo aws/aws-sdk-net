@@ -71,7 +71,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetIntervalSeconds())
             {
                 context.Writer.WritePropertyName("targetIntervalSeconds");
-                context.Writer.Write(requestObject.TargetIntervalSeconds);
+                context.Writer.Write(requestObject.TargetIntervalSeconds.Value);
             }
 
         }

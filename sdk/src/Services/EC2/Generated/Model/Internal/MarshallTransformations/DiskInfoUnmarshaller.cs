@@ -56,13 +56,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("count", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sizeInGB", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.SizeInGB = unmarshaller.Unmarshall(context);
                         continue;
                     }

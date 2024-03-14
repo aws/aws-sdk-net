@@ -74,7 +74,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAttachmentSizeInBytes())
                 {
                     context.Writer.WritePropertyName("AttachmentSizeInBytes");
-                    context.Writer.Write(publicRequest.AttachmentSizeInBytes);
+                    context.Writer.Write(publicRequest.AttachmentSizeInBytes.Value);
                 }
 
                 if(publicRequest.IsSetClientToken())

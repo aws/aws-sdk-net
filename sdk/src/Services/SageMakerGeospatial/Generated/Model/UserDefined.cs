@@ -62,9 +62,9 @@ namespace Amazon.SageMakerGeospatial.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float Value
+        public float? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

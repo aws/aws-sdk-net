@@ -102,9 +102,9 @@ namespace Amazon.Redshift.Model
         /// The maximum records setting for the associated custom domain.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

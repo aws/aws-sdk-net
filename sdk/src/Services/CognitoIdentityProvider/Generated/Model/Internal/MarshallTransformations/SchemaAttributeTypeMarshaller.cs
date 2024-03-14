@@ -54,13 +54,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeveloperOnlyAttribute())
             {
                 context.Writer.WritePropertyName("DeveloperOnlyAttribute");
-                context.Writer.Write(requestObject.DeveloperOnlyAttribute);
+                context.Writer.Write(requestObject.DeveloperOnlyAttribute.Value);
             }
 
             if(requestObject.IsSetMutable())
             {
                 context.Writer.WritePropertyName("Mutable");
-                context.Writer.Write(requestObject.Mutable);
+                context.Writer.Write(requestObject.Mutable.Value);
             }
 
             if(requestObject.IsSetName())
@@ -83,7 +83,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("Required");
-                context.Writer.Write(requestObject.Required);
+                context.Writer.Write(requestObject.Required.Value);
             }
 
             if(requestObject.IsSetStringAttributeConstraints())

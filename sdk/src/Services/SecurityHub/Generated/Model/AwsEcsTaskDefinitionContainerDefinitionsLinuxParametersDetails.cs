@@ -86,9 +86,9 @@ namespace Amazon.SecurityHub.Model
         /// reaps processes. 
         /// </para>
         /// </summary>
-        public bool InitProcessEnabled
+        public bool? InitProcessEnabled
         {
-            get { return this._initProcessEnabled.GetValueOrDefault(); }
+            get { return this._initProcessEnabled; }
             set { this._initProcessEnabled = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.SecurityHub.Model
         /// The total amount of swap memory (in MiB) that a container can use.
         /// </para>
         /// </summary>
-        public int MaxSwap
+        public int? MaxSwap
         {
-            get { return this._maxSwap.GetValueOrDefault(); }
+            get { return this._maxSwap; }
             set { this._maxSwap = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SecurityHub.Model
         /// The value for the size (in MiB) of the <b>/dev/shm</b> volume.
         /// </para>
         /// </summary>
-        public int SharedMemorySize
+        public int? SharedMemorySize
         {
-            get { return this._sharedMemorySize.GetValueOrDefault(); }
+            get { return this._sharedMemorySize; }
             set { this._sharedMemorySize = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SecurityHub.Model
         /// is 60.
         /// </para>
         /// </summary>
-        public int Swappiness
+        public int? Swappiness
         {
-            get { return this._swappiness.GetValueOrDefault(); }
+            get { return this._swappiness; }
             set { this._swappiness = value; }
         }
 

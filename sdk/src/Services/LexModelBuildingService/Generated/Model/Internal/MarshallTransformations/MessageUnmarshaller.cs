@@ -77,7 +77,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("groupNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GroupNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

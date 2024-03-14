@@ -60,9 +60,9 @@ namespace Amazon.CodeBuild.Model
         /// build logs are encrypted. 
         /// </para>
         /// </summary>
-        public bool EncryptionDisabled
+        public bool? EncryptionDisabled
         {
-            get { return this._encryptionDisabled.GetValueOrDefault(); }
+            get { return this._encryptionDisabled; }
             set { this._encryptionDisabled = value; }
         }
 

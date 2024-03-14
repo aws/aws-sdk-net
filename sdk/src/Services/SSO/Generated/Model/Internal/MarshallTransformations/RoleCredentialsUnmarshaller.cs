@@ -71,7 +71,7 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProfilingEnabled())
             {
                 context.Writer.WritePropertyName("profilingEnabled");
-                context.Writer.Write(requestObject.ProfilingEnabled);
+                context.Writer.Write(requestObject.ProfilingEnabled.Value);
             }
 
         }

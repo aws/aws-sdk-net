@@ -81,9 +81,9 @@ namespace Amazon.MediaConvert.Model
         /// input regardless of its luminance: Leave blank, or enter 0.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int InputMasteringLuminance
+        public int? InputMasteringLuminance
         {
-            get { return this._inputMasteringLuminance.GetValueOrDefault(); }
+            get { return this._inputMasteringLuminance; }
             set { this._inputMasteringLuminance = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.MediaConvert.Model
         /// Leave blank, or enter 0.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int OutputMasteringLuminance
+        public int? OutputMasteringLuminance
         {
-            get { return this._outputMasteringLuminance.GetValueOrDefault(); }
+            get { return this._outputMasteringLuminance; }
             set { this._outputMasteringLuminance = value; }
         }
 

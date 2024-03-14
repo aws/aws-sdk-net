@@ -43,9 +43,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxRows
+        public int? MaxRows
         {
-            get { return this._maxRows.GetValueOrDefault(); }
+            get { return this._maxRows; }
             set { this._maxRows = value; }
         }
 

@@ -54,7 +54,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("timeoutInSeconds");
-                context.Writer.Write(requestObject.TimeoutInSeconds);
+                context.Writer.Write(requestObject.TimeoutInSeconds.Value);
             }
 
         }

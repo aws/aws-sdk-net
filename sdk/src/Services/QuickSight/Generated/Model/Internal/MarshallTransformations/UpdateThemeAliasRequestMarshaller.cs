@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThemeVersionNumber())
                 {
                     context.Writer.WritePropertyName("ThemeVersionNumber");
-                    context.Writer.Write(publicRequest.ThemeVersionNumber);
+                    context.Writer.Write(publicRequest.ThemeVersionNumber.Value);
                 }
 
                 writer.WriteObjectEnd();

@@ -102,9 +102,9 @@ namespace Amazon.OpenSearchService.Model
         /// The uncompressed size of the plugin.
         /// </para>
         /// </summary>
-        public long UncompressedSizeInBytes
+        public long? UncompressedSizeInBytes
         {
-            get { return this._uncompressedSizeInBytes.GetValueOrDefault(); }
+            get { return this._uncompressedSizeInBytes; }
             set { this._uncompressedSizeInBytes = value; }
         }
 

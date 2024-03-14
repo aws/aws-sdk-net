@@ -53,7 +53,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EnableCrossAccountsDiscovery", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableCrossAccountsDiscovery = unmarshaller.Unmarshall(context);
                     continue;
                 }

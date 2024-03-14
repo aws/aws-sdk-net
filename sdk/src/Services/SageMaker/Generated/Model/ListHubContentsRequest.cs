@@ -57,9 +57,9 @@ namespace Amazon.SageMaker.Model
         /// Only list hub content that was created after the time specified.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeAfter
+        public DateTime? CreationTimeAfter
         {
-            get { return this._creationTimeAfter.GetValueOrDefault(); }
+            get { return this._creationTimeAfter; }
             set { this._creationTimeAfter = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.SageMaker.Model
         /// Only list hub content that was created before the time specified.
         /// </para>
         /// </summary>
-        public DateTime CreationTimeBefore
+        public DateTime? CreationTimeBefore
         {
-            get { return this._creationTimeBefore.GetValueOrDefault(); }
+            get { return this._creationTimeBefore; }
             set { this._creationTimeBefore = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

@@ -62,13 +62,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("availableInstanceCount", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.AvailableInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("firstSlotStartTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.FirstSlotStartTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,13 +86,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("maxTermDurationInDays", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxTermDurationInDays = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("minTermDurationInDays", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinTermDurationInDays = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -122,13 +122,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("slotDurationInHours", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.SlotDurationInHours = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("totalScheduledInstanceHours", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.TotalScheduledInstanceHours = unmarshaller.Unmarshall(context);
                         continue;
                     }

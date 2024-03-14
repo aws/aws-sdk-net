@@ -65,7 +65,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LastUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRepInterval())
             {
                 context.Writer.WritePropertyName("repInterval");
-                context.Writer.Write(requestObject.RepInterval);
+                context.Writer.Write(requestObject.RepInterval.Value);
             }
 
         }

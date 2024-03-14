@@ -83,7 +83,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InvocationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TriggerTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TriggerTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

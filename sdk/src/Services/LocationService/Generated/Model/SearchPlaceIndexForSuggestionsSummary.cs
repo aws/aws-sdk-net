@@ -192,9 +192,9 @@ namespace Amazon.LocationService.Model
         /// Contains the optional result count limit specified in the request.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

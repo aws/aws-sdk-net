@@ -161,13 +161,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetQueryDepthLimit())
                 {
                     context.Writer.WritePropertyName("queryDepthLimit");
-                    context.Writer.Write(publicRequest.QueryDepthLimit);
+                    context.Writer.Write(publicRequest.QueryDepthLimit.Value);
                 }
 
                 if(publicRequest.IsSetResolverCountLimit())
                 {
                     context.Writer.WritePropertyName("resolverCountLimit");
-                    context.Writer.Write(publicRequest.ResolverCountLimit);
+                    context.Writer.Write(publicRequest.ResolverCountLimit.Value);
                 }
 
                 if(publicRequest.IsSetUserPoolConfig())
@@ -184,7 +184,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetXrayEnabled())
                 {
                     context.Writer.WritePropertyName("xrayEnabled");
-                    context.Writer.Write(publicRequest.XrayEnabled);
+                    context.Writer.Write(publicRequest.XrayEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

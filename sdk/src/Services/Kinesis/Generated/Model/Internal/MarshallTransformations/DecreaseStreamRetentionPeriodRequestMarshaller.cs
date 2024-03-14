@@ -70,7 +70,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRetentionPeriodHours())
                 {
                     context.Writer.WritePropertyName("RetentionPeriodHours");
-                    context.Writer.Write(publicRequest.RetentionPeriodHours);
+                    context.Writer.Write(publicRequest.RetentionPeriodHours.Value);
                 }
 
                 if(publicRequest.IsSetStreamARN())

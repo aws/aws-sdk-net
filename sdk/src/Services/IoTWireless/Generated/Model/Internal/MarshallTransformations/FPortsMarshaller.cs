@@ -64,19 +64,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClockSync())
             {
                 context.Writer.WritePropertyName("ClockSync");
-                context.Writer.Write(requestObject.ClockSync);
+                context.Writer.Write(requestObject.ClockSync.Value);
             }
 
             if(requestObject.IsSetFuota())
             {
                 context.Writer.WritePropertyName("Fuota");
-                context.Writer.Write(requestObject.Fuota);
+                context.Writer.Write(requestObject.Fuota.Value);
             }
 
             if(requestObject.IsSetMulticast())
             {
                 context.Writer.WritePropertyName("Multicast");
-                context.Writer.Write(requestObject.Multicast);
+                context.Writer.Write(requestObject.Multicast.Value);
             }
 
             if(requestObject.IsSetPositioning())

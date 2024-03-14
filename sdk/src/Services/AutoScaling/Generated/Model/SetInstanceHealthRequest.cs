@@ -98,9 +98,9 @@ namespace Amazon.AutoScaling.Model
         /// in the <i>Amazon EC2 Auto Scaling API Reference</i>.
         /// </para>
         /// </summary>
-        public bool ShouldRespectGracePeriod
+        public bool? ShouldRespectGracePeriod
         {
-            get { return this._shouldRespectGracePeriod.GetValueOrDefault(); }
+            get { return this._shouldRespectGracePeriod; }
             set { this._shouldRespectGracePeriod = value; }
         }
 

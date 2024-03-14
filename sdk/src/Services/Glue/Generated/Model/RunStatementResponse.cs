@@ -41,9 +41,9 @@ namespace Amazon.Glue.Model
         /// Returns the Id of the statement that was run.
         /// </para>
         /// </summary>
-        public int Id
+        public int? Id
         {
-            get { return this._id.GetValueOrDefault(); }
+            get { return this._id; }
             set { this._id = value; }
         }
 

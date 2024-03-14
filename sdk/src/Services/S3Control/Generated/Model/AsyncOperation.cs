@@ -46,9 +46,9 @@ namespace Amazon.S3Control.Model
         /// The time that the request was sent to the service.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 

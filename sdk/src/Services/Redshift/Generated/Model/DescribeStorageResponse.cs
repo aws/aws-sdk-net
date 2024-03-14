@@ -42,9 +42,9 @@ namespace Amazon.Redshift.Model
         /// The total amount of storage currently used for snapshots.
         /// </para>
         /// </summary>
-        public double TotalBackupSizeInMegaBytes
+        public double? TotalBackupSizeInMegaBytes
         {
-            get { return this._totalBackupSizeInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalBackupSizeInMegaBytes; }
             set { this._totalBackupSizeInMegaBytes = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.Redshift.Model
         /// The total amount of storage currently provisioned.
         /// </para>
         /// </summary>
-        public double TotalProvisionedStorageInMegaBytes
+        public double? TotalProvisionedStorageInMegaBytes
         {
-            get { return this._totalProvisionedStorageInMegaBytes.GetValueOrDefault(); }
+            get { return this._totalProvisionedStorageInMegaBytes; }
             set { this._totalProvisionedStorageInMegaBytes = value; }
         }
 

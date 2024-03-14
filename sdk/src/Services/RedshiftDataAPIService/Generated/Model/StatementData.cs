@@ -50,9 +50,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// The date and time (UTC) the statement was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// A value that indicates whether the statement is a batch query request.
         /// </para>
         /// </summary>
-        public bool IsBatchStatement
+        public bool? IsBatchStatement
         {
-            get { return this._isBatchStatement.GetValueOrDefault(); }
+            get { return this._isBatchStatement; }
             set { this._isBatchStatement = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// The date and time (UTC) that the statement metadata was last updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

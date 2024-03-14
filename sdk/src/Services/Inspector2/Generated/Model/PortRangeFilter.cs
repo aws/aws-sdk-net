@@ -43,9 +43,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int BeginInclusive
+        public int? BeginInclusive
         {
-            get { return this._beginInclusive.GetValueOrDefault(); }
+            get { return this._beginInclusive; }
             set { this._beginInclusive = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int EndInclusive
+        public int? EndInclusive
         {
-            get { return this._endInclusive.GetValueOrDefault(); }
+            get { return this._endInclusive; }
             set { this._endInclusive = value; }
         }
 

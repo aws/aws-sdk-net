@@ -71,7 +71,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {   
                 xmlWriter.WriteStartElement("UpdateAccessGrantsLocationRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
                 if(publicRequest.IsSetIAMRoleArn())
-                    xmlWriter.WriteElementString("IAMRoleArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.IAMRoleArn));                    
+                    xmlWriter.WriteElementString("IAMRoleArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.IAMRoleArn));
 
 
                 xmlWriter.WriteEndElement();

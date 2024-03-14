@@ -53,31 +53,31 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AnalyzedResourceCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.AnalyzedResourceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MetricsAnalyzed", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MetricsAnalyzed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OpenProactiveInsights", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OpenProactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OpenReactiveInsights", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.OpenReactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceHours", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ResourceHours = unmarshaller.Unmarshall(context);
                     continue;
                 }

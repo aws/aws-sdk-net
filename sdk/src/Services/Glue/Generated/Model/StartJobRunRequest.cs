@@ -60,9 +60,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use MaxCapacity instead.")]
-        public int AllocatedCapacity
+        public int? AllocatedCapacity
         {
-            get { return this._allocatedCapacity.GetValueOrDefault(); }
+            get { return this._allocatedCapacity; }
             set { this._allocatedCapacity = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public double MaxCapacity
+        public double? MaxCapacity
         {
-            get { return this._maxCapacity.GetValueOrDefault(); }
+            get { return this._maxCapacity; }
             set { this._maxCapacity = value; }
         }
 
@@ -265,9 +265,9 @@ namespace Amazon.Glue.Model
         /// runs.
         /// </para>
         /// </summary>
-        public int NumberOfWorkers
+        public int? NumberOfWorkers
         {
-            get { return this._numberOfWorkers.GetValueOrDefault(); }
+            get { return this._numberOfWorkers; }
             set { this._numberOfWorkers = value; }
         }
 
@@ -310,9 +310,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Timeout
+        public int? Timeout
         {
-            get { return this._timeout.GetValueOrDefault(); }
+            get { return this._timeout; }
             set { this._timeout = value; }
         }
 

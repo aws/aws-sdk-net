@@ -76,7 +76,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableWWWSubdomain())
                 {
                     context.Writer.WritePropertyName("EnableWWWSubdomain");
-                    context.Writer.Write(publicRequest.EnableWWWSubdomain);
+                    context.Writer.Write(publicRequest.EnableWWWSubdomain.Value);
                 }
 
                 if(publicRequest.IsSetServiceArn())

@@ -44,9 +44,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Length
+        public int? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

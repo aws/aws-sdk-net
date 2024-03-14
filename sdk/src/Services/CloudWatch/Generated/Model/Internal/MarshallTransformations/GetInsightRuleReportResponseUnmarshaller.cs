@@ -83,7 +83,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("AggregateValue", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         response.AggregateValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -95,7 +95,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ApproximateUniqueCount", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         response.ApproximateUniqueCount = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -94,7 +94,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteResource())
                 {
                     context.Writer.WritePropertyName("DeleteResource");
-                    context.Writer.Write(publicRequest.DeleteResource);
+                    context.Writer.Write(publicRequest.DeleteResource.Value);
                 }
 
                 writer.WriteObjectEnd();

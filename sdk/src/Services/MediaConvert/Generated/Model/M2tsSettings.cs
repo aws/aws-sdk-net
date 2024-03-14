@@ -130,9 +130,9 @@ namespace Amazon.MediaConvert.Model
         /// for each PES packet.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int AudioFramesPerPes
+        public int? AudioFramesPerPes
         {
-            get { return this._audioFramesPerPes.GetValueOrDefault(); }
+            get { return this._audioFramesPerPes; }
             set { this._audioFramesPerPes = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.MediaConvert.Model
         /// bitrate. Other common values are 3750000, 7500000, and 15000000.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.MediaConvert.Model
         /// DVB teletext data you include in this output. Default is 499.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int DvbTeletextPid
+        public int? DvbTeletextPid
         {
-            get { return this._dvbTeletextPid.GetValueOrDefault(); }
+            get { return this._dvbTeletextPid; }
             set { this._dvbTeletextPid = value; }
         }
 
@@ -370,9 +370,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property FragmentTime. The length, in seconds, of each fragment.
         /// Only used with EBP markers.
         /// </summary>
-        public double FragmentTime
+        public double? FragmentTime
         {
-            get { return this._fragmentTime.GetValueOrDefault(); }
+            get { return this._fragmentTime; }
             set { this._fragmentTime = value; }
         }
 
@@ -405,9 +405,9 @@ namespace Amazon.MediaConvert.Model
         /// between Program Clock References (PCRs) inserted into the transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int MaxPcrInterval
+        public int? MaxPcrInterval
         {
-            get { return this._maxPcrInterval.GetValueOrDefault(); }
+            get { return this._maxPcrInterval; }
             set { this._maxPcrInterval = value; }
         }
 
@@ -426,9 +426,9 @@ namespace Amazon.MediaConvert.Model
         /// elsewhere to create sufficient latency to make the lookahead accurate.
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int MinEbpInterval
+        public int? MinEbpInterval
         {
-            get { return this._minEbpInterval.GetValueOrDefault(); }
+            get { return this._minEbpInterval; }
             set { this._minEbpInterval = value; }
         }
 
@@ -460,9 +460,9 @@ namespace Amazon.MediaConvert.Model
         /// packets to insert into the transport stream. This can be used if a downstream encryption
         /// system requires periodic null packets.
         /// </summary>
-        public double NullPacketBitrate
+        public double? NullPacketBitrate
         {
-            get { return this._nullPacketBitrate.GetValueOrDefault(); }
+            get { return this._nullPacketBitrate; }
             set { this._nullPacketBitrate = value; }
         }
 
@@ -477,9 +477,9 @@ namespace Amazon.MediaConvert.Model
         /// of this table in the output transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PatInterval
+        public int? PatInterval
         {
-            get { return this._patInterval.GetValueOrDefault(); }
+            get { return this._patInterval; }
             set { this._patInterval = value; }
         }
 
@@ -513,9 +513,9 @@ namespace Amazon.MediaConvert.Model
         /// use the value for Video PID.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int PcrPid
+        public int? PcrPid
         {
-            get { return this._pcrPid.GetValueOrDefault(); }
+            get { return this._pcrPid; }
             set { this._pcrPid = value; }
         }
 
@@ -530,9 +530,9 @@ namespace Amazon.MediaConvert.Model
         /// instances of the program map table (PMT) in the output transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
-        public int PmtInterval
+        public int? PmtInterval
         {
-            get { return this._pmtInterval.GetValueOrDefault(); }
+            get { return this._pmtInterval; }
             set { this._pmtInterval = value; }
         }
 
@@ -547,9 +547,9 @@ namespace Amazon.MediaConvert.Model
         /// map table (PMT) itself. Default is 480.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int PmtPid
+        public int? PmtPid
         {
-            get { return this._pmtPid.GetValueOrDefault(); }
+            get { return this._pmtPid; }
             set { this._pmtPid = value; }
         }
 
@@ -564,9 +564,9 @@ namespace Amazon.MediaConvert.Model
         /// of the private metadata stream. Default is 503.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int PrivateMetadataPid
+        public int? PrivateMetadataPid
         {
-            get { return this._privateMetadataPid.GetValueOrDefault(); }
+            get { return this._privateMetadataPid; }
             set { this._privateMetadataPid = value; }
         }
 
@@ -583,9 +583,9 @@ namespace Amazon.MediaConvert.Model
         /// for organizing data.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int ProgramNumber
+        public int? ProgramNumber
         {
-            get { return this._programNumber.GetValueOrDefault(); }
+            get { return this._programNumber; }
             set { this._programNumber = value; }
         }
 
@@ -601,9 +601,9 @@ namespace Amazon.MediaConvert.Model
         /// blank to keep the default value 2.
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int PtsOffset
+        public int? PtsOffset
         {
-            get { return this._ptsOffset.GetValueOrDefault(); }
+            get { return this._ptsOffset; }
             set { this._ptsOffset = value; }
         }
 
@@ -673,9 +673,9 @@ namespace Amazon.MediaConvert.Model
         /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int Scte35Pid
+        public int? Scte35Pid
         {
-            get { return this._scte35Pid.GetValueOrDefault(); }
+            get { return this._scte35Pid; }
             set { this._scte35Pid = value; }
         }
 
@@ -755,9 +755,9 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SegmentationTime. Specify the length, in seconds, of each
         /// segment. Required unless markers is set to _none_.
         /// </summary>
-        public double SegmentationTime
+        public double? SegmentationTime
         {
-            get { return this._segmentationTime.GetValueOrDefault(); }
+            get { return this._segmentationTime; }
             set { this._segmentationTime = value; }
         }
 
@@ -772,9 +772,9 @@ namespace Amazon.MediaConvert.Model
         /// stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int TimedMetadataPid
+        public int? TimedMetadataPid
         {
-            get { return this._timedMetadataPid.GetValueOrDefault(); }
+            get { return this._timedMetadataPid; }
             set { this._timedMetadataPid = value; }
         }
 
@@ -790,9 +790,9 @@ namespace Amazon.MediaConvert.Model
         /// map tables are parts of MPEG-2 transport stream containers, used for organizing data.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
-        public int TransportStreamId
+        public int? TransportStreamId
         {
-            get { return this._transportStreamId.GetValueOrDefault(); }
+            get { return this._transportStreamId; }
             set { this._transportStreamId = value; }
         }
 
@@ -807,9 +807,9 @@ namespace Amazon.MediaConvert.Model
         /// video stream in the transport stream.
         /// </summary>
         [AWSProperty(Min=32, Max=8182)]
-        public int VideoPid
+        public int? VideoPid
         {
-            get { return this._videoPid.GetValueOrDefault(); }
+            get { return this._videoPid; }
             set { this._videoPid = value; }
         }
 

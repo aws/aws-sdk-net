@@ -64,9 +64,9 @@ namespace Amazon.XRay.Model
         /// The default value is false.
         /// </para>
         /// </summary>
-        public bool BypassPolicyLockoutCheck
+        public bool? BypassPolicyLockoutCheck
         {
-            get { return this._bypassPolicyLockoutCheck.GetValueOrDefault(); }
+            get { return this._bypassPolicyLockoutCheck; }
             set { this._bypassPolicyLockoutCheck = value; }
         }
 

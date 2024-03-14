@@ -65,7 +65,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("identifier", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }

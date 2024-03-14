@@ -216,9 +216,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int InProgressInvalidationBatches
+        public int? InProgressInvalidationBatches
         {
-            get { return this._inProgressInvalidationBatches.GetValueOrDefault(); }
+            get { return this._inProgressInvalidationBatches; }
             set { this._inProgressInvalidationBatches = value; }
         }
 
@@ -235,9 +235,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 

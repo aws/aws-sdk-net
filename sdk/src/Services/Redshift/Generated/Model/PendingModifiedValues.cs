@@ -52,9 +52,9 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the automated snapshot retention period.
         /// </para>
         /// </summary>
-        public int AutomatedSnapshotRetentionPeriod
+        public int? AutomatedSnapshotRetentionPeriod
         {
-            get { return this._automatedSnapshotRetentionPeriod.GetValueOrDefault(); }
+            get { return this._automatedSnapshotRetentionPeriod; }
             set { this._automatedSnapshotRetentionPeriod = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.Redshift.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool EnhancedVpcRouting
+        public bool? EnhancedVpcRouting
         {
-            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            get { return this._enhancedVpcRouting; }
             set { this._enhancedVpcRouting = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the number of nodes in the cluster.
         /// </para>
         /// </summary>
-        public int NumberOfNodes
+        public int? NumberOfNodes
         {
-            get { return this._numberOfNodes.GetValueOrDefault(); }
+            get { return this._numberOfNodes; }
             set { this._numberOfNodes = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.Redshift.Model
         /// public network.
         /// </para>
         /// </summary>
-        public bool PubliclyAccessible
+        public bool? PubliclyAccessible
         {
-            get { return this._publiclyAccessible.GetValueOrDefault(); }
+            get { return this._publiclyAccessible; }
             set { this._publiclyAccessible = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorrowCount())
             {
                 context.Writer.WritePropertyName("BorrowCount");
-                context.Writer.Write(requestObject.BorrowCount);
+                context.Writer.Write(requestObject.BorrowCount.Value);
             }
 
             if(requestObject.IsSetClientID())
@@ -60,7 +60,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequestCount())
             {
                 context.Writer.WritePropertyName("RequestCount");
-                context.Writer.Write(requestObject.RequestCount);
+                context.Writer.Write(requestObject.RequestCount.Value);
             }
 
             if(requestObject.IsSetRuleName())
@@ -72,13 +72,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampledCount())
             {
                 context.Writer.WritePropertyName("SampledCount");
-                context.Writer.Write(requestObject.SampledCount);
+                context.Writer.Write(requestObject.SampledCount.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.Write(requestObject.Timestamp.Value);
             }
 
         }

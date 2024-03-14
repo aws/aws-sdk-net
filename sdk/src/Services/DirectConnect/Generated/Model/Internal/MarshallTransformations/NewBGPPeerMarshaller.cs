@@ -60,7 +60,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAsn())
             {
                 context.Writer.WritePropertyName("asn");
-                context.Writer.Write(requestObject.Asn);
+                context.Writer.Write(requestObject.Asn.Value);
             }
 
             if(requestObject.IsSetAuthKey())

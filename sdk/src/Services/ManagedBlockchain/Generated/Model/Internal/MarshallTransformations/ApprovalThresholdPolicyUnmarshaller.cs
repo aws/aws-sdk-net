@@ -65,7 +65,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ProposalDurationInHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProposalDurationInHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ThresholdPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThresholdPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }

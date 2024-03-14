@@ -105,9 +105,9 @@ namespace Amazon.EKS.Model
         /// The timestamp that the association was created at.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.EKS.Model
         /// The most recent timestamp that the association was modified at
         /// </para>
         /// </summary>
-        public DateTime ModifiedAt
+        public DateTime? ModifiedAt
         {
-            get { return this._modifiedAt.GetValueOrDefault(); }
+            get { return this._modifiedAt; }
             set { this._modifiedAt = value; }
         }
 

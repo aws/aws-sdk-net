@@ -107,9 +107,9 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether to include scaling activity from deleted Auto Scaling groups.
         /// </para>
         /// </summary>
-        public bool IncludeDeletedGroups
+        public bool? IncludeDeletedGroups
         {
-            get { return this._includeDeletedGroups.GetValueOrDefault(); }
+            get { return this._includeDeletedGroups; }
             set { this._includeDeletedGroups = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.AutoScaling.Model
         /// and the maximum value is <c>100</c>.
         /// </para>
         /// </summary>
-        public int MaxRecords
+        public int? MaxRecords
         {
-            get { return this._maxRecords.GetValueOrDefault(); }
+            get { return this._maxRecords; }
             set { this._maxRecords = value; }
         }
 

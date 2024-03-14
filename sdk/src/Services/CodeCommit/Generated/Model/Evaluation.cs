@@ -81,9 +81,9 @@ namespace Amazon.CodeCommit.Model
         /// Whether the state of the pull request is approved.
         /// </para>
         /// </summary>
-        public bool Approved
+        public bool? Approved
         {
-            get { return this._approved.GetValueOrDefault(); }
+            get { return this._approved; }
             set { this._approved = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CodeCommit.Model
         /// no longer need to be met.
         /// </para>
         /// </summary>
-        public bool Overridden
+        public bool? Overridden
         {
-            get { return this._overridden.GetValueOrDefault(); }
+            get { return this._overridden; }
             set { this._overridden = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ItemCount
+        public int? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long TotalSizeInBytes
+        public long? TotalSizeInBytes
         {
-            get { return this._totalSizeInBytes.GetValueOrDefault(); }
+            get { return this._totalSizeInBytes; }
             set { this._totalSizeInBytes = value; }
         }
 

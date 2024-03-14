@@ -45,9 +45,9 @@ namespace Amazon.Personalize.Model
         /// Whether the hyperparameter is tunable.
         /// </para>
         /// </summary>
-        public bool IsTunable
+        public bool? IsTunable
         {
-            get { return this._isTunable.GetValueOrDefault(); }
+            get { return this._isTunable; }
             set { this._isTunable = value; }
         }
 

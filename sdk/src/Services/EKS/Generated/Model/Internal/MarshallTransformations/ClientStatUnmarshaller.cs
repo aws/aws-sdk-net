@@ -65,13 +65,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastRequestTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastRequestTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfRequestsLast30Days", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRequestsLast30Days = unmarshaller.Unmarshall(context);
                     continue;
                 }

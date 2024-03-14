@@ -65,7 +65,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllRegionsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllRegionsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

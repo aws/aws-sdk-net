@@ -70,9 +70,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The number of times a scan has been re-run on a revised resource.
         /// </para>
         /// </summary>
-        public long NumberOfRevisions
+        public long? NumberOfRevisions
         {
-            get { return this._numberOfRevisions.GetValueOrDefault(); }
+            get { return this._numberOfRevisions; }
             set { this._numberOfRevisions = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// The time when the scan was last updated. Only available for <c>STANDARD</c> scan types.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -41,9 +41,9 @@ namespace Amazon.MediaLive.Model
         /// are within the range from -60 (mute) and 6 dB.
         /// </summary>
         [AWSProperty(Required=true, Min=-60, Max=6)]
-        public int Gain
+        public int? Gain
         {
-            get { return this._gain.GetValueOrDefault(); }
+            get { return this._gain; }
             set { this._gain = value; }
         }
 
@@ -58,9 +58,9 @@ namespace Amazon.MediaLive.Model
         /// source.
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=15)]
-        public int InputChannel
+        public int? InputChannel
         {
-            get { return this._inputChannel.GetValueOrDefault(); }
+            get { return this._inputChannel; }
             set { this._inputChannel = value; }
         }
 

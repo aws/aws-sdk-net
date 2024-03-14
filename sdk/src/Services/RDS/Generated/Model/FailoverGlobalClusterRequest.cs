@@ -121,9 +121,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool AllowDataLoss
+        public bool? AllowDataLoss
         {
-            get { return this._allowDataLoss.GetValueOrDefault(); }
+            get { return this._allowDataLoss; }
             set { this._allowDataLoss = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public bool Switchover
+        public bool? Switchover
         {
-            get { return this._switchover.GetValueOrDefault(); }
+            get { return this._switchover; }
             set { this._switchover = value; }
         }
 

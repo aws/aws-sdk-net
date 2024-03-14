@@ -43,9 +43,9 @@ namespace Amazon.WAFV2.Model
         /// information. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTimestamp
+        public DateTime? LastUpdateTimestamp
         {
-            get { return this._lastUpdateTimestamp.GetValueOrDefault(); }
+            get { return this._lastUpdateTimestamp; }
             set { this._lastUpdateTimestamp = value; }
         }
 

@@ -65,67 +65,67 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ElapsedTimeMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ElapsedTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FreshStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FreshStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadFinishDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FullLoadFinishDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadProgressPercent", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FullLoadProgressPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadStartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FullLoadStartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StopDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesErrored", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesErrored = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesLoaded", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesLoaded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesLoading", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesLoading = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesQueued", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesQueued = unmarshaller.Unmarshall(context);
                     continue;
                 }

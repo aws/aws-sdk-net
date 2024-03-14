@@ -53,7 +53,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AllowProfileCreation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AllowProfileCreation = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -71,7 +71,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LockEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LockEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

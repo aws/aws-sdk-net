@@ -151,7 +151,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsReviewOwnerUpdateAcknowledged())
                 {
                     context.Writer.WritePropertyName("IsReviewOwnerUpdateAcknowledged");
-                    context.Writer.Write(publicRequest.IsReviewOwnerUpdateAcknowledged);
+                    context.Writer.Write(publicRequest.IsReviewOwnerUpdateAcknowledged.Value);
                 }
 
                 if(publicRequest.IsSetNonAwsRegions())

@@ -47,9 +47,9 @@ namespace Amazon.MainframeModernization.Model
         /// data set.
         /// </para>
         /// </summary>
-        public bool AllowDuplicates
+        public bool? AllowDuplicates
         {
-            get { return this._allowDuplicates.GetValueOrDefault(); }
+            get { return this._allowDuplicates; }
             set { this._allowDuplicates = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Length
+        public int? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

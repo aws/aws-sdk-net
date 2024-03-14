@@ -100,79 +100,79 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MaxIopsPerDbInstance", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxIopsPerDbInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxIopsPerGib", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MaxIopsPerGib = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxStorageSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxStorageSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxStorageThroughputPerDbInstance", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MaxStorageThroughputPerDbInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxStorageThroughputPerIops", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MaxStorageThroughputPerIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinIopsPerDbInstance", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinIopsPerDbInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinIopsPerGib", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MinIopsPerGib = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinStorageSize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinStorageSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinStorageThroughputPerDbInstance", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.MinStorageThroughputPerDbInstance = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MinStorageThroughputPerIops", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.MinStorageThroughputPerIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MultiAZCapable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.MultiAZCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("OutpostCapable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.OutpostCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReadReplicaCapable", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ReadReplicaCapable = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -205,73 +205,73 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SupportsClusters", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsClusters = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsDedicatedLogVolume", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsDedicatedLogVolume = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsEnhancedMonitoring", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsEnhancedMonitoring = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIAMDatabaseAuthentication", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsIAMDatabaseAuthentication = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsIops", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsKerberosAuthentication", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsKerberosAuthentication = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsPerformanceInsights", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsPerformanceInsights = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsStorageAutoscaling", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsStorageAutoscaling = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsStorageEncryption", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsStorageEncryption = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsStorageThroughput", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.SupportsStorageThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Vpc", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
                         continue;
                     }

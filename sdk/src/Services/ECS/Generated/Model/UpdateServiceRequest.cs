@@ -315,9 +315,9 @@ namespace Amazon.ECS.Model
         /// The number of instantiations of the task to place and keep running in your service.
         /// </para>
         /// </summary>
-        public int DesiredCount
+        public int? DesiredCount
         {
-            get { return this._desiredCount.GetValueOrDefault(); }
+            get { return this._desiredCount; }
             set { this._desiredCount = value; }
         }
 
@@ -342,9 +342,9 @@ namespace Amazon.ECS.Model
         /// new tasks with the updated tags.
         /// </para>
         /// </summary>
-        public bool EnableECSManagedTags
+        public bool? EnableECSManagedTags
         {
-            get { return this._enableecsManagedTags.GetValueOrDefault(); }
+            get { return this._enableecsManagedTags; }
             set { this._enableecsManagedTags = value; }
         }
 
@@ -365,9 +365,9 @@ namespace Amazon.ECS.Model
         /// you can set this to <c>null</c> when performing this action.
         /// </para>
         /// </summary>
-        public bool EnableExecuteCommand
+        public bool? EnableExecuteCommand
         {
-            get { return this._enableExecuteCommand.GetValueOrDefault(); }
+            get { return this._enableExecuteCommand; }
             set { this._enableExecuteCommand = value; }
         }
 
@@ -387,9 +387,9 @@ namespace Amazon.ECS.Model
         /// onto a newer platform version.
         /// </para>
         /// </summary>
-        public bool ForceNewDeployment
+        public bool? ForceNewDeployment
         {
-            get { return this._forceNewDeployment.GetValueOrDefault(); }
+            get { return this._forceNewDeployment; }
             set { this._forceNewDeployment = value; }
         }
 
@@ -412,9 +412,9 @@ namespace Amazon.ECS.Model
         /// as unhealthy and stopping them before they have time to come up.
         /// </para>
         /// </summary>
-        public int HealthCheckGracePeriodSeconds
+        public int? HealthCheckGracePeriodSeconds
         {
-            get { return this._healthCheckGracePeriodSeconds.GetValueOrDefault(); }
+            get { return this._healthCheckGracePeriodSeconds; }
             set { this._healthCheckGracePeriodSeconds = value; }
         }
 

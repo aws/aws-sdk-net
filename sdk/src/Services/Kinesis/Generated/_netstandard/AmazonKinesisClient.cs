@@ -502,7 +502,7 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">REST API Reference for DecreaseStreamRetentionPeriod Operation</seealso>
-        public virtual Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(string streamName, int? retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DecreaseStreamRetentionPeriodRequest();
             request.StreamName = streamName;
@@ -1534,7 +1534,7 @@ namespace Amazon.Kinesis
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
-        public virtual Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(string streamName, int? retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new IncreaseStreamRetentionPeriodRequest();
             request.StreamName = streamName;

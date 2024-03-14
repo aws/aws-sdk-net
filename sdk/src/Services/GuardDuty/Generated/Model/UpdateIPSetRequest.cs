@@ -46,9 +46,9 @@ namespace Amazon.GuardDuty.Model
         /// The updated Boolean value that specifies whether the IPSet is active or not.
         /// </para>
         /// </summary>
-        public bool Activate
+        public bool? Activate
         {
-            get { return this._activate.GetValueOrDefault(); }
+            get { return this._activate; }
             set { this._activate = value; }
         }
 

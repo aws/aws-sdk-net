@@ -67,9 +67,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExecutionTime
+        public DateTime? ExecutionTime
         {
-            get { return this._executionTime.GetValueOrDefault(); }
+            get { return this._executionTime; }
             set { this._executionTime = value; }
         }
 

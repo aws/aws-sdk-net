@@ -65,7 +65,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DashboardEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DashboardEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SubscriptionExpiryDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SubscriptionExpiryDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

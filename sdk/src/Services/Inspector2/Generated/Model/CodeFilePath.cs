@@ -45,9 +45,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int EndLine
+        public int? EndLine
         {
-            get { return this._endLine.GetValueOrDefault(); }
+            get { return this._endLine; }
             set { this._endLine = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int StartLine
+        public int? StartLine
         {
-            get { return this._startLine.GetValueOrDefault(); }
+            get { return this._startLine; }
             set { this._startLine = value; }
         }
 

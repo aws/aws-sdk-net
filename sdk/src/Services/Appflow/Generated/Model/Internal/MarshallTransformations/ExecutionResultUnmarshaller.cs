@@ -65,13 +65,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bytesProcessed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bytesWritten", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesWritten = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,19 +83,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxPageSize", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxPageSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numParallelProcesses", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumParallelProcesses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recordsProcessed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }

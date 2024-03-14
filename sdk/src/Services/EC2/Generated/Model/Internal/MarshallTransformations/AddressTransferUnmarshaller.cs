@@ -80,13 +80,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("transferOfferAcceptedTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.TransferOfferAcceptedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("transferOfferExpirationTimestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.TransferOfferExpirationTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }

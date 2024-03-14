@@ -43,9 +43,9 @@ namespace Amazon.ConfigService.Model
         /// Indicates whether the maximum count is reached.
         /// </para>
         /// </summary>
-        public bool CapExceeded
+        public bool? CapExceeded
         {
-            get { return this._capExceeded.GetValueOrDefault(); }
+            get { return this._capExceeded; }
             set { this._capExceeded = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.ConfigService.Model
         /// compliance of the item.
         /// </para>
         /// </summary>
-        public int CappedCount
+        public int? CappedCount
         {
-            get { return this._cappedCount.GetValueOrDefault(); }
+            get { return this._cappedCount; }
             set { this._cappedCount = value; }
         }
 

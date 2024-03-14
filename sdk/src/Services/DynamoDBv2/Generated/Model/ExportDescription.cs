@@ -62,9 +62,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long BilledSizeBytes
+        public long? BilledSizeBytes
         {
-            get { return this._billedSizeBytes.GetValueOrDefault(); }
+            get { return this._billedSizeBytes; }
             set { this._billedSizeBytes = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The time at which the export task completed.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Point in time from which table data was exported.
         /// </para>
         /// </summary>
-        public DateTime ExportTime
+        public DateTime? ExportTime
         {
-            get { return this._exportTime.GetValueOrDefault(); }
+            get { return this._exportTime; }
             set { this._exportTime = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long ItemCount
+        public long? ItemCount
         {
-            get { return this._itemCount.GetValueOrDefault(); }
+            get { return this._itemCount; }
             set { this._itemCount = value; }
         }
 
@@ -405,9 +405,9 @@ namespace Amazon.DynamoDBv2.Model
         /// The time at which the export task began.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

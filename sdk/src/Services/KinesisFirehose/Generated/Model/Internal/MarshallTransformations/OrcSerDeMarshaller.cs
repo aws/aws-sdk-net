@@ -48,7 +48,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
-                context.Writer.Write(requestObject.BlockSizeBytes);
+                context.Writer.Write(requestObject.BlockSizeBytes.Value);
             }
 
             if(requestObject.IsSetBloomFilterColumns())
@@ -65,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBloomFilterFalsePositiveProbability())
             {
                 context.Writer.WritePropertyName("BloomFilterFalsePositiveProbability");
-                context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability);
+                context.Writer.Write(requestObject.BloomFilterFalsePositiveProbability.Value);
             }
 
             if(requestObject.IsSetCompression())
@@ -77,13 +77,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDictionaryKeyThreshold())
             {
                 context.Writer.WritePropertyName("DictionaryKeyThreshold");
-                context.Writer.Write(requestObject.DictionaryKeyThreshold);
+                context.Writer.Write(requestObject.DictionaryKeyThreshold.Value);
             }
 
             if(requestObject.IsSetEnablePadding())
             {
                 context.Writer.WritePropertyName("EnablePadding");
-                context.Writer.Write(requestObject.EnablePadding);
+                context.Writer.Write(requestObject.EnablePadding.Value);
             }
 
             if(requestObject.IsSetFormatVersion())
@@ -95,19 +95,19 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPaddingTolerance())
             {
                 context.Writer.WritePropertyName("PaddingTolerance");
-                context.Writer.Write(requestObject.PaddingTolerance);
+                context.Writer.Write(requestObject.PaddingTolerance.Value);
             }
 
             if(requestObject.IsSetRowIndexStride())
             {
                 context.Writer.WritePropertyName("RowIndexStride");
-                context.Writer.Write(requestObject.RowIndexStride);
+                context.Writer.Write(requestObject.RowIndexStride.Value);
             }
 
             if(requestObject.IsSetStripeSizeBytes())
             {
                 context.Writer.WritePropertyName("StripeSizeBytes");
-                context.Writer.Write(requestObject.StripeSizeBytes);
+                context.Writer.Write(requestObject.StripeSizeBytes.Value);
             }
 
         }

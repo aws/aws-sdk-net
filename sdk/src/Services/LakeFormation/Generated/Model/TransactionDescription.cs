@@ -44,9 +44,9 @@ namespace Amazon.LakeFormation.Model
         /// The time when the transaction committed or aborted, if it is not currently active.
         /// </para>
         /// </summary>
-        public DateTime TransactionEndTime
+        public DateTime? TransactionEndTime
         {
-            get { return this._transactionEndTime.GetValueOrDefault(); }
+            get { return this._transactionEndTime; }
             set { this._transactionEndTime = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.LakeFormation.Model
         /// The time when the transaction started.
         /// </para>
         /// </summary>
-        public DateTime TransactionStartTime
+        public DateTime? TransactionStartTime
         {
-            get { return this._transactionStartTime.GetValueOrDefault(); }
+            get { return this._transactionStartTime; }
             set { this._transactionStartTime = value; }
         }
 

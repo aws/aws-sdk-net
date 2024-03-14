@@ -115,9 +115,9 @@ namespace Amazon.Finspace.Model
         /// 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -397,9 +397,9 @@ namespace Amazon.Finspace.Model
         /// 1, 2021 12:00:00 PM UTC is specified as 1635768000000.
         /// </para>
         /// </summary>
-        public DateTime UpdateTimestamp
+        public DateTime? UpdateTimestamp
         {
-            get { return this._updateTimestamp.GetValueOrDefault(); }
+            get { return this._updateTimestamp; }
             set { this._updateTimestamp = value; }
         }
 

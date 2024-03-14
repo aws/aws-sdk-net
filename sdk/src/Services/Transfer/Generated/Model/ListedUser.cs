@@ -163,9 +163,9 @@ namespace Amazon.Transfer.Model
         /// Specifies the number of SSH public keys stored for the user you specified.
         /// </para>
         /// </summary>
-        public int SshPublicKeyCount
+        public int? SshPublicKeyCount
         {
-            get { return this._sshPublicKeyCount.GetValueOrDefault(); }
+            get { return this._sshPublicKeyCount; }
             set { this._sshPublicKeyCount = value; }
         }
 

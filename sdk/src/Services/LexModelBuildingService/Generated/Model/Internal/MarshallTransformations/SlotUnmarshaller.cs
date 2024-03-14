@@ -89,7 +89,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("priority", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
                     continue;
                 }

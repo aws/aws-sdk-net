@@ -42,9 +42,9 @@ namespace Amazon.XRay.Model
         /// The number of requests that failed with untracked 5xx Server Error status codes.
         /// </para>
         /// </summary>
-        public long OtherCount
+        public long? OtherCount
         {
-            get { return this._otherCount.GetValueOrDefault(); }
+            get { return this._otherCount; }
             set { this._otherCount = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.XRay.Model
         /// The total number of requests that failed with a 5xx Server Error status code.
         /// </para>
         /// </summary>
-        public long TotalCount
+        public long? TotalCount
         {
-            get { return this._totalCount.GetValueOrDefault(); }
+            get { return this._totalCount; }
             set { this._totalCount = value; }
         }
 

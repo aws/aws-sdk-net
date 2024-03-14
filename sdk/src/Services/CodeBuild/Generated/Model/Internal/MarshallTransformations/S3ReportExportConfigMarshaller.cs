@@ -60,7 +60,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionDisabled())
             {
                 context.Writer.WritePropertyName("encryptionDisabled");
-                context.Writer.Write(requestObject.EncryptionDisabled);
+                context.Writer.Write(requestObject.EncryptionDisabled.Value);
             }
 
             if(requestObject.IsSetEncryptionKey())

@@ -56,19 +56,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("allowDnsResolutionFromRemoteVpc", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AllowDnsResolutionFromRemoteVpc = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("allowEgressFromLocalClassicLinkToRemoteVpc", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AllowEgressFromLocalClassicLinkToRemoteVpc = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("allowEgressFromLocalVpcToRemoteClassicLink", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AllowEgressFromLocalVpcToRemoteClassicLink = unmarshaller.Unmarshall(context);
                         continue;
                     }

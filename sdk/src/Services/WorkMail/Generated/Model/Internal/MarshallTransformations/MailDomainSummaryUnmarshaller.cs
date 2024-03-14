@@ -65,7 +65,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DefaultDomain", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DefaultDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -101,7 +101,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("PackedPolicySize", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         response.PackedPolicySize = unmarshaller.Unmarshall(context);
                         continue;
                     }

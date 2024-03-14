@@ -43,9 +43,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// The time the job finished transcoding, in epoch milliseconds.
         /// </para>
         /// </summary>
-        public long FinishTimeMillis
+        public long? FinishTimeMillis
         {
-            get { return this._finishTimeMillis.GetValueOrDefault(); }
+            get { return this._finishTimeMillis; }
             set { this._finishTimeMillis = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// The time the job began transcoding, in epoch milliseconds.
         /// </para>
         /// </summary>
-        public long StartTimeMillis
+        public long? StartTimeMillis
         {
-            get { return this._startTimeMillis.GetValueOrDefault(); }
+            get { return this._startTimeMillis; }
             set { this._startTimeMillis = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// The time the job was submitted to Elastic Transcoder, in epoch milliseconds.
         /// </para>
         /// </summary>
-        public long SubmitTimeMillis
+        public long? SubmitTimeMillis
         {
-            get { return this._submitTimeMillis.GetValueOrDefault(); }
+            get { return this._submitTimeMillis; }
             set { this._submitTimeMillis = value; }
         }
 

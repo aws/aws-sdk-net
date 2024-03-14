@@ -76,13 +76,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEncrypted())
                 {
                     context.Writer.WritePropertyName("encrypted");
-                    context.Writer.Write(publicRequest.Encrypted);
+                    context.Writer.Write(publicRequest.Encrypted.Value);
                 }
 
                 if(publicRequest.IsSetFrequency())
                 {
                     context.Writer.WritePropertyName("frequency");
-                    context.Writer.Write(publicRequest.Frequency);
+                    context.Writer.Write(publicRequest.Frequency.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyId())
@@ -100,7 +100,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfRecentAmisToKeep())
                 {
                     context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
-                    context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep);
+                    context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep.Value);
                 }
 
                 if(publicRequest.IsSetRoleName())
@@ -112,13 +112,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRunOnce())
                 {
                     context.Writer.WritePropertyName("runOnce");
-                    context.Writer.Write(publicRequest.RunOnce);
+                    context.Writer.Write(publicRequest.RunOnce.Value);
                 }
 
                 if(publicRequest.IsSetSeedReplicationTime())
                 {
                     context.Writer.WritePropertyName("seedReplicationTime");
-                    context.Writer.Write(publicRequest.SeedReplicationTime);
+                    context.Writer.Write(publicRequest.SeedReplicationTime.Value);
                 }
 
                 if(publicRequest.IsSetServerId())

@@ -106,9 +106,9 @@ namespace Amazon.SecurityHub.Model
         /// then you provide either <c>AcmCertificateArn</c> or <c>IamCertificateId</c>.
         /// </para>
         /// </summary>
-        public bool CloudFrontDefaultCertificate
+        public bool? CloudFrontDefaultCertificate
         {
-            get { return this._cloudFrontDefaultCertificate.GetValueOrDefault(); }
+            get { return this._cloudFrontDefaultCertificate; }
             set { this._cloudFrontDefaultCertificate = value; }
         }
 

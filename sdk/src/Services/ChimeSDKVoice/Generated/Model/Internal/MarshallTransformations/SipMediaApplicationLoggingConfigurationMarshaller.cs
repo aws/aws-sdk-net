@@ -48,7 +48,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableSipMediaApplicationMessageLogs())
             {
                 context.Writer.WritePropertyName("EnableSipMediaApplicationMessageLogs");
-                context.Writer.Write(requestObject.EnableSipMediaApplicationMessageLogs);
+                context.Writer.Write(requestObject.EnableSipMediaApplicationMessageLogs.Value);
             }
 
         }

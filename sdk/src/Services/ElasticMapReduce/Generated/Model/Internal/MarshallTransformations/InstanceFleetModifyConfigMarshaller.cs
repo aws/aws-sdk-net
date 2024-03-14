@@ -65,13 +65,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetOnDemandCapacity())
             {
                 context.Writer.WritePropertyName("TargetOnDemandCapacity");
-                context.Writer.Write(requestObject.TargetOnDemandCapacity);
+                context.Writer.Write(requestObject.TargetOnDemandCapacity.Value);
             }
 
             if(requestObject.IsSetTargetSpotCapacity())
             {
                 context.Writer.WritePropertyName("TargetSpotCapacity");
-                context.Writer.Write(requestObject.TargetSpotCapacity);
+                context.Writer.Write(requestObject.TargetSpotCapacity.Value);
             }
 
         }

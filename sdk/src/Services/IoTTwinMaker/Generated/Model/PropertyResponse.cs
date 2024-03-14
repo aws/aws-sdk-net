@@ -44,9 +44,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// the API response. The maximum number of values per property returned is 50.
         /// </para>
         /// </summary>
-        public bool AreAllPropertyValuesReturned
+        public bool? AreAllPropertyValuesReturned
         {
-            get { return this._areAllPropertyValuesReturned.GetValueOrDefault(); }
+            get { return this._areAllPropertyValuesReturned; }
             set { this._areAllPropertyValuesReturned = value; }
         }
 

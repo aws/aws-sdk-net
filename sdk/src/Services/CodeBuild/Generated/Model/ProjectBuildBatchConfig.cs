@@ -76,9 +76,9 @@ namespace Amazon.CodeBuild.Model
         /// artifact location.
         /// </para>
         /// </summary>
-        public bool CombineArtifacts
+        public bool? CombineArtifacts
         {
-            get { return this._combineArtifacts.GetValueOrDefault(); }
+            get { return this._combineArtifacts; }
             set { this._combineArtifacts = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.CodeBuild.Model
         /// in.
         /// </para>
         /// </summary>
-        public int TimeoutInMins
+        public int? TimeoutInMins
         {
-            get { return this._timeoutInMins.GetValueOrDefault(); }
+            get { return this._timeoutInMins; }
             set { this._timeoutInMins = value; }
         }
 

@@ -70,9 +70,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int NetmaskLength
+        public int? NetmaskLength
         {
-            get { return this._netmaskLength.GetValueOrDefault(); }
+            get { return this._netmaskLength; }
             set { this._netmaskLength = value; }
         }
 

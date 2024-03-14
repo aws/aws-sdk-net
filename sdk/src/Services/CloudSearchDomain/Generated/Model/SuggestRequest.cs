@@ -83,9 +83,9 @@ namespace Amazon.CloudSearchDomain.Model
         /// Specifies the maximum number of suggestions to return. 
         /// </para>
         /// </summary>
-        public long Size
+        public long? Size
         {
-            get { return this._size.GetValueOrDefault(); }
+            get { return this._size; }
             set { this._size = value; }
         }
 

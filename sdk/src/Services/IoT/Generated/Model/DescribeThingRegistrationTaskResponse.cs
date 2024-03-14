@@ -52,9 +52,9 @@ namespace Amazon.IoT.Model
         /// The task creation date.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.IoT.Model
         /// The number of things that failed to be provisioned.
         /// </para>
         /// </summary>
-        public int FailureCount
+        public int? FailureCount
         {
-            get { return this._failureCount.GetValueOrDefault(); }
+            get { return this._failureCount; }
             set { this._failureCount = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.IoT.Model
         /// The date when the task was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int PercentageProgress
+        public int? PercentageProgress
         {
-            get { return this._percentageProgress.GetValueOrDefault(); }
+            get { return this._percentageProgress; }
             set { this._percentageProgress = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.IoT.Model
         /// The number of things successfully provisioned.
         /// </para>
         /// </summary>
-        public int SuccessCount
+        public int? SuccessCount
         {
-            get { return this._successCount.GetValueOrDefault(); }
+            get { return this._successCount; }
             set { this._successCount = value; }
         }
 

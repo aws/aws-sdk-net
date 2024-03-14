@@ -71,9 +71,9 @@ namespace Amazon.Lightsail.Model
         /// Indicates whether the bundle is active. Use for a new or existing bucket.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.Lightsail.Model
         /// The monthly price of the bundle, in US dollars.
         /// </para>
         /// </summary>
-        public float Price
+        public float? Price
         {
-            get { return this._price.GetValueOrDefault(); }
+            get { return this._price; }
             set { this._price = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Lightsail.Model
         /// The storage size of the bundle, in GB.
         /// </para>
         /// </summary>
-        public int StoragePerMonthInGb
+        public int? StoragePerMonthInGb
         {
-            get { return this._storagePerMonthInGb.GetValueOrDefault(); }
+            get { return this._storagePerMonthInGb; }
             set { this._storagePerMonthInGb = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.Lightsail.Model
         /// The monthly network transfer quota of the bundle.
         /// </para>
         /// </summary>
-        public int TransferPerMonthInGb
+        public int? TransferPerMonthInGb
         {
-            get { return this._transferPerMonthInGb.GetValueOrDefault(); }
+            get { return this._transferPerMonthInGb; }
             set { this._transferPerMonthInGb = value; }
         }
 

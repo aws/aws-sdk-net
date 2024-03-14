@@ -82,7 +82,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetFaceMatchThreshold())
                 {
                     context.Writer.WritePropertyName("FaceMatchThreshold");
-                    context.Writer.Write(publicRequest.FaceMatchThreshold);
+                    context.Writer.Write(publicRequest.FaceMatchThreshold.Value);
                 }
 
                 if(publicRequest.IsSetJobTag())

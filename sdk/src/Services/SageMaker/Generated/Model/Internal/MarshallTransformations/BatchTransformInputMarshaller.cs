@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProbabilityThresholdAttribute())
             {
                 context.Writer.WritePropertyName("ProbabilityThresholdAttribute");
-                context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
+                context.Writer.Write(requestObject.ProbabilityThresholdAttribute.Value);
             }
 
             if(requestObject.IsSetS3DataDistributionType())

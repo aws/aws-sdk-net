@@ -65,9 +65,9 @@ namespace Amazon.IoTSiteWise.Model
         ///  Whether or not to exclude asset model properties from the response. 
         /// </para>
         /// </summary>
-        public bool ExcludeProperties
+        public bool? ExcludeProperties
         {
-            get { return this._excludeProperties.GetValueOrDefault(); }
+            get { return this._excludeProperties; }
             set { this._excludeProperties = value; }
         }
 

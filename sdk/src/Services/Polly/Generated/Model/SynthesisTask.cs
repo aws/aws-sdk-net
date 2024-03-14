@@ -55,9 +55,9 @@ namespace Amazon.Polly.Model
         /// Timestamp for the time the synthesis task was started.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.Polly.Model
         /// Number of billable characters synthesized.
         /// </para>
         /// </summary>
-        public int RequestCharacters
+        public int? RequestCharacters
         {
-            get { return this._requestCharacters.GetValueOrDefault(); }
+            get { return this._requestCharacters; }
             set { this._requestCharacters = value; }
         }
 

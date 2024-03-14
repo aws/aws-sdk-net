@@ -54,7 +54,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimum())
             {
                 context.Writer.WritePropertyName("minimum");
-                context.Writer.Write(requestObject.Minimum);
+                context.Writer.Write(requestObject.Minimum.Value);
             }
 
             if(requestObject.IsSetType())

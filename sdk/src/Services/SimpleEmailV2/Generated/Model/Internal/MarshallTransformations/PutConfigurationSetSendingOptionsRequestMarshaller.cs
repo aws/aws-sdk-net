@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSendingEnabled())
                 {
                     context.Writer.WritePropertyName("SendingEnabled");
-                    context.Writer.Write(publicRequest.SendingEnabled);
+                    context.Writer.Write(publicRequest.SendingEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

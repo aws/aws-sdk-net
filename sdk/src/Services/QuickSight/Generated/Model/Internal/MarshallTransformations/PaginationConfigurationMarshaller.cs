@@ -48,13 +48,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPageNumber())
             {
                 context.Writer.WritePropertyName("PageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.Write(requestObject.PageNumber.Value);
             }
 
             if(requestObject.IsSetPageSize())
             {
                 context.Writer.WritePropertyName("PageSize");
-                context.Writer.Write(requestObject.PageSize);
+                context.Writer.Write(requestObject.PageSize.Value);
             }
 
         }

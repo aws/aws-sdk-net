@@ -22,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.ElastiCache;
 using Amazon.ElastiCache.Model;
 
-namespace AWSSDK_DotNet35.UnitTests.TestTools
+namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
     public class ElastiCacheConstructorCustomizationsTests
@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         [TestCategory("Constructors"), TestCategory("ElastiCache")]
         public void CreateCacheClusterRequestConstructorTests()
         {
-            EnsureConstructorExists(typeof(Amazon.ElastiCache.Model.CreateCacheClusterRequest), new System.Type[] { typeof(string), typeof(int), typeof(string), typeof(string), typeof(List<string>), });
+            EnsureConstructorExists(typeof(Amazon.ElastiCache.Model.CreateCacheClusterRequest), new System.Type[] { typeof(string), typeof(int?), typeof(string), typeof(string), typeof(List<string>), });
         }
 
         [TestMethod]

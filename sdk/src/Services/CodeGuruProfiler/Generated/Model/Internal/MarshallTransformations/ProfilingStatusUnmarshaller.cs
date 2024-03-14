@@ -65,13 +65,13 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("latestAgentOrchestratedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestAgentOrchestratedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("latestAgentProfileReportedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestAgentProfileReportedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

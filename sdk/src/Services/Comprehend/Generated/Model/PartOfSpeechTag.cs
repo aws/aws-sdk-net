@@ -45,9 +45,9 @@ namespace Amazon.Comprehend.Model
         /// The confidence that Amazon Comprehend has that the part of speech was correctly identified.
         /// </para>
         /// </summary>
-        public float Score
+        public float? Score
         {
-            get { return this._score.GetValueOrDefault(); }
+            get { return this._score; }
             set { this._score = value; }
         }
 

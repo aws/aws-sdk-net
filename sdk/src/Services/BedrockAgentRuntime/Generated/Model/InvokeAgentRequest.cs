@@ -87,9 +87,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Enable agent trace events for improved debugging
         /// </para>
         /// </summary>
-        public bool EnableTrace
+        public bool? EnableTrace
         {
-            get { return this._enableTrace.GetValueOrDefault(); }
+            get { return this._enableTrace; }
             set { this._enableTrace = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// End current session
         /// </para>
         /// </summary>
-        public bool EndSession
+        public bool? EndSession
         {
-            get { return this._endSession.GetValueOrDefault(); }
+            get { return this._endSession; }
             set { this._endSession = value; }
         }
 

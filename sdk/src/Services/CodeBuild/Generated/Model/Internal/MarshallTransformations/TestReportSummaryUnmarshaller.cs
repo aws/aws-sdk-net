@@ -65,7 +65,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("durationInNanoSeconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationInNanoSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }

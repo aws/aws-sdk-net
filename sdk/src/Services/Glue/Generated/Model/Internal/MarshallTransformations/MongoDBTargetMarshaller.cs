@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScanAll())
             {
                 context.Writer.WritePropertyName("ScanAll");
-                context.Writer.Write(requestObject.ScanAll);
+                context.Writer.Write(requestObject.ScanAll.Value);
             }
 
         }

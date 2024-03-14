@@ -76,9 +76,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// both values results in an error.
         /// </para>
         /// </summary>
-        public DateTime CdcStartTime
+        public DateTime? CdcStartTime
         {
-            get { return this._cdcStartTime.GetValueOrDefault(); }
+            get { return this._cdcStartTime; }
             set { this._cdcStartTime = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("NumberOfRuleGroupsAlreadyAssociated", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRuleGroupsAlreadyAssociated = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -63,9 +63,9 @@ namespace Amazon.LookoutEquipment.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public long ModelVersion
+        public long? ModelVersion
         {
-            get { return this._modelVersion.GetValueOrDefault(); }
+            get { return this._modelVersion; }
             set { this._modelVersion = value; }
         }
 

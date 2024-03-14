@@ -71,9 +71,9 @@ namespace Amazon.PinpointEmail.Model
         /// The value you specify has to be at least 0, and can be no more than 1000.
         /// </para>
         /// </summary>
-        public int PageSize
+        public int? PageSize
         {
-            get { return this._pageSize.GetValueOrDefault(); }
+            get { return this._pageSize; }
             set { this._pageSize = value; }
         }
 

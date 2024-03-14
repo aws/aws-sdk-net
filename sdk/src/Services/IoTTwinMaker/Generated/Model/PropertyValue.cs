@@ -108,9 +108,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated and will throw an error in the future. Use time instead.")]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

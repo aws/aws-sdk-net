@@ -81,7 +81,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCopyTagsToDataRepositoryAssociations())
                 {
                     context.Writer.WritePropertyName("CopyTagsToDataRepositoryAssociations");
-                    context.Writer.Write(publicRequest.CopyTagsToDataRepositoryAssociations);
+                    context.Writer.Write(publicRequest.CopyTagsToDataRepositoryAssociations.Value);
                 }
 
                 if(publicRequest.IsSetDataRepositoryAssociations())
@@ -143,7 +143,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStorageCapacity())
                 {
                     context.Writer.WritePropertyName("StorageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity);
+                    context.Writer.Write(publicRequest.StorageCapacity.Value);
                 }
 
                 if(publicRequest.IsSetSubnetIds())

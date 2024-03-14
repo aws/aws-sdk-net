@@ -94,9 +94,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateDate
+        public DateTime? CreateDate
         {
-            get { return this._createDate.GetValueOrDefault(); }
+            get { return this._createDate; }
             set { this._createDate = value; }
         }
 
@@ -134,9 +134,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=3600, Max=43200)]
-        public int MaxSessionDuration
+        public int? MaxSessionDuration
         {
-            get { return this._maxSessionDuration.GetValueOrDefault(); }
+            get { return this._maxSessionDuration; }
             set { this._maxSessionDuration = value; }
         }
 

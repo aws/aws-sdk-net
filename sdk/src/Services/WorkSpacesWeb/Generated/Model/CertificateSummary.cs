@@ -64,9 +64,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The certificate is not valid after this date.
         /// </para>
         /// </summary>
-        public DateTime NotValidAfter
+        public DateTime? NotValidAfter
         {
-            get { return this._notValidAfter.GetValueOrDefault(); }
+            get { return this._notValidAfter; }
             set { this._notValidAfter = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The certificate is not valid before this date.
         /// </para>
         /// </summary>
-        public DateTime NotValidBefore
+        public DateTime? NotValidBefore
         {
-            get { return this._notValidBefore.GetValueOrDefault(); }
+            get { return this._notValidBefore; }
             set { this._notValidBefore = value; }
         }
 

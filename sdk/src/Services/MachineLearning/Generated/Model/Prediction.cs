@@ -114,9 +114,9 @@ namespace Amazon.MachineLearning.Model
         /// The prediction value for <c>REGRESSION</c> <c>MLModel</c>.
         /// </para>
         /// </summary>
-        public float PredictedValue
+        public float? PredictedValue
         {
-            get { return this._predictedValue.GetValueOrDefault(); }
+            get { return this._predictedValue; }
             set { this._predictedValue = value; }
         }
 

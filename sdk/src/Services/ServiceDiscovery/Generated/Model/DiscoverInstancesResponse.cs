@@ -62,9 +62,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// updates don't update <c>InstancesRevision</c>.
         /// </para>
         /// </summary>
-        public long InstancesRevision
+        public long? InstancesRevision
         {
-            get { return this._instancesRevision.GetValueOrDefault(); }
+            get { return this._instancesRevision; }
             set { this._instancesRevision = value; }
         }
 

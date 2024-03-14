@@ -64,9 +64,9 @@ namespace Amazon.EC2.Model
         /// Indicates whether the rule is an outbound rule.
         /// </para>
         /// </summary>
-        public bool Egress
+        public bool? Egress
         {
-            get { return this._egress.GetValueOrDefault(); }
+            get { return this._egress; }
             set { this._egress = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.EC2.Model
         /// The rule number.
         /// </para>
         /// </summary>
-        public int RuleNumber
+        public int? RuleNumber
         {
-            get { return this._ruleNumber.GetValueOrDefault(); }
+            get { return this._ruleNumber; }
             set { this._ruleNumber = value; }
         }
 

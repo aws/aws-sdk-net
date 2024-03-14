@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSessionExpirationDurationInSeconds())
                 {
                     context.Writer.WritePropertyName("SessionExpirationDurationInSeconds");
-                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds);
+                    context.Writer.Write(publicRequest.SessionExpirationDurationInSeconds.Value);
                 }
 
                 writer.WriteObjectEnd();

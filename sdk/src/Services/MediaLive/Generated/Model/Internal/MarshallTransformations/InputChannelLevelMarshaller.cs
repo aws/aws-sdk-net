@@ -48,13 +48,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGain())
             {
                 context.Writer.WritePropertyName("gain");
-                context.Writer.Write(requestObject.Gain);
+                context.Writer.Write(requestObject.Gain.Value);
             }
 
             if(requestObject.IsSetInputChannel())
             {
                 context.Writer.WritePropertyName("inputChannel");
-                context.Writer.Write(requestObject.InputChannel);
+                context.Writer.Write(requestObject.InputChannel.Value);
             }
 
         }

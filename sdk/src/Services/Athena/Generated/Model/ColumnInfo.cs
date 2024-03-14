@@ -50,9 +50,9 @@ namespace Amazon.Athena.Model
         /// Indicates whether values in the column are case-sensitive.
         /// </para>
         /// </summary>
-        public bool CaseSensitive
+        public bool? CaseSensitive
         {
-            get { return this._caseSensitive.GetValueOrDefault(); }
+            get { return this._caseSensitive; }
             set { this._caseSensitive = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Athena.Model
         /// performance reasons, we recommend up to 18 digits.
         /// </para>
         /// </summary>
-        public int Precision
+        public int? Precision
         {
-            get { return this._precision.GetValueOrDefault(); }
+            get { return this._precision; }
             set { this._precision = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.Athena.Model
         /// part of the value. Defaults to 0.
         /// </para>
         /// </summary>
-        public int Scale
+        public int? Scale
         {
-            get { return this._scale.GetValueOrDefault(); }
+            get { return this._scale; }
             set { this._scale = value; }
         }
 

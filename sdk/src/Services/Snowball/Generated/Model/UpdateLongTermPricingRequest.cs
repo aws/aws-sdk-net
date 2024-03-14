@@ -45,9 +45,9 @@ namespace Amazon.Snowball.Model
         /// should be automatically renewed before the long-term pricing contract expires.
         /// </para>
         /// </summary>
-        public bool IsLongTermPricingAutoRenew
+        public bool? IsLongTermPricingAutoRenew
         {
-            get { return this._isLongTermPricingAutoRenew.GetValueOrDefault(); }
+            get { return this._isLongTermPricingAutoRenew; }
             set { this._isLongTermPricingAutoRenew = value; }
         }
 

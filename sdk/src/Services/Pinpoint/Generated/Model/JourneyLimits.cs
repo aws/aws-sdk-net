@@ -48,9 +48,9 @@ namespace Amazon.Pinpoint.Model
         /// a 24-hour period. The maximum value is 100.
         /// </para>
         /// </summary>
-        public int DailyCap
+        public int? DailyCap
         {
-            get { return this._dailyCap.GetValueOrDefault(); }
+            get { return this._dailyCap; }
             set { this._dailyCap = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Pinpoint.Model
         /// set this value to 0.
         /// </para>
         /// </summary>
-        public int EndpointReentryCap
+        public int? EndpointReentryCap
         {
-            get { return this._endpointReentryCap.GetValueOrDefault(); }
+            get { return this._endpointReentryCap; }
             set { this._endpointReentryCap = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.Pinpoint.Model
         /// The maximum number of messages that the journey can send each second.
         /// </para>
         /// </summary>
-        public int MessagesPerSecond
+        public int? MessagesPerSecond
         {
-            get { return this._messagesPerSecond.GetValueOrDefault(); }
+            get { return this._messagesPerSecond; }
             set { this._messagesPerSecond = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.Pinpoint.Model
         /// value is 100. If set to 0, this limit will not apply.
         /// </para>
         /// </summary>
-        public int TotalCap
+        public int? TotalCap
         {
-            get { return this._totalCap.GetValueOrDefault(); }
+            get { return this._totalCap; }
             set { this._totalCap = value; }
         }
 

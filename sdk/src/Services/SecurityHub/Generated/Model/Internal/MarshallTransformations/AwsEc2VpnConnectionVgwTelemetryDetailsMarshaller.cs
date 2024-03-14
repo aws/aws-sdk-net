@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptedRouteCount())
             {
                 context.Writer.WritePropertyName("AcceptedRouteCount");
-                context.Writer.Write(requestObject.AcceptedRouteCount);
+                context.Writer.Write(requestObject.AcceptedRouteCount.Value);
             }
 
             if(requestObject.IsSetCertificateArn())

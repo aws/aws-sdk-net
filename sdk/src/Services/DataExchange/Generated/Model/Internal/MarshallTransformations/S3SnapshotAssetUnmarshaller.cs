@@ -65,7 +65,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }

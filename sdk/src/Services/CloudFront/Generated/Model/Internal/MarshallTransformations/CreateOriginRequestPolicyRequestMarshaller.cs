@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("OriginRequestPolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.OriginRequestPolicyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));                    
+                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Comment));
 
                 
                     if (publicRequest.OriginRequestPolicyConfig.CookiesConfig != null) 
@@ -91,7 +91,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
@@ -121,14 +121,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.OriginRequestPolicyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));                    
+                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.Name));
 
                 
                     if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig != null) 
@@ -154,7 +154,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteEndElement();            
                             }
                             if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.IsSetQuantity())
-                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Quantity));                 
+                                xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Quantity.Value));                 
 
                             xmlWriter.WriteEndElement();
                         }

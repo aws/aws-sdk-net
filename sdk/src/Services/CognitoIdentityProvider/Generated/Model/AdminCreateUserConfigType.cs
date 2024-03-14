@@ -44,9 +44,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to <c>False</c> if users can sign themselves up via an app.
         /// </para>
         /// </summary>
-        public bool AllowAdminCreateUserOnly
+        public bool? AllowAdminCreateUserOnly
         {
-            get { return this._allowAdminCreateUserOnly.GetValueOrDefault(); }
+            get { return this._allowAdminCreateUserOnly; }
             set { this._allowAdminCreateUserOnly = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=365)]
-        public int UnusedAccountValidityDays
+        public int? UnusedAccountValidityDays
         {
-            get { return this._unusedAccountValidityDays.GetValueOrDefault(); }
+            get { return this._unusedAccountValidityDays; }
             set { this._unusedAccountValidityDays = value; }
         }
 

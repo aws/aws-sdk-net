@@ -46,9 +46,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// This value might not be available for all export source types
         /// </para>
         /// </summary>
-        public int ExportedRecordsCount
+        public int? ExportedRecordsCount
         {
-            get { return this._exportedRecordsCount.GetValueOrDefault(); }
+            get { return this._exportedRecordsCount; }
             set { this._exportedRecordsCount = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The number of records that were processed to generate the final export file.
         /// </para>
         /// </summary>
-        public int ProcessedRecordsCount
+        public int? ProcessedRecordsCount
         {
-            get { return this._processedRecordsCount.GetValueOrDefault(); }
+            get { return this._processedRecordsCount; }
             set { this._processedRecordsCount = value; }
         }
 

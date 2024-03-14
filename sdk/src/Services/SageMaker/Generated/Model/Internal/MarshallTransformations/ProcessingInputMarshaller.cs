@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppManaged())
             {
                 context.Writer.WritePropertyName("AppManaged");
-                context.Writer.Write(requestObject.AppManaged);
+                context.Writer.Write(requestObject.AppManaged.Value);
             }
 
             if(requestObject.IsSetDatasetDefinition())

@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Weight", targetDepth))
                     {
-                        var unmarshaller = FloatUnmarshaller.Instance;
+                        var unmarshaller = NullableFloatUnmarshaller.Instance;
                         unmarshalledObject.Weight = unmarshaller.Unmarshall(context);
                         continue;
                     }

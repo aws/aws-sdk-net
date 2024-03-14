@@ -45,9 +45,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to enable encryption on the CloudWatch logs.
         /// </para>
         /// </summary>
-        public bool CloudWatchEncryptionEnabled
+        public bool? CloudWatchEncryptionEnabled
         {
-            get { return this._cloudWatchEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._cloudWatchEncryptionEnabled; }
             set { this._cloudWatchEncryptionEnabled = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to encrypt the logs that are sent to the S3 bucket.
         /// </para>
         /// </summary>
-        public bool S3EncryptionEnabled
+        public bool? S3EncryptionEnabled
         {
-            get { return this._s3EncryptionEnabled.GetValueOrDefault(); }
+            get { return this._s3EncryptionEnabled; }
             set { this._s3EncryptionEnabled = value; }
         }
 

@@ -48,7 +48,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMainNode())
             {
                 context.Writer.WritePropertyName("mainNode");
-                context.Writer.Write(requestObject.MainNode);
+                context.Writer.Write(requestObject.MainNode.Value);
             }
 
             if(requestObject.IsSetNodeRangeProperties())
@@ -70,7 +70,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumNodes())
             {
                 context.Writer.WritePropertyName("numNodes");
-                context.Writer.Write(requestObject.NumNodes);
+                context.Writer.Write(requestObject.NumNodes.Value);
             }
 
         }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ImportExport")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Import/Export. AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

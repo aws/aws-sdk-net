@@ -44,9 +44,9 @@ namespace Amazon.EMRServerless.Model
         /// job is terminated.
         /// </para>
         /// </summary>
-        public double MemoryGBHour
+        public double? MemoryGBHour
         {
-            get { return this._memorygbHour.GetValueOrDefault(); }
+            get { return this._memorygbHour; }
             set { this._memorygbHour = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.EMRServerless.Model
         /// the job is terminated.
         /// </para>
         /// </summary>
-        public double StorageGBHour
+        public double? StorageGBHour
         {
-            get { return this._storagegbHour.GetValueOrDefault(); }
+            get { return this._storagegbHour; }
             set { this._storagegbHour = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.EMRServerless.Model
         /// job is terminated.
         /// </para>
         /// </summary>
-        public double VCPUHour
+        public double? VCPUHour
         {
-            get { return this._vcpuHour.GetValueOrDefault(); }
+            get { return this._vcpuHour; }
             set { this._vcpuHour = value; }
         }
 

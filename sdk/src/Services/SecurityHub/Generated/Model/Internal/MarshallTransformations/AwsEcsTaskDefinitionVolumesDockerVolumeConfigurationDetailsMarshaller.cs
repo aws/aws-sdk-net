@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoprovision())
             {
                 context.Writer.WritePropertyName("Autoprovision");
-                context.Writer.Write(requestObject.Autoprovision);
+                context.Writer.Write(requestObject.Autoprovision.Value);
             }
 
             if(requestObject.IsSetDriver())

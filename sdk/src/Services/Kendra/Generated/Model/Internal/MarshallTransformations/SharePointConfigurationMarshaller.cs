@@ -54,13 +54,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlAttachments())
             {
                 context.Writer.WritePropertyName("CrawlAttachments");
-                context.Writer.Write(requestObject.CrawlAttachments);
+                context.Writer.Write(requestObject.CrawlAttachments.Value);
             }
 
             if(requestObject.IsSetDisableLocalGroups())
             {
                 context.Writer.WritePropertyName("DisableLocalGroups");
-                context.Writer.Write(requestObject.DisableLocalGroups);
+                context.Writer.Write(requestObject.DisableLocalGroups.Value);
             }
 
             if(requestObject.IsSetDocumentTitleFieldName())
@@ -155,7 +155,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog);
+                context.Writer.Write(requestObject.UseChangeLog.Value);
             }
 
             if(requestObject.IsSetVpcConfiguration())

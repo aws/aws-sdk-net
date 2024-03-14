@@ -48,7 +48,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");
-                context.Writer.Write(requestObject.FromPort);
+                context.Writer.Write(requestObject.FromPort.Value);
             }
 
             if(requestObject.IsSetIpRange())
@@ -66,7 +66,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetToPort())
             {
                 context.Writer.WritePropertyName("ToPort");
-                context.Writer.Write(requestObject.ToPort);
+                context.Writer.Write(requestObject.ToPort.Value);
             }
 
         }

@@ -77,7 +77,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }

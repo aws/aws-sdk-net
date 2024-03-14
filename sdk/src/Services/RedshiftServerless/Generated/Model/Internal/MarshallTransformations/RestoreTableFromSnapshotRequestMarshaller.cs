@@ -70,7 +70,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetActivateCaseSensitiveIdentifier())
                 {
                     context.Writer.WritePropertyName("activateCaseSensitiveIdentifier");
-                    context.Writer.Write(publicRequest.ActivateCaseSensitiveIdentifier);
+                    context.Writer.Write(publicRequest.ActivateCaseSensitiveIdentifier.Value);
                 }
 
                 if(publicRequest.IsSetNamespaceName())

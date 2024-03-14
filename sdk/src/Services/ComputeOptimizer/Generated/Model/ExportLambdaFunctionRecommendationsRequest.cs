@@ -183,9 +183,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// or the account IDs parameter, is omitted.
         /// </para>
         /// </summary>
-        public bool IncludeMemberAccounts
+        public bool? IncludeMemberAccounts
         {
-            get { return this._includeMemberAccounts.GetValueOrDefault(); }
+            get { return this._includeMemberAccounts; }
             set { this._includeMemberAccounts = value; }
         }
 

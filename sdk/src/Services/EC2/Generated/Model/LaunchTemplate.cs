@@ -65,9 +65,9 @@ namespace Amazon.EC2.Model
         /// The time launch template was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.EC2.Model
         /// The version number of the default version of the launch template.
         /// </para>
         /// </summary>
-        public long DefaultVersionNumber
+        public long? DefaultVersionNumber
         {
-            get { return this._defaultVersionNumber.GetValueOrDefault(); }
+            get { return this._defaultVersionNumber; }
             set { this._defaultVersionNumber = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.EC2.Model
         /// The version number of the latest version of the launch template.
         /// </para>
         /// </summary>
-        public long LatestVersionNumber
+        public long? LatestVersionNumber
         {
-            get { return this._latestVersionNumber.GetValueOrDefault(); }
+            get { return this._latestVersionNumber; }
             set { this._latestVersionNumber = value; }
         }
 

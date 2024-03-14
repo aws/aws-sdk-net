@@ -90,9 +90,9 @@ namespace Amazon.Kendra.Model
         /// The maximum number of query suggestions you want to show to your users.
         /// </para>
         /// </summary>
-        public int MaxSuggestionsCount
+        public int? MaxSuggestionsCount
         {
-            get { return this._maxSuggestionsCount.GetValueOrDefault(); }
+            get { return this._maxSuggestionsCount; }
             set { this._maxSuggestionsCount = value; }
         }
 

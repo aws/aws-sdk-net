@@ -125,9 +125,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </summary>
         [Obsolete("Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]
         [AWSProperty(Min=1, Max=10)]
-        public int FailureThreshold
+        public int? FailureThreshold
         {
-            get { return this._failureThreshold.GetValueOrDefault(); }
+            get { return this._failureThreshold; }
             set { this._failureThreshold = value; }
         }
 

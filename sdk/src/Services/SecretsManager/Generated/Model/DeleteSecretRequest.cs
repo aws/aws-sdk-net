@@ -122,9 +122,9 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  </important>
         /// </summary>
-        public bool ForceDeleteWithoutRecovery
+        public bool? ForceDeleteWithoutRecovery
         {
-            get { return this._forceDeleteWithoutRecovery.GetValueOrDefault(); }
+            get { return this._forceDeleteWithoutRecovery; }
             set { this._forceDeleteWithoutRecovery = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.SecretsManager.Model
         /// 30 day recovery window.
         /// </para>
         /// </summary>
-        public long RecoveryWindowInDays
+        public long? RecoveryWindowInDays
         {
-            get { return this._recoveryWindowInDays.GetValueOrDefault(); }
+            get { return this._recoveryWindowInDays; }
             set { this._recoveryWindowInDays = value; }
         }
 

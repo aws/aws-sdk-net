@@ -86,9 +86,9 @@ namespace Amazon.Honeycode.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long WorkbookCursor
+        public long? WorkbookCursor
         {
-            get { return this._workbookCursor.GetValueOrDefault(); }
+            get { return this._workbookCursor; }
             set { this._workbookCursor = value; }
         }
 

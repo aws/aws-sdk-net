@@ -65,55 +65,55 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Avg", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Avg = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Count", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountDistinct", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CountDistinct = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountDistinctLong", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CountDistinctLong = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountLong", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CountLong = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountNan", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CountNan = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountNanLong", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CountNanLong = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountNull", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CountNull = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CountNullLong", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CountNullLong = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Stddev", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Stddev = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -131,7 +131,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetShots())
                 {
                     context.Writer.WritePropertyName("shots");
-                    context.Writer.Write(publicRequest.Shots);
+                    context.Writer.Write(publicRequest.Shots.Value);
                 }
 
                 if(publicRequest.IsSetTags())

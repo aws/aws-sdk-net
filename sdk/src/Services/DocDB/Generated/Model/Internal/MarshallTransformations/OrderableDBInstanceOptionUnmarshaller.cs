@@ -93,7 +93,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Vpc", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
                         continue;
                     }

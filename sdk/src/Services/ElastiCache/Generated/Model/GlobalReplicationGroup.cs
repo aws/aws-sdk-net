@@ -92,9 +92,9 @@ namespace Amazon.ElastiCache.Model
         /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         /// </summary>
-        public bool AtRestEncryptionEnabled
+        public bool? AtRestEncryptionEnabled
         {
-            get { return this._atRestEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._atRestEncryptionEnabled; }
             set { this._atRestEncryptionEnabled = value; }
         }
 
@@ -114,9 +114,9 @@ namespace Amazon.ElastiCache.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AuthTokenEnabled
+        public bool? AuthTokenEnabled
         {
-            get { return this._authTokenEnabled.GetValueOrDefault(); }
+            get { return this._authTokenEnabled; }
             set { this._authTokenEnabled = value; }
         }
 
@@ -150,9 +150,9 @@ namespace Amazon.ElastiCache.Model
         /// A flag that indicates whether the Global datastore is cluster enabled.
         /// </para>
         /// </summary>
-        public bool ClusterEnabled
+        public bool? ClusterEnabled
         {
-            get { return this._clusterEnabled.GetValueOrDefault(); }
+            get { return this._clusterEnabled; }
             set { this._clusterEnabled = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.ElastiCache.Model
         /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         /// </summary>
-        public bool TransitEncryptionEnabled
+        public bool? TransitEncryptionEnabled
         {
-            get { return this._transitEncryptionEnabled.GetValueOrDefault(); }
+            get { return this._transitEncryptionEnabled; }
             set { this._transitEncryptionEnabled = value; }
         }
 

@@ -56,9 +56,9 @@ namespace Amazon.Lightsail.Model
         /// A Boolean value that indicates whether the role is activated.
         /// </para>
         /// </summary>
-        public bool IsActive
+        public bool? IsActive
         {
-            get { return this._isActive.GetValueOrDefault(); }
+            get { return this._isActive; }
             set { this._isActive = value; }
         }
 

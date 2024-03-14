@@ -70,7 +70,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAccessBasedEnumeration())
                 {
                     context.Writer.WritePropertyName("AccessBasedEnumeration");
-                    context.Writer.Write(publicRequest.AccessBasedEnumeration);
+                    context.Writer.Write(publicRequest.AccessBasedEnumeration.Value);
                 }
 
                 if(publicRequest.IsSetAdminUserList())
@@ -146,7 +146,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetGuessMIMETypeEnabled())
                 {
                     context.Writer.WritePropertyName("GuessMIMETypeEnabled");
-                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled);
+                    context.Writer.Write(publicRequest.GuessMIMETypeEnabled.Value);
                 }
 
                 if(publicRequest.IsSetInvalidUserList())
@@ -163,7 +163,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKMSEncrypted())
                 {
                     context.Writer.WritePropertyName("KMSEncrypted");
-                    context.Writer.Write(publicRequest.KMSEncrypted);
+                    context.Writer.Write(publicRequest.KMSEncrypted.Value);
                 }
 
                 if(publicRequest.IsSetKMSKey())
@@ -193,19 +193,19 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOplocksEnabled())
                 {
                     context.Writer.WritePropertyName("OplocksEnabled");
-                    context.Writer.Write(publicRequest.OplocksEnabled);
+                    context.Writer.Write(publicRequest.OplocksEnabled.Value);
                 }
 
                 if(publicRequest.IsSetReadOnly())
                 {
                     context.Writer.WritePropertyName("ReadOnly");
-                    context.Writer.Write(publicRequest.ReadOnly);
+                    context.Writer.Write(publicRequest.ReadOnly.Value);
                 }
 
                 if(publicRequest.IsSetRequesterPays())
                 {
                     context.Writer.WritePropertyName("RequesterPays");
-                    context.Writer.Write(publicRequest.RequesterPays);
+                    context.Writer.Write(publicRequest.RequesterPays.Value);
                 }
 
                 if(publicRequest.IsSetRole())
@@ -217,7 +217,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSMBACLEnabled())
                 {
                     context.Writer.WritePropertyName("SMBACLEnabled");
-                    context.Writer.Write(publicRequest.SMBACLEnabled);
+                    context.Writer.Write(publicRequest.SMBACLEnabled.Value);
                 }
 
                 if(publicRequest.IsSetTags())

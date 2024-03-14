@@ -57,9 +57,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the option can be copied across Amazon Web Services accounts.
         /// </para>
         /// </summary>
-        public bool CopyableCrossAccount
+        public bool? CopyableCrossAccount
         {
-            get { return this._copyableCrossAccount.GetValueOrDefault(); }
+            get { return this._copyableCrossAccount; }
             set { this._copyableCrossAccount = value; }
         }
 
@@ -75,9 +75,9 @@ namespace Amazon.RDS.Model
         /// If the option requires a port, specifies the default port for the option.
         /// </para>
         /// </summary>
-        public int DefaultPort
+        public int? DefaultPort
         {
-            get { return this._defaultPort.GetValueOrDefault(); }
+            get { return this._defaultPort; }
             set { this._defaultPort = value; }
         }
 
@@ -257,9 +257,9 @@ namespace Amazon.RDS.Model
         /// a permanent option can't be removed from a DB instance.
         /// </para>
         /// </summary>
-        public bool Permanent
+        public bool? Permanent
         {
-            get { return this._permanent.GetValueOrDefault(); }
+            get { return this._permanent; }
             set { this._permanent = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.RDS.Model
         /// your can remove the persistent option from the option group.
         /// </para>
         /// </summary>
-        public bool Persistent
+        public bool? Persistent
         {
-            get { return this._persistent.GetValueOrDefault(); }
+            get { return this._persistent; }
             set { this._persistent = value; }
         }
 
@@ -295,9 +295,9 @@ namespace Amazon.RDS.Model
         /// Indicates whether the option requires a port.
         /// </para>
         /// </summary>
-        public bool PortRequired
+        public bool? PortRequired
         {
-            get { return this._portRequired.GetValueOrDefault(); }
+            get { return this._portRequired; }
             set { this._portRequired = value; }
         }
 
@@ -315,9 +315,9 @@ namespace Amazon.RDS.Model
         /// first create your DB instance, or by modifying your DB instance later.
         /// </para>
         /// </summary>
-        public bool RequiresAutoMinorEngineVersionUpgrade
+        public bool? RequiresAutoMinorEngineVersionUpgrade
         {
-            get { return this._requiresAutoMinorEngineVersionUpgrade.GetValueOrDefault(); }
+            get { return this._requiresAutoMinorEngineVersionUpgrade; }
             set { this._requiresAutoMinorEngineVersionUpgrade = value; }
         }
 
@@ -334,9 +334,9 @@ namespace Amazon.RDS.Model
         /// applies to options that have different versions available.
         /// </para>
         /// </summary>
-        public bool SupportsOptionVersionDowngrade
+        public bool? SupportsOptionVersionDowngrade
         {
-            get { return this._supportsOptionVersionDowngrade.GetValueOrDefault(); }
+            get { return this._supportsOptionVersionDowngrade; }
             set { this._supportsOptionVersionDowngrade = value; }
         }
 
@@ -352,9 +352,9 @@ namespace Amazon.RDS.Model
         /// If true, you can only use this option with a DB instance that is in a VPC.
         /// </para>
         /// </summary>
-        public bool VpcOnly
+        public bool? VpcOnly
         {
-            get { return this._vpcOnly.GetValueOrDefault(); }
+            get { return this._vpcOnly; }
             set { this._vpcOnly = value; }
         }
 

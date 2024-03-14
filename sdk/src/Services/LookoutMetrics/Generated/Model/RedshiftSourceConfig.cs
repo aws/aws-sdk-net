@@ -106,9 +106,9 @@ namespace Amazon.LookoutMetrics.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
-        public int DatabasePort
+        public int? DatabasePort
         {
-            get { return this._databasePort.GetValueOrDefault(); }
+            get { return this._databasePort; }
             set { this._databasePort = value; }
         }
 

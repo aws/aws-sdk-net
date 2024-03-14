@@ -7,10 +7,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ServiceQuotas")]
-#if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
-#elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
+#if BCL
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.6.2) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif NETSTANDARD20
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Service Quotas. Service Quotas enables you to view and manage your quotas for AWS services from a central location.")]
 #elif NETCOREAPP3_1

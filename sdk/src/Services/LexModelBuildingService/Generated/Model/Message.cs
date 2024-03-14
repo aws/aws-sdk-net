@@ -83,9 +83,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int GroupNumber
+        public int? GroupNumber
         {
-            get { return this._groupNumber.GetValueOrDefault(); }
+            get { return this._groupNumber; }
             set { this._groupNumber = value; }
         }
 

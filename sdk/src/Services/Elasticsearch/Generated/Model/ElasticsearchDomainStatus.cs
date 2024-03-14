@@ -198,9 +198,9 @@ namespace Amazon.Elasticsearch.Model
         /// is complete. <c>False</c> if domain creation is still in progress.
         /// </para>
         /// </summary>
-        public bool Created
+        public bool? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -219,9 +219,9 @@ namespace Amazon.Elasticsearch.Model
         /// longer returned.
         /// </para>
         /// </summary>
-        public bool Deleted
+        public bool? Deleted
         {
-            get { return this._deleted.GetValueOrDefault(); }
+            get { return this._deleted; }
             set { this._deleted = value; }
         }
 
@@ -477,9 +477,9 @@ namespace Amazon.Elasticsearch.Model
         /// active.
         /// </para>
         /// </summary>
-        public bool Processing
+        public bool? Processing
         {
-            get { return this._processing.GetValueOrDefault(); }
+            get { return this._processing; }
             set { this._processing = value; }
         }
 
@@ -532,9 +532,9 @@ namespace Amazon.Elasticsearch.Model
         /// Service is undergoing a version upgrade. <c>False</c> if the configuration is active.
         /// </para>
         /// </summary>
-        public bool UpgradeProcessing
+        public bool? UpgradeProcessing
         {
-            get { return this._upgradeProcessing.GetValueOrDefault(); }
+            get { return this._upgradeProcessing; }
             set { this._upgradeProcessing = value; }
         }
 

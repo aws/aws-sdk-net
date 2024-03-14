@@ -47,9 +47,9 @@ namespace Amazon.Finspace.Model
         /// The timestamp at which the kdb environment was created in FinSpace.
         /// </para>
         /// </summary>
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 

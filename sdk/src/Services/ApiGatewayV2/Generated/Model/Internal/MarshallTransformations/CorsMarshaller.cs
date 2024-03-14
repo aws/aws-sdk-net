@@ -48,7 +48,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCredentials())
             {
                 context.Writer.WritePropertyName("allowCredentials");
-                context.Writer.Write(requestObject.AllowCredentials);
+                context.Writer.Write(requestObject.AllowCredentials.Value);
             }
 
             if(requestObject.IsSetAllowHeaders())
@@ -98,7 +98,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAge())
             {
                 context.Writer.WritePropertyName("maxAge");
-                context.Writer.Write(requestObject.MaxAge);
+                context.Writer.Write(requestObject.MaxAge.Value);
             }
 
         }

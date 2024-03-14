@@ -53,7 +53,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EndEventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndEventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,13 +89,13 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartEventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartEventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UpdatedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

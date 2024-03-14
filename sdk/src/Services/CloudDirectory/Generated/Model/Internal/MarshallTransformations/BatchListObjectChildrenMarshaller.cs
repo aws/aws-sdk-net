@@ -48,7 +48,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
-                context.Writer.Write(requestObject.MaxResults);
+                context.Writer.Write(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetNextToken())

@@ -65,13 +65,13 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastUpdateToPayPerRequestTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateToPayPerRequestTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("readCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("writeCapacityUnits", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

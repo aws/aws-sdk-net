@@ -48,9 +48,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <c>true</c>.)
         /// </para>
         /// </summary>
-        public bool ForceFailover
+        public bool? ForceFailover
         {
-            get { return this._forceFailover.GetValueOrDefault(); }
+            get { return this._forceFailover; }
             set { this._forceFailover = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <c>true</c>.)
         /// </para>
         /// </summary>
-        public bool ForcePlannedFailover
+        public bool? ForcePlannedFailover
         {
-            get { return this._forcePlannedFailover.GetValueOrDefault(); }
+            get { return this._forcePlannedFailover; }
             set { this._forcePlannedFailover = value; }
         }
 

@@ -54,13 +54,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorderThickness())
             {
                 context.Writer.WritePropertyName("BorderThickness");
-                context.Writer.Write(requestObject.BorderThickness);
+                context.Writer.Write(requestObject.BorderThickness.Value);
             }
 
             if(requestObject.IsSetCornerRadius())
             {
                 context.Writer.WritePropertyName("CornerRadius");
-                context.Writer.Write(requestObject.CornerRadius);
+                context.Writer.Write(requestObject.CornerRadius.Value);
             }
 
             if(requestObject.IsSetHighlightColor())

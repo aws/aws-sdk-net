@@ -71,7 +71,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AwsManaged", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AwsManaged = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -77,9 +77,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -236,9 +236,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ProgressPercent.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int ProgressPercent
+        public int? ProgressPercent
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
+            get { return this._progressPercent; }
             set { this._progressPercent = value; }
         }
 

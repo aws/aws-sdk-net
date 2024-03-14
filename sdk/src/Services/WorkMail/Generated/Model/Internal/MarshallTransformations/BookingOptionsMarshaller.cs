@@ -48,19 +48,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoAcceptRequests())
             {
                 context.Writer.WritePropertyName("AutoAcceptRequests");
-                context.Writer.Write(requestObject.AutoAcceptRequests);
+                context.Writer.Write(requestObject.AutoAcceptRequests.Value);
             }
 
             if(requestObject.IsSetAutoDeclineConflictingRequests())
             {
                 context.Writer.WritePropertyName("AutoDeclineConflictingRequests");
-                context.Writer.Write(requestObject.AutoDeclineConflictingRequests);
+                context.Writer.Write(requestObject.AutoDeclineConflictingRequests.Value);
             }
 
             if(requestObject.IsSetAutoDeclineRecurringRequests())
             {
                 context.Writer.WritePropertyName("AutoDeclineRecurringRequests");
-                context.Writer.Write(requestObject.AutoDeclineRecurringRequests);
+                context.Writer.Write(requestObject.AutoDeclineRecurringRequests.Value);
             }
 
         }

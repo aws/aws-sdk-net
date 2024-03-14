@@ -71,9 +71,9 @@ namespace Amazon.Neptunedata.Model
         /// If set to <c>TRUE</c>, causes the cancelation of the openCypher query to happen silently.
         /// </para>
         /// </summary>
-        public bool Silent
+        public bool? Silent
         {
-            get { return this._silent.GetValueOrDefault(); }
+            get { return this._silent; }
             set { this._silent = value; }
         }
 

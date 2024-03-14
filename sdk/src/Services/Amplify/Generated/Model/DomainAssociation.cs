@@ -191,9 +191,9 @@ namespace Amazon.Amplify.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableAutoSubDomain
+        public bool? EnableAutoSubDomain
         {
-            get { return this._enableAutoSubDomain.GetValueOrDefault(); }
+            get { return this._enableAutoSubDomain; }
             set { this._enableAutoSubDomain = value; }
         }
 

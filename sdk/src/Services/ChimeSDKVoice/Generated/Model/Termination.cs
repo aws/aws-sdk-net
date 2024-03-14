@@ -84,9 +84,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int CpsLimit
+        public int? CpsLimit
         {
-            get { return this._cpsLimit.GetValueOrDefault(); }
+            get { return this._cpsLimit; }
             set { this._cpsLimit = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.ChimeSDKVoice.Model
         /// When termination is disabled, outbound calls cannot be made.
         /// </para>
         /// </summary>
-        public bool Disabled
+        public bool? Disabled
         {
-            get { return this._disabled.GetValueOrDefault(); }
+            get { return this._disabled; }
             set { this._disabled = value; }
         }
 

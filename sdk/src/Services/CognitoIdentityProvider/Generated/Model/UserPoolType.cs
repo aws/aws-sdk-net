@@ -170,9 +170,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// 8601</a> format, when the item was created.
         /// </para>
         /// </summary>
-        public DateTime CreationDate
+        public DateTime? CreationDate
         {
-            get { return this._creationDate.GetValueOrDefault(); }
+            get { return this._creationDate; }
             set { this._creationDate = value; }
         }
 
@@ -363,9 +363,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// A number estimating the size of the user pool.
         /// </para>
         /// </summary>
-        public int EstimatedNumberOfUsers
+        public int? EstimatedNumberOfUsers
         {
-            get { return this._estimatedNumberOfUsers.GetValueOrDefault(); }
+            get { return this._estimatedNumberOfUsers; }
             set { this._estimatedNumberOfUsers = value; }
         }
 
@@ -419,9 +419,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// 8601</a> format, when the item was modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

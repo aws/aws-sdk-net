@@ -71,7 +71,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DirectPutContent", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DirectPutContent = unmarshaller.Unmarshall(context);
                     continue;
                 }

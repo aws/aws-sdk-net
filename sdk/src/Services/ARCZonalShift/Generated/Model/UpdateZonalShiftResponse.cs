@@ -100,9 +100,9 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ExpiryTime
+        public DateTime? ExpiryTime
         {
-            get { return this._expiryTime.GetValueOrDefault(); }
+            get { return this._expiryTime; }
             set { this._expiryTime = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdateToPayPerRequestDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateToPayPerRequestDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

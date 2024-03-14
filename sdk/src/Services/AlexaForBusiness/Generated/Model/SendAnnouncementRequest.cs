@@ -108,9 +108,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
-        public int TimeToLiveInSeconds
+        public int? TimeToLiveInSeconds
         {
-            get { return this._timeToLiveInSeconds.GetValueOrDefault(); }
+            get { return this._timeToLiveInSeconds; }
             set { this._timeToLiveInSeconds = value; }
         }
 

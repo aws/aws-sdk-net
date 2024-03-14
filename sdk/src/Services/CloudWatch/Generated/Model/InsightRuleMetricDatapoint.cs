@@ -60,9 +60,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double Average
+        public double? Average
         {
-            get { return this._average.GetValueOrDefault(); }
+            get { return this._average; }
             set { this._average = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double MaxContributorValue
+        public double? MaxContributorValue
         {
-            get { return this._maxContributorValue.GetValueOrDefault(); }
+            get { return this._maxContributorValue; }
             set { this._maxContributorValue = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double Maximum
+        public double? Maximum
         {
-            get { return this._maximum.GetValueOrDefault(); }
+            get { return this._maximum; }
             set { this._maximum = value; }
         }
 
@@ -133,9 +133,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double Minimum
+        public double? Minimum
         {
-            get { return this._minimum.GetValueOrDefault(); }
+            get { return this._minimum; }
             set { this._minimum = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double SampleCount
+        public double? SampleCount
         {
-            get { return this._sampleCount.GetValueOrDefault(); }
+            get { return this._sampleCount; }
             set { this._sampleCount = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double Sum
+        public double? Sum
         {
-            get { return this._sum.GetValueOrDefault(); }
+            get { return this._sum; }
             set { this._sum = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.CloudWatch.Model
         /// your request.
         /// </para>
         /// </summary>
-        public double UniqueContributors
+        public double? UniqueContributors
         {
-            get { return this._uniqueContributors.GetValueOrDefault(); }
+            get { return this._uniqueContributors; }
             set { this._uniqueContributors = value; }
         }
 

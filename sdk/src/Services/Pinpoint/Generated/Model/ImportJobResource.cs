@@ -52,9 +52,9 @@ namespace Amazon.Pinpoint.Model
         /// the endpoint definitions are imported.
         /// </para>
         /// </summary>
-        public bool DefineSegment
+        public bool? DefineSegment
         {
-            get { return this._defineSegment.GetValueOrDefault(); }
+            get { return this._defineSegment; }
             set { this._defineSegment = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Pinpoint.Model
         /// the endpoint definitions are imported.
         /// </para>
         /// </summary>
-        public bool RegisterEndpoints
+        public bool? RegisterEndpoints
         {
-            get { return this._registerEndpoints.GetValueOrDefault(); }
+            get { return this._registerEndpoints; }
             set { this._registerEndpoints = value; }
         }
 

@@ -56,31 +56,31 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Bounces", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.Bounces = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Complaints", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.Complaints = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DeliveryAttempts", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.DeliveryAttempts = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Rejects", targetDepth))
                     {
-                        var unmarshaller = LongUnmarshaller.Instance;
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.Rejects = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Timestamp", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }

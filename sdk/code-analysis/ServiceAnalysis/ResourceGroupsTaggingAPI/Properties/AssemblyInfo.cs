@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ResourceGroupsTaggingAPI")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Resource Groups Tagging API. Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

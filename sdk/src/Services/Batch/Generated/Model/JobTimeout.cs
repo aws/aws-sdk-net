@@ -52,9 +52,9 @@ namespace Amazon.Batch.Model
         /// individual nodes.
         /// </para>
         /// </summary>
-        public int AttemptDurationSeconds
+        public int? AttemptDurationSeconds
         {
-            get { return this._attemptDurationSeconds.GetValueOrDefault(); }
+            get { return this._attemptDurationSeconds; }
             set { this._attemptDurationSeconds = value; }
         }
 

@@ -65,13 +65,13 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EventEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EventEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EventLastReplayedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EventLastReplayedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EventStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EventStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReplayEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReplayEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ReplayStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ReplayStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

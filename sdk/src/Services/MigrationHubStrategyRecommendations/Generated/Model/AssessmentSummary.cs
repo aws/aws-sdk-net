@@ -106,9 +106,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  The time the assessment was performed. 
         /// </para>
         /// </summary>
-        public DateTime LastAnalyzedTimestamp
+        public DateTime? LastAnalyzedTimestamp
         {
-            get { return this._lastAnalyzedTimestamp.GetValueOrDefault(); }
+            get { return this._lastAnalyzedTimestamp; }
             set { this._lastAnalyzedTimestamp = value; }
         }
 

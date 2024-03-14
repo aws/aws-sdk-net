@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.
         /// </para>
         /// </summary>
-        public bool DeleteStream
+        public bool? DeleteStream
         {
-            get { return this._deleteStream.GetValueOrDefault(); }
+            get { return this._deleteStream; }
             set { this._deleteStream = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.IoT.Model
         /// will occur. The default is false.
         /// </para>
         /// </summary>
-        public bool ForceDeleteAWSJob
+        public bool? ForceDeleteAWSJob
         {
-            get { return this._forceDeleteAWSJob.GetValueOrDefault(); }
+            get { return this._forceDeleteAWSJob; }
             set { this._forceDeleteAWSJob = value; }
         }
 

@@ -68,9 +68,9 @@ namespace Amazon.Route53Domains.Model
         /// Time (UTC). 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.Route53Domains.Model
         /// The date when the request was submitted.
         /// </para>
         /// </summary>
-        public DateTime SubmittedDate
+        public DateTime? SubmittedDate
         {
-            get { return this._submittedDate.GetValueOrDefault(); }
+            get { return this._submittedDate; }
             set { this._submittedDate = value; }
         }
 

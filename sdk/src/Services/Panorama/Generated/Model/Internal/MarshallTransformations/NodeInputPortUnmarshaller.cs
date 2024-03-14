@@ -77,7 +77,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxConnections", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConnections = unmarshaller.Unmarshall(context);
                     continue;
                 }

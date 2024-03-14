@@ -59,7 +59,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -71,7 +71,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExportSourceImages", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ExportSourceImages = unmarshaller.Unmarshall(context);
                     continue;
                 }

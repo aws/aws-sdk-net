@@ -71,7 +71,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("metricFilterCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MetricFilterCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -125,7 +125,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("storedBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoredBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -77,7 +77,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("versionNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

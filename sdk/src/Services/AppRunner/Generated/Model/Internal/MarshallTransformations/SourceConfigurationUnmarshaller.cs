@@ -71,7 +71,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AutoDeploymentsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeploymentsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

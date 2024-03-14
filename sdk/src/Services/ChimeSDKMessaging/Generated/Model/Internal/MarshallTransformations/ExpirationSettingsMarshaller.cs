@@ -54,7 +54,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationDays())
             {
                 context.Writer.WritePropertyName("ExpirationDays");
-                context.Writer.Write(requestObject.ExpirationDays);
+                context.Writer.Write(requestObject.ExpirationDays.Value);
             }
 
         }

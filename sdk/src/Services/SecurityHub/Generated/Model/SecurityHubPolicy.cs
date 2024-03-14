@@ -89,9 +89,9 @@ namespace Amazon.SecurityHub.Model
         ///  Indicates whether Security Hub is enabled in the policy. 
         /// </para>
         /// </summary>
-        public bool ServiceEnabled
+        public bool? ServiceEnabled
         {
-            get { return this._serviceEnabled.GetValueOrDefault(); }
+            get { return this._serviceEnabled; }
             set { this._serviceEnabled = value; }
         }
 

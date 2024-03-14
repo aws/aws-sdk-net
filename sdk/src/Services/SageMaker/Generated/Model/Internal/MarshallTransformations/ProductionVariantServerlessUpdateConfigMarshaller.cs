@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrency())
             {
                 context.Writer.WritePropertyName("MaxConcurrency");
-                context.Writer.Write(requestObject.MaxConcurrency);
+                context.Writer.Write(requestObject.MaxConcurrency.Value);
             }
 
             if(requestObject.IsSetProvisionedConcurrency())
             {
                 context.Writer.WritePropertyName("ProvisionedConcurrency");
-                context.Writer.Write(requestObject.ProvisionedConcurrency);
+                context.Writer.Write(requestObject.ProvisionedConcurrency.Value);
             }
 
         }

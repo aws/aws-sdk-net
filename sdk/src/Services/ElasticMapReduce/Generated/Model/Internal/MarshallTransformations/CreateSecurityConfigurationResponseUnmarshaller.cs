@@ -53,7 +53,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CreationDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

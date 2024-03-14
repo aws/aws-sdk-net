@@ -42,9 +42,9 @@ namespace Amazon.MediaLive.Model
         /// HDR video stream or file.
         /// </summary>
         [AWSProperty(Min=0, Max=32768)]
-        public int MaxCll
+        public int? MaxCll
         {
-            get { return this._maxCll.GetValueOrDefault(); }
+            get { return this._maxCll; }
             set { this._maxCll = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MediaLive.Model
         /// an encoded HDR video stream or file.
         /// </summary>
         [AWSProperty(Min=0, Max=32768)]
-        public int MaxFall
+        public int? MaxFall
         {
-            get { return this._maxFall.GetValueOrDefault(); }
+            get { return this._maxFall; }
             set { this._maxFall = value; }
         }
 

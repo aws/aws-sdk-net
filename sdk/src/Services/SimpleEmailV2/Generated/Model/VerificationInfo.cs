@@ -92,9 +92,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The last time a verification attempt was made for this identity.
         /// </para>
         /// </summary>
-        public DateTime LastCheckedTimestamp
+        public DateTime? LastCheckedTimestamp
         {
-            get { return this._lastCheckedTimestamp.GetValueOrDefault(); }
+            get { return this._lastCheckedTimestamp; }
             set { this._lastCheckedTimestamp = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// The last time a successful verification was made for this identity.
         /// </para>
         /// </summary>
-        public DateTime LastSuccessTimestamp
+        public DateTime? LastSuccessTimestamp
         {
-            get { return this._lastSuccessTimestamp.GetValueOrDefault(); }
+            get { return this._lastSuccessTimestamp; }
             set { this._lastSuccessTimestamp = value; }
         }
 

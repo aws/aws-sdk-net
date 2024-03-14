@@ -76,13 +76,13 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEffectiveDate())
                 {
                     context.Writer.WritePropertyName("EffectiveDate");
-                    context.Writer.Write(publicRequest.EffectiveDate);
+                    context.Writer.Write(publicRequest.EffectiveDate.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

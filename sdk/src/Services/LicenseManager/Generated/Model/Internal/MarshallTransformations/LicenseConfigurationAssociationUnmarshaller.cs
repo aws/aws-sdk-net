@@ -71,7 +71,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AssociationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AssociationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

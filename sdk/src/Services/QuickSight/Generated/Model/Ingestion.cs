@@ -71,9 +71,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.QuickSight.Model
         /// The size of the data ingested, in bytes.
         /// </para>
         /// </summary>
-        public long IngestionSizeInBytes
+        public long? IngestionSizeInBytes
         {
-            get { return this._ingestionSizeInBytes.GetValueOrDefault(); }
+            get { return this._ingestionSizeInBytes; }
             set { this._ingestionSizeInBytes = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.QuickSight.Model
         /// The time that this ingestion took, measured in seconds.
         /// </para>
         /// </summary>
-        public long IngestionTimeInSeconds
+        public long? IngestionTimeInSeconds
         {
-            get { return this._ingestionTimeInSeconds.GetValueOrDefault(); }
+            get { return this._ingestionTimeInSeconds; }
             set { this._ingestionTimeInSeconds = value; }
         }
 

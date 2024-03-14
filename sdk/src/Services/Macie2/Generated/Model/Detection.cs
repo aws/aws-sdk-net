@@ -70,9 +70,9 @@ namespace Amazon.Macie2.Model
         /// The total number of occurrences of the sensitive data.
         /// </para>
         /// </summary>
-        public long Count
+        public long? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.Macie2.Model
         /// included (false) in the bucket's sensitivity score.
         /// </para>
         /// </summary>
-        public bool Suppressed
+        public bool? Suppressed
         {
-            get { return this._suppressed.GetValueOrDefault(); }
+            get { return this._suppressed; }
             set { this._suppressed = value; }
         }
 

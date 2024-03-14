@@ -138,9 +138,9 @@ namespace Amazon.Backup.Model
         /// Accepted value is an integer between 0 and 168 (the hourly equivalent of seven days).
         /// </para>
         /// </summary>
-        public int ValidationWindowHours
+        public int? ValidationWindowHours
         {
-            get { return this._validationWindowHours.GetValueOrDefault(); }
+            get { return this._validationWindowHours; }
             set { this._validationWindowHours = value; }
         }
 

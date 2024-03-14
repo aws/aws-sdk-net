@@ -59,9 +59,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies when the flow was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.Appflow.Model
         ///  Specifies when the flow was last updated. 
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 
@@ -342,9 +342,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public long SchemaVersion
+        public long? SchemaVersion
         {
-            get { return this._schemaVersion.GetValueOrDefault(); }
+            get { return this._schemaVersion; }
             set { this._schemaVersion = value; }
         }
 

@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastModified", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }

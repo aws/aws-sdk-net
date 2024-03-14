@@ -70,9 +70,9 @@ namespace Amazon.CodeBuild.Model
         /// contains one or more reports, an exception is thrown. 
         /// </para>
         /// </summary>
-        public bool DeleteReports
+        public bool? DeleteReports
         {
-            get { return this._deleteReports.GetValueOrDefault(); }
+            get { return this._deleteReports; }
             set { this._deleteReports = value; }
         }
 

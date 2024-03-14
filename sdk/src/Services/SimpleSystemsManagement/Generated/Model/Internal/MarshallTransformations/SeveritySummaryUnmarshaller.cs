@@ -65,37 +65,37 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CriticalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CriticalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HighCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HighCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InformationalCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InformationalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LowCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LowCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MediumCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MediumCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UnspecifiedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnspecifiedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

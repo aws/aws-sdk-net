@@ -50,9 +50,9 @@ namespace Amazon.AppSync.Model
         /// metadata or directives. 
         /// </para>
         /// </summary>
-        public bool IncludeModelsSDL
+        public bool? IncludeModelsSDL
         {
-            get { return this._includeModelsSDL.GetValueOrDefault(); }
+            get { return this._includeModelsSDL; }
             set { this._includeModelsSDL = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

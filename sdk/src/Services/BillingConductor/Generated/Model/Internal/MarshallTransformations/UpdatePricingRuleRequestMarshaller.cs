@@ -80,7 +80,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetModifierPercentage())
                 {
                     context.Writer.WritePropertyName("ModifierPercentage");
-                    context.Writer.Write(publicRequest.ModifierPercentage);
+                    context.Writer.Write(publicRequest.ModifierPercentage.Value);
                 }
 
                 if(publicRequest.IsSetName())

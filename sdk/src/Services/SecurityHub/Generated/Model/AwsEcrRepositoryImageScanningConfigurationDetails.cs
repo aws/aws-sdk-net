@@ -41,9 +41,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to scan images after they are pushed to a repository.
         /// </para>
         /// </summary>
-        public bool ScanOnPush
+        public bool? ScanOnPush
         {
-            get { return this._scanOnPush.GetValueOrDefault(); }
+            get { return this._scanOnPush; }
             set { this._scanOnPush = value; }
         }
 

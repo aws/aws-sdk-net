@@ -70,7 +70,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIncludeShadowTrails())
                 {
                     context.Writer.WritePropertyName("includeShadowTrails");
-                    context.Writer.Write(publicRequest.IncludeShadowTrails);
+                    context.Writer.Write(publicRequest.IncludeShadowTrails.Value);
                 }
 
                 if(publicRequest.IsSetTrailNameList())

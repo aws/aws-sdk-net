@@ -65,7 +65,7 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotifyAll())
             {
                 context.Writer.WritePropertyName("NotifyAll");
-                context.Writer.Write(requestObject.NotifyAll);
+                context.Writer.Write(requestObject.NotifyAll.Value);
             }
 
             if(requestObject.IsSetSnsTopicARN())

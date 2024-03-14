@@ -95,7 +95,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RequiredToPreview", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequiredToPreview = unmarshaller.Unmarshall(context);
                     continue;
                 }

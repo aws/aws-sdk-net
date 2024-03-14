@@ -82,9 +82,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int ContainerStartupHealthCheckTimeoutInSeconds
+        public int? ContainerStartupHealthCheckTimeoutInSeconds
         {
-            get { return this._containerStartupHealthCheckTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._containerStartupHealthCheckTimeoutInSeconds; }
             set { this._containerStartupHealthCheckTimeoutInSeconds = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.SageMaker.Model
         /// endpoint configuration and calling <c>UpdateEndpoint</c>. 
         /// </para>
         /// </summary>
-        public bool EnableSSMAccess
+        public bool? EnableSSMAccess
         {
-            get { return this._enableSSMAccess.GetValueOrDefault(); }
+            get { return this._enableSSMAccess; }
             set { this._enableSSMAccess = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int InitialInstanceCount
+        public int? InitialInstanceCount
         {
-            get { return this._initialInstanceCount.GetValueOrDefault(); }
+            get { return this._initialInstanceCount; }
             set { this._initialInstanceCount = value; }
         }
 
@@ -164,9 +164,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public float InitialVariantWeight
+        public float? InitialVariantWeight
         {
-            get { return this._initialVariantWeight.GetValueOrDefault(); }
+            get { return this._initialVariantWeight; }
             set { this._initialVariantWeight = value; }
         }
 
@@ -222,9 +222,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=3600)]
-        public int ModelDataDownloadTimeoutInSeconds
+        public int? ModelDataDownloadTimeoutInSeconds
         {
-            get { return this._modelDataDownloadTimeoutInSeconds.GetValueOrDefault(); }
+            get { return this._modelDataDownloadTimeoutInSeconds; }
             set { this._modelDataDownloadTimeoutInSeconds = value; }
         }
 
@@ -320,9 +320,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

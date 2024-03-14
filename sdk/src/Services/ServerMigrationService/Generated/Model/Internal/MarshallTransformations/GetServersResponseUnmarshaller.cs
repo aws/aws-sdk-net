@@ -53,7 +53,7 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("lastModifiedOn", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedOn = unmarshaller.Unmarshall(context);
                     continue;
                 }

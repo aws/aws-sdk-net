@@ -115,9 +115,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
-        public int AuthorizerResultTtlInSeconds
+        public int? AuthorizerResultTtlInSeconds
         {
-            get { return this._authorizerResultTtlInSeconds.GetValueOrDefault(); }
+            get { return this._authorizerResultTtlInSeconds; }
             set { this._authorizerResultTtlInSeconds = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// with AWS Lambda authorizers for HTTP APIs</a>
         /// </para>
         /// </summary>
-        public bool EnableSimpleResponses
+        public bool? EnableSimpleResponses
         {
-            get { return this._enableSimpleResponses.GetValueOrDefault(); }
+            get { return this._enableSimpleResponses; }
             set { this._enableSimpleResponses = value; }
         }
 

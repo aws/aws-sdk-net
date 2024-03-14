@@ -82,9 +82,9 @@ namespace Amazon.Batch.Model
         /// the container can write to the volume. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ReadOnly
+        public bool? ReadOnly
         {
-            get { return this._readOnly.GetValueOrDefault(); }
+            get { return this._readOnly; }
             set { this._readOnly = value; }
         }
 

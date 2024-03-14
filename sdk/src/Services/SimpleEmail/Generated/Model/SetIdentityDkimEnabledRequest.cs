@@ -69,9 +69,9 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DkimEnabled
+        public bool? DkimEnabled
         {
-            get { return this._dkimEnabled.GetValueOrDefault(); }
+            get { return this._dkimEnabled; }
             set { this._dkimEnabled = value; }
         }
 

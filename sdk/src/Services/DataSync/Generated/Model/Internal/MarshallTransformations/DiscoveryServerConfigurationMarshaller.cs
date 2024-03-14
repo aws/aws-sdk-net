@@ -54,7 +54,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetServerPort())
             {
                 context.Writer.WritePropertyName("ServerPort");
-                context.Writer.Write(requestObject.ServerPort);
+                context.Writer.Write(requestObject.ServerPort.Value);
             }
 
         }

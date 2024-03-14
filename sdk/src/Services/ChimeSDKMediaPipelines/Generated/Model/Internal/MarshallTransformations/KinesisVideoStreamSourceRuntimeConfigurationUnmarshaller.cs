@@ -71,7 +71,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MediaSampleRate", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MediaSampleRate = unmarshaller.Unmarshall(context);
                     continue;
                 }

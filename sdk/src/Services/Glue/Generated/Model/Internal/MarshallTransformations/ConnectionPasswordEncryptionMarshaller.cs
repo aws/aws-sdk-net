@@ -54,7 +54,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReturnConnectionPasswordEncrypted())
             {
                 context.Writer.WritePropertyName("ReturnConnectionPasswordEncrypted");
-                context.Writer.Write(requestObject.ReturnConnectionPasswordEncrypted);
+                context.Writer.Write(requestObject.ReturnConnectionPasswordEncrypted.Value);
             }
 
         }

@@ -67,9 +67,9 @@ namespace Amazon.SSMContacts.Model
         /// The time the message was delivered to the contact channel.
         /// </para>
         /// </summary>
-        public DateTime DeliveryTime
+        public DateTime? DeliveryTime
         {
-            get { return this._deliveryTime.GetValueOrDefault(); }
+            get { return this._deliveryTime; }
             set { this._deliveryTime = value; }
         }
 
@@ -142,9 +142,9 @@ namespace Amazon.SSMContacts.Model
         /// The time that the contact channel acknowledged engagement.
         /// </para>
         /// </summary>
-        public DateTime ReadTime
+        public DateTime? ReadTime
         {
-            get { return this._readTime.GetValueOrDefault(); }
+            get { return this._readTime; }
             set { this._readTime = value; }
         }
 
@@ -179,9 +179,9 @@ namespace Amazon.SSMContacts.Model
         /// The time that Incident Manager engaged the contact channel.
         /// </para>
         /// </summary>
-        public DateTime SentTime
+        public DateTime? SentTime
         {
-            get { return this._sentTime.GetValueOrDefault(); }
+            get { return this._sentTime; }
             set { this._sentTime = value; }
         }
 

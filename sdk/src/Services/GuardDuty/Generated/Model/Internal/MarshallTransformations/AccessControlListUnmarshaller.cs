@@ -65,13 +65,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("allowsPublicReadAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowsPublicReadAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("allowsPublicWriteAccess", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowsPublicWriteAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }

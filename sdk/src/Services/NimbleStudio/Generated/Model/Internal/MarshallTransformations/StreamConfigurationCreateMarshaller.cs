@@ -71,13 +71,13 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSessionLengthInMinutes())
             {
                 context.Writer.WritePropertyName("maxSessionLengthInMinutes");
-                context.Writer.Write(requestObject.MaxSessionLengthInMinutes);
+                context.Writer.Write(requestObject.MaxSessionLengthInMinutes.Value);
             }
 
             if(requestObject.IsSetMaxStoppedSessionLengthInMinutes())
             {
                 context.Writer.WritePropertyName("maxStoppedSessionLengthInMinutes");
-                context.Writer.Write(requestObject.MaxStoppedSessionLengthInMinutes);
+                context.Writer.Write(requestObject.MaxStoppedSessionLengthInMinutes.Value);
             }
 
             if(requestObject.IsSetSessionBackup())

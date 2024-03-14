@@ -70,7 +70,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfFrameworks())
             {
                 context.Writer.WritePropertyName("NumberOfFrameworks");
-                context.Writer.Write(requestObject.NumberOfFrameworks);
+                context.Writer.Write(requestObject.NumberOfFrameworks.Value);
             }
 
             if(requestObject.IsSetOrganizationUnits())

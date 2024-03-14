@@ -42,9 +42,9 @@ namespace Amazon.MediaConvert.Model
         /// the mastering display, as defined by ST 2094-40.
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]
-        public int MasteringMonitorNits
+        public int? MasteringMonitorNits
         {
-            get { return this._masteringMonitorNits.GetValueOrDefault(); }
+            get { return this._masteringMonitorNits; }
             set { this._masteringMonitorNits = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.MediaConvert.Model
         /// as defined by ST 2094-40.
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]
-        public int TargetMonitorNits
+        public int? TargetMonitorNits
         {
-            get { return this._targetMonitorNits.GetValueOrDefault(); }
+            get { return this._targetMonitorNits; }
             set { this._targetMonitorNits = value; }
         }
 

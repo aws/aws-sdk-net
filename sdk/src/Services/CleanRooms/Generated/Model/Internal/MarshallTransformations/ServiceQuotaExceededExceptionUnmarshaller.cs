@@ -72,7 +72,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("quotaValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.QuotaValue = unmarshaller.Unmarshall(context);
                     continue;
                 }

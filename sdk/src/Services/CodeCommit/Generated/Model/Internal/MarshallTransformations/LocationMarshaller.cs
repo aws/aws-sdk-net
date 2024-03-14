@@ -54,7 +54,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilePosition())
             {
                 context.Writer.WritePropertyName("filePosition");
-                context.Writer.Write(requestObject.FilePosition);
+                context.Writer.Write(requestObject.FilePosition.Value);
             }
 
             if(requestObject.IsSetRelativeFileVersion())

@@ -94,9 +94,9 @@ namespace Amazon.Redshift.Model
         /// Default: <c>true</c> 
         /// </para>
         /// </summary>
-        public bool ResetAllParameters
+        public bool? ResetAllParameters
         {
-            get { return this._resetAllParameters.GetValueOrDefault(); }
+            get { return this._resetAllParameters; }
             set { this._resetAllParameters = value; }
         }
 

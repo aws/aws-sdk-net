@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointPublicAccess())
             {
                 context.Writer.WritePropertyName("EndpointPublicAccess");
-                context.Writer.Write(requestObject.EndpointPublicAccess);
+                context.Writer.Write(requestObject.EndpointPublicAccess.Value);
             }
 
             if(requestObject.IsSetSecurityGroupIds())

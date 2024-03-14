@@ -69,9 +69,9 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property ConsumerCreationTimestamp.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ConsumerCreationTimestamp
+        public DateTime? ConsumerCreationTimestamp
         {
-            get { return this._consumerCreationTimestamp.GetValueOrDefault(); }
+            get { return this._consumerCreationTimestamp; }
             set { this._consumerCreationTimestamp = value; }
         }
 

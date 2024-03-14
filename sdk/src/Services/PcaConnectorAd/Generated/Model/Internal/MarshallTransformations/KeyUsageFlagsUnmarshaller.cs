@@ -65,31 +65,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DataEncipherment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataEncipherment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DigitalSignature", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DigitalSignature = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KeyAgreement", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.KeyAgreement = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KeyEncipherment", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.KeyEncipherment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NonRepudiation", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NonRepudiation = unmarshaller.Unmarshall(context);
                     continue;
                 }

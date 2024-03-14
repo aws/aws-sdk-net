@@ -119,7 +119,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsActive())
                 {
                     context.Writer.WritePropertyName("isActive");
-                    context.Writer.Write(publicRequest.IsActive);
+                    context.Writer.Write(publicRequest.IsActive.Value);
                 }
 
                 if(publicRequest.IsSetLanguage())
@@ -137,19 +137,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRemoveDescription())
                 {
                     context.Writer.WritePropertyName("removeDescription");
-                    context.Writer.Write(publicRequest.RemoveDescription);
+                    context.Writer.Write(publicRequest.RemoveDescription.Value);
                 }
 
                 if(publicRequest.IsSetRemoveGroupingConfiguration())
                 {
                     context.Writer.WritePropertyName("removeGroupingConfiguration");
-                    context.Writer.Write(publicRequest.RemoveGroupingConfiguration);
+                    context.Writer.Write(publicRequest.RemoveGroupingConfiguration.Value);
                 }
 
                 if(publicRequest.IsSetRemoveShortcutKey())
                 {
                     context.Writer.WritePropertyName("removeShortcutKey");
-                    context.Writer.Write(publicRequest.RemoveShortcutKey);
+                    context.Writer.Write(publicRequest.RemoveShortcutKey.Value);
                 }
 
                 if(publicRequest.IsSetShortcutKey())

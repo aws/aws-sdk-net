@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups);
+                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetJunctionPath())
@@ -83,13 +83,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSizeInBytes())
             {
                 context.Writer.WritePropertyName("SizeInBytes");
-                context.Writer.Write(requestObject.SizeInBytes);
+                context.Writer.Write(requestObject.SizeInBytes.Value);
             }
 
             if(requestObject.IsSetSizeInMegabytes())
             {
                 context.Writer.WritePropertyName("SizeInMegabytes");
-                context.Writer.Write(requestObject.SizeInMegabytes);
+                context.Writer.Write(requestObject.SizeInMegabytes.Value);
             }
 
             if(requestObject.IsSetSnaplockConfiguration())
@@ -112,7 +112,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageEfficiencyEnabled())
             {
                 context.Writer.WritePropertyName("StorageEfficiencyEnabled");
-                context.Writer.Write(requestObject.StorageEfficiencyEnabled);
+                context.Writer.Write(requestObject.StorageEfficiencyEnabled.Value);
             }
 
             if(requestObject.IsSetStorageVirtualMachineId())

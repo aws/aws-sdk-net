@@ -67,9 +67,9 @@ namespace Amazon.LakeFormation.Model
         /// Allow external data filtering</a>.
         /// </para>
         /// </summary>
-        public bool AllowExternalDataFiltering
+        public bool? AllowExternalDataFiltering
         {
-            get { return this._allowExternalDataFiltering.GetValueOrDefault(); }
+            get { return this._allowExternalDataFiltering; }
             set { this._allowExternalDataFiltering = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.LakeFormation.Model
         /// session tags when a caller has full data access permissions.
         /// </para>
         /// </summary>
-        public bool AllowFullTableExternalDataAccess
+        public bool? AllowFullTableExternalDataAccess
         {
-            get { return this._allowFullTableExternalDataAccess.GetValueOrDefault(); }
+            get { return this._allowFullTableExternalDataAccess; }
             set { this._allowFullTableExternalDataAccess = value; }
         }
 

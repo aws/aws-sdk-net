@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// The timestamp of the last inference that was made.
         /// </para>
         /// </summary>
-        public DateTime LatestInference
+        public DateTime? LatestInference
         {
-            get { return this._latestInference.GetValueOrDefault(); }
+            get { return this._latestInference; }
             set { this._latestInference = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SageMaker.Model
         /// The timestamp of the last data sample taken.
         /// </para>
         /// </summary>
-        public DateTime LatestSampleTime
+        public DateTime? LatestSampleTime
         {
-            get { return this._latestSampleTime.GetValueOrDefault(); }
+            get { return this._latestSampleTime; }
             set { this._latestSampleTime = value; }
         }
 

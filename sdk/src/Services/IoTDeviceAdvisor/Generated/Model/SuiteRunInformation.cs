@@ -56,9 +56,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Date (in Unix epoch time) when the suite run was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Date (in Unix epoch time) when the suite run ended.
         /// </para>
         /// </summary>
-        public DateTime EndAt
+        public DateTime? EndAt
         {
-            get { return this._endAt.GetValueOrDefault(); }
+            get { return this._endAt; }
             set { this._endAt = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -112,9 +112,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int Passed
+        public int? Passed
         {
-            get { return this._passed.GetValueOrDefault(); }
+            get { return this._passed; }
             set { this._passed = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Date (in Unix epoch time) when the suite run was started.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

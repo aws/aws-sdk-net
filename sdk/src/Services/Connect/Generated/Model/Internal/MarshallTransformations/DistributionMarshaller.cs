@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPercentage())
             {
                 context.Writer.WritePropertyName("Percentage");
-                context.Writer.Write(requestObject.Percentage);
+                context.Writer.Write(requestObject.Percentage.Value);
             }
 
             if(requestObject.IsSetRegion())

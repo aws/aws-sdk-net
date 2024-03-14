@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPublicSharingEnabled())
                 {
                     context.Writer.WritePropertyName("PublicSharingEnabled");
-                    context.Writer.Write(publicRequest.PublicSharingEnabled);
+                    context.Writer.Write(publicRequest.PublicSharingEnabled.Value);
                 }
 
                 writer.WriteObjectEnd();

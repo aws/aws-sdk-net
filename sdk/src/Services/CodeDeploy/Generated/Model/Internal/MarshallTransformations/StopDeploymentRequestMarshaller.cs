@@ -70,7 +70,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAutoRollbackEnabled())
                 {
                     context.Writer.WritePropertyName("autoRollbackEnabled");
-                    context.Writer.Write(publicRequest.AutoRollbackEnabled);
+                    context.Writer.Write(publicRequest.AutoRollbackEnabled.Value);
                 }
 
                 if(publicRequest.IsSetDeploymentId())

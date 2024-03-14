@@ -56,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AbortableOperationInProgress", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AbortableOperationInProgress = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,13 +74,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("DateCreated", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DateCreated = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DateUpdated", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.DateUpdated = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -1054,7 +1054,7 @@ namespace Amazon.MachineLearning
         /// A specified resource cannot be located.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
-        Task<GetDataSourceResponse> GetDataSourceAsync(string dataSourceId, bool verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetDataSourceResponse> GetDataSourceAsync(string dataSourceId, bool? verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -1194,7 +1194,7 @@ namespace Amazon.MachineLearning
         /// A specified resource cannot be located.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">REST API Reference for GetMLModel Operation</seealso>
-        Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, bool verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<GetMLModelResponse> GetMLModelAsync(string mlModelId, bool? verbose, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -1515,7 +1515,7 @@ namespace Amazon.MachineLearning
         /// A specified resource cannot be located.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateMLModel">REST API Reference for UpdateMLModel Operation</seealso>
-        Task<UpdateMLModelResponse> UpdateMLModelAsync(string mlModelId, string mlModelName, float scoreThreshold, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<UpdateMLModelResponse> UpdateMLModelAsync(string mlModelId, string mlModelName, float? scoreThreshold, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>

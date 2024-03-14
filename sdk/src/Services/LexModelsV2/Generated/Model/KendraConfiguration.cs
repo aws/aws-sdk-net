@@ -89,9 +89,9 @@ namespace Amazon.LexModelsV2.Model
         /// string to query the Amazon Kendra index.
         /// </para>
         /// </summary>
-        public bool QueryFilterStringEnabled
+        public bool? QueryFilterStringEnabled
         {
-            get { return this._queryFilterStringEnabled.GetValueOrDefault(); }
+            get { return this._queryFilterStringEnabled; }
             set { this._queryFilterStringEnabled = value; }
         }
 

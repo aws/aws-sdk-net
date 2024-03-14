@@ -61,9 +61,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property ClockSync.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int ClockSync
+        public int? ClockSync
         {
-            get { return this._clockSync.GetValueOrDefault(); }
+            get { return this._clockSync; }
             set { this._clockSync = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property Fuota.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int Fuota
+        public int? Fuota
         {
-            get { return this._fuota.GetValueOrDefault(); }
+            get { return this._fuota; }
             set { this._fuota = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property Multicast.
         /// </summary>
         [AWSProperty(Min=1, Max=223)]
-        public int Multicast
+        public int? Multicast
         {
-            get { return this._multicast.GetValueOrDefault(); }
+            get { return this._multicast; }
             set { this._multicast = value; }
         }
 

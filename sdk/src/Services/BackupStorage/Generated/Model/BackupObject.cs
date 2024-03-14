@@ -43,9 +43,9 @@ namespace Amazon.BackupStorage.Model
         /// <summary>
         /// Gets and sets the property ChunksCount. Number of chunks in object
         /// </summary>
-        public long ChunksCount
+        public long? ChunksCount
         {
-            get { return this._chunksCount.GetValueOrDefault(); }
+            get { return this._chunksCount; }
             set { this._chunksCount = value; }
         }
 

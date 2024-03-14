@@ -65,13 +65,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("expirationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("protectionEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ProtectionEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

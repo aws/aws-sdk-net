@@ -66,7 +66,7 @@ namespace Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("StartTimestamp");
-                context.Writer.Write(requestObject.StartTimestamp);
+                context.Writer.Write(requestObject.StartTimestamp.Value);
             }
 
         }

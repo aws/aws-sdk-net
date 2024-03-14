@@ -54,13 +54,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerPort())
             {
                 context.Writer.WritePropertyName("ContainerPort");
-                context.Writer.Write(requestObject.ContainerPort);
+                context.Writer.Write(requestObject.ContainerPort.Value);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetRegistryArn())

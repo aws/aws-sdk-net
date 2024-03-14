@@ -117,7 +117,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumberOfWorkers())
                 {
                     context.Writer.WritePropertyName("NumberOfWorkers");
-                    context.Writer.Write(publicRequest.NumberOfWorkers);
+                    context.Writer.Write(publicRequest.NumberOfWorkers.Value);
                 }
 
                 if(publicRequest.IsSetRole())
@@ -140,7 +140,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTimeout())
                 {
                     context.Writer.WritePropertyName("Timeout");
-                    context.Writer.Write(publicRequest.Timeout);
+                    context.Writer.Write(publicRequest.Timeout.Value);
                 }
 
                 writer.WriteObjectEnd();

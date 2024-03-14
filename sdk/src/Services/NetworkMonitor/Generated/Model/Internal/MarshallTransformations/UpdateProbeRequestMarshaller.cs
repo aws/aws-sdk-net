@@ -80,13 +80,13 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDestinationPort())
                 {
                     context.Writer.WritePropertyName("destinationPort");
-                    context.Writer.Write(publicRequest.DestinationPort);
+                    context.Writer.Write(publicRequest.DestinationPort.Value);
                 }
 
                 if(publicRequest.IsSetPacketSize())
                 {
                     context.Writer.WritePropertyName("packetSize");
-                    context.Writer.Write(publicRequest.PacketSize);
+                    context.Writer.Write(publicRequest.PacketSize.Value);
                 }
 
                 if(publicRequest.IsSetProtocol())

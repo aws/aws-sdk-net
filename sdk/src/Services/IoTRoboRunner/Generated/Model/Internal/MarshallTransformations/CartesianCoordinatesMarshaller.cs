@@ -48,19 +48,19 @@ namespace Amazon.IoTRoboRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetX())
             {
                 context.Writer.WritePropertyName("x");
-                context.Writer.Write(requestObject.X);
+                context.Writer.Write(requestObject.X.Value);
             }
 
             if(requestObject.IsSetY())
             {
                 context.Writer.WritePropertyName("y");
-                context.Writer.Write(requestObject.Y);
+                context.Writer.Write(requestObject.Y.Value);
             }
 
             if(requestObject.IsSetZ())
             {
                 context.Writer.WritePropertyName("z");
-                context.Writer.Write(requestObject.Z);
+                context.Writer.Write(requestObject.Z.Value);
             }
 
         }

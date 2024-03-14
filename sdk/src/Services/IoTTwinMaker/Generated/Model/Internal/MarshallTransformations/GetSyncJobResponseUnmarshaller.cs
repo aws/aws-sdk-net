@@ -59,7 +59,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateDateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateDateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

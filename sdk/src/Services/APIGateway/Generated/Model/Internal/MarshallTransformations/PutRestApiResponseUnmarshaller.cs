@@ -65,7 +65,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("disableExecuteApiEndpoint", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DisableExecuteApiEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("minimumCompressionSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinimumCompressionSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

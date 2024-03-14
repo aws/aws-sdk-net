@@ -105,9 +105,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// is only an approximation and does not reflect the actual billing rate.
         /// </para>
         /// </summary>
-        public int NormalizedInstanceHours
+        public int? NormalizedInstanceHours
         {
-            get { return this._normalizedInstanceHours.GetValueOrDefault(); }
+            get { return this._normalizedInstanceHours; }
             set { this._normalizedInstanceHours = value; }
         }
 

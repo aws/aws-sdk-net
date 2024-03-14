@@ -44,9 +44,9 @@ namespace Amazon.AppStream.Model
         /// The time when the last usage report was generated.
         /// </para>
         /// </summary>
-        public DateTime LastGeneratedReportDate
+        public DateTime? LastGeneratedReportDate
         {
-            get { return this._lastGeneratedReportDate.GetValueOrDefault(); }
+            get { return this._lastGeneratedReportDate; }
             set { this._lastGeneratedReportDate = value; }
         }
 

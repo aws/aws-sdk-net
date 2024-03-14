@@ -114,7 +114,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIsEnabled())
                 {
                     context.Writer.WritePropertyName("isEnabled");
-                    context.Writer.Write(publicRequest.IsEnabled);
+                    context.Writer.Write(publicRequest.IsEnabled.Value);
                 }
 
                 if(publicRequest.IsSetOrigin())

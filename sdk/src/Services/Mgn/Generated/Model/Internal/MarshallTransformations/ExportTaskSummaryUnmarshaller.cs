@@ -65,19 +65,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("applicationsCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationsCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("serversCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ServersCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("wavesCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WavesCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsDataKeyReusePeriodSeconds())
             {
                 context.Writer.WritePropertyName("KmsDataKeyReusePeriodSeconds");
-                context.Writer.Write(requestObject.KmsDataKeyReusePeriodSeconds);
+                context.Writer.Write(requestObject.KmsDataKeyReusePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetKmsMasterKeyId())

@@ -70,7 +70,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAmazonSideAsn())
                 {
                     context.Writer.WritePropertyName("amazonSideAsn");
-                    context.Writer.Write(publicRequest.AmazonSideAsn);
+                    context.Writer.Write(publicRequest.AmazonSideAsn.Value);
                 }
 
                 if(publicRequest.IsSetDirectConnectGatewayName())

@@ -71,19 +71,19 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     context.Writer.WritePropertyName("deletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection);
+                    context.Writer.Write(publicRequest.DeletionProtection.Value);
                 }
 
                 if(publicRequest.IsSetProvisionedMemory())
                 {
                     context.Writer.WritePropertyName("provisionedMemory");
-                    context.Writer.Write(publicRequest.ProvisionedMemory);
+                    context.Writer.Write(publicRequest.ProvisionedMemory.Value);
                 }
 
                 if(publicRequest.IsSetPublicConnectivity())
                 {
                     context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity);
+                    context.Writer.Write(publicRequest.PublicConnectivity.Value);
                 }
 
                 writer.WriteObjectEnd();

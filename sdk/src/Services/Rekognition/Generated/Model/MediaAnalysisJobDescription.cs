@@ -52,9 +52,9 @@ namespace Amazon.Rekognition.Model
         /// The Unix date and time when the job finished.
         /// </para>
         /// </summary>
-        public DateTime CompletionTimestamp
+        public DateTime? CompletionTimestamp
         {
-            get { return this._completionTimestamp.GetValueOrDefault(); }
+            get { return this._completionTimestamp; }
             set { this._completionTimestamp = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Rekognition.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 

@@ -48,13 +48,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout);
+                context.Writer.Write(requestObject.Timeout.Value);
             }
 
         }

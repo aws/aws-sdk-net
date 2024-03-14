@@ -56,49 +56,49 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Idle", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Idle = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IOWait", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.IOWait = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IRQ", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.IRQ = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Nice", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Nice = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Privileged", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.Privileged = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SoftIRQ", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.SoftIRQ = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("System", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.System = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("User", targetDepth))
                     {
-                        var unmarshaller = DoubleUnmarshaller.Instance;
+                        var unmarshaller = NullableDoubleUnmarshaller.Instance;
                         unmarshalledObject.User = unmarshaller.Unmarshall(context);
                         continue;
                     }

@@ -56,9 +56,9 @@ namespace Amazon.CustomerProfiles.Model
         /// is found, then the service creates a new standard profile.
         /// </para>
         /// </summary>
-        public bool AllowProfileCreation
+        public bool? AllowProfileCreation
         {
-            get { return this._allowProfileCreation.GetValueOrDefault(); }
+            get { return this._allowProfileCreation; }
             set { this._allowProfileCreation = value; }
         }
 
@@ -74,9 +74,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the domain was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -132,9 +132,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1098)]
-        public int ExpirationDays
+        public int? ExpirationDays
         {
-            get { return this._expirationDays.GetValueOrDefault(); }
+            get { return this._expirationDays; }
             set { this._expirationDays = value; }
         }
 
@@ -188,9 +188,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the domain was most recently edited.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

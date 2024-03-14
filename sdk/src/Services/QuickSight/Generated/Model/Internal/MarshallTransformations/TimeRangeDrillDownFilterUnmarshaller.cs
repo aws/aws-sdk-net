@@ -71,13 +71,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RangeMaximum", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RangeMaximum = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RangeMinimum", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RangeMinimum = unmarshaller.Unmarshall(context);
                     continue;
                 }

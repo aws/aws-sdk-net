@@ -53,9 +53,9 @@ namespace Amazon.ElastiCache.Model
         /// The number of cache nodes that have been reserved.
         /// </para>
         /// </summary>
-        public int CacheNodeCount
+        public int? CacheNodeCount
         {
-            get { return this._cacheNodeCount.GetValueOrDefault(); }
+            get { return this._cacheNodeCount; }
             set { this._cacheNodeCount = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.ElastiCache.Model
         /// The duration of the reservation in seconds.
         /// </para>
         /// </summary>
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -270,9 +270,9 @@ namespace Amazon.ElastiCache.Model
         /// The fixed price charged for this reserved cache node.
         /// </para>
         /// </summary>
-        public double FixedPrice
+        public double? FixedPrice
         {
-            get { return this._fixedPrice.GetValueOrDefault(); }
+            get { return this._fixedPrice; }
             set { this._fixedPrice = value; }
         }
 
@@ -401,9 +401,9 @@ namespace Amazon.ElastiCache.Model
         /// The time the reservation started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -437,9 +437,9 @@ namespace Amazon.ElastiCache.Model
         /// The hourly price charged for this reserved cache node.
         /// </para>
         /// </summary>
-        public double UsagePrice
+        public double? UsagePrice
         {
-            get { return this._usagePrice.GetValueOrDefault(); }
+            get { return this._usagePrice; }
             set { this._usagePrice = value; }
         }
 

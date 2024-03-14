@@ -65,31 +65,31 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("numberOfDocumentsDeleted", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDocumentsDeleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfDocumentsFailed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDocumentsFailed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfDocumentsScanned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDocumentsScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfModifiedDocumentsIndexed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfModifiedDocumentsIndexed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfNewDocumentsIndexed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfNewDocumentsIndexed = unmarshaller.Unmarshall(context);
                     continue;
                 }

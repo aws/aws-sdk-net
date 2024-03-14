@@ -78,7 +78,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("OriginalStatusCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OriginalStatusCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

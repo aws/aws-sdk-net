@@ -102,9 +102,9 @@ namespace Amazon.SecurityHub.Model
         /// A timestamp for the date and time when the invitation was sent to the member account.
         /// </para>
         /// </summary>
-        public DateTime InvitedAt
+        public DateTime? InvitedAt
         {
-            get { return this._invitedAt.GetValueOrDefault(); }
+            get { return this._invitedAt; }
             set { this._invitedAt = value; }
         }
 
@@ -203,9 +203,9 @@ namespace Amazon.SecurityHub.Model
         /// The timestamp for the date and time when the member account was updated.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

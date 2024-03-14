@@ -109,9 +109,9 @@ namespace Amazon.IoT.Model
         /// Removes the authorization configuration from a domain.
         /// </para>
         /// </summary>
-        public bool RemoveAuthorizerConfig
+        public bool? RemoveAuthorizerConfig
         {
-            get { return this._removeAuthorizerConfig.GetValueOrDefault(); }
+            get { return this._removeAuthorizerConfig; }
             set { this._removeAuthorizerConfig = value; }
         }
 

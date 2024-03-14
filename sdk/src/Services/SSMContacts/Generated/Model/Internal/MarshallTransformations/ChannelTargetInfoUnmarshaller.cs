@@ -71,7 +71,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetryIntervalInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetryIntervalInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

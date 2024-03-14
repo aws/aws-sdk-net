@@ -65,13 +65,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DeleteAfterUpload", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteAfterUpload = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EdgeRetentionInHours", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeRetentionInHours = unmarshaller.Unmarshall(context);
                     continue;
                 }

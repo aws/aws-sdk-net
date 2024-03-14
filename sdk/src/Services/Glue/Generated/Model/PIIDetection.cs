@@ -171,9 +171,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double SampleFraction
+        public double? SampleFraction
         {
-            get { return this._sampleFraction.GetValueOrDefault(); }
+            get { return this._sampleFraction; }
             set { this._sampleFraction = value; }
         }
 
@@ -191,9 +191,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double ThresholdFraction
+        public double? ThresholdFraction
         {
-            get { return this._thresholdFraction.GetValueOrDefault(); }
+            get { return this._thresholdFraction; }
             set { this._thresholdFraction = value; }
         }
 

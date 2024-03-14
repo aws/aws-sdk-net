@@ -71,7 +71,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEndDateTime())
                 {
                     context.Writer.WritePropertyName("endDateTime");
-                    context.Writer.Write(publicRequest.EndDateTime);
+                    context.Writer.Write(publicRequest.EndDateTime.Value);
                 }
 
                 if(publicRequest.IsSetFilters())
@@ -99,7 +99,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetStartDateTime())
                 {
                     context.Writer.WritePropertyName("startDateTime");
-                    context.Writer.Write(publicRequest.StartDateTime);
+                    context.Writer.Write(publicRequest.StartDateTime.Value);
                 }
 
                 writer.WriteObjectEnd();

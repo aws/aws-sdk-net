@@ -71,7 +71,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -107,7 +107,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ForecastHorizon", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ForecastHorizon = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,13 +131,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsAutoPredictor", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsAutoPredictor = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModificationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -155,13 +155,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PerformAutoML", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PerformAutoML = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PerformHPO", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PerformHPO = unmarshaller.Unmarshall(context);
                     continue;
                 }

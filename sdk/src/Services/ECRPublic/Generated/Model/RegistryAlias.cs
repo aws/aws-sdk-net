@@ -50,9 +50,9 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DefaultRegistryAlias
+        public bool? DefaultRegistryAlias
         {
-            get { return this._defaultRegistryAlias.GetValueOrDefault(); }
+            get { return this._defaultRegistryAlias; }
             set { this._defaultRegistryAlias = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.ECRPublic.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool PrimaryRegistryAlias
+        public bool? PrimaryRegistryAlias
         {
-            get { return this._primaryRegistryAlias.GetValueOrDefault(); }
+            get { return this._primaryRegistryAlias; }
             set { this._primaryRegistryAlias = value; }
         }
 

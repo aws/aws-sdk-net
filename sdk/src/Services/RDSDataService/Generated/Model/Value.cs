@@ -75,9 +75,9 @@ namespace Amazon.RDSDataService.Model
         /// A value for a column of big integer data type.
         /// </para>
         /// </summary>
-        public long BigIntValue
+        public long? BigIntValue
         {
-            get { return this._bigIntValue.GetValueOrDefault(); }
+            get { return this._bigIntValue; }
             set { this._bigIntValue = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.RDSDataService.Model
         /// A value for a column of BIT data type.
         /// </para>
         /// </summary>
-        public bool BitValue
+        public bool? BitValue
         {
-            get { return this._bitValue.GetValueOrDefault(); }
+            get { return this._bitValue; }
             set { this._bitValue = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.RDSDataService.Model
         /// A value for a column of double data type.
         /// </para>
         /// </summary>
-        public double DoubleValue
+        public double? DoubleValue
         {
-            get { return this._doubleValue.GetValueOrDefault(); }
+            get { return this._doubleValue; }
             set { this._doubleValue = value; }
         }
 
@@ -147,9 +147,9 @@ namespace Amazon.RDSDataService.Model
         /// A value for a column of integer data type.
         /// </para>
         /// </summary>
-        public int IntValue
+        public int? IntValue
         {
-            get { return this._intValue.GetValueOrDefault(); }
+            get { return this._intValue; }
             set { this._intValue = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.RDSDataService.Model
         /// A NULL value.
         /// </para>
         /// </summary>
-        public bool IsNull
+        public bool? IsNull
         {
-            get { return this._isNull.GetValueOrDefault(); }
+            get { return this._isNull; }
             set { this._isNull = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.RDSDataService.Model
         /// A value for a column of real data type.
         /// </para>
         /// </summary>
-        public float RealValue
+        public float? RealValue
         {
-            get { return this._realValue.GetValueOrDefault(); }
+            get { return this._realValue; }
             set { this._realValue = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// Whether require check in is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.AlexaForBusiness.Model
         /// checked into. 
         /// </para>
         /// </summary>
-        public int ReleaseAfterMinutes
+        public int? ReleaseAfterMinutes
         {
-            get { return this._releaseAfterMinutes.GetValueOrDefault(); }
+            get { return this._releaseAfterMinutes; }
             set { this._releaseAfterMinutes = value; }
         }
 

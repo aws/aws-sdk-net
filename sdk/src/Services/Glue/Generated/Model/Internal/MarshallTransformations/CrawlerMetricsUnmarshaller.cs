@@ -71,43 +71,43 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastRuntimeSeconds", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.LastRuntimeSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MedianRuntimeSeconds", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MedianRuntimeSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StillEstimating", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StillEstimating = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesCreated", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesDeleted", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesDeleted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesUpdated", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeLeftSeconds", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TimeLeftSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

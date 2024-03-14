@@ -64,9 +64,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=52428800)]
-        public long CodeSize
+        public long? CodeSize
         {
-            get { return this._codeSize.GetValueOrDefault(); }
+            get { return this._codeSize; }
             set { this._codeSize = value; }
         }
 

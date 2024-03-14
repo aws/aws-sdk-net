@@ -70,13 +70,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetAverageDownloadRateLimitInBitsPerSec())
                 {
                     context.Writer.WritePropertyName("AverageDownloadRateLimitInBitsPerSec");
-                    context.Writer.Write(publicRequest.AverageDownloadRateLimitInBitsPerSec);
+                    context.Writer.Write(publicRequest.AverageDownloadRateLimitInBitsPerSec.Value);
                 }
 
                 if(publicRequest.IsSetAverageUploadRateLimitInBitsPerSec())
                 {
                     context.Writer.WritePropertyName("AverageUploadRateLimitInBitsPerSec");
-                    context.Writer.Write(publicRequest.AverageUploadRateLimitInBitsPerSec);
+                    context.Writer.Write(publicRequest.AverageUploadRateLimitInBitsPerSec.Value);
                 }
 
                 if(publicRequest.IsSetGatewayARN())

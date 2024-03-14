@@ -71,7 +71,7 @@ namespace Amazon.IoTThingsGraph.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("revisionNumber", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RevisionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

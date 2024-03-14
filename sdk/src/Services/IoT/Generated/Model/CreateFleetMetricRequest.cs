@@ -154,9 +154,9 @@ namespace Amazon.IoT.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=86400)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 

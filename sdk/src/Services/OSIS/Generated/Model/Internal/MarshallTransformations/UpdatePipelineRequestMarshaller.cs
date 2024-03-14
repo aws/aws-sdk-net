@@ -104,13 +104,13 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxUnits())
                 {
                     context.Writer.WritePropertyName("MaxUnits");
-                    context.Writer.Write(publicRequest.MaxUnits);
+                    context.Writer.Write(publicRequest.MaxUnits.Value);
                 }
 
                 if(publicRequest.IsSetMinUnits())
                 {
                     context.Writer.WritePropertyName("MinUnits");
-                    context.Writer.Write(publicRequest.MinUnits);
+                    context.Writer.Write(publicRequest.MinUnits.Value);
                 }
 
                 if(publicRequest.IsSetPipelineConfigurationBody())

@@ -48,7 +48,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCountUpdate())
             {
                 context.Writer.WritePropertyName("CountUpdate");
-                context.Writer.Write(requestObject.CountUpdate);
+                context.Writer.Write(requestObject.CountUpdate.Value);
             }
 
         }

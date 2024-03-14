@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudit())
             {
                 context.Writer.WritePropertyName("Audit");
-                context.Writer.Write(requestObject.Audit);
+                context.Writer.Write(requestObject.Audit.Value);
             }
 
             if(requestObject.IsSetAuditLogGroup())
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeneral())
             {
                 context.Writer.WritePropertyName("General");
-                context.Writer.Write(requestObject.General);
+                context.Writer.Write(requestObject.General.Value);
             }
 
             if(requestObject.IsSetGeneralLogGroup())

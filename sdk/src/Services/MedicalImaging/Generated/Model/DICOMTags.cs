@@ -73,9 +73,9 @@ namespace Amazon.MedicalImaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int DICOMNumberOfStudyRelatedInstances
+        public int? DICOMNumberOfStudyRelatedInstances
         {
-            get { return this._dicomNumberOfStudyRelatedInstances.GetValueOrDefault(); }
+            get { return this._dicomNumberOfStudyRelatedInstances; }
             set { this._dicomNumberOfStudyRelatedInstances = value; }
         }
 
@@ -92,9 +92,9 @@ namespace Amazon.MedicalImaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public int DICOMNumberOfStudyRelatedSeries
+        public int? DICOMNumberOfStudyRelatedSeries
         {
-            get { return this._dicomNumberOfStudyRelatedSeries.GetValueOrDefault(); }
+            get { return this._dicomNumberOfStudyRelatedSeries; }
             set { this._dicomNumberOfStudyRelatedSeries = value; }
         }
 

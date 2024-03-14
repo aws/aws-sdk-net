@@ -44,9 +44,9 @@ namespace Amazon.AppMesh.Model
         /// is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool Invert
+        public bool? Invert
         {
-            get { return this._invert.GetValueOrDefault(); }
+            get { return this._invert; }
             set { this._invert = value; }
         }
 

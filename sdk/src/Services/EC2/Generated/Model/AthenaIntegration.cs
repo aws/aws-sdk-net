@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// The end date for the partition.
         /// </para>
         /// </summary>
-        public DateTime PartitionEndDate
+        public DateTime? PartitionEndDate
         {
-            get { return this._partitionEndDate.GetValueOrDefault(); }
+            get { return this._partitionEndDate; }
             set { this._partitionEndDate = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.EC2.Model
         /// The start date for the partition.
         /// </para>
         /// </summary>
-        public DateTime PartitionStartDate
+        public DateTime? PartitionStartDate
         {
-            get { return this._partitionStartDate.GetValueOrDefault(); }
+            get { return this._partitionStartDate; }
             set { this._partitionStartDate = value; }
         }
 

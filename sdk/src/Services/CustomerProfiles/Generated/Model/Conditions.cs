@@ -44,9 +44,9 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int ObjectCount
+        public int? ObjectCount
         {
-            get { return this._objectCount.GetValueOrDefault(); }
+            get { return this._objectCount; }
             set { this._objectCount = value; }
         }
 

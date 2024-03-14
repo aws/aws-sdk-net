@@ -181,9 +181,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxBand
+        public int? MaxBand
         {
-            get { return this._maxBand.GetValueOrDefault(); }
+            get { return this._maxBand; }
             set { this._maxBand = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MaxFilesInBand
+        public int? MaxFilesInBand
         {
-            get { return this._maxFilesInBand.GetValueOrDefault(); }
+            get { return this._maxFilesInBand; }
             set { this._maxFilesInBand = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.Glue.Model
         /// allows for more aggressive file-splitting during parsing.
         /// </para>
         /// </summary>
-        public bool Multiline
+        public bool? Multiline
         {
-            get { return this._multiline.GetValueOrDefault(); }
+            get { return this._multiline; }
             set { this._multiline = value; }
         }
 
@@ -261,9 +261,9 @@ namespace Amazon.Glue.Model
         /// Apache Arrow based columnar memory formats. Only available in Glue version 3.0.
         /// </para>
         /// </summary>
-        public bool OptimizePerformance
+        public bool? OptimizePerformance
         {
-            get { return this._optimizePerformance.GetValueOrDefault(); }
+            get { return this._optimizePerformance; }
             set { this._optimizePerformance = value; }
         }
 
@@ -337,9 +337,9 @@ namespace Amazon.Glue.Model
         /// paths.
         /// </para>
         /// </summary>
-        public bool Recurse
+        public bool? Recurse
         {
-            get { return this._recurse.GetValueOrDefault(); }
+            get { return this._recurse; }
             set { this._recurse = value; }
         }
 
@@ -376,9 +376,9 @@ namespace Amazon.Glue.Model
         /// is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool SkipFirst
+        public bool? SkipFirst
         {
-            get { return this._skipFirst.GetValueOrDefault(); }
+            get { return this._skipFirst; }
             set { this._skipFirst = value; }
         }
 
@@ -395,9 +395,9 @@ namespace Amazon.Glue.Model
         /// value is <c>False</c>.
         /// </para>
         /// </summary>
-        public bool WithHeader
+        public bool? WithHeader
         {
-            get { return this._withHeader.GetValueOrDefault(); }
+            get { return this._withHeader; }
             set { this._withHeader = value; }
         }
 
@@ -414,9 +414,9 @@ namespace Amazon.Glue.Model
         /// value is <c>True</c>. 
         /// </para>
         /// </summary>
-        public bool WriteHeader
+        public bool? WriteHeader
         {
-            get { return this._writeHeader.GetValueOrDefault(); }
+            get { return this._writeHeader; }
             set { this._writeHeader = value; }
         }
 

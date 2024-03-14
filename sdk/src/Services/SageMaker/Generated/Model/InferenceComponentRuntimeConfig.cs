@@ -43,9 +43,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int CopyCount
+        public int? CopyCount
         {
-            get { return this._copyCount.GetValueOrDefault(); }
+            get { return this._copyCount; }
             set { this._copyCount = value; }
         }
 

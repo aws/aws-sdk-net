@@ -70,13 +70,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDataEndTimeBefore())
                 {
                     context.Writer.WritePropertyName("DataEndTimeBefore");
-                    context.Writer.Write(publicRequest.DataEndTimeBefore);
+                    context.Writer.Write(publicRequest.DataEndTimeBefore.Value);
                 }
 
                 if(publicRequest.IsSetDataStartTimeAfter())
                 {
                     context.Writer.WritePropertyName("DataStartTimeAfter");
-                    context.Writer.Write(publicRequest.DataStartTimeAfter);
+                    context.Writer.Write(publicRequest.DataStartTimeAfter.Value);
                 }
 
                 if(publicRequest.IsSetInferenceSchedulerName())
@@ -88,7 +88,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

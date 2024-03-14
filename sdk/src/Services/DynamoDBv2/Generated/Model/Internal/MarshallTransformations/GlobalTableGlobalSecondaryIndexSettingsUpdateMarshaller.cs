@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProvisionedWriteCapacityUnits())
             {
                 context.Writer.WritePropertyName("ProvisionedWriteCapacityUnits");
-                context.Writer.Write(requestObject.ProvisionedWriteCapacityUnits);
+                context.Writer.Write(requestObject.ProvisionedWriteCapacityUnits.Value);
             }
 
         }

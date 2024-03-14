@@ -86,9 +86,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// and column changes in the Kafka message output. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeControlDetails
+        public bool? IncludeControlDetails
         {
-            get { return this._includeControlDetails.GetValueOrDefault(); }
+            get { return this._includeControlDetails; }
             set { this._includeControlDetails = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeNullAndEmpty
+        public bool? IncludeNullAndEmpty
         {
-            get { return this._includeNullAndEmpty.GetValueOrDefault(); }
+            get { return this._includeNullAndEmpty; }
             set { this._includeNullAndEmpty = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// is <c>schema-table-type</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludePartitionValue
+        public bool? IncludePartitionValue
         {
-            get { return this._includePartitionValue.GetValueOrDefault(); }
+            get { return this._includePartitionValue; }
             set { this._includePartitionValue = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// and <c>rename-column</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeTableAlterOperations
+        public bool? IncludeTableAlterOperations
         {
-            get { return this._includeTableAlterOperations.GetValueOrDefault(); }
+            get { return this._includeTableAlterOperations; }
             set { this._includeTableAlterOperations = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// within a transaction). The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeTransactionDetails
+        public bool? IncludeTransactionDetails
         {
-            get { return this._includeTransactionDetails.GetValueOrDefault(); }
+            get { return this._includeTransactionDetails; }
             set { this._includeTransactionDetails = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The maximum size in bytes for records created on the endpoint The default is 1,000,000.
         /// </para>
         /// </summary>
-        public int MessageMaxBytes
+        public int? MessageMaxBytes
         {
-            get { return this._messageMaxBytes.GetValueOrDefault(); }
+            get { return this._messageMaxBytes; }
             set { this._messageMaxBytes = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// without adding the '0x' prefix.
         /// </para>
         /// </summary>
-        public bool NoHexPrefix
+        public bool? NoHexPrefix
         {
-            get { return this._noHexPrefix.GetValueOrDefault(); }
+            get { return this._noHexPrefix; }
             set { this._noHexPrefix = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// to the same partition, which causes throttling. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool PartitionIncludeSchemaTable
+        public bool? PartitionIncludeSchemaTable
         {
-            get { return this._partitionIncludeSchemaTable.GetValueOrDefault(); }
+            get { return this._partitionIncludeSchemaTable; }
             set { this._partitionIncludeSchemaTable = value; }
         }
 

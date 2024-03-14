@@ -70,13 +70,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteElasticIp())
                 {
                     context.Writer.WritePropertyName("DeleteElasticIp");
-                    context.Writer.Write(publicRequest.DeleteElasticIp);
+                    context.Writer.Write(publicRequest.DeleteElasticIp.Value);
                 }
 
                 if(publicRequest.IsSetDeleteVolumes())
                 {
                     context.Writer.WritePropertyName("DeleteVolumes");
-                    context.Writer.Write(publicRequest.DeleteVolumes);
+                    context.Writer.Write(publicRequest.DeleteVolumes.Value);
                 }
 
                 if(publicRequest.IsSetInstanceId())

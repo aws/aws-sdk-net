@@ -103,9 +103,9 @@ namespace Amazon.ElasticMapReduce.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int BlockDurationMinutes
+        public int? BlockDurationMinutes
         {
-            get { return this._blockDurationMinutes.GetValueOrDefault(); }
+            get { return this._blockDurationMinutes; }
             set { this._blockDurationMinutes = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int TimeoutDurationMinutes
+        public int? TimeoutDurationMinutes
         {
-            get { return this._timeoutDurationMinutes.GetValueOrDefault(); }
+            get { return this._timeoutDurationMinutes; }
             set { this._timeoutDurationMinutes = value; }
         }
 

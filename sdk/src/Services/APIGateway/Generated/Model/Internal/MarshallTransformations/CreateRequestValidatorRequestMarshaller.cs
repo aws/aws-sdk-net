@@ -77,13 +77,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetValidateRequestBody())
                 {
                     context.Writer.WritePropertyName("validateRequestBody");
-                    context.Writer.Write(publicRequest.ValidateRequestBody);
+                    context.Writer.Write(publicRequest.ValidateRequestBody.Value);
                 }
 
                 if(publicRequest.IsSetValidateRequestParameters())
                 {
                     context.Writer.WritePropertyName("validateRequestParameters");
-                    context.Writer.Write(publicRequest.ValidateRequestParameters);
+                    context.Writer.Write(publicRequest.ValidateRequestParameters.Value);
                 }
 
                 writer.WriteObjectEnd();

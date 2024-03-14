@@ -75,9 +75,9 @@ namespace Amazon.DLM.Model
         /// the cross-Region copy.
         /// </para>
         /// </summary>
-        public bool CopyTags
+        public bool? CopyTags
         {
-            get { return this._copyTags.GetValueOrDefault(); }
+            get { return this._copyTags; }
             set { this._copyTags = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.DLM.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 

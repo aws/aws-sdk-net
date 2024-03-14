@@ -87,7 +87,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("AbortIncompleteMultipartUpload", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                 if(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.IsSetDaysAfterInitiation())
-                                    xmlWriter.WriteElementString("DaysAfterInitiation", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation));                 
+                                    xmlWriter.WriteElementString("DaysAfterInitiation", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.AbortIncompleteMultipartUpload.DaysAfterInitiation.Value));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -96,13 +96,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("Expiration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetDate())
-                                    xmlWriter.WriteElementString("Date", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequestLifecycleConfigurationRulesValue.Expiration.Date));                 
+                                    xmlWriter.WriteElementString("Date", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequestLifecycleConfigurationRulesValue.Expiration.Date.Value));                 
 
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetDays())
-                                    xmlWriter.WriteElementString("Days", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.Expiration.Days));                 
+                                    xmlWriter.WriteElementString("Days", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.Expiration.Days.Value));                 
 
                                 if(publicRequestLifecycleConfigurationRulesValue.Expiration.IsSetExpiredObjectDeleteMarker())
-                                    xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequestLifecycleConfigurationRulesValue.Expiration.ExpiredObjectDeleteMarker));                 
+                                    xmlWriter.WriteElementString("ExpiredObjectDeleteMarker", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequestLifecycleConfigurationRulesValue.Expiration.ExpiredObjectDeleteMarker.Value));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -115,10 +115,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("And", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetObjectSizeGreaterThan())
-                                        xmlWriter.WriteElementString("ObjectSizeGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeGreaterThan));                 
+                                        xmlWriter.WriteElementString("ObjectSizeGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeGreaterThan.Value));                 
 
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetObjectSizeLessThan())
-                                        xmlWriter.WriteElementString("ObjectSizeLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeLessThan));                 
+                                        xmlWriter.WriteElementString("ObjectSizeLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeLessThan.Value));                 
 
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetPrefix())
                                         xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.And.Prefix));                 
@@ -147,10 +147,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetObjectSizeGreaterThan())
-                                    xmlWriter.WriteElementString("ObjectSizeGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeGreaterThan));                 
+                                    xmlWriter.WriteElementString("ObjectSizeGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeGreaterThan.Value));                 
 
                                 if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetObjectSizeLessThan())
-                                    xmlWriter.WriteElementString("ObjectSizeLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeLessThan));                 
+                                    xmlWriter.WriteElementString("ObjectSizeLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeLessThan.Value));                 
 
                                 if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetPrefix())
                                     xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.Prefix));                 
@@ -177,10 +177,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             {
                                 xmlWriter.WriteStartElement("NoncurrentVersionExpiration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                 if(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
-                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NewerNoncurrentVersions));                 
+                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NewerNoncurrentVersions.Value));                 
 
                                 if(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNoncurrentDays())
-                                    xmlWriter.WriteElementString("NoncurrentDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NoncurrentDays));                 
+                                    xmlWriter.WriteElementString("NoncurrentDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NoncurrentDays.Value));                 
 
                                 xmlWriter.WriteEndElement();
                             }
@@ -195,7 +195,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("NoncurrentVersionTransition", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetNoncurrentDays())
-                                        xmlWriter.WriteElementString("NoncurrentDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.NoncurrentDays));                 
+                                        xmlWriter.WriteElementString("NoncurrentDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.NoncurrentDays.Value));                 
 
                                     if(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.IsSetStorageClass())
                                         xmlWriter.WriteElementString("StorageClass", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValueNoncurrentVersionTransitionsValue.StorageClass));                 
@@ -219,10 +219,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteStartElement("Transition", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
                                     if(publicRequestLifecycleConfigurationRulesValueTransitionsValue.IsSetDate())
-                                        xmlWriter.WriteElementString("Date", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Date));                 
+                                        xmlWriter.WriteElementString("Date", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromDateTimeToISO8601(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Date.Value));                 
 
                                     if(publicRequestLifecycleConfigurationRulesValueTransitionsValue.IsSetDays())
-                                        xmlWriter.WriteElementString("Days", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Days));                 
+                                        xmlWriter.WriteElementString("Days", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValueTransitionsValue.Days.Value));                 
 
                                     if(publicRequestLifecycleConfigurationRulesValueTransitionsValue.IsSetStorageClass())
                                         xmlWriter.WriteElementString("StorageClass", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValueTransitionsValue.StorageClass));                 

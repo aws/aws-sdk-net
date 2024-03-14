@@ -216,9 +216,9 @@ namespace Amazon.Glue.Model
         /// in Glue version 3.0 or later only.
         /// </para>
         /// </summary>
-        public bool IncludeHeaders
+        public bool? IncludeHeaders
         {
-            get { return this._includeHeaders.GetValueOrDefault(); }
+            get { return this._includeHeaders; }
             set { this._includeHeaders = value; }
         }
 
@@ -238,9 +238,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long MaxOffsetsPerTrigger
+        public long? MaxOffsetsPerTrigger
         {
-            get { return this._maxOffsetsPerTrigger.GetValueOrDefault(); }
+            get { return this._maxOffsetsPerTrigger; }
             set { this._maxOffsetsPerTrigger = value; }
         }
 
@@ -259,9 +259,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int MinPartitions
+        public int? MinPartitions
         {
-            get { return this._minPartitions.GetValueOrDefault(); }
+            get { return this._minPartitions; }
             set { this._minPartitions = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int NumRetries
+        public int? NumRetries
         {
-            get { return this._numRetries.GetValueOrDefault(); }
+            get { return this._numRetries; }
             set { this._numRetries = value; }
         }
 
@@ -299,9 +299,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long PollTimeoutMs
+        public long? PollTimeoutMs
         {
-            get { return this._pollTimeoutMs.GetValueOrDefault(); }
+            get { return this._pollTimeoutMs; }
             set { this._pollTimeoutMs = value; }
         }
 
@@ -319,9 +319,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long RetryIntervalMs
+        public long? RetryIntervalMs
         {
-            get { return this._retryIntervalMs.GetValueOrDefault(); }
+            get { return this._retryIntervalMs; }
             set { this._retryIntervalMs = value; }
         }
 
@@ -382,9 +382,9 @@ namespace Amazon.Glue.Model
         /// Only one of <c>StartingTimestamp</c> or <c>StartingOffsets</c> must be set.
         /// </para>
         /// </summary>
-        public DateTime StartingTimestamp
+        public DateTime? StartingTimestamp
         {
-            get { return this._startingTimestamp.GetValueOrDefault(); }
+            get { return this._startingTimestamp; }
             set { this._startingTimestamp = value; }
         }
 

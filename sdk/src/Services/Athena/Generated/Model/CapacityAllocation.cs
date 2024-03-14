@@ -45,9 +45,9 @@ namespace Amazon.Athena.Model
         /// The time when the capacity allocation request was completed.
         /// </para>
         /// </summary>
-        public DateTime RequestCompletionTime
+        public DateTime? RequestCompletionTime
         {
-            get { return this._requestCompletionTime.GetValueOrDefault(); }
+            get { return this._requestCompletionTime; }
             set { this._requestCompletionTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Athena.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RequestTime
+        public DateTime? RequestTime
         {
-            get { return this._requestTime.GetValueOrDefault(); }
+            get { return this._requestTime; }
             set { this._requestTime = value; }
         }
 

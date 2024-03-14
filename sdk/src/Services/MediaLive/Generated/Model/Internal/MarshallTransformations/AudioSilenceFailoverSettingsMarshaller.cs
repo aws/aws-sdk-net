@@ -54,7 +54,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioSilenceThresholdMsec())
             {
                 context.Writer.WritePropertyName("audioSilenceThresholdMsec");
-                context.Writer.Write(requestObject.AudioSilenceThresholdMsec);
+                context.Writer.Write(requestObject.AudioSilenceThresholdMsec.Value);
             }
 
         }

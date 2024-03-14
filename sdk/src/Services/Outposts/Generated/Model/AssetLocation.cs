@@ -42,9 +42,9 @@ namespace Amazon.Outposts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=99)]
-        public float RackElevation
+        public float? RackElevation
         {
-            get { return this._rackElevation.GetValueOrDefault(); }
+            get { return this._rackElevation; }
             set { this._rackElevation = value; }
         }
 

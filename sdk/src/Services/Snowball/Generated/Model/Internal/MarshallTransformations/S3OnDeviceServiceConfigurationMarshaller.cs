@@ -48,19 +48,19 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFaultTolerance())
             {
                 context.Writer.WritePropertyName("FaultTolerance");
-                context.Writer.Write(requestObject.FaultTolerance);
+                context.Writer.Write(requestObject.FaultTolerance.Value);
             }
 
             if(requestObject.IsSetServiceSize())
             {
                 context.Writer.WritePropertyName("ServiceSize");
-                context.Writer.Write(requestObject.ServiceSize);
+                context.Writer.Write(requestObject.ServiceSize.Value);
             }
 
             if(requestObject.IsSetStorageLimit())
             {
                 context.Writer.WritePropertyName("StorageLimit");
-                context.Writer.Write(requestObject.StorageLimit);
+                context.Writer.Write(requestObject.StorageLimit.Value);
             }
 
             if(requestObject.IsSetStorageUnit())

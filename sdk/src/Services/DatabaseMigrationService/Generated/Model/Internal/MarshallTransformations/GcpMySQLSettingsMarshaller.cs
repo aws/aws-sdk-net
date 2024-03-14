@@ -54,7 +54,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCleanSourceMetadataOnMismatch())
             {
                 context.Writer.WritePropertyName("CleanSourceMetadataOnMismatch");
-                context.Writer.Write(requestObject.CleanSourceMetadataOnMismatch);
+                context.Writer.Write(requestObject.CleanSourceMetadataOnMismatch.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
@@ -66,19 +66,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventsPollInterval())
             {
                 context.Writer.WritePropertyName("EventsPollInterval");
-                context.Writer.Write(requestObject.EventsPollInterval);
+                context.Writer.Write(requestObject.EventsPollInterval.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize);
+                context.Writer.Write(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetParallelLoadThreads())
             {
                 context.Writer.WritePropertyName("ParallelLoadThreads");
-                context.Writer.Write(requestObject.ParallelLoadThreads);
+                context.Writer.Write(requestObject.ParallelLoadThreads.Value);
             }
 
             if(requestObject.IsSetPassword())
@@ -90,7 +90,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.Write(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())

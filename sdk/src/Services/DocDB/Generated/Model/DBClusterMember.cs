@@ -81,9 +81,9 @@ namespace Amazon.DocDB.Model
         /// cluster and <c>false</c> otherwise.
         /// </para>
         /// </summary>
-        public bool IsClusterWriter
+        public bool? IsClusterWriter
         {
-            get { return this._isClusterWriter.GetValueOrDefault(); }
+            get { return this._isClusterWriter; }
             set { this._isClusterWriter = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.DocDB.Model
         /// to the primary instance after a failure of the existing primary instance. 
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

@@ -161,9 +161,9 @@ namespace Amazon.AppSync.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]
-        public int MaxBatchSize
+        public int? MaxBatchSize
         {
-            get { return this._maxBatchSize.GetValueOrDefault(); }
+            get { return this._maxBatchSize; }
             set { this._maxBatchSize = value; }
         }
 

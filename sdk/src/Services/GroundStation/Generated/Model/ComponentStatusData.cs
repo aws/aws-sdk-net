@@ -47,9 +47,9 @@ namespace Amazon.GroundStation.Model
         /// Bytes received by the component.
         /// </para>
         /// </summary>
-        public long BytesReceived
+        public long? BytesReceived
         {
-            get { return this._bytesReceived.GetValueOrDefault(); }
+            get { return this._bytesReceived; }
             set { this._bytesReceived = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.GroundStation.Model
         /// Bytes sent by the component.
         /// </para>
         /// </summary>
-        public long BytesSent
+        public long? BytesSent
         {
-            get { return this._bytesSent.GetValueOrDefault(); }
+            get { return this._bytesSent; }
             set { this._bytesSent = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.GroundStation.Model
         /// Packets dropped by component.
         /// </para>
         /// </summary>
-        public long PacketsDropped
+        public long? PacketsDropped
         {
-            get { return this._packetsDropped.GetValueOrDefault(); }
+            get { return this._packetsDropped; }
             set { this._packetsDropped = value; }
         }
 

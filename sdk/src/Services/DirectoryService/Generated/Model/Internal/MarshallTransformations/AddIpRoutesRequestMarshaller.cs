@@ -92,7 +92,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetUpdateSecurityGroupForDirectoryControllers())
                 {
                     context.Writer.WritePropertyName("UpdateSecurityGroupForDirectoryControllers");
-                    context.Writer.Write(publicRequest.UpdateSecurityGroupForDirectoryControllers);
+                    context.Writer.Write(publicRequest.UpdateSecurityGroupForDirectoryControllers.Value);
                 }
 
                 writer.WriteObjectEnd();

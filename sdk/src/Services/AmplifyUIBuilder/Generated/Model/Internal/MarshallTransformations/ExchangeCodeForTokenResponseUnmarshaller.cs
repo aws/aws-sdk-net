@@ -59,7 +59,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("expiresIn", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ExpiresIn = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// instance.
         /// </para>
         /// </summary>
-        public bool FIPSEnabled
+        public bool? FIPSEnabled
         {
-            get { return this._fipsEnabled.GetValueOrDefault(); }
+            get { return this._fipsEnabled; }
             set { this._fipsEnabled = value; }
         }
 

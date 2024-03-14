@@ -84,9 +84,9 @@ namespace Amazon.QBusiness.Model
         /// The display order of fields in a payload.
         /// </para>
         /// </summary>
-        public int DisplayOrder
+        public int? DisplayOrder
         {
-            get { return this._displayOrder.GetValueOrDefault(); }
+            get { return this._displayOrder; }
             set { this._displayOrder = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.QBusiness.Model
         /// Information about whether the field is required.
         /// </para>
         /// </summary>
-        public bool Required
+        public bool? Required
         {
-            get { return this._required.GetValueOrDefault(); }
+            get { return this._required; }
             set { this._required = value; }
         }
 

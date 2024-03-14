@@ -44,9 +44,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Estimated monthly commitment for the Savings Plan.
         /// </para>
         /// </summary>
-        public double EstimatedMonthlyCommitment
+        public double? EstimatedMonthlyCommitment
         {
-            get { return this._estimatedMonthlyCommitment.GetValueOrDefault(); }
+            get { return this._estimatedMonthlyCommitment; }
             set { this._estimatedMonthlyCommitment = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Estimated On-Demand cost you will pay after buying the Savings Plan.
         /// </para>
         /// </summary>
-        public double EstimatedOnDemandCost
+        public double? EstimatedOnDemandCost
         {
-            get { return this._estimatedOnDemandCost.GetValueOrDefault(); }
+            get { return this._estimatedOnDemandCost; }
             set { this._estimatedOnDemandCost = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// The cost of paying for the recommended Savings Plan monthly.
         /// </para>
         /// </summary>
-        public double MonthlySavingsPlansEligibleCost
+        public double? MonthlySavingsPlansEligibleCost
         {
-            get { return this._monthlySavingsPlansEligibleCost.GetValueOrDefault(); }
+            get { return this._monthlySavingsPlansEligibleCost; }
             set { this._monthlySavingsPlansEligibleCost = value; }
         }
 
@@ -98,9 +98,9 @@ namespace Amazon.CostOptimizationHub.Model
         /// Estimated savings as a percentage of your overall costs after buying the Savings Plan.
         /// </para>
         /// </summary>
-        public double SavingsPercentage
+        public double? SavingsPercentage
         {
-            get { return this._savingsPercentage.GetValueOrDefault(); }
+            get { return this._savingsPercentage; }
             set { this._savingsPercentage = value; }
         }
 

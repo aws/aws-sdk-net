@@ -86,9 +86,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// value is 'false'.
         /// </para>
         /// </summary>
-        public bool ReverseOrder
+        public bool? ReverseOrder
         {
-            get { return this._reverseOrder.GetValueOrDefault(); }
+            get { return this._reverseOrder; }
             set { this._reverseOrder = value; }
         }
 

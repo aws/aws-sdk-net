@@ -66,13 +66,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStreamOutputToCloudWatch())
             {
                 context.Writer.WritePropertyName("streamOutputToCloudWatch");
-                context.Writer.Write(requestObject.StreamOutputToCloudWatch);
+                context.Writer.Write(requestObject.StreamOutputToCloudWatch.Value);
             }
 
             if(requestObject.IsSetStreamUI())
             {
                 context.Writer.WritePropertyName("streamUI");
-                context.Writer.Write(requestObject.StreamUI);
+                context.Writer.Write(requestObject.StreamUI.Value);
             }
 
         }

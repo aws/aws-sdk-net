@@ -43,9 +43,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long HostedZoneCount
+        public long? HostedZoneCount
         {
-            get { return this._hostedZoneCount.GetValueOrDefault(); }
+            get { return this._hostedZoneCount; }
             set { this._hostedZoneCount = value; }
         }
 

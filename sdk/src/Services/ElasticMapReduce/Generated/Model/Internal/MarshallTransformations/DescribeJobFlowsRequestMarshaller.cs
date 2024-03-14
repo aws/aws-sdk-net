@@ -70,13 +70,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetCreatedAfter())
                 {
                     context.Writer.WritePropertyName("CreatedAfter");
-                    context.Writer.Write(publicRequest.CreatedAfter);
+                    context.Writer.Write(publicRequest.CreatedAfter.Value);
                 }
 
                 if(publicRequest.IsSetCreatedBefore())
                 {
                     context.Writer.WritePropertyName("CreatedBefore");
-                    context.Writer.Write(publicRequest.CreatedBefore);
+                    context.Writer.Write(publicRequest.CreatedBefore.Value);
                 }
 
                 if(publicRequest.IsSetJobFlowIds())

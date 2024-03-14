@@ -99,9 +99,9 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -210,9 +210,9 @@ namespace Amazon.MainframeModernization.Model
         /// for the first time.
         /// </para>
         /// </summary>
-        public DateTime LastStartTime
+        public DateTime? LastStartTime
         {
-            get { return this._lastStartTime.GetValueOrDefault(); }
+            get { return this._lastStartTime; }
             set { this._lastStartTime = value; }
         }
 

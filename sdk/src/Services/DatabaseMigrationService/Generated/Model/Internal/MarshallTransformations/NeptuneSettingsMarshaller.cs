@@ -48,25 +48,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorRetryDuration())
             {
                 context.Writer.WritePropertyName("ErrorRetryDuration");
-                context.Writer.Write(requestObject.ErrorRetryDuration);
+                context.Writer.Write(requestObject.ErrorRetryDuration.Value);
             }
 
             if(requestObject.IsSetIamAuthEnabled())
             {
                 context.Writer.WritePropertyName("IamAuthEnabled");
-                context.Writer.Write(requestObject.IamAuthEnabled);
+                context.Writer.Write(requestObject.IamAuthEnabled.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize);
+                context.Writer.Write(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetMaxRetryCount())
             {
                 context.Writer.WritePropertyName("MaxRetryCount");
-                context.Writer.Write(requestObject.MaxRetryCount);
+                context.Writer.Write(requestObject.MaxRetryCount.Value);
             }
 
             if(requestObject.IsSetS3BucketFolder())

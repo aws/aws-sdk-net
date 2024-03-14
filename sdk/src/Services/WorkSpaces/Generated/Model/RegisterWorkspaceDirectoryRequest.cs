@@ -75,9 +75,9 @@ namespace Amazon.WorkSpaces.Model
         /// Indicates whether self-service capabilities are enabled or disabled.
         /// </para>
         /// </summary>
-        public bool EnableSelfService
+        public bool? EnableSelfService
         {
-            get { return this._enableSelfService.GetValueOrDefault(); }
+            get { return this._enableSelfService; }
             set { this._enableSelfService = value; }
         }
 
@@ -96,9 +96,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableWorkDocs
+        public bool? EnableWorkDocs
         {
-            get { return this._enableWorkDocs.GetValueOrDefault(); }
+            get { return this._enableWorkDocs; }
             set { this._enableWorkDocs = value; }
         }
 

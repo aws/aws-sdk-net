@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("isValid", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsValid = unmarshaller.Unmarshall(context);
                     continue;
                 }

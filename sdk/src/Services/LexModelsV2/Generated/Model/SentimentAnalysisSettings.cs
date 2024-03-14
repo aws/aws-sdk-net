@@ -43,9 +43,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DetectSentiment
+        public bool? DetectSentiment
         {
-            get { return this._detectSentiment.GetValueOrDefault(); }
+            get { return this._detectSentiment; }
             set { this._detectSentiment = value; }
         }
 

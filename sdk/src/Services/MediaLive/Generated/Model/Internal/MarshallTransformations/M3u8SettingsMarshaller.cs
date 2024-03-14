@@ -48,7 +48,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
-                context.Writer.Write(requestObject.AudioFramesPerPes);
+                context.Writer.Write(requestObject.AudioFramesPerPes.Value);
             }
 
             if(requestObject.IsSetAudioPids())
@@ -84,7 +84,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPatInterval())
             {
                 context.Writer.WritePropertyName("patInterval");
-                context.Writer.Write(requestObject.PatInterval);
+                context.Writer.Write(requestObject.PatInterval.Value);
             }
 
             if(requestObject.IsSetPcrControl())
@@ -96,7 +96,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPcrPeriod())
             {
                 context.Writer.WritePropertyName("pcrPeriod");
-                context.Writer.Write(requestObject.PcrPeriod);
+                context.Writer.Write(requestObject.PcrPeriod.Value);
             }
 
             if(requestObject.IsSetPcrPid())
@@ -108,7 +108,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPmtInterval())
             {
                 context.Writer.WritePropertyName("pmtInterval");
-                context.Writer.Write(requestObject.PmtInterval);
+                context.Writer.Write(requestObject.PmtInterval.Value);
             }
 
             if(requestObject.IsSetPmtPid())
@@ -120,7 +120,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProgramNum())
             {
                 context.Writer.WritePropertyName("programNum");
-                context.Writer.Write(requestObject.ProgramNum);
+                context.Writer.Write(requestObject.ProgramNum.Value);
             }
 
             if(requestObject.IsSetScte35Behavior())
@@ -150,7 +150,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");
-                context.Writer.Write(requestObject.TransportStreamId);
+                context.Writer.Write(requestObject.TransportStreamId.Value);
             }
 
             if(requestObject.IsSetVideoPid())

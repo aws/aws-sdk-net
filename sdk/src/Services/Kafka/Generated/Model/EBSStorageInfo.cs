@@ -62,9 +62,9 @@ namespace Amazon.Kafka.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
-        public int VolumeSize
+        public int? VolumeSize
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
+            get { return this._volumeSize; }
             set { this._volumeSize = value; }
         }
 

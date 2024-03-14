@@ -49,9 +49,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int ErrorChecks
+        public int? ErrorChecks
         {
-            get { return this._errorChecks.GetValueOrDefault(); }
+            get { return this._errorChecks; }
             set { this._errorChecks = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int FailedChecks
+        public int? FailedChecks
         {
-            get { return this._failedChecks.GetValueOrDefault(); }
+            get { return this._failedChecks; }
             set { this._failedChecks = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int InformationalChecks
+        public int? InformationalChecks
         {
-            get { return this._informationalChecks.GetValueOrDefault(); }
+            get { return this._informationalChecks; }
             set { this._informationalChecks = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int NotApplicableChecks
+        public int? NotApplicableChecks
         {
-            get { return this._notApplicableChecks.GetValueOrDefault(); }
+            get { return this._notApplicableChecks; }
             set { this._notApplicableChecks = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int NotEvaluatedChecks
+        public int? NotEvaluatedChecks
         {
-            get { return this._notEvaluatedChecks.GetValueOrDefault(); }
+            get { return this._notEvaluatedChecks; }
             set { this._notEvaluatedChecks = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int SuccessfulChecks
+        public int? SuccessfulChecks
         {
-            get { return this._successfulChecks.GetValueOrDefault(); }
+            get { return this._successfulChecks; }
             set { this._successfulChecks = value; }
         }
 
@@ -163,9 +163,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int TotalChecks
+        public int? TotalChecks
         {
-            get { return this._totalChecks.GetValueOrDefault(); }
+            get { return this._totalChecks; }
             set { this._totalChecks = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.Inspector2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
-        public int UnknownChecks
+        public int? UnknownChecks
         {
-            get { return this._unknownChecks.GetValueOrDefault(); }
+            get { return this._unknownChecks; }
             set { this._unknownChecks = value; }
         }
 

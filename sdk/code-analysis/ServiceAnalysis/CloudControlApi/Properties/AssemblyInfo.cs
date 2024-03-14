@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudControlApi")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Cloud Control API. Initial release of the SDK for AWS Cloud Control API")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

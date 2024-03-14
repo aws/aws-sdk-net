@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotifyDelayAfter())
             {
                 context.Writer.WritePropertyName("NotifyDelayAfter");
-                context.Writer.Write(requestObject.NotifyDelayAfter);
+                context.Writer.Write(requestObject.NotifyDelayAfter.Value);
             }
 
         }

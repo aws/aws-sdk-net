@@ -45,9 +45,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// The number of I/O operations per second (IOPS) that the volume supports.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int SizeInGB
+        public int? SizeInGB
         {
-            get { return this._sizeInGB.GetValueOrDefault(); }
+            get { return this._sizeInGB; }
             set { this._sizeInGB = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Throughput
+        public int? Throughput
         {
-            get { return this._throughput.GetValueOrDefault(); }
+            get { return this._throughput; }
             set { this._throughput = value; }
         }
 

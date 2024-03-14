@@ -65,9 +65,9 @@ namespace Amazon.SavingsPlans.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long DurationSeconds
+        public long? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

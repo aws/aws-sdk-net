@@ -69,9 +69,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The date that the certificate was created.
         /// </para>
         /// </summary>
-        public DateTime CertificateCreationDate
+        public DateTime? CertificateCreationDate
         {
-            get { return this._certificateCreationDate.GetValueOrDefault(); }
+            get { return this._certificateCreationDate; }
             set { this._certificateCreationDate = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The key length of the cryptographic algorithm being used.
         /// </para>
         /// </summary>
-        public int KeyLength
+        public int? KeyLength
         {
-            get { return this._keyLength.GetValueOrDefault(); }
+            get { return this._keyLength; }
             set { this._keyLength = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The beginning date that the certificate is valid.
         /// </para>
         /// </summary>
-        public DateTime ValidFromDate
+        public DateTime? ValidFromDate
         {
-            get { return this._validFromDate.GetValueOrDefault(); }
+            get { return this._validFromDate; }
             set { this._validFromDate = value; }
         }
 
@@ -216,9 +216,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The final date that the certificate is valid.
         /// </para>
         /// </summary>
-        public DateTime ValidToDate
+        public DateTime? ValidToDate
         {
-            get { return this._validToDate.GetValueOrDefault(); }
+            get { return this._validToDate; }
             set { this._validToDate = value; }
         }
 

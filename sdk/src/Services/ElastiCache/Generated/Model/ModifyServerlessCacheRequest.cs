@@ -107,9 +107,9 @@ namespace Amazon.ElastiCache.Model
         /// cache. Available for Redis only. Default is NULL.
         /// </para>
         /// </summary>
-        public bool RemoveUserGroup
+        public bool? RemoveUserGroup
         {
-            get { return this._removeUserGroup.GetValueOrDefault(); }
+            get { return this._removeUserGroup; }
             set { this._removeUserGroup = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.ElastiCache.Model
         /// will not be removed or modified. The maximum value allowed is 35 days.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionLimit
+        public int? SnapshotRetentionLimit
         {
-            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            get { return this._snapshotRetentionLimit; }
             set { this._snapshotRetentionLimit = value; }
         }
 

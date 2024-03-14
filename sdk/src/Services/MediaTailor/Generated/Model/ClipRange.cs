@@ -43,9 +43,9 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public long EndOffsetMillis
+        public long? EndOffsetMillis
         {
-            get { return this._endOffsetMillis.GetValueOrDefault(); }
+            get { return this._endOffsetMillis; }
             set { this._endOffsetMillis = value; }
         }
 

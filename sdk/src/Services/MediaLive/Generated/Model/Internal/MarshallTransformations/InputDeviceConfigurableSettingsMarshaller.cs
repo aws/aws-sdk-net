@@ -76,13 +76,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatencyMs())
             {
                 context.Writer.WritePropertyName("latencyMs");
-                context.Writer.Write(requestObject.LatencyMs);
+                context.Writer.Write(requestObject.LatencyMs.Value);
             }
 
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMediaconnectSettings())

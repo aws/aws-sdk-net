@@ -131,9 +131,9 @@ namespace Amazon.Connect.Model
         /// Whether this a default routing profile.
         /// </para>
         /// </summary>
-        public bool IsDefault
+        public bool? IsDefault
         {
-            get { return this._isDefault.GetValueOrDefault(); }
+            get { return this._isDefault; }
             set { this._isDefault = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.Connect.Model
         /// The timestamp when this resource was last modified.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.Connect.Model
         /// The number of associated queues in routing profile.
         /// </para>
         /// </summary>
-        public long NumberOfAssociatedQueues
+        public long? NumberOfAssociatedQueues
         {
-            get { return this._numberOfAssociatedQueues.GetValueOrDefault(); }
+            get { return this._numberOfAssociatedQueues; }
             set { this._numberOfAssociatedQueues = value; }
         }
 
@@ -241,9 +241,9 @@ namespace Amazon.Connect.Model
         /// The number of associated users in routing profile.
         /// </para>
         /// </summary>
-        public long NumberOfAssociatedUsers
+        public long? NumberOfAssociatedUsers
         {
-            get { return this._numberOfAssociatedUsers.GetValueOrDefault(); }
+            get { return this._numberOfAssociatedUsers; }
             set { this._numberOfAssociatedUsers = value; }
         }
 

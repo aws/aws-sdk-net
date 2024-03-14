@@ -57,13 +57,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ConfirmationRequired", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.ConfirmationRequired = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("CreationTime", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -117,7 +117,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Priority", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -159,13 +159,13 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SuspendedDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.SuspendedDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TerminationDate", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.TerminationDate = unmarshaller.Unmarshall(context);
                         continue;
                     }

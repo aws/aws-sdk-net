@@ -44,9 +44,9 @@ namespace Amazon.RoboMaker.Model
         /// The time, in milliseconds since the epoch, when the simulation job batch failed.
         /// </para>
         /// </summary>
-        public DateTime FailedAt
+        public DateTime? FailedAt
         {
-            get { return this._failedAt.GetValueOrDefault(); }
+            get { return this._failedAt; }
             set { this._failedAt = value; }
         }
 

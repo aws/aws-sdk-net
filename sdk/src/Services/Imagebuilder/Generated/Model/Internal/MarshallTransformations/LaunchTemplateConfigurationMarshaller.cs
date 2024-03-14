@@ -60,7 +60,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSetDefaultVersion())
             {
                 context.Writer.WritePropertyName("setDefaultVersion");
-                context.Writer.Write(requestObject.SetDefaultVersion);
+                context.Writer.Write(requestObject.SetDefaultVersion.Value);
             }
 
         }

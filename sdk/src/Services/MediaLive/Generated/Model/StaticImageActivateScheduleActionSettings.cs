@@ -50,9 +50,9 @@ namespace Amazon.MediaLive.Model
         /// will remain until it is explicitly deactivated.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Duration
+        public int? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.MediaLive.Model
         /// in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FadeIn
+        public int? FadeIn
         {
-            get { return this._fadeIn.GetValueOrDefault(); }
+            get { return this._fadeIn; }
             set { this._fadeIn = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.MediaLive.Model
         /// is hit, so it effectively extends the duration. Default is 0 (no fade-out).
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FadeOut
+        public int? FadeOut
         {
-            get { return this._fadeOut.GetValueOrDefault(); }
+            get { return this._fadeOut; }
             set { this._fadeOut = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.MediaLive.Model
         /// blank to use the native height of the overlay.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.MediaLive.Model
         /// the underlying video, then the overlay is cropped on the right.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ImageX
+        public int? ImageX
         {
-            get { return this._imageX.GetValueOrDefault(); }
+            get { return this._imageX; }
             set { this._imageX = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.MediaLive.Model
         /// the underlying video, then the overlay is cropped on the bottom.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int ImageY
+        public int? ImageY
         {
-            get { return this._imageY.GetValueOrDefault(); }
+            get { return this._imageY; }
             set { this._imageY = value; }
         }
 
@@ -178,9 +178,9 @@ namespace Amazon.MediaLive.Model
         /// top of overlays with lower values of layer. Default is 0.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
-        public int Layer
+        public int? Layer
         {
-            get { return this._layer.GetValueOrDefault(); }
+            get { return this._layer; }
             set { this._layer = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.MediaLive.Model
         /// is fully opaque. Default is 100.
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public int Opacity
+        public int? Opacity
         {
-            get { return this._opacity.GetValueOrDefault(); }
+            get { return this._opacity; }
             set { this._opacity = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.MediaLive.Model
         /// to use the native width of the overlay.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

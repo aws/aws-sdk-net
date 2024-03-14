@@ -65,7 +65,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("policySizeBytes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.PolicySizeBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }

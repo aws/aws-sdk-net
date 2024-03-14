@@ -87,9 +87,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Date the parameter was last changed or updated and the parameter version was created.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter version.
         /// </para>
         /// </summary>
-        public long Version
+        public long? Version
         {
-            get { return this._version.GetValueOrDefault(); }
+            get { return this._version; }
             set { this._version = value; }
         }
 

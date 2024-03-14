@@ -117,7 +117,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetKeepEmptyFolders())
                 {
                     context.Writer.WritePropertyName("keepEmptyFolders");
-                    context.Writer.Write(publicRequest.KeepEmptyFolders);
+                    context.Writer.Write(publicRequest.KeepEmptyFolders.Value);
                 }
 
                 if(publicRequest.IsSetMergeOption())

@@ -48,9 +48,9 @@ namespace Amazon.EC2.Model
         /// the Capacity Reservation.
         /// </para>
         /// </summary>
-        public int AvailableInstanceCount
+        public int? AvailableInstanceCount
         {
-            get { return this._availableInstanceCount.GetValueOrDefault(); }
+            get { return this._availableInstanceCount; }
             set { this._availableInstanceCount = value; }
         }
 
@@ -185,9 +185,9 @@ namespace Amazon.EC2.Model
         /// The number of instances for which the Capacity Reservation reserves capacity.
         /// </para>
         /// </summary>
-        public int TotalInstanceCount
+        public int? TotalInstanceCount
         {
-            get { return this._totalInstanceCount.GetValueOrDefault(); }
+            get { return this._totalInstanceCount; }
             set { this._totalInstanceCount = value; }
         }
 

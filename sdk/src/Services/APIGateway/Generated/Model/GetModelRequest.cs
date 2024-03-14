@@ -45,9 +45,9 @@ namespace Amazon.APIGateway.Model
         /// and returns a flattened model schema or not (<c>false</c>) The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Flatten
+        public bool? Flatten
         {
-            get { return this._flatten.GetValueOrDefault(); }
+            get { return this._flatten; }
             set { this._flatten = value; }
         }
 

@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTransitEncryptionPort())
             {
                 context.Writer.WritePropertyName("TransitEncryptionPort");
-                context.Writer.Write(requestObject.TransitEncryptionPort);
+                context.Writer.Write(requestObject.TransitEncryptionPort.Value);
             }
 
         }

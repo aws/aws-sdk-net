@@ -54,7 +54,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
-                context.Writer.Write(requestObject.AudioFramesPerPes);
+                context.Writer.Write(requestObject.AudioFramesPerPes.Value);
             }
 
             if(requestObject.IsSetAudioPids())
@@ -77,7 +77,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPcrInterval())
             {
                 context.Writer.WritePropertyName("maxPcrInterval");
-                context.Writer.Write(requestObject.MaxPcrInterval);
+                context.Writer.Write(requestObject.MaxPcrInterval.Value);
             }
 
             if(requestObject.IsSetNielsenId3())
@@ -89,7 +89,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPatInterval())
             {
                 context.Writer.WritePropertyName("patInterval");
-                context.Writer.Write(requestObject.PatInterval);
+                context.Writer.Write(requestObject.PatInterval.Value);
             }
 
             if(requestObject.IsSetPcrControl())
@@ -101,37 +101,37 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPcrPid())
             {
                 context.Writer.WritePropertyName("pcrPid");
-                context.Writer.Write(requestObject.PcrPid);
+                context.Writer.Write(requestObject.PcrPid.Value);
             }
 
             if(requestObject.IsSetPmtInterval())
             {
                 context.Writer.WritePropertyName("pmtInterval");
-                context.Writer.Write(requestObject.PmtInterval);
+                context.Writer.Write(requestObject.PmtInterval.Value);
             }
 
             if(requestObject.IsSetPmtPid())
             {
                 context.Writer.WritePropertyName("pmtPid");
-                context.Writer.Write(requestObject.PmtPid);
+                context.Writer.Write(requestObject.PmtPid.Value);
             }
 
             if(requestObject.IsSetPrivateMetadataPid())
             {
                 context.Writer.WritePropertyName("privateMetadataPid");
-                context.Writer.Write(requestObject.PrivateMetadataPid);
+                context.Writer.Write(requestObject.PrivateMetadataPid.Value);
             }
 
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber);
+                context.Writer.Write(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetPtsOffset())
             {
                 context.Writer.WritePropertyName("ptsOffset");
-                context.Writer.Write(requestObject.PtsOffset);
+                context.Writer.Write(requestObject.PtsOffset.Value);
             }
 
             if(requestObject.IsSetPtsOffsetMode())
@@ -143,7 +143,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid);
+                context.Writer.Write(requestObject.Scte35Pid.Value);
             }
 
             if(requestObject.IsSetScte35Source())
@@ -161,19 +161,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimedMetadataPid())
             {
                 context.Writer.WritePropertyName("timedMetadataPid");
-                context.Writer.Write(requestObject.TimedMetadataPid);
+                context.Writer.Write(requestObject.TimedMetadataPid.Value);
             }
 
             if(requestObject.IsSetTransportStreamId())
             {
                 context.Writer.WritePropertyName("transportStreamId");
-                context.Writer.Write(requestObject.TransportStreamId);
+                context.Writer.Write(requestObject.TransportStreamId.Value);
             }
 
             if(requestObject.IsSetVideoPid())
             {
                 context.Writer.WritePropertyName("videoPid");
-                context.Writer.Write(requestObject.VideoPid);
+                context.Writer.Write(requestObject.VideoPid.Value);
             }
 
         }

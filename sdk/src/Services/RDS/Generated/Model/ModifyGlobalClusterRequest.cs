@@ -66,9 +66,9 @@ namespace Amazon.RDS.Model
         /// any custom parameter groups after completing the upgrade.
         /// </para>
         /// </summary>
-        public bool AllowMajorVersionUpgrade
+        public bool? AllowMajorVersionUpgrade
         {
-            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._allowMajorVersionUpgrade; }
             set { this._allowMajorVersionUpgrade = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.RDS.Model
         /// global database cluster can't be deleted when deletion protection is enabled.
         /// </para>
         /// </summary>
-        public bool DeletionProtection
+        public bool? DeletionProtection
         {
-            get { return this._deletionProtection.GetValueOrDefault(); }
+            get { return this._deletionProtection; }
             set { this._deletionProtection = value; }
         }
 

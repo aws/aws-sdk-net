@@ -48,7 +48,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("maxRuntimeInSeconds");
-                context.Writer.Write(requestObject.MaxRuntimeInSeconds);
+                context.Writer.Write(requestObject.MaxRuntimeInSeconds.Value);
             }
 
         }

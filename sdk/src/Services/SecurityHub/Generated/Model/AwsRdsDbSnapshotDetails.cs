@@ -67,9 +67,9 @@ namespace Amazon.SecurityHub.Model
         /// The amount of storage (in gigabytes) to be initially allocated for the database instance.
         /// </para>
         /// </summary>
-        public int AllocatedStorage
+        public int? AllocatedStorage
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
+            get { return this._allocatedStorage; }
             set { this._allocatedStorage = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether the DB snapshot is encrypted.
         /// </para>
         /// </summary>
-        public bool Encrypted
+        public bool? Encrypted
         {
-            get { return this._encrypted.GetValueOrDefault(); }
+            get { return this._encrypted; }
             set { this._encrypted = value; }
         }
 
@@ -269,9 +269,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether mapping of IAM accounts to database accounts is enabled.
         /// </para>
         /// </summary>
-        public bool IamDatabaseAuthenticationEnabled
+        public bool? IamDatabaseAuthenticationEnabled
         {
-            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            get { return this._iamDatabaseAuthenticationEnabled; }
             set { this._iamDatabaseAuthenticationEnabled = value; }
         }
 
@@ -307,9 +307,9 @@ namespace Amazon.SecurityHub.Model
         /// of the snapshot.
         /// </para>
         /// </summary>
-        public int Iops
+        public int? Iops
         {
-            get { return this._iops.GetValueOrDefault(); }
+            get { return this._iops; }
             set { this._iops = value; }
         }
 
@@ -397,9 +397,9 @@ namespace Amazon.SecurityHub.Model
         /// The percentage of the estimated data that has been transferred.
         /// </para>
         /// </summary>
-        public int PercentProgress
+        public int? PercentProgress
         {
-            get { return this._percentProgress.GetValueOrDefault(); }
+            get { return this._percentProgress; }
             set { this._percentProgress = value; }
         }
 
@@ -415,9 +415,9 @@ namespace Amazon.SecurityHub.Model
         /// The port that the database engine was listening on at the time of the snapshot.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

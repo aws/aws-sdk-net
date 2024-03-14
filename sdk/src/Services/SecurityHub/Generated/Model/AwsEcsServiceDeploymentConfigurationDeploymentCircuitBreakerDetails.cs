@@ -42,9 +42,9 @@ namespace Amazon.SecurityHub.Model
         /// Whether to enable the deployment circuit breaker logic for the service.
         /// </para>
         /// </summary>
-        public bool Enable
+        public bool? Enable
         {
-            get { return this._enable.GetValueOrDefault(); }
+            get { return this._enable; }
             set { this._enable = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         /// that completed successfully.
         /// </para>
         /// </summary>
-        public bool Rollback
+        public bool? Rollback
         {
-            get { return this._rollback.GetValueOrDefault(); }
+            get { return this._rollback; }
             set { this._rollback = value; }
         }
 

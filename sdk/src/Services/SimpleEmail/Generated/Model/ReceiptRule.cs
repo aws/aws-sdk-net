@@ -78,9 +78,9 @@ namespace Amazon.SimpleEmail.Model
         /// If <c>true</c>, the receipt rule is active. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.SimpleEmail.Model
         /// and viruses. The default value is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool ScanEnabled
+        public bool? ScanEnabled
         {
-            get { return this._scanEnabled.GetValueOrDefault(); }
+            get { return this._scanEnabled; }
             set { this._scanEnabled = value; }
         }
 

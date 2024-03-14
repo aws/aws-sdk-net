@@ -60,13 +60,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsRequired())
             {
                 context.Writer.WritePropertyName("IsRequired");
-                context.Writer.Write(requestObject.IsRequired);
+                context.Writer.Write(requestObject.IsRequired.Value);
             }
 
             if(requestObject.IsSetIsTunable())
             {
                 context.Writer.WritePropertyName("IsTunable");
-                context.Writer.Write(requestObject.IsTunable);
+                context.Writer.Write(requestObject.IsTunable.Value);
             }
 
             if(requestObject.IsSetName())

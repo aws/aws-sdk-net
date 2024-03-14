@@ -68,9 +68,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The steps completed in the migration workflow.
         /// </para>
         /// </summary>
-        public int CompletedSteps
+        public int? CompletedSteps
         {
-            get { return this._completedSteps.GetValueOrDefault(); }
+            get { return this._completedSteps; }
             set { this._completedSteps = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the migration workflow was created.
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The time at which the migration workflow ended.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// All the steps in a migration workflow.
         /// </para>
         /// </summary>
-        public int TotalSteps
+        public int? TotalSteps
         {
-            get { return this._totalSteps.GetValueOrDefault(); }
+            get { return this._totalSteps; }
             set { this._totalSteps = value; }
         }
 

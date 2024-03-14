@@ -51,9 +51,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int EvaluationPeriods
+        public int? EvaluationPeriods
         {
-            get { return this._evaluationPeriods.GetValueOrDefault(); }
+            get { return this._evaluationPeriods; }
             set { this._evaluationPeriods = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Threshold
+        public double? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.Route53.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60)]
-        public int Period
+        public int? Period
         {
-            get { return this._period.GetValueOrDefault(); }
+            get { return this._period; }
             set { this._period = value; }
         }
 

@@ -42,9 +42,9 @@ namespace Amazon.LicenseManager.Model
         /// Number of resources associated with licenses.
         /// </para>
         /// </summary>
-        public long AssociationCount
+        public long? AssociationCount
         {
-            get { return this._associationCount.GetValueOrDefault(); }
+            get { return this._associationCount; }
             set { this._associationCount = value; }
         }
 

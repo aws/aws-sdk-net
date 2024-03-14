@@ -54,7 +54,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRiskThreshold())
             {
                 context.Writer.WritePropertyName("RiskThreshold");
-                context.Writer.Write(requestObject.RiskThreshold);
+                context.Writer.Write(requestObject.RiskThreshold.Value);
             }
 
             if(requestObject.IsSetWatchlistIds())

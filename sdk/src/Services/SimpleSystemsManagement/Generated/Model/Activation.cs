@@ -71,9 +71,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date the activation was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The date when this activation can no longer be used to register managed nodes.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Whether or not the activation is expired.
         /// </para>
         /// </summary>
-        public bool Expired
+        public bool? Expired
         {
-            get { return this._expired.GetValueOrDefault(); }
+            get { return this._expired; }
             set { this._expired = value; }
         }
 
@@ -183,9 +183,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int RegistrationLimit
+        public int? RegistrationLimit
         {
-            get { return this._registrationLimit.GetValueOrDefault(); }
+            get { return this._registrationLimit; }
             set { this._registrationLimit = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int RegistrationsCount
+        public int? RegistrationsCount
         {
-            get { return this._registrationsCount.GetValueOrDefault(); }
+            get { return this._registrationsCount; }
             set { this._registrationsCount = value; }
         }
 

@@ -48,13 +48,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConnections())
             {
                 context.Writer.WritePropertyName("maxConnections");
-                context.Writer.Write(requestObject.MaxConnections);
+                context.Writer.Write(requestObject.MaxConnections.Value);
             }
 
             if(requestObject.IsSetMaxPendingRequests())
             {
                 context.Writer.WritePropertyName("maxPendingRequests");
-                context.Writer.Write(requestObject.MaxPendingRequests);
+                context.Writer.Write(requestObject.MaxPendingRequests.Value);
             }
 
         }

@@ -65,7 +65,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,7 +77,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Encrypted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Encrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -119,7 +119,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NumberOfMountTargets", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NumberOfMountTargets = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -137,7 +137,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ProvisionedThroughputInMibps", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.ProvisionedThroughputInMibps = unmarshaller.Unmarshall(context);
                     continue;
                 }

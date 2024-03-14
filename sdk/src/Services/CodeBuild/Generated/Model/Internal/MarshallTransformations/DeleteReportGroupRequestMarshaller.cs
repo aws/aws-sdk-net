@@ -76,7 +76,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDeleteReports())
                 {
                     context.Writer.WritePropertyName("deleteReports");
-                    context.Writer.Write(publicRequest.DeleteReports);
+                    context.Writer.Write(publicRequest.DeleteReports.Value);
                 }
 
                 writer.WriteObjectEnd();

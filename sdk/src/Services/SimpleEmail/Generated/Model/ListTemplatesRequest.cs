@@ -51,9 +51,9 @@ namespace Amazon.SimpleEmail.Model
         /// set to 100. If you do not specify a value, 10 is the default page size. 
         /// </para>
         /// </summary>
-        public int MaxItems
+        public int? MaxItems
         {
-            get { return this._maxItems.GetValueOrDefault(); }
+            get { return this._maxItems; }
             set { this._maxItems = value; }
         }
 

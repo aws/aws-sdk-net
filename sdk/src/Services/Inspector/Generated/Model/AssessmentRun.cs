@@ -100,9 +100,9 @@ namespace Amazon.Inspector.Model
         /// completion time or failure.
         /// </para>
         /// </summary>
-        public DateTime CompletedAt
+        public DateTime? CompletedAt
         {
-            get { return this._completedAt.GetValueOrDefault(); }
+            get { return this._completedAt; }
             set { this._completedAt = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool DataCollected
+        public bool? DataCollected
         {
-            get { return this._dataCollected.GetValueOrDefault(); }
+            get { return this._dataCollected; }
             set { this._dataCollected = value; }
         }
 
@@ -158,9 +158,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=180, Max=86400)]
-        public int DurationInSeconds
+        public int? DurationInSeconds
         {
-            get { return this._durationInSeconds.GetValueOrDefault(); }
+            get { return this._durationInSeconds; }
             set { this._durationInSeconds = value; }
         }
 
@@ -253,9 +253,9 @@ namespace Amazon.Inspector.Model
         /// The time when <a>StartAssessmentRun</a> was called.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -291,9 +291,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StateChangedAt
+        public DateTime? StateChangedAt
         {
-            get { return this._stateChangedAt.GetValueOrDefault(); }
+            get { return this._stateChangedAt; }
             set { this._stateChangedAt = value; }
         }
 

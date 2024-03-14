@@ -61,9 +61,9 @@ namespace Amazon.WorkMail.Model
         /// Boolean indicating whether the test passed or failed.
         /// </para>
         /// </summary>
-        public bool TestPassed
+        public bool? TestPassed
         {
-            get { return this._testPassed.GetValueOrDefault(); }
+            get { return this._testPassed; }
             set { this._testPassed = value; }
         }
 

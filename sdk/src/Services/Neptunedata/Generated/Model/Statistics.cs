@@ -50,9 +50,9 @@ namespace Amazon.Neptunedata.Model
         /// Indicates whether or not DFE statistics generation is enabled at all.
         /// </para>
         /// </summary>
-        public bool Active
+        public bool? Active
         {
-            get { return this._active.GetValueOrDefault(); }
+            get { return this._active; }
             set { this._active = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.Neptunedata.Model
         /// Indicates whether or not automatic statistics generation is enabled.
         /// </para>
         /// </summary>
-        public bool AutoCompute
+        public bool? AutoCompute
         {
-            get { return this._autoCompute.GetValueOrDefault(); }
+            get { return this._autoCompute; }
             set { this._autoCompute = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.Neptunedata.Model
         /// The UTC time at which DFE statistics have most recently been generated.
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 

@@ -102,7 +102,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnableAutoSubDomain())
                 {
                     context.Writer.WritePropertyName("enableAutoSubDomain");
-                    context.Writer.Write(publicRequest.EnableAutoSubDomain);
+                    context.Writer.Write(publicRequest.EnableAutoSubDomain.Value);
                 }
 
                 if(publicRequest.IsSetSubDomainSettings())

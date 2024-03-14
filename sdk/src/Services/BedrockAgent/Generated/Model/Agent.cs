@@ -168,9 +168,9 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property CreatedAt.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property IdleSessionTTLInSeconds.
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=3600)]
-        public int IdleSessionTTLInSeconds
+        public int? IdleSessionTTLInSeconds
         {
-            get { return this._idleSessionTTLInSeconds.GetValueOrDefault(); }
+            get { return this._idleSessionTTLInSeconds; }
             set { this._idleSessionTTLInSeconds = value; }
         }
 
@@ -279,9 +279,9 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property PreparedAt.
         /// </summary>
-        public DateTime PreparedAt
+        public DateTime? PreparedAt
         {
-            get { return this._preparedAt.GetValueOrDefault(); }
+            get { return this._preparedAt; }
             set { this._preparedAt = value; }
         }
 
@@ -327,9 +327,9 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property UpdatedAt.
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

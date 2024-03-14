@@ -43,9 +43,9 @@ namespace Amazon.RDS.Model
         /// (ACUs).
         /// </para>
         /// </summary>
-        public double MinRequiredACU
+        public double? MinRequiredACU
         {
-            get { return this._minRequiredACU.GetValueOrDefault(); }
+            get { return this._minRequiredACU; }
             set { this._minRequiredACU = value; }
         }
 

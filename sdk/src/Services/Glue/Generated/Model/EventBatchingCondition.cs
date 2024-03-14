@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
-        public int BatchSize
+        public int? BatchSize
         {
-            get { return this._batchSize.GetValueOrDefault(); }
+            get { return this._batchSize; }
             set { this._batchSize = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=900)]
-        public int BatchWindow
+        public int? BatchWindow
         {
-            get { return this._batchWindow.GetValueOrDefault(); }
+            get { return this._batchWindow; }
             set { this._batchWindow = value; }
         }
 

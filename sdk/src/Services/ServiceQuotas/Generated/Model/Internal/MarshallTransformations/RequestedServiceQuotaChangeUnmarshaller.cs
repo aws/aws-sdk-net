@@ -71,19 +71,19 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DesiredValue", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DesiredValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("GlobalQuota", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.GlobalQuota = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastUpdated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }

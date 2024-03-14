@@ -82,9 +82,9 @@ namespace Amazon.NetworkManager.Model
         /// The ID of a core network policy version.
         /// </para>
         /// </summary>
-        public int PolicyVersionId
+        public int? PolicyVersionId
         {
-            get { return this._policyVersionId.GetValueOrDefault(); }
+            get { return this._policyVersionId; }
             set { this._policyVersionId = value; }
         }
 

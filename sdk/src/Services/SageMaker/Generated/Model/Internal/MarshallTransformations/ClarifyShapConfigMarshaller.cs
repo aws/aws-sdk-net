@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfSamples())
             {
                 context.Writer.WritePropertyName("NumberOfSamples");
-                context.Writer.Write(requestObject.NumberOfSamples);
+                context.Writer.Write(requestObject.NumberOfSamples.Value);
             }
 
             if(requestObject.IsSetSeed())
             {
                 context.Writer.WritePropertyName("Seed");
-                context.Writer.Write(requestObject.Seed);
+                context.Writer.Write(requestObject.Seed.Value);
             }
 
             if(requestObject.IsSetShapBaselineConfig())
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseLogit())
             {
                 context.Writer.WritePropertyName("UseLogit");
-                context.Writer.Write(requestObject.UseLogit);
+                context.Writer.Write(requestObject.UseLogit.Value);
             }
 
         }

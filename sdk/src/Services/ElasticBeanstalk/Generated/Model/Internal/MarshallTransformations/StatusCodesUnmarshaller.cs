@@ -56,25 +56,25 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Status2xx", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Status2xx = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status3xx", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Status3xx = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status4xx", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Status4xx = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status5xx", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Status5xx = unmarshaller.Unmarshall(context);
                         continue;
                     }

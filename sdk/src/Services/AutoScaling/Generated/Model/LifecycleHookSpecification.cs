@@ -78,9 +78,9 @@ namespace Amazon.AutoScaling.Model
         /// seconds (1 hour).
         /// </para>
         /// </summary>
-        public int HeartbeatTimeout
+        public int? HeartbeatTimeout
         {
-            get { return this._heartbeatTimeout.GetValueOrDefault(); }
+            get { return this._heartbeatTimeout; }
             set { this._heartbeatTimeout = value; }
         }
 

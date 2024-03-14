@@ -94,9 +94,9 @@ namespace Amazon.IdentityManagement.Model
         /// The date on which the certificate is set to expire.
         /// </para>
         /// </summary>
-        public DateTime Expiration
+        public DateTime? Expiration
         {
-            get { return this._expiration.GetValueOrDefault(); }
+            get { return this._expiration; }
             set { this._expiration = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.IdentityManagement.Model
         /// The date when the server certificate was uploaded.
         /// </para>
         /// </summary>
-        public DateTime UploadDate
+        public DateTime? UploadDate
         {
-            get { return this._uploadDate.GetValueOrDefault(); }
+            get { return this._uploadDate; }
             set { this._uploadDate = value; }
         }
 

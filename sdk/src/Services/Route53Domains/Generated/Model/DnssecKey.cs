@@ -63,9 +63,9 @@ namespace Amazon.Route53Domains.Model
         /// DNSSEC signing and establishing a chain of trust</a>.
         /// </para>
         /// </summary>
-        public int Algorithm
+        public int? Algorithm
         {
-            get { return this._algorithm.GetValueOrDefault(); }
+            get { return this._algorithm; }
             set { this._algorithm = value; }
         }
 
@@ -110,9 +110,9 @@ namespace Amazon.Route53Domains.Model
         /// for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. 
         /// </para>
         /// </summary>
-        public int DigestType
+        public int? DigestType
         {
-            get { return this._digestType.GetValueOrDefault(); }
+            get { return this._digestType; }
             set { this._digestType = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.Route53Domains.Model
         /// If you have ZSK keys only – use ZSK to create a DS record.
         /// </para>
         /// </summary>
-        public int Flags
+        public int? Flags
         {
-            get { return this._flags.GetValueOrDefault(); }
+            get { return this._flags; }
             set { this._flags = value; }
         }
 
@@ -172,9 +172,9 @@ namespace Amazon.Route53Domains.Model
         ///  A numeric identification of the DNSKEY record referred to by this DS record. 
         /// </para>
         /// </summary>
-        public int KeyTag
+        public int? KeyTag
         {
-            get { return this._keyTag.GetValueOrDefault(); }
+            get { return this._keyTag; }
             set { this._keyTag = value; }
         }
 

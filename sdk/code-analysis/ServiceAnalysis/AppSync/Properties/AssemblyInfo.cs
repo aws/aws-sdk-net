@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AppSync")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS AppSync. AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

@@ -43,9 +43,9 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Options
+        public bool? Options
         {
-            get { return this._options.GetValueOrDefault(); }
+            get { return this._options; }
             set { this._options = value; }
         }
 

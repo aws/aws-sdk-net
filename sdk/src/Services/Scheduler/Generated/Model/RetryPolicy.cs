@@ -45,9 +45,9 @@ namespace Amazon.Scheduler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=86400)]
-        public int MaximumEventAgeInSeconds
+        public int? MaximumEventAgeInSeconds
         {
-            get { return this._maximumEventAgeInSeconds.GetValueOrDefault(); }
+            get { return this._maximumEventAgeInSeconds; }
             set { this._maximumEventAgeInSeconds = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Scheduler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=185)]
-        public int MaximumRetryAttempts
+        public int? MaximumRetryAttempts
         {
-            get { return this._maximumRetryAttempts.GetValueOrDefault(); }
+            get { return this._maximumRetryAttempts; }
             set { this._maximumRetryAttempts = value; }
         }
 

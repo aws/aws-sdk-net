@@ -208,9 +208,9 @@ namespace Amazon.GameLift.Model
         /// to null.
         /// </para>
         /// </summary>
-        public DateTime LastClaimTime
+        public DateTime? LastClaimTime
         {
-            get { return this._lastClaimTime.GetValueOrDefault(); }
+            get { return this._lastClaimTime; }
             set { this._lastClaimTime = value; }
         }
 
@@ -229,9 +229,9 @@ namespace Amazon.GameLift.Model
         /// specifies a health check value.
         /// </para>
         /// </summary>
-        public DateTime LastHealthCheckTime
+        public DateTime? LastHealthCheckTime
         {
-            get { return this._lastHealthCheckTime.GetValueOrDefault(); }
+            get { return this._lastHealthCheckTime; }
             set { this._lastHealthCheckTime = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime RegistrationTime
+        public DateTime? RegistrationTime
         {
-            get { return this._registrationTime.GetValueOrDefault(); }
+            get { return this._registrationTime; }
             set { this._registrationTime = value; }
         }
 

@@ -134,9 +134,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public int Confidence
+        public int? Confidence
         {
-            get { return this._confidence.GetValueOrDefault(); }
+            get { return this._confidence; }
             set { this._confidence = value; }
         }
 
@@ -153,9 +153,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -209,9 +209,9 @@ namespace Amazon.Inspector.Model
         /// This data element is currently not used.
         /// </para>
         /// </summary>
-        public bool IndicatorOfCompromise
+        public bool? IndicatorOfCompromise
         {
-            get { return this._indicatorOfCompromise.GetValueOrDefault(); }
+            get { return this._indicatorOfCompromise; }
             set { this._indicatorOfCompromise = value; }
         }
 
@@ -228,9 +228,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
-        public double NumericSeverity
+        public double? NumericSeverity
         {
-            get { return this._numericSeverity.GetValueOrDefault(); }
+            get { return this._numericSeverity; }
             set { this._numericSeverity = value; }
         }
 
@@ -266,9 +266,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int SchemaVersion
+        public int? SchemaVersion
         {
-            get { return this._schemaVersion.GetValueOrDefault(); }
+            get { return this._schemaVersion; }
             set { this._schemaVersion = value; }
         }
 
@@ -359,9 +359,9 @@ namespace Amazon.Inspector.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

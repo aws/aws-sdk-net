@@ -83,19 +83,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FirstActivatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstActivatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FirstEvaluationStarted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FirstEvaluationStarted = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastDeactivatedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastDeactivatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -113,7 +113,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastDebugLogDeliveryTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastDebugLogDeliveryTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,25 +131,25 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("LastFailedEvaluationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastFailedEvaluationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastFailedInvocationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastFailedInvocationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulEvaluationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfulEvaluationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulInvocationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfulInvocationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

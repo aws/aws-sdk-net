@@ -66,9 +66,9 @@ namespace Amazon.IdentityManagement.Model
         /// The date and time on which the virtual MFA device was enabled.
         /// </para>
         /// </summary>
-        public DateTime EnableDate
+        public DateTime? EnableDate
         {
-            get { return this._enableDate.GetValueOrDefault(); }
+            get { return this._enableDate; }
             set { this._enableDate = value; }
         }
 

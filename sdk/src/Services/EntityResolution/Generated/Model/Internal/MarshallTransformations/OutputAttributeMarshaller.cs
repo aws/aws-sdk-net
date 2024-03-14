@@ -48,7 +48,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHashed())
             {
                 context.Writer.WritePropertyName("hashed");
-                context.Writer.Write(requestObject.Hashed);
+                context.Writer.Write(requestObject.Hashed.Value);
             }
 
             if(requestObject.IsSetName())

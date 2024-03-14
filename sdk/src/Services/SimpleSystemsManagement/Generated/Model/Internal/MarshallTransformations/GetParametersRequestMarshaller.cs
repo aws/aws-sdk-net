@@ -81,7 +81,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetWithDecryption())
                 {
                     context.Writer.WritePropertyName("WithDecryption");
-                    context.Writer.Write(publicRequest.WithDecryption);
+                    context.Writer.Write(publicRequest.WithDecryption.Value);
                 }
 
                 writer.WriteObjectEnd();

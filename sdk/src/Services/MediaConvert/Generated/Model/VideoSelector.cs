@@ -164,9 +164,9 @@ namespace Amazon.MediaConvert.Model
         /// 10000000 for 1000 nits.
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
-        public int MaxLuminance
+        public int? MaxLuminance
         {
-            get { return this._maxLuminance.GetValueOrDefault(); }
+            get { return this._maxLuminance; }
             set { this._maxLuminance = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.MediaConvert.Model
         /// is an identifier for a set of data in an MPEG-2 transport stream container.
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
-        public int Pid
+        public int? Pid
         {
-            get { return this._pid.GetValueOrDefault(); }
+            get { return this._pid; }
             set { this._pid = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.MediaConvert.Model
         /// multi-program transport stream. Note that Quad 4K is not currently supported.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int ProgramNumber
+        public int? ProgramNumber
         {
-            get { return this._programNumber.GetValueOrDefault(); }
+            get { return this._programNumber; }
             set { this._programNumber = value; }
         }
 

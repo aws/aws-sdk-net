@@ -42,9 +42,9 @@ namespace Amazon.MediaLive.Model
         /// out. Default is 0 (no fade-out).
         /// </summary>
         [AWSProperty(Min=0)]
-        public int FadeOut
+        public int? FadeOut
         {
-            get { return this._fadeOut.GetValueOrDefault(); }
+            get { return this._fadeOut; }
             set { this._fadeOut = value; }
         }
 
@@ -59,9 +59,9 @@ namespace Amazon.MediaLive.Model
         /// is 0.
         /// </summary>
         [AWSProperty(Min=0, Max=7)]
-        public int Layer
+        public int? Layer
         {
-            get { return this._layer.GetValueOrDefault(); }
+            get { return this._layer; }
             set { this._layer = value; }
         }
 

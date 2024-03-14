@@ -231,9 +231,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsIPV6Enabled
+        public bool? IsIPV6Enabled
         {
-            get { return this._isIPV6Enabled.GetValueOrDefault(); }
+            get { return this._isIPV6Enabled; }
             set { this._isIPV6Enabled = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -404,9 +404,9 @@ namespace Amazon.CloudFront.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Staging
+        public bool? Staging
         {
-            get { return this._staging.GetValueOrDefault(); }
+            get { return this._staging; }
             set { this._staging = value; }
         }
 

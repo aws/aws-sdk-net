@@ -171,9 +171,9 @@ namespace Amazon.CleanRoomsML.Model
         /// The end date and time of the training window.
         /// </para>
         /// </summary>
-        public DateTime TrainingDataEndTime
+        public DateTime? TrainingDataEndTime
         {
-            get { return this._trainingDataEndTime.GetValueOrDefault(); }
+            get { return this._trainingDataEndTime; }
             set { this._trainingDataEndTime = value; }
         }
 
@@ -208,9 +208,9 @@ namespace Amazon.CleanRoomsML.Model
         /// The start date and time of the training window.
         /// </para>
         /// </summary>
-        public DateTime TrainingDataStartTime
+        public DateTime? TrainingDataStartTime
         {
-            get { return this._trainingDataStartTime.GetValueOrDefault(); }
+            get { return this._trainingDataStartTime; }
             set { this._trainingDataStartTime = value; }
         }
 

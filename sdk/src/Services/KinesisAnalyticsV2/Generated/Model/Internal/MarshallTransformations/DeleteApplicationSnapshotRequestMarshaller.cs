@@ -76,7 +76,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSnapshotCreationTimestamp())
                 {
                     context.Writer.WritePropertyName("SnapshotCreationTimestamp");
-                    context.Writer.Write(publicRequest.SnapshotCreationTimestamp);
+                    context.Writer.Write(publicRequest.SnapshotCreationTimestamp.Value);
                 }
 
                 if(publicRequest.IsSetSnapshotName())

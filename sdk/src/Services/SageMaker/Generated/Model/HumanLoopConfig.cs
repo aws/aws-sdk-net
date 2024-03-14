@@ -100,9 +100,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int TaskAvailabilityLifetimeInSeconds
+        public int? TaskAvailabilityLifetimeInSeconds
         {
-            get { return this._taskAvailabilityLifetimeInSeconds.GetValueOrDefault(); }
+            get { return this._taskAvailabilityLifetimeInSeconds; }
             set { this._taskAvailabilityLifetimeInSeconds = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
-        public int TaskCount
+        public int? TaskCount
         {
-            get { return this._taskCount.GetValueOrDefault(); }
+            get { return this._taskCount; }
             set { this._taskCount = value; }
         }
 
@@ -180,9 +180,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]
-        public int TaskTimeLimitInSeconds
+        public int? TaskTimeLimitInSeconds
         {
-            get { return this._taskTimeLimitInSeconds.GetValueOrDefault(); }
+            get { return this._taskTimeLimitInSeconds; }
             set { this._taskTimeLimitInSeconds = value; }
         }
 

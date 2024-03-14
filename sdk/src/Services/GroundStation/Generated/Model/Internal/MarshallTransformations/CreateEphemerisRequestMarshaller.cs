@@ -68,7 +68,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetEphemeris())
@@ -85,7 +85,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpirationTime())
                 {
                     context.Writer.WritePropertyName("expirationTime");
-                    context.Writer.Write(publicRequest.ExpirationTime);
+                    context.Writer.Write(publicRequest.ExpirationTime.Value);
                 }
 
                 if(publicRequest.IsSetKmsKeyArn())
@@ -103,7 +103,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPriority())
                 {
                     context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority);
+                    context.Writer.Write(publicRequest.Priority.Value);
                 }
 
                 if(publicRequest.IsSetSatelliteId())

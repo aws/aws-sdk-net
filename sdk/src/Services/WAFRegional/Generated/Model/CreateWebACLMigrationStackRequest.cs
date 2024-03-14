@@ -60,9 +60,9 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IgnoreUnsupportedType
+        public bool? IgnoreUnsupportedType
         {
-            get { return this._ignoreUnsupportedType.GetValueOrDefault(); }
+            get { return this._ignoreUnsupportedType; }
             set { this._ignoreUnsupportedType = value; }
         }
 

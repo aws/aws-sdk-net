@@ -85,9 +85,9 @@ namespace Amazon.Connect.Model
         /// The time at which the contact was connected to an agent.
         /// </para>
         /// </summary>
-        public DateTime ConnectedToAgentTimestamp
+        public DateTime? ConnectedToAgentTimestamp
         {
-            get { return this._connectedToAgentTimestamp.GetValueOrDefault(); }
+            get { return this._connectedToAgentTimestamp; }
             set { this._connectedToAgentTimestamp = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.Connect.Model
         /// The epoch timestamp when the contact state started.
         /// </para>
         /// </summary>
-        public DateTime StateStartTimestamp
+        public DateTime? StateStartTimestamp
         {
-            get { return this._stateStartTimestamp.GetValueOrDefault(); }
+            get { return this._stateStartTimestamp; }
             set { this._stateStartTimestamp = value; }
         }
 

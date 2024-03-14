@@ -46,9 +46,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the maintenance window finished running.
         /// </para>
         /// </summary>
-        public DateTime EndTime
+        public DateTime? EndTime
         {
-            get { return this._endTime.GetValueOrDefault(); }
+            get { return this._endTime; }
             set { this._endTime = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The time the maintenance window started running.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

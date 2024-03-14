@@ -254,9 +254,9 @@ namespace Amazon.SecurityHub.Model
         ///  Indicates whether to use X-Ray tracing for the GraphQL API. 
         /// </para>
         /// </summary>
-        public bool XrayEnabled
+        public bool? XrayEnabled
         {
-            get { return this._xrayEnabled.GetValueOrDefault(); }
+            get { return this._xrayEnabled; }
             set { this._xrayEnabled = value; }
         }
 

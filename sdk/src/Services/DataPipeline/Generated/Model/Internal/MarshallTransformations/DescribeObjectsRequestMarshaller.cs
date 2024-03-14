@@ -70,7 +70,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEvaluateExpressions())
                 {
                     context.Writer.WritePropertyName("evaluateExpressions");
-                    context.Writer.Write(publicRequest.EvaluateExpressions);
+                    context.Writer.Write(publicRequest.EvaluateExpressions.Value);
                 }
 
                 if(publicRequest.IsSetMarker())

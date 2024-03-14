@@ -162,9 +162,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// region in which it is being retrieved.
         /// </para>
         /// </summary>
-        public bool ResourcesSupported
+        public bool? ResourcesSupported
         {
-            get { return this._resourcesSupported.GetValueOrDefault(); }
+            get { return this._resourcesSupported; }
             set { this._resourcesSupported = value; }
         }
 

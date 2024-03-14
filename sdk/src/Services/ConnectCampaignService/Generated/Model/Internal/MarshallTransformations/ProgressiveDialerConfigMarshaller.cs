@@ -48,13 +48,13 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");
-                context.Writer.Write(requestObject.BandwidthAllocation);
+                context.Writer.Write(requestObject.BandwidthAllocation.Value);
             }
 
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
-                context.Writer.Write(requestObject.DialingCapacity);
+                context.Writer.Write(requestObject.DialingCapacity.Value);
             }
 
         }

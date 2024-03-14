@@ -41,9 +41,9 @@ namespace Amazon.SecurityHub.Model
         /// The read capacity units for the replica.
         /// </para>
         /// </summary>
-        public int ReadCapacityUnits
+        public int? ReadCapacityUnits
         {
-            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            get { return this._readCapacityUnits; }
             set { this._readCapacityUnits = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.Chime.Model
         /// in ISO 8601 format.
         /// </para>
         /// </summary>
-        public DateTime InitiateDeletionTimestamp
+        public DateTime? InitiateDeletionTimestamp
         {
-            get { return this._initiateDeletionTimestamp.GetValueOrDefault(); }
+            get { return this._initiateDeletionTimestamp; }
             set { this._initiateDeletionTimestamp = value; }
         }
 

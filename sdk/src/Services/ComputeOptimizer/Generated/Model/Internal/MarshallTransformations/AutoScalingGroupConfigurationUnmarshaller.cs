@@ -65,7 +65,7 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("desiredCapacity", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("maxSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("minSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSize = unmarshaller.Unmarshall(context);
                     continue;
                 }

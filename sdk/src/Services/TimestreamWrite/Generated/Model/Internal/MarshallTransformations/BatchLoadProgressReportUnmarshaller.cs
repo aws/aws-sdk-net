@@ -65,37 +65,37 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BytesMetered", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileFailures", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FileFailures = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ParseFailures", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ParseFailures = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordIngestionFailures", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordIngestionFailures = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordsIngested", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordsIngested = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RecordsProcessed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RecordsProcessed = unmarshaller.Unmarshall(context);
                     continue;
                 }

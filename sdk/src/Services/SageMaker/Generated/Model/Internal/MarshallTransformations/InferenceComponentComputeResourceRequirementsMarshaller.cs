@@ -48,25 +48,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MaxMemoryRequiredInMb");
-                context.Writer.Write(requestObject.MaxMemoryRequiredInMb);
+                context.Writer.Write(requestObject.MaxMemoryRequiredInMb.Value);
             }
 
             if(requestObject.IsSetMinMemoryRequiredInMb())
             {
                 context.Writer.WritePropertyName("MinMemoryRequiredInMb");
-                context.Writer.Write(requestObject.MinMemoryRequiredInMb);
+                context.Writer.Write(requestObject.MinMemoryRequiredInMb.Value);
             }
 
             if(requestObject.IsSetNumberOfAcceleratorDevicesRequired())
             {
                 context.Writer.WritePropertyName("NumberOfAcceleratorDevicesRequired");
-                context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired);
+                context.Writer.Write(requestObject.NumberOfAcceleratorDevicesRequired.Value);
             }
 
             if(requestObject.IsSetNumberOfCpuCoresRequired())
             {
                 context.Writer.WritePropertyName("NumberOfCpuCoresRequired");
-                context.Writer.Write(requestObject.NumberOfCpuCoresRequired);
+                context.Writer.Write(requestObject.NumberOfCpuCoresRequired.Value);
             }
 
         }

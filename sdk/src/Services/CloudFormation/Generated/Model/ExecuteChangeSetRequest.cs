@@ -125,9 +125,9 @@ namespace Amazon.CloudFormation.Model
         /// Default: <c>True</c> 
         /// </para>
         /// </summary>
-        public bool DisableRollback
+        public bool? DisableRollback
         {
-            get { return this._disableRollback.GetValueOrDefault(); }
+            get { return this._disableRollback; }
             set { this._disableRollback = value; }
         }
 
@@ -148,9 +148,9 @@ namespace Amazon.CloudFormation.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool RetainExceptOnCreate
+        public bool? RetainExceptOnCreate
         {
-            get { return this._retainExceptOnCreate.GetValueOrDefault(); }
+            get { return this._retainExceptOnCreate; }
             set { this._retainExceptOnCreate = value; }
         }
 

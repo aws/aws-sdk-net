@@ -48,9 +48,9 @@ namespace Amazon.Redshift.Model
         /// If set to true, allows write operations for a datashare.
         /// </para>
         /// </summary>
-        public bool AllowWrites
+        public bool? AllowWrites
         {
-            get { return this._allowWrites.GetValueOrDefault(); }
+            get { return this._allowWrites; }
             set { this._allowWrites = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.Redshift.Model
         /// A value that specifies whether the datashare is associated with the entire account.
         /// </para>
         /// </summary>
-        public bool AssociateEntireAccount
+        public bool? AssociateEntireAccount
         {
-            get { return this._associateEntireAccount.GetValueOrDefault(); }
+            get { return this._associateEntireAccount; }
             set { this._associateEntireAccount = value; }
         }
 

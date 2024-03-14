@@ -122,9 +122,9 @@ namespace Amazon.MediaLive.Model
         /// multiple of 1000.
         /// </summary>
         [AWSProperty(Min=100000, Max=40000000)]
-        public int Bitrate
+        public int? Bitrate
         {
-            get { return this._bitrate.GetValueOrDefault(); }
+            get { return this._bitrate; }
             set { this._bitrate = value; }
         }
 
@@ -138,9 +138,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property BufSize. Size of buffer (HRD buffer model) in bits.
         /// </summary>
         [AWSProperty(Min=100000, Max=80000000)]
-        public int BufSize
+        public int? BufSize
         {
-            get { return this._bufSize.GetValueOrDefault(); }
+            get { return this._bufSize; }
             set { this._bufSize = value; }
         }
 
@@ -232,9 +232,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateDenominator. Framerate denominator.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3003)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.MediaLive.Model
         /// a fraction, e.g. 24000 / 1001 = 23.976 fps.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.MediaLive.Model
         /// output segmenting.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GopClosedCadence
+        public int? GopClosedCadence
         {
-            get { return this._gopClosedCadence.GetValueOrDefault(); }
+            get { return this._gopClosedCadence; }
             set { this._gopClosedCadence = value; }
         }
 
@@ -286,9 +286,9 @@ namespace Amazon.MediaLive.Model
         /// and must be greater than or equal to 1.If gopSizeUnits is seconds, gopSize must be
         /// greater than 0, but need not be an integer.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 
@@ -351,9 +351,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality level
         /// </summary>
         [AWSProperty(Min=100000, Max=40000000)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -373,9 +373,9 @@ namespace Amazon.MediaLive.Model
         /// Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public int MinIInterval
+        public int? MinIInterval
         {
-            get { return this._minIInterval.GetValueOrDefault(); }
+            get { return this._minIInterval; }
             set { this._minIInterval = value; }
         }
 
@@ -389,9 +389,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ParDenominator. Pixel Aspect Ratio denominator.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParDenominator
+        public int? ParDenominator
         {
-            get { return this._parDenominator.GetValueOrDefault(); }
+            get { return this._parDenominator; }
             set { this._parDenominator = value; }
         }
 
@@ -405,9 +405,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ParNumerator. Pixel Aspect Ratio numerator.
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParNumerator
+        public int? ParNumerator
         {
-            get { return this._parNumerator.GetValueOrDefault(); }
+            get { return this._parNumerator; }
             set { this._parNumerator = value; }
         }
 
@@ -441,9 +441,9 @@ namespace Amazon.MediaLive.Model
         /// 1M to 1.5M
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int QvbrQualityLevel
+        public int? QvbrQualityLevel
         {
-            get { return this._qvbrQualityLevel.GetValueOrDefault(); }
+            get { return this._qvbrQualityLevel; }
             set { this._qvbrQualityLevel = value; }
         }
 
@@ -514,9 +514,9 @@ namespace Amazon.MediaLive.Model
         /// based on encode resolution.
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
-        public int Slices
+        public int? Slices
         {
-            get { return this._slices.GetValueOrDefault(); }
+            get { return this._slices; }
             set { this._slices = value; }
         }
 

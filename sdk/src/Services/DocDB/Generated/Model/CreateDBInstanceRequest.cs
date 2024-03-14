@@ -59,9 +59,9 @@ namespace Amazon.DocDB.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool AutoMinorVersionUpgrade
+        public bool? AutoMinorVersionUpgrade
         {
-            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            get { return this._autoMinorVersionUpgrade; }
             set { this._autoMinorVersionUpgrade = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.DocDB.Model
         /// DB instance. By default, tags are not copied.
         /// </para>
         /// </summary>
-        public bool CopyTagsToSnapshot
+        public bool? CopyTagsToSnapshot
         {
-            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            get { return this._copyTagsToSnapshot; }
             set { this._copyTagsToSnapshot = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.DocDB.Model
         /// Amazon Performance Insights</a>.
         /// </para>
         /// </summary>
-        public bool EnablePerformanceInsights
+        public bool? EnablePerformanceInsights
         {
-            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            get { return this._enablePerformanceInsights; }
             set { this._enablePerformanceInsights = value; }
         }
 
@@ -343,9 +343,9 @@ namespace Amazon.DocDB.Model
         /// Valid values: 0-15
         /// </para>
         /// </summary>
-        public int PromotionTier
+        public int? PromotionTier
         {
-            get { return this._promotionTier.GetValueOrDefault(); }
+            get { return this._promotionTier; }
             set { this._promotionTier = value; }
         }
 

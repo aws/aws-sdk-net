@@ -46,9 +46,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime EndDate
+        public DateTime? EndDate
         {
-            get { return this._endDate.GetValueOrDefault(); }
+            get { return this._endDate; }
             set { this._endDate = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -109,9 +109,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime StartDate
+        public DateTime? StartDate
         {
-            get { return this._startDate.GetValueOrDefault(); }
+            get { return this._startDate; }
             set { this._startDate = value; }
         }
 

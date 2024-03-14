@@ -70,7 +70,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpsLimit())
             {
                 context.Writer.WritePropertyName("CpsLimit");
-                context.Writer.Write(requestObject.CpsLimit);
+                context.Writer.Write(requestObject.CpsLimit.Value);
             }
 
             if(requestObject.IsSetDefaultPhoneNumber())
@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisabled())
             {
                 context.Writer.WritePropertyName("Disabled");
-                context.Writer.Write(requestObject.Disabled);
+                context.Writer.Write(requestObject.Disabled.Value);
             }
 
         }

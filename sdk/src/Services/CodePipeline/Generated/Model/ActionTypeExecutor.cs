@@ -69,9 +69,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=43200)]
-        public int JobTimeout
+        public int? JobTimeout
         {
-            get { return this._jobTimeout.GetValueOrDefault(); }
+            get { return this._jobTimeout; }
             set { this._jobTimeout = value; }
         }
 

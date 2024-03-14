@@ -48,7 +48,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabledByMotion())
             {
                 context.Writer.WritePropertyName("EnabledByMotion");
-                context.Writer.Write(requestObject.EnabledByMotion);
+                context.Writer.Write(requestObject.EnabledByMotion.Value);
             }
 
         }

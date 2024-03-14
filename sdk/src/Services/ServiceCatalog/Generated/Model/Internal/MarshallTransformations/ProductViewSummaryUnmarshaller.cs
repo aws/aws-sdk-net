@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HasDefaultPath", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasDefaultPath = unmarshaller.Unmarshall(context);
                     continue;
                 }

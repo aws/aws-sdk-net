@@ -47,9 +47,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Inverted
+        public bool? Inverted
         {
-            get { return this._inverted.GetValueOrDefault(); }
+            get { return this._inverted; }
             set { this._inverted = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Threshold
+        public int? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

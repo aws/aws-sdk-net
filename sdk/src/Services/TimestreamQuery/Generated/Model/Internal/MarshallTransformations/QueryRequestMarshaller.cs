@@ -81,7 +81,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxRows())
                 {
                     context.Writer.WritePropertyName("MaxRows");
-                    context.Writer.Write(publicRequest.MaxRows);
+                    context.Writer.Write(publicRequest.MaxRows.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

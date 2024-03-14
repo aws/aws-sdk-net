@@ -65,7 +65,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("migrationTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.MigrationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }

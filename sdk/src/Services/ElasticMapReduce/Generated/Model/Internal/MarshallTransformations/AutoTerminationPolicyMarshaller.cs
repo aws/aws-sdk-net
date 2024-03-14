@@ -48,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeout())
             {
                 context.Writer.WritePropertyName("IdleTimeout");
-                context.Writer.Write(requestObject.IdleTimeout);
+                context.Writer.Write(requestObject.IdleTimeout.Value);
             }
 
         }

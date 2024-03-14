@@ -43,9 +43,9 @@ namespace Amazon.AppSync.Model
         /// The column number in the code. Defaults to <c>0</c> if unknown.
         /// </para>
         /// </summary>
-        public int Column
+        public int? Column
         {
-            get { return this._column.GetValueOrDefault(); }
+            get { return this._column; }
             set { this._column = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.AppSync.Model
         /// The line number in the code. Defaults to <c>0</c> if unknown.
         /// </para>
         /// </summary>
-        public int Line
+        public int? Line
         {
-            get { return this._line.GetValueOrDefault(); }
+            get { return this._line; }
             set { this._line = value; }
         }
 
@@ -79,9 +79,9 @@ namespace Amazon.AppSync.Model
         /// The span/length of the error. Defaults to <c>-1</c> if unknown.
         /// </para>
         /// </summary>
-        public int Span
+        public int? Span
         {
-            get { return this._span.GetValueOrDefault(); }
+            get { return this._span; }
             set { this._span = value; }
         }
 

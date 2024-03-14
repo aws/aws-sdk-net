@@ -98,7 +98,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxJobDurationInSeconds())
             {
                 context.Writer.WritePropertyName("maxJobDurationInSeconds");
-                context.Writer.Write(requestObject.MaxJobDurationInSeconds);
+                context.Writer.Write(requestObject.MaxJobDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetOutputLocation())
@@ -161,7 +161,7 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUseDefaultApplications())
             {
                 context.Writer.WritePropertyName("useDefaultApplications");
-                context.Writer.Write(requestObject.UseDefaultApplications);
+                context.Writer.Write(requestObject.UseDefaultApplications.Value);
             }
 
             if(requestObject.IsSetVpcConfig())

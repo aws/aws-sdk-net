@@ -48,13 +48,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageX())
             {
                 context.Writer.WritePropertyName("imageX");
-                context.Writer.Write(requestObject.ImageX);
+                context.Writer.Write(requestObject.ImageX.Value);
             }
 
             if(requestObject.IsSetImageY())
             {
                 context.Writer.WritePropertyName("imageY");
-                context.Writer.Write(requestObject.ImageY);
+                context.Writer.Write(requestObject.ImageY.Value);
             }
 
         }

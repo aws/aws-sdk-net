@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNoDevice())
             {
                 context.Writer.WritePropertyName("NoDevice");
-                context.Writer.Write(requestObject.NoDevice);
+                context.Writer.Write(requestObject.NoDevice.Value);
             }
 
             if(requestObject.IsSetVirtualName())

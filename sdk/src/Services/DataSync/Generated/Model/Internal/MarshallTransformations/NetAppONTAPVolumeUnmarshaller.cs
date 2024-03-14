@@ -65,31 +65,31 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CapacityProvisioned", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CapacityProvisioned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CapacityUsed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CapacityUsed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CifsShareCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CifsShareCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LogicalCapacityUsed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LogicalCapacityUsed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LunCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LunCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -101,7 +101,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NfsExported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NfsExported = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -131,7 +131,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("SnapshotCapacityUsed", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SnapshotCapacityUsed = unmarshaller.Unmarshall(context);
                     continue;
                 }

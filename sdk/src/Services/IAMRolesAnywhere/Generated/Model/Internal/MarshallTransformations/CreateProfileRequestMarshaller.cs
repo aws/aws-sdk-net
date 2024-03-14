@@ -68,13 +68,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDurationSeconds())
                 {
                     context.Writer.WritePropertyName("durationSeconds");
-                    context.Writer.Write(publicRequest.DurationSeconds);
+                    context.Writer.Write(publicRequest.DurationSeconds.Value);
                 }
 
                 if(publicRequest.IsSetEnabled())
                 {
                     context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
+                    context.Writer.Write(publicRequest.Enabled.Value);
                 }
 
                 if(publicRequest.IsSetManagedPolicyArns())
@@ -97,7 +97,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRequireInstanceProperties())
                 {
                     context.Writer.WritePropertyName("requireInstanceProperties");
-                    context.Writer.Write(publicRequest.RequireInstanceProperties);
+                    context.Writer.Write(publicRequest.RequireInstanceProperties.Value);
                 }
 
                 if(publicRequest.IsSetRoleArns())

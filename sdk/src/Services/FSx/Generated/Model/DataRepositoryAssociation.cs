@@ -104,9 +104,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool BatchImportMetaDataOnCreate
+        public bool? BatchImportMetaDataOnCreate
         {
-            get { return this._batchImportMetaDataOnCreate.GetValueOrDefault(); }
+            get { return this._batchImportMetaDataOnCreate; }
             set { this._batchImportMetaDataOnCreate = value; }
         }
 
@@ -119,9 +119,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CreationTime.
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -344,9 +344,9 @@ namespace Amazon.FSx.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512000)]
-        public int ImportedFileChunkSize
+        public int? ImportedFileChunkSize
         {
-            get { return this._importedFileChunkSize.GetValueOrDefault(); }
+            get { return this._importedFileChunkSize; }
             set { this._importedFileChunkSize = value; }
         }
 

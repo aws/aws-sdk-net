@@ -183,9 +183,9 @@ namespace Amazon.Drs.Model
         /// Whether we are failing back to the original Source Server for this Recovery Instance.
         /// </para>
         /// </summary>
-        public bool FailbackToOriginalServer
+        public bool? FailbackToOriginalServer
         {
-            get { return this._failbackToOriginalServer.GetValueOrDefault(); }
+            get { return this._failbackToOriginalServer; }
             set { this._failbackToOriginalServer = value; }
         }
 

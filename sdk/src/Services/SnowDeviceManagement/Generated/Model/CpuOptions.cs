@@ -42,9 +42,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// The number of cores that the CPU can use.
         /// </para>
         /// </summary>
-        public int CoreCount
+        public int? CoreCount
         {
-            get { return this._coreCount.GetValueOrDefault(); }
+            get { return this._coreCount; }
             set { this._coreCount = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.SnowDeviceManagement.Model
         /// The number of threads per core in the CPU.
         /// </para>
         /// </summary>
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

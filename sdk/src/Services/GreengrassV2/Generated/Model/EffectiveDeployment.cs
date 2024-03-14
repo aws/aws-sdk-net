@@ -107,9 +107,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreationTimestamp
+        public DateTime? CreationTimestamp
         {
-            get { return this._creationTimestamp.GetValueOrDefault(); }
+            get { return this._creationTimestamp; }
             set { this._creationTimestamp = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ModifiedTimestamp
+        public DateTime? ModifiedTimestamp
         {
-            get { return this._modifiedTimestamp.GetValueOrDefault(); }
+            get { return this._modifiedTimestamp; }
             set { this._modifiedTimestamp = value; }
         }
 

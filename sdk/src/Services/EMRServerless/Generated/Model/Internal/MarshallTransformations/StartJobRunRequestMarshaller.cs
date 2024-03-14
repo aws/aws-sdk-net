@@ -99,7 +99,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExecutionTimeoutMinutes())
                 {
                     context.Writer.WritePropertyName("executionTimeoutMinutes");
-                    context.Writer.Write(publicRequest.ExecutionTimeoutMinutes);
+                    context.Writer.Write(publicRequest.ExecutionTimeoutMinutes.Value);
                 }
 
                 if(publicRequest.IsSetJobDriver())

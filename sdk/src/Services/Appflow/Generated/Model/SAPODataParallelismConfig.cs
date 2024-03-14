@@ -46,9 +46,9 @@ namespace Amazon.Appflow.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int MaxParallelism
+        public int? MaxParallelism
         {
-            get { return this._maxParallelism.GetValueOrDefault(); }
+            get { return this._maxParallelism; }
             set { this._maxParallelism = value; }
         }
 

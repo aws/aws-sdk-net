@@ -74,9 +74,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// stage.
         /// </para>
         /// </summary>
-        public bool ApiGatewayManaged
+        public bool? ApiGatewayManaged
         {
-            get { return this._apiGatewayManaged.GetValueOrDefault(); }
+            get { return this._apiGatewayManaged; }
             set { this._apiGatewayManaged = value; }
         }
 
@@ -93,9 +93,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// value is false.
         /// </para>
         /// </summary>
-        public bool AutoDeploy
+        public bool? AutoDeploy
         {
-            get { return this._autoDeploy.GetValueOrDefault(); }
+            get { return this._autoDeploy; }
             set { this._autoDeploy = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// The timestamp when the stage was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -221,9 +221,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// The timestamp when the stage was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 

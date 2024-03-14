@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApproveAfterDays())
             {
                 context.Writer.WritePropertyName("ApproveAfterDays");
-                context.Writer.Write(requestObject.ApproveAfterDays);
+                context.Writer.Write(requestObject.ApproveAfterDays.Value);
             }
 
             if(requestObject.IsSetApproveUntilDate())
@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableNonSecurity())
             {
                 context.Writer.WritePropertyName("EnableNonSecurity");
-                context.Writer.Write(requestObject.EnableNonSecurity);
+                context.Writer.Write(requestObject.EnableNonSecurity.Value);
             }
 
             if(requestObject.IsSetPatchFilterGroup())

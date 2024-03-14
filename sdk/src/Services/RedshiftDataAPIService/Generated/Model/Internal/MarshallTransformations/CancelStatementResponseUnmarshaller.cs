@@ -53,7 +53,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }

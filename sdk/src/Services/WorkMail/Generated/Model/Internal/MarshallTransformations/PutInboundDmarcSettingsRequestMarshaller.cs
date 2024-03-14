@@ -70,7 +70,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnforced())
                 {
                     context.Writer.WritePropertyName("Enforced");
-                    context.Writer.Write(publicRequest.Enforced);
+                    context.Writer.Write(publicRequest.Enforced.Value);
                 }
 
                 if(publicRequest.IsSetOrganizationId())

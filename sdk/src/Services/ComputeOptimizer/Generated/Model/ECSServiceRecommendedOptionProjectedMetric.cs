@@ -68,9 +68,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The recommended CPU size for the Amazon ECS service. 
         /// </para>
         /// </summary>
-        public int RecommendedCpuUnits
+        public int? RecommendedCpuUnits
         {
-            get { return this._recommendedCpuUnits.GetValueOrDefault(); }
+            get { return this._recommendedCpuUnits; }
             set { this._recommendedCpuUnits = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.ComputeOptimizer.Model
         ///  The recommended memory size for the Amazon ECS service. 
         /// </para>
         /// </summary>
-        public int RecommendedMemorySize
+        public int? RecommendedMemorySize
         {
-            get { return this._recommendedMemorySize.GetValueOrDefault(); }
+            get { return this._recommendedMemorySize; }
             set { this._recommendedMemorySize = value; }
         }
 

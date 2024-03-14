@@ -123,9 +123,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// store.
         /// </para>
         /// </summary>
-        public bool IsExternalId
+        public bool? IsExternalId
         {
-            get { return this._isExternalId.GetValueOrDefault(); }
+            get { return this._isExternalId; }
             set { this._isExternalId = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value that specifies whether the property is required.
         /// </para>
         /// </summary>
-        public bool IsRequiredInEntity
+        public bool? IsRequiredInEntity
         {
-            get { return this._isRequiredInEntity.GetValueOrDefault(); }
+            get { return this._isRequiredInEntity; }
             set { this._isRequiredInEntity = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value that specifies whether the property is stored externally.
         /// </para>
         /// </summary>
-        public bool IsStoredExternally
+        public bool? IsStoredExternally
         {
-            get { return this._isStoredExternally.GetValueOrDefault(); }
+            get { return this._isStoredExternally; }
             set { this._isStoredExternally = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.IoTTwinMaker.Model
         /// A Boolean value that specifies whether the property consists of time series data.
         /// </para>
         /// </summary>
-        public bool IsTimeSeries
+        public bool? IsTimeSeries
         {
-            get { return this._isTimeSeries.GetValueOrDefault(); }
+            get { return this._isTimeSeries; }
             set { this._isTimeSeries = value; }
         }
 

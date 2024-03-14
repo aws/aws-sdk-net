@@ -43,9 +43,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
-        public int Percentage
+        public int? Percentage
         {
-            get { return this._percentage.GetValueOrDefault(); }
+            get { return this._percentage; }
             set { this._percentage = value; }
         }
 

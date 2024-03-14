@@ -44,9 +44,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Column
+        public int? Column
         {
-            get { return this._column.GetValueOrDefault(); }
+            get { return this._column; }
             set { this._column = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Line
+        public int? Line
         {
-            get { return this._line.GetValueOrDefault(); }
+            get { return this._line; }
             set { this._line = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Offset
+        public int? Offset
         {
-            get { return this._offset.GetValueOrDefault(); }
+            get { return this._offset; }
             set { this._offset = value; }
         }
 

@@ -65,9 +65,9 @@ namespace Amazon.ServiceQuotas.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000000000)]
-        public double DesiredValue
+        public double? DesiredValue
         {
-            get { return this._desiredValue.GetValueOrDefault(); }
+            get { return this._desiredValue; }
             set { this._desiredValue = value; }
         }
 

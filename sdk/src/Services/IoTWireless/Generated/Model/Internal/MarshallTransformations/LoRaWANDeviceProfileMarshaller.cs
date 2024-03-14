@@ -48,13 +48,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClassBTimeout())
             {
                 context.Writer.WritePropertyName("ClassBTimeout");
-                context.Writer.Write(requestObject.ClassBTimeout);
+                context.Writer.Write(requestObject.ClassBTimeout.Value);
             }
 
             if(requestObject.IsSetClassCTimeout())
             {
                 context.Writer.WritePropertyName("ClassCTimeout");
-                context.Writer.Write(requestObject.ClassCTimeout);
+                context.Writer.Write(requestObject.ClassCTimeout.Value);
             }
 
             if(requestObject.IsSetFactoryPresetFreqsList())
@@ -77,31 +77,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDutyCycle())
             {
                 context.Writer.WritePropertyName("MaxDutyCycle");
-                context.Writer.Write(requestObject.MaxDutyCycle);
+                context.Writer.Write(requestObject.MaxDutyCycle.Value);
             }
 
             if(requestObject.IsSetMaxEirp())
             {
                 context.Writer.WritePropertyName("MaxEirp");
-                context.Writer.Write(requestObject.MaxEirp);
+                context.Writer.Write(requestObject.MaxEirp.Value);
             }
 
             if(requestObject.IsSetPingSlotDr())
             {
                 context.Writer.WritePropertyName("PingSlotDr");
-                context.Writer.Write(requestObject.PingSlotDr);
+                context.Writer.Write(requestObject.PingSlotDr.Value);
             }
 
             if(requestObject.IsSetPingSlotFreq())
             {
                 context.Writer.WritePropertyName("PingSlotFreq");
-                context.Writer.Write(requestObject.PingSlotFreq);
+                context.Writer.Write(requestObject.PingSlotFreq.Value);
             }
 
             if(requestObject.IsSetPingSlotPeriod())
             {
                 context.Writer.WritePropertyName("PingSlotPeriod");
-                context.Writer.Write(requestObject.PingSlotPeriod);
+                context.Writer.Write(requestObject.PingSlotPeriod.Value);
             }
 
             if(requestObject.IsSetRegParamsRevision())
@@ -119,49 +119,49 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRxDataRate2())
             {
                 context.Writer.WritePropertyName("RxDataRate2");
-                context.Writer.Write(requestObject.RxDataRate2);
+                context.Writer.Write(requestObject.RxDataRate2.Value);
             }
 
             if(requestObject.IsSetRxDelay1())
             {
                 context.Writer.WritePropertyName("RxDelay1");
-                context.Writer.Write(requestObject.RxDelay1);
+                context.Writer.Write(requestObject.RxDelay1.Value);
             }
 
             if(requestObject.IsSetRxDrOffset1())
             {
                 context.Writer.WritePropertyName("RxDrOffset1");
-                context.Writer.Write(requestObject.RxDrOffset1);
+                context.Writer.Write(requestObject.RxDrOffset1.Value);
             }
 
             if(requestObject.IsSetRxFreq2())
             {
                 context.Writer.WritePropertyName("RxFreq2");
-                context.Writer.Write(requestObject.RxFreq2);
+                context.Writer.Write(requestObject.RxFreq2.Value);
             }
 
             if(requestObject.IsSetSupports32BitFCnt())
             {
                 context.Writer.WritePropertyName("Supports32BitFCnt");
-                context.Writer.Write(requestObject.Supports32BitFCnt);
+                context.Writer.Write(requestObject.Supports32BitFCnt.Value);
             }
 
             if(requestObject.IsSetSupportsClassB())
             {
                 context.Writer.WritePropertyName("SupportsClassB");
-                context.Writer.Write(requestObject.SupportsClassB);
+                context.Writer.Write(requestObject.SupportsClassB.Value);
             }
 
             if(requestObject.IsSetSupportsClassC())
             {
                 context.Writer.WritePropertyName("SupportsClassC");
-                context.Writer.Write(requestObject.SupportsClassC);
+                context.Writer.Write(requestObject.SupportsClassC.Value);
             }
 
             if(requestObject.IsSetSupportsJoin())
             {
                 context.Writer.WritePropertyName("SupportsJoin");
-                context.Writer.Write(requestObject.SupportsJoin);
+                context.Writer.Write(requestObject.SupportsJoin.Value);
             }
 
         }

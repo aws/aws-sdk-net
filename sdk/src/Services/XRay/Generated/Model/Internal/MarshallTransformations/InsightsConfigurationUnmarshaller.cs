@@ -65,13 +65,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("InsightsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InsightsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotificationsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NotificationsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

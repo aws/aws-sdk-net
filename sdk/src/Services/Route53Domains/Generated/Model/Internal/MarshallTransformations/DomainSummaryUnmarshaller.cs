@@ -65,7 +65,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AutoRenew", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -77,13 +77,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Expiry", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Expiry = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TransferLock", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TransferLock = unmarshaller.Unmarshall(context);
                     continue;
                 }

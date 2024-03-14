@@ -71,7 +71,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,13 +95,13 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("NextInvocationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.NextInvocationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PreviousInvocationTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PreviousInvocationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

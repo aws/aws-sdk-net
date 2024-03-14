@@ -65,13 +65,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IndividualAssessmentCompletedCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndividualAssessmentCompletedCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IndividualAssessmentCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndividualAssessmentCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

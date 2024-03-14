@@ -85,9 +85,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the job was completed.
         /// </para>
         /// </summary>
-        public DateTime JobEndTime
+        public DateTime? JobEndTime
         {
-            get { return this._jobEndTime.GetValueOrDefault(); }
+            get { return this._jobEndTime; }
             set { this._jobEndTime = value; }
         }
 
@@ -121,9 +121,9 @@ namespace Amazon.CustomerProfiles.Model
         /// The timestamp of when the job was started or will be started.
         /// </para>
         /// </summary>
-        public DateTime JobStartTime
+        public DateTime? JobStartTime
         {
-            get { return this._jobStartTime.GetValueOrDefault(); }
+            get { return this._jobStartTime; }
             set { this._jobStartTime = value; }
         }
 

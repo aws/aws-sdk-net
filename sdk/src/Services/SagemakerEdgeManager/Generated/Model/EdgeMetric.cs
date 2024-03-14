@@ -82,9 +82,9 @@ namespace Amazon.SagemakerEdgeManager.Model
         /// Timestamp of when the metric was requested.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.SagemakerEdgeManager.Model
         /// Returns the value of the metric.
         /// </para>
         /// </summary>
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

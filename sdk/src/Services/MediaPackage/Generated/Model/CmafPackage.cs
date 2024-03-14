@@ -73,9 +73,9 @@ namespace Amazon.MediaPackage.Model
         /// Gets and sets the property SegmentDurationSeconds. Duration (in seconds) of each segment.
         /// Actual segments will berounded to the nearest multiple of the source segment duration.
         /// </summary>
-        public int SegmentDurationSeconds
+        public int? SegmentDurationSeconds
         {
-            get { return this._segmentDurationSeconds.GetValueOrDefault(); }
+            get { return this._segmentDurationSeconds; }
             set { this._segmentDurationSeconds = value; }
         }
 

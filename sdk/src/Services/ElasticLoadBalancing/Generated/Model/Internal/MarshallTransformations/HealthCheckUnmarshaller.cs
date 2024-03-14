@@ -56,13 +56,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("HealthyThreshold", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.HealthyThreshold = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Interval", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Interval = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -74,13 +74,13 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Timeout", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UnhealthyThreshold", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.UnhealthyThreshold = unmarshaller.Unmarshall(context);
                         continue;
                     }

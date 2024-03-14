@@ -65,13 +65,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CheckpointingEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CheckpointingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CheckpointInterval", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CheckpointInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -83,7 +83,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MinPauseBetweenCheckpoints", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinPauseBetweenCheckpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }

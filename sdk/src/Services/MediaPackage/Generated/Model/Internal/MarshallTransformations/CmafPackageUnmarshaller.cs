@@ -77,7 +77,7 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

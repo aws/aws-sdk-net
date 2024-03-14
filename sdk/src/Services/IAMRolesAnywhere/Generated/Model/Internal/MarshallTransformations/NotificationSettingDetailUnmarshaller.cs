@@ -77,7 +77,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -89,7 +89,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("threshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
                     continue;
                 }

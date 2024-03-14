@@ -48,9 +48,9 @@ namespace Amazon.WorkSpaces.Model
         /// The date when the image was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 

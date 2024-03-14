@@ -55,9 +55,9 @@ namespace Amazon.EntityResolution.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool AnonymizedOutput
+        public bool? AnonymizedOutput
         {
-            get { return this._anonymizedOutput.GetValueOrDefault(); }
+            get { return this._anonymizedOutput; }
             set { this._anonymizedOutput = value; }
         }
 

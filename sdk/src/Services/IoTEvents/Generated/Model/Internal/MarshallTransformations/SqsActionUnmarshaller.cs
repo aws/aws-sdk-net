@@ -77,7 +77,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("useBase64", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseBase64 = unmarshaller.Unmarshall(context);
                     continue;
                 }

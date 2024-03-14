@@ -48,19 +48,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricIntervalLowerBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
-                context.Writer.Write(requestObject.MetricIntervalLowerBound);
+                context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
             }
 
             if(requestObject.IsSetMetricIntervalUpperBound())
             {
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
-                context.Writer.Write(requestObject.MetricIntervalUpperBound);
+                context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
             }
 
             if(requestObject.IsSetScalingAdjustment())
             {
                 context.Writer.WritePropertyName("ScalingAdjustment");
-                context.Writer.Write(requestObject.ScalingAdjustment);
+                context.Writer.Write(requestObject.ScalingAdjustment.Value);
             }
 
         }

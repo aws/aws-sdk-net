@@ -45,9 +45,9 @@ namespace Amazon.LicenseManager.Model
         /// Indicates whether cross-account discovery is enabled.
         /// </para>
         /// </summary>
-        public bool EnableCrossAccountsDiscovery
+        public bool? EnableCrossAccountsDiscovery
         {
-            get { return this._enableCrossAccountsDiscovery.GetValueOrDefault(); }
+            get { return this._enableCrossAccountsDiscovery; }
             set { this._enableCrossAccountsDiscovery = value; }
         }
 

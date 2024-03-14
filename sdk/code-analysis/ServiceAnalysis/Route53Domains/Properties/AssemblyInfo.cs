@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53Domains")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

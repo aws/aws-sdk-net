@@ -87,13 +87,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetHidePassword())
                 {
                     context.Writer.WritePropertyName("HidePassword");
-                    context.Writer.Write(publicRequest.HidePassword);
+                    context.Writer.Write(publicRequest.HidePassword.Value);
                 }
 
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    context.Writer.Write(publicRequest.MaxResults.Value);
                 }
 
                 if(publicRequest.IsSetNextToken())

@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchMode())
             {
                 context.Writer.WritePropertyName("batchMode");
-                context.Writer.Write(requestObject.BatchMode);
+                context.Writer.Write(requestObject.BatchMode.Value);
             }
 
             if(requestObject.IsSetDeliveryStreamName())

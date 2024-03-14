@@ -44,9 +44,9 @@ namespace Amazon.Macie2.Model
         /// the bucket.
         /// </para>
         /// </summary>
-        public bool AllowsPublicReadAccess
+        public bool? AllowsPublicReadAccess
         {
-            get { return this._allowsPublicReadAccess.GetValueOrDefault(); }
+            get { return this._allowsPublicReadAccess; }
             set { this._allowsPublicReadAccess = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Macie2.Model
         /// for the bucket.
         /// </para>
         /// </summary>
-        public bool AllowsPublicWriteAccess
+        public bool? AllowsPublicWriteAccess
         {
-            get { return this._allowsPublicWriteAccess.GetValueOrDefault(); }
+            get { return this._allowsPublicWriteAccess; }
             set { this._allowsPublicWriteAccess = value; }
         }
 

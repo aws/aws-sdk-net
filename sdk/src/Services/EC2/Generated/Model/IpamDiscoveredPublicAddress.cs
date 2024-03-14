@@ -275,9 +275,9 @@ namespace Amazon.EC2.Model
         /// The last successful resource discovery time.
         /// </para>
         /// </summary>
-        public DateTime SampleTime
+        public DateTime? SampleTime
         {
-            get { return this._sampleTime.GetValueOrDefault(); }
+            get { return this._sampleTime; }
             set { this._sampleTime = value; }
         }
 

@@ -170,9 +170,9 @@ namespace Amazon.Batch.Model
         /// The exit code to return upon completion.
         /// </para>
         /// </summary>
-        public int ExitCode
+        public int? ExitCode
         {
-            get { return this._exitCode.GetValueOrDefault(); }
+            get { return this._exitCode; }
             set { this._exitCode = value; }
         }
 
@@ -362,9 +362,9 @@ namespace Amazon.Batch.Model
         /// on Fargate resources, see <c>resourceRequirements</c>.
         /// </para>
         /// </summary>
-        public int Memory
+        public int? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -442,9 +442,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public bool Privileged
+        public bool? Privileged
         {
-            get { return this._privileged.GetValueOrDefault(); }
+            get { return this._privileged; }
             set { this._privileged = value; }
         }
 
@@ -464,9 +464,9 @@ namespace Amazon.Batch.Model
         /// <c>docker run</c> </a>.
         /// </para>
         /// </summary>
-        public bool ReadonlyRootFilesystem
+        public bool? ReadonlyRootFilesystem
         {
-            get { return this._readonlyRootFilesystem.GetValueOrDefault(); }
+            get { return this._readonlyRootFilesystem; }
             set { this._readonlyRootFilesystem = value; }
         }
 
@@ -659,9 +659,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </note>
         /// </summary>
-        public int Vcpus
+        public int? Vcpus
         {
-            get { return this._vcpus.GetValueOrDefault(); }
+            get { return this._vcpus; }
             set { this._vcpus = value; }
         }
 

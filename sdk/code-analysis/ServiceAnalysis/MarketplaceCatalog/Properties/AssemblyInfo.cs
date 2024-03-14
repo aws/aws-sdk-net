@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.MarketplaceCatalog")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Marketplace Catalog Service. This is the first release for the AWS Marketplace Catalog service which allows you to list, describe and manage change requests on your published entities on AWS Marketplace. ")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - AWS Marketplace Catalog Service. This is the first release for the AWS Marketplace Catalog service which allows you to list, describe and manage change requests on your published entities on AWS Marketplace. ")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]

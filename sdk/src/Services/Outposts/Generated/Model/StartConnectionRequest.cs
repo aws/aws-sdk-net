@@ -118,9 +118,9 @@ namespace Amazon.Outposts.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]
-        public int NetworkInterfaceDeviceIndex
+        public int? NetworkInterfaceDeviceIndex
         {
-            get { return this._networkInterfaceDeviceIndex.GetValueOrDefault(); }
+            get { return this._networkInterfaceDeviceIndex; }
             set { this._networkInterfaceDeviceIndex = value; }
         }
 

@@ -192,9 +192,9 @@ namespace Amazon.EC2.Model
         /// be between 1 and 200.
         /// </para>
         /// </summary>
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.EC2.Model
         /// Default: <c>false</c> 
         /// </para>
         /// </summary>
-        public bool ResolveAlias
+        public bool? ResolveAlias
         {
-            get { return this._resolveAlias.GetValueOrDefault(); }
+            get { return this._resolveAlias; }
             set { this._resolveAlias = value; }
         }
 

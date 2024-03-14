@@ -54,9 +54,9 @@ namespace Amazon.Transfer.Model
         /// An optional date that specifies when the certificate becomes active.
         /// </para>
         /// </summary>
-        public DateTime ActiveDate
+        public DateTime? ActiveDate
         {
-            get { return this._activeDate.GetValueOrDefault(); }
+            get { return this._activeDate; }
             set { this._activeDate = value; }
         }
 
@@ -168,9 +168,9 @@ namespace Amazon.Transfer.Model
         /// An optional date that specifies when the certificate becomes inactive.
         /// </para>
         /// </summary>
-        public DateTime InactiveDate
+        public DateTime? InactiveDate
         {
-            get { return this._inactiveDate.GetValueOrDefault(); }
+            get { return this._inactiveDate; }
             set { this._inactiveDate = value; }
         }
 
@@ -186,9 +186,9 @@ namespace Amazon.Transfer.Model
         /// The final date that the certificate is valid.
         /// </para>
         /// </summary>
-        public DateTime NotAfterDate
+        public DateTime? NotAfterDate
         {
-            get { return this._notAfterDate.GetValueOrDefault(); }
+            get { return this._notAfterDate; }
             set { this._notAfterDate = value; }
         }
 
@@ -204,9 +204,9 @@ namespace Amazon.Transfer.Model
         /// The earliest date that the certificate is valid.
         /// </para>
         /// </summary>
-        public DateTime NotBeforeDate
+        public DateTime? NotBeforeDate
         {
-            get { return this._notBeforeDate.GetValueOrDefault(); }
+            get { return this._notBeforeDate; }
             set { this._notBeforeDate = value; }
         }
 

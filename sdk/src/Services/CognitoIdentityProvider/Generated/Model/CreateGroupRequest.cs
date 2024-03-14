@@ -125,9 +125,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int Precedence
+        public int? Precedence
         {
-            get { return this._precedence.GetValueOrDefault(); }
+            get { return this._precedence; }
             set { this._precedence = value; }
         }
 

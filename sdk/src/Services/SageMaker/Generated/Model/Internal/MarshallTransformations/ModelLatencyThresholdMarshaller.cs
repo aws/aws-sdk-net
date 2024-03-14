@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValueInMilliseconds())
             {
                 context.Writer.WritePropertyName("ValueInMilliseconds");
-                context.Writer.Write(requestObject.ValueInMilliseconds);
+                context.Writer.Write(requestObject.ValueInMilliseconds.Value);
             }
 
         }

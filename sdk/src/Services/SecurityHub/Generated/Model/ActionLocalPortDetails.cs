@@ -43,9 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// The number of the port.
         /// </para>
         /// </summary>
-        public int Port
+        public int? Port
         {
-            get { return this._port.GetValueOrDefault(); }
+            get { return this._port; }
             set { this._port = value; }
         }
 

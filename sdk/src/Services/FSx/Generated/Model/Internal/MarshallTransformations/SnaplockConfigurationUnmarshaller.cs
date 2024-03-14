@@ -65,7 +65,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AuditLogVolume", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AuditLogVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -95,7 +95,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("VolumeAppendModeEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.VolumeAppendModeEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

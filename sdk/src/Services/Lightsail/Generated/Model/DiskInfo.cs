@@ -45,9 +45,9 @@ namespace Amazon.Lightsail.Model
         /// loaded on it).
         /// </para>
         /// </summary>
-        public bool IsSystemDisk
+        public bool? IsSystemDisk
         {
-            get { return this._isSystemDisk.GetValueOrDefault(); }
+            get { return this._isSystemDisk; }
             set { this._isSystemDisk = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Lightsail.Model
         /// The size of the disk in GB (<c>32</c>).
         /// </para>
         /// </summary>
-        public int SizeInGb
+        public int? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 

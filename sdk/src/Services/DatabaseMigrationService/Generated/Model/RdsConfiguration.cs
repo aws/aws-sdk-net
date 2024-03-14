@@ -106,9 +106,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Describes the memory on the recommended Amazon RDS DB instance that meets your requirements.
         /// </para>
         /// </summary>
-        public double InstanceMemory
+        public double? InstanceMemory
         {
-            get { return this._instanceMemory.GetValueOrDefault(); }
+            get { return this._instanceMemory; }
             set { this._instanceMemory = value; }
         }
 
@@ -143,9 +143,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// that meets your requirements.
         /// </para>
         /// </summary>
-        public double InstanceVcpu
+        public double? InstanceVcpu
         {
-            get { return this._instanceVcpu.GetValueOrDefault(); }
+            get { return this._instanceVcpu; }
             set { this._instanceVcpu = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Amazon RDS DB instance that meets your requirements.
         /// </para>
         /// </summary>
-        public int StorageIops
+        public int? StorageIops
         {
-            get { return this._storageIops.GetValueOrDefault(); }
+            get { return this._storageIops; }
             set { this._storageIops = value; }
         }
 
@@ -181,9 +181,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// requirements.
         /// </para>
         /// </summary>
-        public int StorageSize
+        public int? StorageSize
         {
-            get { return this._storageSize.GetValueOrDefault(); }
+            get { return this._storageSize; }
             set { this._storageSize = value; }
         }
 

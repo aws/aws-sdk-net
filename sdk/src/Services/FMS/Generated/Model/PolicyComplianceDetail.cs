@@ -49,9 +49,9 @@ namespace Amazon.FMS.Model
         /// Indicates if over 100 resources are noncompliant with the Firewall Manager policy.
         /// </para>
         /// </summary>
-        public bool EvaluationLimitExceeded
+        public bool? EvaluationLimitExceeded
         {
-            get { return this._evaluationLimitExceeded.GetValueOrDefault(); }
+            get { return this._evaluationLimitExceeded; }
             set { this._evaluationLimitExceeded = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.FMS.Model
         /// of date.
         /// </para>
         /// </summary>
-        public DateTime ExpiredAt
+        public DateTime? ExpiredAt
         {
-            get { return this._expiredAt.GetValueOrDefault(); }
+            get { return this._expiredAt; }
             set { this._expiredAt = value; }
         }
 

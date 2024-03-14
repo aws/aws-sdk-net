@@ -198,9 +198,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
-        public long SamplingRate
+        public long? SamplingRate
         {
-            get { return this._samplingRate.GetValueOrDefault(); }
+            get { return this._samplingRate; }
             set { this._samplingRate = value; }
         }
 

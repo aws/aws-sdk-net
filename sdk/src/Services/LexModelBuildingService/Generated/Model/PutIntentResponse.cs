@@ -115,9 +115,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// The date that the intent was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -135,9 +135,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// in the response.
         /// </para>
         /// </summary>
-        public bool CreateVersion
+        public bool? CreateVersion
         {
-            get { return this._createVersion.GetValueOrDefault(); }
+            get { return this._createVersion; }
             set { this._createVersion = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// and last update dates are the same.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedDate
+        public DateTime? LastUpdatedDate
         {
-            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            get { return this._lastUpdatedDate; }
             set { this._lastUpdatedDate = value; }
         }
 

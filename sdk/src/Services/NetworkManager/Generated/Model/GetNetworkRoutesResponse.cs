@@ -100,9 +100,9 @@ namespace Amazon.NetworkManager.Model
         /// The route table creation time.
         /// </para>
         /// </summary>
-        public DateTime RouteTableTimestamp
+        public DateTime? RouteTableTimestamp
         {
-            get { return this._routeTableTimestamp.GetValueOrDefault(); }
+            get { return this._routeTableTimestamp; }
             set { this._routeTableTimestamp = value; }
         }
 

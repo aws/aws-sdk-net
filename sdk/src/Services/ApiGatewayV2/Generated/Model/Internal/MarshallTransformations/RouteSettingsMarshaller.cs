@@ -48,13 +48,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTraceEnabled())
             {
                 context.Writer.WritePropertyName("dataTraceEnabled");
-                context.Writer.Write(requestObject.DataTraceEnabled);
+                context.Writer.Write(requestObject.DataTraceEnabled.Value);
             }
 
             if(requestObject.IsSetDetailedMetricsEnabled())
             {
                 context.Writer.WritePropertyName("detailedMetricsEnabled");
-                context.Writer.Write(requestObject.DetailedMetricsEnabled);
+                context.Writer.Write(requestObject.DetailedMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetLoggingLevel())
@@ -66,13 +66,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThrottlingBurstLimit())
             {
                 context.Writer.WritePropertyName("throttlingBurstLimit");
-                context.Writer.Write(requestObject.ThrottlingBurstLimit);
+                context.Writer.Write(requestObject.ThrottlingBurstLimit.Value);
             }
 
             if(requestObject.IsSetThrottlingRateLimit())
             {
                 context.Writer.WritePropertyName("throttlingRateLimit");
-                context.Writer.Write(requestObject.ThrottlingRateLimit);
+                context.Writer.Write(requestObject.ThrottlingRateLimit.Value);
             }
 
         }

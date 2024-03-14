@@ -135,9 +135,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50000)]
-        public int Order
+        public int? Order
         {
-            get { return this._order.GetValueOrDefault(); }
+            get { return this._order; }
             set { this._order = value; }
         }
 

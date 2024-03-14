@@ -76,9 +76,9 @@ namespace Amazon.Connect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
-        public int Concurrency
+        public int? Concurrency
         {
-            get { return this._concurrency.GetValueOrDefault(); }
+            get { return this._concurrency; }
             set { this._concurrency = value; }
         }
 

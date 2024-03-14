@@ -60,9 +60,9 @@ namespace Amazon.CloudTrail.Model
         ///  Specifies whether the channel applies to a single Region or to all Regions.
         /// </para>
         /// </summary>
-        public bool ApplyToAllRegions
+        public bool? ApplyToAllRegions
         {
-            get { return this._applyToAllRegions.GetValueOrDefault(); }
+            get { return this._applyToAllRegions; }
             set { this._applyToAllRegions = value; }
         }
 

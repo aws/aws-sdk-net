@@ -42,9 +42,9 @@ namespace Amazon.DeviceFarm.Model
         /// The number of free trial minutes remaining in the account.
         /// </para>
         /// </summary>
-        public double Remaining
+        public double? Remaining
         {
-            get { return this._remaining.GetValueOrDefault(); }
+            get { return this._remaining; }
             set { this._remaining = value; }
         }
 
@@ -60,9 +60,9 @@ namespace Amazon.DeviceFarm.Model
         /// The total number of free trial minutes that the account started with.
         /// </para>
         /// </summary>
-        public double Total
+        public double? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 
