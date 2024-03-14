@@ -7,6 +7,8 @@
 	* This release allows you to configure HTTP client keep-alive duration for communication between clients and Application Load Balancers.
 * FIS (3.7.302.0)
 	* This release adds support for previewing target resources before running a FIS experiment. It also adds resource ARNs for actions, experiments, and experiment templates to API responses.
+* IoTRoboRunner (Removed)
+	* AWS IoT RoboRunner has been removed from the SDK because it has been discontinued.
 * RDS (3.7.309.4)
 	* Updates Amazon RDS documentation for EBCDIC collation for RDS for Db2.
 * SecretsManager (3.7.302.32)
