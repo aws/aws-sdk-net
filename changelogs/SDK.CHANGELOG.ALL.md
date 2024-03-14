@@ -1,3 +1,22 @@
+### 3.7.768.0 (2024-03-14 18:25 UTC)
+* Amplify (3.7.301.5)
+	* Documentation updates for Amplify. Identifies the APIs available only to apps created using Amplify Gen 1.
+* EC2InstanceConnect (3.7.301.0)
+	* This release includes a new exception type "SerialConsoleSessionUnsupportedException" for SendSerialConsoleSSHPublicKey API.
+* ElasticLoadBalancingV2 (3.7.302.13)
+	* This release allows you to configure HTTP client keep-alive duration for communication between clients and Application Load Balancers.
+* FIS (3.7.302.0)
+	* This release adds support for previewing target resources before running a FIS experiment. It also adds resource ARNs for actions, experiments, and experiment templates to API responses.
+* RDS (3.7.309.4)
+	* Updates Amazon RDS documentation for EBCDIC collation for RDS for Db2.
+* SecretsManager (3.7.302.32)
+	* Doc only update for Secrets Manager
+* TimestreamInfluxDB (3.7.300.0)
+	* This is the initial SDK release for Amazon Timestream for InfluxDB. Amazon Timestream for InfluxDB is a new time-series database engine that makes it easy for application developers and DevOps teams to run InfluxDB databases on AWS for near real-time time-series applications using open source APIs.
+* Core 3.7.302.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.767.0 (2024-03-13 18:17 UTC)
 * IVSRealTime (3.7.302.0)
 	* adds support for multiple new composition layout configuration options (grid, pip)
