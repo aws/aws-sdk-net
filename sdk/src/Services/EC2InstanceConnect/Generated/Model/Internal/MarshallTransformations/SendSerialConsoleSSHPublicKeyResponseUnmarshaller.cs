@@ -122,6 +122,10 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
                 {
                     return SerialConsoleSessionUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("SerialConsoleSessionUnsupportedException"))
+                {
+                    return SerialConsoleSessionUnsupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
                 {
                     return ServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
