@@ -57,10 +57,12 @@ namespace Amazon.Runtime.Internal.Util
         
         public static string FromInt(int? value)
         {
-            if (value != null)
-                return value.Value.ToString(CultureInfo.InvariantCulture);
+            if (!value.HasValue)
+            {
+                return null;
+            }
 
-            return null;
+            return value.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         public static string FromLong(long value)
@@ -70,10 +72,12 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromLong(long? value)
         {
-            if (value != null)
-                return value.Value.ToString(CultureInfo.InvariantCulture);
+            if (!value.HasValue)
+            {
+                return null;
+            }
 
-            return null;
+            return value.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         public static string FromFloat(float value)
@@ -164,10 +168,12 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromDecimal(decimal? value)
         {
-            if (value != null)
-                return value.Value.ToString(CultureInfo.InvariantCulture);
+            if (!value.HasValue)
+            {
+                return null;
+            }
 
-            return null;
+            return value.Value.ToString(CultureInfo.InvariantCulture);
         }
 
         /// <summary>
