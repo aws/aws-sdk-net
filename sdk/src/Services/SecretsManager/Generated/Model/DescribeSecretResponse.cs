@@ -239,6 +239,12 @@ namespace Amazon.SecretsManager.Model
         /// If rotation fails, Secrets Manager retries the entire rotation process multiple times.
         /// If rotation is unsuccessful, this date may be in the past.
         /// </para>
+        ///  
+        /// <para>
+        /// This date represents the latest date that rotation will occur, but it is not an approximate
+        /// rotation date. In some cases, for example if you turn off automatic rotation and then
+        /// turn it back on, the next rotation may occur much sooner than this date.
+        /// </para>
         /// </summary>
         public DateTime NextRotationDate
         {

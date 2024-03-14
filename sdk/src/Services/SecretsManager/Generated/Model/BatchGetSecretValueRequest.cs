@@ -95,7 +95,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// If there are more results available, in the response, Secrets Manager includes <c>NextToken</c>.
         /// To get the next results, call <c>BatchGetSecretValue</c> again with the value from
-        /// <c>NextToken</c>.
+        /// <c>NextToken</c>. To use this parameter, you must also use the <c>Filters</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
