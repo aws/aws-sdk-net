@@ -33,10 +33,30 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ActionSummary
     {
+        private string _arn;
         private string _description;
         private string _id;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, ActionTarget> _targets = new Dictionary<string, ActionTarget>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

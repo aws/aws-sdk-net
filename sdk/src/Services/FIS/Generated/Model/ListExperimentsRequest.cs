@@ -34,8 +34,28 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ListExperimentsRequest : AmazonFISRequest
     {
+        private string _experimentTemplateId;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property ExperimentTemplateId. 
+        /// <para>
+        /// The ID of the experiment template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string ExperimentTemplateId
+        {
+            get { return this._experimentTemplateId; }
+            set { this._experimentTemplateId = value; }
+        }
+
+        // Check to see if ExperimentTemplateId property is set
+        internal bool IsSetExperimentTemplateId()
+        {
+            return this._experimentTemplateId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

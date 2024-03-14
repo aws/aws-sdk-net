@@ -56,7 +56,7 @@ namespace Amazon.FIS.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
-    /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
+    /// templates</a> in the <i>Fault Injection Service User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateRequest : AmazonFISRequest

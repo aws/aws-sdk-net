@@ -34,7 +34,7 @@ namespace Amazon.FIS.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a>
-    /// in the <i>Fault Injection Simulator User Guide</i>.
+    /// in the <i>Fault Injection Service User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateExperimentTemplateActionInput

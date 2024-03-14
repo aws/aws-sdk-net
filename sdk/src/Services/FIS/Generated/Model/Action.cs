@@ -30,15 +30,35 @@ namespace Amazon.FIS.Model
 {
     /// <summary>
     /// Describes an action. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS
-    /// actions</a> in the <i>Fault Injection Simulator User Guide</i>.
+    /// actions</a> in the <i>Fault Injection Service User Guide</i>.
     /// </summary>
     public partial class Action
     {
+        private string _arn;
         private string _description;
         private string _id;
         private Dictionary<string, ActionParameter> _parameters = new Dictionary<string, ActionParameter>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, ActionTarget> _targets = new Dictionary<string, ActionTarget>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

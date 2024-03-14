@@ -59,6 +59,9 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetExperimentTemplateId())
+                request.Parameters.Add("experimentTemplateId", StringUtils.FromString(publicRequest.ExperimentTemplateId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

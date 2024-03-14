@@ -34,6 +34,7 @@ namespace Amazon.FIS.Model
     public partial class ExperimentTemplate
     {
         private Dictionary<string, ExperimentTemplateAction> _actions = new Dictionary<string, ExperimentTemplateAction>();
+        private string _arn;
         private DateTime? _creationTime;
         private string _description;
         private ExperimentTemplateExperimentOptions _experimentOptions;
@@ -62,6 +63,25 @@ namespace Amazon.FIS.Model
         internal bool IsSetActions()
         {
             return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the experiment template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
