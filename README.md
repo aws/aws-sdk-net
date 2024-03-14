@@ -810,6 +810,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.
 * [AWSSDK.Textract](https://www.nuget.org/packages/AWSSDK.Textract/)
 	* Amazon Textract enables you to add document text detection and analysis to your applications. You provide a document image to the Amazon Textract API, and the service detects the document text. Amazon Textract works with formatted text and can detect words and lines of words that are located close to each other. It can also analyze a document for items such as related text, tables, key-value pairs, and selection elements.
+* [AWSSDK.TimestreamInfluxDB](https://www.nuget.org/packages/AWSSDK.TimestreamInfluxDB/)
+	* This is the initial SDK release for Amazon Timestream for InfluxDB. Amazon Timestream for InfluxDB is a new time-series database engine that makes it easy for application developers and DevOps teams to run InfluxDB databases on AWS for near real-time time-series applications using open source APIs.
 * [AWSSDK.TimestreamQuery](https://www.nuget.org/packages/AWSSDK.TimestreamQuery/)
 	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
 * [AWSSDK.TimestreamWrite](https://www.nuget.org/packages/AWSSDK.TimestreamWrite/)
