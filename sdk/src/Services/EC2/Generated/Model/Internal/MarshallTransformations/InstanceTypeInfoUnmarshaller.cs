@@ -144,6 +144,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("mediaAcceleratorInfo", targetDepth))
+                    {
+                        var unmarshaller = MediaAcceleratorInfoUnmarshaller.Instance;
+                        unmarshalledObject.MediaAcceleratorInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("memoryInfo", targetDepth))
                     {
                         var unmarshaller = MemoryInfoUnmarshaller.Instance;
@@ -154,6 +160,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NetworkInfoUnmarshaller.Instance;
                         unmarshalledObject.NetworkInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("neuronInfo", targetDepth))
+                    {
+                        var unmarshaller = NeuronInfoUnmarshaller.Instance;
+                        unmarshalledObject.NeuronInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("nitroEnclavesSupport", targetDepth))

@@ -281,6 +281,13 @@ namespace Amazon.EC2.Model
         /// you can't specify <c>LaunchTemplateConfigs</c>. If you include On-Demand capacity
         /// in your request, you must use <c>LaunchTemplateConfigs</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If an AMI specified in a launch specification is deregistered or disabled, no new
+        /// instances can be launched from the AMI. For fleets of type <c>maintain</c>, the target
+        /// capacity will not be maintained.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<SpotFleetLaunchSpecification> LaunchSpecifications
         {
