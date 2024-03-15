@@ -32,7 +32,7 @@ namespace Amazon.ComputeOptimizer
     public partial class AmazonComputeOptimizerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "3.7.301.49");
+            InternalSDKUtils.BuildUserAgentString("Compute Optimizer", "3.7.301.50");
 
         private string _userAgent = UserAgentString;
         ///<summary>

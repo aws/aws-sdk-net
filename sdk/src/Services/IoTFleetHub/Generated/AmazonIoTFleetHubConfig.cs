@@ -32,7 +32,7 @@ namespace Amazon.IoTFleetHub
     public partial class AmazonIoTFleetHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTFleetHub", "3.7.300.57");
+            InternalSDKUtils.BuildUserAgentString("IoTFleetHub", "3.7.300.58");
 
         private string _userAgent = UserAgentString;
         ///<summary>

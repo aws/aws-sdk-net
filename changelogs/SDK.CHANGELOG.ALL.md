@@ -1,3 +1,24 @@
+### 3.7.769.0 (2024-03-15 18:28 UTC)
+* Backup (3.7.304.0)
+	* This release introduces a boolean attribute ManagedByAWSBackupOnly as part of ListRecoveryPointsByResource api to filter the recovery points based on ownership. This attribute can be used to filter out the recovery points protected by AWSBackup.
+* CodeBuild (3.7.303.0)
+	* AWS CodeBuild now supports overflow behavior on Reserved Capacity.
+* Connect (3.7.314.0)
+	* This release adds Hierarchy based Access Control fields to Security Profile public APIs and adds support for UserAttributeFilter to SearchUsers API.
+* EC2 (3.7.317.0)
+	* Add media accelerator and neuron device information on the describe instance types API.
+* KinesisAnalyticsV2 (3.7.302.0)
+	* Support for Flink 1.18 in Managed Service for Apache Flink
+* S3 (3.7.306.2)
+	* Documentation updates for Amazon S3.
+* SageMaker (3.7.315.0)
+	* Adds m6i, m6id, m7i, c6i, c6id, c7i, r6i r6id, r7i, p5 instance type support to Sagemaker Notebook Instances and miscellaneous wording fixes for previous Sagemaker documentation.
+* WorkSpacesThinClient (3.7.301.0)
+	* Removed unused parameter kmsKeyArn from UpdateDeviceRequest
+* Core 3.7.302.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.768.0 (2024-03-14 18:25 UTC)
 * Amplify (3.7.301.5)
 	* Documentation updates for Amplify. Identifies the APIs available only to apps created using Amplify Gen 1.
