@@ -112,8 +112,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Part number after which listing begins.
-        ///  
+        /// Gets and sets the property PartNumberMarker. 
+        /// <para>
+        /// Specifies the part after which listing should begin. Only parts with higher part numbers
+        /// will be listed.
+        /// </para>
         /// </summary>
         public int PartNumberMarker
         {
@@ -131,7 +134,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property NextPartNumberMarker. 
         /// <para>
         /// When a list is truncated, this element specifies the last part in the list, as well
-        /// as the value to use for the <code>part-number-marker</code> request parameter in a
+        /// as the value to use for the <c>part-number-marker</c> request parameter in a
         /// subsequent request.
         /// </para>
         ///  
@@ -204,7 +207,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// Container element that identifies who initiated the multipart upload. If the initiator
         /// is an Amazon Web Services account, this element provides the same information as the
-        /// <code>Owner</code> element. If the initiator is an IAM User, this element provides
+        /// <c>Owner</c> element. If the initiator is an IAM User, this element provides
         /// the user ARN and display name.
         /// </para>
         /// </summary>
@@ -281,7 +284,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// The response will also include the <code>x-amz-abort-rule-id</code> header that will
+        /// The response will also include the <c>x-amz-abort-rule-id</c> header that will
         /// provide the ID of the lifecycle configuration rule that defines this action.
         /// </para>
         ///  <note> 
@@ -305,7 +308,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property AbortRuleId. 
         /// <para>
-        /// This header is returned along with the <code>x-amz-abort-date</code> header. It identifies
+        /// This header is returned along with the <c>x-amz-abort-date</c> header. It identifies
         /// applicable lifecycle configuration rule that defines the action to abort incomplete
         /// multipart uploads.
         /// </para>

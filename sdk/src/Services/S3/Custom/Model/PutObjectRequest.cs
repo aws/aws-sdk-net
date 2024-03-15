@@ -30,9 +30,9 @@ namespace Amazon.S3.Model
     ///  <note> <ul> <li> 
     /// <para>
     /// Amazon S3 never adds partial objects; if you receive a success response, Amazon S3
-    /// added the entire object to the bucket. You cannot use <code>PutObject</code> to only
-    /// update a single piece of metadata for an existing object. You must put the entire
-    /// object with updated metadata if you want to update some values.
+    /// added the entire object to the bucket. You cannot use <c>PutObject</c> to only update
+    /// a single piece of metadata for an existing object. You must put the entire object
+    /// with updated metadata if you want to update some values.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
     /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </note> 
@@ -83,47 +83,47 @@ namespace Amazon.S3.Model
     ///  </note> </li> </ul> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     ///  <b>General purpose bucket permissions</b> - The following permissions are required
-    /// in your policies when your <code>PutObject</code> request includes specific headers.
+    /// in your policies when your <c>PutObject</c> request includes specific headers.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b> <code>s3:PutObject</code> </b> - To successfully complete the <code>PutObject</code>
-    /// request, you must always have the <code>s3:PutObject</code> permission on a bucket
-    /// to add an object to it.
+    ///  <b> <c>s3:PutObject</c> </b> - To successfully complete the <c>PutObject</c> request,
+    /// you must always have the <c>s3:PutObject</c> permission on a bucket to add an object
+    /// to it.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b> <code>s3:PutObjectAcl</code> </b> - To successfully change the objects ACL of
-    /// your <code>PutObject</code> request, you must have the <code>s3:PutObjectAcl</code>.
+    ///  <b> <c>s3:PutObjectAcl</c> </b> - To successfully change the objects ACL of your
+    /// <c>PutObject</c> request, you must have the <c>s3:PutObjectAcl</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b> <code>s3:PutObjectTagging</code> </b> - To successfully set the tag-set with
-    /// your <code>PutObject</code> request, you must have the <code>s3:PutObjectTagging</code>.
+    ///  <b> <c>s3:PutObjectTagging</c> </b> - To successfully set the tag-set with your <c>PutObject</c>
+    /// request, you must have the <c>s3:PutObjectTagging</c>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
-    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
-    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+    /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
     /// API call on the bucket to obtain a session token. With the session token in your request
     /// header, you can make API requests to this operation. After the session token expires,
-    /// you make another <code>CreateSession</code> API call to generate a new session token
-    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// you make another <c>CreateSession</c> API call to generate a new session token for
+    /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
     /// automatically to avoid service interruptions when a session expires. For more information
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a>.
+    /// <c>CreateSession</c> </a>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Data integrity with Content-MD5</dt> <dd> <ul> <li> 
     /// <para>
     ///  <b>General purpose bucket</b> - To ensure that data is not corrupted traversing the
-    /// network, use the <code>Content-MD5</code> header. When you use this header, Amazon
-    /// S3 checks the object against the provided MD5 value and, if they do not match, Amazon
-    /// S3 returns an error. Alternatively, when the object's ETag is its MD5 digest, you
-    /// can calculate the MD5 while putting the object to Amazon S3 and compare the returned
-    /// ETag to the calculated MD5 value.
+    /// network, use the <c>Content-MD5</c> header. When you use this header, Amazon S3 checks
+    /// the object against the provided MD5 value and, if they do not match, Amazon S3 returns
+    /// an error. Alternatively, when the object's ETag is its MD5 digest, you can calculate
+    /// the MD5 while putting the object to Amazon S3 and compare the returned ETag to the
+    /// calculated MD5 value.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -131,7 +131,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -227,10 +227,10 @@ namespace Amazon.S3.Model
         /// If the bucket that you're uploading objects to uses the bucket owner enforced setting
         /// for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets
         /// that use this setting only accept PUT requests that don't specify an ACL or PUT requests
-        /// that specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
+        /// that specify bucket owner full control ACLs, such as the <c>bucket-owner-full-control</c>
         /// canned ACL or an equivalent form of this ACL expressed in the XML format. PUT requests
         /// that contain other ACLs (for example, custom grants to certain Amazon Web Services
-        /// accounts) fail and return a <code>400</code> error with the error code <code>AccessControlListNotSupported</code>.
+        /// accounts) fail and return a <c>400</c> error with the error code <c>AccessControlListNotSupported</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
         /// Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
@@ -261,12 +261,12 @@ namespace Amazon.S3.Model
         /// <para>
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
         /// server-side encryption using Key Management Service (KMS) keys (SSE-KMS). Setting
-        /// this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+        /// this header to <c>true</c> causes Amazon S3 to use an S3 Bucket Key for object
         /// encryption with SSE-KMS.
         /// </para>
         ///  
         /// <para>
-        /// Specifying this header with a PUT action doesn’t affect bucket-level settings for
+        /// Specifying this header with a PUT action doesnï¿½t affect bucket-level settings for
         /// S3 Bucket Key.
         /// </para>
         ///  <note> 
@@ -294,11 +294,11 @@ namespace Amazon.S3.Model
         ///  
         /// <para>
         ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
-        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// Path-style requests are not supported. Directory bucket names must be unique in the
-        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
-        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
-        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -320,7 +320,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
         /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
-        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -388,7 +388,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -533,7 +533,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
         /// The server-side encryption algorithm that was used when you store this object in Amazon
-        /// S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).
+        /// S3 (for example, <c>AES256</c>, <c>aws:kms</c>, <c>aws:kms:dsse</c>).
         /// </para>
         ///  
         /// <para>
@@ -550,7 +550,7 @@ namespace Amazon.S3.Model
         ///  
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, only the server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) value is supported.
+        /// with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) value is supported.
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -652,7 +652,7 @@ namespace Amazon.S3.Model
         /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
         /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs. This value is stored as object metadata and automatically
-        /// gets passed on to Amazon Web Services KMS for future <code>GetObject</code> or <code>CopyObject</code>
+        /// gets passed on to Amazon Web Services KMS for future <c>GetObject</c> or <c>CopyObject</c>
         /// operations on this object. This value must be explicitly added during CopyObject operations.
         /// </para>
         ///  <note> 
@@ -681,11 +681,11 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 should use to encrypt and decrypt the object.
         /// If a key id is not specified, the default key will be used for encryption and decryption.
         /// <para>
-        /// If <code>x-amz-server-side-encryption</code> has a valid value of <code>aws:kms</code>,
+        /// If <c>x-amz-server-side-encryption</c> has a valid value of <c>aws:kms</c>,
         /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
         /// Web Services KMS) symmetric encryption customer managed key that was used for the
-        /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
-        /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the
+        /// object. If you specify <c>x-amz-server-side-encryption:aws:kms</c>, but do not
+        /// provide<c> x-amz-server-side-encryption-aws-kms-key-id</c>, Amazon S3 uses the
         /// Amazon Web Services managed key to protect the data. If the KMS key does not exist
         /// in the same account issuing the command, you must use the full ARN and not just the
         /// ID. 
@@ -782,7 +782,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-website-redirect-location: /anotherPage.html</code> 
+        ///  <c>x-amz-website-redirect-location: /anotherPage.html</c> 
         /// </para>
         ///  
         /// <para>
@@ -790,7 +790,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>x-amz-website-redirect-location: http://www.example.com/</code> 
+        ///  <c>x-amz-website-redirect-location: http://www.example.com/</c> 
         /// </para>
         ///  
         /// <para>
@@ -990,7 +990,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Content-MD5</code> header is required for any request to upload an object
+        /// The <c>Content-MD5</c> header is required for any request to upload an object
         /// with a retention period configured using Amazon S3 Object Lock. For more information
         /// about Amazon S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
         /// S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. 
@@ -1012,14 +1012,14 @@ namespace Amazon.S3.Model
         /// <para>
         /// Indicates the algorithm used to create the checksum for the object when you use the
         /// SDK. This header will not provide any additional functionality if you don't use the
-        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i>
-        /// </code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the
-        /// request with the HTTP status code <code>400 Bad Request</code>.
+        /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the
+        /// request with the HTTP status code <c>400 Bad Request</c>.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i>
-        /// </code> with the supported algorithm from the following list: 
+        /// For the <c>x-amz-checksum-<i>algorithm</i> </c> header, replace <c> <i>algorithm</i>
+        /// </c> with the supported algorithm from the following list: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1044,15 +1044,15 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i>
-        /// </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>,
-        /// Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the
-        /// checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i>
-        /// </code>.
+        /// If the individual checksum value you provide through <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> doesn't match the checksum algorithm you set through <c>x-amz-sdk-checksum-algorithm</c>,
+        /// Amazon S3 ignores any provided <c>ChecksumAlgorithm</c> parameter and uses the
+        /// checksum algorithm that matches the provided value in <c>x-amz-checksum-<i>algorithm</i>
+        /// </c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For directory buckets, when you use Amazon Web Services SDKs, <code>CRC32</code> is
+        /// For directory buckets, when you use Amazon Web Services SDKs, <c>CRC32</c> is
         /// the default checksum algorithm that's used for performance.
         /// </para>
         ///  </note>

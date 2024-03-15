@@ -48,8 +48,8 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
     /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </note> 
@@ -77,33 +77,33 @@ namespace Amazon.S3.Model
     ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
     ///  <b>General purpose bucket permissions</b> - The following permissions are required
-    /// in your policies when your <code>DeleteObjects</code> request includes specific headers.
+    /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b> <code>s3:DeleteObject</code> </b> - To delete an object from a bucket, you must
-    /// always specify the <code>s3:DeleteObject</code> permission.
+    ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
+    /// specify the <c>s3:DeleteObject</c> permission.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific version of an
-    /// object from a versiong-enabled bucket, you must specify the <code>s3:DeleteObjectVersion</code>
+    ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
+    /// from a versiong-enabled bucket, you must specify the <c>s3:DeleteObjectVersion</c>
     /// permission.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
-    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
-    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+    /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
     /// API call on the bucket to obtain a session token. With the session token in your request
     /// header, you can make API requests to this operation. After the session token expires,
-    /// you make another <code>CreateSession</code> API call to generate a new session token
-    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// you make another <c>CreateSession</c> API call to generate a new session token for
+    /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
     /// automatically to avoid service interruptions when a session expires. For more information
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a>.
+    /// <c>CreateSession</c> </a>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Content-MD5 request header</dt> <dd> <ul> <li> 
     /// <para>
@@ -114,17 +114,17 @@ namespace Amazon.S3.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Directory bucket</b> - The Content-MD5 request header or a additional checksum
-    /// request header (including <code>x-amz-checksum-crc32</code>, <code>x-amz-checksum-crc32c</code>,
-    /// <code>x-amz-checksum-sha1</code>, or <code>x-amz-checksum-sha256</code>) is required
-    /// for all Multi-Object Delete requests.
+    /// request header (including <c>x-amz-checksum-crc32</c>, <c>x-amz-checksum-crc32c</c>,
+    /// <c>x-amz-checksum-sha1</c>, or <c>x-amz-checksum-sha256</c>) is required for all Multi-Object
+    /// Delete requests.
     /// </para>
     ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following operations are related to <code>DeleteObjects</code>:
+    /// The following operations are related to <c>DeleteObjects</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -172,11 +172,11 @@ namespace Amazon.S3.Model
         ///  
         /// <para>
         ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
-        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// Path-style requests are not supported. Directory bucket names must be unique in the
-        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
-        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
-        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -198,7 +198,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
         /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
-        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -221,7 +221,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BypassGovernanceRetention. 
         /// <para>
         /// Specifies whether you want to delete this object even if it has a Governance-type
-        /// Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code>
+        /// Object Lock in place. To use this header, you must have the <c>s3:BypassGovernanceRetention</c>
         /// permission.
         /// </para>
         ///  <note> 
@@ -247,14 +247,14 @@ namespace Amazon.S3.Model
         /// <para>
         /// Indicates the algorithm used to create the checksum for the object when you use the
         /// SDK. This header will not provide any additional functionality if you don't use the
-        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum-<i>algorithm</i>
-        /// </code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the
-        /// request with the HTTP status code <code>400 Bad Request</code>.
+        /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the
+        /// request with the HTTP status code <c>400 Bad Request</c>.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i>
-        /// </code> with the supported algorithm from the following list: 
+        /// For the <c>x-amz-checksum-<i>algorithm</i> </c> header, replace <c> <i>algorithm</i>
+        /// </c> with the supported algorithm from the following list: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -279,15 +279,15 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i>
-        /// </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>,
-        /// Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the
-        /// checksum algorithm that matches the provided value in <code>x-amz-checksum-<i>algorithm</i>
-        /// </code>.
+        /// If the individual checksum value you provide through <c>x-amz-checksum-<i>algorithm</i>
+        /// </c> doesn't match the checksum algorithm you set through <c>x-amz-sdk-checksum-algorithm</c>,
+        /// Amazon S3 ignores any provided <c>ChecksumAlgorithm</c> parameter and uses the
+        /// checksum algorithm that matches the provided value in <c>x-amz-checksum-<i>algorithm</i>
+        /// </c>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <c>ChecksumAlgorithm</c>
         /// parameter.
         /// </para>
         /// </summary>
@@ -308,7 +308,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -352,7 +352,7 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When performing the <code>DeleteObjects</code> operation on an MFA delete enabled
+        /// When performing the <c>DeleteObjects</c> operation on an MFA delete enabled
         /// bucket, which attempts to delete the specified versioned objects, you must include
         /// an MFA token. If you don't provide an MFA token, the entire request will fail, even
         /// if there are non-versioned objects that you are trying to delete. If you provide an

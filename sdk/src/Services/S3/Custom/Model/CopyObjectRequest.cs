@@ -32,228 +32,161 @@ namespace Amazon.S3.Model
     /// You can store individual objects of up to 5 TB in Amazon S3. You create a copy of
     /// your object up to 5 GB in size in a single atomic action using this API. However,
     /// to copy an object greater than 5 GB, you must use the multipart upload Upload Part
-    /// - Copy API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
+    /// - Copy (UploadPartCopy) API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjctsUsingRESTMPUapi.html">Copy
     /// Object Using the REST Multipart Upload API</a>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// All copy requests must be authenticated. Additionally, you must have <i>read</i> access
-    /// to the source object and <i>write</i> access to the destination bucket. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-    /// Authentication</a>. Both the Region that you want to copy the object from and the
-    /// Region that you want to copy the object to must be enabled for your account.
-    /// </para>
-    ///  
-    /// <para>
-    /// A copy request might return an error when Amazon S3 receives the copy request or while
-    /// Amazon S3 is copying the files. If the error occurs before the copy action starts,
-    /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
-    /// the error response is embedded in the <code>200 OK</code> response. This means that
-    /// a <code>200 OK</code> response can contain either a success or an error. Design your
-    /// application to parse the contents of the response and handle it appropriately. If you call
-    /// the S3 API directly, make sure to design your application to parse the contents of
-    /// the response and handle it appropriately. If you use Amazon Web Services SDKs, SDKs
-    /// handle this condition. The SDKs detect the embedded error and apply error handling
-    /// per your configuration settings (including automatically retrying the request as appropriate).
-    /// If the condition persists, the SDKs throws an exception (or, for the SDKs that don't
-    /// use exceptions, they return the error).
-    /// </para>
-    ///  
-    /// <para>
-    /// If the copy is successful, you receive a response with information about the copied
-    /// object.
+    /// You can copy individual objects between general purpose buckets, between directory
+    /// buckets, and between general purpose buckets and directory buckets.
     /// </para>
     ///  <note> 
     /// <para>
-    /// If the request is an HTTP 1.1 request, the response is chunk encoded. If it were not,
-    /// it would not contain the content-length, and you would need to read the entire body.
+    ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+    /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// The copy request charge is based on the storage class and Region that you specify
-    /// for the destination object. For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon
-    /// S3 pricing</a>.
+    /// Both the Region that you want to copy the object from and the Region that you want
+    /// to copy the object to must be enabled for your account.
     /// </para>
     ///  <important> 
     /// <para>
     /// Amazon S3 transfer acceleration does not support cross-Region copies. If you request
-    /// a cross-Region copy using a transfer acceleration endpoint, you get a 400 <code>Bad
-    /// Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
+    /// a cross-Region copy using a transfer acceleration endpoint, you get a <c>400 Bad
+    /// Request</c> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
     /// Acceleration</a>.
     /// </para>
-    ///  </important> <dl> <dt>Metadata</dt> <dd> 
-    ///  
+    ///  </important> <dl> <dt>Authentication and authorization</dt> <dd> 
     /// <para>
-    /// When copying an object, you can preserve all metadata (default) or specify new metadata.
-    /// However, the ACL is not preserved and is set to private for the user making the request.
-    /// To override the default ACL setting, specify a new ACL when generating a copy request.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
-    /// ACLs</a>. 
+    /// All <c>CopyObject</c> requests must be authenticated and signed by using IAM
+    /// credentials (access key ID and secret access key for the IAM identities). All headers
+    /// with the <c>x-amz-</c> prefix, including <c>x-amz-copy-source</c>, must
+    /// be signed. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+    /// Authentication</a>.
     /// </para>
     ///  
     /// <para>
-    /// To specify whether you want the object metadata copied from the source object or replaced
-    /// with metadata provided in the request, you can optionally add the <code>x-amz-metadata-directive</code>
-    /// header. When you grant permissions, you can use the <code>s3:x-amz-metadata-directive</code>
-    /// condition key to enforce certain metadata behavior when objects are uploaded. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
-    /// Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete list
-    /// of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
-    /// Resources, and Condition Keys for Amazon S3</a>.
+    ///  <b>Directory buckets</b> - You must use the IAM credentials to authenticate and authorize
+    /// your access to the <c>CopyObject</c> API operation, instead of using the temporary
+    /// security credentials through the <c>CreateSession</c> API operation.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    ///  <code>x-amz-website-redirect-location</code> is unique to each object and must be
-    /// specified in the request headers to copy the value.
+    /// Amazon Web Services CLI or SDKs handles authentication and authorization on your behalf.
     /// </para>
-    ///  </note> </dd> <dt>x-amz-copy-source-if Headers</dt> <dd> 
+    ///  </dd> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
-    /// matches or whether the object was modified before or after a specified date, use the
-    /// following request parameters:
+    /// You must have <i>read</i> access to the source object and <i>write</i> access to the
+    /// destination bucket.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-match</code> 
+    ///  <b>General purpose bucket permissions</b> - You must have permissions in an IAM policy
+    /// based on the source and destination bucket types in a <c>CopyObject</c> operation.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If the source object is in a general purpose bucket, you must have <b> <c>s3:GetObject</c>
+    /// </b> permission to read the source object that is being copied. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-none-match</code> 
+    /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
+    /// </b> permission to write the object copy to the destination bucket. 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Directory bucket permissions</b> - You must have permissions in a bucket policy
+    /// or an IAM identity-based policy based on the source and destination bucket types in
+    /// a <c>CopyObject</c> operation.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If the source object that you want to copy is in a directory bucket, you must have
+    /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c>
+    /// element of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
+    /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+    /// condition key to <c>ReadOnly</c> on the copy source bucket.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-unmodified-since</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>x-amz-copy-source-if-modified-since</code> 
+    /// If the copy destination is a directory bucket, you must have the <b> <c>s3express:CreateSession</c>
+    /// </b> permission in the <c>Action</c> element of a policy to write the object
+    /// to the destination. The <c>s3express:SessionMode</c> condition key can't be
+    /// set to <c>ReadOnly</c> on the copy destination bucket. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  If both the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code>
-    /// headers are present in the request and evaluate as follows, Amazon S3 returns <code>200
-    /// OK</code> and copies the data:
+    /// For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
+    /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
+    /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
+    /// One Zone</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </li> </ul> </dd> <dt>Response and special errors</dt> <dd> 
+    /// <para>
+    /// When the request is an HTTP 1.1 request, the response is chunk encoded. When the request
+    /// is not an HTTP 1.1 request, the response would not contain the <c>Content-Length</c>.
+    /// You always need to read the entire response body to check if the copy succeeds. to
+    /// keep the connection alive while we copy the data. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-match</code> condition evaluates to true
+    /// If the copy is successful, you receive a response with information about the copied
+    /// object.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to false
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If both the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code>
-    /// headers are present in the request and evaluate as follows, Amazon S3 returns the
-    /// <code>412 Precondition Failed</code> response code:
+    /// A copy request might return an error when Amazon S3 receives the copy request or while
+    /// Amazon S3 is copying the files. A <c>200 OK</c> response can contain either
+    /// a success or an error.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-none-match</code> condition evaluates to false
+    /// If the error occurs before the copy action starts, you receive a standard Amazon S3
+    /// error.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-copy-source-if-modified-since</code> condition evaluates to true
-    /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
-    /// must be signed.
-    /// </para>
-    ///  </note> </dd> <dt>Server-side encryption</dt> <dd> 
-    /// <para>
-    /// Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket.
-    /// When copying an object, if you don't specify encryption information in your copy request,
-    /// the encryption setting of the target object is set to the default encryption configuration
-    /// of the destination bucket. By default, all buckets have a base level of encryption
-    /// configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3).
-    /// If the destination bucket has a default encryption configuration that uses server-side
-    /// encryption with an Key Management Service (KMS) key (SSE-KMS), or a customer-provided
-    /// encryption key (SSE-C), Amazon S3 uses the corresponding KMS key, or a customer-provided
-    /// key to encrypt the target object copy.
+    /// If the error occurs during the copy operation, the error response is embedded in the
+    /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter
+    /// throttling and receive a <c>200 OK</c> response. For more information, see <a
+    /// href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve the
+    /// Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c>
+    /// status code means the copy was accepted, but it doesn't mean the copy is complete.
+    /// Another example is when you disconnect from Amazon S3 before the copy is complete,
+    /// Amazon S3 might cancel the copy and you may receive a <c>200 OK</c> response.
+    /// You must stay connected to Amazon S3 until the entire response is successfully received
+    /// and processed.
     /// </para>
     ///  
     /// <para>
-    /// When you perform a CopyObject operation, you can optionally use the appropriate encryption-related
-    /// headers to encrypt the object using server-side encryption with Amazon Web Services
-    /// managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided encryption key.
-    /// With server-side encryption, Amazon S3 encrypts your data as it writes it to disks
-    /// in its data centers and decrypts the data when you access it. For more information
-    /// about server-side encryption, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
-    /// Server-Side Encryption</a>.
+    /// If you call this API operation directly, make sure to design your application to parse
+    /// the content of the response and handle it appropriately. If you use Amazon Web Services
+    /// SDKs, SDKs handle this condition. The SDKs detect the embedded error and apply error
+    /// handling per your configuration settings (including automatically retrying the request
+    /// as appropriate). If the condition persists, the SDKs throw an exception (or, for the
+    /// SDKs that don't use exceptions, they return an error).
     /// </para>
-    ///  
+    ///  </li> </ul> </li> </ul> </dd> <dt>Charge</dt> <dd> 
     /// <para>
-    /// If a target object uses SSE-KMS, you can enable an S3 Bucket Key for the object. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
-    /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
+    /// The copy request charge is based on the storage class and Region that you specify
+    /// for the destination object. The request can also result in a data retrieval charge
+    /// for the source if the source storage class bills for data retrieval. If the copy source
+    /// is in a different region, the data transfer is billed to the copy source account.
+    /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+    /// pricing</a>.
     /// </para>
-    ///  </dd> <dt>Access Control List (ACL)-Specific Request Headers</dt> <dd> 
+    ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    /// When copying an object, you can optionally use headers to grant ACL-based permissions.
-    /// By default, all objects are private. Only the owner has full access control. When
-    /// adding a new object, you can grant permissions to individual Amazon Web Services accounts
-    /// or to predefined groups defined by Amazon S3. These permissions are then added to
-    /// the ACL on the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-    /// Control List (ACL) Overview</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
-    /// ACLs Using the REST API</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// If the bucket that you're copying objects to uses the bucket owner enforced setting
-    /// for S3 Object Ownership, ACLs are disabled and no longer affect permissions. Buckets
-    /// that use this setting only accept PUT requests that don't specify an ACL or PUT requests
-    /// that specify bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code>
-    /// canned ACL or an equivalent form of this ACL expressed in the XML format.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
-    /// Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// If your bucket uses the bucket owner enforced setting for Object Ownership, all objects
-    /// written to the bucket by any account will be owned by the bucket owner.
-    /// </para>
-    ///  </note> 
-    ///  </dd> <dt>Storage Class Options</dt> <dd> 
-    /// <para>
-    /// You can use the <code>CopyObject</code> action to change the storage class of an object
-    /// that is already stored in Amazon S3 using the <code>StorageClass</code> parameter.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-    /// Classes</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// If the source object's storage class is GLACIER, you must restore a copy of this object
-    /// before you can use it as a source object for the copy operation. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
-    /// Objects</a>.
-    /// </para>
-    ///  </dd> <dt>Versioning</dt> <dd> 
-    /// <para>
-    /// By default, <code>x-amz-copy-source</code> identifies the current version of an object
-    /// to copy. If the current version is a delete marker, Amazon S3 behaves as if the object
-    /// was deleted. To copy a different version, use the <code>versionId</code> subresource.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you enable versioning on the target bucket, Amazon S3 generates a unique version
-    /// ID for the object being copied. This version ID is different from the version ID of
-    /// the source object. Amazon S3 returns the version ID of the copied object in the <code>x-amz-version-id</code>
-    /// response header in the response.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you do not enable versioning or suspend it on the target bucket, the version ID
-    /// that Amazon S3 generates is always null.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following operations are related to <code>CopyObject</code>:
+    /// The following operations are related to <c>CopyObject</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -265,7 +198,7 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
     /// 
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul>
     /// </summary>
     public partial class CopyObjectRequest : PutWithACLRequest
     {
@@ -335,7 +268,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
-        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <c>true</c>
         /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. 
         /// </para>
         ///  
@@ -548,21 +481,38 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. Directory bucket names must be unique in the
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For
+        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
         /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// Access points and Object Lambda access points are not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
+        /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string DestinationBucket
@@ -616,8 +566,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
         /// The account ID of the expected destination bucket owner. If the destination bucket
-        /// is owned by a different account, the request will fail with an HTTP <code>403 (Access
-        /// Denied)</code> error.
+        /// is owned by a different account, the request will fail with an HTTP <c>403 (Access
+        /// Denied)</c> error.
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -636,7 +586,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ExpectedSourceBucketOwner. 
         /// <para>
         /// The account ID of the expected source bucket owner. If the source bucket is owned
-        /// by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code>
+        /// by a different account, the request will fail with an HTTP <c>403 (Access Denied)</c>
         /// error.
         /// </para>
         /// </summary>
@@ -825,7 +775,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>
         /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
-        /// example, AES256, <code>aws:kms</code>).
+        /// example, AES256, <c>aws:kms</c>).
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -1000,7 +950,7 @@ namespace Amazon.S3.Model
         /// If the bucket is configured as a website, redirects requests for this object to another
         /// object in the same bucket or to an external URL. Amazon S3 stores the value of this
         /// header in the object metadata. This value is unique to each object and is not copied
-        /// when using the <code>x-amz-metadata-directive</code> header. Instead, you may opt
+        /// when using the <c>x-amz-metadata-directive</c> header. Instead, you may opt
         /// to provide this header in combination with the directive.
         /// </para>
         /// </summary>
