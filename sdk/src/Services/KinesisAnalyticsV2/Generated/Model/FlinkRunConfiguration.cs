@@ -41,8 +41,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// When restoring from a snapshot, specifies whether the runtime is allowed to skip a
         /// state that cannot be mapped to the new program. This will happen if the program is
         /// updated between snapshots to remove stateful parameters, and state data in the snapshot
-        /// no longer corresponds to valid application data. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
-        /// Allowing Non-Restored State</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+        /// no longer corresponds to valid application data. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
+        /// Allowing Non-Restored State</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
         /// Flink documentation</a>.
         /// </para>
         ///  <note> 

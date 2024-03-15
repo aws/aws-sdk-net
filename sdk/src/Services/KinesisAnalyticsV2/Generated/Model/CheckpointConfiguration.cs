@@ -31,8 +31,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Describes an application's checkpointing configuration. Checkpointing is the process
     /// of persisting application state for fault tolerance. For more information, see <a
-    /// href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance">
-    /// Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+    /// href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing">
+    /// Checkpoints for Fault Tolerance</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
     /// Flink Documentation</a>.
     /// </summary>
     public partial class CheckpointConfiguration
@@ -139,8 +139,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Describes the minimum time in milliseconds after a checkpoint operation completes
         /// that a new checkpoint operation can start. If a checkpoint operation takes longer
         /// than the <c>CheckpointInterval</c>, the application otherwise performs continual checkpoint
-        /// operations. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing">
-        /// Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+        /// operations. For more information, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing">
+        /// Tuning Checkpointing</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
         /// Flink Documentation</a>.
         /// </para>
         ///  <note> 
