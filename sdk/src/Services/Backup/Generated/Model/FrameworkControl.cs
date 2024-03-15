@@ -82,6 +82,11 @@ namespace Amazon.Backup.Model
         /// Three examples of control scopes are: a specific backup plan, all backup plans with
         /// a specific tag, or all backup plans.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+        /// <c>ControlScope</c>.</a> 
+        /// </para>
         /// </summary>
         public ControlScope ControlScope
         {
