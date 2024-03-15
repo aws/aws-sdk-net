@@ -71,6 +71,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedAccessControlHierarchyGroupId())
+                {
+                    context.Writer.WritePropertyName("AllowedAccessControlHierarchyGroupId");
+                    context.Writer.Write(publicRequest.AllowedAccessControlHierarchyGroupId);
+                }
+
                 if(publicRequest.IsSetAllowedAccessControlTags())
                 {
                     context.Writer.WritePropertyName("AllowedAccessControlTags");
@@ -105,6 +111,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetHierarchyRestrictedResources())
+                {
+                    context.Writer.WritePropertyName("HierarchyRestrictedResources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestHierarchyRestrictedResourcesListValue in publicRequest.HierarchyRestrictedResources)
+                    {
+                            context.Writer.Write(publicRequestHierarchyRestrictedResourcesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetPermissions())

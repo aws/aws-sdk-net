@@ -33,9 +33,11 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SecurityProfile
     {
+        private string _allowedAccessControlHierarchyGroupId;
         private Dictionary<string, string> _allowedAccessControlTags = new Dictionary<string, string>();
         private string _arn;
         private string _description;
+        private List<string> _hierarchyRestrictedResources = new List<string>();
         private string _id;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
@@ -43,6 +45,25 @@ namespace Amazon.Connect.Model
         private string _securityProfileName;
         private List<string> _tagRestrictedResources = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowedAccessControlHierarchyGroupId. 
+        /// <para>
+        /// The identifier of the hierarchy group that a security profile uses to restrict access
+        /// to resources in Amazon Connect.
+        /// </para>
+        /// </summary>
+        public string AllowedAccessControlHierarchyGroupId
+        {
+            get { return this._allowedAccessControlHierarchyGroupId; }
+            set { this._allowedAccessControlHierarchyGroupId = value; }
+        }
+
+        // Check to see if AllowedAccessControlHierarchyGroupId property is set
+        internal bool IsSetAllowedAccessControlHierarchyGroupId()
+        {
+            return this._allowedAccessControlHierarchyGroupId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedAccessControlTags. 
@@ -99,6 +120,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HierarchyRestrictedResources. 
+        /// <para>
+        /// The list of resources that a security profile applies hierarchy restrictions to in
+        /// Amazon Connect. Following are acceptable ResourceNames: <c>User</c>.
+        /// </para>
+        /// </summary>
+        public List<string> HierarchyRestrictedResources
+        {
+            get { return this._hierarchyRestrictedResources; }
+            set { this._hierarchyRestrictedResources = value; }
+        }
+
+        // Check to see if HierarchyRestrictedResources property is set
+        internal bool IsSetHierarchyRestrictedResources()
+        {
+            return this._hierarchyRestrictedResources != null && this._hierarchyRestrictedResources.Count > 0; 
         }
 
         /// <summary>

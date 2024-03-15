@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UserSearchFilter Marshaller
+    /// AttributeAndCondition Marshaller
     /// </summary>
-    public class UserSearchFilterMarshaller : IRequestMarshaller<UserSearchFilter, JsonMarshallerContext> 
+    public class AttributeAndConditionMarshaller : IRequestMarshaller<AttributeAndCondition, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,33 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UserSearchFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(AttributeAndCondition requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetTagFilter())
+            if(requestObject.IsSetHierarchyGroupCondition())
             {
-                context.Writer.WritePropertyName("TagFilter");
+                context.Writer.WritePropertyName("HierarchyGroupCondition");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ControlPlaneTagFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.TagFilter, context);
+                var marshaller = HierarchyGroupConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.HierarchyGroupCondition, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetUserAttributeFilter())
+            if(requestObject.IsSetTagConditions())
             {
-                context.Writer.WritePropertyName("UserAttributeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("TagConditions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTagConditionsListValue in requestObject.TagConditions)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = ControlPlaneUserAttributeFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.UserAttributeFilter, context);
+                    var marshaller = TagConditionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTagConditionsListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -72,7 +77,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UserSearchFilterMarshaller Instance = new UserSearchFilterMarshaller();
+        public readonly static AttributeAndConditionMarshaller Instance = new AttributeAndConditionMarshaller();
 
     }
 }
