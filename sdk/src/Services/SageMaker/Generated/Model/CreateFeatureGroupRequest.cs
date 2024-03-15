@@ -165,7 +165,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
         /// The name of the <c>FeatureGroup</c>. The name must be unique within an Amazon Web
-        /// Services Region in an Amazon Web Services account. The name:
+        /// Services Region in an Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The name:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -173,7 +177,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can only contain alphanumeric character and hyphens. Spaces are not allowed. 
+        /// Can only include alphanumeric characters, underscores, and hyphens. Spaces are not
+        /// allowed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

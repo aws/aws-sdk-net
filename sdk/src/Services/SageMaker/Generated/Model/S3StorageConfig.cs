@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The Amazon Simple Storage (Amazon S3) location and and security configuration for
-    /// <c>OfflineStore</c>.
+    /// The Amazon Simple Storage (Amazon S3) location and security configuration for <c>OfflineStore</c>.
     /// </summary>
     public partial class S3StorageConfig
     {

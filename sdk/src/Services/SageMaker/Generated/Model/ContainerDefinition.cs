@@ -78,9 +78,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment variables to set in the Docker container. Each key and value in the
-        /// <c>Environment</c> string to string map can have length of up to 1024. We support
-        /// up to 16 entries in the map. 
+        /// The environment variables to set in the Docker container.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of each key and value in the <c>Environment</c> map is 1024 bytes.
+        /// The maximum length of all keys and values in the map, combined, is 32 KB. If you pass
+        /// multiple containers to a <c>CreateModel</c> request, then the maximum length of all
+        /// of their maps, combined, is also 32 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
