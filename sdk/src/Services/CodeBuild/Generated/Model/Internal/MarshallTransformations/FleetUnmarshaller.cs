@@ -111,6 +111,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overflowBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OverflowBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scalingConfiguration", targetDepth))
                 {
                     var unmarshaller = ScalingConfigurationOutputUnmarshaller.Instance;

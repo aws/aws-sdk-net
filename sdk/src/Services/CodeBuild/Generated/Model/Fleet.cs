@@ -41,6 +41,7 @@ namespace Amazon.CodeBuild.Model
         private string _id;
         private DateTime? _lastModified;
         private string _name;
+        private FleetOverflowBehavior _overflowBehavior;
         private ScalingConfigurationOutput _scalingConfiguration;
         private FleetStatus _status;
         private List<Tag> _tags = new List<Tag>();
@@ -296,6 +297,34 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverflowBehavior. 
+        /// <para>
+        /// The compute fleet overflow behavior.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For overflow behavior <c>QUEUE</c>, your overflow builds need to wait on the existing
+        /// fleet instance to become available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For overflow behavior <c>ON_DEMAND</c>, your overflow builds run on CodeBuild on-demand.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FleetOverflowBehavior OverflowBehavior
+        {
+            get { return this._overflowBehavior; }
+            set { this._overflowBehavior = value; }
+        }
+
+        // Check to see if OverflowBehavior property is set
+        internal bool IsSetOverflowBehavior()
+        {
+            return this._overflowBehavior != null;
         }
 
         /// <summary>
