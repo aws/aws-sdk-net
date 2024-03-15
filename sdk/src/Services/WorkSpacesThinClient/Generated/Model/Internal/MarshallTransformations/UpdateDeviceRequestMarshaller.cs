@@ -74,12 +74,6 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DesiredSoftwareSetId);
                 }
 
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("kmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
