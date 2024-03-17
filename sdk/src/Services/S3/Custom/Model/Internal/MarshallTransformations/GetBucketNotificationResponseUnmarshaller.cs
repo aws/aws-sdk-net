@@ -36,8 +36,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             while (context.Read())
             {
                 if (context.IsStartElement)
-                {                    
-                    UnmarshallResult(context,response);                        
+                {
+                    UnmarshallResult(context,response);
                     continue;
                 }
             }
@@ -60,16 +60,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("TopicConfiguration", targetDepth))
                     {
+                        if (response.TopicConfigurations == null)
+                        {
+                            response.TopicConfigurations = new List<TopicConfiguration>();
+                        }
                         response.TopicConfigurations.Add(TopicConfigurationUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("QueueConfiguration", targetDepth))
                     {
+                        if (response.QueueConfigurations == null)
+                        {
+                            response.QueueConfigurations = new List<QueueConfiguration>();
+                        }
                         response.QueueConfigurations.Add(QueueConfigurationUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("CloudFunctionConfiguration", targetDepth))
                     {
+                        if (response.LambdaFunctionConfigurations == null)
+                        {
+                            response.LambdaFunctionConfigurations = new List<LambdaFunctionConfiguration>();
+                        }
                         response.LambdaFunctionConfigurations.Add(LambdaFunctionConfigurationUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }

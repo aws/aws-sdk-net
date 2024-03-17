@@ -28,11 +28,11 @@ namespace Amazon.S3.Model
     {
         private bool? isTruncated;
         private string nextMarker;
-        private List<S3Object> contents = new List<S3Object>();
+        private List<S3Object> contents = AWSConfigs.InitializeCollections ? new List<S3Object>() : null;
         private string name;
         private string prefix;
         private int? maxKeys;
-        private List<string> commonPrefixes = new List<string>();
+        private List<string> commonPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string delimiter;
         private RequestCharged _requestCharged;
 
@@ -69,7 +69,7 @@ namespace Amazon.S3.Model
                 // last returned Key as the default value.
                 if (System.String.IsNullOrEmpty(nextMarker) &&
                     isTruncated.GetValueOrDefault() &&
-                    (this.S3Objects.Count > 0))
+                    (this.S3Objects?.Count > 0))
                 {
                     int lastObjIdx = this.S3Objects.Count - 1;
                     nextMarker = this.S3Objects[lastObjIdx].Key;
@@ -99,7 +99,7 @@ namespace Amazon.S3.Model
         // Check to see if Contents property is set
         internal bool IsSetContents()
         {
-            return this.contents.Count > 0;
+            return this.contents != null && (this.contents.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.S3.Model
         // Check to see if CommonPrefixes property is set
         internal bool IsSetCommonPrefixes()
         {
-            return this.commonPrefixes.Count > 0;
+            return this.commonPrefixes != null && (this.commonPrefixes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

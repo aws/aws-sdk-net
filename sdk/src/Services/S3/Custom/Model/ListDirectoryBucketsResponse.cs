@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class ListDirectoryBucketsResponse : AmazonWebServiceResponse
     {
-        private List<S3Bucket> _buckets = new List<S3Bucket>();
+        private List<S3Bucket> _buckets = AWSConfigs.InitializeCollections ? new List<S3Bucket>() : null;
         private string _continuationToken;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Amazon.S3.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && this._buckets.Count > 0;
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

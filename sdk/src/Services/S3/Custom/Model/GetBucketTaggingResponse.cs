@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class GetBucketTaggingResponse : AmazonWebServiceResponse
     {
-        private List<Tag> tagSet = new List<Tag>();
+        private List<Tag> tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// The collection of tags.
@@ -40,7 +40,7 @@ namespace Amazon.S3.Model
         // Check to see if TagSet property is set
         internal bool IsSetTagSet()
         {
-            return this.tagSet.Count > 0;
+            return this.tagSet != null && (this.tagSet.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }

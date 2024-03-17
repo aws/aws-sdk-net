@@ -79,8 +79,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RoutingRule", targetDepth + 1))
                     {
+                        if (response.WebsiteConfiguration.RoutingRules == null)
+                        {
+                            response.WebsiteConfiguration.RoutingRules = new List<RoutingRule>();
+                        }
+
                         response.WebsiteConfiguration.RoutingRules.Add(RoutingRuleUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }

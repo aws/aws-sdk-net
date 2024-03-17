@@ -44,6 +44,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Event", targetDepth))
                     {
+                        if (cloudFunctionConfiguration.Events == null)
+                        {
+                            cloudFunctionConfiguration.Events = new List<EventType>();
+                        }
+
                         cloudFunctionConfiguration.Events.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
 
                         continue;

@@ -223,8 +223,8 @@ namespace Amazon.S3.Model
         private string dstBucket;
         private string dstKey;
         private string uploadId;
-        private List<string> etagsToMatch;
-        private List<string> etagsToNotMatch;
+        private List<string> etagsToMatch = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> etagsToNotMatch = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
         private int? partNumber;
@@ -444,14 +444,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         public List<string> ETagToMatch
         {
-            get
-            {
-                if (this.etagsToMatch == null)
-                {
-                    this.etagsToMatch = new List<String>();
-                }
-                return this.etagsToMatch;
-            }
+            get{ return this.etagsToMatch;}
             set { this.etagsToMatch = value; }
         }
 
@@ -477,14 +470,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         public List<string> ETagsToNotMatch
         {
-            get
-            {
-                if (this.etagsToNotMatch == null)
-                {
-                    this.etagsToNotMatch = new List<String>();
-                }
-                return this.etagsToNotMatch;
-            }
+            get { return this.etagsToNotMatch; }
             set { this.etagsToNotMatch = value; }
         }
 

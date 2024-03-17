@@ -33,7 +33,7 @@ namespace Amazon.S3.Model
         private string inventoryId;
         private bool isEnabled;
         private InventoryIncludedObjectVersions inventoryIncludedObjectVersions;
-        private List<InventoryOptionalField> inventoryOptionalFields = new List<InventoryOptionalField>();
+        private List<InventoryOptionalField> inventoryOptionalFields = AWSConfigs.InitializeCollections ? new List<InventoryOptionalField>() : null;
         private InventorySchedule inventorySchedule;
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Amazon.S3.Model
         // Check to see if InventoryOptionalFields property is set
         internal bool IsSetInventoryOptionalFields()
         {
-            return this.inventoryOptionalFields.Count > 0;
+            return this.inventoryOptionalFields != null && (this.inventoryOptionalFields.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

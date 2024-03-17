@@ -265,7 +265,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private S3StorageClass storageClass;
-        private List<Tag> tagset = new List<Tag>();
+        private List<Tag> tagset = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string websiteRedirectLocation;
         private ChecksumAlgorithm _checksumAlgorithm;
 
@@ -763,7 +763,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Tagging is set.</returns>
         internal bool IsSetTagSet()
         {
-            return (this.tagset != null) && (this.tagset.Count > 0);
+            return this.tagset != null && (this.tagset.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

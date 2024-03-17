@@ -39,6 +39,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ChecksumAlgorithm", targetDepth))
                     {
+                        if (versionsItem.ChecksumAlgorithm == null)
+                        {
+                            versionsItem.ChecksumAlgorithm = new List<string>();
+                        }
                         versionsItem.ChecksumAlgorithm.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                         continue;
                     }

@@ -228,7 +228,7 @@ namespace Amazon.S3.Model
         private string _expectedBucketOwner;
         private string _key;
         private int? _maxParts;
-        private List<ObjectAttributes> _objectAttributes = new List<ObjectAttributes>();
+        private List<ObjectAttributes> _objectAttributes = AWSConfigs.InitializeCollections ? new List<ObjectAttributes>() : null;
         private int? _partNumberMarker;
         private RequestPayer _requestPayer;
         private string _sseCustomerAlgorithm;
@@ -362,7 +362,7 @@ namespace Amazon.S3.Model
         // Check to see if ObjectAttributes property is set
         internal bool IsSetObjectAttributes()
         {
-            return this._objectAttributes != null && this._objectAttributes.Count > 0;
+            return this._objectAttributes != null && (this._objectAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

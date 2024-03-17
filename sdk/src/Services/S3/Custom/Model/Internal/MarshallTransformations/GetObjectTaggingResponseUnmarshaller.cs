@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Transform;
+using System.Collections.Generic;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -51,8 +52,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Tag", targetDepth))
                     {
+                        if (response.Tagging == null)
+                        {
+                            response.Tagging = new List<Tag>();
+                        }
                         response.Tagging.Add(TagUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                 }

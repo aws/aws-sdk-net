@@ -41,7 +41,7 @@ namespace Amazon.S3.Model
     /// </remarks>
     public class S3AccessControlList
     {
-        private List<S3Grant> grantList = null;
+        private List<S3Grant> grantList = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
 
         /// <summary>
         /// Creates a S3Grant and adds it to the list of grants.
@@ -51,6 +51,11 @@ namespace Amazon.S3.Model
         public void AddGrant(S3Grantee grantee, S3Permission permission)
         {
             S3Grant grant = new S3Grant { Grantee = grantee, Permission = permission };
+
+            if (this.Grants == null)
+            {
+                this.Grants = new List<S3Grant>();
+            }
             this.Grants.Add(grant);
         }
 
@@ -61,12 +66,15 @@ namespace Amazon.S3.Model
         /// <param name="permission">The permission for the grantee to remove</param>
         public void RemoveGrant(S3Grantee grantee, S3Permission permission)
         {
-            foreach (S3Grant grant in this.Grants)
+            if (this.Grants != null)
             {
-                if (grant.Grantee.Equals(grantee) && grant.Permission == permission)
+                foreach (S3Grant grant in this.Grants)
                 {
-                    this.Grants.Remove(grant);
-                    break;
+                    if (grant.Grantee.Equals(grantee) && grant.Permission == permission)
+                    {
+                        this.Grants.Remove(grant);
+                        break;
+                    }
                 }
             }
         }
@@ -77,17 +85,21 @@ namespace Amazon.S3.Model
         /// <param name="grantee"></param>
         public void RemoveGrant(S3Grantee grantee)
         {
-            List<S3Grant> removeList = new List<S3Grant>();
-            foreach (S3Grant grant in this.Grants)
+            if (this.Grants != null)
             {
-                if (grant.Grantee.Equals(grantee))
+                List<S3Grant> removeList = new List<S3Grant>();
+
+                foreach (S3Grant grant in this.Grants)
                 {
-                    removeList.Add(grant);
+                    if (grant.Grantee.Equals(grantee))
+                    {
+                        removeList.Add(grant);
+                    }
                 }
-            }
-            foreach (S3Grant grant in removeList)
-            {
-                this.Grants.Remove(grant);
+                foreach (S3Grant grant in removeList)
+                {
+                    this.Grants.Remove(grant);
+                }
             }
         }
 
@@ -152,18 +164,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<S3Grant> Grants
         {
-            get
-            {
-                if (this.grantList == null)
-                {
-                    this.grantList = new List<S3Grant>();
-                }
-                return this.grantList;
-            }
-            set
-            {
-                this.grantList = value;
-            }
+            get {  return this.grantList; }
+            set { this.grantList = value; }
         }
 
         /// <summary>
@@ -172,17 +174,20 @@ namespace Amazon.S3.Model
         /// <returns>true if Grants property is set.</returns>
         internal bool IsSetGrants()
         {
-            return (this.Grants.Count > 0);
+            return this.grantList != null && (this.grantList.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         internal void Marshall(string memberName, XmlWriter xmlWriter)
         {
             xmlWriter.WriteStartElement(memberName);
-            foreach (var grant in grantList)
+            if (grantList != null)
             {
-                if (grant != null)
+                foreach (var grant in grantList)
                 {
-                    grant.Marshall("Grant", xmlWriter);
+                    if (grant != null)
+                    {
+                        grant.Marshall("Grant", xmlWriter);
+                    }
                 }
             }
             xmlWriter.WriteEndElement();

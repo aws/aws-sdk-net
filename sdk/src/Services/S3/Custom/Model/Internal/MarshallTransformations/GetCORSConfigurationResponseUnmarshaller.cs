@@ -61,6 +61,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (response.Configuration == null)
                             response.Configuration = new CORSConfiguration();
+                        if (response.Configuration.Rules == null)
+                            response.Configuration.Rules = new List<CORSRule>();
 
                         response.Configuration.Rules.Add(CORSRuleUnmarshaller.Instance.Unmarshall(context));
                             

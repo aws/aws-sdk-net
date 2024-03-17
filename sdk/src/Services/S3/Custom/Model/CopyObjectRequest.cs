@@ -222,7 +222,7 @@ namespace Amazon.S3.Model
         private DateTime? modifiedSinceDateUtc;
         private DateTime? unmodifiedSinceDateUtc;
 
-        private List<Tag> tagset = new List<Tag>();
+        private List<Tag> tagset = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         private S3MetadataDirective metadataDirective;
         private S3StorageClass storageClass;
@@ -942,7 +942,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Tagging is set.</returns>
         internal bool IsSetTagSet()
         {
-            return (this.tagset != null) && (this.tagset.Count > 0);
+            return (this.tagset != null) && (this.tagset.Count > 0 || !AWSConfigs.InitializeCollections);
         }
         
         /// <summary>

@@ -26,48 +26,30 @@ namespace Amazon.S3.Model
     /// </summary>
     public class GetBucketNotificationResponse : AmazonWebServiceResponse
     {
-        List<TopicConfiguration> _topicConfigurations;
+        List<TopicConfiguration> _topicConfigurations = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
         /// <summary>
         /// Gets and sets the TopicConfigurations property. TopicConfigurations are configuration 
         /// for Amazon S3 events to be sent to Amazon SNS topics.
         /// </summary>
         public List<TopicConfiguration> TopicConfigurations 
         {
-            get
-            {
-                if (this._topicConfigurations == null)
-                    this._topicConfigurations = new List<TopicConfiguration>();
-
-                return this._topicConfigurations;
-            }
-            set
-            {
-                this._topicConfigurations = value;
-            }
+            get { return _topicConfigurations; }
+            set {  _topicConfigurations = value; }
         }
 
-        List<QueueConfiguration> _queueConfigurations;
+        List<QueueConfiguration> _queueConfigurations = AWSConfigs.InitializeCollections ? new List<QueueConfiguration>() : null;
         /// <summary>
         /// Gets and sets the QueueConfigurations property. QueueConfigurations are configuration 
         /// for Amazon S3 events to be sent to Amazon SQS queues.
         /// </summary>
         public List<QueueConfiguration> QueueConfigurations
         {
-            get
-            {
-                if (this._queueConfigurations == null)
-                    this._queueConfigurations = new List<QueueConfiguration>();
-
-                return this._queueConfigurations;
-            }
-            set
-            {
-                this._queueConfigurations = value;
-            }
+            get { return _queueConfigurations; }
+            set { _queueConfigurations = value; }
         }
 
 
-        List<LambdaFunctionConfiguration> _lambdaFunctionConfigurations;
+        List<LambdaFunctionConfiguration> _lambdaFunctionConfigurations = AWSConfigs.InitializeCollections ? new List<LambdaFunctionConfiguration>() : null;
         /// <summary>
         /// Gets and sets the property LambdaFunctionConfigurations. 
         /// <para>
@@ -76,17 +58,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<LambdaFunctionConfiguration> LambdaFunctionConfigurations
         {
-            get
-            {
-                if (this._lambdaFunctionConfigurations == null)
-                    this._lambdaFunctionConfigurations = new List<LambdaFunctionConfiguration>();
-
-                return this._lambdaFunctionConfigurations;
-            }
-            set
-            {
-                this._lambdaFunctionConfigurations = value;
-            }
+            get { return _lambdaFunctionConfigurations; }
+            set { _lambdaFunctionConfigurations = value; }
         }
 
         private EventBridgeConfiguration _eventBridgeConfiguration;

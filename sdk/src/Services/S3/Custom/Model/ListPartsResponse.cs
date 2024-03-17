@@ -37,7 +37,7 @@ namespace Amazon.S3.Model
         private int? nextPartNumberMarker;
         private int? maxParts;
         private bool? isTruncated;
-        private List<PartDetail> parts = new List<PartDetail>();
+        private List<PartDetail> parts = AWSConfigs.InitializeCollections ? new List<PartDetail>() : null;
         private DateTime? abortDate;
         private string abortRuleId;
         private RequestCharged requestCharged;
@@ -199,7 +199,7 @@ namespace Amazon.S3.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this.parts.Count > 0;
+            return this.parts != null && (this.parts.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

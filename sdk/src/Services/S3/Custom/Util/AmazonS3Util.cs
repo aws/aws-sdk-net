@@ -568,7 +568,10 @@ namespace Amazon.S3.Util
             {
                 xmlWriter.WriteStartElement("Tagging", S3Constants.S3RequestXmlNamespace);
 
-                SerializeTagSetToXml(xmlWriter, tagging.TagSet);
+                if (tagging.TagSet != null)
+                {
+                    SerializeTagSetToXml(xmlWriter, tagging.TagSet);
+                }
 
                 xmlWriter.WriteEndElement();
             }

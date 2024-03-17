@@ -63,8 +63,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IntelligentTieringConfiguration", targetDepth))
                     {
+                        if (response.IntelligentTieringConfigurationList == null)
+                        {
+                            response.IntelligentTieringConfigurationList = new List<IntelligentTieringConfiguration>();
+                        }
                         response.IntelligentTieringConfigurationList.Add(IntelligentTieringConfigurationUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))

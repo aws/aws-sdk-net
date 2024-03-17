@@ -42,13 +42,13 @@ namespace Amazon.S3.Model
         /// Enumerable containing all of the Uploads
         /// </summary>
         public IPaginatedEnumerable<MultipartUpload> Uploads => 
-            new PaginatedResultKeyResponse<ListMultipartUploadsResponse, MultipartUpload>(this, (i) => i.MultipartUploads);
+            new PaginatedResultKeyResponse<ListMultipartUploadsResponse, MultipartUpload>(this, (i) => i.MultipartUploads ?? new List<MultipartUpload>());
 
         /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         public IPaginatedEnumerable<string> CommonPrefixes => 
-            new PaginatedResultKeyResponse<ListMultipartUploadsResponse, string>(this, (i) => i.CommonPrefixes);
+            new PaginatedResultKeyResponse<ListMultipartUploadsResponse, string>(this, (i) => i.CommonPrefixes ?? new List<string>());
 
         internal ListMultipartUploadsPaginator(IAmazonS3 client, ListMultipartUploadsRequest request)
         {
