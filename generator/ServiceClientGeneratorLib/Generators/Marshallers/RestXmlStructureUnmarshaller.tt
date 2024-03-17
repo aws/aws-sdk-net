@@ -75,6 +75,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 					if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
 					{
+                        if (unmarshalledObject.<#=member.PropertyName#> == null)
+                        {
+                            unmarshalledObject.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						unmarshalledObject.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
 						continue;
