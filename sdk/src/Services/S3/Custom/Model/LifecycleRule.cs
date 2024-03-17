@@ -150,6 +150,11 @@ namespace Amazon.S3.Model
             }
             set
             {
+                if (this.Transitions == null)
+                {
+                    this.Transitions = new List<LifecycleTransition>();
+                }
+
                 if (this.Transitions.Count == 0)
                     this.Transitions.Add(value);
                 else
@@ -184,9 +189,9 @@ namespace Amazon.S3.Model
             }
             set
             {
-                if (this.NoncurrentVersionTransition == null)
+                if (this.NoncurrentVersionTransitions == null)
                 {
-                    this.NoncurrentVersionTransition = new LifecycleRuleNoncurrentVersionTransition();
+                    this.NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
                 }
 
                 if (this.NoncurrentVersionTransitions.Count == 0)
