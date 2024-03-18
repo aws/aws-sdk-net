@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonMediaTailorRequest
     {
+        private List<string> _audiences = new List<string>();
         private string _channelName;
         private SlateSource _fillerSlate;
         private List<RequestOutputItem> _outputs = new List<RequestOutputItem>();
@@ -42,6 +43,24 @@ namespace Amazon.MediaTailor.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Tier _tier;
         private TimeShiftConfiguration _timeShiftConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property Audiences. 
+        /// <para>
+        /// The list of audiences defined in channel.
+        /// </para>
+        /// </summary>
+        public List<string> Audiences
+        {
+            get { return this._audiences; }
+            set { this._audiences = value; }
+        }
+
+        // Check to see if Audiences property is set
+        internal bool IsSetAudiences()
+        {
+            return this._audiences != null && this._audiences.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelName. 

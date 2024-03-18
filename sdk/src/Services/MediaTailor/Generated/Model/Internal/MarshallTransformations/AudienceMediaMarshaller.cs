@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClipRange Marshaller
+    /// AudienceMedia Marshaller
     /// </summary>
-    public class ClipRangeMarshaller : IRequestMarshaller<ClipRange, JsonMarshallerContext> 
+    public class AudienceMediaMarshaller : IRequestMarshaller<AudienceMedia, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,28 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClipRange requestObject, JsonMarshallerContext context)
+        public void Marshall(AudienceMedia requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEndOffsetMillis())
+            if(requestObject.IsSetAlternateMedia())
             {
-                context.Writer.WritePropertyName("EndOffsetMillis");
-                context.Writer.Write(requestObject.EndOffsetMillis);
+                context.Writer.WritePropertyName("AlternateMedia");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAlternateMediaListValue in requestObject.AlternateMedia)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlternateMediaMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAlternateMediaListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetStartOffsetMillis())
+            if(requestObject.IsSetAudience())
             {
-                context.Writer.WritePropertyName("StartOffsetMillis");
-                context.Writer.Write(requestObject.StartOffsetMillis);
+                context.Writer.WritePropertyName("Audience");
+                context.Writer.Write(requestObject.Audience);
             }
 
         }
@@ -62,7 +72,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClipRangeMarshaller Instance = new ClipRangeMarshaller();
+        public readonly static AudienceMediaMarshaller Instance = new AudienceMediaMarshaller();
 
     }
 }

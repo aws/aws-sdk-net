@@ -29,27 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateProgram operation.
+    /// A playlist of media (VOD and/or live) to be played instead of the default media on
+    /// a particular program.
     /// </summary>
-    public partial class UpdateProgramResponse : AmazonWebServiceResponse
+    public partial class AlternateMedia
     {
         private List<AdBreak> _adBreaks = new List<AdBreak>();
-        private string _arn;
-        private List<AudienceMedia> _audienceMedia = new List<AudienceMedia>();
-        private string _channelName;
         private ClipRange _clipRange;
-        private DateTime? _creationTime;
         private long? _durationMillis;
         private string _liveSourceName;
-        private string _programName;
-        private DateTime? _scheduledStartTime;
+        private long? _scheduledStartTimeMillis;
         private string _sourceLocationName;
         private string _vodSourceName;
 
         /// <summary>
         /// Gets and sets the property AdBreaks. 
         /// <para>
-        /// The ad break configuration settings.
+        /// Ad break configuration parameters defined in AlternateMedia.
         /// </para>
         /// </summary>
         public List<AdBreak> AdBreaks
@@ -65,64 +61,7 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The ARN to assign to the program.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AudienceMedia. 
-        /// <para>
-        /// The list of AudienceMedia defined in program.
-        /// </para>
-        /// </summary>
-        public List<AudienceMedia> AudienceMedia
-        {
-            get { return this._audienceMedia; }
-            set { this._audienceMedia = value; }
-        }
-
-        // Check to see if AudienceMedia property is set
-        internal bool IsSetAudienceMedia()
-        {
-            return this._audienceMedia != null && this._audienceMedia.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ChannelName. 
-        /// <para>
-        /// The name to assign to the channel for this program.
-        /// </para>
-        /// </summary>
-        public string ChannelName
-        {
-            get { return this._channelName; }
-            set { this._channelName = value; }
-        }
-
-        // Check to see if ChannelName property is set
-        internal bool IsSetChannelName()
-        {
-            return this._channelName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClipRange. 
-        /// <para>
-        /// The clip range configuration settings.
-        /// </para>
+        /// Gets and sets the property ClipRange.
         /// </summary>
         public ClipRange ClipRange
         {
@@ -137,27 +76,9 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime. 
-        /// <para>
-        /// The time the program was created.
-        /// </para>
-        /// </summary>
-        public DateTime CreationTime
-        {
-            get { return this._creationTime.GetValueOrDefault(); }
-            set { this._creationTime = value; }
-        }
-
-        // Check to see if CreationTime property is set
-        internal bool IsSetCreationTime()
-        {
-            return this._creationTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property DurationMillis. 
         /// <para>
-        /// The duration of the live program in milliseconds.
+        /// The duration of the alternateMedia in milliseconds.
         /// </para>
         /// </summary>
         public long DurationMillis
@@ -175,7 +96,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LiveSourceName. 
         /// <para>
-        /// The name of the LiveSource for this Program.
+        /// The name of the live source for alternateMedia.
         /// </para>
         /// </summary>
         public string LiveSourceName
@@ -191,45 +112,27 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProgramName. 
+        /// Gets and sets the property ScheduledStartTimeMillis. 
         /// <para>
-        /// The name to assign to this program.
+        /// The date and time that the alternateMedia is scheduled to start, in epoch milliseconds.
         /// </para>
         /// </summary>
-        public string ProgramName
+        public long ScheduledStartTimeMillis
         {
-            get { return this._programName; }
-            set { this._programName = value; }
+            get { return this._scheduledStartTimeMillis.GetValueOrDefault(); }
+            set { this._scheduledStartTimeMillis = value; }
         }
 
-        // Check to see if ProgramName property is set
-        internal bool IsSetProgramName()
+        // Check to see if ScheduledStartTimeMillis property is set
+        internal bool IsSetScheduledStartTimeMillis()
         {
-            return this._programName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ScheduledStartTime. 
-        /// <para>
-        /// The scheduled start time for this Program.
-        /// </para>
-        /// </summary>
-        public DateTime ScheduledStartTime
-        {
-            get { return this._scheduledStartTime.GetValueOrDefault(); }
-            set { this._scheduledStartTime = value; }
-        }
-
-        // Check to see if ScheduledStartTime property is set
-        internal bool IsSetScheduledStartTime()
-        {
-            return this._scheduledStartTime.HasValue; 
+            return this._scheduledStartTimeMillis.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The name to assign to the source location for this program.
+        /// The name of the source location for alternateMedia.
         /// </para>
         /// </summary>
         public string SourceLocationName
@@ -247,7 +150,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property VodSourceName. 
         /// <para>
-        /// The name that's used to refer to a VOD source.
+        /// The name of the VOD source for alternateMedia.
         /// </para>
         /// </summary>
         public string VodSourceName

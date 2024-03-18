@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     public partial class UpdateProgramRequest : AmazonMediaTailorRequest
     {
         private List<AdBreak> _adBreaks = new List<AdBreak>();
+        private List<AudienceMedia> _audienceMedia = new List<AudienceMedia>();
         private string _channelName;
         private string _programName;
         private UpdateProgramScheduleConfiguration _scheduleConfiguration;
@@ -55,6 +56,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAdBreaks()
         {
             return this._adBreaks != null && this._adBreaks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudienceMedia. 
+        /// <para>
+        /// The list of AudienceMedia defined in program.
+        /// </para>
+        /// </summary>
+        public List<AudienceMedia> AudienceMedia
+        {
+            get { return this._audienceMedia; }
+            set { this._audienceMedia = value; }
+        }
+
+        // Check to see if AudienceMedia property is set
+        internal bool IsSetAudienceMedia()
+        {
+            return this._audienceMedia != null && this._audienceMedia.Count > 0; 
         }
 
         /// <summary>

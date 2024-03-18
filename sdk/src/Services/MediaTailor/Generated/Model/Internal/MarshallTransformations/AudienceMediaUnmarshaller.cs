@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClipRange Object
+    /// Response Unmarshaller for AudienceMedia Object
     /// </summary>  
-    public class ClipRangeUnmarshaller : IUnmarshaller<ClipRange, XmlUnmarshallerContext>, IUnmarshaller<ClipRange, JsonUnmarshallerContext>
+    public class AudienceMediaUnmarshaller : IUnmarshaller<AudienceMedia, XmlUnmarshallerContext>, IUnmarshaller<AudienceMedia, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClipRange IUnmarshaller<ClipRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudienceMedia IUnmarshaller<AudienceMedia, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClipRange Unmarshall(JsonUnmarshallerContext context)
+        public AudienceMedia Unmarshall(JsonUnmarshallerContext context)
         {
-            ClipRange unmarshalledObject = new ClipRange();
+            AudienceMedia unmarshalledObject = new AudienceMedia();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,16 +63,16 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndOffsetMillis", targetDepth))
+                if (context.TestExpression("AlternateMedia", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AlternateMedia, AlternateMediaUnmarshaller>(AlternateMediaUnmarshaller.Instance);
+                    unmarshalledObject.AlternateMedia = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StartOffsetMillis", targetDepth))
+                if (context.TestExpression("Audience", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StartOffsetMillis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Audience = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,12 +80,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClipRangeUnmarshaller _instance = new ClipRangeUnmarshaller();        
+        private static AudienceMediaUnmarshaller _instance = new AudienceMediaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClipRangeUnmarshaller Instance
+        public static AudienceMediaUnmarshaller Instance
         {
             get
             {

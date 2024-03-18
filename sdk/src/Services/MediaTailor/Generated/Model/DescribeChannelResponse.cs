@@ -34,6 +34,7 @@ namespace Amazon.MediaTailor.Model
     public partial class DescribeChannelResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private List<string> _audiences = new List<string>();
         private string _channelName;
         private ChannelState _channelState;
         private DateTime? _creationTime;
@@ -62,6 +63,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Audiences. 
+        /// <para>
+        /// The list of audiences defined in channel.
+        /// </para>
+        /// </summary>
+        public List<string> Audiences
+        {
+            get { return this._audiences; }
+            set { this._audiences = value; }
+        }
+
+        // Check to see if Audiences property is set
+        internal bool IsSetAudiences()
+        {
+            return this._audiences != null && this._audiences.Count > 0; 
         }
 
         /// <summary>

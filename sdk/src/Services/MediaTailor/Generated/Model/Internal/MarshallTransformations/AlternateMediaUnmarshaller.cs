@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduleEntry Object
+    /// Response Unmarshaller for AlternateMedia Object
     /// </summary>  
-    public class ScheduleEntryUnmarshaller : IUnmarshaller<ScheduleEntry, XmlUnmarshallerContext>, IUnmarshaller<ScheduleEntry, JsonUnmarshallerContext>
+    public class AlternateMediaUnmarshaller : IUnmarshaller<AlternateMedia, XmlUnmarshallerContext>, IUnmarshaller<AlternateMedia, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ScheduleEntry IUnmarshaller<ScheduleEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AlternateMedia IUnmarshaller<AlternateMedia, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,9 +53,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScheduleEntry Unmarshall(JsonUnmarshallerContext context)
+        public AlternateMedia Unmarshall(JsonUnmarshallerContext context)
         {
-            ScheduleEntry unmarshalledObject = new ScheduleEntry();
+            AlternateMedia unmarshalledObject = new AlternateMedia();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -63,34 +63,22 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ApproximateDurationSeconds", targetDepth))
+                if (context.TestExpression("AdBreaks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AdBreak, AdBreakUnmarshaller>(AdBreakUnmarshaller.Instance);
+                    unmarshalledObject.AdBreaks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ClipRange", targetDepth))
+                {
+                    var unmarshaller = ClipRangeUnmarshaller.Instance;
+                    unmarshalledObject.ClipRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DurationMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.ApproximateDurationSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ApproximateStartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ApproximateStartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Audiences", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Audiences = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ChannelName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LiveSourceName", targetDepth))
@@ -99,22 +87,10 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.LiveSourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ProgramName", targetDepth))
+                if (context.TestExpression("ScheduledStartTimeMillis", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScheduleAdBreaks", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ScheduleAdBreak, ScheduleAdBreakUnmarshaller>(ScheduleAdBreakUnmarshaller.Instance);
-                    unmarshalledObject.ScheduleAdBreaks = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScheduleEntryType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleEntryType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledStartTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceLocationName", targetDepth))
@@ -134,12 +110,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduleEntryUnmarshaller _instance = new ScheduleEntryUnmarshaller();        
+        private static AlternateMediaUnmarshaller _instance = new AlternateMediaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduleEntryUnmarshaller Instance
+        public static AlternateMediaUnmarshaller Instance
         {
             get
             {
