@@ -35,6 +35,8 @@ namespace Amazon.RDS.Model
     {
         private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
         private DateTime? _createTime;
+        private string _dataFilter;
+        private string _description;
         private List<IntegrationError> _errors = new List<IntegrationError>();
         private string _integrationArn;
         private string _integrationName;
@@ -79,6 +81,45 @@ namespace Amazon.RDS.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataFilter. 
+        /// <para>
+        /// Data filters for the integration. These filters determine which tables from the source
+        /// database are sent to the target Amazon Redshift data warehouse. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25600)]
+        public string DataFilter
+        {
+            get { return this._dataFilter; }
+            set { this._dataFilter = value; }
+        }
+
+        // Check to see if DataFilter property is set
+        internal bool IsSetDataFilter()
+        {
+            return this._dataFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>

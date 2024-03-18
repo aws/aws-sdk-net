@@ -32,18 +32,44 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Integration Object
+    /// Response Unmarshaller for ModifyIntegration operation
     /// </summary>  
-    public class IntegrationUnmarshaller : IUnmarshaller<Integration, XmlUnmarshallerContext>, IUnmarshaller<Integration, JsonUnmarshallerContext>
+    public class ModifyIntegrationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Integration Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            Integration unmarshalledObject = new Integration();
+            ModifyIntegrationResponse response = new ModifyIntegrationResponse();
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.IsStartElement)
+                {                    
+                    if(context.TestExpression("ModifyIntegrationResult", 2))
+                    {
+                        UnmarshallResult(context, response);                        
+                        continue;
+                    }
+                    
+                    if (context.TestExpression("ResponseMetadata", 2))
+                    {
+                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
+                    }
+                }
+            }
+
+            return response;
+        }
+
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ModifyIntegrationResponse response)
+        {
+            
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,113 +80,139 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
                     if (context.TestExpression("AdditionalEncryptionContext/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.AdditionalEncryptionContext.Add(item);
+                        response.AdditionalEncryptionContext.Add(item);
                         continue;
                     }
                     if (context.TestExpression("CreateTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                        response.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DataFilter", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DataFilter = unmarshaller.Unmarshall(context);
+                        response.DataFilter = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        response.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Errors/IntegrationError", targetDepth))
                     {
                         var unmarshaller = IntegrationErrorUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Errors.Add(item);
+                        response.Errors.Add(item);
                         continue;
                     }
                     if (context.TestExpression("IntegrationArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IntegrationArn = unmarshaller.Unmarshall(context);
+                        response.IntegrationArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("IntegrationName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.IntegrationName = unmarshaller.Unmarshall(context);
+                        response.IntegrationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("KMSKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.KMSKeyId = unmarshaller.Unmarshall(context);
+                        response.KMSKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SourceArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                        response.SourceArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        response.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
+                        response.Tags.Add(item);
                         continue;
                     }
                     if (context.TestExpression("TargetArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context);
+                        response.TargetArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
+                } 
+           }
 
-            return unmarshalledObject;
+            return;
         }
+
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public Integration Unmarshall(JsonUnmarshallerContext context)
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            return null;
+            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationConflictOperationFault"))
+                {
+                    return IntegrationConflictOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IntegrationNotFoundFault"))
+                {
+                    return IntegrationNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidIntegrationStateFault"))
+                {
+                    return InvalidIntegrationStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+            }
+            return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+        private static ModifyIntegrationResponseUnmarshaller _instance = new ModifyIntegrationResponseUnmarshaller();        
 
-
-        private static IntegrationUnmarshaller _instance = new IntegrationUnmarshaller();        
+        internal static ModifyIntegrationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IntegrationUnmarshaller Instance
+        public static ModifyIntegrationResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

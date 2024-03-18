@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// A zero-ETL integration with Amazon Redshift.
     /// </summary>
-    public partial class DeleteIntegrationResponse : AmazonWebServiceResponse
+    public partial class ModifyIntegrationResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
         private DateTime? _createTime;

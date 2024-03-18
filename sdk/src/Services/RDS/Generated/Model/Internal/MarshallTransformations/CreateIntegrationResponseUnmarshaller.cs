@@ -94,6 +94,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DataFilter", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DataFilter = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Description", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Errors/IntegrationError", targetDepth))
                     {
                         var unmarshaller = IntegrationErrorUnmarshaller.Instance;
