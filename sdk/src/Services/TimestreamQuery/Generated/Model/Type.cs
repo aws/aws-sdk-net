@@ -81,7 +81,8 @@ namespace Amazon.TimestreamQuery.Model
         /// Gets and sets the property ScalarType. 
         /// <para>
         /// Indicates if the column is of type string, integer, Boolean, double, timestamp, date,
-        /// time. 
+        /// time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+        /// data types</a>.
         /// </para>
         /// </summary>
         public ScalarType ScalarType
