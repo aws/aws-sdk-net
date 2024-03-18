@@ -1,3 +1,20 @@
+### 3.7.770.0 (2024-03-18 18:42 UTC)
+* CloudFormation (3.7.305.0)
+	* This release supports for a new API ListStackSetAutoDeploymentTargets, which provider auto-deployment configuration as a describable resource. Customers can now view the specific combinations of regions and OUs that are being auto-deployed.
+* KeyManagementService (3.7.301.0)
+	* Adds the ability to use the default policy name by omitting the policyName parameter in calls to PutKeyPolicy and GetKeyPolicy
+* MediaTailor (3.7.304.0)
+	* This release adds support to allow customers to show different content within a channel depending on metadata associated with the viewer.
+* RDS (3.7.310.0)
+	* This release launches the ModifyIntegration API and support for data filtering for zero-ETL Integrations.
+* S3 (3.7.307.0)
+	* Fix two issues with response root node names.
+* TimestreamQuery (3.7.300.59)
+	* Documentation updates, March 2024
+* Core 3.7.302.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.769.0 (2024-03-15 18:28 UTC)
 * Backup (3.7.304.0)
 	* This release introduces a boolean attribute ManagedByAWSBackupOnly as part of ListRecoveryPointsByResource api to filter the recovery points based on ownership. This attribute can be used to filter out the recovery points protected by AWSBackup.

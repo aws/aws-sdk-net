@@ -32,7 +32,7 @@ namespace Amazon.IoTTwinMaker
     public partial class AmazonIoTTwinMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "3.7.301.51");
+            InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "3.7.301.52");
 
         private string _userAgent = UserAgentString;
         ///<summary>
