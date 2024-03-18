@@ -142,7 +142,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             {
                                 Id = "the-queue-test",
                                 Queue = queueArn,
-                                Events = {EventType.ObjectCreatedPut},
+                                Events = new List<EventType>{EventType.ObjectCreatedPut},
                                 Filter = new Filter
                                 {
                                     S3KeyFilter = new S3KeyFilter
