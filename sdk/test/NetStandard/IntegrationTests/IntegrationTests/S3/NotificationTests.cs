@@ -97,7 +97,7 @@ namespace Amazon.DNXCore.IntegrationTests
                             {
                                 Id = "the-queue-test",
                                 Queue = queueArn,
-                                Events = {EventType.ObjectCreatedPut},
+                                Events = new List<EventType>{EventType.ObjectCreatedPut},
                                 Filter = new Filter
                                 {
                                     S3KeyFilter = new S3KeyFilter
@@ -152,7 +152,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         },
                         (r) =>
                         {
-                            return r.Messages.Count == 0;
+                            return r.Messages == null || r.Messages.Count == 0;
                         });
 
                     var putObjectRequest = new PutObjectRequest
@@ -174,7 +174,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         },
                         (r) =>
                         {
-                            return r.Messages.Count > 0;
+                            return r.Messages != null && r.Messages.Count > 0;
                         });
 
                     var evnt = S3EventNotification.ParseJson(response.Messages[0].Body);

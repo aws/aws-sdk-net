@@ -29,8 +29,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             // perform a filtered query to (a) test parameter marshalling
             // and (b) cut down the time to run -- an unfiltered request
             // yields a lot of images
-            var request = new DescribeImagesRequest();
-            request.Owners.Add("amazon");
+            var request = new DescribeImagesRequest()
+            {
+                Owners = new List<string> { "amazon" }
+            };
             var response = Client.DescribeImages(request);
 
             Assert.IsNotNull(response);
@@ -45,8 +47,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             // perform a filtered query to (a) test parameter marshalling
             // and (b) cut down the time to run -- an unfiltered request
             // yields a lot of images
-            var request = new DescribeImagesRequest();
-            request.Owners.Add("amazon");
+            var request = new DescribeImagesRequest()
+            {
+                Owners = new List<string> { "amazon" }
+            };
 
             var cts = new CancellationTokenSource();
             cts.CancelAfter(1000);

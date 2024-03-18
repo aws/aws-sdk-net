@@ -1,4 +1,5 @@
-﻿using Amazon.EC2;
+﻿using Amazon;
+using Amazon.EC2;
 using Amazon.EC2.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -132,7 +133,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             var authorizeSecurityGroupEgressResponse = Client.AuthorizeSecurityGroupEgress(authorizeSecurityGroupEgressRequest);
 
             Assert.IsNotNull(authorizeSecurityGroupEgressResponse);
-            Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.IsFalse(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges.Any());
+            }
+            else
+            {
+                Assert.IsNull(authorizeSecurityGroupEgressRequest.IpPermissions[0].Ipv4Ranges);
+            }
+
             UtilityMethods.WaitUntilSuccess(() =>
             {
                 describeSecurityGroupsResponse = DescribeSecurityGroupById();

@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 });
                 Assert.IsNotNull(response);
 
-                if (describeResponse.DBEngineVersions.Count > 0)
+                if (describeResponse.DBEngineVersions != null && describeResponse.DBEngineVersions.Count > 0)
                 {
                     foreach (var dbev in describeResponse.DBEngineVersions)
                     {
@@ -94,7 +94,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             Assert.IsNotNull(response);
 
             string dbInstanceIdentifier = null;
-            if (response.DBInstances.Count > 0)
+            if (response.DBInstances != null && response.DBInstances.Count > 0)
             {
                 foreach (var dbi in response.DBInstances)
                 {
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 
             string sourceIdentifier = null;
             string sourceType = null;
-            if (response.Events.Count > 0)
+            if (response.Events != null && response.Events.Count > 0)
             {
                 foreach (var e in response.Events)
                 {
@@ -352,7 +352,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                     if (optionGroupName == null)
                         optionGroupName = og.OptionGroupName;
 
-                    if (og.Options.Count > 0)
+                    if (og.Options != null && og.Options.Count > 0)
                     {
                         foreach (var o in og.Options)
                         {
@@ -449,7 +449,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             string reservedInstanceId = null;
             string dbInstanceClass = null;
 
-            if (response.ReservedDBInstances.Count > 0)
+            if (response.ReservedDBInstances != null && response.ReservedDBInstances.Count > 0)
             {
                 foreach (var rdbi in response.ReservedDBInstances)
                 {

@@ -9,6 +9,7 @@ using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
 using Amazon.DNXCore.IntegrationTests;
 using Xunit;
+using System.Collections.Generic;
 
 namespace Amazon.DNXCore.IntegrationTests
 {
@@ -99,8 +100,17 @@ namespace Amazon.DNXCore.IntegrationTests
         private static void VerifyTemplateSummary(GetTemplateSummaryResponse response)
         {
             Assert.NotNull(response.ResponseMetadata.RequestId);
-            Assert.NotNull(response.Capabilities);
-            Assert.Equal(0, response.Capabilities.Count);
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.NotNull(response.Capabilities);
+                Assert.Empty(response.Capabilities);
+            }
+            else
+            {
+                Assert.Null(response.Capabilities);
+            }
+
             Assert.Null(response.CapabilitiesReason);
             Assert.NotNull(response.Description);
             Assert.NotNull(response.Parameters);
@@ -132,19 +142,21 @@ namespace Amazon.DNXCore.IntegrationTests
                 CreateStackRequest createRequest = new CreateStackRequest
                 {
                     StackName = stackName,
-                    TemplateBody = TEMPLATE_TEXT
-                };
-
-                createRequest.Parameters.Add(new Parameter
+                    TemplateBody = TEMPLATE_TEXT,
+                    Parameters = new List<Parameter>
                     {
-                        ParameterKey = "TopicName",
-                        ParameterValue = "MyTopic" + DateTime.Now.Ticks
-                    });
-                createRequest.Parameters.Add(new Parameter
-                {
-                    ParameterKey = "QueueName",
-                    ParameterValue = "MyQueue" + DateTime.Now.Ticks
-                });
+                        new Parameter
+                        {
+                            ParameterKey = "TopicName",
+                            ParameterValue = "MyTopic" + DateTime.Now.Ticks
+                        },
+                        new Parameter
+                        {
+                            ParameterKey = "QueueName",
+                            ParameterValue = "MyQueue" + DateTime.Now.Ticks
+                        }
+                    }
+                };
 
                 await Client.CreateStackAsync(createRequest);
 

@@ -204,7 +204,6 @@ namespace Amazon.DNXCore.IntegrationTests
                 }
             }
             Assert.NotNull(status);
-            Assert.NotNull(status.HealthCheckObservations);
 
             var healthCheck = Client.GetHealthCheckAsync(new GetHealthCheckRequest
             {
@@ -222,8 +221,15 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.NotNull(tagSet);
             Assert.NotNull(tagSet.ResourceId);
             Assert.NotNull(tagSet.ResourceType);
-            Assert.NotNull(tagSet.Tags);
-            Assert.Equal(0, tagSet.Tags.Count);
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.Empty(tagSet.Tags);
+            }
+            else
+            {
+                Assert.Null(tagSet.Tags);
+            }
 
             Client.ChangeTagsForResourceAsync(new ChangeTagsForResourceRequest
             {
@@ -244,7 +250,7 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.NotNull(tagSet.ResourceId);
             Assert.NotNull(tagSet.ResourceType);
             Assert.NotNull(tagSet.Tags);
-            Assert.Equal(1, tagSet.Tags.Count);
+            Assert.Single(tagSet.Tags);
             Assert.Equal("Test", tagSet.Tags[0].Key);
             Assert.Equal("true", tagSet.Tags[0].Value);
 

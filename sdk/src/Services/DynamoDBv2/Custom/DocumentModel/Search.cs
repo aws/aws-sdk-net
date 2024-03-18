@@ -343,10 +343,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             Limit = Limit,
                             TableName = TableName,
                             AttributesToGet = AttributesToGet,
-                            ScanFilter = Filter.ToConditions(SourceTable),
                             Select = EnumMapper.Convert(Select),
                             ConsistentRead = IsConsistentRead
                         };
+
+                        var scanFilter = Filter.ToConditions(SourceTable);
+                        if (scanFilter?.Count > 0)
+                            scanReq.ScanFilter = scanFilter;
+
                         if (!string.IsNullOrEmpty(this.IndexName))
                             scanReq.IndexName = this.IndexName;
                         if (this.FilterExpression != null && this.FilterExpression.IsSet)
@@ -396,8 +400,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         Dictionary<string, Condition> keyConditions, filterConditions;
                         SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
-                        queryReq.KeyConditions = keyConditions;
-                        queryReq.QueryFilter = filterConditions;
+                        queryReq.KeyConditions = keyConditions.Count > 0 ? keyConditions : null;
+                        queryReq.QueryFilter = filterConditions.Count > 0 ? filterConditions : null;
                         Common.ConvertAttributesToGetToProjectionExpression(queryReq);
 
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
