@@ -5344,7 +5344,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Gets the key policy for the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policyName">Specifies the name of the key policy. The only valid name is <c>default</c>. To get the names of key policies, use <a>ListKeyPolicies</a>.</param>
+        /// <param name="policyName">Specifies the name of the key policy. If no policy name is specified, the default value is <c>default</c>. The only valid name is <c>default</c>. To get the names of key policies, use <a>ListKeyPolicies</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6123,9 +6123,7 @@ namespace Amazon.KeyManagementService
         /// the same key material</a> into that KMS key, but you cannot import different key material.
         /// You might reimport key material to replace key material that expired or key material
         /// that you deleted. You might also reimport key material to change the expiration model
-        /// or expiration date of the key material. Before reimporting key material, if necessary,
-        /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
-        /// 
+        /// or expiration date of the key material. 
         /// </para>
         ///  
         /// <para>
@@ -7118,7 +7116,7 @@ namespace Amazon.KeyManagementService
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> <li> Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> The key policy must allow the calling principal to make a subsequent <c>PutKeyPolicy</c> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <c>BypassPolicyLockoutSafetyCheck</c> to true.) </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<c>\u0020</c>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <c>\u00FF</c>). </li> <li> The tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage return (<c>\u000D</c>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
-        /// <param name="policyName">The name of the key policy. The only valid value is <c>default</c>.</param>
+        /// <param name="policyName">The name of the key policy. If no policy name is specified, the default value is <c>default</c>. The only valid value is <c>default</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7954,7 +7952,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Deletes the specified grant. You revoke a grant to terminate the permissions that
-        /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring
+        /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// 
         ///  
@@ -8068,7 +8066,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Deletes the specified grant. You revoke a grant to terminate the permissions that
-        /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring
+        /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
         /// and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// 
         ///  

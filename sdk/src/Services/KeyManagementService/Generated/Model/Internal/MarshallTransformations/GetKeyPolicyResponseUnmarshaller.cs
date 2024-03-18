@@ -57,6 +57,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     response.Policy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PolicyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PolicyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
