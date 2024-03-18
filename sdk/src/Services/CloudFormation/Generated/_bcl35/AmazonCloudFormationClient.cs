@@ -4180,6 +4180,63 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListStackSetAutoDeploymentTargets
+
+        /// <summary>
+        /// Returns summary information about deployment targets for a stack set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetAutoDeploymentTargets service method.</param>
+        /// 
+        /// <returns>The response from the ListStackSetAutoDeploymentTargets service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">REST API Reference for ListStackSetAutoDeploymentTargets Operation</seealso>
+        public virtual ListStackSetAutoDeploymentTargetsResponse ListStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackSetAutoDeploymentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackSetAutoDeploymentTargetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStackSetAutoDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetAutoDeploymentTargets operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStackSetAutoDeploymentTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">REST API Reference for ListStackSetAutoDeploymentTargets Operation</seealso>
+        public virtual IAsyncResult BeginListStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackSetAutoDeploymentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStackSetAutoDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStackSetAutoDeploymentTargets.</param>
+        /// 
+        /// <returns>Returns a  ListStackSetAutoDeploymentTargetsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">REST API Reference for ListStackSetAutoDeploymentTargets Operation</seealso>
+        public virtual ListStackSetAutoDeploymentTargetsResponse EndListStackSetAutoDeploymentTargets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStackSetAutoDeploymentTargetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListStackSetOperationResults
 
         /// <summary>

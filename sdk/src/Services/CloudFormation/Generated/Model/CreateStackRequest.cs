@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-        /// <c>AWS::IAM::AccessKey</c> AWS::IAM::AccessKey</a> 
+        /// <c>AWS::IAM::AccessKey</c> </a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
