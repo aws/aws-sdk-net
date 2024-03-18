@@ -510,6 +510,60 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  DocumentTypeAsMapValue
+
+        /// <summary>
+        /// This example serializes documents as the value of maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DocumentTypeAsMapValue service method.</param>
+        /// 
+        /// <returns>The response from the DocumentTypeAsMapValue service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DocumentTypeAsMapValue">REST API Reference for DocumentTypeAsMapValue Operation</seealso>
+        public virtual DocumentTypeAsMapValueResponse DocumentTypeAsMapValue(DocumentTypeAsMapValueRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DocumentTypeAsMapValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DocumentTypeAsMapValueResponseUnmarshaller.Instance;
+
+            return Invoke<DocumentTypeAsMapValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DocumentTypeAsMapValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DocumentTypeAsMapValue operation on AmazonRestJsonProtocolClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDocumentTypeAsMapValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DocumentTypeAsMapValue">REST API Reference for DocumentTypeAsMapValue Operation</seealso>
+        public virtual IAsyncResult BeginDocumentTypeAsMapValue(DocumentTypeAsMapValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DocumentTypeAsMapValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DocumentTypeAsMapValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DocumentTypeAsMapValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDocumentTypeAsMapValue.</param>
+        /// 
+        /// <returns>Returns a  DocumentTypeAsMapValueResult from RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DocumentTypeAsMapValue">REST API Reference for DocumentTypeAsMapValue Operation</seealso>
+        public virtual DocumentTypeAsMapValueResponse EndDocumentTypeAsMapValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DocumentTypeAsMapValueResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DocumentTypeAsPayload
 
         /// <summary>
@@ -1073,61 +1127,6 @@ namespace Amazon.RestJsonProtocol
         public virtual HttpPayloadTraitsResponse EndHttpPayloadTraits(IAsyncResult asyncResult)
         {
             return EndInvoke<HttpPayloadTraitsResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  HttpPayloadTraitsWithMediaType
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        public virtual HttpPayloadTraitsWithMediaTypeResponse HttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = HttpPayloadTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = HttpPayloadTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return Invoke<HttpPayloadTraitsWithMediaTypeResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the HttpPayloadTraitsWithMediaType operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType operation on AmazonRestJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndHttpPayloadTraitsWithMediaType
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        public virtual IAsyncResult BeginHttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = HttpPayloadTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = HttpPayloadTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  HttpPayloadTraitsWithMediaType operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginHttpPayloadTraitsWithMediaType.</param>
-        /// 
-        /// <returns>Returns a  HttpPayloadTraitsWithMediaTypeResult from RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        public virtual HttpPayloadTraitsWithMediaTypeResponse EndHttpPayloadTraitsWithMediaType(IAsyncResult asyncResult)
-        {
-            return EndInvoke<HttpPayloadTraitsWithMediaTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -2005,117 +2004,6 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
-        #region  JsonLists
-
-        /// <summary>
-        /// This test case serializes JSON lists for the following cases for both input and output:
-        /// 
-        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
-        /// <li>Lists of structures.</li> </ol>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
-        /// 
-        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
-        public virtual JsonListsResponse JsonLists(JsonListsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
-
-            return Invoke<JsonListsResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the JsonLists operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the JsonLists operation on AmazonRestJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndJsonLists
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
-        public virtual IAsyncResult BeginJsonLists(JsonListsRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  JsonLists operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginJsonLists.</param>
-        /// 
-        /// <returns>Returns a  JsonListsResult from RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
-        public virtual JsonListsResponse EndJsonLists(IAsyncResult asyncResult)
-        {
-            return EndInvoke<JsonListsResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  JsonMaps
-
-        /// <summary>
-        /// The example tests basic map serialization.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
-        /// 
-        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
-        public virtual JsonMapsResponse JsonMaps(JsonMapsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
-
-            return Invoke<JsonMapsResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the JsonMaps operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the JsonMaps operation on AmazonRestJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndJsonMaps
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
-        public virtual IAsyncResult BeginJsonMaps(JsonMapsRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  JsonMaps operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginJsonMaps.</param>
-        /// 
-        /// <returns>Returns a  JsonMapsResult from RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
-        public virtual JsonMapsResponse EndJsonMaps(IAsyncResult asyncResult)
-        {
-            return EndInvoke<JsonMapsResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  JsonTimestamps
 
         /// <summary>
@@ -2982,187 +2870,6 @@ namespace Amazon.RestJsonProtocol
         public virtual SimpleScalarPropertiesResponse EndSimpleScalarProperties(IAsyncResult asyncResult)
         {
             return EndInvoke<SimpleScalarPropertiesResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  StreamingTraits
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraits service method.</param>
-        /// 
-        /// <returns>The response from the StreamingTraits service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraits">REST API Reference for StreamingTraits Operation</seealso>
-        public virtual StreamingTraitsResponse StreamingTraits(StreamingTraitsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsResponseUnmarshaller.Instance;
-
-            return Invoke<StreamingTraitsResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the StreamingTraits operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraits operation on AmazonRestJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStreamingTraits
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraits">REST API Reference for StreamingTraits Operation</seealso>
-        public virtual IAsyncResult BeginStreamingTraits(StreamingTraitsRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  StreamingTraits operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStreamingTraits.</param>
-        /// 
-        /// <returns>Returns a  StreamingTraitsResult from RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraits">REST API Reference for StreamingTraits Operation</seealso>
-        public virtual StreamingTraitsResponse EndStreamingTraits(IAsyncResult asyncResult)
-        {
-            return EndInvoke<StreamingTraitsResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  StreamingTraitsRequireLength
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape with a required content length in
-        /// the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsRequireLength service method.</param>
-        /// 
-        /// <returns>The response from the StreamingTraitsRequireLength service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsRequireLength">REST API Reference for StreamingTraitsRequireLength Operation</seealso>
-        public virtual StreamingTraitsRequireLengthResponse StreamingTraitsRequireLength(StreamingTraitsRequireLengthRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequireLengthRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsRequireLengthResponseUnmarshaller.Instance;
-
-            return Invoke<StreamingTraitsRequireLengthResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the StreamingTraitsRequireLength operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsRequireLength operation on AmazonRestJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStreamingTraitsRequireLength
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsRequireLength">REST API Reference for StreamingTraitsRequireLength Operation</seealso>
-        public virtual IAsyncResult BeginStreamingTraitsRequireLength(StreamingTraitsRequireLengthRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequireLengthRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsRequireLengthResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  StreamingTraitsRequireLength operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStreamingTraitsRequireLength.</param>
-        /// 
-        /// <returns>Returns a  StreamingTraitsRequireLengthResult from RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsRequireLength">REST API Reference for StreamingTraitsRequireLength Operation</seealso>
-        public virtual StreamingTraitsRequireLengthResponse EndStreamingTraitsRequireLength(IAsyncResult asyncResult)
-        {
-            return EndInvoke<StreamingTraitsRequireLengthResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  StreamingTraitsWithMediaType
-
-        /// <summary>
-        /// This examples serializes a streaming media-typed blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// This examples uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsWithMediaType service method.</param>
-        /// 
-        /// <returns>The response from the StreamingTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsWithMediaType">REST API Reference for StreamingTraitsWithMediaType Operation</seealso>
-        public virtual StreamingTraitsWithMediaTypeResponse StreamingTraitsWithMediaType(StreamingTraitsWithMediaTypeRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return Invoke<StreamingTraitsWithMediaTypeResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the StreamingTraitsWithMediaType operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsWithMediaType operation on AmazonRestJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStreamingTraitsWithMediaType
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsWithMediaType">REST API Reference for StreamingTraitsWithMediaType Operation</seealso>
-        public virtual IAsyncResult BeginStreamingTraitsWithMediaType(StreamingTraitsWithMediaTypeRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  StreamingTraitsWithMediaType operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStreamingTraitsWithMediaType.</param>
-        /// 
-        /// <returns>Returns a  StreamingTraitsWithMediaTypeResult from RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsWithMediaType">REST API Reference for StreamingTraitsWithMediaType Operation</seealso>
-        public virtual StreamingTraitsWithMediaTypeResponse EndStreamingTraitsWithMediaType(IAsyncResult asyncResult)
-        {
-            return EndInvoke<StreamingTraitsWithMediaTypeResponse>(asyncResult);
         }
 
         #endregion

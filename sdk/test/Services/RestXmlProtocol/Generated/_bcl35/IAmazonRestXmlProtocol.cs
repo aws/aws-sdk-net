@@ -705,47 +705,6 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
-        #region  HttpPayloadTraitsWithMediaType
-
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestXmlProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        HttpPayloadTraitsWithMediaTypeResponse HttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the HttpPayloadTraitsWithMediaType operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType operation on AmazonRestXmlProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndHttpPayloadTraitsWithMediaType
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        IAsyncResult BeginHttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  HttpPayloadTraitsWithMediaType operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginHttpPayloadTraitsWithMediaType.</param>
-        /// 
-        /// <returns>Returns a  HttpPayloadTraitsWithMediaTypeResult from RestXmlProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        HttpPayloadTraitsWithMediaTypeResponse EndHttpPayloadTraitsWithMediaType(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  HttpPayloadWithMemberXmlName
 
 

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HttpPayloadTraitsWithMediaType Request Marshaller
+    /// DocumentTypeAsMapValue Request Marshaller
     /// </summary>       
-    public class HttpPayloadTraitsWithMediaTypeRequestMarshaller : IMarshaller<IRequest, HttpPayloadTraitsWithMediaTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DocumentTypeAsMapValueRequestMarshaller : IMarshaller<IRequest, DocumentTypeAsMapValueRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((HttpPayloadTraitsWithMediaTypeRequest)input);
+            return this.Marshall((DocumentTypeAsMapValueRequest)input);
         }
 
         /// <summary>
@@ -52,37 +52,44 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(HttpPayloadTraitsWithMediaTypeRequest publicRequest)
+        public IRequest Marshall(DocumentTypeAsMapValueRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonProtocol");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/HttpPayloadTraitsWithMediaType";
-            request.ContentStream =  publicRequest.Blob ?? new MemoryStream();
-            if(request.ContentStream.CanSeek)
+            request.ResourcePath = "/DocumentTypeAsMapValue";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
-                request.ContentStream.Seek(0, SeekOrigin.Begin);
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDocValuedMap())
+                {
+                    context.Writer.WritePropertyName("docValuedMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestDocValuedMapKvp in publicRequest.DocValuedMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestDocValuedMapKvp.Key);
+                        var publicRequestDocValuedMapValue = publicRequestDocValuedMapKvp.Value;
+
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestDocValuedMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
-                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
-            if (request.ContentStream != null && request.ContentStream.Length == 0)
-            {
-                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
-            }
-        
-            if (publicRequest.IsSetFoo()) 
-            {
-                request.Headers["X-Foo"] = publicRequest.Foo;
-            }
+
 
             return request;
         }
-        private static HttpPayloadTraitsWithMediaTypeRequestMarshaller _instance = new HttpPayloadTraitsWithMediaTypeRequestMarshaller();        
+        private static DocumentTypeAsMapValueRequestMarshaller _instance = new DocumentTypeAsMapValueRequestMarshaller();        
 
-        internal static HttpPayloadTraitsWithMediaTypeRequestMarshaller GetInstance()
+        internal static DocumentTypeAsMapValueRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -90,7 +97,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpPayloadTraitsWithMediaTypeRequestMarshaller Instance
+        public static DocumentTypeAsMapValueRequestMarshaller Instance
         {
             get
             {

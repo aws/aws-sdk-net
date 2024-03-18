@@ -29,43 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RestJsonProtocol.Model
 {
     /// <summary>
-    /// Container for the parameters to the HttpPayloadTraitsWithMediaType operation.
-    /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-    /// to be serialized.
+    /// Container for the parameters to the DocumentTypeAsMapValue operation.
+    /// This example serializes documents as the value of maps.
     /// </summary>
-    public partial class HttpPayloadTraitsWithMediaTypeRequest : AmazonRestJsonProtocolRequest
+    public partial class DocumentTypeAsMapValueRequest : AmazonRestJsonProtocolRequest
     {
-        private MemoryStream _blob;
-        private string _foo;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _docValuedMap = new Dictionary<string, Amazon.Runtime.Documents.Document>();
 
         /// <summary>
-        /// Gets and sets the property Blob.
+        /// Gets and sets the property DocValuedMap.
         /// </summary>
-        public MemoryStream Blob
+        public Dictionary<string, Amazon.Runtime.Documents.Document> DocValuedMap
         {
-            get { return this._blob; }
-            set { this._blob = value; }
+            get { return this._docValuedMap; }
+            set { this._docValuedMap = value; }
         }
 
-        // Check to see if Blob property is set
-        internal bool IsSetBlob()
+        // Check to see if DocValuedMap property is set
+        internal bool IsSetDocValuedMap()
         {
-            return this._blob != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Foo.
-        /// </summary>
-        public string Foo
-        {
-            get { return this._foo; }
-            set { this._foo = value; }
-        }
-
-        // Check to see if Foo property is set
-        internal bool IsSetFoo()
-        {
-            return this._foo != null;
+            return this._docValuedMap != null && this._docValuedMap.Count > 0; 
         }
 
     }

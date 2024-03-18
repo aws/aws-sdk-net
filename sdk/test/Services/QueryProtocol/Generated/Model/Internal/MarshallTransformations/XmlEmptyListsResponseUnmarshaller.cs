@@ -109,7 +109,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList2.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithMemberNamespace/", targetDepth))
+                    if (context.TestExpression("flattenedListWithMemberNamespace/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);

@@ -414,6 +414,40 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  DocumentTypeAsMapValue
+
+        internal virtual DocumentTypeAsMapValueResponse DocumentTypeAsMapValue(DocumentTypeAsMapValueRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DocumentTypeAsMapValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DocumentTypeAsMapValueResponseUnmarshaller.Instance;
+
+            return Invoke<DocumentTypeAsMapValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This example serializes documents as the value of maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DocumentTypeAsMapValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DocumentTypeAsMapValue service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DocumentTypeAsMapValue">REST API Reference for DocumentTypeAsMapValue Operation</seealso>
+        public virtual Task<DocumentTypeAsMapValueResponse> DocumentTypeAsMapValueAsync(DocumentTypeAsMapValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DocumentTypeAsMapValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DocumentTypeAsMapValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DocumentTypeAsMapValueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DocumentTypeAsPayload
 
         internal virtual DocumentTypeAsPayloadResponse DocumentTypeAsPayload(DocumentTypeAsPayloadRequest request)
@@ -777,41 +811,6 @@ namespace Amazon.RestJsonProtocol
             options.ResponseUnmarshaller = HttpPayloadTraitsResponseUnmarshaller.Instance;
 
             return InvokeAsync<HttpPayloadTraitsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  HttpPayloadTraitsWithMediaType
-
-        internal virtual HttpPayloadTraitsWithMediaTypeResponse HttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = HttpPayloadTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = HttpPayloadTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return Invoke<HttpPayloadTraitsWithMediaTypeResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        public virtual Task<HttpPayloadTraitsWithMediaTypeResponse> HttpPayloadTraitsWithMediaTypeAsync(HttpPayloadTraitsWithMediaTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = HttpPayloadTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = HttpPayloadTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<HttpPayloadTraitsWithMediaTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1369,77 +1368,6 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
-        #region  JsonLists
-
-        internal virtual JsonListsResponse JsonLists(JsonListsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
-
-            return Invoke<JsonListsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// This test case serializes JSON lists for the following cases for both input and output:
-        /// 
-        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
-        /// <li>Lists of structures.</li> </ol>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
-        public virtual Task<JsonListsResponse> JsonListsAsync(JsonListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonListsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonListsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<JsonListsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  JsonMaps
-
-        internal virtual JsonMapsResponse JsonMaps(JsonMapsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
-
-            return Invoke<JsonMapsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// The example tests basic map serialization.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
-        public virtual Task<JsonMapsResponse> JsonMapsAsync(JsonMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = JsonMapsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = JsonMapsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<JsonMapsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  JsonTimestamps
 
         internal virtual JsonTimestampsResponse JsonTimestamps(JsonTimestampsRequest request)
@@ -1986,127 +1914,6 @@ namespace Amazon.RestJsonProtocol
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  StreamingTraits
-
-        internal virtual StreamingTraitsResponse StreamingTraits(StreamingTraitsRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsResponseUnmarshaller.Instance;
-
-            return Invoke<StreamingTraitsResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraits service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StreamingTraits service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraits">REST API Reference for StreamingTraits Operation</seealso>
-        public virtual Task<StreamingTraitsResponse> StreamingTraitsAsync(StreamingTraitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StreamingTraitsResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  StreamingTraitsRequireLength
-
-        internal virtual StreamingTraitsRequireLengthResponse StreamingTraitsRequireLength(StreamingTraitsRequireLengthRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequireLengthRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsRequireLengthResponseUnmarshaller.Instance;
-
-            return Invoke<StreamingTraitsRequireLengthResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape with a required content length in
-        /// the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsRequireLength service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StreamingTraitsRequireLength service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsRequireLength">REST API Reference for StreamingTraitsRequireLength Operation</seealso>
-        public virtual Task<StreamingTraitsRequireLengthResponse> StreamingTraitsRequireLengthAsync(StreamingTraitsRequireLengthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsRequireLengthRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsRequireLengthResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StreamingTraitsRequireLengthResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  StreamingTraitsWithMediaType
-
-        internal virtual StreamingTraitsWithMediaTypeResponse StreamingTraitsWithMediaType(StreamingTraitsWithMediaTypeRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return Invoke<StreamingTraitsWithMediaTypeResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// This examples serializes a streaming media-typed blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// This examples uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsWithMediaType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StreamingTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsWithMediaType">REST API Reference for StreamingTraitsWithMediaType Operation</seealso>
-        public virtual Task<StreamingTraitsWithMediaTypeResponse> StreamingTraitsWithMediaTypeAsync(StreamingTraitsWithMediaTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = StreamingTraitsWithMediaTypeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = StreamingTraitsWithMediaTypeResponseUnmarshaller.Instance;
-
-            return InvokeAsync<StreamingTraitsWithMediaTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion

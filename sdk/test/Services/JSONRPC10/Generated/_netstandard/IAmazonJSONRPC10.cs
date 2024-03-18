@@ -204,60 +204,6 @@ namespace Amazon.JSONRPC10
 
         #endregion
                 
-        #region  OperationWithDefaults
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the OperationWithDefaults service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the OperationWithDefaults service method, as returned by JSONRPC10.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/OperationWithDefaults">REST API Reference for OperationWithDefaults Operation</seealso>
-        Task<OperationWithDefaultsResponse> OperationWithDefaultsAsync(OperationWithDefaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  OperationWithNestedStructure
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the OperationWithNestedStructure service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the OperationWithNestedStructure service method, as returned by JSONRPC10.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/OperationWithNestedStructure">REST API Reference for OperationWithNestedStructure Operation</seealso>
-        Task<OperationWithNestedStructureResponse> OperationWithNestedStructureAsync(OperationWithNestedStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  OperationWithRequiredMembers
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the OperationWithRequiredMembers service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the OperationWithRequiredMembers service method, as returned by JSONRPC10.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/OperationWithRequiredMembers">REST API Reference for OperationWithRequiredMembers Operation</seealso>
-        Task<OperationWithRequiredMembersResponse> OperationWithRequiredMembersAsync(OperationWithRequiredMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
         #region  PutWithContentEncoding
 
 
