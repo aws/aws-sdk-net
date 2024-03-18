@@ -85,7 +85,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                         response.FlattenedList2.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
-                    if (context.TestExpression("flattenedListWithMemberNamespace/", targetDepth))
+                    if (context.TestExpression("flattenedListWithMemberNamespace/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.FlattenedListWithMemberNamespace.Add(unmarshaller.Unmarshall(context));

@@ -799,60 +799,6 @@ namespace Amazon.JsonProtocol
 
         #endregion
         
-        #region  NullOperation
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the NullOperation service method.</param>
-        /// 
-        /// <returns>The response from the NullOperation service method, as returned by JsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
-        public virtual NullOperationResponse NullOperation(NullOperationRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = NullOperationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = NullOperationResponseUnmarshaller.Instance;
-
-            return Invoke<NullOperationResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the NullOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the NullOperation operation on AmazonJsonProtocolClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndNullOperation
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
-        public virtual IAsyncResult BeginNullOperation(NullOperationRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = NullOperationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = NullOperationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  NullOperation operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginNullOperation.</param>
-        /// 
-        /// <returns>Returns a  NullOperationResult from JsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
-        public virtual NullOperationResponse EndNullOperation(IAsyncResult asyncResult)
-        {
-            return EndInvoke<NullOperationResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  OperationWithOptionalInputOutput
 
         /// <summary>

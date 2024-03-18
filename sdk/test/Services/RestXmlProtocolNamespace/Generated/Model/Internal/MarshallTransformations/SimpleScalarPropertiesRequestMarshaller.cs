@@ -88,7 +88,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                 
                 if (publicRequest.Nested != null) 
                 {
-                    xmlWriter.WriteStartElement("", "https://example.com");            
+                    xmlWriter.WriteStartElement("Nested", "https://example.com");            
                     if(publicRequest.Nested.IsSetAttrField())
                         xmlWriter.WriteElementString("xsi:someName", "https://example.com", StringUtils.FromString(publicRequest.Nested.AttrField));                 
 

@@ -153,6 +153,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RestJsonProtocol")]
+        public void DocumentTypeAsMapValueMarshallTest()
+        {
+            var operation = service_model.FindOperation("DocumentTypeAsMapValue");
+
+            var request = InstantiateClassGenerator.Execute<DocumentTypeAsMapValueRequest>(operation);
+            var marshaller = new DocumentTypeAsMapValueRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DocumentTypeAsMapValue", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DocumentTypeAsMapValueResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DocumentTypeAsMapValueResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("RestJsonProtocol")]
         public void DocumentTypeAsPayloadMarshallTest()
         {
             var operation = service_model.FindOperation("DocumentTypeAsPayload");
@@ -505,37 +535,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = HttpPayloadTraitsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as HttpPayloadTraitsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("RestJsonProtocol")]
-        public void HttpPayloadTraitsWithMediaTypeMarshallTest()
-        {
-            var operation = service_model.FindOperation("HttpPayloadTraitsWithMediaType");
-
-            var request = InstantiateClassGenerator.Execute<HttpPayloadTraitsWithMediaTypeRequest>(operation);
-            var marshaller = new HttpPayloadTraitsWithMediaTypeRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("HttpPayloadTraitsWithMediaType", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"X-Foo","X-Foo_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = HttpPayloadTraitsWithMediaTypeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as HttpPayloadTraitsWithMediaTypeResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1005,66 +1004,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("RestJsonProtocol")]
-        public void JsonListsMarshallTest()
-        {
-            var operation = service_model.FindOperation("JsonLists");
-
-            var request = InstantiateClassGenerator.Execute<JsonListsRequest>(operation);
-            var marshaller = new JsonListsRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("JsonLists", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = JsonListsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as JsonListsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("RestJsonProtocol")]
-        public void JsonMapsMarshallTest()
-        {
-            var operation = service_model.FindOperation("JsonMaps");
-
-            var request = InstantiateClassGenerator.Execute<JsonMapsRequest>(operation);
-            var marshaller = new JsonMapsRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("JsonMaps", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = JsonMapsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as JsonMapsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("RestJsonProtocol")]
         public void JsonTimestampsMarshallTest()
         {
             var operation = service_model.FindOperation("JsonTimestamps");
@@ -1448,84 +1387,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as SimpleScalarPropertiesResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("RestJsonProtocol")]
-        public void StreamingTraitsMarshallTest()
-        {
-            var operation = service_model.FindOperation("StreamingTraits");
-
-            var request = InstantiateClassGenerator.Execute<StreamingTraitsRequest>(operation);
-            var marshaller = new StreamingTraitsRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StreamingTraits", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"X-Foo","X-Foo_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = StreamingTraitsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as StreamingTraitsResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("RestJsonProtocol")]
-        public void StreamingTraitsRequireLengthMarshallTest()
-        {
-            var operation = service_model.FindOperation("StreamingTraitsRequireLength");
-
-            var request = InstantiateClassGenerator.Execute<StreamingTraitsRequireLengthRequest>(operation);
-            var marshaller = new StreamingTraitsRequireLengthRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StreamingTraitsRequireLength", request, internalRequest, service_model);
-
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("RestJsonProtocol")]
-        public void StreamingTraitsWithMediaTypeMarshallTest()
-        {
-            var operation = service_model.FindOperation("StreamingTraitsWithMediaType");
-
-            var request = InstantiateClassGenerator.Execute<StreamingTraitsWithMediaTypeRequest>(operation);
-            var marshaller = new StreamingTraitsWithMediaTypeRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("StreamingTraitsWithMediaType", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"X-Foo","X-Foo_Value"},
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = StreamingTraitsWithMediaTypeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as StreamingTraitsWithMediaTypeResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

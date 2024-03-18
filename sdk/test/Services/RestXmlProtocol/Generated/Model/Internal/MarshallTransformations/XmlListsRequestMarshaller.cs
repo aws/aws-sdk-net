@@ -116,7 +116,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("flattenedListWithMemberNamespace", "");
                     foreach (var publicRequestFlattenedListWithMemberNamespaceValue in publicRequestFlattenedListWithMemberNamespace) 
                     {
-                        xmlWriter.WriteStartElement("", "");
+                        xmlWriter.WriteStartElement("member", "");
                         xmlWriter.WriteValue(publicRequestFlattenedListWithMemberNamespaceValue);
                         xmlWriter.WriteEndElement();
                     }            

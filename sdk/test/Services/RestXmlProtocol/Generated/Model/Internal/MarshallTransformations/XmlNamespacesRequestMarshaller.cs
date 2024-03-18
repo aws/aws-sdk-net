@@ -67,15 +67,15 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("nested", "");            
                     if(publicRequest.Nested.IsSetFoo())
-                        xmlWriter.WriteElementString("", "", StringUtils.FromString(publicRequest.Nested.Foo));                 
+                        xmlWriter.WriteElementString("foo", "", StringUtils.FromString(publicRequest.Nested.Foo));                 
 
                     var publicRequestNestedValues = publicRequest.Nested.Values;
                     if (publicRequestNestedValues != null && publicRequestNestedValues.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("", "");
+                        xmlWriter.WriteStartElement("values", "");
                         foreach (var publicRequestNestedValuesValue in publicRequestNestedValues) 
                         {
-                            xmlWriter.WriteStartElement("", "");
+                            xmlWriter.WriteStartElement("member", "");
                             xmlWriter.WriteValue(publicRequestNestedValuesValue);
                             xmlWriter.WriteEndElement();
                         }            

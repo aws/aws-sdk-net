@@ -186,6 +186,34 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
+        #region  DocumentTypeAsMapValue
+
+
+        /// <summary>
+        /// This example serializes documents as the value of maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DocumentTypeAsMapValue service method.</param>
+        /// 
+        /// <returns>The response from the DocumentTypeAsMapValue service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DocumentTypeAsMapValue">REST API Reference for DocumentTypeAsMapValue Operation</seealso>
+        DocumentTypeAsMapValueResponse DocumentTypeAsMapValue(DocumentTypeAsMapValueRequest request);
+
+
+
+        /// <summary>
+        /// This example serializes documents as the value of maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DocumentTypeAsMapValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DocumentTypeAsMapValue service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DocumentTypeAsMapValue">REST API Reference for DocumentTypeAsMapValue Operation</seealso>
+        Task<DocumentTypeAsMapValueResponse> DocumentTypeAsMapValueAsync(DocumentTypeAsMapValueRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DocumentTypeAsPayload
 
 
@@ -517,36 +545,6 @@ namespace Amazon.RestJsonProtocol
         /// <returns>The response from the HttpPayloadTraits service method, as returned by RestJsonProtocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraits">REST API Reference for HttpPayloadTraits Operation</seealso>
         Task<HttpPayloadTraitsResponse> HttpPayloadTraitsAsync(HttpPayloadTraitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  HttpPayloadTraitsWithMediaType
-
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        HttpPayloadTraitsWithMediaTypeResponse HttpPayloadTraitsWithMediaType(HttpPayloadTraitsWithMediaTypeRequest request);
-
-
-
-        /// <summary>
-        /// This example uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the HttpPayloadTraitsWithMediaType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the HttpPayloadTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPayloadTraitsWithMediaType">REST API Reference for HttpPayloadTraitsWithMediaType Operation</seealso>
-        Task<HttpPayloadTraitsWithMediaTypeResponse> HttpPayloadTraitsWithMediaTypeAsync(HttpPayloadTraitsWithMediaTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1016,68 +1014,6 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
-        #region  JsonLists
-
-
-        /// <summary>
-        /// This test case serializes JSON lists for the following cases for both input and output:
-        /// 
-        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
-        /// <li>Lists of structures.</li> </ol>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
-        /// 
-        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
-        JsonListsResponse JsonLists(JsonListsRequest request);
-
-
-
-        /// <summary>
-        /// This test case serializes JSON lists for the following cases for both input and output:
-        /// 
-        ///  <ol> <li>Normal JSON lists.</li> <li>Normal JSON sets.</li> <li>JSON lists of lists.</li>
-        /// <li>Lists of structures.</li> </ol>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonLists service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the JsonLists service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonLists">REST API Reference for JsonLists Operation</seealso>
-        Task<JsonListsResponse> JsonListsAsync(JsonListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  JsonMaps
-
-
-        /// <summary>
-        /// The example tests basic map serialization.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
-        /// 
-        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
-        JsonMapsResponse JsonMaps(JsonMapsRequest request);
-
-
-
-        /// <summary>
-        /// The example tests basic map serialization.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the JsonMaps service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the JsonMaps service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/JsonMaps">REST API Reference for JsonMaps Operation</seealso>
-        Task<JsonMapsResponse> JsonMapsAsync(JsonMapsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  JsonTimestamps
 
 
@@ -1535,128 +1471,6 @@ namespace Amazon.RestJsonProtocol
         /// <returns>The response from the SimpleScalarProperties service method, as returned by RestJsonProtocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  StreamingTraits
-
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraits service method.</param>
-        /// 
-        /// <returns>The response from the StreamingTraits service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraits">REST API Reference for StreamingTraits Operation</seealso>
-        StreamingTraitsResponse StreamingTraits(StreamingTraitsRequest request);
-
-
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraits service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StreamingTraits service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraits">REST API Reference for StreamingTraits Operation</seealso>
-        Task<StreamingTraitsResponse> StreamingTraitsAsync(StreamingTraitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  StreamingTraitsRequireLength
-
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape with a required content length in
-        /// the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsRequireLength service method.</param>
-        /// 
-        /// <returns>The response from the StreamingTraitsRequireLength service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsRequireLength">REST API Reference for StreamingTraitsRequireLength Operation</seealso>
-        StreamingTraitsRequireLengthResponse StreamingTraitsRequireLength(StreamingTraitsRequireLengthRequest request);
-
-
-
-        /// <summary>
-        /// This examples serializes a streaming blob shape with a required content length in
-        /// the request body.
-        /// 
-        ///  
-        /// <para>
-        /// In this example, no JSON document is synthesized because the payload is not a structure
-        /// or a union type.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsRequireLength service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StreamingTraitsRequireLength service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsRequireLength">REST API Reference for StreamingTraitsRequireLength Operation</seealso>
-        Task<StreamingTraitsRequireLengthResponse> StreamingTraitsRequireLengthAsync(StreamingTraitsRequireLengthRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  StreamingTraitsWithMediaType
-
-
-        /// <summary>
-        /// This examples serializes a streaming media-typed blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// This examples uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsWithMediaType service method.</param>
-        /// 
-        /// <returns>The response from the StreamingTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsWithMediaType">REST API Reference for StreamingTraitsWithMediaType Operation</seealso>
-        StreamingTraitsWithMediaTypeResponse StreamingTraitsWithMediaType(StreamingTraitsWithMediaTypeRequest request);
-
-
-
-        /// <summary>
-        /// This examples serializes a streaming media-typed blob shape in the request body.
-        /// 
-        ///  
-        /// <para>
-        /// This examples uses a <c>@mediaType</c> trait on the payload to force a custom content-type
-        /// to be serialized.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the StreamingTraitsWithMediaType service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the StreamingTraitsWithMediaType service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/StreamingTraitsWithMediaType">REST API Reference for StreamingTraitsWithMediaType Operation</seealso>
-        Task<StreamingTraitsWithMediaTypeResponse> StreamingTraitsWithMediaTypeAsync(StreamingTraitsWithMediaTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

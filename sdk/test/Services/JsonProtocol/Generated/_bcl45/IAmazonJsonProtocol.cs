@@ -364,34 +364,6 @@ namespace Amazon.JsonProtocol
 
         #endregion
         
-        #region  NullOperation
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the NullOperation service method.</param>
-        /// 
-        /// <returns>The response from the NullOperation service method, as returned by JsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
-        NullOperationResponse NullOperation(NullOperationRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the NullOperation service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the NullOperation service method, as returned by JsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
-        Task<NullOperationResponse> NullOperationAsync(NullOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  OperationWithOptionalInputOutput
 
 

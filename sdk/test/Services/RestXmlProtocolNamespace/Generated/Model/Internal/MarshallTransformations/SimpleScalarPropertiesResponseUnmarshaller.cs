@@ -99,7 +99,7 @@ namespace Amazon.RestXmlProtocolNamespace.Model.Internal.MarshallTransformations
                         response.LongValue = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("", targetDepth))
+                    if (context.TestExpression("Nested", targetDepth))
                     {
                         var unmarshaller = NestedWithNamespaceUnmarshaller.Instance;
                         response.Nested = unmarshaller.Unmarshall(context);
