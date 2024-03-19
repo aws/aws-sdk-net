@@ -1,3 +1,15 @@
+### 3.7.771.0 (2024-03-19 18:16 UTC)
+* CloudFormation (3.7.305.1)
+	* Documentation update, March 2024. Corrects some formatting.
+* CloudWatchLogs (3.7.305.0)
+	* Update LogSamples field in Anomaly model to be a list of LogEvent
+* EC2 (3.7.318.0)
+	* This release adds the new DescribeMacHosts API operation for getting information about EC2 Mac Dedicated Hosts. Users can now see the latest macOS versions that their underlying Apple Mac can support without needing to be updated.
+* Finspace (3.7.305.0)
+	* Adding new attributes readWrite and onDemand to dataview models for Database Maintenance operations.
+* ManagedBlockchainQuery (3.7.303.0)
+	* Introduces a new API for Amazon Managed Blockchain Query: ListFilteredTransactionEvents.
+
 ### 3.7.770.0 (2024-03-18 18:42 UTC)
 * CloudFormation (3.7.305.0)
 	* This release supports for a new API ListStackSetAutoDeploymentTargets, which provider auto-deployment configuration as a describable resource. Customers can now view the specific combinations of regions and OUs that are being auto-deployed.
