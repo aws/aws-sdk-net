@@ -135,6 +135,8 @@ namespace Amazon.Runtime.Internal
             var userAgentAddition = requestContext.OriginalRequest.UserAgentAddition;
             sb.AppendFormat(" {0}", userAgentAddition);
 
+            sb.AppendFormat(" cfg/init-coll#{0}", AWSConfigs.InitializeCollections ? "1" : "0");
+
             var userAgent = sb.ToString();
 
             userAgent = InternalSDKUtils.ReplaceInvalidUserAgentCharacters(userAgent);

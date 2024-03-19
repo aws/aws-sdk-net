@@ -234,6 +234,9 @@ namespace Amazon.EC2.Internal
         /// <param name="IpPermissions"></param>
         private static void SelectModifiedIpRange(List<IpPermission> IpPermissions)
         {
+            if (IpPermissions == null)
+                return;
+
             foreach (var ipPermission in IpPermissions)
             {
                 switch (ipPermission.CanModify())
@@ -241,7 +244,9 @@ namespace Amazon.EC2.Internal
                     case IpRangeValue.Invalid:
                         throw new ArgumentException("Cannot set values for both Ipv4Ranges and IpRanges properties on the IpPermission type which is part of the request. Consider using only Ipv4Ranges as IpRanges has been marked obsolete.");
                     case IpRangeValue.IpRanges:
+#pragma warning disable CS0618
                         ipPermission.SelectIpRangeForMarshalling(ipPermission.IpRanges);
+#pragma warning restore CS0618
                         break;
                     case IpRangeValue.Ipv4Ranges:
                         ipPermission.SelectIpV4RangeForMarshalling(ipPermission.Ipv4Ranges);

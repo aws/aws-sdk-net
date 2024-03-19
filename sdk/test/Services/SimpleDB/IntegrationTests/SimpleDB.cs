@@ -309,10 +309,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         Dictionary<string, string> ConvertAttributesToMap(List<Amazon.SimpleDB.Model.Attribute> attributeList)
         {
             Dictionary<string, string> attributeValuesByName = new Dictionary<string, string>();
-
-            foreach (Amazon.SimpleDB.Model.Attribute attribute in attributeList)
+            
+            if (attributeList != null)
             {
-                attributeValuesByName.Add(attribute.Name, attribute.Value);
+                foreach (Amazon.SimpleDB.Model.Attribute attribute in attributeList)
+                {
+                    attributeValuesByName.Add(attribute.Name, attribute.Value);
+                }
             }
             return attributeValuesByName;
         }

@@ -74,7 +74,15 @@ namespace Amazon.EC2.Model
         /// <returns></returns>
         internal IpRangeValue CanModify()
         {
-            List<string> ipv4Ranges = this._ipv4Ranges.Select(p => p.CidrIp).ToList();
+#pragma warning disable CS0618
+            if (this._ipv4Ranges != null && this.IpRanges == null)
+                return IpRangeValue.Ipv4Ranges;
+            else if (this.IpRanges != null && this._ipv4Ranges == null)
+                return IpRangeValue.IpRanges;
+            else if (this._ipv4Ranges == null && this.IpRanges == null)
+                return IpRangeValue.Ipv4Ranges; // This is the no IP case so defaulting to the non obsolete property.
+
+            List<string> ipv4Ranges = this._ipv4Ranges?.Select(p => p.CidrIp).ToList() ?? new List<string>();
             var equallyModified = !(ipv4Ranges.Except(this.IpRanges).ToList().Any() || this.IpRanges.Except(ipv4Ranges).ToList().Any());
 
             if (equallyModified)
@@ -91,6 +99,7 @@ namespace Amazon.EC2.Model
                 return IpRangeValue.IpRanges;
             else
                 return IpRangeValue.Ipv4Ranges;
+#pragma warning restore CS0618
         }
 
         /// <summary>

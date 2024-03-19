@@ -136,7 +136,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             Assert.IsNotNull(response);
 
             string dbSecurityGroupName = null;
-            if (response.DBSecurityGroups.Count > 0)
+            if (response.DBSecurityGroups != null && response.DBSecurityGroups.Count > 0)
             {
                 foreach (var dbsg in response.DBSecurityGroups)
                 {
@@ -171,7 +171,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             string dbInstanceIdentifier = null;
             string dbSnapshotIdentifier = null;
 
-            if (response.DBSnapshots.Count > 0)
+            if (response.DBSnapshots != null && response.DBSnapshots.Count > 0)
             {
                 foreach (var dbss in response.DBSnapshots)
                 {
@@ -216,7 +216,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             Assert.IsNotNull(response);
 
             string dbSubnetGroupName = null;
-            if (response.DBSubnetGroups.Count > 0)
+            if (response.DBSubnetGroups != null && response.DBSubnetGroups.Count > 0)
             {
                 foreach (var dbsng in response.DBSubnetGroups)
                 {

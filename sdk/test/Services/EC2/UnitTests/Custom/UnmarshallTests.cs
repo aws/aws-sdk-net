@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Amazon;
 using Amazon.EC2;
 using Amazon.EC2.Model;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
@@ -348,7 +349,15 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
                 as RunInstancesResponse;
 
             Assert.AreEqual("r-6e46e03a", result.Reservation.ReservationId);
-            Assert.AreEqual(0, result.Reservation.Groups.Count);
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.AreEqual(0, result.Reservation.Groups.Count);
+            }
+            else
+            {
+                Assert.IsNull(result.Reservation.Groups);
+            }
 
             Assert.AreEqual<int>(1, result.Reservation.Instances.Count);
             var instance = result.Reservation.Instances[0];
@@ -507,7 +516,14 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
             Assert.AreEqual("sg-1a2b3c4d", result.NetworkInterface.Groups[0].GroupId);
             Assert.AreEqual("default", result.NetworkInterface.Groups[0].GroupName);
 
-            Assert.AreEqual(0, result.NetworkInterface.TagSet.Count);
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.AreEqual(0, result.NetworkInterface.TagSet.Count);
+            }
+            else
+            {
+                Assert.IsNull(result.NetworkInterface.TagSet);
+            }
 
             Assert.AreEqual(3, result.NetworkInterface.PrivateIpAddresses.Count);
             Assert.AreEqual("10.0.2.130", result.NetworkInterface.PrivateIpAddresses[0].PrivateIpAddress);
