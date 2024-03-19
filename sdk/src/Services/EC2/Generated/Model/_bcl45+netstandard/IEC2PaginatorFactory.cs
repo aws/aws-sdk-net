@@ -291,6 +291,11 @@ namespace Amazon.EC2.Model
         IDescribeLocalGatewayVirtualInterfacesPaginator DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeMacHosts operation
+        ///</summary>
+        IDescribeMacHostsPaginator DescribeMacHosts(DescribeMacHostsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeManagedPrefixLists operation
         ///</summary>
         IDescribeManagedPrefixListsPaginator DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request);

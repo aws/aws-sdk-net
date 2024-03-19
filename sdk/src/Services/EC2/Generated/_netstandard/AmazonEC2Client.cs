@@ -13080,6 +13080,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeMacHosts
+
+        internal virtual DescribeMacHostsResponse DescribeMacHosts(DescribeMacHostsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMacHostsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMacHostsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMacHostsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMacHosts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMacHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts">REST API Reference for DescribeMacHosts Operation</seealso>
+        public virtual Task<DescribeMacHostsResponse> DescribeMacHostsAsync(DescribeMacHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMacHostsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMacHostsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMacHostsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeManagedPrefixLists
 
         internal virtual DescribeManagedPrefixListsResponse DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request)
