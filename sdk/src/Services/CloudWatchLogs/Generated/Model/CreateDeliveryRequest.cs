@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3
-    /// bucket, or a delivery stream in Kinesis Data Firehose.
+    /// bucket, or a delivery stream in Firehose.
     /// </para>
     ///  
     /// <para>

@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The ARN of the Amazon Web Services destination that this delivery destination represents.
         /// That Amazon Web Services destination can be a log group in CloudWatch Logs, an Amazon
-        /// S3 bucket, or a delivery stream in Kinesis Data Firehose.
+        /// S3 bucket, or a delivery stream in Firehose.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -115,7 +115,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// sensitive data terms. This <c>Audit</c> action must contain a <c>FindingsDestination</c>
         /// object. You can optionally use that <c>FindingsDestination</c> object to list one
         /// or more destinations to send audit findings to. If you specify destinations such as
-        /// log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.
+        /// log groups, Firehose streams, and S3 buckets, they must already exist.
         /// </para>
         ///  </li> <li> 
         /// <para>

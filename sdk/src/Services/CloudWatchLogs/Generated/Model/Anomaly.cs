@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         private bool? _isPatternLevelSuppression;
         private long? _lastSeen;
         private List<string> _logGroupArnList = new List<string>();
-        private List<string> _logSamples = new List<string>();
+        private List<LogEvent> _logSamples = new List<LogEvent>();
         private string _patternId;
         private string _patternRegex;
         private string _patternString;
@@ -244,7 +244,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<string> LogSamples
+        public List<LogEvent> LogSamples
         {
             get { return this._logSamples; }
             set { this._logSamples = value; }

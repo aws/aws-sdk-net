@@ -31,8 +31,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// This structure contains information about one <i>delivery source</i> in your account.
     /// A delivery source is an Amazon Web Services resource that sends logs to an Amazon
-    /// Web Services destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis
-    /// Data Firehose.
+    /// Web Services destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.
     /// 
     ///  
     /// <para>

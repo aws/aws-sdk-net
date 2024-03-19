@@ -94,7 +94,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property DeliveryDestinationType. 
         /// <para>
         /// Displays whether the delivery destination associated with this delivery is CloudWatch
-        /// Logs, Amazon S3, or Kinesis Data Firehose.
+        /// Logs, Amazon S3, or Firehose.
         /// </para>
         /// </summary>
         public DeliveryDestinationType DeliveryDestinationType

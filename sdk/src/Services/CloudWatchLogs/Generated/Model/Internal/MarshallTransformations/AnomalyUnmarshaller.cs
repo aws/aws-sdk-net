@@ -119,7 +119,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("logSamples", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<LogEvent, LogEventUnmarshaller>(LogEventUnmarshaller.Instance);
                     unmarshalledObject.LogSamples = unmarshaller.Unmarshall(context);
                     continue;
                 }

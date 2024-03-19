@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// This structure contains information about one <i>delivery destination</i> in your
     /// account. A delivery destination is an Amazon Web Services resource that represents
     /// an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3,
-    /// are supported as Kinesis Data Firehose delivery destinations.
+    /// are supported as Firehose delivery destinations.
     /// 
     ///  
     /// <para>
@@ -116,8 +116,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DeliveryDestinationType. 
         /// <para>
-        /// Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis
-        /// Data Firehose.
+        /// Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
         /// </para>
         /// </summary>
         public DeliveryDestinationType DeliveryDestinationType
