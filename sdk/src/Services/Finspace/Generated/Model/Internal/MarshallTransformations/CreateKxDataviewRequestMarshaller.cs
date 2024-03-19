@@ -118,6 +118,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetReadWrite())
+                {
+                    context.Writer.WritePropertyName("readWrite");
+                    context.Writer.Write(publicRequest.ReadWrite);
+                }
+
                 if(publicRequest.IsSetSegmentConfigurations())
                 {
                     context.Writer.WritePropertyName("segmentConfigurations");

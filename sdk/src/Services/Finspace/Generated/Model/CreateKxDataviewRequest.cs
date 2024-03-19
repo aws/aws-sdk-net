@@ -45,6 +45,7 @@ namespace Amazon.Finspace.Model
         private string _dataviewName;
         private string _description;
         private string _environmentId;
+        private bool? _readWrite;
         private List<KxDataviewSegmentConfiguration> _segmentConfigurations = new List<KxDataviewSegmentConfiguration>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -74,6 +75,7 @@ namespace Amazon.Finspace.Model
         ///  The identifier of the availability zones. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -89,18 +91,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        /// The number of availability zones you want to assign per cluster. This can be one of
-        /// the following 
+        /// The number of availability zones you want to assign per volume. Currently, FinSpace
+        /// only supports <c>SINGLE</c> for volumes. This places dataview in a single AZ.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>SINGLE</c> – Assigns one availability zone per cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>MULTI</c> – Assigns all the availability zones per cluster.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public KxAzMode AzMode
@@ -228,6 +221,46 @@ namespace Amazon.Finspace.Model
         internal bool IsSetEnvironmentId()
         {
             return this._environmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadWrite. 
+        /// <para>
+        ///  The option to specify whether you want to make the dataview writable to perform database
+        /// maintenance. The following are some considerations related to writable dataviews.&#x2028;&#x2028;
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You cannot create partial writable dataviews. When you create writeable dataviews
+        /// you must provide the entire database path.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot perform updates on a writeable dataview. Hence, <c>autoUpdate</c> must
+        /// be set as <b>False</b> if <c>readWrite</c> is <b>True</b> for a dataview.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must also use a unique volume for creating a writeable dataview. So, if you choose
+        /// a volume that is already in use by another dataview, the dataview creation fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Once you create a dataview as writeable, you cannot change it to read-only. So, you
+        /// cannot update the <c>readWrite</c> parameter later.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool ReadWrite
+        {
+            get { return this._readWrite.GetValueOrDefault(); }
+            set { this._readWrite = value; }
+        }
+
+        // Check to see if ReadWrite property is set
+        internal bool IsSetReadWrite()
+        {
+            return this._readWrite.HasValue; 
         }
 
         /// <summary>

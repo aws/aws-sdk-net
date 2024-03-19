@@ -42,7 +42,7 @@ namespace Amazon.Finspace.Model
         /// The name of the key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }
@@ -61,7 +61,7 @@ namespace Amazon.Finspace.Model
         /// The value of the key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

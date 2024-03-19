@@ -64,8 +64,8 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        ///  The number of availability zones assigned to the volume. Currently, only <c>SINGLE</c>
-        /// is supported. 
+        /// The number of availability zones you want to assign per volume. Currently, FinSpace
+        /// only supports <c>SINGLE</c> for volumes. This places dataview in a single AZ.
         /// </para>
         /// </summary>
         public KxAzMode AzMode

@@ -37,6 +37,7 @@ namespace Amazon.Finspace.Model
     public partial class KxDataviewSegmentConfiguration
     {
         private List<string> _dbPaths = new List<string>();
+        private bool? _onDemand;
         private string _volumeName;
 
         /// <summary>
@@ -57,6 +58,27 @@ namespace Amazon.Finspace.Model
         internal bool IsSetDbPaths()
         {
             return this._dbPaths != null && this._dbPaths.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnDemand. 
+        /// <para>
+        /// Enables on-demand caching on the selected database path when a particular file or
+        /// a column of the database is accessed. When on demand caching is <b>True</b>, dataviews
+        /// perform minimal loading of files on the filesystem as needed. When it is set to <b>False</b>,
+        /// everything is cached. The default value is <b>False</b>. 
+        /// </para>
+        /// </summary>
+        public bool OnDemand
+        {
+            get { return this._onDemand.GetValueOrDefault(); }
+            set { this._onDemand = value; }
+        }
+
+        // Check to see if OnDemand property is set
+        internal bool IsSetOnDemand()
+        {
+            return this._onDemand.HasValue; 
         }
 
         /// <summary>

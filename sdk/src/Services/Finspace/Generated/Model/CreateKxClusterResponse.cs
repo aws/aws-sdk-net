@@ -83,6 +83,7 @@ namespace Amazon.Finspace.Model
         ///  The availability zone identifiers for the requested regions. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }

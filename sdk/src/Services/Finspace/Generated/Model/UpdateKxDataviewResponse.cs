@@ -44,6 +44,7 @@ namespace Amazon.Finspace.Model
         private string _description;
         private string _environmentId;
         private DateTime? _lastModifiedTimestamp;
+        private bool? _readWrite;
         private List<KxDataviewSegmentConfiguration> _segmentConfigurations = new List<KxDataviewSegmentConfiguration>();
         private KxDataviewStatus _status;
 
@@ -91,6 +92,7 @@ namespace Amazon.Finspace.Model
         ///  The identifier of the availability zones. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -106,18 +108,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        /// The number of availability zones you want to assign per cluster. This can be one of
-        /// the following 
+        /// The number of availability zones you want to assign per volume. Currently, FinSpace
+        /// only supports <c>SINGLE</c> for volumes. This places dataview in a single AZ.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>SINGLE</c> – Assigns one availability zone per cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>MULTI</c> – Assigns all the availability zones per cluster.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public KxAzMode AzMode
         {
@@ -264,6 +257,24 @@ namespace Amazon.Finspace.Model
         internal bool IsSetLastModifiedTimestamp()
         {
             return this._lastModifiedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadWrite. 
+        /// <para>
+        /// Returns True if the dataview is created as writeable and False otherwise. 
+        /// </para>
+        /// </summary>
+        public bool ReadWrite
+        {
+            get { return this._readWrite.GetValueOrDefault(); }
+            set { this._readWrite = value; }
+        }
+
+        // Check to see if ReadWrite property is set
+        internal bool IsSetReadWrite()
+        {
+            return this._readWrite.HasValue; 
         }
 
         /// <summary>
