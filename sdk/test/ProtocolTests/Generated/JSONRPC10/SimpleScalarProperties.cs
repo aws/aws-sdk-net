@@ -1,0 +1,181 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated.
+ */
+using AWSSDK.ProtocolTests;
+using AWSSDK.ProtocolTests.Utils;
+using AWSSDK_DotNet35.UnitTests.TestTools;
+using Amazon.JSONRPC10;
+using Amazon.JSONRPC10.Model;
+using Amazon.JSONRPC10.Model.Internal.MarshallTransformations;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+namespace AWSSDK.ProtocolTests.JsonRpc10
+{
+    [TestClass]
+    public class SimpleScalarProperties
+    {
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10SupportsNaNFloatInputsRequest()
+        {
+            var request = new SimpleScalarPropertiesRequest{
+                FloatValue = float.NaN,
+                DoubleValue = double.NaN,
+            };
+            var config = new AmazonJSONRPC10Config{
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SimpleScalarPropertiesRequestMarshaller();
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
+            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
+            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"floatValue\": \"NaN\",\n    \"doubleValue\": \"NaN\"\n}");
+            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/", actualUri.AbsolutePath);
+            Assert.AreEqual( "application/x-amz-json-1.0", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual( "JsonRpc10.SimpleScalarProperties", marshalledRequest.Headers["X-Amz-Target"]);
+        }
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10SupportsInfinityFloatInputsRequest()
+        {
+            var request = new SimpleScalarPropertiesRequest{
+                FloatValue = float.PositiveInfinity,
+                DoubleValue = double.PositiveInfinity,
+            };
+            var config = new AmazonJSONRPC10Config{
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SimpleScalarPropertiesRequestMarshaller();
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
+            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
+            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"floatValue\": \"Infinity\",\n    \"doubleValue\": \"Infinity\"\n}");
+            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/", actualUri.AbsolutePath);
+            Assert.AreEqual( "application/x-amz-json-1.0", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual( "JsonRpc10.SimpleScalarProperties", marshalledRequest.Headers["X-Amz-Target"]);
+        }
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10SupportsNegativeInfinityFloatInputsRequest()
+        {
+            var request = new SimpleScalarPropertiesRequest{
+                FloatValue = float.NegativeInfinity,
+                DoubleValue = double.NegativeInfinity,
+            };
+            var config = new AmazonJSONRPC10Config{
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SimpleScalarPropertiesRequestMarshaller();
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
+            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
+            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"floatValue\": \"-Infinity\",\n    \"doubleValue\": \"-Infinity\"\n}");
+            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/", actualUri.AbsolutePath);
+            Assert.AreEqual( "application/x-amz-json-1.0", marshalledRequest.Headers["Content-Type"]);
+            Assert.AreEqual( "JsonRpc10.SimpleScalarProperties", marshalledRequest.Headers["X-Amz-Target"]);
+        }
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10SupportsNaNFloatInputsResponse()
+        {
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"NaN\",\n    \"doubleValue\": \"NaN\"\n}");
+            var stream = new MemoryStream(bytes);
+            var webResponseData = new WebResponseData();
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new SimpleScalarPropertiesResponse{
+                FloatValue = float.NaN,
+                DoubleValue = double.NaN,
+            };
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
+            Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+        }
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10SupportsInfinityFloatInputsResponse()
+        {
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"Infinity\",\n    \"doubleValue\": \"Infinity\"\n}");
+            var stream = new MemoryStream(bytes);
+            var webResponseData = new WebResponseData();
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new SimpleScalarPropertiesResponse{
+                FloatValue = float.PositiveInfinity,
+                DoubleValue = double.PositiveInfinity,
+            };
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
+            Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+        }
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10SupportsNegativeInfinityFloatInputsResponse()
+        {
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"floatValue\": \"-Infinity\",\n    \"doubleValue\": \"-Infinity\"\n}");
+            var stream = new MemoryStream(bytes);
+            var webResponseData = new WebResponseData();
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new SimpleScalarPropertiesResponse{
+                FloatValue = float.NegativeInfinity,
+                DoubleValue = double.NegativeInfinity,
+            };
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
+            var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
+            Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+        }
+    }
+}
