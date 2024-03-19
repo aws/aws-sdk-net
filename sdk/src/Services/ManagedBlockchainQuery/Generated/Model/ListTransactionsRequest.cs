@@ -30,7 +30,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTransactions operation.
-    /// Lists all of the transactions on a given wallet address or to a specific contract.
+    /// Lists all the transaction events for a transaction.
     /// </summary>
     public partial class ListTransactionsRequest : AmazonManagedBlockchainQueryRequest
     {
@@ -67,8 +67,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <para>
         /// This filter is used to include transactions in the response that haven't reached <a
         /// href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-        /// <i>finality</i> </a>. Transactions that have reached finiality are always part of
-        /// the response.
+        /// <i>finality</i> </a>. Transactions that have reached finality are always part of the
+        /// response.
         /// </para>
         /// </summary>
         public ConfirmationStatusFilter ConfirmationStatusFilter
@@ -105,7 +105,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         ///  
         /// <para>
-        /// Default:<c>100</c> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -174,8 +174,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// The order by which the results will be sorted. If <c>ASCENNDING</c> is selected, the
-        /// results will be ordered by <c>fromTime</c>. 
+        /// The order by which the results will be sorted. 
         /// </para>
         /// </summary>
         public ListTransactionsSort Sort

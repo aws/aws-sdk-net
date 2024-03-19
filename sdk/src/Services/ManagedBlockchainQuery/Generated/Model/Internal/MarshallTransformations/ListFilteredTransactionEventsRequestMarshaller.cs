@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListTransactionEvents Request Marshaller
+    /// ListFilteredTransactionEvents Request Marshaller
     /// </summary>       
-    public class ListTransactionEventsRequestMarshaller : IMarshaller<IRequest, ListTransactionEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListFilteredTransactionEventsRequestMarshaller : IMarshaller<IRequest, ListFilteredTransactionEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListTransactionEventsRequest)input);
+            return this.Marshall((ListFilteredTransactionEventsRequest)input);
         }
 
         /// <summary>
@@ -52,19 +52,41 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListTransactionEventsRequest publicRequest)
+        public IRequest Marshall(ListFilteredTransactionEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedBlockchainQuery");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-05-04";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/list-transaction-events";
+            request.ResourcePath = "/list-filtered-transaction-events";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAddressIdentifierFilter())
+                {
+                    context.Writer.WritePropertyName("addressIdentifierFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AddressIdentifierFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AddressIdentifierFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetConfirmationStatusFilter())
+                {
+                    context.Writer.WritePropertyName("confirmationStatusFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConfirmationStatusFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConfirmationStatusFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
@@ -83,16 +105,37 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetTransactionHash())
+                if(publicRequest.IsSetSort())
                 {
-                    context.Writer.WritePropertyName("transactionHash");
-                    context.Writer.Write(publicRequest.TransactionHash);
+                    context.Writer.WritePropertyName("sort");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ListFilteredTransactionEventsSortMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Sort, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTransactionId())
+                if(publicRequest.IsSetTimeFilter())
                 {
-                    context.Writer.WritePropertyName("transactionId");
-                    context.Writer.Write(publicRequest.TransactionId);
+                    context.Writer.WritePropertyName("timeFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TimeFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TimeFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVoutFilter())
+                {
+                    context.Writer.WritePropertyName("voutFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VoutFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VoutFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -103,9 +146,9 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListTransactionEventsRequestMarshaller _instance = new ListTransactionEventsRequestMarshaller();        
+        private static ListFilteredTransactionEventsRequestMarshaller _instance = new ListFilteredTransactionEventsRequestMarshaller();        
 
-        internal static ListTransactionEventsRequestMarshaller GetInstance()
+        internal static ListFilteredTransactionEventsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +156,7 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListTransactionEventsRequestMarshaller Instance
+        public static ListFilteredTransactionEventsRequestMarshaller Instance
         {
             get
             {

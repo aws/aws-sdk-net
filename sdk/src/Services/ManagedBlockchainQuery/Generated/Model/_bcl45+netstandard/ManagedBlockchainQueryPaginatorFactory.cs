@@ -44,6 +44,14 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 
         /// <summary>
+        /// Paginator for ListFilteredTransactionEvents operation
+        ///</summary>
+        public IListFilteredTransactionEventsPaginator ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request) 
+        {
+            return new ListFilteredTransactionEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTokenBalances operation
         ///</summary>
         public IListTokenBalancesPaginator ListTokenBalances(ListTokenBalancesRequest request) 

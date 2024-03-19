@@ -29,29 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the owner identifier.
+    /// This container specifies filtering attributes related to <c>BITCOIN_VOUT</c> event
+    /// types
     /// </summary>
-    public partial class OwnerIdentifier
+    public partial class VoutFilter
     {
-        private string _address;
+        private bool? _voutSpent;
 
         /// <summary>
-        /// Gets and sets the property Address. 
+        /// Gets and sets the property VoutSpent. 
         /// <para>
-        /// The contract or wallet address for the owner.
+        /// Specifies if the transaction output is spent or unspent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Address
+        public bool VoutSpent
         {
-            get { return this._address; }
-            set { this._address = value; }
+            get { return this._voutSpent.GetValueOrDefault(); }
+            set { this._voutSpent = value; }
         }
 
-        // Check to see if Address property is set
-        internal bool IsSetAddress()
+        // Check to see if VoutSpent property is set
+        internal bool IsSetVoutSpent()
         {
-            return this._address != null;
+            return this._voutSpent.HasValue; 
         }
 
     }

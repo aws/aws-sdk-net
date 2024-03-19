@@ -78,8 +78,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TransactionHash. 
         /// <para>
-        /// The hash of the transaction. It is generated whenever a transaction is verified and
-        /// added to the blockchain.
+        /// The hash of a transaction. It is generated when a transaction is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

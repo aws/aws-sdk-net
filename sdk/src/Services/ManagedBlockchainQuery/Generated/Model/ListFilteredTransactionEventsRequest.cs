@@ -29,24 +29,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTransactionEvents operation.
-    /// Lists all the transaction events for a transaction 
+    /// Container for the parameters to the ListFilteredTransactionEvents operation.
+    /// Lists all the transaction events for an address on the blockchain.
     /// 
     ///  <note> 
     /// <para>
-    /// This action will return transaction details for all transactions that are <i>confirmed</i>
-    /// on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
-    /// 
+    /// This operation is only supported on the Bitcoin networks.
     /// </para>
     ///  </note>
     /// </summary>
-    public partial class ListTransactionEventsRequest : AmazonManagedBlockchainQueryRequest
+    public partial class ListFilteredTransactionEventsRequest : AmazonManagedBlockchainQueryRequest
     {
+        private AddressIdentifierFilter _addressIdentifierFilter;
+        private ConfirmationStatusFilter _confirmationStatusFilter;
         private int? _maxResults;
-        private QueryNetwork _network;
+        private string _network;
         private string _nextToken;
-        private string _transactionHash;
-        private string _transactionId;
+        private ListFilteredTransactionEventsSort _sort;
+        private TimeFilter _timeFilter;
+        private VoutFilter _voutFilter;
+
+        /// <summary>
+        /// Gets and sets the property AddressIdentifierFilter. 
+        /// <para>
+        /// This is the unique public address on the blockchain for which the transaction events
+        /// are being requested.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public AddressIdentifierFilter AddressIdentifierFilter
+        {
+            get { return this._addressIdentifierFilter; }
+            set { this._addressIdentifierFilter = value; }
+        }
+
+        // Check to see if AddressIdentifierFilter property is set
+        internal bool IsSetAddressIdentifierFilter()
+        {
+            return this._addressIdentifierFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationStatusFilter.
+        /// </summary>
+        public ConfirmationStatusFilter ConfirmationStatusFilter
+        {
+            get { return this._confirmationStatusFilter; }
+            set { this._confirmationStatusFilter = value; }
+        }
+
+        // Check to see if ConfirmationStatusFilter property is set
+        internal bool IsSetConfirmationStatusFilter()
+        {
+            return this._confirmationStatusFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -86,11 +122,15 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Network. 
         /// <para>
-        /// The blockchain network where the transaction events occurred.
+        /// The blockchain network where the transaction occurred.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>BITCOIN_MAINNET</c> | <c>BITCOIN_TESTNET</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public QueryNetwork Network
+        public string Network
         {
             get { return this._network; }
             set { this._network = value; }
@@ -122,44 +162,58 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionHash. 
+        /// Gets and sets the property Sort. 
         /// <para>
-        /// The hash of a transaction. It is generated when a transaction is created.
+        /// The order by which the results will be sorted.
         /// </para>
         /// </summary>
-        public string TransactionHash
+        public ListFilteredTransactionEventsSort Sort
         {
-            get { return this._transactionHash; }
-            set { this._transactionHash = value; }
+            get { return this._sort; }
+            set { this._sort = value; }
         }
 
-        // Check to see if TransactionHash property is set
-        internal bool IsSetTransactionHash()
+        // Check to see if Sort property is set
+        internal bool IsSetSort()
         {
-            return this._transactionHash != null;
+            return this._sort != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionId. 
+        /// Gets and sets the property TimeFilter. 
         /// <para>
-        /// The identifier of a Bitcoin transaction. It is generated when a transaction is created.
+        /// This container specifies the time frame for the transaction events returned in the
+        /// response.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <c>transactionId</c> is only supported on the Bitcoin networks.
-        /// </para>
-        ///  </note>
         /// </summary>
-        public string TransactionId
+        public TimeFilter TimeFilter
         {
-            get { return this._transactionId; }
-            set { this._transactionId = value; }
+            get { return this._timeFilter; }
+            set { this._timeFilter = value; }
         }
 
-        // Check to see if TransactionId property is set
-        internal bool IsSetTransactionId()
+        // Check to see if TimeFilter property is set
+        internal bool IsSetTimeFilter()
         {
-            return this._transactionId != null;
+            return this._timeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoutFilter. 
+        /// <para>
+        /// This container specifies filtering attributes related to BITCOIN_VOUT event types
+        /// </para>
+        /// </summary>
+        public VoutFilter VoutFilter
+        {
+            get { return this._voutFilter; }
+            set { this._voutFilter = value; }
+        }
+
+        // Check to see if VoutFilter property is set
+        internal bool IsSetVoutFilter()
+        {
+            return this._voutFilter != null;
         }
 
     }

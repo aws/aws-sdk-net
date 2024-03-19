@@ -394,6 +394,70 @@ namespace Amazon.ManagedBlockchainQuery
 
         #endregion
         
+        #region  ListFilteredTransactionEvents
+
+
+        /// <summary>
+        /// Lists all the transaction events for an address on the blockchain.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported on the Bitcoin networks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFilteredTransactionEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListFilteredTransactionEvents service method, as returned by ManagedBlockchainQuery.</returns>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.AccessDeniedException">
+        /// The Amazon Web Services account doesn’t have access to this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.InternalServerException">
+        /// The request processing has failed because of an internal error in the service.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is when you create resources that exceed
+        /// your service limit for this resource type. Request a limit increase or delete unused
+        /// resources, if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ValidationException">
+        /// The resource passed is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
+        ListFilteredTransactionEventsResponse ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFilteredTransactionEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFilteredTransactionEvents operation on AmazonManagedBlockchainQueryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFilteredTransactionEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
+        IAsyncResult BeginListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFilteredTransactionEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFilteredTransactionEvents.</param>
+        /// 
+        /// <returns>Returns a  ListFilteredTransactionEventsResult from ManagedBlockchainQuery.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
+        ListFilteredTransactionEventsResponse EndListFilteredTransactionEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTokenBalances
 
 
@@ -476,8 +540,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
-        /// transaction event.
+        /// Lists all the transaction events for a transaction 
         /// 
         ///  <note> 
         /// <para>
@@ -543,7 +606,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Lists all of the transactions on a given wallet address or to a specific contract.
+        /// Lists all the transaction events for a transaction.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransactions service method.</param>
         /// 

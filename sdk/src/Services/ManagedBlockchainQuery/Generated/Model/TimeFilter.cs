@@ -29,29 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the owner identifier.
+    /// This container is used to specify a time frame.
     /// </summary>
-    public partial class OwnerIdentifier
+    public partial class TimeFilter
     {
-        private string _address;
+        private BlockchainInstant _from;
+        private BlockchainInstant _to;
 
         /// <summary>
-        /// Gets and sets the property Address. 
-        /// <para>
-        /// The contract or wallet address for the owner.
-        /// </para>
+        /// Gets and sets the property From.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Address
+        public BlockchainInstant From
         {
-            get { return this._address; }
-            set { this._address = value; }
+            get { return this._from; }
+            set { this._from = value; }
         }
 
-        // Check to see if Address property is set
-        internal bool IsSetAddress()
+        // Check to see if From property is set
+        internal bool IsSetFrom()
         {
-            return this._address != null;
+            return this._from != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property To.
+        /// </summary>
+        public BlockchainInstant To
+        {
+            get { return this._to; }
+            set { this._to = value; }
+        }
+
+        // Check to see if To property is set
+        internal bool IsSetTo()
+        {
+            return this._to != null;
         }
 
     }

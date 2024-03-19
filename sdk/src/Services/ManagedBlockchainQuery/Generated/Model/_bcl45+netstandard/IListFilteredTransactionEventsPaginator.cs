@@ -16,43 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the managedblockchain-query-2023-05-04.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the owner identifier.
-    /// </summary>
-    public partial class OwnerIdentifier
+    /// Paginator for the ListFilteredTransactionEvents operation
+    ///</summary>
+    public interface IListFilteredTransactionEventsPaginator
     {
-        private string _address;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListFilteredTransactionEventsResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property Address. 
-        /// <para>
-        /// The contract or wallet address for the owner.
-        /// </para>
+        /// Enumerable containing all of the Events
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Address
-        {
-            get { return this._address; }
-            set { this._address = value; }
-        }
-
-        // Check to see if Address property is set
-        internal bool IsSetAddress()
-        {
-            return this._address != null;
-        }
-
+        IPaginatedEnumerable<TransactionEvent> Events { get; }
     }
 }

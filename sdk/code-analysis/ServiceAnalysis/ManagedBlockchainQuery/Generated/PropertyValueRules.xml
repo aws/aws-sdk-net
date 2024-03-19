@@ -24,6 +24,21 @@
     <max>131070</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchainQuery.Model.ListFilteredTransactionEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchainQuery.Model.ListFilteredTransactionEventsRequest.NextToken</property>
+    <min>0</min>
+    <max>131070</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchainQuery.Model.ListFilteredTransactionEventsResponse.NextToken</property>
+    <min>0</min>
+    <max>131070</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchainQuery.Model.ListTokenBalancesRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -50,6 +65,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchainQuery.Model.ListTransactionEventsRequest.TransactionHash</property>
+    <pattern>(0x[A-Fa-f0-9]{64}|[A-Fa-f0-9]{64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchainQuery.Model.ListTransactionEventsRequest.TransactionId</property>
     <pattern>(0x[A-Fa-f0-9]{64}|[A-Fa-f0-9]{64})</pattern>
   </property-value-rule>
   <property-value-rule>

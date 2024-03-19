@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the owner identifier.
+    /// This is the container for the unique public address on the blockchain.
     /// </summary>
-    public partial class OwnerIdentifier
+    public partial class AddressIdentifierFilter
     {
-        private string _address;
+        private List<string> _transactionEventToAddress = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Address. 
+        /// Gets and sets the property TransactionEventToAddress. 
         /// <para>
-        /// The contract or wallet address for the owner.
+        /// The container for the recipient address of the transaction. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Address
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<string> TransactionEventToAddress
         {
-            get { return this._address; }
-            set { this._address = value; }
+            get { return this._transactionEventToAddress; }
+            set { this._transactionEventToAddress = value; }
         }
 
-        // Check to see if Address property is set
-        internal bool IsSetAddress()
+        // Check to see if TransactionEventToAddress property is set
+        internal bool IsSetTransactionEventToAddress()
         {
-            return this._address != null;
+            return this._transactionEventToAddress != null && this._transactionEventToAddress.Count > 0; 
         }
 
     }

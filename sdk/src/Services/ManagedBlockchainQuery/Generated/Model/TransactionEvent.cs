@@ -33,21 +33,60 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class TransactionEvent
     {
+        private BlockchainInstant _blockchainInstant;
+        private ConfirmationStatus _confirmationStatus;
         private string _contractAddress;
         private QueryTransactionEventType _eventType;
         private string _from;
         private QueryNetwork _network;
+        private int? _spentVoutIndex;
+        private string _spentVoutTransactionHash;
+        private string _spentVoutTransactionId;
         private string _to;
         private string _tokenId;
         private string _transactionHash;
         private string _transactionId;
         private string _value;
         private int? _voutIndex;
+        private bool? _voutSpent;
+
+        /// <summary>
+        /// Gets and sets the property BlockchainInstant.
+        /// </summary>
+        public BlockchainInstant BlockchainInstant
+        {
+            get { return this._blockchainInstant; }
+            set { this._blockchainInstant = value; }
+        }
+
+        // Check to see if BlockchainInstant property is set
+        internal bool IsSetBlockchainInstant()
+        {
+            return this._blockchainInstant != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfirmationStatus. 
+        /// <para>
+        /// This container specifies whether the transaction has reached Finality.
+        /// </para>
+        /// </summary>
+        public ConfirmationStatus ConfirmationStatus
+        {
+            get { return this._confirmationStatus; }
+            set { this._confirmationStatus = value; }
+        }
+
+        // Check to see if ConfirmationStatus property is set
+        internal bool IsSetConfirmationStatus()
+        {
+            return this._confirmationStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContractAddress. 
         /// <para>
-        /// The blockchain address. for the contract
+        /// The blockchain address for the contract
         /// </para>
         /// </summary>
         public string ContractAddress
@@ -120,6 +159,76 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SpentVoutIndex. 
+        /// <para>
+        /// The position of the spent transaction output in the output list of the <i>creating
+        /// transaction</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only returned for <c>BITCOIN_VIN</c> event types.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int SpentVoutIndex
+        {
+            get { return this._spentVoutIndex.GetValueOrDefault(); }
+            set { this._spentVoutIndex = value; }
+        }
+
+        // Check to see if SpentVoutIndex property is set
+        internal bool IsSetSpentVoutIndex()
+        {
+            return this._spentVoutIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpentVoutTransactionHash. 
+        /// <para>
+        /// The transactionHash that <i>created</i> the spent transaction output.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only returned for <c>BITCOIN_VIN</c> event types.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SpentVoutTransactionHash
+        {
+            get { return this._spentVoutTransactionHash; }
+            set { this._spentVoutTransactionHash = value; }
+        }
+
+        // Check to see if SpentVoutTransactionHash property is set
+        internal bool IsSetSpentVoutTransactionHash()
+        {
+            return this._spentVoutTransactionHash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpentVoutTransactionId. 
+        /// <para>
+        /// The transactionId that <i>created</i> the spent transaction output.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only returned for <c>BITCOIN_VIN</c> event types.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SpentVoutTransactionId
+        {
+            get { return this._spentVoutTransactionId; }
+            set { this._spentVoutTransactionId = value; }
+        }
+
+        // Check to see if SpentVoutTransactionId property is set
+        internal bool IsSetSpentVoutTransactionId()
+        {
+            return this._spentVoutTransactionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property To. 
         /// <para>
         /// The wallet address receiving the transaction. It can either be a public key or a contract.
@@ -158,8 +267,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TransactionHash. 
         /// <para>
-        /// The hash of the transaction. It is generated whenever a transaction is verified and
-        /// added to the blockchain.
+        /// The hash of a transaction. It is generated when a transaction is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,8 +286,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The unique identifier of the transaction. It is generated whenever a transaction is
-        /// verified and added to the blockchain.
+        /// The identifier of a Bitcoin transaction. It is generated when a transaction is created.
         /// </para>
         /// </summary>
         public string TransactionId
@@ -215,7 +322,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property VoutIndex. 
         /// <para>
-        /// The position of the vout in the transaction output list.
+        /// The position of the transaction output in the transaction output list.
         /// </para>
         /// </summary>
         public int VoutIndex
@@ -228,6 +335,30 @@ namespace Amazon.ManagedBlockchainQuery.Model
         internal bool IsSetVoutIndex()
         {
             return this._voutIndex.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoutSpent. 
+        /// <para>
+        /// Specifies if the transaction output is spent or unspent. This is only returned for
+        /// BITCOIN_VOUT event types.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only returned for <c>BITCOIN_VOUT</c> event types.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool VoutSpent
+        {
+            get { return this._voutSpent.GetValueOrDefault(); }
+            set { this._voutSpent = value; }
+        }
+
+        // Check to see if VoutSpent property is set
+        internal bool IsSetVoutSpent()
+        {
+            return this._voutSpent.HasValue; 
         }
 
     }
