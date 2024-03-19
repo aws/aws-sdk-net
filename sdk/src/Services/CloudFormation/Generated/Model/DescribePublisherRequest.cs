@@ -43,8 +43,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
-    /// <c>RegisterPublisher</c> </a> 
+    ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>

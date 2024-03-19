@@ -277,9 +277,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property OnStackFailure. 
         /// <para>
         /// Determines what action will be taken if stack creation fails. When this parameter
-        /// is specified, the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-        /// <c>ExecuteChangeSet</c> </a> API operation must not be specified. This must be one
-        /// of these values:
+        /// is specified, the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation must not be specified. This must be one of these values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -290,14 +289,14 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>DO_NOTHING</c> - if the stack creation fails, do nothing. This is equivalent to
-        /// specifying <c>true</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-        /// <c>ExecuteChangeSet</c> </a> API operation.
+        /// specifying <c>true</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>ROLLBACK</c> - if the stack creation fails, roll back the stack. This is equivalent
-        /// to specifying <c>false</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-        /// <c>ExecuteChangeSet</c> </a> API operation.
+        /// to specifying <c>false</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -317,8 +316,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of <c>Parameter</c> structures that describes the input parameters and their
-        /// values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-        /// <c>Parameter</c> </a> data type.
+        /// values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+        /// data type.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

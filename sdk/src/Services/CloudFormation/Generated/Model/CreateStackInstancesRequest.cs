@@ -226,8 +226,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// You can only override the parameter <i>values</i> that are specified in the stack
-        /// set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-        /// <c>UpdateStackSet</c> </a> to update the stack set template.
+        /// set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+        /// to update the stack set template.
         /// </para>
         /// </summary>
         public List<Parameter> ParameterOverrides

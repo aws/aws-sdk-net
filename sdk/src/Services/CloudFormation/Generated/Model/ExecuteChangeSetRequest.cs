@@ -105,20 +105,20 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DisableRollback. 
         /// <para>
         /// Preserves the state of previously provisioned resources when an operation fails. This
-        /// parameter can't be specified when the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
-        /// <c>CreateChangeSet</c> </a> API operation was specified.
+        /// parameter can't be specified when the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+        /// API operation was specified.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>True</c> - if the stack creation fails, do nothing. This is equivalent to specifying
-        /// <c>DO_NOTHING</c> for the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
-        /// <c>CreateChangeSet</c> </a> API operation.
+        /// <c>DO_NOTHING</c> for the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+        /// API operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>False</c> - if the stack creation fails, roll back the stack. This is equivalent
-        /// to specifying <c>ROLLBACK</c> for the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
-        /// <c>CreateChangeSet</c> </a> API operation.
+        /// to specifying <c>ROLLBACK</c> for the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+        /// API operation.
         /// </para>
         ///  </li> </ul> 
         /// <para>

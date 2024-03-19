@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// One of the targets for the stack set. Returned by the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-    /// <c>ListStackSetAutoDeploymentTargets</c> </a> API operation.
+    /// One of the targets for the stack set. Returned by the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+    /// API operation.
     /// </summary>
     public partial class StackSetAutoDeploymentTargetSummary
     {

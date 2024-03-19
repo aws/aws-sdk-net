@@ -40,10 +40,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the request doesn't return all the remaining results, <c>NextToken</c> is set to
-        /// a token. To retrieve the next set of results, call <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-        /// <c>ListStackSetAutoDeploymentTargets</c> </a> again and use that value for the <c>NextToken</c>
-        /// parameter. If the request returns all results, <c>NextToken</c> is set to an empty
-        /// string.
+        /// a token. To retrieve the next set of results, call <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+        /// again and use that value for the <c>NextToken</c> parameter. If the request returns
+        /// all results, <c>NextToken</c> is set to an empty string.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

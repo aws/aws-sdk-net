@@ -49,8 +49,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To view the deprecation status of an extension or extension version, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-    /// <c>DescribeType</c> </a>.
+    /// To view the deprecation status of an extension or extension version, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
     /// </para>
     /// </summary>
     public partial class DeregisterTypeRequest : AmazonCloudFormationRequest
