@@ -9,6 +9,10 @@
     <pattern>(0x[A-Fa-f0-9]{64}|[A-Fa-f0-9]{64})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchainQuery.Model.GetTransactionRequest.TransactionId</property>
+    <pattern>(0x[A-Fa-f0-9]{64}|[A-Fa-f0-9]{64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchainQuery.Model.ListAssetContractsRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -173,6 +177,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchainQuery.Model.TransactionOutputItem.TransactionHash</property>
+    <pattern>(0x[A-Fa-f0-9]{64}|[A-Fa-f0-9]{64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchainQuery.Model.TransactionOutputItem.TransactionId</property>
     <pattern>(0x[A-Fa-f0-9]{64}|[A-Fa-f0-9]{64})</pattern>
   </property-value-rule>
 </property-value-rules>

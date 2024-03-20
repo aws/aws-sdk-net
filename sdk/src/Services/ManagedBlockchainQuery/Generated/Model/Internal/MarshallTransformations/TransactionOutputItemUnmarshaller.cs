@@ -81,6 +81,12 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
                     unmarshalledObject.TransactionHash = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("transactionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("transactionTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
