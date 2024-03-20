@@ -701,6 +701,10 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanState PaymentPending = new SavingsPlanState("payment-pending");
         /// <summary>
+        /// Constant PendingReturn for SavingsPlanState
+        /// </summary>
+        public static readonly SavingsPlanState PendingReturn = new SavingsPlanState("pending-return");
+        /// <summary>
         /// Constant Queued for SavingsPlanState
         /// </summary>
         public static readonly SavingsPlanState Queued = new SavingsPlanState("queued");
@@ -712,6 +716,10 @@ namespace Amazon.SavingsPlans
         /// Constant Retired for SavingsPlanState
         /// </summary>
         public static readonly SavingsPlanState Retired = new SavingsPlanState("retired");
+        /// <summary>
+        /// Constant Returned for SavingsPlanState
+        /// </summary>
+        public static readonly SavingsPlanState Returned = new SavingsPlanState("returned");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

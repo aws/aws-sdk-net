@@ -30,7 +30,7 @@ namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSavingsPlansOfferings operation.
-    /// Describes the specified Savings Plans offerings.
+    /// Describes the offerings for the specified Savings Plans.
     /// </summary>
     public partial class DescribeSavingsPlansOfferingsRequest : AmazonSavingsPlansRequest
     {
@@ -87,7 +87,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Durations. 
         /// <para>
-        /// The durations, in seconds.
+        /// The duration, in seconds.
         /// </para>
         /// </summary>
         public List<long> Durations
@@ -180,7 +180,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// The specific AWS operation for the line item in the billing report.
+        /// The specific Amazon Web Services operation for the line item in the billing report.
         /// </para>
         /// </summary>
         public List<string> Operations
@@ -216,7 +216,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property PlanTypes. 
         /// <para>
-        /// The plan type.
+        /// The plan types.
         /// </para>
         /// </summary>
         public List<string> PlanTypes

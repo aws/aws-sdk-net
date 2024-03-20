@@ -29,32 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeSavingsPlanRates operation.
+    /// Container for the parameters to the ReturnSavingsPlan operation.
+    /// Returns the specified Savings Plan.
     /// </summary>
-    public partial class DescribeSavingsPlanRatesResponse : AmazonWebServiceResponse
+    public partial class ReturnSavingsPlanRequest : AmazonSavingsPlansRequest
     {
-        private string _nextToken;
+        private string _clientToken;
         private string _savingsPlanId;
-        private List<SavingsPlanRate> _searchResults = new List<SavingsPlanRate>();
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string NextToken
+        public string ClientToken
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this._nextToken != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
@@ -63,6 +62,7 @@ namespace Amazon.SavingsPlans.Model
         /// The ID of the Savings Plan.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SavingsPlanId
         {
             get { return this._savingsPlanId; }
@@ -73,24 +73,6 @@ namespace Amazon.SavingsPlans.Model
         internal bool IsSetSavingsPlanId()
         {
             return this._savingsPlanId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SearchResults. 
-        /// <para>
-        /// Information about the Savings Plan rates.
-        /// </para>
-        /// </summary>
-        public List<SavingsPlanRate> SearchResults
-        {
-            get { return this._searchResults; }
-            set { this._searchResults = value; }
-        }
-
-        // Check to see if SearchResults property is set
-        internal bool IsSetSearchResults()
-        {
-            return this._searchResults != null && this._searchResults.Count > 0; 
         }
 
     }

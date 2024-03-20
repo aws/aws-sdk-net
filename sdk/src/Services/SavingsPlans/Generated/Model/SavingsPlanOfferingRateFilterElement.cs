@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
-    /// Information about a filter.
+    /// Information about a Savings Plan offering rate filter.
     /// </summary>
     public partial class SavingsPlanOfferingRateFilterElement
     {

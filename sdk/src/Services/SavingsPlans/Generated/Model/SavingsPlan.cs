@@ -43,6 +43,7 @@ namespace Amazon.SavingsPlans.Model
         private List<string> _productTypes = new List<string>();
         private string _recurringPaymentAmount;
         private string _region;
+        private string _returnableUntil;
         private string _savingsPlanArn;
         private string _savingsPlanId;
         private SavingsPlanType _savingsPlanType;
@@ -55,7 +56,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Commitment. 
         /// <para>
-        /// The hourly commitment, in USD.
+        /// The hourly commitment amount in the specified currency.
         /// </para>
         /// </summary>
         public string Commitment
@@ -217,7 +218,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region.
+        /// The Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string Region
@@ -230,6 +231,25 @@ namespace Amazon.SavingsPlans.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnableUntil. 
+        /// <para>
+        /// The time until when a return for the Savings Plan can be requested. If the Savings
+        /// Plan is not returnable, the field reflects the Savings Plan start time.
+        /// </para>
+        /// </summary>
+        public string ReturnableUntil
+        {
+            get { return this._returnableUntil; }
+            set { this._returnableUntil = value; }
+        }
+
+        // Check to see if ReturnableUntil property is set
+        internal bool IsSetReturnableUntil()
+        {
+            return this._returnableUntil != null;
         }
 
         /// <summary>
@@ -307,7 +327,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state.
+        /// The current state.
         /// </para>
         /// </summary>
         public SavingsPlanState State

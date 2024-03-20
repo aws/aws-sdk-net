@@ -29,11 +29,11 @@ namespace Amazon.SavingsPlans
     /// <summary>
     /// <para>Interface for accessing SavingsPlans</para>
     ///
-    /// Savings Plans are a pricing model that offer significant savings on AWS usage (for
-    /// example, on Amazon EC2 instances). You commit to a consistent amount of usage, in
-    /// USD per hour, for a term of 1 or 3 years, and receive a lower price for that usage.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS
-    /// Savings Plans User Guide</a>.
+    /// Savings Plans are a pricing model that offer significant savings on Amazon Web Services
+    /// usage (for example, on Amazon EC2 instances). You commit to a consistent amount of
+    /// usage per hour, in the specified currency, for a term of one or three years, and receive
+    /// a lower price for that usage. For more information, see the <a href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon
+    /// Web Services Savings Plans User Guide</a>.
     /// </summary>
     public partial interface IAmazonSavingsPlans : IAmazonService, IDisposable
     {
@@ -150,7 +150,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans rates.
+        /// Describes the rates for the specified Savings Plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlanRates service method.</param>
         /// 
@@ -242,7 +242,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans offering rates.
+        /// Describes the offering rates for the specified Savings Plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferingRates service method.</param>
         /// 
@@ -288,7 +288,7 @@ namespace Amazon.SavingsPlans
 
 
         /// <summary>
-        /// Describes the specified Savings Plans offerings.
+        /// Describes the offerings for the specified Savings Plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSavingsPlansOfferings service method.</param>
         /// 
@@ -376,6 +376,58 @@ namespace Amazon.SavingsPlans
         /// <returns>Returns a  ListTagsForResourceResult from SavingsPlans.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ReturnSavingsPlan
+
+
+        /// <summary>
+        /// Returns the specified Savings Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReturnSavingsPlan service method.</param>
+        /// 
+        /// <returns>The response from the ReturnSavingsPlan service method, as returned by SavingsPlans.</returns>
+        /// <exception cref="Amazon.SavingsPlans.Model.InternalServerException">
+        /// An unexpected error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ServiceQuotaExceededException">
+        /// A service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SavingsPlans.Model.ValidationException">
+        /// One of the input parameters is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">REST API Reference for ReturnSavingsPlan Operation</seealso>
+        ReturnSavingsPlanResponse ReturnSavingsPlan(ReturnSavingsPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReturnSavingsPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReturnSavingsPlan operation on AmazonSavingsPlansClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReturnSavingsPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">REST API Reference for ReturnSavingsPlan Operation</seealso>
+        IAsyncResult BeginReturnSavingsPlan(ReturnSavingsPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReturnSavingsPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReturnSavingsPlan.</param>
+        /// 
+        /// <returns>Returns a  ReturnSavingsPlanResult from SavingsPlans.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">REST API Reference for ReturnSavingsPlan Operation</seealso>
+        ReturnSavingsPlanResponse EndReturnSavingsPlan(IAsyncResult asyncResult);
 
         #endregion
         

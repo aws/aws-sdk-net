@@ -138,7 +138,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property States. 
         /// <para>
-        /// The states.
+        /// The current states of the Savings Plans.
         /// </para>
         /// </summary>
         public List<string> States

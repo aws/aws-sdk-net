@@ -123,6 +123,12 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("returnableUntil", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReturnableUntil = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("savingsPlanArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

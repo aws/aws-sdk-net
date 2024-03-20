@@ -29,33 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeSavingsPlanRates operation.
+    /// This is the response object from the ReturnSavingsPlan operation.
     /// </summary>
-    public partial class DescribeSavingsPlanRatesResponse : AmazonWebServiceResponse
+    public partial class ReturnSavingsPlanResponse : AmazonWebServiceResponse
     {
-        private string _nextToken;
         private string _savingsPlanId;
-        private List<SavingsPlanRate> _searchResults = new List<SavingsPlanRate>();
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
-        /// <para>
-        /// The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=1024)]
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property SavingsPlanId. 
@@ -73,24 +51,6 @@ namespace Amazon.SavingsPlans.Model
         internal bool IsSetSavingsPlanId()
         {
             return this._savingsPlanId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SearchResults. 
-        /// <para>
-        /// Information about the Savings Plan rates.
-        /// </para>
-        /// </summary>
-        public List<SavingsPlanRate> SearchResults
-        {
-            get { return this._searchResults; }
-            set { this._searchResults = value; }
-        }
-
-        // Check to see if SearchResults property is set
-        internal bool IsSetSearchResults()
-        {
-            return this._searchResults != null && this._searchResults.Count > 0; 
         }
 
     }
