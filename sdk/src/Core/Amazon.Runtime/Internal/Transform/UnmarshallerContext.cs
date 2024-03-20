@@ -336,7 +336,8 @@ namespace Amazon.Runtime.Internal.Transform
             XmlNodeType.None,
             XmlNodeType.XmlDeclaration,
             XmlNodeType.Comment,
-            XmlNodeType.DocumentType
+            XmlNodeType.DocumentType,
+            XmlNodeType.CDATA
         };
 
         private StreamReader streamReader;
