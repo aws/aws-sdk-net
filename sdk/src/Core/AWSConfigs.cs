@@ -86,7 +86,7 @@ namespace Amazon
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
-        internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
+        internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: true);
         // for reading from awsconfigs.xml
         private static object _lock = new object();
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
