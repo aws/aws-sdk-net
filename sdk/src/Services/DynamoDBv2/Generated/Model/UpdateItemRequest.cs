@@ -66,7 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates UpdateItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the item to update.</param>
+        /// <param name="tableName">The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <c>UpdateExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         public UpdateItemRequest(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates)
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates UpdateItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the item to update.</param>
+        /// <param name="tableName">The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <c>UpdateExpression</c> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appear before or after they are successfully updated. For <c>UpdateItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <c>UPDATED_OLD</c> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <c>ALL_NEW</c> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <c>UPDATED_NEW</c> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. The values returned are strongly consistent.</param>
@@ -460,10 +460,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table containing the item to update.
+        /// The name of the table containing the item to update. You can also provide the Amazon
+        /// Resource Name (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

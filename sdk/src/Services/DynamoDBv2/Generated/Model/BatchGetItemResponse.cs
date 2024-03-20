@@ -71,9 +71,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        /// A map of table name to a list of items. Each object in <c>Responses</c> consists of
-        /// a table name, along with a map of attribute data consisting of the data type and attribute
-        /// value.
+        /// A map of table name or table ARN to a list of items. Each object in <c>Responses</c>
+        /// consists of a table name or ARN, along with a map of attribute data consisting of
+        /// the data type and attribute value.
         /// </para>
         /// </summary>
         public Dictionary<string, List<Dictionary<string, AttributeValue>>> Responses

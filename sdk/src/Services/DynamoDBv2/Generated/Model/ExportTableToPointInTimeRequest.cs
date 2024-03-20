@@ -272,7 +272,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) associated with the table to export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }

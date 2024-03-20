@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates DeleteItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table from which to delete the item.</param>
+        /// <param name="tableName">The name of the table from which to delete the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         public DeleteItemRequest(string tableName, Dictionary<string, AttributeValue> key)
         {
@@ -84,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates DeleteItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table from which to delete the item.</param>
+        /// <param name="tableName">The name of the table from which to delete the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to delete. For the primary key, you must provide all of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were deleted. For <c>DeleteItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - The content of the old item is returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>DeleteItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         public DeleteItemRequest(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues)
@@ -431,10 +431,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table from which to delete the item.
+        /// The name of the table from which to delete the item. You can also provide the Amazon
+        /// Resource Name (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

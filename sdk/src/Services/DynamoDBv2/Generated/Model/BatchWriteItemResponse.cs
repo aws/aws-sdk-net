@@ -121,8 +121,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// Each <c>UnprocessedItems</c> entry consists of a table name and, for that table, a
-        /// list of operations to perform (<c>DeleteRequest</c> or <c>PutRequest</c>).
+        /// Each <c>UnprocessedItems</c> entry consists of a table name or table ARN and, for
+        /// that table, a list of operations to perform (<c>DeleteRequest</c> or <c>PutRequest</c>).
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -60,7 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested item.</param>
+        /// <param name="tableName">The name of the table containing the requested item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key)
         {
@@ -71,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates GetItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested item.</param>
+        /// <param name="tableName">The name of the table containing the requested item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="key">A map of attribute names to <c>AttributeValue</c> objects, representing the primary key of the item to retrieve. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="consistentRead">Determines the read consistency model: If set to <c>true</c>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</param>
         public GetItemRequest(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead)
@@ -265,10 +265,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table containing the requested item.
+        /// The name of the table containing the requested item. You can also provide the Amazon
+        /// Resource Name (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

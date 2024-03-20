@@ -214,6 +214,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string SourceTableArn
         {
             get { return this._sourceTableArn; }

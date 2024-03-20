@@ -59,9 +59,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     ///  <c>UpdateTable</c> is an asynchronous operation; while it's executing, the table
     /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it's <c>UPDATING</c>,
-    /// you can't issue another <c>UpdateTable</c> request on the base table nor any replicas.
-    /// When the table returns to the <c>ACTIVE</c> state, the <c>UpdateTable</c> operation
-    /// is complete.
+    /// you can't issue another <c>UpdateTable</c> request. When the table returns to the
+    /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
@@ -85,7 +84,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates UpdateTableRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table to be updated.</param>
+        /// <param name="tableName">The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         /// <param name="provisionedThroughput">The new provisioned throughput settings for the specified table or index.</param>
         public UpdateTableRequest(string tableName, ProvisionedThroughput provisionedThroughput)
         {
@@ -315,10 +314,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table to be updated.
+        /// The name of the table to be updated. You can also provide the Amazon Resource Name
+        /// (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

@@ -29,31 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTimeToLive operation.
-    /// Gives a description of the Time to Live (TTL) status on the specified table.
+    /// This is the response object from the DeleteResourcePolicy operation.
     /// </summary>
-    public partial class DescribeTimeToLiveRequest : AmazonDynamoDBRequest
+    public partial class DeleteResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private string _tableName;
+        private string _revisionId;
 
         /// <summary>
-        /// Gets and sets the property TableName. 
+        /// Gets and sets the property RevisionId. 
         /// <para>
-        /// The name of the table to be described. You can also provide the Amazon Resource Name
-        /// (ARN) of the table in this parameter.
+        /// A unique string that represents the revision ID of the policy. If you are comparing
+        /// revision IDs, make sure to always use string comparison logic.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value will be empty if you make a request against a resource without a policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string TableName
+        [AWSProperty(Min=1, Max=255)]
+        public string RevisionId
         {
-            get { return this._tableName; }
-            set { this._tableName = value; }
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
         }
 
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
         {
-            return this._tableName != null;
+            return this._revisionId != null;
         }
 
     }

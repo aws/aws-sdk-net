@@ -113,7 +113,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ScanRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         public ScanRequest(string tableName)
         {
             _tableName = tableName;
@@ -656,11 +656,15 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table containing the requested items; or, if you provide <c>IndexName</c>,
+        /// The name of the table containing the requested items or if you provide <c>IndexName</c>,
         /// the name of the table to which that index belongs.
         /// </para>
+        ///  
+        /// <para>
+        /// You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

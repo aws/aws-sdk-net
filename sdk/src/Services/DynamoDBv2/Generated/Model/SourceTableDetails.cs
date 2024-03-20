@@ -136,6 +136,7 @@ namespace Amazon.DynamoDBv2.Model
         /// ARN of the table for which backup was created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }
