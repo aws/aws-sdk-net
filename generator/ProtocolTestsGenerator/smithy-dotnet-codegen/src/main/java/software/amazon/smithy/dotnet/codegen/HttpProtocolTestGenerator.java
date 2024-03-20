@@ -133,25 +133,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
         //verify the body
         if(httpRequestTestCase.getBody().isPresent() && !httpRequestTestCase.getBody().get().equals("")){
             if(protocol.equals("Json")){
-                AtomicBoolean hasExplicitPayload = new AtomicBoolean(false);
-                inputShape.getAllMembers().forEach((s, member) -> {
-                    if(member.hasTrait("httpPayload")){
-                        hasExplicitPayload.set(true);
-                    }
-                });
-                // if the request shape has a member marked with @httppayload, the marshaller will marshall the body
-                // to the contentStream of the request and not the content of the request
-                if (hasExplicitPayload.get()){
-                    writer.write("byte[] contentStreamBytes = ProtocolTestUtils.ConvertStreamToByteArray(marshalledRequest.ContentStream);");
-                    writer.write("var actualBody = Encoding.UTF8.GetString(contentStreamBytes);");
-                    writer.write("Assert.AreEqual(actualBody, $S);", httpRequestTestCase.getBody());
-                }
-                else{
-                    writer.write("var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);");
-                    writer.write("JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);");
-                    writer.write("JObject expectedJObj = JsonConvert.DeserializeObject<JObject>($S);",httpRequestTestCase.getBody());
-                    writer.write("Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));");
-                }
+                writer.write("var expectedBody = $S;",httpRequestTestCase.getBody());
+                writer.write("JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);");
+
             }
             else if(projectionName.equals("QueryProtocol") || projectionName.equals("EC2Protocol")){
                 writer.addImport(protocolNamespace,"System.Net");
@@ -226,8 +210,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
     private void generateResponseTestBlock(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
         var outputShape =  model.expectShape(operation.getOutputShape(), StructureShape.class);
-        var responseSymbol = operation.getId().getName() + "Response";
 
+        var responseSymbol = operation.getId().getName() + "Response";
         writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);",httpResponseTestCase.getBody());
         writer.write("var stream = new MemoryStream(bytes);");
         writer.write("var webResponseData = new WebResponseData();");
@@ -235,11 +219,18 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("webResponseData.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
         }
         writer.write("var context = new $LUnmarshallerContext(stream,true,webResponseData);", protocol);
-        writer.write("var unmarshalledResponse = new $LUnmarshaller().Unmarshall(context);",responseSymbol);
-        writer.openBlock("var expectedResponse = new $L{","};",responseSymbol,(Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape,true, responseSymbol)));
+
+        // only unmarshall the response and assert if a body is present, as per smithy spec
+        if(httpResponseTestCase.getBody().isPresent() && !httpResponseTestCase.getBody().equals("")){
+            writer.write("var unmarshalledResponse = new $LUnmarshaller().Unmarshall(context);",responseSymbol);
+            writer.openBlock("var expectedResponse = new $L{","};",responseSymbol,(Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape,true, responseSymbol)));
+            writer.write("var actualResponse = ($L)unmarshalledResponse;",responseSymbol);
+            writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
+        }
+
         writer.write("Assert.AreEqual($L, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);",httpResponseTestCase.getCode());
-        writer.write("var actualResponse = ($L)unmarshalledResponse;",responseSymbol);
-        writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
+
+
     }
 
     private final class ValueNodeVisitor implements NodeVisitor<Void> {

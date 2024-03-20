@@ -11,7 +11,7 @@ using Amazon.Runtime.Internal.Util;
 using AWSSDK.UnitTests;
 using System.IO;
 using System.Net;
-using static AWSSDK.UnitTests.HttpHandlerTests;
+
 namespace AWSSDK.ProtocolTests.Utils
 {
     public class ProtocolTestUtils
@@ -20,7 +20,7 @@ namespace AWSSDK.ProtocolTests.Utils
         {
             {HttpStatusCode.OK, 200 }
         };
-
+        // return an object since this should be able to return a request or a response
         public static IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, IClientConfig config)
         {
             var pipeline = new RuntimePipeline(new List<IPipelineHandler>
@@ -48,6 +48,7 @@ namespace AWSSDK.ProtocolTests.Utils
 
             pipeline.InvokeSync(executionContext);
 
+
             return requestContext.Request;
         }
 
@@ -58,8 +59,15 @@ namespace AWSSDK.ProtocolTests.Utils
                 stream.CopyTo(memoryStream);
                 return memoryStream.ToArray();
             }
-            
         }
+
+        public static string GetContentStreamBody(Stream contentStream)
+        {
+            byte[] contentStreamBytes = ConvertStreamToByteArray(contentStream);
+            var actualBody = Encoding.UTF8.GetString(contentStreamBytes);
+            return actualBody;
+        }
+
         public class NoopPipelineHandler : IPipelineHandler
         {
             public ILogger Logger { get; set; }

@@ -76,8 +76,13 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
         popState();
         return this;
     }
+
+    /**
+     * Refer to the following link to see why 65 was used as the line break.
+     * <a href = https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions#style-guidelines>C# Style Guidelines</a>
+     */
     public String formatDocs(String docs){
-        return StringUtils.wrap(docs.replace("\n", " "),100);
+        return StringUtils.wrap(docs.replace("\n", " "),65);
     }
 
     @Override

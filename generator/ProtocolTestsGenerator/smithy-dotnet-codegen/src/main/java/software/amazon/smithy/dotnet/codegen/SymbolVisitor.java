@@ -25,13 +25,9 @@ import java.util.logging.Logger;
 
 import static java.lang.String.format;
 
-
-// Add reservedWordsBuilder class to handle ReservedWords
-//Create a newline delimeted file that contains each reserved word and a
-//Function<String,String> that takes a reserved word and returns an escaped word.
-
 /**
  * For a list of simple types see <a href = https://smithy.io/2.0/spec/simple-types.html#simple-types>Smithy Simple Types</a>
+ * For a list of aggregate types see <a href = https://smithy.io/2.0/spec/aggregate-types.html#>Aggregate Types</a>
  */
 
 public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
@@ -86,14 +82,14 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
         return Symbol.builder().name("List<" + targetSymbol + ">").putProperty("list", listShape).build();
     }
 
-
+    /**
+     * Per <a href = https://smithy.io/2.0/spec/aggregate-types.html#map>map type</a>, the key MUST target a string
+     */
     @Override
     public Symbol mapShape(MapShape mapShape) {
         var valueShape = model.expectShape(mapShape.getValue().getTarget());
         var valueType = valueShape.accept(this);
-
         return Symbol.builder().name("Dictionary<string," + valueType + ">").putProperty("map",mapShape).build();
-
     }
 
     @Override

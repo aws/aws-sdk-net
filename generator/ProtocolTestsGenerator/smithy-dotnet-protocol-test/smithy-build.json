@@ -12,7 +12,7 @@
         {
           "name": "excludeShapesBySelector",
           "args": {
-            "selector": "operation:is([id|name=PostPlayerAction], [id|name=JsonLists],[id|name=StreamingTraitsWithMediaType],[id|name=StreamingTraits],[id|name=StreamingTraitsRequireLength],[id|name=JsonMaps],[id|name=HttpPayloadTraitsWithMediaType])"
+            "selector": "operation:is([id|name=PostPlayerAction], [id|name=JsonLists],[id|name=StreamingTraitsWithMediaType],[id|name=StreamingTraits],[id|name=StreamingTraitsRequireLength],[id|name=JsonMaps],[id|name=HttpPayloadTraitsWithMediaType],[id|name=ResponseCodeHttpFallback])"
           }
         }
       ],
