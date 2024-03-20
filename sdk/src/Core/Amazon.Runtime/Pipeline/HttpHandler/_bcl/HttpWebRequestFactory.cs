@@ -479,11 +479,18 @@ namespace Amazon.Runtime.Internal
             {
                 if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
                 {
-                    _request.Proxy = requestContext.ClientConfig.GetHttpProxy();
+                    proxy = requestContext.ClientConfig.GetHttpProxy();
                 }
                 else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
                 {
-                    _request.Proxy = requestContext.ClientConfig.GetHttpsProxy();
+                    proxy = requestContext.ClientConfig.GetHttpsProxy();
+                }
+
+                // Only set the HttpWebRequest Proxy property if we have a value so
+                // that we don't override any OS level proxy settings.
+                if (proxy != null)
+                {
+                    _request.Proxy = proxy;
                 }
             }
 
