@@ -20,6 +20,9 @@ import software.amazon.smithy.codegen.core.SmithyIntegration;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * This is here for future extensibility
+ */
 public interface DotnetIntegration extends SmithyIntegration<DotnetSettings, CSharpWriter, DotnetGenerationContext> {
 
 

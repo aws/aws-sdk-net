@@ -67,6 +67,7 @@ public final class DotnetImportContainer implements ImportContainer {
         namespaceImports.put(name, alias);
         return this;
     }
+
     @Override
     public String toString(){
         if(imports.isEmpty()){
@@ -80,6 +81,7 @@ public final class DotnetImportContainer implements ImportContainer {
         builder.append("\n");
         return builder.toString();
     }
+
     public String formatNamespaceEntries(String namespace, Map<String,String> namespaceImports){
         var builder = new StringBuilder();
         for(var entry : namespaceImports.entrySet()){
@@ -93,11 +95,13 @@ public final class DotnetImportContainer implements ImportContainer {
             addImport(namespace, systemImport);
         }
     }
+
     public void addCoreImport(String namespace) {
         for(String coreImport: coreImports){
             addImport(namespace, coreImport);
         }
     }
+
     public void addMarshallImports(String namespace, String service) {
         addImport(namespace,service);
         addImport(namespace, service + ".Model");

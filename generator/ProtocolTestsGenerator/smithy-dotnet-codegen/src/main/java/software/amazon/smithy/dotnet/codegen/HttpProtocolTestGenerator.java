@@ -53,7 +53,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
         this.context = context;
         this.protocol = protocol;
         this.projectionName = projectionName;
-
     }
 
     @Override
@@ -157,7 +156,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
             else{
                 throw new CodegenException("Unsupported protocol detected while generating request test block.");
             }
-
         }
 
         writer.write("Assert.AreEqual($S, marshalledRequest.HttpMethod);",httpRequestTestCase.getMethod());
@@ -198,7 +196,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
     }
 
     private void generateResponseTest(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
-
         writer.write("[TestMethod]");
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"ResponseTest\")]");
@@ -210,11 +207,11 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
     private void generateResponseTestBlock(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
         var outputShape =  model.expectShape(operation.getOutputShape(), StructureShape.class);
-
         var responseSymbol = operation.getId().getName() + "Response";
         writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);",httpResponseTestCase.getBody());
         writer.write("var stream = new MemoryStream(bytes);");
         writer.write("var webResponseData = new WebResponseData();");
+
         for(var header: httpResponseTestCase.getHeaders().keySet()){
             writer.write("webResponseData.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
         }
@@ -229,8 +226,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
         }
 
         writer.write("Assert.AreEqual($L, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);",httpResponseTestCase.getCode());
-
-
     }
 
     private final class ValueNodeVisitor implements NodeVisitor<Void> {
@@ -245,11 +240,13 @@ public final class HttpProtocolTestGenerator implements Runnable {
             this.inputShape = inputShape;
             this.generatedInputOutputShapeName = "";
         }
+
         private ValueNodeVisitor(Shape inputShape, boolean isTopLevelInputOrOutput, String generatedInputOutputShapeName){
             this.inputShape = inputShape;
             this.isTopLevelInputOrOutput = isTopLevelInputOrOutput;
             this.generatedInputOutputShapeName = generatedInputOutputShapeName;
         }
+
         @Override
         public Void arrayNode(ArrayNode node) {
             if(inputShape.isDocumentShape()){
@@ -407,6 +404,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             );
             return null;
         }
+
         private Void getDocument(DocumentShape shape, ObjectNode node) {
             writer.addImport(protocolNamespace,"Amazon.Runtime.Documents");
             writer.openBlock("new Document{", "}",

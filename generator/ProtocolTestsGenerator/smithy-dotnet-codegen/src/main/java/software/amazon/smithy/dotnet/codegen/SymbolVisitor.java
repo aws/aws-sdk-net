@@ -159,8 +159,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol stringShape(StringShape stringShape) {
-        var builder = Symbol.builder().putProperty("shape",stringShape).name("string").build();
-        return builder;
+        return Symbol.builder().putProperty("shape",stringShape).name("string").build();
     }
 
     @Override

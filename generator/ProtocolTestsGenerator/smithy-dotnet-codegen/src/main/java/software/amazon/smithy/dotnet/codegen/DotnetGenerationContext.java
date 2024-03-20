@@ -131,6 +131,7 @@ public class DotnetGenerationContext implements  CodegenContext<DotnetSettings,C
             this.model = model;
             return this;
         }
+
         @Override
         public DotnetGenerationContext build() {
             return new DotnetGenerationContext(this);

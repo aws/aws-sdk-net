@@ -62,7 +62,6 @@ public final class DotnetSettings {
         return packageVersion;
     }
     private void setPackageVersion(String packageVersion) {
-        //TODO: Add Validation
         this.packageVersion = Objects.requireNonNull(packageVersion);
     }
 
@@ -75,7 +74,6 @@ public final class DotnetSettings {
         return packageName;
     }
     private void setPackageName(String packageName) {
-        //TODO: Add validation
         this.packageName = Objects.requireNonNull(packageName);
     }
 
