@@ -105,9 +105,9 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
                     AttrField = "nestedAttrValue",
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
     }
 }

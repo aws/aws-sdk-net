@@ -54,10 +54,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"String\":\"abc xyz\"}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"String\":\"abc xyz\"}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -79,10 +77,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"JsonValue\":\"{\\\"string\\\":\\\"value\\\",\\\"number\\\":1234.5,\\\"boolTrue\\\":true,\\\"boolFalse\\\":false,\\\"array\\\":[1,2,3,4],\\\"object\\\":{\\\"key\\\":\\\"value\\\"},\\\"null\\\":null}\"}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"JsonValue\":\"{\\\"string\\\":\\\"value\\\",\\\"number\\\":1234.5,\\\"boolTrue\\\":true,\\\"boolFalse\\\":false,\\\"array\\\":[1,2,3,4],\\\"object\\\":{\\\"key\\\":\\\"value\\\"},\\\"null\\\":null}\"}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -104,10 +100,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Integer\":1234}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Integer\":1234}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -129,10 +123,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Long\":999999999999}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Long\":999999999999}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -154,10 +146,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Float\":1234.5}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Float\":1234.5}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -179,10 +169,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Double\":1234.5}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Double\":1234.5}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -204,10 +192,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Blob\":\"YmluYXJ5LXZhbHVl\"}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Blob\":\"YmluYXJ5LXZhbHVl\"}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -229,10 +215,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Boolean\":true}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Boolean\":true}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -254,10 +238,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Boolean\":false}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Boolean\":false}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -279,10 +261,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Timestamp\":946845296}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Timestamp\":946845296}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -304,10 +284,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"Iso8601Timestamp\":\"2000-01-02T20:34:56Z\"}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"Iso8601Timestamp\":\"2000-01-02T20:34:56Z\"}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -329,10 +307,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"HttpdateTimestamp\":\"Sun, 02 Jan 2000 20:34:56 GMT\"}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"HttpdateTimestamp\":\"Sun, 02 Jan 2000 20:34:56 GMT\"}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -354,10 +330,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"UnixTimestamp\":946845296}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"UnixTimestamp\":946845296}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -384,10 +358,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"ListOfStrings\":[\"abc\",\"mno\",\"xyz\"]}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"ListOfStrings\":[\"abc\",\"mno\",\"xyz\"]}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -411,10 +383,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"ListOfStrings\":[]}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"ListOfStrings\":[]}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -450,10 +420,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"ListOfMapsOfStrings\":[{\"foo\":\"bar\"},{\"abc\":\"xyz\"},{\"red\":\"blue\"}]}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"ListOfMapsOfStrings\":[{\"foo\":\"bar\"},{\"abc\":\"xyz\"},{\"red\":\"blue\"}]}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -486,10 +454,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"ListOfStructs\":[{\"Value\":\"abc\"},{\"Value\":\"mno\"},{\"Value\":\"xyz\"}]}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"ListOfStructs\":[{\"Value\":\"abc\"},{\"Value\":\"mno\"},{\"Value\":\"xyz\"}]}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -526,10 +492,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"RecursiveList\":[{\"RecursiveList\":[{\"RecursiveList\":[{\"Integer\":123}]}]}]}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"RecursiveList\":[{\"RecursiveList\":[{\"RecursiveList\":[{\"Integer\":123}]}]}]}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -555,10 +519,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"MapOfStrings\":{\"abc\":\"xyz\",\"mno\":\"hjk\"}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"MapOfStrings\":{\"abc\":\"xyz\",\"mno\":\"hjk\"}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -582,10 +544,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"MapOfStrings\":{}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"MapOfStrings\":{}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -619,10 +579,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"MapOfListsOfStrings\":{\"abc\":[\"abc\",\"xyz\"],\"mno\":[\"xyz\",\"abc\"]}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"MapOfListsOfStrings\":{\"abc\":[\"abc\",\"xyz\"],\"mno\":[\"xyz\",\"abc\"]}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -652,10 +610,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"MapOfStructs\":{\"key1\":{\"Value\":\"value-1\"},\"key2\":{\"Value\":\"value-2\"}}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"MapOfStructs\":{\"key1\":{\"Value\":\"value-1\"},\"key2\":{\"Value\":\"value-2\"}}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -692,10 +648,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"RecursiveMap\":{\"key1\":{\"RecursiveMap\":{\"key2\":{\"RecursiveMap\":{\"key3\":{\"Boolean\":false}}}}}}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"RecursiveMap\":{\"key1\":{\"RecursiveMap\":{\"key2\":{\"RecursiveMap\":{\"key3\":{\"Boolean\":false}}}}}}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -719,10 +673,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"SimpleStruct\":{\"Value\":\"abc\"}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"SimpleStruct\":{\"Value\":\"abc\"}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -746,10 +698,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"StructWithJsonName\":{\"Value\":\"some-value\"}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"StructWithJsonName\":{\"Value\":\"some-value\"}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -772,10 +722,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"SimpleStruct\":{}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"SimpleStruct\":{}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -798,10 +746,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"EmptyStruct\":{}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"EmptyStruct\":{}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -843,10 +789,8 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
 
             var marshaller = new KitchenSinkOperationRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\"String\":\"top-value\",\"Boolean\":false,\"RecursiveStruct\":{\"String\":\"nested-value\",\"Boolean\":true,\"RecursiveList\":[{\"String\":\"string-only\"},{\"RecursiveStruct\":{\"MapOfStrings\":{\"color\":\"red\",\"size\":\"large\"}}}]}}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\"String\":\"top-value\",\"Boolean\":false,\"RecursiveStruct\":{\"String\":\"nested-value\",\"Boolean\":true,\"RecursiveList\":[{\"String\":\"string-only\"},{\"RecursiveStruct\":{\"MapOfStrings\":{\"color\":\"red\",\"size\":\"large\"}}}]}}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/", actualUri.AbsolutePath);
@@ -867,9 +811,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new KitchenSinkOperationResponse{
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -886,9 +830,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 String = "string-value",
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -905,9 +849,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Integer = 1234,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -924,9 +868,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Long = 1234567890123456789,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -943,9 +887,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Float = 1234.5F,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -962,9 +906,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Double = 1.2345678912345679E8,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -981,9 +925,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Boolean = true,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1000,9 +944,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Boolean = false,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1019,9 +963,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Blob = new MemoryStream(Encoding.UTF8.GetBytes("binary-value")),
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1038,9 +982,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Timestamp = ProtocolTestConstants.epoch.AddSeconds(946845296),
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1057,9 +1001,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 Iso8601Timestamp = ProtocolTestConstants.epoch.AddSeconds(946845296),
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1076,9 +1020,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var expectedResponse = new KitchenSinkOperationResponse{
                 HttpdateTimestamp = ProtocolTestConstants.epoch.AddSeconds(946845296),
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1100,9 +1044,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     "xyz",
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1129,9 +1073,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     },
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1162,9 +1106,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     },
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1189,9 +1133,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     },
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1223,9 +1167,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     },
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1246,9 +1190,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     {"color", "red"},
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1277,9 +1221,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     }},
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1308,9 +1252,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     }},
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1335,9 +1279,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     }},
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1369,9 +1313,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
                     }},
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -1388,9 +1332,9 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var unmarshalledResponse = new KitchenSinkOperationResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new KitchenSinkOperationResponse{
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (KitchenSinkOperationResponse)unmarshalledResponse;
             Comparer.CompareObjects<KitchenSinkOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
     }
 }

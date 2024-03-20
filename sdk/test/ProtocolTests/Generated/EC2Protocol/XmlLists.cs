@@ -135,9 +135,9 @@ namespace AWSSDK.ProtocolTests.AwsEc2
                     },
                 },
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (XmlListsResponse)unmarshalledResponse;
             Comparer.CompareObjects<XmlListsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
     }
 }

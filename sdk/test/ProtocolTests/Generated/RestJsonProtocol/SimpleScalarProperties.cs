@@ -63,10 +63,8 @@ namespace AWSSDK.ProtocolTests.RestJson
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"stringValue\": \"string\",\n    \"trueBooleanValue\": true,\n    \"falseBooleanValue\": false,\n    \"byteValue\": 1,\n    \"shortValue\": 2,\n    \"integerValue\": 3,\n    \"longValue\": 4,\n    \"floatValue\": 5.5,\n    \"DoubleDribble\": 6.5\n}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\n    \"stringValue\": \"string\",\n    \"trueBooleanValue\": true,\n    \"falseBooleanValue\": false,\n    \"byteValue\": 1,\n    \"shortValue\": 2,\n    \"integerValue\": 3,\n    \"longValue\": 4,\n    \"floatValue\": 5.5,\n    \"DoubleDribble\": 6.5\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
@@ -88,10 +86,8 @@ namespace AWSSDK.ProtocolTests.RestJson
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
@@ -113,10 +109,8 @@ namespace AWSSDK.ProtocolTests.RestJson
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"floatValue\": \"NaN\",\n    \"DoubleDribble\": \"NaN\"\n}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\n    \"floatValue\": \"NaN\",\n    \"DoubleDribble\": \"NaN\"\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
@@ -138,10 +132,8 @@ namespace AWSSDK.ProtocolTests.RestJson
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"floatValue\": \"Infinity\",\n    \"DoubleDribble\": \"Infinity\"\n}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\n    \"floatValue\": \"Infinity\",\n    \"DoubleDribble\": \"Infinity\"\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
@@ -163,10 +155,8 @@ namespace AWSSDK.ProtocolTests.RestJson
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
-            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
-            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>("{\n    \"floatValue\": \"-Infinity\",\n    \"DoubleDribble\": \"-Infinity\"\n}");
-            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+            var expectedBody = "{\n    \"floatValue\": \"-Infinity\",\n    \"DoubleDribble\": \"-Infinity\"\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);
@@ -197,9 +187,9 @@ namespace AWSSDK.ProtocolTests.RestJson
                 FloatValue = 5.5F,
                 DoubleValue = 6.5,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -215,9 +205,9 @@ namespace AWSSDK.ProtocolTests.RestJson
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
             var expectedResponse = new SimpleScalarPropertiesResponse{
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -235,9 +225,9 @@ namespace AWSSDK.ProtocolTests.RestJson
                 FloatValue = float.NaN,
                 DoubleValue = double.NaN,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -255,9 +245,9 @@ namespace AWSSDK.ProtocolTests.RestJson
                 FloatValue = float.PositiveInfinity,
                 DoubleValue = double.PositiveInfinity,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
         [TestMethod]
         [TestCategory("ProtocolTest")]
@@ -275,9 +265,9 @@ namespace AWSSDK.ProtocolTests.RestJson
                 FloatValue = float.NegativeInfinity,
                 DoubleValue = double.NegativeInfinity,
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
     }
 }

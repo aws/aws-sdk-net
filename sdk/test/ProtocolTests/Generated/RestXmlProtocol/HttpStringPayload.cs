@@ -77,9 +77,9 @@ namespace AWSSDK.ProtocolTests.RestXml
             var expectedResponse = new HttpStringPayloadResponse{
                 Payload = "rawstring",
             };
-            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
             var actualResponse = (HttpStringPayloadResponse)unmarshalledResponse;
             Comparer.CompareObjects<HttpStringPayloadResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
     }
 }
