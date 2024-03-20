@@ -90,8 +90,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of webhook filter. There are six webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
-        /// <c>HEAD_REF</c>, <c>BASE_REF</c>, <c>FILE_PATH</c>, and <c>COMMIT_MESSAGE</c>. 
+        ///  The type of webhook filter. There are eight webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
+        /// <c>HEAD_REF</c>, <c>BASE_REF</c>, <c>FILE_PATH</c>, <c>COMMIT_MESSAGE</c>, <c>TAG_NAME</c>,
+        /// and <c>RELEASE_NAME</c>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -100,15 +101,16 @@ namespace Amazon.CodeBuild.Model
         ///  <ul> <li> 
         /// <para>
         ///  A webhook event triggers a build when the provided <c>pattern</c> matches one of
-        /// six event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
-        /// <c>PULL_REQUEST_CLOSED</c>, <c>PULL_REQUEST_REOPENED</c>, and <c>PULL_REQUEST_MERGED</c>.
-        /// The <c>EVENT</c> patterns are specified as a comma-separated string. For example,
-        /// <c>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</c> filters all push, pull request
-        /// created, and pull request updated events. 
+        /// eight event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
+        /// <c>PULL_REQUEST_CLOSED</c>, <c>PULL_REQUEST_REOPENED</c>, <c>PULL_REQUEST_MERGED</c>,
+        /// <c>RELEASED</c>, and <c>PRERELEASED</c>. The <c>EVENT</c> patterns are specified as
+        /// a comma-separated string. For example, <c>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</c>
+        /// filters all push, pull request created, and pull request updated events. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. 
+        ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. The
+        /// <c>RELEASED</c> and <c>PRERELEASED</c> work with GitHub only.
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
@@ -129,12 +131,12 @@ namespace Amazon.CodeBuild.Model
         /// <c>pattern</c>. For example, <c>refs/heads/branch-name</c> and <c>refs/tags/tag-name</c>.
         /// 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
         ///  Works with GitHub and GitHub Enterprise push, GitHub and GitHub Enterprise pull request,
-        /// Bitbucket push, and Bitbucket pull request events. 
+        /// Bitbucket push, and Bitbucket pull request events.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </note> </li> </ul> </li> <li> 
         /// <para>
         /// BASE_REF
         /// </para>
@@ -176,6 +178,31 @@ namespace Amazon.CodeBuild.Model
         ///  Works with GitHub and Bitbucket events push and pull requests events. Also works
         /// with GitHub Enterprise push events, but does not work with GitHub Enterprise pull
         /// request events. 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// TAG_NAME
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A webhook triggers a build when the tag name of the release matches the regular expression
+        /// <c>pattern</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with <c>RELEASED</c> and <c>PRERELEASED</c> events only. 
+        /// </para>
+        ///  </note> </li> </ul> </li> <li> 
+        /// <para>
+        /// RELEASE_NAME
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A webhook triggers a build when the release name matches the regular expression <c>pattern</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  Works with <c>RELEASED</c> and <c>PRERELEASED</c> events only. 
         /// </para>
         ///  </note> </li> </ul> </li> </ul>
         /// </summary>
