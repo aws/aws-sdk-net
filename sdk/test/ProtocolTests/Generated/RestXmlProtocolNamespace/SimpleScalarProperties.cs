@@ -39,13 +39,18 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
     [TestClass]
     public class SimpleScalarProperties
     {
+        /// <summary>
+        /// Serializes simple scalar properties
+        /// </summary>
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestXmlWithNamespace")]
         public void XmlNamespaceSimpleScalarPropertiesRequest()
         {
-            var request = new SimpleScalarPropertiesRequest{
+            //Arrange
+            var request = new SimpleScalarPropertiesRequest
+            {
                 Foo = "Foo",
                 StringValue = "string",
                 TrueBooleanValue = true,
@@ -60,12 +65,16 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
                     AttrField = "nestedAttrValue",
                 },
             };
-            var config = new AmazonRestXmlProtocolNamespaceConfig{
+            var config = new AmazonRestXmlProtocolNamespaceConfig
+            {
               ServiceURL = "https://test.com/"
             };
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
+            //Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            //Assert
             var expectedBody = "<SimpleScalarPropertiesInputOutput xmlns=\"https://example.com\">\n    <stringValue>string</stringValue>\n    <trueBooleanValue>true</trueBooleanValue>\n    <falseBooleanValue>false</falseBooleanValue>\n    <byteValue>1</byteValue>\n    <shortValue>2</shortValue>\n    <integerValue>3</integerValue>\n    <longValue>4</longValue>\n    <floatValue>5.5</floatValue>\n    <DoubleDribble>6.5</DoubleDribble>\n    <Nested xmlns:xsi=\"https://example.com\" xsi:someName=\"nestedAttrValue\"></Nested>\n</SimpleScalarPropertiesInputOutput>\n";
             XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
@@ -74,20 +83,28 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
             Assert.AreEqual( "application/xml", marshalledRequest.Headers["Content-Type"]);
             Assert.AreEqual( "Foo", marshalledRequest.Headers["X-Foo"]);
         }
+
+        /// <summary>
+        /// Serializes simple scalar properties
+        /// </summary>
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXmlWithNamespace")]
         public void XmlNamespaceSimpleScalarPropertiesResponse()
         {
+            //Arrange
             byte[] bytes = Encoding.ASCII.GetBytes("<SimpleScalarPropertiesInputOutput xmlns=\"https://example.com\">\n    <stringValue>string</stringValue>\n    <trueBooleanValue>true</trueBooleanValue>\n    <falseBooleanValue>false</falseBooleanValue>\n    <byteValue>1</byteValue>\n    <shortValue>2</shortValue>\n    <integerValue>3</integerValue>\n    <longValue>4</longValue>\n    <floatValue>5.5</floatValue>\n    <DoubleDribble>6.5</DoubleDribble>\n    <Nested xmlns:xsi=\"https://example.com\" xsi:someName=\"nestedAttrValue\"></Nested>\n</SimpleScalarPropertiesInputOutput>\n");
             var stream = new MemoryStream(bytes);
             var webResponseData = new WebResponseData();
             webResponseData.Headers["Content-Type"] = "application/xml";
             webResponseData.Headers["X-Foo"] = "Foo";
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+
+            //Act
             var unmarshalledResponse = new SimpleScalarPropertiesResponseUnmarshaller().Unmarshall(context);
-            var expectedResponse = new SimpleScalarPropertiesResponse{
+            var expectedResponse = new SimpleScalarPropertiesResponse
+            {
                 Foo = "Foo",
                 StringValue = "string",
                 TrueBooleanValue = true,
@@ -102,9 +119,12 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
                     AttrField = "nestedAttrValue",
                 },
             };
+
+            //Assert
             var actualResponse = (SimpleScalarPropertiesResponse)unmarshalledResponse;
             Comparer.CompareObjects<SimpleScalarPropertiesResponse>(expectedResponse,actualResponse);
             Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
+
     }
 }

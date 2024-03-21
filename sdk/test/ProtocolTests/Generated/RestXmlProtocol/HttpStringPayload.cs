@@ -45,38 +45,52 @@ namespace AWSSDK.ProtocolTests.RestXml
         [TestCategory("RestXml")]
         public void RestXmlStringPayloadRequestRequest()
         {
-            var request = new HttpStringPayloadRequest{
+            //Arrange
+            var request = new HttpStringPayloadRequest
+            {
                 Payload = "rawstring",
             };
-            var config = new AmazonRestXmlProtocolConfig{
+            var config = new AmazonRestXmlProtocolConfig
+            {
               ServiceURL = "https://test.com/"
             };
 
             var marshaller = new HttpStringPayloadRequestMarshaller();
+            //Act
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            //Assert
             var expectedBody = "rawstring";
             XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/StringPayload", actualUri.AbsolutePath);
         }
+
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("RestXml")]
         public void RestXmlStringPayloadResponseResponse()
         {
+            //Arrange
             byte[] bytes = Encoding.ASCII.GetBytes("rawstring");
             var stream = new MemoryStream(bytes);
             var webResponseData = new WebResponseData();
             var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+
+            //Act
             var unmarshalledResponse = new HttpStringPayloadResponseUnmarshaller().Unmarshall(context);
-            var expectedResponse = new HttpStringPayloadResponse{
+            var expectedResponse = new HttpStringPayloadResponse
+            {
                 Payload = "rawstring",
             };
+
+            //Assert
             var actualResponse = (HttpStringPayloadResponse)unmarshalledResponse;
             Comparer.CompareObjects<HttpStringPayloadResponse>(expectedResponse,actualResponse);
             Assert.AreEqual(200, ProtocolTestUtils.StatusCodeDictionary[context.ResponseData.StatusCode]);
         }
+
     }
 }
