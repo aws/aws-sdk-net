@@ -155,7 +155,14 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
             
             #line default
             #line hidden
-            this.Write(");\r\n");
+            this.Write(" ?? new ");
+            
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.Member.DetermineType()));
+            
+            #line default
+            #line hidden
+            this.Write("());\r\n");
             
             #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
