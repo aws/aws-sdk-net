@@ -130,8 +130,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package version to be updated. The package version component
-        /// that specifies its namespace depends on its type. For example:
+        /// The namespace of the package version to be updated. The package component that specifies
+        /// its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -139,16 +139,16 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <c>scope</c>. 
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The namespace of a generic package is its <c>namespace</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Python and NuGet package versions do not contain a corresponding component, package
         /// versions of those formats do not have a namespace. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

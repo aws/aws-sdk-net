@@ -26,9 +26,24 @@ namespace Amazon.CodeArtifact.Model
     {
 
         /// <summary>
+        /// Paginator for ListAllowedRepositoriesForGroup operation
+        ///</summary>
+        IListAllowedRepositoriesForGroupPaginator ListAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssociatedPackages operation
+        ///</summary>
+        IListAssociatedPackagesPaginator ListAssociatedPackages(ListAssociatedPackagesRequest request);
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPackageGroups operation
+        ///</summary>
+        IListPackageGroupsPaginator ListPackageGroups(ListPackageGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListPackages operation
@@ -54,5 +69,10 @@ namespace Amazon.CodeArtifact.Model
         /// Paginator for ListRepositoriesInDomain operation
         ///</summary>
         IListRepositoriesInDomainPaginator ListRepositoriesInDomain(ListRepositoriesInDomainRequest request);
+
+        /// <summary>
+        /// Paginator for ListSubPackageGroups operation
+        ///</summary>
+        IListSubPackageGroupsPaginator ListSubPackageGroups(ListSubPackageGroupsRequest request);
     }
 }

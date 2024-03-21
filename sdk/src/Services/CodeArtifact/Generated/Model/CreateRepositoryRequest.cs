@@ -102,7 +102,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The name of the repository to create. 
+        /// The name of the repository to create. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
