@@ -341,7 +341,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             // then generate the structure member names.
             else{
                 var structureSymbol = context.symbolProvider().toSymbol(structureShape);
-                writer.openBlock("new $L{","}",structureSymbol,
+                writer.openBlock("new $L\n{","}",structureSymbol,
                         () -> getStructureMembersShapes(structureShape,node));
             }
             return  null;
@@ -410,7 +410,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.openBlock("{", "}",
                     () -> node.getMembers().forEach((keyNode, valueNode) -> {
                         var targetShape = model.expectShape(shape.getValue().getTarget());
-                        writer.write("{$S, $C},",
+                        writer.write("{ $S, $C },",
                                 keyNode.getValue(),
                                 (Runnable) () -> valueNode.accept(new ValueNodeVisitor(targetShape))
                         );
@@ -424,7 +424,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.openBlock("new Document{", "}",
                     () -> node.getMembers().forEach((keyNode, valueNode) -> {
                         if (!inDocumentValueNode) {
-                            writer.write("{$S , $C},",
+                            writer.write("{ $S, $C },",
                                     keyNode.getValue(),
                                     //the keyNode's shape is the new input shape for the value node
                                     (Runnable) () -> valueNode.accept(this)
