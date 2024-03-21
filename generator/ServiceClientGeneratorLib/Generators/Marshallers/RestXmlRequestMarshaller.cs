@@ -1058,7 +1058,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
         #line hidden
         
         #line 232 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(" != null && ");
+this.Write(" != null && (");
 
         
         #line default
@@ -1072,7 +1072,7 @@ this.Write(this.ToStringHelper.ToStringWithCulture(listVariable));
         #line hidden
         
         #line 232 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\RestXmlRequestMarshaller.tt"
-this.Write(".Count > 0) \r\n");
+this.Write(".Count > 0 || !AWSConfigs.InitializeCollections)) \r\n");
 
         
         #line default

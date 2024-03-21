@@ -25,7 +25,7 @@ namespace Amazon.S3.Model
     public class ReplicationConfiguration
     {
         private string role;
-        private List<ReplicationRule> rules = new List<ReplicationRule>();
+        private List<ReplicationRule> rules = AWSConfigs.InitializeCollections ? new List<ReplicationRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Role. 
@@ -66,9 +66,7 @@ namespace Amazon.S3.Model
         /// <returns>true if the Rules property is set.</returns>
         internal bool IsSetRules()
         {
-            return this.rules.Count > 0;
+            return this.rules != null && (this.rules.Count > 0 || !AWSConfigs.InitializeCollections);
         }
-
-
     }
 }

@@ -51,6 +51,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>"))
                     {
                         var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+                        if (response.<#=member.PropertyName#> == null)
+                        {
+                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
                         response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
                     }
 <#

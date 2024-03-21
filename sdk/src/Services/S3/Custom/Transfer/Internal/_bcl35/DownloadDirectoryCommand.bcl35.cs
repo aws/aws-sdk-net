@@ -83,15 +83,18 @@ namespace Amazon.S3.Transfer.Internal
             {
                 ListObjectsResponse listResponse = this._s3Client.ListObjects(listRequest);
 
-                foreach (S3Object s3o in listResponse.S3Objects)
+                if (listResponse.S3Objects != null)
                 {
-                    if (ShouldDownload(s3o))
+                    foreach (S3Object s3o in listResponse.S3Objects)
                     {
-                        this._totalBytes += s3o.Size;
-                        objs.Add(s3o);
+                        if (ShouldDownload(s3o))
+                        {
+                            this._totalBytes += s3o.Size;
+                            objs.Add(s3o);
+                        }
                     }
+                    listRequest.Marker = listResponse.NextMarker;
                 }
-                listRequest.Marker = listResponse.NextMarker;
             } while (!string.IsNullOrEmpty(listRequest.Marker));
             return objs;
         }
@@ -103,12 +106,15 @@ namespace Amazon.S3.Transfer.Internal
             {
                 ListObjectsV2Response listResponse = this._s3Client.ListObjectsV2(listRequestV2);
 
-                foreach (S3Object s3o in listResponse.S3Objects)
+                if (listResponse.S3Objects != null)
                 {
-                    if (ShouldDownload(s3o))
+                    foreach (S3Object s3o in listResponse.S3Objects)
                     {
-                        this._totalBytes += s3o.Size;
-                        objs.Add(s3o);
+                        if (ShouldDownload(s3o))
+                        {
+                            this._totalBytes += s3o.Size;
+                            objs.Add(s3o);
+                        }
                     }
                 }
                 listRequestV2.ContinuationToken = listResponse.NextContinuationToken;

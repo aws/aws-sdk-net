@@ -63,6 +63,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Rule", targetDepth))
                     {
+                        if (response.Configuration.Rules == null)
+                        {
+                            response.Configuration.Rules = new List<ReplicationRule>();
+                        }
                         response.Configuration.Rules.Add(ReplicationRuleUnmarshaller.Instance.Unmarshall(context));
 
                         continue;

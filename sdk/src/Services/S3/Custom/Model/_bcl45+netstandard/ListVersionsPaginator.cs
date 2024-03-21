@@ -36,12 +36,12 @@ namespace Amazon.S3.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         public IPaginatedEnumerable<ListVersionsResponse> Responses => new PaginatedResponse<ListVersionsResponse>(this);
-        
+
         /// <summary>
         /// Enumerable containing all of the Versions
         /// </summary>
-        public IPaginatedEnumerable<S3ObjectVersion> Versions => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, S3ObjectVersion>(this, (i) => i.Versions);
+        public IPaginatedEnumerable<S3ObjectVersion> Versions =>
+            new PaginatedResultKeyResponse<ListVersionsResponse, S3ObjectVersion>(this, (i) => i.Versions ?? new List<S3ObjectVersion>());
 
         /// <summary>
         /// Enumerable containing all of the CommonPrefixes

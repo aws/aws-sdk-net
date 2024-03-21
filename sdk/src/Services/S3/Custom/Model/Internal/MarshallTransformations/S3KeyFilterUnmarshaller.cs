@@ -39,7 +39,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("FilterRule", targetDepth))
                     {
-                        s3KeyFilter.FilterRules.Add(FilterRuleUnmarshaller.Instance.Unmarshall(context));                            
+                        if (s3KeyFilter.FilterRules == null)
+                        {
+                            s3KeyFilter.FilterRules = new List<FilterRule>();
+                        }
+
+                        s3KeyFilter.FilterRules.Add(FilterRuleUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
                 }

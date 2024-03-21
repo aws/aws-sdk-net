@@ -391,6 +391,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (request.IsSetAttributesToGet() &&
                 (request.IsSetExpressionAttributeNames() || request.IsSetExpressionAttributeValues() || request.IsSetFilterExpression()))
             {
+                if (request.ExpressionAttributeNames == null)
+                {
+                    request.ExpressionAttributeNames = new Dictionary<string, string>();
+                }
+
                 var attributesToGet = request.AttributesToGet;
                 var attributeNames = request.ExpressionAttributeNames;
 
@@ -403,6 +408,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (request.IsSetAttributesToGet() &&
                 (request.IsSetExpressionAttributeNames() || request.IsSetExpressionAttributeValues() || request.IsSetFilterExpression()))
             {
+                if (request.ExpressionAttributeNames == null)
+                {
+                    request.ExpressionAttributeNames = new Dictionary<string, string>();
+                }
+
                 var attributesToGet = request.AttributesToGet;
                 var attributeNames = request.ExpressionAttributeNames;
 
@@ -413,7 +423,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private static string AttributesToGetAsProjectionExpression(List<string> attributesToGet, Dictionary<string, string> attributeNames)
         {
-            int attributeCount = attributeNames.Count;
+            if (attributesToGet == null || attributesToGet.Count == 0)
+                return null;
+
+            int attributeCount = attributeNames != null ? attributeNames.Count : 0;
             var referencesToGet = new List<string>();
             foreach (var attribute in attributesToGet)
             {

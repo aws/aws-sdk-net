@@ -66,32 +66,35 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", S3Constants.S3RequestXmlNamespace);
                     if (sseConfiguration != null)
                     {
-                        foreach(var serverSideEncryptionRule in sseConfiguration.ServerSideEncryptionRules)
+                        if (sseConfiguration.ServerSideEncryptionRules != null)
                         {
-                            xmlWriter.WriteStartElement("Rule");
-                            if (serverSideEncryptionRule != null)
+                            foreach (var serverSideEncryptionRule in sseConfiguration.ServerSideEncryptionRules)
                             {
-                                if (serverSideEncryptionRule.IsSetServerSideEncryptionByDefault())
+                                xmlWriter.WriteStartElement("Rule");
+                                if (serverSideEncryptionRule != null)
                                 {
-                                    xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
-                                    var sseDefault = serverSideEncryptionRule.ServerSideEncryptionByDefault;
-                                    if(sseDefault.IsSetServerSideEncryptionAlgorithm())
+                                    if (serverSideEncryptionRule.IsSetServerSideEncryptionByDefault())
                                     {
-                                        xmlWriter.WriteElementString("SSEAlgorithm", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionAlgorithm));
+                                        xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
+                                        var sseDefault = serverSideEncryptionRule.ServerSideEncryptionByDefault;
+                                        if (sseDefault.IsSetServerSideEncryptionAlgorithm())
+                                        {
+                                            xmlWriter.WriteElementString("SSEAlgorithm", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionAlgorithm));
+                                        }
+                                        if (sseDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
+                                        {
+                                            xmlWriter.WriteElementString("KMSMasterKeyID", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionKeyManagementServiceKeyId));
+                                        }
+                                        xmlWriter.WriteEndElement();
                                     }
-                                    if (sseDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
-                                    {
-                                        xmlWriter.WriteElementString("KMSMasterKeyID", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionKeyManagementServiceKeyId));
-                                    }
-                                    xmlWriter.WriteEndElement();
-                                }
 
-                                if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
-                                {
-                                    xmlWriter.WriteElementString("BucketKeyEnabled", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                    if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
+                                    {
+                                        xmlWriter.WriteElementString("BucketKeyEnabled", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                    }
                                 }
+                                xmlWriter.WriteEndElement();
                             }
-                            xmlWriter.WriteEndElement();
                         }
                     }
                     xmlWriter.WriteEndElement();

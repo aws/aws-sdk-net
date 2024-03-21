@@ -297,7 +297,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var dor = new Amazon.S3.Model.DeleteObjectsResponse
             {
-                DeletedObjects =
+                DeletedObjects = new List<DeletedObject>
                     {
                         new DeletedObject
                         {
@@ -314,7 +314,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                             DeleteMarkerVersionId = "mv2"
                         }
                     },
-                DeleteErrors =
+                DeleteErrors = new List<DeleteError>
                     {
                         new DeleteError
                         {

@@ -189,7 +189,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             }
             Assert.IsNotNull(status);
-            Assert.IsNotNull(status.HealthCheckObservations);
+
+            if (status.HealthCheckObservations == null)
+                Assert.IsFalse(AWSConfigs.InitializeCollections);
+            else
+                Assert.IsNotNull(status.HealthCheckObservations);
 
             var healthCheck = Client.GetHealthCheck(new GetHealthCheckRequest
             {
@@ -206,9 +210,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }).ResourceTagSet;
             Assert.IsNotNull(tagSet);
             Assert.IsNotNull(tagSet.ResourceId);
-            Assert.IsNotNull(tagSet.ResourceType);
-            Assert.IsNotNull(tagSet.Tags);
-            Assert.AreEqual(0, tagSet.Tags.Count);
+
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.IsNotNull(tagSet.Tags);
+                Assert.AreEqual(0, tagSet.Tags.Count);
+            }
+            else
+            {
+                Assert.IsNull(tagSet.Tags);
+            }
 
             Client.ChangeTagsForResource(new ChangeTagsForResourceRequest
             {

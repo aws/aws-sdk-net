@@ -115,7 +115,7 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
         private bool? fetchOwner;
         private int? maxKeys;
-        private List<string> _optionalObjectAttributes = new List<string>();
+        private List<string> _optionalObjectAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string prefix;
         private RequestPayer requestPayer;
         private string startAfter;
@@ -332,7 +332,7 @@ namespace Amazon.S3.Model
         // Check to see if OptionalObjectAttributes property is set
         internal bool IsSetOptionalObjectAttributes()
         {
-            return this._optionalObjectAttributes != null && this._optionalObjectAttributes.Count > 0;
+            return this._optionalObjectAttributes != null && (this._optionalObjectAttributes.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

@@ -10,6 +10,7 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
 using ReturnValuesOnConditionCheckFailure = Amazon.DynamoDBv2.DocumentModel.ReturnValuesOnConditionCheckFailure;
+using Amazon;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -1163,11 +1164,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.IsNotNull(ex);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
                 Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[0].Code);
-                Assert.AreEqual(0, ex.CancellationReasons[0].Item.Count);
+
+                if (AWSConfigs.InitializeCollections)
+                {
+                    Assert.AreEqual(0, ex.CancellationReasons[0].Item.Count);
+                    Assert.AreEqual(0, ex.CancellationReasons[1].Item.Count);
+                    Assert.AreEqual(0, ex.CancellationReasons[2].Item.Count);
+                    Assert.AreEqual(0, transactWrite.ConditionCheckFailedItems.Count);
+                }
+                else
+                {
+                    Assert.IsNull(ex.CancellationReasons[0].Item);
+                    Assert.IsNull(ex.CancellationReasons[1].Item);
+                    Assert.IsNull(ex.CancellationReasons[2].Item);
+                    
+                }
+
                 Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[1].Code);
-                Assert.AreEqual(0, ex.CancellationReasons[1].Item.Count);
                 Assert.AreEqual("None", ex.CancellationReasons[2].Code);
-                Assert.AreEqual(0, ex.CancellationReasons[2].Item.Count);
                 Assert.AreEqual(0, transactWrite.ConditionCheckFailedItems.Count);
             }
 
@@ -1272,7 +1286,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[1].Code);
                 Assert.AreNotEqual(0, ex.CancellationReasons[1].Item.Count);
                 Assert.AreEqual("None", ex.CancellationReasons[2].Code);
-                Assert.AreEqual(0, ex.CancellationReasons[2].Item.Count);
+
+                if (AWSConfigs.InitializeCollections)
+                    Assert.AreEqual(0, ex.CancellationReasons[2].Item.Count);
+                else
+                    Assert.IsNull(ex.CancellationReasons[2].Item);
+
                 Assert.AreEqual(2, transactWrite.ConditionCheckFailedItems.Count);
                 Assert.IsTrue(AreValuesEqual(doc1, transactWrite.ConditionCheckFailedItems[0], conversion));
                 Assert.IsTrue(AreValuesEqual(doc2, transactWrite.ConditionCheckFailedItems[1], conversion));
@@ -1331,13 +1350,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.IsNotNull(ex);
                 Assert.AreEqual(3, ex.CancellationReasons.Count);
                 Assert.AreEqual("None", ex.CancellationReasons[0].Code);
-                Assert.AreEqual(0, ex.CancellationReasons[0].Item.Count);
                 Assert.AreEqual("None", ex.CancellationReasons[1].Code);
-                Assert.AreEqual(0, ex.CancellationReasons[1].Item.Count);
                 Assert.AreEqual(BatchStatementErrorCodeEnum.ConditionalCheckFailed.Value, ex.CancellationReasons[2].Code);
                 Assert.AreNotEqual(0, ex.CancellationReasons[2].Item.Count);
                 Assert.AreEqual(1, transactWrite.ConditionCheckFailedItems.Count);
                 Assert.IsTrue(AreValuesEqual(doc3, transactWrite.ConditionCheckFailedItems[0], conversion));
+
+                if (AWSConfigs.InitializeCollections)
+                {
+                    Assert.AreEqual(0, ex.CancellationReasons[0].Item.Count);
+                    Assert.AreEqual(0, ex.CancellationReasons[1].Item.Count);
+                }
+                else
+                {
+                    Assert.IsNull(ex.CancellationReasons[0].Item);
+                    Assert.IsNull(ex.CancellationReasons[1].Item);
+                }
             }
 
             {

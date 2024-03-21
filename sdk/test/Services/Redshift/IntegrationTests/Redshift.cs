@@ -76,8 +76,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(1, descResponse.ParameterGroups.Count);
                 Assert.AreEqual(name, descResponse.ParameterGroups[0].ParameterGroupName);
 
-                ModifyClusterParameterGroupRequest modRequest = new ModifyClusterParameterGroupRequest() { ParameterGroupName = name };
-                modRequest.Parameters.Add(new Parameter() { ParameterName = "require_ssl", ParameterValue = "true" });
+                ModifyClusterParameterGroupRequest modRequest = new ModifyClusterParameterGroupRequest() 
+                { 
+                    ParameterGroupName = name,
+                    Parameters = new List<Parameter>
+                    {
+                        new Parameter() { ParameterName = "require_ssl", ParameterValue = "true" }
+                    }
+                };
                 var modResponse = Client.ModifyClusterParameterGroup(modRequest);
 
                 var descParameterResponse = Client.DescribeClusterParameters(new DescribeClusterParametersRequest() { ParameterGroupName = name });
@@ -89,7 +95,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Client.DeleteClusterParameterGroup(new DeleteClusterParameterGroupRequest() { ParameterGroupName = name });
                 var descResponse = Client.DescribeClusterParameterGroups(new DescribeClusterParameterGroupsRequest());
-                Assert.IsNull(descResponse.ParameterGroups.FirstOrDefault(x => x.ParameterGroupName == name));
+                Assert.IsNull(descResponse.ParameterGroups?.FirstOrDefault(x => x.ParameterGroupName == name));
             }
         }
 

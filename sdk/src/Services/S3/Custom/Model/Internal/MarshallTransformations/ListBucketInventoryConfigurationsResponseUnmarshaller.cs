@@ -69,8 +69,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("InventoryConfiguration", targetDepth))
                     {
+                        if (response.InventoryConfigurationList == null)
+                        {
+                            response.InventoryConfigurationList = new List<InventoryConfiguration>();
+                        }
                         response.InventoryConfigurationList.Add(InventoryConfigurationUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))

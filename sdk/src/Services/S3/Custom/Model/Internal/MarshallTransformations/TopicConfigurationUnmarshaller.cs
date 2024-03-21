@@ -45,6 +45,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Event", targetDepth))
                     {
+                        if (topicConfiguration.Events == null)
+                        {
+                            topicConfiguration.Events = new List<EventType>();
+                        }
+
                         topicConfiguration.Events.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;

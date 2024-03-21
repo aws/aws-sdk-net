@@ -27,22 +27,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public static void Marshall(IRequest request, PutWithACLRequest aclRequest)
         {
             var protoHeaders = new Dictionary<S3Permission, string>();
-            foreach (var grant in aclRequest.Grants)
+            if( aclRequest != null )
             {
-                string grantee = null;
-                if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
-                    grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
-                else if (grant.Grantee.IsSetEmailAddress())
-                    grantee = string.Format(CultureInfo.InvariantCulture, "emailAddress=\"{0}\"", grant.Grantee.EmailAddress);
-                else if (grant.Grantee.IsSetURI())
-                    grantee = string.Format(CultureInfo.InvariantCulture, "uri=\"{0}\"", grant.Grantee.URI);
-                else continue;
+                if (aclRequest.Grants != null)
+                {
+                    foreach (var grant in aclRequest.Grants)
+                    {
+                        string grantee = null;
+                        if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
+                            grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
+                        else if (grant.Grantee.IsSetEmailAddress())
+                            grantee = string.Format(CultureInfo.InvariantCulture, "emailAddress=\"{0}\"", grant.Grantee.EmailAddress);
+                        else if (grant.Grantee.IsSetURI())
+                            grantee = string.Format(CultureInfo.InvariantCulture, "uri=\"{0}\"", grant.Grantee.URI);
+                        else continue;
 
-                string glist = null;
-                if (protoHeaders.TryGetValue(grant.Permission, out glist))
-                    protoHeaders[grant.Permission] = string.Format(CultureInfo.InvariantCulture, "{0}, {1}", glist, grantee);
-                else
-                    protoHeaders.Add(grant.Permission, grantee);
+                        string glist = null;
+                        if (protoHeaders.TryGetValue(grant.Permission, out glist))
+                            protoHeaders[grant.Permission] = string.Format(CultureInfo.InvariantCulture, "{0}, {1}", glist, grantee);
+                        else
+                            protoHeaders.Add(grant.Permission, grantee);
+                    }
+                }
             }
 
             foreach (var permission in protoHeaders.Keys)

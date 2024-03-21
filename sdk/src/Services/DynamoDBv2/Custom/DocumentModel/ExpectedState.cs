@@ -113,6 +113,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 eav.ComparisonOperator = EnumMapper.Convert(comparison);
                 foreach (var val in values)
                 {
+                    if (eav.AttributeValueList == null)
+                    {
+                        eav.AttributeValueList = new List<AttributeValue>();
+                    }
+
                     var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(conversion, isEmptyStringValueEnabled);
                     eav.AttributeValueList.Add(val.ConvertToAttributeValue(attributeConversionConfig));
                 }

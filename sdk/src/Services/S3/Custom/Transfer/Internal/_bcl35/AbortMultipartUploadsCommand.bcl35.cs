@@ -43,12 +43,15 @@ namespace Amazon.S3.Transfer.Internal
                 ListMultipartUploadsRequest listRequest = ConstructListMultipartUploadsRequest(listResponse);
 
                 listResponse = this._s3Client.ListMultipartUploads(listRequest);
-                foreach (MultipartUpload upload in listResponse.MultipartUploads)
+                if (listResponse.MultipartUploads != null)
                 {
-                    if (upload.Initiated < this._initiatedDate)
+                    foreach (MultipartUpload upload in listResponse.MultipartUploads)
                     {
-                        var abortRequest = ConstructAbortMultipartUploadRequest(upload);
-                        this._s3Client.AbortMultipartUpload(abortRequest);
+                        if (upload.Initiated < this._initiatedDate)
+                        {
+                            var abortRequest = ConstructAbortMultipartUploadRequest(upload);
+                            this._s3Client.AbortMultipartUpload(abortRequest);
+                        }
                     }
                 }
             }

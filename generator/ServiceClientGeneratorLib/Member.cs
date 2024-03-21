@@ -964,7 +964,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Determines if the member is a type that needs to be instantiated, such as a list or map
         /// </summary>
-        public bool ShouldInstantiate
+        public bool IsCollection
         {
             get { return this.IsMap || this.IsList; }
         }

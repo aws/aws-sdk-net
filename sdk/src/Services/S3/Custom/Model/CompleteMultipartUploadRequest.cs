@@ -200,7 +200,7 @@ namespace Amazon.S3.Model
         private string _checksumSHA1;
         private string _checksumSHA256;
         private string key;
-        private List<PartETag> partETags = new List<PartETag>();
+        private List<PartETag> partETags = AWSConfigs.InitializeCollections ? new List<PartETag>() : null;
         private string uploadId;
         private RequestPayer requestPayer;
         private string _sseCustomerAlgorithm;
@@ -403,15 +403,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<PartETag> PartETags
         {
-            get
-            {
-                if (this.partETags == null)
-                {
-                    this.partETags = new List<PartETag>();
-                }
-
-                return this.partETags;
-            }
+            get { return this.partETags; }
             set { this.partETags = value; }
         }
 
@@ -421,9 +413,12 @@ namespace Amazon.S3.Model
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(params PartETag[] partETags)
         {
-            foreach (PartETag part in partETags)
+            if (partETags != null)
             {
-                this.PartETags.Add(part);
+                foreach (PartETag part in partETags)
+                {
+                    this.PartETags.Add(part);
+                }
             }
         }
 
@@ -433,6 +428,10 @@ namespace Amazon.S3.Model
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(IEnumerable<PartETag> partETags)
         {
+            if (partETags == null)
+            {
+                partETags = new List<PartETag>();
+            }
             foreach (PartETag part in partETags)
             {
                 this.PartETags.Add(part);
@@ -445,6 +444,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from UploadParts.</param>
         public void AddPartETags(params UploadPartResponse[] responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (UploadPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));
@@ -457,6 +461,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from UploadParts.</param>
         public void AddPartETags(IEnumerable<UploadPartResponse> responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (UploadPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));
@@ -469,6 +478,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from CopyParts.</param>
         public void AddPartETags(params CopyPartResponse[] responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (CopyPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));
@@ -481,6 +495,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from CopyParts.</param>
         public void AddPartETags(IEnumerable<CopyPartResponse> responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (CopyPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));

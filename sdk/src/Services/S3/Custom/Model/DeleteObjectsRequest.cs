@@ -158,7 +158,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private bool? bypassGovernanceRetention;
         private ChecksumAlgorithm _checksumAlgorithm;
-        private List<KeyVersion> objects = new List<KeyVersion>();
+        private List<KeyVersion> objects = AWSConfigs.InitializeCollections ? new List<KeyVersion>() : null;
         private bool? quiet;
         private MfaCodes mfaCodes;
         private RequestPayer requestPayer;
@@ -328,20 +328,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<KeyVersion> Objects
         {
-            get
-            {
-                if (this.objects == null)
-                    this.objects = new List<KeyVersion>();
-
-                return this.objects;
-            }
+            get { return this.objects; }
             set { this.objects = value; }
         }
 
         // Check to see if Objects property is set
         internal bool IsSetObjects()
         {
-            return this.objects.Count > 0;
+            return this.objects != null && (this.objects.Count > 0 || !AWSConfigs.InitializeCollections);
         }
         /// <summary>
         /// Gets and sets the property MFA. 

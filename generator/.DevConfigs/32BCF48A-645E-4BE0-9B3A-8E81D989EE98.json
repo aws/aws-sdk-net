@@ -1,0 +1,10 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Add InitializeCollections property to AWSConfigs. If true types used for request and responses for service calls initializes collection properties to empty collection. If false the collections will be initialized to null. The default value is true.",
+			"Fixed issue overriding OS configured proxy for .NET Framework targets."
+        ],
+        "type": "minor",
+        "updateMinimum": true
+    }
+}

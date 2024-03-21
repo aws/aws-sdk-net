@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     public class ReplicationRuleAndOperator
     {
         private string prefix;
-        private List<Tag> tags = new List<Tag>();
+        private List<Tag> tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Object keyname prefix that identifies subset of objects to which the rule applies.
@@ -61,7 +61,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Tags property is set.</returns>
         internal bool IsSetTags()
         {
-            return this.tags != null && this.tags.Count > 0;
+            return this.tags != null && (this.tags.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }

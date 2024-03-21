@@ -59,6 +59,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Tiering", targetDepth))
                     {
+                        if (response.Tierings == null)
+                        {
+                            response.Tierings = new List<Tiering>();
+                        }
                         response.Tierings.Add(TieringUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }

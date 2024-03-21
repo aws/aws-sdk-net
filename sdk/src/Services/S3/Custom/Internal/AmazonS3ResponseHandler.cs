@@ -149,9 +149,9 @@ namespace Amazon.S3.Internal
             {
                 if (listObjectsResponse.IsTruncated &&
                     string.IsNullOrEmpty(listObjectsResponse.NextMarker) &&
-                    listObjectsResponse.S3Objects.Count > 0)
+                    listObjectsResponse.S3Objects?.Count > 0)
                 {
-                    listObjectsResponse.NextMarker = listObjectsResponse.S3Objects.Last().Key;
+                    listObjectsResponse.NextMarker = listObjectsResponse.S3Objects?.Last().Key;
                 }
             }
 

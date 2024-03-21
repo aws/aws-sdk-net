@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
 		private string intelligentTieringId;
 		private IntelligentTieringFilter intelligentTieringFilter;
 		private IntelligentTieringStatus status;
-		private List<Tiering> tierings = new List<Tiering>();
+		private List<Tiering> tierings = AWSConfigs.InitializeCollections ? new List<Tiering>() : null;
 
 		/// <summary>
 		/// <para>The ID used to identify the S3 Intelligent-Tiering configuration.</para>
@@ -87,7 +87,7 @@ namespace Amazon.S3.Model
 		// Check if the tieringList property is set
 		internal bool IsSetTieringList()
 		{
-			return this.tierings.Count > 0;
-		}
+            return this.tierings != null && (this.tierings.Count > 0 || !AWSConfigs.InitializeCollections);
+        }
 	}
 }

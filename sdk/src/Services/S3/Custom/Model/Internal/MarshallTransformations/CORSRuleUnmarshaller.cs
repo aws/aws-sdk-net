@@ -39,26 +39,42 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllowedMethod", targetDepth))
                     {
+                        if (cORSRule.AllowedMethods == null)
+                        {
+                            cORSRule.AllowedMethods = new List<string>();
+                        }
+
                         cORSRule.AllowedMethods.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("AllowedOrigin", targetDepth))
                     {
+                        if (cORSRule.AllowedOrigins == null)
+                        {
+                            cORSRule.AllowedOrigins = new List<string>();
+                        }
+
                         cORSRule.AllowedOrigins.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("ExposeHeader", targetDepth))
                     {
+                        if (cORSRule.ExposeHeaders == null)
+                        {
+                            cORSRule.ExposeHeaders = new List<string>();
+                        }
+
                         cORSRule.ExposeHeaders.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("AllowedHeader", targetDepth))
                     {
-                        cORSRule.AllowedHeaders.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                        if (cORSRule.AllowedHeaders == null)
+                        {
+                            cORSRule.AllowedHeaders = new List<string>();
+                        }
 
+                        cORSRule.AllowedHeaders.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                         continue;
                     }
 

@@ -35,9 +35,9 @@ namespace Amazon.S3.Model
         private RequestCharged _requestCharged;
         private bool? isTruncated;
 
-        private List<MultipartUpload> multipartUploads;
+        private List<MultipartUpload> multipartUploads = AWSConfigs.InitializeCollections ? new List<MultipartUpload>() : null;
         private string delimiter;
-        private List<string> commonPrefixes;
+        private List<string> commonPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string prefix;
 
         /// <summary>
@@ -184,13 +184,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<MultipartUpload> MultipartUploads
         {
-            get 
-            {
-                if (this.multipartUploads == null)
-                    this.multipartUploads = new List<MultipartUpload>();
-
-                return this.multipartUploads; 
-            }
+            get { return this.multipartUploads; }
             set { this.multipartUploads = value; }
         }
 
@@ -263,14 +257,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<string> CommonPrefixes
         {
-            get
-            {
-                if (this.commonPrefixes == null)
-                {
-                    this.commonPrefixes = new List<string>();
-                }
-                return this.commonPrefixes;
-            }
+            get { return this.commonPrefixes; }
+            set { this.commonPrefixes = value; }
         }
     }
 }

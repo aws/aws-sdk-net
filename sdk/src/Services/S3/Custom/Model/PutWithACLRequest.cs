@@ -28,7 +28,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public abstract class PutWithACLRequest : AmazonWebServiceRequest
     {
-        private List<S3Grant> _grants;
+        private List<S3Grant> _grants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
 
         /// <summary>
         /// Gets the access control lists (ACLs) for this request. 
@@ -37,20 +37,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<S3Grant> Grants
         {
-            get
-            {
-                if (null == _grants)
-                {
-                    _grants = new List<S3Grant>();
-                }
-                return _grants;
-            }
-            set
-            {
-                _grants = value;
-            }
+            get { return _grants; }
+            set { _grants = value; }
         }
-
-
     }
 }

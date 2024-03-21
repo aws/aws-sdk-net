@@ -111,15 +111,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 MetricName = "NetworkIn",
                 Namespace = "AWS/EC2",
-                StartTime = DateTime.Parse("2008-01-01T19:00:00+00:00"),
-                EndTime = DateTime.Parse("2009-12-01T19:00:00+00:00"),
+                StartTimeUtc = DateTime.Parse("2008-01-01T19:00:00+00:00"),
+                EndTimeUtc = DateTime.Parse("2009-12-01T19:00:00+00:00"),
                 Statistics = new List<string> { "Average" },
                 Unit = "Percent",
                 Period = 42000,
             };
             var getMetricResult = Client.GetMetricStatistics(getMetricRequest);
             Assert.IsNotNull(getMetricResult);
-            Assert.IsTrue(getMetricResult.Datapoints.Count >= 0);
             Assert.IsNotNull(getMetricResult.Label);
         }
 
@@ -257,11 +256,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 AssertNotEmpty(metric.MetricName);
                 AssertNotEmpty(metric.Namespace);
 
-                foreach (Dimension dimension in metric.Dimensions)
+                if (metric.Dimensions != null)
                 {
-                    seenDimensions = true;
-                    AssertNotEmpty(dimension.Name);
-                    AssertNotEmpty(dimension.Value);
+                    foreach (Dimension dimension in metric.Dimensions)
+                    {
+                        seenDimensions = true;
+                        AssertNotEmpty(dimension.Name);
+                        AssertNotEmpty(dimension.Value);
+                    }
                 }
             }
             Assert.IsTrue(seenDimensions);
@@ -288,7 +290,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             GetMetricStatisticsRequest request = new GetMetricStatisticsRequest()
             {
-                StartTime = DateTime.Now.AddMilliseconds(-ONE_WEEK_IN_MILLISECONDS),
+                StartTimeUtc = DateTime.UtcNow.AddMilliseconds(-ONE_WEEK_IN_MILLISECONDS),
                 Namespace = "AWS/EC2",
                 Period = 60 * 60,
                 Dimensions = new List<Dimension>
@@ -297,13 +299,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 },
                 MetricName = measureName,
                 Statistics = new List<string> { "Average", "Maximum", "Minimum", "Sum" },
-                EndTime = DateTime.Now
+                EndTimeUtc = DateTime.UtcNow
             };
             var result = Client.GetMetricStatistics(request);
 
             AssertNotEmpty(result.Label);
             Assert.AreEqual(measureName, result.Label);
-            Assert.IsNotNull(result.Datapoints);
         }
 
         /**
