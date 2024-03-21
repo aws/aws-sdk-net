@@ -67,12 +67,26 @@ public final class CSharpWriter extends SymbolWriter<CSharpWriter, DotnetImportC
         return this;
     }
 
-    public CSharpWriter writeComment(String comment){
+    public CSharpWriter writeMultiLineComment(String comment){
         pushState();
         write("/* ");
         setNewlinePrefix("* ");
         write(formatDocs(comment));
         write("*/");
+        popState();
+        return this;
+    }
+    public CSharpWriter writeSingleLineComment(String comment){
+        write("//" + comment);
+        return this;
+    }
+
+    public CSharpWriter writeXmlDocs(String comment){
+        pushState();
+        setNewlinePrefix("/// ");
+        write("<summary>");
+        write(formatDocs(comment));
+        write("</summary>");
         popState();
         return this;
     }

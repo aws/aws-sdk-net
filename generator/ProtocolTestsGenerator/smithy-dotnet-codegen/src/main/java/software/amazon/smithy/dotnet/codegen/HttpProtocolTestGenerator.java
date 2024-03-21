@@ -97,6 +97,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
 
     private void generateRequestTest(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
         if(!ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId())){
+            if(httpRequestTestCase.getDocumentation().isPresent()){
+                writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
+            }
             writer.write("[TestMethod]");
             writer.write("[TestCategory(\"ProtocolTest\")]");
             writer.write("[TestCategory(\"RequestTest\")]");
@@ -104,6 +107,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.openBlock("public void $LRequest()\n{","}",httpRequestTestCase.getId(), () ->{
                 generateRequestTestBlock(operation,httpRequestTestCase);
             });
+            writer.write("\n");
         }
     }
     private void generateRequestTestBlock(OperationShape operation, HttpRequestTestCase httpRequestTestCase ){
@@ -111,7 +115,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         var inputShape =  model.expectShape(operation.getInputShape(), StructureShape.class);
 
         String inputShapeName = operation.getId().getName() + "Request";
-        writer.openBlock("var request = new $L{","};",inputShapeName, (Runnable) () -> params.accept(new ValueNodeVisitor(inputShape, true, inputShapeName )));
+        writer.writeSingleLineComment("Arrange");
+        writer.openBlock("var request = new $L\n{","};",inputShapeName, (Runnable) () -> params.accept(new ValueNodeVisitor(inputShape, true, inputShapeName )));
         var hostList = httpRequestTestCase.getHost().orElse("test.com").split("/",2);
         var host = hostList[0];
         String path;
@@ -120,15 +125,18 @@ public final class HttpProtocolTestGenerator implements Runnable {
         } else {
             path = "";
         }
+
         writer.write("""
-                     var config = new $L{
+                     var config = new $L
+                     {
                        ServiceURL = "https://$L/$L"
                      };
                      """, ProtocolTestUtils.getProtocolConfig(settings),host,path);
-
         writer.write("var marshaller = new $LMarshaller();",inputShapeName);
+        writer.writeSingleLineComment("Act");
         writer.write("var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);");
-
+        writer.write("\n");
+        writer.writeSingleLineComment("Assert");
         //verify the body
         if(httpRequestTestCase.getBody().isPresent() && !httpRequestTestCase.getBody().get().equals("")){
             if(protocol.equals("Json")){
@@ -154,9 +162,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 throw new CodegenException("Unsupported protocol detected while generating request test block.");
             }
         }
-
         writer.write("Assert.AreEqual($S, marshalledRequest.HttpMethod);",httpRequestTestCase.getMethod());
-
         // Calling AmazonServiceClient.ComposeUrl to avoid adding the HttpHandler to the mock request pipeline since we don't want
         // to make a network call
         writer.write("Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);");
@@ -174,7 +180,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
             }
             writer.write("Assert.AreEqual( $S, marshalledRequest.Headers[$S]);", headers.get(header), header);
         }
-
         //Verify the query Params
         if(!httpRequestTestCase.getQueryParams().isEmpty()){
             writer.write("var querySegment = actualUri.Query.Substring(1);");
@@ -193,6 +198,9 @@ public final class HttpProtocolTestGenerator implements Runnable {
     }
 
     private void generateResponseTest(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
+        if(httpResponseTestCase.getDocumentation().isPresent()){
+            writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
+        }
         writer.write("[TestMethod]");
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"ResponseTest\")]");
@@ -200,11 +208,14 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.openBlock("public void $LResponse()\n{","}",httpResponseTestCase.getId(), () ->{
             generateResponseTestBlock(operation,httpResponseTestCase);
         });
+        writer.write("\n");
     }
 
     private void generateResponseTestBlock(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
         var outputShape =  model.expectShape(operation.getOutputShape(), StructureShape.class);
         var responseSymbol = operation.getId().getName() + "Response";
+        //Arrange
+        writer.writeSingleLineComment("Arrange");
         writer.write("byte[] bytes = Encoding.ASCII.GetBytes($S);",httpResponseTestCase.getBody());
         writer.write("var stream = new MemoryStream(bytes);");
         writer.write("var webResponseData = new WebResponseData();");
@@ -213,11 +224,16 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("webResponseData.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
         }
         writer.write("var context = new $LUnmarshallerContext(stream,true,webResponseData);", protocol);
-
+        writer.write("\n");
         // only unmarshall the response and assert if a body is present, as per smithy spec
         if(httpResponseTestCase.getBody().isPresent() && !httpResponseTestCase.getBody().equals("")){
+            //Act
+            writer.writeSingleLineComment("Act");
             writer.write("var unmarshalledResponse = new $LUnmarshaller().Unmarshall(context);",responseSymbol);
-            writer.openBlock("var expectedResponse = new $L{","};",responseSymbol,(Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape,true, responseSymbol)));
+            writer.openBlock("var expectedResponse = new $L\n{","};",responseSymbol,(Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape,true, responseSymbol)));
+            writer.write("\n");
+            //Assert
+            writer.writeSingleLineComment("Assert");
             writer.write("var actualResponse = ($L)unmarshalledResponse;",responseSymbol);
             writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
         }
