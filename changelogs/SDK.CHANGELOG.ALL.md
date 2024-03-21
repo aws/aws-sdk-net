@@ -1,3 +1,7 @@
+### 3.7.773.0 (2024-03-21 18:14 UTC)
+* CodeArtifact (3.7.301.0)
+	* This release adds Package groups to CodeArtifact so you can more conveniently configure package origin controls for multiple packages.
+
 ### 3.7.772.0 (2024-03-20 18:28 UTC)
 * AccessAnalyzer (3.7.303.0)
 	* This release adds support for policy validation and external access findings for DynamoDB tables and streams. IAM Access Analyzer helps you author functional and secure resource-based policies and identify cross-account access. Updated service API, documentation, and paginators.
