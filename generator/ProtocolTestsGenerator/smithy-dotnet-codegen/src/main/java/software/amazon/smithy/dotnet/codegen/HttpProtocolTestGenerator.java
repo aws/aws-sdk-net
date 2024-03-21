@@ -147,11 +147,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
                              """);
             }
             else if (projectionName.equals("RestXmlProtocol") || projectionName.equals("RestXmlProtocolNamespace")){
-                writer.write("var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);");
                 writer.write("var expectedBody = $S;",httpRequestTestCase.getBody());
-                writer.write("XDocument actualDoc = XDocument.Parse(actualBody);");
-                writer.write("XDocument expectedDoc = XDocument.Parse(expectedBody);");
-                writer.write("Assert.IsTrue(XmlTestUtils.AreDocumentsEqual(expectedDoc, actualDoc));");
+                writer.write("XmlTestUtils.AssertBody(marshalledRequest,expectedBody);");
             }
             else{
                 throw new CodegenException("Unsupported protocol detected while generating request test block.");

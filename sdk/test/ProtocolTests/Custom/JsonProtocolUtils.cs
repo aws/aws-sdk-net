@@ -19,7 +19,7 @@ namespace AWSSDK.ProtocolTests.Utils
             if (actualRequest.ContentStream != null)
             {
                 actualBody = ProtocolTestUtils.GetContentStreamBody(actualRequest.ContentStream);
-                Assert.AreEqual(actualBody, expectedBody);
+                Assert.AreEqual(expectedBody, actualBody);
             }
 
             else

@@ -1,4 +1,5 @@
-﻿using Amazon.Runtime.Internal.Util;
+﻿using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,23 @@ namespace AWSSDK.ProtocolTests.Utils
 {
     internal static class XmlTestUtils
     {
+        internal static void AssertBody(IRequest actualRequest, string expectedBody)
+        {
+            string actualBody;
+            if(actualRequest.ContentStream != null)
+            {
+                actualBody = ProtocolTestUtils.GetContentStreamBody(actualRequest.ContentStream);
+                Assert.AreEqual(expectedBody,actualBody);
+            }
+            else 
+            {
+                actualBody = Encoding.UTF8.GetString(actualRequest.Content);
+                XDocument actualDoc = XDocument.Parse(actualBody);
+                XDocument expectedDoc = XDocument.Parse(expectedBody);
+                Assert.IsTrue(AreDocumentsEqual(expectedDoc, actualDoc));
+            }
+        }
+
         internal static bool AreDocumentsEqual(XDocument expectedDoc, XDocument actualDoc)
         {
             return AreElementsEqual(expectedDoc.Root,actualDoc.Root);
