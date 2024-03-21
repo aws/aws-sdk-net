@@ -66,11 +66,8 @@ namespace AWSSDK.ProtocolTests.RestXmlWithNamespace
 
             var marshaller = new SimpleScalarPropertiesRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
             var expectedBody = "<SimpleScalarPropertiesInputOutput xmlns=\"https://example.com\">\n    <stringValue>string</stringValue>\n    <trueBooleanValue>true</trueBooleanValue>\n    <falseBooleanValue>false</falseBooleanValue>\n    <byteValue>1</byteValue>\n    <shortValue>2</shortValue>\n    <integerValue>3</integerValue>\n    <longValue>4</longValue>\n    <floatValue>5.5</floatValue>\n    <DoubleDribble>6.5</DoubleDribble>\n    <Nested xmlns:xsi=\"https://example.com\" xsi:someName=\"nestedAttrValue\"></Nested>\n</SimpleScalarPropertiesInputOutput>\n";
-            XDocument actualDoc = XDocument.Parse(actualBody);
-            XDocument expectedDoc = XDocument.Parse(expectedBody);
-            Assert.IsTrue(XmlTestUtils.AreDocumentsEqual(expectedDoc, actualDoc));
+            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/SimpleScalarProperties", actualUri.AbsolutePath);

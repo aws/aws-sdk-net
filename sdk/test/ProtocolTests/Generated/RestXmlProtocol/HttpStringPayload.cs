@@ -54,11 +54,8 @@ namespace AWSSDK.ProtocolTests.RestXml
 
             var marshaller = new HttpStringPayloadRequestMarshaller();
             var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
-            var actualBody = Encoding.UTF8.GetString(marshalledRequest.Content);
             var expectedBody = "rawstring";
-            XDocument actualDoc = XDocument.Parse(actualBody);
-            XDocument expectedDoc = XDocument.Parse(expectedBody);
-            Assert.IsTrue(XmlTestUtils.AreDocumentsEqual(expectedDoc, actualDoc));
+            XmlTestUtils.AssertBody(marshalledRequest,expectedBody);
             Assert.AreEqual("POST", marshalledRequest.HttpMethod);
             Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
             Assert.AreEqual("/StringPayload", actualUri.AbsolutePath);
