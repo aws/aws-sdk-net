@@ -69,7 +69,8 @@ namespace Amazon.EC2.Model
         /// This method decides which of IpRanges/Ipv4Ranges property values will be used to make the request.
         /// If both IpRanges and Ipv4Ranges are set with the same Cidr values, Ipv4Range property is selected. 
         /// If no modifications have been made on either of IpRanges Ipv4ranges properties, Ipv4Ranges property is selected.
-        /// If both IpRanges and Ipv4Ranges are set differently, an ArgumentException is thrown.
+        /// If both IpRanges and Ipv4Ranges are set with different CIDRs the method returns IpRangeValue.Invalid. The AmazonEC2PreMarshallHandler 
+        /// is main caller of this method which throws an ArgumentException exception if IpRangeValue.Invalid is returned.
         /// </summary>
         /// <returns></returns>
         internal IpRangeValue CanModify()
