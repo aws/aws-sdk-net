@@ -178,7 +178,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
                     continue;
                 }
             }
-            writer.write("Assert.AreEqual( $S, marshalledRequest.Headers[$S]);", headers.get(header), header);
+            // We are relaxing our assert here so that "1, 2, 3" = "1,2,3" There is nothing in the smithy docs that says whitespace matters.
+            writer.write("Assert.AreEqual($S.Replace(\" \",\"\"), marshalledRequest.Headers[$S].Replace(\" \",\"\"));", headers.get(header), header);
         }
         //Verify the query Params
         if(!httpRequestTestCase.getQueryParams().isEmpty()){
